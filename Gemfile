@@ -10,9 +10,7 @@ gem "slim", "~> 2.0.2"
 gem "sass", "~> 3.2.14"
 gem "coffee-script", "~> 2.2.0"
 
-
 gem "github-markdown", "~> 0.6.4"
-# gem "redcarpet", "~> 3.1.0"
 
 group :development do
   gem "shotgun", "~> 0.9"

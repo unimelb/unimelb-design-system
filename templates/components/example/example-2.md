@@ -1,9 +1,11 @@
 # Example 2
 
-I'm more text for another example!!
+I'm more another example with HTML!!
 
-```ruby
-def foo()
-  'bar'
-end
+```html
+<form>
+  <input type="text" name="first_name">
+  <input type="text" name="last_name">
+  <input type="submit" value="Go">
+</form>
 ```
