@@ -1,2 +1,10 @@
-h1 Welcome to the web templates
-p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+h1 Web Templates
+
+h2 Components
+
+ul
+  - @components.each do |path|
+    li
+      a href=(component_path(path))
+        = component_title(path)
+

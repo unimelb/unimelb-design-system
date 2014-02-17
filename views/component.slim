@@ -1,0 +1,7 @@
+h2= @component
+
+- if @documents.empty?
+  p There are no examples for this component :(
+- else
+  - @documents.each do |document|
+    == document

@@ -6,6 +6,7 @@ GEM
       execjs
     coffee-script-source (1.7.0)
     execjs (2.0.2)
+    github-markdown (0.6.4)
     hike (1.2.3)
     multi_json (1.8.4)
     rack (1.5.2)
@@ -36,6 +37,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script (~> 2.2.0)
+  github-markdown (~> 0.6.4)
   sass (~> 3.2.14)
   shotgun (~> 0.9)
   sinatra (~> 1.4.4)
