@@ -6,6 +6,8 @@ class WebTemplates < Sinatra::Base
   set :components, Dir.entries(components_dir).select { |f| f =~ /^[^\.]/ }
   set :globals_dir, File.join(root, 'templates', 'globals')
   set :globals, Dir.entries(globals_dir).select { |f| f =~ /^[^\.]/ }
+  set :layouts_dir, File.join(root, 'views', 'example_layouts')
+  set :layouts, Dir.entries(layouts_dir).select { |f| f =~ /.+\.slim$/ }.map { |l| l.gsub(/\.slim$/, '') }
 
   configure do
     sprockets.append_path File.join(root, 'templates')
@@ -22,20 +24,25 @@ class WebTemplates < Sinatra::Base
   helpers do
     include Sprockets::Helpers
 
-    def component_title(component)
-      component.capitalize
+    def path_to_title(path)
+      path.split('-').join(' ').capitalize
     end
+
+    alias :component_title :path_to_title
+    alias :global_title    :path_to_title
+    alias :layout_title    :path_to_title
 
     def component_path(component)
       "/components/#{component.downcase}"
     end
 
-    def global_title(global)
-      global.capitalize
-    end
-
     def global_path(global)
       "/globals/#{global.downcase}"
+    end
+
+    def layout_path(layout, source=false)
+      path = "/layouts/#{layout.downcase}"
+      !!source ? "#{path}?view=source" : path
     end
 
   end
@@ -43,6 +50,7 @@ class WebTemplates < Sinatra::Base
   get '/' do
     @globals    = settings.globals
     @components = settings.components
+    @layouts    = settings.layouts
     slim :index
   end
 
@@ -61,6 +69,20 @@ class WebTemplates < Sinatra::Base
     @documents = @documents.map { |d| GitHub::Markdown.render_gfm(File.read(d)) }
     slim :global
   end
+
+  get '/layouts/*' do |path|
+    halt(404) unless settings.layouts.include? path
+    layout_view = "example_layouts/#{path}".to_sym
+
+    if request['view'].to_s.downcase == 'source'
+      @file   = path
+      @source = slim layout_view, layout: false, pretty: true
+      slim :source_view
+    else
+      slim layout_view
+    end
+  end
+
 
   get "#{Sprockets::Helpers.prefix}/*" do |path|
     env_sprockets = request.env.dup
