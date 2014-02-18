@@ -1,8 +1,3 @@
 tmp/*
 .bundle/*
-<<<<<<< HEAD
-
-/.DS_Store
-=======
 .DS_Store
->>>>>>> d665272e056af6212267ca1de01a4e57f8654798

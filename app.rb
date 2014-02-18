@@ -1,4 +1,5 @@
 class WebTemplates < Sinatra::Base
+
   set :sprockets, Sprockets::Environment.new(root)
   set :assets_prefix, '/assets'
   set :digest_assets, true
