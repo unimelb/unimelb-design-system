@@ -2,7 +2,7 @@ source "http://rubygems.org"
 
 ruby "2.1.0"
 
-gem "sinatra", "~> 1.4.4"
+gem "sinatra", "~> 1.4.4", require: "sinatra/base"
 gem "sprockets", "~> 2.10.1"
 gem "sprockets-helpers", "~> 1.1.0"
 
