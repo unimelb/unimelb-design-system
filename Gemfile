@@ -11,7 +11,6 @@ gem "sass", "~> 3.2.14"
 gem "coffee-script", "~> 2.2.0"
 
 gem "github-markdown", "~> 0.6.4"
-gem "rails_config", "~> 0.3.3"
 
 group :development do
   gem "shotgun", "~> 0.9"

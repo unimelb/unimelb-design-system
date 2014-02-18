@@ -1,5 +1,4 @@
 class WebTemplates < Sinatra::Base
-
   set :sprockets, Sprockets::Environment.new(root)
   set :assets_prefix, '/assets'
   set :digest_assets, true
@@ -25,32 +24,25 @@ class WebTemplates < Sinatra::Base
   helpers do
     include Sprockets::Helpers
 
-    def component_title(component)
-      component.capitalize
+    def path_to_title(path)
+      path.split('-').join(' ').capitalize
     end
+
+    alias :component_title :path_to_title
+    alias :global_title    :path_to_title
+    alias :layout_title    :path_to_title
 
     def component_path(component)
       "/components/#{component.downcase}"
-    end
-
-    def global_title(global)
-      global.capitalize
     end
 
     def global_path(global)
       "/globals/#{global.downcase}"
     end
 
-    def layout_title(layout)
-      layout.capitalize
-    end
-
-    def layout_path(layout)
-      "/layouts/#{layout.downcase}"
-    end
-
-    def layout_source_path(layout)
-      "/layouts/#{layout.downcase}?view=source"
+    def layout_path(layout, source=false)
+      path = "/layouts/#{layout.downcase}"
+      !!source ? "#{path}?view=source" : path
     end
 
   end
@@ -82,7 +74,7 @@ class WebTemplates < Sinatra::Base
     halt(404) unless settings.layouts.include? path
     layout_view = "example_layouts/#{path}".to_sym
 
-    if request['view'].to_s == 'source'
+    if request['view'].to_s.downcase == 'source'
       @file   = path
       @source = slim layout_view, layout: false, pretty: true
       slim :source_view
