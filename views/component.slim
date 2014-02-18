@@ -1,4 +1,14 @@
-h1= @component
+h1= component_title(@component)
+
+- if component_pending?(@component)
+  .notice
+    strong Attention! Pending component
+    '
+    | This component is not yet implemented. Please help us
+    '
+    a href="https://github.com/marcom-unimelb/unimelb-web-templates" build it
+    | .
+
 
 - if @documents.empty?
   p There are no examples for this component :(

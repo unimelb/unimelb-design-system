@@ -1,0 +1,26 @@
+/* N.B. Only styles specific to the example site are to be placed here */
+
+.todo {
+  color: #555;
+  font-weight: bold;
+  font-size: 0.7em;
+}
+
+.notice {
+  background-color: #fcf8f2;
+  border-left: 3px solid #f0ad4e;
+  color: #333;
+  margin: 20px 0;
+  padding: 20px;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+}
+
+.notice strong {
+  color: #f0ad4e;
+  display: block;
+  margin-top: 0;
+  margin-bottom: 5px;
+  line-height: 1.1;
+  font-size: 18px;
+}

@@ -1,4 +1,13 @@
-h1= @global
+h1= global_title(@global)
+
+- if global_pending?(@global)
+  .notice
+    strong Attention! Pending global
+    '
+    | This global is not yet implemented. Please help us
+    '
+    a href="https://github.com/marcom-unimelb/unimelb-web-templates" build it
+    | .
 
 - if @documents.empty?
   p There are no examples for this global :(

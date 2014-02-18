@@ -25,12 +25,21 @@ class WebTemplates < Sinatra::Base
     include Sprockets::Helpers
 
     def path_to_title(path)
-      path.split('-').join(' ').capitalize
+      path.gsub(/^todo-/, '').split('-').map(&:capitalize).join(' ')
     end
 
     alias :component_title :path_to_title
     alias :global_title    :path_to_title
     alias :layout_title    :path_to_title
+
+
+    def path_pending?(path)
+      path =~ /^todo-/
+    end
+
+    alias :component_pending? :path_pending?
+    alias :global_pending?    :path_pending?
+    alias :layout_pending?    :path_pending?
 
     def component_path(component)
       "/components/#{component.downcase}"
@@ -56,7 +65,7 @@ class WebTemplates < Sinatra::Base
 
   get '/components/*' do |path|
     halt(404) unless settings.components.include? path
-    @component = component_title(path)
+    @component = path
     @documents = Dir.glob(File.join(settings.components_dir, path, '*.md')).sort
     @documents = @documents.map { |d| GitHub::Markdown.render_gfm(File.read(d)) }
     slim :component
@@ -64,7 +73,7 @@ class WebTemplates < Sinatra::Base
 
   get '/globals/*' do |path|
     halt(404) unless settings.globals.include? path
-    @global    = global_title(path)
+    @global    = path
     @documents = Dir.glob(File.join(settings.globals_dir, path, '*.md')).sort
     @documents = @documents.map { |d| GitHub::Markdown.render_gfm(File.read(d)) }
     slim :global

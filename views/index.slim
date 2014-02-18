@@ -5,6 +5,10 @@ h2 Globals
 ul
   - @globals.each do |path|
     li
+      - if global_pending?(path)
+        small class="todo"
+          | [TODO]
+          '
       a href=(global_path(path))
         = global_title(path)
 
@@ -13,6 +17,10 @@ h2 Components
 ul
   - @components.each do |path|
     li
+      - if component_pending?(path)
+        small class="todo"
+          | [TODO]
+          '
       a href=(component_path(path))
         = component_title(path)
 
@@ -21,6 +29,11 @@ h2 Example Layouts
 ul
   - @layouts.each do |path|
     li
+
+      - if layout_pending?(path)
+        small class="todo"
+          | [TODO]
+          '
       a href=(layout_path(path))
         = layout_title(path)
       '
