@@ -83,7 +83,6 @@ class WebTemplates < Sinatra::Base
     end
   end
 
-
   get "#{Sprockets::Helpers.prefix}/*" do |path|
     env_sprockets = request.env.dup
     env_sprockets['PATH_INFO'] = path
