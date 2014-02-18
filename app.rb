@@ -6,6 +6,8 @@ class WebTemplates < Sinatra::Base
   set :components, Dir.entries(components_dir).select { |f| f =~ /^[^\.]/ }
   set :globals_dir, File.join(root, 'templates', 'globals')
   set :globals, Dir.entries(globals_dir).select { |f| f =~ /^[^\.]/ }
+  set :layouts_dir, File.join(root, 'views', 'example_layouts')
+  set :layouts, Dir.entries(layouts_dir).select { |f| f =~ /.+\.slim$/ }.map { |l| l.gsub(/\.slim$/, '') }
 
   configure do
     sprockets.append_path File.join(root, 'templates')
@@ -38,11 +40,24 @@ class WebTemplates < Sinatra::Base
       "/globals/#{global.downcase}"
     end
 
+    def layout_title(layout)
+      layout.capitalize
+    end
+
+    def layout_path(layout)
+      "/layouts/#{layout.downcase}"
+    end
+
+    def layout_source_path(layout)
+      "/layouts/#{layout.downcase}?view=source"
+    end
+
   end
 
   get '/' do
     @globals    = settings.globals
     @components = settings.components
+    @layouts    = settings.layouts
     slim :index
   end
 
@@ -61,6 +76,20 @@ class WebTemplates < Sinatra::Base
     @documents = @documents.map { |d| GitHub::Markdown.render_gfm(File.read(d)) }
     slim :global
   end
+
+  get '/layouts/*' do |path|
+    halt(404) unless settings.layouts.include? path
+    layout_view = "example_layouts/#{path}".to_sym
+
+    if request['view'].to_s == 'source'
+      @file   = path
+      @source = slim layout_view, layout: false, pretty: true
+      slim :source_view
+    else
+      slim layout_view
+    end
+  end
+
 
   get "#{Sprockets::Helpers.prefix}/*" do |path|
     env_sprockets = request.env.dup

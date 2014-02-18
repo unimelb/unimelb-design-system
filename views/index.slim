@@ -16,3 +16,14 @@ ul
       a href=(component_path(path))
         = component_title(path)
 
+h2 Example Layouts
+
+ul
+  - @layouts.each do |path|
+    li
+      a href=(layout_path(path))
+        = layout_title(path)
+      '
+      small
+        a href=(layout_source_path(path))
+          | (source)
