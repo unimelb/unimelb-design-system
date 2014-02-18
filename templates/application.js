@@ -1,2 +1,3 @@
 //= stub 'components/example/example'
-//= require_tree .
+//= require_tree ./globals
+//= require_tree ./components

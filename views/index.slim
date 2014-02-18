@@ -1,5 +1,13 @@
 h1 Web Templates
 
+h2 Globals
+
+ul
+  - @globals.each do |path|
+    li
+      a href=(global_path(path))
+        = global_title(path)
+
 h2 Components
 
 ul

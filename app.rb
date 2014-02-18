@@ -4,6 +4,8 @@ class WebTemplates < Sinatra::Base
   set :digest_assets, true
   set :components_dir, File.join(root, 'templates', 'components')
   set :components, Dir.entries(components_dir).select { |f| f =~ /^[^\.]/ }
+  set :globals_dir, File.join(root, 'templates', 'globals')
+  set :globals, Dir.entries(globals_dir).select { |f| f =~ /^[^\.]/ }
 
   configure do
     sprockets.append_path File.join(root, 'templates')
@@ -28,9 +30,18 @@ class WebTemplates < Sinatra::Base
       "/components/#{component.downcase}"
     end
 
+    def global_title(global)
+      global.capitalize
+    end
+
+    def global_path(global)
+      "/globals/#{global.downcase}"
+    end
+
   end
 
   get '/' do
+    @globals    = settings.globals
     @components = settings.components
     slim :index
   end
@@ -41,6 +52,14 @@ class WebTemplates < Sinatra::Base
     @documents = Dir.glob(File.join(settings.components_dir, path, '*.md')).sort
     @documents = @documents.map { |d| GitHub::Markdown.render_gfm(File.read(d)) }
     slim :component
+  end
+
+  get '/globals/*' do |path|
+    halt(404) unless settings.globals.include? path
+    @global    = global_title(path)
+    @documents = Dir.glob(File.join(settings.globals_dir, path, '*.md')).sort
+    @documents = @documents.map { |d| GitHub::Markdown.render_gfm(File.read(d)) }
+    slim :global
   end
 
   get "#{Sprockets::Helpers.prefix}/*" do |path|
