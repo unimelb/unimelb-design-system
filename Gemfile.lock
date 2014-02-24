@@ -1,6 +1,9 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    bourbon (3.1.8)
+      sass (>= 3.2.0)
+      thor
     coffee-script (2.2.0)
       coffee-script-source
       execjs
@@ -30,12 +33,14 @@ GEM
     sprockets-helpers (1.1.0)
       sprockets (~> 2.0)
     temple (0.6.7)
+    thor (0.18.1)
     tilt (1.4.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bourbon (~> 3.1.8)
   coffee-script (~> 2.2.0)
   github-markdown (~> 0.6.4)
   sass (~> 3.2.14)

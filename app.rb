@@ -2,10 +2,10 @@ class WebTemplates < Sinatra::Base
   set :sprockets, Sprockets::Environment.new(root)
   set :assets_prefix, '/assets'
   set :digest_assets, true
+
   set :components_dir, File.join(root, 'templates', 'components')
-  set :components, Dir.entries(components_dir).select { |f| f =~ /^[^\.]/ }
-  set :globals_dir, File.join(root, 'templates', 'globals')
-  set :globals, Dir.entries(globals_dir).select { |f| f =~ /^[^\.]/ }
+  set :components, Dir.entries(components_dir).select { |f| f =~ /^[^\.|globals]/ }
+
   set :layouts_dir, File.join(root, 'views', 'example_layouts')
   set :layouts, Dir.entries(layouts_dir).select { |f| f =~ /.+\.slim$/ }.map { |l| l.gsub(/\.slim$/, '') }
 
@@ -29,35 +29,26 @@ class WebTemplates < Sinatra::Base
     end
 
     alias :component_title :path_to_title
-    alias :global_title    :path_to_title
     alias :layout_title    :path_to_title
-
 
     def path_pending?(path)
       path =~ /^todo-/
     end
 
     alias :component_pending? :path_pending?
-    alias :global_pending?    :path_pending?
     alias :layout_pending?    :path_pending?
 
     def component_path(component)
       "/components/#{component.downcase}"
     end
 
-    def global_path(global)
-      "/globals/#{global.downcase}"
-    end
-
     def layout_path(layout, source=false)
       path = "/layouts/#{layout.downcase}"
       !!source ? "#{path}?view=source" : path
     end
-
   end
 
   get '/' do
-    @globals    = settings.globals
     @components = settings.components
     @layouts    = settings.layouts
     slim :index
@@ -69,14 +60,6 @@ class WebTemplates < Sinatra::Base
     @documents = Dir.glob(File.join(settings.components_dir, path, '*.md')).sort
     @documents = @documents.map { |d| GitHub::Markdown.render_gfm(File.read(d)) }
     slim :component
-  end
-
-  get '/globals/*' do |path|
-    halt(404) unless settings.globals.include? path
-    @global    = path
-    @documents = Dir.glob(File.join(settings.globals_dir, path, '*.md')).sort
-    @documents = @documents.map { |d| GitHub::Markdown.render_gfm(File.read(d)) }
-    slim :global
   end
 
   get '/layouts/*' do |path|

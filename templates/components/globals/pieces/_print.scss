@@ -1,0 +1,21 @@
+// Print
+
+$black: #000000;
+$white: #ffffff;
+@mixin defaultfont {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+
+@media print {
+  body {
+    @include defaultfont;
+    color: $black !important;
+    background: $white !important;
+    font-size: 11pt;
+    line-height: 1.2;
+  }
+  body>header,
+  body>footer {
+    display: none !important;
+  }
+}

@@ -2,13 +2,31 @@ doctype html
 html.no-js
   head
     meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    title Web Templates
 
-    == javascript_tag 'application'
+    == stylesheet_tag 'components/globals/core'
     == stylesheet_tag 'application'
-
 
     == stylesheet_tag 'example'
 
   body
+    .body__inner
+      .body__header
+        header
+          a class="header__logo" href="/"
+            img src="/assets/images/header-logo.png" alt=""
+          a href="/" University of Melbourne
+          span
+            ' /
+          a href="/" Web Templates
+      main role="main"
 
-    == yield
+        == yield
+
+      .body__footer
+        footer
+         p UoM
+
+  == javascript_tag 'application'

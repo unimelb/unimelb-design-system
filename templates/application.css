@@ -1,4 +1,4 @@
 /*
- *= require_tree ./globals
- *= require_tree ./components
-*/
+ *= require ./components/globals/pieces/_globals
+ *= require_tree ./components/colours
+ */

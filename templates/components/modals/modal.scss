@@ -1,0 +1,65 @@
+@mixin box-shadow($props) {
+  -moz-box-shadow: $props;
+  -ms-box-shadow: $props;
+  -o-box-shadow: $props;
+  -webkit-box-shadow: $props;
+  box-shadow: $props;
+}
+
+@mixin opacity($v) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$v*100})";
+  opacity: $v;
+}
+
+.modal__above {
+  position: relative;
+  z-index: 2;
+}
+
+.modal__dialog {
+  @include box-shadow(0 3px 12px 3px rgba(0,0,0,0.2));
+  background-color: #fff;
+  left: 20%;
+  padding: 20px;
+  position: absolute;
+  right: 20%;
+  top: 20%;
+  text-align: left;
+  visibility: hidden;
+  z-index: 1;
+  &.on {
+    visibility: visible;
+    z-index: 4;
+  }
+}
+
+.modal__close {
+  color: #aaa;
+  cursor: pointer;
+  float: right;
+  font-size: 18px;
+  width: 30px;
+  text-align: right;
+  text-decoration: none;
+  &:hover {
+    color: #444;
+  }
+}
+
+.modal__blanket {
+  @include opacity(0);
+  background: #000;
+  display: none;
+  height: 100%;
+  left: 0px;
+  overflow: scroll;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  &.on {
+    @include opacity(0.4);
+    display: block;
+    z-index: 3;
+  }
+}

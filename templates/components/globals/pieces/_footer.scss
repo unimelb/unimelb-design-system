@@ -1,0 +1,11 @@
+.body__footer {
+  background-color: $brand;
+  color: $white;
+
+  footer {
+    @extend %wrapper;
+    @include rem(height, 60px);
+    @include rem(padding-bottom, 15px);
+    @include rem(padding-top, 15px);
+  }
+}

@@ -1,42 +1,32 @@
-h1 Web Templates
+article
+  header
+    section
+      h1 Web Templates
 
-h2 Globals
+  section
+    h2 Components
+    ul
+      - @components.each do |path|
+        li
+          - if component_pending?(path)
+            small class="todo"
+              | [TODO]
+              '
+          a href=(component_path(path))
+            = component_title(path)
 
-ul
-  - @globals.each do |path|
-    li
-      - if global_pending?(path)
-        small class="todo"
-          | [TODO]
+    h2 Example Layouts
+    ul
+      - @layouts.each do |path|
+        li
+
+          - if layout_pending?(path)
+            small class="todo"
+              | [TODO]
+              '
+          a href=(layout_path(path))
+            = layout_title(path)
           '
-      a href=(global_path(path))
-        = global_title(path)
-
-h2 Components
-
-ul
-  - @components.each do |path|
-    li
-      - if component_pending?(path)
-        small class="todo"
-          | [TODO]
-          '
-      a href=(component_path(path))
-        = component_title(path)
-
-h2 Example Layouts
-
-ul
-  - @layouts.each do |path|
-    li
-
-      - if layout_pending?(path)
-        small class="todo"
-          | [TODO]
-          '
-      a href=(layout_path(path))
-        = layout_title(path)
-      '
-      small
-        a href=(layout_path(path, 'source'))
-          | (source)
+          small
+            a href=(layout_path(path, 'source'))
+              | (source)

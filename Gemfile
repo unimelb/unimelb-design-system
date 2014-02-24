@@ -8,6 +8,7 @@ gem "sprockets-helpers", "~> 1.1.0"
 
 gem "slim", "~> 2.0.2"
 gem "sass", "~> 3.2.14"
+gem "bourbon", "~> 3.1.8"
 gem "coffee-script", "~> 2.2.0"
 
 gem "github-markdown", "~> 0.6.4"
