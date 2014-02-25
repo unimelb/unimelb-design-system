@@ -13,7 +13,7 @@ Some minor DOM extensions (IE8+ only)
   <li><code>data-single-focus</code> &ndash; Close all other sections when opening an accordion <small class="opt">optional</small></li>
 </ul>
 
-*** The animation is CSS3 transition-based, so most of the options are tied to classes.**
+<em>* The animation is CSS3 transition-based, so most of the options are tied to classes.</em>
 
 The two parts (toggle switch and content container) must be wrapped inside their own container, but this can be any block level element.
 

@@ -51,6 +51,7 @@ class WebTemplates < Sinatra::Base
   get '/' do
     @components = settings.components
     @layouts    = settings.layouts
+    @title = {"Web Templates" => "/"}
     slim :index
   end
 
@@ -59,12 +60,14 @@ class WebTemplates < Sinatra::Base
     @component = path
     @documents = Dir.glob(File.join(settings.components_dir, path, '*.md')).sort
     @documents = @documents.map { |d| GitHub::Markdown.render_gfm(File.read(d)) }
+    @title = {"Web Templates" => "/", component_title(@component) => component_title(@component).downcase.gsub(/\W/, '-')}
     slim :component
   end
 
   get '/layouts/*' do |path|
     halt(404) unless settings.layouts.include? path
     layout_view = "example_layouts/#{path}".to_sym
+    @title = {"Web Templates" => "/"}
 
     if request['view'].to_s.downcase == 'source'
       @file   = path

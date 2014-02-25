@@ -4,7 +4,14 @@ html.no-js
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
-    title Web Templates
+    title
+      - i = 0
+      - @title.each do |label, loc|
+        == label
+        - i += 1
+        - if i < @title.length
+          '
+          ' |
 
     == stylesheet_tag 'application'
     == stylesheet_tag 'docs'
@@ -16,9 +23,11 @@ html.no-js
           a class="header__logo" href="/"
             img src="/assets/images/header-logo.png" alt=""
           a href="/" University of Melbourne
-          span
-            ' /
-          a href="/" Web Templates
+          - @title.each do |label, loc|
+            span
+              ' /
+            a href=(loc)
+              == label
       main role="main"
 
         == yield

@@ -1,3 +1,10 @@
+# Add blanket if not already on page
+if Array.prototype.slice.call(document.querySelectorAll '.modal__blanket').length != 1
+  el.remove() for el in document.querySelectorAll('.modal__blanket')
+  blanket = document.createElement 'div'
+  blanket.setAttribute('class', 'modal__blanket')
+  document.body.appendChild blanket
+
 for trigger in document.querySelectorAll("[data-modal-target]")
   trigger.addEventListener 'click', (e) ->
     e.preventDefault()

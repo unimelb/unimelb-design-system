@@ -15,13 +15,8 @@ Some minor DOM extensions (IE8+ only)
 <ul class="nobullet">
   <li><code>data-modal-target</code> &ndash; ID of modal to trigger <small>required</small></li>
   <li><code>data-modal-offset</code> &ndash; Reposition modal to 160px above triggering link <small>required</small></li>
-  <li><code>.modal__blanket</code> &ndash; Overlay <small>required</small></li>
   <li><code>.modal__dialog</code> &ndash; Modal dialog container <small>required</small></li>
   <li><code>.modal__close</code> &ndash; Close button <small class="opt">optional</small></li>
 </ul>
-
-There should only be one <code>.modal__blanket</code> defined.
-
-<div class="modal__blanket"></div>
 
 ## Implementation examples
