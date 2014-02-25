@@ -44,6 +44,6 @@ Some minor DOM extensions (IE8+ only)
   </li>
 </ul>
 
-Note: Browser-native HTML5 validation uses <code>required</code> and <code>pattern</code>, but there is no easy way to customise the error messand behaviour.
+Note: Browser-native HTML5 validation uses <code>required</code> and <code>pattern</code>, but there is no easy way to customise the error message behaviour.
 
 ## Example

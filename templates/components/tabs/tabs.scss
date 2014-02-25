@@ -1,0 +1,18 @@
+[data-tabbed] {
+  position: relative;
+  .tab__header {
+    a {
+      cursor: pointer;
+      font-weight: 400;
+      &[data-current] {
+        font-weight: bold;
+      }
+    }
+  }
+  section {
+    display: none;
+    &[data-current] {
+      display: block;
+    }
+  }
+}

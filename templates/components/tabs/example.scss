@@ -1,0 +1,32 @@
+[data-tabbed].test {
+  @extend %clearfix;
+  margin-bottom: 30px;
+
+  nav {
+    @include rem(font-size, 18px);
+    a {
+      background-color: inherit;
+      border-radius: 5px 5px 0 0;
+      color: #bbb;
+      cursor: pointer;
+      display: inline-block;
+      padding: 15px 20px 5px;
+      font-weight: bold;
+      text-decoration: none;
+      &:hover {
+        color: #444;
+      }
+      &[data-current] {
+        background-color: #eee;
+        color: #444;
+      }
+    }
+  }
+
+  section {
+    background-color: #eee;
+    margin: 0;
+    padding: 15px 20px;
+    width: 600px;
+  }
+}
