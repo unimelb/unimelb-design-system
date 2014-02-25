@@ -1,0 +1,18 @@
+.type-test {
+  font-size: 18px;
+  p.sans {
+    font-family: $ff-sans;
+  }
+  p.fixed {
+    font-family: $ff-fixed;
+  }
+  span.light {
+    font-weight: $light;
+  }
+  span.regular {
+    font-weight: $regular;
+  }
+  span.bold {
+    font-weight: $bold;
+  }
+}
