@@ -34,6 +34,7 @@ class Feed
         el.appendChild ul
         el.setAttribute 'class', el.getAttribute('class') + ' loaded'
 
-google.load "feeds", "1"
-google.setOnLoadCallback ->
-  new Feed(f) for f in document.querySelectorAll('[data-feed-url]')
+if (typeof google != "undefined")
+  google.load "feeds", "1"
+  google.setOnLoadCallback ->
+    new Feed(f) for f in document.querySelectorAll('[data-feed-url]')

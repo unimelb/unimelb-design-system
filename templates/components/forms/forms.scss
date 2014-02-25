@@ -1,0 +1,155 @@
+@mixin transition($props) {
+  -webkit-transition: $props;
+  -moz-transition: $props;
+  -ms-transition: $props;
+  transition: $props;
+}
+
+@mixin appearance($a) {
+  -webkit-appearance: $a;
+  -moz-appearance: $a;
+  -ms-appearance: $a;  
+  appearance: $a;
+}
+
+@mixin animate-once($n) {
+  -webkit-animation: $n .4s .1s 1 ease-in-out;
+  -moz-animation: $n .4s .1s 1 ease-in-out;
+  animation: $n .4s .1s 1 ease-in-out;
+}
+
+@-webkit-keyframes flash {
+  0%,
+  100% {
+    color: lighten($cherry, 25%);
+  }
+  66% {
+    color: lighten($cherry, 60%);
+  }
+}
+
+@keyframes flash {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0.4;
+  }
+}
+
+%flatbutton {
+  @include rem(border-radius, 3px);
+  @include rem(font-size, 20px);
+  @include rem(padding, 20px 60px);
+  @include rem(max-width, 180px);
+  background-color: $green;
+  border: 0;
+  border-bottom: 5px solid darken($green, 3%);
+  color: $white;
+  cursor: pointer;
+  display: block;
+  margin: 20px 0;
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+    border-bottom-width: 1px;
+    margin-top: 24px;
+    color: $white;
+  }
+}
+
+%textcontrol {
+  @include rem(border-radius, 3px);
+  @include rem(font-size, 20px);
+  @include rem(margin-top, 5px);
+  @include rem(padding, 2px 5px);
+  @include rem(width, 400px);
+  background-color: $paleyellow;
+  border: 1px solid darken($paleyellow, 5%);
+  font-family: $ff-sans;
+  &:focus {
+    background-color: darken($paleyellow, 10%);
+    border-color: $darkgray;
+  }
+  &.invalid {
+    background-color: lighten($cherry, 50%);
+    border-color: lighten($cherry, 45%);
+  }
+}
+
+%selectcontrol {
+  @include rem(margin, 5px);
+}
+
+form {
+  @include rem(font-size, 16px);
+  color: #444;
+  line-height: 1.2;
+  padding: 0 30px;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  div {
+    padding: 10px 0;
+  }
+  label {
+    @include rem(font-size, 16px);
+    display: inline-block;
+    position: relative;
+    width: 412px;
+    small {
+      @include rem(font-size, 18px);
+      display: none;
+      margin: 0;
+      text-transform: none;
+    }
+    &.invalid {
+      color: $cherry;
+      small {
+        @include animate-once(flash);
+        display: block;
+      }
+    }
+    &.inline {
+      padding-right: 30px;
+      width: auto;
+    }
+  }
+  p {
+    @include rem(font-size, 16px);
+  }
+  input[type="text"],
+  input[type="password"],
+  textarea {
+    @extend %textcontrol;
+    width: 100%;
+  }
+  select {
+    @extend %textcontrol;
+    @include appearance(none);
+    @include rem(font-size, 16px);
+    @include transition(.1s linear background-color);
+    background-image: url(select.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    cursor: pointer;
+    line-height: 1.55;
+    width: 412px;
+    &.invalid {
+      background-image: url(select-invalid.png);
+    }
+  }
+  input[type="radio"],
+  input[type="checkbox"] {
+    @extend %selectcontrol;
+  }
+}
+
+input[type="submit"],
+input[type="button"] {
+  @extend %flatbutton;
+  width: auto;
+}

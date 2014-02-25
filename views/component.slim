@@ -8,14 +8,16 @@ article
       .notice
         strong Attention! Pending component
         '
-        | This component is not yet implemented. Please help us
-        '
-        a href="https://github.com/marcom-unimelb/unimelb-web-templates" build it
-        | .
-
+        ' This component is not yet implemented. Please help us
+        a href="https://github.com/marcom-unimelb/unimelb-web-templates" build it.
 
     - if @documents.empty?
-      p There are no examples for this component :(
+      .notice
+        strong There is no documentation yet for this component.
+        '
+        ' Please help us
+        a href="https://github.com/marcom-unimelb/unimelb-web-templates" build it
+        ', by submitting documentation and examples.
     - else
       - @documents.each do |document|
         == document

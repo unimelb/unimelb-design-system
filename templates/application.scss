@@ -1,6 +1,7 @@
 /*
  *= require ./components/accordion/accordion
  *= require ./components/modal/modal
+ *= require ./components/showpass/showpass
  *= require_self
  */
 
@@ -13,4 +14,5 @@
 @import "components/patterns/smooth-font-loading";
 @import "components/patterns/layout";
 @import "components/header/header";
+@import "components/forms/forms";
 @import "components/footer/footer";
