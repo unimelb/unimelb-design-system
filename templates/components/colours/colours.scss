@@ -1,66 +1,25 @@
-@import "../globals/pieces/globals";
+// Colours
+$black: #000000 !default;
+$darkgray: #333333;
+$midgray: #666666;
+$lightgray: #f6f6f6;
+$white: #ffffff !default;
 
-.square {
-  border: 2px solid $white;
-  box-shadow: 0 3px 3px -1px rgba(0,0,0,0.2);
-  display: inline-block;
-  font-family: $ff-fixed;
-  font-size: 14px;
-  font-weight: $bold;
-  height: 85px;
-  line-height: 85px;
-  margin: 0 2px 2px 0;
-  text-align: center;
-  width: 85px;
-  &.black {
-    background-color: $black;
-    color: $white;
-  }
-  &.darkgray {
-    background-color: $darkgray;
-    color: $white;
-  }
-  &.midgray {
-    background-color: $midgray;
-    color: $white;
-  }
-  &.lightgray {
-    background-color: $lightgray;
-  }
-  &.white {
-    background-color: $white;
-  }
-  &.navy {
-    background-color: $navy;
-    color: $white;
-  }
-  &.darkblue {
-    background-color: $darkblue;
-    color: $white;
-  }
-  &.midblue {
-    background-color: $midblue;
-    color: $white;
-  }
-  &.lightblue {
-    background-color: $lightblue;
-  }
-  &.paleblue {
-    background-color: $paleblue;
-  }
-  &.paleyellow {
-    background-color: $paleyellow;
-  }
-  &.cyan {
-    background-color: $cyan;
-    color: $white;
-  }
-  &.green {
-    background-color: $green;
-    color: $white;
-  }
-  &.cherry {
-    background-color: $cherry;
-    color: $white;
-  }
-}
+$navy: #0c304a;
+$darkblue: #004576;
+$midblue: #366996;
+$lightblue: #82a1bd;
+$paleblue: #f2f5f8;
+
+$paleyellow: #fffbe4;
+
+$cyan: #0084ee;
+$green: #00bd41;
+$cherry: #d0021b;
+
+// Vars
+$success: $green;
+$error: $cherry;
+$default: $cyan;
+$brand: $darkblue;
+$base: $darkgray;

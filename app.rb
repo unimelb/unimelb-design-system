@@ -4,7 +4,7 @@ class WebTemplates < Sinatra::Base
   set :digest_assets, true
 
   set :components_dir, File.join(root, 'templates', 'components')
-  set :components, Dir.entries(components_dir).select { |f| f =~ /^[^\.|globals]/ }
+  set :components, Dir.entries(components_dir).select { |f| f =~ /^[^\.]/ }
 
   set :layouts_dir, File.join(root, 'views', 'example_layouts')
   set :layouts, Dir.entries(layouts_dir).select { |f| f =~ /.+\.slim$/ }.map { |l| l.gsub(/\.slim$/, '') }

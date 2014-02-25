@@ -1,0 +1,50 @@
+div.accordion-test {
+  padding: 0 0 20px;
+  h1 {
+    font-size: 14px;
+    color: #444;
+    &:hover {
+      color: $cherry;
+    }
+  }
+}
+
+ul.accordion-test {
+  width: 400px;
+  li {
+    background-color: #fafafa;
+    border-bottom: 1px solid #f2f2f2;
+    list-style-type: none;
+    padding: 5px 0;
+  }
+  .accordion__title {
+    padding: 10px 5px;
+  }
+  .accordion__title {
+    color: #999;
+    padding-left: 20px;
+    position: relative;
+    &::before {
+      color: #999;
+      content: '+';
+      margin-left: -15px;
+      position: absolute;
+      text-align: center;
+      width: 10px;
+    }
+  }
+  .accordion__visible .accordion__title {
+    color: #444;
+  }
+  .accordion__visible .accordion__title::before {
+    color: #444;
+    content: '-';
+  }
+  .accordion__visible {
+    background-color: #eee;
+    border-bottom: 1px solid #dedede;
+  }
+  .accordion__hidden p {
+    padding: 10px 20px 30px;
+  }
+}
