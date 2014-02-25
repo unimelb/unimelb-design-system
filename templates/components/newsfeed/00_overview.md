@@ -17,7 +17,7 @@ Adds a class <code>.loaded</code> to the calling wrapper after entries are appen
 
 ## Dependencies
 
-(Google Feed API (v1))[https://developers.google.com/feed/v1/]
+[Google Feed API (v1)](https://developers.google.com/feed/v1/)
 
 ## Options
 
