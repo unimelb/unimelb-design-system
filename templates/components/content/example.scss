@@ -1,9 +1,8 @@
 .type-test {
-  font-size: 18px;
-  p.sans {
+  .sans {
     font-family: $ff-sans;
   }
-  p.fixed {
+  .fixed {
     font-family: $ff-fixed;
   }
   span.light {
