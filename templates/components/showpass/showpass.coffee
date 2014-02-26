@@ -1,27 +1,31 @@
 class ShowPass
   constructor: (@el) ->
+    @container = @el.parentNode
+
     @label = document.createElement 'span'
     @label.setAttribute('class', 'showpass__label')
     @label.appendChild document.createTextNode 'Hide'
 
-    el = @el
+    @alt = document.createElement('input')
+    for v in @el.attributes
+      @alt.setAttribute(v.name, v.value) if v.name != 'type'
+    @alt.type = 'text'
+
     t = this
     @label.addEventListener 'click', (e) ->
       e.preventDefault()
-      if this.textContent=='Hide'
-        t.hide(el, this)
+      if t.label.textContent=='Hide' or t.label.innerText=='Hide'
+        t.label.innerText = 'Show'
+        t.label.textContent = 'Show'
+        t.el.value = t.alt.value
+        t.container.replaceChild(t.el, t.alt)
       else
-        t.show(el, this)
+        t.label.innerText = 'Hide'
+        t.label.textContent = 'Hide'
+        t.alt.value = t.el.value
+        t.container.replaceChild(t.alt, t.el)
 
-    @el.parentNode.insertBefore(@label, @el)
-    @el.setAttribute('type', 'text')
-
-  hide: (el, label) ->
-    label.textContent = 'Show'
-    el.setAttribute('type', 'password')
-
-  show: (el, label) ->
-    label.textContent = 'Hide'
-    el.setAttribute('type', 'text')
+    @container.insertBefore(@label, @el)
+    @container.replaceChild(@alt, @el)
 
 new ShowPass(f) for f in document.querySelectorAll('input[type="password"]')

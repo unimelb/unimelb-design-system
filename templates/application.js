@@ -1,5 +1,5 @@
-//= require_tree ./components
 //= require_self
+//= require_tree ./components
 
 (function() {
   if (!Window.prototype.height) {
@@ -18,9 +18,6 @@
     };
   }
 
-}).call(this);
-
-(function() {
   if (!Element.prototype.hasClass) {
     Element.prototype.hasClass = function(q) {
       var re;
@@ -62,6 +59,18 @@
       } else {
         return this.addClass(q);
       }
+    };
+  }
+
+  if (!Element.prototype.addEventListener) {
+    Element.prototype.addEventListener = function(e,f) {
+      this.attachEvent("on"+e, f);
+    };
+  }
+
+  if (!Event.prototype.preventDefault) {
+    Event.prototype.preventDefault = function() {
+      this.returnValue = false;
     };
   }
 

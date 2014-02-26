@@ -1,5 +1,5 @@
 # Add blanket if not already on page
-if Array.prototype.slice.call(document.querySelectorAll '.modal__blanket').length != 1
+if document.querySelectorAll('.modal__blanket')
   el.remove() for el in document.querySelectorAll('.modal__blanket')
   blanket = document.createElement 'div'
   blanket.setAttribute('class', 'modal__blanket')

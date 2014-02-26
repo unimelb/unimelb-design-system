@@ -3,7 +3,7 @@ html.no-js
   head
     meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
     title
       - i = 0
       - @title.each do |label, loc|
@@ -15,6 +15,9 @@ html.no-js
 
     == stylesheet_tag 'application'
     == stylesheet_tag 'docs'
+
+    /[if lt IE 9]
+      script src="/assets/javascripts/html5shiv.js"
 
   body
     .body__inner
