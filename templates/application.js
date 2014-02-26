@@ -4,6 +4,7 @@
 (function() {
   'use strict';
 
+  // Window height helper
   if (!Window.prototype.height) {
     Window.prototype.height = function() {
       var h;
@@ -20,6 +21,7 @@
     };
   }
 
+  // jQuery-style Element class helpers
   if (!Element.prototype.hasClass) {
     Element.prototype.hasClass = function(q) {
       var re;
@@ -27,7 +29,6 @@
       return re.test(this.className);
     };
   }
-
   if (!Element.prototype.addClass) {
     Element.prototype.addClass = function(q) {
       var curr;
@@ -40,7 +41,6 @@
       }
     };
   }
-
   if (!Element.prototype.removeClass) {
     Element.prototype.removeClass = function(q) {
       if (this.className === null || this.className === " ") {
@@ -53,7 +53,6 @@
       }
     };
   }
-
   if (!Element.prototype.toggleClass) {
     Element.prototype.toggleClass = function(q) {
       if (this.hasClass(q)) {
@@ -64,12 +63,17 @@
     };
   }
 
+  // IE lt 9 Event polyfills
   if (!Element.prototype.addEventListener) {
     Element.prototype.addEventListener = function(e,f) {
       this.attachEvent("on"+e, f);
     };
   }
-
+  if (!Element.prototype.removeEventListener) {
+    Element.prototype.removeEventListener = function() {
+      ;
+    };
+  }
   if (!Event.prototype.preventDefault) {
     Event.prototype.preventDefault = function() {
       this.returnValue = false;
@@ -78,6 +82,7 @@
 
 }).call(this);
 
+// IE polyfill for Array.prototype.slice returning Object, source: MDN
 (function () {
   'use strict';
   var _slice = Array.prototype.slice;

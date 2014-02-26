@@ -29,7 +29,7 @@ body {
   font-size: 118%;
 }
 
-main {
+[role="main"] {
   background-color: $lightgray;
   font-weight: $light;
 
@@ -45,7 +45,6 @@ main {
 
   article {
     @include rem(padding-bottom, 30px);    
-    background-color: $lightgray;
   }
 
   section {
