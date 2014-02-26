@@ -30,7 +30,8 @@ class Valid
     t = this
     @el.addEventListener 'submit', (e) ->
       invalid = 0
-      for f in this.querySelectorAll('input,select,textarea')
+      target = e.target || e.srcElement
+      for f in target.querySelectorAll('input,select,textarea')
 
         if f.hasAttribute('data-required')
           if f.tagName=='SELECT'

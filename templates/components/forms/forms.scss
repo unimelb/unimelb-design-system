@@ -132,14 +132,14 @@ fieldset {
     @include appearance(none);
     @include rem(font-size, 16px);
     @include transition(.1s linear background-color);
-    background-image: url(select.png);
+    background-image: url(/assets/images/select.png);
     background-repeat: no-repeat;
     background-position: right center;
     cursor: pointer;
     line-height: 1.55;
     width: 412px;
     &.invalid {
-      background-image: url(select-invalid.png);
+      background-image: url(/assets/images/select-invalid.png);
     }
   }
   input[type="radio"],
