@@ -1,5 +1,5 @@
 # Add blanket if not already on page
-if document.querySelectorAll('.modal__blanket')
+if Array.prototype.slice.call(document.querySelectorAll('.modal__blanket')).length==0
   el.remove() for el in document.querySelectorAll('.modal__blanket')
   blanket = document.createElement 'div'
   blanket.setAttribute('class', 'modal__blanket')
@@ -8,12 +8,13 @@ if document.querySelectorAll('.modal__blanket')
 for trigger in document.querySelectorAll("[data-modal-target]")
   trigger.addEventListener 'click', (e) ->
     e.preventDefault()
-    target = document.getElementById(this.getAttribute 'data-modal-target')
-    if this.getAttribute('data-modal-offset')==""
-      target.style.setProperty('top', this.offsetTop-160+'px')
+    t = e.target || e.srcElement
+    target = document.getElementById(t.getAttribute 'data-modal-target')
+    if t.getAttribute('data-modal-offset')==''
+      target.style.top = t.offsetTop-160+'px'
       target.addClass('on')
     else
-      target.style.setProperty('top', parseInt((window.height()-target.offsetHeight)/2)-document.body.getBoundingClientRect().top+'px')
+      target.style.top = parseInt((window.height()-target.offsetHeight)/2)-document.body.getBoundingClientRect().top+'px'
       target.addClass('on')
 
     document.querySelector('.modal__blanket').toggleClass 'on'

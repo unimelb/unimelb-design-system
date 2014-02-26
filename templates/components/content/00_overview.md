@@ -1,9 +1,9 @@
 ## Typography
 ```scss
-$ff-sans: 'Open Sans', sans-serif;
-$ff-header: $ff-sans;
+$ff-sans: Roboto, Helvetica, Arial, sans-serif;
 $ff-fixed: 'Courier New', Courier, fixed;
 
+$thin: 100;
 $light: 300;
 $regular: 400;
 $bold: 700;
@@ -19,8 +19,14 @@ p.sans {
 ```
 
 <div class="type-test">
-  <p class="sans">Open Sans, sans-serif</p>
+  <p class="sans">Roboto, Helvetica, Arial, sans-serif</p>
   <p class="fixed">Courier New, Courier, fixed</p>
+  <p>
+    <span class="thin">thin</span>
+    <span class="light">light</span>
+    <span class="regular">regular</span>
+    <span class="bold">bold</span>
+  </p>
 </div>
 
 ## Headings
