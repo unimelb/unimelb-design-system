@@ -45,6 +45,7 @@ main {
 
   article {
     @include rem(padding-bottom, 30px);    
+    background-color: $lightgray;
   }
 
   section {
@@ -93,7 +94,7 @@ pre {
   @include rem(padding, 15px);
   line-height: 1.2;
   max-width: 100%;
-  overflow: scroll;
+  overflow: auto;
   code {
     border-bottom: 0;
   }

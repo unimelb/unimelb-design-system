@@ -42,7 +42,6 @@
   @include rem(border-radius, 3px);
   @include rem(font-size, 20px);
   @include rem(padding, 20px 60px);
-  @include rem(max-width, 180px);
   background-color: $green;
   border: 0;
   border-bottom: 5px solid darken($green, 3%);
