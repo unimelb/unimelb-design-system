@@ -21,19 +21,32 @@ html.no-js
 
   body
     .page-inner
+
       .page-header
         header
           a class="page-header-logo" href="/"
             img src="/assets/images/header-logo.png" alt=""
+
           a href="/" University of Melbourne
           - @title.each do |label, loc|
             span
               ' /
             a href=(loc)
               == label
-      div role="main"
 
+      div role="main"
         == yield
+
+      .page-authorisation
+        section
+          p
+            strong Date created:
+            '
+            | 27 February 2014
+          p
+            strong Last modified:
+            '
+            | 27 February 2014
 
       .page-footer
         footer
