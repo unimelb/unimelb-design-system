@@ -25,4 +25,5 @@ class Tabbed
       else
         tab.removeAttribute('data-current')
 
-new Tabbed(el) for el in document.querySelectorAll('[data-tabbed]')
+if (supportedmodernbrowser)
+  new Tabbed(el) for el in document.querySelectorAll('[data-tabbed]')

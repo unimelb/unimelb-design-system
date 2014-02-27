@@ -3,13 +3,13 @@
   @include rem(height, 75px);
   @include rem(line-height, 75px);
   @include rem(padding, 7.5px 15px);
-  color: $brand;
+  color: $darkblue;
   display: inline-block;
   font-weight: $regular;
   vertical-align: middle;
 }
 
-.body__header {
+.page-header {
   background-color: $white;
   color: $black;
 
@@ -27,11 +27,12 @@
       text-decoration: underline;
     }
     
-    &.header__logo {
+    &.page-header-logo {
       @include rem(padding, 7.5px);
       @include rem(width, 75px);
-      background-color: $brand;
+      background-color: $darkblue;
       img {
+        border: 0;
         max-height: 100%;
         max-width: 100%;
       }

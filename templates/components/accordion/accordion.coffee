@@ -11,4 +11,5 @@ class Accordion
       else
         t.parentNode.toggleClass('accordion__visible')
 
-new Accordion(el) for el in document.querySelectorAll('.accordion__title')
+if (supportedmodernbrowser)
+  new Accordion(el) for el in document.querySelectorAll('.accordion__title')

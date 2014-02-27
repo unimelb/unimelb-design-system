@@ -37,11 +37,12 @@ class Gmap
     @map.setMapTypeId('map_style')
 
 # Only load if element with data attribute exists
-if Array.prototype.slice.call(document.querySelectorAll('[data-latlng]')).length > 0
-  script = document.createElement("script")
-  script.type = "text/javascript"
-  script.src = "https://maps.googleapis.com/maps/api/js?sensor=true&callback=maps_loaded"
-  document.body.appendChild script
+if (supportedmodernbrowser)
+  if Array.prototype.slice.call(document.querySelectorAll('[data-latlng]')).length > 0
+    script = document.createElement("script")
+    script.type = "text/javascript"
+    script.src = "https://maps.googleapis.com/maps/api/js?sensor=true&callback=maps_loaded"
+    document.body.appendChild script
 
 window.maps_loaded = ->
   new Gmap(m) for m in document.querySelectorAll '[data-latlng]'

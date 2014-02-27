@@ -1,11 +1,85 @@
-.body__footer {
-  background-color: $brand;
+.page-footer {
+  background-color: $navy;
   color: $white;
 
   footer {
     @extend %wrapper;
-    @include rem(height, 60px);
-    @include rem(padding-bottom, 15px);
+    @include rem(padding-bottom, 60px);
     @include rem(padding-top, 15px);
+  }
+
+  // temp
+  p {
+    @include rem(padding, 15px 0);
+    clear: both;
+    color: $blue;
+  }
+
+  small {
+    @include rem(font-size, 14px);
+    color: $lightblue;
+    display: block;
+  }
+}
+
+.page-footer-section {
+  @include rem(height, 50px);
+  @include rem(line-height, 50px);
+  border-bottom: 1px solid $blue;
+  clear: both;
+  float: left;
+  margin-left: 0;
+  width: 100%;
+  li {
+    display: block;
+    float: left;
+    list-style-type: none;
+  }
+  a {
+    @include rem(font-size, 18px);
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &.nav {
+    border-top: 1px solid $blue;
+    height: auto;
+    li {
+      width: 50%;
+    }
+    @include breakpoint(desktop) {
+      width: 80%;
+      li {
+        @include rem(padding-right, 30px);
+        display: inline;
+        float: none;
+        width: auto;
+      }
+    }
+  }
+  &.social {
+    height: auto;
+    li {
+      text-align: center;
+      width: 33%;
+    }
+    // temp
+    a {
+      color: $blue;
+    }
+    @include breakpoint(desktop) {
+      border-top: 1px solid $blue;
+      clear: none;
+      text-align: right;
+      width: 20%;
+      li {
+        @include rem(padding-left, 10px);
+        display: inline;
+        float: none;
+        width: auto;
+      }
+    }
   }
 }

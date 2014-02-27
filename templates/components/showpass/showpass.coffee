@@ -28,4 +28,5 @@ class ShowPass
     @container.insertBefore(@label, @el)
     @container.replaceChild(@alt, @el)
 
-new ShowPass(f) for f in document.querySelectorAll('input[type="password"]')
+if (supportedmodernbrowser)
+  new ShowPass(f) for f in document.querySelectorAll('input[type="password"]')

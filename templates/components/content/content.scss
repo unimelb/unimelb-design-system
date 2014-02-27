@@ -23,7 +23,7 @@
 }
 
 body {
-  background-color: $brand;
+  background-color: $navy;
   color: $black;
   font-family: $ff-sans;
   font-size: 118%;
@@ -116,6 +116,7 @@ ul {
   @include rem(margin, 0 0 0 25px);
   @include rem(padding, 10px 0);
   color: $darkgray;
+  list-style-position: outside;
   li {
     @include rem(padding-bottom, 5px);
     color: $black;
@@ -127,6 +128,10 @@ ul {
       list-style-type: none;
     }
   }
+}
+
+ol li {
+  list-style-type: decimal;
 }
 
 ul li {

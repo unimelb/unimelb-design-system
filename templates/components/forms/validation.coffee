@@ -90,5 +90,5 @@ class Valid
     f.parentNode.removeClass('invalid')
     f.removeClass('invalid')
 
-
-new Valid(f) for f in document.querySelectorAll("[data-validate]")
+if (supportedmodernbrowser)
+  new Valid(f) for f in document.querySelectorAll("[data-validate]")
