@@ -3,8 +3,9 @@
   box-shadow: 0 -2px 6px 1px rgba($black, 0.1);
   color: $midblue;
 
-  section {
+  >section {
     @extend %wrapper;
+    @extend %clearfix;
     @include rem(padding-bottom, 45px);
     @include rem(padding-top, 30px);
   }
@@ -20,6 +21,18 @@
     font-weight: $regular;
   }
 
+}
+
+.page-authorisation-text {
+  float: left;
+}
+
+.page-authorisation-logos {
+  @include rem(padding-top, 30px);
+  float: right;
+  a {
+    @include rem(margin-left, 30px);
+  }
 }
 
 .page-footer {
@@ -44,6 +57,13 @@
     clear: left;
     color: $lightblue;
     display: block;
+    a {
+      color: $lightblue;
+      text-decoration: none;
+      &:hover {
+        color: $white;
+      }
+    }
   }
 }
 
@@ -72,7 +92,12 @@
     border-top: 1px solid $blue;
     height: auto;
     li {
+      @include rem(padding-bottom, 10px);
+      @include rem(padding-top, 10px);
       width: 50%;
+    }
+    a {
+      @include rem(font-size, 14px);
     }
     @include breakpoint(desktop) {
       @include rem(margin-bottom, 60px);
@@ -81,7 +106,12 @@
         @include rem(padding-right, 30px);
         display: inline;
         float: none;
+        padding-bottom: 0;
+        padding-top: 0;
         width: auto;
+      }
+      a {
+        @include rem(font-size, 18px);        
       }
     }
   }
