@@ -41,13 +41,19 @@
       color: #ccc;
       padding-bottom: 10px;
     }
+    ul {
+      margin-left: 0;      
+    }
     li {
-      float: left;
       list-style-type: none;
       margin: 0.5%;
-      width: 24%;
-      &:nth-child(4n+1) {
-        clear: left;
+      width: 100%;
+      @include breakpoint(desktop) {
+        float: left;
+        width: 24%;
+        &:nth-child(4n+1) {
+          clear: left;
+        }
       }
     }
     span {
@@ -73,7 +79,8 @@
     }
     ul {
       font-size: 12px;
-      width: 400px;
+      margin-left: 0;
+      max-width: 400px;
     }
   }
 }

@@ -22,55 +22,13 @@ html.no-js
   body
     .page-inner
 
-      .page-header
-        header
-          a class="page-header-logo" href="/"
-            img src="/assets/images/header-logo.png" alt=""
-
-          a href="/" University of Melbourne
-          - @title.each do |label, loc|
-            span
-              ' /
-            a href=(loc)
-              == label
+      == slim :header
 
       div role="main"
         == yield
 
-      .page-authorisation
-        section
-          p
-            strong Date created:
-            '
-            | 27 February 2014
-          p
-            strong Last modified:
-            '
-            | 27 February 2014
+      == slim :authorisation
 
-      .page-footer
-        footer
-          p UoM logo
-
-          ul.page-footer-section.nav
-            li: a href="" Emergency Information
-            li: a href="" Faculties & Schools
-            li: a href="" A-Z Directory
-            li: a href="" Jobs
-            li: a href="" Disclaimer & Copyright
-            li: a href="" Accessibility
-            li: a href="" Privacy
-
-          ul.page-footer-section.social
-            li.social-facebook: a href="facebook" Facebook
-            li.social-twitter: a href="twitter" Twitter
-            li.social-linkedin: a href="linkedin" LinkedIn
-
-          p Est. 1853 logo
-
-          small Phone: 13 MELB (13 6352) | International: +61 3 9035 5511
-          small The University of Melbourne ABN: 84 002 705 224
-          small CRICOS Provider Code: 00116K (visa information)
-          small Web brand guidelines created by Marketing
+      == slim :footer
 
   == javascript_tag 'application'

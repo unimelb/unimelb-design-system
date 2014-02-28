@@ -1,0 +1,11 @@
+.page-header
+  header
+    a class="page-header-logo" href="/"
+      img src="/assets/images/header-logo.png" alt=""
+
+    a href="/" University of Melbourne
+    - @title.each do |label, loc|
+      span
+        ' /
+      a href=(loc)
+        == label

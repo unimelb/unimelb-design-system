@@ -5,12 +5,12 @@
 
   section {
     @extend %wrapper;
-    @include rem(padding-bottom, 30px);
+    @include rem(padding-bottom, 45px);
     @include rem(padding-top, 30px);
   }
 
   p {
-    @include rem(font-size, 17px);
+    @include rem(font-size, 16px);
     @include rem(padding-bottom, 5px);
     font-weight: $light;
     max-width: 100%;
@@ -19,6 +19,7 @@
   strong {
     font-weight: $regular;
   }
+
 }
 
 .page-footer {
@@ -40,6 +41,7 @@
 
   small {
     @include rem(font-size, 14px);
+    clear: left;
     color: $lightblue;
     display: block;
   }
@@ -73,6 +75,7 @@
       width: 50%;
     }
     @include breakpoint(desktop) {
+      @include rem(margin-bottom, 60px);
       width: 80%;
       li {
         @include rem(padding-right, 30px);
@@ -83,6 +86,7 @@
     }
   }
   &.social {
+    @include rem(margin-bottom, 60px);
     height: auto;
     li {
       text-align: center;
@@ -108,5 +112,16 @@
         width: auto;
       }
     }
+  }
+}
+
+.page-footer-lockup {
+  @include rem(margin, 30px auto);
+  display: block;
+}
+
+.page-footer-est1853 {
+  @include breakpoint(desktop) {
+    float: right;
   }
 }
