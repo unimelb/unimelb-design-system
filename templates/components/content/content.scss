@@ -107,6 +107,10 @@ a {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 .button {
   @extend %flatbutton;
 }

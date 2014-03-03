@@ -28,10 +28,32 @@
 }
 
 .page-authorisation-logos {
-  @include rem(padding-top, 30px);
-  float: right;
+  clear: left;
   a {
-    @include rem(margin-left, 30px);
+    @include rem(margin-top, 30px);
+    display: inline-block;
+    text-align: center;
+    width: 33%;
+  }
+  img {
+    @include rem(max-height, 50px);
+  }
+  .apru img {
+    @include rem(margin-bottom, 10px);
+    @include rem(max-height, 30px);
+  }
+  .universitas21 img {
+    @include rem(margin-bottom, 10px);
+    @include rem(max-height, 40px);
+  }
+  @include breakpoint(desktop) {
+    clear: none;
+    @include rem(padding-top, 30px);
+    float: right;
+    a {
+      @include rem(margin-left, 45px);
+      width: auto;
+    }
   }
 }
 
@@ -94,7 +116,9 @@
     li {
       @include rem(padding-bottom, 10px);
       @include rem(padding-top, 10px);
-      width: 50%;
+      margin-left: 3%;
+      margin-right: 3%;
+      width: 42%;
     }
     a {
       @include rem(font-size, 14px);
@@ -106,6 +130,8 @@
         @include rem(padding-right, 30px);
         display: inline;
         float: none;
+        margin-left: 0;
+        margin-right: 0;
         padding-bottom: 0;
         padding-top: 0;
         width: auto;
@@ -116,21 +142,21 @@
     }
   }
   &.social {
-    @include rem(margin-bottom, 60px);
+    @include rem(margin-bottom, 15px);
     height: auto;
     li {
       text-align: center;
       width: 33%;
     }
-    // temp
     a {
-      color: $blue;
-      &:hover {
-        color: $white;
-        text-decoration: none;
-      }
+      text-decoration: none;
+    }
+    img {
+      @include rem(max-width, 32px);
+      @include rem(max-width, 32px);
     }
     @include breakpoint(desktop) {
+      @include rem(margin-bottom, 60px);
       border-top: 1px solid $blue;
       clear: none;
       text-align: right;
@@ -148,10 +174,15 @@
 .page-footer-lockup {
   @include rem(margin, 30px auto);
   display: block;
+  max-height: 70px;
 }
 
 .page-footer-est1853 {
+  clear: both;
+  display: block;
+  margin: 0 auto;
   @include breakpoint(desktop) {
+    display: inline;
     float: right;
   }
 }

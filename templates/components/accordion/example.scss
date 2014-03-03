@@ -10,7 +10,7 @@ div.accordion-test {
 }
 
 ul.accordion-test {
-  width: 400px;
+  max-width: 100%;
   li {
     background-color: #fafafa;
     border-bottom: 1px solid #f2f2f2;
@@ -46,5 +46,8 @@ ul.accordion-test {
   }
   .accordion__hidden p {
     padding: 10px 20px 30px;
+  }
+  @include breakpoint(desktop) {
+    max-width: 400px;
   }
 }
