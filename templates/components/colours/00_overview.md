@@ -1,4 +1,23 @@
-## Colours
+## How to use colours
+
+**Note:** In general, you should not need to customise the colours on your website and should use the default colour scheme provided. This page exists primarily as a reference for people looking to [contribute additional components to the templates](#). 
+
+The colours used on our website go a long way towards ensuring a consistent user experience and compatibility with the University of Melbourne brand. In many ways University Blue ($navy below) is as much a part of the university brand as the crest itself. 
+
+On the web, colour choices are also vital in ensuring the utility and accessibility of our websites as they impact contrast. Colour
+
+Colours are also used to denote various types of functionality, so you will find these colours used throughout various template components (a good example is [buttons](todo-buttons). For example, green is frequently used to denote a primary action that you would like someone to take.
+
+## How not to use colours
+
+You should avoid: 
+
+* Changing the colour of components either locally or globally (eg. making the logo red, or the body text green). This damages our abiltiy
+* Adding colours to the palette (if you feel that a colour should be added to the palette, please request it using the [contribution process](#)).
+
+
+## Colour pallete
+
 ```scss
 $black:      #000000 !default;
 $darkgray:   #333333;
