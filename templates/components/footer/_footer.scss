@@ -143,10 +143,18 @@
   }
   &.social {
     @include rem(margin-bottom, 15px);
+    @include rem(padding-top, 20px);
     height: auto;
+    padding-bottom: 0;
     li {
       text-align: center;
-      width: 33%;
+      width: 20%;
+      &.social-facebook {
+        margin-left: 20%;
+      }
+      &.social-linkedin {
+        margin-right: 20%;
+      }
     }
     a {
       text-decoration: none;
@@ -162,10 +170,16 @@
       text-align: right;
       width: 20%;
       li {
-        @include rem(padding-left, 10px);
+        @include rem(margin-left, 25px);
         display: inline;
         float: none;
         width: auto;
+        &.social-facebook {
+          margin-left: 0;
+        }
+        &.social-linkedin {
+          margin-right: 0;
+        }
       }
     }
   }
