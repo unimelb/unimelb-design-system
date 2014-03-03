@@ -1,0 +1,8 @@
+## Collaboration
+
+**Your contribution to the templates is what makes them better**. We've tried to make contributing as easy and painless as possible. 
+
+To contribute, please: 
+
+* [Read the contribution guide](#)
+* [Explore documentation on github](#)
