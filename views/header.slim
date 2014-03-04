@@ -3,9 +3,14 @@
     a class="page-header-logo" href="/"
       img src="/assets/images/header-logo.png" alt=""
 
-    a href="/" The University of Melbourne
-    - @title.each do |label, loc|
-      span
-        ' /
-      a href=(loc)
-        == label
+    .page-header-navigation
+      a href="/" University of Melbourne
+      - @title.each do |label, loc|
+        span
+          ' /
+        a href=(loc)
+          == label
+
+    .page-header-tools
+      a.page-header-icon.menu href="": img src="/assets/images/menu.svg"
+      a.page-header-icon.search href="": img src="/assets/images/search.svg"
