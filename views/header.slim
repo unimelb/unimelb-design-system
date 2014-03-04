@@ -5,11 +5,17 @@
 
     .page-header-navigation
       a href="/" University of Melbourne
+      - i = 0
       - @title.each do |label, loc|
         span
           ' /
-        a href=(loc)
-          == label
+        - i += 1
+        - if i == @title.length
+          a.last href=(loc)
+            ==label
+        - else
+          a href=(loc)
+            ==label
 
     .page-header-tools
       a.page-header-icon.menu href="": img src="/assets/images/menu.svg"

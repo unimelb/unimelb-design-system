@@ -74,7 +74,7 @@
   a, span {
     display: none;
   }
-  a:last-child {
+  a.last {
     display: inline-block;
     max-width: 45%;
     overflow: hidden;
