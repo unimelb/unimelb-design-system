@@ -1,3 +1,9 @@
+// TODO: Make this an alert box once we have the classes.
+
+> This is a mandatory global component that must be included on all sites created on the unimelb domain. Changes made to typography code will be applied globally across all sites using these templates. 
+
+
+
 ## Typography
 ```scss
 $ff-sans: Roboto, Helvetica, Arial, sans-serif;
