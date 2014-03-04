@@ -76,6 +76,10 @@
   }
   a:last-child {
     display: inline-block;
+    max-width: 45%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   @include breakpoint(desktop) {
     a, span {
