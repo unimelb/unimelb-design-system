@@ -1,6 +1,6 @@
 ## When to use this component
 
-Accordians are an efficient way of grouping and communicating multiple pieces of contextually related information. 
+Accordians are an efficient way of grouping and communicating multiple pieces of contextually related information. They display a large amount of content in a small amount of space. 
 
 Accordians are recommended for use where the following critiera are met: 
 
@@ -28,6 +28,7 @@ Example content.
 
 - Writing good accordian titles
 - Link to general writing guidelines (writing punchy sentences for the web). 
+- [Writing accessibile headings](http://www.unimelb.edu.au/accessibility/training/examples/1-3-1-info-and-relationships/index.html)
 
 ## Related planning tools
 
