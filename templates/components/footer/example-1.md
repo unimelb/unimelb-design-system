@@ -1,6 +1,6 @@
 # Example 1
 
-This is the current footer code. 
+This is the current footer code.
 
 ```html
 .page-footer

@@ -54,6 +54,10 @@ class WebTemplates < Sinatra::Base
       ]
       (@pipeline.call(md))[:output].to_s
     end
+
+    def syntax_highlight(html)
+      Pygments.highlight(html, lexer: 'html')
+    end
   end
 
   get '/' do
@@ -80,6 +84,7 @@ class WebTemplates < Sinatra::Base
     if request['view'].to_s.downcase == 'source'
       @file   = path
       @source = slim layout_view, layout: false, pretty: true
+      @source = syntax_highlight(@source)
       slim :source_view
     else
       slim layout_view
