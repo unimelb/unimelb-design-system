@@ -1,10 +1,10 @@
 class Feed
   constructor: (@el) ->
-    @url = @el.getAttribute('data-feed-url')
-    @entries = @el.getAttribute('data-entries')
+    @url        = @el.getAttribute('data-feed-url')
+    @entries    = @el.getAttribute('data-entries')
     @dateFormat = @el.getAttribute('data-data-format') || "htt, mmmm d, yyyy"
-    @noDate = @el.getAttribute('data-no-date')
-    
+    @noDate     = @el.hasAttribute('data-no-date')
+
     @load()
 
   load: ->
@@ -12,7 +12,9 @@ class Feed
     if @entries
       feed.includeHistoricalEntries()
       feed.setNumEntries(@entries)
-    el = @el
+    el         = @el
+    dateFormat = @dateFormat
+    dateFormat = '' if @noDate
     feed.load (result) ->
       unless result.error
         ul = document.createElement 'ul'
@@ -21,10 +23,13 @@ class Feed
           title.appendChild document.createTextNode entry.title
           link = document.createElement 'a'
           link.setAttribute 'href', entry.link
-          if @noDate
+          if dateFormat.length > 0
             published = new Date(Date.parse entry.publishedDate)
-            date = document.createElement '<em>'
-            date.appendChild document.createTextNode published.format(dateFormatMask)+' '
+            date = document.createElement 'time'
+            time = document.createAttribute('datetime')
+            time.nodeValue = published.format('isoUtcDateTime')
+            date.setAttributeNode(time)
+            date.appendChild document.createTextNode published.format(dateFormat)+' '
             link.appendChild date
           link.appendChild title
           li = document.createElement 'li'

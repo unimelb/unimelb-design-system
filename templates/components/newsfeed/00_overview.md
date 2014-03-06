@@ -5,15 +5,16 @@ Consume an RSS feed using the Google Feed API.
 
 Output can be styled with CSS (I've included some samples below), the code template generated within the calling wrapper looks like:
 
-<pre>
-&lt;ul&gt;
-  &lt;li&gt;&lt;em&gt;<b class="alt">date published</b> &lt;/em&gt;&lt;span&gt;<b class="alt">entry title</b>&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;<b class="alt">date published</b> &lt;/em&gt;&lt;span&gt;<b class="alt">entry title</b>&lt;/span&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;<b class="alt">date published</b> &lt;/em&gt;&lt;span&gt;<b class="alt">entry title</b>&lt;/span&gt;&lt;/li&gt;
-  &hellip;
-&lt;/ul&gt;</pre>
+```html
+<ul>
+  <li><time>date published </time><span>entry title</span></li>
+  <li><time>date published </time><span>entry title</span></li>
+  <li><time>date published </time><span>entry title</span></li>
+  …
+</ul>
+```
 
-Adds a class <code>.loaded</code> to the calling wrapper after entries are appended.
+Adds a class `.loaded` to the calling wrapper after entries are appended.
 
 ## Dependencies
 
