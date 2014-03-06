@@ -53,6 +53,11 @@ body {
     @include rem(padding-top, 30px);
   }
 
+  footer {
+    @extend %wrapper;
+    @include rem(padding-bottom, 30px);
+  }
+
 }
 
 h1 {
