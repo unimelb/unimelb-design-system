@@ -63,8 +63,13 @@ class WebTemplates < Sinatra::Base
   get '/' do
     @components = settings.components
     @layouts    = settings.layouts
-    @title = {"Web Templates" => "/"}
+    @title = {"Web Templates" => "/", "Contribution" => '/contribution'}
     slim :index
+  end
+
+  get '/contribution' do
+    @title = {"Web Templates" => "/"}
+    slim :contribution
   end
 
   get '/components/*' do |path|

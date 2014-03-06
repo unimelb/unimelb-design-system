@@ -5,13 +5,8 @@ html.no-js
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     meta content="IE=edge" http-equiv="X-UA-Compatible"
     title
-      - i = 0
-      - @title.each do |label, loc|
-        == label
-        - i += 1
-        - if i < @title.length
-          '
-          ' |
+      = @title.keys.join(' | ')
+
 
     == stylesheet_tag 'application'
     == stylesheet_tag 'docs'
@@ -26,7 +21,23 @@ html.no-js
       == slim :header
 
       div role="main"
+
         == yield
+
+        - unless request.path_info =~ %r{^(/|/contribution)$}
+          footer
+            h2 Collaboration
+
+            p
+              em Your contribution to the templates is what makes them better.
+              '
+              | We've tried to make contributing as easy and painless as possible.
+
+            p To contribute, please:
+
+            ul
+              li: a href="/contribution" Read the contribution guide
+              li: a href="https://github.com/marcom-unimelb/unimelb-web-templates" Explore documentation on GitHub
 
       == slim :authorisation
 
