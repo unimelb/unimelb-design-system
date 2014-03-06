@@ -46,6 +46,14 @@ class WebTemplates < Sinatra::Base
       path = "/layouts/#{layout.downcase}"
       !!source ? "#{path}?view=source" : path
     end
+
+    def render_markdown(md)
+      @pipeline ||= HTML::Pipeline.new [
+        HTML::Pipeline::MarkdownFilter,
+        HTML::Pipeline::SyntaxHighlightFilter
+      ]
+      (@pipeline.call(md))[:output].to_s
+    end
   end
 
   get '/' do
@@ -59,7 +67,7 @@ class WebTemplates < Sinatra::Base
     halt(404) unless settings.components.include? path
     @component = path
     @documents = Dir.glob(File.join(settings.components_dir, path, '*.md')).sort
-    @documents = @documents.map { |d| GitHub::Markdown.render_gfm(File.read(d)) }
+    @documents = @documents.map { |d| render_markdown File.read(d) }
     @title = {"Web Templates" => "/", component_title(@component) => component_title(@component).downcase.gsub(/\W/, '-')}
     slim :component
   end
