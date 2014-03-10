@@ -1,4 +1,4 @@
- <script src="https://www.google.com/jsapi"></script>
+<script src="https://www.google.com/jsapi"></script>
 
 ## Implementation
 Consume an RSS feed using the Google Feed API.
