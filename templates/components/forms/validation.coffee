@@ -1,6 +1,6 @@
 class Valid
   constructor: (@el) ->
-    @patterns = 
+    @patterns =
       alpha: /[a-zA-Z]+/
       alpha_numeric : /[a-zA-Z0-9]+/
       integer: /-?\d+/
@@ -15,7 +15,7 @@ class Valid
       email : /^[a-zA-Z0-9.!#$%&\'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
 
       # abc.de
-      domain: /^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z]{2,6}$/
+      domain: /^([a-zA-Z0-9]([a-zA-Z0-9\-]{0,61}[a-zA-Z0-9])?\.)+[a-zA-Z][a-zA-Z]+$/
 
       datetime: /([0-2][0-9]{3})\-([0-1][0-9])\-([0-3][0-9])T([0-5][0-9])\:([0-5][0-9])\:([0-5][0-9])(Z|([\-\+]([0-1][0-9])\:00))/
       date: /(?:19|20)[0-9]{2}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-9])|(?:(?!02)(?:0[1-9]|1[0-2])-(?:30))|(?:(?:0[13578]|1[02])-31))/
@@ -41,7 +41,7 @@ class Valid
               t.invalid(f)
               invalid++
 
-          else 
+          else
             if f.getAttribute('type')=='checkbox'
               if f.checked
                 t.valid(f)
@@ -59,7 +59,7 @@ class Valid
         if f.hasAttribute('data-pattern')
           re = if t.patterns.hasOwnProperty(f.getAttribute 'data-pattern') then new RegExp(t.patterns[f.getAttribute 'data-pattern']) else new RegExp(f.getAttribute 'data-pattern')
           if re.test(f.value)
-            t.valid(f)        
+            t.valid(f)
           else
             t.invalid(f)
             invalid++
@@ -70,7 +70,7 @@ class Valid
   setupMsg: (f) ->
     error = document.createElement 'small'
     error.appendChild document.createTextNode f.getAttribute('title')
-    f.parentNode.appendChild error   
+    f.parentNode.appendChild error
 
   invalid: (f) ->
     if f.parentNode.hasClass('invalid')
