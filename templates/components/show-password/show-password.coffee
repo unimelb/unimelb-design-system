@@ -1,4 +1,4 @@
-class ShowPass
+class ShowPassword
   constructor: (@el) ->
     @container = @el.parentNode
 
@@ -28,4 +28,4 @@ class ShowPass
     @container.insertBefore(@label, @el)
 
 if (supportedmodernbrowser)
-  new ShowPass(f) for f in document.querySelectorAll('input[type="password"]')
+  new ShowPassword(f) for f in document.querySelectorAll('input[type="password"]')
