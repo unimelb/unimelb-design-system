@@ -4,18 +4,13 @@
       img src="/assets/images/header-logo.png" alt=""
 
     .page-header-navigation
-      a href="/" University of Melbourne
-      - i = 0
-      - @title.each do |label, loc|
-        span
-          ' /
-        - i += 1
-        - if i == @title.length
-          a.last href=(loc)
-            ==label
-        - else
-          a href=(loc)
-            ==label
+      a href="//www.unimelb.edu.au/" University of Melbourne
+      span= ' / '
+      a href="/" Web Templates
+      - if page_title
+        span= ' / '
+        a href=""
+          = page_title
 
     .page-header-tools
       a.page-header-icon.menu href="": img src="/assets/images/menu.svg"

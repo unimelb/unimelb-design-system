@@ -5,7 +5,7 @@ html.no-js
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     meta content="IE=edge" http-equiv="X-UA-Compatible"
     title
-      = @title.keys.join(' | ')
+      = page_title ? "#{page_title} | Web Templates" : "Web Templates"
 
     == stylesheet_tag 'uom'
     == stylesheet_tag 'docs'
