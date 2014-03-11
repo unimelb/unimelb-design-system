@@ -10,7 +10,6 @@ Output can be styled with CSS (I've included some samples below), the code templ
   <li><time>date published </time><span>entry title</span></li>
   <li><time>date published </time><span>entry title</span></li>
   <li><time>date published </time><span>entry title</span></li>
-  …
 </ul>
 ```
 
@@ -18,7 +17,7 @@ Adds a class `.loaded` to the calling wrapper after entries are appended.
 
 ## Dependencies
 
-[Google Feed API (v1)](https://developers.google.com/feed/v1/)
+[Google Feed API (v1)](https://developers.google.com/feed/v1/).
 
 ## Options
 
@@ -39,4 +38,3 @@ Adds a class `.loaded` to the calling wrapper after entries are appended.
   <li><code>data-no-date</code> &mdash; Do not display date <small class="opt">optional</small></li>
 </ul>
 
-## Examples
