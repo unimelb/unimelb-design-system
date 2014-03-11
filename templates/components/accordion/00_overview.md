@@ -69,7 +69,7 @@ In this case, it would be more desirable to simply expose the links underneath e
 
 
 
-## Collaboration
+## Contribution
 
 **Your contribution to the templates is what makes them better**. We've tried to make contributing as easy and painless as possible. 
 
