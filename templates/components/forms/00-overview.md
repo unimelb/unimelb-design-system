@@ -4,7 +4,7 @@ Client&ndash;side form validation, using HTML5 text patterns.
 
 ## Dependencies
 
-Some minor DOM extensions (IE8+ only)
+Some minor DOM extensions (IE8+ only).
 
 ## Options
 <ul class="nobullet">
@@ -46,4 +46,3 @@ Some minor DOM extensions (IE8+ only)
 
 Note: Browser-native HTML5 validation uses <code>required</code> and <code>pattern</code>, but there is no easy way to customise the error message behaviour.
 
-## Example
