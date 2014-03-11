@@ -1,3 +1,24 @@
+## When to use this component
+
+The map component is especially useful when trying to describe a location. 
+## When to avoid this component? 
+
+## Content recommendations
+
+## Planning tools 
+
+The map components requires that you know the latitude and longditude of the location you are referencing to a high degree of fidelity. 
+
+// Need to find a foolproof way to find a latlng for this piece. The easiest way to find a LATLGN for a specific place is to...
+
+## Examples
+
+### Good examples
+
+### Poor examples
+
+## References
+
 ## Implementation
 
 Basic google map (v3), with a few options:
@@ -9,11 +30,11 @@ Basic google map (v3), with a few options:
 
 Anything more complex should work directly on the google maps API.
 
-## Dependencies
+### Dependencies
 
 [Google Maps API](https://developers.google.com/maps/)
 
-## Options
+### Options
 
 <ul class="nobullet">
   <li><code>data-latlng</code> &ndash; Comma separated LatLng for map center <small>required</small></li>
@@ -24,4 +45,4 @@ Anything more complex should work directly on the google maps API.
   <li><code>data-grayscale</code> &ndash; Alternate style  <small class="opt">optional</small></li>
 </ul>
     
-## Examples
+## Implementation Examples

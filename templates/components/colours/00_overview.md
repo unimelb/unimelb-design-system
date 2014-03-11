@@ -1,8 +1,6 @@
 
 ## A note about colours
 
-// TODO: Make this an alert box once we have the classes.
-
 > This is a mandatory global component that must be included on all sites created on the unimelb domain. Changes made to footer code will be applied globally across all sites using these templates.
 
 

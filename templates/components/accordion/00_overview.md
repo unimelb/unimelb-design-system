@@ -30,9 +30,23 @@ Example content.
 - Link to general writing guidelines (writing punchy sentences for the web). 
 - [Writing accessibile headings](http://www.unimelb.edu.au/accessibility/training/examples/1-3-1-info-and-relationships/index.html)
 
-## Related planning tools
+## Planning tools
 
 * [Download component stencils](#) (illustrator, sketch and photoshop versions available)
+
+## Examples
+
+### Good examples
+
+### Poor examples
+
+![A Poor example](/assets/videos/poor-example__accordian-1.gif)
+
+In this case, it would be more desirable to simply expose the links underneath each heading rather than hiding them behind an accordian
+
+## References
+
+// Add references supporting this. 
 
 ## Implementation
 Modular open/close content sections, with gracefully degrading CSS3 animation.
@@ -52,21 +66,6 @@ Some minor DOM extensions (IE8+ only)
 <em>* The animation is CSS3 transition-based, so most of the options are tied to classes.</em>
 
 The two parts (toggle switch and content container) must be wrapped inside their own container, but this can be any block level element.
-
-### Example implementations
-
-#### Good examples
-
-
-#### Poor implementation examples
-
-![A Poor example](/assets/videos/poor-example__accordian-1.gif)
-
-In this case, it would be more desirable to simply expose the links underneath each heading rather than hiding them behind an accordian
-
-
-## References
-
 
 
 ## Contribution

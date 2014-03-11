@@ -1,8 +1,24 @@
+## When to use this component
+
+## When to avoid this component? 
+
+## Content recommendations
+
+## Planning tools 
+
+## Examples
+
+### Good examples
+
+### Poor examples
+
+## References
+
 ## Implementation
 
 Client&ndash;side form validation, using HTML5 text patterns.
 
-## Dependencies
+### Dependencies
 
 Some minor DOM extensions (IE8+ only).
 

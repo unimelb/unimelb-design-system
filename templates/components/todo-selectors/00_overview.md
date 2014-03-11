@@ -1,4 +1,3 @@
-
 ## When to use this component
 
 ## When to avoid this component? 
@@ -16,11 +15,6 @@
 ## References
 
 ## Implementation
-
-De-obfuscate password fields by default.
-
 ### Dependencies
-
-Some minor DOM extensions (IE8+ only)
-
-### Example
+### Options
+### Implementation examples
