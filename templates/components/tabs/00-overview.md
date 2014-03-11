@@ -12,4 +12,3 @@ Some minor DOM extensions (IE8+ only)
   <li><code>data-current</code> &ndash; Pre-select tab <small class="opt">optional</small></li>
 </ul>
 
-## Examples

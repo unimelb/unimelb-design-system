@@ -1,4 +1,8 @@
-*Unstyled*
+## Unstyled Tabs
+
+
+### Markup
+
 ```html
 <div data-tabbed>
   <nav>
@@ -26,6 +30,9 @@
   </section>
 </div>
 ```
+
+### Preview
+
 <div data-tabbed>
   <nav>
     <a>1st</a>

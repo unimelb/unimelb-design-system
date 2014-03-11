@@ -1,4 +1,7 @@
-*Styled*
+## Styled Tabs
+
+### Markup
+
 ```html
 <div class="test" data-tabbed>
   <nav>
@@ -32,6 +35,9 @@ Pellentesque libero leo, vehicula vitae ipsum quis, hendrerit semper velit. Nam 
   </section>
 </div>
 ```
+
+### Preview
+
 <div class="test" data-tabbed>
   <nav>
     <a>1st</a>
