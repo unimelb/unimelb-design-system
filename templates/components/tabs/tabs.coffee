@@ -1,13 +1,13 @@
 class Tabbed
   constructor: (@el) ->
-    t = this    
+    t = this
     for tab in @el.querySelectorAll('nav a')
       tab.addEventListener 'click', (e) ->
         e.preventDefault()
         target = e.target || e.srcElement
         t.move(target)
 
-    @move(@el.querySelector('[data-current]')) if @el.querySelector('[data-current]')   
+    @move(@el.querySelector('[data-current]')) if @el.querySelector('[data-current]')
     @move(@el.querySelector('nav a:first-child')) if Array.prototype.slice.call(@el.querySelectorAll('[data-current]')).length==0
 
   move: (clicked) ->

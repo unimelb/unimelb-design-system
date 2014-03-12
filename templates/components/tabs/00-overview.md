@@ -11,4 +11,3 @@ Some minor DOM extensions (IE8+ only)
   <li><code>data-tabbed</code> &ndash; Tab container <small>required</small></li>
   <li><code>data-current</code> &ndash; Pre-select tab <small class="opt">optional</small></li>
 </ul>
-

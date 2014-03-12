@@ -2,15 +2,16 @@
 
 // TODO: Make this an alert box once we have the classes.
 
-> This is a mandatory global component that must be included on all sites created on the unimelb domain. Changes made to typography code will be applied globally across all sites using these templates. 
+> This is a mandatory global component that must be included on all sites created on the unimelb domain. Changes made to typography code will be applied globally across all sites using these templates.
 
-// TODO: need to add typography choices documentation. Why did we choose the fonts that we have chosen? 
+// TODO: need to add typography choices documentation. Why did we choose the fonts that we have chosen?
 
 
 ## Typography
 ```scss
 $ff-sans: Roboto, Helvetica, Arial, sans-serif;
 $ff-fixed: 'Courier New', Courier, fixed;
+$ff-serif: Georgia, 'Times New Roman', Times, serif;
 
 $thin: 100;
 $light: 300;
@@ -30,6 +31,7 @@ p.sans {
 <div class="type-test">
   <p class="sans">Roboto, Helvetica, Arial, sans-serif</p>
   <p class="fixed">Courier New, Courier, fixed</p>
+  <p class="serif">Georgia, Times New Roman, Times, serif</p>
   <p>
     <span class="thin">thin</span>
     <span class="light">light</span>

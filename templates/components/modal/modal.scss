@@ -31,7 +31,7 @@
     visibility: visible;
     z-index: 4;
   }
-  @media screen and (min-width: 1100px) { 
+  @media screen and (min-width: 1100px) {
     left: 20%;
     right: 20%;
     top: 20%;
@@ -56,10 +56,10 @@
   background: #000;
   display: none;
   height: 100%;
-  left: 0px;
+  left: 0;
   overflow: scroll;
   position: fixed;
-  top: 0px;
+  top: 0;
   width: 100%;
   z-index: 1;
   &.on {

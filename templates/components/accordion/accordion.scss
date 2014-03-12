@@ -1,5 +1,6 @@
 @mixin transition-duration($p) {
   -ms-transition-duration: $p;
+  -o-transition-duration: $p;
   -moz-transition-duration: $p;
   -webkit-transition-duration: $p;
   transition-duration: $p;
@@ -7,6 +8,7 @@
 
 @mixin transition-property($p) {
   -ms-transition-property: $p;
+  -o-transition-property: $p;
   -moz-transition-property: $p;
   -webkit-transition-property: $p;
   transition-property: $p;
@@ -14,6 +16,7 @@
 
 @mixin transition-timing-function($p) {
   -ms-transition-timing-function: $p;
+  -o-transition-timing-function: $p;
   -moz-transition-timing-function: $p;
   -webkit-transition-timing-function: $p;
   transition-timing-function: $p;

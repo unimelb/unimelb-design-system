@@ -11,7 +11,7 @@
   }
 
   p {
-    @include rem(font-size, 16px);
+    @include rem(font-size, 14px);
     @include rem(padding-bottom, 5px);
     font-weight: $light;
     max-width: 100%;
@@ -75,7 +75,7 @@
   }
 
   small {
-    @include rem(font-size, 14px);
+    @include rem(font-size, 12px);
     clear: left;
     color: $lightblue;
     display: block;
@@ -103,7 +103,7 @@
     list-style-type: none;
   }
   a {
-    @include rem(font-size, 18px);
+    @include rem(font-size, 15px);
     color: $white;
     text-decoration: none;
     &:hover {
@@ -137,7 +137,7 @@
         width: auto;
       }
       a {
-        @include rem(font-size, 18px);        
+        @include rem(font-size, 15px);
       }
     }
   }
@@ -163,8 +163,8 @@
       text-decoration: none;
     }
     img {
-      @include rem(max-width, 32px);
-      @include rem(max-width, 32px);
+      @include rem(max-width, 24px);
+      @include rem(max-width, 24px);
     }
     @include breakpoint(desktop) {
       @include rem(margin-bottom, 60px);

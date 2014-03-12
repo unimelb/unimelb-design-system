@@ -1,5 +1,5 @@
 %headerblock {
-  @include rem(font-size, 19px);
+  @include rem(font-size, 16px);
   color: $darkblue;
   display: inline-block;
   font-weight: $regular;
@@ -24,6 +24,7 @@
     @extend %headerblock;
     @include rem(height, 50px);
     @include rem(line-height, 50px);
+    font-weight: $light;
     text-decoration: none;
     &:hover {
       color: $midblue;
@@ -46,19 +47,20 @@
       @include rem(height, 75px);
       @include rem(line-height, 75px);
       &.page-header-logo {
-        @include rem(padding, 7.5px);
-        @include rem(height, 75px);
-        @include rem(width, 75px);
+        @include rem(padding, 7px);
+        @include rem(height, 76px);
+        @include rem(width, 76px);
       }
     }
   }
 
   span {
     @extend %headerblock;
-    @include rem(font-size, 22px);
+    @include rem(font-size, 13px);
     @include rem(height, 40px);
     @include rem(line-height, 40px);
     @include rem(padding, 5px 10px);
+    font-weight: $bold;
 
     @include breakpoint(desktop) {
       @include rem(height, 75px);
@@ -69,7 +71,7 @@
 }
 
 .page-header-navigation {
-  @include rem(margin-left, 15px);
+  @include rem(margin-left, 25px);
   display: inline;
   a, span {
     display: none;

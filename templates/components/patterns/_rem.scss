@@ -1,5 +1,5 @@
 // REM mixin
-$baseline-px: 19px;
+$baseline-px: 16px;
 
 @mixin rem($property, $px-values) {
   $baseline-rem: $baseline-px / 1rem;
