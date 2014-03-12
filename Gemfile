@@ -10,6 +10,7 @@ gem "slim", "~> 2.0.2"
 gem "sass", "~> 3.2.14"
 gem "bourbon", "~> 3.1.8"
 gem "coffee-script", "~> 2.2.0"
+gem "redcarpet", "~> 3.1.1"
 
 gem "html-pipeline", "~> 1.6.0"
 gem "github-linguist", "~> 2.10.9"

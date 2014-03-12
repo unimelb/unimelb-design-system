@@ -7,7 +7,7 @@ As modal boxes commandeer the users browser by preventing them from interacting 
 
 ## When to avoid this component? 
 
-You must never use a modal box as a tool for gathering information that it is not essential for the user to provide (e.g. complete this short survey). Doing so will incur the wrath of the internet. If you would like to display an alert to the user prompting them to do something (like fill in your survey), we would suggest using a more unobtrusive component like a [dismissable alert](#)
+You must never use a modal box as a tool for gathering information that it is not essential for the user to provide (e.g. complete this short survey). Doing so will incur the wrath of the internet. If you would like to display an alert to the user prompting them to do something (like fill in your survey), we would suggest using a more unobtrusive component like a [dismissable alert](#).
 
 
 
