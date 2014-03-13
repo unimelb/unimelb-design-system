@@ -44,8 +44,14 @@ p.sans {
 <h1>h1 should only appear once, in page heading</h1>
 <h2>h2 can be used as an inpage subheading</h2>
 
-## Blocks
+## Paragraph
 <p>p a normal paragraph</p>
+
+## Blockquote
+<blockquote>
+  A person who won't read has no advantage over one who can't read.
+  <cite>Samuel Clemens</cite>
+</blockquote>
 
 ## Lists
 <ul>

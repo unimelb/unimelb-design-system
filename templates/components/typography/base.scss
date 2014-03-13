@@ -122,7 +122,29 @@ li {
   -ms-behavior: url(/assets/javascripts/backgroundsize.min.htc);
   display: inline-block;
   margin: 0 auto;
+  position: relative;
   width: 100%;
+  section {
+    background: url(/assets/images/overlay.png) center top repeat-x;
+    bottom: 0;
+    margin: 0;
+    max-width: 100%;
+    position: absolute;
+  }
+  p {
+    @include rem(font-size, 22px);
+    @include rem(padding-top, 45px);
+    color: $white;
+    font-weight: $regular;
+    margin: 0 3%;
+    max-width: 94%;
+    padding-bottom: 0;
+
+    @include breakpoint(desktop) {
+      margin: 0 18%;
+      max-width: 64%;
+    }
+  }
 }
 
 code {
@@ -200,5 +222,58 @@ dl {
   }
   dd {
     float: left;
+  }
+}
+
+blockquote {
+  @include rem(font-size, 24px);
+  @include rem(padding, 12px 15px 0);
+  color: $darkblue;
+  font-family: $ff-serif;
+  font-style: italic;
+  font-weight: $regular;
+  margin: 0 4% 0 7%;
+  quotes: "\201C""\201D";
+  &:after,
+  &:before {
+    @include rem(font-size, 100px);
+    color: darken($lightgray, 10%);
+    content: open-quote;
+    line-height: 0.1em;
+    margin-left: -14.667%;
+    margin-right: 3%;
+    vertical-align: -0.333em;
+  }
+  &:after {
+    content: close-quote;
+    margin-right: 0;
+    margin-left: 0;
+    vertical-align: -0.667em;
+  }
+  cite {
+    @include rem(font-size, 16px);
+    color: lighten($midgray, 20%);
+    float: left;
+    font-family: $ff-sans;
+    font-style: normal;
+    font-weight: $light;
+    width: 100%;
+    &:before {
+      @include rem(padding-right, 5px);
+      content: "\2014";
+    }
+  }
+  p {
+    @include rem(font-size, 24px);
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+  @include breakpoint(desktop) {
+    margin: 0 14% 0 22%;
+    &:before {
+      margin-left: -5.667%;
+      margin-right: 2%;
+    }
   }
 }
