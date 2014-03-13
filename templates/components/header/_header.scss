@@ -91,26 +91,36 @@
 }
 
 .page-header-tools {
-  @include rem(padding-right, 10px);
   float: right;
   .page-header-icon {
-    @include rem(margin-left, 10px);
-    @include rem(padding, 0 0 0 15px);
+    @include rem(font-size, 11px);
+    @include rem(padding, 0 10px);
+    @include rem(width, 40px);
     border-left: 1px solid darken($lightgray, 10%);
+    font-weight: $regular;
+    line-height: 1;
     text-align: center;
+    text-transform: uppercase;
     img {
-      max-height: 65%;
-      max-width: 65%;
+      @include rem(max-height, 24px);
+      @include rem(padding-bottom, 3px);
+      @include rem(padding-top, 5px);
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+    &:hover {
+      background-color: $paleblue;
+      text-decoration: none;
     }
   }
   @include breakpoint(desktop) {
-    @include rem(padding-right, 20px);
     .page-header-icon {
-      @include rem(margin-left, 20px);
-      @include rem(padding, 7.5px 10px 7.5px 30px);
+      @include rem(padding, 7.5px 30px 7.5px 30px);
       img {
-        max-height: 60%;
-        max-width: 60%;
+        @include rem(padding-bottom, 5px);
+        @include rem(padding-top, 15px);
+        max-width: 100%;
       }
     }
   }

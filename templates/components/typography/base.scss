@@ -113,6 +113,18 @@ li {
   @include rem(font-size, 20px);
 }
 
+.fullwidth {
+  @include rem(height, 500px);
+  background-color: transparent;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -ms-behavior: url(/assets/javascripts/backgroundsize.min.htc);
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
+}
+
 code {
   @extend %code;
   @include rem(border-bottom-width, 2px);
