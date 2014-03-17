@@ -44,11 +44,6 @@ body {
     position: relative;
     p {
       @include rem(font-size, 22px);
-      margin-right: 10%;
-      max-width: 90%;
-    }
-    section {
-      margin-right: 0;
     }
 
     @include breakpoint(desktop) {
@@ -73,6 +68,7 @@ body {
 
   section {
     @extend %wrapper;
+    @include rem(max-width, 700px);
     @include rem(padding-bottom, 30px);
     @include rem(padding-top, 30px);
   }
@@ -80,6 +76,11 @@ body {
   footer {
     @extend %wrapper;
     @include rem(padding-bottom, 30px);
+    section {
+      @include breakpoint(desktop) {
+        margin-left: 0;
+      }
+    }
   }
 
 }
@@ -90,23 +91,33 @@ h1 {
   font-family: $ff-serif;
   font-weight: $regular;
   line-height: 1;
+  margin: 0 auto;
   @include breakpoint(desktop) {
     @include rem(font-size, 96px);
+    margin-left: 0;
   }
 }
 
 h2 {
   @include rem(font-size, 24px);
   @include rem(padding, 20px 0 10px);
+  clear: left;
   font-weight: $light;
+  margin: 0 auto;
+  @include breakpoint(desktop) {
+    margin-left: 0;
+  }
 }
 
 p,
 li {
   @include rem(font-size, 19px);
-  @include rem(max-width, 700px);
-  @include rem(padding-bottom, 15px);
+  @include rem(padding-bottom, 30px);
   line-height: 1.5;
+  margin: 0 auto;
+  @include breakpoint(desktop) {
+    margin-left: 0;
+  }
 }
 
 .feature {
@@ -129,6 +140,9 @@ li {
     bottom: 0;
     margin: 0;
     max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
     position: absolute;
   }
   p {
@@ -158,12 +172,18 @@ pre {
   @include rem(border-left-width, 6px);
   @include rem(margin-bottom, 15px);
   @include rem(margin-top, 10px);
+  @include rem(max-width, 700px);
   @include rem(padding, 15px);
   line-height: 1.2;
-  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
   overflow: auto;
   code {
     border-bottom: 0;
+  }
+  @include breakpoint(desktop) {
+    margin-left: 0;
+    max-width: 100%;
   }
 }
 
@@ -227,21 +247,23 @@ dl {
 
 blockquote {
   @include rem(font-size, 24px);
+  max-width: 70%;
   @include rem(padding, 12px 15px 0);
   color: $darkblue;
   font-family: $ff-serif;
   font-style: italic;
   font-weight: $regular;
-  margin: 0 4% 0 7%;
+  margin: 0 auto;
   quotes: "\201C""\201D";
+  text-align: left;
   &:after,
   &:before {
     @include rem(font-size, 100px);
+    @include rem(margin-left, -50px);
+    @include rem(margin-right, 10px);
     color: darken($lightgray, 10%);
     content: open-quote;
     line-height: 0.1em;
-    margin-left: -14.667%;
-    margin-right: 3%;
     vertical-align: -0.333em;
   }
   &:after {
@@ -257,6 +279,7 @@ blockquote {
     font-family: $ff-sans;
     font-style: normal;
     font-weight: $light;
+    text-align: left;
     width: 100%;
     &:before {
       @include rem(padding-right, 5px);
@@ -269,11 +292,78 @@ blockquote {
     margin: 0;
     padding: 0;
   }
+
   @include breakpoint(desktop) {
-    margin: 0 14% 0 22%;
-    &:before {
-      margin-left: -5.667%;
-      margin-right: 2%;
+    margin: 0 10%;
+  }
+}
+
+.inset-left {
+  @include rem(margin-bottom, 30px);
+  @include rem(padding, 15px);
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  text-align: center;
+  figcaption {
+    @include rem(font-size, 14px);
+    font-style: italic;
+    line-height: 1.2;
+    text-align: center;
+  }
+  img {
+    max-height: 500px;
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(margin-bottom, 20px);
+    @include rem(margin-left, -200px);
+    @include rem(margin-right, 20px);
+    border: 0 none;
+    box-shadow: 0 0 0 0 transparent;
+    float: left;
+    margin-top: 0;
+    padding: 0;
+    img {
+      max-width: 75%;
+    }
+    figcaption {
+      @include rem(margin-bottom, 15px);
+      @include rem(padding-top, 15px);
+      color: $lighterblue;
+      float: left;
+      margin-right: 3%;
+      position: relative;
+      text-align: right;
+      width: 22%;
+      &:before {
+        @include rem(width, 40px);
+        border-bottom: 2px solid $lighterblue;
+        content: "";
+        display: block;
+        position: absolute;
+        right: -2px;
+        top: 0;
+      }
+    }
+  }
+}
+
+.inset-right {
+  @extend .inset-left;
+  @include breakpoint(desktop) {
+    @include rem(margin-left, 20px);
+    @include rem(margin-right, -200px);
+    float: right;
+    figcaption {
+      float: right;
+      margin-left: 3%;
+      margin-right: 0;
+      text-align: left;
+      &:before {
+        left: 2px;
+        right: auto;
+      }
     }
   }
 }

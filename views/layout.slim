@@ -24,18 +24,19 @@ html.no-js
 
         - unless request.path_info =~ %r{^(/|/contribution)$}
           footer
-            h2 Collaboration
+            section
+              h2 Collaboration
 
-            p
-              em Your contribution to the templates is what makes them better.
-              '
-              | We've tried to make contributing as easy and painless as possible.
+              p
+                em Your contribution to the templates is what makes them better.
+                '
+                | We've tried to make contributing as easy and painless as possible.
 
-            p To contribute, please:
+              p To contribute, please:
 
-            ul
-              li: a href="/contribution" Read the contribution guide
-              li: a href="https://github.com/marcom-unimelb/unimelb-web-templates" Explore documentation on GitHub
+              ul
+                li: a href="/contribution" Read the contribution guide
+                li: a href="https://github.com/marcom-unimelb/unimelb-web-templates" Explore documentation on GitHub
 
       == slim :authorisation
 

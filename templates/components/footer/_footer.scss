@@ -72,6 +72,7 @@
     @include rem(padding, 15px 0);
     clear: both;
     color: $blue;
+    margin-left: 0;
   }
 
   small {
@@ -79,12 +80,16 @@
     clear: left;
     color: $lightblue;
     display: block;
+    text-align: center;
     a {
       color: $lightblue;
       text-decoration: none;
       &:hover {
         color: $white;
       }
+    }
+    @include breakpoint(desktop) {
+      text-align: left;
     }
   }
 }
@@ -101,6 +106,7 @@
     display: block;
     float: left;
     list-style-type: none;
+    margin-left: 0;
   }
   a {
     @include rem(font-size, 15px);
@@ -116,9 +122,14 @@
     li {
       @include rem(padding-bottom, 10px);
       @include rem(padding-top, 10px);
+      line-height: 1.1;
       margin-left: 3%;
       margin-right: 3%;
+      text-align: right;
       width: 42%;
+      &:nth-child(2n) {
+        text-align: left;
+      }
     }
     a {
       @include rem(font-size, 14px);
@@ -195,6 +206,7 @@
 }
 
 .page-footer-est1853 {
+  @include rem(padding-bottom, 15px);
   clear: both;
   display: block;
   margin: 0 auto;

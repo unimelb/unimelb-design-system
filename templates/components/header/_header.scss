@@ -102,9 +102,9 @@
     text-align: center;
     text-transform: uppercase;
     img {
-      @include rem(max-height, 24px);
+      @include rem(max-height, 16px);
       @include rem(padding-bottom, 3px);
-      @include rem(padding-top, 5px);
+      @include rem(padding-top, 10px);
       display: block;
       margin: 0 auto;
       max-width: 100%;
@@ -118,6 +118,7 @@
     .page-header-icon {
       @include rem(padding, 7.5px 30px 7.5px 30px);
       img {
+        @include rem(max-height, 24px);
         @include rem(padding-bottom, 5px);
         @include rem(padding-top, 15px);
         max-width: 100%;
