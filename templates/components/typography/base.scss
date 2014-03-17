@@ -1,5 +1,5 @@
 %wrapper {
-  @include rem(padding, 10px);
+  @include rem(padding, 15px);
   margin: 0 auto;
   max-width: 100%;
 
@@ -300,10 +300,10 @@ blockquote {
 
 .inset-left {
   @include rem(margin-bottom, 30px);
-  @include rem(padding, 15px);
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
+  padding: 0;
   text-align: center;
   figcaption {
     @include rem(font-size, 14px);
@@ -323,7 +323,6 @@ blockquote {
     box-shadow: 0 0 0 0 transparent;
     float: left;
     margin-top: 0;
-    padding: 0;
     img {
       max-width: 75%;
     }
