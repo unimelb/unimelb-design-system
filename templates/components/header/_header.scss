@@ -60,7 +60,7 @@
     @include rem(height, 40px);
     @include rem(line-height, 40px);
     @include rem(padding, 5px 10px);
-    font-weight: $bold;
+    font-weight: $light;
 
     @include breakpoint(desktop) {
       @include rem(height, 75px);
@@ -74,16 +74,21 @@
   @include rem(margin-left, 25px);
   display: inline;
   a, span {
-    display: none;
-  }
-  a.last {
     display: inline-block;
-    max-width: 45%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
-  @include breakpoint(desktop) {
+  @include breakpoint(mobile) {  
+    a, span {
+      display: none;
+    }
+    a.last {
+      display: inline-block;
+      max-width: 45%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  @include breakpoint(tablet) {
     a, span {
       display: inline-block;
     }

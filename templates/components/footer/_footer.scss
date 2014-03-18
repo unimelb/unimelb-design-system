@@ -1,61 +1,61 @@
-.page-authorisation {
-  background-color: $paleblue;
-  box-shadow: 0 -2px 6px 1px rgba($black, 0.1);
-  color: $midblue;
+// .page-authorisation {
+//   background-color: $paleblue;
+//   box-shadow: 0 -2px 6px 1px rgba($black, 0.1);
+//   color: $midblue;
 
-  >section {
-    @extend %wrapper;
-    @extend %clearfix;
-    @include rem(padding-bottom, 45px);
-    @include rem(padding-top, 30px);
-  }
+//   >section {
+//     @extend %wrapper;
+//     @extend %clearfix;
+//     @include rem(padding-bottom, 45px);
+//     @include rem(padding-top, 30px);
+//   }
 
-  p {
-    @include rem(font-size, 14px);
-    @include rem(padding-bottom, 5px);
-    font-weight: $light;
-    max-width: 100%;
-  }
+//   p {
+//     @include rem(font-size, 14px);
+//     @include rem(padding-bottom, 5px);
+//     font-weight: $light;
+//     max-width: 100%;
+//   }
 
-  strong {
-    font-weight: $regular;
-  }
+//   strong {
+//     font-weight: $regular;
+//   }
 
-}
+// }
 
-.page-authorisation-text {
-  float: left;
-}
+// .page-authorisation-text {
+//   float: left;
+// }
 
-.page-authorisation-logos {
-  clear: left;
-  a {
-    @include rem(margin-top, 30px);
-    display: inline-block;
-    text-align: center;
-    width: 33%;
-  }
-  img {
-    @include rem(max-height, 50px);
-  }
-  .apru img {
-    @include rem(margin-bottom, 10px);
-    @include rem(max-height, 30px);
-  }
-  .universitas21 img {
-    @include rem(margin-bottom, 10px);
-    @include rem(max-height, 40px);
-  }
-  @include breakpoint(desktop) {
-    clear: none;
-    @include rem(padding-top, 30px);
-    float: right;
-    a {
-      @include rem(margin-left, 45px);
-      width: auto;
-    }
-  }
-}
+// .page-authorisation-logos {
+//   clear: left;
+//   a {
+//     @include rem(margin-top, 30px);
+//     display: inline-block;
+//     text-align: center;
+//     width: 33%;
+//   }
+//   img {
+//     @include rem(max-height, 50px);
+//   }
+//   .apru img {
+//     @include rem(margin-bottom, 10px);
+//     @include rem(max-height, 30px);
+//   }
+//   .universitas21 img {
+//     @include rem(margin-bottom, 10px);
+//     @include rem(max-height, 40px);
+//   }
+//   @include breakpoint(desktop) {
+//     clear: none;
+//     @include rem(padding-top, 30px);
+//     float: right;
+//     a {
+//       @include rem(margin-left, 45px);
+//       width: auto;
+//     }
+//   }
+// }
 
 .page-footer {
   background-color: $navy;
@@ -127,9 +127,13 @@
       margin-right: 3%;
       text-align: right;
       width: 42%;
-      &:nth-child(2n) {
-        text-align: left;
-      }
+    }
+    /* nth-child for IE8, up to 9 items */
+    li:first-child + li,
+    li:first-child + li + li + li,
+    li:first-child + li + li + li + li + li,
+    li:first-child + li + li + li + li + li + li + li {
+      text-align: left;
     }
     a {
       @include rem(font-size, 14px);

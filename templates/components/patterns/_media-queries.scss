@@ -1,6 +1,28 @@
 @mixin breakpoint($point) {
-  @if $point == desktop {
+  @if $point == wide {
     @media screen and (min-width: 1099px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == desktop {
+    @media screen and (min-width: 769px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == tablet {
+    @media screen and (min-width: 481px) {
+      & {
+        @content;
+      }
+    }
+  }
+  // Not required, but useful to styling out IE8
+  @else if $point == mobile {
+    @media screen and (max-width: 480px) {
       & {
         @content;
       }
@@ -13,11 +35,4 @@
   //     }
   //   } // , screen and (max-width: 500px) and (-webkit-min-device-pixel-ratio: 1.3)
   // }
-  @else if $point {
-    @media screen and (min-width: $point) {
-      & {
-        @content;
-      }
-    }
-  }
 }

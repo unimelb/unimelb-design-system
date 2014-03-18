@@ -1,0 +1,77 @@
+.listing {
+  @include rem(padding-bottom, 30px);
+  @include rem(padding-left, 15px);
+  @include rem(padding-right, 15px);
+  border-bottom: 1px solid darken($lightgray, 5%);
+  border-top: 1px solid darken($lightgray, 5%);
+  margin: 0;
+  li {
+    @include rem(margin-top, 10px);
+    @include rem(min-height, 100px);
+    @include rem(padding-top, 10px);
+    border-top: 1px solid darken($lightgray, 5%);
+    list-style-type: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    &:first-child {
+      border-top: 0 none;
+    }
+  }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  figure {
+    @include rem(height, 100px);
+    @include rem(margin-bottom, 10px);
+    @include rem(margin-right, 20px);
+    @include rem(width, 100px);
+    float: left;
+    margin-left: 0;
+    margin-top: 0;
+    overflow: hidden;
+    text-align: center;
+  }
+  img {
+    display: block;
+    float: left;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  strong {
+    @include rem(font-size, 16px);
+    color: $darkblue;
+    display: block;
+    font-weight: $light;
+  }
+  p {
+    @include rem(font-size, 14px);
+    color: $midgray;
+    padding-bottom: 0;
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(padding-top, 60px);
+    float: left;
+    padding-left: 10%;
+    padding-right: 10%;
+    li {
+      @include rem(padding-bottom, 60px);
+      border: 0;
+      float: left;
+      width: 25%;
+    }
+    a {
+      @include rem(padding, 0 10px);
+    }
+    figure {
+      @include rem(max-height, 220px);
+      float: none;
+      height: auto;
+      width: 100%;
+    }
+    strong, p {
+      text-align: center;
+    }
+  }
+}
