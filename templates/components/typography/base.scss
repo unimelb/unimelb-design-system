@@ -8,7 +8,7 @@
 }
 
 %code {
-  @include rem(font-size, 14px);
+  @include rem(font-size, 16px);
   @include rem(border-radius, 3px);
   background-color: darken($lightgray, 2%);
   border-color: darken($lightgray, 5%);
@@ -26,7 +26,7 @@ body {
 
 .bottom-align {
   @include breakpoint(desktop) {
-    @include rem(bottom, 30px);
+    @include rem(bottom, 45px);
     position: absolute;
     width: 100%;
   }
@@ -34,10 +34,11 @@ body {
 
 [role="main"] {
   background-color: $lightgray;
+  //background-image: url(http://basehold.it/i/30);
   font-weight: $light;
 
   header {
-    @include rem(margin-bottom, 45px);
+    @include rem(margin-bottom, 30px);
     background-color: $lightgray;
     background-image: url(/assets/images/bg-banner.jpg);
     background-position: center 50%;
@@ -49,7 +50,7 @@ body {
     }
 
     @include breakpoint(desktop) {
-      @include rem(height, 500px);
+      @include rem(height, 480px);
       @include rem(padding-bottom, 30px);
       p {
         @include rem(font-size, 28px);
@@ -58,7 +59,7 @@ body {
     }
 
     @include breakpoint(wide) {
-      @include rem(height, 620px);
+      @include rem(height, 600px);
       h1 {
         @include rem(margin-right, -200px);
       }
@@ -91,37 +92,49 @@ body {
 }
 
 h1 {
-  @include rem(font-size, 48px);
-  @include rem(padding, 20px 0);
+  @include rem(font-size, 38px);
+  @include rem(padding, 22px 0);
   font-family: $ff-serif;
   font-weight: $regular;
-  line-height: 1;
+  line-height: 1.2;
   @include breakpoint(desktop) {
-    @include rem(font-size, 64px);
+    @include rem(font-size, 57px);
+    line-height: 1.05;
   }
   @include breakpoint(wide) {
-    @include rem(font-size, 96px);
+    @include rem(font-size, 95px);
+    line-height: 1.06;
+  }
+
+  &+ h2 {
+    @include rem(padding-top, 15px);
   }
 }
 
 h2 {
-  @include rem(font-size, 28px);
-  @include rem(padding, 20px 0 10px);
+  @include rem(font-size, 28.5px);
+  @include rem(padding, 30px 0 30px);
   clear: left;
   font-weight: $light;
+  line-height: 1.1;
+  &:first-child {
+    @include rem(padding-top, 2px);
+  }
 }
 
 h3 {
-  @include rem(font-size, 24px);
-  @include rem(padding, 0 0 20px);
+  @include rem(font-size, 22.2px);
+  @include rem(padding, 28px 0 30px 0);
   font-weight: $light;
+  line-height: 1.4;
 }
 
 p,
 li {
   @include rem(font-size, 19px);
-  @include rem(padding-bottom, 30px);
-  line-height: 1.5;
+  @include rem(letter-spacing, 0.18px);
+  @include rem(padding, 4px 0 26px 0);
+  line-height: 1.58;
 }
 
 .feature {
@@ -174,11 +187,11 @@ code {
 pre {
   @extend %code;
   @include rem(border-left-width, 6px);
-  @include rem(margin-bottom, 15px);
-  @include rem(margin-top, 10px);
+  @include rem(margin-bottom, 16px);
+  @include rem(margin-top, 0px);
   @include rem(max-width, 700px);
-  @include rem(padding, 15px);
-  line-height: 1.2;
+  @include rem(padding, 28px 15px 16px 15px);
+  line-height: 1.875;
   margin-left: auto;
   margin-right: auto;
   overflow: auto;
@@ -207,7 +220,7 @@ img {
 ol,
 ul {
   @include rem(margin, 0 0 0 25px);
-  @include rem(padding, 10px 0);
+  @include rem(padding, 0 0 20px 0);
   color: $darkgray;
   list-style-position: outside;
   li {
