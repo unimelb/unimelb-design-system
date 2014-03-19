@@ -20,6 +20,7 @@ GEM
     escape_utils (1.0.1)
     eventmachine (1.0.3)
     execjs (2.0.2)
+    front_matter_parser (0.0.1)
     github-linguist (2.10.9)
       charlock_holmes (~> 0.6.6)
       escape_utils (>= 0.3.1)
@@ -77,6 +78,7 @@ PLATFORMS
 DEPENDENCIES
   bourbon (~> 3.1.8)
   coffee-script (~> 2.2.0)
+  front_matter_parser (~> 0.0.1)
   github-linguist (~> 2.10.9)
   github-markdown (~> 0.6.4)
   html-pipeline (~> 1.6.0)

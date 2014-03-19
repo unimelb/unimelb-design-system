@@ -1,7 +1,7 @@
 header
   .bottom-align
     section
-      h1= component_title(@component)
+      h1= @settings['title']
 
 - if component_pending?(@component)
   section

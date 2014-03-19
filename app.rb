@@ -32,6 +32,7 @@ class WebTemplates < Sinatra::Base
     end
 
     def page_title
+      return @settings['title'] if @settings and !@settings['title'].empty?
       path_to_title request.path_info.split('/').last
     end
 
@@ -76,8 +77,13 @@ class WebTemplates < Sinatra::Base
   get '/components/*' do |path|
     halt(404) unless settings.components.include? path
     @component = path
+    @settings  = { 'title' => component_title(@component) }
     @documents = Dir.glob(File.join(settings.components_dir, path, '*.md')).sort
-    @documents = @documents.map { |d| render_markdown File.read(d) }
+    @documents = @documents.map do |f|
+      p = FrontMatterParser.parse_file(f)
+      @settings.merge!(p.front_matter)
+      render_markdown p.content
+    end
     slim :component
   end
 
