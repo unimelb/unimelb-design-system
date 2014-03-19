@@ -6,4 +6,3 @@ De-obfuscate password fields by default.
 
 Some minor DOM extensions (IE8+ only)
 
-## Example

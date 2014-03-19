@@ -1,10 +1,10 @@
-class ShowPass
+class ShowPassword
   constructor: (@el) ->
     @container = @el.parentNode
 
     @label = document.createElement 'span'
     @label.setAttribute('class', 'showpass__label')
-    @label.appendChild document.createTextNode 'Hide'
+    @label.appendChild document.createTextNode 'Show'
 
     @alt = document.createElement('input')
     for v in @el.attributes
@@ -26,7 +26,6 @@ class ShowPass
         t.container.replaceChild(t.alt, t.el)
 
     @container.insertBefore(@label, @el)
-    @container.replaceChild(@alt, @el)
 
 if (supportedmodernbrowser)
-  new ShowPass(f) for f in document.querySelectorAll('input[type="password"]')
+  new ShowPassword(f) for f in document.querySelectorAll('input[type="password"]')
