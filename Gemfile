@@ -17,5 +17,5 @@ gem "github-markdown", "~> 0.6.4"
 gem "pygments.rb", "~> 0.5.4"
 
 group :development do
-  gem "shotgun", "~> 0.9"
+  gem "thin", "~> 1.6.2"
 end
