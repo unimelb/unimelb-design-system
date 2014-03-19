@@ -1,3 +1,9 @@
+class SectionWrapFilter < HTML::Pipeline::Filter
+  def call
+    "<section>#{doc.to_s}</section>"
+  end
+end
+
 class WebTemplates < Sinatra::Base
   set :sprockets, Sprockets::Environment.new(root)
   set :assets_prefix, '/assets'
@@ -63,6 +69,15 @@ class WebTemplates < Sinatra::Base
       (@pipeline.call(md))[:output].to_s
     end
 
+    def render_markdown_with_section(md)
+      @pipeline_with_section = HTML::Pipeline.new [
+        HTML::Pipeline::MarkdownFilter,
+        HTML::Pipeline::SyntaxHighlightFilter,
+        SectionWrapFilter
+      ]
+      (@pipeline_with_section.call(md))[:output].to_s
+    end
+
     def syntax_highlight(html)
       Pygments.highlight(html, lexer: 'html')
     end
@@ -82,7 +97,8 @@ class WebTemplates < Sinatra::Base
     @documents = @documents.map do |f|
       fmp = FrontMatterParser.parse_file(f)
       @settings.merge!(fmp.front_matter)
-      render_markdown fmp.content
+      render_method = !!fmp.front_matter['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
+      send render_method, fmp.content
     end
     slim :component
   end

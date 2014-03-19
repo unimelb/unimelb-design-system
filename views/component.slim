@@ -20,10 +20,5 @@ header
       a href="https://github.com/marcom-unimelb/unimelb-web-templates" build it
       ', by submitting documentation and examples.
 - else
-  - i = 0
   - @documents.each do |document|
-    - if i==0
-      section== document
-    - else
-      == document
-    - i += 1
+    == document
