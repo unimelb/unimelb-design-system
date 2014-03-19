@@ -21,7 +21,7 @@ body {
   background-color: $navy;
   color: $black;
   font-family: $ff-sans;
-  font-size: 118%;
+  font-size: 112.5%;
 }
 
 .bottom-align {
@@ -34,11 +34,11 @@ body {
 
 [role="main"] {
   background-color: $lightgray;
-  //background-image: url(http://basehold.it/i/30);
   font-weight: $light;
 
   header {
     @include rem(margin-bottom, 30px);
+    @include rem(min-height, 150px);
     background-color: $lightgray;
     background-image: url(/assets/images/bg-banner.jpg);
     background-position: center 50%;
@@ -92,48 +92,50 @@ body {
 }
 
 h1 {
-  @include rem(font-size, 38px);
-  @include rem(padding, 22px 0);
+  @include rem(font-size, 40.2px);
+  @include rem(padding, 25px 0);
   font-family: $ff-serif;
   font-weight: $regular;
-  line-height: 1.2;
+  line-height: 1;
   @include breakpoint(desktop) {
     @include rem(font-size, 57px);
-    line-height: 1.05;
+    @include rem(padding-bottom, 20px);
+    @include rem(padding-top, 30px);
+    line-height: 1;
   }
   @include breakpoint(wide) {
     @include rem(font-size, 95px);
-    line-height: 1.06;
+    line-height: 1.04;
   }
 
   &+ h2 {
-    @include rem(padding-top, 15px);
+    @include rem(padding-top, 10px);
   }
 }
 
 h2 {
-  @include rem(font-size, 28.5px);
-  @include rem(padding, 30px 0 30px);
+  @include rem(font-size, 30px);
+  @include rem(padding, 23px 0 23px 0);
   clear: left;
   font-weight: $light;
-  line-height: 1.1;
+  line-height: 1.47;
   &:first-child {
-    @include rem(padding-top, 2px);
+    //@include rem(padding-top, 10px);
   }
 }
 
 h3 {
-  @include rem(font-size, 22.2px);
-  @include rem(padding, 28px 0 30px 0);
-  font-weight: $light;
+  @include rem(font-size, 24.9px);
+  @include rem(padding, 28px 0 28px 0);
+  font-weight: $bold;
   line-height: 1.4;
 }
 
 p,
 li {
   @include rem(font-size, 19px);
-  @include rem(letter-spacing, 0.18px);
-  @include rem(padding, 4px 0 26px 0);
+  @include rem(letter-spacing, 0.2px);
+  @include rem(padding, 0 0 30px 0);
   line-height: 1.58;
 }
 
@@ -187,13 +189,13 @@ code {
 pre {
   @extend %code;
   @include rem(border-left-width, 6px);
-  @include rem(margin-bottom, 16px);
-  @include rem(margin-top, 0px);
+  @include rem(margin-bottom, 30px);
   @include rem(max-width, 700px);
-  @include rem(padding, 28px 15px 16px 15px);
-  line-height: 1.875;
+  @include rem(padding, 15px 15px 15px 15px);
+  line-height: 1.88;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0;
   overflow: auto;
   code {
     border-bottom: 0;
@@ -314,9 +316,9 @@ blockquote {
 
 .inset-left {
   @include rem(margin-bottom, 30px);
+  @include rem(margin-top, 6px);
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0;
   max-width: 100%;
   padding: 0;
   text-align: center;

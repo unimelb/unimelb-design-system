@@ -8,6 +8,9 @@ This is a mandatory global component that must be included on all sites created 
 
 
 ## Typography
+
+Code blocks
+
 ```scss
 $ff-sans: Roboto, Helvetica, Arial, sans-serif;
 $ff-fixed: 'Courier New', Courier, fixed;
