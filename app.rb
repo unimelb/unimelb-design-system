@@ -3,6 +3,8 @@ class WebTemplates < Sinatra::Base
   set :assets_prefix, '/assets'
   set :digest_assets, true
 
+  set :pages_dir, File.join(root, 'pages')
+
   set :components_dir, File.join(root, 'templates', 'components')
   set :components, Dir.entries(components_dir).select { |f| f =~ /^[^\.]/ }
 
@@ -71,10 +73,6 @@ class WebTemplates < Sinatra::Base
     slim :index
   end
 
-  get '/contribution' do
-    slim :contribution
-  end
-
   get '/components/*' do |path|
     halt(404) unless settings.components.include? path
     @component = path
@@ -101,6 +99,21 @@ class WebTemplates < Sinatra::Base
     env_sprockets = request.env.dup
     env_sprockets['PATH_INFO'] = path
     settings.sprockets.call env_sprockets
+  end
+
+  get '/*' do
+    viewname = params[:splat].first
+    file  = File.join settings.pages_dir, "#{viewname}.md"
+    index = File.join settings.pages_dir, "#{viewname}/index.md"
+
+    file = index unless File.exist?(file)
+
+    if File.exist?(file)
+      @content = render_markdown File.read(file)
+      slim :page
+    else
+      "I can't find that page."
+    end
   end
 
 end
