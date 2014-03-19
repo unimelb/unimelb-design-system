@@ -11,7 +11,7 @@
   color: $black;
 
   header {
-    @include rem(height, 50px);
+    @include rem(height, 60px);
     box-shadow: 0 6px 6px -3px rgba($black, 0.3);
     padding: 0;
 
@@ -22,8 +22,8 @@
 
   a {
     @extend %headerblock;
-    @include rem(height, 50px);
-    @include rem(line-height, 50px);
+    @include rem(height, 60px);
+    @include rem(line-height, 60px);
     font-weight: $light;
     text-decoration: none;
     &:hover {
@@ -31,9 +31,9 @@
       text-decoration: underline;
     }
     &.page-header-logo {
-      @include rem(height, 40px);
+      @include rem(height, 50px);
       @include rem(padding, 5px);
-      @include rem(width, 40px);
+      @include rem(width, 50px);
       background-color: $darkblue;
       margin-left: 0;
       img {
@@ -76,7 +76,7 @@
   a, span {
     display: inline-block;
   }
-  @include breakpoint(mobile) {  
+  @include breakpoint(mobile) {
     a, span {
       display: none;
     }
@@ -109,7 +109,7 @@
     img {
       @include rem(max-height, 16px);
       @include rem(padding-bottom, 3px);
-      @include rem(padding-top, 10px);
+      @include rem(padding-top, 15px);
       display: block;
       margin: 0 auto;
       max-width: 100%;

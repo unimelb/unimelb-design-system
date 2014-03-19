@@ -8,7 +8,7 @@
 }
 
 %code {
-  @include rem(font-size, 14px);
+  @include rem(font-size, 16px);
   @include rem(border-radius, 3px);
   background-color: darken($lightgray, 2%);
   border-color: darken($lightgray, 5%);
@@ -21,12 +21,12 @@ body {
   background-color: $navy;
   color: $black;
   font-family: $ff-sans;
-  font-size: 118%;
+  font-size: 112.5%;
 }
 
 .bottom-align {
   @include breakpoint(desktop) {
-    @include rem(bottom, 30px);
+    @include rem(bottom, 45px);
     position: absolute;
     width: 100%;
   }
@@ -36,8 +36,13 @@ body {
   background-color: $lightgray;
   font-weight: $light;
 
+  &.vertical-grid {
+    background-image: url(http://basehold.it/i/30);
+  }
+
   header {
-    @include rem(margin-bottom, 45px);
+    @include rem(margin-bottom, 30px);
+    @include rem(min-height, 150px);
     background-color: $lightgray;
     background-image: url(/assets/images/bg-banner.jpg);
     background-position: center 50%;
@@ -49,7 +54,7 @@ body {
     }
 
     @include breakpoint(desktop) {
-      @include rem(height, 500px);
+      @include rem(height, 480px);
       @include rem(padding-bottom, 30px);
       p {
         @include rem(font-size, 28px);
@@ -58,7 +63,7 @@ body {
     }
 
     @include breakpoint(wide) {
-      @include rem(height, 620px);
+      @include rem(height, 600px);
       h1 {
         @include rem(margin-right, -200px);
       }
@@ -91,37 +96,48 @@ body {
 }
 
 h1 {
-  @include rem(font-size, 48px);
-  @include rem(padding, 20px 0);
+  @include rem(font-size, 40.2px);
+  @include rem(padding, 25px 0);
   font-family: $ff-serif;
   font-weight: $regular;
   line-height: 1;
   @include breakpoint(desktop) {
-    @include rem(font-size, 64px);
+    @include rem(font-size, 57px);
+    @include rem(padding-bottom, 20px);
+    @include rem(padding-top, 30px);
+    line-height: 1;
   }
   @include breakpoint(wide) {
-    @include rem(font-size, 96px);
+    @include rem(font-size, 95px);
+    line-height: 1.04;
+  }
+
+  &+ h2 {
+    @include rem(padding-top, 10px);
   }
 }
 
 h2 {
-  @include rem(font-size, 28px);
-  @include rem(padding, 20px 0 10px);
+  @include rem(font-size, 30px);
+  @include rem(padding, 23px 0);
   clear: left;
   font-weight: $light;
+  line-height: 1.47;
 }
 
 h3 {
-  @include rem(font-size, 24px);
-  @include rem(padding, 0 0 20px);
-  font-weight: $light;
+  @include rem(font-size, 24.9px);
+  @include rem(padding, 28px 0);
+  font-weight: $bold;
+  line-height: 1.4;
 }
 
 p,
 li {
   @include rem(font-size, 19px);
+  @include rem(letter-spacing, 0.2px);
   @include rem(padding-bottom, 30px);
-  line-height: 1.5;
+  line-height: 1.58;
 }
 
 .feature {
@@ -174,13 +190,13 @@ code {
 pre {
   @extend %code;
   @include rem(border-left-width, 6px);
-  @include rem(margin-bottom, 15px);
-  @include rem(margin-top, 10px);
+  @include rem(margin-bottom, 30px);
   @include rem(max-width, 700px);
   @include rem(padding, 15px);
-  line-height: 1.2;
+  line-height: 1.88;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0;
   overflow: auto;
   code {
     border-bottom: 0;
@@ -207,7 +223,7 @@ img {
 ol,
 ul {
   @include rem(margin, 0 0 0 25px);
-  @include rem(padding, 10px 0);
+  @include rem(padding, 0 0 24px 0);
   color: $darkgray;
   list-style-position: outside;
   li {
@@ -301,9 +317,9 @@ blockquote {
 
 .inset-left {
   @include rem(margin-bottom, 30px);
+  @include rem(margin-top, 6px);
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0;
   max-width: 100%;
   padding: 0;
   text-align: center;
