@@ -1,3 +1,7 @@
+---
+no_section_wrap: true
+---
+
 ```html
 <ul class="listing">
   <li>
