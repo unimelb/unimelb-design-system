@@ -80,9 +80,9 @@ class WebTemplates < Sinatra::Base
     @settings  = { 'title' => component_title(@component) }
     @documents = Dir.glob(File.join(settings.components_dir, path, '*.md')).sort
     @documents = @documents.map do |f|
-      p = FrontMatterParser.parse_file(f)
-      @settings.merge!(p.front_matter)
-      render_markdown p.content
+      fmp = FrontMatterParser.parse_file(f)
+      @settings.merge!(fmp.front_matter)
+      render_markdown fmp.content
     end
     slim :component
   end
@@ -108,17 +108,20 @@ class WebTemplates < Sinatra::Base
   end
 
   get '/*' do
-    viewname = params[:splat].first
+    viewname  = params[:splat].first
     file  = File.join settings.pages_dir, "#{viewname}.md"
     index = File.join settings.pages_dir, "#{viewname}/index.md"
 
     file = index unless File.exist?(file)
 
     if File.exist?(file)
-      @content = render_markdown File.read(file)
+      @settings = { 'title' => path_to_title(viewname) }
+      fmp = FrontMatterParser.parse_file(file)
+      @settings.merge!(fmp.front_matter)
+      @content = render_markdown render_markdown fmp.content
       slim :page
     else
-      "I can't find that page."
+      halt(404)
     end
   end
 
