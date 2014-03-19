@@ -36,6 +36,10 @@ body {
   background-color: $lightgray;
   font-weight: $light;
 
+  &.vertical-grid {
+    background-image: url(http://basehold.it/i/30);
+  }
+
   header {
     @include rem(margin-bottom, 30px);
     @include rem(min-height, 150px);
@@ -115,18 +119,15 @@ h1 {
 
 h2 {
   @include rem(font-size, 30px);
-  @include rem(padding, 23px 0 23px 0);
+  @include rem(padding, 23px 0);
   clear: left;
   font-weight: $light;
   line-height: 1.47;
-  &:first-child {
-    //@include rem(padding-top, 10px);
-  }
 }
 
 h3 {
   @include rem(font-size, 24.9px);
-  @include rem(padding, 28px 0 28px 0);
+  @include rem(padding, 28px 0);
   font-weight: $bold;
   line-height: 1.4;
 }
@@ -135,7 +136,7 @@ p,
 li {
   @include rem(font-size, 19px);
   @include rem(letter-spacing, 0.2px);
-  @include rem(padding, 0 0 30px 0);
+  @include rem(padding-bottom, 30px);
   line-height: 1.58;
 }
 
@@ -191,7 +192,7 @@ pre {
   @include rem(border-left-width, 6px);
   @include rem(margin-bottom, 30px);
   @include rem(max-width, 700px);
-  @include rem(padding, 15px 15px 15px 15px);
+  @include rem(padding, 15px);
   line-height: 1.88;
   margin-left: auto;
   margin-right: auto;
@@ -222,7 +223,7 @@ img {
 ol,
 ul {
   @include rem(margin, 0 0 0 25px);
-  @include rem(padding, 0 0 20px 0);
+  @include rem(padding, 0 0 24px 0);
   color: $darkgray;
   list-style-position: outside;
   li {

@@ -117,6 +117,8 @@
     }
   }
   &.nav {
+    @include rem(padding-bottom, 12px);
+    @include rem(padding-top, 8px);
     border-top: 1px solid $blue;
     height: auto;
     li {
