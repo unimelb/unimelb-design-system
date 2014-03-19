@@ -9,6 +9,8 @@
 .page-header {
   background-color: $white;
   color: $black;
+  position: relative;
+  z-index: 100;
 
   header {
     @include rem(height, 60px);
@@ -31,9 +33,8 @@
       text-decoration: underline;
     }
     &.page-header-logo {
-      @include rem(height, 50px);
-      @include rem(padding, 5px);
-      @include rem(width, 50px);
+      @include rem(height, 60px);
+      @include rem(width, 60px);
       background-color: $darkblue;
       margin-left: 0;
       img {
@@ -47,9 +48,10 @@
       @include rem(height, 75px);
       @include rem(line-height, 75px);
       &.page-header-logo {
-        @include rem(padding, 7px);
-        @include rem(height, 76px);
-        @include rem(width, 76px);
+        @include rem(margin-left, 40px);
+        @include rem(height, 140px);
+        @include rem(width, 140px);
+        position: absolute;
       }
     }
   }
@@ -92,6 +94,9 @@
     a, span {
       display: inline-block;
     }
+  }
+  @include breakpoint(desktop) {
+    @include rem(margin-left, 205px);
   }
 }
 
