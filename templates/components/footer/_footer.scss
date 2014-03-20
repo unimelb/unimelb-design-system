@@ -59,20 +59,13 @@
 
 .page-footer {
   background-color: $navy;
+  clear: left;
   color: $white;
 
   footer {
     @extend %wrapper;
     @include rem(padding-bottom, 60px);
     @include rem(padding-top, 15px);
-  }
-
-  // temp
-  p {
-    @include rem(padding, 15px 0);
-    clear: both;
-    color: $blue;
-    margin-left: 0;
   }
 
   small {

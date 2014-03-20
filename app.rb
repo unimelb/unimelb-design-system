@@ -1,7 +1,15 @@
+class SectionWrapFilter < HTML::Pipeline::Filter
+  def call
+    "<section>#{doc.to_s}</section>"
+  end
+end
+
 class WebTemplates < Sinatra::Base
   set :sprockets, Sprockets::Environment.new(root)
   set :assets_prefix, '/assets'
   set :digest_assets, true
+
+  set :pages_dir, File.join(root, 'pages')
 
   set :components_dir, File.join(root, 'templates', 'components')
   set :components, Dir.entries(components_dir).select { |f| f =~ /^[^\.]/ }
@@ -30,6 +38,7 @@ class WebTemplates < Sinatra::Base
     end
 
     def page_title
+      return @settings['title'] if @settings and !@settings['title'].empty?
       path_to_title request.path_info.split('/').last
     end
 
@@ -60,6 +69,15 @@ class WebTemplates < Sinatra::Base
       (@pipeline.call(md))[:output].to_s
     end
 
+    def render_markdown_with_section(md)
+      @pipeline_with_section = HTML::Pipeline.new [
+        HTML::Pipeline::MarkdownFilter,
+        HTML::Pipeline::SyntaxHighlightFilter,
+        SectionWrapFilter
+      ]
+      (@pipeline_with_section.call(md))[:output].to_s
+    end
+
     def syntax_highlight(html)
       Pygments.highlight(html, lexer: 'html')
     end
@@ -71,15 +89,17 @@ class WebTemplates < Sinatra::Base
     slim :index
   end
 
-  get '/contribution' do
-    slim :contribution
-  end
-
   get '/components/*' do |path|
     halt(404) unless settings.components.include? path
     @component = path
+    @settings  = { 'title' => component_title(@component) }
     @documents = Dir.glob(File.join(settings.components_dir, path, '*.md')).sort
-    @documents = @documents.map { |d| render_markdown File.read(d) }
+    @documents = @documents.map do |f|
+      fmp = FrontMatterParser.parse_file(f)
+      @settings.merge!(fmp.front_matter)
+      render_method = !!fmp.front_matter['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
+      send render_method, fmp.content
+    end
     slim :component
   end
 
@@ -101,6 +121,24 @@ class WebTemplates < Sinatra::Base
     env_sprockets = request.env.dup
     env_sprockets['PATH_INFO'] = path
     settings.sprockets.call env_sprockets
+  end
+
+  get '/*' do
+    viewname  = params[:splat].first
+    file  = File.join settings.pages_dir, "#{viewname}.md"
+    index = File.join settings.pages_dir, "#{viewname}/index.md"
+
+    file = index unless File.exist?(file)
+
+    if File.exist?(file)
+      @settings = { 'title' => path_to_title(viewname) }
+      fmp = FrontMatterParser.parse_file(file)
+      @settings.merge!(fmp.front_matter)
+      @content = render_markdown render_markdown fmp.content
+      slim :page
+    else
+      halt(404)
+    end
   end
 
 end

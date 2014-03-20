@@ -2,6 +2,7 @@
   @include rem(padding-bottom, 30px);
   @include rem(padding-left, 15px);
   @include rem(padding-right, 15px);
+  background-color: $lightgray;
   border-bottom: 1px solid darken($lightgray, 5%);
   border-top: 1px solid darken($lightgray, 5%);
   margin: 0;
@@ -22,10 +23,10 @@
     text-decoration: none;
   }
   figure {
-    @include rem(height, 100px);
     @include rem(margin-bottom, 10px);
     @include rem(margin-right, 20px);
-    @include rem(width, 100px);
+    @include rem(max-height, 100px);
+    @include rem(max-width, 100px);
     float: left;
     margin-left: 0;
     margin-top: 0;
@@ -61,6 +62,12 @@
       float: left;
       width: 25%;
     }
+    /* nth-child for IE8, up to 15 items */
+    li:first-child + li + li +li + li,
+    li:first-child + li + li +li + li + li + li +li + li,
+    li:first-child + li + li +li + li + li + li +li + li + li + li +li + li {
+      clear: left;
+    }
     a {
       @include rem(padding, 0 10px);
     }
@@ -68,10 +75,55 @@
       @include rem(max-height, 220px);
       float: none;
       height: auto;
-      width: 100%;
+      margin-right: 0;
+      max-width: 100%;
     }
     strong, p {
       text-align: center;
+    }
+  }
+}
+
+.feature-listing {
+  @extend .listing;
+  li {
+    border-top: 0 none;
+    text-align: center;
+  }
+  figure {
+    @include rem(max-height, 300px);
+    float: none;
+    margin-right: 0;
+    max-width: 100%;
+  }
+  strong {
+    @include rem(font-size, 20px);
+    @include rem(padding, 15px 0);
+  }
+  p {
+    @include rem(padding-bottom, 30px);
+  }
+
+  @include breakpoint(desktop) {
+    li {
+      width: 50%;
+    }
+    strong {
+      @include rem(font-size, 24px);
+    }
+    p {
+      padding-left: 15%;
+      padding-right: 15%;
+    }
+  }
+}
+
+.feature-listing-3 {
+  @extend .feature-listing;
+
+  @include breakpoint(desktop) {
+    li {
+      width: 33%;
     }
   }
 }
