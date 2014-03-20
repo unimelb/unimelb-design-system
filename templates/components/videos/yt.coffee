@@ -2,11 +2,12 @@ class YtEmbed
   constructor: (@el) ->
     @ytid = @el.getAttribute('data-ytid')
 
-    @trigger = document.createElement 'div'
+    @trigger = document.createElement 'img'
     @trigger.setAttribute('class', 'video-trigger')
+    @trigger.setAttribute('src', '/assets/images/play-video.png')
 
     t = this
-    @trigger.addEventListener 'click', (e) ->
+    @el.addEventListener 'click', (e) ->
       e.preventDefault()
       t.video = new YT.Player(t.el.id,
         height: '320'
