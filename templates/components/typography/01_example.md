@@ -1,3 +1,6 @@
+---
+no_section_wrap: true
+---
 <section><h2>Blockquote</h2></section>
 <blockquote>
   A person who won't read has no advantage over one who can't read.

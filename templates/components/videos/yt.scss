@@ -1,0 +1,72 @@
+[role="main"] {
+  .video {
+    height: 0;
+    max-width: 100%;
+    padding-bottom: 48.5%;
+    padding-top: 25px;
+    position: relative;
+
+    @include breakpoint(desktop) {
+      padding-bottom: 32%;
+    }
+
+    .video-trigger {
+      background-image: url(/assets/images/play-video.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    [data-ytid] {
+      background-color: $black;
+      height: 100%;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 100%;
+      img {
+        width: 100%;
+      }
+      @include breakpoint(desktop) {
+        margin: 0 18%;
+        width: 64%;
+      }
+    }
+
+    iframe {
+      height: 100%;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      @include breakpoint(desktop) {
+        margin: 0 18%;
+        width: 64%;
+      }
+    }
+  }
+
+  .video-4-3 {
+    @extend .video;
+    padding-bottom: 75%;
+
+    @include breakpoint(desktop) {
+      padding-bottom: 33%;
+    }
+
+    [data-ytid] {
+      @include breakpoint(desktop) {
+        margin: 0 28%;
+        width: 44%;
+      }
+    }
+  }
+}
