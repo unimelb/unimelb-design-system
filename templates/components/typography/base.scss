@@ -4,6 +4,10 @@
   max-width: 100%;
   @include breakpoint(wide) {
     @include rem(max-width, 1099px);
+    margin-left: 15%;
+  }
+  @include breakpoint(1600px) {
+    margin-left: 25%;
   }
 }
 
@@ -75,10 +79,6 @@ body {
   background-color: $lightgray;
   font-weight: $regular;
 
-  &.vertical-grid {
-    background-image: url(http://basehold.it/i/29);
-  }
-
   header {
     @include rem(margin-bottom, 30px);
     @include rem(min-height, 144px);
@@ -88,10 +88,13 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: $white;
-    overflow: hidden;
     position: relative;
     &.tight {
       margin-bottom: 0;
+    }
+
+    section {
+      @include rem(min-height, 82px);
     }
 
     h1 {
@@ -151,7 +154,6 @@ body {
   }
 
   footer {
-    @extend %wrapper;
     @include rem(padding-bottom, 30px);
     @include rem(padding-top, 30px);
   }
