@@ -21,12 +21,43 @@ body {
   background-color: $navy;
   color: $black;
   font-family: $ff-sans;
-  font-size: 112.5%;
+  font-size: 106.3%;
+  line-height: 1.7;
+  @include breakpoint(desktop) {
+    font-size: 112.5%;
+    line-height: 1.68;
+  }
 }
 
 .bottom-align {
-  @include breakpoint(desktop) {
-    @include rem(bottom, 45px);
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.9))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 ); /* IE6-9 */
+  @include breakpoint(height-small) {
+    @include rem(padding-top, 70px);
+    @include rem(padding-bottom, 20px);
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+.bottom-align-inverted {
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0.9) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(255%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,0.9))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 100%); /* Chrome1255+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 100%); /* Opera 11.1255+ */
+  background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 100%); /* IE1255+ */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.9) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=0 ); /* IE6-9 */
+  color: $black;
+  @include breakpoint(height-small) {
+    @include rem(padding-top, 70px);
+    @include rem(padding-bottom, 20px);
+    bottom: 0;
     position: absolute;
     width: 100%;
   }
@@ -34,28 +65,31 @@ body {
 
 [role="main"] {
   background-color: $lightgray;
-  font-weight: $light;
+  font-weight: $regular;
 
   &.vertical-grid {
-    background-image: url(http://basehold.it/i/30);
+    background-image: url(http://basehold.it/i/29);
   }
 
   header {
     @include rem(margin-bottom, 30px);
-    @include rem(min-height, 150px);
+    @include rem(min-height, 144px);
     background-color: $lightgray;
     background-image: url(/assets/images/bg-banner.jpg);
-    background-position: center 50%;
+    background-position: center top;
     background-repeat: no-repeat;
+    background-size: cover;
     color: $white;
     position: relative;
+    h1 {
+      line-height: 1;
+      padding-bottom: 0;
+    }
     p {
       @include rem(font-size, 22px);
     }
 
     @include breakpoint(desktop) {
-      @include rem(height, 480px);
-      @include rem(padding-bottom, 30px);
       p {
         @include rem(font-size, 28px);
         @include rem(padding-top, 10px);
@@ -63,7 +97,6 @@ body {
     }
 
     @include breakpoint(wide) {
-      @include rem(height, 600px);
       h1 {
         @include rem(margin-right, -200px);
       }
@@ -71,6 +104,16 @@ body {
         @include rem(font-size, 32px);
         @include rem(margin-right, -200px);
       }
+    }
+    @include breakpoint(height-small) {
+      @include rem(height, 480px);
+    }
+    @include breakpoint(height-medium) {
+      @include rem(height, 600px);
+      @include rem(padding-bottom, 30px);
+    }
+    @include breakpoint(height-big) {
+      @include rem(height, 800px);
     }
   }
 
@@ -85,6 +128,12 @@ body {
     @include rem(padding-bottom, 30px);
     @include rem(padding-top, 30px);
     margin: 0 auto;
+    @include breakpoint(wide) {
+      margin-left: 15%;
+    }
+    @include breakpoint(1600px) {
+      margin-left: 25%;
+    }
   }
 
   footer {
@@ -93,51 +142,65 @@ body {
     @include rem(padding-top, 30px);
   }
 
+  @include breakpoint(desktop) {
+    font-weight: $light;
+    &.vertical-grid {
+      background-image: url(http://basehold.it/i/30);
+    }
+  }
+
 }
 
 h1 {
-  @include rem(font-size, 40.2px);
-  @include rem(padding, 25px 0);
+  @include rem(font-size, 36px);
+  @include rem(padding, 26px 0);
   font-family: $ff-serif;
   font-weight: $regular;
-  line-height: 1;
+  line-height: 1.2;
   @include breakpoint(desktop) {
-    @include rem(font-size, 57px);
-    @include rem(padding-bottom, 20px);
+    @include rem(font-size, 47.1px);
+    @include rem(padding-bottom, 24px);
     @include rem(padding-top, 30px);
-    line-height: 1;
+    line-height: 1.26;
   }
   @include breakpoint(wide) {
-    @include rem(font-size, 95px);
+    @include rem(font-size, 72px);
     line-height: 1.04;
   }
 
   &+ h2 {
-    @include rem(padding-top, 10px);
+    @include rem(padding-top, 3px);
   }
 }
 
 h2 {
-  @include rem(font-size, 30px);
+  @include rem(font-size, 27.5px);
   @include rem(padding, 23px 0);
   clear: left;
   font-weight: $light;
-  line-height: 1.47;
+  line-height: 1.5;
+  @include breakpoint(desktop) {
+    @include rem(font-size, 29.1px);
+  }
 }
 
 h3 {
-  @include rem(font-size, 24.9px);
-  @include rem(padding, 28px 0);
+  @include rem(font-size, 22.2px);
+  @include rem(padding, 20px 0);
   font-weight: $bold;
   line-height: 1.4;
+  @include breakpoint(desktop) {
+    @include rem(font-size, 23.5px);
+    @include rem(padding, 29px 0);
+  }
 }
 
 p,
 li {
-  @include rem(font-size, 19px);
+  //@include rem(font-size, 19px);
   @include rem(letter-spacing, 0.2px);
   @include rem(padding-bottom, 30px);
-  line-height: 1.58;
+  //line-height: 1.58;
 }
 
 .feature {
@@ -153,10 +216,18 @@ li {
   -ms-behavior: url(/assets/javascripts/backgroundsize.min.htc);
   display: inline-block;
   margin: 0 auto;
+  overflow: hidden;
   position: relative;
   width: 100%;
   section {
-    background: url(/assets/images/overlay.png) center top repeat-x;
+    @include rem(padding-top, 200px);
+    background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.9))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 ); /* IE6-9 */
     bottom: 0;
     margin: 0;
     max-width: 100%;
@@ -166,7 +237,7 @@ li {
     position: absolute;
   }
   p {
-    @include rem(font-size, 22px);
+    @include rem(font-size, 19px);
     @include rem(margin, 0 15px);
     @include rem(padding-top, 45px);
     color: $white;
@@ -179,6 +250,19 @@ li {
       max-width: 80%;
     }
   }
+  @include breakpoint(height-small) {
+    @include rem(height, 650px);
+    p {
+      @include rem(font-size, 22px);
+    }
+  }
+  @include breakpoint(height-medium) {
+    @include rem(height, 850px);
+    @include rem(padding-bottom, 30px);
+  }
+  @include breakpoint(height-big) {
+    @include rem(height, 1000px);
+  }
 }
 
 code {
@@ -190,7 +274,7 @@ code {
 pre {
   @extend %code;
   @include rem(border-left-width, 6px);
-  @include rem(margin-bottom, 30px);
+  @include rem(margin-bottom, 22px);
   @include rem(max-width, 700px);
   @include rem(padding, 15px);
   line-height: 1.88;
@@ -200,6 +284,9 @@ pre {
   overflow: auto;
   code {
     border-bottom: 0;
+  }
+  @include breakpoint(desktop) {
+    @include rem(margin-bottom, 31px);
   }
 }
 
