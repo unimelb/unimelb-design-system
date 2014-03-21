@@ -16,3 +16,42 @@
     }
   }
 }
+
+.tabbed-nav {
+  .full-width {
+    background-color: rgba($navy, 0.9);
+  }
+  nav {
+    @extend %wrapper;
+    padding-bottom: 0;
+    padding-top: 0;
+    text-align: center;
+    a {
+      @include rem(font-size, 22px);
+      @include rem(padding, 20px 45px);
+      color: $white;
+      display: inline-block;
+      font-weight: $light;
+      text-decoration: none;
+      text-transform: uppercase;
+      &[data-current] {
+        font-weight: $light;
+        position: relative;
+      }
+      &[data-current]:after {
+        border: solid transparent;
+        border-top-color: rgba($navy, 0.9);
+        border-width: 10px;
+        content: " ";
+        height: 0;
+        left: 50%;
+        margin-bottom: -10px;
+        margin-left: -10px;
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        width: 0;
+      }
+    }
+  }
+}
