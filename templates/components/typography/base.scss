@@ -260,6 +260,10 @@ li {
       max-width: 80%;
     }
   }
+  blockquote {
+    color: $white;
+    line-height: 1.4;
+  }
   @include breakpoint(height-small) {
     @include rem(height, 650px);
     p {
