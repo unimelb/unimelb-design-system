@@ -1,5 +1,4 @@
 .listing {
-  @extend %fix-padding;
   @include rem(padding-bottom, 30px);
   @include rem(padding-left, 15px);
   @include rem(padding-right, 15px);
@@ -7,6 +6,7 @@
   border-bottom: 1px solid darken($lightgray, 5%);
   border-top: 1px solid darken($lightgray, 5%);
   margin: 0;
+  -moz-box-sizing: content-box;
   li {
     @include rem(margin-top, 10px);
     @include rem(min-height, 100px);
@@ -145,8 +145,6 @@
 
 .hero-listing {
   @extend .feature-listing;
-  -moz-box-sizing: content-box;
-
   li {
     position: relative;
   }

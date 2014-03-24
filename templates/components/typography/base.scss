@@ -11,12 +11,6 @@
   }
 }
 
-%fix-padding {
-  -moz-box-sizing: padding-box;
-  -webkit-box-sizing: padding-box;
-  box-sizing: padding-box;
-}
-
 %code {
   @include rem(font-size, 16px);
   @include rem(border-radius, 3px);

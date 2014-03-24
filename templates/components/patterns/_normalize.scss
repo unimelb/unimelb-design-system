@@ -1,12 +1,11 @@
 html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
 }
 body {
   font-size: 1em;
-  //-webkit-font-smoothing: antialiased;
   line-height: 1.5789;
   margin: 0;
   padding: 0;
@@ -27,7 +26,8 @@ li {
   margin: 0;
   padding: 0;
 }
-iframe[src^='//www.youtube.com'],
-iframe[src^='//player.vimeo.com'] {
-  width: 100%;
+* {
+   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }

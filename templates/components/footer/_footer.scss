@@ -1,62 +1,3 @@
-// .page-authorisation {
-//   background-color: $paleblue;
-//   box-shadow: 0 -2px 6px 1px rgba($black, 0.1);
-//   color: $midblue;
-
-//   >section {
-//     @extend %wrapper;
-//     @extend %clearfix;
-//     @include rem(padding-bottom, 45px);
-//     @include rem(padding-top, 30px);
-//   }
-
-//   p {
-//     @include rem(font-size, 14px);
-//     @include rem(padding-bottom, 5px);
-//     font-weight: $light;
-//     max-width: 100%;
-//   }
-
-//   strong {
-//     font-weight: $regular;
-//   }
-
-// }
-
-// .page-authorisation-text {
-//   float: left;
-// }
-
-// .page-authorisation-logos {
-//   clear: left;
-//   a {
-//     @include rem(margin-top, 30px);
-//     display: inline-block;
-//     text-align: center;
-//     width: 33%;
-//   }
-//   img {
-//     @include rem(max-height, 50px);
-//   }
-//   .apru img {
-//     @include rem(margin-bottom, 10px);
-//     @include rem(max-height, 30px);
-//   }
-//   .universitas21 img {
-//     @include rem(margin-bottom, 10px);
-//     @include rem(max-height, 40px);
-//   }
-//   @include breakpoint(desktop) {
-//     clear: none;
-//     @include rem(padding-top, 30px);
-//     float: right;
-//     a {
-//       @include rem(margin-left, 45px);
-//       width: auto;
-//     }
-//   }
-// }
-
 .page-footer {
   background-color: $navy;
   clear: left;
@@ -66,6 +7,8 @@
     @extend %wrapper;
     @include rem(padding-bottom, 60px);
     @include rem(padding-top, 15px);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   small {
