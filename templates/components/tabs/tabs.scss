@@ -21,6 +21,12 @@
   .tabbed-nav {
     .full-width {
       background-color: rgba($navy, 0.9);
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#e50c304a,endColorstr=#e50c304a);
+      border-bottom: 1px solid transparent;
+      // IE fix
+      @include breakpoint(0) {
+        border-bottom: 0 none;
+      }
     }
     nav {
       @extend %wrapper;
@@ -41,6 +47,7 @@
         }
         &[data-current]:after {
           border: solid transparent;
+          border-top-color: #23445A;
           border-top-color: rgba($navy, 0.9);
           border-width: 10px;
           content: " ";
@@ -56,7 +63,10 @@
         @include breakpoint(desktop) {
           @include rem(font-size, 22px);
           @include rem(padding, 20px 45px);
-       }
+        }
+      }
+      @include breakpoint(desktop) {
+        margin: 0 auto;
       }
     }
     section {

@@ -1,4 +1,5 @@
 .listing {
+  @extend %fix-padding;
   @include rem(padding-bottom, 30px);
   @include rem(padding-left, 15px);
   @include rem(padding-right, 15px);
@@ -56,16 +57,14 @@
     float: left;
     padding-left: 10%;
     padding-right: 10%;
+    width: 80%;
     li {
       @include rem(padding-bottom, 60px);
       border: 0;
       float: left;
       width: 25%;
     }
-    /* nth-child for IE8, up to 15 items */
-    li:first-child + li + li +li + li,
-    li:first-child + li + li +li + li + li + li +li + li,
-    li:first-child + li + li +li + li + li + li +li + li + li + li +li + li {
+    li:nth-child(4n+1) {
       clear: left;
     }
     a {
@@ -95,6 +94,10 @@
     float: none;
     margin-right: 0;
     max-width: 100%;
+    text-align: center;
+  }
+  img {
+    float: none;
   }
   strong {
     @include rem(font-size, 20px);
@@ -107,6 +110,12 @@
   @include breakpoint(desktop) {
     li {
       width: 50%;
+    }
+    li:nth-child(4n+1) {
+      clear: none;
+    }
+    li:nth-child(2n+1) {
+      clear: left;
     }
     strong {
       @include rem(font-size, 24px);
@@ -125,5 +134,66 @@
     li {
       width: 33%;
     }
+    li:nth-child(2n+1) {
+      clear: none;
+    }
+    li:nth-child(3n+1) {
+      clear: left;
+    }
   }
 }
+
+.hero-listing {
+  @extend .feature-listing;
+
+  li {
+    position: relative;
+  }
+  a {
+    background-size: cover;
+    -ms-behavior: url(/assets/javascripts/backgroundsize.min.htc);
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+  }
+  figure {
+    @include rem(max-height, 500px);
+    margin: 0;
+  }
+  .inner {
+    background-color: rgba($black, 0.6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+    margin: 0;
+    max-width: 100%;
+    padding: 3%;
+    strong {
+      @include rem(font-size, 40px);
+      @include rem(padding-top, 30px);
+      color: $white;
+      line-height: 1.1;
+    }
+    p {
+      @include rem(font-size, 18px);
+      color: $white;
+      padding: 0;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    li {
+      padding-bottom: 0;
+      width: 100%;
+    }
+    .inner {
+      padding: 10% 20%;
+      strong {
+        @include rem(font-size, 60px);
+        line-height: 1.2;
+      }
+      p {
+        @include rem(font-size, 24px);
+      }
+    }
+  }
+}
+
