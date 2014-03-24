@@ -1,14 +1,16 @@
 [role="main"] {
   .video {
+    @include rem(margin-top, 31px);
     height: 0;
     margin-left: auto;
-    max-width: 100%;
-    padding-bottom: 48.5%;
-    padding-top: 25px;
+    max-width: 1099px;
+    padding-bottom: 56.25%;
+    padding-top: 0;
     position: relative;
 
-    @include breakpoint(desktop) {
-      padding-bottom: 32%;
+    @include breakpoint(wide) {
+      max-width: 100%;
+      padding-bottom: 39.45%;
     }
 
     [data-ytid] {
@@ -41,9 +43,9 @@
         }
       }
 
-      @include breakpoint(desktop) {
-        margin: 0 18%;
-        width: 64%;
+      @include breakpoint(wide) {
+        margin-left: 11%;
+        width: 70%;
       }
     }
 
@@ -55,9 +57,9 @@
       top: 0;
       width: 100%;
 
-      @include breakpoint(desktop) {
-        margin: 0 18%;
-        width: 64%;
+      @include breakpoint(wide) {
+        margin-left: 11%;
+        width: 70%;
       }
     }
   }
