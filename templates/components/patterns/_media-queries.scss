@@ -43,7 +43,7 @@
     }
   }
   @else if $point == height-medium {
-    @media screen and (min-height: 950px) {
+    @media screen and (min-height: 850px) {
       & {
         @content;
       }

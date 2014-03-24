@@ -122,11 +122,14 @@ body {
         @include rem(margin-right, -200px);
       }
     }
+    @include breakpoint(height-smallest) {
+      @include rem(height, 550px);
+    }
     @include breakpoint(height-small) {
-      @include rem(height, 480px);
+      @include rem(height, 650px);
     }
     @include breakpoint(height-medium) {
-      @include rem(height, 600px);
+      @include rem(height, 700px);
       @include rem(padding-bottom, 30px);
     }
     @include breakpoint(height-big) {
