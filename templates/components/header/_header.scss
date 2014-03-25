@@ -57,8 +57,8 @@
     }
 
     @include breakpoint(desktop) {
-      @include rem(height, 75px);
-      @include rem(line-height, 75px);
+      @include rem(height, 90px);
+      @include rem(line-height, 90px);
       &.page-header-logo {
         @include rem(margin-left, 40px);
         @include rem(height, 140px);
@@ -141,8 +141,9 @@
   }
   @include breakpoint(desktop) {
     .page-header-icon {
-      @include rem(padding, 7.5px 30px 7.5px 30px);
+      @include rem(padding, 0px 30px 0px 30px);
       img {
+        @include rem(margin-top, 15px);
         @include rem(max-height, 39px);
         @include rem(padding-bottom, 5px);
         @include rem(padding-top, 15px);

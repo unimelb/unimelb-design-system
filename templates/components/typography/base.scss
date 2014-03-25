@@ -186,6 +186,9 @@ body {
         list-style-type: none;
       }
     }
+    & + .video {
+      @include rem(margin-top, -30px);
+    }
     @include breakpoint(wide) {
       margin-left: 15%;
     }
@@ -409,14 +412,13 @@ dl {
 }
 
 blockquote {
-  @include rem(font-size, 24px);
+  @include rem(font-size, 19px);
   @include rem(padding, 12px 15px 0);
   color: $darkblue;
   font-family: $ff-serif;
   font-style: italic;
   font-weight: $regular;
-  margin: 0 15%;
-  max-width: 70%;
+  margin: 0 8%;
   quotes: "\201C""\201D";
   text-align: left;
   &:after,
@@ -456,6 +458,11 @@ blockquote {
     padding: 0;
   }
 
+  @include breakpoint(tablet) {
+    @include rem(font-size, 24px);
+    margin: 0 10%;
+    max-width: 80%;
+  }
   @include breakpoint(desktop) {
     margin: 0 10%;
     max-width: 80%;

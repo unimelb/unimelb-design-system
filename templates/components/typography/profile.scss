@@ -57,6 +57,10 @@
           //border-bottom: 1px dotted $navy;
           padding-bottom: 0;
         }
+
+        & + .video {
+          @include rem(margin-top, 31px);
+        }
       }
 
     }
