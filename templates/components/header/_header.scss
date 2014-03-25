@@ -43,6 +43,9 @@
         max-width: 100%;
       }
     }
+    &.floating {
+      @include rem(margin-top, 30px);
+    }
 
     @include breakpoint(desktop) {
       @include rem(height, 75px);
@@ -61,7 +64,7 @@
     @include rem(font-size, 13px);
     @include rem(height, 40px);
     @include rem(line-height, 40px);
-    @include rem(padding, 5px 10px);
+    @include rem(padding, 0 10px 5px 10px);
     font-weight: $light;
 
     @include breakpoint(desktop) {

@@ -38,7 +38,7 @@
   }
   img {
     display: block;
-    float: left;
+    float: none;
     margin: 0 auto;
     max-width: 100%;
   }
@@ -50,8 +50,17 @@
   }
   p {
     @include rem(font-size, 14px);
+    @include rem(margin-left, 120px);
     color: $midgray;
     padding-bottom: 0;
+  }
+
+  @include breakpoint(0) {
+    img {
+      margin: 0 auto 0 -33%;
+      max-height: 100%;
+      max-width: 200%;
+    }
   }
 
   @include breakpoint(desktop) {
@@ -60,6 +69,13 @@
     padding-left: 10%;
     padding-right: 10%;
     width: 80%;
+    img {
+      margin: 0 auto;
+      max-width: 100%;
+    }
+    p {
+      margin-left: 0;
+    }
     li {
       @include rem(padding-bottom, 60px);
       border: 0;
@@ -107,6 +123,7 @@
   }
   p {
     @include rem(padding-bottom, 30px);
+    margin-left: 0;
   }
 
   @include breakpoint(desktop) {
@@ -176,7 +193,9 @@
     p {
       @include rem(font-size, 18px);
       color: $white;
-      padding: 0;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 0;
     }
   }
 

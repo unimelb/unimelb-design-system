@@ -36,8 +36,7 @@
     }
     nav {
       @extend %wrapper;
-      padding-bottom: 0;
-      padding-top: 0;
+      padding: 0;
       text-align: center;
       a {
         @include rem(font-size, 16px);
@@ -72,6 +71,7 @@
         }
       }
       @include breakpoint(desktop) {
+        @include rem(padding, 15px);
         margin: 0 auto;
       }
     }
