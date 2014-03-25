@@ -173,6 +173,25 @@ body {
     &.tight {
       padding-bottom: 0;
     }
+    &.links {
+      padding-top: 0;
+      h2 {
+        @include rem(font-size, 13px);
+        font-weight: $bold;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      ul {
+        margin-left: 0;
+      }
+      p,
+      li {
+        @include rem(font-size, 16px);
+      }
+      li {
+        list-style-type: none;
+      }
+    }
     @include breakpoint(wide) {
       margin-left: 15%;
     }
@@ -279,7 +298,7 @@ li {
     @include rem(margin, 0 15px);
     @include rem(padding-top, 45px);
     color: $white;
-    font-weight: $regular;
+    font-weight: $light;
     max-width: 100%;
     padding-bottom: 0;
 
@@ -333,16 +352,21 @@ pre {
 }
 
 a {
-  color: darken($cherry, 15%);
+  color: $cyan;
   text-decoration: underline;
   &:hover {
-    color: $cherry;
+    color: darken($cyan, 15%);
   }
 }
 
 img {
   border: 0;
   max-width: 100%;
+}
+
+hr {
+  border-top: 0;
+  border-bottom: 1px solid darken($lightgray, 5%);
 }
 
 .button {

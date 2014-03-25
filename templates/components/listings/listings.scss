@@ -176,6 +176,7 @@
     p {
       @include rem(font-size, 18px);
       color: $white;
+      font-weight: $thin;
       padding: 0;
     }
   }
@@ -197,4 +198,3 @@
     }
   }
 }
-
