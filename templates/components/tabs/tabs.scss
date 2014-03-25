@@ -9,12 +9,18 @@
       }
     }
   }
-  section {
+  .tab {
     display: none;
+    margin: 0;
+    padding: 0;
     &[data-current] {
       display: block;
     }
   }
+}
+
+[data-tab] {
+  cursor: pointer;
 }
 
 [role="main"] {
@@ -69,7 +75,7 @@
         margin: 0 auto;
       }
     }
-    section {
+    .tab {
       margin-left: auto;
       max-width: 100%;
       padding: 0;

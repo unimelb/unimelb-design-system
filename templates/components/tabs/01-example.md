@@ -10,12 +10,12 @@
     <a>2nd</a>
     <a>3rd</a>
   </nav>
-  <section>
+  <section class="tab">
     <p>
       Some text
     </p>
   </section>
-  <section>
+  <section class="tab">
     <p>
       Some text in the 2nd tab
     </p>
@@ -23,7 +23,7 @@
       Second para
     </p>
   </section>
-  <section>
+  <section class="tab">
     <p>
       The 3rd table
     </p>
@@ -39,12 +39,12 @@
     <a>2nd</a>
     <a>3rd</a>
   </nav>
-  <section>
+  <section class="tab">
     <p>
       Some text
     </p>
   </section>
-  <section>
+  <section class="tab">
     <p>
       Some text in the 2nd tab
     </p>
@@ -52,7 +52,7 @@
       Second para
     </p>
   </section>
-  <section>
+  <section class="tab">
     <p>
       The 3rd table
     </p>
