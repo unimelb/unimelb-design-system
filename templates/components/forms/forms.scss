@@ -8,7 +8,7 @@
 @mixin appearance($a) {
   -webkit-appearance: $a;
   -moz-appearance: $a;
-  -ms-appearance: $a;  
+  -ms-appearance: $a;
   appearance: $a;
 }
 
@@ -35,27 +35,6 @@
   }
   66% {
     opacity: 0.4;
-  }
-}
-
-%flatbutton {
-  @include rem(border-radius, 3px);
-  @include rem(font-size, 20px);
-  @include rem(padding, 20px 60px);
-  background-color: $green;
-  border: 0;
-  border-bottom: 5px solid darken($green, 3%);
-  border-radius: 0;
-  color: $white;
-  cursor: pointer;
-  display: inline-block;
-  margin: 20px 0;
-  text-align: center;
-  text-decoration: none;
-  &:hover {
-    border-bottom-width: 1px;
-    margin-top: 24px;
-    color: $white;
   }
 }
 
@@ -146,10 +125,4 @@ fieldset {
   input[type="checkbox"] {
     @extend %selectcontrol;
   }
-}
-
-input[type="submit"],
-input[type="button"] {
-  @extend %flatbutton;
-  width: auto;
 }

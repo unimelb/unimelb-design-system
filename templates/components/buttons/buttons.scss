@@ -1,0 +1,75 @@
+%flatbutton {
+  @include rem(font-size, 20px);
+  @include rem(padding, 20px 60px);
+  background-color: $green;
+  border: 0;
+  border-bottom: 5px solid darken($green, 3%);
+  border-radius: 0;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: $regular;
+  margin: 20px 0;
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+    border-bottom-width: 1px;
+    margin-top: 24px;
+    color: $white;
+  }
+}
+
+%outlinebutton {
+  @include rem(border-radius, 5px);
+  @include rem(border-width, 2px);
+  @include rem(font-size, 15px);
+  @include rem(letter-spacing, 1px);
+  @include rem(margin, 20px 0);
+  @include rem(padding, 20px 60px 20px 20px);
+  border-style: solid;
+  border-color: $black;
+  color: $black;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: $bold;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:after {
+    @include rem(font-size, 30px);
+    @include rem(padding-left, 15px);
+    @include rem(top, 4px);
+    content: "\2192";
+    position: absolute;
+  }
+  &:hover {
+    background-color: rgba($white, 0.5);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff,endColorstr=#7fffffff);
+    color: $lighterblue;
+    border-color: transparent;
+  }
+}
+
+input[type="submit"],
+input[type="button"] {
+  @extend %flatbutton;
+  width: auto;
+}
+
+.button {
+  @extend %flatbutton;
+}
+
+.button-outline {
+  @extend %outlinebutton;
+}
+
+.button-outline-inverse {
+  @extend %outlinebutton;
+  color: $white;
+  border-color: $white;
+  &:hover {
+    color: $midblue;
+  }
+}

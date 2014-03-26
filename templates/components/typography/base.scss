@@ -366,10 +366,6 @@ hr {
   border-bottom: 1px solid darken($lightgray, 5%);
 }
 
-.button {
-  @extend %flatbutton;
-}
-
 ol,
 ul {
   @include rem(margin, 0 0 0 25px);
