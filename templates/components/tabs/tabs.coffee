@@ -10,8 +10,8 @@ class Tabbed
 
     for el in @el.querySelectorAll('[data-tab]')
       el.addEventListener 'click', (e) ->
-        e.preventDefault()
-        t.moveindex(el.getAttribute('data-tab')-1)
+        t.moveindex(this.getAttribute('data-tab')-1)
+        e.preventDefault() unless (this.hasAttribute('href') and this.getAttribute('href')[0]=="#")
 
     @move(@el.querySelector('[data-current]')) if @el.querySelector('[data-current]')
     @move(@el.querySelector('nav a:first-child')) if Array.prototype.slice.call(@el.querySelectorAll('[data-current]')).length==0
