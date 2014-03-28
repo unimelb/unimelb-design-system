@@ -2,7 +2,6 @@
 //= require_tree ./components
 
 var supportedmodernbrowser = !/(MSIE 7.0)/g.test(navigator.userAgent);
-var supportedsvg = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect;
 
 (function() {
   'use strict';
@@ -91,7 +90,7 @@ var supportedsvg = !!document.createElementNS && !!document.createElementNS('htt
 
   try {
     // Can't be used with DOM elements in IE < 9
-    _slice.call(document.documentElement); 
+    _slice.call(document.documentElement);
   }
   catch (e) { // Fails in IE < 9
     Array.prototype.slice = function (begin, end) {
@@ -99,19 +98,19 @@ var supportedsvg = !!document.createElementNS && !!document.createElementNS('htt
       // Although IE < 9 does not fail when applying Array.prototype.slice
       // to strings, here we do have to duck-type to avoid failing
       // with IE < 9's lack of support for string indexes
-      if (this.charAt) { 
+      if (this.charAt) {
         for (i = 0; i < arrl; i++) {
           a.push(this.charAt(i));
         }
       }
-      // This will work for genuine arrays, array-like objects, 
+      // This will work for genuine arrays, array-like objects,
       // NamedNodeMap (attributes, entities, notations),
       // NodeList (e.g., getElementsByTagName), HTMLCollection (e.g., childNodes),
       // and will not fail on other DOM objects (as do DOM elements in IE < 9)
-      else { 
+      else {
         // IE < 9 (at least IE < 9 mode in IE 10) does not work with
         // node.attributes (NamedNodeMap) without a dynamically checked length here
-        for (i = 0; i < this.length; i++) { 
+        for (i = 0; i < this.length; i++) {
           a.push(this[i]);
         }
       }

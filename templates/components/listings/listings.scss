@@ -63,6 +63,12 @@
     }
   }
 
+  @include breakpoint(tablet) {
+    img {
+      margin-left: auto;
+    }
+  }
+
   @include breakpoint(desktop) {
     @include rem(padding-top, 60px);
     float: left;

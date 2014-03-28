@@ -57,10 +57,18 @@ body {
   @extend %grad-bottom;
   @include rem(padding-top, 70px);
   @include rem(padding-bottom, 20px);
+  position: relative;
   width: 100%;
-  @include breakpoint(height-small) {
+  @include breakpoint(tablet) {
     bottom: 0;
     position: absolute;
+  }
+  @include breakpoint(height-smallest) {
+    bottom: 0;
+    position: absolute;
+  }
+  @media screen and (min-width: 481px) and (max-height:639px) {
+    position: relative;
   }
 }
 .bottom-align-inverted {
@@ -82,7 +90,7 @@ body {
   header {
     @include rem(margin-bottom, 30px);
     @include rem(min-height, 144px);
-    background-color: $lightgray;
+    background-color: $black;
     background-image: url(/assets/images/bg-banner.jpg);
     background-position: center top;
     background-repeat: no-repeat;
@@ -94,14 +102,16 @@ body {
       margin-bottom: 0;
     }
     .video-loop {
+      background-color: $black;
       display: none;
-      @include breakpoint(tablet) {
+      @include breakpoint(wide) {
         display: block;
         height: 100%;
         overflow: hidden;
         position: absolute;
         width: 100%;
         video {
+          background-color: $black;
           min-height: 100%;
           min-width: 100%;
         }
@@ -166,6 +176,9 @@ body {
     margin: 0 auto;
     &.tight {
       padding-bottom: 0;
+      p:last-child {
+        padding-bottom: 0;
+      }
     }
     &.links {
       padding-top: 0;
@@ -409,12 +422,15 @@ dl {
 
 blockquote {
   @include rem(font-size, 19px);
-  @include rem(padding, 12px 15px 0);
+  @include rem(margin-top, 30px);
+  @include rem(padding, 30px 15px 0);
   color: $darkblue;
   font-family: $ff-serif;
   font-style: italic;
   font-weight: $regular;
-  margin: 0 8%;
+  margin-bottom: 0;
+  margin-left: 8%;
+  margin-right: 8%;
   quotes: "\201C""\201D";
   text-align: left;
   &:after,

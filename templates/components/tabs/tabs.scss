@@ -1,6 +1,7 @@
 [data-tabbed] {
   position: relative;
   nav {
+    display: none;
     a {
       cursor: pointer;
       font-weight: 400;
@@ -10,7 +11,7 @@
     }
   }
   .tab {
-    display: none;
+//    display: none;
     margin: 0;
     padding: 0;
     &[data-current] {
