@@ -1,6 +1,5 @@
-header
-  section
-    h1= "Source view of '#{layout_title(@file)}'"
-
 section
-  == @source
+  h1
+    ' Source of
+    em==layout_title(@file)
+.fullwidth== @source

@@ -213,13 +213,14 @@ body {
   footer {
     @include rem(padding-bottom, 30px);
     @include rem(padding-top, 30px);
+    &.alt {
+      background-color: $lightestblue;
+      box-shadow: 0 6px 6px 4px rgba($black, 0.3);
+    }
   }
 
   @include breakpoint(desktop) {
     font-weight: $light;
-    &.vertical-grid {
-      background-image: url(http://basehold.it/i/30);
-    }
   }
 
 }
@@ -320,6 +321,10 @@ li {
   blockquote {
     color: $white;
     line-height: 1.4;
+  }
+  pre {
+    @include rem(margin, 0 30px);
+    max-width: 100%;
   }
   @include breakpoint(height-small) {
     @include rem(height, 650px);
