@@ -173,6 +173,12 @@
   li {
     position: relative;
   }
+  h2 {
+    @include rem(margin-bottom, 30px);
+    background-size: cover;
+    padding: 0;
+    position: relative;
+  }
   a {
     background-size: cover;
     -ms-behavior: url(/assets/javascripts/backgroundsize.min.htc);
@@ -223,4 +229,8 @@
       }
     }
   }
+}
+
+.noborder {
+  border: 0;
 }

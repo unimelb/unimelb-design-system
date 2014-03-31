@@ -97,8 +97,12 @@ class WebTemplates < Sinatra::Base
     @documents = @documents.map do |f|
       fmp = FrontMatterParser.parse_file(f)
       @settings.merge!(fmp.front_matter)
-      render_method = !!fmp.front_matter['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
-      send render_method, fmp.content
+      if !!fmp.front_matter['bypass_markdown']
+        slim fmp.content, layout: false
+      else
+        render_method = !!fmp.front_matter['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
+        send render_method, fmp.content
+      end
     end
     slim :component
   end

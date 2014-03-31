@@ -77,9 +77,13 @@
       }
     }
     .tab {
+      @include rem(margin-top, -70px);
+      @include rem(padding-top, 70px);
       margin-left: auto;
       max-width: 100%;
-      padding: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }

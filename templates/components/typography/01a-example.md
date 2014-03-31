@@ -1,0 +1,59 @@
+---
+no_section_wrap: true
+bypass_markdown: true
+---
+#typography.hold
+  aside
+    dl
+      dt Large headlines
+      dd Only used on the hero. The background image must ensure readibility of the headline.
+  dl.bside
+    dt class="sans thin" Roboto Thin
+    dd class="sans thin"
+      span A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+      span a b c d e f g h i j k l m n o p q r s t u v w x y z
+      span 1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( )
+
+  aside
+    dl
+      dt Body text
+      dd Used for standard copy text.
+  dl.bside
+    dt class="sans light" Roboto Light
+    dd class="sans light"
+      span A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+      span a b c d e f g h i j k l m n o p q r s t u v w x y z
+      span 1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( )
+
+  aside
+    dl
+      dt Special highlighting
+      dd Image captions, quoting etc.
+  dl.bside
+    dt class="sans light": em Roboto Light Italic
+    dd class="sans light": em
+      span A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+      span a b c d e f g h i j k l m n o p q r s t u v w x y z
+      span 1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( )
+
+  aside
+    dl
+      dt General headlines
+      dd Font used for all standard headlines within a text.
+  dl.bside
+    dt class="sans regular" Roboto Regular
+    dd class="sans regular"
+      span A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+      span a b c d e f g h i j k l m n o p q r s t u v w x y z
+      span 1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( )
+
+  aside
+    dl
+      dt Article headlines
+      dd Only used as the headline for a single article.
+  dl.bside
+    dt class="sans bold" Roboto Bold
+    dd class="sans bold"
+      span A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+      span a b c d e f g h i j k l m n o p q r s t u v w x y z
+      span 1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( )

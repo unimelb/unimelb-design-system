@@ -25,7 +25,7 @@ html.no-js
       div role="main"
         == yield
 
-        - unless request.path_info =~ %r{^(/|/contribution)$}
+        - unless request.path_info =~ %r{^(/|/contribution/responsive)$}
           footer.alt
             section
               h2 Collaboration

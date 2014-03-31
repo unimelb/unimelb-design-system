@@ -53,6 +53,10 @@ body {
   }
 }
 
+.clearfix {
+  @extend %clearfix;
+}
+
 .bottom-align {
   @extend %grad-bottom;
   @include rem(padding-top, 70px);
@@ -81,6 +85,28 @@ body {
     position: absolute;
     width: 100%;
   }
+}
+
+.sans {
+  font-family: $ff-sans;
+}
+.fixed {
+  font-family: $ff-fixed;
+}
+.serif {
+  font-family: $ff-serif;
+}
+.thin {
+  font-weight: $thin;
+}
+.light {
+  font-weight: $light;
+}
+.regular {
+  font-weight: $regular;
+}
+.bold {
+  font-weight: $bold;
 }
 
 [role="main"] {
@@ -213,6 +239,7 @@ body {
   footer {
     @include rem(padding-bottom, 30px);
     @include rem(padding-top, 30px);
+    clear: both;
     &.alt {
       background-color: $lightestblue;
       box-shadow: 0 6px 6px 4px rgba($black, 0.3);
@@ -382,6 +409,7 @@ img {
 hr {
   border-top: 0;
   border-bottom: 1px solid darken($lightgray, 5%);
+  clear: both;
 }
 
 ol,
@@ -409,20 +437,6 @@ ol li {
 
 ul li {
   list-style-type: disc;
-}
-
-dl {
-  @extend %clearfix;
-  @include rem(font-size, 12px);
-  @include rem(padding, 10px 15px);
-  dt {
-    @include rem(width, 120px);
-    clear: left;
-    float: left;
-  }
-  dd {
-    float: left;
-  }
 }
 
 blockquote {
@@ -577,5 +591,82 @@ blockquote {
         right: auto;
       }
     }
+  }
+}
+
+dl {
+  @extend %clearfix;
+  @include rem(font-size, 12px);
+  @include rem(padding, 10px 15px);
+  dt {
+    @include rem(width, 120px);
+    clear: left;
+    float: left;
+  }
+  dd {
+    float: left;
+  }
+  &.bside {
+    @include rem(font-size, 15px);
+    dt {
+      margin: 0;
+      text-align: left;
+      width: 15%;
+    }
+    dd {
+      margin: 0 0 0 2%;
+      width: 83%;
+    }
+    span {
+      @include rem(font-size, 28px);
+      letter-spacing: -0.125em;
+      line-height: 1;
+    }
+    @include breakpoint(desktop) {
+      @include rem(padding, 10px 30px);
+      display: inline-block;
+      max-width: 900px;
+      width: 75%;
+      dt {
+        text-align: right;
+      }
+    }
+  }
+}
+
+aside {
+  clear: both;
+  width: 100%;
+  dt {
+    @include rem(letter-spacing, 1px);
+    @include rem(padding-bottom, 5px);
+    font-weight: $bold;
+    margin-left: 0;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  dd {
+    margin-left: 0;
+    width: 100%;
+  }
+  @include breakpoint(desktop) {
+    display: inline-block;
+    max-width: 300px;
+    width: 25%;
+  }
+}
+
+.hold {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.alert {
+  @include rem(margin-bottom, 15px);
+  @include rem(padding, 15px);
+  background-color: $paleyellow;
+  box-shadow: 0 2px 3px rgba($black, 0.1);
+  a {
+    color: darken($paleyellow, 65%);
   }
 }
