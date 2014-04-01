@@ -1,21 +1,68 @@
-%flatbutton {
-  @include rem(font-size, 20px);
-  @include rem(padding, 20px 60px);
-  background-color: $green;
+%raisedbutton {
+  @include rem(border-radius, 5px);
+  @include rem(font-size, 15px);
+  @include rem(padding, 17px 40px);
+  background-color: $brand;
   border: 0;
-  border-bottom: 5px solid darken($green, 3%);
-  border-radius: 0;
+  border-bottom: 5px solid darken($brand, 10%);
   color: $white;
   cursor: pointer;
   display: inline-block;
-  font-weight: $regular;
+  font-weight: $bold;
+  letter-spacing: 2px;
   margin: 20px 0;
   text-align: center;
   text-decoration: none;
+  text-transform: uppercase;
   &:hover {
+    color: $white;
     border-bottom-width: 1px;
     margin-top: 24px;
-    color: $white;
+  }
+  &.warning {
+    background-color: $warning;
+    border-bottom-color: darken($warning, 10%);
+  }
+  &.cta {
+    background-color: $cta;
+    border-bottom-color: darken($cta, 10%);
+  }
+  &.highlight {
+    background-color: $highlight;
+    border-bottom-color: darken($highlight, 10%);
+  }
+  &.soft {
+    background-color: $soft;
+    border-bottom-color: darken($soft, 10%);
+    color: $midblue;
+    &:hover {
+      background-color: $gray;
+      color: $darkblue;
+    }
+  }
+}
+
+%flatbutton {
+  @extend %raisedbutton;
+  @include rem(border-radius, 2px);
+  @include rem(font-size, 12px);
+  @include rem(padding, 10px 40px 10px 15px);
+  border-bottom: 0;
+  margin: 0;
+  position: relative;
+  &.soft {
+    background-color: $gray;
+    color: $darkblue;
+  }
+  &:hover {
+    margin-top: 0;
+  }
+  &:after {
+    @include rem(font-size, 30px);
+    @include rem(padding-left, 5px);
+    @include rem(top, -7px);
+    content: "\ffeb";
+    position: absolute;
   }
 }
 
@@ -53,11 +100,17 @@
 
 input[type="submit"],
 input[type="button"] {
-  @extend %flatbutton;
+  @extend %raisedbutton;
+  @extend %raisedbutton.cta;
+  @extend %flatbutton.cta;
   width: auto;
 }
 
 .button {
+  @extend %raisedbutton;
+}
+
+.button-small {
   @extend %flatbutton;
 }
 

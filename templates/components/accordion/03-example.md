@@ -1,3 +1,4 @@
+## Single open block only
 ```html
 <ul data-single-focus class="accordion-test">
   <li>

@@ -1,20 +1,15 @@
+### On this page
+
+* [Implementation](#implementation)
+* [In page tabs](#inpage)
+* [Full width navigation tabs](#fullwidth)
+
 ## Implementation
-Tabbed content, with loosely opinionated semantics (tab titles are in a <code>nav</code> block, tab content in <code>section</code> blocks).
-
-## Dependencies
-
-Some minor DOM extensions (IE8+ only)
-
-## Options
-
 <ul class="nobullet">
   <li><code>data-tabbed</code> &ndash; Overall tab container <small>required</small></li>
   <li><code>data-current</code> &ndash; Pre-select tab <small class="opt">optional</small></li>
   <li><code>data-tab</code> &ndash; Link to tab <small>optional</small></li>
 </ul>
-
-## Structure
-
 ```html
 <div data-tabbed>
   <nav>
@@ -32,3 +27,4 @@ Some minor DOM extensions (IE8+ only)
   ...
 </div>
 ```
+Tabs are assigned an <code>id</code> to allow the link to snap to the top, and degrade gracefully in older browsers. To prevent hidden content on unsupported browsers, the <code>nav</code> is hidden and all tab content is displayed by default.

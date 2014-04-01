@@ -1,38 +1,15 @@
-## Example
-
+<h2 id="normal">Normal Buttons</h2>
 ```html
-<form>
-  <input type="button" value="Button">
-</form>
+<a class="button">Brand (default)</a>
+<a class="button highlight">Highlight</a>
+<a class="button cta">Call to action</a>
+<a class="button warning">Warning</a>
+<a class="button soft">Soft</a>
 
-<form>
-  <input type="submit">
-</form>
-
-<a class="button">Button</a>
-
-<div style="background:url(/assets/images/irrigation.jpg) 95% 85% no-repeat; text-align:center; padding:30px">
-  <a class="button-outline">Outline Button</a>
-</div>
-
-<div style="background:url(/assets/images/bg-banner.jpg) 15% 90% no-repeat; text-align:center; padding:30px">
-  <a class="button-outline-inverse">Inverse Button</a>
-</div>
+<a class="button-small">Brand (default)</a>
+<a class="button-small highlight">Highlight</a>
+<a class="button-small cta">Call to action</a>
+<a class="button-small warning">Warning</a>
+<a class="button-small soft">Soft</a>
 ```
-<form>
-  <input type="button" value="Button">
-</form>
-
-<form>
-  <input type="submit">
-</form>
-
-<a class="button">Flat Button</a>
-
-<div style="background:url(/assets/images/irrigation.jpg) 95% 85% no-repeat; text-align:center; padding:30px">
-  <a class="button-outline">Outline Button</a>
-</div>
-
-<div style="background:url(/assets/images/bg-banner.jpg) 15% 90% no-repeat; text-align:center; padding:30px">
-  <a class="button-outline-inverse">Inverse Button</a>
-</div>
+Form inputs with type <code>submit</code> and <code>button</code> have a default style of <code>button cta</code>.

@@ -86,4 +86,37 @@
       padding-right: 0;
     }
   }
+
+  [data-tabbed].tabbed {
+    @extend %clearfix;
+    margin-bottom: 30px;
+    width: 100%;
+
+    nav {
+      @include rem(font-size, 18px);
+      a {
+        @include rem(border-radius, 5px 5px 0 0);
+        @include rem(padding, 15px 20px 5px);
+        background-color: inherit;
+        color: $gray;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: $bold;
+        text-decoration: none;
+        &:hover {
+          color: $base;
+        }
+        &[data-current] {
+          background-color: darken($lightgray, 2%);
+          color: $base;
+        }
+      }
+    }
+
+    .tab {
+      @include rem(padding, 15px 20px);
+      background-color: darken($lightgray, 2%);
+      margin: 0;
+    }
+  }
 }

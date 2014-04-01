@@ -1,64 +1,89 @@
 .square {
-  border: 2px solid $white;
-  box-shadow: 0 3px 3px -1px rgba(0,0,0,0.2);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2);
   display: inline-block;
   font-family: $ff-fixed;
   font-size: 14px;
   font-weight: $bold;
   height: 85px;
   line-height: 85px;
-  margin: 0 2px 2px 0;
+  margin: 3px;
   text-align: center;
   width: 85px;
   &.black {
-    background-color: $black;
+    background-color: #000000;
     color: $white;
   }
   &.darkgray {
-    background-color: $darkgray;
+    background-color: #333333;
     color: $white;
   }
   &.midgray {
-    background-color: $midgray;
+    background-color: #666666;
+    color: $white;
+  }
+  &.gray {
+    background-color: #ADB8C1;
     color: $white;
   }
   &.lightgray {
-    background-color: $lightgray;
+    background-color: #f6f6f6;
+    color: $black;
+  }
+  &.lightergray {
+    background-color: #E0E0E0;
+    color: $black;
   }
   &.white {
-    background-color: $white;
+    background-color: #ffffff;
+    color: $black;
   }
   &.navy {
-    background-color: $navy;
+    background-color: #0c304a;
+    color: $white;
+  }
+  &.blue {
+    background-color: #304E64;
     color: $white;
   }
   &.darkblue {
-    background-color: $darkblue;
+    background-color: #004576;
     color: $white;
   }
   &.midblue {
-    background-color: $midblue;
+    background-color: #366996;
     color: $white;
   }
   &.lightblue {
-    background-color: $lightblue;
+    background-color: #82a1bd;
+    color: $white;
+  }
+  &.lighterblue {
+    background-color: #359aec;
+    color: $white;
   }
   &.paleblue {
-    background-color: $paleblue;
+    background-color: #f2f5f8;
+    color: $black;
+  }
+  &.lightestblue {
+    background-color: #e1eaf5;
+    color: $black;
   }
   &.paleyellow {
-    background-color: $paleyellow;
+    background-color: #fffbe4;
+    color: $black;
   }
   &.cyan {
-    background-color: $cyan;
+    background-color: #0084ee;
     color: $white;
   }
   &.green {
-    background-color: $green;
+    background-color: #3FC76E;
     color: $white;
   }
   &.cherry {
-    background-color: $cherry;
+    background-color: #DF0620;
     color: $white;
   }
+
 }

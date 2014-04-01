@@ -1,3 +1,4 @@
+## Allow multiple open blocks
 ```html
 <ul class="accordion-test">
   <li>
