@@ -11,16 +11,6 @@
   }
 }
 
-%code {
-  @include rem(font-size, 16px);
-  @include rem(border-radius, 3px);
-  background-color: darken($lightgray, 2%);
-  border-color: darken($lightgray, 5%);
-  border-style: solid;
-  border-width: 0;
-  font-family: $ff-fixed;
-}
-
 %grad-bottom {
   background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%); /* FF3.6+ */
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.9))); /* Chrome,Safari4+ */
@@ -151,6 +141,15 @@ body {
     h1 {
       line-height: 1;
       padding-bottom: 0;
+
+      &:after {
+        display: none;
+      }
+
+      @include breakpoint(wide) {
+        @include rem(font-size, 72px);
+        line-height: 1.04;
+      }
     }
 
     p {
@@ -258,15 +257,21 @@ h1 {
   font-family: $ff-serif;
   font-weight: $regular;
   line-height: 1.2;
+
+  &:after {
+    @include rem(margin-top, 15px);
+    @include rem(max-width, 700px);
+    border-bottom: 2px solid $midgray;
+    content: "";
+    display: block;
+    width: 100%;
+  }
+
   @include breakpoint(desktop) {
     @include rem(font-size, 47.1px);
     @include rem(padding-bottom, 24px);
     @include rem(padding-top, 30px);
     line-height: 1.26;
-  }
-  @include breakpoint(wide) {
-    @include rem(font-size, 72px);
-    line-height: 1.04;
   }
 
   &+ h2 {
@@ -365,31 +370,6 @@ li {
   }
   @include breakpoint(height-big) {
     @include rem(height, 1000px);
-  }
-}
-
-code {
-  @extend %code;
-  @include rem(border-bottom-width, 2px);
-  color: $midgray;
-}
-
-pre {
-  @extend %code;
-  @include rem(border-left-width, 6px);
-  @include rem(margin-bottom, 22px);
-  @include rem(max-width, 700px);
-  @include rem(padding, 15px);
-  line-height: 1.88;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
-  overflow: auto;
-  code {
-    border-bottom: 0;
-  }
-  @include breakpoint(desktop) {
-    @include rem(margin-bottom, 31px);
   }
 }
 

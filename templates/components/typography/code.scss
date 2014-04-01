@@ -1,0 +1,35 @@
+%code {
+  @include rem(font-size, 16px);
+  @include rem(border-radius, 3px);
+  background-color: darken($lightgray, 2%);
+  border-color: darken($lightgray, 5%);
+  border-style: solid;
+  border-width: 0;
+  font-family: $ff-fixed;
+}
+
+code {
+  @extend %code;
+  @include rem(border-bottom-width, 2px);
+  color: $midgray;
+}
+
+pre {
+  @extend %code;
+  @include rem(border-left-width, 6px);
+  @include rem(margin-bottom, 22px);
+  @include rem(margin, 0 30px);
+  @include rem(padding, 15px);
+  line-height: 1.88;
+  overflow: auto;
+  code {
+    border-bottom: 0;
+  }
+  @include breakpoint(desktop) {
+    @include rem(margin-bottom, 31px);
+  }
+}
+
+section pre {
+  @include rem(margin, 0 0 15px);
+}

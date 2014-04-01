@@ -30,19 +30,29 @@
       border-radius: 5px;
       box-shadow: 0 6px 6px -6px rgba(0,0,0,0.2);
       display: block;
-      min-height: 80px;
+      font-size: 14px;
+      min-height: 100px;
       padding: 5%;
+      position: relative;
       width: 90%;
       &:hover {
         background-color: lighten($cherry, 55%);
       }
+      @include breakpoint(desktop) {
+        min-height: 160px;
+      }
     }
-    em {
-      color: #ccc;
+    time {
+      bottom: 0;
+      color: #aaa;
+      font-size: 11px;
       padding-bottom: 10px;
+      position: absolute;
+      right: 10px;
+      text-transform: uppercase;
     }
     ul {
-      margin-left: 0;      
+      margin-left: 0;
     }
     li {
       list-style-type: none;
@@ -66,6 +76,7 @@
       border-left-style: solid;
       border-left-width: 4px;
       display: block;
+      font-size: 16px;
       padding-left: 10px;
       &:hover {
         border-left-color: $cherry;
