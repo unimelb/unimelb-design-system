@@ -1,3 +1,11 @@
+### On this page
+
+* [When to use this component](#use)
+* [When to avoid this component?](#avoid)
+* [Content recommendations](#content)
+* [Related planning tools](#planning)
+* [Poor implementation examples]()
+
 ## When to use this component
 
 Accordians are an efficient way of grouping and communicating multiple pieces of contextually related information. They display a large amount of content in a small amount of space.
@@ -34,34 +42,19 @@ Example content.
 
 * [Download component stencils](#) (illustrator, sketch and photoshop versions available)
 
+## Poor implementation examples
+
+![A Poor example](/assets/videos/poor-example__accordian-1.gif)
+
+In this case, it would be more desirable to simply expose the links underneath each heading rather than hiding them behind an accordian
+
 ## Implementation
-Modular open/close content sections, with gracefully degrading CSS3 animation.
 
-### Dependencies
-Some minor DOM extensions (IE8+ only)
-
-### Options
-<ul class="nobullet">
+<!-- <ul class="nobullet">
   <li><code>.accordion__title</code> &ndash; Toggle switch open/close <small>required</small></li>
   <li><code>.accordion__hidden</code> &ndash; Content container (hidden by default), must be next adjacent element to toggle switch <small>required</small></li>
   <li><code>.accordion__noanim</code> &ndash; Disable animation <small class="opt">optional</small></li>
   <li><code>.accordion__visible</code> &ndash; Accordion container is visible by default <small class="opt">optional</small></li>
   <li><code>data-single-focus</code> &ndash; Close all other sections when opening an accordion <small class="opt">optional</small></li>
 </ul>
-
-<em>* The animation is CSS3 transition-based, so most of the options are tied to classes.</em>
-
-The two parts (toggle switch and content container) must be wrapped inside their own container, but this can be any block level element.
-
-### Example implementations
-
-#### Good examples
-
-
-#### Poor implementation examples
-
-![A Poor example](/assets/videos/poor-example__accordian-1.gif)
-
-In this case, it would be more desirable to simply expose the links underneath each heading rather than hiding them behind an accordian
-
-
+ -->

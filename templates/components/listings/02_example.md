@@ -1,7 +1,7 @@
 ---
 no_section_wrap: true
 ---
-<section><h2>Feature Listings</h2></section>
+<section><h2 if="feature">Feature Listings</h2></section>
 
 ```html
 <ul class="feature-listing">

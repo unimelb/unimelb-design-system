@@ -1,7 +1,7 @@
 ---
 no_section_wrap: true
 ---
-<section><h2>Hero Listings (1-col)</h2></section>
+<section><h2 id="hero">Hero Listings (1-col)</h2></section>
 
 ```html
 <ul class="hero-listing">

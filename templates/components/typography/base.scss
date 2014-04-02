@@ -243,6 +243,10 @@ body {
       background-color: $lightestblue;
       box-shadow: 0 6px 6px 4px rgba($black, 0.3);
     }
+    &.cta {
+      background-color: $paleyellow;
+      box-shadow: 0 6px 6px 4px rgba($black, 0.3);
+    }
   }
 
   @include breakpoint(desktop) {

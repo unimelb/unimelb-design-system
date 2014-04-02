@@ -1,7 +1,7 @@
 ---
 no_section_wrap: true
 ---
-<section><h2>Feature Listings (3-col)</h2></section>
+<section><h2 id="feature3">Feature Listings (3-col)</h2></section>
 
 ```html
 <ul class="feature-listing-3">
