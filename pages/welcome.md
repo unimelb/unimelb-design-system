@@ -1,5 +1,5 @@
 ---
-title: Welcome to the Codex
+title: Welcome to the codex
 ---
 
 # Welcome to the Codex
@@ -9,14 +9,6 @@ Like other great Codex’s throughout history, this site is designed to be a sin
 
 For new web professionals to seasoned developers, you should be able to use this site to explore the resources available to you. If you cannot find what you are looking for, please request it. 
 
-[Philosophies, guidelines and policies](/test)
-
-A comprehensive listing explaining why and how the web works at the University of Melbourne.
-
-[Templates, tools and techniques](/pages/codex/tools-templates-techniques.html)
-
-Resources to help you plan, create content, design and develop your website.
-
-[Training and community](/training/training-dates)
-
-Listings of official training and community based support
+* [Philosophies, guidelines and policies](/policies/web-policies) - _A comprehensive listing explaining why and how the web works at the University of Melbourne._
+* [Templates, tools and techniques](/build/process) - _Resources to help you plan, create content, design and develop your website._
+* [Training and community](/training/training-dates) - _Listings of official training and community based support_

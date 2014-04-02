@@ -10,21 +10,25 @@ To aid you on this noble quest, we have created a range of resources to explore.
 ## STEP 0
 **Start with why**
 > Unless you know why your site needs to exist, you’ll end up simply adding to the noise.
+
 [Read more](/build/why)
 
 ## STEP 1
 **The Templates**
 > Before you start building a website it makes sense to explore the starter-templates that are available to you. 
+
 [Read more](/build/templates)
 
 ## STEP 2
 **IA Planning**
 > Once you have an understanding of the page types available to you, we suggest you use these resources to create a site map. 
+
 [Read more](/build/information-architecture)
 
 ## STEP 3
 **Content**
 > Getting the images, text and video on your page right is essential and where you should focus your efforts
+
 [Read more](/build/content)
 
 ## STEP 4 
@@ -33,13 +37,16 @@ To aid you on this noble quest, we have created a range of resources to explore.
 
 ## STEP 5
 **Design and development**
+
 [Read more](/build/design)
 
 ## STEP 6
 **But wait…**
 Before you go live, make sure your site is ready to go with this checklist
+
 [Read more](/build/checklist)
 
 ## STEP 7
 **Iterate. Iterate. Iterate**
+
 [Read more](/build/iteration)
