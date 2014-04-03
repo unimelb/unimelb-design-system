@@ -15,7 +15,7 @@ class WebTemplates < Sinatra::Base
   set :components, Dir.entries(components_dir).select { |f| f =~ /^[^\.]/ }
 
   set :layouts_dir, File.join(root, 'views', 'example_layouts')
-  set :layouts, Dir.entries(layouts_dir).select { |f| f =~ /.+\.slim$/ }.map { |l| l.gsub(/\.slim$/, '') }
+  set :layouts, Dir.entries(layouts_dir).select { |f| f =~ /^[^notes].+\.slim$/ }.map { |l| l.gsub(/\.slim$/, '') }
 
   configure do
     sprockets.append_path File.join(root, 'templates')
@@ -93,17 +93,21 @@ class WebTemplates < Sinatra::Base
     halt(404) unless settings.components.include? path
     @component = path
     @settings  = { 'title' => component_title(@component) }
-    @documents = Dir.glob(File.join(settings.components_dir, path, '*.md')).sort
-    @documents = @documents.map do |f|
-      fmp = FrontMatterParser.parse_file(f)
-      @settings.merge!(fmp.front_matter)
-      if !!fmp.front_matter['bypass_markdown']
-        slim fmp.content, layout: false
-      else
+
+    @documents = []
+    raw_documents = Dir.glob(File.join(settings.components_dir, path, '*')).sort
+    raw_documents.map do |f|
+      ext = f.split(".").last
+      if ext=="md"
+        fmp = FrontMatterParser.parse_file(f)
+        @settings.merge!(fmp.front_matter)
         render_method = !!fmp.front_matter['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
-        send render_method, fmp.content
+        @documents << send(render_method, fmp.content)
+      elsif ext=="slim"
+        @documents << slim(File.read(f), layout: false)
       end
     end
+
     slim :component
   end
 
@@ -115,6 +119,7 @@ class WebTemplates < Sinatra::Base
       @file   = path
       @source = slim layout_view, layout: false, pretty: true
       @source = syntax_highlight(@source)
+      @notes  = slim "example_layouts/notes-#{path}".to_sym, layout: false rescue nil
       slim :source_view
     else
       slim layout_view
