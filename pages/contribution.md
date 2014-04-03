@@ -134,3 +134,7 @@ Slim ([http://slim-lang.com](http://slim-lang.com))is a templating engine that m
 If you get to a page with the .slim extension, we suggest [reading the documentation pages](http://rdoc.info/gems/slim) before starting to change that page. 
 
 Slim is backwards compatible with HTML, however raw HTML-based pull requests will not be accepted unless these are for the purpose of showing code examples. 
+
+###### Related links
+
+* [The Slim language documentation website](http://slim-lang.com/)
