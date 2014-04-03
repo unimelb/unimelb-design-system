@@ -66,7 +66,6 @@ NEIL TO ADD.
 ## Making changes to template documentation
 
 The web templates and their associated documentation are built into the same github repository. This is an intentional design decision as it forces people (mostly it's creators) to explain how to use the code, and not just add it without this explanation. 
-
 To make it easy for people to contribute the documentation is stored in three file formats - Markdown (.md), Slim (.slim), and sometimes HTML. Occasionally, a .md file may also contain HTML or Slim within it in order to enable a more custom presentation of the information being discussed, but more on this later.
 
 ### Understanding the structure of the templates
@@ -97,7 +96,7 @@ Each component has, at a minimum, a file named `00-overview.md` and an SCSS file
 
 If the component requires javascript, as is the case with the "Maps" component, it will also have a .coffee file. Coffee files are precompiled into javascript for use in production. 
 
-Most components then have one or more example files sequentially numbered. Example files can either be written in Markdown (`.md`) or Slim (`.slim`) and must be sequentially numbered. eg. `01-example.md` comes before `01a-example.md` comes before `02-example.md`.
+Most components then have one or more example files sequentially numbered. Example files can either be written in Markdown (`.md`) or Slim (`.slim`) and must be sequentially numbered. eg. `01-example.md` comes before `01a-example.slim` comes before `02-example.md`. The file extension must be either a `.md` or `.slim` to be added into the page. 
 
 Any pages that you add the component directory will be assembled together into the component page. For example the buttons component is created by combining the files listed above in order. The example pages are also styled and made functional by the SCSS and JS in the folder (as well as all other folders).
 
@@ -105,6 +104,7 @@ Any pages that you add the component directory will be assembled together into t
 [![Compiled page showing relationship](/assets/images/component-assembly-annotated-thumb.jpg)](/assets/images/component-assembly-annotated.jpg)
 [![Compiled page](/assets/images/component-assembly-thumb.jpg)](/assets/images/component-assembly.jpg)
 
+To add additional examples either add additionally sequentially numbered example files or create a new component by creating a new folder and starting it with, at minimum a `00-overview.md` file. 
 
 ##### Related links
 
@@ -134,11 +134,3 @@ Slim ([http://slim-lang.com](http://slim-lang.com))is a templating engine that m
 If you get to a page with the .slim extension, we suggest [reading the documentation pages](http://rdoc.info/gems/slim) before starting to change that page. 
 
 Slim is backwards compatible with HTML, however raw HTML-based pull requests will not be accepted unless these are for the purpose of showing code examples. 
-
-## Making changes to template code
-
-HTML/SLIM
-CSS/SCSS
-JS/COFFEE
-
-JASON TO ADD. 
