@@ -4,13 +4,13 @@ title: Contribution
 
 # Contribution
 
-
 These templates are open for modification by anyone in the university community.
 
 You can contribute by creating a 'fork' of this project, applying your modifications and then sending a 'pull request' back to the main repository.
 
 All changes are reviewed by the Web Marketing team before being accepted into the master branch.
 
+// TODO - write a section explaining how to log an issue when you don't have time to write a component. 
 
 //TODO - hide the majority of the next paragraph behind an accordian to make the page friendlier
 
