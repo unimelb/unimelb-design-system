@@ -193,6 +193,15 @@ body {
     @include rem(padding-bottom, 30px);
   }
 
+  aside {
+    @include rem(font-size, 15px);
+    color: $darkgray;
+    float: right;
+    section {
+      margin-left: 0;
+    }
+  }
+
   section {
     @extend %wrapper;
     @include rem(max-width, 700px);
@@ -643,6 +652,9 @@ aside {
 .hold {
   margin: 0 auto;
   max-width: 1200px;
+  aside {
+    float: none;
+  }
 }
 
 .alert {

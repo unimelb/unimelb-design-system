@@ -8,7 +8,6 @@ header
     .inner
       strong Components
       p Small units of page style and functionality
-
 section.clearfix
   ul
     - @components.each do |path|
@@ -27,7 +26,6 @@ hr
     .inner
       strong Example Layouts
       p Focused page templates, constructed from the components listed above.
-
 ul.feature-listing-3.noborder
   - @layouts.each do |path|
     li
@@ -42,21 +40,20 @@ ul.feature-listing-3.noborder
           a href=(layout_path(path, 'source'))
             | (source)
 
-hr 
+hr
 
 .hero-listing.noborder
   h2 style="background-image:url(http://placekitten.com/1200/600)"
     .inner
       strong Planning your website
       p Resources to help you plan, create content, design and develop your website.
-
-ul.feature-listing-3.noborder
-  li
-    a href="/build/process" Tools and techniques
-  li
-    a href="/training/training-dates" Training and community
-  li
-    a href="/policies/web-policies" Philosophies, guidelines and policies
-
+section.clearfix
+  ul
+    li
+      a href="/build/process" Tools and techniques
+    li
+      a href="/training/training-dates" Training and community
+    li
+      a href="/policies/web-policies" Philosophies, guidelines and policies
 
 footer
