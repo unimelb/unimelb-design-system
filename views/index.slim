@@ -37,8 +37,8 @@ ul.feature-listing-3.noborder
             img src=('/assets/images/templates/'+layout_title(path).downcase+'.jpg')
         strong= layout_title(path)
         p
-          a href=(layout_path(path, 'source'))
-            | (source)
+          a href=(layout_path path, 'demo') Demo
+          a href=(layout_path path, 'source') Source
 
 hr
 

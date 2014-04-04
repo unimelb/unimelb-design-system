@@ -56,9 +56,9 @@ class WebTemplates < Sinatra::Base
       "/components/#{component.downcase}"
     end
 
-    def layout_path(layout, source=false)
+    def layout_path(layout, opt=false)
       path = "/layouts/#{layout.downcase}"
-      !!source ? "#{path}?view=source" : path
+      !!opt ? "#{path}?view="+opt : path
     end
 
     def render_markdown(md)
@@ -113,16 +113,19 @@ class WebTemplates < Sinatra::Base
 
   get '/layouts/*' do |path|
     halt(404) unless settings.layouts.include? path
-    layout_view = "example_layouts/#{path}".to_sym
+    prepend = "example_layouts/"
+    layout_view = (prepend+path).to_sym
 
     if request['view'].to_s.downcase == 'source'
       @file   = path
       @source = slim layout_view, layout: false, pretty: true
       @source = syntax_highlight(@source)
-      @notes  = slim "example_layouts/notes-#{path}".to_sym, layout: false rescue nil
+      @notes  = slim (prepend+'notes-'+path).to_sym, layout: false rescue nil
       slim :source_view
-    else
+    elsif request['view'].to_s.downcase == 'demo'
       slim layout_view
+    else
+      slim (prepend+'overview-'+path).to_sym
     end
   end
 
