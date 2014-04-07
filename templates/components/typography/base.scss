@@ -31,6 +31,16 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=0 ); /* IE6-9 */
 }
 
+%grad-right {
+  background: -moz-linear-gradient(left, rgba($cyan,0) 0%, rgba($cyan,0.9) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,rgba($cyan,0)), color-stop(100%,rgba($cyan,0.9))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba($cyan,0) 0%,rgba($cyan,0.9) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba($cyan,0) 0%,rgba($cyan,0.9) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba($cyan,0) 0%,rgba($cyan,0.9) 100%); /* IE10+ */
+  background: linear-gradient(to right, rgba($cyan,0) 0%,rgba($cyan,0.9) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=1 ); /* IE6-9 */
+}
+
 body {
   background-color: $navy;
   color: $black;
@@ -658,10 +668,8 @@ aside {
 }
 
 .overview {
-  @include rem(padding, 30px 0);
-  margin: 0;
-  min-width: 820px;
-  max-width: 100%;
+  margin: 0 auto;
+  width: 814px;
   position: relative;
   text-align: center;
   img {
@@ -669,9 +677,12 @@ aside {
     display: inline;
     margin-right: 10px;
     vertical-align: top;
+    &.last {
+      margin-right: 0;
+    }
   }
   .block {
-    margin-left: -410px;
+    margin-left: -406px;
     width: 200px;
 
     background-color: rgba($black, 0.7);
@@ -686,8 +697,36 @@ aside {
       color: $black;
     }
     &.desktop {
-      margin-left: -199px;
-      width: 600px;
+      margin-left: -194px;
+      width: 601px;
+    }
+  }
+}
+
+.wide-wrap {
+  overflow: scroll;
+  padding-top: 60px;
+  position: relative;
+  max-width: 100%;
+  div:before {
+    @extend %grad-right;
+    color: $cyan;
+    content: "\21e2";
+    font-size: 50px;
+    margin-top: -60px;
+    line-height: 50px;
+    position: absolute;
+    right: 0;
+    text-align: left;
+    width: 100%;
+  }
+  @include breakpoint(desktop) {
+    overflow: visible;
+    padding-top: 0;
+    div:before {
+      content: none;
+      position: static;
+      height: 0;
     }
   }
 }
