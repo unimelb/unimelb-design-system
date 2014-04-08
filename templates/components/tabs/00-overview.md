@@ -4,7 +4,7 @@
 * [In page tabs](#inpage)
 * [Full width navigation tabs](#fullwidth)
 
-## Implementation
+<h2 id="implementation">Implementation</h2>
 <ul class="nobullet">
   <li><code>data-tabbed</code> &ndash; Overall tab container <small>required</small></li>
   <li><code>data-current</code> &ndash; Pre-select tab <small class="opt">optional</small></li>
