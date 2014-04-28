@@ -38,22 +38,37 @@
   }
 }
 
-%textcontrol {
+%control {
   @include rem(border-radius, 3px);
-  @include rem(font-size, 20px);
   @include rem(margin-top, 5px);
-  @include rem(padding, 2px 5px);
+  @include rem(padding, 8px 10px);
   @include rem(width, 400px);
-  background-color: $paleyellow;
-  border: 1px solid darken($paleyellow, 5%);
   font-family: $ff-sans;
-  &:focus {
-    background-color: darken($paleyellow, 10%);
-    border-color: $darkgray;
-  }
+  font-weight: $light;
   &.invalid {
-    background-color: lighten($cherry, 50%);
-    border-color: lighten($cherry, 45%);
+    background-color: $white;
+    border-color: lighten($cherry, 25%);
+    color: lighten($cherry, 25%);
+  }
+}
+
+%textcontrol {
+  @extend %control;
+  @include rem(font-size, 20px);
+  background-color: $lightgray;
+  border: 1px solid darken($lightergray, 5%);
+  box-shadow: inset 0 1px 3px rgba($black, 0.15);
+  &:hover {
+    border-color: $gray;
+  }
+  &:focus {
+    background-color: $white;
+    border-color: $borderblue;
+    color: $black;
+    outline: 0;
+  }
+  &:focus.invalid {
+    color: $black;
   }
 }
 
@@ -63,6 +78,7 @@
 
 form {
   @include rem(font-size, 16px);
+  background-color: $white;
   color: #444;
   line-height: 1.2;
   padding: 0 30px;
@@ -86,10 +102,13 @@ fieldset {
       text-transform: none;
     }
     &.invalid {
-      color: $cherry;
       small {
         @include animate-once(flash);
+        @include rem(font-size, 14px);
+        @include rem(padding, 5px 0);
+        color: $cherry;
         display: block;
+        font-style: italic;
       }
     }
     &.inline {
@@ -107,18 +126,49 @@ fieldset {
     width: 100%;
   }
   select {
-    @extend %textcontrol;
+    @extend %control;
     @include appearance(none);
-    @include rem(font-size, 16px);
-    @include transition(.1s linear background-color);
-    background-image: url(/assets/images/select.png);
+    @include rem(font-size, 18px);
+    background-color: $highlight;
+    background-image: url(asset_path("components/forms/n-s.png"));
     background-repeat: no-repeat;
-    background-position: right center;
+    background-position: 98% 50%;
+    border: 1px solid $highlight;
+    color: $white;
     cursor: pointer;
     line-height: 1.55;
     width: 412px;
     &.invalid {
-      background-image: url(/assets/images/select-invalid.png);
+      background-image: url(asset_path("components/forms/n-s-invalid.png"));
+      color: $cherry;
+    }
+    &:hover {
+      background-color: $brand;
+      background-image: url(asset_path("components/forms/n-s.png"));
+      border-color: $brand;
+      color: $white;
+    }
+    &.alt {
+      background-color: $white;
+      background-image: url(asset_path("components/forms/n-s-alt.png"));
+      border-color: $highlight;
+      color: $highlight;
+    }
+    &.alt:hover {
+      background-color: $lightestblue;
+      background-image: url(asset_path("components/forms/n-s-alt.png"));
+      border-color: $highlight;
+      color: $highlight;
+    }
+    &.alt.invalid {
+      background-image: url(asset_path("components/forms/n-s-invalid.png"));
+      border-color: lighten($cherry, 25%);
+      color: $cherry;
+    }
+    &.alt.invalid:hover {
+      background-image: url(asset_path("components/forms/n-s-alt.png"));
+      border-color: $highlight;
+      color: $highlight;
     }
   }
   input[type="radio"],

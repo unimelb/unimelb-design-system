@@ -121,6 +121,22 @@
       </label>
     </div>
 
+    <div>
+      <label>
+        Alternate style dropdown (required):
+        <select class="alt" data-required name="f[select]" title="Please make a selection from the dropdown">
+          <option value="-1">Please select</option>
+          <optgroup>
+            <option>Hi</option>
+          </optgroup>
+          <optgroup>
+            <option>Another group</option>
+            <option>Another group, another opt</option>
+          </optgroup>
+        </select>
+      </label>
+    </div>
+
   </fieldset>
   <footer>
     <input type="submit">
