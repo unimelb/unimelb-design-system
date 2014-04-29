@@ -42,13 +42,16 @@
   @include rem(border-radius, 3px);
   @include rem(margin-top, 5px);
   @include rem(padding, 8px 10px);
-  @include rem(width, 400px);
   font-family: $ff-sans;
   font-weight: $light;
+  @include rem(width, 200px);
   &.invalid {
     background-color: $white;
     border-color: lighten($cherry, 25%);
     color: lighten($cherry, 25%);
+  }
+  @include breakpoint(desktop) {
+    @include rem(width, 400px);
   }
 }
 
@@ -72,10 +75,6 @@
   }
 }
 
-%selectcontrol {
-  @include rem(margin, 5px);
-}
-
 %controlhack {
   text-indent: 0.01px;
   text-overflow: '';
@@ -83,12 +82,18 @@
   -webkit-appearance:none;
 }
 
-form {
+[role="main"] form {
   @include rem(font-size, 16px);
+  @include rem(padding, 0 10px);
   background-color: $white;
-  color: #444;
+  color: $darkgray;
   line-height: 1.2;
-  padding: 0 30px;
+  @include breakpoint(desktop) {
+    @include rem(padding, 10px 30px);
+  }
+  footer {
+    padding: 0;
+  }
 }
 
 fieldset {
@@ -107,10 +112,9 @@ fieldset {
     @include rem(font-size, 16px);
     display: inline-block;
     position: relative;
-    width: 412px;
-    &.inline {
-      padding-right: 30px;
-      width: auto;
+    width: 100%;
+    @include breakpoint(desktop) {
+      @include rem(width, 412px);
     }
   }
   .invalid small {
@@ -128,9 +132,14 @@ fieldset {
   input[type="text"],
   input[type="email"],
   input[type="number"],
-  input[type="password"],
+  input[type="password"] {
+    @extend %textcontrol;
+    width: 100%;
+  }
+
   textarea {
     @extend %textcontrol;
+    height: 200px;
     width: 100%;
   }
 
@@ -147,7 +156,7 @@ fieldset {
     color: $white;
     cursor: pointer;
     line-height: 1.55;
-    width: 412px;
+    width: 100%;
     &::-ms-expand {
         display: none;
     }
@@ -183,6 +192,9 @@ fieldset {
       border-color: $highlight;
       color: $highlight;
     }
+    @include breakpoint(desktop) {
+      @include rem(width, 412px);
+    }
   }
 
   input[type="checkbox"] {
@@ -193,10 +205,10 @@ fieldset {
     }
   }
   input[type="checkbox"] + label {
-    background: $white;
+    background-color: $white;
     border: 1px solid $lightergray;
     border-radius: 3px;
-    cursor: pointer;
+    cursor: default;
     display: inline-block;
     height: 25px;
     margin: 0 10px -6px;
@@ -230,58 +242,41 @@ fieldset {
   }
 
   input[type="radio"] {
-    @extend %selectcontrol;
+    display: none;
+    &:checked + label {
+      border-color: $highlight;
+    }
+    &:checked + label:active,
+    &:checked + label:after {
+      opacity: 1;
+    }
+  }
+  input[type="radio"] + label {
+    background-color: $white;
+    border: 1px solid $lightergray;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: -3px;
+    margin-right: 5px;
+    padding: 9px;
+    position: relative;
+    width: 12px;
+    -webkit-appearance: none;
+    &:after {
+      background-color: $highlight;
+      border-radius: 50px;
+      content: ' ';
+      font-size: 32px;
+      height: 12px;
+      left: 3px;
+      opacity: 0;
+      position: absolute;
+      text-shadow: 0px;
+      top: 3px;
+      width: 12px;
+    }
+    &:active:after {
+      opacity: 0.2;
+    }
   }
 }
-
-// .radio-1 {
-//   width: 193px;
-// }
-
-// .button-holder {
-//   float: left;
-// }
-
-// /* RADIO */
-
-// .regular-radio {
-//   display: none;
-// }
-
-// .regular-radio + label {
-//   -webkit-appearance: none;
-//   background-color: #fafafa;
-//   border: 1px solid #cacece;
-//   box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
-//   padding: 9px;
-//   border-radius: 50px;
-//   display: inline-block;
-//   position: relative;
-// }
-
-// .regular-radio:checked + label:after {
-//   content: ' ';
-//   width: 12px;
-//   height: 12px;
-//   border-radius: 50px;
-//   position: absolute;
-//   top: 3px;
-//   background: #99a1a7;
-//   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.3);
-//   text-shadow: 0px;
-//   left: 3px;
-//   font-size: 32px;
-// }
-
-// .regular-radio:checked + label {
-//   background-color: #e9ecee;
-//   color: #99a1a7;
-//   border: 1px solid #adb8c0;
-//   box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1), inset 0px 0px 10px rgba(0,0,0,0.1);
-// }
-
-// .regular-radio + label:active, .regular-radio:checked + label:active {
-//   box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
-// }
-
-

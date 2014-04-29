@@ -1,0 +1,10 @@
+form fieldset {
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: inline;
+  }
+  input[type="checkbox"] + label,
+  input[type="radio"] + label {
+    display: none;
+  }
+}

@@ -1,5 +1,4 @@
-## Example
-
+<h2 id="text">Text field</h2>
 ```html
 <form method="post" action="" data-validate>
   <fieldset>
@@ -7,14 +6,14 @@
     <div>
       <label>
         Name (required):
-        <input data-required name="f[name]" type="text" title="Please enter your name" />
+        <input data-required name="f[name]" type="text" title="Please enter your name." />
       </label>
     </div>
 
     <div>
       <label>
         Email (pattern matching):
-        <input data-pattern="email" name="f[email]" type="text" title="Please enter a valid email" />
+        <input data-pattern="email" name="f[email]" type="email" title="Please enter a valid email." />
       </label>
     </div>
 
@@ -27,50 +26,8 @@
 
     <div>
       <label>
-        Tick the box (required):
-        <input data-required name="f[approve]" type="checkbox" title="Please tick the box" />
-      </label>
-    </div>
-
-    <div>
-      <p>Make a selection (implicit selection):</p>
-      <label class="inline">
-        <input checked name="f[radio]" type="radio" value="yes" title="Please make a selection" /> Yes
-      </label>
-      <label class="inline">
-        <input name="f[radio]" type="radio" value="no" title="Please make a selection" /> No
-      </label>
-    </div>
-
-    <div>
-      <label>
-        Make a selection from the dropdown (required):
-        <select data-required name="f[select]" title="Please make a selection from the dropdown">
-          <option value="-1">Please select</option>
-          <optgroup>
-            <option>Hi</option>
-          </optgroup>
-          <optgroup>
-            <option>Another group</option>
-            <option>Another group, another opt</option>
-          </optgroup>
-        </select>
-      </label>
-    </div>
-
-    <div>
-      <label>
-        Alternate style dropdown (required):
-        <select class="alt" data-required name="f[select2]" title="Please make a selection from the 2nd dropdown">
-          <option value="-1">Please select</option>
-          <optgroup>
-            <option>Hi</option>
-          </optgroup>
-          <optgroup>
-            <option>Another group</option>
-            <option>Another group, another opt</option>
-          </optgroup>
-        </select>
+        Message:
+        <textarea data-required name="f[message]" title="Please enter a message."></textarea>
       </label>
     </div>
 
@@ -80,20 +37,22 @@
   </footer>
 </form>
 ```
+<p>Uses native validation where possible, on <code>input type="email"</code>.</p>
+
 <form method="post" action="" data-validate>
   <fieldset>
 
     <div>
       <label>
         Name (required):
-        <input data-required name="f[name]" type="text" title="Please enter your name" />
+        <input data-required name="f[name]" type="text" title="Please enter your name." />
       </label>
     </div>
 
     <div>
       <label>
         Email (pattern matching):
-        <input data-pattern="email" name="f[email]" type="text" title="Please enter a valid email" />
+        <input data-pattern="email" name="f[email]" type="email" title="Please enter a valid email." />
       </label>
     </div>
 
@@ -105,50 +64,9 @@
     </div>
 
     <div>
-      Tick the box (required):
-      <input type="checkbox" id="c1" class="checkbox" data-required name="f[approve]" title="Please tick the box" />
-      <label for="c1"></label>
-    </div>
-
-    <div>
-      <p>Make a selection (implicit selection):</p>
-      <label class="inline">
-        <input checked name="f[radio]" type="radio" value="yes" title="Please make a selection" /> Yes
-      </label>
-      <label class="inline">
-        <input name="f[radio]" type="radio" value="no" title="Please make a selection" /> No
-      </label>
-    </div>
-
-    <div>
       <label>
-        Make a selection from the dropdown (required):
-        <select data-required name="f[select]" title="Please make a selection from the dropdown">
-          <option value="-1">Please select</option>
-          <optgroup>
-            <option>Hi</option>
-          </optgroup>
-          <optgroup>
-            <option>Another group</option>
-            <option>Another group, another opt</option>
-          </optgroup>
-        </select>
-      </label>
-    </div>
-
-    <div>
-      <label>
-        Alternate style dropdown (required):
-        <select class="alt" data-required name="f[select2]" title="Please make a selection from the 2nd dropdown">
-          <option value="-1">Please select</option>
-          <optgroup>
-            <option>Hi</option>
-          </optgroup>
-          <optgroup>
-            <option>Another group</option>
-            <option>Another group, another opt</option>
-          </optgroup>
-        </select>
+        Message:
+        <textarea data-required name="f[message]" title="Please enter a message."></textarea>
       </label>
     </div>
 
