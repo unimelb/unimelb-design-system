@@ -58,6 +58,22 @@
       </label>
     </div>
 
+    <div>
+      <label>
+        Alternate style dropdown (required):
+        <select class="alt" data-required name="f[select2]" title="Please make a selection from the 2nd dropdown">
+          <option value="-1">Please select</option>
+          <optgroup>
+            <option>Hi</option>
+          </optgroup>
+          <optgroup>
+            <option>Another group</option>
+            <option>Another group, another opt</option>
+          </optgroup>
+        </select>
+      </label>
+    </div>
+
   </fieldset>
   <footer>
     <input type="submit">
@@ -89,10 +105,9 @@
     </div>
 
     <div>
-      <label>
-        Tick the box (required):
-        <input data-required name="f[approve]" type="checkbox" title="Please tick the box" />
-      </label>
+      Tick the box (required):
+      <input type="checkbox" id="c1" class="checkbox" data-required name="f[approve]" title="Please tick the box" />
+      <label for="c1"></label>
     </div>
 
     <div>
@@ -124,7 +139,7 @@
     <div>
       <label>
         Alternate style dropdown (required):
-        <select class="alt" data-required name="f[select]" title="Please make a selection from the 2nd dropdown">
+        <select class="alt" data-required name="f[select2]" title="Please make a selection from the 2nd dropdown">
           <option value="-1">Please select</option>
           <optgroup>
             <option>Hi</option>
