@@ -76,6 +76,13 @@
   @include rem(margin, 5px);
 }
 
+%controlhack {
+  text-indent: 0.01px;
+  text-overflow: '';
+  -moz-appearance: none;
+  -webkit-appearance:none;
+}
+
 form {
   @include rem(font-size, 16px);
   background-color: $white;
@@ -127,6 +134,7 @@ fieldset {
   }
   select {
     @extend %control;
+    @extend %controlhack;
     @include appearance(none);
     @include rem(font-size, 18px);
     background-color: $highlight;
@@ -138,6 +146,9 @@ fieldset {
     cursor: pointer;
     line-height: 1.55;
     width: 412px;
+    &::-ms-expand {
+        display: none;
+    }
     &.invalid {
       background-image: url(asset_path("components/forms/n-s-invalid.png"));
       color: $cherry;

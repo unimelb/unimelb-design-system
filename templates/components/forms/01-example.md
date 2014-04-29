@@ -124,7 +124,7 @@
     <div>
       <label>
         Alternate style dropdown (required):
-        <select class="alt" data-required name="f[select]" title="Please make a selection from the dropdown">
+        <select class="alt" data-required name="f[select]" title="Please make a selection from the 2nd dropdown">
           <option value="-1">Please select</option>
           <optgroup>
             <option>Hi</option>
