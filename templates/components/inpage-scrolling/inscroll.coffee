@@ -29,7 +29,10 @@ if supportedmodernbrowser
 
         if e.target
           t = e.target
-          outer = document.body
+          if /(Firefox)/g.test(navigator.userAgent)
+            outer = document.querySelector('html')
+          else
+            outer = document.body
         else
           t = e.srcElement
           outer = document.documentElement
