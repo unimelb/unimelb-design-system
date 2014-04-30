@@ -12,8 +12,8 @@
     <div>
       Make a selection (implicitly required):
       <div class="inline">
-        <input checked name="f[radio]" type="radio" id="radio-1-1" value="yes" title="Please make a selection" />
         <label for="radio-1-1"></label>
+        <input checked name="f[radio]" type="radio" id="radio-1-1" value="yes" title="Please make a selection" />
         Yes
       </div>
       <div class="inline">

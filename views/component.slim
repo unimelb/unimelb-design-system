@@ -1,23 +1,26 @@
-section.tight
-  h1= @settings['title']
+div role="main"
+  section.tight
+    h1= @settings['title']
 
-- if component_pending?(@component)
-  section.alert
-    strong Attention! Pending component
-    '
-    ' This component is not yet implemented. Please help us
-    a href="https://github.com/marcom-unimelb/unimelb-web-templates" build it.
+  - if component_pending?(@component)
+    section.alert
+      strong Attention! Pending component
+      '
+      ' This component is not yet implemented. Please help us
+      a href="https://github.com/marcom-unimelb/unimelb-web-templates" build it.
 
-- if @documents.empty?
-  section.alert
-    strong There is no documentation yet for this component.
-    '
-    ' Please help us
-    a href="https://github.com/marcom-unimelb/unimelb-web-templates" build it
-    ', by submitting documentation and examples.
+  - if @documents.empty?
+    section.alert
+      strong There is no documentation yet for this component.
+      '
+      ' Please help us
+      a href="https://github.com/marcom-unimelb/unimelb-web-templates" build it
+      ', by submitting documentation and examples.
 
-- else
-  - @documents.each_with_index do |document, i|
-    == document
-    - if i<@documents.length-1
-      hr
+  - else
+    - @documents.each_with_index do |document, i|
+      == document
+      - if i<@documents.length-1
+        hr
+
+  == slim :contrib

@@ -1,6 +1,9 @@
-section
-  h1
-    ' Source of
-    em==layout_title(@file)
-aside== @notes
-== @source
+div role="main"
+  section
+    h1
+      ' Source of
+      em==layout_title(@file)
+  aside== @notes
+  == @source
+
+  == slim :contrib

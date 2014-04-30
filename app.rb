@@ -86,7 +86,7 @@ class WebTemplates < Sinatra::Base
   get '/' do
     @components = settings.components
     @layouts    = settings.layouts
-    slim :index
+    slim :index, layout: 'sub'
   end
 
   get '/components/*' do |path|

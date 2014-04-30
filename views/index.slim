@@ -1,59 +1,69 @@
-header
-  .bottom-align
-    section
-      h1 Web Templates
+.page-header
+  a class="page-header-logo floating" href="http://www.unimelb.edu.au"
+    /[if lt IE 9]
+      img src=(asset_path "components/header/header-logo.png") alt="UoM Logo"
+    <!--[if gte IE 9]><!-->
+    img src=(asset_path "components/header/header-logo.svg") alt="UoM Logo"
+    <!--<![endif]-->
 
-.hero-listing.noborder
-  h2 style="background-image:url(http://placekitten.com/1200/600)"
-    .inner
-      strong Components
-      p Small units of page style and functionality
-section.clearfix
-  ul
-    - @components.each do |path|
-      li
-        - if component_pending?(path)
-          small class="todo"
-            | [TODO]
-            '
-        a href=(component_path(path))
-          = component_title(path)
+div.skip-header role="main"
+  article
+    header
+      .bottom-align
+        section
+          h1 Web Templates
 
-hr
+    .hero-listing.noborder
+      h2 style="background-image:url(http://placekitten.com/1200/600)"
+        .inner
+          strong Components
+          p Small units of page style and functionality
+    section.clearfix
+      ul
+        - @components.each do |path|
+          li
+            - if component_pending?(path)
+              small class="todo"
+                | [TODO]
+                '
+            a href=(component_path(path))
+              = component_title(path)
 
-.hero-listing.noborder
-  h2 style="background-image:url(http://placekitten.com/1200/600)"
-    .inner
-      strong Example Layouts
-      p Focused page templates, constructed from the components listed above.
-ul.feature-listing-3.noborder
-  - @layouts.each do |path|
-    li
-      a href=(layout_path(path))
-        - if component_pending?(path)
-          small.todo=="[TODO]"
-        - else
-          figure
-            img src=('/assets/images/templates/'+layout_title(path).downcase+'.jpg')
-        strong= layout_title(path)
-        p
-          a href=(layout_path path, 'demo') Demo
-          a href=(layout_path path, 'source') Source
+    hr
 
-hr
+    .hero-listing.noborder
+      h2 style="background-image:url(http://placekitten.com/1200/600)"
+        .inner
+          strong Example Layouts
+          p Focused page templates, constructed from the components listed above.
+    ul.feature-listing-3.noborder
+      - @layouts.each do |path|
+        li
+          a href=(layout_path(path))
+            - if component_pending?(path)
+              small.todo=="[TODO]"
+            - else
+              figure
+                img src=('/assets/images/templates/'+layout_title(path).downcase+'.jpg')
+            strong= layout_title(path)
+            p
+              a href=(layout_path path, 'demo') Demo
+              a href=(layout_path path, 'source') Source
 
-.hero-listing.noborder
-  h2 style="background-image:url(http://placekitten.com/1200/600)"
-    .inner
-      strong Planning your website
-      p Resources to help you plan, create content, design and develop your website.
-section.clearfix
-  ul
-    li
-      a href="/build/process" Tools and techniques
-    li
-      a href="/training/training-dates" Training and community
-    li
-      a href="/policies/web-policies" Philosophies, guidelines and policies
+    hr
 
-footer
+    .hero-listing.noborder
+      h2 style="background-image:url(http://placekitten.com/1200/600)"
+        .inner
+          strong Planning your website
+          p Resources to help you plan, create content, design and develop your website.
+    section.clearfix
+      ul
+        li
+          a href="/build/process" Tools and techniques
+        li
+          a href="/training/training-dates" Training and community
+        li
+          a href="/policies/web-policies" Philosophies, guidelines and policies
+
+    footer
