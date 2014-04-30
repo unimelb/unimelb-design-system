@@ -3,3 +3,4 @@
 * [Text field](#text)
 * [Checkbox & Radio buttons](#box)
 * [Select](#select)
+* [Search field](#search)

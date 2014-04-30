@@ -44,7 +44,6 @@
   @include rem(padding, 8px 10px);
   font-family: $ff-sans;
   font-weight: $light;
-  @include rem(width, 200px);
   &.invalid {
     background-color: $white;
     border-color: lighten($cherry, 25%);
@@ -76,10 +75,9 @@
 }
 
 %controlhack {
+  @include appearance(none);
   text-indent: 0.01px;
   text-overflow: '';
-  -moz-appearance: none;
-  -webkit-appearance:none;
 }
 
 [role="main"] form {
@@ -263,6 +261,7 @@ fieldset {
       }
     }
     input[type="radio"] + label {
+      @include appearance(none);
       background-color: $white;
       border: 1px solid $lightergray;
       border-radius: 50px;
@@ -272,7 +271,6 @@ fieldset {
       padding: 9px;
       position: relative;
       width: 12px;
-      -webkit-appearance: none;
       &:after {
         background-color: $highlight;
         border-radius: 50px;
@@ -288,6 +286,34 @@ fieldset {
       }
       &:active:after {
         opacity: 0.2;
+      }
+    }
+  }
+
+  .inline {
+    position: relative;
+    input[type="search"] {
+      @extend %textcontrol;
+      @include appearance(none);
+      @include rem(height, 45px);
+      width: 100%;
+      @include breakpoint(desktop) {
+        @include rem(width, 400px);
+      }
+    }
+    input[type="image"] {
+      @include rem(border-radius, 3px);
+      @include rem(height, 45px);
+      @include rem(margin, 15px 0);
+      @include rem(padding, 10px);
+      @include rem(width, 45px);
+      background-color: $highlight;
+      color: $white;
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include breakpoint(desktop) {
+        @include rem(right, 170px);
       }
     }
   }

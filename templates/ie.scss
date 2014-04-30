@@ -1,10 +1,1 @@
-form fieldset {
-  input[type="checkbox"],
-  input[type="radio"] {
-    display: inline;
-  }
-  input[type="checkbox"] + label,
-  input[type="radio"] + label {
-    display: none;
-  }
-}
+// Ideally this file should only contain this comment
