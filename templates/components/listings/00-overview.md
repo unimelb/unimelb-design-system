@@ -1,4 +1,4 @@
-### On this page
+## On this page
 
 * [Normal (4 col)](#normal)
 * [Feature (2 col)](#feature)
