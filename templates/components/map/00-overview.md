@@ -1,3 +1,9 @@
+## Overview
+
+Adding a map to a page is a great way to describe a location in addition to a text-based description. This component uses the Google Maps API to embed a functional google map into one of your pages easily. 
+
+To use the Maps component, you will need to know the latitude and longitude of the location you are looking to map. These can be found easily using Google Maps or a service like [itouchmap.com](http://itouchmap.com/latlong.html). 
+
 ## Implementation
 
 Basic google map (v3), with a few options:
