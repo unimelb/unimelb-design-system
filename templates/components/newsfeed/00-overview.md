@@ -1,9 +1,9 @@
 <script src="https://www.google.com/jsapi"></script>
 
 ## Implementation
-Consume an RSS feed using the Google Feed API.
+This tool consumes an RSS feed using the Google Feed API and displays it on your website inside a calling wrapper (eg. `<div id="news__block">...</div>` )
 
-Output can be styled with CSS (I've included some samples below), the code template generated within the calling wrapper looks like:
+Output can be styled with CSS (some samples included below), the code template generated within the calling wrapper looks like:
 
 ```html
 <ul>
@@ -13,7 +13,7 @@ Output can be styled with CSS (I've included some samples below), the code templ
 </ul>
 ```
 
-Adds a class `.loaded` to the calling wrapper after entries are appended.
+Once the feed has finished loading a class of `.loaded` is added to the calling wrapper.
 
 ## Dependencies
 
