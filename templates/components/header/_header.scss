@@ -114,6 +114,27 @@
       display: inline;
     }
   }
+  .page-local-navigation {
+    color: $darkblue;
+    display: inline;
+    margin: 0;
+    a {
+      color: $darkblue;
+    }
+  }
+}
+
+.page-local-navigation {
+  @extend .page-header-navigation;
+  @include rem(padding-top, 30px);
+  color: $white;
+  a {
+    color: $white;
+    font-weight: $light;
+  }
+  span {
+    @include rem(padding, 0 10px);
+  }
 }
 
 .page-header-tools {
