@@ -1,4 +1,4 @@
-### On this page
+## On this page
 
 * [A note about colours](#note)
 * [How to use colours](#howto)

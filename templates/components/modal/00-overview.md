@@ -1,4 +1,5 @@
 ## Implementation
+
 A simple two&ndash;part modal component, with a triggering link and a modal container.
 
 * Modal dialog is positioned at center of viewport, with an option to position 160px above triggering link

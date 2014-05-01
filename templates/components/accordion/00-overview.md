@@ -1,4 +1,4 @@
-### On this page
+## On this page
 
 * [When to use this component](#use)
 * [When to avoid this component?](#avoid)

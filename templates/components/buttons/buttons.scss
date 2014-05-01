@@ -2,9 +2,9 @@
   @include rem(border-radius, 5px);
   @include rem(font-size, 15px);
   @include rem(padding, 17px 40px);
-  background-color: $brand;
+  background-color: $highlight;
   border: 0;
-  border-bottom: 5px solid darken($brand, 10%);
+  border-bottom: 5px solid darken($highlight, 10%);
   color: $white;
   cursor: pointer;
   display: inline-block;
@@ -27,9 +27,9 @@
     background-color: $cta;
     border-bottom-color: darken($cta, 10%);
   }
-  &.highlight {
-    background-color: $highlight;
-    border-bottom-color: darken($highlight, 10%);
+  &.brand {
+    background-color: $brand;
+    border-bottom-color: darken($brand, 10%);
   }
   &.soft {
     background-color: $soft;

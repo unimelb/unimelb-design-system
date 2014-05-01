@@ -1,14 +1,14 @@
 <h2 id="normal">Normal Buttons</h2>
 ```html
-<a class="button">Brand (default)</a>
-<a class="button highlight">Highlight</a>
-<a class="button cta">Call to action</a>
+<a class="button">Call to action</a>
+<a class="button brand">Brand</a>
+<a class="button cta">Complete</a>
 <a class="button warning">Warning</a>
 <a class="button soft">Soft</a>
 
-<a class="button-small">Brand (default)</a>
-<a class="button-small highlight">Highlight</a>
-<a class="button-small cta">Call to action</a>
+<a class="button-small">Call to action</a>
+<a class="button-small brand">Brand</a>
+<a class="button-small cta">Complete</a>
 <a class="button-small warning">Warning</a>
 <a class="button-small soft">Soft</a>
 ```
