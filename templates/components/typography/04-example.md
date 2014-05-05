@@ -1,71 +1,23 @@
-## Simple typographic styles
+<h2 id="figures">Figure (inset left)</h2>
+<figure class="inset-left">
+  <img src="http://placekitten.com/300/500" alt="">
+  <figcaption>
+    Caption to the image
+  </figcaption>
+</figure>
 
-Below are some basic typographic styles with their associated renderings
+Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper consequat sed non leo. Nam massa est, egestas ac felis id, blandit luctus metus. Mauris eu aliquet nisi. Donec nunc ipsum, fermentum quis enim posuere, dapibus fermentum libero. Aliquam erat volutpat. Nulla tempor tellus lorem, dapibus euismod mi mattis sit amet. Sed ac orci consequat, aliquet ligula vitae, facilisis elit. Sed et lobortis est, eu facilisis massa.
 
-```html
-<h1>Heading 1</h1>
-```
-<h1>Heading 1</h1>
+Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi. Integer rhoncus ante quis lectus facilisis, ac auctor enim mattis. Nullam gravida nec ante mattis accumsan. Donec pretium, leo tempor adipiscing posuere, risus ligula ornare erat, vitae euismod lectus nulla ac arcu. Morbi sed pharetra risus, nec auctor lorem. Phasellus neque quam, auctor ut tincidunt et, suscipit quis nibh. Praesent sed malesuada eros, eu volutpat tortor. Proin pharetra nisl sed eros ultrices, vitae condimentum felis tempor.
 
-```html
-<h2>Heading 2</h2>
-```
-<h2>Heading 2</h2>
+## Figure (inset right)
+<figure class="inset-right">
+  <img src="http://placekitten.com/300/500" alt="">
+  <figcaption>
+    Caption to the image
+  </figcaption>
+</figure>
 
-```html
-<h3>Heading 3</h3>
-```
-<h3>Heading 3</h3>
+Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper consequat sed non leo. Nam massa est, egestas ac felis id, blandit luctus metus. Mauris eu aliquet nisi. Donec nunc ipsum, fermentum quis enim posuere, dapibus fermentum libero. Aliquam erat volutpat. Nulla tempor tellus lorem, dapibus euismod mi mattis sit amet. Sed ac orci consequat, aliquet ligula vitae, facilisis elit. Sed et lobortis est, eu facilisis massa.
 
-```html
-<h4>Heading 4</h4>
-```
-<h4>Heading 4</h4>
-
-```html
-<h5>Heading 5</h5>
-```
-<h5>Heading 5</h5>
-
-```html
-<h6>Heading 6</h6>
-```
-<h6>Heading 6</h6>
-
-```html
-<p>A paragraph of text</h1>
-```
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
-
-```html
-<p><strong>Bold </strong>, <em>italic</em>and <u>underlined</u> text</p>
-```
-<p><strong>Bold </strong>, <em>italic</em> and <u>underlined</u> text</p>
-
-```html
-<ul>
-  <li>Unordered list items</li>
-  <li>Unordered list items</li>
-  <li>Unordered list items</li>
-</ul>
-```
-<ul>
-  <li>Unordered list items</li>
-  <li>Unordered list items</li>
-  <li>Unordered list items</li>
-</ul>
-
-```html
-<ol>
-  <li>Ordered list items</li>
-  <li>Ordered list items</li>
-  <li>Ordered list items</li>
-</ol>
-```
-<ol>
-  <li>Ordered list items</li>
-  <li>Ordered list items</li>
-  <li>Ordered list items</li>
-</ol>
-
-
+Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi. Integer rhoncus ante quis lectus facilisis, ac auctor enim mattis. Nullam gravida nec ante mattis accumsan. Donec pretium, leo tempor adipiscing posuere, risus ligula ornare erat, vitae euismod lectus nulla ac arcu. Morbi sed pharetra risus, nec auctor lorem. Phasellus neque quam, auctor ut tincidunt et, suscipit quis nibh. Praesent sed malesuada eros, eu volutpat tortor. Proin pharetra nisl sed eros ultrices, vitae condimentum felis tempor.
