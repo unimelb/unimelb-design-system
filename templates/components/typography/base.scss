@@ -348,6 +348,9 @@ li {
   overflow: hidden;
   position: relative;
   width: 100%;
+  &.short {
+    height: auto;
+  }
   section {
     @include rem(padding-top, 200px);
     @extend %grad-bottom;

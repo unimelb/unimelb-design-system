@@ -37,6 +37,8 @@ if supportedmodernbrowser
           t = e.srcElement
           outer = document.documentElement
 
-        target = document.querySelector(t.getAttribute('href'))
-        if target
-          scrollTo(target.offsetTop, outer)
+        target = t.getAttribute('href')
+        if target != "#"
+          target = document.querySelector(t.getAttribute('href'))
+          if target
+            scrollTo(target.offsetTop, outer)

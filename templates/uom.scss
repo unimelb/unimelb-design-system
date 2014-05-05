@@ -1,7 +1,6 @@
 /*
  *= require ./components/accordion/accordion
  *= require ./components/modal/modal
- *= require ./components/showpass/showpass
  *= require_self
  */
 
@@ -17,10 +16,8 @@
 @import "components/typography/profile";
 @import "components/listings/listings";
 @import "components/videos/yt";
-//@import "components/header/header";
 @import "components/forms/forms";
 @import "components/buttons/buttons";
-//@import "components/footer/footer";
 @import "components/tabs/tabs";
 
 /* Print */
