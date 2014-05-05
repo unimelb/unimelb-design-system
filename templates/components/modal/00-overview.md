@@ -1,8 +1,3 @@
-### On this page
-
-* [Overview](#overview)
-* [Implementation examples](#examples)
-
 <h2 id="overview">Overview</h2>
 
 A simple two&ndash;part modal component, with a triggering link and a modal container.
