@@ -1,12 +1,9 @@
 #jump-navigation {
   background: $lightgray;
   color: $gray;
-  left: 0;
   list-style-position: inside;
   margin: 0;
-  padding: 0;
-  top: 0;
-  z-index: 10;
+  padding: 15px;
 
   // MAGIC FAIRY DUST
   -webkit-transform: translateZ(0);
@@ -41,5 +38,11 @@
     &:hover {
       color: $highlight;
     }
+  }
+  &.jump-fixed {
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 10;
   }
 }
