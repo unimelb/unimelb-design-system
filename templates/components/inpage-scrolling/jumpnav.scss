@@ -44,5 +44,8 @@
     position: fixed;
     top: 0;
     z-index: 10;
+    a.current {
+      color: $highlight;
+    }
   }
 }

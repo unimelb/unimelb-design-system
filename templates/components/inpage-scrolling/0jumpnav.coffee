@@ -10,18 +10,20 @@ class StickyNav
 
     @nPadding = 30 # 15 top + 15 bottom
     @fPadding = 60 # 30 top + 30 bottom
+    @arbitraryOffset = 50
 
     if /(Firefox)/g.test(navigator.userAgent)
       @outer = document.querySelector('html')
     else
       @outer = document.body
 
+    @nav = {}
     for h in document.querySelectorAll('h2[id]')
-      link = document.createElement "a"
-      link.href = "#"+h.id
-      link.appendChild document.createTextNode h.textContent
+      @nav[h.offsetTop] = document.createElement "a"
+      @nav[h.offsetTop].href = "#"+h.id
+      @nav[h.offsetTop].appendChild document.createTextNode h.textContent
       li = document.createElement "li"
-      li.appendChild link
+      li.appendChild @nav[h.offsetTop]
       @n.appendChild li
 
     # Arbitrary delay to allow calculation of CSS block hiding - page load on local can run up to 400ms
@@ -33,8 +35,10 @@ class StickyNav
 
       window.addEventListener "scroll", ->
         t.stickify()
+        t.progress()
 
       t.stickify()
+      t.progress()
     , 400)
 
   stickify: ->
@@ -43,5 +47,13 @@ class StickyNav
       @n.addClass('jump-fixed')
     else
       @n.removeClass('jump-fixed')
+
+  progress: ->
+    for pos, link of @nav
+      if @outer.scrollTop + @arbitraryOffset >= pos
+        el.removeClass("current") for el in @jump.querySelectorAll('a')
+        link.addClass("current")
+      else
+        link.removeClass("current")
 
 el = new StickyNav() if Array.prototype.slice.call(document.querySelectorAll('h2[id]')).length>0
