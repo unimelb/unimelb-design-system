@@ -40,12 +40,14 @@
     }
   }
   &.jump-fixed {
-    left: 0;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    a.current {
-      color: $highlight;
+    @include breakpoint(desktop) {
+      left: 0;
+      position: fixed;
+      top: 340px;
+      z-index: 100;
+      a.current {
+        color: $highlight;
+      }
     }
   }
 }

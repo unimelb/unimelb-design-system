@@ -64,7 +64,7 @@ class WebTemplates < Sinatra::Base
     def render_markdown(md)
       @pipeline ||= HTML::Pipeline.new [
         HTML::Pipeline::MarkdownFilter,
-        HTML::Pipeline::SyntaxHighlightFilter
+        # HTML::Pipeline::SyntaxHighlightFilter
       ]
       (@pipeline.call(md))[:output].to_s
     end
@@ -72,7 +72,7 @@ class WebTemplates < Sinatra::Base
     def render_markdown_with_section(md)
       @pipeline_with_section = HTML::Pipeline.new [
         HTML::Pipeline::MarkdownFilter,
-        HTML::Pipeline::SyntaxHighlightFilter,
+        # HTML::Pipeline::SyntaxHighlightFilter,
         SectionWrapFilter
       ]
       (@pipeline_with_section.call(md))[:output].to_s

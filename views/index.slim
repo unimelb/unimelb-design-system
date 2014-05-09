@@ -6,6 +6,15 @@
     img src=(asset_path "components/header/header-logo.svg") alt="UoM Logo"
     <!--<![endif]-->
 
+  .page-header-tools.floating
+    a class="page-header-icon menu" href="#sitemap" title="Menu"
+      <!--[if lt IE 9]>
+        img alt="" src="/assets/components/header/menu-e38e5801aa0e2e4eb23e375093157f92.png"
+      <![endif]-->
+      <!--[if gte IE 9]><!-->
+        img alt="" src="/assets/components/header/menu-783164750fe6981e545a91b4d63bf863.svg"
+      <!--<![endif]-->Menu
+
 div.skip-header role="main"
 
   article
@@ -70,7 +79,4 @@ div.skip-header role="main"
               = component_title(path)
 
     hr
-
-
-
     footer

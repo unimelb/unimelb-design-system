@@ -10,7 +10,7 @@
   background-color: $white;
   color: $black;
   position: relative;
-  z-index: 100;
+  z-index: 3;
 
   header {
     @include rem(height, 58px);
@@ -114,7 +114,7 @@
       display: inline;
     }
   }
-  .page-local-navigation {
+  .page-local-history {
     color: $darkblue;
     display: inline;
     margin: 0;
@@ -124,8 +124,8 @@
   }
 }
 
-.page-local-navigation {
-  @extend .page-header-navigation;
+.page-local-history {
+  @extend %wrapper;
   @include rem(padding-top, 30px);
   color: $white;
   a {
@@ -177,6 +177,18 @@
         @include rem(padding-bottom, 5px);
         @include rem(padding-top, 15px);
         max-width: 100%;
+      }
+    }
+
+    &.floating {
+      @include rem(margin, 40px);
+      background-color: transparent;
+      a.page-header-icon {
+        border: 0 none;
+        &:hover {
+          background-color: transparent;
+          color: $darkblue;
+        }
       }
     }
   }

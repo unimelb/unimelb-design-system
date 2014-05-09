@@ -4,7 +4,7 @@ if (supportedmodernbrowser)
     el.remove() for el in document.querySelectorAll('.modal__blanket')
     blanket = document.createElement 'div'
     blanket.setAttribute('class', 'modal__blanket')
-    document.body.appendChild blanket
+    document.querySelector('div[role="main"]').appendChild blanket
 
   for trigger in document.querySelectorAll("[data-modal-target]")
     trigger.addEventListener 'click', (e) ->
@@ -21,7 +21,7 @@ if (supportedmodernbrowser)
       document.querySelector('.modal__blanket').toggleClass 'on'
 
   for el in document.querySelectorAll('.modal__blanket,.modal__close')
-    el.addEventListener 'click', (e) ->  
+    el.addEventListener 'click', (e) ->
       e.preventDefault()
       modal.removeClass 'on' for modal in document.querySelectorAll('.modal__dialog')
       document.querySelector('.modal__blanket').toggleClass 'on'

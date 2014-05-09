@@ -6,13 +6,11 @@ html.no-js
     meta content="IE=edge" http-equiv="X-UA-Compatible"
     title== page_title ? "#{page_title} | Web.Unimelb" : "Web.Unimelb"
 
+    == stylesheet_tag 'injection'
+
     == stylesheet_tag 'uom'
     == stylesheet_tag 'docs'
-    == stylesheet_tag 'injection'
     == stylesheet_tag '/assets/stylesheets/syntax.css'
-
-    / == stylesheet_tag '//vjs.zencdn.net/4.4/video-js.css'
-    / script src="//vjs.zencdn.net/4.4/video.js"
 
     /[if lt IE 9]
       script src="/assets/javascripts/html5shiv.js"
@@ -22,4 +20,7 @@ html.no-js
     .page-inner
       == yield
 
+    == slim :globalnav
+
     == javascript_tag 'uom'
+    == javascript_tag 'injection'

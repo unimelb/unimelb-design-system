@@ -1,7 +1,108 @@
 [role="navigation"] {
-
+  @include rem(padding, 30px 0);
+  background-color: lighten($navy, 2%);
+  color: $white;
+  h2 {
+    @include rem(padding, 0 30px 30px);
+  }
+  ul {
+    margin-left: 0;
+  }
+  img {
+    display: none;
+    max-width: 50%;
+    margin: 0 25%;
+  }
+  li {
+    border-top: 1px solid $blue;
+    list-style-type: none;
+    padding: 0;
+  }
+  a {
+    @include rem(font-size, 14px);
+    @include rem(letter-spacing, 1px);
+    @include rem(padding, 15px 30px);
+    color: $white;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover {
+      background-color: $brand;
+      color: $white;
+    }
+  }
+  .sitemap-label {
+    @include rem(font-size, 16px);
+    color: $white;
+    cursor: pointer;
+    letter-spacing: 1px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+    -webkit-transform: rotate(90deg) translateX(100px) translateY(-275px);
+    -moz-transform: rotate(90deg) translateX(100px) translateY(-275px);
+    -ms-transform: rotate(90deg) translateX(100px) translateY(-275px);
+    transform: rotate(90deg) translateX(100px) translateY(-275px);
+    &::before {
+      content: '>';
+      display: inline-block;
+      font-size: 30px;
+      -webkit-transform: rotate(-90deg) translateX(-5px) translateY(-12px);
+      -moz-transform: rotate(-90deg) translateX(-5px) translateY(-12px);
+      -ms-transform: rotate(-90deg) translateX(-5px) translateY(-12px);
+      transform: rotate(-90deg) translateX(-5px) translateY(-12px);
+    }
+  }
+  @include breakpoint(tablet) {
+    @include rem(padding, 30px 0);
+    @include rem(right, 60px);
+    @include rem(width, 340px);
+    @include translateX(0);
+    box-shadow: 1px 0 12px 3px rgba($black,.6);
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    &.active {
+      display: block;
+      position: absolute;
+      img {
+        display: block;
+      }
+    }
+    &.evolve {
+      @include translateX(-820px);
+      .sitemap-label::before {
+        -webkit-transform: rotate(90deg) translateX(5px) translateY(5px);
+        -moz-transform: rotate(90deg) translateX(5px) translateY(5px);
+        -ms-transform: rotate(90deg) translateX(5px) translateY(5px);
+        transform: rotate(90deg) translateX(5px) translateY(5px);
+      }
+    }
+    &.no-js {
+      @extend %wrapper;
+      background-color: $navy;
+      box-shadow: 0 0 0;
+      display: block;
+      position: static;
+      width: auto;
+    }
+  }
 }
 
-// http://codepen.io/scottb/pen/javhr
-// http://jpanelmenu.com
-// https://github.com/christophery/pushy
+[role="sitemap"] {
+  @include rem(padding, 30px 0);
+  @include rem(width, 800px);
+  @include translateX(0);
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 15px;
+  z-index: 0;
+  form {
+    @include rem(width, 600px);
+  }
+  &.active {
+    display: block;
+    position: absolute;
+  }
+}

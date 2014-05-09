@@ -27,18 +27,6 @@
 $regular: 400;
 $light: 300;
 
-%wrapper {
-  @include rem(padding, 15px);
-  margin: 0 auto;
-  max-width: 100%;
-  @include breakpoint(wide) {
-    @include rem(max-width, 1099px);
-    margin-left: 15%;
-  }
-  @include breakpoint(1600px) {
-    margin-left: 25%;
-  }
-}
-
 @import "components/header/header";
 @import "components/footer/footer";
+@import "components/global-navigation/globalnav";

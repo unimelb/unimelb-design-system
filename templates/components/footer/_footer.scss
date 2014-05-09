@@ -2,6 +2,8 @@
   background-color: $navy;
   clear: left;
   color: $white;
+  position: relative;
+  z-index: 1;
 
   footer {
     @extend %wrapper;
