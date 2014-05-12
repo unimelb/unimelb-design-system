@@ -6,39 +6,45 @@ Math.easeInOutQuad = (curr, start, change, duration) ->
     curr--
     -change/2 * (curr*(curr-2) - 1) + start
 
-scrollTo = (to, element) ->
-  duration = 600
-
-  start = element.scrollTop
-  change = to - start
-  curr = 0
-  increment = 10
-
-  animateScroll = ->
-    curr += increment
-    element.scrollTop = Math.easeInOutQuad(curr, start, change, duration)
-    setTimeout(animateScroll, increment) if curr < duration
-
-  animateScroll()
-
-if supportedmodernbrowser
-  for el in document.querySelectorAll('a[href^="#"]')
-    unless el.hasAttribute('data-tab')
-      el.addEventListener 'click', (e) ->
-        e.preventDefault()
+class InPage
+  constructor: (@el) ->
+    t = this
+    unless @el.hasAttribute('data-tab')
+      @el.addEventListener 'click', (e) ->
 
         if e.target
-          t = e.target
+          tel = e.target
           if /(Firefox)/g.test(navigator.userAgent)
             outer = document.querySelector('html')
           else
             outer = document.body
         else
-          t = e.srcElement
+          tel = e.srcElement
           outer = document.documentElement
 
-        target = t.getAttribute('href')
-        if target != "#"
-          target = document.querySelector(t.getAttribute('href'))
+        target = tel.getAttribute('href')
+        if target != "#" and target != "#sitemap"
+          e.preventDefault()
+          target = document.querySelector(tel.getAttribute('href'))
           if target
-            scrollTo(target.offsetTop, outer)
+            t.to = target.offsetTop
+            t.element = outer
+            t.scrollTo()
+
+  scrollTo: ->
+    element = @element
+    duration = 600
+    start = element.scrollTop
+    change = @to - start
+    curr = 0
+    increment = 10
+
+    animateScroll = ->
+      curr += increment
+      element.scrollTop = Math.easeInOutQuad(curr, start, change, duration)
+      setTimeout(animateScroll, increment) if curr < duration
+
+    animateScroll()
+
+if supportedmodernbrowser
+  new InPage(el) for el in document.querySelectorAll('a[href^="#"]')

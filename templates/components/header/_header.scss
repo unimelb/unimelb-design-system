@@ -170,6 +170,17 @@
       text-decoration: none;
     }
   }
+  &.floating {
+    @include rem(margin, 15px);
+    background-color: transparent;
+    a.page-header-icon {
+      border-left: 0 none;
+      &:hover {
+        background-color: transparent;
+        color: $darkblue;
+      }
+    }
+  }
   @include breakpoint(desktop) {
     @include rem(padding-left, 15px);
     background-color: $white;
@@ -183,17 +194,8 @@
         max-width: 100%;
       }
     }
-
     &.floating {
       @include rem(margin, 40px);
-      background-color: transparent;
-      a.page-header-icon {
-        border: 0 none;
-        &:hover {
-          background-color: transparent;
-          color: $darkblue;
-        }
-      }
     }
   }
 }

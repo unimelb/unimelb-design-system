@@ -35,6 +35,7 @@
     @include rem(font-size, 16px);
     color: $white;
     cursor: pointer;
+    display: none;
     letter-spacing: 1px;
     position: absolute;
     text-transform: uppercase;
@@ -51,6 +52,9 @@
       -moz-transform: rotate(-90deg) translateX(-5px) translateY(-12px);
       -ms-transform: rotate(-90deg) translateX(-5px) translateY(-12px);
       transform: rotate(-90deg) translateX(-5px) translateY(-12px);
+    }
+    @include breakpoint(tablet) {
+      display: block;
     }
   }
   @include breakpoint(tablet) {
