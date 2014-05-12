@@ -85,6 +85,7 @@ if Array.prototype.slice.call(document.querySelectorAll('div[role="navigation"]'
   nav = document.createElement('div')
   nav.setAttribute('role', 'sitemap')
   nav.innerHTML = """
+  <h2>University of Melbourne</h2>
   <form>
     <fieldset>
       <div class="inline">
@@ -93,6 +94,72 @@ if Array.prototype.slice.call(document.querySelectorAll('div[role="navigation"]'
       </div>
     </fieldset>
   </form>
+  <div class="col-2">
+    <h2><a href="#">Study at Melbourne</a></h2>
+    <ul>
+      <li><a href="#">Undergraduate</a></li>
+      <li><a href="#">Graduate coursework</a></li>
+      <li><a href="#">PhD &amp; research programs</a></li>
+      <li><a href="#">International</a></li>
+      <li><a href="#">Professional, executive &amp; community education</a></li>
+      <li><a href="#">Schools &amp; parents</a></li>
+      <li><a href="#">Student life @ Melbourne</a></li>
+      <li><a href="#">Campus &amp; facilities</a></li>
+    </ul>
+    <h2><a href="#">About us</a></h2>
+    <ul>
+      <li><a href="#">International connections</a></li>
+      <li><a href="#">Governance &amp; leadership</a></li>
+      <li><a href="#">Strategy &amp; vision</a></li>
+      <li><a href="#">Profile &amp; achievements</a></li>
+      <li><a href="#">Faculties &amp; graduate schools</a></li>
+      <li><a href="#">Policy &amp; publications</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">Events</a></li>
+    </ul>
+    <h2><a href="#">Research</a></h2>
+    <ul>
+      <li><a href="#">About research at Melbourne</a></li>
+      <li><a href="#">Working at Melbourne</a></li>
+      <li><a href="#">Research centres, institutes &amp; offices</a></li>
+      <li><a href="#">Current research programs &amp; projects</a></li>
+      <li><a href="#">Scholarships &amp; support</a></li>
+      <li><a href="#">PhD &amp; research programs</a></li>
+      <li><a href="#">Commercial research</a></li>
+      <li><a href="#">Research services &amp; collaboration</a></li>
+    </ul>
+  </div>
+  <div class="col-2">
+    <h2><a href="#">Engagement</a></h2>
+    <ul>
+      <li><a href="#">Outreach programs</a></li>
+      <li><a href="#">The arts &amp; culture</a></li>
+      <li><a href="#">About engagement</a></li>
+      <li><a href="#">Partnerships</a></li>
+      <li><a href="#">Media</a></li>
+      <li><a href="#">Why Melbourne?</a></li>
+    </ul>
+    <h2><a href="#">Alumni &amp; friends</a></h2>
+    <ul>
+      <li><a href="#">Benefits</a></li>
+      <li><a href="#">Giving</a></li>
+      <li><a href="#">Your faculty</a></li>
+      <li><a href="#">Get involved</a></li>
+      <li><a href="#">Global alumni network</a></li>
+      <li><a href="#">Career Centre</a></li>
+      <li><a href="#">Future study</a></li>
+    </ul>
+    <h2><a href="#">Business &amp; organisations</a></h2>
+    <ul>
+      <li><a href="#">Find an expert</a></li>
+      <li><a href="#">Areas of expertise</a></li>
+      <li><a href="#">Consultancy</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Professional development &amp; custom programs</a></li>
+      <li><a href="#">Technology commercialisation</a></li>
+      <li><a href="#">Facilities &amp; technology for hire</a></li>
+    </ul>
+  </div>
   """
   document.querySelector('body').appendChild(nav)
 
