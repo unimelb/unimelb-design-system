@@ -16,16 +16,22 @@ class NavState
 
     @localnav.querySelector('h2:first-child').addEventListener 'click', (e) ->
       e.preventDefault()
-      t.switch(t)
+      if t.page.hasClass "evolve"
+        t.page.toggleClass('evolve')
+        t.localnav.toggleClass('evolve')
+        t.sitemap.toggleClass('active')
+      else
+        t.page.removeClass('evolve')
+        t.localnav.removeClass('evolve')
+        t.sitemap.removeClass('active')
+        t.page.toggleClass('active')
+        t.localnav.toggleClass('active')
 
     @localnav.querySelector('.sitemap-label').addEventListener 'click', (e) ->
       e.preventDefault()
-      t.switch(t)
-
-  switch: (t) ->
-    t.page.toggleClass('evolve')
-    t.localnav.toggleClass('evolve')
-    t.sitemap.toggleClass('active')
+      t.page.toggleClass('evolve')
+      t.localnav.toggleClass('evolve')
+      t.sitemap.toggleClass('active')
 
 # Header
 if Array.prototype.slice.call(document.querySelectorAll('div[role="main"].skip-header')).length==0

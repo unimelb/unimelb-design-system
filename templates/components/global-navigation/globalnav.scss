@@ -88,19 +88,27 @@
 }
 
 [role="sitemap"] {
+  @extend %wrapper;
   @include rem(padding, 30px 0);
-  @include rem(width, 800px);
-  @include translateX(0);
-  display: none;
-  position: fixed;
-  right: 0;
-  top: 15px;
-  z-index: 0;
-  form {
-    @include rem(width, 600px);
-  }
-  &.active {
-    display: block;
-    position: absolute;
+  display: block;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 94%;
+  @include breakpoint(tablet) {
+    @include rem(padding, 30px 0);
+    @include rem(width, 800px);
+    @include translateX(0);
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 15px;
+    z-index: 0;
+    form {
+      @include rem(width, 600px);
+    }
+    &.active {
+      display: block;
+      position: absolute;
+    }
   }
 }
