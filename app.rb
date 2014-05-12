@@ -8,8 +8,8 @@ class WebTemplates < Sinatra::Base
   set :sprockets, Sprockets::Environment.new(root)
   set :assets_prefix, '/assets'
   set :digest_assets, true
-
   set :pages_dir, File.join(root, 'pages')
+  set :compass_gem_root, Gem.loaded_specs['compass'].full_gem_path
 
   set :components_dir, File.join(root, 'templates', 'components')
   set :components, Dir.entries(components_dir).select { |f| f =~ /^[^\.]/ }
@@ -18,7 +18,9 @@ class WebTemplates < Sinatra::Base
   set :layouts, Dir.entries(layouts_dir).select { |f| f =~ /^[^notes].+\.slim$/ }.map { |l| l.gsub(/\.slim$/, '') }
 
   configure do
+    Compass.add_project_configuration(File.join(root, 'compass.rb'))
     sprockets.append_path File.join(root, 'templates')
+    sprockets.append_path File.join(compass_gem_root, 'frameworks', 'compass', 'stylesheets')
     sprockets.cache = Sprockets::Cache::FileStore.new(File.join(root, 'tmp'))
 
     Sprockets::Helpers.configure do |config|

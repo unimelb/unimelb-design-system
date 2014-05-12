@@ -71,12 +71,6 @@
     }
     &.evolve {
       @include translateX(-820px);
-      .sitemap-label::before {
-        -webkit-transform: rotate(90deg) translateX(5px) translateY(5px);
-        -moz-transform: rotate(90deg) translateX(5px) translateY(5px);
-        -ms-transform: rotate(90deg) translateX(5px) translateY(5px);
-        transform: rotate(90deg) translateX(5px) translateY(5px);
-      }
     }
     &.no-js {
       @extend %wrapper;
