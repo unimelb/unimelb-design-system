@@ -1,2 +1,2 @@
-//= require ./components/global
-//= require ./components/header/injection
+//= require ./global
+//= require ./components/injection/injection

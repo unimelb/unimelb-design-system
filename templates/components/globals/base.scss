@@ -1,0 +1,742 @@
+body {
+  background-color: $navy;
+  color: $black;
+  font-family: $ff-sans;
+  font-size: 106.3%;
+  line-height: 1.7;
+  @include breakpoint(desktop) {
+    font-size: 112.5%;
+    line-height: 1.68;
+  }
+}
+
+.page-inner {
+  box-shadow: 1px 0 12px 3px rgba($black,.6);
+  @include breakpoint(tablet) {
+    @include translateX(0);
+    position: relative;
+    z-index: 2;
+    &.active {
+      @include translateX(-400px);
+    }
+    &.evolve {
+      @include translateX(-900px);
+    }
+  }
+}
+
+.clearfix {
+  @extend %clearfix;
+}
+
+.bottom-align {
+  @extend %grad-bottom;
+  @include rem(padding-top, 70px);
+  @include rem(padding-bottom, 20px);
+  position: relative;
+  width: 100%;
+  @include breakpoint(tablet) {
+    bottom: 0;
+    position: absolute;
+  }
+  @include breakpoint(height-smallest) {
+    bottom: 0;
+    position: absolute;
+  }
+  @media screen and (min-width: 481px) and (max-height:639px) {
+    position: relative;
+  }
+}
+.bottom-align-inverted {
+  @extend %grad-top;
+  color: $black;
+  @include breakpoint(height-small) {
+    @include rem(padding-top, 70px);
+    @include rem(padding-bottom, 20px);
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.sans {
+  font-family: $ff-sans;
+}
+.fixed {
+  font-family: $ff-fixed;
+}
+.serif {
+  font-family: $ff-serif;
+}
+.thin {
+  font-weight: $thin;
+}
+.light {
+  font-weight: $light;
+}
+.regular {
+  font-weight: $regular;
+}
+.bold {
+  font-weight: $bold;
+}
+
+[role="main"] {
+  background-color: $lightgray;
+  font-weight: $regular;
+
+  header {
+    @include rem(margin-bottom, 30px);
+    @include rem(min-height, 144px);
+    background-color: $black;
+    background-image: url(/assets/images/bg-banner.jpg);
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -ms-behavior: url(/assets/javascripts/backgroundsize.min.htc);
+    color: $white;
+    position: relative;
+    &.tight {
+      margin-bottom: 0;
+    }
+    .video-loop {
+      background-color: $black;
+      display: none;
+      @include breakpoint(wide) {
+        display: block;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        video {
+          background-color: $black;
+          min-height: 100%;
+          min-width: 100%;
+        }
+      }
+    }
+
+    section {
+      @include rem(min-height, 82px);
+    }
+
+    h1 {
+      line-height: 1;
+      padding-bottom: 0;
+
+      &:after {
+        display: none;
+      }
+
+      @include breakpoint(wide) {
+        @include rem(font-size, 72px);
+        line-height: 1.04;
+      }
+    }
+
+    p {
+      @include rem(font-size, 22px);
+    }
+
+    @include breakpoint(desktop) {
+      overflow: hidden;
+      p {
+        @include rem(font-size, 28px);
+        @include rem(padding-top, 10px);
+      }
+    }
+
+    @include breakpoint(wide) {
+      h1 {
+        @include rem(margin-right, -200px);
+      }
+      p {
+        @include rem(font-size, 32px);
+        @include rem(margin-right, -200px);
+      }
+    }
+    @include breakpoint(height-smallest) {
+      @include rem(height, 550px);
+    }
+    @include breakpoint(height-small) {
+      @include rem(height, 650px);
+    }
+    @include breakpoint(height-medium) {
+      @include rem(height, 700px);
+      @include rem(padding-bottom, 30px);
+    }
+    @include breakpoint(height-big) {
+      @include rem(height, 800px);
+    }
+  }
+
+
+  article {
+    @include rem(padding-bottom, 30px);
+  }
+
+  aside {
+    @include rem(font-size, 15px);
+    color: $darkgray;
+    float: right;
+    section {
+      margin-left: 0;
+    }
+  }
+
+  section {
+    @extend %wrapper;
+    @include rem(max-width, 700px);
+    @include rem(padding-bottom, 30px);
+    @include rem(padding-top, 30px);
+    margin: 0 auto;
+    &.tight {
+      padding-bottom: 0;
+      p:last-child {
+        padding-bottom: 0;
+      }
+    }
+    &.links {
+      padding-top: 0;
+      h2 {
+        @include rem(font-size, 13px);
+        font-weight: $bold;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      ul {
+        margin-left: 0;
+      }
+      p,
+      li {
+        @include rem(font-size, 16px);
+      }
+      li {
+        list-style-type: none;
+      }
+    }
+    & + .video {
+      @include rem(margin-top, -30px);
+    }
+    @include breakpoint(wide) {
+      margin-left: 15%;
+    }
+    @include breakpoint(1600px) {
+      margin-left: 25%;
+    }
+  }
+
+  footer {
+    @include rem(padding-bottom, 30px);
+    @include rem(padding-top, 30px);
+    clear: both;
+    &.alt {
+      background-color: $lightestblue;
+      box-shadow: 0 6px 6px 4px rgba($black, 0.3);
+    }
+    &.cta {
+      background-color: $paleyellow;
+      box-shadow: 0 6px 6px 4px rgba($black, 0.3);
+    }
+  }
+
+  @include breakpoint(desktop) {
+    font-weight: $light;
+  }
+
+}
+
+h1 {
+  @include rem(font-size, 36px);
+  @include rem(padding, 26px 0);
+  font-family: $ff-serif;
+  font-weight: $regular;
+  line-height: 1.2;
+
+  &:after {
+    @include rem(margin-top, 15px);
+    @include rem(max-width, 700px);
+    border-bottom: 2px solid $midgray;
+    content: "";
+    display: block;
+    width: 100%;
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(font-size, 47.1px);
+    @include rem(padding-bottom, 24px);
+    @include rem(padding-top, 30px);
+    line-height: 1.26;
+  }
+
+  &+ h2 {
+    @include rem(padding-top, 3px);
+  }
+}
+
+h2 {
+  @include rem(font-size, 27.5px);
+  @include rem(padding, 23px 0);
+  clear: left;
+  font-weight: $light;
+  line-height: 1.5;
+  @include breakpoint(desktop) {
+    @include rem(font-size, 29.1px);
+  }
+}
+
+h3 {
+  @include rem(font-size, 22.2px);
+  @include rem(padding, 20px 0);
+  font-weight: $bold;
+  line-height: 1.4;
+  @include breakpoint(desktop) {
+    @include rem(font-size, 23.5px);
+    @include rem(padding, 29px 0);
+  }
+}
+
+p,
+li {
+  //@include rem(font-size, 19px);
+  @include rem(letter-spacing, 0.2px);
+  @include rem(padding-bottom, 30px);
+  //line-height: 1.58;
+}
+
+.feature {
+  @include rem(font-size, 20px);
+}
+
+.fullwidth {
+  @include rem(height, 500px);
+  background-color: transparent;
+  background-position: center 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -ms-behavior: url(/assets/javascripts/backgroundsize.min.htc);
+  display: inline-block;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  &.short {
+    height: auto;
+  }
+  section {
+    @include rem(padding-top, 200px);
+    @extend %grad-bottom;
+    bottom: 0;
+    margin: 0;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    position: absolute;
+  }
+  p {
+    @include rem(font-size, 19px);
+    @include rem(margin, 0 15px);
+    @include rem(padding-top, 45px);
+    color: $white;
+    font-weight: $light;
+    max-width: 100%;
+    padding-bottom: 0;
+
+    @include breakpoint(desktop) {
+      margin: 0 10%;
+      max-width: 80%;
+    }
+  }
+  blockquote {
+    color: $white;
+    line-height: 1.4;
+  }
+  pre {
+    @include rem(margin, 0 30px);
+    max-width: 100%;
+  }
+  @include breakpoint(height-small) {
+    @include rem(height, 650px);
+    p {
+      @include rem(font-size, 22px);
+    }
+  }
+  @include breakpoint(height-medium) {
+    @include rem(height, 850px);
+    @include rem(padding-bottom, 30px);
+  }
+  @include breakpoint(height-big) {
+    @include rem(height, 1000px);
+  }
+}
+
+a {
+  color: $cyan;
+  text-decoration: underline;
+  &:hover {
+    color: darken($cyan, 15%);
+  }
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+}
+
+hr {
+  border-top: 0;
+  border-bottom: 1px solid darken($lightgray, 5%);
+  clear: both;
+}
+
+ol,
+ul {
+  @include rem(margin, 0 0 0 25px);
+  @include rem(padding, 0 0 24px 0);
+  color: $darkgray;
+  list-style-position: outside;
+  li {
+    @include rem(padding-bottom, 5px);
+    color: $black;
+    display: list-item;
+  }
+  &.nobullet {
+    margin-left: 0;
+    li {
+      list-style-type: none;
+    }
+  }
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+ul li {
+  list-style-type: disc;
+}
+
+blockquote {
+  @include rem(font-size, 19px);
+  @include rem(margin-top, 30px);
+  @include rem(padding, 30px 15px 0);
+  color: $darkblue;
+  font-family: $ff-serif;
+  font-style: italic;
+  font-weight: $regular;
+  margin-bottom: 0;
+  margin-left: 8%;
+  margin-right: 8%;
+  quotes: "\201C""\201D";
+  text-align: left;
+  &:after,
+  &:before {
+    @include rem(font-size, 100px);
+    @include rem(margin-left, -50px);
+    @include rem(margin-right, 10px);
+    color: darken($lightgray, 10%);
+    content: open-quote;
+    line-height: 0.1em;
+    vertical-align: -0.333em;
+  }
+  &:after {
+    content: close-quote;
+    margin-right: 0;
+    margin-left: 0;
+    vertical-align: -0.667em;
+  }
+  cite {
+    @include rem(font-size, 16px);
+    color: lighten($midgray, 20%);
+    float: left;
+    font-family: $ff-sans;
+    font-style: normal;
+    font-weight: $light;
+    text-align: left;
+    width: 100%;
+    &:before {
+      @include rem(padding-right, 5px);
+      content: "\2014";
+    }
+  }
+  p {
+    @include rem(font-size, 24px);
+    display: inline;
+    margin: 0;
+    padding: 0;
+  }
+
+  @include breakpoint(tablet) {
+    @include rem(font-size, 24px);
+    margin: 0 10%;
+    max-width: 80%;
+  }
+  @include breakpoint(desktop) {
+    margin: 0 10%;
+    max-width: 80%;
+  }
+}
+
+.inset-left {
+  @include rem(margin-bottom, 30px);
+  @include rem(margin-top, 6px);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding: 0;
+  text-align: center;
+  figcaption {
+    @include rem(font-size, 14px);
+    @include rem(padding-bottom, 15px);
+    font-style: italic;
+    line-height: 1.2;
+    text-align: center;
+  }
+  img {
+    max-height: 500px;
+  }
+
+  @include breakpoint(tablet) {
+    @include rem(margin-right, 30px);
+    border: 0 none;
+    float: left;
+    max-width: 40%;
+    text-align: left;
+    figcaption {
+      @include rem(margin-top, 15px);
+      @include rem(padding-top, 15px);
+      color: $lighterblue;
+      position: relative;
+      text-align: left;
+      &:before {
+        @include rem(width, 40px);
+        border-bottom: 2px solid $lighterblue;
+        content: "";
+        display: block;
+        position: absolute;
+        left: 2px;
+        top: 0;
+      }
+    }
+  }
+
+  @include breakpoint(wide) {
+    @include rem(margin-bottom, 20px);
+    @include rem(margin-left, -180px);
+    max-width: 80%;
+    figcaption {
+      float: left;
+      margin-right: 3%;
+      margin-top: 0;
+      text-align: right;
+      width: 22%;
+      &:before {
+        left: auto;
+        right: -2px;
+      }
+    }
+  }
+}
+
+.inset-right {
+  @extend .inset-left;
+
+  @include breakpoint(tablet) {
+    @include rem(margin-left, 30px);
+    float: right;
+    margin-right: 0;
+    text-align: right;
+    figcaption {
+      text-align: right;
+      &:before {
+        left: auto;
+        right: -2px;
+      }
+    }
+  }
+
+  @include breakpoint(wide) {
+    @include rem(margin-right, -180px);
+    margin-left: 0;
+    figcaption {
+      float: right;
+      margin-left: 3%;
+      margin-right: 0;
+      text-align: left;
+      &:before {
+        left: 2px;
+        right: auto;
+      }
+    }
+  }
+}
+
+dl {
+  @extend %clearfix;
+  @include rem(font-size, 12px);
+  @include rem(padding, 10px 15px);
+  dt {
+    @include rem(width, 120px);
+    clear: left;
+    float: left;
+  }
+  dd {
+    float: left;
+  }
+  &.bside {
+    @include rem(font-size, 15px);
+    dt {
+      margin: 0;
+      text-align: left;
+      width: 15%;
+    }
+    dd {
+      margin: 0 0 0 2%;
+      width: 83%;
+    }
+    span {
+      @include rem(font-size, 28px);
+      letter-spacing: -0.125em;
+      line-height: 1;
+    }
+    @include breakpoint(desktop) {
+      @include rem(padding, 10px 30px);
+      display: inline-block;
+      max-width: 900px;
+      width: 75%;
+      dt {
+        text-align: right;
+      }
+    }
+  }
+}
+
+aside {
+  clear: both;
+  width: 100%;
+  dt {
+    @include rem(letter-spacing, 1px);
+    @include rem(padding-bottom, 5px);
+    font-weight: $bold;
+    margin-left: 0;
+    text-transform: uppercase;
+    width: 100%;
+  }
+  dd {
+    margin-left: 0;
+    width: 100%;
+  }
+  @include breakpoint(desktop) {
+    display: inline-block;
+    max-width: 300px;
+    width: 25%;
+  }
+}
+
+.hold {
+  @include rem(max-width, 1200px);
+  margin: 0 auto;
+  aside {
+    float: none;
+  }
+}
+
+.overview {
+  margin: 0 auto;
+  width: 814px;
+  position: relative;
+  text-align: center;
+  img {
+    border: 1px solid $lightergray;
+    display: inline;
+    margin-right: 10px;
+    vertical-align: top;
+    &.last {
+      margin-right: 0;
+    }
+  }
+  .block {
+    margin-left: -406px;
+    width: 200px;
+
+    background-color: rgba($black, 0.7);
+    color: $white;
+    font-weight: $bold;
+
+    left: 50%;
+    position: absolute;
+    text-decoration: none;
+    &:hover {
+      background-color: rgba($paleyellow, 0.8);
+      color: $black;
+    }
+    &.desktop {
+      margin-left: -194px;
+      width: 601px;
+    }
+  }
+}
+
+.wide-wrap {
+  overflow: scroll;
+  padding-top: 60px;
+  position: relative;
+  max-width: 100%;
+  &:before {
+    color: $cyan;
+    content: "\21e0";
+    float: left;
+    font-size: 50px;
+    line-height: 50px;
+    margin-top: -60px;
+    text-align: right;
+    width: 100%;
+  }
+  div:before {
+    @extend %grad-left;
+    content: '';
+    height: 50px;
+    margin-top: -60px;
+    position: absolute;
+    width: 100%;
+  }
+  @include breakpoint(desktop) {
+    overflow: visible;
+    padding-top: 0;
+    &:before {
+      content: none;
+      position: static;
+      height: 0;
+    }
+    div:before {
+      content: none;
+    }
+  }
+}
+
+.alert {
+  @include rem(margin-bottom, 15px);
+  @include rem(padding, 15px);
+  background-color: $paleyellow;
+  box-shadow: 0 2px 3px rgba($black, 0.1);
+  a {
+    color: darken($paleyellow, 65%);
+  }
+}
+
+.fifth {
+  @include rem(padding, 0 15px 30px);
+  float: left;
+  width: 100%;
+  .col {
+    margin: 1%;
+    @include breakpoint(desktop) {
+      float: left;
+      margin: 0 1%;
+      text-align: center;
+      width: 18%;
+    }
+  }
+}
+

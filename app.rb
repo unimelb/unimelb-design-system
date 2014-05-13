@@ -127,7 +127,12 @@ class WebTemplates < Sinatra::Base
     elsif request['view'].to_s.downcase == 'demo'
       slim layout_view
     else
-      slim (prepend+'overview-'+path).to_sym
+      overview = prepend+'overview-'+path
+      if File.exist?(overview)
+        slim overview.to_sym
+      else
+        slim layout_view
+      end
     end
   end
 

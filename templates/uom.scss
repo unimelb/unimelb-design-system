@@ -1,7 +1,7 @@
 /*
  *= require_self
- *= require ./components/accordion/accordion
- *= require ./components/modal/modal
+ *= require ./components/accordions/accordion
+ *= require ./components/modals/modal
  */
 
 @import "compass";
@@ -12,15 +12,17 @@
 /* Sass Dependencies */
 @import "components/patterns/normalize";
 @import "components/patterns/smooth-font-loading";
-@import "components/typography/base";
-@import "components/typography/code";
-@import "components/typography/profile";
+@import "components/globals/base";
+@import "components/globals/code";
 @import "components/listings/listings";
 @import "components/videos/yt";
 @import "components/forms/forms";
 @import "components/buttons/buttons";
 @import "components/tabs/tabs";
-@import "components/inpage-scrolling/jumpnav";
+@import "components/navigation/jumpnav";
+
+/* Layouts */
+@import "components/globals/profile";
 
 /* Print */
 @import "print";

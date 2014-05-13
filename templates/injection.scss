@@ -1,7 +1,7 @@
 @import "compass";
 @import "components/patterns/rem";
 @import "components/patterns/media-queries";
-@import "components/colours/globals";
+@import "components/globals/globals";
 
 @font-face {
   font-family: 'Roboto';
@@ -28,6 +28,6 @@
 $regular: 400;
 $light: 300;
 
-@import "components/header/header";
-@import "components/footer/footer";
-@import "components/global-navigation/globalnav";
+@import "components/injection/header";
+@import "components/injection/footer";
+@import "components/injection/globalnav";

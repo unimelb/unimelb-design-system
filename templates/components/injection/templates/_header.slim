@@ -1,0 +1,26 @@
+.page-header
+  header
+    a class="page-header-logo" href="http://www.unimelb.edu.au"
+      /[if lt IE 9]
+        img src=(asset_path "components/injection/header-logo.png") alt="UoM Logo"
+      <!--[if gte IE 9]><!-->
+      img src=(asset_path "components/injection/header-logo.svg") alt="UoM Logo"
+      <!--<![endif]-->
+
+    .page-header-navigation
+      a title="The University of Melbourne" href="https://unimelb.edu.au" The University of Melbourne
+      span="/"
+      a.last title="Web Templates" href="/" Web Templates
+      - if page_title
+        span="/"
+        a title=(page_title) href=""
+          = page_title
+
+    .page-header-tools
+      a.page-header-icon.menu title="Menu" href="#index"
+        /[if lt IE 9]
+          img src=(asset_path "components/injection/menu.png") alt=""
+        <!--[if gte IE 9]><!-->
+          img src=(asset_path "components/injection/menu.svg") alt=""
+        <!--<![endif]-->
+        ' Menu

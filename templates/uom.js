@@ -1,3 +1,3 @@
-//= require ./components/global
+//= require ./global
 //= require_tree ./components
-//= stub ./components/header/injection
+//= stub ./components/injection/injection

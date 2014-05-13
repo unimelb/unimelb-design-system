@@ -1,0 +1,201 @@
+%headerblock {
+  @include rem(font-size, 16px);
+  color: $darkblue;
+  display: inline-block;
+  font-weight: $regular;
+  vertical-align: middle;
+}
+
+.page-header {
+  background-color: $white;
+  color: $black;
+  position: relative;
+  z-index: 3;
+
+  header {
+    @include rem(height, 58px);
+    //box-shadow: 0 6px 6px -3px rgba($black, 0.3);
+    // god damn it compass
+    @include single-box-shadow(rgba($black,0.3), 0, 6px, 6px, -3px);
+
+    padding: 0;
+
+    @include breakpoint(desktop) {
+      @include rem(height, 90px);
+    }
+  }
+
+  a {
+    @extend %headerblock;
+    @include rem(height, 60px);
+    @include rem(line-height, 60px);
+    font-weight: $light;
+    text-decoration: none;
+    &:hover {
+      color: $midblue;
+      text-decoration: underline;
+    }
+    &.page-header-logo {
+      @include rem(height, 60px);
+      @include rem(width, 60px);
+      background-color: $darkblue;
+      margin-left: 0;
+      img {
+        border: 0;
+        max-height: 100%;
+        max-width: 100%;
+      }
+    }
+    &.floating {
+      @include rem(left, 10px);
+      @include rem(top, 10px);
+      margin-top: 0;
+      position: absolute;
+      @include breakpoint(desktop) {
+        @include rem(margin-top, 30px);
+        left: 0;
+        position: relative;
+        top: 0;
+      }
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(height, 90px);
+      @include rem(line-height, 90px);
+      &.page-header-logo {
+        @include rem(margin-left, 40px);
+        @include rem(height, 140px);
+        @include rem(width, 140px);
+        position: absolute;
+      }
+    }
+  }
+
+  span {
+    @extend %headerblock;
+    @include rem(font-size, 13px);
+    @include rem(height, 40px);
+    @include rem(line-height, 40px);
+    @include rem(padding, 0 10px 5px 10px);
+    font-weight: $light;
+
+    @include breakpoint(desktop) {
+      @include rem(height, 75px);
+      @include rem(line-height, 75px);
+      @include rem(padding, 0 10px 7.5px 10px);
+    }
+  }
+}
+
+.page-header-navigation {
+  @include rem(margin-left, 25px);
+  display: inline;
+  a, span {
+    display: inline-block;
+  }
+  @include breakpoint(0) {
+    a, span {
+      display: none;
+    }
+    a.last {
+      display: inline-block;
+      max-width: 55%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  @include breakpoint(desktop) {
+    @include rem(height, 90px);
+    @include rem(margin-left, 205px);
+    @include rem(margin-right, 115px);
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    a, span {
+      display: inline;
+    }
+  }
+  .page-local-history {
+    color: $darkblue;
+    display: inline;
+    margin: 0;
+    a {
+      color: $darkblue;
+    }
+  }
+}
+
+.page-local-history {
+  @extend %wrapper;
+  @include rem(padding-top, 30px);
+  color: $white;
+  a {
+    color: $white;
+    font-weight: $light;
+  }
+  span {
+    @include rem(padding, 0 10px);
+  }
+}
+
+.page-header-tools {
+  position: absolute;
+  right: 0;
+  top: -2px;
+  .page-header-icon {
+    @include rem(font-size, 11px);
+    @include rem(padding, 0 10px);
+    @include rem(width, 40px);
+    border-left: 1px solid darken($lightgray, 10%);
+    font-weight: $regular;
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    img {
+      @include rem(max-height, 31px);
+      @include rem(padding-bottom, 3px);
+      @include rem(padding-top, 15px);
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+    &:hover {
+      background-color: $paleblue;
+      text-decoration: none;
+    }
+  }
+  &.floating {
+    @include rem(margin, 15px);
+    background-color: transparent;
+    a.page-header-icon {
+      border-left: 0 none;
+      color: $white;
+      &:hover {
+        background-color: transparent;
+        color: $white;
+      }
+    }
+  }
+  @include breakpoint(desktop) {
+    @include rem(padding-left, 15px);
+    background-color: $white;
+    .page-header-icon {
+      @include rem(padding, 0px 30px 0px 30px);
+      img {
+        @include rem(margin-top, 15px);
+        @include rem(max-height, 39px);
+        @include rem(padding-bottom, 5px);
+        @include rem(padding-top, 15px);
+        max-width: 100%;
+      }
+    }
+    &.floating {
+      @include rem(margin, 40px);
+    }
+  }
+}
