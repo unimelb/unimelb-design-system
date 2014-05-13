@@ -58,6 +58,12 @@ body {
     width: 100%;
   }
 }
+.mid-align {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
 
 .sans {
   font-family: $ff-sans;

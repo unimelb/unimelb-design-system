@@ -85,6 +85,11 @@
       padding-left: 0;
       padding-right: 0;
     }
+    &.black {
+      .full-width {
+        background-color: $black;
+      }
+    }
   }
 
   [data-tabbed].tabbed {

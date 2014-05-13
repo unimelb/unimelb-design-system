@@ -1,12 +1,73 @@
-== slim :breadcrumb
+.page-header
+  a class="page-header-logo floating" href="http://www.unimelb.edu.au"
+    /[if lt IE 9]
+      img src="/assets/images/injection/header-logo.png" alt="UoM Logo"
+    <!--[if gte IE 9]><!-->
+    img src="/assets/images/injection/header-logo.svg" alt="UoM Logo"
+    <!--<![endif]-->
 
-div role="main"
+  .page-header-tools.floating
+    a class="page-header-icon menu" href="#sitemap" title="Menu"
+      <!--[if lt IE 9]>
+        img alt="" src="/assets/images/injection/menu-w.png"
+      <![endif]-->
+      <!--[if gte IE 9]><!-->
+        img alt="" src="/assets/images/injection/menu-w.svg"
+      <!--<![endif]-->Menu
+
+div.skip-header role="main"
+
   article
-    header style="background-image:url(/assets/videos/deciphering-epilepsy.jpg);"
-      .bottom-align
+    header.tight style="background-image:url(/assets/images/templates/vca-1.jpg);"
+      .mid-align
         section
-          h1 Deciphering epilepsy
-          p From predicting seizures to pinpointing genes, researchers are making huge leaps in understanding the causes and processes involved in epilepsy.
+          h1 VCA
+          a.button-outline-inverse href="" Read More
 
-    section
-      p test
+    .tabbed-nav.black data-tabbed=""
+      .full-width
+        nav
+          a Study
+          a Today
+          a Research
+      #welcome.tab
+        article.welcome
+          section
+            h2 For more than 160 years, research at the University of Melbourne has been helping to change the world.
+
+          section.video
+            iframe src="//player.vimeo.com/video/90098451?api=1" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""
+          div.white
+            section
+              p At the heart of the Parkville Precinct research community, the University is one of the largest and most productive research organisations in Australia. Our research helps solve the world’s most difficult problems, improves lives and contributes to the greater wellbeing of societies.
+            section.center
+              a.button-outline href="#stories" data-tab="2" Read our stories
+
+      #stories.tab
+        section
+          p nil
+      #researchers.tab
+        article.welcome
+          section.wide
+            h2  Meet some of our researchers who are at the forefront of international scholarship in fields as diverse as Asian law, quantum mechanics, architecture, economics and medical research.
+        .listing-divider
+          h3 The next big thing
+          p Younger researchers at the University of Melbourne may have big shoes to fill, but they are making rapid progress toward the top of their game.
+
+    .fullwidth.short
+      ul.selector-listing
+        li
+          a href="/build/process"
+            strong: span Planning your website
+            p Resources to help you plan, create content, design and develop your website.
+            span class="button-small brand" Planning
+        li
+          a href="/training/index"
+            strong: span Training and community
+            p Training calendar, online training, forums, zendesk and more...
+            span class="button-small brand" Training
+        li
+          a href="/policies/web-policies"
+            strong: span Philosophies, guidelines and policies
+            p Stay on the right side of the law son.
+            span class="button-small brand" Policies
