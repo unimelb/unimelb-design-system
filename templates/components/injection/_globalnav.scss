@@ -177,7 +177,7 @@
       @include rem(font-size, 30px);
       @include rem(height, 20px);
       @include rem(line-height, 17px);
-      @include rem(margin, 10px 5px 0 0);
+      @include rem(margin, 10px 10px 0 0);
       @include rem(padding-left, 2px);
       @include rem(width, 18px);
       border: 2px solid $white;
@@ -202,12 +202,23 @@
       background-color: $brand;
       color: $white;
     }
+    &::after {
+      color: $blue;
+      content: '\25bc';
+      float: right;
+    }
   }
 
   .accordion__visible {
-    a,
+    a {
+      background-color: $brand;
+    }
     .accordion__title {
       background-color: $brand;
+      &::after {
+        color: $white;
+        content: '\25b2';
+      }
     }
   }
 
@@ -215,6 +226,10 @@
     @include rem(width, 800px);
     form {
       @include rem(width, 600px);
+      padding: 0;
+    }
+    h2 {
+      @include rem(padding-left, 10px);
     }
     .col-2 {
       float: left;
@@ -225,10 +240,14 @@
       }
     }
     .accordion__title {
+      @include rem(padding-top, 30px);
       border-top: 0 none;
       cursor: text;
       &:hover {
         background-color: inherit;
+      }
+      &::after {
+        display: none;
       }
     }
     .accordion__hidden {
