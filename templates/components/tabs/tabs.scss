@@ -11,7 +11,6 @@
     }
   }
   .tab {
-//    display: none;
     margin: 0;
     padding: 0;
     &[data-current] {
@@ -88,6 +87,9 @@
     &.black {
       .full-width {
         background-color: $black;
+      }
+      nav a[data-current]:after {
+        border-top-color: $black;
       }
     }
   }

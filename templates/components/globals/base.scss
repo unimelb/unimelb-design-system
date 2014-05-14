@@ -12,13 +12,23 @@ body {
 
 .page-inner {
   box-shadow: 1px 0 12px 3px rgba($black,.6);
+  @include translateX(0);
+  position: relative;
+  z-index: 2;
+
+  &.active {
+    @include translateX(-280px);
+  }
+
+  &.evolve {
+    @include translateX(-600px);
+  }
+
   @include breakpoint(tablet) {
-    @include translateX(0);
-    position: relative;
-    z-index: 2;
     &.active {
       @include translateX(-400px);
     }
+
     &.evolve {
       @include translateX(-900px);
     }
@@ -29,7 +39,7 @@ body {
   @extend %clearfix;
 }
 
-.bottom-align {
+[role="main"] header .bottom-align {
   @extend %grad-bottom;
   @include rem(padding-top, 70px);
   @include rem(padding-bottom, 20px);
@@ -47,7 +57,7 @@ body {
     position: relative;
   }
 }
-.bottom-align-inverted {
+[role="main"] header .bottom-align-inverted {
   @extend %grad-top;
   color: $black;
   @include breakpoint(height-small) {
@@ -58,11 +68,22 @@ body {
     width: 100%;
   }
 }
-.mid-align {
+
+[role="main"] header .mid-align {
+  @include rem(height, 700px);
+  @include rem(padding, 260px 0 180px);
   position: absolute;
-  height: 100%;
   width: 100%;
   text-align: center;
+  h1 {
+    @include rem(font-size, 50px);
+    @include rem(letter-spacing, 3px);
+    @include rem(padding-bottom, 30px);
+    font-family: $ff-sans;
+    font-weight: $bold;
+    margin-right: 0;
+    text-transform: uppercase;
+  }
 }
 
 .sans {
@@ -304,10 +325,8 @@ h3 {
 
 p,
 li {
-  //@include rem(font-size, 19px);
   @include rem(letter-spacing, 0.2px);
   @include rem(padding-bottom, 30px);
-  //line-height: 1.58;
 }
 
 .feature {
@@ -348,6 +367,10 @@ li {
     font-weight: $light;
     max-width: 100%;
     padding-bottom: 0;
+    &.black {
+      color: $black;
+      text-align: center;
+    }
 
     @include breakpoint(desktop) {
       margin: 0 10%;

@@ -69,6 +69,12 @@
         position: absolute;
       }
     }
+    &.wide {
+      @include breakpoint(desktop) {
+        @include rem(width, 320px);
+        background-color: $black;
+      }
+    }
   }
 
   span {

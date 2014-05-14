@@ -1,9 +1,9 @@
 .page-header
-  a class="page-header-logo floating" href="http://www.unimelb.edu.au"
+  a class="page-header-logo floating wide" href="http://www.unimelb.edu.au"
     /[if lt IE 9]
-      img src="/assets/images/injection/header-logo.png" alt="UoM Logo"
+      img src="/assets/images/logo-vca.png" alt="UoM Logo"
     <!--[if gte IE 9]><!-->
-    img src="/assets/images/injection/header-logo.svg" alt="UoM Logo"
+    img src="/assets/images/logo-vca.svg" alt="UoM Logo"
     <!--<![endif]-->
 
   .page-header-tools.floating
@@ -20,9 +20,8 @@ div.skip-header role="main"
   article
     header.tight style="background-image:url(/assets/images/templates/vca-1.jpg);"
       .mid-align
-        section
-          h1 VCA
-          a.button-outline-inverse href="" Read More
+        h1 Some awesome event
+        a.button-outline-inverse href="" Read More
 
     .tabbed-nav.black data-tabbed=""
       .full-width
@@ -30,6 +29,7 @@ div.skip-header role="main"
           a Study
           a Today
           a Research
+          a About
       #welcome.tab
         article.welcome
           section
@@ -44,8 +44,23 @@ div.skip-header role="main"
               a.button-outline href="#stories" data-tab="2" Read our stories
 
       #stories.tab
-        section
-          p nil
+        .fullwidth.short
+          ul.selector-listing
+            li
+              a href="/build/process"
+                strong: span Planning your website
+                p Resources to help you plan, create content, design and develop your website.
+                span class="button-small brand" Planning
+            li
+              a href="/training/index"
+                strong: span Training and community
+                p Training calendar, online training, forums, zendesk and more...
+                span class="button-small brand" Training
+            li
+              a href="/policies/web-policies"
+                strong: span Philosophies, guidelines and policies
+                p Stay on the right side of the law son.
+                span class="button-small brand" Policies
       #researchers.tab
         article.welcome
           section.wide
@@ -53,21 +68,6 @@ div.skip-header role="main"
         .listing-divider
           h3 The next big thing
           p Younger researchers at the University of Melbourne may have big shoes to fill, but they are making rapid progress toward the top of their game.
-
-    .fullwidth.short
-      ul.selector-listing
-        li
-          a href="/build/process"
-            strong: span Planning your website
-            p Resources to help you plan, create content, design and develop your website.
-            span class="button-small brand" Planning
-        li
-          a href="/training/index"
-            strong: span Training and community
-            p Training calendar, online training, forums, zendesk and more...
-            span class="button-small brand" Training
-        li
-          a href="/policies/web-policies"
-            strong: span Philosophies, guidelines and policies
-            p Stay on the right side of the law son.
-            span class="button-small brand" Policies
+      #about.tab
+        .fullwidth.short
+          p.black The Victorian College of the Arts brings together an extensive range of creative disciplines including Art, Dance, Theatre, Film and Television, Contemporary Music, Music Theatre, Production, Community Cultural Development and Indigenous Arts Management.

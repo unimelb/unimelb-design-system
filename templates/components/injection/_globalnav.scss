@@ -1,7 +1,15 @@
 [role="navigation"] {
   @include rem(padding, 30px 0);
+  @include rem(right, 40px);
+  @include rem(width, 250px);
+  @include translateX(0);
   background-color: lighten($navy, 2%);
+  box-shadow: 1px 0 12px 3px rgba($black,.6);
   color: $white;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+
   h2 {
     @include rem(padding, 0 30px 30px);
   }
@@ -31,12 +39,14 @@
       color: $white;
     }
   }
+
   .sitemap-label {
     @include rem(font-size, 16px);
     color: $white;
     cursor: pointer;
-    display: none;
+    display: block;
     letter-spacing: 1px;
+    line-height: 1;
     position: absolute;
     text-transform: uppercase;
     top: 0;
@@ -53,52 +63,65 @@
       -ms-transform: rotate(-90deg) translateX(-5px) translateY(-12px);
       transform: rotate(-90deg) translateX(-5px) translateY(-12px);
     }
-    @include breakpoint(tablet) {
+  }
+
+  &.active {
+    display: block;
+    position: absolute;
+    img {
       display: block;
     }
-  }
-  @include breakpoint(tablet) {
-    @include rem(padding, 30px 0);
-    @include rem(right, 60px);
-    @include rem(width, 340px);
-    @include translateX(0);
-    box-shadow: 1px 0 12px 3px rgba($black,.6);
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    &.active {
-      display: block;
-      position: absolute;
-      img {
-        display: block;
+    .sitemap-label {
+      margin-left: -100px;
+      @include breakpoint(tablet) {
+        margin-left: 0;
       }
     }
-    &.evolve {
+  }
+
+  &.evolve {
+    @include translateX(-400px);
+    @include breakpoint(tablet) {
       @include translateX(-820px);
     }
-    &.no-js {
-      @extend %wrapper;
-      background-color: $navy;
-      box-shadow: 0 0 0;
-      display: block;
-      position: static;
-      width: auto;
-    }
+  }
+
+  &.no-js {
+    @extend %wrapper;
+    background-color: $navy;
+    box-shadow: 0 0 0;
+    display: block;
+    position: static;
+    width: auto;
+  }
+
+  @include breakpoint(tablet) {
+    @include rem(right, 60px);
+    @include rem(width, 340px);
   }
 }
 
 [role="sitemap"] {
   @extend %wrapper;
-  @include rem(padding, 30px 0);
-  display: block;
-  padding-left: 3%;
-  padding-right: 3%;
-  width: 94%;
+  @include rem(padding, 0 0 30px);
+  @include translateX(0);
+  display: none;
+  height: 100%;
+  margin: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+
   a {
-    @include rem(padding, 10px);
+    @include rem(padding-bottom, 10px);
+    @include rem(padding-top, 10px);
     border-top: 1px solid $blue;
     color: $white;
     display: block;
+    padding-left: 3%;
+    padding-right: 3%;
     text-decoration: none;
     &:hover {
       background-color: $brand;
@@ -107,9 +130,12 @@
   }
   h2 {
     @include rem(font-size, 24px);
-    @include rem(padding, 20px 0 0);
+    @include rem(padding-bottom, 10px);
     color: $white;
-    margin-right: 3%;
+    line-height: 1.2;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 0;
     a {
       border-top: 0 none;
     }
@@ -125,15 +151,68 @@
     margin: 0;
     padding: 0;
   }
+  form {
+    padding: 0 3%;
+  }
+
+  &.active {
+    display: block;
+    position: absolute;
+  }
+
+  .col-2 {
+    width: 100%;
+  }
+
+  .close-button {
+    color: $navy;
+    border: 0;
+    display: block;
+    height: 0;
+    margin-right: 0;
+    padding-right: 0;
+    text-indent: -999em;
+
+    &::before {
+      @include rem(font-size, 30px);
+      @include rem(height, 20px);
+      @include rem(line-height, 17px);
+      @include rem(margin, 10px 5px 0 0);
+      @include rem(padding-left, 2px);
+      @include rem(width, 18px);
+      border: 2px solid $white;
+      border-radius: 50%;
+      color: $white;
+      content: '\00d7';
+      display: block;
+      float: right;
+      font-weight: $light;
+      text-indent: 0;
+    }
+    &:hover {
+      background-color: $navy;
+      color: $navy;
+    }
+  }
+
+  .accordion__title {
+    @include rem(padding, 20px 10px);
+    border-top: 1px solid $blue;
+    &:hover {
+      background-color: $brand;
+      color: $white;
+    }
+  }
+
+  .accordion__visible {
+    a,
+    .accordion__title {
+      background-color: $brand;
+    }
+  }
+
   @include breakpoint(tablet) {
-    @include rem(padding, 30px 0);
     @include rem(width, 800px);
-    @include translateX(0);
-    display: none;
-    position: fixed;
-    right: 0;
-    top: 15px;
-    z-index: 0;
     form {
       @include rem(width, 600px);
     }
@@ -145,9 +224,21 @@
         margin-right: 0;
       }
     }
-    &.active {
-      display: block;
-      position: absolute;
+    .accordion__title {
+      border-top: 0 none;
+      cursor: text;
+      &:hover {
+        background-color: inherit;
+      }
+    }
+    .accordion__hidden {
+      max-height: 1000px;
+    }
+    .accordion__visible {
+      a,
+      .accordion__title {
+        background-color: inherit;
+      }
     }
   }
 }
