@@ -3,20 +3,15 @@
 
   .selector-listing {
     @include rem(margin-top, 60px);
-    background-color: transparent;
     li {
-      @include rem(margin, 30px 0);
+      @include rem(margin-bottom, 30px);
+      @include rem(margin-top, 30px);
       background-color: transparent;
       color: $black;
-      @include breakpoint(desktop) {
-        margin: 0 2%;
-        width: 29%;
-      }
     }
     strong,
     span,
     p {
-      background-color: transparent;
       border-color: $black;
       color: $black;
     }
@@ -32,6 +27,7 @@
       }
     }
     .button-small {
+      background-color: $white;
       border: 2px solid $black;
     }
     &.inverse {

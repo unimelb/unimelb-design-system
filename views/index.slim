@@ -42,7 +42,7 @@ div.skip-header role="main"
             span class="button-small brand" Policies
 
     .hero-listing.noborder
-      h2 style="background-image:url(http://placekitten.com/1200/600)"
+      h2 style="background-image:url(http://placekitten.com/1200/700)"
         .inner
           strong Example Page Layouts
           p Focused page templates, constructed from the components listed above.
@@ -54,7 +54,7 @@ div.skip-header role="main"
               small.todo=="[TODO]"
             - else
               figure
-                img src=('/assets/images/templates/'+layout_title(path).downcase+'.jpg')
+                img src=('/assets/images/templates/'+path+'.jpg')
             strong= layout_title(path)
             p
               a href=(layout_path path, 'demo') Demo

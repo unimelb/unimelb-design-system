@@ -795,6 +795,16 @@ aside {
 .half {
   margin: 0 auto;
 
+  em {
+    @include rem(font-size, 13px);
+    @include rem(padding-bottom, 30px);
+    display: block;
+  }
+  img {
+    @include rem(margin-top, 30px);
+    max-width: 95%;
+  }
+
   @include breakpoint(desktop) {
     width: 90%;
   }

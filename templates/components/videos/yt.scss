@@ -90,8 +90,8 @@
     @include breakpoint(desktop) {
       @include rem(margin-bottom, 60px);
       @include rem(margin-top, 60px);
-      margin-right: 5%;
-      max-width: 45%;
+      margin-right: 2.5%;
+      max-width: 47.5%;
       padding-bottom: 27.5%;
     }
   }
