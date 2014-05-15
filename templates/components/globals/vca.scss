@@ -1,0 +1,91 @@
+[role="main"] .vca {
+  padding-bottom: 0;
+
+  .selector-listing {
+    @include rem(margin-top, 60px);
+    background-color: transparent;
+    li {
+      @include rem(margin, 30px 0);
+      background-color: transparent;
+      color: $black;
+      @include breakpoint(desktop) {
+        margin: 0 2%;
+        width: 29%;
+      }
+    }
+    strong,
+    span,
+    p {
+      background-color: transparent;
+      border-color: $black;
+      color: $black;
+    }
+    a {
+      background-color: $white;
+      color: $black;
+    }
+    a {
+      @include rem(min-height, 360px);
+      &:hover .button-small {
+        background-color: $black;
+        color: $white;
+      }
+    }
+    .button-small {
+      border: 2px solid $black;
+    }
+    &.inverse {
+      strong,
+      span,
+      p {
+        border-color: $white;
+        color: $white;
+      }
+      a {
+        background-color: rgba($black, 0.85);
+        color: $white;
+        &:hover .button-small {
+          background-color: $white;
+          color: $black;
+        }
+      }
+      .button-small {
+        border-color: $white;
+      }
+    }
+  }
+
+  footer.cta {
+    @include rem(padding-top, 30px);
+    background-color: $black;
+    color: $white;
+    .overview {
+      @include rem(padding, 30px 0 0);
+    }
+    .button-outline-inverse {
+      @include rem(margin-left, 30px);
+      @include rem(padding-bottom, 10px);
+      @include rem(padding-top, 10px);
+      &::after {
+        @include rem(top, -4px);
+      }
+    }
+  }
+
+  .quarter {
+    border-bottom: 1px solid $white;
+    margin-left: 0;
+    width: 100%;
+    a {
+      color: $white;
+    }
+    img {
+      @include rem(margin-right, 10px);
+      @include rem(max-width, 24px);
+      vertical-align: middle;
+    }
+    @include breakpoint(desktop) {
+      @include rem(padding, 30px 0 90px);
+    }
+  }
+}

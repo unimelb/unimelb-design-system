@@ -368,6 +368,8 @@ li {
     max-width: 100%;
     padding-bottom: 0;
     &.black {
+      @include rem(padding-bottom, 45px);
+      @include rem(padding-top, 65px);
       color: $black;
       text-align: center;
     }
@@ -673,9 +675,12 @@ aside {
 
 .overview {
   margin: 0 auto;
-  width: 814px;
   position: relative;
   text-align: center;
+  width: 100%;
+  @include breakpoint(desktop) {
+    width: 814px;
+  }
   img {
     border: 1px solid $lightergray;
     display: inline;
@@ -769,3 +774,32 @@ aside {
   }
 }
 
+.quarter {
+  li {
+    @include rem(padding-bottom, 20px);
+    line-height: 1;
+    margin-left: 9%;
+    margin-right: 9%;
+    text-align: left;
+    width: 82%;
+    @include breakpoint(desktop) {
+      float: left;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      width: 25%;
+    }
+  }
+}
+
+.half {
+  margin: 0 auto;
+  width: 90%;
+  section {
+    margin: 0;
+    @include breakpoint(desktop) {
+      float: left;
+      width: 50%;
+    }
+  }
+}

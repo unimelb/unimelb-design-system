@@ -1,9 +1,9 @@
 .page-header
-  a class="page-header-logo floating wide" href="http://www.unimelb.edu.au"
+  a class="page-header-logo floating wide" href="/"
     /[if lt IE 9]
-      img src="/assets/images/logo-vca.png" alt="UoM Logo"
+      img src="/assets/images/vca/logo-vca.png" alt="UoM Logo"
     <!--[if gte IE 9]><!-->
-    img src="/assets/images/logo-vca.svg" alt="UoM Logo"
+    img src="/assets/images/vca/logo-vca.svg" alt="UoM Logo"
     <!--<![endif]-->
 
   .page-header-tools.floating
@@ -17,7 +17,7 @@
 
 div.skip-header role="main"
 
-  article
+  article.vca
     header.tight style="background-image:url(/assets/images/templates/vca-1.jpg);"
       .mid-align
         h1 Some awesome event
@@ -30,44 +30,85 @@ div.skip-header role="main"
           a Today
           a Research
           a About
-      #welcome.tab
-        article.welcome
-          section
-            h2 For more than 160 years, research at the University of Melbourne has been helping to change the world.
 
-          section.video
-            iframe src="//player.vimeo.com/video/90098451?api=1" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""
-          div.white
-            section
-              p At the heart of the Parkville Precinct research community, the University is one of the largest and most productive research organisations in Australia. Our research helps solve the world’s most difficult problems, improves lives and contributes to the greater wellbeing of societies.
-            section.center
-              a.button-outline href="#stories" data-tab="2" Read our stories
-
-      #stories.tab
+      #study.tab
         .fullwidth.short
+          p.black The VCA is committed to providing a deep and transforming learning experience in pursuit of artistic excellence, innovation and an absorbing education. Welcome to a community of artists of all sorts - contemporary artists, writers, choreographers, musicians, designers, performers, actors, filmmakers, dancers and more, all committed to the production of new artistic work.
+
+        .fullwidth.short style="background-image:url(/assets/images/vca/bg-geo.png)"
           ul.selector-listing
             li
-              a href="/build/process"
-                strong: span Planning your website
-                p Resources to help you plan, create content, design and develop your website.
-                span class="button-small brand" Planning
+              a href=""
+                strong: span Undergraduate
+                p Undergraduate studies are generally your first degree, normally completed fulltime over three years.
+                span class="button-small brand" View
             li
-              a href="/training/index"
-                strong: span Training and community
-                p Training calendar, online training, forums, zendesk and more...
-                span class="button-small brand" Training
+              a href=""
+                strong: span Graduate
+                p Graduate studies are generally completed after an undergraduate degree or extensive relevant experience. Includes professional entry, development and research programs.
+                span class="button-small brand" View
             li
-              a href="/policies/web-policies"
-                strong: span Philosophies, guidelines and policies
-                p Stay on the right side of the law son.
-                span class="button-small brand" Policies
-      #researchers.tab
-        article.welcome
-          section.wide
-            h2  Meet some of our researchers who are at the forefront of international scholarship in fields as diverse as Asian law, quantum mechanics, architecture, economics and medical research.
-        .listing-divider
-          h3 The next big thing
-          p Younger researchers at the University of Melbourne may have big shoes to fill, but they are making rapid progress toward the top of their game.
+              a href=""
+                strong: span Single subject study / Community Access Program
+                p As part of the University of Melbourne's Community Access Program (CAP), you can study a single subject, even if you have not completed previous studies.
+                span class="button-small brand" View
+
+        .half
+          section
+            p VIDEO
+          section
+            p.black The VCA is committed to providing a deep and transforming learning experience in pursuit of artistic excellence, innovation and an absorbing education. Welcome to a community of artists of all sorts - contemporary artists, writers, choreographers, musicians, designers, performers, actors, filmmakers, dancers and more, all committed to the production of new artistic work.
+
+      #today.tab
+
+      #research.tab
+        .fullwidth.short
+          p.black The VCA Research Clusters are centred around a research theme and involve membership across the various discipline areas of the VCA Schools and Centres, and more broadly across the University and beyond.  They represent research areas of critical mass in the VCA and contribute to an interdisciplinary collaborative research environment.
+
+        .fullwidth.short style="background-image:url(/assets/images/vca/vca-feature-1.jpg)"
+          ul.selector-listing.inverse
+            li
+              a href=""
+                strong: span Art, social and spatial practice
+                p The Art, Social and Spatial Practice (ASSP) Cluster seeks to investigate the potential of both the material and social production of art as object, performance, spatial practice …
+                span class="button-small brand" View
+            li
+              a href=""
+                strong: span Matters of the Body
+                p The Matters of the Body (MOB) Cluster engages with culture’s capacity to communicate material conditions of gender, sexuality, feminism, trans and queerness.
+                span class="button-small brand" View
+            li
+              a href=""
+                strong: span Moving image narrative
+                p The Moving image Narrative (MIN) Cluster is a practice‐based research group, that investigates the power of moving image narratives in contemporary life.
+                span class="button-small brand" View
+
+        .half
+          section
+            p VIDEO
+          section
+            h2 Research Office
+            p The VCA&MCM Research Office is a professional unit within the Faculty that provides a range of services and support to research staff and graduate research students.
+
       #about.tab
         .fullwidth.short
           p.black The Victorian College of the Arts brings together an extensive range of creative disciplines including Art, Dance, Theatre, Film and Television, Contemporary Music, Music Theatre, Production, Community Cultural Development and Indigenous Arts Management.
+
+    footer.cta
+      ul.quarter
+        li: a.email href="email"
+          img src="/assets/images/email.png" alt=""
+          | Sign up for our newsletter
+        li: a.link href="link"
+          img src="/assets/images/link.png" alt=""
+          | Read the VCA blog
+        li: a.facebook href="facebook"
+          img src="/assets/images/fb.png" alt=""
+          | VCA Facebook
+        li: a.youtube href="youtube"
+          img src="/assets/images/youtube.png" alt=""
+          | VCA &amp; MCM YouTube
+
+      p.overview
+        | Support the VCA
+        a.button-outline-inverse href="" Donate
