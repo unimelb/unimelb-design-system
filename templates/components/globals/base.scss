@@ -794,9 +794,14 @@ aside {
 
 .half {
   margin: 0 auto;
-  width: 90%;
+
+  @include breakpoint(desktop) {
+    width: 90%;
+  }
+
   section {
     margin: 0;
+
     @include breakpoint(desktop) {
       float: left;
       width: 50%;

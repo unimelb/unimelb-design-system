@@ -21,6 +21,7 @@ class YtEmbed
 
     @el.appendChild @trigger
 
+
   onPlayerReady: (event) ->
     event.target.playVideo() unless /(iPad|iPhone|iPod|Android)/g.test(navigator.userAgent)
 
