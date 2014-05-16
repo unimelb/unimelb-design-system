@@ -58,12 +58,14 @@ if Array.prototype.slice.call(document.querySelectorAll('div[role="main"].skip-h
   if Array.prototype.slice.call(document.querySelectorAll('article.vca')).length==1
     logo = "/assets/images/vca/logo-vca"
     menu = "/assets/images/injection/menu-b"
+    classes = ' class="vca"'
   else
     logo = "/assets/images/injection/header-logo"
     menu = "/assets/images/injection/menu"
+    classes = ""
 
   block.innerHTML = """
-  <header class="vca">
+  <header#{classes}>
     <a class="page-header-logo" href="http://www.unimelb.edu.au">
     <!--[if lt IE 9]>
       <img alt="UoM Logo" src="#{logo}.png" /><![endif]-->
