@@ -18,7 +18,6 @@ class WebTemplates < Sinatra::Base
   set :layouts, Dir.entries(layouts_dir).select { |f| f =~ /^[^notes].+\.slim$/ }.map { |l| l.gsub(/\.slim$/, '') }
 
   configure do
-    Compass.add_project_configuration(File.join(root, 'compass.rb'))
     sprockets.append_path File.join(root, 'templates')
     sprockets.append_path File.join(compass_gem_root, 'frameworks', 'compass', 'stylesheets')
     sprockets.cache = Sprockets::Cache::FileStore.new(File.join(root, 'tmp'))
