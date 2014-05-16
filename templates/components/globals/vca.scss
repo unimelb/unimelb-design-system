@@ -85,3 +85,26 @@
     }
   }
 }
+
+.page-header header.vca {
+  a.page-header-logo {
+    @include rem(width, 142px);
+    @include breakpoint(desktop) {
+      @include rem(height, 90px);
+      @include rem(width, 212px);
+    }
+    margin-left: 0;
+  }
+  .page-header-navigation {
+    @include breakpoint(desktop) {
+      @include rem(margin-left, 235px);
+    }
+    a,
+    span {
+      color: $black;
+    }
+  }
+  .page-header-tools .page-header-icon {
+    color: $black;
+  }
+}

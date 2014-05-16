@@ -55,12 +55,20 @@ class NavState
 if Array.prototype.slice.call(document.querySelectorAll('div[role="main"].skip-header')).length==0
   block = document.createElement('div')
   block.addClass('page-header')
+  if Array.prototype.slice.call(document.querySelectorAll('article.vca')).length==1
+    logo = "/assets/images/vca/logo-vca"
+    menu = "/assets/images/injection/menu-b"
+  else
+    logo = "/assets/images/injection/header-logo"
+    menu = "/assets/images/injection/menu"
+
   block.innerHTML = """
-  <header>
+  <header class="vca">
     <a class="page-header-logo" href="http://www.unimelb.edu.au">
     <!--[if lt IE 9]>
-      <img alt="UoM Logo" src="/assets/images/injection/header-logo.png" /><![endif]-->
-    <!--[if gte IE 9]><!--><img alt="UoM Logo" src="/assets/images/injection/header-logo.svg"><!--<![endif]-->
+      <img alt="UoM Logo" src="#{logo}.png" /><![endif]-->
+    <!--[if gte IE 9]><!--><img alt="UoM Logo" src="#{logo}.svg"><!--<![endif]-->
+    </a>
     </a>
     <div class="page-header-navigation">
       <a href="https://unimelb.edu.au" title="The University of Melbourne">The University of Melbourne</a>
@@ -68,15 +76,16 @@ if Array.prototype.slice.call(document.querySelectorAll('div[role="main"].skip-h
     <div class="page-header-tools">
       <a class="page-header-icon menu" href="#sitemap" title="Menu">
       <!--[if lt IE 9]>
-        <img alt="" src="/assets/images/injection/menu.png" />
+        <img alt="" src="#{menu}.png" />
       <![endif]-->
       <!--[if gte IE 9]><!-->
-        <img alt="" src="/assets/images/injection/menu.svg">
+        <img alt="" src="#{menu}.svg">
       <!--<![endif]-->Menu
       </a>
     </div>
   </header>
   """
+
   parent = document.querySelector('.page-inner')
   parent.insertBefore(block, parent.firstChild)
 
