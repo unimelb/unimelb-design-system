@@ -80,7 +80,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-script (~> 2.2.0)
   compass (~> 0.12.2)
-  front_matter_parser (~> 0.0.1)
+  front_matter_parser (~> 0.0.2)
   github-linguist (~> 2.10.9)
   github-markdown (~> 0.6.4)
   html-pipeline (~> 1.6.0)

@@ -1,0 +1,7 @@
+div#sitemap.no-js role="navigation"
+  h2 Components
+  - unless @components.blank?
+    - @components.each do |path|
+      li
+        a href=(component_path(path))
+          = component_title(path)

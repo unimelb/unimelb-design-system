@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+require 'rubygems' unless defined?(Gem)
+require 'bundler/setup' if %w(Gemfile).all? { |f| File.exist?(f) }
+require 'thin'
+
+ENV['RACK_ENV'] ||= 'development'
+
+BIN_DIR = File.expand_path(File.dirname(__FILE__))
+APP_DIR = File.expand_path(File.join(BIN_DIR, '..', 'demo-site'))
+RACK_UP = File.expand_path('config.ru', APP_DIR)
+
+
+# Dir.chdir(APP_DIR)
+
+app = Rack::Adapter.load(RACK_UP)
+
+Thin::Server.start('0.0.0.0', 3000, app)
