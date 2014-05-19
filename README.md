@@ -12,7 +12,5 @@ Collaboration is welcomed. Before you can Create a local development environment
 
 1. `cd` into the cloned repository
 2. Run `bundle install`
-3. Run `bundle exec thin start`
+3. Run `./bin/server`
 4. Visit [http://localhost:3000/](http://localhost:3000/)
-
-

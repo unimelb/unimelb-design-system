@@ -22,7 +22,10 @@ div role="main"
   - else
     - @documents.each_with_index do |document, i|
       == document
+      / TODO: fix this!!!!
       - if i<@documents.length-1
         hr
 
   == slim :contrib
+
+  == slim :nav
