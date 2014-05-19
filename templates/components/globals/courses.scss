@@ -1,0 +1,63 @@
+.course-section {
+  @include rem(max-width, 1200px);
+  @include rem(padding-bottom, 30px);
+  margin: 0 auto;
+
+  aside {
+    float: none;
+    vertical-align: top;
+
+    @include breakpoint(desktop) {
+      display: inline-block;
+      padding-left: 15px;
+      padding-right: 30px;
+      max-width: 300px;
+      width: 25%;
+    }
+  }
+
+  .bside {
+
+    @include breakpoint(desktop) {
+      @include rem(padding, 10px 30px);
+      display: inline-block;
+      max-width: 900px;
+      width: 75%;
+    }
+  }
+}
+
+.course-grid {
+  li {
+    @include rem(font-size, 14px);
+    @include rem(margin, 2px);
+    background-color: $palegreen;
+    float: left;
+    list-style-type: none;
+    padding: 0;
+    &.gradcert,
+    &.graddip {
+      background-color: $bronze;
+    }
+    &.master {
+      background-color: $lightestblue;
+    }
+    &.doctor {
+      background-color: $lightblue;
+    }
+  }
+  a {
+    @include rem(height, 110px);
+    @include rem(padding, 10px);
+    @include rem(width, 190px);
+    color: $darkgray;
+    display: block;
+    font-weight: $light;
+    text-decoration: none;
+  }
+  strong {
+    @include rem(font-size, 16px);
+    display: block;
+   line-height: 1.2;
+  }
+}

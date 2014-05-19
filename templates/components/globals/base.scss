@@ -419,6 +419,9 @@ hr {
   border-top: 0;
   border-bottom: 1px solid darken($lightgray, 5%);
   clear: both;
+  &.spacer {
+    @include rem(margin, 0 0 30px);
+  }
 }
 
 ol,
