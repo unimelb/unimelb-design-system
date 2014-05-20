@@ -212,31 +212,6 @@ document.querySelector('body').appendChild(nav)
 # Add link state behaviour
 navstate = new NavState()
 
-# Create global footer
-block = document.createElement('div')
-block.addClass('page-footer')
-block.innerHTML = """
-<footer>
-  <a href="https://unimelb.edu.au">
-    <img alt="The University of Melbourne" class="page-footer-lockup" src="/assets/images/injection/lockup.png">
-  </a>
-  <ul class="page-footer-section nav">
-    <li><a href="http://safety.unimelb.edu.au/about/contacts/emergency.html">Emergency Information</a></li>
-    <li><a href="http://www.unimelb.edu.au/disclaimer/">Disclaimer &amp; Copyright</a></li>
-    <li><a href="http://www.unimelb.edu.au/accessibility/index.html">Accessibility</a></li>
-    <li><a href="http://www.unimelb.edu.au/disclaimer/privacy.html">Privacy</a></li>
-  </ul>
-  <ul class="page-footer-section social">
-    <li class="social-facebook"><a href="http://www.facebook.com/melbuni"><img alt="Facebook" src="/assets/images/injection/fb.png"></a></li>
-    <li class="social-twitter"><a href="http://www.twitter.com/unimelb"><img alt="Twitter" src="/assets/images/injection/tw.png"></a></li>
-    <li class="social-linkedin"><a href="http://au.linkedin.com/pub/the-university-of-melbourne/61/430/215"><img alt="LinkedIn" src="/assets/images/injection/li.png"></a></li>
-  </ul>
-  <img alt="Est. 1853" class="page-footer-est1853" src="/assets/images/injection/est1853.png">
-  <small>Phone: 13 MELB (13 6352) | International: +61 3 9035 5511</small><small>The University of Melbourne ABN: 84 002 705 224</small>
-  <small>CRICOS Provider Code: 00116K (<a href="http://www.services.unimelb.edu.au/international/visas/index.html">visa information</a>)</small>
-</footer>
-"""
-document.querySelector('body').appendChild(block)
 
 class InjAccordion
   constructor: (@el) ->
