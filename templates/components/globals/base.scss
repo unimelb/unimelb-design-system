@@ -68,6 +68,39 @@ body {
     width: 100%;
   }
 }
+[role="main"] header .bottom-align-flat {
+  @include rem(padding-top, 30px);
+  @include rem(padding-bottom, 30px);
+  background-color: rgba($black, 0.8);
+  position: relative;
+  width: 100%;
+  form {
+    background-color: transparent;
+    color: $white;
+    strong {
+      @include rem(font-size, 15px);
+      @include rem(padding-bottom, 15px);
+      @include rem(padding-left, 10px);
+      display: block;
+      font-weight: $light;
+    }
+    div {
+      @include rem(padding-right, 45px);
+      float: left;
+    }
+  }
+  @include breakpoint(tablet) {
+    bottom: 0;
+    position: absolute;
+  }
+  @include breakpoint(height-smallest) {
+    bottom: 0;
+    position: absolute;
+  }
+  @media screen and (min-width: 481px) and (max-height:639px) {
+    position: relative;
+  }
+}
 
 [role="main"] header .mid-align {
   @include rem(height, 700px);
@@ -125,6 +158,19 @@ body {
     position: relative;
     &.tight {
       margin-bottom: 0;
+    }
+    &.short {
+      @include rem(padding-bottom, 160px);
+      height: auto;
+      p {
+        @include rem(font-size, 24px);
+        @include rem(padding-bottom, 60px);
+        @include rem(padding-top, 60px);
+        padding-left: 15%;
+        padding-right: 15%;
+        text-align: center;
+        width: 100%;
+      }
     }
     .video-loop {
       background-color: $black;

@@ -50,14 +50,10 @@ div.skip-header role="main"
       - @layouts.each do |path|
         li
           a href=(layout_path(path))
-            - if component_pending?(path)
-              small.todo=="[TODO]"
-            - else
-              figure
-                img src=('/assets/images/templates/'+path+'.jpg')
+            figure
+              img src=('/assets/images/templates/'+path+'.jpg')
             strong= layout_title(path)
             p
-              a href=(layout_path path, 'demo') Demo
               a href=(layout_path path, 'source') Source
 
     hr

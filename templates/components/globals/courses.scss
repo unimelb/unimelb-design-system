@@ -27,6 +27,37 @@
   }
 }
 
+.course-select fieldset {
+  .undergrad {
+    color: lighten($green, 30%);
+    input[type="checkbox"] + label {
+      background-color: lighten($green, 30%);
+      border-color: darken($green, 10%);
+    }
+  }
+  .postgrad {
+    color: $bronze;
+    input[type="checkbox"] + label {
+      background-color: $bronze;
+      border-color: darken($bronze, 20%);
+    }
+  }
+  .masters {
+    color: $lightestblue;
+    input[type="checkbox"] + label {
+      background-color: l$lightestblue;
+      border-color: darken($lightestblue, 20%);
+    }
+  }
+  .research {
+    color: lighten($lightblue, 10%);
+    input[type="checkbox"] + label {
+      background-color: lighten($lightblue, 10%);
+      border-color: darken($lightblue, 10%);
+    }
+  }
+}
+
 .course-grid {
   li {
     @include rem(font-size, 14px);
@@ -35,14 +66,13 @@
     float: left;
     list-style-type: none;
     padding: 0;
-    &.gradcert,
-    &.graddip {
+    &.postgrad {
       background-color: $bronze;
     }
-    &.master {
+    &.masters {
       background-color: $lightestblue;
     }
-    &.doctor {
+    &.research {
       background-color: $lightblue;
     }
   }
@@ -58,6 +88,6 @@
   strong {
     @include rem(font-size, 16px);
     display: block;
-   line-height: 1.2;
+    line-height: 1.2;
   }
 }
