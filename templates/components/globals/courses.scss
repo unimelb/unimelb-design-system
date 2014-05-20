@@ -4,20 +4,26 @@
   margin: 0 auto;
 
   aside {
+    @include rem(padding-bottom, 30px);
     float: none;
+    margin: 0 3%;
     vertical-align: top;
+    width: 94%;
+    p {
+      padding-bottom: 0;
+    }
 
     @include breakpoint(desktop) {
       display: inline-block;
+      margin: 0;
+      max-width: 300px;
       padding-left: 15px;
       padding-right: 30px;
-      max-width: 300px;
       width: 25%;
     }
   }
 
   .bside {
-
     @include breakpoint(desktop) {
       @include rem(padding, 10px 30px);
       display: inline-block;
@@ -27,43 +33,99 @@
   }
 }
 
-.course-select fieldset {
-  .undergrad {
-    color: lighten($green, 30%);
-    input[type="checkbox"] + label {
-      background-color: lighten($green, 30%);
-      border-color: darken($green, 10%);
+[role="main"] form.course-select {
+  @include rem(max-width, 1200px);
+  background-color: transparent;
+  color: $white;
+  margin: 0 auto;
+
+  strong {
+    @include rem(font-size, 15px);
+    @include rem(padding-bottom, 5px);
+    @include rem(padding-left, 10px);
+    display: block;
+    font-weight: $light;
+  }
+
+  fieldset.left {
+    @include breakpoint(tablet) {
+      @include rem(line-height, 30px);
+      margin: 0;
+
+      strong {
+        @include rem(padding-bottom, 15px);
+      }
+      div {
+        @include rem(padding-right, 45px);
+        float: left;
+      }
+    }
+    @include breakpoint(desktop) {
+      float: left;
+      width: 75%;
+    }
+
+    .undergrad {
+      color: lighten($green, 30%);
+      input[type="checkbox"] + label {
+        background-color: lighten($green, 30%);
+        border-color: darken($green, 10%);
+      }
+    }
+    .postgrad {
+      color: $bronze;
+      input[type="checkbox"] + label {
+        background-color: $bronze;
+        border-color: darken($bronze, 20%);
+      }
+    }
+    .masters {
+      color: $lightestblue;
+      input[type="checkbox"] + label {
+        background-color: l$lightestblue;
+        border-color: darken($lightestblue, 20%);
+      }
+    }
+    .research {
+      color: lighten($lightblue, 10%);
+      input[type="checkbox"] + label {
+        background-color: lighten($lightblue, 10%);
+        border-color: darken($lightblue, 10%);
+      }
     }
   }
-  .postgrad {
-    color: $bronze;
-    input[type="checkbox"] + label {
-      background-color: $bronze;
-      border-color: darken($bronze, 20%);
+
+  fieldset.right {
+    @include rem(padding-top, 15px);
+    div {
+      float: none;
+      select {
+        width: 100%;
+      }
     }
-  }
-  .masters {
-    color: $lightestblue;
-    input[type="checkbox"] + label {
-      background-color: l$lightestblue;
-      border-color: darken($lightestblue, 20%);
-    }
-  }
-  .research {
-    color: lighten($lightblue, 10%);
-    input[type="checkbox"] + label {
-      background-color: lighten($lightblue, 10%);
-      border-color: darken($lightblue, 10%);
+    @include breakpoint(desktop) {
+      float: right;
+      margin: 0;
+      padding-top: 0;
+      width: 25%;
+
+      strong {
+        @include rem(padding-bottom, 15px);
+      }
     }
   }
 }
 
 .course-grid {
+  @extend %clearfix;
+  margin: 0 3%;
+  @include breakpoint(desktop) {
+    margin: 0;
+  }
   li {
     @include rem(font-size, 14px);
-    @include rem(margin, 2px);
+    @include rem(margin, 2px 2px 4px 2px);
     background-color: $palegreen;
-    float: left;
     list-style-type: none;
     padding: 0;
     &.postgrad {
@@ -75,15 +137,22 @@
     &.research {
       background-color: $lightblue;
     }
+    @include breakpoint(tablet) {
+      @include rem(margin, 2px);
+      float: left;
+    }
   }
   a {
     @include rem(height, 110px);
     @include rem(padding, 10px);
-    @include rem(width, 190px);
     color: $darkgray;
     display: block;
     font-weight: $light;
     text-decoration: none;
+    width: 100%;
+    @include breakpoint(tablet) {
+      @include rem(width, 190px);
+    }
   }
   strong {
     @include rem(font-size, 16px);

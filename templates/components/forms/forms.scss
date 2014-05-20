@@ -190,6 +190,17 @@ fieldset {
       border-color: $highlight;
       color: $highlight;
     }
+    &.clear {
+      background-color: transparent;
+      border-color: $white;
+    }
+    &.clear:hover {
+      background-color: rgba($white, 0.3);
+    }
+    &.clear.invalid:over {
+      background-image: url(asset_path("components/forms/n-s-invalid.png"));
+      color: $cherry;
+    }
     @include breakpoint(desktop) {
       @include rem(width, 412px);
     }
