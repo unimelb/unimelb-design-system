@@ -73,6 +73,9 @@
       input[type="checkbox"] + label {
         background-color: lighten($green, 30%);
         border-color: darken($green, 10%);
+        &::after {
+          border-color: darken($green, 20%);
+        }
       }
     }
     .postgrad {
@@ -80,6 +83,9 @@
       input[type="checkbox"] + label {
         background-color: $bronze;
         border-color: darken($bronze, 20%);
+        &::after {
+          border-color: darken($bronze, 40%);
+        }
       }
     }
     .masters {
@@ -87,6 +93,9 @@
       input[type="checkbox"] + label {
         background-color: l$lightestblue;
         border-color: darken($lightestblue, 20%);
+        &::after {
+          border-color: darken($lightestblue, 30%);
+        }
       }
     }
     .research {
@@ -94,6 +103,9 @@
       input[type="checkbox"] + label {
         background-color: lighten($lightblue, 10%);
         border-color: darken($lightblue, 10%);
+        &::after {
+          border-color: darken($lightblue, 20%);
+        }
       }
     }
   }
