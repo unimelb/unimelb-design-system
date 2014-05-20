@@ -4,11 +4,19 @@ require_relative 'section_filter'
 module WebTemplates
   class App < Sinatra::Base
 
+    ### Register addons
+
+    register Sinatra::Partial
+
     ### Configure default paths
 
     set :root,           File.join(File.dirname(__FILE__), '..')
     set :views,          File.join(root, "views")
     set :public_dir,     File.join(root, "public")
+
+    ### Partials
+
+    set :partial_template_engine, :slim
 
     ### Web template paths
 
@@ -49,7 +57,8 @@ module WebTemplates
     helpers Sprockets::Helpers
 
     before do
-      @components = settings.components
+      build_navigation
+
       @settings   = {
         'no_section_wrap' => false
       }
@@ -58,7 +67,8 @@ module WebTemplates
     ### Homepage
 
     get '/' do
-      @layouts = settings.layouts
+      @components = settings.components
+      @layouts    = settings.layouts
       slim :index
     end
 
@@ -122,6 +132,23 @@ module WebTemplates
     end
 
     private
+
+    def build_navigation
+      @navigation = []
+
+      layouts = { title: 'Layouts', href: '/', children: [] }
+      settings.layouts.each do |layout|
+        layouts[:children] << { title: layout_title(layout), href: layout_path(layout), children: [] }
+      end
+
+      components = { title: 'Components', href: '/', children: [] }
+      settings.components.each do |component|
+        components[:children] << { title: component_title(component), href: component_path(component), children: [] }
+      end
+
+      @navigation << layouts
+      @navigation << components
+    end
 
     def render_markdown(md)
       @pipeline ||= HTML::Pipeline.new [

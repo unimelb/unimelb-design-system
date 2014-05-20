@@ -1,7 +1,4 @@
-div#sitemap.no-js role="navigation"
-  h2 Components
-  - unless @components.blank?
-    - @components.each do |path|
-      li
-        a href=(component_path(path))
-          = component_title(path)
+- unless @navigation.blank?
+  div#sitemap.no-js role="navigation"
+    h2 Web.Unimelb
+    == partial :nav_list, locals: { nav_list: @navigation }

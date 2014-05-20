@@ -19,6 +19,7 @@ html.no-js
   body
     .page-inner
       == yield
+      == slim :nav
 
     == javascript_tag 'uom'
     == javascript_tag 'injection'
