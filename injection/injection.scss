@@ -28,6 +28,6 @@
 $regular: 400;
 $light: 300;
 
-@import "components/injection/header";
-@import "components/injection/footer";
-@import "components/injection/globalnav";
+@import "header/header";
+@import "footer/footer";
+@import "global-nav/globalnav";

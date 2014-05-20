@@ -39,7 +39,8 @@ module WebTemplates
     set :compass_gem_root, Gem.loaded_specs['compass'].full_gem_path # <-- TODO: this is not right
 
     configure do
-      sprockets.append_path File.join(project_root, 'templates')
+      sprockets.append_path injection
+      sprockets.append_path web_templates
       sprockets.append_path File.join(compass_gem_root, 'frameworks', 'compass', 'stylesheets') # <-- TODO: this is not right
       sprockets.cache = Sprockets::Cache::FileStore.new(File.join(root, 'tmp'))
 
