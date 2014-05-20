@@ -92,6 +92,12 @@
         border-top-color: $black;
       }
     }
+    &.thin {
+      nav a {
+        @include rem(font-size, 16px);
+        @include rem(padding, 30px 15px);
+      }
+    }
   }
 
   [data-tabbed].tabbed {

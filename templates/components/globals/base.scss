@@ -267,11 +267,6 @@ body {
         padding-bottom: 0;
       }
     }
-    &.center {
-      @include rem(padding, 0 0 60px);
-      margin: 0 auto;
-      text-align: center;
-    }
     &.lead {
       @include rem(max-width, 1000px);
       margin: 0 3%;
@@ -340,6 +335,12 @@ body {
     font-weight: $light;
   }
 
+  .center {
+    @include rem(padding, 0 0 60px);
+    margin: 0 auto;
+    text-align: center;
+  }
+
 }
 
 h1 {
@@ -389,6 +390,24 @@ h3 {
   @include breakpoint(desktop) {
     @include rem(font-size, 23.5px);
     @include rem(padding, 29px 0);
+  }
+}
+
+.title {
+  @include rem(font-size, 16px);
+  @include rem(letter-spacing, 2px);
+  font-weight: $bold;
+  text-align: center;
+  text-transform: uppercase;
+  &::after {
+    @include rem(margin-bottom, 15px);
+    @include rem(margin-top, 30px);
+    @include rem(width, 80px);
+    border-bottom: 2px solid $black;
+    content: "";
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

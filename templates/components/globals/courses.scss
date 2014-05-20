@@ -50,6 +50,20 @@
     font-weight: $light;
   }
 
+  h2 {
+    @include rem(font-size, 30px);
+    @include rem(letter-spacing, 2px);
+    font-weight: $light;
+    padding-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    @include rem(font-size, 13px);
+    font-weight: $light;
+    padding: 0;
+  }
+
   fieldset.left {
     @include breakpoint(tablet) {
       @include rem(line-height, 30px);
