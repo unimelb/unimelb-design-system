@@ -3,6 +3,7 @@
 require 'rubygems' unless defined?(Gem)
 require 'bundler/setup' if %w(Gemfile).all? { |f| File.exist?(f) }
 require 'thin'
+require 'optparse'
 
 ENV['RACK_ENV'] ||= 'development'
 
@@ -10,9 +11,23 @@ BIN_DIR = File.expand_path(File.dirname(__FILE__))
 APP_DIR = File.expand_path(File.join(BIN_DIR, '..', 'demo-site'))
 RACK_UP = File.expand_path('config.ru', APP_DIR)
 
+options = { port: 3000 }
 
-# Dir.chdir(APP_DIR)
+optsParser = OptionParser.new do |opts|
+  opts.banner = "Usage: server [-p PORT]"
+  opts.on("-p", "--port port", "Change port, default 3000") do |port|
+    options[:port] = port.to_i
+  end
+end
+
+begin
+  optsParser.parse!
+rescue OptionParser::InvalidOption => ex
+  puts ex
+  puts optsParser.banner
+  exit 1
+end
 
 app = Rack::Adapter.load(RACK_UP)
 
-Thin::Server.start('0.0.0.0', 3000, app)
+Thin::Server.start('0.0.0.0', options[:port], app)
