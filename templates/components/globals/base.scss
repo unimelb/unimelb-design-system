@@ -142,6 +142,9 @@ body {
     &.tight {
       margin-bottom: 0;
     }
+    &.mid {
+      @include rem(height, 300px);
+    }
     &.short {
       height: auto;
       padding-bottom: 0;
@@ -262,6 +265,31 @@ body {
       padding-bottom: 0;
       p:last-child {
         padding-bottom: 0;
+      }
+    }
+    &.center {
+      @include rem(padding, 0 0 60px);
+      margin: 0 auto;
+      text-align: center;
+    }
+    &.lead {
+      @include rem(max-width, 1000px);
+      margin: 0 3%;
+      text-align: center;
+      p {
+        font-style: italic;
+      }
+      &::after {
+        @include rem(margin-top, 30px);
+        @include rem(width, 80px);
+        border-bottom: 2px solid $lighterblue;
+        content: "";
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      @include breakpoint(wide) {
+        margin: 0 auto;
       }
     }
     &.links {
@@ -505,8 +533,8 @@ blockquote {
   margin-right: 8%;
   quotes: "\201C""\201D";
   text-align: left;
-  &:after,
-  &:before {
+  &::after,
+  &::before {
     @include rem(font-size, 100px);
     @include rem(margin-left, -50px);
     @include rem(margin-right, 10px);
@@ -515,7 +543,7 @@ blockquote {
     line-height: 0.1em;
     vertical-align: -0.333em;
   }
-  &:after {
+  &::after {
     content: close-quote;
     margin-right: 0;
     margin-left: 0;
@@ -530,7 +558,7 @@ blockquote {
     font-weight: $light;
     text-align: left;
     width: 100%;
-    &:before {
+    &::before {
       @include rem(padding-right, 5px);
       content: "\2014";
     }
@@ -584,7 +612,7 @@ blockquote {
       color: $lighterblue;
       position: relative;
       text-align: left;
-      &:before {
+      &::before {
         @include rem(width, 40px);
         border-bottom: 2px solid $lighterblue;
         content: "";
@@ -606,7 +634,7 @@ blockquote {
       margin-top: 0;
       text-align: right;
       width: 22%;
-      &:before {
+      &::before {
         left: auto;
         right: -2px;
       }
@@ -624,7 +652,7 @@ blockquote {
     text-align: right;
     figcaption {
       text-align: right;
-      &:before {
+      &::before {
         left: auto;
         right: -2px;
       }
@@ -639,7 +667,7 @@ blockquote {
       margin-left: 3%;
       margin-right: 0;
       text-align: left;
-      &:before {
+      &::before {
         left: 2px;
         right: auto;
       }
@@ -761,7 +789,7 @@ aside {
   padding-top: 60px;
   position: relative;
   max-width: 100%;
-  &:before {
+  &::before {
     color: $cyan;
     content: "\21e0";
     float: left;
@@ -771,7 +799,7 @@ aside {
     text-align: right;
     width: 100%;
   }
-  div:before {
+  div::before {
     @extend %grad-left;
     content: '';
     height: 50px;
@@ -782,12 +810,12 @@ aside {
   @include breakpoint(desktop) {
     overflow: visible;
     padding-top: 0;
-    &:before {
+    &::before {
       content: none;
       position: static;
       height: 0;
     }
-    div:before {
+    div::before {
       content: none;
     }
   }

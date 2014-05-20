@@ -20,6 +20,9 @@
       padding-left: 15px;
       padding-right: 30px;
       width: 25%;
+      p {
+        @include rem(padding-bottom, 15px);
+      }
     }
   }
 
