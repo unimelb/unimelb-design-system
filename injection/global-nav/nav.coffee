@@ -51,56 +51,6 @@ class NavState
           t.page.toggleClass('evolve')
           t.sitemap.toggleClass('active')
 
-# Create header and move local breadcrumb
-if Array.prototype.slice.call(document.querySelectorAll('div[role="main"].skip-header')).length==0
-  block = document.createElement('div')
-  block.addClass('page-header')
-  if Array.prototype.slice.call(document.querySelectorAll('article.vca')).length==1
-    logo = "/assets/images/vca/logo-vca"
-    menu = "/assets/images/injection/menu-b"
-    classes = ' class="vca"'
-  else
-    logo = "/assets/images/injection/header-logo"
-    menu = "/assets/images/injection/menu"
-    classes = ""
-
-  block.innerHTML = """
-  <header#{classes}>
-    <a class="page-header-logo" href="http://www.unimelb.edu.au">
-    <!--[if lt IE 9]>
-      <img alt="UoM Logo" src="#{logo}.png" /><![endif]-->
-    <!--[if gte IE 9]><!--><img alt="UoM Logo" src="#{logo}.svg"><!--<![endif]-->
-    </a>
-    </a>
-    <div class="page-header-navigation">
-      <a href="https://unimelb.edu.au" title="The University of Melbourne">The University of Melbourne</a>
-    </div>
-    <div class="page-header-tools">
-      <a class="page-header-icon menu" href="#sitemap" title="Menu">
-      <!--[if lt IE 9]>
-        <img alt="" src="#{menu}.png" />
-      <![endif]-->
-      <!--[if gte IE 9]><!-->
-        <img alt="" src="#{menu}.svg">
-      <!--<![endif]-->Menu
-      </a>
-    </div>
-  </header>
-  """
-
-  parent = document.querySelector('.page-inner')
-  parent.insertBefore(block, parent.firstChild)
-
-  if Array.prototype.slice.call(document.querySelectorAll('.page-local-history')).length==1
-    local = document.querySelector('.page-local-history')
-    local.parentNode.removeChild(local)
-
-    parent = document.querySelector('.page-header-navigation')
-    sep = document.createElement "span"
-    sep.innerHTML = "/"
-    parent.appendChild(sep)
-    parent.appendChild(local)
-
 # Move local nav outside page container
 if Array.prototype.slice.call(document.querySelectorAll('div[role="navigation"]')).length==1
   localnav = document.querySelector('div[role="navigation"]')
