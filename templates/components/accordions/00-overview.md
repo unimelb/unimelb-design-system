@@ -1,11 +1,3 @@
-## On this page
-
-* [When to use this component](#use)
-* [When to avoid this component?](#avoid)
-* [Content recommendations](#content)
-* [Related planning tools](#planning)
-* [Poor implementation examples]()
-
 ## When to use this component
 
 Accordians are an efficient way of grouping and communicating multiple pieces of contextually related information. They display a large amount of content in a small amount of space.
