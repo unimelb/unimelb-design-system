@@ -63,6 +63,7 @@ var supportedmodernbrowser = !/(MSIE 7.0)/g.test(navigator.userAgent);
       };
     }
 
+    // IE Polyfill for event handling
     (function(win, doc){
       if(win.addEventListener)return;   //No need to polyfill
 

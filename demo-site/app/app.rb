@@ -148,6 +148,17 @@ module WebTemplates
     def build_navigation
       @navigation = []
 
+      # TODO make the code look nicer Neil
+      Dir.entries(settings.pages_dir).select{|f| f =~ /^[^\.]/}.each do |dir|
+        item = { title: File.basename(dir, '.md').gsub("-"," "), href: '/'+dir.gsub(".md",""), children: [] }
+        if File.directory?(settings.pages_dir+'/'+dir)
+          Dir.glob(File.join(settings.pages_dir, dir, '*.md')).map{|f| f.gsub(settings.project_root+"/pages", "").gsub(".md","")}.each do |page|
+            item[:children] << { title: File.basename(page).gsub("-"," "), href: page, children: [] }
+          end
+        end
+        @navigation << item
+      end
+
       layouts = { title: 'Layouts', href: '/layouts', children: [] }
       settings.layouts.each do |layout|
         layouts[:children] << { title: layout_title(layout), href: layout_path(layout), children: [] }

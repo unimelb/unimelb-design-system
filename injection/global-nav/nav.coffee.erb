@@ -1,13 +1,14 @@
-class NavState
-  constructor: ->
-    @page = document.querySelector('.page-inner')
-    @sitemap = document.querySelector('div[role="sitemap"]')
-    t = this
+window.UOMinjectGlobalNav = ->
+  class UOMGlobalNavState
+    constructor: ->
+      @page = document.querySelector('.page-inner')
+      @sitemap = document.querySelector('div[role="sitemap"]')
+      @trigger = document.querySelector('.page-header-tools').querySelector('a[title="Menu"]')
+      t = this
 
-    if 1 #t.page.offsetWidth > 768
       if Array.prototype.slice.call(document.querySelectorAll('div[role="navigation"]')).length==1
         @localnav = document.querySelector('div[role="navigation"]')
-        document.querySelector('.page-header-tools a[title="Menu"]').addEventListener 'click', (e) ->
+        @trigger.addEventListener 'click', (e) ->
           e.preventDefault()
           t.page.removeClass('evolve')
           t.localnav.removeClass('evolve')
@@ -41,7 +42,7 @@ class NavState
           t.sitemap.toggleClass('active')
 
       else
-        document.querySelector('.page-header-tools a[title="Menu"]').addEventListener 'click', (e) ->
+        @trigger.addEventListener 'click', (e) ->
           e.preventDefault()
           t.page.toggleClass('evolve')
           t.sitemap.toggleClass('active')
@@ -51,7 +52,6 @@ class NavState
           t.page.toggleClass('evolve')
           t.sitemap.toggleClass('active')
 
-document.addEventListener 'DOMContentLoaded', ->
   # Move local nav outside page container
   if Array.prototype.slice.call(document.querySelectorAll('div[role="navigation"]')).length==1
     localnav = document.querySelector('div[role="navigation"]')
@@ -161,16 +161,15 @@ document.addEventListener 'DOMContentLoaded', ->
   document.querySelector('body').appendChild(nav)
 
   # Add link state behaviour
-  navstate = new NavState()
+  navstate = new UOMGlobalNavState()
 
+  # class InjAccordion
+  #   constructor: (@el) ->
+  #     @el.addEventListener 'click', (e) ->
+  #       e.preventDefault()
+  #       t = e.target || e.srcElement
+  #       s.removeClass('accordion__visible') for s in t.parentNode.parentNode.parentNode.querySelectorAll('.accordion__visible')
+  #       t.parentNode.addClass('accordion__visible')
 
-  class InjAccordion
-    constructor: (@el) ->
-      @el.addEventListener 'click', (e) ->
-        e.preventDefault()
-        t = e.target || e.srcElement
-        s.removeClass('accordion__visible') for s in t.parentNode.parentNode.parentNode.querySelectorAll('.accordion__visible')
-        t.parentNode.addClass('accordion__visible')
-
-  if (supportedmodernbrowser)
-    new InjAccordion(el) for el in document.querySelectorAll('.accordion__title')
+  # if (supportedmodernbrowser)
+  #   new InjAccordion(el) for el in document.querySelectorAll('.accordion__title')

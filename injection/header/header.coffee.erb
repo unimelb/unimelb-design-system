@@ -1,5 +1,4 @@
-
-injectHeader = ->
+window.UOMinjectHeader = ->
   # Create header and move local breadcrumb
   block = document.createElement('div')
   block.addClass('page-header')
@@ -62,8 +61,3 @@ injectHeader = ->
     sep.innerHTML = "/"
     parent.appendChild(sep)
     parent.appendChild(local)
-
-if window.attachEvent
-  window.attachEvent 'onLoad', injectHeader
-else
-  document.addEventListener 'DOMContentLoaded', injectHeader
