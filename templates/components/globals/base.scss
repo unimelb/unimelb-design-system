@@ -129,6 +129,7 @@ body {
   font-weight: $regular;
 
   header {
+    @extend %background-size-polyfill;
     @include rem(margin-bottom, 30px);
     @include rem(min-height, 144px);
     background-color: $black;
@@ -136,7 +137,6 @@ body {
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;
-    -ms-behavior: url(/assets/javascripts/backgroundsize.min.htc);
     color: $white;
     position: relative;
     &.tight {
@@ -422,12 +422,12 @@ li {
 }
 
 .fullwidth {
+  @extend %background-size-polyfill;
   @include rem(height, 500px);
   background-color: transparent;
   background-position: center 0;
   background-repeat: no-repeat;
   background-size: cover;
-  -ms-behavior: url(/assets/javascripts/backgroundsize.min.htc);
   display: inline-block;
   margin: 0 auto;
   overflow: hidden;

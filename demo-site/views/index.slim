@@ -24,38 +24,18 @@ div.skip-header role="main"
             p Stay on the right side of the law son.
             span class="button-small brand" Policies
 
-    .hero-listing.noborder
-      h2 style="background-image:url(http://placekitten.com/1200/700)"
-        .inner
-          strong Example Page Layouts
-          p Focused page templates, constructed from the components listed above.
-    ul.feature-listing-3.noborder
-      - @layouts.each do |path|
-        li
-          a href=(layout_path(path))
-            figure
-              img src=('/assets/images/templates/'+path+'.jpg')
-            strong= layout_title(path)
-            p
-              a href=(layout_path path, 'source') Source
-
     hr
 
     .hero-listing.noborder
+      h2 style="background-image:url(http://placekitten.com/1200/700)"
+        a.inner href="/layouts"
+          strong Example Page Layouts
+          p Focused page templates, constructed from the components listed above.
+    .hero-listing.noborder
       h2 style="background-image:url(http://placekitten.com/1200/600)"
-        .inner
+        a.inner href="/components"
           strong Components
           p Small units of page style and functionality
-    section.clearfix
-      ul
-        - @components.each do |path|
-          li
-            - if component_pending?(path)
-              small class="todo"
-                | [TODO]
-                '
-            a href=(component_path(path))
-              = component_title(path)
 
     hr
     footer

@@ -1,0 +1,18 @@
+div.skip-header role="main"
+
+  article
+    header.mid
+      .bottom-align
+        section
+          h1 Example Page Layouts
+
+    ul.feature-listing-3.noborder
+      - @layouts.each do |path|
+        li
+          a href=(layout_path(path))
+            figure
+              img src=('/assets/images/templates/'+path+'.jpg')
+            strong= layout_title(path)
+            p
+              a href=(layout_path path, 'source') Source
+

@@ -75,6 +75,11 @@ module WebTemplates
 
     ### Components
 
+    get '/components' do
+      @components = settings.components
+      slim :components_index
+    end
+
     get '/components/*' do |path|
       return_page_not_found unless settings.components.include? path
 
@@ -93,9 +98,15 @@ module WebTemplates
 
     ### Layouts
 
+    get '/layouts' do
+      @layouts    = settings.layouts
+      slim :layouts_index
+    end
+
     get '/layouts/*' do |path|
       return_page_not_found unless settings.layouts.include? path
       layout_view = "example_layouts/#{path}".to_sym
+      @layout = true
 
       if request['view'].to_s.downcase == 'source'
         @file   = path
@@ -137,12 +148,12 @@ module WebTemplates
     def build_navigation
       @navigation = []
 
-      layouts = { title: 'Layouts', href: '/', children: [] }
+      layouts = { title: 'Layouts', href: '/layouts', children: [] }
       settings.layouts.each do |layout|
         layouts[:children] << { title: layout_title(layout), href: layout_path(layout), children: [] }
       end
 
-      components = { title: 'Components', href: '/', children: [] }
+      components = { title: 'Components', href: '/components', children: [] }
       settings.components.each do |component|
         components[:children] << { title: component_title(component), href: component_path(component), children: [] }
       end

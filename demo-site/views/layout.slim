@@ -6,6 +6,7 @@ html.no-js
     meta content="IE=edge" http-equiv="X-UA-Compatible"
     title== page_title ? "#{page_title} | Web.Unimelb" : "Web.Unimelb"
 
+    == javascript_tag 'injection'
     == stylesheet_tag 'injection'
 
     == stylesheet_tag 'uom'
@@ -21,4 +22,3 @@ html.no-js
       == slim :nav
 
     == javascript_tag 'uom'
-    == javascript_tag 'injection'
