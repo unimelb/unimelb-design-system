@@ -6,7 +6,7 @@
 
 ## Collaboration
 
-Collaboration is welcomed. Before you can Create a local development environment for this repository, you will need to set up Ruby. Instructions for doign this can be found in /collaboration.md.
+Collaboration is welcomed. Before you can Create a local development environment for this repository, you will need to set up Ruby. Instructions for doing this can be found in /collaboration.md.
 
 ### Setting up the development environment
 
