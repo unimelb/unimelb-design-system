@@ -1,17 +1,38 @@
-<h2 id="hero">Hero buttons</h2>
-```html
-<div style="background:url(/assets/images/irrigation.jpg) 95% 85% no-repeat; text-align:center; padding:30px">
-  <a class="button-outline">Outline Button</a>
+---
+no_section_wrap: true
+---
+<div class="fifth">
+  <div class="col">
+    <a class="button">Call to action</a>
+  </div>
+  <div class="col">
+    <a class="button brand">Brand</a>
+  </div>
+  <div class="col">
+    <a class="button cta">Complete</a>
+  </div>
+  <div class="col">
+    <a class="button warning">Warning</a>
+  </div>
+  <div class="col">
+    <a class="button soft">Soft</a>
+  </div>
 </div>
 
-<div style="background:url(/assets/images/bg-banner.jpg) 15% 90% no-repeat; text-align:center; padding:30px">
-  <a class="button-outline-inverse">Inverse Button</a>
-</div>
-```
-<div style="background:url(/assets/images/irrigation.jpg) 95% 85% no-repeat; text-align:center; padding:30px">
-  <a class="button-outline">Outline Button</a>
-</div>
-
-<div style="background:url(/assets/images/bg-banner.jpg) 15% 90% no-repeat; text-align:center; padding:30px">
-  <a class="button-outline-inverse">Inverse Button</a>
+<div class="fifth">
+  <div class="col">
+    <a class="button-small">Call to action</a>
+  </div>
+  <div class="col">
+    <a class="button-small brand">Brand</a>
+  </div>
+  <div class="col">
+    <a class="button-small cta">Complete</a>
+  </div>
+  <div class="col">
+    <a class="button-small warning">Warning</a>
+  </div>
+  <div class="col">
+    <a class="button-small soft">Soft</a>
+  </div>
 </div>
