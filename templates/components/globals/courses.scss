@@ -26,6 +26,7 @@
     }
   }
 
+
   .bside {
     @include breakpoint(desktop) {
       @include rem(padding, 10px 30px);
@@ -188,4 +189,50 @@
     display: block;
     line-height: 1.2;
   }
+}
+
+.tabbed-course {
+  @extend .tabbed-nav;
+  @extend .black;
+  @extend .thin;
+  .tab {
+    @extend %clearfix;
+    background-color: $white;
+    max-width: 1200px;
+  }
+  .half {
+    background-color: $lightgray;
+  }
+  aside h2 {
+    @include rem(padding-bottom, 5px);
+  }
+}
+
+.course-progression {
+  @include rem(margin-bottom, 30px);
+  border-collapse: collapse;
+  width: 100%;
+  th {
+    @extend .subtitle;
+    @include rem(font-size, 14px);
+    @include rem(padding, 30px 0 10px);
+    border-bottom: 1px solid $gray;
+    text-align: left;
+  }
+  td {
+    @include rem(font-size, 14px);
+    @include rem(padding, 10px 0);
+    border-bottom: 1px solid $gray;
+  }
+  tr {
+    td:last-child,
+    th:last-child {
+      text-align: right;
+    }
+  }
+  thead th:last-child {
+    border-color: $black;
+    text-align: left;
+  }
+
 }

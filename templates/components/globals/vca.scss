@@ -99,6 +99,10 @@
   .inset-right figcaption::before {
     border-color: $black;
   }
+
+  ul.ticked-list li::before {
+    border-color: $black;
+  }
 }
 
 .page-header header.vca {

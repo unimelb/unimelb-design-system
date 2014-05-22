@@ -220,7 +220,7 @@ fieldset {
     input[type="checkbox"] {
       display: none;
       &:checked + label:active,
-      &:checked + label:after {
+      &:checked + label::after {
         opacity: 1;
       }
     }
@@ -235,7 +235,7 @@ fieldset {
       padding: 1px;
       position: relative;
       width: 25px;
-      &:after {
+      &::after {
         background: transparent;
         border: 3px solid $highlight;
         border-right: none;
@@ -253,7 +253,7 @@ fieldset {
         -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
       }
-      &:active:after {
+      &:active::after {
         opacity: 0.2;
       }
     }

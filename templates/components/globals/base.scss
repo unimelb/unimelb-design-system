@@ -260,6 +260,7 @@ body {
     @include rem(max-width, 700px);
     @include rem(padding-bottom, 30px);
     @include rem(padding-top, 30px);
+    font-weight: $light;
     margin: 0 auto;
     &.tight {
       padding-bottom: 0;
@@ -393,12 +394,15 @@ h3 {
   }
 }
 
-.title {
-  @include rem(font-size, 16px);
+.subtitle {
+  @include rem(font-size, 15px);
   @include rem(letter-spacing, 2px);
   font-weight: $bold;
-  text-align: center;
   text-transform: uppercase;
+}
+.title {
+  @extend .subtitle;
+  text-align: center;
   &::after {
     @include rem(margin-bottom, 15px);
     @include rem(margin-top, 30px);
@@ -522,6 +526,12 @@ ul {
     @include rem(padding-bottom, 5px);
     color: $black;
     display: list-item;
+    &.no-li {
+      list-style-type: none;
+      &::before {
+        display: none;
+      }
+    }
   }
   &.nobullet {
     margin-left: 0;
@@ -537,6 +547,37 @@ ol li {
 
 ul li {
   list-style-type: disc;
+}
+
+ul.ticked-list {
+  @include rem(margin-left, 35px);
+  li {
+    list-style-type: none;
+    position: relative;
+    &::before {
+      @include rem(height, 5px);
+      @include rem(margin-left, -30px);
+      @include rem(top, 10px);
+      @include rem(width, 10px);
+      background: transparent;
+      border: 3px solid $green;
+      border-right: none;
+      border-top: none;
+      content: '';
+      left: 0;
+      position: absolute;
+      -webkit-transform: rotate(-45deg);
+      -moz-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+    }
+    &.disabled {
+      &::before {
+        opacity: 0.2;
+      }
+    }
+  }
 }
 
 blockquote {
@@ -884,6 +925,7 @@ aside {
 }
 
 .half {
+  @extend %clearfix;
   margin: 0 auto;
 
   em {
@@ -897,7 +939,9 @@ aside {
   }
 
   @include breakpoint(desktop) {
-    width: 90%;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
   }
 
   section {
@@ -906,6 +950,29 @@ aside {
     @include breakpoint(desktop) {
       float: left;
       width: 50%;
+    }
+  }
+}
+
+.with-aside {
+  background-color: $lightgray;
+  float: left;
+  width: 100%;
+  aside {
+    @include rem(padding, 30px);
+    background-color: $lightgray;
+    float: left;
+    max-width: 25%;
+    width: 25%;
+  }
+  .bside {
+    background-color: $white;
+    float: left;
+    width: 75%;
+  }
+  &.reverse {
+    aside {
+      float: right;
     }
   }
 }
