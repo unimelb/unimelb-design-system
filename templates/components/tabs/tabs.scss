@@ -29,6 +29,7 @@
       background-color: rgba($navy, 0.9);
       filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#e50c304a,endColorstr=#e50c304a);
       border-bottom: 1px solid transparent;
+      position: relative;
       // IE fix
       @include breakpoint(0) {
         border-bottom: 0 none;
@@ -88,14 +89,25 @@
       .full-width {
         background-color: $black;
       }
-      nav a[data-current]:after {
+      .tab {
+        @include rem(margin-top, -55px);
+        @include rem(padding-top, 55px);
+      }
+      nav a {
+        color: $gray;
+        &[data-current] {
+          color: $white;
+          font-weight: $regular;
+        }
+      }
+      nav a[data-current]::after {
         border-top-color: $black;
       }
     }
     &.thin {
       nav a {
-        @include rem(font-size, 16px);
-        @include rem(padding, 30px 15px);
+        @include rem(font-size, 15px);
+        @include rem(padding, 15px);
       }
     }
   }

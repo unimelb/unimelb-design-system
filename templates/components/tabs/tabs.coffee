@@ -10,28 +10,26 @@ class Tabbed
 
     for item in @el.querySelectorAll('nav a')
       item.addEventListener 'click', (e) ->
-        e.preventDefault()
         target = e.target || e.srcElement
         t.move(target)
-
-    for el in @el.querySelectorAll('[data-tab]')
-      el.addEventListener 'click', (e) ->
-        target = e.target || e.srcElement
-        t.moveindex(target.getAttribute('data-tab')-1)
-        e.preventDefault() unless (target.hasAttribute('href') and target.getAttribute('href')[0]=="#")
 
     @move(@el.querySelector('[data-current]')) if @el.querySelector('[data-current]')
     @move(@el.querySelector('nav a:first-child')) if Array.prototype.slice.call(@el.querySelectorAll('[data-current]')).length==0
 
+    for el in @el.querySelectorAll('[data-tab]')
+      el.addEventListener 'click', (e) ->
+        target = e.target || e.srcElement
+        t.moveindex(target.getAttribute('data-tab'))
+
   moveindex: (index) ->
     for tab, i in @el.querySelectorAll('nav a')
-      if i == index
+      if i == index-1
         tab.setAttribute('data-current', '')
       else
         tab.removeAttribute('data-current')
 
     for tab, i in @el.querySelectorAll('.tab')
-      if i == index
+      if i == index-1
         tab.setAttribute('data-current', '')
         tab.style.display = 'block'
       else
