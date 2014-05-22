@@ -1,9 +1,11 @@
 class Tabbed
   constructor: (@el) ->
     t = this
+    tabs = []
 
     for tab in @el.querySelectorAll('.tab')
       tab.style.display = 'none'
+      tabs.push tab.id || ''
 
     for nav in @el.querySelectorAll('nav')
       nav.style.display = 'block'
@@ -13,8 +15,14 @@ class Tabbed
         target = e.target || e.srcElement
         t.move(target)
 
-    @move(@el.querySelector('[data-current]')) if @el.querySelector('[data-current]')
-    @move(@el.querySelector('nav a:first-child')) if Array.prototype.slice.call(@el.querySelectorAll('[data-current]')).length==0
+    curr = window.location.hash.substr(1)
+
+    if (curr in tabs)
+      @moveindex tabs.indexOf(curr)+1
+    else if Array.prototype.slice.call(@el.querySelectorAll('[data-current]')).length==0
+      @move @el.querySelector('nav a:first-child')
+    else
+      @move @el.querySelector('[data-current]')
 
     for el in @el.querySelectorAll('[data-tab]')
       el.addEventListener 'click', (e) ->
@@ -55,3 +63,4 @@ class Tabbed
 
 if (supportedmodernbrowser)
   new Tabbed(el) for el in document.querySelectorAll('[data-tabbed]')
+
