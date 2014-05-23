@@ -14,7 +14,15 @@
     @include rem(padding, 0 30px 30px);
   }
   ul {
-    margin-left: 0;
+    margin: 0;
+    padding: 0;
+    &.hide {
+      display: none;
+    }
+    ul li {
+      background-color: $blue;
+      border-color: $navy;
+    }
   }
   img {
     display: none;
@@ -26,7 +34,8 @@
     list-style-type: none;
     padding: 0;
   }
-  a {
+  a,
+  span {
     @include rem(font-size, 14px);
     @include rem(letter-spacing, 1px);
     @include rem(padding, 15px 30px);
@@ -37,6 +46,22 @@
     &:hover {
       background-color: $brand;
       color: $white;
+    }
+  }
+  span {
+    cursor: pointer;
+    &::after {
+      @include rem(font-size, 24px);
+      content: '>';
+      float: right;
+      line-height: 1;
+      -webkit-transform: rotate(90deg)  translateY(-10px);
+      -moz-transform: rotate(90deg) translateY(-10px);
+      -ms-transform: rotate(90deg) translateY(-10px);
+      transform: rotate(90deg) translateY(-10px);
+    }
+    &.open {
+      background-color: $blue;
     }
   }
 
