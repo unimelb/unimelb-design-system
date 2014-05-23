@@ -541,7 +541,12 @@ ul {
   }
 }
 
+ol {
+  @includ rem(margin-left, 40px);
+}
 ol li {
+  @include rem(padding-bottom, 15px);
+  @include rem(padding-left, 15px);
   list-style-type: decimal;
 }
 
@@ -973,6 +978,34 @@ aside {
   &.reverse {
     aside {
       float: right;
+    }
+  }
+}
+
+[role="main"] .margin-rule {
+  @include rem(width, 1000px);
+  margin: 0 auto;
+  section {
+    @include rem(margin, 30px 0 30px 300px);
+    padding-bottom: 0;
+    padding-top: 0;
+    &.ruled {
+      @include rem(margin-bottom, 60px);
+      @include rem(margin-top, 60px);
+      border-left: 1px solid $black;
+      float: left;
+      margin-left: 0;
+    }
+  }
+  .floating {
+    @include rem(padding-right, 20px);
+    @include rem(padding-top, 50px);
+    @include rem(width, 280px);
+    float: left;
+    text-align: right;
+    h2 {
+      @include rem(font-size, 26px);
+      @include rem(padding-bottom, 15px);
     }
   }
 }
