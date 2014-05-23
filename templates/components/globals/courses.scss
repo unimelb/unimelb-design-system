@@ -203,7 +203,7 @@
   .half {
     background-color: $lightgray;
   }
-  aside h2 {
+  aside h2.subtitle {
     @include rem(padding-bottom, 5px);
   }
 }

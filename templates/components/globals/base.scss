@@ -440,6 +440,9 @@ li {
   &.short {
     height: auto;
   }
+  &.alt {
+    background-color: $lightgray;
+  }
   section {
     @include rem(padding-top, 200px);
     @extend %grad-bottom;
@@ -970,6 +973,9 @@ aside {
     float: left;
     max-width: 25%;
     width: 25%;
+    h2 {
+      @include rem(padding, 0 0 30px);
+    }
   }
   .bside {
     background-color: $white;
