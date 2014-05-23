@@ -4,16 +4,14 @@
 //= require ./global-nav/nav
 //= require ./footer/footer
 
+var loadEvents = function() {
+    UOMinjectHeader();
+    UOMinjectFooter();
+    UOMinjectGlobalNav();
+};
+
 if (window.attachEvent) {
-  window.attachEvent('onload', function() {
-    UOMinjectHeader();
-    UOMinjectFooter();
-    UOMinjectGlobalNav();
-  });
+  window.attachEvent('onload', loadEvents);
 } else {
-  document.addEventListener('DOMContentLoaded', function() {
-    UOMinjectHeader();
-    UOMinjectFooter();
-    UOMinjectGlobalNav();
-  });
+  document.addEventListener('DOMContentLoaded', loadEvents);
 }
