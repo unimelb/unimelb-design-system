@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require_relative 'helpers'
 require_relative 'section_filter'
 
@@ -10,7 +12,7 @@ module WebTemplates
 
     ### Configure default paths
 
-    set :root,           File.join(File.dirname(__FILE__), '..')
+    set :root,           File.expand_path(File.join(File.dirname(__FILE__), '..'))
     set :views,          File.join(root, "views")
     set :public_dir,     File.join(root, "public")
 
@@ -20,7 +22,7 @@ module WebTemplates
 
     ### Web template paths
 
-    set :project_root,   File.join(root, '..')
+    set :project_root,   File.expand_path(File.join(root, '..'))
     set :injection,      File.join(project_root, 'injection')
     set :web_templates,  File.join(project_root, 'templates')
     set :components_dir, File.join(web_templates, 'components')
@@ -145,25 +147,44 @@ module WebTemplates
 
     private
 
-    def build_navigation
-      @navigation = []
+    def doc_title(file)
+      return '¡missing page!' unless File.file?(file)
+      settings = file_settings(file)
+      settings['title'] ? settings['title'] : 'Untitled'
+    end
 
-      # TODO make the code look nicer Neil
-      Dir.entries(settings.pages_dir).select{|f| f =~ /^[^\.]/}.each do |dir|
-        if File.directory?(settings.pages_dir+'/'+dir)
-          item = { title: File.basename(dir, '.md').gsub("-"," "), href: '', children: [] }
-          item[:children] << { title: File.basename(dir, '.md').gsub("-"," "), href: '/'+dir.gsub(".md",""), children: [] }
-          Dir.glob(File.join(settings.pages_dir, dir, '*.md')).map{|f| f.gsub(settings.project_root+"/pages", "").gsub(".md","")}.each do |page|
-            item[:children] << { title: File.basename(page).gsub("-"," "), href: page, children: [] }
-          end
-        else
-          item = { title: File.basename(dir, '.md').gsub("-"," "), href: '/'+dir.gsub(".md",""), children: [] }
+    def doc_href(file)
+      file = file.gsub(/(index)?\.md/, '')
+      file[settings.pages_dir.length, file.length]
+    end
+
+    def dir_to_menu(dir)
+      pages = []
+
+      Dir.entries(dir).each do |entry|
+        next if entry =~ /^(\.|index)/
+        path     = File.join(dir, entry)
+        children = []
+
+        if File.directory?(entry)
+          children = dir_to_menu(path)
+          path     = File.join(path, 'index.md')
         end
-        @navigation << item
+
+        pages << {
+          title:    doc_title(path),
+          href:     doc_href(path),
+          children: children
+        }
       end
 
-      layouts = { title: 'Layouts', href: '', children: [] }
-      layouts[:children] << { title: 'Layouts', href: '/layouts', children: [] }
+      pages
+    end
+
+    def build_navigation
+      @navigation = dir_to_menu(settings.pages_dir)
+
+      layouts = { title: 'Layouts', href: '/layouts', children: [] }
       settings.layouts.each do |layout|
         layouts[:children] << { title: layout_title(layout), href: layout_path(layout), children: [] }
       end
