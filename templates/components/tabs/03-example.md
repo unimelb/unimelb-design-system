@@ -4,9 +4,9 @@ no_section_wrap: true
 <div id="nav" class="tabbed-nav" data-tabbed>
   <div class="full-width">
     <nav>
-      <a href="#nav">1st</a>
-      <a href="#nav" data-current>2nd</a>
-      <a href="#nav">3rd</a>
+      <a href="#tab1">1st</a>
+      <a href="#tab2" data-current>2nd</a>
+      <a href="#tab3">3rd</a>
     </nav>
   </div>
   <div id="tab1" class="tab">

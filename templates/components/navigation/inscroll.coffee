@@ -9,27 +9,42 @@ Math.easeInOutQuad = (curr, start, change, duration) ->
 class InPage
   constructor: (@el) ->
     t = this
-    unless @el.hasAttribute('data-tab')
-      @el.addEventListener 'click', (e) ->
+    @el.addEventListener 'click', (e) ->
 
-        if e.target
-          tel = e.target
-          if /(Firefox)/g.test(navigator.userAgent)
-            outer = document.querySelector('html')
-          else
-            outer = document.body
+      if e.target
+        tel = e.target
+        if /(Firefox)/g.test(navigator.userAgent)
+          outer = document.querySelector('html')
         else
-          tel = e.srcElement
-          outer = document.documentElement
+          outer = document.body
+      else
+        tel = e.srcElement
+        outer = document.documentElement
 
-        target = tel.getAttribute('href')
-        if target != "#" and target != "#sitemap"
-          e.preventDefault()
-          target = document.querySelector(tel.getAttribute('href'))
-          if target
-            t.to = target.offsetTop
-            t.element = outer
-            t.scrollTo()
+      target = tel.getAttribute('href')
+
+      if target != "#" and target != "#sitemap"
+        e.preventDefault()
+        target = document.querySelector(tel.getAttribute('href'))
+
+        # Tabs scroll to nav
+        up = (el) ->
+          if el.getAttribute('data-tabbed')==''
+            return el
+          else
+            if el.parentNode and el.parentNode!=document
+              return up(el.parentNode)
+            else
+              return false
+
+        tabbed = up(tel)
+        if tabbed
+          target = tabbed
+
+        if target
+          t.to = target.offsetTop
+          t.element = outer
+          t.scrollTo()
 
   scrollTo: ->
     element = @element

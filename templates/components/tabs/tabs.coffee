@@ -14,6 +14,9 @@ class Tabbed
       item.addEventListener 'click', (e) ->
         target = e.target || e.srcElement
         t.move(target)
+        setTimeout(->
+          window.location.hash = target.getAttribute('href').substr(1)
+        , 600)
 
     curr = window.location.hash.substr(1)
 
@@ -28,6 +31,9 @@ class Tabbed
       el.addEventListener 'click', (e) ->
         target = e.target || e.srcElement
         t.moveindex(target.getAttribute('data-tab'))
+        setTimeout(->
+          window.location.hash = target.getAttribute('href').substr(1)
+        , 600)
 
   moveindex: (index) ->
     for tab, i in @el.querySelectorAll('nav a')
