@@ -1,0 +1,77 @@
+#!/usr/bin/env ruby
+
+require 'rubygems' unless defined?(Gem)
+require 'bundler/setup' if %w(Gemfile).all? { |f| File.exist?(f) }
+require 'optparse'
+
+require 'sprockets'
+
+### Parse command line options
+
+options = { verbose: false }
+
+opts_parser = OptionParser.new do |opts|
+  opts.banner = "Usage: build VERSION [options]"
+  opts.on("-v", "--verbose", "Required") do
+    options[:verbose] = true
+  end
+end
+
+begin
+  opts_parser.parse!
+  options[:version] = ARGV.pop
+  raise "Please specify a version" unless options[:version]
+  # IDEA: Build could be grabbed from last tag?
+rescue OptionParser::InvalidOption => ex
+  puts ex
+  puts opts_parser.banner
+  exit 1
+end
+
+### Prepare build directory
+
+SCRIPT_DIR    =      File.expand_path File.dirname(__FILE__)
+ROOT_DIR      =      File.expand_path File.join(SCRIPT_DIR, '..')
+BUILD_DIR     =      File.expand_path File.join(ROOT_DIR, 'build')
+OUTPUT_DIR    =      File.expand_path File.join(BUILD_DIR, options[:version])
+INJECTION_DIR =      File.expand_path File.join(ROOT_DIR, 'injection')
+TEMPLATES_DIR =      File.expand_path File.join(ROOT_DIR, 'templates')
+
+INJECTION_BUILD    = File.expand_path File.join(OUTPUT_DIR, 'injection')
+INJECTION_MANIFEST = File.expand_path File.join(INJECTION_BUILD, 'manifest.json')
+SERVER_PATH        = '/' + File.join(options[:version], 'injection')
+
+# if options[:verbose]
+#   puts "Injection build dir: #{INJECTION_DIR}"
+#   puts "Templates build dir: #{TEMPLATES_DIR}"
+# end
+
+# FileUtils.mkdir_p INJECTION_DIR
+# FileUtils.mkdir_p TEMPLATES_DIR
+
+### Setup sprockets
+
+environment = Sprockets::Environment.new
+
+# environment.js_compressor  = :uglify
+# environment.css_compressor = :scss
+
+environment.append_path INJECTION_DIR
+environment.append_path TEMPLATES_DIR
+environment.append_path File.join(Gem.loaded_specs['compass'].full_gem_path, 'frameworks', 'compass', 'stylesheets') # <-- TODO: this is not right
+
+environment.context_class.class_eval do
+  def asset_path(path, options = {})
+    File.join(SERVER_PATH, path)
+  end
+end
+
+injection = Sprockets::Manifest.new(environment, nil, INJECTION_MANIFEST)
+injection.compile %w{injection/*.eot injection/*.svg injection/*.ttf injection/*.woff} # fonts
+injection.compile %w{*.png *.jpg *.jpeg}       # images
+injection.compile %w{injection.css}            # css
+injection.compile %w{injection.js}             # js
+
+
+
+

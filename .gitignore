@@ -2,3 +2,4 @@ demo-site/tmp/*
 .bundle/*
 .DS_Store
 tmp/*
+build/
