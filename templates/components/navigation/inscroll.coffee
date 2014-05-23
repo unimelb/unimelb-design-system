@@ -59,7 +59,7 @@ class InPage
       element.scrollTop = Math.easeInOutQuad(curr, start, change, duration)
       setTimeout(animateScroll, increment) if curr < duration
 
-    animateScroll()
+    animateScroll() if change != 0
 
 if supportedmodernbrowser
   new InPage(el) for el in document.querySelectorAll('a[href^="#"]')

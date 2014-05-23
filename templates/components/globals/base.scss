@@ -542,7 +542,7 @@ ul {
 }
 
 ol {
-  @includ rem(margin-left, 40px);
+  @include rem(margin-left, 40px);
 }
 ol li {
   @include rem(padding-bottom, 15px);
@@ -966,6 +966,7 @@ aside {
   aside {
     @include rem(padding, 30px);
     background-color: $lightgray;
+    clear: none;
     float: left;
     max-width: 25%;
     width: 25%;
