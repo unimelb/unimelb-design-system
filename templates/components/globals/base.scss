@@ -989,6 +989,11 @@ aside {
   }
 }
 
+.alt {
+  background-color: $lightgray;
+}
+
+
 [role="main"] .margin-rule {
   @include rem(width, 1000px);
   margin: 0 auto;
