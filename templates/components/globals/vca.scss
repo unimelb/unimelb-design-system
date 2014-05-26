@@ -74,8 +74,8 @@
   }
 
   .quarter {
-    border-bottom: 1px solid $white;
-    margin-left: 0;
+    @include rem (max-width, 1099px);
+    margin: 0 auto;
     width: 100%;
     a {
       color: $white;

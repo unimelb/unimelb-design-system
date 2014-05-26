@@ -90,8 +90,8 @@
         background-color: $black;
       }
       .tab {
-        @include rem(margin-top, -55px);
-        @include rem(padding-top, 55px);
+        @include rem(margin-top, -76px);
+        @include rem(padding-top, 76px);
       }
       nav a {
         color: $gray;
@@ -108,6 +108,10 @@
       nav a {
         @include rem(font-size, 15px);
         @include rem(padding, 15px);
+      }
+      .tab {
+        @include rem(margin-top, -55px);
+        @include rem(padding-top, 55px);
       }
     }
   }
