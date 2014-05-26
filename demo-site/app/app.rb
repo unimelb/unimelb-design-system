@@ -21,7 +21,6 @@ module WebTemplates
     set :partial_template_engine, :slim
 
     ### Web template paths
-
     set :project_root,   File.expand_path(File.join(root, '..'))
     set :injection,      File.join(project_root, 'injection')
     set :web_templates,  File.join(project_root, 'templates')
@@ -166,7 +165,7 @@ module WebTemplates
         path     = File.join(dir, entry)
         children = []
 
-        if File.directory?(entry)
+        if File.directory?(path)
           children = dir_to_menu(path)
           path     = File.join(path, 'index.md')
         end
