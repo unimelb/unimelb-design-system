@@ -63,11 +63,14 @@ window.UOMinjectGlobalNav = ->
     trigger.innerHTML = "University Sitemap"
     localnav.appendChild(trigger)
 
-    for group in localnav.querySelectorAll('span')
-      group.addEventListener 'click', (e) ->
-        e.preventDefault()
-        this.toggleClass 'open'
-        this.parentNode.querySelector('ul').toggleClass 'hide'
+    for group in localnav.querySelectorAll('a')
+      if group.nextSibling && group.nextSibling.localName == 'ul'
+        group.addClass('parent')
+        group.nextSibling.addClass('hide') # <-- remove this
+        group.addEventListener 'click', (e) ->
+          e.preventDefault()
+          this.toggleClass 'open'
+          this.parentNode.querySelector('ul').toggleClass 'hide'
 
   # Create global nav
   nav = document.createElement('div')
