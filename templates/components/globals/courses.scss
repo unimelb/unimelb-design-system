@@ -237,8 +237,9 @@
 }
 
 .course-application-checklist {
+  margin-left: 0;
   li {
-    @include rem(padding, 15px 15px 15px 60px);
+    @include rem(padding, 30px 0 30px 45px);
     @include rem(text-indent, -45px);
     border-top: 1px solid $lightergray;
     list-style-type: none;
@@ -248,6 +249,9 @@
     &.on {
       color: $green;
       text-decoration:line-through;
+    }
+    @include breakpoint(desktop) {
+      @include rem(padding, 15px 15px 15px 60px);
     }
   }
 }

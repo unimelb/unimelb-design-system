@@ -484,12 +484,15 @@ li {
       @include rem(padding-bottom, 45px);
       @include rem(padding-top, 65px);
       color: $black;
-      text-align: center;
+      text-align: left;
     }
 
     @include breakpoint(desktop) {
       margin: 0 10%;
       max-width: 80%;
+      &.black {
+        text-align: center;
+      }
     }
     @include breakpoint(wide) {
       @include rem(max-width, 1099px);
@@ -1009,48 +1012,57 @@ aside {
   background-color: $lightgray;
   width: 100%;
   aside {
-    @include rem(padding, 30px);
+    @include rem(padding, 30px 15px 0);
     background-color: $lightgray;
     clear: none;
-    float: left;
-    max-width: 25%;
-    position: relative;
-    width: 25%;
+    width: 100%;
     h2 {
       @include rem(padding, 0 0 30px);
     }
-    &::after {
-      @include rem(border, 15px solid transparent);
-      @include rem(margin-left, -30px);
-      @include rem(top, 90px);
-      border-right-color: $lightgray;
-      content: " ";
-      height: 0;
-      left: 0;
-      pointer-events: none;
-      position: absolute;
-      width: 0;
+    @include breakpoint(desktop) {
+      @include rem(padding, 30px);
+      float: left;
+      max-width: 25%;
+      position: relative;
+      width: 25%;
+      &::after {
+        @include rem(border, 15px solid transparent);
+        @include rem(margin-left, -30px);
+        @include rem(top, 90px);
+        border-right-color: $lightgray;
+        content: " ";
+        height: 0;
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        width: 0;
+      }
     }
   }
   .bside {
     @include rem(max-width, 1099px);
     background-color: $white;
-    float: left;
-    width: 75%;
+    width: 100%;
+    @include breakpoint(desktop) {
+      float: left;
+      width: 75%;
+    }
   }
   &.left {
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAD6AAAAABCAMAAAD9qaGSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkVFRDVDNEZERENDMjExRTNCMjhGODA3NDRENTgwQzlCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkVFRDVDNEZFRENDMjExRTNCMjhGODA3NDRENTgwQzlCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RUVENUM0RkJEQ0MyMTFFM0IyOEY4MDc0NEQ1ODBDOUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RUVENUM0RkNEQ0MyMTFFM0IyOEY4MDc0NEQ1ODBDOUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6WlyZRAAAABlBMVEX////29vbys80OAAAAH0lEQVR42uzBAQkAAAACoPp/uh2BmgIA9wIA3JsAAwCmXgfRbQuJygAAAABJRU5ErkJggg==");
-    background-position: top center;
-    background-repeat: repeat-y;
-    aside {
-      background-color: transparent;
-      &::after {
-        @include rem(margin-right, -30px);
-        border-left-color: $lightgray;
-        border-right-color: transparent;
-        left: auto;
-        margin-left: 0;
-        right: 0;
+    @include breakpoint(desktop) {
+      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAD6AAAAABCAMAAAD9qaGSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkVFRDVDNEZERENDMjExRTNCMjhGODA3NDRENTgwQzlCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkVFRDVDNEZFRENDMjExRTNCMjhGODA3NDRENTgwQzlCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RUVENUM0RkJEQ0MyMTFFM0IyOEY4MDc0NEQ1ODBDOUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RUVENUM0RkNEQ0MyMTFFM0IyOEY4MDc0NEQ1ODBDOUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6WlyZRAAAABlBMVEX////29vbys80OAAAAH0lEQVR42uzBAQkAAAACoPp/uh2BmgIA9wIA3JsAAwCmXgfRbQuJygAAAABJRU5ErkJggg==");
+      background-position: top center;
+      background-repeat: repeat-y;
+      aside {
+        background-color: transparent;
+        &::after {
+          @include rem(margin-right, -30px);
+          border-left-color: $lightgray;
+          border-right-color: transparent;
+          left: auto;
+          margin-left: 0;
+          right: 0;
+        }
       }
     }
   }
@@ -1062,29 +1074,40 @@ aside {
 
 
 [role="main"] .margin-rule {
-  @include rem(width, 1000px);
-  margin: 0 auto;
-  section {
-    @include rem(margin, 30px 0 30px 300px);
-    padding-bottom: 0;
-    padding-top: 0;
-    &.ruled {
-      @include rem(margin-bottom, 60px);
-      @include rem(margin-top, 60px);
-      border-left: 1px solid $black;
-      float: left;
-      margin-left: 0;
+  .floating {
+    @include rem(padding, 15px 15px 30px);
+    background-color: $lightgray;
+    h2,
+    p {
+      padding-bottom: 0;
     }
   }
-  .floating {
-    @include rem(padding-right, 20px);
-    @include rem(padding-top, 50px);
-    @include rem(width, 280px);
-    float: left;
-    text-align: right;
-    h2 {
-      @include rem(font-size, 26px);
-      @include rem(padding-bottom, 15px);
+  @include breakpoint(desktop) {
+    @include rem(width, 1099px);
+    margin: 0 auto;
+    section {
+      @include rem(margin, 30px 0 30px 300px);
+      padding-bottom: 0;
+      padding-top: 0;
+      &.ruled {
+        @include rem(margin-bottom, 60px);
+        @include rem(margin-top, 60px);
+        border-left: 1px solid $black;
+        float: left;
+        margin-left: 0;
+      }
+    }
+    .floating {
+      @include rem(padding-right, 20px);
+      @include rem(padding-top, 50px);
+      @include rem(width, 280px);
+      background-color: transparent;
+      float: left;
+      text-align: right;
+      h2 {
+        @include rem(font-size, 26px);
+        @include rem(padding-bottom, 15px);
+      }
     }
   }
 }
