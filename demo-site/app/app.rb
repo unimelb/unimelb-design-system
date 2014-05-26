@@ -235,8 +235,9 @@ module WebTemplates
     end
 
     def return_page_not_found
-      puts "PAGE NOT FOUND!!"
-      halt(404) # TODO: render 404 page
+      status 404
+      @message = 'Page not found.'
+      slim :error
     end
 
   end
