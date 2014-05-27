@@ -1,0 +1,127 @@
+// Globals
+
+$black: #000000 !default;
+$darkgray: #333333;
+$midgray: #666666;
+$gray: #ADB8C1;
+$lightgray: #f6f6f6;
+$lightergray: #E0E0E0;
+$white: #ffffff !default;
+
+$navy: #0c304a;
+$blue: #304E64;
+$darkblue: #004576;
+$borderblue: #7399B7;
+$midblue: #366996;
+$lightblue: #82a1bd;
+$lighterblue: #359aec;
+$paleblue: #f2f5f8;
+$lightestblue: #e1eaf5;
+
+$brand: $darkblue;
+
+// Rems
+
+$baseline-px: 16px;
+
+@mixin rem($property, $px-values) {
+  $baseline-rem: $baseline-px / 1rem;
+  #{$property}: $px-values;
+  @if type-of($px-values) == "number" {
+    #{$property}: $px-values / $baseline-rem;
+  } @else {
+    $rem-values: unquote("");
+    @each $value in $px-values {
+      @if $value == 0 or type-of($value) == "string" or type-of($value) == "color" {
+        $rem-values: append($rem-values, $value);
+      } @else {
+        $rem-values: append($rem-values, $value / $baseline-rem);
+      }
+    }
+    #{$property}: $rem-values;
+  }
+}
+
+// Media queries
+
+@mixin breakpoint($point) {
+  @if $point == wide {
+    @media screen and (min-width: 1099px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == desktop {
+    @media screen and (min-width: 769px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == tablet {
+    @media screen and (min-width: 481px){
+      & {
+        @content;
+      }
+    }
+  }
+  // Not required, but useful to styling out IE8
+  @else if $point == mobile {
+    @media screen and (max-width: 480px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == height-smallest {
+    @media screen and (min-height: 640px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == height-small {
+    @media screen and (min-height: 740px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == height-medium {
+    @media screen and (min-height: 850px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == height-big {
+    @media screen and (min-height: 1200px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else {
+    @media screen and (min-width: $point) {
+      & {
+        @content;
+      }
+    }
+  }
+}
+
+// Wrapper
+
+%wrapper {
+  @include rem(padding, 15px);
+  margin: 0 auto;
+  max-width: 100%;
+  @include breakpoint(wide) {
+    @include rem(max-width, 1099px);
+    margin-left: 15%;
+  }
+  @include breakpoint(1600px) {
+    margin-left: 25%;
+  }
+}

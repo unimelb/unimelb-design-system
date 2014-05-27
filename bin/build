@@ -30,16 +30,19 @@ end
 
 ### Prepare build directory
 
-SCRIPT_DIR    =      File.expand_path File.dirname(__FILE__)
-ROOT_DIR      =      File.expand_path File.join(SCRIPT_DIR, '..')
-BUILD_DIR     =      File.expand_path File.join(ROOT_DIR, 'build')
-OUTPUT_DIR    =      File.expand_path File.join(BUILD_DIR, options[:version])
-INJECTION_DIR =      File.expand_path File.join(ROOT_DIR, 'injection')
-TEMPLATES_DIR =      File.expand_path File.join(ROOT_DIR, 'templates')
+SCRIPT_DIR       = File.expand_path File.dirname(__FILE__)
+ROOT_DIR         = File.expand_path File.join(SCRIPT_DIR, '..')
+BUILD_DIR        = File.expand_path File.join(ROOT_DIR, 'build')
+INJECTION_ASSETS = File.expand_path File.join(ROOT_DIR, 'injection')
+TEMPLATES_ASSETS = File.expand_path File.join(ROOT_DIR, 'templates')
 
-INJECTION_BUILD    = File.expand_path File.join(OUTPUT_DIR, 'injection')
-INJECTION_MANIFEST = File.expand_path File.join(INJECTION_BUILD, 'manifest.json')
-SERVER_PATH        = '/' + File.join(options[:version], 'injection')
+INJECTION_BUILD_DIR   = File.expand_path File.join(BUILD_DIR, 'injection')
+INJECTION_MANIFEST    = File.expand_path File.join(INJECTION_BUILD_DIR, 'manifest.json')
+INJECTION_SERVER_PATH = "/injection/"
+
+TEMPLATES_BUILD_DIR   = File.expand_path File.join(BUILD_DIR, 'templates', options[:version])
+TEMPLATES_MANIFEST    = File.expand_path File.join(TEMPLATES_BUILD_DIR, 'manifest.json')
+TEMPLATES_SERVER_PATH = "/templates/#{options[:version]}/"
 
 # if options[:verbose]
 #   puts "Injection build dir: #{INJECTION_DIR}"
@@ -49,29 +52,73 @@ SERVER_PATH        = '/' + File.join(options[:version], 'injection')
 # FileUtils.mkdir_p INJECTION_DIR
 # FileUtils.mkdir_p TEMPLATES_DIR
 
-### Setup sprockets
+### Clear build directory
 
-environment = Sprockets::Environment.new
+FileUtils.rm_rf INJECTION_BUILD_DIR
+FileUtils.rm_rf TEMPLATES_BUILD_DIR
 
-# environment.js_compressor  = :uglify
-# environment.css_compressor = :scss
+### Monkey patch sprockets
 
-environment.append_path INJECTION_DIR
-environment.append_path TEMPLATES_DIR
-environment.append_path File.join(Gem.loaded_specs['compass'].full_gem_path, 'frameworks', 'compass', 'stylesheets') # <-- TODO: this is not right
-
-environment.context_class.class_eval do
-  def asset_path(path, options = {})
-    File.join(SERVER_PATH, path)
+module Sprockets
+  class Asset
+    def digest_path
+      return logical_path if logical_path =~ /\.(css|js)$/
+      logical_path.sub(/\.(\w+)$/) { |ext| "-#{digest}#{ext}" }
+    end
   end
 end
 
-injection = Sprockets::Manifest.new(environment, nil, INJECTION_MANIFEST)
-injection.compile %w{injection/*.eot injection/*.svg injection/*.ttf injection/*.woff} # fonts
-injection.compile %w{*.png *.jpg *.jpeg}       # images
-injection.compile %w{injection.css}            # css
-injection.compile %w{injection.js}             # js
+### Setup sprockets
 
+def standard_sprocket_environment
+  environment = Sprockets::Environment.new
+  environment.js_compressor  = :uglify
+  environment.css_compressor = :scss
+  environment.append_path File.join(Gem.loaded_specs['compass'].full_gem_path, 'frameworks', 'compass', 'stylesheets') # <-- TODO: this is not right
+  environment
+end
 
+def injection_manifest(environment=nil)
+  @injection_manifest ||= Sprockets::Manifest.new(environment, INJECTION_MANIFEST)
+end
 
+def templates_manifest(environment=nil)
+  @templates_manifest ||= Sprockets::Manifest.new(environment, TEMPLATES_MANIFEST)
+end
 
+def build_templates!
+  environment = standard_sprocket_environment
+  environment.append_path TEMPLATES_ASSETS
+  environment.context_class.class_eval do
+    def asset_path(path, options = {})
+      digest = templates_manifest.assets[path] || path
+      File.join(TEMPLATES_SERVER_PATH, digest)
+    end
+  end
+
+  templates = templates_manifest(environment)
+  templates.compile %w{*.eot *.svg *.ttf *.woff} # fonts
+  templates.compile %w{*.png *.jpg *.jpeg}       # images
+  templates.compile %w{uom.css}                  # css
+  templates.compile %w{uom.js}                   # js
+end
+
+def build_injection!
+  environment = standard_sprocket_environment
+  environment.append_path INJECTION_ASSETS
+  environment.context_class.class_eval do
+    def asset_path(path, options = {})
+      digest = injection_manifest.assets[path] || path
+      File.join(INJECTION_SERVER_PATH, digest)
+    end
+  end
+
+  injection = injection_manifest(environment)
+  injection.compile %w{*.eot *.svg *.ttf *.woff} # fonts
+  injection.compile %w{*.png *.jpg *.jpeg}       # images
+  injection.compile %w{injection.css}            # css
+  injection.compile %w{injection.js}             # js
+end
+
+build_templates!
+build_injection!

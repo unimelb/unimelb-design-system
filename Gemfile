@@ -20,4 +20,5 @@ gem "front_matter_parser", "~> 0.0.2"
 
 group :development do
   gem "thin", "~> 1.6.2"
+  gem "uglifier", "~> 2.5.0"
 end
