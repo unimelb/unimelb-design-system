@@ -275,7 +275,7 @@ body {
 
   section {
     @extend %wrapper;
-    @include rem(max-width, 700px);
+    @include rem(max-width, $w-sml);
     @include rem(padding-bottom, 30px);
     @include rem(padding-top, 30px);
     font-weight: $light;
@@ -327,12 +327,6 @@ body {
     }
     & + .video {
       @include rem(margin-top, -30px);
-    }
-    @include breakpoint(wide) {
-      margin-left: 15%;
-    }
-    @include breakpoint(1600px) {
-      margin-left: 25%;
     }
   }
 
@@ -618,8 +612,9 @@ blockquote {
   font-style: italic;
   font-weight: $regular;
   margin-bottom: 0;
-  margin-left: 8%;
-  margin-right: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $w-mid;
   quotes: "\201C""\201D";
   text-align: left;
   &::after,
@@ -661,12 +656,6 @@ blockquote {
 
   @include breakpoint(tablet) {
     @include rem(font-size, 24px);
-    margin: 0 10%;
-    max-width: 80%;
-  }
-  @include breakpoint(desktop) {
-    margin: 0 10%;
-    max-width: 80%;
   }
 }
 
@@ -765,7 +754,6 @@ blockquote {
 }
 
 dl {
-  @extend %clearfix;
   @include rem(font-size, 12px);
   @include rem(padding, 10px 15px);
   dt {
@@ -779,6 +767,7 @@ dl {
   &.bside {
     @include rem(font-size, 15px);
     dt {
+      line-height: 1.2;
       margin: 0;
       text-align: left;
       width: 15%;
@@ -795,7 +784,6 @@ dl {
     @include breakpoint(desktop) {
       @include rem(padding, 10px 30px);
       display: inline-block;
-      max-width: 900px;
       width: 75%;
       dt {
         text-align: right;
@@ -821,16 +809,18 @@ aside {
   }
   @include breakpoint(desktop) {
     display: inline-block;
-    max-width: 300px;
     width: 25%;
   }
 }
 
 .hold {
-  @include rem(max-width, 1200px);
+  @include rem(max-width, $w-mid);
   margin: 0 auto;
   aside {
+    @include rem(padding-bottom, 15px);
+    @include rem(padding-top, 5px);
     float: none;
+    vertical-align: top;
   }
 }
 

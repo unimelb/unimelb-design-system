@@ -18,12 +18,13 @@
   @include rem(padding-left, 15px);
   @include rem(padding-right, 15px);
   background-color: $lightgray;
-  border-bottom: 1px solid darken($lightgray, 5%);
-  border-top: 1px solid darken($lightgray, 5%);
-  margin: 0;
+  margin: 0 auto;
+  max-width: $w-lge;
+
   -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
   box-sizing: content-box;
+
   li {
     @include rem(margin-top, 10px);
     @include rem(min-height, 100px);
@@ -86,10 +87,6 @@
 
   @include breakpoint(desktop) {
     @include rem(padding-top, 60px);
-    float: left;
-    padding-left: 10%;
-    padding-right: 10%;
-    width: 80%;
     img {
       margin: 0 auto;
       max-width: 100%;
