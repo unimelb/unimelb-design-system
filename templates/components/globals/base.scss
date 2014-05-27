@@ -992,7 +992,13 @@ aside {
 .with-aside {
   @extend %clearfix;
   background-color: $lightgray;
-  width: 100%;
+  background-image: url("#{asset_path('components/globals/with-aside-r-bg.png')}");
+  background-position: top center;
+  background-repeat: repeat-y;
+  div {
+    margin: 0 auto;
+    max-width: $w-lge;
+  }
   aside {
     @include rem(padding, 30px 15px 0);
     background-color: $lightgray;
@@ -1007,18 +1013,6 @@ aside {
       max-width: 25%;
       position: relative;
       width: 25%;
-      &::after {
-        @include rem(border, 15px solid transparent);
-        @include rem(margin-left, -30px);
-        @include rem(top, 90px);
-        border-right-color: $lightgray;
-        content: " ";
-        height: 0;
-        left: 0;
-        pointer-events: none;
-        position: absolute;
-        width: 0;
-      }
     }
   }
   .bside {
@@ -1032,19 +1026,9 @@ aside {
   }
   &.left {
     @include breakpoint(desktop) {
-      background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAD6AAAAABCAMAAAD9qaGSAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkVFRDVDNEZERENDMjExRTNCMjhGODA3NDRENTgwQzlCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkVFRDVDNEZFRENDMjExRTNCMjhGODA3NDRENTgwQzlCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RUVENUM0RkJEQ0MyMTFFM0IyOEY4MDc0NEQ1ODBDOUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RUVENUM0RkNEQ0MyMTFFM0IyOEY4MDc0NEQ1ODBDOUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6WlyZRAAAABlBMVEX////29vbys80OAAAAH0lEQVR42uzBAQkAAAACoPp/uh2BmgIA9wIA3JsAAwCmXgfRbQuJygAAAABJRU5ErkJggg==");
-      background-position: top center;
-      background-repeat: repeat-y;
+      background-image: url("#{asset_path('components/globals/with-aside-bg.png')}");
       aside {
         background-color: transparent;
-        &::after {
-          @include rem(margin-right, -30px);
-          border-left-color: $lightgray;
-          border-right-color: transparent;
-          left: auto;
-          margin-left: 0;
-          right: 0;
-        }
       }
     }
   }
