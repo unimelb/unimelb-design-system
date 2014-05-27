@@ -1,0 +1,42 @@
+[role="main"] footer.cta {
+  @include rem(padding-top, 30px);
+  background-color: $black;
+  color: $white;
+  .overview {
+    @include rem(padding, 30px 0 0);
+  }
+  .button-outline-inverse {
+    @include rem(margin-left, 30px);
+    @include rem(padding-bottom, 10px);
+    @include rem(padding-top, 10px);
+    &::after {
+      @include rem(top, -4px);
+    }
+  }
+
+  ul {
+    @include rem (max-width, $w-lge);
+    margin: 0 auto;
+
+    li {
+      @include rem(padding, 15px);
+    }
+    a {
+      color: $white;
+    }
+    img {
+      @include rem(margin-right, 10px);
+      @include rem(max-width, 24px);
+      vertical-align: middle;
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(padding, 30px 0 60px);
+     text-align: center;
+     li {
+        @include rem(padding, 0 30px);
+        display: inline;
+      }
+   }
+  }
+}

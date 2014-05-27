@@ -44,12 +44,17 @@ $brand: $darkblue;
 $base: $darkgray;
 $soft: $lightergray;
 
+// Layout widths
+$w-sml: 700px;
+$w-mid: 900px;
+$w-lge: 1400px;
+
 %wrapper {
   @include rem(padding, 15px);
   margin: 0 auto;
   max-width: 100%;
   @include breakpoint(wide) {
-    @include rem(max-width, 1099px);
+    @include rem(max-width, $w-lge);
     margin-left: 15%;
   }
   @include breakpoint(1600px) {

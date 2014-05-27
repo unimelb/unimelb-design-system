@@ -16,7 +16,12 @@ div.skip-header role="main"
 
     #nav.tabbed-nav.black data-tabbed=""
       .full-width
-        nav
+        form.mobile-nav: fieldset: div: select
+          option value="#study" Study
+          option value="#today" Today
+          option value="#research" Research
+          option value="#about" About
+        nav.desktop-nav
           a href="#study" Study
           a href="#today" Today
           a href="#research" Research
@@ -27,7 +32,7 @@ div.skip-header role="main"
           p.black The VCA is committed to providing a deep and transforming learning experience in pursuit of artistic excellence, innovation and an absorbing education. Welcome to a community of artists of all sorts - contemporary artists, writers, choreographers, musicians, designers, performers, actors, filmmakers, dancers and more, all committed to the production of new artistic work.
 
         .fullwidth.short style="background-image:url(/assets/images/vca/bg-geo.png)"
-          ul.selector-listing
+          ul.selector-listing-3
             li
               a href=""
                 strong: span Undergraduate
@@ -115,7 +120,7 @@ div.skip-header role="main"
           p.black The VCA Research Clusters are centred around a research theme and involve membership across the various discipline areas of the VCA Schools and Centres, and more broadly across the University and beyond.  They represent research areas of critical mass in the VCA and contribute to an interdisciplinary collaborative research environment.
 
         .fullwidth.short style="background-image:url(/assets/images/vca/vca-feature-1.jpg)"
-          ul.selector-listing.inverse
+          ul.selector-listing-3.inverse
             li
               a href=""
                 strong: span Art, social and spatial practice
@@ -147,7 +152,7 @@ div.skip-header role="main"
           p.black The Victorian College of the Arts brings together an extensive range of creative disciplines including Art, Dance, Theatre, Film and Television, Contemporary Music, Music Theatre, Production, Community Cultural Development and Indigenous Arts Management.
 
     footer.cta
-      ul.quarter
+      ul
         li: a.email href="email"
           img src="/assets/images/email.png" alt=""
           | Sign up for our newsletter

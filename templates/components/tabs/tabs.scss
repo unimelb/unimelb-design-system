@@ -76,6 +76,18 @@
         margin: 0 auto;
       }
     }
+    .desktop-nav {
+      display: none;
+      @include breakpoint(desktop) {
+        display: block;
+      }
+    }
+    .mobile-nav {
+      display: block;
+      @include breakpoint(desktop) {
+        display: none;
+      }
+    }
     .tab {
       @include rem(margin-top, -70px);
       @include rem(padding-top, 70px);
@@ -102,6 +114,10 @@
       }
       nav a[data-current]::after {
         border-top-color: $black;
+      }
+      .mobile-nav select {
+        background-color: $black;
+        border: 1px solid $black;
       }
     }
     &.thin {

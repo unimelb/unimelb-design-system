@@ -488,15 +488,11 @@ li {
     }
 
     @include breakpoint(desktop) {
-      margin: 0 10%;
-      max-width: 80%;
+      margin: 0 auto;
+      max-width: $w-mid;
       &.black {
         text-align: center;
       }
-    }
-    @include breakpoint(wide) {
-      @include rem(max-width, 1099px);
-      margin: 0 auto;
     }
   }
   blockquote {
@@ -960,6 +956,7 @@ aside {
 .half {
   @extend %clearfix;
   margin: 0 auto;
+  max-width: $w-lge;
 
   em {
     @include rem(font-size, 13px);
@@ -971,37 +968,32 @@ aside {
     max-width: 95%;
   }
 
-  @include breakpoint(desktop) {
-    padding-left: 10%;
-    padding-right: 10%;
-    width: 100%;
-  }
-
   section {
     @include rem(padding, 0 15px);
     margin: 0;
-
+    width: 100%;
     &.tight {
       padding: 0;
     }
 
+    p {
+      max-width: $w-sml;
+    }
+
     iframe {
-      max-width: 100%;
+      width: 100%;
     }
 
     @include breakpoint(desktop) {
       @include rem(padding, 30px 15px);
       float: left;
       width: 50%;
+      padding-left: 0;
+      padding-right: 0;
       iframe {
         @include rem(margin-top, 60px);
         @include rem(margin-bottom, 60px);
         @include rem(padding-right, 30px);
-      }
-    }
-    @include breakpoint(1440px) {
-      iframe {
-        padding-right: 0;
       }
     }
   }

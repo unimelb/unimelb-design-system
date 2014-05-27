@@ -7,9 +7,6 @@ class Tabbed
       tab.style.display = 'none'
       tabs.push tab.id || ''
 
-    for nav in @el.querySelectorAll('nav')
-      nav.style.display = 'block'
-
     for item in @el.querySelectorAll('nav a')
       item.addEventListener 'click', (e) ->
         target = e.target || e.srcElement
@@ -17,6 +14,18 @@ class Tabbed
         setTimeout(->
           window.location.hash = target.getAttribute('href').substr(1)
         , 600)
+
+    if Array.prototype.slice.call(@el.querySelectorAll('select')).length > 0
+      @el.querySelector('select').addEventListener 'change', (e) ->
+        if this.value
+          curr = 1
+          tab = this.value
+          for opt, i in this.querySelectorAll('option')
+            curr = i+1 if opt.value==tab
+          t.moveindex(curr)
+          setTimeout(->
+            window.location.hash = tab.substr(1)
+          , 600)
 
     curr = window.location.hash.substr(1)
 
@@ -42,6 +51,12 @@ class Tabbed
       else
         tab.removeAttribute('data-current')
 
+    for opt, i in @el.querySelectorAll('option')
+      if i == index-1
+        opt.setAttribute('selected', 'selected')
+      else
+        opt.removeAttribute('selected')
+
     for tab, i in @el.querySelectorAll('.tab')
       if i == index-1
         tab.setAttribute('data-current', '')
@@ -58,6 +73,12 @@ class Tabbed
         curr = i
       else
         tab.removeAttribute('data-current')
+
+    for opt, i in @el.querySelectorAll('option')
+      if i == curr
+        opt.setAttribute('selected', 'selected')
+      else
+        opt.removeAttribute('selected')
 
     for tab, i in @el.querySelectorAll('.tab')
       if i == curr

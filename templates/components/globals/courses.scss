@@ -149,6 +149,14 @@
 .course-grid {
   @extend %clearfix;
   margin: 0 3%;
+
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+          transition-property: height, width;
+  -webkit-transition-duration: 0.4s;
+     -moz-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+
   @include breakpoint(desktop) {
     margin: 0;
   }
@@ -158,6 +166,17 @@
     background-color: $palegreen;
     list-style-type: none;
     padding: 0;
+
+    opacity: 1;
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    -ms-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+     -webkit-transition-property: opacity;
+     -ms-transition-property: opacity;
+     -moz-transition-property: opacity;
+    transition-property: opacity;
+
     &.postgrad {
       background-color: $bronze;
     }
@@ -166,6 +185,9 @@
     }
     &.research {
       background-color: $lightblue;
+    }
+    &.hide {
+      opacity: 0.1;
     }
     @include breakpoint(tablet) {
       @include rem(margin, 2px);

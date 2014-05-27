@@ -17,7 +17,14 @@ div role="main"
 
     #nav.tabbed-course data-tabbed=""
       .full-width
-        nav
+        form.mobile-nav: fieldset: div: select
+          option value="#overview" Overview
+          option value="#degree-structure" Degree Structure
+          option value="#entry-requirements" Entry Requirements
+          option value="#fees-and-scholarships" Fees and Scholarships
+          option value="#student-experience" Student Experience
+          option value="#apply-now" Apply Now
+        nav.desktop-nav
           a href="#overview" Overview
           a href="#degree-structure" Degree Structure
           a href="#entry-requirements" Entry Requirements

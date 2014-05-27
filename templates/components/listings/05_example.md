@@ -4,7 +4,7 @@ no_section_wrap: true
 <section><h2 id="selector">Selector Listings</h2></section>
 
 ```html
-<ul class="selector-listing">
+<ul class="selector-listing-3">
   <li>
     <a href="">
       <strong><span>Cras pretium et elit id bibendum.</span></strong>
@@ -15,7 +15,7 @@ no_section_wrap: true
 </ul>
 ```
 
-<ul class="selector-listing">
+<ul class="selector-listing-3">
   <li>
     <a href="">
       <strong><span>Shorter title.</span></strong>

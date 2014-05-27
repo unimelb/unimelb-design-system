@@ -250,7 +250,7 @@
   }
 }
 
-.selector-listing {
+.selector-listing-3 {
   @extend .feature-listing-3;
   @include rem(margin, 30px 0);
   background-color: transparent;
@@ -259,11 +259,11 @@
   width: 94%;
 
   li {
-    @include rem(margin-bottom, 2px);
+    @include rem(margin-bottom, 30px);
+    @include rem(margin-top, 30px);
     background-color: $midblue;
     margin-left: 0;
     margin-right: 0;
-    margin-top: 0;
     padding: 0;
     width: 100%;
   }
@@ -277,9 +277,9 @@
   }
   strong {
     @include rem(font-size, 15px);
-    @include rem(height, 120px);
     @include rem(letter-spacing, 1px);
     @include rem(margin, 0 30px 15px);
+    @include rem(padding, 30px 0);
     color: $white;
     background-color: transparent;
     border-bottom: 1px solid $white;
@@ -295,7 +295,7 @@
     }
   }
   a {
-    @include rem(padding-bottom, 15px);
+    @include rem(padding-bottom, 30px);
     position: relative;
     &:hover {
       background-color: darken($midblue, 3%);
@@ -309,21 +309,34 @@
   }
 
   @include breakpoint(desktop) {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $w-lge;
     li {
       background-color: $midblue;
-      margin: 0 2%;
-      width: 29%;
+      margin-left: 2%;
+      margin-right: 2%;
+      width: 30.333%;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:first-child + li + li {
+        margin-right: 0;
+      }
     }
     p {
       padding-left: 0;
       padding-right: 0;
     }
     strong {
+      @include rem(height, 120px);
       padding-left: 5%;
       padding-right: 5%;
     }
     a {
-      @include rem(min-height, 320px);
+      @include rem(min-height, 360px);
+      @include rem(padding-bottom, 15px);
     }
     .button-small {
       @include horizontal-align;
@@ -474,7 +487,7 @@
   }
 
   @include breakpoint(desktop) {
-    @include rem(max-width, 1800px);
+    @include rem(max-width, $w-lge);
     li {
       margin-left: 0;
       margin-bottom: 1%;
@@ -549,23 +562,14 @@
       }
     }
   }
-  @include breakpoint(1600px) {
+  @include breakpoint($w-lge) {
+    max-width: 1414px;
+    padding: 0;
     li {
-      margin-bottom: 0.9%;
-      margin-right: 0.9%;
       width: 19%;
     }
     .double {
       width: 39%;
-    }
-  }
-  @include breakpoint(2000px) {
-    padding: 0;
-    li {
-      width: 15.666%;
-    }
-    .double {
-      width: 32.333%;
     }
   }
 }
