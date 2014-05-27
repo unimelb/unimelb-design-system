@@ -183,8 +183,10 @@ body {
           @include rem(padding-bottom, 60px);
           @include rem(padding-top, 60px);
           line-height: 1.4;
-          padding-left: 15%;
-          padding-right: 15%;
+          margin: 0 auto;
+          max-width: $w-mid;
+          padding-left: 0;
+          padding-right: 0;
         }
       }
     }
