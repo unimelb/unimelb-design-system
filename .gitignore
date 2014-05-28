@@ -3,3 +3,4 @@ demo-site/tmp/*
 .DS_Store
 tmp/*
 build/
+.env

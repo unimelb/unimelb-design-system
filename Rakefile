@@ -1,6 +1,8 @@
 require 'rubygems' unless defined?(Gem)
 require 'rake/sprocketstask'
 require 'compass'
+require 'asset_sync'
+require 'dotenv/tasks'
 
 ROOT_DIR  = File.expand_path File.dirname(__FILE__)
 BUILD_DIR = File.expand_path File.join(ROOT_DIR,  'build')
@@ -50,6 +52,24 @@ namespace :injection do
     t.keep        = 0
   end
 
+  desc 'Uploads everything in the injection build directory to S3'
+  task sync: :dotenv do
+    AssetSync.configure do |config|
+      config.fog_provider          = 'AWS'
+      config.fog_directory         = ENV['FOG_DIRECTORY']
+      config.aws_access_key_id     = ENV['AWS_ACCESS_KEY_ID']
+      config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+      config.existing_remote_files = 'delete'
+      config.manifest              = false
+      config.gzip_compression      = false
+      config.run_on_precompile     = false
+      config.log_silently          = false
+      config.prefix                = 'injection'
+      config.public_path           = BUILD_DIR
+    end
+    AssetSync.sync
+  end
+
 end
 
 ### Templates
@@ -65,11 +85,12 @@ namespace :templates do
     end
   end
 
-  SPECIFIED_VERSION     = ENV['VERSION'] ? ENV['VERSION'] : 'beta'
-  TEMPLATE_VERSION      = SPECIFIED_VERSION =~ /^\d$/ ? "v#{SPECIFIED_VERSION}" : SPECIFIED_VERSION
-  TEMPLATES_ASSETS      = File.expand_path File.join(ROOT_DIR,  'templates')
-  TEMPLATES_BUILD_DIR   = File.expand_path File.join(BUILD_DIR, 'templates', TEMPLATE_VERSION)
-  TEMPLATES_SERVER_PATH = "/templates/#{TEMPLATE_VERSION}/"
+  SPECIFIED_VERSION      = ENV['VERSION'] ? ENV['VERSION'] : 'beta'
+  TEMPLATE_VERSION       = SPECIFIED_VERSION =~ /^\d$/ ? "v#{SPECIFIED_VERSION}" : SPECIFIED_VERSION
+  TEMPLATES_ASSETS       = File.expand_path File.join(ROOT_DIR,  'templates')
+  TEMPLATES_VERSION_PATH = File.join('templates', TEMPLATE_VERSION)
+  TEMPLATES_BUILD_DIR    = File.expand_path File.join(BUILD_DIR, TEMPLATES_VERSION_PATH)
+  TEMPLATES_SERVER_PATH  = "/#{TEMPLATES_VERSION_PATH}/"
 
   Rake::SprocketsTask.new(:assets) do |t|
     t.environment = Sprockets::Environment.new do |e|
@@ -88,36 +109,59 @@ namespace :templates do
     t.keep        = 0
   end
 
+
+  desc 'Uploads everything in the templates build directory to S3'
+  task sync: :dotenv do
+    AssetSync.configure do |config|
+      config.fog_provider          = 'AWS'
+      config.fog_directory         = ENV['FOG_DIRECTORY']
+      config.aws_access_key_id     = ENV['AWS_ACCESS_KEY_ID']
+      config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+      config.existing_remote_files = 'delete'
+      config.manifest              = false
+      config.gzip_compression      = false
+      config.run_on_precompile     = false
+      config.log_silently          = false
+      config.prefix                = TEMPLATES_VERSION_PATH
+      config.public_path           = BUILD_DIR
+    end
+    AssetSync.sync
+  end
+
 end
 
 namespace :assets do
 
   def version_required!
-    raise "Please specify a version. e.g. rake compile VERSION=2" unless ENV['VERSION']
+    raise "Please specify a version. e.g. rake assets:deploy VERSION=2" unless ENV['VERSION']
   end
 
-  desc 'Remove template/injection assets'
+  desc 'Clobber all local assets'
   task :clean do
     version_required!
     Rake::Task["injection:clobber_assets"].invoke
     Rake::Task["templates:clobber_assets"].invoke
   end
 
-  desc 'Compile template/injection assets'
+  desc 'Compile all assets'
   task :compile do
     version_required!
     Rake::Task["injection:assets"].invoke
     Rake::Task["templates:assets"].invoke
   end
 
+  desc 'Upload all assets to s3'
   task :sync do
-    puts "TODO: sync build with server"
+    version_required!
+    Rake::Task["injection:sync"].invoke
+    Rake::Task["templates:sync"].invoke
   end
 
+  desc 'Clean, compile and sync all assets'
   task :deploy do
     Rake::Task["assets:clean"].invoke
     Rake::Task["assets:compile"].invoke
-    Rake::Task["assets:deploy"].invoke
+    Rake::Task["assets:sync"].invoke
   end
 
 end
