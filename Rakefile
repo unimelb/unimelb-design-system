@@ -13,6 +13,7 @@ module Sprockets
   class Asset
     def digest_path
       return logical_path if logical_path =~ /\.(css|js)$/
+      return logical_path if logical_path =~ /\bfonts\b\/.+\.(eot|svg|ttf|woff)$/
       logical_path.sub(/\.(\w+)$/) { |ext| "-#{digest}#{ext}" }
     end
   end
