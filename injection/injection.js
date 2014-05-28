@@ -1,5 +1,4 @@
 //= require ./global.js
-//= require ./html5shiv
 //= require ./header/header
 //= require ./global-nav/nav
 //= require ./footer/footer

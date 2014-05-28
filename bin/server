@@ -13,7 +13,7 @@ RACK_UP = File.expand_path('config.ru', APP_DIR)
 
 options = { port: 3000 }
 
-optsParser = OptionParser.new do |opts|
+opts_parser = OptionParser.new do |opts|
   opts.banner = "Usage: server [-p PORT]"
   opts.on("-p", "--port port", "Change port, default 3000") do |port|
     options[:port] = port.to_i
@@ -21,10 +21,10 @@ optsParser = OptionParser.new do |opts|
 end
 
 begin
-  optsParser.parse!
+  opts_parser.parse!
 rescue OptionParser::InvalidOption => ex
   puts ex
-  puts optsParser.banner
+  puts opts_parser.banner
   exit 1
 end
 
