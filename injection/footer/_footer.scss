@@ -1,3 +1,12 @@
+%imgreplace {
+  background-color: transparent;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -ms-behavior: url("#{asset_path('backgroundsize.min.htc')}");
+  behavior: url("#{asset_path('backgroundsize.min.htc')}");
+}
+
 .page-footer {
   background-color: $navy;
   clear: left;
@@ -30,6 +39,17 @@
       text-align: left;
     }
   }
+}
+
+.unimelb-lge {
+  @extend %imgreplace;
+  @include rem(height, 70px);
+  @include rem(margin, 30px auto);
+  @include rem(max-height, 70px);
+  @include rem(width, 270px);
+  background-image: url("#{asset_path('footer/lockup.png')}");
+  display: block;
+  text-indent: -999em;
 }
 
 .page-footer-section {
@@ -102,20 +122,35 @@
     height: auto;
     padding-bottom: 0;
     li {
-      @include rem(padding-bottom, 15px);
       line-height: 1;
       text-align: center;
-      width: 20%;
+      &.social-twitter {
+        width: 46%;
+        a {
+          background-image: url("#{asset_path('footer/tw.png')}");
+        }
+      }
       &.social-facebook {
         margin-left: 20%;
+        a {
+          background-image: url("#{asset_path('footer/fb.png')}");
+        }
       }
       &.social-linkedin {
         margin-right: 20%;
+        a {
+          background-image: url("#{asset_path('footer/li.png')}");
+        }
       }
     }
     a {
+      @extend %imgreplace;
+      @include rem(height, 24px);
+      @include rem(padding-bottom, 15px);
+      @include rem(width, 24px);
       display: inline-block;
       text-decoration: none;
+      text-indent: -999em;
     }
     img {
       @include rem(max-width, 24px);
@@ -132,6 +167,9 @@
         display: inline;
         float: none;
         width: auto;
+        &.social-twitter {
+          width: auto;
+        }
         &.social-facebook {
           margin-left: 0;
         }
@@ -143,17 +181,16 @@
   }
 }
 
-.page-footer-lockup {
-  @include rem(margin, 30px auto);
-  display: block;
-  max-height: 70px;
-}
-
 .page-footer-est1853 {
+  @extend %imgreplace;
+  @include rem(height, 40px);
   @include rem(padding-bottom, 15px);
+  @include rem(width, 132px);
+  background-image: url("#{asset_path('footer/est1853.png')}");
   clear: both;
   display: block;
   margin: 0 auto;
+  text-indent: -999em;
   @include breakpoint(desktop) {
     display: inline;
     float: right;
