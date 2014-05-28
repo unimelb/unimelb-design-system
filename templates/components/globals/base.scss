@@ -661,6 +661,14 @@ blockquote {
   }
 }
 
+figure.framed img {
+  @include breakpoint(tablet) {
+    box-shadow: 0 3px 6px -1px rgba($black, 0.2);
+    display: inline-block;
+    max-height: 90%;
+  }
+}
+
 .inset-left {
   @include rem(margin-bottom, 30px);
   @include rem(margin-top, 6px);

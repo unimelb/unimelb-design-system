@@ -6,11 +6,11 @@ div.skip-header role="main"
         section
           h1 Example Page Layouts
 
-    ul.feature-listing-3.noborder
+    ul.listing
       - @layouts.each do |path|
         li
           a href=(layout_path(path))
-            figure
+            figure.framed
               img src=('/assets/images/templates/'+path+'.jpg')
             strong= layout_title(path)
             p
