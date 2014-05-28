@@ -1,16 +1,25 @@
 # Web Templates
 
-## Start the server
+## Development environment
 
-./bin/server -p 3000
+    git clone git@github.com:marcom-unimelb/unimelb-web-templates.git
+    cd unimelb-web-templates
+    bundle install
+    ./bin/server
 
-## Collaboration
+The development site will be available at [http://localhost:3000/](http://localhost:3000/)
 
-Collaboration is welcomed. Before you can Create a local development environment for this repository, you will need to set up Ruby. Instructions for doing this can be found in /collaboration.md.
 
-### Setting up the development environment
+## Deploying to production
 
-1. `cd` into the cloned repository
-2. Run `bundle install`
-3. Run `./bin/server`
-4. Visit [http://localhost:3000/](http://localhost:3000/)
+Setup a `.env` with the following keys:
+
+    AWS_ACCESS_KEY_ID='...key id...'
+    AWS_SECRET_ACCESS_KEY='...secret key...'
+    FOG_DIRECTORY='...bucket...'
+
+
+Run the following command:
+
+    bundle exec rake assets:deploy VERSION=...
+
