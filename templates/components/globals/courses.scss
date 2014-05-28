@@ -1,5 +1,5 @@
 .course-section {
-  @include rem(max-width, 1200px);
+  @include rem(max-width, $w-lge);
   @include rem(padding-bottom, 30px);
   margin: 0 auto;
 
@@ -14,31 +14,27 @@
     }
 
     @include breakpoint(desktop) {
-      display: inline-block;
+      float: left;
       margin: 0;
-      max-width: 300px;
+      max-width: 30%;
       padding-left: 15px;
-      padding-right: 30px;
-      width: 25%;
       p {
         @include rem(padding-bottom, 15px);
       }
     }
   }
 
-
   .bside {
     @include breakpoint(desktop) {
-      @include rem(padding, 10px 30px);
-      display: inline-block;
-      max-width: 900px;
-      width: 75%;
+      @include rem(padding, 10px 0 10px 30px);
+      float: right;
+      width: 70%;
     }
   }
 }
 
 [role="main"] form.course-select {
-  @include rem(max-width, 1200px);
+  @include rem(max-width, $w-lge);
   background-color: transparent;
   color: $white;
   margin: 0 auto;
@@ -189,9 +185,20 @@
     &.hide {
       opacity: 0.1;
     }
-    @include breakpoint(tablet) {
-      @include rem(margin, 2px);
+    @include breakpoint($w-sml) {
       float: left;
+      margin: 0.5%;
+      width: 49%;
+    }
+    @include breakpoint($w-mid) {
+      width: 32.333%;
+    }
+    @include breakpoint(1100px) {
+      margin: 0.25%;
+      width: 24.5%;
+    }
+    @include breakpoint($w-lge) {
+      width: 19.5%;
     }
   }
   a {

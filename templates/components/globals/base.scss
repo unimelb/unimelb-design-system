@@ -173,7 +173,6 @@ body {
         line-height: 1.3;
         padding-left: 3%;
         padding-right: 3%;
-        text-align: center;
         width: 100%;
       }
       @include breakpoint(desktop) {
@@ -187,6 +186,7 @@ body {
           max-width: $w-mid;
           padding-left: 0;
           padding-right: 0;
+          text-align: center;
         }
       }
     }

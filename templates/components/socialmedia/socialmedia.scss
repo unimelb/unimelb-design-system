@@ -32,11 +32,13 @@
 
     @include breakpoint(desktop) {
       @include rem(padding, 30px 0 60px);
-     text-align: center;
-     li {
+      text-align: center;
+      li {
         @include rem(padding, 0 30px);
         display: inline;
+        float: none;
+        width: auto;
       }
-   }
+    }
   }
 }
