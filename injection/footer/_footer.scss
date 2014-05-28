@@ -1,12 +1,3 @@
-%imgreplace {
-  background-color: transparent;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  -ms-behavior: url("#{asset_path('backgroundsize.min.htc')}");
-  behavior: url("#{asset_path('backgroundsize.min.htc')}");
-}
-
 .page-footer {
   background-color: $navy;
   clear: left;

@@ -9,20 +9,9 @@ window.UOMinjectHeader = ->
     if Array.prototype.slice.call(document.querySelectorAll('div[role="main"].skip-header')).length > 0
       # Landing page header
       html = """
-      <a class="page-header-logo floating" href="http://www.unimelb.edu.au/">
-      <!--[if lt IE 9]>
-        <img alt="UoM Logo" src="<%= asset_path('header/logo.png') %>" /><![endif]-->
-      <!--[if gte IE 9]><!--><img alt="UoM Logo" src="<%= asset_path('header/logo.svg') %>"><!--<![endif]-->
-      </a>
+      <a class="page-header-logo floating" href="/">Home</a>
       <div class="page-header-tools floating">
-        <a class="page-header-icon menu" href="#sitemap" title="Menu">
-        <!--[if lt IE 9]>
-          <img alt="" src="<%= asset_path('header/menu-w.png') %>" />
-        <![endif]-->
-        <!--[if gte IE 9]><!-->
-          <img alt="" src="<%= asset_path('header/menu-w.svg') %>">
-        <!--<![endif]-->Menu
-        </a>
+        <a class="page-header-icon" href="#sitemap" title="Menu"><span class="menu"></span> Menu</a>
       </div>
       """
 
@@ -30,23 +19,12 @@ window.UOMinjectHeader = ->
       # General header
       html = """
       <header>
-        <a class="page-header-logo" href="http://www.unimelb.edu.au/">
-        <!--[if lt IE 9]>
-          <img alt="UoM Logo" src="<%= asset_path('header/logo.png') %>" /><![endif]-->
-        <!--[if gte IE 9]><!--><img alt="UoM Logo" src="<%= asset_path('header/logo.svg') %>"><!--<![endif]-->
-        </a>
+        <a class="page-header-logo" href="/">Home</a>
         <div class="page-header-navigation">
           <a href="https://unimelb.edu.au/" title="The University of Melbourne">The University of Melbourne</a>
         </div>
         <div class="page-header-tools">
-          <a class="page-header-icon menu" href="#sitemap" title="Menu">
-          <!--[if lt IE 9]>
-            <img alt="" src="<%= asset_path('header/menu.png') %>" />
-          <![endif]-->
-          <!--[if gte IE 9]><!-->
-            <img alt="" src="<%= asset_path('header/menu.svg') %>">
-          <!--<![endif]-->Menu
-          </a>
+          <a class="page-header-icon" href="#sitemap" title="Menu"><span class="menu"></span> Menu</a>
         </div>
       </header>
       """

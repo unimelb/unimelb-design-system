@@ -26,6 +26,15 @@
 $regular: 400;
 $light: 300;
 
+%imgreplace {
+  background-color: transparent;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -ms-behavior: url("#{asset_path('backgroundsize.min.htc')}");
+  behavior: url("#{asset_path('backgroundsize.min.htc')}");
+}
+
 @import "header/header";
 @import "footer/footer";
 @import "global-nav/globalnav";

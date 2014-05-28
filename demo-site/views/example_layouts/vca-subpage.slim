@@ -1,25 +1,14 @@
-.page-header
-  header.vca
-    a class="page-header-logo wide" href="/"
-      /[if lt IE 9]
-        img src="/assets/images/vca/logo-vca.png" alt="UoM Logo"
-      <![endif]-->
-      <!--[if gte IE 9]><!-->
-      img src="/assets/images/vca/logo-vca.svg" alt="UoM Logo"
-      <!--<![endif]-->
+.vca: .page-header
+  header
+    a class="page-header-logo wide" href="/" Home
     .page-header-navigation
       a href="https://vca.unimelb.edu.au/" title="Victorian College of the Arts" Victorian College of the Arts
       span
         ' /
       == slim :breadcrumb
     .page-header-tools
-      a class="page-header-icon menu" href="#sitemap" title="Menu"
-        /[if lt IE 9]
-          img alt="" src="/assets/images/vca/menu-b.png"
-        <![endif]-->
-        <!--[if gte IE 9]><!-->
-        img alt="" src="/assets/images/vca/menu-b.svg"
-        <!--<![endif]-->
+      a class="page-header-icon" href="#sitemap" title="Menu"
+        span.menu
         | Menu
 
 div role="main"

@@ -112,13 +112,11 @@ $baseline-px: 16px;
 }
 
 // Wrapper
-
 %wrapper {
+  @include rem(max-width, 1400px);
   @include rem(padding, 15px);
   margin: 0 auto;
-  max-width: 100%;
   @include breakpoint(wide) {
-    @include rem(max-width, 1099px);
     margin-left: 15%;
   }
   @include breakpoint(1600px) {

@@ -65,10 +65,21 @@
   }
 }
 
-.page-header header.vca {
+.vca .page-header .page-header-logo {
+  background-image: url("/assets/images/vca/logo-vca.png");
+  @include breakpoint(0) {
+    background-image: url("/assets/images/vca/logo-vca.svg");
+  }
+}
+
+.vca .page-header header {
   a.page-header-logo {
     @include rem(width, 142px);
     background-color: $black;
+    background-image: url("/assets/images/vca/logo-vca.png");
+    @include breakpoint(0) {
+      background-image: url("/assets/images/vca/logo-vca.svg");
+    }
     @include breakpoint(desktop) {
       @include rem(height, 90px);
       @include rem(width, 212px);
@@ -86,6 +97,12 @@
   }
   .page-header-tools .page-header-icon {
     color: $black;
+    span.menu {
+      background-image: url("/assets/images/vca/menu-b.png");
+      @include breakpoint(0) {
+        background-image: url("/assets/images/vca/menu-b.svg");
+      }
+    }
   }
 
 }
