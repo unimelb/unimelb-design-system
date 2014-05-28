@@ -66,6 +66,7 @@ namespace :injection do
       config.log_silently          = false
       config.prefix                = 'injection'
       config.public_path           = BUILD_DIR
+      config.always_upload         = %w{injection.css injection.js}
     end
     AssetSync.sync
   end
@@ -124,6 +125,7 @@ namespace :templates do
       config.log_silently          = false
       config.prefix                = TEMPLATES_VERSION_PATH
       config.public_path           = BUILD_DIR
+      config.always_upload         = %w{uom.js uom.css}
     end
     AssetSync.sync
   end
