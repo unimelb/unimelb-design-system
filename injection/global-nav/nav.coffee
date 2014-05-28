@@ -82,7 +82,7 @@ window.UOMinjectGlobalNav = ->
       <fieldset>
         <div class="inline">
           <input data-required placeholder="Search" name="f[search]" type="search" title="Please enter a keyword." />
-          <input type="image" src="<%= asset_path('header/search-w.png') %>">
+          <input type="submit" class="search-button">
         </div>
       </fieldset>
     </form>

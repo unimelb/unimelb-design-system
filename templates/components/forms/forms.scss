@@ -312,7 +312,8 @@ fieldset {
         @include rem(width, 400px);
       }
     }
-    input[type="image"] {
+    input[type="image"],
+    .search-button {
       @include rem(border-radius, 3px);
       @include rem(height, 45px);
       @include rem(margin, 15px 0);

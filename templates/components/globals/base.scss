@@ -151,7 +151,7 @@ body {
     @include rem(margin-bottom, 30px);
     @include rem(min-height, 144px);
     background-color: $black;
-    background-image: url(/assets/images/bg-banner.jpg);
+    background-image: url("#{asset_path('components/globals/bg-banner.jpg')}");
     background-position: center top;
     background-repeat: no-repeat;
     background-size: cover;

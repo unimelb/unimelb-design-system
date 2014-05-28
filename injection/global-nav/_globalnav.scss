@@ -189,6 +189,30 @@
     width: 100%;
   }
 
+  .search-button {
+    @extend %imgreplace;
+    @include rem(border-radius, 3px);
+    @include rem(height, 45px);
+    @include rem(margin, 15px 0);
+    @include rem(padding, 10px);
+    @include rem(width, 45px);
+    background-color: $highlight;
+    background-image: url("#{asset_path('header/search-w.png')}");
+    border: 0 none;
+    color: $white;
+    position: absolute;
+    text-indent: -999em;
+    top: 0;
+    right: 0;
+    &:hover {
+      @include rem(margin-top, 15px);
+      border-bottom-width: 0;
+    }
+    @include breakpoint(desktop) {
+      @include rem(right, 170px);
+    }
+  }
+
   .close-button {
     color: $navy;
     border: 0;
