@@ -31,7 +31,7 @@ namespace :injection do
       asset = environment[path]
       raise "Unknown asset: #{path}" if asset.nil?
       digest = asset.digest_path
-      File.join(INJECTION_SERVER_PATH, path)
+      File.join(INJECTION_SERVER_PATH, digest)
     end
   end
 
@@ -81,7 +81,7 @@ namespace :templates do
       asset = environment[path]
       raise "Unknown asset: #{path}" if asset.nil?
       digest = asset.digest_path
-      File.join(TEMPLATES_SERVER_PATH, path)
+      File.join(TEMPLATES_SERVER_PATH, digest)
     end
   end
 
