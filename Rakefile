@@ -160,6 +160,20 @@ namespace :assets do
     Rake::Task["templates:sync"].invoke
   end
 
+  desc 'Clean, compile and sync injection'
+  task :injection_deploy do
+    Rake::Task["injection:clobber_assets"].invoke
+    Rake::Task["injection:assets"].invoke
+    Rake::Task["injection:sync"].invoke
+  end
+
+  desc 'Clean, compile and sync templates'
+  task :templates_deploy do
+    Rake::Task["templates:clobber_assets"].invoke
+    Rake::Task["templates:assets"].invoke
+    Rake::Task["templates:sync"].invoke
+  end
+
   desc 'Clean, compile and sync all assets'
   task :deploy do
     Rake::Task["assets:clean"].invoke
