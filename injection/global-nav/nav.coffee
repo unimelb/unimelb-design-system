@@ -153,11 +153,11 @@ window.UOMinjectGlobalNav = ->
         </div>
       </fieldset>
     </form>
-    <div data-single-focus>
-      <div class="col-2">
+    <div>
+      <div class="col-3">
         <div>
-          <h2 class="accordion__title">Study at Melbourne</h2>
-          <ul class="accordion__hidden">
+          <h2>Study at Melbourne</h2>
+          <ul>
             <li><a href="#">Undergraduate</a></li>
             <li><a href="#">Graduate coursework</a></li>
             <li><a href="#">PhD &amp; research programs</a></li>
@@ -169,8 +169,8 @@ window.UOMinjectGlobalNav = ->
           </ul>
         </div>
         <div>
-          <h2 class="accordion__title">About us</h2>
-          <ul class="accordion__hidden">
+          <h2>About us</h2>
+          <ul>
             <li><a href="#">International connections</a></li>
             <li><a href="#">Governance &amp; leadership</a></li>
             <li><a href="#">Strategy &amp; vision</a></li>
@@ -182,8 +182,8 @@ window.UOMinjectGlobalNav = ->
           </ul>
         </div>
         <div>
-          <h2 class="accordion__title">Research</h2>
-          <ul class="accordion__hidden">
+          <h2>Research</h2>
+          <ul>
             <li><a href="#">About research at Melbourne</a></li>
             <li><a href="#">Working at Melbourne</a></li>
             <li><a href="#">Research centres, institutes &amp; offices</a></li>
@@ -195,10 +195,10 @@ window.UOMinjectGlobalNav = ->
           </ul>
         </div>
       </div>
-      <div class="col-2">
+      <div class="col-3">
         <div>
-          <h2 class="accordion__title">Engagement</h2>
-          <ul class="accordion__hidden">
+          <h2>Engagement</h2>
+          <ul>
             <li><a href="#">Outreach programs</a></li>
             <li><a href="#">The arts &amp; culture</a></li>
             <li><a href="#">About engagement</a></li>
@@ -208,8 +208,8 @@ window.UOMinjectGlobalNav = ->
           </ul>
         </div>
         <div>
-          <h2 class="accordion__title">Alumni &amp; friends</h2>
-          <ul class="accordion__hidden">
+          <h2>Alumni &amp; friends</h2>
+          <ul>
             <li><a href="#">Benefits</a></li>
             <li><a href="#">Giving</a></li>
             <li><a href="#">Your faculty</a></li>
@@ -220,8 +220,8 @@ window.UOMinjectGlobalNav = ->
           </ul>
         </div>
         <div>
-          <h2 class="accordion__title">Business &amp; organisations</h2>
-          <ul class="accordion__hidden">
+          <h2>Business &amp; organisations</h2>
+          <ul>
             <li><a href="#">Find an expert</a></li>
             <li><a href="#">Areas of expertise</a></li>
             <li><a href="#">Consultancy</a></li>

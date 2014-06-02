@@ -186,6 +186,7 @@ $menu: #036;
   display: none;
   height: 100%;
   margin: 0;
+  max-width: 100%;
   position: fixed;
   right: 0;
   top: 0;
@@ -193,30 +194,29 @@ $menu: #036;
   z-index: 0;
 
   a {
-    @include rem(padding-bottom, 10px);
-    @include rem(padding-top, 10px);
-    border-top: 1px solid $blue;
-    color: $white;
+    @include rem(padding-bottom, 7px);
+    @include rem(padding-top, 12px);
+    border-bottom: 1px solid $navy;
+    color: rgba($white, 0.6);
     display: block;
     padding-left: 3%;
     padding-right: 3%;
     text-decoration: none;
     &:hover {
-      background-color: $menu;
+      background-color: transparent;
+      border-bottom: 1px solid $white;
       color: $white;
     }
   }
   h2 {
-    @include rem(font-size, 24px);
+    @include rem(font-size, 20px);
     @include rem(padding-bottom, 10px);
-    color: $white;
+    border-bottom: 1px solid $blue;
+    color: rgba($white, 0.6);
     line-height: 1.2;
     padding-left: 3%;
     padding-right: 3%;
     padding-top: 0;
-    a {
-      border-top: 0 none;
-    }
   }
   li {
     @include rem(font-size, 14px);
@@ -236,13 +236,11 @@ $menu: #036;
   &.active {
     display: block;
     left: 0;
-    padding-left: 120px;
-    padding-right: 15px;
-    position: absolute;
-  }
-
-  .col-2 {
-    width: 100%;
+    overflow: auto;
+    padding-left: 160px;
+    padding-right: 60px;
+    position: fixed;
+    z-index: 11;
   }
 
   .search-button {
@@ -269,7 +267,8 @@ $menu: #036;
     }
   }
 
-  .close-button {
+  a.close-button {
+    border: 0;
     color: $navy;
     border: 0;
     display: block;
@@ -308,32 +307,27 @@ $menu: #036;
     h2 {
       @include rem(padding-left, 10px);
     }
-    .col-2 {
-      float: left;
-      margin-right: 3%;
-      width: 47%;
+    .col-3 {
+      clear: both;
+      padding-top: 30px;
+      div {
+        float: left;
+        width: 27%;
+        &:first-child {
+          margin-right: 9.5%;
+        }
+        &:first-child + div + div {
+          margin-left: 9.5%;
+        }
+      }
       h2 {
+        @include rem(padding-top, 30px);
+        border-top: 0 none;
         margin-right: 0;
+        padding-left: 0;
       }
-    }
-    .accordion__title {
-      @include rem(padding-top, 30px);
-      border-top: 0 none;
-      cursor: text;
-      &:hover {
-        background-color: inherit;
-      }
-      &::after {
-        display: none;
-      }
-    }
-    .accordion__hidden {
-      max-height: 1000px;
-    }
-    .accordion__visible {
-      a,
-      .accordion__title {
-        background-color: inherit;
+      a {
+        padding-left: 0;
       }
     }
   }

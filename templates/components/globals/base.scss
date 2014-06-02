@@ -363,6 +363,11 @@ body {
     & + .video {
       @include rem(margin-top, -30px);
       @include rem(max-width, $w-lge);
+      @include breakpoint($w-lge) {
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 550px;
+      }
     }
   }
 
