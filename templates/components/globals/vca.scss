@@ -95,14 +95,13 @@
       color: $black;
     }
   }
-  .page-header-tools .page-header-icon {
-    color: $black;
-    span.menu {
-      background-image: url("#{asset_path('components/globals/vca/menu-b.png')}");
-      @include breakpoint(0) {
-        background-image: url("#{asset_path('components/globals/vca/menu-b.svg')}");
-      }
+}
+.vca .page-header-tools .page-header-icon {
+  color: $black;
+  span.menu {
+    background-image: url("#{asset_path('components/globals/vca/menu-b.png')}");
+    @include breakpoint(0) {
+      background-image: url("#{asset_path('components/globals/vca/menu-b.svg')}");
     }
   }
-
 }

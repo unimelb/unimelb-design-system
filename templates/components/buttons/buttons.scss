@@ -114,11 +114,11 @@ input[type="button"] {
   @extend %flatbutton;
 }
 
-.button-outline {
+.button-hero {
   @extend %outlinebutton;
 }
 
-.button-outline-inverse {
+.button-hero-inverse {
   @extend %outlinebutton;
   color: $white;
   border-color: $white;

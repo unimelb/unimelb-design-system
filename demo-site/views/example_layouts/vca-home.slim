@@ -1,20 +1,16 @@
-.vca: .page-header
-  a class="page-header-logo floating wide" href="/" Home
-  div class="page-header-tools floating"
-    a class="page-header-icon" href="#sitemap" title="Menu"
-      span.menu
-      | Menu
+.floating.vca: .page-header
+  a class="page-header-logo wide" href="/" Home
 
 div.skip-header role="main"
-  article.vca
+  .vca
     header.tight style="background-image:url(/assets/images/vca/vca-1.jpg);"
       .mid-align
         h1 Some awesome event
-        a.button-outline-inverse href="" Read More
+        a.button-hero-inverse href="" Read More
 
     #nav.tabbed-nav.black data-tabbed=""
       .full-width
-        form.mobile-nav: fieldset: div: select
+        select.mobile-nav
           option value="#study" Study
           option value="#today" Today
           option value="#research" Research
@@ -71,7 +67,7 @@ div.skip-header role="main"
             a.block-container href=""
               strong Artist booking service
               p Melbourne's finest agency for performing artists and musicians from the VCA and MCM
-              span.button-outline-inverse href="" Book Artists
+              span.button-hero-inverse href="" Book Artists
 
           li.event
             .block-container
@@ -143,7 +139,7 @@ div.skip-header role="main"
           section
             h2 Research Office
             p The VCA&MCM Research Office is a professional unit within the Faculty that provides a range of services and support to research staff and graduate research students.
-            a.button-outline href="" Read More
+            a.button-hero href="" Read More
 
       #about.tab
         .fullwidth.short
@@ -166,4 +162,4 @@ div.skip-header role="main"
       hr
       p.overview
         | Support the VCA
-        a.button-outline-inverse href="" Donate
+        a.button-hero-inverse href="" Donate

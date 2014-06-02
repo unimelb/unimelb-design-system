@@ -1,5 +1,5 @@
 %headerblock {
-  @include rem(font-size, 16px);
+  @include rem(font-size, 15px);
   color: $darkblue;
   display: inline-block;
   font-weight: $regular;
@@ -50,18 +50,6 @@
       }
       @include breakpoint(0) {
         background-image: url("#{asset_path('header/logo.svg')}");
-      }
-    }
-    &.floating {
-      @include rem(left, 10px);
-      @include rem(top, 10px);
-      margin-top: 0;
-      position: absolute;
-      @include breakpoint(desktop) {
-        @include rem(margin-top, 30px);
-        left: 0;
-        position: relative;
-        top: 0;
       }
     }
 
@@ -171,12 +159,12 @@
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     span {
-      @include rem(height, 14px);
+      @include rem(height, 12px);
       @include rem(margin-bottom, 3px);
       @include rem(margin-top, 14px);
       @include rem(padding-bottom, 3px);
       @include rem(padding-top, 15px);
-      @include rem(width, 14px);
+      @include rem(width, 12px);
       display: block;
       margin-left: auto;
       margin-right: auto;
@@ -193,7 +181,34 @@
       text-decoration: none;
     }
   }
-  &.floating {
+  @include breakpoint(desktop) {
+    @include rem(padding-left, 15px);
+    background-color: $white;
+    .page-header-icon {
+      @include rem(padding, 0px 30px 0px 30px);
+      span {
+        @include rem(height, 24px);
+        @include rem(margin-top, 24px);
+        @include rem(width, 24px);
+      }
+    }
+  }
+}
+
+.floating {
+  .page-header-logo {
+    @include rem(left, 10px);
+    @include rem(top, 10px);
+    margin-top: 0;
+    position: absolute;
+    @include breakpoint(desktop) {
+      @include rem(margin-top, 30px);
+      left: 0;
+      position: relative;
+      top: 0;
+    }
+  }
+  .page-header-tools {
     @include rem(margin, 15px);
     background-color: transparent;
     a.page-header-icon {
@@ -210,20 +225,9 @@
         }
       }
     }
-  }
-  @include breakpoint(desktop) {
-    @include rem(padding-left, 15px);
-    background-color: $white;
-    .page-header-icon {
-      @include rem(padding, 0px 30px 0px 30px);
-      span {
-        @include rem(height, 24px);
-        @include rem(margin-top, 24px);
-        @include rem(width, 24px);
-      }
-    }
-    &.floating {
+    @include breakpoint(desktop) {
       @include rem(margin, 40px);
     }
   }
 }
+

@@ -141,71 +141,6 @@ fieldset {
     width: 100%;
   }
 
-  select {
-    @extend %control;
-    @extend %controlhack;
-    @include appearance(none);
-    @include rem(font-size, 18px);
-    background-color: $highlight;
-    background-image: url(asset_path("components/forms/n-s.png"));
-    background-repeat: no-repeat;
-    background-position: 98% 50%;
-    border: 1px solid $highlight;
-    color: $white;
-    cursor: pointer;
-    line-height: 1.55;
-    width: 100%;
-    &::-ms-expand {
-        display: none;
-    }
-    &.invalid {
-      background-image: url(asset_path("components/forms/n-s-invalid.png"));
-      color: $cherry;
-    }
-    &:hover {
-      background-color: $brand;
-      background-image: url(asset_path("components/forms/n-s.png"));
-      border-color: $brand;
-      color: $white;
-    }
-    &.alt {
-      background-color: $white;
-      background-image: url(asset_path("components/forms/n-s-alt.png"));
-      border-color: $highlight;
-      color: $highlight;
-    }
-    &.alt:hover {
-      background-color: $lightestblue;
-      background-image: url(asset_path("components/forms/n-s-alt.png"));
-      border-color: $highlight;
-      color: $highlight;
-    }
-    &.alt.invalid {
-      background-image: url(asset_path("components/forms/n-s-invalid.png"));
-      border-color: lighten($cherry, 25%);
-      color: $cherry;
-    }
-    &.alt.invalid:hover {
-      background-image: url(asset_path("components/forms/n-s-alt.png"));
-      border-color: $highlight;
-      color: $highlight;
-    }
-    &.clear {
-      background-color: transparent;
-      border-color: $white;
-    }
-    &.clear:hover {
-      background-color: rgba($white, 0.3);
-    }
-    &.clear.invalid:over {
-      background-image: url(asset_path("components/forms/n-s-invalid.png"));
-      color: $cherry;
-    }
-    @include breakpoint(desktop) {
-      @include rem(width, 412px);
-    }
-  }
-
   // exclude style from IE lt 9
   input[type="checkbox"],
   input[type="radio"] {
@@ -330,3 +265,69 @@ fieldset {
     }
   }
 }
+
+select {
+  @extend %control;
+  @extend %controlhack;
+  @include appearance(none);
+  @include rem(font-size, 18px);
+  background-color: $highlight;
+  background-image: url(asset_path("components/forms/n-s.png"));
+  background-repeat: no-repeat;
+  background-position: 98% 50%;
+  border: 1px solid $highlight;
+  color: $white;
+  cursor: pointer;
+  line-height: 1.55;
+  width: 100%;
+  &::-ms-expand {
+      display: none;
+  }
+  &.invalid {
+    background-image: url(asset_path("components/forms/n-s-invalid.png"));
+    color: $cherry;
+  }
+  &:hover {
+    background-color: $brand;
+    background-image: url(asset_path("components/forms/n-s.png"));
+    border-color: $brand;
+    color: $white;
+  }
+  &.alt {
+    background-color: $white;
+    background-image: url(asset_path("components/forms/n-s-alt.png"));
+    border-color: $highlight;
+    color: $highlight;
+  }
+  &.alt:hover {
+    background-color: $lightestblue;
+    background-image: url(asset_path("components/forms/n-s-alt.png"));
+    border-color: $highlight;
+    color: $highlight;
+  }
+  &.alt.invalid {
+    background-image: url(asset_path("components/forms/n-s-invalid.png"));
+    border-color: lighten($cherry, 25%);
+    color: $cherry;
+  }
+  &.alt.invalid:hover {
+    background-image: url(asset_path("components/forms/n-s-alt.png"));
+    border-color: $highlight;
+    color: $highlight;
+  }
+  &.clear {
+    background-color: transparent;
+    border-color: $white;
+  }
+  &.clear:hover {
+    background-color: rgba($white, 0.3);
+  }
+  &.clear.invalid:over {
+    background-image: url(asset_path("components/forms/n-s-invalid.png"));
+    color: $cherry;
+  }
+  @include breakpoint(desktop) {
+    @include rem(width, 412px);
+  }
+}
+

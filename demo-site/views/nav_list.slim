@@ -1,10 +1,7 @@
 ul
   - nav_list.each do |nav_item|
     li
-      - if nav_item[:href].length==0
-        span== nav_item[:title]
-      - else
-        a href=(nav_item[:href])
-          == nav_item[:title]
+      a href=(nav_item[:href])
+        == nav_item[:title]
       - unless nav_item[:children].blank?
         == partial :nav_list, locals: { nav_list: nav_item[:children] }

@@ -1,27 +1,37 @@
+$menu: #036;
+
 [role="navigation"] {
-  @include rem(padding, 30px 0);
+  @include rem(padding, 0 0 30px);
   @include rem(right, 40px);
   @include rem(width, 250px);
   @include translateX(0);
-  background-color: lighten($navy, 2%);
-  box-shadow: 1px 0 12px 3px rgba($black,.6);
+  background-color: $menu;
+  box-shadow: 1px 0 12px 3px rgba($black, 0.6);
   color: $white;
+  height: 100%;
+  overflow: auto;
   position: fixed;
   top: 0;
   z-index: 1;
 
-  h2 {
-    @include rem(padding, 0 30px 30px);
-  }
   ul {
     margin: 0;
     padding: 0;
     &.hide {
-      display: none;
+      @include translateX(100%);
+    }
+    ul {
+      @include translateX(0);
+      background-color: $navy;
+      min-height: 100%;
+      overflow: auto;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
     }
     ul li {
-      background-color: $blue;
-      border-color: $navy;
+      background-color: $navy;
     }
   }
   img {
@@ -30,72 +40,82 @@
     margin: 0 25%;
   }
   li {
-    border-top: 1px solid $blue;
+    border-top: 1px solid rgba($white, 0.1);
     list-style-type: none;
     padding: 0;
+  }
+  h2 {
+    @include rem(font-size, 14px);
+    @include rem(letter-spacing, 1px);
+    @include rem(padding, 20px);
+    color: rgba($white, 0.6);
+    cursor: pointer;
+    display: block;
+    font-weight: 400;
+    text-decoration: none;
   }
   a,
   span {
     @include rem(font-size, 14px);
     @include rem(letter-spacing, 1px);
-    @include rem(padding, 15px 30px);
+    @include rem(padding, 20px);
     color: $white;
     display: block;
     text-decoration: none;
-    text-transform: uppercase;
     &:hover {
-      background-color: $brand;
+      background-color: darken($menu, 3%);
       color: $white;
     }
   }
+
+  .sitemap-link {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 15px;
+  }
+
+  .back {
+    span {
+      background-color: $menu;
+      color: rgba($white, 0.6);
+      cursor: pointer;
+      &::before {
+        @include rem(font-size, 24px);
+        content: '\2335';
+        float: left;
+        font-weight: 800;
+        line-height: 1;
+        padding-right: 10px;
+        -webkit-transform: rotate(90deg) translateX(5px);
+        -moz-transform:    rotate(90deg) translateX(5px);
+        -ms-transform:     rotate(90deg) translateX(5px);
+        transform:         rotate(90deg) translateX(5px);
+      }
+    }
+  }
+
   .parent {
     cursor: pointer;
     &::after {
       @include rem(font-size, 24px);
-      content: '>';
+      content: '\2335';
       float: right;
+      font-weight: 800;
       line-height: 1;
-      -webkit-transform: rotate(90deg)  translateY(-10px);
-      -moz-transform: rotate(90deg) translateY(-10px);
-      -ms-transform: rotate(90deg) translateY(-10px);
-      transform: rotate(90deg) translateY(-10px);
-    }
-    &.open {
-      background-color: $blue;
-    }
-  }
-
-  .sitemap-label {
-    @include rem(font-size, 16px);
-    color: $white;
-    cursor: pointer;
-    display: block;
-    letter-spacing: 1px;
-    line-height: 1;
-    position: absolute;
-    text-transform: uppercase;
-    top: 0;
-    -webkit-transform: rotate(90deg) translateX(100px) translateY(-275px);
-    -moz-transform: rotate(90deg) translateX(100px) translateY(-275px);
-    -ms-transform: rotate(90deg) translateX(100px) translateY(-275px);
-    transform: rotate(90deg) translateX(100px) translateY(-275px);
-    &::before {
-      content: '>';
-      display: inline-block;
-      font-size: 30px;
-      -webkit-transform: rotate(-90deg) translateX(-5px) translateY(-12px);
-      -moz-transform: rotate(-90deg) translateX(-5px) translateY(-12px);
-      -ms-transform: rotate(-90deg) translateX(-5px) translateY(-12px);
-      transform: rotate(-90deg) translateX(-5px) translateY(-12px);
+      -webkit-transform: rotate(270deg) translateY(-1px);
+      -moz-transform:    rotate(270deg) translateY(-1px);
+      -ms-transform:     rotate(270deg) translateY(-1px);
+      transform:         rotate(270deg) translateY(-1px);
+      z-index: 9;
     }
   }
 
   &.active {
-    display: block;
-    position: absolute;
-    img {
-      display: block;
-    }
+    @include translateX(0);
     .sitemap-label {
       margin-left: -100px;
       @include breakpoint(tablet) {
@@ -104,11 +124,13 @@
     }
   }
 
-  &.evolve {
-    @include translateX(-400px);
-    @include breakpoint(tablet) {
-      @include translateX(-820px);
-    }
+  &.global-active {
+    @include transform(translate(-100%, 0) translate(100px, 0));
+    left: 0;
+    -webkit-transition: -webkit-transform .3s ease;
+    -moz-transition:    -moz-transform .3s ease;
+    -ms-transition:     -ms-transform .3s ease;
+    transition:         transform .3s ease;
   }
 
   &.no-js {
@@ -121,9 +143,40 @@
   }
 
   @include breakpoint(tablet) {
-    @include rem(right, 60px);
-    @include rem(width, 340px);
+    @include rem(right, 40px);
+    @include rem(width, 300px);
   }
+}
+
+.sitemap-label {
+  @include rem(font-size, 16px);
+  color: $white;
+  cursor: pointer;
+  display: block;
+  letter-spacing: 1px;
+  line-height: 1;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+  top: 0;
+  z-index: 11;
+  -webkit-transform: rotate(90deg) translateX(115px) translateY(-82px);
+  -moz-transform:    rotate(90deg) translateX(115px) translateY(-82px);
+  -ms-transform:     rotate(90deg) translateX(115px) translateY(-82px);
+  transform:         rotate(90deg) translateX(115px) translateY(-82px);
+  &::before {
+    content: '\2335';
+    display: inline-block;
+    font-size: 30px;
+    -webkit-transform: rotate(180deg) translateX(5px) translateY(-9px);
+    -moz-transform:    rotate(180deg) translateX(5px) translateY(-9px);
+    -ms-transform:     rotate(180deg) translateX(5px) translateY(-9px);
+    transform:         rotate(180deg) translateX(5px) translateY(-9px);
+  }
+  &.open::before {
+    color: transparent;
+  }
+  display: none;
 }
 
 [role="sitemap"] {
@@ -149,7 +202,7 @@
     padding-right: 3%;
     text-decoration: none;
     &:hover {
-      background-color: $brand;
+      background-color: $menu;
       color: $white;
     }
   }
@@ -182,6 +235,9 @@
 
   &.active {
     display: block;
+    left: 0;
+    padding-left: 120px;
+    padding-right: 15px;
     position: absolute;
   }
 
@@ -244,35 +300,7 @@
     }
   }
 
-  .accordion__title {
-    @include rem(padding, 20px 10px);
-    border-top: 1px solid $blue;
-    &:hover {
-      background-color: $brand;
-      color: $white;
-    }
-    &::after {
-      color: $blue;
-      content: '\25bc';
-      float: right;
-    }
-  }
-
-  .accordion__visible {
-    a {
-      background-color: $brand;
-    }
-    .accordion__title {
-      background-color: $brand;
-      &::after {
-        color: $white;
-        content: '\25b2';
-      }
-    }
-  }
-
   @include breakpoint(tablet) {
-    @include rem(width, 800px);
     form {
       @include rem(width, 600px);
       padding: 0;

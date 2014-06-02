@@ -84,6 +84,8 @@
     }
     .mobile-nav {
       display: block;
+      margin: 0 3%;
+      width: 94%;
       @include breakpoint(desktop) {
         display: none;
       }
@@ -115,7 +117,7 @@
       nav a[data-current]::after {
         border-top-color: $black;
       }
-      .mobile-nav select {
+      .mobile-nav {
         background-color: $black;
         border: 1px solid $black;
       }

@@ -11,27 +11,30 @@ body {
 }
 
 .page-inner {
-  box-shadow: 1px 0 12px 3px rgba($black,.6);
   @include translateX(0);
+  background-color: $navy;
+  box-shadow: 1px 0 12px 3px rgba($black,.6);
+  height: 100%;
   position: relative;
   z-index: 2;
 
   &.active {
-    @include translateX(-280px);
+    @include translateX(-340px);
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
 
-  &.evolve {
-    @include translateX(-600px);
-  }
+  &.global-active {
+    @include transform(translate(-100%, 0) translate(60px, 0));
+    position: fixed;
+    top: 0;
+    width: 100%;
 
-  @include breakpoint(tablet) {
-    &.active {
-      @include translateX(-400px);
-    }
-
-    &.evolve {
-      @include translateX(-900px);
-    }
+    -webkit-transition: -webkit-transform .3s ease;
+    -moz-transition:    -moz-transform .3s ease;
+    -ms-transition:     -ms-transform .3s ease;
+    transition:         transform .3s ease;
   }
 }
 
@@ -208,12 +211,23 @@ body {
     }
 
     section {
+      @include rem(max-width, $w-mid);
       @include rem(min-height, 82px);
+      margin: 0 auto;
+      text-align: left;
+      p,
+      h1 {
+        max-width: 100%;
+        text-align: left;
+      }
     }
 
     h1 {
       line-height: 1;
+      margin: 0 auto;
+      max-width: $w-lge;
       padding-bottom: 0;
+      text-align: center;
 
       &:after {
         display: none;
@@ -238,9 +252,6 @@ body {
     }
 
     @include breakpoint(wide) {
-      h1 {
-        @include rem(margin-right, -200px);
-      }
       p {
         @include rem(font-size, 32px);
         @include rem(margin-right, -200px);
@@ -275,13 +286,34 @@ body {
     }
   }
 
-  section {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  li,
+  table {
     @extend %wrapper;
     @include rem(max-width, $w-sml);
-    @include rem(padding-bottom, 30px);
-    @include rem(padding-top, 30px);
     font-weight: $light;
     margin: 0 auto;
+  }
+  ul {
+    @include rem(padding-left, 50px);
+  }
+  li {
+    padding: 0;
+  }
+
+  section {
+    @include rem(padding-bottom, 30px);
+    @include rem(padding-top, 30px);
+    div {
+      @include rem(max-width, $w-sml);
+      margin: 0 auto;
+    }
     &.tight {
       padding-bottom: 0;
       p:last-child {
@@ -289,11 +321,12 @@ body {
       }
     }
     &.lead {
-      @include rem(max-width, 1000px);
+      @include rem(max-width, $w-lge);
       margin: 0 3%;
       text-align: center;
       p {
         font-style: italic;
+        max-width: $w-mid;
       }
       &::after {
         @include rem(margin-top, 30px);
@@ -329,6 +362,7 @@ body {
     }
     & + .video {
       @include rem(margin-top, -30px);
+      @include rem(max-width, $w-lge);
     }
   }
 
@@ -997,6 +1031,11 @@ aside {
       }
     }
   }
+}
+
+.with-figure {
+  margin: 0 auto;
+  max-width: $w-sml;
 }
 
 .with-aside {

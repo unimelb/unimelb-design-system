@@ -3,76 +3,143 @@ window.UOMinjectGlobalNav = ->
     constructor: ->
       @page = document.querySelector('.page-inner')
       @sitemap = document.querySelector('div[role="sitemap"]')
-      @trigger = document.querySelector('.page-header-tools').querySelector('a[title="Menu"]')
-      t = this
+      @menutrigger = document.querySelector('.page-header-tools').querySelector('a[title="Menu"]')
+      @searchtrigger = document.querySelector('.page-header-tools').querySelector('a[title="Search"]')
 
+      @setupBlanket()
+      @blanket = document.querySelector('.modal__blanket')
+
+      @setupEvents()
+
+    setupBlanket: ->
+      if Array.prototype.slice.call(document.querySelectorAll('.modal__blanket')).length==0
+        el.remove() for el in document.querySelectorAll('.modal__blanket')
+        blanket = document.createElement 'div'
+        blanket.setAttribute('class', 'modal__blanket')
+        document.querySelector('div[role="main"]').appendChild blanket
+
+    setupEvents: ->
+      t = this
       if Array.prototype.slice.call(document.querySelectorAll('div[role="navigation"]')).length==1
         @localnav = document.querySelector('div[role="navigation"]')
-        @trigger.addEventListener 'click', (e) ->
+        @localsitemaptrigger = @localnav.querySelector('.sitemap-link')
+
+        @menutrigger.addEventListener 'click', (e) ->
           e.preventDefault()
-          t.page.removeClass('evolve')
-          t.localnav.removeClass('evolve')
+          t.blanket.toggleClass 'on'
+          t.page.removeClass('global-active')
+          t.localnav.removeClass('global-active')
           t.sitemap.removeClass('active')
           t.page.toggleClass('active')
           t.localnav.toggleClass('active')
 
         @localnav.querySelector('h2:first-child').addEventListener 'click', (e) ->
           e.preventDefault()
-          if t.page.hasClass "evolve"
-            t.page.toggleClass('evolve')
-            t.localnav.toggleClass('evolve')
-            t.sitemap.toggleClass('active')
+          if t.page.hasClass "global-active"
+            t.page.removeClass('global-active')
+            t.page.addClass('active')
+            t.localnav.removeClass('global-active')
+            t.localnav.addClass('active')
+            t.sitemap.removeClass('active')
           else
-            t.page.removeClass('evolve')
-            t.localnav.removeClass('evolve')
+            t.blanket.removeClass 'on'
+            t.page.removeClass('global-active')
+            t.localnav.removeClass('global-active')
             t.sitemap.removeClass('active')
             t.page.toggleClass('active')
             t.localnav.toggleClass('active')
 
-        @localnav.querySelector('.sitemap-label').addEventListener 'click', (e) ->
+        document.querySelector('.sitemap-label').addEventListener 'click', (e) ->
           e.preventDefault()
-          t.page.toggleClass('evolve')
-          t.localnav.toggleClass('evolve')
+          this.toggleClass 'open'
+          t.page.toggleClass('global-active')
+          t.localnav.toggleClass('global-active')
           t.sitemap.toggleClass('active')
 
         @sitemap.querySelector('.close-button').addEventListener 'click', (e) ->
           e.preventDefault()
-          t.page.toggleClass('evolve')
-          t.localnav.toggleClass('evolve')
+          t.blanket.removeClass 'on'
+          t.page.removeClass('global-active')
+          t.page.removeClass('active')
+          t.localnav.removeClass('global-active')
+          t.localnav.removeClass('active')
+          t.sitemap.removeClass('active')
+
+        @localsitemaptrigger.addEventListener 'click', (e) ->
+          e.preventDefault()
+          t.page.toggleClass('global-active')
+          t.localnav.toggleClass('global-active')
           t.sitemap.toggleClass('active')
 
       else
-        @trigger.addEventListener 'click', (e) ->
+        @menutrigger.addEventListener 'click', (e) ->
           e.preventDefault()
-          t.page.toggleClass('evolve')
+          t.blanket.toggleClass 'on'
+          t.page.toggleClass('global-active')
           t.sitemap.toggleClass('active')
 
         @sitemap.querySelector('.close-button').addEventListener 'click', (e) ->
           e.preventDefault()
-          t.page.toggleClass('evolve')
+          t.blanket.removeClass 'on'
+          t.page.toggleClass('global-active')
           t.sitemap.toggleClass('active')
+
+      @blanket.addEventListener 'click', (e) ->
+        e.preventDefault()
+        t.page.removeClass('global-active')
+        t.page.removeClass('active')
+        if t.localnav
+          t.localnav.removeClass('global-active')
+          t.localnav.removeClass('active')
+        t.sitemap.removeClass('active')
+
+      @searchtrigger.addEventListener 'click', (e) ->
+        e.preventDefault()
+        t.blanket.toggleClass 'on'
+        t.page.toggleClass('global-active')
+        t.localnav.removeClass('active')
+        t.localnav.toggleClass('global-active')
+        t.sitemap.toggleClass('active')
+
 
   # Move local nav outside page container
   if Array.prototype.slice.call(document.querySelectorAll('div[role="navigation"]')).length==1
     localnav = document.querySelector('div[role="navigation"]')
+
+    sitemaplink = document.createElement 'a'
+    sitemaplink.addClass 'sitemap-link'
+    sitemaplink.appendChild document.createTextNode 'Browse University'
+    sitemaplink.href = 'https://unimelb.edu.au/sitemap'
+    localnav.appendChild sitemaplink
+
     localnav.removeClass('no-js')
     document.body.appendChild(localnav)
 
-    trigger = document.createElement('div')
-    trigger.addClass('sitemap-label')
-    trigger.innerHTML = "University Sitemap"
-    localnav.appendChild(trigger)
-
     for group in localnav.querySelectorAll('a')
-      if group.nextSibling && group.nextSibling.localName == 'ul'
+      if group.nextSibling and group.nextSibling.localName == 'ul'
+        childgroup = group.nextSibling
+
+        back = document.createElement 'li'
+        back.addClass 'back'
+        back.innerHTML = "<span>" + group.text + "</span>"
+        childgroup.insertBefore(back, childgroup.firstChild)
+
+        childgroup.firstChild.addEventListener 'click', (e) ->
+          e.preventDefault()
+          this.parentNode.toggleClass 'hide'
+
         group.addClass('parent')
-        group.nextSibling.addClass('hide') # <-- remove this
+        childgroup.addClass('hide')
         group.addEventListener 'click', (e) ->
           e.preventDefault()
-          this.toggleClass 'open'
           this.parentNode.querySelector('ul').toggleClass 'hide'
 
   # Create global nav
+  trigger = document.createElement('div')
+  trigger.addClass('sitemap-label')
+  trigger.innerHTML = "University Sitemap"
+  document.body.appendChild(trigger)
+
   nav = document.createElement('div')
   nav.setAttribute('role', 'sitemap')
   nav.innerHTML = """
@@ -167,18 +234,7 @@ window.UOMinjectGlobalNav = ->
       </div>
     </div>
   """
-  document.querySelector('body').appendChild(nav)
+  document.body.appendChild(nav)
 
   # Add link state behaviour
   navstate = new UOMGlobalNavState()
-
-  # class InjAccordion
-  #   constructor: (@el) ->
-  #     @el.addEventListener 'click', (e) ->
-  #       e.preventDefault()
-  #       t = e.target || e.srcElement
-  #       s.removeClass('accordion__visible') for s in t.parentNode.parentNode.parentNode.querySelectorAll('.accordion__visible')
-  #       t.parentNode.addClass('accordion__visible')
-
-  # if (supportedmodernbrowser)
-  #   new InjAccordion(el) for el in document.querySelectorAll('.accordion__title')

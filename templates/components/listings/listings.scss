@@ -188,11 +188,13 @@
 .hero-listing {
   @extend .feature-listing;
   li {
+    max-width: 100%;
     position: relative;
   }
   h2 {
     @include rem(margin-bottom, 30px);
     background-size: cover;
+    max-width: 100%;
     padding: 0;
     position: relative;
   }
@@ -248,7 +250,7 @@
   }
 }
 
-.selector-listing-3 {
+[role="main"] .selector-listing-3 {
   @extend .feature-listing-3;
   @include rem(margin, 30px 0);
   background-color: transparent;
@@ -468,7 +470,7 @@
     .block-container {
       background-color: rgba($black, 0.6);
       color: $white;
-      &:hover .button-outline-inverse {
+      &:hover .button-hero-inverse {
         background-color: $white;
         color: $black;
       }
@@ -479,7 +481,7 @@
       line-height: 1.1;
       margin-bottom: 0;
     }
-    .button-outline-inverse {
+    .button-hero-inverse {
       @include rem(margin-left, 25px);
     }
   }
@@ -529,7 +531,7 @@
         @include rem(font-size, 20px);
         line-height: 1.4;
       }
-      .button-outline-inverse {
+      .button-hero-inverse {
         @include rem(margin-left, 30px);
       }
     }
@@ -555,7 +557,7 @@
         @include rem(padding, 0 60px 30px);
         line-height: 1.3;
       }
-      .button-outline-inverse {
+      .button-hero-inverse {
         @include rem(margin-left, 60px);
       }
     }

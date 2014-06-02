@@ -18,7 +18,7 @@ no_section_wrap: true
     <a href="" class="block-container">
       <strong>Artist booking service</strong>
       <p>Melbourne's finest agency for performing artists and musicians from the VCA and MCM</p>
-      <span class="button-outline-inverse" href="">Book Artists</span>
+      <span class="button-hero-inverse" href="">Book Artists</span>
     </a>
   </li>
   <li class="event">

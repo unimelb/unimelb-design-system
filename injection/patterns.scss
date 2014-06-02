@@ -1,29 +1,27 @@
-// Globals
+// Global
+$black:        #000000 !default;
+$darkgray:     #333333;
+$midgray:      #666666;
+$gray:         #ADB8C1;
+$lightgray:    #f6f6f6;
+$lightergray:  #E0E0E0;
+$white:        #ffffff !default;
 
-$black: #000000 !default;
-$darkgray: #333333;
-$midgray: #666666;
-$gray: #ADB8C1;
-$lightgray: #f6f6f6;
-$lightergray: #E0E0E0;
-$white: #ffffff !default;
-
-$navy: #0c304a;
-$blue: #304E64;
-$darkblue: #004576;
-$borderblue: #7399B7;
-$midblue: #366996;
-$lightblue: #82a1bd;
-$lighterblue: #359aec;
-$paleblue: #f2f5f8;
+$navy:         #0c304a;
+$blue:         #304E64;
+$darkblue:     #004576;
+$borderblue:   #7399B7;
+$midblue:      #366996;
+$lightblue:    #82a1bd;
+$lighterblue:  #359aec;
+$paleblue:     #f2f5f8;
 $lightestblue: #e1eaf5;
 
-$brand: $darkblue;
-$highlight: $lighterblue;
+$brand:        $darkblue;
+$highlight:    $lighterblue;
 
-// Rems
-
-$baseline-px: 16px;
+// Rem
+$baseline-px:  16px;
 
 @mixin rem($property, $px-values) {
   $baseline-rem: $baseline-px / 1rem;
@@ -44,7 +42,6 @@ $baseline-px: 16px;
 }
 
 // Media queries
-
 @mixin breakpoint($point) {
   @if $point == wide {
     @media screen and (min-width: 1099px) {
@@ -117,10 +114,17 @@ $baseline-px: 16px;
   @include rem(max-width, 1400px);
   @include rem(padding, 15px);
   margin: 0 auto;
-  @include breakpoint(wide) {
-    margin-left: 15%;
-  }
-  @include breakpoint(1600px) {
-    margin-left: 25%;
-  }
+}
+
+
+// X-axis translation
+@mixin translateX($d) {
+  -webkit-transform:  translate3d($d,0,0);
+  -moz-transform:     translate3d($d,0,0);
+  -ms-transform:      translate3d($d,0,0);
+  transform:          translate3d($d,0,0);
+  -webkit-transition: -webkit-transform .3s ease;
+  -moz-transition:    -moz-transform .3s ease;
+  -ms-transition:     -ms-transform .3s ease;
+  transition:         transform .3s ease;
 }

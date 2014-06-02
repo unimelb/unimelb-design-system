@@ -22,4 +22,4 @@ window.UOMinjectFooter= ->
       <small>CRICOS Provider Code: 00116K (<a href="http://www.services.unimelb.edu.au/international/visas/index.html">visa information</a>)</small>
     </footer>
     """
-    document.querySelector('body').appendChild(block)
+    document.querySelector('.page-inner').appendChild(block)

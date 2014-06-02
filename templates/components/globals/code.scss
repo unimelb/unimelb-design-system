@@ -19,7 +19,7 @@ pre {
   @include rem(border-width, 1px);
   @include rem(font-size, 13px);
   @include rem(margin-bottom, 22px);
-  @include rem(margin, 0 30px);
+  @include rem(margin, 0 0 15px);
   @include rem(padding, 15px);
   border-radius: 5px;
   line-height: 1.4;
@@ -34,8 +34,4 @@ pre {
     margin-top: 0;
     max-width: $w-mid;
   }
-}
-
-section pre {
-  @include rem(margin, 0 0 15px);
 }
