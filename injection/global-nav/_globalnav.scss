@@ -230,17 +230,42 @@ $menu: #036;
     padding: 0;
   }
   form {
+    float: right;
+    margin-top: 45px;
     padding: 0 3%;
+
+    fieldset .inline input[type="search"] {
+      width: 600px;
+    }
+    fieldset .inline .search-button {
+      right: 0;
+    }
   }
 
   &.active {
     display: block;
     left: 0;
     overflow: auto;
-    left: 160px;
-    padding-right: 200px;
+    left: 100px;
+    padding-left: 40px;
+    padding-right: 140px;
     position: fixed;
     z-index: 1;
+  }
+
+  h2.logo {
+    @extend %imgreplace;
+    @include rem(height, 140px);
+    @include rem(width, 140px);
+    background-image: url("#{asset_path('header/logo.png')}");
+    border: 0 none;
+    clear: none;
+    float: left;
+    margin-top: 15px;
+    text-indent: -9999em;
+    @include breakpoint(0) {
+      background-image: url("#{asset_path('header/logo.svg')}");
+    }
   }
 
   .search-button {
@@ -272,30 +297,28 @@ $menu: #036;
     color: $navy;
     border: 0;
     display: block;
-    height: 0;
-    margin-right: 0;
-    padding-right: 0;
+    float: left;
+    height: 60px;
+    margin-left: -40px;
+    padding-left: 45px;
     text-indent: -999em;
-
+    width: 0;
     &::before {
-      @include rem(font-size, 30px);
-      @include rem(height, 20px);
-      @include rem(line-height, 17px);
-      @include rem(margin, 10px 10px 0 0);
-      @include rem(padding-left, 2px);
-      @include rem(width, 18px);
-      border: 2px solid $white;
-      border-radius: 50%;
-      color: $white;
-      content: '\00d7';
+      @include rem(font-size, 40px);
+      color: rgba($white, 0.4);
+      content: '\2335';
       display: block;
-      float: right;
-      font-weight: $light;
+      font-weight: $regular;
+      height: 10px;
       text-indent: 0;
+      -webkit-transform: rotate(90deg) translate(10px, -15px);
+      -moz-transform:    rotate(90deg) translate(10px, -15px);
+      -ms-transform:     rotate(90deg) translate(10px, -15px);
+      transform:         rotate(90deg) translate(10px, -15px);
     }
     &:hover {
-      background-color: $navy;
-      color: $navy;
+      background-color: transparent;
+      color: rgba($white, 0.4);
     }
   }
 

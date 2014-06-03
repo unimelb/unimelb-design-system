@@ -173,13 +173,13 @@
      -moz-transition-property: opacity;
     transition-property: opacity;
 
-    &.postgrad {
+    &.certificates_diplomas {
       background-color: $bronze;
     }
-    &.masters {
+    &.research {
       background-color: $lightestblue;
     }
-    &.research {
+    &.phd {
       background-color: $lightblue;
     }
     &.hide {

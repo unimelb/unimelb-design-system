@@ -146,7 +146,7 @@ window.UOMinjectGlobalNav = ->
   nav.setAttribute('role', 'sitemap')
   nav.innerHTML = """
     <a class="close-button" href="">Close</a>
-    <h2>University of Melbourne</h2>
+    <h2 class="logo">University of Melbourne</h2>
     <form>
       <fieldset>
         <div class="inline">
