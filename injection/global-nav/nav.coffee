@@ -86,6 +86,7 @@ window.UOMinjectGlobalNav = ->
 
       @blanket.addEventListener 'click', (e) ->
         e.preventDefault()
+        t.blanket.removeClass 'on'
         t.page.removeClass('global-active')
         t.page.removeClass('active')
         if t.localnav

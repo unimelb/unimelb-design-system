@@ -2,7 +2,6 @@ window.UOMModal = ->
   # Add blanket if not already on page
   if (supportedmodernbrowser)
     if Array.prototype.slice.call(document.querySelectorAll('.modal__blanket')).length==0
-      el.remove() for el in document.querySelectorAll('.modal__blanket')
       blanket = document.createElement 'div'
       blanket.setAttribute('class', 'modal__blanket')
       document.querySelector('div[role="main"]').appendChild blanket
@@ -22,7 +21,7 @@ window.UOMModal = ->
         document.querySelector('.modal__blanket').toggleClass 'on'
 
     for el in document.querySelectorAll('.modal__blanket,.modal__close')
-      el.addEventListener 'click', (e) ->
+      el.addEventListener 'click.modal', (e) ->
         e.preventDefault()
         modal.removeClass 'on' for modal in document.querySelectorAll('.modal__dialog')
         document.querySelector('.modal__blanket').toggleClass 'on'

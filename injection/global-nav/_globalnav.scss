@@ -332,3 +332,25 @@ $menu: #036;
     }
   }
 }
+
+@mixin opacity($v) {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$v*100})";
+  opacity: $v;
+}
+.modal__blanket {
+  @include opacity(0);
+  background-color: $black;
+  display: none;
+  height: 100%;
+  left: 0;
+  overflow: scroll;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  &.on {
+    @include opacity(0.4);
+    display: block;
+    z-index: 3;
+  }
+}
