@@ -72,6 +72,9 @@ namespace :injection do
     AssetSync.sync
   end
 
+  desc 'Clean, compile and sync injection'
+  task deploy: ['injection:clobber_assets', 'injection:assets', 'injection:sync']
+
 end
 
 ### Templates
@@ -131,54 +134,27 @@ namespace :templates do
     AssetSync.sync
   end
 
+  desc 'Clean, compile and sync templates'
+  task deploy: ['templates:clobber_assets', 'templates:assets', 'templates:sync']
+
 end
 
 namespace :assets do
 
-  def version_required!
+  task :version_check do
     raise "Please specify a version. e.g. rake assets:deploy VERSION=2" unless ENV['VERSION']
   end
 
   desc 'Clobber all local assets'
-  task :clean do
-    version_required!
-    Rake::Task["injection:clobber_assets"].invoke
-    Rake::Task["templates:clobber_assets"].invoke
-  end
+  task clean: ['assets:version_check', 'templates:clobber_assets', 'injection:clobber_assets']
 
   desc 'Compile all assets'
-  task :compile do
-    version_required!
-    Rake::Task["injection:assets"].invoke
-    Rake::Task["templates:assets"].invoke
-  end
+  task compile: ['assets:version_check', 'templates:assets', 'injection:assets']
 
   desc 'Upload all assets to s3'
-  task :sync do
-    version_required!
-    Rake::Task["injection:sync"].invoke
-    Rake::Task["templates:sync"].invoke
-  end
-
-  desc 'Clean, compile and sync injection'
-  task :injection_deploy do
-    Rake::Task["injection:clobber_assets"].invoke
-    Rake::Task["injection:assets"].invoke
-    Rake::Task["injection:sync"].invoke
-  end
-
-  desc 'Clean, compile and sync templates'
-  task :templates_deploy do
-    Rake::Task["templates:clobber_assets"].invoke
-    Rake::Task["templates:assets"].invoke
-    Rake::Task["templates:sync"].invoke
-  end
+  task sync: ['assets:version_check', 'templates:sync', 'injection:sync']
 
   desc 'Clean, compile and sync all assets'
-  task :deploy do
-    Rake::Task["assets:clean"].invoke
-    Rake::Task["assets:compile"].invoke
-    Rake::Task["assets:sync"].invoke
-  end
+  task deploy: ['assets:version_check', 'templates:deploy', 'injection:deploy']
 
 end
