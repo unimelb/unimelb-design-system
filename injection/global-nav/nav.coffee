@@ -93,13 +93,14 @@ window.UOMinjectGlobalNav = ->
           t.localnav.removeClass('active')
         t.sitemap.removeClass('active')
 
-      @searchtrigger.addEventListener 'click', (e) ->
-        e.preventDefault()
-        t.blanket.toggleClass 'on'
-        t.page.toggleClass('global-active')
-        t.localnav.removeClass('active')
-        t.localnav.toggleClass('global-active')
-        t.sitemap.toggleClass('active')
+      if @searchtrigger
+        @searchtrigger.addEventListener 'click', (e) ->
+          e.preventDefault()
+          t.blanket.toggleClass 'on'
+          t.page.toggleClass('global-active')
+          t.localnav.removeClass('active')
+          t.localnav.toggleClass('global-active')
+          t.sitemap.toggleClass('active')
 
 
   # Move local nav outside page container

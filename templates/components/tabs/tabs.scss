@@ -9,6 +9,9 @@
         font-weight: bold;
       }
     }
+    &.active {
+      display: block;
+    }
   }
   .tab {
     margin: 0;
@@ -79,13 +82,18 @@
     .desktop-nav {
       display: none;
       @include breakpoint(desktop) {
-        display: block;
+        &.active {
+          display: block;
+        }
       }
     }
     .mobile-nav {
-      display: block;
+      display: none;
       margin: 0 3%;
       width: 94%;
+      &.active {
+        display: block;
+      }
       @include breakpoint(desktop) {
         display: none;
       }

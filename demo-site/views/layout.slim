@@ -16,16 +16,17 @@ html.no-js
 
     == stylesheet_tag 'uom'
     /== stylesheet_tag '//uom-templates.s3.amazonaws.com/templates/beta/uom.css'
-    == stylesheet_tag 'docs'
-    == stylesheet_tag '/assets/stylesheets/syntax.css'
 
     /[if lt IE 9]
       == stylesheet_tag 'ie'
+
+    == stylesheet_tag 'docs'
+    == stylesheet_tag '/assets/stylesheets/syntax.css'
+
+    == javascript_tag 'uom'
+    /== javascript_tag '//uom-templates.s3.amazonaws.com/templates/beta/uom.js'
 
   body
     .page-inner
       == yield
       == slim :nav
-
-    == javascript_tag 'uom'
-    /== javascript_tag '//uom-templates.s3.amazonaws.com/templates/beta/uom.js'

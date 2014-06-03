@@ -4,13 +4,13 @@
 //= require ./footer/footer
 
 var loadEvents = function() {
-    UOMinjectHeader();
-    UOMinjectFooter();
-    UOMinjectGlobalNav();
+  UOMinjectHeader();
+  UOMinjectFooter();
+  UOMinjectGlobalNav();
 };
 
 if (window.attachEvent) {
   window.attachEvent('onload', loadEvents);
 } else {
-  document.addEventListener('DOMContentLoaded', loadEvents);
+  document.addEventListener('DOMContentLoaded', loadEvents, false);
 }
