@@ -8,6 +8,7 @@ $menu: #036;
   background-color: $menu;
   box-shadow: 1px 0 12px 3px rgba($black, 0.6);
   color: $white;
+  display: none;
   height: 100%;
   overflow: auto;
   position: fixed;
@@ -116,6 +117,7 @@ $menu: #036;
 
   &.active {
     @include translateX(0);
+    display: block;
     .sitemap-label {
       margin-left: -100px;
       @include breakpoint(tablet) {
@@ -126,6 +128,7 @@ $menu: #036;
 
   &.global-active {
     @include transform(translate(-100%, 0) translate(100px, 0));
+    display: block;
     left: 0;
     -webkit-transition: -webkit-transform .3s ease;
     -moz-transition:    -moz-transform .3s ease;
@@ -194,18 +197,18 @@ $menu: #036;
   z-index: 0;
 
   a {
-    @include rem(padding-bottom, 7px);
-    @include rem(padding-top, 12px);
-    border-bottom: 1px solid $navy;
+    @include rem(padding-top, 10px);
     color: rgba($white, 0.6);
     display: block;
+    font-weight: $light;
+    padding-bottom: 0;
     padding-left: 3%;
     padding-right: 3%;
     text-decoration: none;
     &:hover {
       background-color: transparent;
-      border-bottom: 1px solid $white;
       color: $white;
+      text-decoration: underline;
     }
   }
   h2 {
@@ -234,11 +237,47 @@ $menu: #036;
     margin-top: 45px;
     padding: 0 3%;
 
-    fieldset .inline input[type="search"] {
-      width: 600px;
-    }
-    fieldset .inline .search-button {
-      right: 0;
+    fieldset .inline {
+      input[type="search"] {
+        background-color: $lightergray;
+        max-width: 600px;
+        width: 100%;
+
+        &::-webkit-input-placeholder { /* WebKit browsers */
+          color: $midgray;
+        }
+        &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+          color: $midgray;
+          opacity:  1;
+        }
+        &::-moz-placeholder { /* Mozilla Firefox 19+ */
+          color: $midgray;
+          opacity:  1;
+        }
+        &:-ms-input-placeholder { /* Internet Explorer 10+ */
+          color: $midgray;
+        }
+      }
+      .search-button {
+        @extend %imgreplace;
+        @include rem(border-radius, 0 3px 3px 0);
+        @include rem(height, 45px);
+        @include rem(margin, 15px 0);
+        @include rem(padding, 10px);
+        @include rem(width, 45px);
+        background-color: $white;
+        background-image: url("#{asset_path('header/search.png')}");
+        border: 0 none;
+        color: $white;
+        position: absolute;
+        text-indent: -999em;
+        top: 0;
+        right: 0;
+        &:hover {
+          @include rem(margin-top, 15px);
+          border-bottom-width: 0;
+        }
+      }
     }
   }
 
@@ -268,30 +307,6 @@ $menu: #036;
     }
   }
 
-  .search-button {
-    @extend %imgreplace;
-    @include rem(border-radius, 3px);
-    @include rem(height, 45px);
-    @include rem(margin, 15px 0);
-    @include rem(padding, 10px);
-    @include rem(width, 45px);
-    background-color: $highlight;
-    background-image: url("#{asset_path('header/search-w.png')}");
-    border: 0 none;
-    color: $white;
-    position: absolute;
-    text-indent: -999em;
-    top: 0;
-    right: 0;
-    &:hover {
-      @include rem(margin-top, 15px);
-      border-bottom-width: 0;
-    }
-    @include breakpoint(desktop) {
-      @include rem(right, 170px);
-    }
-  }
-
   a.close-button {
     border: 0;
     color: $navy;
@@ -301,6 +316,7 @@ $menu: #036;
     height: 60px;
     margin-left: -40px;
     padding-left: 45px;
+    text-decoration: none;
     text-indent: -999em;
     width: 0;
     &::before {
@@ -319,6 +335,7 @@ $menu: #036;
     &:hover {
       background-color: transparent;
       color: rgba($white, 0.4);
+      text-decoration: none;
     }
   }
 
@@ -335,12 +352,12 @@ $menu: #036;
       padding-top: 30px;
       div {
         float: left;
-        width: 27%;
+        width: 30%;
         &:first-child {
-          margin-right: 9.5%;
+          margin-right: 5%;
         }
         &:first-child + div + div {
-          margin-left: 9.5%;
+          margin-left: 5%;
         }
       }
       h2 {

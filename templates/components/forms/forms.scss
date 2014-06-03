@@ -86,6 +86,8 @@
   background-color: $white;
   color: $darkgray;
   line-height: 1.2;
+  margin: 0 auto;
+  max-width: $w-sml;
   @include breakpoint(desktop) {
     @include rem(padding, 10px 30px);
   }
@@ -243,13 +245,10 @@ fieldset {
       @include appearance(none);
       @include rem(height, 45px);
       width: 100%;
-      @include breakpoint(desktop) {
-        @include rem(width, 400px);
-      }
     }
     input[type="image"],
     .search-button {
-      @include rem(border-radius, 3px);
+      @include rem(border-radius, 0 3px 3px 0);
       @include rem(height, 45px);
       @include rem(margin, 15px 0);
       @include rem(padding, 10px);
@@ -259,9 +258,6 @@ fieldset {
       position: absolute;
       top: 0;
       right: 0;
-      @include breakpoint(desktop) {
-        @include rem(right, 170px);
-      }
     }
   }
 }

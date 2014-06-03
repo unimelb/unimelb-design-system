@@ -111,10 +111,11 @@
     height: auto;
     padding-bottom: 0;
     li {
+      @include rem(margin-bottom, 15px);
       line-height: 1;
       text-align: center;
+      width: 20%;
       &.social-twitter {
-        width: 46%;
         a {
           background-image: url("#{asset_path('footer/tw.png')}");
         }

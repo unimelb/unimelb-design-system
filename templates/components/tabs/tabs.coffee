@@ -4,7 +4,8 @@ window.UOMTabs = ->
       t = this
       tabs = []
 
-      @el.querySelector('nav').addClass('active')
+      @el.querySelector('nav').addClass('active') if Array.prototype.slice.call(@el.querySelectorAll('nav')).length > 0
+      @el.querySelector('.mobile-nav').addClass('active') if Array.prototype.slice.call(@el.querySelectorAll('.mobile-nav')).length > 0
 
       for tab in @el.querySelectorAll('.tab')
         tab.style.display = 'none'
