@@ -6,6 +6,8 @@ window.UOMModal = ->
       blanket.setAttribute('class', 'modal__blanket')
       document.querySelector('div[role="main"]').appendChild blanket
 
+    blanket = document.querySelector('.modal__blanket')
+
     for trigger in document.querySelectorAll("[data-modal-target]")
       trigger.addEventListener 'click', (e) ->
         e.preventDefault()
@@ -18,13 +20,13 @@ window.UOMModal = ->
           target.style.top = parseInt((window.height()-target.offsetHeight)/2)-document.body.getBoundingClientRect().top+'px'
           target.addClass('on')
 
-        document.querySelector('.modal__blanket').toggleClass 'on'
+        blanket.addClass 'on'
 
     for el in document.querySelectorAll('.modal__blanket,.modal__close')
-      el.addEventListener 'click.modal', (e) ->
+      el.addEventListener 'click', (e) ->
         e.preventDefault()
         modal.removeClass 'on' for modal in document.querySelectorAll('.modal__dialog')
-        document.querySelector('.modal__blanket').toggleClass 'on'
+        blanket.removeClass 'on'
 
 if window.attachEvent
   window.attachEvent 'onload', ->
