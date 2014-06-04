@@ -15,7 +15,7 @@ unless window.UOMExtraLabel
 
   if window.attachEvent
     window.attachEvent 'onload', ->
-      UOMModal()
+      UOMExtraLabel()
   else
     document.addEventListener 'DOMContentLoaded', ->
-      UOMModal()
+      UOMExtraLabel()
