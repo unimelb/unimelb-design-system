@@ -148,9 +148,10 @@
   right: 0;
   top: -2px;
   .page-header-icon {
-    @include rem(font-size, 11px);
+    @include rem(font-size, 9px);
     @include rem(padding, 0 10px);
     @include rem(width, 40px);
+    background-color: $white;
     border-left: 1px solid darken($lightgray, 10%);
     font-weight: $regular;
     line-height: 1;
@@ -160,17 +161,28 @@
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
     span {
-      @include rem(height, 12px);
+      @include rem(height, 20px);
       @include rem(margin-bottom, 3px);
       @include rem(margin-top, 14px);
       @include rem(padding-bottom, 3px);
       @include rem(padding-top, 15px);
-      @include rem(width, 12px);
+      @include rem(width, 20px);
       display: block;
       margin-left: auto;
       margin-right: auto;
+      &.search {
+        @extend %imgreplace;
+        background-image: url("#{asset_path('header/icon-s.png')}");
+      }
+      &.login {
+        @extend %imgreplace;
+        background-image: url("#{asset_path('header/icon-p.png')}");
+      }
       &.menu {
         @extend %imgreplace;
+        @include rem(height, 12px);
+        @include rem(margin-bottom, 6px);
+        @include rem(width, 12px);
         background-image: url("#{asset_path('header/menu.png')}");
         @include breakpoint(0) {
           background-image: url("#{asset_path('header/menu.svg')}");
@@ -181,17 +193,28 @@
       background-color: $paleblue;
       text-decoration: none;
     }
+    &[title="Login"],
+    &[title="Search"] {
+      display: none;
+      @include breakpoint(tablet) {
+        display: inline-block;
+      }
+    }
   }
   @include breakpoint(desktop) {
     @include rem(padding-left, 15px);
     background-color: $white;
     .page-header-icon {
-      @include rem(margin-right, -4px);
+      @include rem(font-size, 10px);
       @include rem(padding, 0 23px);
       span {
-        @include rem(height, 24px);
+        @include rem(height, 34px);
         @include rem(margin-top, 24px);
-        @include rem(width, 24px);
+        @include rem(width, 34px);
+        &.menu {
+          @include rem(margin-bottom, 12px);
+          @include rem(margin-top, 30px);
+        }
       }
     }
   }

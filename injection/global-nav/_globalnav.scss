@@ -266,7 +266,7 @@ $menu: #036;
         @include rem(padding, 10px);
         @include rem(width, 45px);
         background-color: $white;
-        background-image: url("#{asset_path('header/search.png')}");
+        background-image: url("#{asset_path('header/icon-s-b.png')}");
         border: 0 none;
         color: $white;
         position: absolute;

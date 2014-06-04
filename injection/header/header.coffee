@@ -65,8 +65,8 @@ window.UOMinjectHeader = ->
   tools = document.createElement "div"
   tools.addClass('page-header-tools')
   tools.innerHTML = """
-        <a class="page-header-icon" href="#sitemap" title="Search"><span class="search"></span> Search</a>
-        <a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><span class="login"></span> Login</a>
-        <a class="page-header-icon" href="#sitemap" title="Menu"><span class="menu"></span> Menu</a>
+        <a class="page-header-icon" href="#sitemap" title="Search"><span class="search"></span> Search</a><!--
+        --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><span class="login"></span> Login</a><!--
+        --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="menu"></span> Menu</a>
   """
   parent.appendChild(tools)
