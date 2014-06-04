@@ -8,12 +8,15 @@ $menu: #036;
   background-color: $menu;
   box-shadow: 1px 0 12px 3px rgba($black, 0.6);
   color: $white;
-  display: none;
   height: 100%;
   overflow: auto;
   position: fixed;
   top: 0;
   z-index: 1;
+
+  @include breakpoint(tablet) {
+    display: none;
+  }
 
   ul {
     margin: 0;
@@ -127,13 +130,17 @@ $menu: #036;
   }
 
   &.global-active {
-    @include transform(translate(-100%, 0) translate(100px, 0));
+    @include transform(translate(-100%, 0));
     display: block;
     left: 0;
     -webkit-transition: -webkit-transform .3s ease;
     -moz-transition:    -moz-transform .3s ease;
     -ms-transition:     -ms-transform .3s ease;
     transition:         transform .3s ease;
+
+    @include breakpoint(tablet) {
+      @include transform(translate(-100%, 0) translate(110px, 0));
+    }
   }
 
   &.no-js {
@@ -214,12 +221,12 @@ $menu: #036;
   h2 {
     @include rem(font-size, 20px);
     @include rem(padding-bottom, 10px);
+    @include rem(padding-top, 30px);
     border-bottom: 1px solid $blue;
     color: rgba($white, 0.6);
     line-height: 1.2;
     padding-left: 3%;
     padding-right: 3%;
-    padding-top: 0;
   }
   li {
     @include rem(font-size, 14px);
@@ -232,10 +239,39 @@ $menu: #036;
     margin: 0;
     padding: 0;
   }
+
+  ul.quicklinks {
+    @include rem(padding, 15px 0);
+    clear: both;
+    width: 100%;
+    @include breakpoint(tablet) {
+      border-bottom: 1px solid $blue;
+      border-top: 1px solid $blue;
+      float: left;
+      li {
+        float: left;
+        width: 20%;
+      }
+      a {
+        display: block;
+        text-align: center;
+        vertical-align: middle;
+        height: 80px;
+      }
+    }
+  }
+
   form {
-    float: right;
-    margin-top: 45px;
+    clear: both;
+    float: none;
+    margin-top: 0;
     padding: 0 3%;
+
+    @include breakpoint(tablet) {
+      @include rem(margin-top, 45px);
+      clear: none;
+      float: right;
+    }
 
     fieldset .inline {
       input[type="search"] {
@@ -285,47 +321,55 @@ $menu: #036;
     display: block;
     left: 0;
     overflow: auto;
-    left: 100px;
-    padding-left: 40px;
-    padding-right: 140px;
+    padding-left: 3%;
+    padding-right: 3%;
     position: fixed;
     z-index: 1;
+
+    @include breakpoint(tablet) {
+      @include rem(left, 100px);
+      @include rem(padding-left, 40px);
+      @include rem(padding-right, 140px);
+    }
   }
 
   h2.logo {
     @extend %imgreplace;
     @include rem(height, 140px);
+    @include rem(margin-top, 15px);
     @include rem(width, 140px);
     background-image: url("#{asset_path('header/logo.png')}");
     border: 0 none;
     clear: none;
-    float: left;
-    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
     text-indent: -9999em;
+
     @include breakpoint(0) {
       background-image: url("#{asset_path('header/logo.svg')}");
+    }
+    @include breakpoint(tablet) {
+      float: left;
     }
   }
 
   a.close-button {
+    @include rem(padding-left, 45px);
+    @include rem(height, 60px);
     border: 0;
     color: $navy;
-    border: 0;
     display: block;
     float: left;
-    height: 60px;
-    margin-left: -40px;
-    padding-left: 45px;
     text-decoration: none;
     text-indent: -999em;
     width: 0;
     &::before {
       @include rem(font-size, 40px);
+      @include rem(height, 10px);
       color: rgba($white, 0.4);
       content: '\2335';
       display: block;
       font-weight: $regular;
-      height: 10px;
       text-indent: 0;
       -webkit-transform: rotate(90deg) translate(10px, -15px);
       -moz-transform:    rotate(90deg) translate(10px, -15px);

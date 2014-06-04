@@ -49,11 +49,10 @@ window.UOMinjectGlobalNav = ->
 
         @sitemap.querySelector('.close-button').addEventListener 'click', (e) ->
           e.preventDefault()
-          t.blanket.removeClass 'on'
           t.page.removeClass('global-active')
-          t.page.removeClass('active')
+          t.page.addClass('active')
           t.localnav.removeClass('global-active')
-          t.localnav.removeClass('active')
+          t.localnav.addClass('active')
           t.sitemap.removeClass('active')
 
         @localsitemaptrigger.addEventListener 'click', (e) ->
@@ -146,6 +145,13 @@ window.UOMinjectGlobalNav = ->
         </div>
       </fieldset>
     </form>
+    <ul class="quicklinks">
+      <li><a href="/pages/thanks.html"><i class="fa fa-building"></i> Faculties and Graduate Schools</a></li><!--
+      --><li><a href="/pages/thanks.html"><i class="fa fa-book"></i> Library</a></li><!--
+      --><li><a href="/pages/thanks.html"><i class="fa fa-phone"></i> Contact us</a></li><!--
+      --><li><a href="/pages/thanks.html"><i class="fa fa-map-marker"></i> Maps</a></li><!--
+      --><li><a href="/pages/thanks.html"><i class="fa fa-university"></i> Support the Campaign</a></li>
+    </ul>
     <div>
       <div class="col-3">
         <div>

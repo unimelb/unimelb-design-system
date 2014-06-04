@@ -13,6 +13,7 @@ unless window.UOMModal
         trigger.addEventListener 'click', (e) ->
           e.preventDefault()
           t = e.target || e.srcElement
+          t = t.parentNode if t.nodeName != 'A'
           target = document.getElementById(t.getAttribute 'data-modal-target')
           if t.getAttribute('data-modal-offset')==''
             target.style.top = t.offsetTop-160+'px'

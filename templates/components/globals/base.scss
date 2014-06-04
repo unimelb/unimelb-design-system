@@ -30,7 +30,7 @@ body {
   }
 
   &.global-active {
-    @include transform(translate(-100%, 0) translate(30px, 0));
+    @include transform(translate(-100%, 0));
     position: fixed;
     top: 0;
     width: 100%;
@@ -41,7 +41,7 @@ body {
     transition:         transform .3s ease;
 
     @include breakpoint(tablet) {
-      @include transform(translate(-100%, 0) translate(60px, 0));
+      @include transform(translate(-100%, 0) translate(90px, 0));
     }
   }
 }
@@ -1059,6 +1059,7 @@ aside {
   background-position: top center;
   background-repeat: repeat-y;
   div {
+    clear: both;
     margin: 0 auto;
     max-width: $w-lge;
   }
@@ -1068,7 +1069,10 @@ aside {
     clear: none;
     width: 100%;
     h2 {
-      @include rem(padding, 0 0 30px);
+      @include rem(padding, 30px 0);
+    }
+    p {
+      padding: 0;
     }
     @include breakpoint(desktop) {
       @include rem(padding, 30px);
@@ -1080,9 +1084,12 @@ aside {
   }
   .bside {
     @include rem(max-width, 1099px);
+    @include rem(padding-top, 30px);
     background-color: $white;
+    clear: none;
     width: 100%;
     @include breakpoint(desktop) {
+      @include rem(padding-top, 45px);
       float: left;
       width: 75%;
     }

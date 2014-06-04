@@ -51,13 +51,16 @@
     @include rem(font-size, 30px);
     @include rem(letter-spacing, 2px);
     font-weight: $light;
+    margin-left: 0;
     padding-bottom: 0;
+    padding-left: 0;
     text-transform: uppercase;
   }
 
   p {
     @include rem(font-size, 13px);
     font-weight: $light;
+    margin-left: 0;
     padding: 0;
   }
 

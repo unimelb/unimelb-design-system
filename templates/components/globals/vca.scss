@@ -98,10 +98,13 @@
 }
 .vca .page-header-tools .page-header-icon {
   color: $black;
+  span.search {
+    background-image: url("#{asset_path('components/globals/vca/icon-s-b.png')}");
+  }
+  span.login {
+    background-image: url("#{asset_path('components/globals/vca/icon-p-b.png')}");
+  }
   span.menu {
     background-image: url("#{asset_path('components/globals/vca/menu-b.png')}");
-    @include breakpoint(0) {
-      background-image: url("#{asset_path('components/globals/vca/menu-b.svg')}");
-    }
   }
 }

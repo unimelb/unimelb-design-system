@@ -227,17 +227,21 @@
     @include rem(margin, 15px);
     background-color: transparent;
     a.page-header-icon {
+      background-color: transparent;
       border-left: 0 none;
       color: $white;
       &:hover {
         background-color: transparent;
         color: $white;
       }
+      span.search {
+        background-image: url("#{asset_path('header/icon-s-w.png')}");
+      }
+      span.login {
+        background-image: url("#{asset_path('header/icon-p-w.png')}");
+      }
       span.menu {
         background-image: url("#{asset_path('header/menu-w.png')}");
-        @include breakpoint(0) {
-          background-image: url("#{asset_path('header/menu-w.svg')}");
-        }
       }
     }
     @include breakpoint(desktop) {
