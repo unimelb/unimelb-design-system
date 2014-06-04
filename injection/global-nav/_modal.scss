@@ -11,11 +11,6 @@
   opacity: $v;
 }
 
-.modal__above {
-  position: relative;
-  z-index: 2;
-}
-
 .modal__dialog {
   @include box-shadow(0 3px 6px 3px rgba(0,0,0,0.2));
   background-color: #fff;

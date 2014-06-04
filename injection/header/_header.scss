@@ -186,7 +186,8 @@
     @include rem(padding-left, 15px);
     background-color: $white;
     .page-header-icon {
-      @include rem(padding, 0px 30px 0px 30px);
+      @include rem(margin-right, -4px);
+      @include rem(padding, 0 23px);
       span {
         @include rem(height, 24px);
         @include rem(margin-top, 24px);

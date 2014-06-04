@@ -5,18 +5,9 @@ window.UOMinjectGlobalNav = ->
       @sitemap = document.querySelector('div[role="sitemap"]')
       @menutrigger = document.querySelector('.page-header-tools').querySelector('a[title="Menu"]')
       @searchtrigger = document.querySelector('.page-header-tools').querySelector('a[title="Search"]')
-
-      @setupBlanket()
       @blanket = document.querySelector('.modal__blanket')
 
       @setupEvents()
-
-    setupBlanket: ->
-      if Array.prototype.slice.call(document.querySelectorAll('.modal__blanket')).length==0
-        el.remove() for el in document.querySelectorAll('.modal__blanket')
-        blanket = document.createElement 'div'
-        blanket.setAttribute('class', 'modal__blanket')
-        document.querySelector('div[role="main"]').appendChild blanket
 
     setupEvents: ->
       t = this

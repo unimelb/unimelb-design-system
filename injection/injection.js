@@ -1,11 +1,13 @@
 //= require ./global.js
 //= require ./header/header
+//= require ./global-nav/modal
 //= require ./global-nav/nav
 //= require ./footer/footer
 
 var loadEvents = function() {
   UOMinjectHeader();
   UOMinjectFooter();
+  UOMModal()
   UOMinjectGlobalNav();
 };
 

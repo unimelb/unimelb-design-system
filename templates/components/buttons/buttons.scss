@@ -126,3 +126,20 @@ input[type="button"] {
     color: $brand;
   }
 }
+
+.button-fill {
+  color: $black;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  &:hover {
+    background-color: $highlight;
+    color: $white;
+  }
+  h2 {
+    @include rem(font-size, 24px);
+  }
+  p {
+    @include rem(font-size, 16px);
+  }
+}

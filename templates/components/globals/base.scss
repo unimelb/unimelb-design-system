@@ -1015,8 +1015,10 @@ aside {
     max-width: 95%;
   }
 
+  .button-fill,
   section {
     @include rem(padding, 0 15px);
+    float: left;
     margin: 0;
     width: 100%;
     &.tight {
@@ -1033,7 +1035,6 @@ aside {
 
     @include breakpoint(desktop) {
       @include rem(padding, 30px 15px);
-      float: left;
       width: 50%;
       padding-left: 0;
       padding-right: 0;

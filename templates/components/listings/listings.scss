@@ -355,7 +355,7 @@
   }
 }
 
-.block-listing {
+[role="main"] .block-listing {
   @extend %clearfix;
   @include rem(margin-bottom, 30px);
   @include rem(margin-top, 30px);

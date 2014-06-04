@@ -373,24 +373,41 @@ $menu: #036;
   }
 }
 
-@mixin opacity($v) {
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$v*100})";
-  opacity: $v;
-}
-.modal__blanket {
-  @include opacity(0);
-  background-color: $black;
-  display: none;
-  height: 100%;
-  left: 0;
-  overflow: scroll;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-  &.on {
-    @include opacity(0.4);
-    display: block;
-    z-index: 3;
+.modal__dialog {
+  h2.title {
+    @include rem(padding-top, 30px);
+    padding-bottom: 0;
+  }
+  .button-fill {
+    h2 {
+      padding-top: 0;
+    }
+    p {
+      font-weight: $light;
+    }
+    .icon-staff {
+      @include rem(height, 100px);
+      @include rem(width, 100px);
+      background-image: url("#{asset_path('header/icon-p-b.png')}");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      margin: 0 auto;
+      -ms-behavior: url("#{asset_path('backgroundsize.min.htc')}");
+      behavior: url("#{asset_path('backgroundsize.min.htc')}");
+    }
+    .icon-student {
+      @extend .icon-staff;
+      background-image: url("#{asset_path('header/icon-m-b.png')}");
+    }
+    &:hover {
+      .icon-staff {
+        background-image: url("#{asset_path('header/icon-p-w.png')}");
+      }
+      .icon-student {
+        background-image: url("#{asset_path('header/icon-m-w.png')}");
+      }
+    }
   }
 }
