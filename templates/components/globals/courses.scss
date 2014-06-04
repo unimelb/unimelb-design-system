@@ -51,6 +51,7 @@
     @include rem(font-size, 30px);
     @include rem(letter-spacing, 2px);
     font-weight: $light;
+    line-height: 1.2;
     margin-left: 0;
     padding-bottom: 0;
     padding-left: 0;

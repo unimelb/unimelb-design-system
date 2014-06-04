@@ -173,6 +173,9 @@ body {
     }
     &.mid {
       @include rem(height, 300px);
+      .bottom-align-flat {
+        position: absolute;
+      }
     }
     &.short {
       height: auto;
@@ -623,6 +626,7 @@ ul li {
 
 ul.ticked-list {
   @include rem(margin-left, 35px);
+  margin-left: 0;
   li {
     list-style-type: none;
     position: relative;
