@@ -116,9 +116,21 @@ $baseline-px:  16px;
   margin: 0 auto;
 }
 
+%imgreplace {
+  background-color: transparent;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -ms-behavior: url("#{asset_path('backgroundsize.min.htc')}");
+  behavior: url("#{asset_path('backgroundsize.min.htc')}");
+}
 
 // X-axis translation
 @mixin translateX($d) {
+  // -webkit-transform:  translateX($d);
+  // -moz-transform:     translateX($d);
+  // -ms-transform:      translateX($d);
+  // transform:          translateX($d);
   -webkit-transform:  translate3d($d,0,0);
   -moz-transform:     translate3d($d,0,0);
   -ms-transform:      translate3d($d,0,0);

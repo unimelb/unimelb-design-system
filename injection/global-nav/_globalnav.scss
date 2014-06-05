@@ -6,7 +6,7 @@ $menu: #036;
   @include rem(width, 250px);
   @include translateX(0);
   background-color: $menu;
-  box-shadow: 1px 0 12px 3px rgba($black, 0.6);
+  box-shadow: 1px 0 12px 3px rgba($black, .6);
   color: $white;
   height: 100%;
   overflow: auto;
@@ -21,43 +21,50 @@ $menu: #036;
   ul {
     margin: 0;
     padding: 0;
+
     &.hide {
       @include translateX(100%);
     }
+
     ul {
       @include translateX(0);
       background-color: $navy;
-      min-height: 100%;
+      height: 100%;
       overflow: auto;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 10;
     }
+
     ul li {
       background-color: $navy;
     }
   }
+
   img {
     display: none;
-    max-width: 50%;
     margin: 0 25%;
+    max-width: 50%;
   }
+
   li {
-    border-top: 1px solid rgba($white, 0.1);
+    border-top: 1px solid rgba($white, .1);
     list-style-type: none;
     padding: 0;
   }
+
   h2 {
     @include rem(font-size, 14px);
     @include rem(letter-spacing, 1px);
     @include rem(padding, 20px);
-    color: rgba($white, 0.6);
+    color: rgba($white, .6);
     cursor: pointer;
     display: block;
     font-weight: 400;
     text-decoration: none;
   }
+
   a,
   span {
     @include rem(font-size, 14px);
@@ -66,6 +73,7 @@ $menu: #036;
     color: $white;
     display: block;
     text-decoration: none;
+
     &:hover {
       background-color: darken($menu, 3%);
       color: $white;
@@ -73,47 +81,42 @@ $menu: #036;
   }
 
   .sitemap-link {
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 14px;
-    background-color: rgba(255, 255, 255, 0.1);
-
+    @include rem(font-size, 14px);
+    @include rem(margin, 20px);
+    @include rem(padding, 10px 15px);
+    background-color: rgba($white, .1);
+    border: 1px solid rgba($white, .1);
     display: inline-block;
-    margin: 20px;
-    padding: 10px 15px;
   }
 
   .back {
     span {
       background-color: $menu;
-      color: rgba($white, 0.6);
+      color: rgba($white, .6);
       cursor: pointer;
+
       &::before {
         @include rem(font-size, 24px);
+        @include transform(rotate(90deg) translateX(5px));
         content: '\2335';
         float: left;
         font-weight: 800;
         line-height: 1;
         padding-right: 10px;
-        -webkit-transform: rotate(90deg) translateX(5px);
-        -moz-transform:    rotate(90deg) translateX(5px);
-        -ms-transform:     rotate(90deg) translateX(5px);
-        transform:         rotate(90deg) translateX(5px);
       }
     }
   }
 
   .parent {
     cursor: pointer;
+
     &::after {
       @include rem(font-size, 24px);
+      @include transform(rotate(270deg) translateY(-1px));
       content: '\2335';
       float: right;
       font-weight: 800;
       line-height: 1;
-      -webkit-transform: rotate(270deg) translateY(-1px);
-      -moz-transform:    rotate(270deg) translateY(-1px);
-      -ms-transform:     rotate(270deg) translateY(-1px);
-      transform:         rotate(270deg) translateY(-1px);
       z-index: 9;
     }
   }
@@ -121,8 +124,10 @@ $menu: #036;
   &.active {
     @include translateX(0);
     display: block;
+
     .sitemap-label {
       margin-left: -100px;
+
       @include breakpoint(tablet) {
         margin-left: 0;
       }
@@ -131,12 +136,13 @@ $menu: #036;
 
   &.global-active {
     @include transform(translate(-100%, 0));
-    display: block;
-    left: 0;
     -webkit-transition: -webkit-transform .3s ease;
     -moz-transition:    -moz-transform .3s ease;
     -ms-transition:     -ms-transform .3s ease;
     transition:         transform .3s ease;
+
+    display: block;
+    left: 0;
 
     @include breakpoint(tablet) {
       @include transform(translate(-100%, 0) translate(110px, 0));
@@ -158,41 +164,10 @@ $menu: #036;
   }
 }
 
-.sitemap-label {
-  @include rem(font-size, 16px);
-  color: $white;
-  cursor: pointer;
-  display: block;
-  letter-spacing: 1px;
-  line-height: 1;
-  position: absolute;
-  right: 0;
-  text-transform: uppercase;
-  top: 0;
-  z-index: 11;
-  -webkit-transform: rotate(90deg) translateX(115px) translateY(-82px);
-  -moz-transform:    rotate(90deg) translateX(115px) translateY(-82px);
-  -ms-transform:     rotate(90deg) translateX(115px) translateY(-82px);
-  transform:         rotate(90deg) translateX(115px) translateY(-82px);
-  &::before {
-    content: '\2335';
-    display: inline-block;
-    font-size: 30px;
-    -webkit-transform: rotate(180deg) translateX(5px) translateY(-9px);
-    -moz-transform:    rotate(180deg) translateX(5px) translateY(-9px);
-    -ms-transform:     rotate(180deg) translateX(5px) translateY(-9px);
-    transform:         rotate(180deg) translateX(5px) translateY(-9px);
-  }
-  &.open::before {
-    color: transparent;
-  }
-  display: none;
-}
-
 [role="sitemap"] {
   @extend %wrapper;
   @include rem(padding, 0 0 30px);
-  @include translateX(0);
+  box-shadow: 3px 0 6px rgba($black, .4) inset;
   display: none;
   height: 100%;
   margin: 0;
@@ -203,31 +178,76 @@ $menu: #036;
   width: 100%;
   z-index: 0;
 
+  &.reveal {
+    @include rem(padding-left, 60px);
+    @include transform(translate3d(100%, 0, 0) translateX(-40px));
+    -webkit-transition: -webkit-transform .3s ease;
+    -moz-transition:    -moz-transform .3s ease;
+    -ms-transition:     -ms-transform .3s ease;
+    transition:         transform .3s ease;
+    background-color: $navy;
+    cursor: pointer;
+    display: block;
+    z-index: 10;
+
+    &:hover {
+      @include transform(translate3d(100%, 0, 0) translateX(-55px));
+      .sitemap-label {
+        @include transition(color .3s ease);
+        color: $white;
+        text-decoration: none;
+      }
+    }
+
+    .sitemap-label {
+      display: block;
+    }
+  }
+
+  &.active {
+    display: block;
+    left: 0;
+    overflow: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+    position: fixed;
+    z-index: 1;
+
+    @include breakpoint(tablet) {
+      @include rem(left, 110px);
+      @include rem(padding-left, 40px);
+      @include rem(padding-right, 155px);
+    }
+  }
+
   a {
     @include rem(padding-top, 10px);
-    color: rgba($white, 0.6);
+    color: rgba($white, .6);
     display: block;
     font-weight: $light;
     padding-bottom: 0;
     padding-left: 3%;
     padding-right: 3%;
     text-decoration: none;
+
     &:hover {
       background-color: transparent;
       color: $white;
       text-decoration: underline;
     }
   }
+
   h2 {
     @include rem(font-size, 20px);
     @include rem(padding-bottom, 10px);
     @include rem(padding-top, 30px);
     border-bottom: 1px solid $blue;
-    color: rgba($white, 0.6);
+    color: rgba($white, .6);
     line-height: 1.2;
     padding-left: 3%;
     padding-right: 3%;
   }
+
   li {
     @include rem(font-size, 14px);
     color: $white;
@@ -235,6 +255,7 @@ $menu: #036;
     list-style-type: none;
     padding: 0;
   }
+
   ul {
     margin: 0;
     padding: 0;
@@ -244,19 +265,22 @@ $menu: #036;
     @include rem(padding, 15px 0);
     clear: both;
     width: 100%;
+
     @include breakpoint(tablet) {
       border-bottom: 1px solid $blue;
       border-top: 1px solid $blue;
       float: left;
+
       li {
         float: left;
         width: 20%;
       }
+
       a {
+        @include rem(height, 80px);
         display: block;
         text-align: center;
         vertical-align: middle;
-        height: 80px;
       }
     }
   }
@@ -294,6 +318,7 @@ $menu: #036;
           color: $midgray;
         }
       }
+
       .search-button {
         @extend %imgreplace;
         @include rem(border-radius, 0 3px 3px 0);
@@ -306,30 +331,15 @@ $menu: #036;
         border: 0 none;
         color: $white;
         position: absolute;
+        right: 0;
         text-indent: -999em;
         top: 0;
-        right: 0;
+
         &:hover {
           @include rem(margin-top, 15px);
           border-bottom-width: 0;
         }
       }
-    }
-  }
-
-  &.active {
-    display: block;
-    left: 0;
-    overflow: auto;
-    padding-left: 3%;
-    padding-right: 3%;
-    position: fixed;
-    z-index: 1;
-
-    @include breakpoint(tablet) {
-      @include rem(left, 100px);
-      @include rem(padding-left, 40px);
-      @include rem(padding-right, 140px);
     }
   }
 
@@ -348,13 +358,41 @@ $menu: #036;
     @include breakpoint(0) {
       background-image: url("#{asset_path('header/logo.svg')}");
     }
+
     @include breakpoint(tablet) {
       float: left;
     }
   }
 
+  a.sitemap-label {
+    @include rem(font-size, 15px);
+    @include rem(padding-left, 65px);
+    @include rem(padding-top, 200px);
+    @include transform(rotate(90deg));
+    color: rgba($white, .5);
+    cursor: pointer;
+    display: none;
+    font-weight: $regular;
+    left: 0;
+    letter-spacing: 1px;
+    line-height: 1;
+    padding-bottom: 0;
+    padding-right: 0;
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+    z-index: 11;
+
+    &::before {
+      @include transform(rotate(180deg) translateX(10px) translateY(-10px));
+      content: '\2335';
+      display: inline-block;
+      font-size: 30px;
+    }
+  }
+
   a.close-button {
-    @include rem(padding-left, 45px);
+    @include rem(padding-left, 30px);
     @include rem(height, 60px);
     border: 0;
     color: $navy;
@@ -363,22 +401,21 @@ $menu: #036;
     text-decoration: none;
     text-indent: -999em;
     width: 0;
+
     &::before {
       @include rem(font-size, 40px);
       @include rem(height, 10px);
-      color: rgba($white, 0.4);
+      @include transform(rotate(90deg) translate(10px, -15px));
+      color: rgba($white, .4);
       content: '\2335';
       display: block;
       font-weight: $regular;
       text-indent: 0;
-      -webkit-transform: rotate(90deg) translate(10px, -15px);
-      -moz-transform:    rotate(90deg) translate(10px, -15px);
-      -ms-transform:     rotate(90deg) translate(10px, -15px);
-      transform:         rotate(90deg) translate(10px, -15px);
     }
+
     &:hover {
       background-color: transparent;
-      color: rgba($white, 0.4);
+      color: rgba($white, .4);
       text-decoration: none;
     }
   }
@@ -388,28 +425,35 @@ $menu: #036;
       @include rem(width, 600px);
       padding: 0;
     }
+
     h2 {
       @include rem(padding-left, 10px);
     }
+
     .col-3 {
       clear: both;
       padding-top: 30px;
+
       div {
         float: left;
         width: 30%;
+
         &:first-child {
           margin-right: 5%;
-        }
-        &:first-child + div + div {
-          margin-left: 5%;
+
+          & + div + div {
+            margin-left: 5%;
+          }
         }
       }
+
       h2 {
         @include rem(padding-top, 30px);
         border-top: 0 none;
         margin-right: 0;
         padding-left: 0;
       }
+
       a {
         padding-left: 0;
       }
@@ -422,33 +466,39 @@ $menu: #036;
     @include rem(padding-top, 30px);
     padding-bottom: 0;
   }
+
   .button-fill {
     h2 {
       padding-top: 0;
     }
+
     p {
       font-weight: $light;
     }
+
     .icon-staff {
       @include rem(height, 100px);
       @include rem(width, 100px);
+      -ms-behavior: url("#{asset_path('backgroundsize.min.htc')}");
+      behavior: url("#{asset_path('backgroundsize.min.htc')}");
       background-image: url("#{asset_path('header/icon-p-b.png')}");
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
       display: block;
       margin: 0 auto;
-      -ms-behavior: url("#{asset_path('backgroundsize.min.htc')}");
-      behavior: url("#{asset_path('backgroundsize.min.htc')}");
     }
+
     .icon-student {
       @extend .icon-staff;
       background-image: url("#{asset_path('header/icon-m-b.png')}");
     }
+
     &:hover {
       .icon-staff {
         background-image: url("#{asset_path('header/icon-p-w.png')}");
       }
+
       .icon-student {
         background-image: url("#{asset_path('header/icon-m-w.png')}");
       }

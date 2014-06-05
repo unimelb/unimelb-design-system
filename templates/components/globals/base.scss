@@ -4,6 +4,7 @@ body {
   font-family: $ff-sans;
   font-size: 106.3%;
   line-height: 1.7;
+
   @include breakpoint(desktop) {
     font-size: 112.5%;
     line-height: 1.68;
@@ -13,7 +14,7 @@ body {
 .page-inner {
   @include translateX(0);
   background-color: $navy;
-  box-shadow: 1px 0 12px 3px rgba($black,.6);
+  box-shadow: 1px 0 12px 3px rgba($black, .6);
   min-height: 100%;
   position: relative;
   z-index: 2;
@@ -31,14 +32,14 @@ body {
 
   &.global-active {
     @include transform(translate(-100%, 0));
-    position: fixed;
-    top: 0;
-    width: 100%;
-
     -webkit-transition: -webkit-transform .3s ease;
     -moz-transition:    -moz-transform .3s ease;
     -ms-transition:     -ms-transform .3s ease;
     transition:         transform .3s ease;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
 
     @include breakpoint(tablet) {
       @include transform(translate(-100%, 0) translate(90px, 0));
@@ -56,14 +57,17 @@ body {
   @include rem(padding-bottom, 20px);
   position: relative;
   width: 100%;
+
   @include breakpoint(tablet) {
     bottom: 0;
     position: absolute;
   }
+
   @include breakpoint(height-smallest) {
     bottom: 0;
     position: absolute;
   }
+
   @media screen and (min-width: 481px) and (max-height:639px) {
     position: relative;
   }
@@ -72,6 +76,7 @@ body {
 [role="main"] header .bottom-align-inverted {
   @extend %grad-top;
   color: $black;
+
   @include breakpoint(height-small) {
     @include rem(padding-top, 70px);
     @include rem(padding-bottom, 20px);
@@ -84,13 +89,15 @@ body {
 [role="main"] header .bottom-align-flat {
   @include rem(padding-bottom, 30px);
   @include rem(padding-top, 30px);
-  background-color: rgba($black, 0.8);
+  background-color: rgba($black, .8);
   position: relative;
   width: 100%;
+
   @include breakpoint(desktop) {
     bottom: 0;
     position: absolute;
   }
+
   @media screen and (min-width: 481px) and (max-height:639px) {
     position: relative;
   }
@@ -100,6 +107,7 @@ body {
   position: relative;
   text-align: center;
   width: 100%;
+
   h1 {
     @include rem(font-size, 50px);
     @include rem(letter-spacing, 3px);
@@ -110,6 +118,7 @@ body {
     padding-bottom: 0;
     text-transform: uppercase;
   }
+
   @include breakpoint(tablet) {
     @include rem(height, 700px);
     @include rem(padding, 260px 0 180px);
@@ -117,12 +126,14 @@ body {
       @include rem(padding-bottom, 30px);
     }
   }
+
   @include breakpoint(height-smallest) {
     @include rem(padding, 180px 0);
     h1 {
       @include rem(padding-bottom, 30px);
     }
   }
+
   @media screen and (min-width: 481px) and (max-height:639px) {
     @include rem(padding, 180px 0);
     h1 {
@@ -134,21 +145,27 @@ body {
 .sans {
   font-family: $ff-sans;
 }
+
 .fixed {
   font-family: $ff-fixed;
 }
+
 .serif {
   font-family: $ff-serif;
 }
+
 .thin {
   font-weight: $thin;
 }
+
 .light {
   font-weight: $light;
 }
+
 .regular {
   font-weight: $regular;
 }
+
 .bold {
   font-weight: $bold;
 }
@@ -515,8 +532,22 @@ li {
     max-width: 100%;
     padding-left: 0;
     padding-right: 0;
-    width: 100%;
     position: absolute;
+    width: 100%;
+    &.lead {
+      @include rem(font-size, 22px);
+      @include rem(padding-bottom, 45px);
+      @include rem(padding-top, 65px);
+      background: transparent;
+      color: $black;
+      font-weight: $light;
+      margin: 0 auto;
+      max-width: $w-mid;
+      position: static;
+    }
+    &.lead::after {
+      display: none;
+    }
   }
   p {
     @include rem(font-size, 19px);

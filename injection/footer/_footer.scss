@@ -75,7 +75,7 @@
       margin-left: 3%;
       margin-right: 3%;
       text-align: right;
-      width: 42%;
+      width: 44%;
     }
     /* nth-child for IE8, up to 9 items */
     li:first-child + li,
@@ -116,6 +116,7 @@
       text-align: center;
       width: 20%;
       &.social-twitter {
+        @include rem(padding-top, 1px);
         a {
           background-image: url("#{asset_path('footer/tw.png')}");
         }

@@ -21,6 +21,7 @@ window.UOMinjectGlobalNav = ->
           t.page.removeClass('global-active')
           t.localnav.removeClass('global-active')
           t.sitemap.removeClass('active')
+          t.sitemap.addClass('reveal')
           t.page.toggleClass('active')
           t.localnav.toggleClass('active')
 
@@ -32,20 +33,23 @@ window.UOMinjectGlobalNav = ->
             t.localnav.removeClass('global-active')
             t.localnav.addClass('active')
             t.sitemap.removeClass('active')
+            t.sitemap.addClass('reveal')
           else
             t.blanket.removeClass 'on'
             t.page.removeClass('global-active')
             t.localnav.removeClass('global-active')
             t.sitemap.removeClass('active')
+            t.sitemap.removeClass('reveal')
             t.page.toggleClass('active')
             t.localnav.toggleClass('active')
 
         document.querySelector('.sitemap-label').addEventListener 'click', (e) ->
           e.preventDefault()
-          this.toggleClass 'open'
+          t.blanket.addClass 'on'
           t.page.toggleClass('global-active')
           t.localnav.toggleClass('global-active')
           t.sitemap.toggleClass('active')
+          t.sitemap.removeClass('reveal')
 
         @sitemap.querySelector('.close-button').addEventListener 'click', (e) ->
           e.preventDefault()
@@ -54,12 +58,14 @@ window.UOMinjectGlobalNav = ->
           t.localnav.removeClass('global-active')
           t.localnav.addClass('active')
           t.sitemap.removeClass('active')
+          t.sitemap.addClass('reveal')
 
         @localsitemaptrigger.addEventListener 'click', (e) ->
           e.preventDefault()
           t.page.toggleClass('global-active')
           t.localnav.toggleClass('global-active')
           t.sitemap.toggleClass('active')
+          t.sitemap.removeClass('reveal')
 
       else
         @menutrigger.addEventListener 'click', (e) ->
@@ -67,12 +73,14 @@ window.UOMinjectGlobalNav = ->
           t.blanket.toggleClass 'on'
           t.page.toggleClass('global-active')
           t.sitemap.toggleClass('active')
+          t.sitemap.removeClass('reveal')
 
         @sitemap.querySelector('.close-button').addEventListener 'click', (e) ->
           e.preventDefault()
           t.blanket.removeClass 'on'
           t.page.toggleClass('global-active')
           t.sitemap.toggleClass('active')
+          t.sitemap.removeClass('reveal')
 
       @blanket.addEventListener 'click', (e) ->
         e.preventDefault()
@@ -83,6 +91,7 @@ window.UOMinjectGlobalNav = ->
           t.localnav.removeClass('global-active')
           t.localnav.removeClass('active')
         t.sitemap.removeClass('active')
+        t.sitemap.removeClass('reveal')
 
       if @searchtrigger
         @searchtrigger.addEventListener 'click', (e) ->
@@ -92,7 +101,7 @@ window.UOMinjectGlobalNav = ->
           t.localnav.removeClass('active')
           t.localnav.toggleClass('global-active')
           t.sitemap.toggleClass('active')
-
+          t.sitemap.removeClass('reveal')
 
   # Move local nav outside page container
   if Array.prototype.slice.call(document.querySelectorAll('div[role="navigation"]')).length==1
@@ -119,22 +128,22 @@ window.UOMinjectGlobalNav = ->
         childgroup.firstChild.addEventListener 'click', (e) ->
           e.preventDefault()
           this.parentNode.toggleClass 'hide'
+          this.parentNode.toggleClass 'active'
 
         group.addClass('parent')
         childgroup.addClass('hide')
         group.addEventListener 'click', (e) ->
           e.preventDefault()
           this.parentNode.querySelector('ul').toggleClass 'hide'
+          this.parentNode.querySelector('ul').toggleClass 'active'
+          localnav.scrollTop = 0
+
 
   # Create global nav
-  trigger = document.createElement('div')
-  trigger.addClass('sitemap-label')
-  trigger.innerHTML = "University Sitemap"
-  document.body.appendChild(trigger)
-
   nav = document.createElement('div')
   nav.setAttribute('role', 'sitemap')
   nav.innerHTML = """
+    <a class="sitemap-label">University Sitemap</a>
     <a class="close-button" href="">Close</a>
     <h2 class="logo">University of Melbourne</h2>
     <form>
