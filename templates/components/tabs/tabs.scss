@@ -109,7 +109,29 @@
       padding-bottom: 0;
       padding-left: 0;
       padding-right: 0;
+
+      section.lead {
+        @include rem(font-size, 22px);
+        @include rem(padding-bottom, 45px);
+        @include rem(padding-top, 65px);
+        background: transparent;
+        color: $black;
+        font-weight: $light;
+        margin: 0 auto;
+        max-width: $w-mid;
+        position: static;
+
+        &::after {
+          display: none;
+        }
+
+        p {
+          color: $black;
+          font-style: inherit;
+        }
+      }
     }
+
     &.black {
       .full-width {
         background-color: $black;

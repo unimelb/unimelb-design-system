@@ -12,21 +12,23 @@
 }
 
 .modal__dialog {
-  @include box-shadow(0 3px 6px 3px rgba(0,0,0,0.2));
+  @include box-shadow(0 3px 6px 3px rgba(0, 0, 0, .2));
   background-color: #fff;
   left: 5%;
   max-width: 900px;
   padding: 20px;
   position: absolute;
   right: 5%;
-  top: 5%;
   text-align: left;
+  top: 5%;
   visibility: hidden;
   z-index: 1;
+
   &.on {
     visibility: visible;
     z-index: 4;
   }
+
   @media screen and (min-width: 1100px) {
     left: 20%;
     right: 20%;
@@ -39,9 +41,10 @@
   cursor: pointer;
   float: right;
   font-size: 28px;
-  width: 30px;
   text-align: right;
   text-decoration: none;
+  width: 30px;
+
   &:hover {
     color: #444;
   }
@@ -58,8 +61,9 @@
   top: 0;
   width: 100%;
   z-index: 1;
+
   &.on {
-    @include opacity(0.5);
+    @include opacity(.5);
     display: block;
     z-index: 3;
   }

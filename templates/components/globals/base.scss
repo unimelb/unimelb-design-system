@@ -518,12 +518,15 @@ li {
   overflow: hidden;
   position: relative;
   width: 100%;
+
   &.short {
     height: auto;
   }
+
   &.alt {
     background-color: $lightgray;
   }
+
   section {
     @include rem(padding-top, 200px);
     @extend %grad-bottom;
@@ -534,21 +537,8 @@ li {
     padding-right: 0;
     position: absolute;
     width: 100%;
-    &.lead {
-      @include rem(font-size, 22px);
-      @include rem(padding-bottom, 45px);
-      @include rem(padding-top, 65px);
-      background: transparent;
-      color: $black;
-      font-weight: $light;
-      margin: 0 auto;
-      max-width: $w-mid;
-      position: static;
-    }
-    &.lead::after {
-      display: none;
-    }
   }
+
   p {
     @include rem(font-size, 19px);
     @include rem(margin, 0 15px);
@@ -557,6 +547,7 @@ li {
     font-weight: $light;
     max-width: 100%;
     padding-bottom: 0;
+
     &.black {
       @include rem(padding-bottom, 45px);
       @include rem(padding-top, 65px);
@@ -567,19 +558,23 @@ li {
     @include breakpoint(desktop) {
       margin: 0 auto;
       max-width: $w-mid;
+
       &.black {
         text-align: center;
       }
     }
   }
+
   blockquote {
     color: $white;
     line-height: 1.4;
   }
+
   pre {
     @include rem(margin, 0 30px);
     max-width: 100%;
   }
+
   @include breakpoint(height-small) {
     @include rem(height, 650px);
     p {

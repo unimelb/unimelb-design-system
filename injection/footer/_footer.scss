@@ -17,13 +17,16 @@
     color: $lightblue;
     display: block;
     text-align: center;
+
     a {
       color: $lightblue;
       text-decoration: none;
+
       &:hover {
         color: $white;
       }
     }
+
     @include breakpoint(desktop) {
       text-align: left;
     }
@@ -49,25 +52,30 @@
   float: left;
   margin-left: 0;
   width: 100%;
+
   li {
     display: block;
     float: left;
     list-style-type: none;
     margin-left: 0;
   }
+
   a {
     @include rem(font-size, 15px);
     color: $white;
     text-decoration: none;
+
     &:hover {
       text-decoration: underline;
     }
   }
+
   &.nav {
     @include rem(padding-bottom, 12px);
     @include rem(padding-top, 8px);
     border-top: 1px solid $blue;
     height: auto;
+
     li {
       @include rem(padding-bottom, 10px);
       @include rem(padding-top, 10px);
@@ -77,19 +85,23 @@
       text-align: right;
       width: 44%;
     }
-    /* nth-child for IE8, up to 9 items */
+
+    // nth-child for IE8, up to 9 items
     li:first-child + li,
     li:first-child + li + li + li,
     li:first-child + li + li + li + li + li,
     li:first-child + li + li + li + li + li + li + li {
       text-align: left;
     }
+
     a {
       @include rem(font-size, 14px);
     }
+
     @include breakpoint(desktop) {
       @include rem(margin-bottom, 60px);
       width: 80%;
+
       li {
         @include rem(padding-right, 30px);
         display: inline;
@@ -100,40 +112,49 @@
         padding-top: 0;
         width: auto;
       }
+
       a {
         @include rem(font-size, 15px);
       }
     }
   }
+
   &.social {
     @include rem(margin-bottom, 20px);
     @include rem(padding-top, 20px);
     height: auto;
     padding-bottom: 0;
+
     li {
       @include rem(margin-bottom, 15px);
       line-height: 1;
       text-align: center;
       width: 20%;
+
       &.social-twitter {
         @include rem(padding-top, 1px);
         a {
           background-image: url("#{asset_path('footer/tw.png')}");
         }
       }
+
       &.social-facebook {
         margin-left: 20%;
+
         a {
           background-image: url("#{asset_path('footer/fb.png')}");
         }
       }
+
       &.social-linkedin {
         margin-right: 20%;
+
         a {
           background-image: url("#{asset_path('footer/li.png')}");
         }
       }
     }
+
     a {
       @extend %imgreplace;
       @include rem(height, 24px);
@@ -143,27 +164,33 @@
       text-decoration: none;
       text-indent: -999em;
     }
+
     img {
       @include rem(max-width, 24px);
       @include rem(max-width, 24px);
     }
+
     @include breakpoint(desktop) {
       @include rem(margin-bottom, 60px);
       border-top: 1px solid $blue;
       clear: none;
       text-align: right;
       width: 20%;
+
       li {
         @include rem(margin-left, 25px);
         display: inline;
         float: none;
         width: auto;
+
         &.social-twitter {
           width: auto;
         }
+
         &.social-facebook {
           margin-left: 0;
         }
+
         &.social-linkedin {
           margin-right: 0;
         }
@@ -182,6 +209,7 @@
   display: block;
   margin: 0 auto;
   text-indent: -999em;
+
   @include breakpoint(desktop) {
     display: inline;
     float: right;

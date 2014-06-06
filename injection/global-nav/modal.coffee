@@ -27,5 +27,6 @@ unless window.UOMModal
       for el in document.querySelectorAll('.modal__blanket,.modal__close')
         el.addEventListener 'click', (e) ->
           e.preventDefault()
-          modal.removeClass 'on' for modal in document.querySelectorAll('.modal__dialog')
+          for modal in document.querySelectorAll('.modal__dialog')
+            modal.removeClass 'on'
           blanket.removeClass 'on'
