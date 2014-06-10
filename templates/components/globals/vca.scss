@@ -108,3 +108,13 @@
     background-image: url("#{asset_path('components/globals/vca/menu-b.png')}");
   }
 }
+
+.vca .course-progression tr {
+  td.unit-description {
+    background-color: $black;
+
+    &::before {
+      border-bottom-color: $black;
+    }
+  }
+}

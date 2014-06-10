@@ -119,6 +119,10 @@ body {
     text-transform: uppercase;
   }
 
+  p {
+    margin: 0 auto;
+  }
+
   @include breakpoint(tablet) {
     @include rem(height, 700px);
     @include rem(padding, 260px 0 180px);
@@ -170,7 +174,7 @@ body {
   font-weight: $bold;
 }
 
-[role="main"] {
+[role='main'] {
   background-color: $lightgray;
   font-weight: $regular;
 
@@ -185,18 +189,22 @@ body {
     background-size: cover;
     color: $white;
     position: relative;
+
     &.tight {
       margin-bottom: 0;
     }
+
     &.mid {
       @include rem(height, 300px);
       .bottom-align-flat {
         position: absolute;
       }
     }
+
     &.short {
       height: auto;
       padding-bottom: 0;
+
       p {
         @include rem(font-size, 20px);
         @include rem(padding-bottom, 15px);
@@ -206,6 +214,7 @@ body {
         padding-right: 3%;
         width: 100%;
       }
+
       @include breakpoint(desktop) {
         @include rem(padding-bottom, 160px);
         p {
@@ -221,15 +230,18 @@ body {
         }
       }
     }
+
     .video-loop {
       background-color: $black;
       display: none;
+
       @include breakpoint(wide) {
         display: block;
         height: 100%;
         overflow: hidden;
         position: absolute;
         width: 100%;
+
         video {
           background-color: $black;
           min-height: 100%;
@@ -243,6 +255,7 @@ body {
       @include rem(min-height, 82px);
       margin: 0 auto;
       text-align: left;
+
       p,
       h1 {
         max-width: 100%;
@@ -273,6 +286,7 @@ body {
 
     @include breakpoint(desktop) {
       overflow: hidden;
+
       p {
         @include rem(font-size, 28px);
         @include rem(padding-top, 10px);
@@ -285,16 +299,20 @@ body {
         @include rem(margin-right, -200px);
       }
     }
+
     @include breakpoint(height-smallest) {
       @include rem(height, 550px);
     }
+
     @include breakpoint(height-small) {
       @include rem(height, 650px);
     }
+
     @include breakpoint(height-medium) {
       @include rem(height, 700px);
       @include rem(padding-bottom, 30px);
     }
+
     @include breakpoint(height-big) {
       @include rem(height, 800px);
     }
@@ -309,6 +327,7 @@ body {
     @include rem(font-size, 15px);
     color: $darkgray;
     float: right;
+
     section {
       margin-left: 0;
     }
@@ -328,9 +347,11 @@ body {
     font-weight: $light;
     margin: 0 auto;
   }
+
   ul {
     @include rem(padding-left, 50px);
   }
+
   li {
     padding: 0;
   }
@@ -342,52 +363,64 @@ body {
       @include rem(max-width, $w-sml);
       margin: 0 auto;
     }
+
     &.tight {
       padding-bottom: 0;
+
       p:last-child {
         padding-bottom: 0;
       }
     }
+
     &.lead {
       @include rem(max-width, $w-lge);
       margin: 0 3%;
       text-align: center;
+
       p {
         font-style: italic;
         max-width: $w-mid;
       }
+
       &::after {
         @include rem(margin-top, 30px);
         @include rem(width, 80px);
         border-bottom: 2px solid $lighterblue;
-        content: "";
+        content: '';
         display: block;
         margin-left: auto;
         margin-right: auto;
       }
+
       @include breakpoint(wide) {
         margin: 0 auto;
       }
     }
+
     &.links {
       padding-top: 0;
+
       h2 {
         @include rem(font-size, 13px);
         font-weight: $bold;
         letter-spacing: 3px;
         text-transform: uppercase;
       }
+
       ul {
         margin-left: 0;
       }
+
       p,
       li {
         @include rem(font-size, 16px);
       }
+
       li {
         list-style-type: none;
       }
     }
+
     & + .video {
       @include rem(margin-top, -30px);
       @include rem(max-width, $w-lge);
@@ -403,13 +436,15 @@ body {
     @include rem(padding-bottom, 30px);
     @include rem(padding-top, 30px);
     clear: both;
+
     &.alt {
       background-color: $lightestblue;
-      box-shadow: 0 6px 6px 4px rgba($black, 0.3);
+      box-shadow: 0 6px 6px 4px rgba($black, .3);
     }
+
     &.cta {
       background-color: $paleyellow;
-      box-shadow: 0 6px 6px 4px rgba($black, 0.3);
+      box-shadow: 0 6px 6px 4px rgba($black, .3);
     }
   }
 
@@ -436,7 +471,7 @@ h1 {
     @include rem(margin-top, 15px);
     @include rem(max-width, 700px);
     border-bottom: 2px solid $midgray;
-    content: "";
+    content: '';
     display: block;
     width: 100%;
   }
@@ -459,6 +494,7 @@ h2 {
   clear: left;
   font-weight: $light;
   line-height: 1.5;
+
   @include breakpoint(desktop) {
     @include rem(font-size, 29.1px);
   }
@@ -469,6 +505,7 @@ h3 {
   @include rem(padding, 20px 0);
   font-weight: $bold;
   line-height: 1.4;
+
   @include breakpoint(desktop) {
     @include rem(font-size, 23.5px);
     @include rem(padding, 29px 0);
@@ -481,15 +518,17 @@ h3 {
   font-weight: $bold;
   text-transform: uppercase;
 }
+
 .title {
   @extend .subtitle;
   text-align: center;
+
   &::after {
     @include rem(margin-bottom, 15px);
     @include rem(margin-top, 30px);
     @include rem(width, 80px);
     border-bottom: 2px solid $black;
-    content: "";
+    content: '';
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -498,7 +537,7 @@ h3 {
 
 p,
 li {
-  @include rem(letter-spacing, 0.2px);
+  @include rem(letter-spacing, .2px);
   @include rem(padding-bottom, 30px);
 }
 
@@ -581,10 +620,12 @@ li {
       @include rem(font-size, 22px);
     }
   }
+
   @include breakpoint(height-medium) {
     @include rem(height, 850px);
     @include rem(padding-bottom, 30px);
   }
+
   @include breakpoint(height-big) {
     @include rem(height, 1000px);
   }
@@ -593,6 +634,7 @@ li {
 a {
   color: $cyan;
   text-decoration: underline;
+
   &:hover {
     color: darken($cyan, 15%);
   }
@@ -604,9 +646,10 @@ img {
 }
 
 hr {
-  border-top: 0;
   border-bottom: 1px solid darken($lightgray, 5%);
+  border-top: 0;
   clear: both;
+
   &.spacer {
     @include rem(margin, 0 0 30px);
   }
@@ -618,19 +661,24 @@ ul {
   @include rem(padding, 0 0 24px 0);
   color: $darkgray;
   list-style-position: outside;
+
   li {
     @include rem(padding-bottom, 5px);
     color: $black;
     display: list-item;
+
     &.no-li {
       list-style-type: none;
+
       &::before {
         display: none;
       }
     }
   }
+
   &.nobullet {
     margin-left: 0;
+
     li {
       list-style-type: none;
     }
@@ -639,11 +687,11 @@ ul {
 
 ol {
   @include rem(margin-left, 40px);
-}
-ol li {
-  @include rem(padding-bottom, 15px);
-  @include rem(padding-left, 15px);
-  list-style-type: decimal;
+  li {
+    @include rem(padding-bottom, 15px);
+    @include rem(padding-left, 15px);
+    list-style-type: decimal;
+  }
 }
 
 ul li {
@@ -653,9 +701,11 @@ ul li {
 ul.ticked-list {
   @include rem(margin-left, 35px);
   margin-left: 0;
+
   li {
     list-style-type: none;
     position: relative;
+
     &::before {
       @include rem(height, 5px);
       @include rem(margin-left, -30px);
@@ -663,8 +713,8 @@ ul.ticked-list {
       @include rem(width, 10px);
       background: transparent;
       border: 3px solid $green;
-      border-right: none;
-      border-top: none;
+      border-right: 0 none;
+      border-top: 0 none;
       content: '';
       left: 0;
       position: absolute;
@@ -674,9 +724,10 @@ ul.ticked-list {
       -ms-transform: rotate(-45deg);
       transform: rotate(-45deg);
     }
+
     &.disabled {
       &::before {
-        opacity: 0.2;
+        opacity: .2;
       }
     }
   }
@@ -694,8 +745,9 @@ blockquote {
   margin-left: auto;
   margin-right: auto;
   max-width: $w-mid;
-  quotes: "\201C""\201D";
+  quotes: '\201C''\201D';
   text-align: left;
+
   &::after,
   &::before {
     @include rem(font-size, 100px);
@@ -703,15 +755,17 @@ blockquote {
     @include rem(margin-right, 10px);
     color: darken($lightgray, 10%);
     content: open-quote;
-    line-height: 0.1em;
-    vertical-align: -0.333em;
+    line-height: .1em;
+    vertical-align: -.333em;
   }
+
   &::after {
     content: close-quote;
-    margin-right: 0;
     margin-left: 0;
-    vertical-align: -0.667em;
+    margin-right: 0;
+    vertical-align: -.667em;
   }
+
   cite {
     @include rem(font-size, 16px);
     color: lighten($midgray, 20%);
@@ -721,11 +775,13 @@ blockquote {
     font-weight: $light;
     text-align: left;
     width: 100%;
+
     &::before {
       @include rem(padding-right, 5px);
-      content: "\2014";
+      content: '\2014';
     }
   }
+
   p {
     @include rem(font-size, 24px);
     display: inline;
@@ -740,7 +796,7 @@ blockquote {
 
 figure.framed img {
   @include breakpoint(tablet) {
-    box-shadow: 0 3px 6px -1px rgba($black, 0.2);
+    box-shadow: 0 3px 6px -1px rgba($black, .2);
     display: inline-block;
     max-height: 90%;
   }
@@ -754,6 +810,7 @@ figure.framed img {
   max-width: 100%;
   padding: 0;
   text-align: center;
+
   figcaption {
     @include rem(font-size, 14px);
     @include rem(padding-bottom, 15px);
@@ -761,6 +818,7 @@ figure.framed img {
     line-height: 1.2;
     text-align: center;
   }
+
   img {
     max-height: 500px;
   }
@@ -771,19 +829,21 @@ figure.framed img {
     float: left;
     max-width: 40%;
     text-align: left;
+
     figcaption {
       @include rem(margin-top, 15px);
       @include rem(padding-top, 15px);
       color: $lighterblue;
       position: relative;
       text-align: left;
+
       &::before {
         @include rem(width, 40px);
         border-bottom: 2px solid $lighterblue;
-        content: "";
+        content: '';
         display: block;
-        position: absolute;
         left: 2px;
+        position: absolute;
         top: 0;
       }
     }
@@ -793,12 +853,14 @@ figure.framed img {
     @include rem(margin-bottom, 20px);
     @include rem(margin-left, -180px);
     max-width: 80%;
+
     figcaption {
       float: left;
       margin-right: 3%;
       margin-top: 0;
       text-align: right;
       width: 22%;
+
       &::before {
         left: auto;
         right: -2px;
@@ -815,8 +877,10 @@ figure.framed img {
     float: right;
     margin-right: 0;
     text-align: right;
+
     figcaption {
       text-align: right;
+
       &::before {
         left: auto;
         right: -2px;
@@ -827,11 +891,13 @@ figure.framed img {
   @include breakpoint(wide) {
     @include rem(margin-right, -180px);
     margin-left: 0;
+
     figcaption {
       float: right;
       margin-left: 3%;
       margin-right: 0;
       text-align: left;
+
       &::before {
         left: 2px;
         right: auto;
@@ -848,9 +914,11 @@ dl {
     clear: left;
     float: left;
   }
+
   dd {
     float: left;
   }
+
   &.bside {
     @include rem(font-size, 15px);
     dt {
@@ -859,19 +927,23 @@ dl {
       text-align: left;
       width: 15%;
     }
+
     dd {
       margin: 0 0 0 2%;
       width: 83%;
     }
+
     span {
       @include rem(font-size, 28px);
-      letter-spacing: -0.125em;
+      letter-spacing: -.125em;
       line-height: 1;
     }
+
     @include breakpoint(desktop) {
       @include rem(padding, 10px 30px);
       display: inline-block;
       width: 75%;
+
       dt {
         text-align: right;
       }
@@ -882,6 +954,7 @@ dl {
 aside {
   clear: both;
   width: 100%;
+
   dt {
     @include rem(letter-spacing, 1px);
     @include rem(padding-bottom, 5px);
@@ -890,10 +963,12 @@ aside {
     text-transform: uppercase;
     width: 100%;
   }
+
   dd {
     margin-left: 0;
     width: 100%;
   }
+
   @include breakpoint(desktop) {
     display: inline-block;
     width: 25%;
@@ -903,6 +978,7 @@ aside {
 .hold {
   @include rem(max-width, $w-mid);
   margin: 0 auto;
+
   aside {
     @include rem(padding-bottom, 15px);
     @include rem(padding-top, 5px);
@@ -916,33 +992,37 @@ aside {
   position: relative;
   text-align: center;
   width: 100%;
+
   @include breakpoint(desktop) {
     width: 814px;
   }
+
   img {
     border: 1px solid $lightergray;
     display: inline;
     margin-right: 10px;
     vertical-align: top;
+
     &.last {
       margin-right: 0;
     }
   }
-  .block {
-    margin-left: -406px;
-    width: 200px;
 
-    background-color: rgba($black, 0.7);
+  .block {
+    background-color: rgba($black, .7);
     color: $white;
     font-weight: $bold;
-
     left: 50%;
+    margin-left: -406px;
     position: absolute;
     text-decoration: none;
+    width: 200px;
+
     &:hover {
-      background-color: rgba($paleyellow, 0.8);
+      background-color: rgba($paleyellow, .8);
       color: $black;
     }
+
     &.desktop {
       margin-left: -194px;
       width: 601px;
@@ -951,13 +1031,14 @@ aside {
 }
 
 .wide-wrap {
+  max-width: 100%;
   overflow: scroll;
   padding-top: 60px;
   position: relative;
-  max-width: 100%;
+
   &::before {
     color: $cyan;
-    content: "\21e0";
+    content: '\21e0';
     float: left;
     font-size: 50px;
     line-height: 50px;
@@ -965,6 +1046,7 @@ aside {
     text-align: right;
     width: 100%;
   }
+
   div::before {
     @extend %grad-left;
     content: '';
@@ -973,14 +1055,17 @@ aside {
     position: absolute;
     width: 100%;
   }
+
   @include breakpoint(desktop) {
     overflow: visible;
     padding-top: 0;
+
     &::before {
       content: none;
-      position: static;
       height: 0;
+      position: static;
     }
+
     div::before {
       content: none;
     }
@@ -991,7 +1076,8 @@ aside {
   @include rem(margin-bottom, 15px);
   @include rem(padding, 15px);
   background-color: $paleyellow;
-  box-shadow: 0 2px 3px rgba($black, 0.1);
+  box-shadow: 0 2px 3px rgba($black, .1);
+
   a {
     color: darken($paleyellow, 65%);
   }
@@ -1001,8 +1087,10 @@ aside {
   @include rem(padding, 0 15px 30px);
   float: left;
   width: 100%;
+
   .col {
     margin: 1%;
+
     @include breakpoint(desktop) {
       float: left;
       margin: 0 1%;
@@ -1020,6 +1108,7 @@ aside {
     margin-right: 9%;
     text-align: left;
     width: 82%;
+
     @include breakpoint(desktop) {
       float: left;
       margin: 0;
@@ -1040,6 +1129,7 @@ aside {
     @include rem(padding-bottom, 30px);
     display: block;
   }
+
   img {
     @include rem(margin-top, 30px);
     max-width: 95%;
@@ -1051,6 +1141,7 @@ aside {
     float: left;
     margin: 0;
     width: 100%;
+
     &.tight {
       padding: 0;
     }
@@ -1068,6 +1159,7 @@ aside {
       width: 50%;
       padding-left: 0;
       padding-right: 0;
+
       iframe {
         @include rem(margin-top, 60px);
         @include rem(margin-bottom, 60px);
@@ -1088,22 +1180,27 @@ aside {
   background-image: url("#{asset_path('components/globals/with-aside-r-bg.png')}");
   background-position: top center;
   background-repeat: repeat-y;
+
   div {
     clear: both;
     margin: 0 auto;
     max-width: $w-lge;
   }
+
   aside {
     @include rem(padding, 30px 15px 0);
     background-color: $lightgray;
     clear: none;
     width: 100%;
+
     h2 {
       @include rem(padding, 30px 0);
     }
+
     p {
       padding: 0;
     }
+
     @include breakpoint(desktop) {
       @include rem(padding, 30px);
       float: left;
@@ -1112,21 +1209,25 @@ aside {
       width: 25%;
     }
   }
+
   .bside {
     @include rem(max-width, 1099px);
     @include rem(padding-top, 30px);
     background-color: $white;
     clear: none;
     width: 100%;
+
     @include breakpoint(desktop) {
       @include rem(padding-top, 45px);
       float: left;
       width: 75%;
     }
   }
+
   &.left {
     @include breakpoint(desktop) {
       background-image: url("#{asset_path('components/globals/with-aside-bg.png')}");
+
       aside {
         background-color: transparent;
       }
@@ -1143,18 +1244,22 @@ aside {
   .floating {
     @include rem(padding, 15px 15px 30px);
     background-color: $lightgray;
+
     h2,
     p {
       padding-bottom: 0;
     }
   }
+
   @include breakpoint(desktop) {
     @include rem(width, 1099px);
     margin: 0 auto;
+
     section {
       @include rem(margin, 30px 0 30px 300px);
       padding-bottom: 0;
       padding-top: 0;
+
       &.ruled {
         @include rem(margin-bottom, 60px);
         @include rem(margin-top, 60px);
@@ -1163,6 +1268,7 @@ aside {
         margin-left: 0;
       }
     }
+
     .floating {
       @include rem(padding-right, 20px);
       @include rem(padding-top, 50px);
@@ -1170,6 +1276,7 @@ aside {
       background-color: transparent;
       float: left;
       text-align: right;
+
       h2 {
         @include rem(font-size, 26px);
         @include rem(padding-bottom, 15px);

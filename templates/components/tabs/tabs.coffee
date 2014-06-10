@@ -5,8 +5,11 @@ unless window.UOMTabs
         t = this
         tabs = []
 
-        @el.querySelector('nav').addClass('active') if Array.prototype.slice.call(@el.querySelectorAll('nav')).length > 0
-        @el.querySelector('.mobile-nav').addClass('active') if Array.prototype.slice.call(@el.querySelectorAll('.mobile-nav')).length > 0
+        if @el.countSelector('nav') > 0
+          @el.querySelector('nav').addClass('active')
+
+        if @el.countSelector('.mobile-nav') > 0
+          @el.querySelector('.mobile-nav').addClass('active')
 
         for tab in @el.querySelectorAll('.tab')
           tab.style.display = 'none'
@@ -17,7 +20,8 @@ unless window.UOMTabs
             target = e.target || e.srcElement
             t.move(target)
             setTimeout(->
-              window.location.hash = target.getAttribute('href').substr(1)
+              if target.getAttribute('href')
+                window.location.hash = target.getAttribute('href').substr(1)
             , 600)
 
         if Array.prototype.slice.call(@el.querySelectorAll('select')).length > 0
@@ -29,14 +33,14 @@ unless window.UOMTabs
                 curr = i+1 if opt.value==tab
               t.moveindex(curr)
               setTimeout(->
-                window.location.hash = tab.substr(1)
+                window.location.hash = tab.substr(1) if tab
               , 600)
 
-        curr = window.location.hash.substr(1)
+        curr = window.location.hash.substr(1) if window.location.hash
 
         if (curr in tabs)
           @moveindex tabs.indexOf(curr)+1
-        else if Array.prototype.slice.call(@el.querySelectorAll('[data-current]')).length==0
+        else if @el.countSelector('[data-current]') == 0
           @move @el.querySelector('nav a:first-child')
         else
           @move @el.querySelector('[data-current]')
@@ -46,7 +50,8 @@ unless window.UOMTabs
             target = e.target || e.srcElement
             t.moveindex(target.getAttribute('data-tab'))
             setTimeout(->
-              window.location.hash = target.getAttribute('href').substr(1)
+              if target.getAttribute('href')
+                window.location.hash = target.getAttribute('href').substr(1)
             , 600)
 
       moveindex: (index) ->

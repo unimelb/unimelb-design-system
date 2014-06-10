@@ -1,1 +1,110 @@
 // Ideally this file should only contain this comment
+$navy:  #0c304a;
+$white: #fff;
+$lightblue:    #82a1bd;
+$blue:         #304E64;
+
+.page-inner {
+  &.active {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+  }
+
+  &.global-active {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+}
+
+.page-header {
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.page-footer {
+  background-color: $navy;
+  clear: left;
+  color: $white;
+
+  footer {
+    @extend %wrapper;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 60px;
+    padding-top: 15px;
+  }
+
+  small {
+    clear: left;
+    color: $lightblue;
+    display: block;
+    font-size: 12px;
+    text-align: left;
+
+    a {
+      color: $lightblue;
+      text-decoration: none;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+.page-footer-section {
+  &.nav {
+    margin-bottom: 60px;
+    width: 80%;
+
+    li {
+      display: inline;
+      float: none;
+      margin-left: 0;
+      margin-right: 0;
+      padding-bottom: 0;
+      padding-right: 30px;
+      padding-top: 0;
+      width: auto;
+    }
+
+    a {
+      font-size: 15px;
+    }
+  }
+
+  &.social {
+    border-top: 1px solid $blue;
+    clear: none;
+    margin-bottom: 60px;
+    text-align: right;
+    width: 20%;
+
+    li {
+      display: inline;
+      float: none;
+      margin-left: 25px;
+      width: auto;
+
+      &.social-twitter {
+        width: auto;
+      }
+
+      &.social-facebook {
+        margin-left: 0;
+      }
+
+      &.social-linkedin {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.page-footer-est1853 {
+  display: inline;
+  float: right;
+}

@@ -9,9 +9,11 @@ unless window.UOMExtraLabel
           else
             this.removeClass("on")
           target = e.target || e.srcElement
-          t.el.click() unless (target.nodeName=='INPUT' or target.nodeName=='LABEL')
+          unless (target.nodeName=='INPUT' or target.nodeName=='LABEL')
+            t.el.click()
 
-    new ExtraLabel(control) for control in document.querySelectorAll('input[type="radio"],input[type="checkbox"]')
+    for control in document.querySelectorAll('input[type="radio"],input[type="checkbox"]')
+      new ExtraLabel(control)
 
   if window.attachEvent
     window.attachEvent 'onload', ->

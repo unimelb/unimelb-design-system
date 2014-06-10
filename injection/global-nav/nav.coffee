@@ -11,7 +11,7 @@ window.UOMinjectGlobalNav = ->
 
     setupEvents: ->
       t = this
-      if Array.prototype.slice.call(document.querySelectorAll('div[role="navigation"]')).length==1
+      if document.countSelector('div[role="navigation"]') == 1
         @localnav = document.querySelector('div[role="navigation"]')
         @localsitemaptrigger = @localnav.querySelector('.sitemap-link')
 
@@ -104,7 +104,7 @@ window.UOMinjectGlobalNav = ->
           t.sitemap.removeClass('reveal')
 
   # Move local nav outside page container
-  if Array.prototype.slice.call(document.querySelectorAll('div[role="navigation"]')).length==1
+  if document.countSelector('div[role="navigation"]') == 1
     localnav = document.querySelector('div[role="navigation"]')
 
     sitemaplink = document.createElement 'a'

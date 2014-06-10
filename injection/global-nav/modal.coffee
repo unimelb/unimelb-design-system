@@ -2,7 +2,7 @@ unless window.UOMModal
   window.UOMModal = ->
     # Add blanket if not already on page
     if (supportedmodernbrowser)
-      if Array.prototype.slice.call(document.querySelectorAll('.modal__blanket')).length==0
+      if document.countSelector('.modal__blanket') == 0
         blanket = document.createElement 'div'
         blanket.setAttribute('class', 'modal__blanket')
         document.querySelector('div[role="main"]').appendChild blanket

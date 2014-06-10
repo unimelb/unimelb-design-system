@@ -25,19 +25,39 @@
 .accordion__title {
   cursor: pointer;
 }
+
 .accordion__hidden {
   @include transition-duration(250ms);
   @include transition-property(max-height);
   @include transition-timing-function(ease-out);
+  display: block;
   max-height: 0;
   overflow: hidden;
+
+  td {
+    display: none;
+  }
 }
+
+.accordion__close {
+  display: none;
+}
+
 .accordion__visible .accordion__hidden {
   @include transition-duration(500ms);
   @include transition-property(max-height);
   @include transition-timing-function(ease-in);
   max-height: 1000px;
 }
+
+.accordion__visible tr.accordion__hidden {
+  display: table-row;
+
+  td {
+    display: table-cell;
+  }
+}
+
 .accordion__noanim {
   .accordion__hidden,
   .accordion__visible .accordion__hidden {

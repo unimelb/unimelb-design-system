@@ -4,6 +4,17 @@ var supportedmodernbrowser = !/(MSIE 7.0)/g.test(navigator.userAgent);
   'use strict';
 
   if (supportedmodernbrowser) {
+    // Count selectors
+    document.countSelector = function(selectors) {
+      return Array.prototype.slice.call(document.querySelectorAll(selectors)).length
+    }
+
+    if (!Element.prototype.countSelector) {
+      Element.prototype.countSelector = function(selectors) {
+        return Array.prototype.slice.call(this.querySelectorAll(selectors)).length
+      }
+    }
+
     // Window height helper
     if (!Window.prototype.height) {
       Window.prototype.height = function() {

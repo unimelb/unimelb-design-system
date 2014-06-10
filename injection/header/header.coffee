@@ -1,12 +1,12 @@
 window.UOMinjectHeader = ->
   # Only inject header if it doesn't already exist
-  if Array.prototype.slice.call(document.querySelectorAll('.page-header')).length == 0
+  if document.countSelector('.page-header') == 0
 
     # Create header and move local breadcrumb
     block = document.createElement('div')
     block.addClass('page-header')
 
-    if Array.prototype.slice.call(document.querySelectorAll('.page-inner > .floating')).length > 0
+    if document.countSelector('.page-inner > .floating') > 0
       # Landing page header
       block.innerHTML = """
       <a class="page-header-logo" href="/">Home</a>
@@ -27,7 +27,7 @@ window.UOMinjectHeader = ->
     parent = document.querySelector('.page-inner')
     parent.insertBefore(block, parent.firstChild)
 
-    if Array.prototype.slice.call(document.querySelectorAll('.page-local-history')).length==1
+    if document.countSelector('.page-local-history') == 1
       local = document.querySelector('.page-local-history')
       local.parentNode.removeChild(local)
 
