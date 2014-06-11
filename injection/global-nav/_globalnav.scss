@@ -111,7 +111,6 @@ $menu: #036;
   .parent {
     cursor: pointer;
 
-    &:after,
     &::after {
       @include rem(font-size, 24px);
       @include transform(rotate(270deg) translateY(-1px));
@@ -471,7 +470,7 @@ $menu: #036;
     padding-bottom: 0;
   }
 
-  .button-fill {
+  a.button-fill {
     h2 {
       padding-top: 0;
     }

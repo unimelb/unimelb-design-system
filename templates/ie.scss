@@ -11,25 +11,69 @@ $blue: #304e64;
   padding: 15px;
 }
 
-.page-inner {
+// .page-inner {
+//   &.active,
+//   &.global-active {
+//     position: relative;
+//   }
+// }
+
+body [role="navigation"] {
+  display: none;
+
   &.active {
+    display: block;
     position: fixed;
     right: 0;
     top: 0;
     width: 300px;
+    z-index: 100;
   }
 
-  &.global-active {
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
+  ul {
+    ul {
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+body [role="sitemap"] {
+  display: none;
+  position: static;
+
+  &.active {
+    display: block;
+  }
+
+  &.reveal .sitemap-label {
+    display: none;
+  }
+}
+
+.modal__dialog {
+  left: 20%;
+  right: 20%;
+  top: 20%;
+  width: 60%;
+
+  .half .button-fill {
+    width: 50%;
   }
 }
 
 .page-header {
   border-bottom: 2px solid #f0f0f0;
 }
+
+.page-header-tools .page-header-icon[title="Login"],
+.page-header-tools .page-header-icon[title="Search"] {
+  display: inline-block;
+}
+
 
 [role="main"] header {
   .bottom-align,

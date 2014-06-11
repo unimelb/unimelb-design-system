@@ -19,7 +19,9 @@ unless window.UOMModal
             target.style.top = t.offsetTop-160+'px'
             target.addClass('on')
           else
-            target.style.top = parseInt((window.height()-target.offsetHeight)/2)-document.body.getBoundingClientRect().top+'px'
+            viewport = document.body.getBoundingClientRect()
+            maxheight = window.height()
+            target.style.top = parseInt((maxheight-target.offsetHeight)/2)-viewport.top+'px'
             target.addClass('on')
 
           blanket.addClass 'on'

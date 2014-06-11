@@ -67,13 +67,13 @@ window.UOMinjectHeader = ->
   tools.addClass('page-header-tools')
   if document.querySelector('[role="main"]').hasClass "no-login"
     tools.innerHTML = """
-          <a class="page-header-icon" href="#sitemap" title="Search"><span class="search"></span> Search</a><!--
-          --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="menu"></span> Menu</a>
+          <a class="page-header-icon" href="#sitemap" title="Search"><span class="icon search"></span> Search</a><!--
+          --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="icon menu"></span> Menu</a>
     """
   else
     tools.innerHTML = """
-          <a class="page-header-icon" href="#sitemap" title="Search"><span class="search"></span> Search</a><!--
-          --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><span class="login"></span> Portal</a><!--
-          --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="menu"></span> Menu</a>
+          <a class="page-header-icon" href="#sitemap" title="Search"><span class="icon search"></span> Search</a><!--
+          --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><span class="icon login"></span> Portal</a><!--
+          --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="icon menu"></span> Menu</a>
     """
   parent.appendChild(tools)

@@ -3,8 +3,8 @@ window.UOMinjectGlobalNav = ->
     constructor: ->
       @page = document.querySelector('.page-inner')
       @sitemap = document.querySelector('div[role="sitemap"]')
-      @menutrigger = document.querySelector('.page-header-tools').querySelector('a[title="Menu"]')
-      @searchtrigger = document.querySelector('.page-header-tools').querySelector('a[title="Search"]')
+      @menutrigger = document.querySelector('.page-header-tools a[title="Menu"]')
+      @searchtrigger = document.querySelector('.page-header-tools a[title="Search"]')
       @blanket = document.querySelector('.modal__blanket')
 
       @setupEvents()

@@ -181,7 +181,7 @@
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
 
-    span {
+    .icon {
       @include rem(height, 20px);
       @include rem(margin-bottom, 3px);
       @include rem(margin-top, 14px);
@@ -231,7 +231,7 @@
       @include rem(font-size, 10px);
       @include rem(padding, 0 23px);
 
-      span {
+      .icon {
         @include rem(height, 34px);
         @include rem(margin-top, 24px);
         @include rem(width, 34px);
