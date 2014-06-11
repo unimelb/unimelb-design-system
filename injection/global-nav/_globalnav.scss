@@ -95,6 +95,7 @@ $menu: #036;
       color: rgba($white, .6);
       cursor: pointer;
 
+      &:before,
       &::before {
         @include rem(font-size, 24px);
         @include transform(rotate(90deg) translateX(5px));
@@ -110,6 +111,7 @@ $menu: #036;
   .parent {
     cursor: pointer;
 
+    &:after,
     &::after {
       @include rem(font-size, 24px);
       @include transform(rotate(270deg) translateY(-1px));
@@ -383,6 +385,7 @@ $menu: #036;
     top: 0;
     z-index: 11;
 
+    &:before,
     &::before {
       @include transform(rotate(180deg) translateX(10px) translateY(-10px));
       content: '\2335';
@@ -402,6 +405,7 @@ $menu: #036;
     text-indent: -999em;
     width: 0;
 
+    &:before,
     &::before {
       @include rem(font-size, 40px);
       @include rem(height, 10px);

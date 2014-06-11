@@ -6,24 +6,29 @@
       background-color: transparent;
       color: $black;
     }
+
     strong,
     span,
     p {
       border-color: $black;
       color: $black;
     }
+
     a {
       background-color: $white;
       color: $black;
+
       &:hover .button-small {
         background-color: $black;
         color: $white;
       }
     }
+
     .button-small {
       background-color: $white;
       border: 2px solid $black;
     }
+
     &.inverse {
       strong,
       span,
@@ -31,14 +36,17 @@
         border-color: $white;
         color: $white;
       }
+
       a {
-        background-color: rgba($black, 0.85);
+        background-color: rgba($black, .85);
         color: $white;
+
         &:hover .button-small {
           background-color: $white;
           color: $black;
         }
       }
+
       .button-small {
         background-color: $black;
         border-color: $white;
@@ -67,6 +75,7 @@
 
 .vca .page-header .page-header-logo {
   background-image: url("#{asset_path('components/globals/vca/logo-vca.png')}");
+
   @include breakpoint(0) {
     background-image: url("#{asset_path('components/globals/vca/logo-vca.svg')}");
   }
@@ -77,41 +86,53 @@
     @include rem(width, 142px);
     background-color: $black;
     background-image: url("#{asset_path('components/globals/vca/logo-vca.png')}");
+    margin-left: 0;
+
     @include breakpoint(0) {
       background-image: url("#{asset_path('components/globals/vca/logo-vca.svg')}");
     }
+
     @include breakpoint(desktop) {
       @include rem(height, 90px);
       @include rem(width, 212px);
     }
-    margin-left: 0;
   }
+
   .page-header-navigation {
-    @include breakpoint(desktop) {
-      @include rem(margin-left, 235px);
-    }
     a,
     span {
       color: $black;
     }
+
+    @include breakpoint(desktop) {
+      @include rem(margin-left, 235px);
+    }
   }
 }
+
 .vca .page-header-tools .page-header-icon {
   color: $black;
+
   span.search {
-    background-image: url("#{asset_path('components/globals/vca/icon-s-b.png')}");
+    background-image: url('#{asset_path('components/globals/vca/icon-s-b.png')}');
   }
+
   span.login {
-    background-image: url("#{asset_path('components/globals/vca/icon-p-b.png')}");
+    background-image: url('#{asset_path('components/globals/vca/icon-p-b.png')}');
   }
+
   span.menu {
-    background-image: url("#{asset_path('components/globals/vca/menu-b.png')}");
+    background-image: url('#{asset_path('components/globals/vca/menu-b.png')}');
   }
 }
 
 .vca .course-progression tr {
   td.unit-description {
     background-color: $black;
+
+    &:before {
+      border-bottom-color: $black;
+    }
 
     &::before {
       border-bottom-color: $black;

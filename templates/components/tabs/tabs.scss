@@ -36,9 +36,9 @@
   .tabbed-nav {
     .full-width {
       background-color: rgba($navy, .9);
-      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#e50c304a,endColorstr=#e50c304a);
       border-bottom: 1px solid transparent;
       position: relative;
+
       // IE fix
       @include breakpoint(0) {
         border-bottom: 0 none;
@@ -106,9 +106,11 @@
       display: none;
       margin: 0 3%;
       width: 94%;
+
       &.active {
         display: block;
       }
+
       @include breakpoint(desktop) {
         display: none;
         &.active {
@@ -137,6 +139,7 @@
         max-width: $w-mid;
         position: static;
 
+        &:after,
         &::after {
           display: none;
         }
@@ -171,7 +174,8 @@
         border-top-color: $black;
       }
 
-      .mobile-nav {
+      .mobile-nav,
+      .mobile-nav select {
         background-color: $black;
         border: 1px solid $black;
       }

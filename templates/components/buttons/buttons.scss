@@ -14,27 +14,33 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+
   &:hover {
-    color: $white;
     border-bottom-width: 1px;
+    color: $white;
     margin-top: 24px;
   }
+
   &.warning {
     background-color: $warning;
     border-bottom-color: darken($warning, 10%);
   }
+
   &.cta {
     background-color: $cta;
     border-bottom-color: darken($cta, 10%);
   }
+
   &.brand {
     background-color: $brand;
     border-bottom-color: darken($brand, 10%);
   }
+
   &.soft {
     background-color: $soft;
     border-bottom-color: darken($soft, 10%);
     color: $midblue;
+
     &:hover {
       background-color: $gray;
       color: $darkblue;
@@ -50,18 +56,21 @@
   border-bottom: 0;
   margin: 0;
   position: relative;
+
   &.soft {
     background-color: $gray;
     color: $darkblue;
   }
+
   &:hover {
     margin-top: 0;
   }
-  &:after {
+
+  &::after {
     @include rem(font-size, 30px);
     @include rem(padding-left, 5px);
     @include rem(top, -7px);
-    content: "\2192";
+    content: '\2192';
     position: absolute;
   }
 }
@@ -73,8 +82,8 @@
   @include rem(letter-spacing, 1px);
   @include rem(margin, 20px 0);
   @include rem(padding, 20px 60px 20px 20px);
-  border-style: solid;
   border-color: $black;
+  border-style: solid;
   color: $black;
   cursor: pointer;
   display: inline-block;
@@ -83,16 +92,19 @@
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  &:after {
+
+  &::after {
     @include rem(font-size, 30px);
     @include rem(padding-left, 15px);
-    @include rem(top, 4px);
-    content: "\2192";
+    content: '\2192';
     position: absolute;
+    top: 4px;
   }
+
   &:hover {
-    background-color: rgba($white, 0.5);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff,endColorstr=#7fffffff);
+    background-color: rgba($white, .5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff,endColorstr=#7fffffff);
+
     color: $lighterblue;
     border-color: transparent;
   }
@@ -120,8 +132,9 @@ input[type="button"] {
 
 .button-hero-inverse {
   @extend %outlinebutton;
-  color: $white;
   border-color: $white;
+  color: $white;
+
   &:hover {
     color: $brand;
   }
@@ -132,13 +145,16 @@ input[type="button"] {
   text-align: center;
   text-decoration: none;
   width: 100%;
+
   &:hover {
     background-color: $highlight;
     color: $white;
   }
+
   h2 {
     @include rem(font-size, 24px);
   }
+
   p {
     @include rem(font-size, 16px);
   }

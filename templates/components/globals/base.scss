@@ -270,7 +270,8 @@ body {
       padding-bottom: 0;
       text-align: center;
 
-      &:after {
+      &:after,
+      &::after {
         display: none;
       }
 
@@ -382,6 +383,7 @@ body {
         max-width: $w-mid;
       }
 
+      &:after,
       &::after {
         @include rem(margin-top, 30px);
         @include rem(width, 80px);
@@ -467,7 +469,8 @@ h1 {
   font-weight: $regular;
   line-height: 1.2;
 
-  &:after {
+  &:after,
+  &::after {
     @include rem(margin-top, 15px);
     @include rem(max-width, 700px);
     border-bottom: 2px solid $midgray;
@@ -523,6 +526,7 @@ h3 {
   @extend .subtitle;
   text-align: center;
 
+  &:after,
   &::after {
     @include rem(margin-bottom, 15px);
     @include rem(margin-top, 30px);
@@ -670,6 +674,7 @@ ul {
     &.no-li {
       list-style-type: none;
 
+      &:before,
       &::before {
         display: none;
       }
@@ -725,10 +730,8 @@ ul.ticked-list {
       transform: rotate(-45deg);
     }
 
-    &.disabled {
-      &::before {
-        opacity: .2;
-      }
+    &.disabled::before {
+      opacity: .2;
     }
   }
 }
@@ -748,7 +751,9 @@ blockquote {
   quotes: '\201C''\201D';
   text-align: left;
 
+  &:after,
   &::after,
+  &:before,
   &::before {
     @include rem(font-size, 100px);
     @include rem(margin-left, -50px);
@@ -759,6 +764,7 @@ blockquote {
     vertical-align: -.333em;
   }
 
+  &:after,
   &::after {
     content: close-quote;
     margin-left: 0;
@@ -776,6 +782,7 @@ blockquote {
     text-align: left;
     width: 100%;
 
+    &:before,
     &::before {
       @include rem(padding-right, 5px);
       content: '\2014';
@@ -837,6 +844,7 @@ figure.framed img {
       position: relative;
       text-align: left;
 
+      &:before,
       &::before {
         @include rem(width, 40px);
         border-bottom: 2px solid $lighterblue;
@@ -861,6 +869,7 @@ figure.framed img {
       text-align: right;
       width: 22%;
 
+      &:before,
       &::before {
         left: auto;
         right: -2px;
@@ -881,6 +890,7 @@ figure.framed img {
     figcaption {
       text-align: right;
 
+      &:before,
       &::before {
         left: auto;
         right: -2px;
@@ -898,6 +908,7 @@ figure.framed img {
       margin-right: 0;
       text-align: left;
 
+      &:before,
       &::before {
         left: 2px;
         right: auto;
@@ -1036,6 +1047,7 @@ aside {
   padding-top: 60px;
   position: relative;
 
+  &:before,
   &::before {
     color: $cyan;
     content: '\21e0';
@@ -1047,6 +1059,7 @@ aside {
     width: 100%;
   }
 
+  div:before,
   div::before {
     @extend %grad-left;
     content: '';
@@ -1060,12 +1073,14 @@ aside {
     overflow: visible;
     padding-top: 0;
 
+    &:before,
     &::before {
       content: none;
       height: 0;
       position: static;
     }
 
+    div:before,
     div::before {
       content: none;
     }
@@ -1177,9 +1192,12 @@ aside {
 .with-aside {
   @extend %clearfix;
   background-color: $lightgray;
-  background-image: url("#{asset_path('components/globals/with-aside-r-bg.png')}");
-  background-position: top center;
-  background-repeat: repeat-y;
+
+  @include breakpoint(desktop) {
+    background-image: url("#{asset_path('components/globals/with-aside-r-bg.png')}");
+    background-position: top center;
+    background-repeat: repeat-y;
+  }
 
   div {
     clear: both;
@@ -1188,7 +1206,7 @@ aside {
   }
 
   aside {
-    @include rem(padding, 30px 15px 0);
+    @include rem(padding, 30px 15px);
     background-color: $lightgray;
     clear: none;
     width: 100%;
@@ -1214,11 +1232,12 @@ aside {
     @include rem(max-width, 1099px);
     @include rem(padding-top, 30px);
     background-color: $white;
-    clear: none;
+    clear: both;
     width: 100%;
 
     @include breakpoint(desktop) {
       @include rem(padding-top, 45px);
+      clear: none;
       float: left;
       width: 75%;
     }

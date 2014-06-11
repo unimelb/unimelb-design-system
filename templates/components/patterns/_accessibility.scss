@@ -12,8 +12,8 @@
 //   Solution from: j.mp/visuallyhidden - Thanks Jonathan Neal!
 @mixin screenreaders-only {
   position: absolute !important;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
 }
 
 // Hide visually and from screenreaders, but maintain layout

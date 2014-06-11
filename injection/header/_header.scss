@@ -17,7 +17,7 @@
     //box-shadow: 0 6px 6px -3px rgba($black, 0.3);
 
     // god damn it compass
-    @include single-box-shadow(rgba($black,0.3), 0, 6px, 6px, -3px);
+    @include single-box-shadow(rgba($black, .3), 0, 6px, 6px, -3px);
 
     padding: 0;
 
@@ -32,10 +32,12 @@
     @include rem(line-height, 60px);
     font-weight: $light;
     text-decoration: none;
+
     &:hover {
       color: $midblue;
       text-decoration: underline;
     }
+
     &.page-header-logo {
       @extend %imgreplace;
       @include rem(height, 60px);
@@ -44,11 +46,13 @@
       background-image: url("#{asset_path('header/logo.png')}");
       margin-left: 0;
       text-indent: -999em;
+
       img {
         border: 0;
         max-height: 100%;
         max-width: 100%;
       }
+
       @include breakpoint(0) {
         background-image: url("#{asset_path('header/logo.svg')}");
       }
@@ -64,9 +68,11 @@
         position: absolute;
       }
     }
+
     &.wide {
       @include rem(width, 142px);
       background-color: $black;
+
       @include breakpoint(desktop) {
         @include rem(width, 320px);
       }
@@ -92,13 +98,18 @@
 .page-header-navigation {
   @include rem(margin-left, 25px);
   display: inline;
-  a, span {
+
+  a,
+  span {
     display: inline-block;
   }
+
   @include breakpoint(0) {
-    a, span {
+    a,
+    span {
       display: none;
     }
+
     a.last {
       display: inline-block;
       max-width: 55%;
@@ -107,6 +118,7 @@
       white-space: nowrap;
     }
   }
+
   @include breakpoint(desktop) {
     @include rem(height, 90px);
     @include rem(margin-left, 205px);
@@ -115,15 +127,19 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    a, span {
+
+    a,
+    span {
       display: inline;
     }
   }
+
   .page-local-history {
     color: $darkblue;
     display: inline;
     margin: 0;
     padding-left: 0;
+
     a {
       color: $darkblue;
     }
@@ -134,10 +150,12 @@
   @extend %wrapper;
   @include rem(padding-top, 30px);
   color: $white;
+
   a {
     color: $white;
     font-weight: $light;
   }
+
   span {
     @include rem(padding, 0 10px);
   }
@@ -147,6 +165,7 @@
   position: absolute;
   right: 0;
   top: -2px;
+
   .page-header-icon {
     @include rem(font-size, 9px);
     @include rem(padding, 0 10px);
@@ -157,9 +176,11 @@
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
+
     -moz-box-sizing: content-box;
     -webkit-box-sizing: content-box;
     box-sizing: content-box;
+
     span {
       @include rem(height, 20px);
       @include rem(margin-bottom, 3px);
@@ -170,37 +191,46 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
+
       &.search {
         @extend %imgreplace;
         background-image: url("#{asset_path('header/icon-s.png')}");
       }
+
       &.login {
         @extend %imgreplace;
         background-image: url("#{asset_path('header/icon-p.png')}");
       }
+
       &.menu {
         @extend %imgreplace;
         background-image: url("#{asset_path('header/menu.png')}");
       }
     }
+
     &:hover {
       background-color: $paleblue;
       text-decoration: none;
     }
+
     &[title="Login"],
     &[title="Search"] {
       display: none;
+
       @include breakpoint(tablet) {
         display: inline-block;
       }
     }
   }
+
   @include breakpoint(desktop) {
     @include rem(padding-left, 15px);
     background-color: $white;
+
     .page-header-icon {
       @include rem(font-size, 10px);
       @include rem(padding, 0 23px);
+
       span {
         @include rem(height, 34px);
         @include rem(margin-top, 24px);
@@ -216,6 +246,7 @@
     @include rem(top, 10px);
     margin-top: 0;
     position: absolute;
+
     @include breakpoint(desktop) {
       @include rem(margin-top, 30px);
       left: 0;
@@ -223,27 +254,34 @@
       top: 0;
     }
   }
+
   .page-header-tools {
     @include rem(margin, 15px);
     background-color: transparent;
+
     a.page-header-icon {
       background-color: transparent;
       border-left: 0 none;
       color: $white;
+
       &:hover {
         background-color: transparent;
         color: $white;
       }
+
       span.search {
-        background-image: url("#{asset_path('header/icon-s-w.png')}");
+        background-image: url('#{asset_path('header/icon-s-w.png')}');
       }
+
       span.login {
-        background-image: url("#{asset_path('header/icon-p-w.png')}");
+        background-image: url('#{asset_path('header/icon-p-w.png')}');
       }
+
       span.menu {
-        background-image: url("#{asset_path('header/menu-w.png')}");
+        background-image: url('#{asset_path('header/menu-w.png')}');
       }
     }
+
     @include breakpoint(desktop) {
       @include rem(margin, 40px);
     }

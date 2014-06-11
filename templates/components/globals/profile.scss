@@ -1,44 +1,51 @@
 [role="main"] .profile {
   background-color: $lightestblue;
+
   header {
     @include rem(min-height, 400px);
+
     .bottom-align {
       @include rem(padding-top, 50px);
-      @include rem(padding-bottom, 0px);
       bottom: 0;
+      padding-bottom: 0;
       position: absolute;
       width: 100%;
     }
+
     h1 {
-      @include rem(margin-bottom, 0px);
-      // @include rem(padding-bottom, 15px);
       border: 0;
       color: $white;
       line-height: 1.2;
-      &:after {
+      margin-bottom: 0;
+
+      &::after {
         @include rem(margin-top, 15px);
         @include rem(max-width, 700px);
         border-bottom: 2px solid $white;
-        content: "";
+        content: '';
         display: block;
         width: 100%;
       }
+
       @include breakpoint(tablet) {
         @include rem(margin-bottom, 15px);
-        &:after{
+
+        &::after {
           @include rem(margin-top, 31px);
           @include rem(max-width, 700px);
           border-bottom: 2px solid $white;
-          content: "";
+          content: '';
           display: block;
           width: 100%;
         }
       }
     }
+
     p {
       @include rem(font-size, 19px);
       font-style: italic;
       padding: 0;
+
       @include breakpoint(tablet) {
         @include rem(font-size, 21px);
       }
@@ -48,12 +55,13 @@
       padding-top: 0;
     }
   }
+
   section {
     &.intro {
       padding-bottom: 0;
+
       p {
         font-style: italic;
-        //border-bottom: 1px dotted $navy;
         padding-bottom: 0;
       }
 
@@ -63,13 +71,16 @@
     }
 
   }
+
   h1 {
     @include rem(margin-bottom, 35px);
     border-bottom: 2px solid $navy;
     color: $navy;
+
     @include breakpoint(tablet) {
       @include rem(margin-bottom, 25px);
     }
+
     @include breakpoint(wide) {
       @include rem(font-size, 50px);
       @include rem(margin-bottom, 31px);

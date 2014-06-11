@@ -178,18 +178,20 @@
   @include breakpoint(desktop) {
     margin: 0;
   }
+
   li {
     @include rem(font-size, 14px);
     @include rem(margin, 2px 2px 4px 2px);
     background-color: $palegreen;
     list-style-type: none;
+    opacity: 1;
     padding: 0;
 
-    opacity: 1;
     -webkit-transition-duration: 0.4s;
     -moz-transition-duration: 0.4s;
     -ms-transition-duration: 0.4s;
     transition-duration: 0.4s;
+
      -webkit-transition-property: opacity;
      -ms-transition-property: opacity;
      -moz-transition-property: opacity;
@@ -330,8 +332,8 @@
   }
 
   tr {
-    td:last-child,
-    th:last-child {
+    td:first-child + td,
+    th:first-child + th {
       text-align: right;
     }
 
@@ -415,7 +417,7 @@
     }
   }
 
-  thead th:last-child {
+  thead th:first-child + th {
     border-color: $black;
     text-align: left;
   }

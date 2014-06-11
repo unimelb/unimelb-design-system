@@ -17,34 +17,41 @@
     font-weight: $regular;
     list-style-type: none;
     white-space: nowrap;
+
     &:first-child {
       border-bottom: 1px solid $lightergray;
       letter-spacing: 1px;
       margin-bottom: 10px;
       text-transform: uppercase;
+
       a::before {
         content: '';
         padding-right: 0;
       }
     }
   }
+
   a {
     color: $gray;
     text-decoration: none;
+
     &::before {
       content: '\25cf';
       padding-right: 5px;
     }
+
     &:hover {
       color: $highlight;
     }
   }
+
   &.jump-fixed {
     @include breakpoint(desktop) {
       left: 0;
       position: fixed;
       top: 340px;
       z-index: 100;
+
       a.current {
         color: $highlight;
       }

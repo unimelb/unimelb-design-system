@@ -24,9 +24,11 @@ pre {
   border-radius: 5px;
   line-height: 1.4;
   overflow: auto;
+
   code {
     border-bottom: 0;
   }
+
   @include breakpoint(desktop) {
     @include rem(margin-bottom, 31px);
     margin-left: auto;

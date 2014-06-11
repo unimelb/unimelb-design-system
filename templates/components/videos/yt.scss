@@ -22,13 +22,15 @@
       text-align: center;
       top: 0;
       width: 100%;
+
       img {
         width: 100%;
+
         &.video-trigger {
           height: 100px;
           left: 50%;
-          margin-top: -50px;
           margin-left: -50px;
+          margin-top: -50px;
           position: absolute;
           top: 50%;
           width: 100px;

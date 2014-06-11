@@ -1,8 +1,15 @@
 // Ideally this file should only contain this comment
 $navy:  #0c304a;
 $white: #fff;
-$lightblue:    #82a1bd;
-$blue:         #304E64;
+$black: #000;
+$lightblue: #82a1bd;
+$blue: #304e64;
+
+%wrapper {
+  margin: 0 auto;
+  max-width: 1400px;
+  padding: 15px;
+}
 
 .page-inner {
   &.active {
@@ -22,6 +29,124 @@ $blue:         #304E64;
 
 .page-header {
   border-bottom: 2px solid #f0f0f0;
+}
+
+[role="main"] header {
+  .bottom-align,
+  .bottom-align-inverted,
+  .bottom-align-flat {
+    bottom: 0;
+    position: absolute;
+  }
+
+  .bottom-align-flat {
+    background-image: url("#{asset_path('components/globals/000o80.png')}");
+  }
+}
+
+%button-arrow {
+  content: '\2192';
+  font-size: 30px;
+  padding-left: 5px;
+  position: absolute;
+  top: 4px;
+}
+
+.button-hero-inverse:after {
+  @extend %button-arrow;
+  top: -6px;
+}
+
+.button-hero:after {
+  @extend %button-arrow;
+}
+
+[role="main"] .tabbed-nav .fullwidth {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e50c304a, endColorstr=#e50c304a);
+  nav a[data-current]:after {
+    border-top-color: #23445a;
+  }
+}
+
+.fullwidth {
+  p,
+  p.black {
+    margin: 0 auto;
+    max-width: 900px;
+    text-align: center;
+  }
+}
+
+ul.ticked-list li:before {
+  color: #3fc76e;
+  content: '\221a';
+  font-size: 16px;
+  font-weight: 600;
+  left: 0;
+  margin-left: -22px;
+  position: absolute;
+}
+
+.vca ul.ticked-list li:before {
+  color: #000;
+}
+
+
+[role="main"] .tabbed-course,
+[role="main"] .tabbed-nav {
+  nav a[data-current]:after {
+    border: solid transparent;
+    border-top-color: $black;
+    border-width: 10px;
+    content: ' ';
+    height: 0;
+    left: 50%;
+    margin-bottom: -10px;
+    margin-left: -10px;
+    pointer-events: none;
+    position: absolute;
+    top: 100%;
+    width: 0;
+  }
+
+  .mobile-nav,
+  .mobile-nav.active {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: block;
+  }
+}
+
+[role="main"] table.course-progression {
+  td,
+  th {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .accordion__close:after {
+    content: '\00d7';
+    font-size: 60px;
+    font-weight: 100;
+    line-height: 1;
+  }
+
+  tr td.unit-description:before {
+    border: solid transparent;
+    border-bottom-color: $navy;
+    border-width: 10px;
+    bottom: 100%;
+    content: ' ';
+    height: 0;
+    left: 0;
+    margin-left: 20px;
+    margin-top: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+  }
 }
 
 .page-footer {
@@ -101,10 +226,27 @@ $blue:         #304E64;
         margin-right: 0;
       }
     }
+
+    a {
+      vertical-align: top;
+    }
   }
 }
 
 .page-footer-est1853 {
   display: inline;
   float: right;
+}
+
+[role="main"] footer.cta ul.quarter {
+  padding: 30px 0 60px;
+  text-align: center;
+
+  li {
+    display: inline;
+    float: none;
+    margin: 0;
+    padding: 0 30px;
+    width: auto;
+  }
 }

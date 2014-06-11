@@ -24,7 +24,7 @@ unless window.UOMTabs
                 window.location.hash = target.getAttribute('href').substr(1)
             , 600)
 
-        if Array.prototype.slice.call(@el.querySelectorAll('select')).length > 0
+        if @el.countSelector('select') > 0
           @el.querySelector('select').addEventListener 'change', (e) ->
             if this.value
               curr = 1
@@ -38,8 +38,12 @@ unless window.UOMTabs
 
         curr = window.location.hash.substr(1) if window.location.hash
 
-        if (curr in tabs)
-          @moveindex tabs.indexOf(curr)+1
+        idx = 0
+        for tab, i in tabs
+          idx = i+1 if curr == tab
+
+        if idx > 0
+          @moveindex idx
         else if @el.countSelector('[data-current]') == 0
           @move @el.querySelector('nav a:first-child')
         else
