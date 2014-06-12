@@ -95,7 +95,6 @@ $menu: #036;
       color: rgba($white, .6);
       cursor: pointer;
 
-      &:before,
       &::before {
         @include rem(font-size, 24px);
         @include transform(rotate(90deg) translateX(5px));

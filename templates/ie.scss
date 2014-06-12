@@ -4,6 +4,7 @@ $white: #fff;
 $black: #000;
 $lightblue: #82a1bd;
 $blue: #304e64;
+$borderblue: #1d4873;
 
 %wrapper {
   margin: 0 auto;
@@ -20,6 +21,42 @@ $blue: #304e64;
 
 body [role="navigation"] {
   display: none;
+
+  li {
+    border-top: 1px solid $borderblue;
+  }
+
+  h2 {
+    color: $lightblue;
+  }
+
+  .back {
+    span {
+      color: $lightblue;
+
+      &:before {
+        content: '<';
+        float: left;
+        font-size: 20px;
+        font-weight: 100;
+        line-height: 1;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .sitemap-link {
+    background-color: $borderblue;
+  }
+
+  .parent:after {
+    font-size: 20px;
+    content: '>';
+    float: right;
+    font-weight: 100;
+    line-height: 1;
+    z-index: 109;
+  }
 
   &.active {
     display: block;
@@ -103,6 +140,54 @@ body [role="sitemap"] {
 
 .button-hero:after {
   @extend %button-arrow;
+}
+
+[role="main"] .selector-listing-3 {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1400px;
+  background: red;
+
+  li {
+    float: left;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 30.333%;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:first-child + li + li {
+      margin-right: 0;
+    }
+  }
+
+  p {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  strong {
+    height: 120px;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  a {
+    min-height: 360px;
+    padding-bottom: 15px;
+  }
+
+  .button-small {
+    bottom: 30px;
+    display: inline-block;
+    left: 20%;
+    position: absolute;
+    text-align: center;
+    width: 60%;
+  }
 }
 
 [role="main"] .tabbed-nav .fullwidth {

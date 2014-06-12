@@ -117,12 +117,12 @@ window.UOMinjectGlobalNav = ->
     document.body.appendChild(localnav)
 
     for group in localnav.querySelectorAll('a')
-      if group.nextSibling and group.nextSibling.localName == 'ul'
+      if group.nextSibling and group.nextSibling.nodeName == 'UL'
         childgroup = group.nextSibling
 
         back = document.createElement 'li'
         back.addClass 'back'
-        back.innerHTML = "<span>" + group.text + "</span>"
+        back.innerHTML = "<span>" + group.firstChild.data + "</span>"
         childgroup.insertBefore(back, childgroup.firstChild)
 
         childgroup.firstChild.addEventListener 'click', (e) ->

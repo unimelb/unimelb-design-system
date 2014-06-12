@@ -3,6 +3,7 @@ unless window.UOMExtraLabel
     class ExtraLabel
       constructor: (@el) ->
         t = this
+        @el.parentNode.addClass "cursor"
         @el.parentNode.addEventListener 'click', (e) ->
           if t.el.checked
             this.addClass("on")
