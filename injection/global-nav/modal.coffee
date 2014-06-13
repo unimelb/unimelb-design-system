@@ -13,15 +13,18 @@ unless window.UOMModal
         trigger.addEventListener 'click', (e) ->
           e.preventDefault()
           t = e.target || e.srcElement
-          t = t.parentNode if t.nodeName != 'A'
+          while t.nodeName != 'A'
+            t = t.parentNode
+
           target = document.getElementById(t.getAttribute 'data-modal-target')
+
           if t.getAttribute('data-modal-offset')==''
             target.style.top = t.offsetTop-160+'px'
             target.addClass('on')
           else
             viewport = document.body.getBoundingClientRect()
-            top = (window.height() - target.offsetHeight) / 2
-            target.style.top = (parseInt(top) - viewport.top)+'px'
+            top = parseInt( (window.height() - target.offsetHeight) / 2 )
+            target.style.top = (top - viewport.top)+'px'
             target.addClass('on')
 
           blanket.addClass 'on'
