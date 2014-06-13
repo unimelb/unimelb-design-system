@@ -403,7 +403,6 @@ $menu: #036;
     text-indent: -999em;
     width: 0;
 
-    &:before,
     &::before {
       @include rem(font-size, 40px);
       @include rem(height, 10px);

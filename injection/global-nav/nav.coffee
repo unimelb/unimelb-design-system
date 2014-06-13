@@ -146,10 +146,10 @@ window.UOMinjectGlobalNav = ->
     <a class="sitemap-label">University Sitemap</a>
     <a class="close-button" href="">Close</a>
     <h2 class="logo">University of Melbourne</h2>
-    <form>
+    <form action="http://search.unimelb.edu.au" method="get">
       <fieldset>
         <div class="inline">
-          <input data-required placeholder="Search" name="f[search]" type="search" title="Please enter a keyword." />
+          <input data-required placeholder="Search" name="q" type="search" title="Please enter a keyword." />
           <input type="submit" class="search-button">
         </div>
       </fieldset>
@@ -242,7 +242,12 @@ window.UOMinjectGlobalNav = ->
       </div>
     </div>
   """
+  nav.querySelector('form').addEventListener 'submit', (e) ->
+    e.preventDefault()
+    window.location = this.action + "#gsc.q=" + this.elements[1].value
+
   document.body.appendChild(nav)
+
 
   # Add link state behaviour
   navstate = new UOMGlobalNavState()

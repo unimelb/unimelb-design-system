@@ -20,8 +20,8 @@ unless window.UOMModal
             target.addClass('on')
           else
             viewport = document.body.getBoundingClientRect()
-            maxheight = window.height()
-            target.style.top = parseInt((maxheight-target.offsetHeight)/2)-viewport.top+'px'
+            top = (window.height() - target.offsetHeight) / 2
+            target.style.top = (parseInt(top) - viewport.top)+'px'
             target.addClass('on')
 
           blanket.addClass 'on'

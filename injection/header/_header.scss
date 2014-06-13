@@ -269,15 +269,15 @@
         color: $white;
       }
 
-      span.search {
+      .search {
         background-image: url('#{asset_path('header/icon-s-w.png')}');
       }
 
-      span.login {
+      .login {
         background-image: url('#{asset_path('header/icon-p-w.png')}');
       }
 
-      span.menu {
+      .menu {
         background-image: url('#{asset_path('header/menu-w.png')}');
       }
     }

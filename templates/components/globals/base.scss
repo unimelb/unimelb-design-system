@@ -360,9 +360,20 @@ body {
   section {
     @include rem(padding-bottom, 30px);
     @include rem(padding-top, 30px);
+
     div {
       @include rem(max-width, $w-sml);
       margin: 0 auto;
+
+      &.youtube5placeholder {
+        @include rem(margin-bottom, 45px);
+        @include rem(margin-top, 45px);
+        width: 100% !important;
+      }
+
+      &.youtube5container {
+        width: 100% !important;
+      }
     }
 
     &.tight {
@@ -1181,6 +1192,10 @@ aside {
         @include rem(padding-right, 30px);
       }
     }
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(padding, 0 30px);
   }
 }
 
