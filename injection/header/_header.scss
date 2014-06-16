@@ -39,11 +39,11 @@
     }
 
     &.page-header-logo {
-      @extend %imgreplace;
+//      @extend %imgreplace;
       @include rem(height, 60px);
       @include rem(width, 60px);
       background-color: $darkblue;
-      background-image: url("#{asset_path('header/logo.png')}");
+      background-image: url("#{asset_path('header/logo.svg')}");
       margin-left: 0;
       text-indent: -999em;
 
@@ -51,10 +51,6 @@
         border: 0;
         max-height: 100%;
         max-width: 100%;
-      }
-
-      @include breakpoint(0) {
-        background-image: url("#{asset_path('header/logo.svg')}");
       }
     }
 

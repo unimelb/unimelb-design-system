@@ -135,6 +135,7 @@
         @include rem(padding-top, 65px);
         background: transparent;
         color: $black;
+        filter: none;
         font-weight: $light;
         margin: 0 auto;
         max-width: $w-mid;

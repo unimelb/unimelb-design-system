@@ -150,16 +150,16 @@ window.UOMinjectGlobalNav = ->
       <fieldset>
         <div class="inline">
           <input data-required placeholder="Search" name="q" type="search" title="Please enter a keyword." />
-          <input type="submit" class="search-button">
+          <input type="submit" value="Go" class="search-button">
         </div>
       </fieldset>
     </form>
     <ul class="quicklinks">
-      <li><a href="/pages/thanks.html"><i class="fa fa-building"></i> Faculties and Graduate Schools</a></li><!--
-      --><li><a href="/pages/thanks.html"><i class="fa fa-book"></i> Library</a></li><!--
-      --><li><a href="/pages/thanks.html"><i class="fa fa-phone"></i> Contact us</a></li><!--
-      --><li><a href="/pages/thanks.html"><i class="fa fa-map-marker"></i> Maps</a></li><!--
-      --><li><a href="/pages/thanks.html"><i class="fa fa-university"></i> Support the Campaign</a></li>
+      <li><a href="/pages/thanks.html"><span class="icon faculties"></span> Faculties and Graduate Schools</a></li><!--
+      --><li><a href="/pages/thanks.html"><span class="icon library"></span> Library</a></li><!--
+      --><li><a href="/pages/thanks.html"><span class="icon contact"></span> Contact us</a></li><!--
+      --><li><a href="/pages/thanks.html"><span class="icon maps"></span> Maps</a></li><!--
+      --><li><a href="/pages/thanks.html"><span class="icon support"></span> Support the Campaign</a></li>
     </ul>
     <div>
       <div class="col-3">
@@ -242,7 +242,15 @@ window.UOMinjectGlobalNav = ->
       </div>
     </div>
   """
-  nav.querySelector('form').addEventListener 'submit', (e) ->
+
+  form = nav.querySelector('form')
+
+  if /(MSIE [8|9].0)/g.test(navigator.userAgent)
+    form.elements[1].value = 'Search'
+    form.elements[1].addEventListener 'click', (e) ->
+      this.select()
+
+  form.addEventListener 'submit', (e) ->
     e.preventDefault()
     window.location = this.action + "#gsc.q=" + this.elements[1].value
 

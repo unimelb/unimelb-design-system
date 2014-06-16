@@ -113,15 +113,15 @@
 .vca .page-header-tools .page-header-icon {
   color: $black;
 
-  span.search {
+  .search {
     background-image: url('#{asset_path('components/globals/vca/icon-s-b.png')}');
   }
 
-  span.login {
+  .login {
     background-image: url('#{asset_path('components/globals/vca/icon-p-b.png')}');
   }
 
-  span.menu {
+  .menu {
     background-image: url('#{asset_path('components/globals/vca/menu-b.png')}');
   }
 }

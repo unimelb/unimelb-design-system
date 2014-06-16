@@ -108,7 +108,7 @@ namespace :templates do
       end
     end
     t.output      = TEMPLATES_BUILD_DIR
-    t.assets      = %w{*.eot *.svg *.ttf *.woff *.png *.jpg *.jpeg uom.js uom.css}
+    t.assets      = %w{*.eot *.svg *.ttf *.woff *.png *.jpg *.jpeg uom.js uom.css ie.css}
     t.logger      = Logger.new($stdout)
     t.log_level   = :debug
     t.keep        = 0

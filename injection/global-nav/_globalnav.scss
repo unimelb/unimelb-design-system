@@ -124,6 +124,7 @@ $menu: #036;
   &.active {
     @include translateX(0);
     display: block;
+    z-index: 9;
 
     .sitemap-label {
       margin-left: -100px;
@@ -211,7 +212,7 @@ $menu: #036;
     padding-left: 3%;
     padding-right: 3%;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
 
     @include breakpoint(tablet) {
       @include rem(left, 110px);
@@ -266,6 +267,66 @@ $menu: #036;
     clear: both;
     width: 100%;
 
+    li {
+      @include rem(line-height, 40px);
+      clear: both;
+
+      @include breakpoint(tablet) {
+        clear: none;
+        line-height: 1;
+      }
+    }
+
+    a {
+      @include rem(border-radius, 3px);
+      @include rem(margin, 0 30px);
+      @include rem(padding, 15px);
+
+      &:hover {
+        background-color: $highlight;
+        text-decoration: none;
+      }
+    }
+
+    .icon {
+      @extend %imgreplace;
+      @include rem(height, 40px);
+      @include rem(padding-right, 15px);
+      @include rem(width, 40px);
+      display: block;
+      float: left;
+
+      @include breakpoint(tablet) {
+        -ms-behavior: '';
+        behavior: '';
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 0;
+      }
+
+      &.faculties {
+        background-image: url("#{asset_path('global-nav/icon-faculties-w.png')}");
+      }
+
+      &.library {
+        background-image: url("#{asset_path('global-nav/icon-library-w.png')}");
+      }
+
+      &.contact {
+        background-image: url("#{asset_path('global-nav/icon-contact-w.png')}");
+      }
+
+      &.maps {
+        background-image: url("#{asset_path('global-nav/icon-maps-w.png')}");
+      }
+
+      &.support {
+        background-image: url("#{asset_path('global-nav/icon-support-w.png')}");
+      }
+
+    }
+
     @include breakpoint(tablet) {
       border-bottom: 1px solid $blue;
       border-top: 1px solid $blue;
@@ -277,7 +338,8 @@ $menu: #036;
       }
 
       a {
-        @include rem(height, 80px);
+        @include rem(min-height, 90px);
+        @include rem(margin-bottom, 15px);
         display: block;
         text-align: center;
         vertical-align: middle;
@@ -348,18 +410,16 @@ $menu: #036;
     @include rem(height, 140px);
     @include rem(margin-top, 15px);
     @include rem(width, 140px);
-    background-image: url("#{asset_path('header/logo.png')}");
+    background-image: url("#{asset_path('header/logo.svg')}");
     border: 0 none;
     clear: none;
     margin-left: auto;
     margin-right: auto;
     text-indent: -9999em;
 
-    @include breakpoint(0) {
-      background-image: url("#{asset_path('header/logo.svg')}");
-    }
-
     @include breakpoint(tablet) {
+      -ms-behavior: none;
+      behavior: none;
       float: left;
     }
   }

@@ -416,6 +416,7 @@
   li {
     @include rem(margin-bottom, 15px);
     background-color: transparent;
+    border: 1px solid rgba($black, .15);
     box-shadow: 0 0 9px -3px rgba($black, .3);
     color: $black;
     float: left;
