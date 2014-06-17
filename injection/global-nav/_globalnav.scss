@@ -124,7 +124,7 @@ $menu: #036;
   &.active {
     @include translateX(0);
     display: block;
-    z-index: 9;
+    z-index: 11;
 
     .sitemap-label {
       margin-left: -100px;
@@ -189,7 +189,7 @@ $menu: #036;
     background-color: $navy;
     cursor: pointer;
     display: block;
-    z-index: 10;
+    z-index: 12;
 
     &:hover {
       @include transform(translate3d(100%, 0, 0) translateX(-55px));
@@ -212,7 +212,7 @@ $menu: #036;
     padding-left: 3%;
     padding-right: 3%;
     position: fixed;
-    z-index: 10;
+    z-index: 12;
 
     @include breakpoint(tablet) {
       @include rem(left, 110px);

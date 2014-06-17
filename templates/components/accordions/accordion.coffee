@@ -39,4 +39,3 @@ unless window.UOMAccordion
   else
     document.addEventListener 'DOMContentLoaded', ->
       UOMAccordion()
-

@@ -3,6 +3,10 @@
   @include rem(padding-bottom, 30px);
   margin: 0 auto;
 
+  &.hide {
+    display: none;
+  }
+
   aside {
     @include rem(padding-bottom, 30px);
     float: none;
@@ -181,6 +185,7 @@
 
   li {
     @include rem(font-size, 14px);
+    @include rem(height, 110px);
     @include rem(margin, 2px 2px 4px 2px);
     background-color: $palegreen;
     list-style-type: none;
@@ -197,20 +202,9 @@
      -moz-transition-property: opacity;
     transition-property: opacity;
 
-    &.certificates_diplomas {
-      background-color: $bronze;
-    }
-
-    &.research {
-      background-color: $lightestblue;
-    }
-
-    &.phd {
-      background-color: $lightblue;
-    }
-
-    &.hide {
-      opacity: .1;
+    &.item {
+      float: left;
+      position: relative;
     }
 
     @include breakpoint($w-sml) {
@@ -231,10 +225,25 @@
     @include breakpoint($w-lge) {
       width: 19.5%;
     }
+
+    &.certificates_diplomas {
+      background-color: $bronze;
+    }
+
+    &.research {
+      background-color: $lightestblue;
+    }
+
+    &.phd {
+      background-color: $lightblue;
+    }
+
+    &.hide {
+      opacity: .1;
+    }
   }
 
   a {
-    @include rem(height, 110px);
     @include rem(padding, 10px);
     color: $darkgray;
     display: block;

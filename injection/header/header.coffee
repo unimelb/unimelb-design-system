@@ -12,6 +12,8 @@ window.UOMinjectHeader = ->
       <a class="page-header-logo" href="/">Home</a>
       """
       block.addClass('floating')
+      if document.querySelector('.page-inner > .floating').hasClass('reverse')
+        block.addClass('reverse')
 
     else
       # General header

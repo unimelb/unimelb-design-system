@@ -131,6 +131,10 @@
       text-align: center;
       width: 20%;
 
+      a {
+        vertical-align: top;
+      }
+
       &.social-twitter {
         @include rem(padding-top, 1px);
         a {
