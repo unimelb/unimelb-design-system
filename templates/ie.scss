@@ -151,6 +151,12 @@ body [role="sitemap"] {
       text-align: center;
       vertical-align: middle;
     }
+
+    .icon {
+      display: block;
+      float: none;
+      margin: 0 auto;
+    }
   }
 
 
@@ -299,6 +305,13 @@ body [role="sitemap"] {
     position: absolute;
     text-align: center;
     width: 60%;
+
+    @media screen and (min-width: 0) {
+      -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
+      left: 50%;
+      width: auto;
+    }
   }
 }
 
@@ -307,6 +320,10 @@ body [role="sitemap"] {
 
   nav a[data-current]:after {
     border-top-color: #23445a;
+  }
+
+  &.short {
+    filter: none;
   }
 }
 
@@ -327,6 +344,10 @@ ul.ticked-list li:before {
   left: 0;
   margin-left: -22px;
   position: absolute;
+
+  @media screen and (min-width: 0) {
+    content: '';
+  }
 }
 
 .vca ul.ticked-list li:before {

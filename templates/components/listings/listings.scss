@@ -245,6 +245,10 @@
     max-width: 100%;
     padding: 3%;
 
+    @include breakpoint(0) {
+      filter: none;
+    }
+
     strong {
       @include rem(font-size, 40px);
       @include rem(padding-top, 30px);
