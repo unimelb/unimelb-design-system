@@ -282,5 +282,21 @@
       @include rem(margin, 40px);
     }
   }
+
+  &.reverse .page-header-tools a.page-header-icon {
+    color: $navy;
+
+    .search {
+      background-image: url('#{asset_path('header/icon-s.png')}');
+    }
+
+    .login {
+      background-image: url('#{asset_path('header/icon-p.png')}');
+    }
+
+    .menu {
+      background-image: url('#{asset_path('header/menu.png')}');
+    }
+  }
 }
 
