@@ -4,12 +4,15 @@ unless window.UOMListFilter
       constructor: (@el) ->
         t = this
 
-        @isos = new Array
+        if typeof Isotope != 'undefined'
+          @isos = new Array
 
-        for grid, i in document.querySelectorAll('.course-grid')
-          @isos[i] = new Isotope grid,
-            itemSelector: '.item'
-            layoutMode: 'fitRows'
+          for grid, i in document.querySelectorAll('.course-grid')
+            @isos[i] = new Isotope grid,
+              itemSelector: '.item'
+              layoutMode: 'fitRows'
+              masonry:
+                columnWidth: '.item'
 
         @tables = document.querySelectorAll('ul.course-grid')
 
@@ -21,9 +24,10 @@ unless window.UOMListFilter
               else
                 t.hideTable(table, this.getAttribute 'data-tag')
 
-            for iso in t.isos
-              iso.arrange
-                filter: '.item'
+            if typeof Isotope != 'undefined'
+              for iso in t.isos
+                iso.arrange
+                  filter: '.item'
 
             for grid in document.querySelectorAll('.course-section')
               if grid.countSelector('.item') == 0

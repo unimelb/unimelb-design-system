@@ -129,6 +129,7 @@ body {
     @include rem(padding, 260px 0 180px);
     h1 {
       @include rem(padding-bottom, 30px);
+      margin: auto;
     }
   }
 

@@ -91,7 +91,7 @@
       width: 75%;
     }
 
-    .undergrad {
+    .undergraduate {
       color: lighten($green, 30%);
 
       input[type="checkbox"] + label {
@@ -104,7 +104,7 @@
       }
     }
 
-    .postgrad {
+    .certificates_diplomas {
       color: $bronze;
 
       input[type="checkbox"] + label {
@@ -117,7 +117,8 @@
       }
     }
 
-    .masters {
+    .coursework,
+    .research {
       color: $lightestblue;
 
       input[type="checkbox"] + label {
@@ -130,7 +131,7 @@
       }
     }
 
-    .research {
+    .phd {
       color: lighten($lightblue, 10%);
 
       input[type="checkbox"] + label {
@@ -168,9 +169,11 @@
   }
 }
 
-.course-grid {
+[role="main"] .course-grid {
   @extend %clearfix;
+  left: 0;
   margin: 0 3%;
+  padding-left: 0;
 
   -webkit-transition-property: height, width;
      -moz-transition-property: height, width;
@@ -191,6 +194,7 @@
     list-style-type: none;
     opacity: 1;
     padding: 0;
+    width: 100%;
 
     -webkit-transition-duration: 0.4s;
     -moz-transition-duration: 0.4s;
@@ -214,22 +218,23 @@
     }
 
     @include breakpoint($w-mid) {
-      width: 32.333%;
+      width: 31.333%;
     }
 
     @include breakpoint(1100px) {
       margin: .25%;
-      width: 24.5%;
+      width: 23.5%;
     }
 
     @include breakpoint($w-lge) {
-      width: 19.5%;
+      width: 18.5%;
     }
 
     &.certificates_diplomas {
       background-color: $bronze;
     }
 
+    &.coursework,
     &.research {
       background-color: $lightestblue;
     }
@@ -248,6 +253,7 @@
     color: $darkgray;
     display: block;
     font-weight: $light;
+    max-width: 100%;
     text-decoration: none;
     width: 100%;
 

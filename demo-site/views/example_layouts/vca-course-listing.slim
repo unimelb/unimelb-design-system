@@ -19,18 +19,22 @@ div role="main"
               input#c1.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="undergrad"
               label for="c1"
               ' Undergraduate
-            div.postgrad
-              input#c2.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="postgrad"
+            div.certificates_diplomas
+              input#c2.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="certificates_diplomas"
               label for="c2"
-              ' Postgraduate
-            div.masters
-              input#c3.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="masters"
-              label for="c3"
+              ' Certificates/Diplomas
+            div.coursework
+              input#c2.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="coursework"
+              label for="c2"
               ' Masters by Coursework
             div.research
-              input#c4.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="research"
+              input#c3.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="research"
+              label for="c3"
+              ' Masters by Research
+            div.phd
+              input#c4.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="phd"
               label for="c4"
-              ' Reasearch
+              ' PhD
           fieldset.right
             strong Area of interest
             div
@@ -38,126 +42,320 @@ div role="main"
                 option value="-1"
                   | All areas
 
-    .course-section
-      aside
-        h2 Art
-        p When you study Art at the VCA, you will be guided by some of Australia’s most progressive art educators and respected artists within a creative learning environment.
-        a.button-hero View Discipline
-      .bside
-        ul.course-grid
-          li.item.show.postgrad: a href=""
-            ' Graduate Certificate in
-            strong Arts and Community Engagement
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Choreography
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Community Cultural Development
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Contemporary Art
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Film and Television
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Fine Arts (Community Cultural Development)
+    / .course-section
+    /   aside
+    /     h2 Art
+    /     p When you study Art at the VCA, you will be guided by some of Australia’s most progressive art educators and respected artists within a creative learning environment.
+    /     a.button-hero View Discipline
+    /   .bside
+    /     ul.course-grid
+    /       li.item.show.postgrad: a href=""
+    /         ' Graduate Certificate in
+    /         strong Arts and Community Engagement
+    /       li.item.show.masters: a href=""
+    /         ' Master of
+    /         strong Choreography
+    /       li.item.show.masters: a href=""
+    /         ' Master of
+    /         strong Community Cultural Development
+    /       li.item.show.masters: a href=""
+    /         ' Master of
+    /         strong Contemporary Art
+    /       li.item.show.masters: a href=""
+    /         ' Master of
+    /         strong Film and Television
+    /       li.item.show.masters: a href=""
+    /         ' Master of
+    /         strong Fine Arts (Community Cultural Development)
 
     hr.spacer
 
     .course-section
       aside
-        h2 Art
-        p When you study Art at the VCA, you will be guided by some of Australia’s most progressive art educators and respected artists within a creative learning environment.
-        a.button-hero View Discipline
+        h2 Film and Television
       .bside
         ul.course-grid
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Fine Arts (Contemporary Music)
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Fine Arts (Dance)
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Fine Arts (Film and Television)
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Fine Arts (Interdisciplinary Arts Practice)
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Fine Arts (Production)
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Fine Arts (Theatre)
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Fine Arts (Visual Art)
-          li.item.show.undergrad: a href=""
-            ' Postgraduate Diploma in
-            strong Performance Creation
-          li.item.show.research: a href=""
-            ' Doctor of
-            strong Philosophy (Visual or Performing Arts)
+          <li class="undergraduate item">
+              <a href="/study/degrees/bachelor-of-fine-arts-animation">Bachelor of
+                  <strong>Fine Arts (Animation)</strong in bet>
+              </a>
+          </li>
+          <li class="undergraduate item">
+              <a href="/study/degrees/bachelor-of-fine-arts-film-and-television">Bachelor of
+                  <strong>Fine Arts (Film and Television)</strong in bet>
+              </a>
+          </li>
+          <li class="undergraduate item">
+              <a href="/study/degrees/bachelor-of-fine-arts-screenwriting">Bachelor of
+                  <strong>Fine Arts (Screenwriting)</strong in bet>
+              </a>
+          </li>
+          <li class="undergraduate item">
+              <a href="/study/degrees/batchelor-of-fine-arts-film-and-television-honours">Batchelor of
+                  <strong>Fine Arts (Film and Television) (Honours)</strong in bet>
+              </a>
+          </li>
+          <li class="coursework item">
+              <a href="/study/degrees/master-of-film-and-television">Master of
+                  <strong>Film and Television</strong in bet>
+              </a>
+          </li>
+          <li class="coursework item">
+              <a href="/study/degrees/master-of-producing">Master of
+                  <strong>Producing</strong in bet>
+              </a>
+          </li>
+          <li class="coursework item">
+              <a href="/study/degrees/master-of-screenwriting">Master of
+                  <strong>Screenwriting</strong in bet>
+              </a>
+          </li>
+          <li class="research item">
+              <a href="/study/degrees/master-of-fine-arts-film-and-television">Master of
+                  <strong>Fine Arts (Film and Television)</strong in bet>
+              </a>
+          </li>
+          <li class="phd item">
+              <a href="/study/degrees/doctor-of-philosophy-film-and-television">Doctor of
+                  <strong>Philosophy (Film and Television)</strong in bet>
+              </a>
+          </li>
 
     hr.spacer
 
     .course-section
       aside
-        h2 Art
-        p When you study Art at the VCA, you will be guided by some of Australia’s most progressive art educators and respected artists within a creative learning environment.
-        a.button-hero View Discipline
+        h2 Dance
       .bside
         ul.course-grid
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Producing
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Production Design for Screen
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Screenwriting
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Transnational Arts
-          li.item.show.undergradø: a href=""
-            ' Graduate Certificate in
-            strong Visual Art
-          li.item.show.postgrad: a href=""
-            ' Postgraduate Certificate in
-            strong Voice Studies
-          li.item.show.undergrad: a href=""
-            ' Postgraduate Diploma in
-            strong Voice Studies
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Writing for Performance
-          li.item.show.undergrad: a href=""
-            ' Graduate Diploma in
-            strong Guided Imagery and Music
-          li.item.show.undergrad: a href=""
-            ' Graduate Diploma in
-            strong Music
-          li.item.show.postgrad: a href=""
-            ' Graduate Certificate in
-            strong Music
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Music (Opera Performance)
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Music (Performance Teaching)
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Music (Research)
-          li.item.show.masters: a href=""
-            ' Master of
-            strong Music Therapy
-          li.item.show.research: a href=""
-            ' Doctor of
-            strong Philosophy (Music)
+          <li class="undergraduate item">
+              <a href="/study/degrees/bachelor-of-fine-arts-dance">Bachelor of
+                  <strong>Fine Arts (Dance)</strong in bet>
+              </a>
+          </li>
+          <li class="undergraduate item">
+              <a href="/study/degrees/bachelor-of-fine-arts-dance-honours">Bachelor of
+                  <strong>Fine Arts (Dance) (Honours)</strong in bet>
+              </a>
+          </li>
+          <li class="coursework item">
+              <a href="/study/degrees/master-of-choreography">Master of
+                  <strong>Choreography</strong in bet>
+              </a>
+          </li>
+          <li class="research item">
+              <a href="/study/degrees/master-of-fine-arts-dance">Master of
+                  <strong>Fine Arts (Dance)</strong in bet>
+              </a>
+          </li>
+          <li class="phd item">
+              <a href="/study/degrees/doctor-of-philosophy-dance">Doctor of
+                  <strong>Philosophy (Dance)</strong in bet>
+              </a>
+          </li>
+
+    hr.spacer
+
+    .course-section
+      aside
+        h2 Contemporary Music
+      .bside
+        ul.course-grid
+          <li class="undergraduate item">
+              <a href="/study/degrees/bachelor-of-fine-arts-contemporary-music">Bachelor of
+                  <strong>Fine Arts (Contemporary Music)</strong in bet>
+              </a>
+          </li>
+          <li class="undergraduate item">
+              <a href="/study/degrees/bachelor-of-fine-arts-contemporary-music-honours">Bachelor of
+                  <strong>Fine Arts (Contemporary Music) (Honours)</strong in bet>
+              </a>
+          </li>
+          <li class="research item">
+              <a href="/study/degrees/master-of-fine-arts-contemporary-music">Master of
+                  <strong>Fine Arts (Contemporary Music)</strong in bet>
+              </a>
+          </li>
+          <li class="phd item">
+              <a href="/study/degrees/doctor-of-philosophy-contemporary-music">Doctor of
+                  <strong>Philosophy (Contemporary Music)</strong in bet>
+              </a>
+          </li>
+
+    hr.spacer
+
+    .course-section
+      aside
+        h2 Music Theatre
+      .bside
+        ul.course-grid
+          <li class="undergraduate item">
+              <a href="/study/degrees/bachelor-of-fine-arts-music-theatre">Bachelor of
+                  <strong>Fine Arts (Music Theatre)</strong in bet>
+              </a>
+          </li>
+
+    hr.spacer
+
+    .course-section
+      aside
+        h2 Production
+      .bside
+        ul.course-grid
+          <li class="undergraduate item">
+              <a href="/study/degrees/bachelor-of-fine-arts-production">Bachelor of
+                  <strong>Fine Arts (Production)</strong in bet>
+              </a>
+          </li>
+          <li class="coursework item">
+              <a href="/study/degrees/master-of-production-design-for-screen">Master of
+                  <strong>Production Design for Screen</strong in bet>
+              </a>
+          </li>
+          <li class="phd item">
+              <a href="/study/degrees/doctor-of-philosophy-production">Doctor of
+                  <strong>Philosophy (Production)</strong in bet>
+              </a>
+          </li>
+
+    hr.spacer
+
+    .course-section
+      aside
+        h2 Theatre
+      .bside
+        ul.course-grid
+          <li class="undergraduate item">
+              <a href="/study/degrees/bachelor-of-fine-arts-theatre-practice">Bachelor of
+                  <strong>Fine Arts (Theatre Practice)</strong in bet>
+              </a>
+          </li>
+          <li class="certificates_diplomas item">
+              <a href="/study/degrees/postgraduate-certificate-in-voice-studies">Postgraduate Certificate in
+                  <strong>Voice Studies</strong in bet>
+              </a>
+          </li>
+          <li class="certificates_diplomas item">
+              <a href="/study/degrees/postgraduate-diploma-in-voice-studies">Postgraduate Diploma in
+                  <strong>Voice Studies</strong in bet>
+              </a>
+          </li>
+          <li class="coursework item">
+              <a href="/study/degrees/master-of-writing-for-performance">Master of
+                  <strong>Writing for Performance</strong in bet>
+              </a>
+          </li>
+          <li class="research item">
+              <a href="/study/degrees/master-of-fine-arts-theatre-practice">Master of
+                  <strong>Fine Arts (Theatre Practice)</strong in bet>
+              </a>
+          </li>
+          <li class="phd item">
+              <a href="/study/degrees/doctor-of-philosophy-theatre">Doctor of
+                  <strong>Philosophy (Theatre)</strong in bet>
+              </a>
+          </li>
+
+    hr.spacer
+
+    .course-section
+      aside
+        h2 Visual Art
+      .bside
+        ul.course-grid
+          <li class="undergraduate item">
+              <a href="/study/degrees/bachelor-of-fine-arts-visual-art">Bachelor of
+                  <strong>Fine Arts (Visual Art)</strong in bet>
+              </a>
+          </li>
+          <li class="undergraduate item">
+              <a href="/study/degrees/bachelor-of-fine-arts-visual-art-honours">Bachelor of
+                  <strong>Fine Arts (Visual Art) (Honours)</strong in bet>
+              </a>
+          </li>
+          <li class="certificates_diplomas item">
+              <a href="/study/degrees/graduate-certificate-in-visual-art">Graduate Certificate in
+                  <strong>Visual Art</strong in bet>
+              </a>
+          </li>
+          <li class="coursework item">
+              <a href="/study/degrees/master-of-contemporary-art">Master of
+                  <strong>Contemporary Art</strong in bet>
+              </a>
+          </li>
+          <li class="research item">
+              <a href="/study/degrees/master-of-fine-arts-visual-art">Master of
+                  <strong>Fine Arts (Visual Art)</strong in bet>
+              </a>
+          </li>
+          <li class="phd item">
+              <a href="/study/degrees/doctor-of-philosophy-visual-art">Doctor of
+                  <strong>Philosophy (Visual Art)</strong in bet>
+              </a>
+          </li>
+
+    hr.spacer
+
+    .course-section
+      aside
+         h2 Community Cultural Development
+      .bside
+        ul.course-grid
+          <li class="certificates_diplomas item">
+              <a href="/study/degrees/graduate-certificate-in-arts-and-community-engagement">Graduate Certificate in
+                  <strong>Arts and Community Engagement</strong in bet>
+              </a>
+          </li>
+          <li class="coursework item">
+              <a href="/study/degrees/master-of-community-cultural-development">Master of
+                  <strong>Community Cultural Development</strong in bet>
+              </a>
+          </li>
+          <li class="research item">
+              <a href="/study/degrees/master-of-fine-arts-community-cultural-development">Master of
+                  <strong>Fine Arts (Community Cultural Development)</strong in bet>
+              </a>
+          </li>
+          <li class="phd item">
+              <a href="/study/degrees/doctor-of-philosophy-community-cultural-development">Doctor of
+                  <strong>Philosophy (Community Cultural Development)</strong in bet>
+              </a>
+          </li>
+
+    hr.spacer
+
+    .course-section
+      aside
+        h2 Interdisciplinary Arts Practice
+      .bside
+        ul.course-grid
+          <li class="coursework item">
+              <a href="/study/degrees/master-of-transnational-arts">Master of
+                  <strong>Transnational Arts</strong in bet>
+              </a>
+          </li>
+          <li class="research item">
+              <a href="/study/degrees/master-of-fine-arts-interdisciplinary-arts-practice">Master of
+                  <strong>Fine Arts (Interdisciplinary Arts Practice)</strong in bet>
+              </a>
+          </li>
+          <li class="phd item">
+              <a href="/study/degrees/doctor-of-philosophy-interdisciplinary-arts-practice">Doctor of
+                  <strong>Philosophy (Interdisciplinary Arts Practice)</strong in bet>
+              </a>
+          </li>
+
+    hr.spacer
+
+    .course-section
+      aside
+      .bside
+        ul.course-grid
+          <li class="research item">
+              <a href="/study/degrees/master-of-fine-arts-production">Master of
+                  <strong>Fine Arts (Production)</strong in bet>
+              </a>
+          </li>
 
     footer.cta
       ul.quarter
