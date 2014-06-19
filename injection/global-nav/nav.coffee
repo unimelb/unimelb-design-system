@@ -155,11 +155,11 @@ window.UOMinjectGlobalNav = ->
       </fieldset>
     </form>
     <ul class="quicklinks">
-      <li><a href="/pages/thanks.html"><span class="icon faculties"></span> Faculties and Graduate Schools</a></li><!--
-      --><li><a href="/pages/thanks.html"><span class="icon library"></span> Library</a></li><!--
-      --><li><a href="/pages/thanks.html"><span class="icon contact"></span> Contact us</a></li><!--
-      --><li><a href="/pages/thanks.html"><span class="icon maps"></span> Maps</a></li><!--
-      --><li><a href="/pages/thanks.html"><span class="icon support"></span> Support the Campaign</a></li>
+      <li><a href="http://www.unimelb.edu.au/az/faculties.html"><span class="icon faculties"></span> Faculties and Graduate Schools</a></li><!--
+      --><li><a href="http://library.unimelb.edu.au/"><span class="icon library"></span> Library</a></li><!--
+      --><li><a href="http://www.unimelb.edu.au/contact/"><span class="icon contact"></span> Contact us</a></li><!--
+      --><li><a href="http://maps.unimelb.edu.au/"><span class="icon maps"></span> Maps</a></li><!--
+      --><li><a href="http://campaign.unimelb.edu.au/"><span class="icon support"></span> Support the Campaign</a></li>
     </ul>
     <div>
       <div class="col-3">
