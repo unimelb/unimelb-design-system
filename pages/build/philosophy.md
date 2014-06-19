@@ -16,7 +16,7 @@ Further to what is normally considered, doing splendid things online requires th
 
 ### The opportunity
 
-Like removing fast food from a diet and replacing it with more wholesome alternatives, we have the opportunity to create something that removes many of the blights that have plagued our websites - banner ads, carousels, pages of links leading to more pages of links - in favour of considered executions that achieve the same purpose without disrupting the user experience. 
+Like removing fast food from a diet and replacing it with more wholesome alternatives, we have the opportunity to create something that removes many of the blights that have plagued our websites - banner ads, unnecessary carousels, pages of links leading to more pages of links - in favour of considered executions that achieve the same purpose without disrupting the user experience. 
 
 We also have the opportunity to introduce the concept of adaptive flux to our websites through the templates. From a visual and content perspective, this means that a website can display itself differently based off what we know about you, or your specific context - for example, if you are a student, student based content should be prioritised. If you are reading at night time, the design should be modified to make it easier on your eyes (e.g. light text on dark background at night as opposed to dark text on light background during the day). These are the sorts of considerations that will make our website truly magnificent when compared to other websites. It sounds lofty, but it is possible. 
 

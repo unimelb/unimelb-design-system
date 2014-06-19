@@ -164,79 +164,80 @@ window.UOMinjectGlobalNav = ->
     <div>
       <div class="col-3">
         <div>
-          <h2>Study at Melbourne</h2>
+          <h2><a href="http://coursesearch.unimelb.edu.au">Study at Melbourne</a></h2>
           <ul>
-            <li><a href="#">Undergraduate</a></li>
-            <li><a href="#">Graduate coursework</a></li>
-            <li><a href="#">PhD &amp; research programs</a></li>
-            <li><a href="#">International</a></li>
-            <li><a href="#">Professional, executive &amp; community education</a></li>
-            <li><a href="#">Schools &amp; parents</a></li>
-            <li><a href="#">Student life @ Melbourne</a></li>
-            <li><a href="#">Campus &amp; facilities</a></li>
+            <li><a href="http://coursesearch.unimelb.edu.au/undergrad">Undergraduate study</a></li>
+            <li><a href="http://coursesearch.unimelb.edu.au/grad">Graduate study</a></li>
+            <li><a href="http://futurestudents.unimelb.edu.au/">Future students</a></li>
+            <li><a href="http://futurestudents.unimelb.edu.au/admissions">Admissions, fees &amp; applications</a></li>
+            <li><a href="http://futurestudents.unimelb.edu.au/info/international">International students</a></li>
+            <li><a href="http://futurestudents.unimelb.edu.au/admissions/scholarships">Scholarships</a></li>
+            <li><a href="http://futurestudents.unimelb.edu.au/courses/single_subject_study">Single subjects &amp; short courses</a></li>
+            <li><a href="http://www.coursera.org/unimelb">Online learning with Coursera</a></li>
           </ul>
         </div>
         <div>
-          <h2>About us</h2>
+          <h2><a href="http://about.unimelb.edu.au/home">About us</a></h2>
           <ul>
-            <li><a href="#">International connections</a></li>
-            <li><a href="#">Governance &amp; leadership</a></li>
-            <li><a href="#">Strategy &amp; vision</a></li>
-            <li><a href="#">Profile &amp; achievements</a></li>
-            <li><a href="#">Faculties &amp; graduate schools</a></li>
-            <li><a href="#">Policy &amp; publications</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">Events</a></li>
+            <li class="current"><a href="http://about.unimelb.edu.au/strategy-and-leadership">Strategy and leadership</a></li>
+            <li><a href="http://about.unimelb.edu.au/tradition-of-excellence">Tradition of excellence</a></li>
+            <li><a href="http://about.unimelb.edu.au/international-connections">International connections</a>
+            </li>
+            <li><a href="http://about.unimelb.edu.au/campuses-and-facilities">Campuses and facilities</a></li>
+            <li><a href="http://about.unimelb.edu.au/governance-and-leadership">Structure and governance</a></li>
+            <li><a href="http://about.unimelb.edu.au/policy-and-publications">Policy and publications</a></li>
+            <li><a href="http://about.unimelb.edu.au/careers">Careers at Melbourne</a></li>
+            <li><a href="http://newsroom.unimelb.edu.au">News</a></li>
+            
           </ul>
         </div>
         <div>
-          <h2>Research</h2>
+          <h2><a href="http://unimelb.edu.au/research/">Research</a></h2>
           <ul>
-            <li><a href="#">About research at Melbourne</a></li>
-            <li><a href="#">Working at Melbourne</a></li>
-            <li><a href="#">Research centres, institutes &amp; offices</a></li>
-            <li><a href="#">Current research programs &amp; projects</a></li>
-            <li><a href="#">Scholarships &amp; support</a></li>
-            <li><a href="#">PhD &amp; research programs</a></li>
-            <li><a href="#">Commercial research</a></li>
-            <li><a href="#">Research services &amp; collaboration</a></li>
+            <li><a href="http://www.unimelb.edu.au/research/faculty-and-graduate-school-research-areas.html">Faculty and graduate school research areas</a></li>
+            <li><a href="http://ri.unimelb.edu.au/">Research institutes</a></li>
+            <li><a href="http://www.unimelb.edu.au/research/research-institutes-centres.html">Research Centres</a></li>
+            <li><a href="http://findanexpert.unimelb.edu.au/">Find an expert or supervisor</a></li>
+            <li><a href="http://futurestudents.unimelb.edu.au/admissions/applications/research">Apply for graduate research</a></li>
+            <li><a href="http://services.unimelb.edu.au/scholarships/research">Graduate research scholarships</a></li>
+            <li><a href="http://gradresearch.unimelb.edu.au/">Information for graduate researchers</a></li>
           </ul>
         </div>
       </div>
       <div class="col-3">
         <div>
-          <h2>Engagement</h2>
+          <h2><a href="http://unimelb.edu.au/engage/">Engagement</a></h2>
           <ul>
-            <li><a href="#">Outreach programs</a></li>
-            <li><a href="#">The arts &amp; culture</a></li>
-            <li><a href="#">About engagement</a></li>
-            <li><a href="#">Partnerships</a></li>
-            <li><a href="#">Media</a></li>
-            <li><a href="#">Why Melbourne?</a></li>
+            <li><a href="http://events.unimelb.edu.au">Events</a></li>
+            <li><a href="http://www.unimelb.edu.au/alumni">Alumni</a></li>
+            <li><a href="http://engage.unimelb.edu.au/community-engagement">Community</a></li>
+            <li><a href="http://engage.unimelb.edu.au/global-engagement">Global Engagement</a></li>
+            <li><a href="http://businessconnect.unimelb.edu.au/">Business &amp; Industry</a></li>
+            <li><a href="http://engage.unimelb.edu.au/cultural-engagement">Arts &amp; Culture</a></li>
+            <li><a href="http://www.sport.unimelb.edu.au/facilities/index.html">Sports Facilities</a></li>
+            <li><a href="http://services.unimelb.edu.au/venuehire/">Venue Hire</a></li>
           </ul>
         </div>
         <div>
-          <h2>Alumni &amp; friends</h2>
+          <h2><a href="http://alumni.unimelb.edu.au">Alumni &amp; friends</a></h2>
           <ul>
-            <li><a href="#">Benefits</a></li>
-            <li><a href="#">Giving</a></li>
-            <li><a href="#">Your faculty</a></li>
-            <li><a href="#">Get involved</a></li>
-            <li><a href="#">Global alumni network</a></li>
-            <li><a href="#">Career Centre</a></li>
-            <li><a href="#">Future study</a></li>
+            <li><a href="http://alumni.unimelb.edu.au/benefits-services/alumni-benefits">Benefits</a></li>
+            <li><a href="http://campaign.unimelb.edu.au">Giving</a></li>
+            <li><a href="http://alumni.unimelb.edu.au/get-involved">Get involved</a></li>
+            <li><a href="http://alumni.unimelb.edu.au/my-network/global-alumni-network">Global alumni network</a></li>
+            <li><a href="http://alumni.unimelb.edu.au/career-centre">Career Centre</a></li>
+            <li><a href="http://alumni.unimelb.edu.au/career-centre/future-study">Future study</a></li>
           </ul>
         </div>
         <div>
-          <h2>Business &amp; organisations</h2>
+          <h2><a href="http://www.unimelb.edu.au/contact/">Contact & Maps</a></h2>
           <ul>
-            <li><a href="#">Find an expert</a></li>
-            <li><a href="#">Areas of expertise</a></li>
-            <li><a href="#">Consultancy</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Professional development &amp; custom programs</a></li>
-            <li><a href="#">Technology commercialisation</a></li>
-            <li><a href="#">Facilities &amp; technology for hire</a></li>
+            <li><a href="http://www.research.unimelb.edu.au/contact">Research enquiries</a></li>
+            <li><a href="http://newsroom.melbourne.edu/about">Media enquiries</a></li>
+            <li><a href="http://www.commercial.unimelb.edu.au/contact-us/">Industry and business enquiries</a></li>
+            <li><a href="http://directory.unimelb.edu.au">Find a staff member</a></li>
+            <li><a href="http://maps.unimelb.edu.au">Find a location on campus</a></li>
+            <li><a href="http://pcs.unimelb.edu.au/traffic-and-parking/">Traffic, parking &amp; bicycles</a></li>
           </ul>
         </div>
       </div>
