@@ -63,8 +63,8 @@
   z-index: 1;
 
   &.on {
-    @include opacity(.5);
     display: block;
     z-index: 3;
+    @include opacity(.5);
   }
 }

@@ -115,6 +115,7 @@ input[type="button"] {
   @extend %raisedbutton;
   @extend %raisedbutton.cta;
   @extend %flatbutton.cta;
+  @include appearance(none);
   width: auto;
 }
 

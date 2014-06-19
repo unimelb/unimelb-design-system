@@ -5,13 +5,6 @@
   transition: $props;
 }
 
-@mixin appearance($a) {
-  -webkit-appearance: $a;
-  -moz-appearance: $a;
-  -ms-appearance: $a;
-  appearance: $a;
-}
-
 @mixin animate-once($n) {
   -webkit-animation: $n .4s .1s 1 ease-in-out;
   -moz-animation: $n .4s .1s 1 ease-in-out;
@@ -315,6 +308,11 @@ select {
   cursor: pointer;
   line-height: 1.55;
   width: 100%;
+
+  option {
+    background-color: $white;
+    color: $black;
+  }
 
   &::-ms-expand {
     display: none;

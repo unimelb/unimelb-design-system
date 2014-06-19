@@ -1,10 +1,54 @@
 $menu: #036;
 
+%smooth-translate {
+  -moz-transition: -moz-transform .3s ease;
+  -ms-transition: -ms-transform .3s ease;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+}
+
+
+.page-inner {
+  @extend %smooth-translate;
+  @include translateX(0);
+  min-height: 100%;
+  position: relative;
+  z-index: 2;
+
+  &.active {
+    @include transform(translate(-100%, 0) translate(30px, 0));
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    @include breakpoint(tablet) {
+      @include translateX(-340px);
+    }
+  }
+
+  &.global-active {
+    @include transform(translate(-100%, 0));
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .modal__blanket.on {
+      position: absolute;
+    }
+
+    @include breakpoint(tablet) {
+      @include transform(translate(-100%, 0) translate(90px, 0));
+    }
+  }
+}
+
 [role="navigation"] {
+  @extend %smooth-translate;
   @include rem(padding, 0 0 30px);
   @include rem(right, 40px);
   @include rem(width, 250px);
-  @include translateX(0);
+  @include transform(translate(100%, 0) translate(110px, 0));
   background-color: $menu;
   box-shadow: 1px 0 12px 3px rgba($black, .6);
   color: $white;
@@ -14,8 +58,42 @@ $menu: #036;
   top: 0;
   z-index: 1;
 
+  &.active {
+    @include translateX(0);
+    display: block;
+    z-index: 11;
+
+    .sitemap-label {
+      margin-left: -100px;
+
+      @include breakpoint(tablet) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.global-active {
+    @include transform(translate(-100%, 0));
+    display: block;
+    left: 0;
+
+    @include breakpoint(tablet) {
+      @include transform(translate(-100%, 0) translate(110px, 0));
+    }
+  }
+
+  &.no-js {
+    @extend %wrapper;
+    background-color: $navy;
+    box-shadow: 0 0 0;
+    display: block;
+    position: static;
+    width: auto;
+  }
+
   @include breakpoint(tablet) {
-    display: none;
+    @include rem(right, 40px);
+    @include rem(width, 300px);
   }
 
   ul {
@@ -120,56 +198,14 @@ $menu: #036;
       z-index: 9;
     }
   }
-
-  &.active {
-    @include translateX(0);
-    display: block;
-    z-index: 11;
-
-    .sitemap-label {
-      margin-left: -100px;
-
-      @include breakpoint(tablet) {
-        margin-left: 0;
-      }
-    }
-  }
-
-  &.global-active {
-    @include transform(translate(-100%, 0));
-    -webkit-transition: -webkit-transform .3s ease;
-    -moz-transition:    -moz-transform .3s ease;
-    -ms-transition:     -ms-transform .3s ease;
-    transition:         transform .3s ease;
-
-    display: block;
-    left: 0;
-
-    @include breakpoint(tablet) {
-      @include transform(translate(-100%, 0) translate(110px, 0));
-    }
-  }
-
-  &.no-js {
-    @extend %wrapper;
-    background-color: $navy;
-    box-shadow: 0 0 0;
-    display: block;
-    position: static;
-    width: auto;
-  }
-
-  @include breakpoint(tablet) {
-    @include rem(right, 40px);
-    @include rem(width, 300px);
-  }
 }
 
 [role="sitemap"] {
   @extend %wrapper;
+  @extend %smooth-translate;
   @include rem(padding, 0 0 30px);
+  @include translateX(100%);
   box-shadow: 3px 0 6px rgba($black, .4) inset;
-  display: none;
   height: 100%;
   margin: 0;
   max-width: 100%;
@@ -182,10 +218,6 @@ $menu: #036;
   &.reveal {
     @include rem(padding-left, 60px);
     @include transform(translate3d(100%, 0, 0) translateX(-40px));
-    -webkit-transition: -webkit-transform .3s ease;
-    -moz-transition:    -moz-transform .3s ease;
-    -ms-transition:     -ms-transform .3s ease;
-    transition:         transform .3s ease;
     background-color: $navy;
     cursor: pointer;
     display: block;
@@ -206,9 +238,10 @@ $menu: #036;
   }
 
   &.active {
-    display: block;
+    @include translateX(0);
     left: 0;
     overflow: auto;
+    –webkit-overflow-scrolling: touch;
     padding-left: 3%;
     padding-right: 3%;
     position: fixed;
@@ -424,7 +457,7 @@ $menu: #036;
     }
   }
 
-  a.sitemap-label {
+  .sitemap-label {
     @include rem(font-size, 15px);
     @include rem(padding-left, 65px);
     @include rem(padding-top, 200px);

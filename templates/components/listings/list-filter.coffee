@@ -35,7 +35,7 @@ unless window.UOMListFilter
       redraw: ->
         for table in @tables
           category = table.parentNode.parentNode
-          if table.countSelector('.item') > 0 and (@curr == '-1' or category.getAttribute('data-category').indexOf(@curr) != -1)
+          if table.countSelector('.item') > 0 and (@curr == '-1' or (category.hasAttribute('data-category') and @curr in category.getAttribute('data-category').split('|')))
             category.removeClass('hide')
           else
             category.addClass('hide')

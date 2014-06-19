@@ -46,8 +46,9 @@ window.UOMinjectGlobalNav = ->
         document.querySelector('.sitemap-label').addEventListener 'click', (e) ->
           e.preventDefault()
           t.blanket.addClass 'on'
-          t.page.toggleClass('global-active')
-          t.localnav.toggleClass('global-active')
+          t.page.addClass('global-active')
+          t.localnav.removeClass('active')
+          t.localnav.addClass('global-active')
           t.sitemap.toggleClass('active')
           t.sitemap.removeClass('reveal')
 
@@ -62,8 +63,9 @@ window.UOMinjectGlobalNav = ->
 
         @localsitemaptrigger.addEventListener 'click', (e) ->
           e.preventDefault()
-          t.page.toggleClass('global-active')
-          t.localnav.toggleClass('global-active')
+          t.page.addClass('global-active')
+          t.localnav.removeClass('active')
+          t.localnav.addClass('global-active')
           t.sitemap.toggleClass('active')
           t.sitemap.removeClass('reveal')
 
@@ -97,10 +99,10 @@ window.UOMinjectGlobalNav = ->
         @searchtrigger.addEventListener 'click', (e) ->
           e.preventDefault()
           t.blanket.toggleClass 'on'
-          t.page.toggleClass('global-active')
+          t.page.addClass('global-active')
           t.localnav.removeClass('active')
-          t.localnav.toggleClass('global-active')
-          t.sitemap.toggleClass('active')
+          t.localnav.addClass('global-active')
+          t.sitemap.addClass('active')
           t.sitemap.removeClass('reveal')
 
   # Move local nav outside page container
@@ -143,7 +145,7 @@ window.UOMinjectGlobalNav = ->
   nav = document.createElement('div')
   nav.setAttribute('role', 'sitemap')
   nav.innerHTML = """
-    <a class="sitemap-label">University Sitemap</a>
+    <div class="sitemap-label">University Sitemap</div>
     <a class="close-button" href="">Close</a>
     <h2 class="logo">University of Melbourne</h2>
     <form action="http://search.unimelb.edu.au" method="get">
@@ -179,16 +181,15 @@ window.UOMinjectGlobalNav = ->
         <div>
           <h2><a href="http://about.unimelb.edu.au/home">About us</a></h2>
           <ul>
-            <li class="current"><a href="http://about.unimelb.edu.au/strategy-and-leadership">Strategy and leadership</a></li>
+            <li><a href="http://about.unimelb.edu.au/strategy-and-leadership">Strategy and leadership</a></li>
             <li><a href="http://about.unimelb.edu.au/tradition-of-excellence">Tradition of excellence</a></li>
-            <li><a href="http://about.unimelb.edu.au/international-connections">International connections</a>
-            </li>
+            <li><a href="http://about.unimelb.edu.au/international-connections">International connections</a></li>
             <li><a href="http://about.unimelb.edu.au/campuses-and-facilities">Campuses and facilities</a></li>
             <li><a href="http://about.unimelb.edu.au/governance-and-leadership">Structure and governance</a></li>
             <li><a href="http://about.unimelb.edu.au/policy-and-publications">Policy and publications</a></li>
             <li><a href="http://about.unimelb.edu.au/careers">Careers at Melbourne</a></li>
             <li><a href="http://newsroom.unimelb.edu.au">News</a></li>
-            
+
           </ul>
         </div>
         <div>

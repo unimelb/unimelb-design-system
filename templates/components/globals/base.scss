@@ -11,43 +11,6 @@ body {
   }
 }
 
-.page-inner {
-  @include translateX(0);
-  background-color: $navy;
-  box-shadow: 1px 0 12px 3px rgba($black, .6);
-  min-height: 100%;
-  position: relative;
-  z-index: 2;
-
-  &.active {
-    @include transform(translate(-100%, 0) translate(30px, 0));
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-
-    @include breakpoint(tablet) {
-      @include translateX(-340px);
-    }
-  }
-
-  &.global-active {
-    @include transform(translate(-100%, 0));
-    -webkit-transition: -webkit-transform .3s ease;
-    -moz-transition:    -moz-transform .3s ease;
-    -ms-transition:     -ms-transform .3s ease;
-    transition:         transform .3s ease;
-
-    position: fixed;
-    top: 0;
-    width: 100%;
-
-    @include breakpoint(tablet) {
-      @include transform(translate(-100%, 0) translate(90px, 0));
-    }
-  }
-}
-
 .clearfix {
   @extend %clearfix;
 }
