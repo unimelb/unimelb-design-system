@@ -260,6 +260,7 @@
       @include rem(font-size, 18px);
       color: $white;
       font-weight: $thin;
+      max-width: 100%;
       padding: 0;
     }
   }

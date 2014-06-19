@@ -4,17 +4,19 @@ unless window.UOMListFilter
       constructor: (@el) ->
         t = this
 
+        @tables = document.querySelectorAll('ul.course-grid')
+        @select = @el.querySelector('select')
+        @curr = @select.value
+
         if typeof Isotope != 'undefined'
           @isos = new Array
 
-          for grid, i in document.querySelectorAll('.course-grid')
-            @isos[i] = new Isotope grid,
+          for table, i in @tables
+            @isos[i] = new Isotope table,
               itemSelector: '.item'
               layoutMode: 'fitRows'
               masonry:
                 columnWidth: '.item'
-
-        @tables = document.querySelectorAll('ul.course-grid')
 
         for filter in @el.querySelectorAll('input.checkbox')
           filter.addEventListener 'change', (e) ->
@@ -24,16 +26,24 @@ unless window.UOMListFilter
               else
                 t.hideTable(table, this.getAttribute 'data-tag')
 
-            if typeof Isotope != 'undefined'
-              for iso in t.isos
-                iso.arrange
-                  filter: '.item'
+            t.redraw()
 
-            for grid in document.querySelectorAll('.course-section')
-              if grid.countSelector('.item') == 0
-                grid.addClass('hide')
-              else
-                grid.removeClass('hide')
+        @select.addEventListener 'change', (e) ->
+          t.curr = this.value
+          t.redraw()
+
+      redraw: ->
+        for table in @tables
+          category = table.parentNode.parentNode
+          if table.countSelector('.item') > 0 and (@curr == '-1' or category.getAttribute('data-category').indexOf(@curr) != -1)
+            category.removeClass('hide')
+          else
+            category.addClass('hide')
+
+        if typeof Isotope != 'undefined'
+          for iso in @isos
+            iso.arrange
+              filter: '.item'
 
       showTable: (table, tag) ->
         for el in table.querySelectorAll('li')

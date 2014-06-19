@@ -528,6 +528,10 @@ h3 {
   }
 }
 
+.small {
+  @include rem(font-size, 12px);
+}
+
 .subtitle {
   @include rem(font-size, 15px);
   @include rem(letter-spacing, 2px);

@@ -3,7 +3,8 @@
   @include rem(padding-bottom, 30px);
   margin: 0 auto;
 
-  &.hide {
+  &.hide,
+  &.hide + hr.spacer {
     display: none;
   }
 
@@ -253,6 +254,7 @@
     color: $darkgray;
     display: block;
     font-weight: $light;
+    height: 100%;
     max-width: 100%;
     text-decoration: none;
     width: 100%;
