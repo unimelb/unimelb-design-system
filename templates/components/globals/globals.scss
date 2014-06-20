@@ -92,8 +92,3 @@ $w-lge:        1400px;
   background: linear-gradient(to left, rgba($cyan, 0) 66%, rgba($cyan, .9) 100%); // /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=1); // /* IE6-9 */
 }
-
-%background-size-polyfill {
-  -ms-behavior: url("#{asset_path('backgroundsize.min.htc')}");
-  behavior: url("#{asset_path('backgroundsize.min.htc')}");
-}

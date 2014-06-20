@@ -47,7 +47,7 @@ namespace :injection do
       end
     end
     t.output      = INJECTION_BUILD_DIR
-    t.assets      = %w{*.htc *.eot *.svg *.ttf *.woff *.png *.jpg *.jpeg injection.js injection.css}
+    t.assets      = %w{*.eot *.svg *.ttf *.woff *.png *.jpg *.jpeg injection.js injection.css}
     t.logger      = Logger.new($stdout)
     t.log_level   = :debug
     t.keep        = 0

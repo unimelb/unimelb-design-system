@@ -330,8 +330,6 @@ $menu: #036;
       float: left;
 
       @include breakpoint(tablet) {
-        -ms-behavior: '';
-        behavior: '';
         float: none;
         margin-left: auto;
         margin-right: auto;
@@ -451,8 +449,6 @@ $menu: #036;
     text-indent: -9999em;
 
     @include breakpoint(tablet) {
-      -ms-behavior: none;
-      behavior: none;
       float: left;
     }
   }
@@ -573,8 +569,6 @@ $menu: #036;
     .icon-staff {
       @include rem(height, 100px);
       @include rem(width, 100px);
-      -ms-behavior: url("#{asset_path('backgroundsize.min.htc')}");
-      behavior: url("#{asset_path('backgroundsize.min.htc')}");
       background-image: url("#{asset_path('header/icon-p-b.png')}");
       background-position: center;
       background-repeat: no-repeat;

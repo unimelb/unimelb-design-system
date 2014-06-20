@@ -144,7 +144,6 @@ body {
   font-weight: $regular;
 
   header {
-    @extend %background-size-polyfill;
     @include rem(margin-bottom, 30px);
     @include rem(min-height, 144px);
     background-color: $black;
@@ -530,7 +529,6 @@ li {
 }
 
 .fullwidth {
-  @extend %background-size-polyfill;
   @include rem(height, 500px);
   background-color: transparent;
   background-position: center 0;

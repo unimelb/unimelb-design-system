@@ -221,8 +221,6 @@ body [role="sitemap"] {
   a.page-header-logo {
     background-image: url("#{asset_path('components/header/logo.png')}");
     background-size: cover;
-    -ms-behavior: url("#{asset_path('backgroundsize.min.htc')}");
-    behavior: url("#{asset_path('backgroundsize.min.htc')}");
   }
 }
 

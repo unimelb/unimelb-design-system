@@ -119,8 +119,16 @@ window.UOMinjectGlobalNav = ->
     document.body.appendChild(localnav)
 
     for group in localnav.querySelectorAll('a')
-      if group.nextSibling and group.nextSibling.nodeName == 'UL'
-        childgroup = group.nextSibling
+
+      elements = []
+      for node in group.parentNode.childNodes
+        if node.nodeType==1 and !node.hasClass('sitemap-link') and node.nodeName != 'H2'
+          elements.push node
+
+      console.log elements
+
+      if elements.length > 1
+        childgroup = elements[1]
 
         back = document.createElement 'li'
         back.addClass 'back'

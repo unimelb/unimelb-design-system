@@ -226,7 +226,6 @@
   }
 
   a {
-    @extend %background-size-polyfill;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
