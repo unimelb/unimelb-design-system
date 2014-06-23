@@ -1,0 +1,32 @@
+@mixin transform($props) {
+  -ms-transform: $props;
+  transform: $props;
+}
+
+@mixin breakpoint($point) {
+  @media screen and (min-width: 1099px) {
+    & {
+      @content;
+    }
+  }
+}
+
+.page-inner {
+  @include transform(translate(0, 0));
+
+  &.active {
+    @include transform(translate(-100%, 0) translate(30px, 0));
+
+    @include breakpoint(tablet) {
+      @include transform(translate(-340px, 0));
+    }
+  }
+
+  &.global-active {
+    @include transform(translate(-100%, 0));
+
+    @include breakpoint(tablet) {
+      @include transform(translate(-100%, 0) translate(90px, 0));
+    }
+  }
+}

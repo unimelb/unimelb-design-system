@@ -1,4 +1,12 @@
 // Ideally this file should only contain this comment
+@mixin ie9 {
+  @media screen and (min-width: 0) {
+    & {
+      @content;
+    }
+  }
+}
+
 $navy:  #0c304a;
 $white: #fff;
 $black: #000;
@@ -100,6 +108,10 @@ body [role="navigation"] {
     top: 0;
     width: 300px;
     z-index: 100;
+
+    @include ie9 {
+      -ms-transform: none;
+    }
   }
 
   ul {
@@ -131,6 +143,10 @@ body [role="sitemap"] {
   h2.logo {
     background-image: url("#{asset_path('components/header/m-logo.png')}");
     float: left;
+
+    @include ie9 {
+      background-image: url("#{asset_path('components/header/logo.png')}");
+    }
   }
 
   a.close-button:before {
@@ -215,6 +231,11 @@ body [role="sitemap"] {
       text-indent: 0;
       color: black;
       width: auto;
+
+      @include ie9 {
+        text-indent: -999em;
+        width: 40px;
+      }
     }
   }
 
@@ -260,18 +281,34 @@ body [role="sitemap"] {
 
     .icon-staff {
       background-image: url("#{asset_path('components/header/m-icon-p-b.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/icon-p-b.png')}");
+      }
     }
 
     &:hover .icon-staff {
       background-image: url("#{asset_path('components/header/m-icon-p-w.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/icon-p-w.png')}");
+      }
     }
 
     .icon-student {
       background-image: url("#{asset_path('components/header/m-icon-m-b.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/icon-m-b.png')}");
+      }
     }
 
     &:hover .icon-student {
       background-image: url("#{asset_path('components/header/m-icon-m-w.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/icon-m-w.png')}");
+      }
     }
   }
 }
@@ -286,6 +323,10 @@ body [role="sitemap"] {
 
   a.page-header-logo {
     background-image: url("#{asset_path('components/header/s-logo.png')}");
+
+    @include ie9 {
+      background-image: url("#{asset_path('components/header/logo-w.png')}");
+    }
   }
 
   .page-header-tools .page-header-icon[title="Login"],
@@ -298,14 +339,26 @@ body [role="sitemap"] {
 
     .search {
       background-image: url("#{asset_path('components/header/s-icon-s.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/icon-s.png')}");
+      }
     }
 
     .login {
       background-image: url("#{asset_path('components/header/s-icon-p.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/icon-p.png')}");
+      }
     }
 
     .menu {
       background-image: url("#{asset_path('components/header/s-menu.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/menu.png')}");
+      }
     }
   }
 }
@@ -316,14 +369,26 @@ body [role="sitemap"] {
 
     .search {
       background-image: url("#{asset_path('components/header/s-icon-s-w.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/icon-s-w.png')}");
+      }
     }
 
     .login {
       background-image: url("#{asset_path('components/header/s-icon-p-w.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/icon-p-w.png')}");
+      }
     }
 
     .menu {
       background-image: url("#{asset_path('components/header/s-menu-w.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/menu-w.png')}");
+      }
     }
   }
 
@@ -332,14 +397,26 @@ body [role="sitemap"] {
 
     .search {
       background-image: url("#{asset_path('components/header/s-icon-s.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/icon-s.png')}");
+      }
     }
 
     .login {
       background-image: url("#{asset_path('components/header/s-icon-p.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/icon-p.png')}");
+      }
     }
 
     .menu {
       background-image: url("#{asset_path('components/header/s-menu.png')}");
+
+      @include ie9 {
+        background-image: url("#{asset_path('components/header/menu.png')}");
+      }
     }
   }
 }
@@ -349,6 +426,10 @@ body [role="sitemap"] {
   .bottom-align-inverted,
   .bottom-align-flat {
     position: static;
+
+    @include ie9 {
+      position: absolute;
+    }
   }
 
   .bottom-align-flat {
@@ -418,7 +499,7 @@ body [role="sitemap"] {
     text-align: center;
     width: 60%;
 
-    @media screen and (min-width: 0) {
+    @include ie9 {
       -ms-transform: translateX(-50%);
       transform: translateX(-50%);
       left: 50%;
@@ -457,7 +538,7 @@ ul.ticked-list li:before {
   margin-left: -22px;
   position: absolute;
 
-  @media screen and (min-width: 0) {
+  @include ie9 {
     content: '';
   }
 }
@@ -636,6 +717,10 @@ ul.ticked-list li:before {
 
         a {
           background-image: url("#{asset_path('components/footer/s-tw.png')}");
+
+          @include ie9 {
+            background-image: url("#{asset_path('components/footer/tw.png')}");
+          }
         }
       }
 
@@ -644,6 +729,10 @@ ul.ticked-list li:before {
 
         a {
           background-image: url("#{asset_path('components/footer/s-fb.png')}");
+
+          @include ie9 {
+            background-image: url("#{asset_path('components/footer/fb.png')}");
+          }
         }
       }
 
@@ -652,6 +741,10 @@ ul.ticked-list li:before {
 
         a {
           background-image: url("#{asset_path('components/footer/s-li.png')}");
+
+          @include ie9 {
+            background-image: url("#{asset_path('components/footer/li.png')}");
+          }
         }
       }
     }
@@ -664,6 +757,10 @@ ul.ticked-list li:before {
 
 .unimelb-lge {
   background-image: url("#{asset_path('components/footer/s-lockup.png')}");
+
+  @include ie9 {
+    background-image: url("#{asset_path('components/footer/lockup.png')}");
+  }
 }
 
 .page-footer-est1853 {
@@ -688,6 +785,11 @@ ul.ticked-list li:before {
 .vca .page-header header a.page-header-logo,
 .vca .page-header .page-header-logo {
   background-image: url("#{asset_path('components/header/s-logo-vca.png')}");
+
+  @include ie9 {
+    background-image: url("#{asset_path('components/header/logo-vca.png')}");
+    background-size: cover;
+  }
 }
 
 .vca ul.ticked-list li:before {
@@ -697,28 +799,52 @@ ul.ticked-list li:before {
 .vca .page-header .page-header-tools a.page-header-icon {
   .search {
     background-image: url("#{asset_path('components/header/s-icon-s-b.png')}");
+
+    @include ie9 {
+      background-image: url("#{asset_path('components/header/icon-s-b.png')}");
+    }
   }
 
   .login {
     background-image: url("#{asset_path('components/header/s-icon-p-b.png')}");
+
+    @include ie9 {
+      background-image: url("#{asset_path('components/header/icon-p-b.png')}");
+    }
   }
 
   span.menu {
     background-image: url("#{asset_path('components/header/s-menu-b.png')}");
+
+    @media screen and (min-width: 0) {
+      background-image: url("#{asset_path('components/header/menu-b.png')}");
+    }
   }
 }
 
 .floating.vca .page-header .page-header-tools a.page-header-icon {
   .search {
     background-image: url("#{asset_path('components/header/s-icon-s-w.png')}");
+
+    @include ie9 {
+      background-image: url("#{asset_path('components/header/icon-s-w.png')}");
+    }
   }
 
   .login {
     background-image: url("#{asset_path('components/header/s-icon-p-w.png')}");
+
+    @include ie9 {
+      background-image: url("#{asset_path('components/header/icon-p-w.png')}");
+    }
   }
 
   span.menu {
     background-image: url("#{asset_path('components/header/s-menu-w.png')}");
+
+    @include ie9 {
+      background-image: url("#{asset_path('components/header/menu-w.png')}");
+    }
   }
 }
 
