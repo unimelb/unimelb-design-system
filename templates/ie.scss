@@ -276,6 +276,11 @@ body [role="sitemap"] {
   }
 }
 
+.modal__blanket {
+  min-height: 100%;
+  width: 120%;
+}
+
 .page-header {
   border-bottom: 2px solid #f0f0f0;
 
@@ -336,20 +341,6 @@ body [role="sitemap"] {
     .menu {
       background-image: url("#{asset_path('components/header/s-menu.png')}");
     }
-  }
-}
-
-.vca .page-header .page-header-tools a.page-header-icon {
-  .search {
-    background-image: url("#{asset_path('components/header/s-icon-s-b.png')}");
-  }
-
-  .login {
-    background-image: url("#{asset_path('components/header/s-icon-p-b.png')}");
-  }
-
-  span.menu {
-    background-image: url("#{asset_path('components/header/s-menu-b.png')}");
   }
 }
 
@@ -470,11 +461,6 @@ ul.ticked-list li:before {
     content: '';
   }
 }
-
-.vca ul.ticked-list li:before {
-  color: #000;
-}
-
 
 [role="main"] .tabbed-course,
 [role="main"] .tabbed-nav {
@@ -695,6 +681,44 @@ ul.ticked-list li:before {
     margin: 0;
     padding: 0 30px;
     width: auto;
+  }
+}
+
+// VCA
+.vca .page-header header a.page-header-logo,
+.vca .page-header .page-header-logo {
+  background-image: url("#{asset_path('components/header/s-logo-vca.png')}");
+}
+
+.vca ul.ticked-list li:before {
+  color: #000;
+}
+
+.vca .page-header .page-header-tools a.page-header-icon {
+  .search {
+    background-image: url("#{asset_path('components/header/s-icon-s-b.png')}");
+  }
+
+  .login {
+    background-image: url("#{asset_path('components/header/s-icon-p-b.png')}");
+  }
+
+  span.menu {
+    background-image: url("#{asset_path('components/header/s-menu-b.png')}");
+  }
+}
+
+.floating.vca .page-header .page-header-tools a.page-header-icon {
+  .search {
+    background-image: url("#{asset_path('components/header/s-icon-s-w.png')}");
+  }
+
+  .login {
+    background-image: url("#{asset_path('components/header/s-icon-p-w.png')}");
+  }
+
+  span.menu {
+    background-image: url("#{asset_path('components/header/s-menu-w.png')}");
   }
 }
 
