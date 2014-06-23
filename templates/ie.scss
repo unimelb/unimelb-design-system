@@ -257,6 +257,22 @@ body [role="sitemap"] {
 
   .half .button-fill {
     width: 50%;
+
+    .icon-staff {
+      background-image: url("#{asset_path('components/header/m-icon-p-b.png')}");
+    }
+
+    &:hover .icon-staff {
+      background-image: url("#{asset_path('components/header/m-icon-p-w.png')}");
+    }
+
+    .icon-student {
+      background-image: url("#{asset_path('components/header/m-icon-m-b.png')}");
+    }
+
+    &:hover .icon-student {
+      background-image: url("#{asset_path('components/header/m-icon-m-w.png')}");
+    }
   }
 }
 
@@ -631,14 +647,26 @@ ul.ticked-list li:before {
 
       &.social-twitter {
         width: auto;
+
+        a {
+          background-image: url("#{asset_path('components/footer/s-tw.png')}");
+        }
       }
 
       &.social-facebook {
         margin-left: 0;
+
+        a {
+          background-image: url("#{asset_path('components/footer/s-fb.png')}");
+        }
       }
 
       &.social-linkedin {
         margin-right: 0;
+
+        a {
+          background-image: url("#{asset_path('components/footer/s-li.png')}");
+        }
       }
     }
 
@@ -646,6 +674,10 @@ ul.ticked-list li:before {
       vertical-align: top;
     }
   }
+}
+
+.unimelb-lge {
+  background-image: url("#{asset_path('components/footer/s-lockup.png')}");
 }
 
 .page-footer-est1853 {
