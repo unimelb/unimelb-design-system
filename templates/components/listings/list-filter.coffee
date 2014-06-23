@@ -26,6 +26,14 @@ unless window.UOMListFilter
               else
                 t.hideTable(table, this.getAttribute 'data-tag')
 
+          # IE8
+          filter.addEventListener 'click', (e) ->
+            for table in t.tables
+              if this.checked
+                t.showTable(table, this.getAttribute 'data-tag')
+              else
+                t.hideTable(table, this.getAttribute 'data-tag')
+
             t.redraw()
 
         @select.addEventListener 'change', (e) ->

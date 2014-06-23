@@ -16,46 +16,46 @@
   appearance: $a;
 }
 
-$black:        #000 !default;
-$darkgray:     #333;
-$midgray:      #666;
-$gray:         #adb8c1;
-$lightgray:    #f6f6f6;
-$lightergray:  #e0e0e0;
-$white:        #fff !default;
+$black:         #000 !default;
+$darkgray:      #333;
+$midgray:       #666;
+$gray:          #adb8c1;
+$lightgray:     #f6f6f6;
+$lightergray:   #e0e0e0;
+$white:         #fff !default;
 
-$navy:         #0c304a;
-$blue:         #304e64;
-$darkblue:     #004576;
-$borderblue:   #7399b7;
-$midblue:      #366996;
-$lightblue:    #82a1bd;
-$lighterblue:  #359aec;
-$paleblue:     #f2f5f8;
-$lightestblue: #e1eaf5;
+$navy:          #0c304a;
+$blue:          #304e64;
+$darkblue:      #004576;
+$borderblue:    #7399b7;
+$midblue:       #366996;
+$lightblue:     #82a1bd;
+$lighterblue:   #359aec;
+$paleblue:      #f2f5f8;
+$lightestblue:  #e1eaf5;
 
-$paleyellow:   #fffbe4;
-$palegreen:    #d2f1cf;
-$salmon:       #ea4f62;
-$bronze:       #e5e1dc;
+$paleyellow:    #fffbe4;
+$palegreen:     #d2f1cf;
+$salmon:        #ea4f62;
+$bronze:        #e5e1dc;
 
-$cyan:         #0084ee;
-$green:        #3fc76e;
-$cherry:       #df0620;
-$beccapurple:  #663399;
+$cyan:          #0084ee;
+$green:         #3fc76e;
+$cherry:        #df0620;
+$rebeccapurple: #663399;
 
 // Vars
-$warning:      $cherry;
-$cta:          $green;
-$highlight:    $lighterblue;
-$brand:        $darkblue;
-$base:         $darkgray;
-$soft:         $lightergray;
+$warning:       $cherry;
+$cta:           $green;
+$highlight:     $lighterblue;
+$brand:         $darkblue;
+$base:          $darkgray;
+$soft:          $lightergray;
 
 // Layout widths
-$w-sml:        700px;
-$w-mid:        900px;
-$w-lge:        1400px;
+$w-sml:         700px;
+$w-mid:         900px;
+$w-lge:         1400px;
 
 %wrapper {
   @include rem(max-width, $w-lge);

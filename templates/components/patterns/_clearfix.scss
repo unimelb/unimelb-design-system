@@ -5,14 +5,21 @@
   zoom: 1;
 
   &:before,
-  &:after,
+  &:after {
+    content: '';
+    display: table;
+  }
+
   &::before,
   &::after {
     content: '';
     display: table;
   }
 
-  &:after,
+  &:after {
+    clear: both;
+  }
+
   &::after {
     clear: both;
   }

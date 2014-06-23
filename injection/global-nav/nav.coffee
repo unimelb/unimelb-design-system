@@ -125,8 +125,6 @@ window.UOMinjectGlobalNav = ->
         if node.nodeType==1 and !node.hasClass('sitemap-link') and node.nodeName != 'H2'
           elements.push node
 
-      console.log elements
-
       if elements.length > 1
         childgroup = elements[1]
 
