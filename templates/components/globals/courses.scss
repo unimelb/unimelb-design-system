@@ -191,7 +191,6 @@
     @include rem(font-size, 14px);
     @include rem(height, 110px);
     @include rem(margin, 2px 2px 4px 2px);
-    background-color: $palegreen;
     list-style-type: none;
     opacity: 1;
     padding: 0;
@@ -207,60 +206,54 @@
      -moz-transition-property: opacity;
     transition-property: opacity;
 
-    &.item {
-      float: left;
-      position: relative;
-    }
 
     @include breakpoint($w-sml) {
       float: left;
-      margin: .5%;
-      width: 49%;
+      margin: 0;
+      width: 48%;
     }
 
     @include breakpoint($w-mid) {
+      margin: 0;
       width: 31.333%;
     }
 
     @include breakpoint(1100px) {
-      margin: .25%;
-      width: 23.5%;
+      margin: 0;
+      width: 24%;
     }
 
-    @include breakpoint($w-lge) {
-      width: 18.5%;
-    }
-
-    &.certificates_diplomas {
+    &.certificates_diplomas a {
       background-color: $bronze;
     }
 
-    &.coursework,
-    &.research {
+    &.coursework a,
+    &.research a {
       background-color: $lightestblue;
     }
 
-    &.phd {
+    &.phd a {
       background-color: $lightblue;
     }
 
-    &.hide {
-      opacity: .1;
-    }
   }
 
   a {
     @include rem(padding, 10px);
+    background-color: $palegreen;
+    border: 2px solid $lightgray;
     color: $darkgray;
     display: block;
     font-weight: $light;
     height: 100%;
+    margin: 0;
+    min-width: 100%;
     max-width: 100%;
     text-decoration: none;
     width: 100%;
 
-    @include breakpoint(tablet) {
-      @include rem(width, 190px);
+    @include breakpoint(desktop) {
+      @include rem(max-width, 180px);
     }
   }
 
