@@ -279,8 +279,11 @@ $menu: #036;
     border-bottom: 1px solid $blue;
     color: rgba($white, .6);
     line-height: 1.2;
-    padding-left: 3%;
     padding-right: 3%;
+
+    @include breakpoint(desktop) {
+      padding-left: 3%;
+    }
   }
 
   li {
@@ -288,6 +291,7 @@ $menu: #036;
     color: $white;
     line-height: 1.4;
     list-style-type: none;
+    margin-left: 0;
     padding: 0;
   }
 
@@ -300,13 +304,15 @@ $menu: #036;
     @include rem(margin, 30px 0);
     @include rem(padding, 15px 0);
     clear: both;
+    max-width: 100%;
     width: 100%;
 
     li {
       @include rem(line-height, 40px);
       clear: both;
+      margin-left: 0;
 
-      @include breakpoint(tablet) {
+      @include breakpoint(desktop) {
         clear: none;
         line-height: 1;
       }
@@ -331,7 +337,7 @@ $menu: #036;
       display: block;
       float: left;
 
-      @include breakpoint(tablet) {
+      @include breakpoint(desktop) {
         float: none;
         margin-left: auto;
         margin-right: auto;
@@ -360,7 +366,7 @@ $menu: #036;
 
     }
 
-    @include breakpoint(tablet) {
+    @include breakpoint(desktop) {
       border-bottom: 1px solid $blue;
       border-top: 1px solid $blue;
       float: left;
@@ -386,7 +392,7 @@ $menu: #036;
     margin-top: 0;
     padding: 0 3%;
 
-    @include breakpoint(tablet) {
+    @include breakpoint(desktop) {
       @include rem(margin-top, 45px);
       clear: none;
       float: right;
@@ -450,7 +456,7 @@ $menu: #036;
     margin-right: auto;
     text-indent: -9999em;
 
-    @include breakpoint(tablet) {
+    @include breakpoint(desktop) {
       float: left;
     }
   }
@@ -512,7 +518,7 @@ $menu: #036;
     }
   }
 
-  @include breakpoint(tablet) {
+  @include breakpoint(desktop) {
     form {
       @include rem(width, 600px);
       padding: 0;
