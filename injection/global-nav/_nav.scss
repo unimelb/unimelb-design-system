@@ -48,7 +48,28 @@
 
   h2.title {
     @include rem(padding-top, 30px);
+    @include rem(font-size, 15px);
+    @include rem(letter-spacing, 2px);
+    font-weight: $regular;
     padding-bottom: 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    &:after {
+      @include rem(margin, 30px auto 15px);
+      @include rem(width, 80px);
+      border-bottom: 2px solid $black;
+      content: '';
+      display: block;
+    }
+
+    &::after {
+      @include rem(margin, 30px auto 15px);
+      @include rem(width, 80px);
+      border-bottom: 2px solid $black;
+      content: '';
+      display: block;
+    }
   }
 
   .half {
@@ -67,77 +88,68 @@
       max-width: 95%;
     }
 
-    .button-fill,
-    section {
-      @include rem(padding, 0 15px);
+    a.button-fill {
+      @include rem(padding, 30px 15px);
+      color: $black;
       float: left;
       margin: 0;
+      text-decoration: none;
       width: 100%;
 
-      &.tight {
-        padding: 0;
+      h2 {
+        @include rem(padding-bottom, 30px);
+        font-weight: $light;
+        padding-top: 0;
+        text-align: center;
       }
 
       p {
+        font-weight: $light;
         max-width: 100%;
+        text-align: center;
       }
 
-      iframe {
-        width: 100%;
+      .icon-staff {
+        @include rem(height, 100px);
+        @include rem(width, 100px);
+        background-image: url("#{asset_path('header/icon-p-b.png')}");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .icon-student {
+        @extend .icon-staff;
+        background-image: url("#{asset_path('header/icon-m-b.png')}");
+      }
+
+      &:hover {
+        color: $white;
+
+        .icon-staff {
+          background-image: url("#{asset_path('header/icon-p-w.png')}");
+        }
+
+        .icon-student {
+          background-image: url("#{asset_path('header/icon-m-w.png')}");
+        }
       }
 
       @include breakpoint(desktop) {
-        @include rem(padding, 30px 15px);
         width: 50%;
         padding-left: 0;
         padding-right: 0;
+      }
 
-        iframe {
-          @include rem(margin-top, 60px);
-          @include rem(margin-bottom, 60px);
-          @include rem(padding-right, 30px);
-        }
+      &:hover {
+        background-color: $highlight;
       }
     }
 
     @include breakpoint(desktop) {
       @include rem(padding, 0 30px);
-    }
-  }
-
-  a.button-fill {
-    h2 {
-      padding-top: 0;
-    }
-
-    p {
-      font-weight: $light;
-    }
-
-    .icon-staff {
-      @include rem(height, 100px);
-      @include rem(width, 100px);
-      background-image: url("#{asset_path('header/icon-p-b.png')}");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .icon-student {
-      @extend .icon-staff;
-      background-image: url("#{asset_path('header/icon-m-b.png')}");
-    }
-
-    &:hover {
-      .icon-staff {
-        background-image: url("#{asset_path('header/icon-p-w.png')}");
-      }
-
-      .icon-student {
-        background-image: url("#{asset_path('header/icon-m-w.png')}");
-      }
     }
   }
 }

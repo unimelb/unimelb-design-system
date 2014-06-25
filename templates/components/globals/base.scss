@@ -512,16 +512,20 @@ body {
     @extend .subtitle;
     text-align: center;
 
-    &:after,
-    &::after {
-      @include rem(margin-bottom, 15px);
-      @include rem(margin-top, 30px);
+    &:after {
+      @include rem(margin, 30px auto 15px);
       @include rem(width, 80px);
       border-bottom: 2px solid $black;
       content: '';
       display: block;
-      margin-left: auto;
-      margin-right: auto;
+    }
+
+    &::after {
+      @include rem(margin, 30px auto 15px);
+      @include rem(width, 80px);
+      border-bottom: 2px solid $black;
+      content: '';
+      display: block;
     }
   }
 
