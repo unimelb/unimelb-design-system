@@ -7,10 +7,17 @@
 }
 
 .page-header {
+  @extend %normalise;
+  @include rem(font-size, 20px);
   background-color: $white;
   color: $black;
+  font-family: $ff-sans;
   position: relative;
   z-index: 3;
+
+  * {
+    @extend %normalise;
+  }
 
   header {
     @include rem(height, 58px);
@@ -39,7 +46,6 @@
     }
 
     &.page-header-logo {
-//      @extend %imgreplace;
       @include rem(height, 60px);
       @include rem(width, 60px);
       background-color: $darkblue;

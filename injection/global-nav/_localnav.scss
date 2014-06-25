@@ -1,0 +1,163 @@
+[role="navigation"] {
+  @extend %normalise;
+  @extend %smooth-translate;
+  @include rem(padding, 0 0 30px);
+  @include rem(right, 40px);
+  @include rem(width, 250px);
+  @include transform(translate(100%, 0) translate(110px, 0));
+  background-color: $menu;
+  box-shadow: 1px 0 12px 3px rgba($black, .6);
+  color: $white;
+  font-family: $ff-sans;
+  height: 100%;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+
+  * {
+    @extend %normalise;
+  }
+
+  &.active {
+    @include translateX(0);
+    display: block;
+    z-index: 11;
+
+    .sitemap-label {
+      margin-left: -100px;
+
+      @include breakpoint(tablet) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &.global-active {
+    @include transform(translate(-100%, 0));
+    display: block;
+    left: 0;
+
+    @include breakpoint(tablet) {
+      @include transform(translate(-100%, 0) translate(110px, 0));
+    }
+  }
+
+  &.no-js {
+    @extend %wrapper;
+    background-color: $navy;
+    box-shadow: 0 0 0;
+    display: block;
+    position: static;
+    width: auto;
+  }
+
+  @include breakpoint(tablet) {
+    @include rem(right, 40px);
+    @include rem(width, 300px);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    &.hide {
+      @include translateX(100%);
+    }
+
+    ul {
+      @include translateX(0);
+      background-color: $navy;
+      height: 100%;
+      overflow: auto;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+
+      li {
+        background-color: $navy;
+      }
+    }
+  }
+
+  img {
+    display: none;
+    margin: 0 25%;
+    max-width: 50%;
+  }
+
+  li {
+    border-top: 1px solid rgba($white, .1);
+    list-style-type: none;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  h2 {
+    @include rem(font-size, 14px);
+    @include rem(letter-spacing, 1px);
+    @include rem(padding, 20px);
+    color: rgba($white, .6);
+    cursor: pointer;
+    display: block;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  a,
+  span {
+    @include rem(font-size, 14px);
+    @include rem(letter-spacing, 1px);
+    @include rem(padding, 20px);
+    color: $white;
+    display: block;
+    text-decoration: none;
+
+    &:hover {
+      background-color: darken($menu, 3%);
+      color: $white;
+    }
+  }
+
+  .sitemap-link {
+    @include rem(font-size, 14px);
+    @include rem(margin, 20px);
+    @include rem(padding, 10px 15px);
+    background-color: rgba($white, .1);
+    border: 1px solid rgba($white, .1);
+    display: inline-block;
+  }
+
+  .back {
+    span {
+      background-color: $menu;
+      color: rgba($white, .6);
+      cursor: pointer;
+
+      &::before {
+        @include rem(font-size, 24px);
+        @include transform(rotate(90deg) translateX(5px));
+        content: '\2335';
+        float: left;
+        font-weight: 800;
+        line-height: 1;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  .parent {
+    cursor: pointer;
+
+    &::after {
+      @include rem(font-size, 24px);
+      @include transform(rotate(270deg) translateY(-1px));
+      content: '\2335';
+      float: right;
+      font-weight: 800;
+      line-height: 1;
+      z-index: 9;
+    }
+  }
+}

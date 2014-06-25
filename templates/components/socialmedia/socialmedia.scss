@@ -36,12 +36,12 @@
     }
 
     @include breakpoint(desktop) {
-      @include rem(padding, 30px 0 60px);
+      @include rem(padding, 0 0 30px);
       text-align: center;
 
       li {
-        @include rem(padding, 0 30px);
-        display: inline;
+        @include rem(padding, 30px);
+        display: inline-block;
         float: none;
         width: auto;
       }

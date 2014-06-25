@@ -1,4 +1,31 @@
 @import 'compass';
+
+// Global
+$black:        #000 !default;
+$darkgray:     #333;
+$midgray:      #666;
+$gray:         #adb8c1;
+$lightgray:    #f6f6f6;
+$lightergray:  #e0e0e0;
+$white:        #fff !default;
+
+$navy:         #0c304a;
+$blue:         #304e64;
+$darkblue:     #004576;
+$borderblue:   #7399b7;
+$midblue:      #366996;
+$lightblue:    #82a1bd;
+$lighterblue:  #359aec;
+$paleblue:     #f2f5f8;
+$lightestblue: #e1eaf5;
+
+$brand:        $darkblue;
+$highlight:    $lighterblue;
+$menu:         #036;
+
+// Rem
+$baseline-px:  16px;
+
 @import 'patterns';
 
 @font-face {
@@ -26,7 +53,18 @@
 $regular: 400;
 $light: 300;
 
+$ff-sans: Roboto, Helvetica, Arial, sans-serif;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 @import 'header/header';
 @import 'footer/footer';
 @import 'global-nav/modal';
+@import 'global-nav/nav';
+@import 'global-nav/localnav';
 @import 'global-nav/globalnav';

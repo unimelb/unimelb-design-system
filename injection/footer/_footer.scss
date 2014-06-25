@@ -1,7 +1,14 @@
 .page-footer {
+  @extend %normalise;
+  @include rem(font-size, 20px);
   background-color: $navy;
   clear: left;
   color: $white;
+  font-family: $ff-sans;
+
+  * {
+    @extend %normalise;
+  }
 
   footer {
     @extend %wrapper;
@@ -13,6 +20,7 @@
 
   small {
     @include rem(font-size, 12px);
+    @include rem(line-height, 20px);
     clear: left;
     color: $lightblue;
     display: block;
@@ -51,6 +59,7 @@
   clear: both;
   float: left;
   margin-left: 0;
+  max-width: 100%;
   padding-left: 0;
   padding-right: 0;
   width: 100%;

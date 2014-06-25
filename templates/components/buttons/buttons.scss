@@ -126,8 +126,8 @@
   }
 }
 
-input[type="submit"],
-input[type="button"] {
+[role="main"] input[type="submit"],
+[role="main"] input[type="button"] {
   @extend %raisedbutton;
   @extend %raisedbutton.cta;
   @extend %flatbutton.cta;
@@ -135,19 +135,19 @@ input[type="button"] {
   width: auto;
 }
 
-.button {
+[role="main"] .button {
   @extend %raisedbutton;
 }
 
-.button-small {
+[role="main"] .button-small {
   @extend %flatbutton;
 }
 
-.button-hero {
+[role="main"] .button-hero {
   @extend %outlinebutton;
 }
 
-.button-hero-inverse {
+[role="main"] .button-hero-inverse {
   @extend %outlinebutton;
   border-color: $white;
   color: $white;
@@ -157,7 +157,7 @@ input[type="button"] {
   }
 }
 
-.button-fill {
+[role="main"] .button-fill {
   color: $black;
   text-align: center;
   text-decoration: none;

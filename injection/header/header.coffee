@@ -1,5 +1,21 @@
 window.UOMinjectHeader = ->
-  # Only inject header if it doesn't already exist
+
+  # Create page wrapper if it doesn't already exist
+  if document.countSelector('.page-inner') == 0
+    page = document.createElement('div')
+    page.addClass('page-inner')
+
+    main = document.createElement('div')
+    main.setAttribute('role', 'main')
+    page.appendChild(main)
+
+    for node in document.body.childNodes
+      if node and node.nodeType==1
+        main.appendChild(node)
+
+    document.body.appendChild(page)
+
+  # Create header if it doesn't already exist
   if document.countSelector('.page-header') == 0
 
     # Create header and move local breadcrumb
@@ -45,6 +61,7 @@ window.UOMinjectHeader = ->
     parent = document.querySelector('.page-inner')
     loginmodal = document.createElement "div"
     loginmodal.addClass('modal__dialog')
+    loginmodal.addClass('page-login')
     loginmodal.id = 'uom-login'
     loginmodal.innerHTML = """
             <h2 class="title">Please Choose</h2>

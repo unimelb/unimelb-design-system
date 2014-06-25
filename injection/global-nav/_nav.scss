@@ -1,0 +1,143 @@
+.page-inner {
+  @extend %smooth-translate;
+  @include translateX(0);
+  background-color: $navy;
+  min-height: 100%;
+  position: relative;
+  z-index: 2;
+
+  &.active {
+    @include transform(translate(-100%, 0) translate(30px, 0));
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    @include breakpoint(tablet) {
+      @include translateX(-340px);
+    }
+  }
+
+  &.global-active {
+    @include transform(translate(-100%, 0));
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .modal__blanket.on {
+      position: absolute;
+    }
+
+    @include breakpoint(tablet) {
+      @include transform(translate(-100%, 0) translate(90px, 0));
+    }
+  }
+}
+
+[role="main"] {
+  background-color: $white;
+}
+
+.page-login {
+  @extend %normalise;
+  font-family: $ff-sans;
+
+  * {
+    @extend %normalise;
+  }
+
+  h2.title {
+    @include rem(padding-top, 30px);
+    padding-bottom: 0;
+  }
+
+  .half {
+    @extend %clearfix;
+    margin: 0 auto;
+    max-width: 100%;
+
+    em {
+      @include rem(font-size, 13px);
+      @include rem(padding-bottom, 30px);
+      display: block;
+    }
+
+    img {
+      @include rem(margin-top, 30px);
+      max-width: 95%;
+    }
+
+    .button-fill,
+    section {
+      @include rem(padding, 0 15px);
+      float: left;
+      margin: 0;
+      width: 100%;
+
+      &.tight {
+        padding: 0;
+      }
+
+      p {
+        max-width: 100%;
+      }
+
+      iframe {
+        width: 100%;
+      }
+
+      @include breakpoint(desktop) {
+        @include rem(padding, 30px 15px);
+        width: 50%;
+        padding-left: 0;
+        padding-right: 0;
+
+        iframe {
+          @include rem(margin-top, 60px);
+          @include rem(margin-bottom, 60px);
+          @include rem(padding-right, 30px);
+        }
+      }
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(padding, 0 30px);
+    }
+  }
+
+  a.button-fill {
+    h2 {
+      padding-top: 0;
+    }
+
+    p {
+      font-weight: $light;
+    }
+
+    .icon-staff {
+      @include rem(height, 100px);
+      @include rem(width, 100px);
+      background-image: url("#{asset_path('header/icon-p-b.png')}");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .icon-student {
+      @extend .icon-staff;
+      background-image: url("#{asset_path('header/icon-m-b.png')}");
+    }
+
+    &:hover {
+      .icon-staff {
+        background-image: url("#{asset_path('header/icon-p-w.png')}");
+      }
+
+      .icon-student {
+        background-image: url("#{asset_path('header/icon-m-w.png')}");
+      }
+    }
+  }
+}

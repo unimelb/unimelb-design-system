@@ -100,8 +100,9 @@ window.UOMinjectGlobalNav = ->
           e.preventDefault()
           t.blanket.toggleClass 'on'
           t.page.addClass('global-active')
-          t.localnav.removeClass('active')
-          t.localnav.addClass('global-active')
+          if t.localnav
+            t.localnav.removeClass('active')
+            t.localnav.addClass('global-active')
           t.sitemap.addClass('active')
           t.sitemap.removeClass('reveal')
 
