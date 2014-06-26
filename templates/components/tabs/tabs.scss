@@ -141,14 +141,8 @@
         max-width: $w-mid;
         position: static;
 
-        &:after,
-        &::after {
-          display: none;
-        }
-
         p {
           color: $black;
-          font-style: inherit;
         }
       }
     }

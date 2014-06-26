@@ -674,10 +674,10 @@ body {
     }
 
     &.nobullet {
-      margin-left: 0;
-
+      padding-left: 0;
       li {
         list-style-type: none;
+        margin-left: 0;
       }
     }
   }
@@ -746,8 +746,8 @@ body {
     font-style: italic;
     font-weight: $regular;
     margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 10%;
+    margin-right: 0;
     quotes: '\201C''\201D';
     text-align: left;
 
@@ -801,6 +801,11 @@ body {
     @include breakpoint(tablet) {
       @include rem(font-size, 24px);
     }
+
+    @include breakpoint(wide) {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   figure.framed img {
@@ -812,8 +817,8 @@ body {
   }
 
   .inset-left {
-    @include rem(margin-bottom, 30px);
     @include rem(margin-top, 6px);
+    margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
     max-width: 100%;
@@ -833,6 +838,7 @@ body {
     }
 
     @include breakpoint(tablet) {
+      @include rem(margin-bottom, 30px);
       @include rem(padding-right, 30px);
       border: 0 none;
       float: left;
@@ -928,8 +934,8 @@ body {
       }
 
       dd {
-        margin: 0 0 0 2%;
-        width: 83%;
+        margin: 0 0 0 5%;
+        width: 80%;
       }
 
       span {
@@ -946,12 +952,18 @@ body {
         dt {
           text-align: right;
         }
+
+        dd {
+          margin: 0 0 0 2%;
+          width: 83%;
+        }
       }
     }
   }
 
   aside {
     clear: both;
+    float: left;
     width: 100%;
 
     dt {
@@ -970,6 +982,7 @@ body {
 
     @include breakpoint(desktop) {
       display: inline-block;
+      float: none;
       width: 25%;
     }
   }
@@ -981,7 +994,6 @@ body {
     aside {
       @include rem(padding-bottom, 15px);
       @include rem(padding-top, 5px);
-      float: none;
       vertical-align: top;
     }
   }
