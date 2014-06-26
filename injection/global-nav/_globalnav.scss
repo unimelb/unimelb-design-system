@@ -191,44 +191,83 @@
   }
 
   form {
+    @include rem(font-size, 16px);
+    @include rem(padding, 0 10px);
+    background-color: transparent;
     clear: both;
+    color: $darkgray;
     float: none;
-    margin-top: 0;
+    line-height: 1.2;
+    margin: 0 auto;
+    max-width: 700px;
     padding: 0 3%;
 
     @include breakpoint(desktop) {
-      @include rem(margin-top, 45px);
+      @include rem(padding, 10px 30px);
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(margin-top, 50px);
       clear: none;
       float: right;
     }
 
-    fieldset .inline {
+    fieldset {
+      border: 0;
+      padding: 0;
+      position: relative;
+
       input[type="search"] {
+        @include appearance(none);
+        @include rem(height, 45px);
+        @include rem(border-radius, 3px);
+        @include rem(font-size, 20px);
+        @include rem(padding, 8px 10px);
         background-color: $lightergray;
+        border: 1px solid darken($lightergray, 5%);
+        box-shadow: inset 0 1px 3px rgba($black, .15);
+        font-family: $ff-sans;
+        font-weight: $light;
+        margin: 0;
         max-width: 600px;
         width: 100%;
 
-        &::-webkit-input-placeholder { /* WebKit browsers */
+        &:-moz-placeholder { // /* Mozilla Firefox 4 to 18 */
+          color: $midgray;
+          opacity: 1;
+        }
+
+        &::-moz-placeholder { // /* Mozilla Firefox 19+ */
+          color: $midgray;
+          opacity: 1;
+        }
+
+        &:-ms-input-placeholder { // /* Internet Explorer 10+ */
           color: $midgray;
         }
-        &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-          color: $midgray;
-          opacity:  1;
-        }
-        &::-moz-placeholder { /* Mozilla Firefox 19+ */
-          color: $midgray;
-          opacity:  1;
-        }
-        &:-ms-input-placeholder { /* Internet Explorer 10+ */
+
+        &::-webkit-input-placeholder { // /* WebKit browsers */
           color: $midgray;
         }
+
+        &:hover {
+          border-color: $gray;
+        }
+
+        &:focus {
+          background-color: $white;
+          border-color: $borderblue;
+          color: $black;
+          outline: 0;
+        }
+
       }
 
       .search-button {
         @extend %imgreplace;
         @include rem(border-radius, 0 3px 3px 0);
         @include rem(height, 45px);
-        @include rem(margin, 15px 0);
+        @include rem(margin, 0 0 15px);
         @include rem(padding, 10px);
         @include rem(width, 45px);
         background-color: $white;

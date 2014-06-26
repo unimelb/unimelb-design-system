@@ -157,10 +157,8 @@ window.UOMinjectGlobalNav = ->
     <h2 class="logo">University of Melbourne</h2>
     <form action="http://search.unimelb.edu.au" method="get">
       <fieldset>
-        <div class="inline">
-          <input data-required placeholder="Search" name="q" type="search" title="Please enter a keyword." />
-          <input type="submit" value="Go" class="search-button">
-        </div>
+        <input data-required placeholder="Search" name="q" type="search" title="Please enter a keyword." />
+        <input type="submit" value="Go" class="search-button">
       </fieldset>
     </form>
     <ul class="quicklinks">

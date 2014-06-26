@@ -651,7 +651,7 @@ body {
   ol,
   ul {
     @include rem(max-width, $w-sml);
-    @include rem(padding, 15px 15px 15px 45px);
+    @include rem(padding, 15px);
     color: $darkgray;
     list-style-position: outside;
     margin: 0 auto;
@@ -682,8 +682,11 @@ body {
     }
   }
 
-  ol li {
-    list-style-type: decimal;
+  ol {
+    @include rem(padding-left, 30px);
+    li {
+      list-style-type: decimal;
+    }
   }
 
   ul li {
@@ -1330,3 +1333,19 @@ body {
     }
   }
 }
+
+// Uninjected styles
+.page-local-history,
+[role="navigation"].no-js {
+  @include rem(padding, 15px 30px);
+  color: $midblue;
+
+  a {
+    color: $midblue;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
