@@ -4,21 +4,15 @@
 //= require ./global-nav/nav
 //= require ./footer/footer
 
-var loadEvents = function() {
+window.UOMloadInjection = function() {
   UOMinjectHeader();
-  UOMinjectFooter();
   UOMModal()
   UOMinjectGlobalNav();
-
-  // outdatedBrowser({
-  //   bgColor: '#3f3f3f',
-  //   color: '#e3e3e3',
-  //   lowerThan: 'IE10'
-  // });
+  UOMinjectFooter();
 };
 
 if (window.attachEvent) {
-  window.attachEvent('onload', loadEvents);
+  window.attachEvent('onload', UOMloadInjection);
 } else {
-  document.addEventListener('DOMContentLoaded', loadEvents, false);
+  document.addEventListener('DOMContentLoaded', UOMloadInjection, false);
 }

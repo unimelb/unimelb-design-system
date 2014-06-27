@@ -1,3 +1,10 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: $navy;
   color: $black;
@@ -15,8 +22,47 @@ body {
   @extend %clearfix;
 }
 
+.page-inner {
+  @include translateX(0);
+  background-color: $navy;
+  min-height: 100%;
+  position: relative;
+  -moz-transition: -moz-transform .3s ease;
+  -ms-transition: -ms-transform .3s ease;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  z-index: 2;
+
+  &.active {
+    @include transform(translate(-100%, 0) translate(30px, 0));
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    @include breakpoint(tablet) {
+      @include translateX(-340px);
+    }
+  }
+
+  &.global-active {
+    @include transform(translate(-100%, 0));
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    .modal__blanket.on {
+      position: absolute;
+    }
+
+    @include breakpoint(tablet) {
+      @include transform(translate(-100%, 0) translate(90px, 0));
+    }
+  }
+}
+
 [role="main"] {
-  background-color: $lightgray;
+  background-color: $white;
   font-weight: $regular;
 
   header .bottom-align {

@@ -1,9 +1,10 @@
 window.UOMinjectFooter= ->
   # Only inject footer if it doesn't already exist
-  if document.countSelector('.page-footer') == 0
-    block = document.createElement('div')
-    block.addClass('page-footer')
-    block.innerHTML = """
+  footer = document.querySelector('.page-footer')
+  unless footer
+    footer = document.createElement('div')
+    footer.addClass('page-footer')
+    footer.innerHTML = """
     <footer>
       <a class="unimelb-lge" href="https://unimelb.edu.au">The University of Melbourne</a>
       <ul class="page-footer-section nav">
@@ -37,4 +38,5 @@ window.UOMinjectFooter= ->
       <small>CRICOS Provider Code: 00116K (<a href="http://www.services.unimelb.edu.au/international/visas/index.html">visa information</a>)</small>
     </footer>
     """
-    document.querySelector('.page-inner').appendChild(block)
+    page = document.querySelector('.page-inner')
+    page.appendChild(footer)

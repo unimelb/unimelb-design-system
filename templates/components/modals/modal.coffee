@@ -1,40 +1,38 @@
 unless window.UOMModal
   window.UOMModal = ->
     # Add blanket if not already on page
-    if (supportedmodernbrowser)
-      if document.countSelector('.modal__blanket') == 0
-        blanket = document.createElement 'div'
-        blanket.setAttribute('class', 'modal__blanket')
-        document.querySelector('div[role="main"]').appendChild blanket
+    blanket = document.querySelector('.modal__blanket')
+    unless blanket
+      blanket = document.createElement 'div'
+      blanket.setAttribute('class', 'modal__blanket')
+      document.querySelector('[role="main"]').appendChild blanket
 
-      blanket = document.querySelector('.modal__blanket')
+    for trigger in document.querySelectorAll("[data-modal-target]")
+      trigger.addEventListener 'click', (e) ->
+        e.preventDefault()
+        t = e.target || e.srcElement
+        while t.nodeName != 'A'
+          t = t.parentNode
 
-      for trigger in document.querySelectorAll("[data-modal-target]")
-        trigger.addEventListener 'click', (e) ->
-          e.preventDefault()
-          t = e.target || e.srcElement
-          while t.nodeName != 'A'
-            t = t.parentNode
+        target = document.getElementById(t.getAttribute 'data-modal-target')
 
-          target = document.getElementById(t.getAttribute 'data-modal-target')
+        if t.getAttribute('data-modal-offset')==''
+          target.style.top = t.offsetTop-160+'px'
+          target.addClass('on')
+        else
+          viewport = document.body.getBoundingClientRect()
+          top = parseInt( (window.height() - target.offsetHeight) / 2 )
+          target.style.top = (top - viewport.top)+'px'
+          target.addClass('on')
 
-          if t.getAttribute('data-modal-offset')==''
-            target.style.top = t.offsetTop-160+'px'
-            target.addClass('on')
-          else
-            viewport = document.body.getBoundingClientRect()
-            top = parseInt( (window.height() - target.offsetHeight) / 2 )
-            target.style.top = (top - viewport.top)+'px'
-            target.addClass('on')
+        blanket.addClass 'on'
 
-          blanket.addClass 'on'
-
-      for el in document.querySelectorAll('.modal__blanket,.modal__close')
-        el.addEventListener 'click', (e) ->
-          e.preventDefault()
-          for modal in document.querySelectorAll('.modal__dialog')
-            modal.removeClass 'on'
-          blanket.removeClass 'on'
+    for el in document.querySelectorAll('.modal__blanket,.modal__close')
+      el.addEventListener 'click', (e) ->
+        e.preventDefault()
+        for modal in document.querySelectorAll('.modal__dialog')
+          modal.removeClass 'on'
+        blanket.removeClass 'on'
 
   if window.attachEvent
     window.attachEvent 'onload', ->

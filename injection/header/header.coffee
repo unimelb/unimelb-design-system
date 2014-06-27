@@ -1,39 +1,51 @@
 window.UOMinjectHeader = ->
-
   # Create page wrapper if it doesn't already exist
-  if document.countSelector('.page-inner') == 0
+  parent = document.body
+  page = document.querySelector('.page-inner')
+  unless page
     page = document.createElement('div')
     page.addClass('page-inner')
 
+  main = document.querySelector('[role="main"]')
+  unless main
     main = document.createElement('div')
     main.setAttribute('role', 'main')
-    page.appendChild(main)
+  else
+    main.parentNode.removeChild(main)
 
-    for node in document.body.childNodes
-      if node and node.nodeType==1
-        main.appendChild(node)
+  footer = document.querySelector('.page-footer')
+  page.insertBefore(main, footer)
 
-    document.body.appendChild(page)
+  sitemap = document.querySelector('[role="sitemap"]')
+  for n in parent.childNodes
+    if n and n != page and n != sitemap
+      parent.removeChild(n)
+      main.appendChild(n)
+
+  if parent.childNodes > 0
+    parent.insertBefore(page, parent.firstChild)
+  else
+    parent.appendChild(page)
 
   # Create header if it doesn't already exist
-  if document.countSelector('.page-header') == 0
-
+  header = document.querySelector('.page-header')
+  unless header
     # Create header and move local breadcrumb
-    block = document.createElement('div')
-    block.addClass('page-header')
+    header = document.createElement('div')
+    header.addClass('page-header')
 
     if document.countSelector('.page-inner > .floating') > 0
       # Landing page header
-      block.innerHTML = """
+      header.innerHTML = """
       <a class="page-header-logo" href="/">Home</a>
       """
-      block.addClass('floating')
+      header.addClass('floating')
       if document.querySelector('.page-inner > .floating').hasClass('reverse')
-        block.addClass('reverse')
+        header.addClass('reverse')
 
     else
       # General header
-      block.innerHTML = """
+      header.innerHTML = """
       <header>
         <a class="page-header-logo" href="/">Home</a>
         <div class="page-header-navigation">
@@ -42,57 +54,57 @@ window.UOMinjectHeader = ->
       </header>
       """
 
-    parent = document.querySelector('.page-inner')
-    parent.insertBefore(block, parent.firstChild)
+    page.insertBefore(header, page.firstChild)
 
-    if document.countSelector('.page-local-history') == 1
-      local = document.querySelector('.page-local-history')
+    local = document.querySelector('.page-local-history')
+    if local
       local.parentNode.removeChild(local)
-
       parent = document.querySelector('.page-header-navigation')
       sep = document.createElement "span"
       sep.innerHTML = "/"
       parent.appendChild(sep)
       parent.appendChild(local)
 
-
   # Set up login modal and attach to page
-  unless document.querySelector('[role="main"]').hasClass "no-login"
-    parent = document.querySelector('.page-inner')
-    loginmodal = document.createElement "div"
-    loginmodal.addClass('modal__dialog')
-    loginmodal.addClass('page-login')
-    loginmodal.id = 'uom-login'
-    loginmodal.innerHTML = """
-            <h2 class="title">Please Choose</h2>
-            <div class="half">
-              <a class="button-fill" href="">
-                <i class="icon-student"></i>
-                <h2>Current Student</h2>
-                <p>Click here to get to the student portal</p>
-              </a>
-              <a class="button-fill" href="">
-                <i class="icon-staff"></i>
-                <h2>Staff Member</h2>
-                <p>Click here to get to the staff portal</p>
-              </a>
-            </div>
-    """
-    parent.appendChild loginmodal
+  login = document.querySelector('.page-login')
+  unless login
+    if document.countSelector('[role="main"].no-login') == 0
+      login = document.createElement "div"
+      login.addClass('modal__dialog')
+      login.addClass('page-login')
+      login.id = 'uom-login'
+      login.innerHTML = """
+              <h2 class="title">Please Choose</h2>
+              <div class="half">
+                <a class="button-fill" href="">
+                  <i class="icon-student"></i>
+                  <h2>Current Student</h2>
+                  <p>Click here to get to the student portal</p>
+                </a>
+                <a class="button-fill" href="">
+                  <i class="icon-staff"></i>
+                  <h2>Staff Member</h2>
+                  <p>Click here to get to the staff portal</p>
+                </a>
+              </div>
+      """
+      page.appendChild login
 
   # Header tools
-  parent = document.querySelector('.page-header')
-  tools = document.createElement "div"
-  tools.addClass('page-header-tools')
-  if document.querySelector('[role="main"]').hasClass "no-login"
-    tools.innerHTML = """
-          <a class="page-header-icon" href="#sitemap" title="Search"><span class="icon search"></span> Search</a><!--
-          --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="icon menu"></span> Menu</a>
-    """
-  else
-    tools.innerHTML = """
-          <a class="page-header-icon" href="#sitemap" title="Search"><span class="icon search"></span> Search</a><!--
-          --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><span class="icon login"></span> Portal</a><!--
-          --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="icon menu"></span> Menu</a>
-    """
-  parent.appendChild(tools)
+  tools = document.querySelector('.page-header-tools')
+  unless tools
+    tools = document.createElement "div"
+    tools.addClass('page-header-tools')
+    if document.countSelector('[role="main"].no-login') == 0
+      tools.innerHTML = """
+            <a class="page-header-icon" href="#sitemap" title="Search"><span class="icon search"></span> Search</a><!--
+            --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><span class="icon login"></span> Portal</a><!--
+            --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="icon menu"></span> Menu</a>
+      """
+    else
+      tools.innerHTML = """
+            <a class="page-header-icon" href="#sitemap" title="Search"><span class="icon search"></span> Search</a><!--
+            --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="icon menu"></span> Menu</a>
+      """
+
+    header.appendChild tools
