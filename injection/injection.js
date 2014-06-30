@@ -3,6 +3,7 @@
 //= require ./global-nav/modal
 //= require ./global-nav/nav
 //= require ./footer/footer
+//= require ./tracking/gtm
 
 window.UOMloadInjection = function() {
   UOMinjectHeader();
