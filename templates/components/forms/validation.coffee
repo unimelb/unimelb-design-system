@@ -66,13 +66,24 @@ unless window.UOMValid
                 t.invalid(f)
                 invalid++
 
-          e.preventDefault() if invalid
+          if invalid
+            e.preventDefault()
+            if /(Firefox)/g.test(navigator.userAgent)
+              outer = document.querySelector('html')
+            else
+              outer = document.body
+            outer.scrollTop = t.el.offsetTop
+
 
       # Move error message out to new node
       setupMsg: (f) ->
-        error = document.createElement 'small'
-        error.appendChild document.createTextNode f.getAttribute('title')
-        f.parentNode.appendChild error
+        if f.parentNode.countSelector('small') == 0
+          error = document.createElement 'small'
+          if f.hasAttribute('title')
+            error.appendChild document.createTextNode f.getAttribute('title')
+          else
+            error.appendChild document.createTextNode 'Required'
+          f.parentNode.appendChild error
 
       invalid: (f) ->
         if f.parentNode.hasClass('invalid')

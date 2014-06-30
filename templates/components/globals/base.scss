@@ -22,6 +22,10 @@ body {
   @extend %clearfix;
 }
 
+.spacer {
+  @include rem(padding, 0 15px);
+}
+
 .page-inner {
   @include translateX(0);
   background-color: $navy;
@@ -98,9 +102,26 @@ body {
     position: relative;
     width: 100%;
 
+    &.white {
+      background-color: rgba($white, .8);
+      color: $black;
+    }
+
     @include breakpoint(desktop) {
       bottom: 0;
       position: absolute;
+
+      p {
+        @include rem(font-size, 24px);
+        @include rem(max-width, $w-mid);
+        margin: 0 auto;
+        padding-bottom: 0;
+        text-align: center;
+
+        a {
+          color: $white;
+        }
+      }
     }
 
     @media screen and (min-width: 481px) and (max-height:639px) {
@@ -233,6 +254,57 @@ body {
       }
     }
 
+    .inner {
+      @extend %clearfix;
+      @include rem(max-width, $w-lge);
+      margin: 0 auto;
+      width: 94%;
+
+      h1 {
+        @include rem(letter-spacing, 2px);
+        font-weight: $bold;
+        text-transform: uppercase;
+      }
+
+      p {
+        @include rem(font-size, 18px);
+        @include rem(padding, 10px 0 20px);
+        line-height: 1.2;
+        text-align: center;
+      }
+
+      .right {
+        text-align: center;
+      }
+
+      @include breakpoint(tablet) {
+        .left {
+          float: left;
+          width: 75%;
+
+          h1 {
+            @include rem(font-size, 28px);
+            max-width: 100%;
+            text-align: left;
+          }
+
+          p {
+            @include rem(font-size, 16px);
+            max-width: 100%;
+            text-align: left;
+          }
+        }
+
+        .right {
+          @include rem(padding-top, 15px);
+          float: right;
+          text-align: right;
+          width: 25%;
+        }
+
+      }
+    }
+
     .video-loop {
       background-color: $black;
       display: none;
@@ -285,6 +357,8 @@ body {
 
     p {
       @include rem(font-size, 22px);
+      @include rem(max-width, $w-lge);
+      margin: 0 auto;
     }
 
     @include breakpoint(desktop) {
@@ -293,13 +367,6 @@ body {
       p {
         @include rem(font-size, 28px);
         @include rem(padding-top, 10px);
-      }
-    }
-
-    @include breakpoint(wide) {
-      p {
-        @include rem(font-size, 32px);
-        @include rem(margin-right, -200px);
       }
     }
 
@@ -398,7 +465,16 @@ body {
         font-style: italic;
       }
 
-      &:after,
+      &:after {
+        @include rem(margin-top, 30px);
+        @include rem(width, 80px);
+        border-bottom: 2px solid $lighterblue;
+        content: '';
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
       &::after {
         @include rem(margin-top, 30px);
         @include rem(width, 80px);
@@ -455,7 +531,7 @@ body {
     clear: both;
 
     &.alt {
-      background-color: $lightestblue;
+      background-color: $paleblue;
       box-shadow: 0 6px 6px 4px rgba($black, .3);
     }
 
@@ -491,6 +567,11 @@ body {
   }
 
   h1 {
+    @include rem(font-size, 28px);
+    @include rem(padding-bottom, 30px);
+  }
+
+  .main-title {
     @include rem(font-size, 36px);
     @include rem(padding, 26px 0);
     font-family: $ff-serif;
@@ -888,7 +969,7 @@ body {
 
     @include breakpoint(tablet) {
       @include rem(margin-bottom, 30px);
-      @include rem(padding-right, 30px);
+      @include rem(padding-right, 60px);
       border: 0 none;
       float: left;
       max-width: 40%;
@@ -934,7 +1015,7 @@ body {
     @extend .inset-left;
 
     @include breakpoint(tablet) {
-      @include rem(padding-left, 30px);
+      @include rem(padding-left, 60px);
       float: right;
       margin-right: 0;
       text-align: right;
@@ -1233,7 +1314,7 @@ body {
       }
 
       p {
-        padding: 0;
+        @include rem(padding, 0 0 30px);
       }
 
       @include breakpoint(desktop) {

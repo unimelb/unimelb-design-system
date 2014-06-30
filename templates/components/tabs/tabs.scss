@@ -33,6 +33,28 @@
 }
 
 [role="main"] {
+  .nav-bar {
+    background-color: $darkblue;
+
+    .inner {
+      @include rem(max-width, $w-lge);
+      @include rem(padding, 20px 0);
+      margin: 0 auto;
+      width: 94%;
+    }
+
+    a {
+      @include rem(font-size, 22px);
+      color: $gray;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+
   .tabbed-nav {
     .full-width {
       background-color: rgba($navy, .9);
@@ -174,6 +196,36 @@
       .mobile-nav select {
         background-color: $black;
         border: 1px solid $black;
+      }
+    }
+
+    &.navy {
+      .full-width {
+        background-color: $darkblue;
+      }
+
+      .tab {
+        @include rem(margin-top, -76px);
+        @include rem(padding-top, 76px);
+      }
+
+      nav a {
+        color: $gray;
+
+        &[data-current] {
+          color: $white;
+          font-weight: $regular;
+        }
+      }
+
+      nav a[data-current]::after {
+        border-top-color: $darkblue;
+      }
+
+      .mobile-nav,
+      .mobile-nav select {
+        background-color: $darkblue;
+        border: 1px solid $darkblue;
       }
     }
 

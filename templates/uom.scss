@@ -4,28 +4,29 @@
  *= require ./components/modals/modal
  */
 
-@import "compass";
+@import 'compass';
 
-/* Sass Includes */
-@import "includes";
+///* Sass Includes */
+@import 'includes';
 
-/* Sass Dependencies */
-@import "components/patterns/normalize";
-@import "components/patterns/smooth-font-loading";
-@import "components/globals/base";
-@import "components/globals/code";
-@import "components/listings/listings";
-@import "components/videos/yt";
-@import "components/forms/forms";
-@import "components/buttons/buttons";
-@import "components/tabs/tabs";
-@import "components/socialmedia/socialmedia";
-@import "components/navigation/jumpnav";
+///* Sass Dependencies */
+@import 'components/patterns/normalize';
+@import 'components/patterns/smooth-font-loading';
+@import 'components/globals/base';
+@import 'components/globals/code';
+@import 'components/listings/listings';
+@import 'components/videos/yt';
+@import 'components/forms/forms';
+@import 'components/buttons/buttons';
+@import 'components/tabs/tabs';
+@import 'components/socialmedia/socialmedia';
+@import 'components/navigation/jumpnav';
 
-/* Layouts */
-@import "components/globals/profile";
-@import "components/globals/courses";
-@import "components/globals/vca";
+///* Layouts */
+@import 'components/globals/profile';
+@import 'components/globals/courses';
+@import 'components/globals/timetable';
+@import 'components/globals/vca';
 
-/* Print */
-@import "print";
+///* Print */
+@import 'print';

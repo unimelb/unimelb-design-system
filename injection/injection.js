@@ -6,14 +6,17 @@
 //= require ./tracking/gtm
 
 window.UOMloadInjection = function() {
-  UOMinjectHeader();
-  UOMModal()
-  UOMinjectGlobalNav();
-  UOMinjectFooter();
+  window.UOMinjectHeader();
+  window.UOMModal()
+  window.UOMinjectGlobalNav();
+  window.UOMinjectFooter();
 };
 
 if (window.attachEvent) {
-  window.attachEvent('onload', UOMloadInjection);
+  window.attachEvent('onload', window.UOMloadInjection);
 } else {
-  document.addEventListener('DOMContentLoaded', UOMloadInjection, false);
+  document.addEventListener('DOMContentLoaded', window.UOMloadInjection, false);
+  document.addEventListener('page:change', function() {
+    window.UOMloadInjection();
+  }, false);
 }

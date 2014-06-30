@@ -36,3 +36,21 @@ no_section_wrap: true
     <a class="button-small soft">Soft</a>
   </div>
 </div>
+
+<div class="fifth">
+  <div class="col">
+    <a class="button-small with-arrow">Call to action</a>
+  </div>
+  <div class="col">
+    <a class="button-small with-arrow brand">Brand</a>
+  </div>
+  <div class="col">
+    <a class="button-small with-arrow cta">Complete</a>
+  </div>
+  <div class="col">
+    <a class="button-small with-arrow warning">Warning</a>
+  </div>
+  <div class="col">
+    <a class="button-small with-arrow soft">Soft</a>
+  </div>
+</div>

@@ -1,0 +1,219 @@
+[role="main"] .timetable {
+  .bside {
+    @include rem(padding, 0 15px);
+    padding-left: 3%;
+
+    @include breakpoint(desktop) {
+      @include rem(padding-right, 60px);
+    }
+
+    @include breakpoint(1455px) {
+      padding-left: 0;
+    }
+  }
+
+  .accessibility {
+    display: block;
+    float: left;
+    height: 0;
+    text-indent: -999em;
+    width: 0;
+  }
+
+  .time {
+    @include rem(min-width, 65px);
+    color: $black;
+    display: inline-block;
+    font-style: italic;
+  }
+
+  .duration {
+    color: $midgray;
+    display: inline-block;
+  }
+
+  h1 {
+    @include rem(padding-top, 60px);
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  p {
+    margin-left: 0;
+  }
+
+  table {
+    @include rem(margin-bottom, 60px);
+    @include rem(margin-top, 60px);
+    border-collapse: collapse;
+    max-width: 100%;
+
+    th {
+      @extend .subtitle;
+      @include rem(font-size, 14px);
+      @include rem(padding, 10px 10px 10px 0);
+      border-bottom: 1px solid $lightergray;
+      border-right: 1px solid $lightergray;
+      letter-spacing: 1px;
+      padding-left: 3%;
+      padding-right: 3%;
+      text-align: left;
+      vertical-align: top;
+      max-width: 25%;
+
+      @include breakpoint(tablet) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .informative {
+      max-width: 25%;
+    }
+
+    td {
+      @include rem(font-size, 14px);
+      @include rem(padding-bottom, 10px);
+      @include rem(padding-top, 10px);
+      border-bottom: 1px solid $lightergray;
+      padding-left: 3%;
+      padding-right: 3%;
+      text-align: left;
+      vertical-align: top;
+
+      @include breakpoint(tablet) {
+        @include rem(padding, 10px);
+      }
+    }
+
+    th + td,
+    tr > td {
+      white-space: nowrap;
+    }
+
+    .accordion__title:hover {
+      text-decoration: underline;
+    }
+
+    .accordion__close {
+      @include rem(height, 50px);
+      @include rem(width, 50px);
+      color: $white;
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      right: 0;
+      text-decoration: none;
+      top: 0;
+
+      &::after {
+        @include rem(font-size, 60px);
+        content: '\00d7';
+        font-weight: $thin;
+        line-height: 1;
+      }
+    }
+
+    tr {
+      td.action {
+        a {
+          @include rem(font-size, 24px);
+          @include rem(padding, 5px);
+          font-weight: $bold;
+          line-height: 1;
+          text-decoration: none;
+        }
+      }
+
+      td.unit-description {
+        @include rem(padding, 15px 0);
+        background-color: $navy;
+        color: $white;
+        position: relative;
+        text-align: left;
+
+        @include breakpoint(tablet) {
+          @include rem(padding-left, 15px);
+          @include rem(padding-right, 15px);
+        }
+
+        &::before {
+          border: solid transparent;
+          border-bottom-color: $navy;
+          border-width: 10px;
+          bottom: 100%;
+          content: ' ';
+          height: 0;
+          left: 0;
+          margin-left: 20px;
+          margin-top: 0;
+          pointer-events: none;
+          position: absolute;
+          width: 0;
+        }
+
+        h2 {
+          @extend .subtitle;
+          @include rem(padding-right, 60px);
+          padding-left: 3%;
+
+          @include breakpoint(tablet) {
+            @include rem(padding-left, 15px);
+          }
+        }
+
+        p {
+          @include rem(font-size, 16px);
+          padding-left: 3%;
+          padding-right: 3%;
+
+          @include breakpoint(tablet) {
+            @include rem(padding-left, 15px);
+            @include rem(padding-right, 15px);
+          }
+        }
+
+        hr {
+          @include rem(margin, 15px);
+          border-color: rgba($white, .2);
+          margin-left: 3%;
+          margin-right: 3%;
+
+          @include breakpoint(tablet) {
+            @include rem(margin, 15px);
+          }
+        }
+
+        .col1_3 {
+          @include rem(padding, 15px);
+          clear: none;
+
+          @include breakpoint(tablet) {
+            float: left;
+            width: 33%;
+          }
+
+          a {
+            color: $white;
+          }
+
+          strong {
+            color: rgba($white, .4);
+            display: block;
+          }
+        }
+      }
+
+      &:last-child td,
+      &:last-child th {
+        border-bottom: 0;
+      }
+    }
+
+    thead th:first-child + th {
+      border-color: $black;
+      text-align: left;
+    }
+
+  }
+}

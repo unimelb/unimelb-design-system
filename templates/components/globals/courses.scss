@@ -70,6 +70,7 @@
     font-weight: $light;
     margin-left: 0;
     padding: 0;
+    text-align: left;
   }
 
   fieldset.left {
@@ -243,7 +244,7 @@
   a {
     @include rem(padding, 10px);
     background-color: $palegreen;
-    border: 2px solid $lightgray;
+    border: 2px solid $white;
     color: $darkgray;
     display: block;
     font-weight: $light;
@@ -434,6 +435,8 @@
     text-align: left;
   }
 }
+
+
 
 [role="main"] .course-application-checklist {
   margin-left: 0;

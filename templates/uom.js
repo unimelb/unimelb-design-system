@@ -14,3 +14,9 @@ window.UOMloadComponents = function() {
   window.UOMTabs()
   window.UOMYtEmbed()
 };
+
+if (!window.attachEvent) {
+  document.addEventListener('page:change', function() {
+    window.UOMloadComponents();
+  }, false);
+}
