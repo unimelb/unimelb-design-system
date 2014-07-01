@@ -275,6 +275,17 @@ body {
 
       .right {
         text-align: center;
+
+        small {
+          @include rem(padding-bottom, 10px);
+          display: block;
+          font-weight: $light;
+          line-height: 1.2;
+
+          @include breakpoint(desktop) {
+            @include rem(margin-top, -15px);
+          }
+        }
       }
 
       @include breakpoint(tablet) {
@@ -785,7 +796,7 @@ body {
 
     li {
       @include rem(margin-left, 15px);
-      @include rem(max-width, (#{$w-sml}-60px));
+      @include rem(max-width, $w-sml);
       @include rem(padding, 0 0 10px);
       color: $black;
       display: list-item;
@@ -801,7 +812,10 @@ body {
     }
 
     &.nobullet {
-      padding-left: 0;
+      @include breakpoint(desktop) {
+        padding-left: 0;
+      }
+
       li {
         list-style-type: none;
         margin-left: 0;
