@@ -164,29 +164,27 @@ window.UOMinjectGlobalNav = ->
         </fieldset>
       </form>
       <ul class="quicklinks">
-        <li><a href="http://www.unimelb.edu.au/az/faculties.html"><span class="icon faculties"></span> Faculties and Graduate Schools</a></li><!--
-        --><li><a href="http://library.unimelb.edu.au/"><span class="icon library"></span> Library</a></li><!--
-        --><li><a href="http://www.unimelb.edu.au/contact/"><span class="icon contact"></span> Contact us</a></li><!--
-        --><li><a href="http://maps.unimelb.edu.au/"><span class="icon maps"></span> Maps</a></li><!--
-        --><li><a href="http://campaign.unimelb.edu.au/"><span class="icon support"></span> Support the Campaign</a></li>
+        <li><a href="http://about.unimelb.edu.au/governance-and-leadership/faculties"><span class="icon faculties"></span> Faculties and Graduate Schools</a></li>
+        <li><a href="http://library.unimelb.edu.au/"><span class="icon library"></span> Library</a></li>
+        <li><a href="http://www.unimelb.edu.au/contact/"><span class="icon contact"></span> Contact us</a></li>
+        <li><a href="http://maps.unimelb.edu.au/"><span class="icon maps"></span> Maps</a></li>
+        <li><a href="http://www.campaign.unimelb.edu.au/"><span class="icon support"></span> Support the Campaign</a></li>
       </ul>
       <div>
         <div class="col-3">
           <div>
-            <h2><a href="http://coursesearch.unimelb.edu.au">Study at Melbourne</a></h2>
+            <h2><a href="http://coursesearch.unimelb.edu.au/">Study at Melbourne</a></h2>
             <ul>
               <li><a href="http://coursesearch.unimelb.edu.au/undergrad">Undergraduate study</a></li>
               <li><a href="http://coursesearch.unimelb.edu.au/grad">Graduate study</a></li>
               <li><a href="http://futurestudents.unimelb.edu.au/">Future students</a></li>
               <li><a href="http://futurestudents.unimelb.edu.au/admissions">Admissions, fees &amp; applications</a></li>
               <li><a href="http://futurestudents.unimelb.edu.au/info/international">International students</a></li>
-              <li><a href="http://futurestudents.unimelb.edu.au/admissions/scholarships">Scholarships</a></li>
-              <li><a href="http://futurestudents.unimelb.edu.au/courses/single_subject_study">Single subjects &amp; short courses</a></li>
-              <li><a href="http://www.coursera.org/unimelb">Online learning with Coursera</a></li>
+              <li><a href="http://www.unimelb.edu.au/campustour/">Campus tour</a></li>
             </ul>
           </div>
           <div>
-            <h2><a href="http://about.unimelb.edu.au/home">About us</a></h2>
+            <h2><a href="http://about.unimelb.edu.au/">About us</a></h2>
             <ul>
               <li><a href="http://about.unimelb.edu.au/strategy-and-leadership">Strategy and leadership</a></li>
               <li><a href="http://about.unimelb.edu.au/tradition-of-excellence">Tradition of excellence</a></li>
@@ -194,21 +192,20 @@ window.UOMinjectGlobalNav = ->
               <li><a href="http://about.unimelb.edu.au/campuses-and-facilities">Campuses and facilities</a></li>
               <li><a href="http://about.unimelb.edu.au/governance-and-leadership">Structure and governance</a></li>
               <li><a href="http://about.unimelb.edu.au/policy-and-publications">Policy and publications</a></li>
-              <li><a href="http://about.unimelb.edu.au/careers">Careers at Melbourne</a></li>
-              <li><a href="http://newsroom.unimelb.edu.au">News</a></li>
+              <li><a href="http://hr.unimelb.edu.au/careers">Careers at Melbourne</a></li>
+              <li><a href="http://newsroom.unimelb.edu.au">Newsroom</a></li>
 
             </ul>
           </div>
           <div>
             <h2><a href="http://unimelb.edu.au/research/">Research</a></h2>
             <ul>
-              <li><a href="http://www.unimelb.edu.au/research/faculty-and-graduate-school-research-areas.html">Faculty and graduate school research areas</a></li>
+              <li><a href="http://www.unimelb.edu.au/research/about-research-at-melbourne.html">About Research at Melbourne</a></li>
               <li><a href="http://ri.unimelb.edu.au/">Research institutes</a></li>
               <li><a href="http://www.unimelb.edu.au/research/research-institutes-centres.html">Research Centres</a></li>
               <li><a href="http://findanexpert.unimelb.edu.au/">Find an expert or supervisor</a></li>
-              <li><a href="http://futurestudents.unimelb.edu.au/admissions/applications/research">Apply for graduate research</a></li>
-              <li><a href="http://services.unimelb.edu.au/scholarships/research">Graduate research scholarships</a></li>
-              <li><a href="http://gradresearch.unimelb.edu.au/">Information for graduate researchers</a></li>
+              <li><a href="http://gradresearch.unimelb.edu.au/>Graduate researchers</a></li>
+              <li><a href="https://pursuit.unimelb.edu.au/">Pursuit: our research showcase</a></li>
             </ul>
           </div>
         </div>
@@ -216,36 +213,36 @@ window.UOMinjectGlobalNav = ->
           <div>
             <h2><a href="http://unimelb.edu.au/engage/">Engagement</a></h2>
             <ul>
-              <li><a href="http://events.unimelb.edu.au">Events</a></li>
-              <li><a href="http://www.unimelb.edu.au/alumni">Alumni</a></li>
+              <li><a href="http://events.unimelb.edu.au/">Events</a></li>
               <li><a href="http://engage.unimelb.edu.au/community-engagement">Community</a></li>
               <li><a href="http://engage.unimelb.edu.au/global-engagement">Global Engagement</a></li>
               <li><a href="http://businessconnect.unimelb.edu.au/">Business &amp; Industry</a></li>
               <li><a href="http://engage.unimelb.edu.au/cultural-engagement">Arts &amp; Culture</a></li>
               <li><a href="http://www.sport.unimelb.edu.au/facilities/index.html">Sports Facilities</a></li>
-              <li><a href="http://services.unimelb.edu.au/venuehire/">Venue Hire</a></li>
             </ul>
           </div>
           <div>
-            <h2><a href="http://alumni.unimelb.edu.au">Alumni &amp; friends</a></h2>
+            <h2><a href="http://alumni.unimelb.edu.au/">Alumni &amp; friends</a></h2>
             <ul>
-              <li><a href="http://alumni.unimelb.edu.au/benefits-services/alumni-benefits">Benefits</a></li>
-              <li><a href="http://campaign.unimelb.edu.au">Giving</a></li>
+              <li><a href="http://alumni.unimelb.edu.au/benefits-services">Benefits &amp; services</a></li>
+              <li><a href="http://www.campaign.unimelb.edu.au/">Giving</a></li>
               <li><a href="http://alumni.unimelb.edu.au/get-involved">Get involved</a></li>
-              <li><a href="http://alumni.unimelb.edu.au/my-network/global-alumni-network">Global alumni network</a></li>
-              <li><a href="http://alumni.unimelb.edu.au/career-centre">Career Centre</a></li>
-              <li><a href="http://alumni.unimelb.edu.au/career-centre/future-study">Future study</a></li>
+              <li><a href="http://alumni.unimelb.edu.au/my-network">Networks</a></li>
+              <li><a href="http://mag.alumni.unimelb.edu.au/?sl=1">3010: alumni magazine</a></li>
+              <li><a href="http://alumni.unimelb.edu.au/news">News</a></li>
+              <li><a href="http://alumni.online.unimelb.edu.au/s/1182/3col.aspx?sid=1182&gid=1&pgid=722">Events</a></li>
             </ul>
           </div>
           <div>
-            <h2><a href="http://www.unimelb.edu.au/contact/">Contact & Maps</a></h2>
+            <h2><a href="http://www.unimelb.edu.au/contact/">Contact &amp; Maps</a></h2>
             <ul>
-              <li><a href="http://www.research.unimelb.edu.au/contact">Research enquiries</a></li>
-              <li><a href="http://newsroom.melbourne.edu/about">Media enquiries</a></li>
-              <li><a href="http://www.commercial.unimelb.edu.au/contact-us/">Industry and business enquiries</a></li>
-              <li><a href="http://directory.unimelb.edu.au">Find a staff member</a></li>
-              <li><a href="http://maps.unimelb.edu.au">Find a location on campus</a></li>
+              <li><a href="http://ask.unimelb.edu.au/app/contact">Contact us</a></li>
+              <li><a href="http://ask.unimelb.edu.au">Enquiries</a></li>
+              <li><a href="http://newsroom.melbourne.edu/">Media</a></li>
+              <li><a href="http://findanexpert.unimelb.edu.au">Find an expert</a></li>
+              <li><a href="http://maps.unimelb.edu.au/">Campus maps</a></li>
               <li><a href="http://pcs.unimelb.edu.au/traffic-and-parking/">Traffic, parking &amp; bicycles</a></li>
+              <li><a href="http://directory.unimelb.edu.au/">Find a staff member</a></li>
             </ul>
           </div>
         </div>
