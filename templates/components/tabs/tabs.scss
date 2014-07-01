@@ -218,6 +218,10 @@
         }
       }
 
+      nav a[data-current]:after {
+        border-top-color: $darkblue;
+      }
+
       nav a[data-current]::after {
         border-top-color: $darkblue;
       }
