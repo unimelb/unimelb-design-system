@@ -1,6 +1,6 @@
 unless window.UOMAccordion
   window.UOMAccordion = ->
-    class Accordion
+    class window.UOMAccordionComponent
       constructor: (@el) ->
         @container = @el.parentNode
         @hidden = @container.querySelector('.accordion__hidden')
@@ -32,7 +32,8 @@ unless window.UOMAccordion
           t.container.toggleClass('accordion__visible')
 
     if (supportedmodernbrowser)
-      new Accordion(el) for el in document.querySelectorAll('.accordion__title')
+      for el in document.querySelectorAll('.accordion__title')
+        new UOMAccordionComponent(el)
 
   if window.attachEvent
     window.attachEvent 'onload', ->
