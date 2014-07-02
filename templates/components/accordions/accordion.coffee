@@ -33,7 +33,7 @@ unless window.UOMAccordion
 
     if (supportedmodernbrowser)
       for el in document.querySelectorAll('.accordion__title')
-        new UOMAccordionComponent(el)
+        new UOMAccordionComponent(el)
 
   if window.attachEvent
     window.attachEvent 'onload', ->
