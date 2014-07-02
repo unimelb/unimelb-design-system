@@ -309,6 +309,7 @@ body {
         .right {
           @include rem(padding-top, 15px);
           float: right;
+          overflow: hidden;
           text-align: right;
           width: 25%;
         }
