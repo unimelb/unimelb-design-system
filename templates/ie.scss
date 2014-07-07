@@ -141,11 +141,11 @@ body [role="sitemap"] {
   }
 
   h2.logo {
-    background-image: url("#{asset_path('components/header/m-logo.png')}");
+    background-image: url("#{asset_path('components/ie/m-logo.png')}");
     float: left;
 
     @include ie9 {
-      background-image: url("#{asset_path('components/header/logo.png')}");
+      background-image: url("#{asset_path('components/ie/logo.png')}");
     }
   }
 
@@ -198,23 +198,23 @@ body [role="sitemap"] {
       margin: 0 auto;
 
       &.faculties {
-        background-image: url("#{asset_path('components/globals/s-icon-faculties-w.png')}");
+        background-image: url("#{asset_path('components/ie/s-icon-faculties-w.png')}");
       }
 
       &.library {
-        background-image: url("#{asset_path('components/globals/s-icon-library-w.png')}");
+        background-image: url("#{asset_path('components/ie/s-icon-library-w.png')}");
       }
 
       &.contact {
-        background-image: url("#{asset_path('components/globals/s-icon-contact-w.png')}");
+        background-image: url("#{asset_path('components/ie/s-icon-contact-w.png')}");
       }
 
       &.maps {
-        background-image: url("#{asset_path('components/globals/s-icon-maps-w.png')}");
+        background-image: url("#{asset_path('components/ie/s-icon-maps-w.png')}");
       }
 
       &.support {
-        background-image: url("#{asset_path('components/globals/s-icon-support-w.png')}");
+        background-image: url("#{asset_path('components/ie/s-icon-support-w.png')}");
       }
     }
   }
@@ -280,34 +280,34 @@ body [role="sitemap"] {
     width: 50%;
 
     .icon-staff {
-      background-image: url("#{asset_path('components/header/m-icon-p-b.png')}");
+      background-image: url("#{asset_path('components/ie/m-icon-p-b.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/icon-p-b.png')}");
+        background-image: url("#{asset_path('components/ie/icon-p-b.png')}");
       }
     }
 
     &:hover .icon-staff {
-      background-image: url("#{asset_path('components/header/m-icon-p-w.png')}");
+      background-image: url("#{asset_path('components/ie/m-icon-p-w.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/icon-p-w.png')}");
+        background-image: url("#{asset_path('components/ie/icon-p-w.png')}");
       }
     }
 
     .icon-student {
-      background-image: url("#{asset_path('components/header/m-icon-m-b.png')}");
+      background-image: url("#{asset_path('components/ie/m-icon-m-b.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/icon-m-b.png')}");
+        background-image: url("#{asset_path('components/ie/icon-m-b.png')}");
       }
     }
 
     &:hover .icon-student {
-      background-image: url("#{asset_path('components/header/m-icon-m-w.png')}");
+      background-image: url("#{asset_path('components/ie/m-icon-m-w.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/icon-m-w.png')}");
+        background-image: url("#{asset_path('components/ie/icon-m-w.png')}");
       }
     }
   }
@@ -322,10 +322,10 @@ body [role="sitemap"] {
   border-bottom: 2px solid #f0f0f0;
 
   a.page-header-logo {
-    background-image: url("#{asset_path('components/header/s-logo.png')}");
+    background-image: url("#{asset_path('components/ie/s-logo.png')}");
 
     @include ie9 {
-      background-image: url("#{asset_path('components/header/logo-w.png')}");
+      background-image: url("#{asset_path('components/ie/logo-w.png')}");
     }
   }
 
@@ -338,26 +338,26 @@ body [role="sitemap"] {
     color: $navy;
 
     .search {
-      background-image: url("#{asset_path('components/header/s-icon-s.png')}");
+      background-image: url("#{asset_path('components/ie/s-icon-s.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/icon-s.png')}");
+        background-image: url("#{asset_path('components/ie/icon-s.png')}");
       }
     }
 
     .login {
-      background-image: url("#{asset_path('components/header/s-icon-p.png')}");
+      background-image: url("#{asset_path('components/ie/s-icon-p.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/icon-p.png')}");
+        background-image: url("#{asset_path('components/ie/icon-p.png')}");
       }
     }
 
     .menu {
-      background-image: url("#{asset_path('components/header/s-menu.png')}");
+      background-image: url("#{asset_path('components/ie/s-menu.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/menu.png')}");
+        background-image: url("#{asset_path('components/ie/menu.png')}");
       }
     }
   }
@@ -368,26 +368,26 @@ body [role="sitemap"] {
     color: $white;
 
     .search {
-      background-image: url("#{asset_path('components/header/s-icon-s-w.png')}");
+      background-image: url("#{asset_path('components/ie/s-icon-s-w.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/icon-s-w.png')}");
+        background-image: url("#{asset_path('components/ie/icon-s-w.png')}");
       }
     }
 
     .login {
-      background-image: url("#{asset_path('components/header/s-icon-p-w.png')}");
+      background-image: url("#{asset_path('components/ie/s-icon-p-w.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/icon-p-w.png')}");
+        background-image: url("#{asset_path('components/ie/icon-p-w.png')}");
       }
     }
 
     .menu {
-      background-image: url("#{asset_path('components/header/s-menu-w.png')}");
+      background-image: url("#{asset_path('components/ie/s-menu-w.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/menu-w.png')}");
+        background-image: url("#{asset_path('components/ie/menu-w.png')}");
       }
     }
   }
@@ -396,26 +396,26 @@ body [role="sitemap"] {
     color: $navy;
 
     .search {
-      background-image: url("#{asset_path('components/header/s-icon-s.png')}");
+      background-image: url("#{asset_path('components/ie/s-icon-s.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/icon-s.png')}");
+        background-image: url("#{asset_path('components/ie/icon-s.png')}");
       }
     }
 
     .login {
-      background-image: url("#{asset_path('components/header/s-icon-p.png')}");
+      background-image: url("#{asset_path('components/ie/s-icon-p.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/icon-p.png')}");
+        background-image: url("#{asset_path('components/ie/icon-p.png')}");
       }
     }
 
     .menu {
-      background-image: url("#{asset_path('components/header/s-menu.png')}");
+      background-image: url("#{asset_path('components/ie/s-menu.png')}");
 
       @include ie9 {
-        background-image: url("#{asset_path('components/header/menu.png')}");
+        background-image: url("#{asset_path('components/ie/menu.png')}");
       }
     }
   }
@@ -433,7 +433,7 @@ body [role="sitemap"] {
   }
 
   .bottom-align-flat {
-    background-image: url("#{asset_path('components/globals/000o80.png')}");
+    background-image: url("#{asset_path('components/ie/000o80.png')}");
   }
 }
 
@@ -716,10 +716,10 @@ ul.ticked-list li:before {
         width: auto;
 
         a {
-          background-image: url("#{asset_path('components/footer/s-tw.png')}");
+          background-image: url("#{asset_path('components/ie/s-tw.png')}");
 
           @include ie9 {
-            background-image: url("#{asset_path('components/footer/tw.png')}");
+            background-image: url("#{asset_path('components/ie/tw.png')}");
           }
         }
       }
@@ -728,10 +728,10 @@ ul.ticked-list li:before {
         margin-left: 0;
 
         a {
-          background-image: url("#{asset_path('components/footer/s-fb.png')}");
+          background-image: url("#{asset_path('components/ie/s-fb.png')}");
 
           @include ie9 {
-            background-image: url("#{asset_path('components/footer/fb.png')}");
+            background-image: url("#{asset_path('components/ie/fb.png')}");
           }
         }
       }
@@ -740,10 +740,10 @@ ul.ticked-list li:before {
         margin-right: 0;
 
         a {
-          background-image: url("#{asset_path('components/footer/s-li.png')}");
+          background-image: url("#{asset_path('components/ie/s-li.png')}");
 
           @include ie9 {
-            background-image: url("#{asset_path('components/footer/li.png')}");
+            background-image: url("#{asset_path('components/ie/li.png')}");
           }
         }
       }
@@ -756,10 +756,10 @@ ul.ticked-list li:before {
 }
 
 .unimelb-lge {
-  background-image: url("#{asset_path('components/footer/s-lockup.png')}");
+  background-image: url("#{asset_path('components/ie/s-lockup.png')}");
 
   @include ie9 {
-    background-image: url("#{asset_path('components/footer/lockup.png')}");
+    background-image: url("#{asset_path('components/ie/lockup.png')}");
   }
 }
 
@@ -784,10 +784,10 @@ ul.ticked-list li:before {
 // VCA
 .vca .page-header header a.page-header-logo,
 .vca .page-header .page-header-logo {
-  background-image: url("#{asset_path('components/header/s-logo-vca.png')}");
+  background-image: url("#{asset_path('components/ie/s-logo-vca.png')}");
 
   @include ie9 {
-    background-image: url("#{asset_path('components/header/logo-vca.png')}");
+    background-image: url("#{asset_path('components/ie/logo-vca.png')}");
     background-size: cover;
   }
 }
@@ -798,52 +798,52 @@ ul.ticked-list li:before {
 
 .vca .page-header .page-header-tools a.page-header-icon {
   .search {
-    background-image: url("#{asset_path('components/header/s-icon-s-b.png')}");
+    background-image: url("#{asset_path('components/ie/s-icon-s-b.png')}");
 
     @include ie9 {
-      background-image: url("#{asset_path('components/header/icon-s-b.png')}");
+      background-image: url("#{asset_path('components/ie/icon-s-b.png')}");
     }
   }
 
   .login {
-    background-image: url("#{asset_path('components/header/s-icon-p-b.png')}");
+    background-image: url("#{asset_path('components/ie/s-icon-p-b.png')}");
 
     @include ie9 {
-      background-image: url("#{asset_path('components/header/icon-p-b.png')}");
+      background-image: url("#{asset_path('components/ie/icon-p-b.png')}");
     }
   }
 
   span.menu {
-    background-image: url("#{asset_path('components/header/s-menu-b.png')}");
+    background-image: url("#{asset_path('components/ie/s-menu-b.png')}");
 
     @media screen and (min-width: 0) {
-      background-image: url("#{asset_path('components/header/menu-b.png')}");
+      background-image: url("#{asset_path('components/ie/menu-b.png')}");
     }
   }
 }
 
 .floating.vca .page-header .page-header-tools a.page-header-icon {
   .search {
-    background-image: url("#{asset_path('components/header/s-icon-s-w.png')}");
+    background-image: url("#{asset_path('components/ie/s-icon-s-w.png')}");
 
     @include ie9 {
-      background-image: url("#{asset_path('components/header/icon-s-w.png')}");
+      background-image: url("#{asset_path('components/ie/icon-s-w.png')}");
     }
   }
 
   .login {
-    background-image: url("#{asset_path('components/header/s-icon-p-w.png')}");
+    background-image: url("#{asset_path('components/ie/s-icon-p-w.png')}");
 
     @include ie9 {
-      background-image: url("#{asset_path('components/header/icon-p-w.png')}");
+      background-image: url("#{asset_path('components/ie/icon-p-w.png')}");
     }
   }
 
   span.menu {
-    background-image: url("#{asset_path('components/header/s-menu-w.png')}");
+    background-image: url("#{asset_path('components/ie/s-menu-w.png')}");
 
     @include ie9 {
-      background-image: url("#{asset_path('components/header/menu-w.png')}");
+      background-image: url("#{asset_path('components/ie/menu-w.png')}");
     }
   }
 }
