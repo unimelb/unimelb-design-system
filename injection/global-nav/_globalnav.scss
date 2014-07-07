@@ -280,7 +280,6 @@
         top: 0;
 
         &:hover {
-          @include rem(margin-top, 15px);
           border-bottom-width: 0;
         }
       }

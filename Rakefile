@@ -29,10 +29,14 @@ namespace :injection do
 
   module InjectionHelper
     def asset_path(path, options={})
-      asset = environment[path]
-      raise "Unknown asset: #{path}" if asset.nil?
-      digest = asset.digest_path
-      File.join(INJECTION_SERVER_PATH, digest)
+      if path[0..1] == '//'
+        File.join(INJECTION_SERVER_PATH, path)
+      else
+        asset = environment[path]
+        raise "Unknown asset: #{path}" if asset.nil?
+        digest = asset.digest_path
+        File.join(INJECTION_SERVER_PATH, digest)
+      end
     end
   end
 
@@ -47,7 +51,7 @@ namespace :injection do
       end
     end
     t.output      = INJECTION_BUILD_DIR
-    t.assets      = %w{*.eot *.svg *.ttf *.woff *.png *.jpg *.jpeg injection.js injection.css}
+    t.assets      = %w{*.svg *.png *.jpg *.jpeg injection.js injection.css}
     t.logger      = Logger.new($stdout)
     t.log_level   = :debug
     t.keep        = 0
@@ -83,15 +87,19 @@ namespace :templates do
 
   module TemplatesHelper
     def asset_path(path, options={})
-      asset = environment[path]
-      raise "Unknown asset: #{path}" if asset.nil?
-      digest = asset.digest_path
-      File.join(TEMPLATES_SERVER_PATH, digest)
+      if path[0..1] == '//'
+        File.join(INJECTION_SERVER_PATH, path)
+      else
+        asset = environment[path]
+        raise "Unknown asset: #{path}" if asset.nil?
+        digest = asset.digest_path
+        File.join(TEMPLATES_SERVER_PATH, digest)
+      end
     end
   end
 
   SPECIFIED_VERSION      = ENV['VERSION'] ? ENV['VERSION'] : 'beta'
-  TEMPLATE_VERSION       = SPECIFIED_VERSION =~ /^\d$/ ? "v#{SPECIFIED_VERSION}" : SPECIFIED_VERSION
+  TEMPLATE_VERSION       = SPECIFIED_VERSION =~ /^\d.*$/ ? "v#{SPECIFIED_VERSION}" : SPECIFIED_VERSION
   TEMPLATES_ASSETS       = File.expand_path File.join(ROOT_DIR,  'templates')
   TEMPLATES_VERSION_PATH = File.join('templates', TEMPLATE_VERSION)
   TEMPLATES_BUILD_DIR    = File.expand_path File.join(BUILD_DIR, TEMPLATES_VERSION_PATH)
@@ -108,12 +116,11 @@ namespace :templates do
       end
     end
     t.output      = TEMPLATES_BUILD_DIR
-    t.assets      = %w{*.eot *.svg *.ttf *.woff *.png *.jpg *.jpeg uom.js isotope.pkgd.min.js uom.css ie.css}
+    t.assets      = %w{*.svg *.png *.jpg *.jpeg uom.js isotope.pkgd.min.js uom.css ie.css}
     t.logger      = Logger.new($stdout)
     t.log_level   = :debug
     t.keep        = 0
   end
-
 
   desc 'Uploads everything in the templates build directory to S3'
   task sync: :dotenv do

@@ -76,12 +76,12 @@ window.UOMinjectHeader = ->
       login.innerHTML = """
               <h2 class="title">Please Choose</h2>
               <div class="half">
-                <a class="button-fill" href="">
+                <a class="button-fill" href="https://my.unimelb.edu.au/studentportal/faces/home">
                   <i class="icon-student"></i>
                   <h2>Current Student</h2>
                   <p>Click here to get to the student portal</p>
                 </a>
-                <a class="button-fill" href="">
+                <a class="button-fill" href="https://staff.unimelb.edu.au">
                   <i class="icon-staff"></i>
                   <h2>Staff Member</h2>
                   <p>Click here to get to the staff portal</p>

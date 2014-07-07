@@ -204,7 +204,7 @@ window.UOMinjectGlobalNav = ->
               <li><a href="http://ri.unimelb.edu.au/">Research institutes</a></li>
               <li><a href="http://www.unimelb.edu.au/research/research-institutes-centres.html">Research Centres</a></li>
               <li><a href="http://findanexpert.unimelb.edu.au/">Find an expert or supervisor</a></li>
-              <li><a href="http://gradresearch.unimelb.edu.au/>Graduate researchers</a></li>
+              <li><a href="http://gradresearch.unimelb.edu.au/">Graduate researchers</a></li>
               <li><a href="https://pursuit.unimelb.edu.au/">Pursuit: our research showcase</a></li>
             </ul>
           </div>
