@@ -3,21 +3,19 @@ no_section_wrap: true
 ---
 <div id="nav" class="tabbed-nav" data-tabbed>
   <div class="full-width">
-    <form class="mobile-nav">
-      <fieldset>
-        <div>
-          <select>
-            <option value="#tab1">1st</option>
-            <option value="#tab2">2nd</option>
-            <option value="#tab3">3rd</option>
-          </select>
-        </div>
-      </fieldset>
-    </form>
+    <div class="mobile-nav">
+      <select>
+        <option value="#tab1">1st</option>
+        <option value="#tab2">2nd</option>
+        <option value="#tab3">3rd</option>
+        <option value="/">Home</option>
+      </select>
+    </div>
     <nav class="desktop-nav">
       <a href="#tab1">1st</a>
       <a href="#tab2" data-current>2nd</a>
       <a href="#tab3">3rd</a>
+      <a href="/">Home</a>
     </nav>
   </div>
   <div id="tab1" class="tab">

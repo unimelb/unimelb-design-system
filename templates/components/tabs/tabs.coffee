@@ -18,23 +18,27 @@ unless window.UOMTabs
         for item in @el.querySelectorAll('nav a')
           item.addEventListener 'click', (e) ->
             target = e.target || e.srcElement
-            t.move(target)
-            setTimeout(->
-              if target.getAttribute('href')
-                window.location.hash = target.getAttribute('href').substr(1)
-            , 600)
+            if target.getAttribute('href').substr(0, 1) == '#'
+              t.move(target)
+              setTimeout(->
+                if target.getAttribute('href')
+                  window.location.hash = target.getAttribute('href').substr(1)
+              , 600)
 
         if @el.countSelector('select') > 0
           @el.querySelector('select').addEventListener 'change', (e) ->
             if this.value
-              curr = 1
-              tab = this.value
-              for opt, i in this.querySelectorAll('option')
-                curr = i+1 if opt.value==tab
-              t.moveindex(curr)
-              setTimeout(->
-                window.location.hash = tab.substr(1) if tab
-              , 600)
+              if this.value.substr(0, 1) != '#'
+                window.location = this.value
+              else
+                curr = 1
+                tab = this.value
+                for opt, i in this.querySelectorAll('option')
+                  curr = i+1 if opt.value==tab
+                t.moveindex(curr)
+                setTimeout(->
+                  window.location.hash = tab.substr(1) if tab
+                , 600)
 
         curr = window.location.hash.substr(1) if window.location.hash
 

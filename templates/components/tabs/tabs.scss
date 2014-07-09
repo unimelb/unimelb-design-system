@@ -57,7 +57,7 @@
 
   .tabbed-nav {
     .full-width {
-      background-color: rgba($navy, .9);
+      background-color: #004576;
       border-bottom: 1px solid transparent;
       position: relative;
 
@@ -128,11 +128,35 @@
     .mobile-nav {
       display: none;
       margin: 0 3%;
+      position: relative;
       width: 94%;
+
+      select {
+        @include rem(margin, 5px 0);
+        background-color: $brand;
+        border-color: $brand;
+      }
 
       &.active {
         display: block;
       }
+
+      &::after {
+        border: solid transparent;
+        border-top-color: #004576;
+        border-width: 10px;
+        content: ' ';
+        height: 0;
+        left: 50%;
+        margin-bottom: -10px;
+        margin-left: -10px;
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        width: 0;
+        z-index: 1;
+      }
+
 
       @include breakpoint(desktop) {
         display: none;
