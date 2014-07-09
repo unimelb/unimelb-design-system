@@ -153,3 +153,69 @@
     }
   }
 }
+
+.ie {
+  .page-inner {
+    &.active {
+      -ms-transform: none;
+    }
+
+    &.global-active {
+      z-index: 0;
+    }
+  }
+
+  .modal__dialog {
+    left: 20%;
+    right: 20%;
+    top: 20%;
+    width: 60%;
+
+    .half .button-fill {
+      width: 50%;
+
+      .icon-staff {
+        background-image: url("#{asset_path('header/m-icon-p-b.png')}");
+      }
+
+      &:hover .icon-staff {
+        background-image: url("#{asset_path('header/m-icon-p-w.png')}");
+      }
+
+      .icon-student {
+        background-image: url("#{asset_path('header/m-icon-m-b.png')}");
+      }
+
+      &:hover .icon-student {
+        background-image: url("#{asset_path('header/m-icon-m-w.png')}");
+      }
+    }
+  }
+
+  .modal__blanket {
+    min-height: 100%;
+    width: 120%;
+  }
+}
+
+.ie9 {
+  .modal__dialog {
+    .half .button-fill {
+      .icon-staff {
+        background-image: url("#{asset_path('header/icon-p-b.png')}");
+      }
+
+      &:hover .icon-staff {
+        background-image: url("#{asset_path('header/icon-p-w.png')}");
+      }
+
+      .icon-student {
+          background-image: url("#{asset_path('header/icon-m-b.png')}");
+      }
+
+      &:hover .icon-student {
+        background-image: url("#{asset_path('header/icon-m-w.png')}");
+      }
+    }
+  }
+}

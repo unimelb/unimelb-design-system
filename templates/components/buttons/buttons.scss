@@ -186,3 +186,22 @@
     @include rem(font-size, 16px);
   }
 }
+
+.ie {
+  %button-arrow {
+    content: '\2192';
+    font-size: 30px;
+    padding-left: 5px;
+    position: absolute;
+    top: 4px;
+  }
+
+  .button-hero-inverse:after {
+    @extend %button-arrow;
+    top: -6px;
+  }
+
+  .button-hero:after {
+    @extend %button-arrow;
+  }
+}

@@ -139,3 +139,79 @@
     }
   }
 }
+
+// IE 8 + 9 compatibility
+.ie9 {
+  .vca .page-header header a.page-header-logo,
+  .vca .page-header .page-header-logo {
+    background-image: url("#{asset_path('components/ie/logo-vca.png')}");
+    background-size: cover;
+  }
+
+  .vca .page-header .page-header-tools a.page-header-icon {
+    .search {
+      background-image: url("#{asset_path('components/ie/icon-s-b.png')}");
+    }
+
+    .login {
+      background-image: url("#{asset_path('components/ie/icon-p-b.png')}");
+    }
+
+    span.menu {
+      background-image: url("#{asset_path('components/ie/menu-b.png')}");
+    }
+  }
+
+  .floating.vca .page-header .page-header-tools a.page-header-icon {
+    .search {
+      background-image: url("#{asset_path('components/ie/icon-s-w.png')}");
+    }
+
+    .login {
+      background-image: url("#{asset_path('components/ie/icon-p-w.png')}");
+    }
+
+    span.menu {
+      background-image: url("#{asset_path('components/ie/menu-w.png')}");
+    }
+  }
+}
+
+.ie {
+  .vca .page-header header a.page-header-logo,
+  .vca .page-header .page-header-logo {
+    background-image: url("#{asset_path('components/ie/s-logo-vca.png')}");
+  }
+
+  .vca ul.ticked-list li:before {
+    color: #000;
+  }
+
+  .vca .page-header .page-header-tools a.page-header-icon {
+    .search {
+      background-image: url("#{asset_path('components/ie/s-icon-s-b.png')}");
+    }
+
+    .login {
+      background-image: url("#{asset_path('components/ie/s-icon-p-b.png')}");
+    }
+
+    span.menu {
+      background-image: url("#{asset_path('components/ie/s-menu-b.png')}");
+    }
+  }
+
+  .floating.vca .page-header .page-header-tools a.page-header-icon {
+    .search {
+      background-image: url("#{asset_path('components/ie/s-icon-s-w.png')}");
+    }
+
+    .login {
+      background-image: url("#{asset_path('components/ie/s-icon-p-w.png')}");
+    }
+
+    span.menu {
+      background-image: url("#{asset_path('components/ie/s-menu-w.png')}");
+    }
+  }
+}

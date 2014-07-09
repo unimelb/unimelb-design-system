@@ -230,3 +230,145 @@
     float: right;
   }
 }
+
+.ie {
+  .page-footer {
+    background-color: $navy;
+    clear: left;
+    color: $white;
+
+    footer {
+      margin: 0 auto;
+      max-width: 1400px;
+      padding: 15px 15px 60px;
+    }
+
+    small {
+      clear: left;
+      color: $lightblue;
+      display: block;
+      font-size: 12px;
+      text-align: left;
+
+      a {
+        color: $lightblue;
+        text-decoration: none;
+
+        &:hover {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .page-footer-section {
+    &.nav {
+      margin-bottom: 60px;
+      width: 80%;
+
+      li {
+        display: inline;
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+        padding-bottom: 0;
+        padding-right: 30px;
+        padding-top: 0;
+        width: auto;
+      }
+
+      a {
+        font-size: 15px;
+      }
+    }
+
+    &.social {
+      border-top: 1px solid $blue;
+      clear: none;
+      margin-bottom: 60px;
+      text-align: right;
+      width: 20%;
+
+      li {
+        display: inline;
+        float: none;
+        margin-left: 25px;
+        width: auto;
+
+        &.social-twitter {
+          width: auto;
+
+          a {
+            background-image: url("#{asset_path('footer/s-tw.png')}");
+          }
+        }
+
+        &.social-facebook {
+          margin-left: 0;
+
+          a {
+            background-image: url("#{asset_path('footer/s-fb.png')}");
+          }
+        }
+
+        &.social-linkedin {
+          margin-right: 0;
+
+          a {
+            background-image: url("#{asset_path('footer/s-li.png')}");
+          }
+        }
+      }
+
+      a {
+        vertical-align: top;
+      }
+    }
+  }
+
+  .unimelb-lge {
+    background-image: url("#{asset_path('footer/s-lockup.png')}");
+  }
+
+  .page-footer-est1853 {
+    display: inline;
+    float: right;
+  }
+
+  [role="main"] footer.cta ul.quarter {
+    padding: 30px 0 60px;
+    text-align: center;
+
+    li {
+      display: inline;
+      float: none;
+      margin: 0;
+      padding: 0 30px;
+      width: auto;
+    }
+  }
+}
+
+.ie9 {
+  .page-footer-section {
+    &.social {
+      li {
+        &.social-twitter a {
+          background-image: url("#{asset_path('footer/tw.png')}");
+        }
+
+        &.social-facebook a {
+          background-image: url("#{asset_path('footer/fb.png')}");
+        }
+
+        &.social-linkedin a {
+          background-image: url("#{asset_path('footer/li.png')}");
+        }
+      }
+    }
+  }
+
+  .unimelb-lge {
+    background-image: url("#{asset_path('footer/lockup.png')}");
+  }
+}

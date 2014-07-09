@@ -401,3 +401,154 @@
     }
   }
 }
+
+body.ie {
+  [role="sitemap"] {
+    display: none;
+    z-index: 0;
+
+    &.active {
+      background: $navy;
+      display: block;
+      z-index: 100;
+    }
+
+    &.reveal,
+    &.reveal .sitemap-label {
+      display: none;
+    }
+
+    h2.logo {
+      background-image: url("#{asset_path('header/m-logo.png')}");
+      float: left;
+    }
+
+    a.close-button:before {
+      color: $lightblue;
+      content: '<';
+      display: block;
+      font-size: 40px;
+      font-weight: 300;
+      height: 10px;
+      text-indent: 0;
+    }
+
+    a.close-button:hover {
+      color: $navy;
+    }
+
+    a.close-button::before {
+      -ms-transform: rotate(0deg);
+      padding-top: 10px;
+    }
+
+    h2,
+    a {
+      color: $lightblue;
+    }
+
+    ul.quicklinks {
+      border-bottom: 1px solid $blue;
+      border-top: 1px solid $blue;
+      float: left;
+
+      li {
+        clear: none;
+        float: left;
+        line-height: 1;
+        width: 20%;
+      }
+
+      a {
+        display: block;
+        height: 100px;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .icon {
+        display: block;
+        float: none;
+        margin: 0 auto;
+
+        &.faculties {
+          background-image: url("#{asset_path('global-nav/s-icon-faculties-w.png')}");
+        }
+
+        &.library {
+          background-image: url("#{asset_path('global-nav/s-icon-library-w.png')}");
+        }
+
+        &.contact {
+          background-image: url("#{asset_path('global-nav/s-icon-contact-w.png')}");
+        }
+
+        &.maps {
+          background-image: url("#{asset_path('global-nav/s-icon-maps-w.png')}");
+        }
+
+        &.support {
+          background-image: url("#{asset_path('global-nav/s-icon-support-w.png')}");
+        }
+      }
+    }
+
+
+    form {
+      clear: none;
+      float: right;
+      margin-top: 45px;
+      padding: 0;
+      width: 600px;
+
+      fieldset .inline .search-button {
+        text-indent: 0;
+        color: black;
+        width: auto;
+      }
+    }
+
+    .col-3 {
+      clear: both;
+      padding-top: 30px;
+
+      div {
+        float: left;
+        padding-bottom: 30px;
+        width: 30%;
+
+        &:first-child {
+          margin-right: 5%;
+
+          & + div + div {
+            margin-left: 5%;
+          }
+        }
+      }
+
+      h2 {
+        border-top: 0 none;
+        margin-right: 0;
+        padding-left: 0;
+        padding-top: 0;
+      }
+
+      a {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+body.ie9 {
+  [role="sitemap"] {
+    h2.logo {
+      background-image: url("#{asset_path('header/logo.png')}");
+    }
+
+    form fieldset .inline .search-button {
+      text-indent: -999em;
+      width: 40px;
+    }
+  }
+}

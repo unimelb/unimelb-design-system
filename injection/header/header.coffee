@@ -1,4 +1,10 @@
 window.UOMinjectHeader = ->
+  # IE helper
+  bodyclass = 'ie ie8' if /(MSIE 8.0)/g.test(navigator.userAgent)
+  bodyclass = 'ie ie9' if /(MSIE 9.0)/g.test(navigator.userAgent)
+  unless document.body.hasClass('ie') or (typeof bodyclass == 'undefined')
+    document.body.addClass(bodyclass)
+
   # Create page wrapper if it doesn't already exist
   parent = document.body
   page = document.querySelector('.page-inner')
@@ -12,6 +18,11 @@ window.UOMinjectHeader = ->
     main.setAttribute('role', 'main')
   else
     main.parentNode.removeChild(main)
+
+  # Move existing child nodes of body into main (volatile)
+  # for node in document.body.childNodes
+  #   if node and node.nodeType==1 and !node.hasClass('.page-inner')
+  #     main.appendChild(node)
 
   footer = document.querySelector('.page-footer')
   page.insertBefore(main, footer)
