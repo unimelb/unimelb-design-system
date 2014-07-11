@@ -1,0 +1,232 @@
+@import 'compass';
+@import 'includes';
+
+[role="main"] {
+  padding-bottom: 0;
+
+  .tabbed-nav .mobile-nav::after {
+    border-top-color: $black;
+  }
+
+  .selector-listing-3 {
+    li {
+      background-color: transparent;
+      color: $black;
+    }
+
+    strong,
+    span,
+    p {
+      border-color: $black;
+      color: $black;
+    }
+
+    a {
+      background-color: $white;
+      color: $black;
+
+      &:hover {
+        background-color: $white;
+
+        .button-small {
+          background-color: $black;
+          color: $white;
+        }
+      }
+    }
+
+    .button-small {
+      background-color: $white;
+      border: 2px solid $black;
+    }
+
+    &.inverse {
+      strong,
+      span,
+      p {
+        border-color: $white;
+        color: $white;
+      }
+
+      a {
+        background-color: rgba($black, .85);
+        color: $white;
+
+        &:hover .button-small {
+          background-color: $white;
+          color: $black;
+        }
+      }
+
+      .button-small {
+        background-color: $black;
+        border-color: $white;
+      }
+    }
+  }
+
+  section.lead::after {
+    border-color: $black;
+  }
+
+  .inset-left figcaption,
+  .inset-right figcaption {
+    color: $black;
+  }
+
+  .inset-left figcaption::before,
+  .inset-right figcaption::before {
+    border-color: $black;
+  }
+
+  ul.ticked-list li::before {
+    border-color: $black;
+  }
+}
+
+.page-header a.page-header-logo {
+  background-image: url("#{asset_path('vca/logo-vca.png')}");
+
+  @include breakpoint(0) {
+    background-image: url("#{asset_path('vca/logo-vca.svg')}");
+  }
+}
+
+.page-header header {
+  a.page-header-logo {
+    @include rem(width, 142px);
+    background-color: $black;
+    background-image: url("#{asset_path('vca/logo-vca.png')}");
+    margin-left: 0;
+
+    @include breakpoint(0) {
+      background-image: url("#{asset_path('vca/logo-vca.svg')}");
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(height, 90px);
+      @include rem(width, 212px);
+    }
+  }
+
+  .page-header-navigation {
+    a,
+    span {
+      color: $black;
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(margin-left, 235px);
+    }
+  }
+}
+
+.page-header-tools .page-header-icon {
+  color: $black;
+
+  .search {
+    background-image: url("#{asset_path('vca/icon-s-b.png')}");
+  }
+
+  .login {
+    background-image: url("#{asset_path('vca/icon-p-b.png')}");
+  }
+
+  .menu {
+    background-image: url("#{asset_path('vca/menu-b.png')}");
+  }
+}
+
+.course-progression tr {
+  td.unit-description {
+    background-color: $black;
+
+    &:before {
+      border-bottom-color: $black;
+    }
+
+    &::before {
+      border-bottom-color: $black;
+    }
+  }
+}
+
+// IE 8 + 9 compatibility
+.ie {
+  [role="main"] .tabbed-nav .mobile-nav:after {
+    border-top-color: $black;
+  }
+
+  .page-header header a.page-header-logo,
+  .page-header .page-header-logo {
+    background-image: url("#{asset_path('vca/s-logo-vca.png')}");
+  }
+
+  ul.ticked-list li:before {
+    color: #000;
+  }
+
+  .page-header .page-header-tools a.page-header-icon {
+    .search {
+      background-image: url("#{asset_path('vca/s-icon-s-b.png')}");
+    }
+
+    .login {
+      background-image: url("#{asset_path('vca/s-icon-p-b.png')}");
+    }
+
+    span.menu {
+      background-image: url("#{asset_path('vca/s-menu-b.png')}");
+    }
+  }
+
+  .floating .page-header .page-header-tools a.page-header-icon {
+    .search {
+      background-image: url("#{asset_path('vca/s-icon-s-w.png')}");
+    }
+
+    .login {
+      background-image: url("#{asset_path('vca/s-icon-p-w.png')}");
+    }
+
+    span.menu {
+      background-image: url("#{asset_path('vca/s-menu-w.png')}");
+    }
+  }
+}
+
+.ie9 {
+  .page-header header a.page-header-logo,
+  .page-header .page-header-logo {
+    background-image: url("#{asset_path('vca/logo-vca.png')}");
+    background-size: cover;
+  }
+
+  .page-header .page-header-tools a.page-header-icon {
+    .search {
+      background-image: url("#{asset_path('components/ie/icon-s-b.png')}");
+    }
+
+    .login {
+      background-image: url("#{asset_path('components/ie/icon-p-b.png')}");
+    }
+
+    span.menu {
+      background-image: url("#{asset_path('vca/menu-b.png')}");
+    }
+  }
+
+  .floating .page-header .page-header-tools a.page-header-icon {
+    .search {
+      background-image: url("#{asset_path('vca/icon-s-w.png')}");
+    }
+
+    .login {
+      background-image: url("#{asset_path('vca/icon-p-w.png')}");
+    }
+
+    span.menu {
+      background-image: url("#{asset_path('vca/menu-w.png')}");
+    }
+  }
+}

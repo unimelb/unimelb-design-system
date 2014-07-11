@@ -100,7 +100,7 @@ module WebTemplates
     ### Layouts
 
     get '/layouts' do
-      @layouts    = settings.layouts
+      @layouts = settings.layouts
       slim :layouts_index
     end
 
@@ -116,7 +116,11 @@ module WebTemplates
         return slim :source_view
       end
 
-      slim layout_view
+      if File.exist? (File.join settings.layouts_dir, path + '_layout.slim')
+        slim layout_view, layout: "example_layouts/#{path}_layout".to_sym
+      else
+        slim layout_view
+      end
     end
 
     ### Assets
@@ -185,7 +189,9 @@ module WebTemplates
 
       layouts = { title: 'Layouts', href: '/layouts', children: [] }
       settings.layouts.each do |layout|
-        layouts[:children] << { title: layout_title(layout), href: layout_path(layout), children: [] }
+        unless layout =~ /[layout]$/
+          layouts[:children] << { title: layout_title(layout), href: layout_path(layout), children: [] }
+        end
       end
 
       components = { title: 'Components', href: '/components', children: [] }

@@ -105,6 +105,7 @@ window.UOMinjectGlobalNav = ->
             t.localnav.addClass('global-active')
           t.sitemap.addClass('active')
           t.sitemap.removeClass('reveal')
+          t.sitemap.querySelector('input[type="search"]').focus()
 
   # Move local nav outside page container
   if document.countSelector('div[role="navigation"]') == 1
