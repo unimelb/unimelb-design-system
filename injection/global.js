@@ -16,8 +16,8 @@ var supportedmodernbrowser = !/(MSIE 7.0)/g.test(navigator.userAgent);
     }
 
     // Window height helper
-    if (!Window.prototype.height) {
-      Window.prototype.height = function() {
+    if (typeof window.height === "undefined") {
+      window.height = function() {
         var h;
         if (window.innerHeight) {
           h = window.innerHeight;
