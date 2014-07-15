@@ -188,10 +188,8 @@ module WebTemplates
       @navigation = dir_to_menu(settings.pages_dir)
 
       layouts = { title: 'Layouts', href: '/layouts', children: [] }
-      settings.layouts.each do |layout|
-        unless layout =~ /[layout]$/
-          layouts[:children] << { title: layout_title(layout), href: layout_path(layout), children: [] }
-        end
+      settings.layouts.reject{ |l| l =~ /(layout)$/ }.each do |layout|
+        layouts[:children] << { title: layout_title(layout), href: layout_path(layout), children: [] }
       end
 
       components = { title: 'Components', href: '/components', children: [] }

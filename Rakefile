@@ -3,6 +3,7 @@ require 'rake/sprocketstask'
 require 'compass'
 require 'asset_sync'
 require 'dotenv/tasks'
+require 'fileutils'
 
 ROOT_DIR  = File.expand_path File.dirname(__FILE__)
 BUILD_DIR = File.expand_path File.join(ROOT_DIR,  'build')
@@ -99,7 +100,7 @@ namespace :templates do
   end
 
   SPECIFIED_VERSION      = ENV['VERSION'] ? ENV['VERSION'] : 'beta'
-  TEMPLATE_VERSION       = SPECIFIED_VERSION =~ /^\d.*$/ ? "v#{SPECIFIED_VERSION}" : SPECIFIED_VERSION
+  TEMPLATE_VERSION       = SPECIFIED_VERSION =~ /^\d.*$/ ? "#{SPECIFIED_VERSION}/tmp" : SPECIFIED_VERSION
   TEMPLATES_ASSETS       = File.expand_path File.join(ROOT_DIR,  'templates')
   TEMPLATES_VERSION_PATH = File.join('templates', TEMPLATE_VERSION)
   TEMPLATES_BUILD_DIR    = File.expand_path File.join(BUILD_DIR, TEMPLATES_VERSION_PATH)
@@ -120,6 +121,10 @@ namespace :templates do
     t.logger      = Logger.new($stdout)
     t.log_level   = :debug
     t.keep        = 0
+  end
+
+  if SPECIFIED_VERSION =~ /^\d.*$/
+    FileUtils.mv('/tmp/your_file', '/opt/new/location/your_file')
   end
 
   desc 'Uploads everything in the templates build directory to S3'

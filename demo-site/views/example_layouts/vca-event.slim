@@ -1,0 +1,39 @@
+.page-header
+  header
+    a class="page-header-logo wide" href="/" Home
+    .page-header-navigation
+      a href="https://vca.unimelb.edu.au/" title="Victorian College of the Arts" Victorian College of the Arts
+      span
+        ' /
+      == slim :breadcrumb
+
+div role="main"
+  header.mid style="background-image:url(/assets/images/bg-banner.jpg)"
+
+  section
+    p WOMINJEKA/Welcome to the traditional lands of the Kulin Nations, where we draw on the strength of more than 1000 generations of arts practice.
+    p We respectfully acknowledge the people of the Boon Wurrung and the Woi Wurrung who have danced their dances, sung their songs and lived their culture on this land for tens of thousands of years
+    p.center
+      img src="http://placekitten.com/200/200"
+    p.center
+      span.diamond-mask
+        img src="http://placekitten.com/200/200"
+
+  footer.cta
+    ul.quarter
+      li: a.email href="email"
+        img src="/assets/images/email.png" alt=""
+        | Sign up for our newsletter
+      li: a.link href="link"
+        img src="/assets/images/link.png" alt=""
+        | Read the VCA blog
+      li: a.facebook href="facebook"
+        img src="/assets/images/fb.png" alt=""
+        | VCA Facebook
+      li: a.youtube href="youtube"
+        img src="/assets/images/youtube.png" alt=""
+        | VCA &amp; MCM YouTube
+    hr
+    p.overview
+      | Support the VCA
+      a.button-hero-inverse href="" Donate
