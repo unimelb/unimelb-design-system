@@ -1410,6 +1410,12 @@ body {
   ul.ticked-list li:before {
     content: '';
   }
+
+  [role="main"] header {
+    .bottom-align-flat {
+      background-image: none;
+    }
+  }
 }
 
 // Uninjected styles
