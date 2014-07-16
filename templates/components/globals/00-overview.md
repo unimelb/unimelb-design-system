@@ -26,26 +26,7 @@ You should avoid:
 * Changing the colour of components either locally or globally (eg. making the logo red, or the body text green). Doing this damages our user-experience, brand consistency and could have an adverse impact on accessibility.
 * Add colours to the palette. If you feel that a colour should be added to the palette, please request it using the [contribution process](#).
 
-<h2 id="palette">Colour palette</h2>
-
-<div class="square black">#000000;</div>
-<div class="square darkgray">#333333;</div>
-<div class="square midgray">#666666;</div>
-<div class="square gray">#adb8c1;</div>
-<div class="square lightergray">#e0e0e0;</div>
-<div class="square paleblue">#f2f5f8;</div>
-<div class="square lightgray">#f6f6f6;</div>
-<div class="square white">#ffffff;</div>
-
-<div class="square navy">#0c304a;</div>
-<div class="square blue">#304e64;</div>
-<div class="square darkblue">#004576;</div>
-<div class="square midblue">#366996;</div>
-<div class="square lightblue">#82a1bd;</div>
-<div class="square lighterblue">#359aec;</div>
-<div class="square lightestblue">#e1eaf5;</div>
-
-<div class="square paleyellow">#fffbe4;</div>
-<div class="square cyan">#0084ee;</div>
-<div class="square green">#3fc76e;</div>
-<div class="square cherry">#df0620;</div>
+<section class="with-figure">
+  <h2 id="palette">Colour palette</h2>
+  <div class="square black">#000000;</div> <div class="square darkgray">#333333;</div> <div class="square midgray">#666666;</div> <div class="square gray">#adb8c1;</div> <div class="square lightergray">#e0e0e0;</div> <div class="square paleblue">#f2f5f8;</div> <div class="square lightgray">#f6f6f6;</div> <div class="square white">#ffffff;</div> <div class="square navy">#0c304a;</div> <div class="square blue">#304e64;</div> <div class="square darkblue">#004576;</div> <div class="square midblue">#366996;</div> <div class="square lightblue">#82a1bd;</div> <div class="square lighterblue">#359aec;</div> <div class="square lightestblue">#e1eaf5;</div> <div class="square paleyellow">#fffbe4;</div> <div class="square cyan">#0084ee;</div> <div class="square green">#3fc76e;</div> <div class="square cherry">#df0620;</div>
+</section>

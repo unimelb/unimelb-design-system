@@ -13,6 +13,7 @@
 @import 'components/patterns/normalize';
 @import 'components/patterns/smooth-font-loading';
 @import 'components/globals/base';
+@import 'components/globals/banners';
 @import 'components/globals/images';
 @import 'components/globals/code';
 @import 'components/listings/listings';
@@ -27,6 +28,7 @@
 @import 'components/globals/profile';
 @import 'components/globals/courses';
 @import 'components/globals/timetable';
+@import 'components/globals/detail';
 
 ///* Print */
 @import 'print';

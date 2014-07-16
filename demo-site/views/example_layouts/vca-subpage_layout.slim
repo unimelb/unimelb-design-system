@@ -23,5 +23,35 @@ html.no-js
 
   body
     .page-inner
-      == yield
+      .page-header
+        header
+          a class="page-header-logo wide" href="/" Home
+          .page-header-navigation
+            a href="https://vca.unimelb.edu.au/" title="Victorian College of the Arts" Victorian College of the Arts
+            span
+              ' /
+            == slim :breadcrumb
+
+      div role="main"
+        == yield
+
+        footer.cta
+          ul.quarter
+            li: a.email href="email"
+              img src="/assets/images/email.png" alt=""
+              | Sign up for our newsletter
+            li: a.link href="link"
+              img src="/assets/images/link.png" alt=""
+              | Read the VCA blog
+            li: a.facebook href="facebook"
+              img src="/assets/images/fb.png" alt=""
+              | VCA Facebook
+            li: a.youtube href="youtube"
+              img src="/assets/images/youtube.png" alt=""
+              | VCA &amp; MCM YouTube
+          hr
+          p.overview
+            | Support the VCA
+            a.button-hero-inverse href="" Donate
+
       == slim :nav

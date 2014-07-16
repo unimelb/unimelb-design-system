@@ -1,39 +1,65 @@
-.page-header
-  header
-    a class="page-header-logo wide" href="/" Home
-    .page-header-navigation
-      a href="https://vca.unimelb.edu.au/" title="Victorian College of the Arts" Victorian College of the Arts
-      span
-        ' /
-      == slim :breadcrumb
+.detail
+  .upper
+    h2.subtitle Current Exhibition
+    aside
+      .when.range
+        time datetime="2014-04-11"
+          ' Friday
+          strong 11 Apr
+          '
+          | 2014
+        time datetime="2014-05-03"
+          ' Saturday
+          strong 03 May
+          '
+          | 2014
 
-div role="main"
-  header.mid style="background-image:url(/assets/images/bg-banner.jpg)"
+    img src="/assets/images/mockup2.jpg"
 
-  section
-    p WOMINJEKA/Welcome to the traditional lands of the Kulin Nations, where we draw on the strength of more than 1000 generations of arts practice.
-    p We respectfully acknowledge the people of the Boon Wurrung and the Woi Wurrung who have danced their dances, sung their songs and lived their culture on this land for tens of thousands of years
-    p.center
-      img src="http://placekitten.com/200/200"
-    p.center
-      span.diamond-mask
-        img src="http://placekitten.com/200/200"
+  .lower
+    aside
+      div
+        p
+          ' 40 Dodds Street  Southbank VIC 3006
+          a.button-map href="" Map
 
-  footer.cta
-    ul.quarter
-      li: a.email href="email"
-        img src="/assets/images/email.png" alt=""
-        | Sign up for our newsletter
-      li: a.link href="link"
-        img src="/assets/images/link.png" alt=""
-        | Read the VCA blog
-      li: a.facebook href="facebook"
-        img src="/assets/images/fb.png" alt=""
-        | VCA Facebook
-      li: a.youtube href="youtube"
-        img src="/assets/images/youtube.png" alt=""
-        | VCA &amp; MCM YouTube
+      div
+        a.button-share href="" Share
+
+      div
+        p: em Gallery Hours
+        p Tuesday - Saturday
+        p 12pm - 5pm
+
+      div
+        p T: +61 3 9035 9400
+        p: a href="" ml-gallery@unimelb.edu.au
+        p Wheelchair accessible
+
+    h2 House and Home
+
+    p: em Opening Celebration Thursday 10 April, 6-8pm
+
+    p Simon Ancher, Megan Campbell, Michael Doolan, Stephen Haley, Wayne Hudson, Lyndal Jones, Danielle Thompson, Shaun Wilson. Curator: Dr Malcom Bywaters
+
+    p House and home will consider the domestic space as a physical and psychological refuge. The house has become a place to hide and a space to create an external identity. Within contemporary Australia the spaces between the private and public are consciously blurred. The exhibition explores themes of personal space, home life, security and family. House and home will investigate the play between the public and the private, the seen and the obscured behind the front door. The exhibition will consider the role of the house as a vehicle open to external influences, not necessarily related to domesticity; the house can also be a monument or keeper of the past that ultimately has some impact and significance on the present and of self.
+
     hr
-    p.overview
-      | Support the VCA
-      a.button-hero-inverse href="" Donate
+
+    p: a.button-hero href="" All Exhibitions
+
+.fullwidth style="background-image:url(/assets/images/mockup.jpg)"
+
+section
+  h2.title About the Margaret Lawrence Gallery
+
+  p The Margaret Lawrence Gallery was established in 2001 to provide crucial links between the School of Art and the wider artistic community.
+
+  p The contemporary art space fulfils an important role within our own artistic community, while its broader function reflects its rigorous commitment to research and art practice in Victoria.
+
+  p The gallery offers established practitioners an opportunity to create new work in a supported and critically engaged environment. It also encourages meaningful connections and exchanges between professional artists, academics, students and the wider public.
+
+  p The program regularly presents new works by local, national and international artists, with a strong emphasis on research. We achieve this in two ways: firstly, by directly responding to exhibition proposals; and, secondly, by inviting artists, curators or groups whose work or research is of particular contemporary relevance to devise a project for the space.
+
+  p The program is generally determined 12 to 18 months in advance to allow a reasonable period of development in discussion with gallery staff.
+
