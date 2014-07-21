@@ -19,6 +19,22 @@
       padding-bottom: 0;
     }
 
+    h2 {
+      @include rem(font-size, 27.5px);
+      font-weight: $light;
+      letter-spacing: 0;
+      text-align: left;
+      text-transform: none;
+
+      &::after {
+        display: none;
+      }
+
+      @include breakpoint(desktop) {
+        @include rem(font-size, 29.1px);
+      }
+    }
+
     @include breakpoint(desktop) {
       float: left;
       margin: 0;

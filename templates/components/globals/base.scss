@@ -452,7 +452,7 @@ body {
   .fullwidth {
     @include rem(height, 500px);
     background-color: transparent;
-    background-position: center 0;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     display: inline-block;

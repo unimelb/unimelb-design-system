@@ -84,7 +84,6 @@
   @include rem(font-size, 16px);
   @include rem(padding, 0 10px);
   background-color: $white;
-  box-shadow: 0 0 9px -1px rgba($black, .2);
   color: $darkgray;
   line-height: 1.2;
   margin: 0 auto;

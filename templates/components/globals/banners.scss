@@ -4,7 +4,7 @@
     @include rem(min-height, 144px);
     background-color: $black;
     background-image: url("#{asset_path('components/globals/bg-banner.jpg')}");
-    background-position: center top;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: $white;

@@ -9,7 +9,11 @@
 
     .when {
       padding: 0;
-      text-align: right;
+      text-align: center;
+
+      @include breakpoint(desktop) {
+        text-align: right;
+      }
 
       time {
         line-height: 1.4;
@@ -63,9 +67,14 @@
     }
 
     div {
-      @include rem(padding, 30px 0 30px 60px);
+      @include rem(padding, 30px 0 30px);
       border-top: 1px solid $black;
-      text-align: right;
+      text-align: center;
+
+      @include breakpoint(desktop) {
+        @include rem(padding-left, 60px);
+        text-align: right;
+      }
     }
 
     p {
@@ -91,8 +100,15 @@
     }
 
     h2 {
+      text-align: center;
+
+      &::after {
+        display: none;
+      }
+
       @include breakpoint(desktop) {
         margin-left: 0;
+        text-align: left;
         width: auto;
       }
     }
@@ -117,8 +133,20 @@
     }
 
     h2 {
+      @include rem(font-size, 27.5px);
       clear: none;
       font-weight: $light;
+      letter-spacing: 0;
+      text-align: left;
+      text-transform: none;
+
+      @include breakpoint(desktop) {
+        @include rem(font-size, 29.1px);
+      }
+
+      &::after {
+        display: none;
+      }
     }
   }
 
