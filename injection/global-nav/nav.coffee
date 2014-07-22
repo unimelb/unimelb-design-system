@@ -157,7 +157,7 @@ window.UOMinjectGlobalNav = ->
     nav.innerHTML = """
       <div class="sitemap-label">University Sitemap</div>
       <a class="close-button" href="">Close</a>
-      <h2 class="logo">University of Melbourne</h2>
+      <a href="https://www.unimelb.edu.au" class="logo">University of Melbourne</a>
       <form action="http://search.unimelb.edu.au" method="get">
         <fieldset>
           <input data-required placeholder="Search" name="q" type="search" title="Please enter a keyword." />

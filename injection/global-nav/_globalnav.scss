@@ -286,7 +286,7 @@
     }
   }
 
-  h2.logo {
+  .logo {
     @extend %imgreplace;
     @include rem(height, 140px);
     @include rem(margin-top, 15px);
@@ -296,6 +296,7 @@
     clear: none;
     margin-left: auto;
     margin-right: auto;
+    text-decoration: none;
     text-indent: -9999em;
 
     @include breakpoint(desktop) {
@@ -335,7 +336,7 @@
     @include rem(padding-left, 30px);
     @include rem(height, 60px);
     border: 0;
-    color: $navy;
+    color: rgba($white, .4);
     display: block;
     float: left;
     text-decoration: none;
@@ -355,7 +356,6 @@
 
     &:hover {
       background-color: transparent;
-      color: rgba($white, .4);
       text-decoration: none;
     }
   }
