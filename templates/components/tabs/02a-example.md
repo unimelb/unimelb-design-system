@@ -1,12 +1,12 @@
 ---
 no_section_wrap: true
 ---
-<div id="nav" class="tabbed-nav" data-tabbed>
+<div id="nav" class="tabbed-nav" data-tabbed role="tabs">
   <div class="full-width">
     <div class="mobile-nav">
       <select>
         <option value="#tab1">1st</option>
-        <option value="#tab2">2nd</option>
+        <option value="#tab2" selected>2nd</option>
         <option value="#tab3">3rd</option>
         <option value="/">Home</option>
       </select>

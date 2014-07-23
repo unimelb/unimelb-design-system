@@ -33,7 +33,7 @@ unless window.UOMInpageScrolling
 
               # Tabs scroll to nav
               up = (el) ->
-                if el.getAttribute('data-tabbed')==''
+                if el.getAttribute('data-tabbed') == '' and el.getAttribute('role') == 'tabs'
                   return el
                 else
                   if el.parentNode and el.parentNode!=document

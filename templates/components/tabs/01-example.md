@@ -1,6 +1,6 @@
 <h2 id="inpage">In page tabs</h2>
 ```html
-<div class="tabbed" data-tabbed>
+<div class="tabbed" data-tabbed role="tabs">
   <nav>
     <a>1st</a>
     <a data-current>2nd</a>
@@ -32,7 +32,7 @@ Pellentesque libero leo, vehicula vitae ipsum quis, hendrerit semper velit. Nam 
   </section>
 </div>
 ```
-<div class="tabbed" data-tabbed>
+<div class="tabbed" data-tabbed role="tabs">
   <nav>
     <a>1st</a>
     <a data-current>2nd</a>
