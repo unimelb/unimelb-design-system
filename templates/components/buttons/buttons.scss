@@ -107,6 +107,16 @@
   text-decoration: none;
   text-transform: uppercase;
 
+  &:hover {
+    background-color: rgba($white, .5);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff,endColorstr=#7fffffff);
+
+    color: $lighterblue;
+    border-color: transparent;
+  }
+}
+
+%outlinearrow {
   &::after {
     @include rem(font-size, 30px);
     @include rem(padding-left, 15px);
@@ -122,13 +132,38 @@
     position: absolute;
     top: 4px;
   }
+}
+
+%iconbutton {
+  @extend %outlinebutton;
+  @include rem(font-size, 14px);
+  @include rem(margin, 10px 0);
+  @include rem(padding, 5px 30px 5px 20px);
+  display: inline-block;
+  font-weight: $regular;
+
+  &:after {
+    @include rem(height, 20px);
+    @include rem(padding-left, 15px);
+    @include rem(width, 7px);
+    content: '';
+    position: absolute;
+    top: 6px;
+  }
+
+  &::after {
+    @include rem(height, 20px);
+    @include rem(padding-left, 15px);
+    @include rem(width, 7px);
+    background-size: cover;
+    content: '';
+    position: absolute;
+    top: 6px;
+  }
 
   &:hover {
-    background-color: rgba($white, .5);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff,endColorstr=#7fffffff);
-
-    color: $lighterblue;
-    border-color: transparent;
+    background-color: rgba($black, .1);
+    color: $black;
   }
 }
 
@@ -155,15 +190,33 @@
 
 [role="main"] .button-hero {
   @extend %outlinebutton;
+  @extend %outlinearrow;
 }
 
 [role="main"] .button-hero-inverse {
   @extend %outlinebutton;
+  @extend %outlinearrow;
   border-color: $white;
   color: $white;
 
   &:hover {
     color: $brand;
+  }
+}
+
+[role="main"] .button-map {
+  @extend %iconbutton;
+
+  &::after {
+    background-image: url(asset_path('components/buttons/icon-pin-b.png'));
+  }
+}
+
+[role="main"] .button-share {
+  @extend %iconbutton;
+
+  &::after {
+    background-image: url(asset_path('components/buttons/icon-share-b.png'));
   }
 }
 
@@ -203,5 +256,17 @@
 
   .button-hero:after {
     @extend %button-arrow;
+  }
+
+  [role="main"] .button-map {
+    &:after {
+      background-image: url(asset_path('components/buttons/s-icon-pin-b.png'));
+    }
+  }
+
+  [role="main"] .button-share {
+    &:after {
+      background-image: url(asset_path('components/buttons/s-icon-share-b.png'));
+    }
   }
 }

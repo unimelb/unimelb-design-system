@@ -137,11 +137,10 @@
 
       &::before {
         @include rem(font-size, 24px);
-        @include transform(rotate(90deg) translateX(5px));
-        content: '\2335';
+        content: '\2039';
         float: left;
-        font-weight: 800;
-        line-height: 1;
+        font-weight: $regular;
+        line-height: .9;
         padding-right: 10px;
       }
     }
@@ -152,11 +151,10 @@
 
     &::after {
       @include rem(font-size, 24px);
-      @include transform(rotate(270deg) translateY(-1px));
-      content: '\2335';
+      content: '\203a';
       float: right;
-      font-weight: 800;
-      line-height: 1;
+      font-weight: $regular;
+      line-height: .9;
       z-index: 9;
     }
   }

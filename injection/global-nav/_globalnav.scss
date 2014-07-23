@@ -229,7 +229,7 @@
         font-family: $ff-sans;
         font-weight: $light;
         margin: 0;
-        max-width: 600px;
+        max-width: 100%;
         width: 100%;
 
         &:-moz-placeholder { // /* Mozilla Firefox 4 to 18 */
@@ -306,8 +306,8 @@
 
   .sitemap-label {
     @include rem(font-size, 15px);
-    @include rem(padding-left, 65px);
-    @include rem(padding-top, 200px);
+    @include rem(padding-left, 45px);
+    @include rem(padding-top, 180px);
     @include transform(rotate(90deg));
     color: rgba($white, .5);
     cursor: pointer;
@@ -323,47 +323,55 @@
     top: 0;
     z-index: 11;
 
-    &:before,
     &::before {
-      @include transform(rotate(180deg) translateX(10px) translateY(-10px));
-      content: '\2335';
+      @include rem(font-size, 24px);
+      @include transform(rotate(-90deg) translateY(-10px) translateX(-3px));
+      content: '\203a';
       display: inline-block;
-      font-size: 30px;
     }
   }
 
   a.close-button {
-    @include rem(padding-left, 30px);
+    @include rem(font-size, 14px);
+    @include rem(padding-top, 16px);
     @include rem(height, 60px);
-    border: 0;
+    border-bottom: 1px solid $blue;
     color: rgba($white, .4);
     display: block;
-    float: left;
+    padding-left: 0;
     text-decoration: none;
-    text-indent: -999em;
-    width: 0;
+    text-transform: uppercase;
 
     &::before {
-      @include rem(font-size, 40px);
+      @include rem(font-size, 24px);
       @include rem(height, 10px);
-      @include transform(rotate(90deg) translate(10px, -15px));
+      @include rem(margin-right, 5px);
       color: rgba($white, .4);
-      content: '\2335';
+      content: '\2039';
       display: block;
+      float: left;
       font-weight: $regular;
+      line-height: .8;
       text-indent: 0;
     }
 
     &:hover {
-      background-color: transparent;
-      text-decoration: none;
+      color: $white;
+      text-decoration: underline;
+    }
+
+    &:hover::before {
+      color: $white;
     }
   }
 
   @include breakpoint(desktop) {
     form {
-      @include rem(width, 600px);
+      @include rem(margin-top, 70px);
+      clear: none;
+      float: right;
       padding: 0;
+      width: 60%;
     }
 
     h2 {
@@ -389,10 +397,18 @@
       }
 
       h2 {
+        @include rem(letter-spacing, 2px);
         border-top: 0 none;
+        font-size: .9375rem;
+        font-weight: $regular;
         margin-right: 0;
         padding-left: 0;
         padding-top: 0;
+        text-transform: uppercase;
+
+        a {
+          font-weight: $regular;
+        }
       }
 
       a {
