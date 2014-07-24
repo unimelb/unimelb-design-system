@@ -20,7 +20,6 @@
       }
     }
   }
-  // Not required, but useful to styling out IE8
   @else if $point == mobile {
     @media screen and (max-width: 480px) {
       & {

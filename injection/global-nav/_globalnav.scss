@@ -434,28 +434,9 @@ body.ie {
       display: none;
     }
 
-    h2.logo {
+    .logo {
       background-image: url("#{asset_path('header/m-logo.png')}");
       float: left;
-    }
-
-    a.close-button:before {
-      color: $lightblue;
-      content: '<';
-      display: block;
-      font-size: 40px;
-      font-weight: 300;
-      height: 10px;
-      text-indent: 0;
-    }
-
-    a.close-button:hover {
-      color: $navy;
-    }
-
-    a.close-button::before {
-      -ms-transform: rotate(0deg);
-      padding-top: 10px;
     }
 
     h2,
@@ -480,6 +461,10 @@ body.ie {
         height: 100px;
         text-align: center;
         vertical-align: middle;
+
+        &:hover {
+          color: $white;
+        }
       }
 
       .icon {
