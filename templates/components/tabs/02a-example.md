@@ -9,6 +9,7 @@ no_section_wrap: true
         <option value="#tab2" selected>2nd</option>
         <option value="#tab3">3rd</option>
         <option value="/">Home</option>
+        <option value="https://unimelb.edu.au">Unimelb</option>
       </select>
     </div>
     <nav class="desktop-nav">
@@ -16,6 +17,7 @@ no_section_wrap: true
       <a href="#tab2" data-current>2nd</a>
       <a href="#tab3">3rd</a>
       <a href="/">Home</a>
+      <a href="https://unimelb.edu.au">Unimelb</a>
     </nav>
   </div>
   <div id="tab1" class="tab">

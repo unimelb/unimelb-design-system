@@ -5,7 +5,6 @@
   @include rem(padding, 0 0 30px);
   @include translateX(100%);
   background-color: $navy;
-  box-shadow: 3px 0 6px rgba($black, .4) inset;
   font-family: $ff-sans;
   height: 100%;
   margin: 0;
@@ -18,28 +17,6 @@
 
   * {
     @extend %normalise;
-  }
-
-  &.reveal {
-    @include rem(padding-left, 60px);
-    @include transform(translate3d(100%, 0, 0) translateX(-40px));
-    background-color: $navy;
-    cursor: pointer;
-    display: block;
-    z-index: 12;
-
-    &:hover {
-      @include transform(translate3d(100%, 0, 0) translateX(-55px));
-      .sitemap-label {
-        @include transition(color .3s ease);
-        color: $white;
-        text-decoration: none;
-      }
-    }
-
-    .sitemap-label {
-      display: block;
-    }
   }
 
   &.active {
@@ -304,33 +281,6 @@
     }
   }
 
-  .sitemap-label {
-    @include rem(font-size, 15px);
-    @include rem(padding-left, 45px);
-    @include rem(padding-top, 180px);
-    @include transform(rotate(90deg));
-    color: rgba($white, .5);
-    cursor: pointer;
-    display: none;
-    font-weight: $regular;
-    left: 0;
-    letter-spacing: 1px;
-    line-height: 1;
-    padding-bottom: 0;
-    padding-right: 0;
-    position: absolute;
-    text-transform: uppercase;
-    top: 0;
-    z-index: 11;
-
-    &::before {
-      @include rem(font-size, 24px);
-      @include transform(rotate(-90deg) translateY(-10px) translateX(-3px));
-      content: '\203a';
-      display: inline-block;
-    }
-  }
-
   a.close-button {
     @include rem(font-size, 14px);
     @include rem(padding-top, 16px);
@@ -427,11 +377,6 @@ body.ie {
       background: $navy;
       display: block;
       z-index: 100;
-    }
-
-    &.reveal,
-    &.reveal .sitemap-label {
-      display: none;
     }
 
     .logo {

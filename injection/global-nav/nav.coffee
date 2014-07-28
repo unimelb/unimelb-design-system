@@ -3,6 +3,7 @@ window.UOMinjectGlobalNav = ->
     constructor: ->
       @page = document.querySelector('.page-inner')
       @sitemap = document.querySelector('div[role="sitemap"]')
+      @trigger = document.querySelector('.sitemap-label')
       @menutrigger = document.querySelector('.page-header-tools a[title="Menu"]')
       @searchtrigger = document.querySelector('.page-header-tools a[title="Search"]')
       @blanket = document.querySelector('.modal__blanket')
@@ -18,93 +19,93 @@ window.UOMinjectGlobalNav = ->
         @menutrigger.addEventListener 'click', (e) ->
           e.preventDefault()
           t.blanket.toggleClass 'on'
-          t.page.removeClass('global-active')
-          t.localnav.removeClass('global-active')
-          t.sitemap.removeClass('active')
-          t.sitemap.addClass('reveal')
-          t.page.toggleClass('active')
-          t.localnav.toggleClass('active')
+          t.trigger.removeClass 'active'
+          t.page.removeClass 'global-active'
+          t.localnav.removeClass 'global-active'
+          t.sitemap.removeClass 'active'
+          t.sitemap.addClass 'reveal'
+          t.page.toggleClass 'active'
+          t.localnav.toggleClass 'active'
 
         @localnav.querySelector('h2:first-child').addEventListener 'click', (e) ->
           e.preventDefault()
-          if t.page.hasClass "global-active"
-            t.page.removeClass('global-active')
-            t.page.addClass('active')
-            t.localnav.removeClass('global-active')
-            t.localnav.addClass('active')
-            t.sitemap.removeClass('active')
-            t.sitemap.addClass('reveal')
+          if t.page.hasClass 'global-active'
+            t.page.removeClass 'global-active'
+            t.page.addClass 'active'
+            t.localnav.removeClass 'global-active'
+            t.localnav.addClass 'active'
+            t.sitemap.removeClass 'active'
           else
             t.blanket.removeClass 'on'
-            t.page.removeClass('global-active')
-            t.localnav.removeClass('global-active')
-            t.sitemap.removeClass('active')
-            t.sitemap.removeClass('reveal')
-            t.page.toggleClass('active')
-            t.localnav.toggleClass('active')
+            t.trigger.addClass 'active'
+            t.page.removeClass 'global-active'
+            t.localnav.removeClass 'global-active'
+            t.sitemap.removeClass 'active'
+            t.page.toggleClass 'active'
+            t.localnav.toggleClass 'active'
 
-        document.querySelector('.sitemap-label').addEventListener 'click', (e) ->
+        @trigger.addEventListener 'click', (e) ->
           e.preventDefault()
           t.blanket.addClass 'on'
-          t.page.addClass('global-active')
-          t.localnav.removeClass('active')
-          t.localnav.addClass('global-active')
-          t.sitemap.toggleClass('active')
-          t.sitemap.removeClass('reveal')
+          t.trigger.addClass 'active'
+          t.page.addClass 'global-active'
+          t.localnav.removeClass 'active'
+          t.localnav.addClass 'global-active'
+          t.sitemap.toggleClass 'active'
 
         @sitemap.querySelector('.close-button').addEventListener 'click', (e) ->
           e.preventDefault()
-          t.page.removeClass('global-active')
-          t.page.addClass('active')
-          t.localnav.removeClass('global-active')
-          t.localnav.addClass('active')
-          t.sitemap.removeClass('active')
-          t.sitemap.addClass('reveal')
+          t.page.removeClass 'global-active'
+          t.page.addClass 'active'
+          t.trigger.removeClass 'active'
+          t.localnav.removeClass 'global-active'
+          t.localnav.addClass 'active'
+          t.sitemap.removeClass 'active'
 
         @localsitemaptrigger.addEventListener 'click', (e) ->
           e.preventDefault()
-          t.page.addClass('global-active')
-          t.localnav.removeClass('active')
-          t.localnav.addClass('global-active')
-          t.sitemap.toggleClass('active')
-          t.sitemap.removeClass('reveal')
+          t.trigger.addClass 'active'
+          t.page.addClass 'global-active'
+          t.localnav.removeClass 'active'
+          t.localnav.addClass 'global-active'
+          t.sitemap.toggleClass 'active'
 
       else
         @menutrigger.addEventListener 'click', (e) ->
           e.preventDefault()
           t.blanket.toggleClass 'on'
-          t.page.toggleClass('global-active')
-          t.sitemap.toggleClass('active')
-          t.sitemap.removeClass('reveal')
+          t.trigger.addClass 'active'
+          t.page.toggleClass 'global-active'
+          t.sitemap.toggleClass 'active'
 
         @sitemap.querySelector('.close-button').addEventListener 'click', (e) ->
           e.preventDefault()
           t.blanket.removeClass 'on'
-          t.page.toggleClass('global-active')
-          t.sitemap.toggleClass('active')
-          t.sitemap.removeClass('reveal')
+          t.trigger.addClass 'active'
+          t.page.toggleClass 'global-active'
+          t.sitemap.toggleClass 'active'
 
       @blanket.addEventListener 'click', (e) ->
         e.preventDefault()
         t.blanket.removeClass 'on'
-        t.page.removeClass('global-active')
-        t.page.removeClass('active')
+        t.trigger.addClass 'active'
+        t.page.removeClass 'global-active'
+        t.page.removeClass 'active'
         if t.localnav
-          t.localnav.removeClass('global-active')
-          t.localnav.removeClass('active')
-        t.sitemap.removeClass('active')
-        t.sitemap.removeClass('reveal')
+          t.localnav.removeClass 'global-active'
+          t.localnav.removeClass 'active'
+        t.sitemap.removeClass 'active'
 
       if @searchtrigger
         @searchtrigger.addEventListener 'click', (e) ->
           e.preventDefault()
           t.blanket.toggleClass 'on'
-          t.page.addClass('global-active')
+          t.trigger.addClass 'active'
+          t.page.addClass 'global-active'
           if t.localnav
-            t.localnav.removeClass('active')
-            t.localnav.addClass('global-active')
-          t.sitemap.addClass('active')
-          t.sitemap.removeClass('reveal')
+            t.localnav.removeClass 'active'
+            t.localnav.addClass 'global-active'
+          t.sitemap.addClass 'active'
           t.sitemap.querySelector('input[type="search"]').focus()
 
   # Move local nav outside page container
@@ -149,13 +150,22 @@ window.UOMinjectGlobalNav = ->
           localnav.scrollTop = 0
 
 
+  # Create global nav trigger
+  trigger = document.querySelector('div.sitemap-label')
+  unless trigger
+    trigger = document.createElement('div')
+    trigger.setAttribute('class', 'sitemap-label active')
+    trigger.innerHTML = """
+      <span>University Sitemap</span>
+    """
+    document.body.appendChild(trigger)
+
   # Create global nav
   nav = document.querySelector('[role="sitemap"]')
   unless nav
     nav = document.createElement('div')
     nav.setAttribute('role', 'sitemap')
     nav.innerHTML = """
-      <div class="sitemap-label">University Sitemap</div>
       <a class="close-button" href="">Close</a>
       <a href="https://www.unimelb.edu.au" class="logo">University of Melbourne</a>
       <form action="http://search.unimelb.edu.au" method="get">

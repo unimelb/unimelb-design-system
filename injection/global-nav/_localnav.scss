@@ -3,7 +3,7 @@
   @extend %smooth-translate;
   @include rem(padding, 0 0 30px);
   @include rem(right, 40px);
-  @include rem(width, 250px);
+//  @include rem(width, 250px);
   @include transform(translate(100%, 0) translate(110px, 0));
   background-color: $menu;
   box-shadow: 1px 0 12px 3px rgba($black, .6);
@@ -22,7 +22,7 @@
   &.active {
     @include translateX(0);
     display: block;
-    z-index: 11;
+    z-index: 13;
 
     .sitemap-label {
       margin-left: -100px;
@@ -66,6 +66,7 @@
     }
 
     ul {
+      @include rem(padding-bottom, 30px);
       @include translateX(0);
       background-color: $navy;
       height: 100%;
