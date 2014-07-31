@@ -39,6 +39,11 @@
       text-align: left;
     }
   }
+
+  ul.quicklinks {
+    margin-bottom: 0;
+    padding: 0;
+  }
 }
 
 .unimelb-lge {
@@ -84,7 +89,6 @@
   &.nav {
     @include rem(padding-bottom, 12px);
     @include rem(padding-top, 8px);
-    border-top: 1px solid $blue;
     height: auto;
 
     li {
@@ -107,10 +111,13 @@
 
     a {
       @include rem(font-size, 14px);
+      color: $lightblue;
     }
 
     @include breakpoint(desktop) {
-      @include rem(margin-bottom, 60px);
+      @include rem(margin-bottom, 10px);
+      @include rem(margin-top, 20px);
+      border: 0;
       width: 80%;
 
       li {
@@ -187,8 +194,11 @@
 
     @include breakpoint(desktop) {
       @include rem(margin-bottom, 60px);
-      border-top: 1px solid $blue;
+      @include rem(margin-top, 25px);
+      @include rem(padding-right, 15px);
+      border: 0;
       clear: none;
+      float: right;
       text-align: right;
       width: 20%;
 
@@ -231,7 +241,7 @@
   }
 }
 
-.ie {
+.ie8 {
   .page-footer {
     background-color: $navy;
     clear: left;
@@ -346,29 +356,5 @@
       padding: 0 30px;
       width: auto;
     }
-  }
-}
-
-.ie9 {
-  .page-footer-section {
-    &.social {
-      li {
-        &.social-twitter a {
-          background-image: url("#{asset_path('footer/tw.png')}");
-        }
-
-        &.social-facebook a {
-          background-image: url("#{asset_path('footer/fb.png')}");
-        }
-
-        &.social-linkedin a {
-          background-image: url("#{asset_path('footer/li.png')}");
-        }
-      }
-    }
-  }
-
-  .unimelb-lge {
-    background-image: url("#{asset_path('footer/lockup.png')}");
   }
 }

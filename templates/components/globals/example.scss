@@ -1,89 +1,84 @@
-.square {
-  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.2);
+.md-fix {
+  div {
+    float: left;
+    font-family: $ff-sans;
+    font-size: 18px;
+    margin: 0 40px 40px 0 !important;
+    text-align: center;
+    width: 100px;
+
+    strong {
+      font-weight: $regular;
+    }
+  }
+
+  br {
+    display: none;
+  }
+}
+
+.circle {
+  border: 1px solid rgba(0, 0, 0, .05);
+  border-radius: 50%;
   display: inline-block;
-  font-family: $ff-fixed;
-  font-size: 14px;
-  font-weight: $bold;
-  height: 85px;
-  line-height: 85px;
-  margin: 5px 2px !important;
-  text-align: center;
-  width: 85px;
+  height: 65px;
+  width: 65px;
   &.black {
     background-color: #000000;
-    color: $white;
   }
   &.darkgray {
     background-color: #333333;
-    color: $white;
   }
   &.midgray {
     background-color: #666666;
-    color: $white;
   }
   &.gray {
     background-color: #ADB8C1;
-    color: $white;
   }
   &.lightgray {
     background-color: #f6f6f6;
-    color: $black;
   }
   &.lightergray {
     background-color: #E0E0E0;
-    color: $black;
   }
   &.white {
     background-color: #ffffff;
-    color: $black;
   }
   &.navy {
     background-color: #0c304a;
-    color: $white;
   }
   &.blue {
     background-color: #304E64;
-    color: $white;
   }
   &.darkblue {
     background-color: #004576;
-    color: $white;
   }
   &.midblue {
     background-color: #366996;
-    color: $white;
   }
   &.lightblue {
     background-color: #82a1bd;
-    color: $white;
   }
   &.lighterblue {
     background-color: #359aec;
-    color: $white;
   }
   &.paleblue {
     background-color: #f2f5f8;
-    color: $black;
   }
   &.lightestblue {
     background-color: #e1eaf5;
-    color: $black;
   }
   &.paleyellow {
     background-color: #fffbe4;
-    color: $black;
   }
   &.cyan {
     background-color: #0084ee;
-    color: $white;
   }
   &.green {
     background-color: #3FC76E;
-    color: $white;
   }
   &.cherry {
     background-color: #DF0620;
-    color: $white;
   }
 
 }

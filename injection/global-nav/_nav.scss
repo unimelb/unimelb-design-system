@@ -8,7 +8,7 @@
 
   &.active {
     // @include transform(translate(-100%, 0) translate(30px, 0));
-    @include translateX(-340px);
+    @include translateX(-100%);
     position: fixed;
     top: 0;
     width: 100%;
@@ -21,7 +21,7 @@
 
   &.global-active {
     // @include transform(translate(-100%, 0));
-    @include transform(translate(-100%, 0) translate(90px, 0));
+    @include translateX(-100%);
     position: fixed;
     top: 0;
     width: 100%;
@@ -38,6 +38,106 @@
 
 [role="main"] {
   background-color: $white;
+}
+
+ul.quicklinks {
+  @include rem(margin, 30px 0);
+  @include rem(padding, 15px 0);
+  clear: both;
+  max-width: 100%;
+  width: 100%;
+
+  li {
+    @include rem(line-height, 40px);
+    clear: both;
+    list-style-type: none;
+    margin-left: 0;
+
+    @include breakpoint(desktop) {
+      clear: none;
+      line-height: 1;
+    }
+  }
+
+  a {
+    @include rem(border-radius, 3px);
+    @include rem(font-size, 14px);
+    @include rem(margin-top, 10px);
+    @include rem(padding, 15px);
+    color: $white;
+    display: block;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $highlight;
+      text-decoration: none;
+    }
+  }
+
+  .icon {
+    @extend %imgreplace;
+    @include rem(height, 40px);
+    @include rem(margin-right, 10px);
+    @include rem(width, 40px);
+    display: block;
+    float: left;
+
+    @include breakpoint(desktop) {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      padding-right: 0;
+    }
+
+    &.faculties {
+      background-image: url("#{asset_path('global-nav/icon-faculties-w.png')}");
+    }
+
+    &.students {
+      background-image: url("#{asset_path('header/m-icon-m-w.png')}");
+    }
+
+    &.library {
+      background-image: url("#{asset_path('global-nav/icon-library-w.png')}");
+    }
+
+    &.contact {
+      background-image: url("#{asset_path('global-nav/icon-contact-w.png')}");
+    }
+
+    &.maps {
+      background-image: url("#{asset_path('global-nav/icon-maps-w.png')}");
+    }
+
+    &.support {
+      background-image: url("#{asset_path('global-nav/icon-support-w.png')}");
+    }
+
+  }
+
+  @include breakpoint(desktop) {
+    border-bottom: 1px solid $blue;
+    border-top: 1px solid $blue;
+    float: left;
+
+    li {
+      float: left;
+      width: 16.667%;
+    }
+
+    a {
+      @include rem(min-height, 90px);
+      @include rem(margin-bottom, 15px);
+      display: block;
+      margin-left: 15%;
+      margin-right: 15%;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
 }
 
 .page-login {
@@ -158,7 +258,12 @@
 
 .sitemap-label {
   @include rem(width, 40px);
+  @include transform(translate(100%, 0) translate(-40px, 0));
   @include transition(right .3s ease);
+  @include transition(-moz-transform .3s ease);
+  @include transition(-ms-transform .3s ease);
+  @include transition(-webkit-transform .3s ease);
+  @include transition(transform .3s ease);
   background-color: $navy;
   box-shadow: 3px 0 6px rgba($black, .4) inset;
   cursor: pointer;
@@ -169,8 +274,12 @@
   z-index: 13;
 
   &:hover {
-    @include rem(right, 5px);
+    @include rem(right, 3px);
     @include transition(right .3s ease);
+    @include transition(-moz-transform .3s ease);
+    @include transition(-ms-transform .3s ease);
+    @include transition(-webkit-transform .3s ease);
+    @include transition(transform .3s ease);
 
     span {
       @include transition(color .3s ease);
@@ -179,18 +288,22 @@
   }
 
   &.active {
-    @include rem(right, -40px);
+    @include transform(translate(100%, 0));
+    @include transition(-moz-transform .3s ease);
+    @include transition(-ms-transform .3s ease);
+    @include transition(-webkit-transform .3s ease);
+    @include transition(transform .3s ease);
   }
 
   span {
     @include rem(font-size, 15px);
-    @include rem(padding-left, 40px);
+    @include rem(padding-left, 44px);
     @include rem(padding-top, 190px);
     @include rem(width, 240px);
     @include transform(rotate(90deg));
     color: rgba($white, .5);
     cursor: pointer;
-    font-weight: $regular;
+    font-weight: $light;
     left: 0;
     letter-spacing: 1px;
     line-height: 1;

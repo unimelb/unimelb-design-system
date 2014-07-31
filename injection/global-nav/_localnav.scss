@@ -1,18 +1,26 @@
+// FF overflow-x fix
+body {
+  overflow-x: hidden;
+}
+
 [role="navigation"] {
   @extend %normalise;
   @extend %smooth-translate;
-  @include rem(padding, 0 0 30px);
-  @include rem(right, 40px);
-//  @include rem(width, 250px);
-  @include transform(translate(100%, 0) translate(110px, 0));
+  @include translateX(0);
+  @include transform-origin(0% 0%);
+  @include transform-style(preserve-3d);
   background-color: $menu;
   box-shadow: 1px 0 12px 3px rgba($black, .6);
   color: $white;
   font-family: $ff-sans;
   height: 100%;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
   position: fixed;
+  right: -100%;
   top: 0;
+  width: 100%;
   z-index: 1;
 
   * {
@@ -20,8 +28,7 @@
   }
 
   &.active {
-    @include translateX(0);
-    display: block;
+    @include translateX(-100%);
     z-index: 13;
 
     .sitemap-label {
@@ -33,10 +40,15 @@
     }
   }
 
+  @include breakpoint(tablet) {
+    right: -260px;
+    width: 300px;
+  }
+
+
   &.global-active {
-    @include transform(translate(-100%, 0));
+    @include translateX(-100%);
     display: block;
-    left: 0;
 
     @include breakpoint(tablet) {
       @include transform(translate(-100%, 0) translate(110px, 0));
@@ -52,33 +64,49 @@
     width: auto;
   }
 
-  @include breakpoint(tablet) {
-    @include rem(right, 40px);
-    @include rem(width, 300px);
+  .w {
+    @include rem(padding-right, 40px);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    @include breakpoint(tablet) {
+      @include rem(width, 300px);
+      padding-right: 0;
+    }
   }
+
 
   ul {
     margin: 0;
     padding: 0;
+  }
+
+  .inner {
+    @include translateX(0);
+    background-color: $navy;
+    height: 100%;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding-right: 40px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 
     &.hide {
       @include translateX(100%);
+      z-index: 1;
     }
 
-    ul {
-      @include rem(padding-bottom, 30px);
-      @include translateX(0);
+    li {
       background-color: $navy;
-      height: 100%;
-      overflow: auto;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
+    }
 
-      li {
-        background-color: $navy;
-      }
+    @include breakpoint(tablet) {
+      padding-right: 0;
     }
   }
 
@@ -193,7 +221,7 @@ body.ie {
     }
 
     .sitemap-link {
-      background-color: $borderblue;
+      background-color: lighten($navy, 10%);
     }
 
     .parent:after {
@@ -220,13 +248,11 @@ body.ie {
       z-index: 100;
     }
 
-    ul {
-      ul {
-        display: none;
+    .inner {
+      display: none;
 
-        &.active {
-          display: block;
-        }
+      &.active {
+        display: block;
       }
     }
   }

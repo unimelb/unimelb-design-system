@@ -81,92 +81,6 @@
     padding: 0;
   }
 
-  ul.quicklinks {
-    @include rem(margin, 30px 0);
-    @include rem(padding, 15px 0);
-    clear: both;
-    max-width: 100%;
-    width: 100%;
-
-    li {
-      @include rem(line-height, 40px);
-      clear: both;
-      margin-left: 0;
-
-      @include breakpoint(desktop) {
-        clear: none;
-        line-height: 1;
-      }
-    }
-
-    a {
-      @include rem(border-radius, 3px);
-      @include rem(margin, 0 30px);
-      @include rem(padding, 15px);
-
-      &:hover {
-        background-color: $highlight;
-        text-decoration: none;
-      }
-    }
-
-    .icon {
-      @extend %imgreplace;
-      @include rem(height, 40px);
-      @include rem(padding-right, 15px);
-      @include rem(width, 40px);
-      display: block;
-      float: left;
-
-      @include breakpoint(desktop) {
-        float: none;
-        margin-left: auto;
-        margin-right: auto;
-        padding-right: 0;
-      }
-
-      &.faculties {
-        background-image: url("#{asset_path('global-nav/icon-faculties-w.png')}");
-      }
-
-      &.library {
-        background-image: url("#{asset_path('global-nav/icon-library-w.png')}");
-      }
-
-      &.contact {
-        background-image: url("#{asset_path('global-nav/icon-contact-w.png')}");
-      }
-
-      &.maps {
-        background-image: url("#{asset_path('global-nav/icon-maps-w.png')}");
-      }
-
-      &.support {
-        background-image: url("#{asset_path('global-nav/icon-support-w.png')}");
-      }
-
-    }
-
-    @include breakpoint(desktop) {
-      border-bottom: 1px solid $blue;
-      border-top: 1px solid $blue;
-      float: left;
-
-      li {
-        float: left;
-        width: 20%;
-      }
-
-      a {
-        @include rem(min-height, 90px);
-        @include rem(margin-bottom, 15px);
-        display: block;
-        text-align: center;
-        vertical-align: middle;
-      }
-    }
-  }
-
   form {
     @include rem(font-size, 16px);
     @include rem(padding, 0 10px);
@@ -398,7 +312,7 @@ body.ie {
         clear: none;
         float: left;
         line-height: 1;
-        width: 20%;
+        width: 16.667%;
       }
 
       a {

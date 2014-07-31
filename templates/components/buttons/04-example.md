@@ -14,12 +14,12 @@ no_section_wrap: false
   </a>
 </div>
 ```
-<div class="half">
-  <a class="button-fill" href="">
+<div class="half" style="background:#999">
+  <a class="button-fill" style="float:left" href="">
     <h2>Current Student</h2>
     <p>Click here to get to the student portal</p>
   </a>
-  <a class="button-fill" href="">
+  <a class="button-fill" style="float:left" href="">
     <h2>Staff Member</h2>
     <p>Click here to get to the staff portal</p>
   </a>

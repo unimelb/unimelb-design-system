@@ -111,12 +111,18 @@ window.UOMinjectGlobalNav = ->
   # Move local nav outside page container
   if document.countSelector('div[role="navigation"]') == 1
     localnav = document.querySelector('div[role="navigation"]')
+    rootmenu = localnav.querySelector('ul')
 
-    sitemaplink = document.createElement 'a'
-    sitemaplink.addClass 'sitemap-link'
-    sitemaplink.appendChild document.createTextNode 'Browse University'
-    sitemaplink.href = 'https://unimelb.edu.au/sitemap'
-    localnav.appendChild sitemaplink
+    lastli = document.createElement 'li'
+    lastli.innerHTML = '<a class="sitemap-link" href="https://unimelb.edu.au/sitemap">Browse University</a>'
+    rootmenu.appendChild lastli
+
+    # firstli = document.createElement 'li'
+    # firstli.addClass 'back'
+    # firstli.innerHTML = '<span>close</span>'
+    # rootmenu.insertBefore(firstli, rootmenu.firstChild)
+
+    #localnav.appendChild sitemaplink
 
     localnav.removeClass('no-js')
     document.body.appendChild(localnav)
@@ -138,6 +144,10 @@ window.UOMinjectGlobalNav = ->
 
         childgroup.firstChild.addEventListener 'click', (e) ->
           e.preventDefault()
+          # Root menu
+          # this.parentNode.parentNode.parentNode.removeClass 'hide'
+
+          # This group
           this.parentNode.toggleClass 'hide'
           this.parentNode.toggleClass 'active'
 
@@ -145,8 +155,12 @@ window.UOMinjectGlobalNav = ->
         childgroup.addClass('hide')
         group.addEventListener 'click', (e) ->
           e.preventDefault()
-          this.parentNode.querySelector('ul').toggleClass 'hide'
-          this.parentNode.querySelector('ul').toggleClass 'active'
+          # Root menu
+          # this.parentNode.parentNode.addClass 'hide'
+
+          # This group
+          this.parentNode.querySelector('div').toggleClass 'hide'
+          this.parentNode.querySelector('div').toggleClass 'active'
           localnav.scrollTop = 0
 
 
@@ -176,6 +190,7 @@ window.UOMinjectGlobalNav = ->
       </form>
       <ul class="quicklinks">
         <li><a href="http://about.unimelb.edu.au/governance-and-leadership/faculties"><span class="icon faculties"></span> Faculties and Graduate Schools</a></li>
+        <li><a href="http://students.unimelb.edu.au/"><span class="icon students"></span> Current Students</a></li>
         <li><a href="http://library.unimelb.edu.au/"><span class="icon library"></span> Library</a></li>
         <li><a href="http://www.unimelb.edu.au/contact/"><span class="icon contact"></span> Contact us</a></li>
         <li><a href="http://maps.unimelb.edu.au/"><span class="icon maps"></span> Maps</a></li>
