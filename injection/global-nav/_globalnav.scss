@@ -94,13 +94,11 @@
     padding: 0 3%;
 
     @include breakpoint(desktop) {
-      @include rem(padding, 10px 30px);
-    }
-
-    @include breakpoint(desktop) {
-      @include rem(margin-top, 50px);
+      @include rem(margin-top, 45px);
       clear: none;
       float: right;
+      padding: 0;
+      width: 60%;
     }
 
     fieldset {
@@ -192,6 +190,7 @@
 
     @include breakpoint(desktop) {
       float: left;
+      margin-top: 0;
     }
   }
 
@@ -230,18 +229,6 @@
   }
 
   @include breakpoint(desktop) {
-    form {
-      @include rem(margin-top, 70px);
-      clear: none;
-      float: right;
-      padding: 0;
-      width: 60%;
-    }
-
-    h2 {
-      @include rem(padding-left, 10px);
-    }
-
     .col-3 {
       clear: both;
       padding-top: 30px;
@@ -303,57 +290,6 @@ body.ie {
       color: $lightblue;
     }
 
-    ul.quicklinks {
-      border-bottom: 1px solid $blue;
-      border-top: 1px solid $blue;
-      float: left;
-
-      li {
-        clear: none;
-        float: left;
-        line-height: 1;
-        width: 16.667%;
-      }
-
-      a {
-        display: block;
-        height: 100px;
-        text-align: center;
-        vertical-align: middle;
-
-        &:hover {
-          color: $white;
-        }
-      }
-
-      .icon {
-        display: block;
-        float: none;
-        margin: 0 auto;
-
-        &.faculties {
-          background-image: url("#{asset_path('global-nav/s-icon-faculties-w.png')}");
-        }
-
-        &.library {
-          background-image: url("#{asset_path('global-nav/s-icon-library-w.png')}");
-        }
-
-        &.contact {
-          background-image: url("#{asset_path('global-nav/s-icon-contact-w.png')}");
-        }
-
-        &.maps {
-          background-image: url("#{asset_path('global-nav/s-icon-maps-w.png')}");
-        }
-
-        &.support {
-          background-image: url("#{asset_path('global-nav/s-icon-support-w.png')}");
-        }
-      }
-    }
-
-
     form {
       clear: none;
       float: right;
@@ -361,9 +297,9 @@ body.ie {
       padding: 0;
       width: 600px;
 
-      fieldset .inline .search-button {
+      fieldset .search-button {
+        color: $black;
         text-indent: 0;
-        color: black;
         width: auto;
       }
     }
@@ -409,6 +345,10 @@ body.ie9 {
     form fieldset .inline .search-button {
       text-indent: -999em;
       width: 40px;
+    }
+
+    ul.quicklinks a {
+      color: $white;
     }
   }
 }

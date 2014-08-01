@@ -117,7 +117,7 @@
     @include breakpoint(desktop) {
       @include rem(margin-bottom, 10px);
       @include rem(margin-top, 20px);
-      border: 0;
+      border: 0 none;
       width: 80%;
 
       li {
@@ -196,7 +196,7 @@
       @include rem(margin-bottom, 60px);
       @include rem(margin-top, 25px);
       @include rem(padding-right, 15px);
-      border: 0;
+      border: 0 none;
       clear: none;
       float: right;
       text-align: right;
@@ -221,23 +221,6 @@
         }
       }
     }
-  }
-}
-
-.page-footer-est1853 {
-  @extend %imgreplace;
-  @include rem(height, 40px);
-  @include rem(padding-bottom, 15px);
-  @include rem(width, 132px);
-  background-image: url("#{asset_path('footer/est1853.png')}");
-  clear: both;
-  display: block;
-  margin: 0 auto;
-  text-indent: -999em;
-
-  @include breakpoint(desktop) {
-    display: inline;
-    float: right;
   }
 }
 
@@ -272,6 +255,7 @@
   }
 
   .page-footer-section {
+    border: 0 none;
     &.nav {
       margin-bottom: 60px;
       width: 80%;
@@ -293,9 +277,12 @@
     }
 
     &.social {
-      border-top: 1px solid $blue;
+      border: 0 none;
       clear: none;
+      float: right;
       margin-bottom: 60px;
+      margin-top: 25px;
+      padding-right: 15px;
       text-align: right;
       width: 20%;
 
@@ -338,11 +325,6 @@
 
   .unimelb-lge {
     background-image: url("#{asset_path('footer/s-lockup.png')}");
-  }
-
-  .page-footer-est1853 {
-    display: inline;
-    float: right;
   }
 
   [role="main"] footer.cta ul.quarter {
