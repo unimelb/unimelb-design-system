@@ -20,6 +20,19 @@ module Sprockets
   end
 end
 
+### Monkey patch asset sync
+
+# This can be removed once this Pull Request is accepted
+# https://github.com/rumblelabs/asset_sync/pull/272
+module AssetSync
+  class << self
+    def reset_config!
+      remove_instance_variable :@config if defined?(@config)
+      remove_instance_variable :@storage if defined?(@storage)
+    end
+  end
+end
+
 ### Injection
 
 namespace :injection do
@@ -60,6 +73,7 @@ namespace :injection do
 
   desc 'Uploads everything in the injection build directory to S3'
   task sync: :dotenv do
+    AssetSync.reset_config!
     AssetSync.configure do |config|
       config.fog_provider          = 'AWS'
       config.fog_directory         = ENV['FOG_DIRECTORY']
@@ -67,7 +81,7 @@ namespace :injection do
       config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
       config.existing_remote_files = 'delete'
       config.manifest              = false
-      config.gzip_compression      = false
+      config.gzip_compression      = true
       config.run_on_precompile     = false
       config.log_silently          = false
       config.prefix                = 'injection'
@@ -129,6 +143,7 @@ namespace :templates do
 
   desc 'Uploads everything in the templates build directory to S3'
   task sync: :dotenv do
+    AssetSync.reset_config!
     AssetSync.configure do |config|
       config.fog_provider          = 'AWS'
       config.fog_directory         = ENV['FOG_DIRECTORY']
@@ -136,7 +151,7 @@ namespace :templates do
       config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
       config.existing_remote_files = 'delete'
       config.manifest              = false
-      config.gzip_compression      = false
+      config.gzip_compression      = true
       config.run_on_precompile     = false
       config.log_silently          = false
       config.prefix                = TEMPLATES_VERSION_PATH
