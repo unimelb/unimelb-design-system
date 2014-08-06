@@ -334,6 +334,13 @@
     .bottom-align-flat {
       background-image: url("#{asset_path('components/globals/000o80.png')}");
     }
+
+    .mid-align h1 {
+      font-size: 48px;
+      font-weight: $thin;
+      margin-left: 3%;
+      padding-bottom: 30px;
+    }
   }
 }
 
