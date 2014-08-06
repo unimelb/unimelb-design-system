@@ -1,39 +1,98 @@
 .floating
 
 div role="main"
-  header
-    .bottom-align
-      h1 Web.Unimelb
+  header  style="background-image:url(/assets/images/desktop.jpg)"
+    .mid-align
+      h1 The guide to web.unimelb
+      p Our milkshake brings all the boys to the yard
+      p
+        a.button-hero-inverse href="/00_getting_started" Get started
+  section
+    h2.title Everything you need to make a website @unimelb
+    p Like other great Codex’s throughout history, this site is designed to be a single repository for all web knowledge at the University of Melbourne. 
+    p For new web professionals to seasoned developers, you should be able to use this site to explore the resources available to you. If you cannot find what you are looking for, please request it.
 
-  ul.selector-listing-3
-    li
-      a href="/build/process"
-        strong: span Planning your website
-        p Resources to help you plan, create content, design and develop your website.
-        span class="button-small brand" Planning
-    li
-      a href="/training/"
-        strong: span Training and community
-        p Training calendar, online training, forums, zendesk and more...
-        span class="button-small brand" Training
-    li
-      a href="/policies/web-policies"
-        strong: span Philosophies, guidelines and policies
-        p Stay on the right side of the law son.
-        span class="button-small brand" Policies
-
+  section.alt
+    .half
+      section.center
+        svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 317" width="450"
+            image xlink:href="/assets/images/home_content_creators.svg" width="100%" height="100%" src="/assets/images/home_content_creators.png"
+      section
+        h1 For content creators
+        p Find out everything about writing for the web
+        p
+          a.button-hero href="/01_content_creators" Writing principles
+  section
+    .half
+      section
+        h1 For designers
+        p Usability and the utility, not the visual design, determine the success or failure of a website
+        p
+          a.button-hero href="/02_designers" Design principles
+      section.center
+        svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 317" width="450"
+          image xlink:href="/assets/images/home_designers.svg" width="100%" height="100%" src="/assets/images/home_designers.png"
+  section.alt
+    .half
+      section.center
+        svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 317" width="450"
+          image xlink:href="/assets/images/home_developers.svg" width="100%" height="100%" src="/assets/images/home_developers.png"
+      section
+        h1 For developers
+        p Put quality at the forefront of your project if you want people to use and enjoy your website.
+        p
+          a.button-hero href="/03_developers" Code guidelines
+  section.navigation-text-listing
+    h1 Example page layouts
+    p Focused page templates, constructed from the components listed below.
+    ul
+      - @layouts.reject{ |l| l =~ /(layout)$/ }.each do |path|
+        li
+          a href=(layout_path(path))
+            = layout_title(path)
   hr
+  section.navigation-text-listing
+    h1 Available components
+    p Small units of page style and functionality
+    ul
+      - @components.each do |path|
+        li
+          - if component_pending?(path)
+            small class="todo"
+              | [TODO]
+              '
+          a href=(component_path(path))
+            = component_title(path)
 
-  .hero-listing
-    h2 style="background-image:url(/assets/images/bg-banner.jpg)"
-      a.inner href="/layouts"
-        strong Example Page Layouts
-        p Focused page templates, constructed from the components listed above.
+  / ul.selector-listing-3
+  /   li
+  /     a href="/build/process"
+  /       strong: span Planning your website
+  /       p Resources to help you plan, create content, design and develop your website.
+  /       span class="button-small brand" Planning
+  /   li
+  /     a href="/training/"
+  /       strong: span Training and community
+  /       p Training calendar, online training, forums, zendesk and more...
+  /       span class="button-small brand" Training
+  /   li
+  /     a href="/policies/web-policies"
+  /       strong: span Philosophies, guidelines and policies
+  /       p Stay on the right side of the law son.
+  /       span class="button-small brand" Policies
 
-  .hero-listing
-    h2 style="background-image:url(/assets/images/bg-banner.jpg)"
-      a.inner href="/components"
-        strong Components
-        p Small units of page style and functionality
+  / hr
+
+  / .hero-listing
+  /   h2 style="background-image:url(/assets/images/bg-banner.jpg)"
+  /     a.inner href="/layouts"
+  /       strong Example Page Layouts
+  /       p Focused page templates, constructed from the components listed above.
+
+  / .hero-listing
+  /   h2 style="background-image:url(/assets/images/bg-banner.jpg)"
+  /     a.inner href="/components"
+  /       strong Components
+  /       p Small units of page style and functionality
 
   footer

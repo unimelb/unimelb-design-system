@@ -28,7 +28,8 @@
       text-align: center;
     }
 
-    img {
+    img,
+    svg {
       @include rem(max-height, 500px);
     }
 

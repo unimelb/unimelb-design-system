@@ -684,6 +684,54 @@
   }
 }
 
+[role="main"] .navigation-text-listing {
+  @include rem(max-width, 1400px);
+  @include rem(padding, 50px 25px);
+  margin: 0 auto;
+
+  h1,
+  p,
+  ul {
+    @include rem(max-width, 4000px);
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  h1 {
+    @include rem(padding-bottom, 5px);
+  }
+
+  ul{
+    padding-bottom: 0;
+    padding-top: 0;
+
+    li {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      a {
+        @include rem(padding, 10px 0);
+        display: block;
+      }
+    }
+
+    @include breakpoint(tablet) {
+      @include column-count(2);
+    }
+
+    @include breakpoint(desktop) {
+      @include column-count(3);
+    }
+
+    @include breakpoint(wide) {
+      @include column-count(4);
+    }
+  }
+}
+
 .noborder {
   border: 0;
 }
