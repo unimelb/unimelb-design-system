@@ -80,7 +80,7 @@ namespace :injection do
       config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
       config.existing_remote_files = 'delete'
       config.manifest              = false
-      config.gzip_compression      = false
+      config.gzip_compression      = true
       config.run_on_precompile     = false
       config.log_silently          = false
       config.prefix                = 'injection'
@@ -146,7 +146,7 @@ namespace :templates do
       config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
       config.existing_remote_files = 'delete'
       config.manifest              = false
-      config.gzip_compression      = false
+      config.gzip_compression      = true
       config.run_on_precompile     = false
       config.log_silently          = false
       config.prefix                = TEMPLATES_VERSION_PATH
