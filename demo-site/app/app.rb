@@ -150,6 +150,12 @@ module WebTemplates
 
     private
 
+    def doc_hidden(file)
+      return false unless File.file?(file)
+      settings = file_settings(file)
+      settings['hidden'] || false
+    end
+
     def doc_title(file)
       return '¡missing page!' unless File.file?(file)
       settings = file_settings(file)
@@ -177,6 +183,7 @@ module WebTemplates
         pages << {
           title:    doc_title(path),
           href:     doc_href(path),
+          hidden:   doc_hidden(path),
           children: children
         }
       end
