@@ -110,14 +110,10 @@
       width: 100%;
 
       h1 {
-        @include rem(font-size, 50px);
-        @include rem(letter-spacing, 3px);
         @include rem(padding-top, 80px);
-        font-family: $ff-sans;
-        font-weight: $bold;
+        font-weight: $thin;
         margin-right: 0;
         padding-bottom: 0;
-        text-transform: uppercase;
       }
 
       p {
