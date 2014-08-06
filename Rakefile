@@ -3,7 +3,6 @@ require 'rake/sprocketstask'
 require 'compass'
 require 'asset_sync'
 require 'dotenv/tasks'
-require 'fileutils'
 
 ROOT_DIR  = File.expand_path File.dirname(__FILE__)
 BUILD_DIR = File.expand_path File.join(ROOT_DIR,  'build')
@@ -81,12 +80,13 @@ namespace :injection do
       config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
       config.existing_remote_files = 'delete'
       config.manifest              = false
-      config.gzip_compression      = true
+      config.gzip_compression      = false
       config.run_on_precompile     = false
       config.log_silently          = false
       config.prefix                = 'injection'
       config.public_path           = BUILD_DIR
       config.always_upload         = %w{injection.css injection.js}
+      config.ignored_files         = /manifest.*\.json/
     end
     AssetSync.sync
   end
@@ -113,8 +113,7 @@ namespace :templates do
     end
   end
 
-  SPECIFIED_VERSION      = ENV['VERSION'] ? ENV['VERSION'] : 'beta'
-  TEMPLATE_VERSION       = SPECIFIED_VERSION =~ /^\d.*$/ ? "#{SPECIFIED_VERSION}/tmp" : SPECIFIED_VERSION
+  TEMPLATE_VERSION       = ENV['VERSION'] ? ENV['VERSION'] : 'beta'
   TEMPLATES_ASSETS       = File.expand_path File.join(ROOT_DIR,  'templates')
   TEMPLATES_VERSION_PATH = File.join('templates', TEMPLATE_VERSION)
   TEMPLATES_BUILD_DIR    = File.expand_path File.join(BUILD_DIR, TEMPLATES_VERSION_PATH)
@@ -130,15 +129,11 @@ namespace :templates do
         include TemplatesHelper
       end
     end
-    t.output      = TEMPLATES_BUILD_DIR
+    t.output      = "#{TEMPLATES_BUILD_DIR}/manifest-#{SecureRandom.hex(16)}.json"
     t.assets      = %w{*.svg *.png *.jpg *.jpeg uom.js isotope.pkgd.min.js uom.css}
     t.logger      = Logger.new($stdout)
     t.log_level   = :debug
     t.keep        = 0
-  end
-
-  if SPECIFIED_VERSION =~ /^\d.*$/
-    FileUtils.mv('/tmp/your_file', '/opt/new/location/your_file')
   end
 
   desc 'Uploads everything in the templates build directory to S3'
@@ -151,12 +146,13 @@ namespace :templates do
       config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
       config.existing_remote_files = 'delete'
       config.manifest              = false
-      config.gzip_compression      = true
+      config.gzip_compression      = false
       config.run_on_precompile     = false
       config.log_silently          = false
       config.prefix                = TEMPLATES_VERSION_PATH
       config.public_path           = BUILD_DIR
       config.always_upload         = %w{uom.js uom.css}
+      config.ignored_files         = /manifest.*\.json/
     end
     AssetSync.sync
   end
