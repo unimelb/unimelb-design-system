@@ -95,8 +95,8 @@
       @include rem(padding-bottom, 10px);
       @include rem(padding-top, 10px);
       line-height: 1.1;
-      margin-left: 3%;
-      margin-right: 3%;
+      margin-left: 0;
+      margin-right: 6%;
       text-align: right;
       width: 44%;
     }
@@ -106,7 +106,15 @@
     li:first-child + li + li + li,
     li:first-child + li + li + li + li + li,
     li:first-child + li + li + li + li + li + li + li {
+      margin-left: 6%;
+      margin-right: 0;
       text-align: left;
+    }
+
+    li:first-child + li + li,
+    li:first-child + li + li + li + li ,
+    li:first-child + li + li + li + li + li + li {
+      clear: left;
     }
 
     a {
@@ -122,6 +130,7 @@
 
       li {
         @include rem(padding-right, 30px);
+        clear: none;
         display: inline;
         float: none;
         margin-left: 0;
