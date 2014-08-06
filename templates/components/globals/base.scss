@@ -1086,10 +1086,9 @@ body {
   }
 
   .half {
-    @extend %clearfix;
-    @include rem(padding, 0 30px);
-    margin: 0 auto;
-    max-width: $w-lge;
+    @extend %wrapper;
+    @include rem(padding-bottom, 30px);
+    @include rem(padding-top, 30px);
 
     em {
       @include rem(font-size, 13px);
@@ -1103,17 +1102,21 @@ body {
     }
 
     section {
-      @include rem(padding, 0 15px);
-      float: left;
       margin: 0;
+      padding: 0;
       width: 100%;
 
       &.tight {
         padding: 0;
       }
 
+      h1 {
+        width: 100%;
+      }
+
       p {
         max-width: 100%;
+        width: 100%;
       }
 
       iframe {
@@ -1122,9 +1125,11 @@ body {
 
       @include breakpoint(desktop) {
         @include rem(padding, 30px 15px);
-        width: 50%;
+        display: table-cell;
         padding-left: 0;
         padding-right: 0;
+        vertical-align: top;
+        width: 50%;
 
         h2 {
           margin-left: 0;
@@ -1139,7 +1144,7 @@ body {
     }
 
     @include breakpoint(desktop) {
-      padding: 0;
+      display: table;
     }
   }
 }

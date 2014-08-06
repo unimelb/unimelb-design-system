@@ -64,7 +64,7 @@ $w-lge:         1400px;
 
   @include breakpoint(tablet) {
     @include rem(max-width, $w-lge);
-    @include rem(padding, 15px);
+    @include rem(padding, 15px 25px);
     width: 100%;
   }
 }

@@ -140,6 +140,13 @@
         width: auto;
       }
 
+      li:first-child + li,
+      li:first-child + li + li + li,
+      li:first-child + li + li + li + li + li,
+      li:first-child + li + li + li + li + li + li + li {
+        margin-left: 0;
+      }
+
       a {
         @include rem(font-size, 15px);
       }
