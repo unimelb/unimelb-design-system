@@ -1,5 +1,6 @@
 ---
 title: Contribution
+hidden: true
 ---
 
 # Contribution
