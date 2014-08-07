@@ -5,7 +5,11 @@ hidden: true
 
 # Web Policies
 
-// TODO
+* Approval and allocation of _.unimelb.edu.au_ subdomains
+* Web accessibility guidelines
+* Web analytics guidlines
+* Web governance guiding principles
+
 
 Explanation needed
 
