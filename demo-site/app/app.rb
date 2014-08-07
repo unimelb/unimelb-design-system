@@ -194,12 +194,12 @@ module WebTemplates
     def build_navigation
       @navigation = dir_to_menu(settings.pages_dir)
 
-      layouts = { title: 'Example Layouts', href: '/layouts', children: [] }
+      layouts = { title: 'Page Templates', href: '/layouts', children: [] }
       settings.layouts.reject{ |l| l =~ /(layout)$/ }.each do |layout|
         layouts[:children] << { title: layout_title(layout), href: layout_path(layout), children: [] }
       end
 
-      components = { title: 'Component Reference', href: '/components', children: [] }
+      components = { title: 'Components', href: '/components', children: [] }
       settings.components.each do |component|
         components[:children] << { title: component_title(component), href: component_path(component), children: [] }
       end
