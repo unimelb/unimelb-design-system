@@ -10,7 +10,7 @@ div role="main"
 
   section
     h2.title A digital design system for The University of Melbourne.
-    p This site explains how we plan, design and build web sites and web applications consistently across the unimelb domain in the pursuit of improved usability and a strong digital brand. 
+    p This site explains how we plan, design and build web sites and web applications consistently across the unimelb domain in the pursuit of improved usability and to a strong digital brand. 
     p Use this site to learn how to write effective content, design your site or develop using the university templates. If you cannot find what you are looking for, <a href="/collaboration.html">please request it</a>.
 
   section.alt
@@ -20,14 +20,14 @@ div role="main"
             image xlink:href="/assets/images/home_content_creators.svg" width="100%" height="100%" src="/assets/images/home_content_creators.png"
       section
         h1 For content creators
-        p Find out everything about writing for the web
+        p Learn how to fill your website with fantastic text, imagery and video
         p
-          a.button-hero href="/01_content_creators" Writing principles
+          a.button-hero href="/01_content_creators" Content principles
   section
     .half
       section
         h1 For designers
-        p Usability and the utility, not the visual design, determine the success or failure of a website
+        p Learn how to use the design system to assemble websites that meet objectives without re-inventing the wheel.
         p
           a.button-hero href="/02_designers" Design principles
       section.center
@@ -40,12 +40,12 @@ div role="main"
           image xlink:href="/assets/images/home_developers.svg" width="100%" height="100%" src="/assets/images/home_developers.png"
       section
         h1 For developers
-        p Put quality at the forefront of your project if you want people to use and enjoy your website.
+        p Learn how to build your next web app without a custom.css file. 
         p
           a.button-hero href="/03_developers" Code guidelines
   section.navigation-text-listing
-    h1 Example page layouts
-    p Focused page templates, constructed from the components listed below.
+    h1 Page Templates
+    p Page templates to get you started building the most commonly used page types across the unimelb domain.
     ul
       - @layouts.reject{ |l| l =~ /(layout)$/ }.each do |path|
         li
@@ -53,8 +53,8 @@ div role="main"
             = layout_title(path)
   hr
   section.navigation-text-listing
-    h1 Available components
-    p Small units of page style and functionality
+    h1 Components
+    p Small units of page style and functionality you can assemble or populate to create unique page templates.
     ul
       - @components.each do |path|
         li
@@ -64,36 +64,4 @@ div role="main"
               '
           a href=(component_path(path))
             = component_title(path)
-
-  / ul.selector-listing-3
-  /   li
-  /     a href="/build/process"
-  /       strong: span Planning your website
-  /       p Resources to help you plan, create content, design and develop your website.
-  /       span class="button-small brand" Planning
-  /   li
-  /     a href="/training/"
-  /       strong: span Training and community
-  /       p Training calendar, online training, forums, zendesk and more...
-  /       span class="button-small brand" Training
-  /   li
-  /     a href="/policies/web-policies"
-  /       strong: span Philosophies, guidelines and policies
-  /       p Stay on the right side of the law son.
-  /       span class="button-small brand" Policies
-
-  / hr
-
-  / .hero-listing
-  /   h2 style="background-image:url(/assets/images/bg-banner.jpg)"
-  /     a.inner href="/layouts"
-  /       strong Example Page Layouts
-  /       p Focused page templates, constructed from the components listed above.
-
-  / .hero-listing
-  /   h2 style="background-image:url(/assets/images/bg-banner.jpg)"
-  /     a.inner href="/components"
-  /       strong Components
-  /       p Small units of page style and functionality
-
   footer
