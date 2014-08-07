@@ -2,6 +2,8 @@
 title: For Developers
 ---
 
+## For developers
+
 The design system has been created with the following development principles in mind. 
 
 1. You should **never** have a custom.css or custom.js file.
@@ -9,8 +11,8 @@ The design system has been created with the following development principles in 
 3. The design system is technology agnostic in the first instance. We cannot support CMS implementations of template code.
 4. However, we will work with CMS experts (eg. Squiz) to integrate with major, university supported CMS's
 5. Assets are stored centrally on a CDN to ensure maximum performance and maintainability over time. 
-6. If something is broken, you should [contribute a fix](#todo).
-7. If something is not there, it is better to [contribute it](#todo).
+6. If something is broken, you should [contribute a fix](/articles/contribution).
+7. If something is not there, it is better to [contribute it](/articles/contribution).
 8. Component code should be isolated and stored seperately as far as is practical.
 3. The documentation site should immediately show you the effect of changes made to enable contribution
 4. Pull-requests should be used to 
