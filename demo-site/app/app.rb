@@ -199,7 +199,7 @@ module WebTemplates
         layouts[:children] << { title: layout_title(layout), href: layout_path(layout), children: [] }
       end
 
-      components = { title: 'Components', href: '/components', children: [] }
+      components = { title: 'Component Reference', href: '/components', children: [] }
       settings.components.each do |component|
         components[:children] << { title: component_title(component), href: component_path(component), children: [] }
       end
