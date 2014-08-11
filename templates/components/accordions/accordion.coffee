@@ -21,9 +21,15 @@ unless window.UOMAccordion
         @el.addEventListener 'click', (e) ->
           e.preventDefault()
           target = e.target || e.srcElement
+
+          # Determine overall container to check for single focus
           container = t.container.parentNode
-          if container.nodeName == 'TR'
-            container = container.parentNode.parentNode
+
+          # Reasonable expectations, if the trigger is wrapped
+          if container.nodeName == 'TR' or container.parentNode.nodeName == 'TR'
+            while container.nodeName != 'TABLE'
+              if container.parentNode
+                container = container.parentNode
 
           if container and container.getAttribute('data-single-focus')==""
             for s in container.querySelectorAll('.accordion__visible')

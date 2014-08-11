@@ -469,6 +469,10 @@ body {
       background-color: $lightgray;
     }
 
+    .gmap__canvas {
+      width: 100% !important;
+    }
+
     section {
       @include rem(padding-top, 200px);
       @extend %grad-bottom;
