@@ -5,6 +5,9 @@ window.UOMinjectHeader = ->
   unless document.body.hasClass('ie') or (typeof bodyclass == 'undefined')
     document.body.addClass(bodyclass)
 
+  # Logo links to
+  defaultlink = 'https://unimelb.edu.au'
+
   # Create page wrapper if it doesn't already exist
   parent = document.body
   page = document.querySelector('.page-inner')
@@ -48,7 +51,7 @@ window.UOMinjectHeader = ->
     if document.countSelector('.page-inner > .floating') > 0
       # Landing page header
       header.innerHTML = """
-      <a class="page-header-logo" href="/">Home</a>
+      <a class="page-header-logo" href="#{defaultlink}">Home</a>
       """
       header.addClass('floating')
       if document.querySelector('.page-inner > .floating').hasClass('reverse')
@@ -58,7 +61,7 @@ window.UOMinjectHeader = ->
       # General header
       header.innerHTML = """
       <header>
-        <a class="page-header-logo" href="/">Home</a>
+        <a class="page-header-logo" href="#{defaultlink}">Home</a>
         <div class="page-header-navigation">
           <a href="https://unimelb.edu.au/" title="The University of Melbourne">The University of Melbourne</a>
         </div>
