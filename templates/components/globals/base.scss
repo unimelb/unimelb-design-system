@@ -992,7 +992,9 @@ body {
     div {
       @include rem(max-width, $w-lge);
       clear: both;
+      display: table;
       margin: 0 auto;
+      width: 100%;
     }
 
     aside {
@@ -1011,7 +1013,7 @@ body {
 
       @include breakpoint(desktop) {
         @include rem(padding, 30px);
-        float: left;
+        display: table-cell;
         max-width: 25%;
         position: relative;
         width: 25%;
@@ -1028,7 +1030,7 @@ body {
       @include breakpoint(desktop) {
         @include rem(padding-top, 45px);
         clear: none;
-        float: left;
+        display: table-cell;
         width: 75%;
       }
     }

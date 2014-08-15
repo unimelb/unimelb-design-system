@@ -6,7 +6,7 @@ window.UOMinjectHeader = ->
     document.body.addClass(bodyclass)
 
   # Logo links to
-  defaultlink = 'https://unimelb.edu.au'
+  defaultlink = 'https://www.unimelb.edu.au'
 
   # Create page wrapper if it doesn't already exist
   parent = document.body
