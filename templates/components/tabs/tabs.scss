@@ -72,7 +72,7 @@
 
       a {
         @include rem(font-size, 16px);
-        @include rem(padding, 15px 10px);
+        @include rem(padding, 25px 10px);
         color: $white;
         display: inline-block;
         font-weight: $light;
@@ -202,7 +202,7 @@
       }
 
       nav a {
-        color: $gray;
+        color: $white;
 
         &[data-current] {
           color: $white;

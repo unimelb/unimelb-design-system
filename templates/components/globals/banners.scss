@@ -79,7 +79,7 @@
     .bottom-align-flat {
       @include rem(padding-bottom, 30px);
       @include rem(padding-top, 30px);
-      background-color: rgba($black, .8);
+      background-color: rgba($darkblue, .8);
       position: relative;
       width: 100%;
 

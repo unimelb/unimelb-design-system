@@ -981,13 +981,7 @@ body {
 
   .with-aside {
     @extend %clearfix;
-    background-color: $lightgray;
-
-    @include breakpoint(desktop) {
-      background-image: url("#{asset_path('components/globals/with-aside-r-bg.png')}");
-      background-position: top center;
-      background-repeat: repeat-y;
-    }
+    background-color: $paleblue;
 
     div {
       @include rem(max-width, $w-lge);
@@ -999,7 +993,7 @@ body {
 
     aside {
       @include rem(padding, 30px 15px);
-      background-color: $lightgray;
+      background-color: $paleblue;
       clear: none;
       width: 100%;
 
@@ -1035,19 +1029,10 @@ body {
       }
     }
 
-    &.left {
-      @include breakpoint(desktop) {
-        background-image: url("#{asset_path('components/globals/with-aside-bg.png')}");
-
-        aside {
-          background-color: transparent;
-        }
-      }
-    }
   }
 
   .alt {
-    background-color: $lightgray;
+    background-color: $paleblue;
   }
 
   .margin-rule {
