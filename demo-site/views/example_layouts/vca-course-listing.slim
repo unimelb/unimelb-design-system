@@ -4,24 +4,28 @@ header.short style="background-image:url(/assets/images/vca/sub-bg.jpg)"
     form.course-select
       fieldset.left
         strong Course type
+        div.all
+          input.checkbox type="checkbox" name="f[degree_type]" checked="checked" data-tag="all" id="c00"
+          label for="c00"
+          ' All
         div.undergraduate
-          input#c1.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="undergrad"
+          input#c1.checkbox type="checkbox" name="f[course_type]" data-tag="undergrad"
           label for="c1"
           ' Undergraduate
         div.certificates_diplomas
-          input#c2.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="certificates_diplomas"
+          input#c2.checkbox type="checkbox" name="f[course_type]" data-tag="certificates_diplomas"
           label for="c2"
           ' Certificates/Diplomas
         div.coursework
-          input#c2.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="coursework"
+          input#c2.checkbox type="checkbox" name="f[course_type]" data-tag="coursework"
           label for="c2"
           ' Masters by Coursework
         div.research
-          input#c3.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="research"
+          input#c3.checkbox type="checkbox" name="f[course_type]" data-tag="research"
           label for="c3"
           ' Masters by Research
         div.phd
-          input#c4.checkbox type="checkbox" name="f[course_type]" checked="checked" data-tag="phd"
+          input#c4.checkbox type="checkbox" name="f[course_type]" data-tag="phd"
           label for="c4"
           ' PhD
       fieldset.right

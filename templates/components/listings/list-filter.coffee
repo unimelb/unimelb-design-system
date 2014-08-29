@@ -18,21 +18,33 @@ unless window.UOMListFilter
               masonry:
                 columnWidth: '.item'
 
-        for filter in @el.querySelectorAll('input.checkbox')
-          filter.addEventListener 'change', (e) ->
-            for table in t.tables
-              if this.checked
-                t.showTable(table, this.getAttribute 'data-tag')
-              else
-                t.hideTable(table, this.getAttribute 'data-tag')
+        @categories = @el.querySelectorAll('input.checkbox:not([data-tag="all"])')
+        @allcategories = @el.querySelector('input.checkbox[data-tag="all"]')
 
-          # IE8
+        for filter in @el.querySelectorAll('input.checkbox')
           filter.addEventListener 'click', (e) ->
-            for table in t.tables
-              if this.checked
-                t.showTable(table, this.getAttribute 'data-tag')
+
+            # all selector
+            if this.getAttribute('data-tag') == 'all' and this.checked
+              for category in t.categories
+                category.checked = false
+              t.showAllTables()
+
+            else
+              t.allcategories.checked = false
+
+              displayed_categories = []
+              for category in t.categories
+                if category.checked
+                  displayed_categories.push category.getAttribute('data-tag')
+
+              if displayed_categories.length == 0
+                t.allcategories.checked = true
+                t.showAllTables()
+
               else
-                t.hideTable(table, this.getAttribute 'data-tag')
+                for table in t.tables
+                  t.showTable(table, displayed_categories)
 
             t.redraw()
 
@@ -53,13 +65,26 @@ unless window.UOMListFilter
             iso.arrange
               filter: '.item'
 
-      showTable: (table, tag) ->
+      showTable: (table, selectedtags) ->
         for el in table.querySelectorAll('li')
-          el.addClass('item') if el.hasClass(tag)
+          show = false
+          for tag in selectedtags
+            if el.hasClass(tag)
+              show = true
+
+          if show
+            el.addClass('item')
+          else
+            el.removeClass('item')
 
       hideTable: (table, tag) ->
         for el in table.querySelectorAll('li')
           el.removeClass('item') if el.hasClass(tag)
+
+      showAllTables: ->
+        for table in @tables
+          for el in table.querySelectorAll('li')
+            el.addClass('item')
 
     new ListFilter(el) for el in document.querySelectorAll('form.course-select')
 
