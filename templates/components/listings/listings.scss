@@ -33,7 +33,7 @@
     border-top: 1px solid darken($lightgray, 5%);
     list-style-type: none;
     margin-bottom: 0;
-    margin-left: 0;
+    margin-left: auto;
     padding-bottom: 0;
 
     &:first-child {
@@ -381,43 +381,46 @@
   }
 
   @include breakpoint(desktop) {
+    @include rem(padding, 50px 0);
+    display: table;
     float: none;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100%;
+    margin: 0 auto;
     max-width: $w-lge;
+    table-layout: fixed;
 
     li {
-      background-color: $midblue;
-      margin-left: 2%;
-      margin-right: 2%;
-      width: 30.333%;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
-      &:first-child + li + li {
-        margin-right: 0;
-      }
+      background-color: transparent;
+      display: table-cell;
+      float: none;
+      height: 100%;
+      margin: 0;
+      padding-left: 1%;
+      padding-right: 1%;
+      vertical-align: top;
+      width: auto;
     }
 
     p {
-      @include rem(margin-left, 30px);
-      @include rem(margin-right, 30px);
-      padding-left: 0;
-      padding-right: 0;
+      @include rem(padding, 20px 0 100px 0);
+      margin: 0;
       text-align: left;
     }
 
     strong {
       @include rem(height, 120px);
-      padding-left: 5%;
-      padding-right: 5%;
+      margin: 0;
+      padding: 0;
     }
 
     a {
-      @include rem(min-height, 360px);
-      @include rem(padding-bottom, 15px);
+      @include rem(max-width, 350px);
+      @include rem(min-height, 400px);
+      @include rem(padding, 0 35px);
+      background-color: $midblue;
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
     }
 
     .button-small {
@@ -426,15 +429,6 @@
       display: inline-block;
       left: 50%;
       position: absolute;
-    }
-  }
-
-  @include breakpoint(wide) {
-    padding: 0 10%;
-    width: 80%;
-
-    a {
-      @include rem(min-height, 345px);
     }
   }
 }
