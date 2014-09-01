@@ -389,6 +389,12 @@
     max-width: $w-lge;
     table-layout: fixed;
 
+    // override clearfix
+    &::before,
+    &::after {
+      display: none;
+    }
+
     li {
       background-color: transparent;
       display: table-cell;
