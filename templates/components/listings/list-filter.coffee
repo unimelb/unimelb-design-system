@@ -23,34 +23,41 @@ unless window.UOMListFilter
 
         for filter in @el.querySelectorAll('input.checkbox')
           filter.addEventListener 'click', (e) ->
+            t.process(e.target || e.srcElement)
 
-            # all selector
-            if this.getAttribute('data-tag') == 'all' and this.checked
-              for category in t.categories
-                category.checked = false
-              t.showAllTables()
-
-            else
-              t.allcategories.checked = false
-
-              displayed_categories = []
-              for category in t.categories
-                if category.checked
-                  displayed_categories.push category.getAttribute('data-tag')
-
-              if displayed_categories.length == 0
-                t.allcategories.checked = true
-                t.showAllTables()
-
-              else
-                for table in t.tables
-                  t.showTable(table, displayed_categories)
-
-            t.redraw()
+        @process()
 
         @select.addEventListener 'change', (e) ->
           t.curr = this.value
           t.redraw()
+
+      process: (target) ->
+        if @allcategories and target and target.getAttribute('data-tag') == 'all' and target.checked
+          for category in @categories
+            category.checked = false
+          @showAllTables()
+
+        else
+          @allcategories.checked = false if @allcategories
+
+          displayed_categories = []
+          for category in @categories
+            if category.checked
+              displayed_categories.push category.getAttribute('data-tag')
+
+          if displayed_categories.length == 0
+            if @allcategories
+              @allcategories.checked = true
+            else
+              for category in @categories
+                category.checked = true
+            @showAllTables()
+
+          else
+            for table in @tables
+              @showTable(table, displayed_categories)
+
+        @redraw()
 
       redraw: ->
         for table in @tables
