@@ -377,12 +377,46 @@ body {
 
   table.staff-listing {
     @extend %wrapper;
-    @include rem(margin-bottom, 120px);
+    @include rem(margin-bottom, 30px);
     @include rem(margin-top, 30px);
     border-collapse: collapse;
     margin-left: 3%;
     margin-right: 3%;
     width: 94%;
+
+    &.min {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: $w-sml;
+
+      a {
+        color: $highlight;
+      }
+
+      img {
+        border-radius: 50%;
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .profile {
+        @include rem(height, 50px);
+        @include rem(margin-right, 30px);
+        @include rem(width, 50px);
+        border-radius: 50%;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      td {
+        border-bottom: 0 none;
+        border-top: 1px solid $lightergray;
+      }
+
+      & > tbody > tr:first-child > td {
+        border-top: 0 none;
+      }
+    }
 
     @include breakpoint($w-lge+30px) {
       margin-left: auto;
