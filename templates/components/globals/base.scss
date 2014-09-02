@@ -396,14 +396,64 @@ body {
     }
   }
 
-  table.staff-listing {
+  .staff-listing {
     @extend %wrapper;
-    @include rem(margin-bottom, 120px);
+    @include rem(margin-bottom, 30px);
     @include rem(margin-top, 30px);
     border-collapse: collapse;
+    display: table;
     margin-left: 3%;
     margin-right: 3%;
     width: 94%;
+
+    &.min {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: $w-sml;
+
+      a {
+        color: $highlight;
+      }
+
+      img {
+        border-radius: 50%;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .profile {
+        background-color: $white;
+        display: table-cell;
+        vertical-align: top;
+
+        .frame {
+          @include rem(height, 50px);
+          @include rem(width, 50px);
+          background-color: $lightestblue;
+          border-radius: 50%;
+        }
+      }
+
+      .details {
+        @include rem(padding-left, 25px);
+        @include rem(width, 570px);
+        display: table-cell;
+        line-height: 1.4;
+        vertical-align: middle;
+      }
+
+      td,
+      li {
+        border-bottom: 0 none;
+        border-top: 1px solid $lightergray;
+      }
+
+      & > tbody > tr:first-child > td,
+      li:first-child {
+        border-top: 0 none;
+      }
+    }
 
     @include breakpoint($w-lge+30px) {
       margin-left: auto;
@@ -413,6 +463,11 @@ body {
     a {
       color: $black;
       font-weight: $bold;
+    }
+
+    li {
+      @include rem(padding, 10px 0);
+      list-style-type: none;
     }
 
     tr {

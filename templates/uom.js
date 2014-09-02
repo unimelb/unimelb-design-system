@@ -9,10 +9,11 @@ window.UOMloadComponents = function() {
   window.UOMListFilter()
   window.UOMGMap()
   window.UOMModal()
-  window.UOMInpageScrolling()
-  window.UOMFeed()
   window.UOMTabs()
-  window.UOMYtEmbed()
+  window.UOMInpageScrolling()
+  window.UOMStickyNav()
+  window.UOMFeed() // unused?
+  window.UOMYtEmbed() // unused?
 };
 
 if (!window.attachEvent) {
