@@ -4,6 +4,8 @@ title: For Designers
 
 # Our design principles
 
+These are the principles we're working with throughout the whole design system
+
 ## Design for people, not for a screen
 The user and their needs always have to be put first. What is the best way to consume the content? What do they want to know, what do they need to know? Where is the user? In a library, at home, on the tram?
 
@@ -30,8 +32,6 @@ By starting with a minimal feature set and an early release, we get the chance t
 Avoiding a 200 page spec document — which can turn into a bottleneck, or worse, fails to address the real users needs completely — minimizes the risk of big failures. We recognise early if our website is useful or we just learnt a lesson.
 
 Our advantage in the digital world is the fact that nothing we do is set in stone; Things can be undone.
-
-<hr>
 
 # How to start
 

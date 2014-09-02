@@ -1,6 +1,5 @@
 [role="main"] {
   header {
-    @include rem(margin-bottom, 30px);
     @include rem(min-height, 144px);
     background-color: $black;
     background-image: url("#{asset_path('components/globals/bg-banner.jpg')}");
@@ -109,39 +108,17 @@
     .mid-align {
       display: table-cell;
       padding-bottom: 0;
-      padding-top: 0;
       position: relative;
       text-align: center;
       vertical-align: middle;
       width: 100%;
 
       h1 {
-        @include rem(padding-top, 80px);
-        font-weight: $thin;
-        margin-right: 0;
-        padding-bottom: 0;
-      }
+        @include rem(max-width, 1000px);
+        @include rem(padding-top, 100px);
 
-      p {
-        margin: 0 auto;
-      }
-
-      @include breakpoint(tablet) {
-        h1 {
-          @include rem(padding-bottom, 30px);
-          margin: auto;
-        }
-      }
-
-      @include breakpoint(height-smallest) {
-        h1 {
-          @include rem(padding-bottom, 30px);
-        }
-      }
-
-      @media screen and (min-width: 481px) and (max-height:639px) {
-        h1 {
-          @include rem(padding-bottom, 30px);
+        @include breakpoint(desktop) {
+          @include rem(padding-top, 170px);
         }
       }
     }
@@ -273,9 +250,8 @@
 
     h1 {
       @include rem(max-width, $w-lge);
-      line-height: 1;
+      font-weight: $thin;
       margin: 0 auto;
-      padding-bottom: 0;
       text-align: center;
 
       &:after,
@@ -283,25 +259,32 @@
         display: none;
       }
 
+      @include breakpoint(desktop) {
+        @include adjust-font-size-to(50px);
+        line-height: 1.04;
+      }
+
       @include breakpoint(wide) {
-        @include rem(font-size, 72px);
+        @include adjust-font-size-to(72px);
         line-height: 1.04;
       }
     }
 
     p {
-      @include rem(font-size, 22px);
       @include rem(max-width, $w-lge);
       margin: 0 auto;
+
+      @include breakpoint(desktop) {
+        @include rem(font-size, 20px);
+      }
+
+      @include breakpoint(wide) {
+        @include rem(font-size, 28px);
+      }
     }
 
     @include breakpoint(desktop) {
       overflow: hidden;
-
-      p {
-        @include rem(font-size, 28px);
-        @include rem(padding-top, 10px);
-      }
     }
 
     @include breakpoint(height-smallest) {

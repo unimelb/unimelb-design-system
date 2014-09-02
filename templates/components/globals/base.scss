@@ -6,11 +6,13 @@ body {
 }
 
 body {
+  @include establish-baseline;
+
   background-color: $navy;
   color: $black;
   font-family: $ff-sans;
-  font-size: 106.3%;
-  line-height: 1.7;
+  /*font-size: 106.3%;
+  line-height: 1.7;*/
 
   @include breakpoint(desktop) {
     font-size: 112.5%;
@@ -137,8 +139,10 @@ body {
   }
 
   section {
-    @include rem(padding-bottom, 30px);
-    @include rem(padding-top, 30px);
+    @include padding-leader(2);
+    @include padding-trailer(2);
+    // @include rem(padding-bottom, 30px);
+    // @include rem(padding-top, 30px);
 
     div {
       @include rem(max-width, $w-sml);
@@ -275,8 +279,9 @@ body {
   }
 
   h1 {
-    @include rem(font-size, 28px);
-    @include rem(padding-bottom, 30px);
+    @include adjust-font-size-to(33px);
+    @include padding-trailer(0.5);
+    font-weight: $light;
   }
 
   .main-title {
@@ -309,26 +314,33 @@ body {
   }
 
   h2 {
-    @include rem(font-size, 27.5px);
-    @include rem(padding, 23px 0);
+    // @include rem(font-size, 27.5px);
+    // @include rem(padding, 23px 0);
+
+    @include adjust-font-size-to(15px);
+    @include rem(letter-spacing, 1px);
+    @include padding-leader(1);
+    @include padding-trailer(1);
     clear: left;
-    font-weight: $light;
-    line-height: 1.5;
+    font-weight: $bold;
+    text-transform: uppercase;
+
 
     @include breakpoint(desktop) {
-      @include rem(font-size, 29.1px);
+      // @include rem(font-size, 29.1px);
     }
   }
 
   h3 {
-    @include rem(font-size, 22.2px);
-    @include rem(padding, 20px 0);
+    // @include rem(font-size, 22.2px);
+    // @include rem(padding, 20px 0);
+    @include adjust-font-size-to(16px);
     font-weight: $bold;
-    line-height: 1.4;
+    // line-height: 1.4;
 
     @include breakpoint(desktop) {
-      @include rem(font-size, 23.5px);
-      @include rem(padding, 29px 0);
+      // @include rem(font-size, 23.5px);
+      // @include rem(padding, 29px 0);
     }
   }
 
@@ -337,14 +349,15 @@ body {
   }
 
   .subtitle {
-    @include rem(font-size, 15px);
+    @include adjust-font-size-to(15px);
+    // @include rem(font-size, 15px);
     @include rem(letter-spacing, 2px);
     font-weight: $bold;
     text-transform: uppercase;
   }
 
   h3.subtitle {
-    @include rem(padding-bottom, 5px);
+    // @include rem(padding-bottom, 5px);
     text-decoration: underline;
     text-transform: none;
   }
@@ -359,19 +372,27 @@ body {
     text-align: center;
 
     &:after {
-      @include rem(margin, 30px auto 15px);
+      @include margin-leader(1);
+      @include margin-trailer(1);
+      // @include rem(margin, 30px auto 30px);
       @include rem(width, 80px);
       border-bottom: 2px solid $black;
       content: '';
       display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     &::after {
-      @include rem(margin, 30px auto 15px);
+      @include margin-leader(1);
+      @include margin-trailer(1);
+      // @include rem(margin, 30px auto 30px);
       @include rem(width, 80px);
       border-bottom: 2px solid $black;
       content: '';
       display: block;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 
@@ -442,7 +463,8 @@ body {
   p,
   li {
     @include rem(letter-spacing, .2px);
-    @include rem(padding-bottom, 30px);
+    @include padding-trailer(1);
+    // @include rem(padding-bottom, 30px);
   }
 
   .feature {

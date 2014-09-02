@@ -57,6 +57,12 @@ $w-sml:         700px;
 $w-mid:         900px;
 $w-lge:         1400px;
 
+// Vertical Rhythm Vars
+$base-font-size: 16px;
+$base-line-height: 24px;
+$rhythm-unit:   rem;
+$round-to-nearest-half-line: true;
+
 %wrapper {
   margin: 0 auto;
   padding: 0 3%;
@@ -64,8 +70,8 @@ $w-lge:         1400px;
 
   @include breakpoint(tablet) {
     @include rem(max-width, $w-lge);
-    @include rem(padding, 15px 25px);
-    width: 100%;
+    // @include rem(padding, 15px 25px);
+    // width: 100%;
   }
 }
 
