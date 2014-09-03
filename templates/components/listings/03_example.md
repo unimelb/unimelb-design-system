@@ -10,7 +10,7 @@ no_section_wrap: true
       <figure>
         <img src="http://placekitten.com/700/400" alt="">
       </figure>
-      <strong>Cras pretium et elit id bibendum.</strong>
+      <strong>Cras pretium et bibendum.</strong>
       <p>Implement a template-based truncation to 20 words to prevent the summary from unbalancing the list item and extending the&hellip;</p>
     </a>
   </li>
@@ -23,7 +23,7 @@ no_section_wrap: true
       <figure>
         <img src="http://placekitten.com/700/400" alt="">
       </figure>
-      <strong>Cras pretium et elit id bibendum.</strong>
+      <strong>Cras pretium et elit id bibendum t elit id bibe</strong>
       <p>Implement a template-based truncation to 20 words to prevent the summary from unbalancing the list item and extending the&hellip;</p>
     </a>
   </li>

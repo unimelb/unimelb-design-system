@@ -19,7 +19,7 @@ no_section_wrap: true
   <li>
     <a href="">
       <strong><span>Shorter title.</span></strong>
-      <p>Implement a template-based truncation to 20 words to prevent the summary from unbalancing the list item and extending the&hellip;</p>
+      <p>Implement a template-based truncation to 20 words to prevent the summary from unbalancing the list item and extending the balancing the list item and extending the&hellip;</p>
       <span class="button-small brand">Call to action</span>
     </a>
   </li>

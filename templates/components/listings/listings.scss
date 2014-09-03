@@ -15,7 +15,8 @@
 
 [role="main"] .listing {
   @extend %clearfix;
-  @include rem(padding-bottom, 30px);
+  @include padding-trailer(2);
+  // @include rem(padding-bottom, 30px);
   @include rem(padding-left, 15px);
   @include rem(padding-right, 15px);
   background-color: $white;
@@ -27,13 +28,16 @@
   box-sizing: content-box;
 
   li {
-    @include rem(margin-top, 10px);
-    @include rem(min-height, 100px);
-    @include rem(padding-top, 10px);
+    @include padding-leader(0.5);
+    @include padding-trailer(0.5);
+    // @include rem(margin-top, 10px);
+    // @include rem(min-height, 100px);
+    // @include rem(padding-top, 10px);
     border-top: 1px solid darken($lightgray, 5%);
     list-style-type: none;
     margin-bottom: 0;
     margin-left: auto;
+    overflow: hidden;
     padding-bottom: 0;
 
     &:first-child {
@@ -47,11 +51,12 @@
   }
 
   figure {
-    @include rem(margin-bottom, 10px);
+    @include trailer(0.5);
+    // @include rem(margin-bottom, 10px);
     @include rem(margin-right, 15px);
     @include rem(max-height, 100px);
     @include rem(max-width, 100px);
-    @include rem(padding-top, 10px);
+    // @include rem(padding-top, 10px);
     float: left;
     margin-left: 0;
     margin-top: 0;
@@ -67,14 +72,17 @@
   }
 
   strong {
-    @include rem(font-size, 16px);
+    @include adjust-font-size-to(16px);
+    @include adjust-leading-to(1);
+    // @include rem(font-size, 16px);
     color: $darkblue;
     display: block;
     font-weight: $light;
   }
 
   p {
-    @include rem(font-size, 14px);
+    @include adjust-font-size-to(13px);
+    // @include rem(font-size, 14px);
     @include rem(margin-left, 115px);
     color: $midgray;
     padding: 0;
@@ -95,8 +103,8 @@
     }
   }
 
-  @include breakpoint(desktop) {
-    @include rem(padding-top, 60px);
+  @include breakpoint(tablet) {
+    @include padding-leader(2);
     img {
       margin: 0 auto;
       max-width: 100%;
@@ -107,10 +115,12 @@
     }
 
     li {
-      @include rem(padding-bottom, 60px);
+      @include padding-trailer(1);
       border: 0;
-      float: left;
-      width: 25%;
+      display: inline-block;
+      vertical-align: top;
+      // float: left;
+      width: 49%;
     }
 
     li:nth-child(4n+1) {
@@ -134,6 +144,17 @@
       text-align: center;
     }
   }
+
+  @include breakpoint(desktop) {
+    li {
+      width: 32%;
+    }
+  }
+  @include breakpoint(wide) {
+    li {
+      width: 24.5%;
+    }
+  }
 }
 
 [role="main"] .feature-listing {
@@ -145,7 +166,7 @@
   }
 
   figure {
-    @include rem(max-height, 300px);
+    @include rem(max-height, 350px);
     float: none;
     margin-right: 0;
     max-width: 100%;
@@ -157,19 +178,27 @@
   }
 
   strong {
-    @include rem(font-size, 20px);
+    @include adjust-font-size-to(20px);
+    @include adjust-leading-to(1);
+    // @include rem(font-size, 20px);
     text-align: left;
   }
 
   p {
-    @include rem(padding, 0 0 30px);
+    @include padding-trailer(1);
     margin-left: 0;
     text-align: left;
   }
 
+  @include breakpoint(tablet) {
+    li {
+      width: 100%;
+    }
+  }
+
   @include breakpoint(desktop) {
     li {
-      width: 50%;
+      width: 49%;
     }
 
     li:nth-child(4n+1) {
@@ -181,14 +210,15 @@
     }
 
     strong {
-      @include rem(font-size, 24px);
-      @include rem(padding, 15px 0);
+      @include adjust-font-size-to(20px);
+      @include padding-trailer(0.5);
+      // @include rem(padding, 15px 0);
       text-align: center;
     }
 
     p {
-      padding-left: 15%;
-      padding-right: 15%;
+      padding-left: 5%;
+      padding-right: 5%;
     }
   }
 }
@@ -209,7 +239,7 @@
 
   @include breakpoint(desktop) {
     li {
-      width: 33%;
+      width: 32.5%;
     }
 
     li:nth-child(2n+1) {
@@ -243,7 +273,8 @@
   }
 
   h2 {
-    @include rem(margin-bottom, 30px);
+    @include trailer(1);
+    // @include rem(margin-bottom, 30px);
     background-size: cover;
     max-width: 100%;
     padding: 0;
@@ -276,14 +307,17 @@
     }
 
     strong {
-      @include rem(font-size, 40px);
-      @include rem(padding-top, 30px);
+      @include adjust-font-size-to(40px);
+      @include padding-leader(1);
+      // @include rem(font-size, 40px);
+      // @include rem(padding-top, 30px);
       color: $white;
       line-height: 1.1;
     }
 
     p {
-      @include rem(font-size, 18px);
+      @include adjust-font-size-to(18px);
+      // @include rem(font-size, 18px);
       color: $white;
       font-weight: $thin;
       max-width: 100%;
@@ -298,32 +332,44 @@
     }
 
     .inner {
-      padding: 10% 20%;
+      padding: 10% 10%;
 
       strong {
-        @include rem(font-size, 60px);
-        line-height: 1.2;
+        @include padding-leader(0.5);
+        // @include adjust-font-size-to(60px);
+        // @include rem(font-size, 60px);
+        // line-height: 1.2;
       }
 
       p {
-        @include rem(font-size, 24px);
+        // @include rem(font-size, 24px);
+        @include padding-trailer(1);
         text-align: center;
       }
+    }
+  }
+  @include breakpoint(wide) {
+    .inner {
+      padding: 10% 20%;
     }
   }
 }
 
 [role="main"] .selector-listing-3 {
   @extend .feature-listing-3;
-  @include rem(margin, 30px 0);
+  @include leader(2);
+  @include trailer(2);
+  // @include rem(margin, 30px 0);
   background-color: transparent;
   border: 0 none;
   padding: 0 3%;
   width: 94%;
 
   li {
-    @include rem(margin-bottom, 30px);
-    @include rem(margin-top, 30px);
+    @include leader(1);
+    @include trailer(1);
+    // @include rem(margin-bottom, 30px);
+    // @include rem(margin-top, 30px);
     background-color: $midblue;
     margin-left: 0;
     margin-right: 0;
@@ -333,8 +379,10 @@
   }
 
   p {
-    @include rem(margin, 15px 0 0);
-    @include rem(padding-bottom, 15px);
+    @include leader(1);
+    @include padding-trailer(1);
+    // @include rem(margin, 15px 0 0);
+    // @include rem(padding-bottom, 15px);
     background-color: transparent;
     color: $white;
     padding-top: 0;
@@ -342,10 +390,14 @@
   }
 
   strong {
-    @include rem(font-size, 15px);
+    @include adjust-font-size-to(15px);
+    // @include leader(1);
+    @include padding-leader(2);
+    @include padding-trailer(2);
+    // @include rem(font-size, 15px);
     @include rem(letter-spacing, 1px);
-    @include rem(margin, 0 30px 15px);
-    @include rem(padding, 30px 0);
+    // @include rem(margin, 0 30px 15px);
+    // @include rem(padding, 30px 0);
     background-color: transparent;
     border-bottom: 1px solid $white;
     color: $white;
@@ -364,7 +416,8 @@
   }
 
   a {
-    @include rem(padding-bottom, 30px);
+    @include padding-trailer(2);
+    // @include rem(padding-bottom, 30px);
     position: relative;
 
     &:hover {
@@ -381,7 +434,9 @@
   }
 
   @include breakpoint(desktop) {
-    @include rem(padding, 50px 0);
+    @include padding-leader(2);
+    @include padding-trailer(2);
+    // @include rem(padding, 50px 0);
     display: table;
     float: none;
     height: 100%;
@@ -408,7 +463,9 @@
     }
 
     p {
-      @include rem(padding, 20px 0 100px 0);
+      @include padding-leader(1);
+      @include padding-trailer(5);
+      // @include rem(padding-bottom, 100px);
       margin: 0;
       text-align: left;
     }
@@ -685,8 +742,11 @@
 }
 
 [role="main"] .navigation-text-listing {
+  @include padding-leader(3);
+  @include padding-trailer(3);
   @include rem(max-width, 1400px);
-  @include rem(padding, 50px 25px);
+  @include rem(padding-left, 25px);
+  @include rem(padding-right, 25px);
   margin: 0 auto;
 
   h1,
@@ -700,7 +760,8 @@
   }
 
   h1 {
-    @include rem(padding-bottom, 5px);
+    @include padding-trailer(0);
+    // @include rem(padding-bottom, 5px);
   }
 
   ul{
@@ -713,9 +774,11 @@
       padding: 0;
 
       a {
-        @include rem(padding, 10px 0);
+        @include padding-trailer(1);
+        // @include rem(padding, 10px 0);
         display: block;
       }
+
     }
 
     @include breakpoint(tablet) {
@@ -731,6 +794,108 @@
     }
   }
 }
+[role="main"] .navigation-block-listing {
+  @include padding-leader(3);
+  @include padding-trailer(3);
+  @include rem(max-width, 1400px);
+  @include rem(padding-left, 25px);
+  @include rem(padding-right, 25px);
+  margin: 0 auto;
+
+  ul,
+  h3 {
+    @include rem(max-width, 4000px);
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  a {
+    @include padding-trailer(0.5);
+    display: block;
+  }
+
+  & > ul > li > a {
+    text-decoration: none;
+
+    h3 {
+      text-decoration: underline;      
+    }
+  }
+
+  h3 {
+    @include adjust-font-size-to(20px);
+    @include padding-trailer(0.5);
+    font-weight: $regular;
+
+    a {
+      @include padding-trailer(0);
+    }
+  }
+
+  p {
+    @include adjust-font-size-to(14px);
+    @include padding-trailer(2);
+    border: 0;
+    color: $midgray;
+    width: 100%;
+  }
+
+  ul{
+    padding-bottom: 0;
+    padding-top: 0;
+
+    li {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      ul {
+        @include padding-trailer(2);
+      }
+    }
+
+    @include breakpoint(tablet) {
+      p {
+        margin: 0;
+        width: 88%;
+      }
+      li {
+        display: inline-block;
+        vertical-align: top;
+        width: 49%;
+
+        li {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    @include breakpoint(desktop) {
+      li {
+        width: 32%;
+
+        li {
+          width: 100%;
+        }
+      }
+    }
+
+    @include breakpoint(wide) {
+      li {
+        width: 24%;
+
+        li {
+          width: 100%;
+        }
+      }
+    }
+
+  }
+}
+
 
 .noborder {
   border: 0;

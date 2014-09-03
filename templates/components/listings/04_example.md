@@ -20,7 +20,7 @@ no_section_wrap: true
   <li>
     <a href="" style="background-image:url(http://placekitten.com/1200/600)">
       <div class="inner">
-        <strong>Cras pretium et elit id bibendum.</strong>
+        <strong>Cras pretium et elit id bibendum elit id bibendum pretium et elit pretium et elit</strong>
         <p>Implement a template-based truncation to 20 words to prevent the summary from unbalancing the list item and extending the&hellip;</p>
       </div>
     </a>

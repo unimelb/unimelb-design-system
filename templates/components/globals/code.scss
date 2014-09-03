@@ -1,5 +1,5 @@
 %code {
-  @include rem(font-size, 16px);
+  @include adjust-font-size-to(16px);
   @include rem(border-radius, 3px);
   background-color: darken($lightgray, 2%);
   border-color: darken($lightgray, 7%);
@@ -16,13 +16,16 @@ code {
 
 pre {
   @extend %code;
+  @include adjust-font-size-to(13px);
+  @include horizontal-borders(1px);
+  @include leader(0);
+  @include padding-leader(1);
+  @include padding-trailer(1);
+  @include trailer(1);
   @include rem(border-width, 1px);
-  @include rem(font-size, 13px);
-  @include rem(margin-bottom, 22px);
-  @include rem(margin, 0 0 15px);
-  @include rem(padding, 15px);
+  @include rem(padding-left, 15px);
+  @include rem(padding-right, 15px);
   border-radius: 5px;
-  line-height: 1.4;
   overflow: auto;
 
   code {
@@ -30,10 +33,8 @@ pre {
   }
 
   @include breakpoint(desktop) {
-    @include rem(margin-bottom, 31px);
     margin-left: auto;
     margin-right: auto;
-    margin-top: 0;
     max-width: $w-mid;
   }
 }

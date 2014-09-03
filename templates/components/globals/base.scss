@@ -28,6 +28,12 @@ body {
   @include rem(padding, 0 15px);
 }
 
+/*---------- evil hack ------------------------------------*/
+p:empty, br {
+  display: none;
+}
+/*---------- evil hack ------------------------------------*/
+
 // .page-inner {
 //   @include translateX(0);
 //   background-color: $navy;
@@ -100,11 +106,14 @@ body {
   }
 
   article {
-    @include rem(padding-bottom, 30px);
+    @include padding-trailer(2);
+    // @include rem(padding-bottom, 30px);
   }
 
   aside {
-    @include rem(font-size, 15px);
+    @include adjust-font-size-to(14px);
+    // @include adjust-leading-to(1);
+    // @include rem(font-size, 15px);
     color: $darkgray;
     float: right;
 
@@ -177,25 +186,25 @@ body {
         font-style: italic;
       }
 
-      &:after {
-        @include rem(margin-top, 30px);
-        @include rem(width, 80px);
-        border-bottom: 2px solid $lighterblue;
-        content: '';
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
+      // &:after {
+      //   @include rem(margin-top, 30px);
+      //   @include rem(width, 80px);
+      //   border-bottom: 2px solid $lighterblue;
+      //   content: '';
+      //   display: block;
+      //   margin-left: auto;
+      //   margin-right: auto;
+      // }
 
-      &::after {
-        @include rem(margin-top, 30px);
-        @include rem(width, 80px);
-        border-bottom: 2px solid $lighterblue;
-        content: '';
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
+      // &::after {
+      //   @include rem(margin-top, 30px);
+      //   @include rem(width, 80px);
+      //   border-bottom: 2px solid $lighterblue;
+      //   content: '';
+      //   display: block;
+      //   margin-left: auto;
+      //   margin-right: auto;
+      // }
 
       @include breakpoint(wide) {
         margin: 0 auto;
@@ -206,7 +215,8 @@ body {
       padding-top: 0;
 
       h2 {
-        @include rem(font-size, 13px);
+        // @include rem(font-size, 13px);
+        @include adjust-font-size-to(13px);
         font-weight: $bold;
         letter-spacing: 3px;
         text-transform: uppercase;
@@ -218,7 +228,8 @@ body {
 
       p,
       li {
-        @include rem(font-size, 16px);
+        @include adjust-font-size-to(16px);
+        // @include rem(font-size, 16px);
       }
 
       li {
@@ -238,8 +249,10 @@ body {
   }
 
   footer {
-    @include rem(padding-bottom, 30px);
-    @include rem(padding-top, 30px);
+    @include padding-leader(2);
+    @include padding-trailer(2);
+    // @include rem(padding-bottom, 30px);
+    // @include rem(padding-top, 30px);
     clear: both;
 
     &.alt {
@@ -285,8 +298,11 @@ body {
   }
 
   .main-title {
-    @include rem(font-size, 36px);
-    @include rem(padding, 26px 0);
+    @include adjust-font-size-to(36px);
+    @include padding-leader(1);
+    @include padding-trailer(1);
+    // @include rem(font-size, 36px);
+    // @include rem(padding, 26px 0);
     font-family: $ff-serif;
     font-weight: $regular;
     line-height: 1.2;
@@ -345,7 +361,7 @@ body {
   }
 
   .small {
-    @include rem(font-size, 12px);
+    @include adjust-font-size-to(12px);
   }
 
   .subtitle {
@@ -373,7 +389,6 @@ body {
 
     &:after {
       @include margin-leader(1);
-      @include margin-trailer(1);
       // @include rem(margin, 30px auto 30px);
       @include rem(width, 80px);
       border-bottom: 2px solid $black;
@@ -385,7 +400,6 @@ body {
 
     &::after {
       @include margin-leader(1);
-      @include margin-trailer(1);
       // @include rem(margin, 30px auto 30px);
       @include rem(width, 80px);
       border-bottom: 2px solid $black;
@@ -398,8 +412,10 @@ body {
 
   .staff-listing {
     @extend %wrapper;
-    @include rem(margin-bottom, 30px);
-    @include rem(margin-top, 30px);
+    @include leader(1);
+    @include trailer(1);
+    // @include rem(margin-bottom, 30px);
+    // @include rem(margin-top, 30px);
     border-collapse: collapse;
     display: table;
     margin-left: 3%;
@@ -523,7 +539,7 @@ body {
   }
 
   .feature {
-    @include rem(font-size, 20px);
+    @include adjust-font-size-to(20px);
   }
 
   .fullwidth {
@@ -567,17 +583,17 @@ body {
     }
 
     p {
-      @include rem(font-size, 19px);
+      @include adjust-font-size-to(19px);
+      @include padding-leader(2);
       @include rem(margin, 0 15px);
-      @include rem(padding-top, 45px);
       color: $white;
       font-weight: $light;
       max-width: 100%;
       padding-bottom: 0;
 
       &.black {
-        @include rem(padding-bottom, 45px);
-        @include rem(padding-top, 65px);
+        @include padding-leader(3);
+        @include padding-trailer(2);
         color: $black;
         text-align: left;
       }
@@ -598,14 +614,16 @@ body {
     }
 
     pre {
-      @include rem(margin, 0 30px);
+      @include trailer(1);
+      margin: 0;
       max-width: 100%;
     }
 
     @include breakpoint(height-small) {
       @include rem(height, 650px);
       p {
-        @include rem(font-size, 22px);
+        @include adjust-font-size-to(22px);
+        @include adjust-leading-to(1);
       }
     }
 
@@ -640,24 +658,33 @@ body {
     clear: both;
 
     &.spacer {
-      @include rem(margin, 0 0 30px);
+      @include trailer(2);
+      // @include rem(margin, 0 0 30px);
     }
   }
 
   ol,
   ul {
+    @include leader(0);
+    @include padding-trailer(1);
     @include rem(max-width, $w-sml);
-    @include rem(padding, 15px);
+    @include rem(padding-left, 15px);
+    @include rem(padding-right, 15px);
     color: $darkgray;
     list-style-position: outside;
     margin: 0 auto;
 
     li {
+      @include padding-trailer(0.5);
       @include rem(margin-left, 15px);
       @include rem(max-width, $w-sml);
-      @include rem(padding, 0 0 10px);
+      // @include rem(padding, 0 0 10px);
       color: $black;
       display: list-item;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
 
       &.no-li {
         list-style-type: none;
@@ -739,10 +766,15 @@ body {
   }
 
   blockquote {
-    @include rem(font-size, 19px);
-    @include rem(margin-top, 30px);
+    @include adjust-font-size-to(19px);
+    @include adjust-leading-to(1);
+    @include padding-leader(1);
+    @include padding-trailer(1);
+    // @include rem(font-size, 19px);
+    // @include rem(margin-top, 30px);
     @include rem(max-width, $w-mid);
-    @include rem(padding, 30px 15px 0);
+    @include rem(padding-left, 15px);
+    @include rem(padding-right, 15px);
     color: $darkblue;
     font-family: $ff-serif;
     font-style: italic;
@@ -778,7 +810,8 @@ body {
     }
 
     cite {
-      @include rem(font-size, 16px);
+      @include adjust-font-size-to(12px);
+      // @include rem(font-size, 16px);
       color: lighten($midgray, 20%);
       float: left;
       font-family: $ff-sans;
@@ -794,14 +827,16 @@ body {
     }
 
     p {
-      @include rem(font-size, 24px);
+      @include adjust-font-size-to(24px);
+      // @include rem(font-size, 24px);
       display: inline;
       margin: 0;
       padding: 0;
     }
 
     @include breakpoint(tablet) {
-      @include rem(font-size, 24px);
+      @include adjust-font-size-to(24px);
+      // @include rem(font-size, 24px);
     }
 
     @include breakpoint(wide) {
@@ -811,8 +846,12 @@ body {
   }
 
   dl {
-    @include rem(font-size, 12px);
-    @include rem(padding, 10px 15px);
+    @include adjust-font-size-to(12px);
+    @include padding-leader(1);
+    @include padding-trailer(1);
+    // @include rem(font-size, 12px);
+    @include rem(padding-left,15px);
+    @include rem(padding-right,15px);
     dt {
       @include rem(width, 120px);
       clear: left;
@@ -1075,16 +1114,20 @@ body {
       vertical-align: top;
       width: 100%;
 
-      h2 {
-        @include rem(padding, 30px 0);
-      }
+      // h2 {
+      //   @include rem(padding, 30px 0);
+      // }
 
-      p {
-        @include rem(padding, 0 0 30px);
+      // p {
+      //   @include rem(padding, 0 0 30px);
+      // }
+
+      & > p:first-child {
+        @include padding-leader(1);
       }
 
       @include breakpoint(desktop) {
-        @include rem(padding, 30px);
+        @include rem(padding, 45px 30px);
         display: table-cell;
         max-width: 25%;
         position: relative;
@@ -1093,14 +1136,14 @@ body {
     }
 
     .bside {
+      @include rem(padding, 30px 15px);
       @include rem(max-width, 1099px);
-      @include rem(padding-top, 30px);
       background-color: $white;
       clear: both;
       width: 100%;
 
       @include breakpoint(desktop) {
-        @include rem(padding-top, 45px);
+        @include rem(padding, 45px 30px);
         clear: none;
         display: table-cell;
         width: 75%;

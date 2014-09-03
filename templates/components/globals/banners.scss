@@ -114,6 +114,7 @@
       width: 100%;
 
       h1 {
+        @include padding-trailer(0.2);
         @include rem(max-width, 1000px);
         @include rem(padding-top, 100px);
 

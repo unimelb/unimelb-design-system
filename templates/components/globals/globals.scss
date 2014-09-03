@@ -73,6 +73,9 @@ $round-to-nearest-half-line: true;
     // @include rem(padding, 15px 25px);
     // width: 100%;
   }
+  @include breakpoint(desktop) {
+    width: 100%;
+  }
 }
 
 %grad-bottom {
