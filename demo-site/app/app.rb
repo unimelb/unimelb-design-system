@@ -93,19 +93,21 @@ module WebTemplates
         raw_documents << Dir.glob(File.join(settings.components_dir, path, "*.#{ext}"))
       end
       raw_documents.flatten.sort.map do |f|
-        case f[-2,2]
+        case f.match(/(?<=\.)[\w\-]*/).to_s
+
         when 'md' then
           @settings.merge! file_settings(f)
           render_method = !!@settings['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
           @documents << send(render_method, file_content(f))
 
-        when 'im' then
-          # Slim
+        when 'slim' then
           source = syntax_highlight(slim file_content(f), layout: false, pretty: true)
           output = slim file_content(f), layout: false, pretty: true
           @documents << [ title_from_filename(f), source, output ]
 
         else
+          # Raw HTML
+
           source = syntax_highlight(file_content(f))
           output = file_content(f)
           @documents << [ title_from_filename(f), source, output ]
