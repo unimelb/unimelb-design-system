@@ -17,12 +17,18 @@
     }
   }
 
+  hr {
+    border: 0 none;
+    border-top: 1px solid rgba($white, .2);
+  }
+
   ul {
     @include rem (max-width, $w-lge);
     margin: 0 auto;
 
     li {
       @include rem(padding, 15px);
+      list-style-type: none;
     }
 
     a {

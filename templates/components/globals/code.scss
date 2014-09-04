@@ -25,7 +25,6 @@ pre {
   @include rem(border-width, 1px);
   @include rem(padding-left, 15px);
   @include rem(padding-right, 15px);
-  border-radius: 5px;
   overflow: auto;
 
   code {
@@ -38,3 +37,4 @@ pre {
     max-width: $w-mid;
   }
 }
+

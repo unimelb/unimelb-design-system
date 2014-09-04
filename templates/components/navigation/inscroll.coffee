@@ -8,7 +8,7 @@ unless window.UOMInpageScrolling
         curr--
         -change/2 * (curr*(curr-2) - 1) + start
 
-    class InPage
+    class window.InPage
       constructor: (@el) ->
         t = this
 
@@ -42,7 +42,7 @@ unless window.UOMInpageScrolling
                     return false
 
               tabbed = up(tel)
-              if tabbed
+              if tabbed and this.parentNode.parentNode.hasClass("jump-navigation") == false
                 target = tabbed
 
               if target

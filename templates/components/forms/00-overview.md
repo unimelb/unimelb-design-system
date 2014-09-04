@@ -1,8 +1,3 @@
-<header><h1>hi</h1></header>
+## Form component
 
-## On this page
-
-* [Text field](#text)
-* [Checkbox & Radio buttons](#box)
-* [Select](#select)
-* [Search field](#search)
+Markdown description

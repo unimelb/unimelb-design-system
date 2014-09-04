@@ -87,11 +87,30 @@ module WebTemplates
       @component = path
 
       @documents = []
-      raw_documents = Dir.glob(File.join(settings.components_dir, path, '*.md')).sort
-      raw_documents.map do |f|
-        @settings.merge! file_settings(f)
-        render_method = !!@settings['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
-        @documents << send(render_method, file_content(f))
+
+      raw_documents = []
+      ['md', 'html', 'slim'].each do |ext|
+        raw_documents << Dir.glob(File.join(settings.components_dir, path, "*.#{ext}"))
+      end
+      raw_documents.flatten.sort.map do |f|
+        case f[-2,2]
+        when 'md' then
+          @settings.merge! file_settings(f)
+          render_method = !!@settings['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
+          @documents << send(render_method, file_content(f))
+
+        when 'im' then
+          # Slim
+          source = syntax_highlight(slim file_content(f), layout: false, pretty: true)
+          output = slim file_content(f), layout: false, pretty: true
+          @documents << [ title_from_filename(f), source, output ]
+
+        else
+          source = syntax_highlight(file_content(f))
+          output = file_content(f)
+          @documents << [ title_from_filename(f), source, output ]
+        end
+
       end
 
       slim :component
@@ -206,6 +225,11 @@ module WebTemplates
 
       @navigation << layouts
       @navigation << components
+    end
+
+    def title_from_filename(f)
+      title = f.match(/[\w\-]*(?=\.)/).to_s[3..-1]
+      "<h2 class=\"title\" id=\"#{title}\">#{title.gsub('-', ' ').capitalize}</h2>"
     end
 
     def render_markdown(md)

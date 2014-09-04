@@ -1,0 +1,26 @@
+form method="post" action="" data-validate=""
+  fieldset
+    div
+      label
+        ' Make a selection from the dropdown (required):
+        select data-required="" name="f[select]" title="Please make a selection from the dropdown"
+          option value="-1" Please select
+          optgroup
+            option Hi
+          optgroup
+            option Another group
+            option Another group, another opt
+
+    div
+      label
+        ' Alternate style dropdown (required):
+        select class="alt" data-required="" name="f[select2]" title="Please make a selection from the 2nd dropdown"
+          option value="-1" Please select
+          optgroup
+            option Hi
+          optgroup
+            option Another group
+            option Another group, another opt
+
+  footer
+    input type="submit"
