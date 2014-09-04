@@ -1,0 +1,22 @@
+.stats {
+  background-color: $white;
+  padding: 5px 20px;
+  width: 150px;
+  p {
+    padding: 5px 0;
+  }
+  strong {
+    display: inline-block;
+    font-weight: 300;
+    width: 110px;
+  }
+  span {
+    display: inline-block;
+    font-weight: 500;
+    text-align: right;
+    width: 40px;
+    img {
+      max-height: 16px;
+    }
+  }
+}

@@ -1,34 +1,51 @@
-/*
- *= require_self
- *= require ./components/accordions/accordion
- *= require ./components/modals/modal
- */
+
 
 @import 'compass';
 
+
+@import 'components/base/base';
+@import 'components/text/text';
+@import 'components/headers/headers';
+@import 'components/listings/listings';
+@import 'components/media/media';
+@import 'components/forms/forms';
+@import 'components/tabs/tabs';
+@import 'components/inpage_navigation/inpage_navigation';
+@import 'components/accordion/accordion';
+@import 'components/events/events';
+@import 'components/filtered_listings/filtered_listings';
+@import 'components/maps/maps';
+@import 'components/modal/modal';
+@import 'components/news/news';
+@import 'components/persons/persons';
+@import 'components/search/search';
+
+@import 'components/newsfeeds/newsfeeds';
+@import 'components/socialmedia/socialmedia';
+
 ///* Sass Includes */
-@import 'includes';
+///@import 'includes';
 
 ///* Sass Dependencies */
-@import 'components/patterns/normalize';
-@import 'components/patterns/smooth-font-loading';
-@import 'components/globals/base';
-@import 'components/globals/banners';
-@import 'components/globals/images';
-@import 'components/globals/code';
-@import 'components/listings/listings';
-@import 'components/videos/yt';
-@import 'components/forms/forms';
-@import 'components/buttons/buttons';
-@import 'components/tabs/tabs';
-@import 'components/socialmedia/socialmedia';
-@import 'components/navigation/jumpnav';
+///@import 'components/patterns/normalize';
+///@import 'components/patterns/smooth-font-loading';
+///@import 'components/globals/base';
+///@import 'components/globals/banners';
+///@import 'components/globals/images';
+///@import 'components/globals/code';
+///@import 'components/listings/listings';
+///@import 'components/videos/yt';
+///@import 'components/forms/forms';
+///@import 'components/buttons/buttons';
+///@import 'components/tabs/tabs';
+///@import 'components/socialmedia/socialmedia';
+///@import 'components/navigation/jumpnav';
 
 ///* Layouts */
-@import 'components/globals/profile';
-@import 'components/globals/courses';
-@import 'components/globals/timetable';
-@import 'components/globals/detail';
+///@import 'components/globals/profile';
+///@import 'components/globals/courses';
+///@import 'components/globals/timetable';
+///@import 'components/globals/detail';
 
 ///* Print */
 @import 'print';

@@ -1,0 +1,101 @@
+[role="main"] {
+  .video {
+    height: 0;
+    margin-left: auto;
+    max-width: 1099px;
+    padding-bottom: 56.25%;
+    padding-top: 0;
+    position: relative;
+
+    @include breakpoint(wide) {
+      max-width: 100%;
+      padding-bottom: 39.45%;
+    }
+
+    [data-ytid] {
+      background-color: $black;
+      cursor: pointer;
+      height: 100%;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      text-align: center;
+      top: 0;
+      width: 100%;
+
+      img {
+        width: 100%;
+
+        &.video-trigger {
+          height: 100px;
+          left: 50%;
+          margin-left: -50px;
+          margin-top: -50px;
+          position: absolute;
+          top: 50%;
+          width: 100px;
+
+          @include breakpoint(desktop) {
+            height: 140px;
+            margin-top: -70px;
+            margin-left: -70px;
+            width: 140px;
+          }
+        }
+      }
+
+      @include breakpoint(wide) {
+        margin-left: 11%;
+        width: 70%;
+      }
+    }
+
+    iframe {
+      height: 100%;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      @include breakpoint(wide) {
+        margin-left: 15%;
+        width: 70%;
+      }
+    }
+  }
+
+  .video-4-3 {
+    @extend .video;
+    padding-bottom: 75%;
+
+    @include breakpoint(desktop) {
+      padding-bottom: 33%;
+    }
+
+    [data-ytid] {
+      @include breakpoint(desktop) {
+        margin: 0 28%;
+        width: 44%;
+      }
+    }
+  }
+
+  .half .video {
+    @include rem(margin, 30px 0 0);
+
+    [data-ytid] {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(margin-bottom, 60px);
+      @include rem(margin-top, 60px);
+      margin-right: 2.5%;
+      max-width: 47.5%;
+      padding-bottom: 27.5%;
+    }
+  }
+
+}

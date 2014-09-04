@@ -1,0 +1,337 @@
+[role="main"] {
+  header {
+    @include rem(min-height, 144px);
+    background-color: $black;
+    background-image: url("#{asset_path('components/globals/bg-banner.jpg')}");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    display: table;
+    position: relative;
+    width: 100%;
+
+    &.tight {
+      margin-bottom: 0;
+    }
+
+    &.mid {
+      @include rem(height, 300px);
+      .bottom-align-flat {
+        bottom: 0;
+        position: absolute;
+      }
+    }
+
+    &.short {
+      height: auto;
+      padding-bottom: 0;
+
+      p {
+        @include rem(font-size, 20px);
+        @include rem(padding-bottom, 15px);
+        @include rem(padding-top, 15px);
+        line-height: 1.3;
+        padding-left: 3%;
+        padding-right: 3%;
+        width: 100%;
+      }
+
+      @include breakpoint(desktop) {
+        @include rem(padding-bottom, 160px);
+        p {
+          @include rem(font-size, 24px);
+          @include rem(max-width, $w-mid);
+          @include rem(padding-bottom, 60px);
+          @include rem(padding-top, 60px);
+          line-height: 1.4;
+          margin: 0 auto;
+          padding-left: 0;
+          padding-right: 0;
+          text-align: center;
+        }
+      }
+    }
+
+    .bottom-align {
+      @extend %grad-bottom;
+      @include rem(padding-top, 70px);
+      @include rem(padding-bottom, 20px);
+      bottom: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    .bottom-align-inverted {
+      @extend %grad-top;
+      color: $black;
+
+      @include breakpoint(height-small) {
+        @include rem(padding-top, 70px);
+        @include rem(padding-bottom, 20px);
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    .bottom-align-flat {
+      @include rem(padding-bottom, 30px);
+      @include rem(padding-top, 30px);
+      background-color: rgba($darkblue, .8);
+      position: relative;
+      width: 100%;
+
+      &.white {
+        background-color: rgba($white, .8);
+        color: $black;
+      }
+
+      @include breakpoint(desktop) {
+        bottom: 0;
+        position: absolute;
+
+        p {
+          @include rem(font-size, 24px);
+          @include rem(max-width, $w-mid);
+          margin: 0 auto;
+          padding-bottom: 0;
+          text-align: center;
+
+          a {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .mid-align {
+      display: table-cell;
+      padding-bottom: 0;
+      position: relative;
+      text-align: center;
+      vertical-align: middle;
+      width: 100%;
+
+      h1 {
+        @include padding-trailer(0.2);
+        @include rem(max-width, 1000px);
+        @include rem(padding-top, 100px);
+
+        @include breakpoint(desktop) {
+          @include rem(padding-top, 170px);
+        }
+      }
+    }
+
+    &.with-box {
+      height: auto;
+      margin-bottom: 0;
+      padding-bottom: 0;
+
+      @include breakpoint(tablet) {
+        @include rem(padding-bottom, 30px);
+        @include rem(padding-top, 30px);
+      }
+    }
+
+    .box {
+      @include rem(max-width, $w-sml);
+      @include rem(padding, 30px);
+      background: rgba($white, .8);
+      color: $black;
+      margin: 0 auto;
+
+      p {
+        @include rem(font-size, 16px);
+        @include rem(padding-bottom, 15px);
+      }
+
+      @include breakpoint(tablet) {
+        @include rem(margin, 30px auto);
+        @include rem(padding-left, 60px);
+        @include rem(padding-right, 60px);
+      }
+    }
+
+    .inner {
+      @extend %clearfix;
+      @include rem(max-width, $w-lge);
+      margin: 0 auto;
+      width: 94%;
+
+      h1 {
+        @include rem(letter-spacing, 2px);
+        font-weight: $bold;
+        text-transform: uppercase;
+      }
+
+      p {
+        @include rem(font-size, 18px);
+        @include rem(padding, 10px 0 20px);
+        line-height: 1.2;
+        text-align: center;
+      }
+
+      .right {
+        text-align: center;
+
+        small {
+          @include rem(padding-bottom, 10px);
+          display: block;
+          font-weight: $light;
+          line-height: 1.2;
+
+          @include breakpoint(desktop) {
+            @include rem(margin-top, -15px);
+          }
+        }
+      }
+
+      @include breakpoint(tablet) {
+        .left {
+          float: left;
+          width: 75%;
+
+          h1 {
+            @include rem(font-size, 28px);
+            max-width: 100%;
+            text-align: left;
+          }
+
+          p {
+            @include rem(font-size, 16px);
+            max-width: 100%;
+            text-align: left;
+          }
+        }
+
+        .right {
+          @include rem(padding-top, 15px);
+          float: right;
+          overflow: hidden;
+          text-align: right;
+          width: 25%;
+        }
+
+      }
+    }
+
+    .video-loop {
+      background-color: $black;
+      display: none;
+
+      @include breakpoint(wide) {
+        display: block;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+
+        video {
+          background-color: $black;
+          min-height: 100%;
+          min-width: 100%;
+        }
+      }
+    }
+
+    section {
+      @include rem(max-width, $w-mid);
+      @include rem(min-height, 82px);
+      margin: 0 auto;
+      text-align: left;
+
+      p,
+      h1 {
+        max-width: 100%;
+        text-align: left;
+      }
+    }
+
+    h1 {
+      @include rem(max-width, $w-lge);
+      font-weight: $thin;
+      margin: 0 auto;
+      text-align: center;
+
+      &:after,
+      &::after {
+        display: none;
+      }
+
+      @include breakpoint(desktop) {
+        @include adjust-font-size-to(50px);
+        line-height: 1.04;
+      }
+
+      @include breakpoint(wide) {
+        @include adjust-font-size-to(72px);
+        line-height: 1.04;
+      }
+    }
+
+    p {
+      @include rem(max-width, $w-lge);
+      margin: 0 auto;
+
+      @include breakpoint(desktop) {
+        @include rem(font-size, 20px);
+      }
+
+      @include breakpoint(wide) {
+        @include rem(font-size, 28px);
+      }
+    }
+
+    @include breakpoint(desktop) {
+      overflow: hidden;
+    }
+
+    @include breakpoint(height-smallest) {
+      @include rem(height, 550px);
+    }
+
+    @include breakpoint(height-small) {
+      @include rem(height, 650px);
+    }
+
+    @include breakpoint(height-medium) {
+      @include rem(height, 700px);
+      @include rem(padding-bottom, 30px);
+    }
+
+    @include breakpoint(height-big) {
+      @include rem(height, 800px);
+    }
+  }
+}
+
+.ie {
+  [role="main"] header {
+    .bottom-align,
+    .bottom-align-inverted,
+    .bottom-align-flat {
+      position: absolute;
+    }
+
+    .bottom-align-flat {
+      background-image: url("#{asset_path('components/globals/000o80.png')}");
+    }
+
+    .mid-align h1 {
+      font-size: 48px;
+      font-weight: $thin;
+      margin-left: 3%;
+      padding-bottom: 30px;
+    }
+  }
+}
+
+.ie9 {
+  [role="main"] header {
+    .bottom-align-flat {
+      background-image: none;
+    }
+  }
+}
