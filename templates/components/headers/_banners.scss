@@ -1,4 +1,8 @@
 [role="main"] {
+  & > header:first-child {
+    padding-top: 0;
+  }
+  
   header {
     @include rem(min-height, 144px);
     background-color: $black;

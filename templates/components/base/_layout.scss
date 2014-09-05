@@ -29,6 +29,10 @@ body {
 
 [role="main"] {
 
+  & > *:first-child {
+    @include rem(padding-top, 100px);
+  }
+
   article {
     @include padding-trailer(2);
   }

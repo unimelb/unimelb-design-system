@@ -1,6 +1,12 @@
 [role="main"] {
   figure.full-width {
     text-align: center;
+
+    figcaption {
+      @include adjust-font-size-to(14px);
+      @include padding-trailer(1);
+      font-style: italic;
+    }
   }
 
   figure.framed img {
