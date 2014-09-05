@@ -1,0 +1,24 @@
+form method="post" action="" data-validate=""
+  fieldset
+    div
+      label
+        ' Name (required):
+        input data-required="" name="f[name]" type="text" title="Please enter your name."
+
+    div
+      label
+        ' Email (pattern matching):
+        input data-pattern="email" name="f[email]" type="email" title="Please enter a valid email."
+
+    div
+      label
+        ' Product Code (regex pattern matching):
+        input data-pattern="[0-9][A-Z]{3}" maxlength="4" name="f[p_id]" type="text" title="Single digit followed by three uppercase letters."
+
+    div
+      label
+        ' Message:
+        textarea data-required="" name="f[message]" title="Please enter a message."
+
+  footer
+    input type="submit"

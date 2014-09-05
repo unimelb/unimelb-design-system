@@ -86,12 +86,45 @@ module WebTemplates
 
       @component = path
 
-      @documents = []
-      raw_documents = Dir.glob(File.join(settings.components_dir, path, '*.md')).sort
-      raw_documents.map do |f|
-        @settings.merge! file_settings(f)
-        render_method = !!@settings['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
-        @documents << send(render_method, file_content(f))
+      @documents = {}
+
+      raw_documents = []
+      ['md', 'html', 'slim'].each do |ext|
+        raw_documents << Dir.glob(File.join(settings.components_dir, path, "*.#{ext}"))
+      end
+      raw_documents.flatten.sort.map do |f|
+        section = File.basename(f)[0..1]
+
+        case File.extname(f)
+        when '.md' then
+          @settings.merge! file_settings(f)
+          render_method = !!@settings['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
+          if @documents[section]
+            @documents[section] << send(render_method, file_content(f))
+          else
+            @documents[section] = [ send(render_method, file_content(f)) ]
+          end
+
+        when '.slim' then
+          source = syntax_highlight(slim file_content(f), layout: false, pretty: true)
+          output = slim file_content(f), layout: false, pretty: true
+          if @documents[section]
+            @documents[section] << [ title_from_filename(f), source, output ]
+          else
+            @documents[section] = [ [ title_from_filename(f), source, output ] ]
+          end
+
+        else
+          # Raw HTML
+          source = syntax_highlight(file_content(f))
+          output = file_content(f)
+          if @documents[section]
+            @documents[section] << [ title_from_filename(f), source, output ]
+          else
+            @documents[section] = [ [ title_from_filename(f), source, output ] ]
+          end
+        end
+
       end
 
       slim :component
@@ -206,6 +239,11 @@ module WebTemplates
 
       @navigation << layouts
       @navigation << components
+    end
+
+    def title_from_filename(f)
+      title = File.basename(f, File.extname(f))[3..-1]
+      "<h2 class=\"title\" id=\"#{title}\">#{title.gsub('-', ' ').capitalize}</h2>"
     end
 
     def render_markdown(md)

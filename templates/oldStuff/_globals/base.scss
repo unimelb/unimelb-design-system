@@ -73,6 +73,13 @@ p:empty, br {
 //   }
 // }
 
+// .page-inner {
+//   -webkit-transform: translateZ(0);
+//   -moz-transform: translateZ(0);
+//   -ms-transform: translateZ(0);
+//   transform: translateZ(0);
+// }
+
 [role="main"] {
   background-color: $white;
   font-weight: $regular;
@@ -442,6 +449,7 @@ p:empty, br {
         background-color: $white;
         display: table-cell;
         vertical-align: top;
+        width: auto;
 
         .frame {
           @include rem(height, 50px);
@@ -1098,6 +1106,13 @@ p:empty, br {
   .with-aside {
     @extend %clearfix;
     background-color: $paleblue;
+    background-image: url("#{asset_path('components/globals/with-aside-bg.png')}");
+    background-position: center 0;
+    background-repeat: repeat-y;
+
+    &.right {
+      background-image: url("#{asset_path('components/globals/with-aside-r-bg.png')}");
+    }
 
     div {
       @include rem(max-width, $w-lge);

@@ -1,7 +1,4 @@
-
-
 @import 'compass';
-
 
 @import 'components/base/base';
 @import 'components/text/text';
@@ -23,24 +20,7 @@
 
 @import 'components/newsfeeds/newsfeeds';
 @import 'components/socialmedia/socialmedia';
-
-///* Sass Includes */
-///@import 'includes';
-
-///* Sass Dependencies */
-///@import 'components/patterns/normalize';
-///@import 'components/patterns/smooth-font-loading';
-///@import 'components/globals/base';
-///@import 'components/globals/banners';
-///@import 'components/globals/images';
-///@import 'components/globals/code';
-///@import 'components/listings/listings';
-///@import 'components/videos/yt';
-///@import 'components/forms/forms';
-///@import 'components/buttons/buttons';
-///@import 'components/tabs/tabs';
-///@import 'components/socialmedia/socialmedia';
-///@import 'components/navigation/jumpnav';
+@import 'components/navigation/navigation';
 
 ///* Layouts */
 ///@import 'components/globals/profile';

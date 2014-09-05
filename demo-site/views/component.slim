@@ -20,10 +20,9 @@ div role="main"
       ', by submitting documentation and examples.
 
   - else
-    - @documents.each_with_index do |document, i|
-      == document
-      / TODO: fix this!!!!
-      - if i<@documents.length-1
-        hr
+    - @documents.each_value do |section|
+      - section.each do |doc|
+        == doc
+      hr
 
   == slim :contrib
