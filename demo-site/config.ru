@@ -6,6 +6,8 @@ require 'bundler'
 
 Bundler.require
 
+require 'compass'
+
 require_relative './app/app'
 
 run WebTemplates::App

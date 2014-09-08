@@ -1,0 +1,192 @@
+== slim :breadcrumb
+
+div role="main"
+  header.short style="background-image:url(/assets/images/bg-banner-small.jpg)"
+    p Lorem ipsum dolor sit amet, vis te saepe nominavi appetere, ceteros lucilius te usu, no nam tota partiendo
+    .bottom-align-flat
+      form.filtered-listing-select
+        fieldset.left
+          strong Filter by type
+          div.all
+            input.checkbox type="checkbox" name="f[degree_type]" checked="checked" data-tag="all" id="c00"
+            label for="c00"
+            ' All
+          div.color-one
+            input#c1.checkbox type="checkbox" name="f[course_type]" data-tag="color-one"
+            label for="c1"
+            ' Nominavi appetere
+          div.color-two
+            input#c2.checkbox type="checkbox" name="f[course_type]" data-tag="color-two"
+            label for="c2"
+            ' Iudico corrumpit
+          div.color-three
+            input#c2.checkbox type="checkbox" name="f[course_type]" data-tag="color-three"
+            label for="c2"
+            ' Argumentum philosophia
+          div.color-four
+            input#c4.checkbox type="checkbox" name="f[course_type]" data-tag="color-four"
+            label for="c4"
+            ' Errem qualisque
+        fieldset.right
+          strong Filter by section
+          div
+            select.clear name="f[select2]" title="Please make a selection from the 2nd dropdown"
+              option value="-1" All sections
+              option value="section1" Section heading 1
+              option value="section2" Different Section
+              option value="section3" Third Example Section
+  hr.spacer
+  .filtered-listing-section data-category="section1"
+    aside
+      h2 Section heading 1
+      p Lorem ipsum dolor sit amet, vis te saepe nominavi appetere, ceteros lucilius te usu, no nam tota partiendo
+    .bside
+      ul.filtered-listing-grid
+        <li class="color-one item">
+            <a href="#">Nominavi appetere
+                <strong>Exerci Oportere</strong>
+            </a>
+        </li>
+        <li class="color-one item">
+            <a href="#">Nominavi appetere
+                <strong>Consulatu repudiandae</strong>
+            </a>
+        </li>
+        <li class="color-one item">
+            <a href="#">Nominavi appetere
+                <strong>Dicant appellantur pro</strong>
+            </a>
+        </li>
+        <li class="color-one item">
+            <a href="#">Nominavi appetere
+                <strong>Periculis elaboraret referrentur</strong>
+            </a>
+        </li>
+        <li class="color-two item">
+            <a href="#">Iudico corrumpit
+                <strong>Sed animal intellegebat no. Ius</strong>
+            </a>
+        </li>
+        <li class="color-two item">
+            <a href="#">Iudico corrumpit
+                <strong>Eum atqui vidisse legimus ex tempor</strong>
+            </a>
+        </li>
+        <li class="color-three item">
+            <a href="#">Argumentum philosophia
+                <strong>Audiam delectus consequuntur</strong>
+            </a>
+        </li>
+        <li class="color-three item">
+            <a href="#">Argumentum philosophia
+                <strong>Inciderint consectetuer</strong>
+            </a>
+        </li>
+        <li class="color-three item">
+            <a href="#">Argumentum philosophia
+                <strong>Mea sumo rebum ea</strong>
+            </a>
+        </li>
+        <li class="color-three item">
+            <a href="#">Argumentum philosophia
+                <strong>Vim ut putant urbanitas</strong>
+            </a>
+        </li>
+        <li class="color-four item">
+            <a href="#">Errem qualisque
+                <strong>Ludus invenire pri</strong>
+            </a>
+        </li>
+        <li class="color-four item">
+            <a href="#">Errem qualisque
+                <strong>Putant urbanitas</strong>
+            </a>
+        </li>
+  hr.spacer
+  .filtered-listing-section data-category="section2"
+    aside
+      h2 Different Section
+      p Ex mei noluisse percipit, ea unum ludus invenire pri. Ei duo aliquid eleifend, errem qualisque at pro. Qui et elit delicatissimi, periculis elaboraret referrentur eam id, graece tractatos ut est. Aperiri delenit sed ei, pro simul principes
+    .bside
+      ul.filtered-listing-grid
+        <li class="color-one item">
+            <a href="#">Nominavi appetere
+                <strong>Dicant appellantur pro</strong>
+            </a>
+        </li>
+        <li class="color-one item">
+            <a href="#">Nominavi appetere
+                <strong>Periculis elaboraret referrentur</strong>
+            </a>
+        </li>
+        <li class="color-two item">
+            <a href="#">Iudico corrumpit
+                <strong>Eum atqui vidisse legimus ex tempor</strong>
+            </a>
+        </li>
+        <li class="color-three item">
+            <a href="#">Argumentum philosophia
+                <strong>Mea sumo rebum ea</strong>
+            </a>
+        </li>
+        <li class="color-three item">
+            <a href="#">Argumentum philosophia
+                <strong>Vim ut putant urbanitas</strong>
+            </a>
+        </li>
+        <li class="color-four item">
+            <a href="#">Errem qualisque
+                <strong>Ludus invenire pri</strong>
+            </a>
+        </li>
+  hr.spacer
+  .filtered-listing-section data-category="section3"
+    aside
+      h2 Third Example Section
+      p Ei nihil argumentum philosophia mel, commune accusata ius ex, homero scripserit an mea. Ne splendide deseruisse quo
+    .bside
+      ul.filtered-listing-grid
+        <li class="color-one item">
+            <a href="#">Nominavi appetere
+                <strong>Exerci Oportere</strong>
+            </a>
+        </li>
+        <li class="color-one item">
+            <a href="#">Nominavi appetere
+                <strong>Consulatu repudiandae</strong>
+            </a>
+        </li>
+        <li class="color-one item">
+            <a href="#">Nominavi appetere
+                <strong>Periculis elaboraret referrentur</strong>
+            </a>
+        </li>
+        <li class="color-two item">
+            <a href="#">Iudico corrumpit
+                <strong>Eum atqui vidisse legimus ex tempor</strong>
+            </a>
+        </li>
+        <li class="color-three item">
+            <a href="#">Argumentum philosophia
+                <strong>Audiam delectus consequuntur</strong>
+            </a>
+        </li>
+        <li class="color-three item">
+            <a href="#">Argumentum philosophia
+                <strong>Inciderint consectetuer</strong>
+            </a>
+        </li>
+        <li class="color-three item">
+            <a href="#">Argumentum philosophia
+                <strong>Mea sumo rebum ea</strong>
+            </a>
+        </li>
+        <li class="color-three item">
+            <a href="#">Argumentum philosophia
+                <strong>Vim ut putant urbanitas</strong>
+            </a>
+        </li>
+  hr.spacer
+
+
+  == javascript_tag 'isotope.pkgd.min'

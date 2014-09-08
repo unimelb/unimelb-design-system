@@ -1,0 +1,153 @@
+.filtered-listing-section {
+  @include padding-trailer(0);
+  @include rem(max-width, $w-lge);
+  margin: 0 auto;
+
+  &.hide,
+  &.hide + hr.spacer {
+    display: none;
+  }
+
+  aside {
+    @include padding-trailer(2);
+    float: none;
+    margin: 0 3%;
+    vertical-align: top;
+    width: 94%;
+
+    p {
+      padding-bottom: 0;
+    }
+
+    h2 {
+      @include adjust-font-size-to(22px);
+      @include padding-leader(0);
+      font-weight: $light;
+      letter-spacing: 0;
+      text-align: left;
+      text-transform: none;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(padding-left, 15px);
+      float: left;
+      margin: 0;
+      max-width: 30%;
+
+      p {
+        @include padding-trailer(1);
+      }
+    }
+  }
+
+  .bside {
+    @include breakpoint(desktop) {
+      @include rem(padding, 10px 0 10px 30px);
+      float: right;
+      width: 70%;
+    }
+  }
+}
+
+[role="main"] .filtered-listing-grid {
+  @extend %clearfix;
+  left: 0;
+  margin: 0 3%;
+  max-width: 100%;
+  padding-left: 0;
+
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+          transition-property: height, width;
+  -webkit-transition-duration: 0.4s;
+     -moz-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+
+  @include breakpoint(desktop) {
+    margin: 0;
+    width: 100%;
+  }
+
+  li {
+    @include adjust-font-size-to(12px);
+    @include adjust-leading-to(1);
+    @include rem(height, 110px);
+    @include rem(margin, 2px 2px 4px 2px);
+    list-style-type: none;
+    opacity: 1;
+    padding: 0;
+    width: 100%;
+
+    -webkit-transition-duration: 0.4s;
+    -moz-transition-duration: 0.4s;
+    -ms-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+
+     -webkit-transition-property: opacity;
+     -ms-transition-property: opacity;
+     -moz-transition-property: opacity;
+    transition-property: opacity;
+
+
+    @include breakpoint($w-sml) {
+      float: left;
+      margin: 0;
+      width: 48%;
+    }
+
+    @include breakpoint($w-mid) {
+      margin: 0;
+      width: 31.333%;
+    }
+
+    @include breakpoint(1100px) {
+      margin: 0;
+      width: 24%;
+    }
+
+    &.certificates_diplomas a,
+    &.color-two a {
+      background-color: $bronze;
+    }
+
+    &.coursework a,
+    &.research a,
+    &.color-three a {
+      background-color: $lightestblue;
+    }
+
+    &.phd a,
+    &.color-four a {
+      background-color: $lightblue;
+    }
+
+  }
+
+  a {
+    @include rem(padding, 10px);
+    background-color: $palegreen;
+    border: 2px solid $white;
+    color: $darkgray;
+    display: block;
+    font-weight: $light;
+    height: 100%;
+    margin: 0;
+    min-width: 100%;
+    max-width: 100%;
+    text-decoration: none;
+    width: 100%;
+
+    @include breakpoint(desktop) {
+      @include rem(max-width, 180px);
+    }
+  }
+
+  strong {
+    @include adjust-font-size-to(20px);
+    display: block;
+  }
+}

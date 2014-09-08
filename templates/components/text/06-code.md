@@ -1,19 +1,17 @@
-%code {
-  @include adjust-font-size-to(16px);
-  @include rem(border-radius, 3px);
-  background-color: darken($lightgray, 2%);
-  border-color: darken($lightgray, 7%);
-  border-style: solid;
-  border-width: 0;
-  font-family: $ff-fixed;
-}
-
-code {
-  @extend %code;
-  @include rem(border-bottom-width, 2px);
-  color: $midgray;
-}
-
+## Code
+```html
+<pre>
+	<html>
+		<head>
+			<title>Hello World</title>
+		</head>
+		<body>
+			<p>Lorem ipsum dolor sit amet, appareat insolens quo cu</p>
+		</body>
+	</html>
+</pre>
+```
+```SCSS
 pre {
   @extend %code;
   @include adjust-font-size-to(13px);
@@ -37,4 +35,4 @@ pre {
     max-width: $w-mid;
   }
 }
-
+```

@@ -243,7 +243,7 @@ module WebTemplates
 
     def title_from_filename(f)
       title = File.basename(f, File.extname(f))[3..-1]
-      "<h2 class=\"title\" id=\"#{title}\">#{title.gsub('-', ' ').capitalize}</h2>"
+      "<h2 id=\"#{title}\">#{title.gsub('-', ' ').capitalize}</h2>"
     end
 
     def render_markdown(md)

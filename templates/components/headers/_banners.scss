@@ -1,4 +1,5 @@
 [role="main"] {
+  & > article:first-child,
   & > header:first-child {
     padding-top: 0;
   }
@@ -46,13 +47,32 @@
         p {
           @include rem(font-size, 24px);
           @include rem(max-width, $w-mid);
-          @include rem(padding-bottom, 60px);
+          @include rem(padding-bottom, 120px);
           @include rem(padding-top, 60px);
           line-height: 1.4;
           margin: 0 auto;
           padding-left: 0;
           padding-right: 0;
           text-align: center;
+        }
+      }
+    }
+
+    &.solid-blue {
+      background-color: $navy;
+      color: $white;
+      height: auto;
+      padding-bottom: 0;
+
+      h1 {
+        @include adjust-font-size-to(33px);
+        @include padding-leader(1);
+        @include rem(max-width, $w-sml);
+        margin: 0 auto;
+        text-align: left;
+
+        @include breakpoint(desktop) {
+          @include adjust-font-size-to(44px);
         }
       }
     }

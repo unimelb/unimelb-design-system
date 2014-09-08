@@ -1,6 +1,7 @@
 ---
 no_section_wrap: true
 ---
+<h2 id="typography">Typography guidelines</h2>
 <div id="typography" class="hold">
   <aside>
     <dl>

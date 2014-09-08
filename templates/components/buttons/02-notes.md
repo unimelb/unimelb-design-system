@@ -1,0 +1,1 @@
+Form inputs with type <code>submit</code> and <code>button</code> have a default style of <code>button cta</code>.

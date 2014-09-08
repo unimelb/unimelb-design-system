@@ -1,16 +1,15 @@
 == slim :breadcrumb
 
 div role="main"
-  header.mid
-    .bottom-align
-      h1 Components
-
-  ul
-    - @components.each do |path|
-      li
-        - if component_pending?(path)
-          small class="todo"
-            | [TODO]
-            '
-        a href=(component_path(path))
-          = component_title(path)
+  header.solid-blue
+    h1 Components
+  .navigation-text-listing
+    ul
+      - @components.each do |path|
+        li
+          - if component_pending?(path)
+            small class="todo"
+              | [TODO]
+              '
+          a href=(component_path(path))
+            = component_title(path)

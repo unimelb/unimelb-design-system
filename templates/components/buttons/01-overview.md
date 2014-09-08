@@ -1,3 +1,6 @@
+---
+title: Buttons
+---
 ## Overview
 
 Buttons are a highly visual way to encourage a user to complete an action. The templates provide buttons pre-styled in several different colours and formats so that there is always a standard button you can use for your site. 
@@ -42,11 +45,6 @@ Buttons should not be used:
 * Where there are several items close together that need to be clicked on - eg. a list of forms. In this situation, a listing component should be used.  
 
 As a wide range of buttons is already provided, glossy, "Web 2.0" type buttons, or buttons made out of images should not be used. 
-
-## On this page
-
-* [Normal buttons](#normal)
-* [Hero buttons](#hero)
 
 ## References
 

@@ -70,5 +70,15 @@ Below are some basic typographic styles with their associated renderings
   <li>Ordered list items</li>
   <li>Ordered list items</li>
 </ol>
-
-
+```html
+<ul class="ticked-list">
+  <li>Item</li>
+  <li>Another item</li>
+  <li class="no-li">This one is not ticked</li>
+</ul>
+```
+<ul class="ticked-list">
+  <li>Item</li>
+  <li>Another item</li>
+  <li class="no-li">This one is not ticked</li>
+</ul>

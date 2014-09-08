@@ -1,0 +1,26 @@
+[role="main"] {
+	.lead {
+		@include adjust-font-size-to(19px);
+		@include adjust-leading-to(1);
+		@include padding-leader(2);
+		@include padding-trailer(2);
+		@include rem(max-width, $w-mid);
+		background: transparent;
+		color: $black;
+    filter: none;
+    font-weight: $light;
+    margin: 0 3%;
+    position: static;
+    text-align: center;
+
+    p {
+      @include rem(max-width, $w-mid);
+      color: $black;
+      font-style: italic;
+    }
+
+    @include breakpoint(wide) {
+      margin: 0 auto;
+    }
+	}
+}

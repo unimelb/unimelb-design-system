@@ -4,7 +4,7 @@ unless window.UOMListFilter
       constructor: (@el) ->
         t = this
 
-        @tables = document.querySelectorAll('ul.course-grid')
+        @tables = document.querySelectorAll('ul.filtered-listing-grid')
         @select = @el.querySelector('select')
         @curr = @select.value
 
@@ -93,7 +93,7 @@ unless window.UOMListFilter
           for el in table.querySelectorAll('li')
             el.addClass('item')
 
-    new ListFilter(el) for el in document.querySelectorAll('form.course-select')
+    new ListFilter(el) for el in document.querySelectorAll('form.filtered-listing-select')
 
   if window.attachEvent
     window.attachEvent 'onload', ->

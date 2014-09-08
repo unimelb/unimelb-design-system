@@ -1,0 +1,150 @@
+.filtered-listing-wrapper {
+  @include padding-leader(1);
+  @include padding-trailer(1);
+  background-color: $navy;
+}
+.bottom-align-flat .filtered-listing-wrapper {
+  background-color: transparent;
+}
+
+[role="main"] form.filtered-listing-select {
+  @include rem(max-width, $w-lge);
+  background-color: transparent;
+  color: $white;
+  margin: 0 auto;
+  overflow: hidden;
+
+  @include breakpoint(desktop) {
+    @include rem(padding-left, 15px);
+  }
+
+  strong {
+    @include rem(font-size, 15px);
+    @include rem(padding-bottom, 5px);
+    display: block;
+    font-weight: $light;
+  }
+
+  h2 {
+    @include rem(font-size, 30px);
+    @include rem(letter-spacing, 2px);
+    font-weight: $light;
+    line-height: 1.2;
+    margin-left: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    @include rem(font-size, 13px);
+    font-weight: $light;
+    margin-left: 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  fieldset.left {
+    @include breakpoint(tablet) {
+      @include rem(line-height, 30px);
+      margin: 0;
+
+      strong {
+        @include rem(padding-bottom, 15px);
+      }
+
+      div {
+        @include rem(padding-right, 45px);
+        float: left;
+      }
+    }
+
+    @include breakpoint(desktop) {
+      float: left;
+      width: 75%;
+    }
+
+    input[type="checkbox"] + label {
+      margin-left: 0;
+    }
+
+    .undergraduate,
+    .color-one {
+      color: lighten($green, 30%);
+
+      input[type="checkbox"] + label {
+        background-color: lighten($green, 30%);
+        border-color: darken($green, 10%);
+
+        &::after {
+          border-color: darken($green, 20%);
+        }
+      }
+    }
+
+    .certificates_diplomas,
+    .color-two {
+      color: $bronze;
+
+      input[type="checkbox"] + label {
+        background-color: $bronze;
+        border-color: darken($bronze, 20%);
+
+        &::after {
+          border-color: darken($bronze, 40%);
+        }
+      }
+    }
+
+    .coursework,
+    .color-three {
+      color: $lightestblue;
+
+      input[type="checkbox"] + label {
+        background-color: l$lightestblue;
+        border-color: darken($lightestblue, 20%);
+
+        &::after {
+          border-color: darken($lightestblue, 30%);
+        }
+      }
+    }
+
+    .phd,
+    .color-four {
+      color: lighten($lightblue, 10%);
+
+      input[type="checkbox"] + label {
+        background-color: lighten($lightblue, 10%);
+        border-color: darken($lightblue, 10%);
+
+        &::after {
+          border-color: darken($lightblue, 20%);
+        }
+      }
+    }
+  }
+
+  fieldset.right {
+    @include rem(padding-top, 15px);
+
+    div {
+      float: none;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    @include breakpoint(desktop) {
+      float: right;
+      margin: 0;
+      padding-top: 0;
+      width: 25%;
+
+      strong {
+        @include rem(padding-bottom, 15px);
+      }
+    }
+  }
+}
