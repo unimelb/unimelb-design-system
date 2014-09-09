@@ -6,11 +6,11 @@ div role="main"
       h1 Web.unimelb
       p Everything you need to make a great website @unimelb
       p
-        a.button-hero-inverse href="/00_getting_started" Get started
+        a.button-hero-inverse href="/getting-started" Get started
 
   section
     h2.title A digital design system for The University of Melbourne.
-    p This site explains how we plan, design and build web sites and web applications consistently across the unimelb domain in the pursuit of improved usability and to a strong digital brand. 
+    p This site explains how we plan, design and build web sites and web applications consistently across the unimelb domain in the pursuit of improved usability and to a strong digital brand.
     p Use this site to learn how to write effective content, design your site or develop using the university templates. If you cannot find what you are looking for, <a href="/collaboration.html">please request it</a>.
 
   section.alt
@@ -22,17 +22,19 @@ div role="main"
         h1 For content creators
         p Learn how to fill your website with fantastic text, imagery and video
         p
-          a.button-hero href="/01_content_creators" Content principles
+          a.button-hero href="/content-creators" Content principles
+
   section
     .half
       section
         h1 For designers
         p Learn how to use the design system to assemble websites that meet objectives without re-inventing the wheel.
         p
-          a.button-hero href="/02_designers" Design principles
+          a.button-hero href="/designers" Design principles
       section.center
         svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 317" width="450" height="285"
           image xlink:href="/assets/images/home_designers.svg" width="100%" height="100%" src="/assets/images/home_designers.png"
+
   section.alt
     .half
       section.center
@@ -40,9 +42,10 @@ div role="main"
           image xlink:href="/assets/images/home_developers.svg" width="100%" height="100%" src="/assets/images/home_developers.png"
       section
         h1 For developers
-        p Learn how to build your next web app without a custom.css file. 
+        p Learn how to build your next web app without a custom.css file.
         p
-          a.button-hero href="/03_developers" Code guidelines
+          a.button-hero href="/developers" Code guidelines
+
   section.navigation-text-listing
     h1
       a href="/layouts" Page Templates
@@ -52,7 +55,9 @@ div role="main"
         li
           a href=(layout_path(path))
             = layout_title(path)
+
   hr
+
   section.navigation-text-listing
     h1
       a href="/components" Components
@@ -60,10 +65,6 @@ div role="main"
     ul
       - @components.each do |path|
         li
-          - if component_pending?(path)
-            small class="todo"
-              | [TODO]
-              '
           a href=(component_path(path))
             = component_title(path)
   footer

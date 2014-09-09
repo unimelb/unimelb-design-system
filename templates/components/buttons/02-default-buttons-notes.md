@@ -1,4 +1,3 @@
-## Default Buttons
 ```html
 <a class="button">Call to action</a>
 <a class="button brand">Brand</a>

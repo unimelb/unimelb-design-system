@@ -769,10 +769,10 @@
     padding-top: 0;
 
     li {
+      -moz-column-break-inside: avoid;
+      -ms-column-break-inside: avoid;
       -webkit-column-break-inside: avoid;
-      page-break-inside: avoid;
-      break-inside: avoid;
-
+      column-break-inside: avoid;
       list-style-type: none;
       margin: 0;
       padding: 0;
@@ -824,7 +824,7 @@
     text-decoration: none;
 
     h3 {
-      text-decoration: underline;      
+      text-decoration: underline;
     }
   }
 
@@ -851,9 +851,10 @@
     padding-top: 0;
 
     li {
+      -moz-column-break-inside: avoid;
+      -ms-column-break-inside: avoid;
       -webkit-column-break-inside: avoid;
-      page-break-inside: avoid;
-      break-inside: avoid;
+      column-break-inside: avoid;
 
       list-style-type: none;
       margin: 0;
