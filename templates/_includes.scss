@@ -1,6 +1,9 @@
-///@import "components/patterns/accessibility";
-///@import "components/patterns/clearfix";
-///@import "components/patterns/rem";
-///@import "components/patterns/media-queries";
-///@import "components/globals/globals";
-///@import "components/typography/typography";
+@import 'compass';
+
+@import 'components/base/patterns_accessibility';
+@import 'components/base/patterns_clearfix';
+@import 'components/base/patterns_rem';
+@import 'components/base/patterns_media-queries';
+@import 'components/base/globals';
+@import 'components/base/typography_fonts';
+@import 'components/base/typography';

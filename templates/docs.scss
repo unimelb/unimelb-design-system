@@ -1,9 +1,5 @@
-/* Sass Includes */
-///@import "includes";
+// Sass Includes
+@import 'includes';
 
-/* Documentation example styles */
-///@import "components/accordions/example";
-///@import "components/globals/example";
-///@import "components/maps/example";
-///@import "components/newsfeeds/example";
-///@import "components/patterns/example";
+// Documentation example styles
+@import 'components/base/example';

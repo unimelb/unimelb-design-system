@@ -286,6 +286,26 @@ body {
       @include rem(padding-bottom, 15px);
       @include rem(padding-top, 5px);
       vertical-align: top;
+
+      dt {
+        width: 100%;
+      }
+
+      @include breakpoint(desktop) {
+        width: 24%;
+
+      }
+    }
+
+    .bside {
+      @include breakpoint(desktop) {
+        @include rem(padding-bottom, 20px);
+        @include rem(padding-top, 20px);
+      }
+
+      dd {
+        @include rem(padding-bottom, 10px);
+      }
     }
   }
 

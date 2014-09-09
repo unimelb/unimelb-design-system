@@ -106,7 +106,11 @@ module WebTemplates
           end
 
         when '.slim' then
-          source = syntax_highlight(slim file_content(f), layout: false, pretty: true)
+          if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
+            source = ''
+          else
+            source = syntax_highlight(slim file_content(f), layout: false, pretty: true)
+          end
           output = slim file_content(f), layout: false, pretty: true
           if @documents[section]
             @documents[section] << [ title_from_filename(f), source, output ]
@@ -116,7 +120,11 @@ module WebTemplates
 
         else
           # Raw HTML
-          source = syntax_highlight(file_content(f))
+          if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
+            source = ''
+          else
+            source = syntax_highlight(file_content(f))
+          end
           output = file_content(f)
           if @documents[section]
             @documents[section] << [ title_from_filename(f), source, output ]
@@ -241,8 +249,13 @@ module WebTemplates
       @navigation << components
     end
 
+    def basename_without_index_and_extension(f)
+      File.basename(f, File.extname(f))[3..-1]
+    end
+
     def title_from_filename(f)
-      title = File.basename(f, File.extname(f))[3..-1]
+      title = basename_without_index_and_extension(f)
+      title = title[0..-11] if title[-9..-1] == 'no-source'
       "<h2 id=\"#{title}\">#{title.gsub('-', ' ').capitalize}</h2>"
     end
 
