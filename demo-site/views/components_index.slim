@@ -3,13 +3,48 @@
 div role="main"
   header.solid-blue
     h1 Components
-  .navigation-text-listing
+
+  section.navigation-text-listing
     ul
-      - @components.each do |path|
-        li
-          - if component_pending?(path)
-            small class="todo"
-              | [TODO]
-              '
-          a href=(component_path(path))
-            = component_title(path)
+      li
+        a href="/components/accordion" Accordion
+      li
+        a href="/components/base" Base
+      li
+        a href="/components/buttons" Buttons
+      li
+        a href="/components/events" Events
+      li
+        a href="/components/filtered-listings" Filtered Listings
+      li
+        a href="/components/forms" Forms
+      li
+        a href="/components/globals" Globals
+      li
+        a href="/components/headers" Headers
+      li
+        a href="/components/inpage-navigation" Inpage Navigation
+      li
+        a href="/components/listings" Listings
+      li
+        a href="/components/maps" Maps
+      li
+        a href="/components/media" Media
+      li
+        a href="/components/modal" Modal
+      li
+        a href="/components/news" News
+      li
+        a href="/components/newsfeeds" Newsfeeds
+      li
+        a href="/components/pathfinder" Pathfinder
+      li
+        a href="/components/persons" Persons
+      li
+        a href="/components/search" Search
+      li
+        a href="/components/socialmedia" Socialmedia
+      li
+        a href="/components/tabs" Tabs
+      li
+        a href="/components/text" Text

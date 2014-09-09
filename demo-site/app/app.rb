@@ -85,6 +85,9 @@ module WebTemplates
       return_page_not_found unless settings.components.include? path
 
       @component = path
+      curr = settings.components.index(@component)
+      @next = curr == settings.components.length - 1 ? settings.components[0] : settings.components[curr + 1]
+      @prev = curr == 0 ? settings.components[settings.components.length - 1] : settings.components[curr - 1]
 
       @documents = {}
 
@@ -234,19 +237,8 @@ module WebTemplates
 
     def build_navigation
       @navigation = dir_to_menu(settings.pages_dir)
-
-      layouts = { title: 'Page Templates', href: '/layouts', children: [] }
-      settings.layouts.reject{ |l| l =~ /(layout)$/ }.each do |layout|
-        layouts[:children] << { title: layout_title(layout), href: layout_path(layout), children: [] }
-      end
-
-      components = { title: 'Component reference', href: '/components', children: [] }
-      settings.components.each do |component|
-        components[:children] << { title: component_title(component), href: component_path(component), children: [] }
-      end
-
-      @navigation << layouts
-      @navigation << components
+      @navigation << { title: 'Page Templates', href: '/layouts', children: [] }
+      @navigation << { title: 'Component reference', href: '/components', children: [] }
     end
 
     def basename_without_index_and_extension(f)

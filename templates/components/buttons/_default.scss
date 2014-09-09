@@ -134,6 +134,26 @@
   }
 }
 
+%outlinearrow-reverse {
+  &::before {
+    @include rem(font-size, 30px);
+    @include rem(padding-left, 15px);
+    content: '\2190';
+    left: 0;
+    position: absolute;
+    top: 4px;
+  }
+
+  &:before {
+    content: '\2190';
+    font-size: 30px;
+    left: 0;
+    padding-left: 15px;
+    position: absolute;
+    top: 4px;
+  }
+}
+
 %iconbutton {
   @extend %outlinebutton;
   @include rem(font-size, 14px);
@@ -191,6 +211,12 @@
 [role="main"] .button-hero {
   @extend %outlinebutton;
   @extend %outlinearrow;
+}
+
+[role="main"] .button-hero-reverse {
+  @extend %outlinebutton;
+  @extend %outlinearrow-reverse;
+  @include rem(padding, 20px 20px 20px 60px);
 }
 
 [role="main"] .button-hero-inverse {
