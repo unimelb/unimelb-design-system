@@ -44,7 +44,8 @@ div role="main"
         p
           a.button-hero href="/03_developers" Code guidelines
   section.navigation-text-listing
-    h1 Page Templates
+    h1
+      a href="/layouts" Page Templates
     p Page templates to get you started building the most commonly used page types across the unimelb domain.
     ul
       - @layouts.reject{ |l| l =~ /(layout)$/ }.each do |path|
@@ -53,7 +54,8 @@ div role="main"
             = layout_title(path)
   hr
   section.navigation-text-listing
-    h1 Components
+    h1
+      a href="/components" Components
     p Small units of page style and functionality you can assemble or populate to create unique page templates.
     ul
       - @components.each do |path|
