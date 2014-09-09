@@ -31,31 +31,9 @@
 }
 
 [role="main"] {
-  .nav-bar {
-    background-color: $darkblue;
-
-    .inner {
-      @include rem(max-width, $w-lge);
-      @include rem(padding, 20px 0);
-      margin: 0 auto;
-      width: 94%;
-    }
-
-    a {
-      @include rem(font-size, 22px);
-      color: $gray;
-      text-decoration: none;
-      text-transform: uppercase;
-
-      &:hover {
-        color: $white;
-      }
-    }
-  }
-
   .tabbed-nav {
     .full-width {
-      background-color: #004576;
+      background-color: $darkblue;
       border-bottom: 1px solid transparent;
       position: relative;
 
@@ -71,8 +49,9 @@
       text-align: center;
 
       a {
-        @include rem(font-size, 16px);
-        @include rem(padding, 25px 10px);
+        //@include adjust-font-size-to(18px);
+        // @include rem(font-size, 16px);
+        @include rem(padding, 20px 10px);
         color: $white;
         display: inline-block;
         font-weight: $light;
@@ -102,7 +81,7 @@
         }
 
         @include breakpoint(desktop) {
-          @include rem(font-size, 22px);
+          @include adjust-font-size-to(18px);
           @include rem(padding, 20px 45px);
         }
       }
@@ -141,7 +120,7 @@
 
       &::after {
         border: solid transparent;
-        border-top-color: #004576;
+        border-top-color: $brand;
         border-width: 10px;
         content: ' ';
         height: 0;
@@ -174,9 +153,9 @@
       padding-right: 0;
 
       section.lead {
-        @include rem(font-size, 22px);
+        /*@include rem(font-size, 22px);
         @include rem(padding-bottom, 45px);
-        @include rem(padding-top, 65px);
+        @include rem(padding-top, 65px);*/
         background: transparent;
         color: $black;
         filter: none;
@@ -184,6 +163,10 @@
         margin: 0 auto;
         max-width: $w-mid;
         position: static;
+
+        & + section {
+          padding-top: 0;
+        }
 
         p {
           color: $black;
@@ -257,7 +240,8 @@
 
     &.thin {
       nav a {
-        @include rem(font-size, 15px);
+        @include adjust-font-size-to(13px);
+        //@include rem(font-size, 15px);
         @include rem(padding, 15px);
       }
 
@@ -270,38 +254,74 @@
 
   [data-tabbed].tabbed {
     @extend %clearfix;
-    margin-bottom: 30px;
+    @include trailer(2);
     width: 100%;
 
     nav {
-      @include rem(font-size, 18px);
+      border-bottom: 1px solid $lightergray;
+      text-align: center;
+
+      @include breakpoint(tablet) {
+        text-align: left;        
+      }
 
       a {
-        @include rem(border-radius, 5px 5px 0 0);
-        @include rem(padding, 15px 20px 5px);
+        @include padding-trailer(0.5);
+        //@include rem(border-radius, 5px 5px 0 0);
+        @include rem(padding-left, 25px);
+        @include rem(padding-right, 25px);
         background-color: inherit;
-        color: $gray;
+        color: $midgray;
         cursor: pointer;
         display: inline-block;
-        font-weight: $bold;
+        font-weight: $light;
+        margin-bottom: -1px;
         text-decoration: none;
 
         &:hover {
-          color: $base;
+          color: $cyan;
         }
 
         &[data-current] {
-          background-color: darken($lightgray, 2%);
-          color: $base;
+          border-bottom: 2px solid $cyan;
+          //background-color: $paleblue;
+          color: $cyan;
         }
       }
     }
 
     .tab {
-      @include rem(padding, 15px 20px);
-      background-color: darken($lightgray, 2%);
+      @include padding-leader(1);
+      @include padding-trailer(0);
+      @include rem(padding-left, 25px);
+      @include rem(padding-right, 25px);
+      border-bottom: 1px solid $lightergray;
+      //background-color: $paleblue;
       margin: 0;
+
+      p {
+        width: 100%;
+      }
     }
+  }
+}
+
+.tabbed-course {
+  @extend .tabbed-nav;
+  @extend .thin;
+
+  .tab {
+    @extend %clearfix;
+    background-color: $white;
+    max-width: 1200px;
+  }
+
+  .half {
+    background-color: $lightgray;
+  }
+
+  aside h2.subtitle {
+    @include rem(padding-bottom, 5px);
   }
 }
 

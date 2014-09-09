@@ -1,22 +1,3 @@
-.tabbed-course {
-  @extend .tabbed-nav;
-  @extend .thin;
-
-  .tab {
-    @extend %clearfix;
-    background-color: $white;
-    max-width: 1200px;
-  }
-
-  .half {
-    background-color: $lightgray;
-  }
-
-  aside h2.subtitle {
-    @include rem(padding-bottom, 5px);
-  }
-}
-
 table.course-progression {
   @include rem(margin-bottom, 30px);
   border-collapse: collapse;

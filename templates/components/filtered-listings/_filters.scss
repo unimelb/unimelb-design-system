@@ -69,7 +69,7 @@
     }
 
     .undergraduate,
-    .color-one {
+    .category-one {
       color: lighten($green, 30%);
 
       input[type="checkbox"] + label {
@@ -83,7 +83,7 @@
     }
 
     .certificates_diplomas,
-    .color-two {
+    .category-two {
       color: $bronze;
 
       input[type="checkbox"] + label {
@@ -97,7 +97,7 @@
     }
 
     .coursework,
-    .color-three {
+    .category-three {
       color: $lightestblue;
 
       input[type="checkbox"] + label {
@@ -111,7 +111,7 @@
     }
 
     .phd,
-    .color-four {
+    .category-four {
       color: lighten($lightblue, 10%);
 
       input[type="checkbox"] + label {

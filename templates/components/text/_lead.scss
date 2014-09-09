@@ -14,6 +14,7 @@
     text-align: center;
 
     p {
+      @include padding-trailer(0);
       @include rem(max-width, $w-mid);
       color: $black;
       font-style: italic;
