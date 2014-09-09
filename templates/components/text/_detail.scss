@@ -2,44 +2,40 @@
   @extend %wrapper;
 
   aside {
-    @include rem(padding, 30px);
+    @include padding-leader(2);
+    @include padding-trailer(2);
+    @include rem(padding-left, 30px);
+    @include rem(padding-right, 30px);
     display: block;
     float: left;
     width: 100%;
 
     .when {
       padding: 0;
-      text-align: center;
-
-      @include breakpoint(desktop) {
-        text-align: right;
-      }
 
       time {
-        line-height: 1.4;
+        display: block;
         position: relative;
+        text-align: center;
 
-        &:first-child::after {
-          @include rem(margin, 5px 10px);
-          @include rem(width, 10px);
-          border-bottom: 2px solid $black;
-          content: ' ';
-          display: inline-block;
-        }
+        
 
         @include breakpoint(desktop) {
           display: block;
+          text-align: right;
 
           &:first-child {
-            @include rem(margin-bottom, 30px);
-            @include rem(padding-bottom, 30px);
+            @include padding-trailer(1);
+            @include rem(margin-top, -8px);
+            @include trailer(1);
             position: relative;
           }
 
           &:first-child::after {
-            @include rem(padding-top, 30px);
+            @include padding-leader(1);
             @include rem(width, 20px);
             border-bottom: 4px solid $black;
+            content: "";
             display: block;
             position: absolute;
             right: 0;
@@ -48,14 +44,11 @@
       }
 
       strong {
-        @include rem(font-size, 16px);
-        @include rem(padding, 0 5px 10px);
         font-weight: $regular;
         vertical-align: baseline;
 
         @include breakpoint(desktop) {
-          @include rem(font-size, 40px);
-          @include rem(padding, 0 0 10px);
+          @include adjust-font-size-to(36px);
           display: block;
           font-weight: $bold;
         }
@@ -67,7 +60,9 @@
     }
 
     div {
-      @include rem(padding, 30px 0 30px);
+      //@include rem(padding, 30px 0 30px);
+      @include padding-leader(1);
+      @include padding-trailer(1);
       border-top: 1px solid $black;
       text-align: center;
 
@@ -129,16 +124,15 @@
     }
 
     h2 {
-      @include rem(font-size, 27.5px);
+      @include adjust-font-size-to(22px);
+      @include adjust-leading-to(1);
+      @include padding-trailer(1);
       clear: none;
       font-weight: $light;
       letter-spacing: 0;
       text-align: left;
       text-transform: none;
 
-      @include breakpoint(desktop) {
-        @include rem(font-size, 29.1px);
-      }
 
       &::after {
         display: none;
