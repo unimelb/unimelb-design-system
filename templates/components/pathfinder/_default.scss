@@ -10,9 +10,9 @@
   li {
     @include leader(1);
     @include trailer(1);
-    background-color: $brand;
     margin-left: 0;
     margin-right: 0;
+    overflow: visible;
     padding: 0;
     width: 100%;
     max-width: 100%;
@@ -53,7 +53,10 @@
 
   a {
     @include padding-trailer(2);
+    @include rem(max-width, 350px);
+    background-color: $brand;
     border-bottom: 3px solid darken($brand, 50%);
+    margin: 0 auto;
     position: relative;
     transition: all 200ms ease-out;
 
@@ -99,7 +102,6 @@
       float: none;
       height: 100%;
       margin: 0;
-      overflow: visible;
       padding-left: 0.5%;
       padding-right: 0.5%;
       vertical-align: top;
@@ -127,7 +129,6 @@
       @include rem(max-width, 350px);
       @include rem(min-height, 400px);
       @include rem(padding, 0 35px);
-      background-color: $brand;
       height: 100%;
       margin: 0 auto;
       position: relative;
@@ -169,19 +170,46 @@
   @extend .pathfinder-3;
 
   @include breakpoint(desktop) {
+    display: flex;
+    flex-flow: row wrap;
+
     li {
       @include rem(padding-left, 1px);
+      @include rem(padding-bottom, 1px);
+      display: flex;
+      flex: 1 1 40%;
+      height: auto;
       padding-right: 0;
-      text-align: left;
 
-      &:nth-child(3n+1) {
-        text-align: right;
+      &:nth-child(2n+1) {
+        justify-content: flex-end;
+        padding-left: 0;
       }
     }
 
     a {
-      display: inline-block;
+      flex: 1;
+      height: auto;
       margin: 0;
+    }
+  }
+
+  @include breakpoint(1350px) {
+    display: table;
+    table-layout: fixed;
+
+    li {
+      display: table-cell;
+      height: 100%;
+
+      &:nth-child(2n+1) {
+        @include rem(padding-left, 1px);
+      }
+    }
+
+    a {
+      height: 100%;
+      margin: 0 auto;
     }
   }
 }
