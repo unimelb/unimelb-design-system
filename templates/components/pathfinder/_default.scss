@@ -1,8 +1,7 @@
-[role="main"] .pathfinder {
+[role="main"] .pathfinder-3 {
   @extend .feature-listing-3;
   @include leader(2);
   @include trailer(2);
-  // @include rem(margin, 30px 0);
   background-color: transparent;
   border: 0 none;
   padding: 0 3%;
@@ -11,9 +10,7 @@
   li {
     @include leader(1);
     @include trailer(1);
-    // @include rem(margin-bottom, 30px);
-    // @include rem(margin-top, 30px);
-    background-color: $midblue;
+    background-color: $brand;
     margin-left: 0;
     margin-right: 0;
     padding: 0;
@@ -24,8 +21,8 @@
   p {
     @include leader(1);
     @include padding-trailer(1);
-    // @include rem(margin, 15px 0 0);
-    // @include rem(padding-bottom, 15px);
+    @include rem(padding-left, 20px);
+    @include rem(padding-right, 20px);
     background-color: transparent;
     color: $white;
     padding-top: 0;
@@ -34,13 +31,9 @@
 
   strong {
     @include adjust-font-size-to(15px);
-    // @include leader(1);
     @include padding-leader(2);
     @include padding-trailer(2);
-    // @include rem(font-size, 15px);
     @include rem(letter-spacing, 1px);
-    // @include rem(margin, 0 30px 15px);
-    // @include rem(padding, 30px 0);
     background-color: transparent;
     border-bottom: 1px solid $white;
     color: $white;
@@ -60,11 +53,19 @@
 
   a {
     @include padding-trailer(2);
-    // @include rem(padding-bottom, 30px);
+    border-bottom: 3px solid darken($brand, 50%);
     position: relative;
+    transition: all 200ms ease-out;
+
+    .button-small {
+      background-color: darken($brand, 5%);
+    }
 
     &:hover {
-      background-color: darken($midblue, 3%);
+      background-color: lighten($brand, 3%);
+      box-shadow: 0 0 10px rgba($black, 0.5);
+      transform: scale(1.06);
+      z-index: 2;
 
       .button-small {
         background-color: darken($brand, 5%);
@@ -79,7 +80,6 @@
   @include breakpoint(desktop) {
     @include padding-leader(2);
     @include padding-trailer(2);
-    // @include rem(padding, 50px 0);
     display: table;
     float: none;
     height: 100%;
@@ -99,8 +99,9 @@
       float: none;
       height: 100%;
       margin: 0;
-      padding-left: 1%;
-      padding-right: 1%;
+      overflow: visible;
+      padding-left: 0.5%;
+      padding-right: 0.5%;
       vertical-align: top;
       width: auto;
     }
@@ -108,14 +109,17 @@
     p {
       @include padding-leader(1);
       @include padding-trailer(5);
-      // @include rem(padding-bottom, 100px);
-      margin: 0;
+      @include rem(max-width, 350px);
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
       text-align: left;
     }
 
     strong {
       @include rem(height, 120px);
-      margin: 0;
+      @include rem(max-width, 350px);
+      margin: 0 auto;
       padding: 0;
     }
 
@@ -123,7 +127,7 @@
       @include rem(max-width, 350px);
       @include rem(min-height, 400px);
       @include rem(padding, 0 35px);
-      background-color: $midblue;
+      background-color: $brand;
       height: 100%;
       margin: 0 auto;
       position: relative;
@@ -139,8 +143,45 @@
   }
 }
 
+[role="main"] .pathfinder-2 {
+  @extend .pathfinder-3;
+
+  @include breakpoint(desktop) {
+    li {
+      @include rem(padding-left, 1px);
+      padding-right: 0;
+      text-align: left;
+
+      &:first-child {
+        padding-left: 0;
+        text-align: right;
+      }
+    }
+
+    a {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+}
+
+[role="main"] .pathfinder-4 {
+  @extend .pathfinder-3;
+
+  @include breakpoint(desktop) {
+    li {
+      @include rem(padding-left, 1px);
+      padding-right: 0;
+
+      &:first-child {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
 .ie {
-  [role="main"] .pathfinder {
+  [role="main"] .pathfinder-3 {
     float: none;
     margin-left: auto;
     margin-right: auto;

@@ -4,4 +4,6 @@
 - rename .course-grid to .filtered-listing-grid
 
 # Selector Boxes 3
-- rename .selector-listing-3 to .pathfinder
+- rename .selector-listing-3 to .pathfinder-3
+- use .pathfinder-2 for two boxes
+- use .pathfinder-4 for four boxes
