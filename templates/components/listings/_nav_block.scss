@@ -1,0 +1,106 @@
+[role="main"] .navigation-block-listing {
+  @include padding-leader(3);
+  @include padding-trailer(3);
+  @include rem(max-width, 1400px);
+  @include rem(padding-left, 25px);
+  @include rem(padding-right, 25px);
+  margin: 0 auto;
+
+  ul,
+  h3 {
+    @include rem(max-width, 4000px);
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  a {
+    @include padding-trailer(0.5);
+    display: block;
+  }
+
+  & > ul > li > a {
+    text-decoration: none;
+
+    h3 {
+      text-decoration: underline;
+    }
+  }
+
+  h3 {
+    @include adjust-font-size-to(20px);
+    @include padding-trailer(0.5);
+    font-weight: $regular;
+
+    a {
+      @include padding-trailer(0);
+    }
+  }
+
+  p {
+    @include adjust-font-size-to(14px);
+    @include padding-trailer(2);
+    border: 0;
+    color: $midgray;
+    width: 100%;
+  }
+
+  ul{
+    padding-bottom: 0;
+    padding-top: 0;
+
+    li {
+      -moz-column-break-inside: avoid;
+      -ms-column-break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      column-break-inside: avoid;
+
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      ul {
+        @include padding-trailer(2);
+      }
+    }
+
+    @include breakpoint(tablet) {
+      p {
+        margin: 0;
+        width: 88%;
+      }
+      li {
+        display: inline-block;
+        vertical-align: top;
+        width: 49%;
+
+        li {
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    @include breakpoint(desktop) {
+      li {
+        width: 32%;
+
+        li {
+          width: 100%;
+        }
+      }
+    }
+
+    @include breakpoint(wide) {
+      li {
+        width: 24%;
+
+        li {
+          width: 100%;
+        }
+      }
+    }
+
+  }
+}

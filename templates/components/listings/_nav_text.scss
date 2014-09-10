@@ -1,0 +1,57 @@
+[role="main"] .navigation-text-listing {
+  @include padding-leader(3);
+  @include padding-trailer(3);
+  @include rem(max-width, 1400px);
+  @include rem(padding-left, 25px);
+  @include rem(padding-right, 25px);
+  margin: 0 auto;
+
+  h1,
+  p,
+  ul {
+    @include rem(max-width, 4000px);
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  h1 {
+    @include padding-trailer(0);
+    // @include rem(padding-bottom, 5px);
+  }
+
+  ul{
+    padding-bottom: 0;
+    padding-top: 0;
+
+    li {
+      -moz-column-break-inside: avoid;
+      -ms-column-break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      column-break-inside: avoid;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      a {
+        @include padding-trailer(1);
+        // @include rem(padding, 10px 0);
+        display: block;
+      }
+
+    }
+
+    @include breakpoint(tablet) {
+      @include column-count(2);
+    }
+
+    @include breakpoint(desktop) {
+      @include column-count(3);
+    }
+
+    @include breakpoint(wide) {
+      @include column-count(4);
+    }
+  }
+}

@@ -1,0 +1,244 @@
+[role="main"] .block-listing {
+  @extend %clearfix;
+  @include rem(margin-bottom, 30px);
+  @include rem(margin-top, 30px);
+  background-color: transparent;
+  border: 0 none;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 3%;
+  width: 100%;
+
+  li {
+    @include rem(margin-bottom, 15px);
+    background-color: transparent;
+    border: 1px solid rgba($black, .15);
+    box-shadow: 0 0 9px -3px rgba($black, .3);
+    color: $black;
+    float: left;
+    list-style-type: none;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  p {
+    @include rem(font-size, 14px);
+    @include rem(padding, 15px 25px 0);
+    background-color: transparent;
+    color: inherit;
+    margin: 0;
+    text-align: left;
+  }
+
+  strong {
+    @include rem(font-size, 22px);
+    @include rem(padding, 15px 25px 0);
+    background-color: transparent;
+    color: inherit;
+    display: block;
+    font-weight: $regular;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  a {
+    color: $black;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  .meta {
+    @include rem(font-size, 12px);
+    @include rem(margin, 15px);
+    @include rem(padding, 10px 10px 20px);
+    background-color: inherit;
+    border-top: 1px solid $black;
+    color: inherit;
+
+    .meta-left {
+      float: left;
+    }
+
+    .meta-right {
+      float: right;
+      font-style: normal;
+      text-transform: uppercase;
+    }
+  }
+
+  .when {
+    @include rem(font-size, 18px);
+    @include rem(padding, 10px 25px 0);
+    color: $salmon;
+    font-weight: $regular;
+    line-height: 1.4;
+    text-align: left;
+
+    time {
+      @include rem(font-size, 26px);
+      display: block;
+      font-weight: $bold;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+  }
+
+  .range {
+    line-height: 2.8;
+    margin-bottom: 0;
+
+    time {
+      @include rem(font-size, 18px);
+      font-weight: $regular;
+
+      &:first-child::after {
+        @include rem(width, 30px);
+        border-bottom: 3px solid $salmon;
+        content: '';
+        display: block;
+      }
+    }
+  }
+
+  .event {
+    background-color: $black;
+    color: $white;
+
+    strong {
+      @include rem(font-size, 24px);
+      @include rem(margin-bottom, 30px);
+    }
+
+    .meta {
+      border-top: 0 none;
+    }
+  }
+
+  .block-container {
+    display: block;
+  }
+
+  .double {
+    .block-container {
+      background-color: rgba($black, .6);
+      color: $white;
+
+      &:hover .button-hero-inverse {
+        background-color: $white;
+        color: $black;
+      }
+    }
+
+    strong {
+      @include rem(font-size, 40px);
+      font-weight: $thin;
+      line-height: 1.1;
+      margin-bottom: 0;
+    }
+
+    .button-hero-inverse {
+      @include rem(margin-left, 25px);
+    }
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(max-width, $w-lge);
+    li {
+      margin-bottom: 1%;
+      margin-left: 0;
+      margin-right: 1%;
+      margin-top: 0;
+      width: 49%;
+    }
+
+    .block-container {
+      @include rem(min-height, 440px);
+      display: block;
+      position: relative;
+    }
+
+    .meta {
+      bottom: 0;
+      left: 0;
+      padding-bottom: 0;
+      position: absolute;
+      width: 94%;
+    }
+
+    .range time {
+      display: block;
+    }
+
+    .event strong {
+      padding-top: 0;
+    }
+
+    .double {
+      width: 49%;
+
+      strong {
+        @include rem(padding, 60px 30px 30px);
+        line-height: 1;
+      }
+
+      p {
+        @include rem(padding, 0 30px 15px);
+        @include rem(font-size, 20px);
+        line-height: 1.4;
+      }
+
+      .button-hero-inverse {
+        @include rem(margin-left, 30px);
+      }
+    }
+  }
+
+  @include breakpoint(wide) {
+    li {
+      width: 24%;
+    }
+
+    .meta {
+      width: 92%;
+    }
+
+    .when {
+      @include rem(margin-bottom, 30px);
+    }
+
+    .double {
+      width: 49%;
+
+      strong {
+        @include rem(font-size, 54px);
+        @include rem(padding, 60px 60px 30px);
+        line-height: 1.2;
+      }
+
+      p {
+        @include rem(padding, 0 60px 30px);
+        line-height: 1.3;
+      }
+
+      .button-hero-inverse {
+        @include rem(margin-left, 60px);
+      }
+    }
+  }
+
+  @include breakpoint($w-lge) {
+    max-width: 1414px;
+    padding: 0;
+
+    li {
+      width: 19%;
+    }
+
+    .double {
+      width: 39%;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+[role="main"] .hero-listing {
+  @extend .feature-listing;
+  padding-left: 3%;
+  padding-right: 3%;
+  width: 94%;
+
+  li {
+    max-width: 100%;
+    position: relative;
+  }
+
+  h2 {
+    @include trailer(1);
+    // @include rem(margin-bottom, 30px);
+    background-size: cover;
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+  }
+
+  a {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+  }
+
+  figure {
+    @include rem(max-height, 500px);
+    margin: 0;
+  }
+
+  .inner {
+    background-color: rgba($black, .6);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
+    margin: 0;
+    max-width: 100%;
+    padding: 3%;
+    @include rem(padding-bottom, 15px);
+    @include rem(padding-top, 60px);
+
+    @include breakpoint(0) {
+      filter: none;
+    }
+
+    strong {
+      @include adjust-font-size-to(40px);
+      @include padding-leader(1);
+      // @include rem(font-size, 40px);
+      // @include rem(padding-top, 30px);
+      color: $white;
+      line-height: 1.1;
+    }
+
+    p {
+      @include adjust-font-size-to(18px);
+      // @include rem(font-size, 18px);
+      color: $white;
+      font-weight: $thin;
+      max-width: 100%;
+      padding: 0;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    li {
+      padding-bottom: 0;
+      width: 100%;
+    }
+
+    .inner {
+      padding: 10% 10%;
+
+      strong {
+        @include padding-leader(0.5);
+        // @include adjust-font-size-to(60px);
+        // @include rem(font-size, 60px);
+        // line-height: 1.2;
+      }
+
+      p {
+        // @include rem(font-size, 24px);
+        @include padding-trailer(1);
+        text-align: center;
+      }
+    }
+  }
+  @include breakpoint(wide) {
+    .inner {
+      padding: 10% 20%;
+    }
+  }
+}
