@@ -172,10 +172,16 @@
     li {
       @include rem(padding-left, 1px);
       padding-right: 0;
+      text-align: left;
 
-      &:first-child {
-        padding-left: 0;
+      &:nth-child(3n+1) {
+        text-align: right;
       }
+    }
+
+    a {
+      display: inline-block;
+      margin: 0;
     }
   }
 }
