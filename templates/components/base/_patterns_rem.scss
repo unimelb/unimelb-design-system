@@ -3,18 +3,34 @@ $baseline-px: 16px;
 
 @mixin rem($property, $px-values) {
   $baseline-rem: $baseline-px / 1rem;
-  #{$property}: $px-values;
-  @if type-of($px-values) == "number" {
-    #{$property}: $px-values / $baseline-rem;
+
+  // Single provide px fallback on vertical rhythm mixins
+  @if type-of($px-values) == 'number' {
+    @if unit($px-values) != 'rem' {
+      #{$property}: $px-values;
+      #{$property}: $px-values / $baseline-rem;
+
+    } @else {
+      #{$property}: $px-values * $baseline-rem;
+      #{$property}: $px-values;
+    }
+
+  // Multiple unit to calculate rem with px passthrough
   } @else {
-    $rem-values: unquote("");
+
+    $rem-values: unquote('');
+    $non-rem: false;
+
     @each $value in $px-values {
-      @if $value == 0 or type-of($value) == "string" or type-of($value) == "color" {
+      @if $value == 0 or type-of($value) == 'string' or type-of($value) == 'color' {
         $rem-values: append($rem-values, $value);
+
       } @else {
         $rem-values: append($rem-values, $value / $baseline-rem);
       }
     }
+
+    #{$property}: $px-values;
     #{$property}: $rem-values;
   }
 }

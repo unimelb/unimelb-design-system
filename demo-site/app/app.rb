@@ -37,12 +37,12 @@ module WebTemplates
     set :assets_prefix,  '/assets'
     set :digest_assets,  true
 
-    set :compass_gem_root, Gem.loaded_specs['compass'].full_gem_path # <-- TODO: this is not right
+    set :compass_gem_root, Gem.loaded_specs['compass-core'].full_gem_path
 
     configure do
       sprockets.append_path injection
       sprockets.append_path web_templates
-      sprockets.append_path File.join(compass_gem_root, 'frameworks', 'compass', 'stylesheets') # <-- TODO: this is not right
+      sprockets.append_path File.join(compass_gem_root, 'stylesheets')
       sprockets.cache = Sprockets::Cache::FileStore.new(File.join(root, 'tmp'))
 
       Sprockets::Helpers.configure do |config|
