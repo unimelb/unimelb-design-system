@@ -84,13 +84,17 @@ module WebTemplates
     get '/components/*' do |path|
       return_page_not_found unless settings.components.include? path
 
+      # Default title from dirname, can be overriden in frontmatter of first .md
+      @settings['title'] = File.basename(path).capitalize
+
       @component = path
+
+      # Determine next and previous links from dir array
       curr = settings.components.index(@component)
       @next = curr == settings.components.length - 1 ? settings.components[0] : settings.components[curr + 1]
       @prev = curr == 0 ? settings.components[settings.components.length - 1] : settings.components[curr - 1]
 
       @documents = {}
-
       raw_documents = []
       ['md', 'html', 'slim'].each do |ext|
         raw_documents << Dir.glob(File.join(settings.components_dir, path, "*.#{ext}"))
@@ -153,6 +157,7 @@ module WebTemplates
       layout_view = "example_layouts/#{path}".to_sym
       @layout = true
 
+      # ?view=source
       if request['view'].to_s.downcase == 'source'
         @file   = path
         @source = slim layout_view, layout: false, pretty: true
@@ -160,6 +165,7 @@ module WebTemplates
         return slim :source_view
       end
 
+      # Use custom layout if there is one
       if File.exist? (File.join settings.layouts_dir, path + '_layout.slim')
         slim layout_view, layout: "example_layouts/#{path}_layout".to_sym
       else
@@ -242,10 +248,12 @@ module WebTemplates
     end
 
     def basename_without_index_and_extension(f)
+      # Name format 00-section-title.filetype
       File.basename(f, File.extname(f))[3..-1]
     end
 
     def title_from_filename(f)
+      # Delete no-source for section title display
       title = basename_without_index_and_extension(f)
       title = title[0..-11] if title[-9..-1] == 'no-source'
       "<h2 id=\"#{title}\">#{title.gsub('-', ' ').capitalize}</h2>"

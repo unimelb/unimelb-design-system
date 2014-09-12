@@ -4,7 +4,7 @@ $baseline-px: 16px;
 @mixin rem($property, $px-values) {
   $baseline-rem: $baseline-px / 1rem;
 
-  // Single provide px fallback on vertical rhythm mixins
+  // Single value, provide px fallback on vertical rhythm mixins
   @if type-of($px-values) == 'number' {
     @if unit($px-values) != 'rem' {
       #{$property}: $px-values;
@@ -15,7 +15,7 @@ $baseline-px: 16px;
       #{$property}: $px-values;
     }
 
-  // Multiple unit to calculate rem with px passthrough
+  // Multiple unit, calculate rem with px passthrough
   } @else {
 
     $rem-values: unquote('');
