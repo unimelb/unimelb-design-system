@@ -1,17 +1,66 @@
-.floating
+== slim :breadcrumb
 
 div role="main"
-  header.mid style="background-image:url(/assets/images/spacegif.gif); background-repeat:repeat; background-size:auto"
-    .bottom-align
-      h1 Example Page Layouts
+  header.solid-blue
+    h1 Example Page Layouts
 
-  ul.listing
-    - @layouts.reject{ |l| l =~ /(layout)$/ }.each do |path|
+  section
+    ul.listing
       li
-        a href=(layout_path(path))
-          figure.framed
-            img src=('/assets/images/templates/'+path+'.jpg')
-          strong= layout_title(path)
-          p
-            a href=(layout_path path, 'source') Source
+        a href="/layouts/404"
+          strong 404
+          p Default page not found template
+
+
+      li
+        a href="/layouts/500"
+          strong 500
+          p Default server error template
+
+
+      li
+        a href="/layouts/article"
+          strong Article
+
+
+      li
+        a href="/layouts/filtered-listing"
+          strong Filtered Listing
+
+
+      li
+        a href="/layouts/profile"
+          strong Profile
+
+
+      li
+        a href="/layouts/staff"
+          strong Staff
+          p Staff/people listing
+
+
+      li
+        a href="/layouts/vca-course-overview"
+          strong Course
+          p Tabbed course structure page
+
+
+      li
+        a href="/layouts/vca-event"
+          strong Event
+
+
+      li
+        a href="/layouts/vca-home"
+          strong Grad School homepage
+
+
+      li
+        a href="/layouts/vca-screening"
+          strong VCA Screening
+
+
+      li
+        a  href="/layouts/vca-subpage"
+          strong VCA Content page
 

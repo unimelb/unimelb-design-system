@@ -1,10 +1,11 @@
 == slim :breadcrumb
 
 div role="main"
-  section
+  header.solid-blue
     h1
       ' Source of
       em==layout_title(@file)
-  == @source
+
+  .fullwidth.short== @source
 
   == slim :contrib
