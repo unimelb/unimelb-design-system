@@ -1,5 +1,17 @@
-div role="main": section
-  h1
-    ' Error
-    = status
-  p== @message
+== slim :breadcrumb
+
+div role="main"
+  section.alt
+    h2.title Something went wrong
+    p.center We are sorry, but something just went wrong.
+
+    p.center= status
+    p.center== @message
+
+    p.center
+      a.button-hero href="/" Go back to homepage
+  section
+    figure.full-width
+      img src="/assets/images/500.jpg" alt="Something is broken. Barry swears it wasn’t him."
+      figcaption Something is broken. Barry swears it wasn’t him.
+

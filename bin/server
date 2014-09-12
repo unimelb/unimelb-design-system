@@ -9,7 +9,7 @@ ENV['RACK_ENV'] ||= 'development'
 
 BIN_DIR = File.expand_path(File.dirname(__FILE__))
 APP_DIR = File.expand_path(File.join(BIN_DIR, '..', 'demo-site'))
-RACK_UP = File.expand_path('config.ru', APP_DIR)
+RACK_UP = File.expand_path(File.join(APP_DIR, '..', 'config.ru'))
 
 options = { port: 3000 }
 

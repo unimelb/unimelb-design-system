@@ -299,7 +299,7 @@ module WebTemplates
     def return_page_not_found
       status 404
       @message = 'Page not found.'
-      slim :error
+      slim "example_layouts/404".to_sym
     end
 
   end
