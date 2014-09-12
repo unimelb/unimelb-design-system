@@ -190,6 +190,9 @@ module WebTemplates
       file  = index unless File.exist?(file)
 
       if File.exist?(file)
+        # Default title from dirname, can be overriden in frontmatter of first .md
+        @settings['title'] = File.basename(file).capitalize
+
         @settings.merge! file_settings(file)
         @content = render_markdown render_markdown file_content(file)
         return slim :page
