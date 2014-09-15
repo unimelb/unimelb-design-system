@@ -3,6 +3,7 @@ require 'rake/sprocketstask'
 require 'compass'
 require 'asset_sync'
 require 'dotenv/tasks'
+require 'autoprefixer-rails'
 
 ROOT_DIR  = File.expand_path File.dirname(__FILE__)
 BUILD_DIR = File.expand_path File.join(ROOT_DIR,  'build')
@@ -57,12 +58,13 @@ namespace :injection do
     t.environment = Sprockets::Environment.new do |e|
       e.js_compressor  = :uglify
       e.css_compressor = :scss
-      e.append_path File.join(Gem.loaded_specs['compass'].full_gem_path, 'frameworks', 'compass', 'stylesheets') # <-- TODO: this is not right
+      e.append_path File.join(Gem.loaded_specs['compass-core'].full_gem_path, 'stylesheets')
       e.append_path INJECTION_ASSETS
       e.context_class.class_eval do
         include InjectionHelper
       end
     end
+    AutoprefixerRails.install(t.environment)
     t.output      = INJECTION_BUILD_DIR
     t.assets      = %w{*.svg *.png *.jpg *.jpeg injection.js injection.css}
     t.logger      = Logger.new($stdout)
@@ -123,12 +125,13 @@ namespace :templates do
     t.environment = Sprockets::Environment.new do |e|
       e.js_compressor  = :uglify
       e.css_compressor = :scss
-      e.append_path File.join(Gem.loaded_specs['compass'].full_gem_path, 'frameworks', 'compass', 'stylesheets') # <-- TODO: this is not right
+      e.append_path File.join(Gem.loaded_specs['compass-core'].full_gem_path, 'stylesheets')
       e.append_path TEMPLATES_ASSETS
       e.context_class.class_eval do
         include TemplatesHelper
       end
     end
+    AutoprefixerRails.install(t.environment)
     t.output      = "#{TEMPLATES_BUILD_DIR}/manifest-#{SecureRandom.hex(16)}.json"
     t.assets      = %w{*.svg *.png *.jpg *.jpeg uom.js isotope.pkgd.min.js uom.css}
     t.logger      = Logger.new($stdout)

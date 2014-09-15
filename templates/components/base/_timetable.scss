@@ -2,11 +2,11 @@
   background-color: $white;
 
   @include breakpoint(desktop) {
-    background-image: url("#{asset_path('components/globals/with-aside-r-bg-b.png')}");
+    background-image: url("#{asset_path('components/base/assets/with-aside-r-bg-b.png')}");
     background-position-x: 59%;
 
     &.left {
-      background-image: url("#{asset_path('components/globals/with-aside-bg-b.png')}");
+      background-image: url("#{asset_path('components/base/assets/with-aside-bg-b.png')}");
     }
   }
 

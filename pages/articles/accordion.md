@@ -19,7 +19,6 @@ As accordians require a lot of content to be displayed in a small area, it is be
 * If there are more than ~10 items, accordians can become difficult for people to comprehend, especially in situations where titles are lengthy (eg. FAQs). Instead, consider a [filtered listing](todo-filtered-listings), thematically grouping items into several accordians (to reduce the number in a single list) or putting th content directly onto the page and using a [jump-nav](todo-jump-navigation) to help people find their way around the page.
 * Situations where you want people to consume all the information contained inside the accordian (eg. lengthy forms). As an accordian hides information and requires detailed interaction in order to expose content, it is easy to miss things. In this instance consider placing the content directly onto the page and using a ordered [jump nav](todo-jump-nav) to help the user navigate up and down the page.
 
-
 ## Content recommendations
 
 Example content.

@@ -53,6 +53,8 @@ module WebTemplates
       end
     end
 
+    AutoprefixerRails.install(sprockets)
+
     ## Helpers
 
     helpers Helpers

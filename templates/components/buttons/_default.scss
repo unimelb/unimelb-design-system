@@ -234,7 +234,7 @@
   @extend %iconbutton;
 
   &::after {
-    background-image: url(asset_path('components/buttons/icon-pin-b.png'));
+    background-image: url(asset_path('components/base/assets/icon-pin-b.png'));
   }
 }
 
@@ -242,7 +242,7 @@
   @extend %iconbutton;
 
   &::after {
-    background-image: url(asset_path('components/buttons/icon-share-b.png'));
+    background-image: url(asset_path('components/base/assets/icon-share-b.png'));
   }
 }
 
@@ -285,13 +285,13 @@
 
   [role="main"] .button-map {
     &:after {
-      background-image: url(asset_path('components/buttons/s-icon-pin-b.png'));
+      background-image: url(asset_path('components/base/assets/s-icon-pin-b.png'));
     }
   }
 
   [role="main"] .button-share {
     &:after {
-      background-image: url(asset_path('components/buttons/s-icon-share-b.png'));
+      background-image: url(asset_path('components/base/assets/s-icon-share-b.png'));
     }
   }
 }

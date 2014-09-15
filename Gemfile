@@ -6,6 +6,7 @@ gem "sinatra", "~> 1.4.4", require: "sinatra/base"
 gem 'sinatra-partial', '~> 0.4.0'
 gem "sprockets", "~> 2.12.2"
 gem "sprockets-helpers", "~> 1.1.0"
+gem "autoprefixer-rails"
 
 gem "slim", "~> 2.0.3"
 gem "sass", "~> 3.4.3"
