@@ -191,7 +191,7 @@ module WebTemplates
 
       if File.exist?(file)
         # Default title from dirname, can be overriden in frontmatter of first .md
-        @settings['title'] = File.basename(file).capitalize
+        @settings['title'] = File.basename(view_name).capitalize
 
         @settings.merge! file_settings(file)
         @content = render_markdown render_markdown file_content(file)
