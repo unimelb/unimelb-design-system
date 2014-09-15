@@ -47,7 +47,7 @@
 
   h1 {
     @include adjust-font-size-to(33px);
-    @include padding-trailer(0.5);
+    @include padding-trailer(1);
     font-weight: $light;
   }
 

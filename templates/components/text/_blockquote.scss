@@ -13,7 +13,7 @@
     @include adjust-font-size-to(19px);
     @include adjust-leading-to(1);
     @include padding-leader(1);
-    @include padding-trailer(1);
+    @include padding-trailer(2);
     @include rem(max-width, $w-mid);
     @include rem(padding-left, 15px);
     @include rem(padding-right, 15px);

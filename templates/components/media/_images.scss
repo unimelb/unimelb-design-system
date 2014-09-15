@@ -39,4 +39,98 @@
       padding: 0;
     }
   }
+
+  .fullwidth {
+    @include rem(height, 500px);
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &.short {
+      height: auto;
+    }
+
+    &.alt {
+      background-color: $lightgray;
+    }
+
+    .gmap__canvas {
+      width: 100% !important;
+
+      img {
+        max-width: none;
+      }
+    }
+
+    section {
+      @include rem(padding-top, 200px);
+      @extend %grad-bottom;
+      bottom: 0;
+      margin: 0;
+      max-width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    p {
+      @include adjust-font-size-to(19px);
+      @include padding-leader(2);
+      @include rem(margin, 0 15px);
+      color: $white;
+      font-weight: $light;
+      max-width: 100%;
+      padding-bottom: 0;
+
+      &.black {
+        @include padding-leader(3);
+        @include padding-trailer(2);
+        color: $black;
+        text-align: left;
+      }
+
+      @include breakpoint(desktop) {
+        @include rem(max-width, $w-mid);
+        margin: 0 auto;
+
+        &.black {
+          text-align: center;
+        }
+      }
+    }
+
+    blockquote {
+      color: $white;
+      line-height: 1.4;
+    }
+
+    pre {
+      @include trailer(1);
+      margin: 0;
+      max-width: 100%;
+    }
+
+    @include breakpoint(height-small) {
+      @include rem(height, 650px);
+      p {
+        @include adjust-font-size-to(22px);
+      }
+    }
+
+    @include breakpoint(height-medium) {
+      @include rem(height, 850px);
+      @include rem(padding-bottom, 30px);
+    }
+
+    @include breakpoint(height-big) {
+      @include rem(height, 1000px);
+    }
+  }
 }

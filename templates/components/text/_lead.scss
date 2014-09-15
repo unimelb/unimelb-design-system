@@ -1,7 +1,6 @@
 [role="main"] {
 	.lead {
 		@include adjust-font-size-to(19px);
-		@include adjust-leading-to(1);
 		@include padding-leader(2);
 		@include padding-trailer(2);
 		@include rem(max-width, $w-mid);
@@ -18,6 +17,10 @@
       @include rem(max-width, $w-mid);
       color: $black;
       font-style: italic;
+    }
+
+    @include breakpoint(desktop) {
+      @include adjust-font-size-to(22px);
     }
 
     @include breakpoint(wide) {

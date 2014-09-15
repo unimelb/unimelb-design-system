@@ -137,6 +137,10 @@
       &::after {
         display: none;
       }
+
+      @include breakpoint(desktop) {
+        @include adjust-font-size-to(26px);
+      }
     }
   }
 

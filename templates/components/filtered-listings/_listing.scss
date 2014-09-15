@@ -73,7 +73,7 @@
   }
 
   li {
-    @include adjust-font-size-to(12px);
+    @include adjust-font-size-to(14px);
     @include adjust-leading-to(1);
     @include rem(height, 110px);
     @include rem(margin, 2px 2px 4px 2px);
@@ -124,7 +124,6 @@
     &.category-four a {
       background-color: $lightblue;
     }
-
   }
 
   a {
@@ -145,9 +144,9 @@
       @include rem(max-width, 180px);
     }
   }
-
   strong {
-    @include adjust-font-size-to(20px);
+    @include adjust-font-size-to(16px);
     display: block;
+    line-height: 1.2;
   }
 }

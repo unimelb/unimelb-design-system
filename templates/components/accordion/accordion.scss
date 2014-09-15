@@ -27,9 +27,9 @@
 }
 
 .accordion__hidden {
-  @include transition-duration(250ms);
+  @include transition-duration(10ms);
   @include transition-property(max-height);
-  @include transition-timing-function(ease-out);
+  @include transition-timing-function(ease-in-out);
   display: block;
   max-height: 0;
   overflow: hidden;
@@ -46,7 +46,7 @@
 .accordion__visible .accordion__hidden {
   @include transition-duration(500ms);
   @include transition-property(max-height);
-  @include transition-timing-function(ease-in);
+  @include transition-timing-function(ease-in-out);
   max-height: 1000px;
 }
 
@@ -63,5 +63,77 @@
   .accordion__visible .accordion__hidden {
     @include transition-duration(0);
     @include transition-property(none);
+  }
+}
+
+[role="main"] {
+  ul.accordion {
+
+    li {
+      @include padding-leader(0.5);
+      @include padding-trailer(0.5);
+      @include rem(padding-left, 15px);
+      @include rem(padding-right, 15px);
+      border-bottom: 1px solid darken($lightgray, 5%);
+      list-style-type: none;
+      margin: 0;
+      max-width: 2000px;
+      width: 100%;
+
+      &:before {
+        @include adjust-font-size-to(18px);
+        @include rem(font-size, 18px);
+        @include rem(height, 30px);
+        @include rem(line-height, 30px);
+        //@include rem(width, 30px);
+        @include transition(transform 0.2s ease-in-out);
+        content: "+";
+        display: inline-block;
+        text-align: center;
+      }
+      &:last-child {
+        @include padding-trailer(0.5);
+      }
+
+      &.accordion__visible {
+        @include padding-trailer(0);
+        @include rem(margin-top, -1px);
+        border-top: 1px solid;
+        border-color: $cyan;
+        //background-color: $paleblue;
+
+        &:before {
+          @include transform(rotate(45deg));
+          color: $cyan;
+        }
+
+        .accordion__title {
+          @include padding-trailer(1);
+          color: $cyan;
+        }
+
+        .accordion__hidden {
+          @include padding-leader(1);
+        }
+      }
+
+      .accordion__title {
+        @include rem(padding-left, 5px);
+        //@include adjust-font-size-to(19px);
+      }
+
+      p {
+        width: 100%;
+      }
+
+      @include breakpoint(desktop) {
+        &:before {
+          @include rem(font-size, 24px);
+        }
+        .accordion__title {
+          @include adjust-font-size-to(22px);
+        }
+      }
+    }
   }
 }
