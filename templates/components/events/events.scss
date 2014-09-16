@@ -1,0 +1,149 @@
+
+[role="main"] ul.event-listing {
+  padding: 0 0 50px 0;
+
+  > li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 0 20px 0;
+    width: 100%;
+
+    > ul {
+      margin: 0 auto;
+      padding: 0;
+      margin: 0 0 2em 5px;
+
+      > li {
+        padding: 0;
+        border-left: 5px solid $lighterblue;
+        list-style-type: none;
+
+        > a {
+          color: black;
+          display: block;
+          padding: 15px 20px 20px;
+          text-decoration: none;
+
+          &:hover {
+            background-color: #f0f0f0;
+          }
+        }
+
+        h3 {
+          font-size: 22px;
+          font-weight: 400;
+          padding: 0 0 10px 0;
+          width: 100%;
+        }
+
+        p {
+          font-size: 1rem;
+          padding: 0;
+          width: 100%;
+        }
+        small {
+          color: $gray;
+          font-size: 0.75rem;
+
+          span {
+            margin-right: .3rem;
+          }
+
+          span:after {
+            content: ',';
+          }
+
+          span:last-child:after {
+            content: '.'
+          }
+        }
+      }
+    }
+
+  }
+
+  h2 {
+    color: $lighterblue;
+    font-weight: 400;
+    line-height: 1;
+    padding: 0 0 .5em 0;
+    text-transform: none;
+
+    span {
+      margin: 0 5px 0 0;
+      text-align: right;
+      font-size: 22px;
+    }
+  }
+
+  .presenters {
+    padding-left: 20px;
+    ul {
+      padding-left: 0;
+      li {
+        font-size: 0.9rem;
+        padding-bottom: 0;
+        margin-left: 0;
+        list-style: none;
+        width: 50%;
+      }
+    }
+  }
+
+  @include breakpoint(desktop) {
+    li {
+      position: relative;
+    }
+  }
+
+  @include breakpoint(wide) {
+
+    .presenters {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin-right: -30rem;
+      width: 30rem;
+
+      ul li { width: 50%; }
+    }
+
+    h2 {
+      font-weight: 700;
+      line-height: 1;
+      margin-left: -110px;
+      padding: 0;
+      position: absolute;
+      text-align: right;
+      text-transform: uppercase;
+      width: 100px;
+
+      span {
+        color: $lighterblue;
+        display: block;
+        margin: 0 0 0 -80px;
+        font-weight: 400;
+
+        &.day {
+          text-transform: none;
+          font-weight: 300;
+        }
+
+        &.date {
+          font-size: 5rem;
+          margin-right: -5px;
+        }
+
+        &.month {
+          font-size: 2.5rem;
+          padding-bottom: 5px;
+        }
+
+        &.year {
+          font-size: 1.2rem;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
