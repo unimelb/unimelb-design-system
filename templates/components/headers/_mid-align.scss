@@ -1,0 +1,27 @@
+[role="main"] {
+  header {
+    .mid-align {
+      @include align-self(center);
+      //display: table-cell;
+      padding-bottom: 0;
+      position: relative;
+      text-align: center;
+      vertical-align: middle;
+      width: 100%;
+
+      h1 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.ie9 {
+  [role="main"] header .mid-align,
+  & > header:first-child .mid-align {
+    display: table-cell;
+  }
+}

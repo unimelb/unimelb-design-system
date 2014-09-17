@@ -1,0 +1,368 @@
+[data-tabbed] {
+  nav {
+    display: none;
+
+    a {
+      cursor: pointer;
+      font-weight: 400;
+
+      &[data-current] {
+        font-weight: bold;
+      }
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .tab {
+    margin: 0;
+    padding: 0;
+
+    &[data-current] {
+      display: block;
+    }
+  }
+}
+
+[data-tab] {
+  cursor: pointer;
+}
+
+[role="main"] {
+  .tabbed-nav {
+    .full-width {
+      background-color: $darkblue;
+      border-bottom: 1px solid transparent;
+      position: relative;
+
+      // IE fix
+      @include breakpoint(0) {
+        border-bottom: 0 none;
+      }
+    }
+
+    nav {
+      @extend %wrapper;
+      padding: 0;
+      text-align: center;
+
+      a {
+        //@include adjust-font-size-to(18px);
+        // @include rem(font-size, 16px);
+        @include rem(padding, 20px 10px);
+        color: $white;
+        display: inline-block;
+        font-weight: $light;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &[data-current] {
+          font-weight: $light;
+          position: relative;
+        }
+
+        &[data-current]::after {
+          border: solid transparent;
+          border-top-color: #23445a;
+          border-top-color: rgba($navy, .9);
+          border-width: 10px;
+          content: ' ';
+          height: 0;
+          left: 50%;
+          margin-bottom: -10px;
+          margin-left: -10px;
+          pointer-events: none;
+          position: absolute;
+          top: 100%;
+          width: 0;
+          z-index: 1;
+        }
+
+        @include breakpoint(desktop) {
+          @include adjust-font-size-to(18px);
+          @include rem(padding, 20px 45px);
+        }
+      }
+
+      @include breakpoint(desktop) {
+        @include rem(padding, 0 15px);
+        margin: 0 auto;
+      }
+    }
+
+    .desktop-nav {
+      display: none;
+
+      @include breakpoint(desktop) {
+        &.active {
+          display: block;
+        }
+      }
+    }
+
+    .mobile-nav {
+      display: none;
+      margin: 0 3%;
+      position: relative;
+      width: 94%;
+
+      select {
+        @include rem(margin, 5px 0);
+        background-color: $brand;
+        border-color: $brand;
+      }
+
+      &.active {
+        display: block;
+      }
+
+      &::after {
+        border: solid transparent;
+        border-top-color: $brand;
+        border-width: 10px;
+        content: ' ';
+        height: 0;
+        left: 50%;
+        margin-bottom: -10px;
+        margin-left: -10px;
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        width: 0;
+        z-index: 1;
+      }
+
+
+      @include breakpoint(desktop) {
+        display: none;
+        &.active {
+          display: none;
+        }
+      }
+    }
+
+    .tab {
+      @include rem(margin-top, -70px);
+      @include rem(padding-top, 70px);
+      margin-left: auto;
+      max-width: 100%;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+
+      section.lead {
+        /*@include rem(font-size, 22px);
+        @include rem(padding-bottom, 45px);
+        @include rem(padding-top, 65px);*/
+        background: transparent;
+        color: $black;
+        filter: none;
+        font-weight: $light;
+        margin: 0 auto;
+        max-width: $w-mid;
+        position: static;
+
+        & + section {
+          padding-top: 0;
+        }
+
+        p {
+          color: $black;
+        }
+      }
+    }
+
+    &.black {
+      .full-width {
+        background-color: $black;
+      }
+
+      .tab {
+        @include rem(margin-top, -76px);
+        @include rem(padding-top, 76px);
+      }
+
+      nav a {
+        color: $white;
+
+        &[data-current] {
+          color: $white;
+          font-weight: $regular;
+        }
+      }
+
+      nav a[data-current]::after {
+        border-top-color: $black;
+      }
+
+      .mobile-nav,
+      .mobile-nav select {
+        background-color: $black;
+        border: 1px solid $black;
+      }
+    }
+
+    &.navy {
+      .full-width {
+        background-color: $darkblue;
+      }
+
+      .tab {
+        @include rem(margin-top, -76px);
+        @include rem(padding-top, 76px);
+      }
+
+      nav a {
+        color: $gray;
+
+        &[data-current] {
+          color: $white;
+          font-weight: $regular;
+        }
+      }
+
+      nav a[data-current]:after {
+        border-top-color: $darkblue;
+      }
+
+      nav a[data-current]::after {
+        border-top-color: $darkblue;
+      }
+
+      .mobile-nav,
+      .mobile-nav select {
+        background-color: $darkblue;
+        border: 1px solid $darkblue;
+      }
+    }
+
+    &.thin {
+      nav a {
+        @include adjust-font-size-to(13px);
+        //@include rem(font-size, 15px);
+        @include rem(padding, 15px);
+      }
+
+      .tab {
+        @include rem(margin-top, -55px);
+        @include rem(padding-top, 55px);
+      }
+    }
+  }
+
+  [data-tabbed].tabbed {
+    @extend %clearfix;
+    @include trailer(2);
+    width: 100%;
+
+    nav {
+      border-bottom: 1px solid $lightergray;
+      text-align: center;
+
+      @include breakpoint(tablet) {
+        text-align: left;        
+      }
+
+      a {
+        @include padding-trailer(0.5);
+        //@include rem(border-radius, 5px 5px 0 0);
+        @include rem(padding-left, 25px);
+        @include rem(padding-right, 25px);
+        background-color: inherit;
+        color: $midgray;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: $light;
+        margin-bottom: -1px;
+        text-decoration: none;
+
+        &:hover {
+          color: $cyan;
+        }
+
+        &[data-current] {
+          border-bottom: 2px solid $cyan;
+          //background-color: $paleblue;
+          color: $cyan;
+        }
+      }
+    }
+
+    .tab {
+      @include padding-leader(1);
+      @include padding-trailer(0);
+      @include rem(padding-left, 25px);
+      @include rem(padding-right, 25px);
+      border-bottom: 1px solid $lightergray;
+      //background-color: $paleblue;
+      margin: 0;
+
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.tabbed-course {
+  @extend .tabbed-nav;
+  @extend .thin;
+
+  .tab {
+    @extend %clearfix;
+    background-color: $white;
+    max-width: 1200px;
+  }
+
+  .half {
+    background-color: $lightgray;
+  }
+
+  aside h2.subtitle {
+    @include rem(padding-bottom, 5px);
+  }
+}
+
+.ie {
+  [role="main"] .tabbed-course,
+  [role="main"] .tabbed-nav {
+    nav a[data-current]:after {
+      border: solid transparent;
+      border-top-color: $black;
+      border-width: 10px;
+      content: ' ';
+      height: 0;
+      left: 50%;
+      margin-bottom: -10px;
+      margin-left: -10px;
+      pointer-events: none;
+      position: absolute;
+      top: 100%;
+      width: 0;
+      z-index: 1;
+    }
+
+    .mobile-nav,
+    .mobile-nav.active {
+      display: none;
+    }
+
+    .desktop-nav {
+      display: block;
+    }
+  }
+
+  [role="main"] .tabbed-nav .fullwidth {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e50c304a, endColorstr=#e50c304a);
+
+    nav a[data-current]:after {
+      border-top-color: #23445a;
+    }
+
+    &.short {
+      filter: none;
+    }
+  }
+}

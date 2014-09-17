@@ -1,0 +1,22 @@
+[role="main"] {
+  header {
+    .video-loop {
+      background-color: $black;
+      display: none;
+
+      @include breakpoint(wide) {
+        display: block;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+
+        video {
+          background-color: $black;
+          min-height: 100%;
+          min-width: 100%;
+        }
+      }
+    }
+  }
+}

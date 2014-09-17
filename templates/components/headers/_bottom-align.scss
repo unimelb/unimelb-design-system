@@ -1,0 +1,89 @@
+[role="main"] {
+  header,
+  & > header:first-child {
+
+  	.bottom-align {
+      @extend %grad-bottom;
+      @include align-self(flex-end);
+
+      width: 100%;
+      /*@include rem(padding-top, 70px);
+      @include rem(padding-bottom, 20px);
+      bottom: 0;
+      position: absolute;
+      width: 100%;*/
+
+      p {
+        @include padding-trailer(1);
+      }
+    }
+
+    .bottom-align-inverted {
+      @extend %grad-top;
+      color: $black;
+
+      /*@include breakpoint(height-small) {
+        @include rem(padding-top, 70px);
+        @include rem(padding-bottom, 20px);
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+      }*/
+    }
+
+    .bottom-align-flat {
+      @include align-self(flex-end);
+      @include rem(padding-bottom, 30px);
+      @include rem(padding-top, 30px);
+      background-color: rgba($darkblue, .8);
+      width: 100%;
+      // position: relative;
+      // width: 100%;
+
+      &.white {
+        background-color: rgba($white, .8);
+        color: $black;
+      }
+
+      /*@include breakpoint(desktop) {
+        bottom: 0;
+        position: absolute;
+
+        p {
+          @include rem(font-size, 24px);
+          @include rem(max-width, $w-mid);
+          margin: 0 auto;
+          padding-bottom: 0;
+          text-align: center;
+
+          a {
+            color: $white;
+          }
+        }
+      }*/
+    }
+	}
+}
+
+.ie {
+  [role="main"] header {
+    .bottom-align,
+    .bottom-align-inverted,
+    .bottom-align-flat {
+      bottom: 0;
+      position: absolute;
+    }
+
+    .bottom-align-flat {
+      background-image: url("#{asset_path('components/base/assets/000o80.png')}");
+    }
+  }
+}
+
+.ie9 {
+  [role="main"] header {
+    .bottom-align-flat {
+      background-image: none;
+    }
+  }
+}

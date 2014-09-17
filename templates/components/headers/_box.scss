@@ -1,0 +1,30 @@
+[role="main"] {
+  header {
+    .box {
+      @include rem(max-width, $w-sml);
+      @include rem(padding, 30px);
+      background: rgba($white, .8);
+      color: $black;
+      margin: 0 auto;
+
+      h1 {
+        @extend .title;
+        @include padding-leader(1);
+        @include trailer(1);
+      }
+
+      p {
+        @include adjust-font-size-to(16px);
+        @include padding-leader(0);
+        @include padding-trailer(1);
+        font-weight: $light;
+      }
+
+      @include breakpoint(tablet) {
+        @include rem(margin, 30px auto);
+        @include rem(padding-left, 60px);
+        @include rem(padding-right, 60px);
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 %raisedbutton {
   @include rem(border-radius, 5px);
-  @include rem(font-size, 15px);
-  @include rem(padding, 17px 40px);
+  @include rem(font-size, 13px);
+  @include rem(padding, 7px 20px);
   background-color: $highlight;
   border: 0;
   border-bottom: 5px solid darken($highlight, 10%);
@@ -47,6 +47,11 @@
       color: $darkblue;
     }
   }
+
+  @include breakpoint(height-small) {
+    @include rem(font-size, 15px);
+    @include rem(padding, 17px 40px);
+  }
 }
 
 %flatbutton {
@@ -91,10 +96,10 @@
 %outlinebutton {
   @include rem(border-radius, 5px);
   @include rem(border-width, 2px);
-  @include rem(font-size, 15px);
+  @include rem(font-size, 13px);
   @include rem(letter-spacing, 1px);
   @include rem(margin, 20px 0);
-  @include rem(padding, 20px 60px 20px 20px);
+  @include rem(padding, 10px);
   border-color: $black;
   border-style: solid;
   color: $black;
@@ -108,49 +113,71 @@
   text-transform: uppercase;
 
   &:hover {
-    background-color: rgba($white, .5);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff,endColorstr=#7fffffff);
+    // background-color: rgba($white, .5);
+    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff,endColorstr=#7fffffff);
 
-    color: $lighterblue;
+    background-color: $cyan;
+
+    color: $white;
     border-color: transparent;
+  }
+
+  @include breakpoint(height-small) {
+    @include rem(font-size, 15px);
+    @include rem(margin, 20px 0);
+    @include rem(padding, 20px);
   }
 }
 
 %outlinearrow {
   &::after {
-    @include rem(font-size, 30px);
-    @include rem(padding-left, 15px);
+    @include rem(font-size, 15px);
+    @include rem(padding-left, 10px);
     content: '\2192';
-    position: absolute;
-    top: 4px;
+    line-height: 0;
+
+    @include breakpoint(height-small) {
+      @include rem(font-size, 26px);
+      @include rem(padding-left, 15px);
+    }
   }
 
   &:after {
+    @include rem(font-size, 15px);
+    @include rem(padding-left, 10px);
     content: '\2192';
-    font-size: 30px;
-    padding-left: 15px;
-    position: absolute;
-    top: 4px;
+    line-height: 0;
+
+    @include breakpoint(height-small) {
+      @include rem(font-size, 26px);
+      @include rem(padding-left, 15px);
+    }
   }
 }
 
 %outlinearrow-reverse {
   &::before {
-    @include rem(font-size, 30px);
-    @include rem(padding-left, 15px);
+    @include rem(font-size, 15px);
+    @include rem(padding-right, 10px);
     content: '\2190';
-    left: 0;
-    position: absolute;
-    top: 4px;
+    line-height: 0;
+
+    @include breakpoint(height-small) {
+      @include rem(font-size, 26px);
+      @include rem(padding-right, 15px);
+    }
   }
 
   &:before {
+    @include rem(font-size, 15px);
+    @include rem(padding-right, 10px);
     content: '\2190';
-    font-size: 30px;
-    left: 0;
-    padding-left: 15px;
-    position: absolute;
-    top: 4px;
+    line-height: 0;
+
+    @include breakpoint(height-small) {
+      @include rem(font-size, 26px);
+      @include rem(padding-right, 15px);
+    }
   }
 }
 
@@ -216,7 +243,6 @@
 [role="main"] .button-hero-reverse {
   @extend %outlinebutton;
   @extend %outlinearrow-reverse;
-  @include rem(padding, 20px 20px 20px 60px);
 }
 
 [role="main"] .button-hero-inverse {
@@ -226,7 +252,7 @@
   color: $white;
 
   &:hover {
-    color: $brand;
+    //color: $brand;
   }
 }
 
@@ -267,7 +293,7 @@
 }
 
 .ie {
-  %button-arrow {
+  /*%button-arrow {
     content: '\2192';
     font-size: 30px;
     padding-left: 5px;
@@ -281,7 +307,7 @@
 
   .button-hero:after {
     @extend %button-arrow;
-  }
+  }*/
 
   [role="main"] .button-map {
     &:after {

@@ -1,0 +1,186 @@
+%bannerbox {
+  @include flexbox((
+    display: box,
+    box-orient: vertical
+  ), $version: 1);
+  @include flexbox((
+    display: flexbox,
+    flex-direction: row
+  ), $version: 2);
+  @include flexbox((
+    display: flex,
+    flex-direction: row
+  ));
+}
+[role="main"] {
+  & > article:first-child {
+    padding-top: 0;
+  }
+
+  header,
+  & > header:first-child {
+    //@include rem(min-height, 144px);
+    @include padding-leader(1);
+    @include padding-trailer(1);
+    background-color: $navy;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+    //display: table;
+    //position: relative;
+    width: 100%;
+
+    // &.tight {
+    //   margin-bottom: 0;
+    // }
+
+    &.image {
+      @extend %bannerbox;
+      @include rem(min-height, 300px);
+    }
+
+    &.banner {
+      @include rem(min-height, 300px);
+
+      @include breakpoint(height-smallest) {
+        @include rem(height, 500px);
+      }
+
+      @include breakpoint(height-small) {
+        @include rem(height, 650px);
+      }
+
+      @include breakpoint(height-medium) {
+        @include rem(height, 720px);
+      }
+
+      @include breakpoint(height-big) {
+        @include rem(height, 800px);
+      }
+
+      @include breakpoint(desktop) {
+        h1 {
+          @include adjust-font-size-to(50px);
+        }
+      }
+      @include breakpoint(wide) {
+        h1 {
+          @include adjust-font-size-to(60px);
+        }
+      }
+    }
+
+    // &.short {
+    //   height: auto;
+    //   padding-bottom: 0;
+
+    //   p {
+    //     @include rem(font-size, 20px);
+    //     @include rem(padding-bottom, 15px);
+    //     @include rem(padding-top, 15px);
+    //     line-height: 1.3;
+    //     padding-left: 3%;
+    //     padding-right: 3%;
+    //     width: 100%;
+    //   }
+
+    //   @include breakpoint(desktop) {
+    //     @include rem(padding-bottom, 160px);
+    //     p {
+    //       @include rem(font-size, 24px);
+    //       @include rem(max-width, $w-mid);
+    //       @include rem(padding-bottom, 120px);
+    //       @include rem(padding-top, 60px);
+    //       line-height: 1.4;
+    //       margin: 0 auto;
+    //       padding-left: 0;
+    //       padding-right: 0;
+    //       text-align: center;
+    //     }
+    //   }
+    // }
+    
+    &.with-box {
+      padding: 0;
+
+      @include breakpoint(tablet) {
+        @include rem(padding-bottom, 30px);
+        @include rem(padding-top, 30px);
+      }
+    }
+
+    // section {
+    //   @include rem(max-width, $w-mid);
+    //   @include rem(min-height, 82px);
+    //   margin: 0 auto;
+    //   text-align: left;
+
+    //   p,
+    //   h1 {
+    //     max-width: 100%;
+    //     text-align: left;
+    //   }
+    // }
+
+    h1 {
+      @include adjust-font-size-to(33px);
+      @include padding-trailer(0);
+      @include rem(max-width, $w-sml);
+      font-weight: $thin;
+      margin: 0 auto;
+      text-align: left;
+
+      @include breakpoint(desktop) {
+        @include adjust-font-size-to(45px);
+      }
+
+      @include breakpoint(wide) {
+        @include adjust-font-size-to(55px);
+      }
+    }
+
+    p {
+      @include padding-trailer(0);
+      @include rem(max-width, $w-sml);
+      font-weight: $thin;
+      margin: 0 auto;
+
+      @include breakpoint(desktop) {
+        @include adjust-font-size-to(20px);
+        @include padding-leader(1);
+      }
+
+      @include breakpoint(wide) {
+        @include adjust-font-size-to(24px);
+      }
+    }
+
+    @include breakpoint(desktop) {
+      @include padding-leader(2);
+      @include padding-trailer(2);
+      overflow: hidden;
+    }
+  }
+}
+
+
+.floating + [role="main"] {
+  header,
+  & > header:first-child {
+    @include rem(padding-top, 100px);
+
+    @include breakpoint(desktop) {
+      @include rem(padding-top, 180px);      
+    }
+  }
+}
+
+.ie9 {
+  [role="main"] header,
+  & > header:first-child {
+    display: table;
+    position: relative;
+    width: 100%;
+  }
+}

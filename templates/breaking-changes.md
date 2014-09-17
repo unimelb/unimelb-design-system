@@ -7,3 +7,8 @@
 - rename .selector-listing-3 to .pathfinder-3
 - use .pathfinder-2 for two boxes
 - use .pathfinder-4 for four boxes
+
+# Banners
+default short
+mid
+banner
