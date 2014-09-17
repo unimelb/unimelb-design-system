@@ -37,10 +37,13 @@
 
     &.image {
       @extend %bannerbox;
+      @include rem(height, 300px);
       @include rem(min-height, 300px);
     }
 
     &.banner {
+      @extend %bannerbox;
+      @include rem(height, 300px);
       @include rem(min-height, 300px);
 
       @include breakpoint(height-smallest) {
