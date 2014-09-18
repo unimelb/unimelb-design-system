@@ -1,0 +1,62 @@
+[role="main"] {
+
+  .staff-listing-detailed {
+    @include rem(max-width, $w-lge);
+    padding: 0;
+    text-align: center;
+
+    li {
+      @include padding-leader(2);
+      @include padding-trailer(2);
+      @include rem(margin, 0 50px 0 50px);
+      display: inline-block;
+      list-stle-type: none;
+      vertical-align: top;
+      width: auto;
+    }
+
+    a {
+      color: $black;
+      text-decoration: none;
+    }
+
+    strong {
+      font-weight: $regular;
+      text-decoration: underline;
+    }
+
+    p {
+      @include adjust-font-size-to(15px);
+      @include padding-trailer(0);
+    }
+
+    .frame {
+      @include trailer(1);
+      background-color: $lightestblue;
+      border-radius: 50%;
+      line-height: 0;
+      max-width: 200px;
+
+      img {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .diamond-mask {
+    @include trailer(1);
+    @include transform(rotate(45deg) scale(.7));
+    // border: 1px solid $black;
+    display: block;
+    overflow: hidden;
+
+    img {
+      @include transform(rotate(-45deg) scale(1.41));
+      display: block;
+      margin: 0;
+      max-width: none;
+      padding: 0;
+    }
+  }
+
+}
