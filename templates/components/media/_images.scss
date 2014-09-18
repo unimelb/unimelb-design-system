@@ -98,6 +98,8 @@
 
       @include breakpoint(desktop) {
         @include rem(max-width, $w-mid);
+        @include rem(padding-left, 20px);
+        @include rem(padding-right, 20px);
         margin: 0 auto;
 
         &.black {

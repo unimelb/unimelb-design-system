@@ -9,14 +9,5 @@ These headers are available in the design system:
 
 Every header can contain a wrapper div that determines how the content within the header is displayed.
 
-## Images
+## A note on images
 We don't provide a default image because images should always be relevant to the content.
-
-# todo: all the inner wrappers except the mid-align
-- bottom align
-- course thingos
-- with filters
-
-and:
-- article headings
-- with / without video

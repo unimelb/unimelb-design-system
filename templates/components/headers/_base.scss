@@ -11,6 +11,7 @@
     display: flex,
     flex-direction: row
   ));
+  @include flex-wrap(wrap);
 }
 [role="main"] {
   & > article:first-child {
@@ -37,8 +38,23 @@
 
     &.image {
       @extend %bannerbox;
-      @include rem(height, 300px);
+      //@include rem(height, 300px);
       @include rem(min-height, 300px);
+
+      & > h1,
+      & > p,
+      & > div {
+        @include flex-basis(100%);
+      }
+
+      & > h1,
+      & > p {
+        @include padding-trailer(2);
+        @include rem(max-width, $w-mid);
+        @include rem(padding-left, 20px);
+        @include rem(padding-right, 20px);
+        text-align: center;
+      }
     }
 
     &.banner {
@@ -185,5 +201,9 @@
     display: table;
     position: relative;
     width: 100%;
+
+    &.image > p {
+      padding-bottom: 200px;
+    }
   }
 }

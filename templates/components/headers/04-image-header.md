@@ -7,3 +7,4 @@ There are several different inner wrappers to position the content within this h
 
 - `.mid-align` — recommended as standard wrapper within this header. Positions content vertically centered
 - `.bottom-align`
+- `.bottom-align-flat`

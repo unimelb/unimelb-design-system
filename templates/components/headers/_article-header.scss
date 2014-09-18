@@ -1,0 +1,22 @@
+[role="main"] article header,
+[role="main"] article header:first-child {
+  @extend .banner;
+  position: relative;
+
+  h1,
+  p {
+    @include rem(max-width, $w-mid);
+    @include rem(padding-left, 20px);
+    @include rem(padding-right, 20px);
+  }
+
+  h1 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+
+  .bottom-align {
+    @include padding-trailer(2);
+    position: relative;
+    //z-index: 2;
+  }
+}

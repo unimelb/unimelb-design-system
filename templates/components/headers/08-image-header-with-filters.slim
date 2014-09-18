@@ -1,0 +1,27 @@
+header.image style="background-image: url(#{asset_path('components/headers/assets/alan_gilbert.jpg')});"
+  p Non equidem invideo, miror magis posuere velit aliquet. Morbi fringilla convallis sapien, id pulvinar odio volutpat. Non equidem invideo, miror magis posuere velit aliquet. Praeterea iter est quasdam res quas ex communi.
+  .bottom-align-flat
+    .filtered-listing-wrapper
+      form.filtered-listing-select
+        fieldset.left
+          strong Filter by type
+          div.all
+            input.checkbox type="checkbox" name="f[degree_type]" checked="checked" data-tag="all" id="c00"
+            label for="c00"
+            ' All
+          div.color-one
+            input#c1.checkbox type="checkbox" name="f[course_type]" data-tag="category-one"
+            label for="c1"
+            ' Nominavi appetere
+          div.color-two
+            input#c2.checkbox type="checkbox" name="f[course_type]" data-tag="category-two"
+            label for="c2"
+            ' Iudico corrumpit
+        fieldset.right
+          strong Filter by section
+          div
+            select.clear name="f[select2]" title="Please make a selection from the 2nd dropdown"
+              option value="-1" All sections
+              option value="section1" Section heading 1
+              option value="section2" Different Section
+              option value="section3" Third Example Section

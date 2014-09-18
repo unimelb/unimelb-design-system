@@ -173,6 +173,53 @@ table.course-progression {
   }
 }
 
+[role="main"] form.course-select {
+  @extend .filtered-listing-select;
+  box-shadow: none;
+
+  .left,
+  .right {
+    @include rem(padding-top, 15px);
+  }
+
+  @include breakpoint(desktop) {
+    display: table;
+    width: 100%;
+
+    .left,
+    .right {
+      display: table-cell;
+      float: none;
+      padding: 0;
+      vertical-align: middle;
+      width: 75%;
+    }
+
+    .right {
+      width: 25%;
+
+      span {
+        @include rem(font-size, 14px);
+        color: rgba($white, .8);
+      }
+
+      select {
+        width: 100%;
+      }
+    }
+
+    h2 {
+      max-width: 2000px;
+      padding: 0;
+      text-align: left;
+    }
+
+    p {
+      color: rgba($white, .8);
+    }
+  }
+}
+
 .ie {
   [role="main"] form.course-select {
     @extend %clearfix;
