@@ -1,6 +1,6 @@
-## When to use an accordon
-
 Accordians are an efficient way of grouping and communicating multiple pieces of contextually related information. They display a large amount of content in a small amount of space.
+
+## When to use an accordon
 
 Accordians are recommended for use where the following critiera are met:
 
