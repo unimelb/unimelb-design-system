@@ -12,7 +12,6 @@ window.UOMloadComponents = function() {
   window.UOMTabs()
   window.UOMInpageScrolling()
   window.UOMStickyNav()
-  window.UOMFeed() // unused?
   window.UOMYtEmbed() // unused?
 };
 

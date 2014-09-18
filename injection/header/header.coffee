@@ -15,32 +15,6 @@ window.UOMinjectHeader = ->
     page = document.createElement('div')
     page.addClass('page-inner')
 
-  main = document.querySelector('[role="main"]')
-  unless main
-    main = document.createElement('div')
-    main.setAttribute('role', 'main')
-  else
-    main.parentNode.removeChild(main)
-
-  # Move existing child nodes of body into main (volatile)
-  # for node in document.body.childNodes
-  #   if node and node.nodeType==1 and !node.hasClass('.page-inner')
-  #     main.appendChild(node)
-
-  footer = document.querySelector('.page-footer')
-  page.insertBefore(main, footer)
-
-  sitemap = document.querySelector('[role="sitemap"]')
-  for n in parent.childNodes
-    if n and n != page and n != sitemap
-      parent.removeChild(n)
-      main.appendChild(n)
-
-  if parent.childNodes > 0
-    parent.insertBefore(page, parent.firstChild)
-  else
-    parent.appendChild(page)
-
   # Create header if it doesn't already exist
   header = document.querySelector('.page-header')
   unless header
@@ -68,16 +42,46 @@ window.UOMinjectHeader = ->
       </header>
       """
 
-    page.insertBefore(header, page.firstChild)
-
     local = document.querySelector('.page-local-history')
     if local
       local.parentNode.removeChild(local)
-      parent = document.querySelector('.page-header-navigation')
+      navparent = document.querySelector('.page-header-navigation')
       sep = document.createElement "span"
       sep.innerHTML = "/"
-      parent.appendChild(sep)
-      parent.appendChild(local)
+      navparent.appendChild(sep)
+      navparent.appendChild(local)
+
+#    parent.insertBefore(header, page)
+  else
+    page.removeChild(header)
+    parent.insertBefore(header, page)
+    # parent.appendChild header
+
+  main = document.querySelector('[role="main"]')
+  unless main
+    main = document.createElement('div')
+    main.setAttribute('role', 'main')
+  else
+    main.parentNode.removeChild(main)
+
+  # Move existing child nodes of body into main (volatile)
+  # for node in document.body.childNodes
+  #   if node and node.nodeType==1 and !node.hasClass('.page-inner')
+  #     main.appendChild(node)
+
+  footer = document.querySelector('.page-footer')
+  page.insertBefore(main, footer)
+
+  sitemap = document.querySelector('[role="sitemap"]')
+  for n in parent.childNodes
+    if n and n != page and n != sitemap and n != header
+      parent.removeChild(n)
+      main.appendChild(n)
+
+  # if parent.childNodes > 0
+  #   parent.insertBefore(page, parent.firstChild)
+  # else
+  parent.appendChild(page)
 
   # Set up login modal and attach to page
   login = document.querySelector('.page-login')
@@ -122,3 +126,14 @@ window.UOMinjectHeader = ->
       """
 
     header.appendChild tools
+
+    window.addEventListener "scroll", ->
+      if /(Firefox)/g.test(navigator.userAgent)
+        outer = document.querySelector('html')
+      else
+        outer = document.body
+
+      if outer.scrollTop > 40
+        header.addClass 'fixed'
+      else
+        header.removeClass 'fixed'

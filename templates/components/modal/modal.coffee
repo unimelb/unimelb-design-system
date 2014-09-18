@@ -5,7 +5,7 @@ unless window.UOMModal
     unless blanket
       blanket = document.createElement 'div'
       blanket.setAttribute('class', 'modal__blanket')
-      document.querySelector('[role="main"]').appendChild blanket
+      document.body.appendChild blanket
 
     for trigger in document.querySelectorAll("[data-modal-target]")
       trigger.addEventListener 'click', (e) ->
