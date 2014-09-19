@@ -7,8 +7,13 @@ body {
   @include translateX(0);
   background-color: $navy;
   min-height: 100%;
+  padding-top: 90px;
   position: relative;
   z-index: 2;
+
+  .floating {
+    margin-top: -90px;
+  }
 
   &.active {
     // @include transform(translate(-100%, 0) translate(30px, 0));
@@ -35,6 +40,22 @@ body {
       position: absolute;
     }
 
+    @include breakpoint(tablet) {
+      @include transform(translate(-100%, 0) translate(90px, 0));
+    }
+  }
+}
+
+.page-header {
+  @extend %smooth-translate;
+
+  &.active {
+    @include breakpoint(tablet) {
+      @include translateX(-340px);
+    }
+  }
+
+  &.global-active {
     @include breakpoint(tablet) {
       @include transform(translate(-100%, 0) translate(90px, 0));
     }

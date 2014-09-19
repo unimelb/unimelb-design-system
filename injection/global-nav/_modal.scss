@@ -1,19 +1,11 @@
-@mixin box-shadow($props) {
-  -moz-box-shadow: $props;
-  -ms-box-shadow: $props;
-  -o-box-shadow: $props;
-  -webkit-box-shadow: $props;
-  box-shadow: $props;
-}
-
 @mixin opacity($v) {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$v*100})";
   opacity: $v;
 }
 
 .modal__dialog {
-  @include box-shadow(0 3px 6px 3px rgba(0, 0, 0, .2));
   background-color: #fff;
+  box-shadow: 0 3px 6px 3px rgba(0, 0, 0, .2);
   left: 5%;
   max-width: 900px;
   padding: 20px;
@@ -26,7 +18,7 @@
 
   &.on {
     visibility: visible;
-    z-index: 4;
+    z-index: 14;
   }
 
   @media screen and (min-width: 1100px) {
@@ -65,6 +57,6 @@
   &.on {
     @include opacity(.5);
     display: block;
-    z-index: 3;
+    z-index: 13;
   }
 }

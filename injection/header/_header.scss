@@ -12,11 +12,65 @@
   background-color: $white;
   color: $black;
   font-family: $ff-sans;
-  position: relative;
-  z-index: 3;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 13;
 
   * {
     @extend %normalise;
+  }
+
+  @include breakpoint(desktop) {
+    &.fixed:not(.floating) {
+      position: fixed;
+      width: 100%;
+
+      header {
+        @include single-box-shadow(rgba($black, .3), 0, 3px, 6px, -3px);
+        width: 100%;
+      }
+
+      .page-header-logo {
+        top: -140px;
+        transition: .2s top;
+      }
+
+      a,
+      span {
+        @include rem(height, 40px);
+        @include rem(line-height, 40px);
+      }
+
+      header {
+        @include rem(height, 40px);
+        @include rem(line-height, 40px);
+      }
+
+      .page-header-navigation {
+        @include rem(height, 40px);
+        @include rem(line-height, 40px);
+        @include rem(padding-left, 15px);
+        transition: .3s padding-left .2s;
+        vertical-align: top;
+      }
+
+      a,
+      span {
+        vertical-align: middle;
+      }
+
+      .page-header-tools .page-header-icon {
+        line-height: 1;
+
+        .icon {
+          @include rem(height, 20px);
+          @include rem(margin-top, 3px);
+          @include rem(width, 20px);
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 
   header {
@@ -27,11 +81,13 @@
     @include single-box-shadow(rgba($black, .3), 0, 6px, 6px, -3px);
 
     padding: 0;
+    position: relative;
 
     @include breakpoint(desktop) {
       @include rem(height, 90px);
     }
   }
+
 
   a {
     @extend %headerblock;
@@ -52,6 +108,12 @@
       background-image: url("#{asset_path('header/logo.svg')}");
       margin-left: 0;
       text-indent: -999em;
+
+      // opacity: 1;
+      // transition: 0 opacity .4s;
+
+      top: 0;
+      transition: .2s top .3s;
 
       img {
         border: 0;
@@ -98,8 +160,10 @@
 }
 
 .page-header-navigation {
-  @include rem(margin-left, 25px);
+  @include rem(padding-left, 25px);
   display: inline;
+  transition: .3s padding-left;
+  vertical-align: middle;
 
   a,
   span {
@@ -123,7 +187,7 @@
 
   @include breakpoint(desktop) {
     @include rem(height, 90px);
-    @include rem(margin-left, 205px);
+    @include rem(padding-left, 205px);
     @include rem(margin-right, 115px);
     display: block;
     overflow: hidden;
@@ -170,7 +234,7 @@
 .page-header-tools {
   position: absolute;
   right: 0;
-  top: -2px;
+  top: 0;
 
   .page-header-icon {
     @include rem(font-size, 9px);
@@ -183,8 +247,6 @@
     text-align: center;
     text-transform: uppercase;
 
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
     box-sizing: content-box;
 
     .icon {
@@ -239,7 +301,7 @@
 
       .icon {
         @include rem(height, 34px);
-        @include rem(margin-top, 24px);
+        @include rem(margin-top, 22px);
         @include rem(width, 34px);
       }
     }

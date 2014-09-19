@@ -2,6 +2,7 @@ window.UOMinjectGlobalNav = ->
   class UOMGlobalNavState
     constructor: ->
       @page = document.querySelector('.page-inner')
+      @header = document.querySelector('.page-header')
       @sitemap = document.querySelector('div[role="sitemap"]')
       @trigger = document.querySelector('.sitemap-label')
       @menutrigger = document.querySelector('.page-header-tools a[title="Menu"]')
@@ -21,17 +22,21 @@ window.UOMinjectGlobalNav = ->
           t.blanket.toggleClass 'on'
           t.trigger.removeClass 'active'
           t.page.removeClass 'global-active'
+          t.header.removeClass 'global-active'
           t.localnav.removeClass 'global-active'
           t.sitemap.removeClass 'active'
           t.sitemap.addClass 'reveal'
           t.page.toggleClass 'active'
           t.localnav.toggleClass 'active'
+          t.header.removeClass 'fixed'
+          t.header.toggleClass 'active'
 
         @localnav.querySelector('h2:first-child').addEventListener 'click', (e) ->
           e.preventDefault()
           if t.page.hasClass 'global-active'
             t.page.removeClass 'global-active'
             t.page.addClass 'active'
+            t.header.addClass 'active'
             t.localnav.removeClass 'global-active'
             t.localnav.addClass 'active'
             t.sitemap.removeClass 'active'
@@ -39,16 +44,19 @@ window.UOMinjectGlobalNav = ->
             t.blanket.removeClass 'on'
             t.trigger.addClass 'active'
             t.page.removeClass 'global-active'
+            t.header.removeClass 'global-active'
             t.localnav.removeClass 'global-active'
             t.sitemap.removeClass 'active'
             t.page.toggleClass 'active'
             t.localnav.toggleClass 'active'
+            t.header.toggleClass 'active'
 
         @trigger.addEventListener 'click', (e) ->
           e.preventDefault()
           t.blanket.addClass 'on'
           t.trigger.addClass 'active'
           t.page.addClass 'global-active'
+          t.header.addClass 'global-active'
           t.localnav.removeClass 'active'
           t.localnav.addClass 'global-active'
           t.sitemap.toggleClass 'active'
@@ -57,6 +65,9 @@ window.UOMinjectGlobalNav = ->
           e.preventDefault()
           t.page.removeClass 'global-active'
           t.page.addClass 'active'
+          t.header.removeClass 'global-active'
+          t.header.addClass 'active'
+
           t.trigger.removeClass 'active'
           t.localnav.removeClass 'global-active'
           t.localnav.addClass 'active'
@@ -66,6 +77,7 @@ window.UOMinjectGlobalNav = ->
           e.preventDefault()
           t.trigger.addClass 'active'
           t.page.addClass 'global-active'
+          t.header.addClass 'global-active'
           t.localnav.removeClass 'active'
           t.localnav.addClass 'global-active'
           t.sitemap.toggleClass 'active'
@@ -76,6 +88,7 @@ window.UOMinjectGlobalNav = ->
           t.blanket.toggleClass 'on'
           t.trigger.addClass 'active'
           t.page.toggleClass 'global-active'
+          t.header.toggleClass 'global-active'
           t.sitemap.toggleClass 'active'
 
         @sitemap.querySelector('.close-button').addEventListener 'click', (e) ->
@@ -83,6 +96,7 @@ window.UOMinjectGlobalNav = ->
           t.blanket.removeClass 'on'
           t.trigger.addClass 'active'
           t.page.toggleClass 'global-active'
+          t.header.toggleClass 'global-active'
           t.sitemap.toggleClass 'active'
 
       @blanket.addEventListener 'click', (e) ->
@@ -91,6 +105,8 @@ window.UOMinjectGlobalNav = ->
         t.trigger.addClass 'active'
         t.page.removeClass 'global-active'
         t.page.removeClass 'active'
+        t.header.removeClass 'global-active'
+        t.header.removeClass 'active'
         if t.localnav
           t.localnav.removeClass 'global-active'
           t.localnav.removeClass 'active'
@@ -102,9 +118,11 @@ window.UOMinjectGlobalNav = ->
           t.blanket.toggleClass 'on'
           t.trigger.addClass 'active'
           t.page.addClass 'global-active'
+          t.header.addClass 'global-active'
           if t.localnav
             t.localnav.addClass 'global-active'
           t.sitemap.addClass 'active'
+          t.header.removeClass 'fixed'
 
           unless /Firefox/.test(navigator.userAgent) and parseFloat(/[^\/|\s]?(?:\d*\.)?\d+$/.exec(navigator.userAgent)[0]) > 30.0
             t.sitemap.querySelector('input[type="search"]').focus()
