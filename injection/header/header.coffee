@@ -51,11 +51,42 @@ window.UOMinjectHeader = ->
       navparent.appendChild(sep)
       navparent.appendChild(local)
 
-#    parent.insertBefore(header, page)
+    parent.insertBefore(header, page)
+
   else
     page.removeChild(header)
     parent.insertBefore(header, page)
     # parent.appendChild header
+
+  # Header tools
+  tools = document.querySelector('.page-header-tools')
+  unless tools
+    tools = document.createElement "div"
+    tools.addClass('page-header-tools')
+    if document.countSelector('[role="main"].no-login') == 0
+      tools.innerHTML = """
+            <a class="page-header-icon" href="#sitemap" title="Search"><span class="icon search"></span> Search</a><!--
+            --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><span class="icon login"></span> Portal</a><!--
+            --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="icon menu"></span> Menu</a>
+      """
+    else
+      tools.innerHTML = """
+            <a class="page-header-icon" href="#sitemap" title="Search"><span class="icon search"></span> Search</a><!--
+            --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="icon menu"></span> Menu</a>
+      """
+
+    header.appendChild tools
+
+    window.addEventListener "scroll", ->
+      if /(Firefox)/g.test(navigator.userAgent)
+        outer = document.querySelector('html')
+      else
+        outer = document.body
+
+      if outer.scrollTop > 40
+        header.addClass 'fixed'
+      else
+        header.removeClass 'fixed'
 
   main = document.querySelector('[role="main"]')
   unless main
@@ -106,34 +137,4 @@ window.UOMinjectHeader = ->
                 </a>
               </div>
       """
-      page.appendChild login
-
-  # Header tools
-  tools = document.querySelector('.page-header-tools')
-  unless tools
-    tools = document.createElement "div"
-    tools.addClass('page-header-tools')
-    if document.countSelector('[role="main"].no-login') == 0
-      tools.innerHTML = """
-            <a class="page-header-icon" href="#sitemap" title="Search"><span class="icon search"></span> Search</a><!--
-            --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><span class="icon login"></span> Portal</a><!--
-            --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="icon menu"></span> Menu</a>
-      """
-    else
-      tools.innerHTML = """
-            <a class="page-header-icon" href="#sitemap" title="Search"><span class="icon search"></span> Search</a><!--
-            --><a class="page-header-icon" href="#sitemap" title="Menu"><span class="icon menu"></span> Menu</a>
-      """
-
-    header.appendChild tools
-
-    window.addEventListener "scroll", ->
-      if /(Firefox)/g.test(navigator.userAgent)
-        outer = document.querySelector('html')
-      else
-        outer = document.body
-
-      if outer.scrollTop > 40
-        header.addClass 'fixed'
-      else
-        header.removeClass 'fixed'
+      parent.appendChild login

@@ -22,7 +22,7 @@
   }
 
   @include breakpoint(desktop) {
-    &.fixed {
+    &.fixed:not(.floating) {
       position: fixed;
       width: 100%;
 
@@ -52,7 +52,7 @@
         @include rem(line-height, 40px);
         @include rem(padding-left, 15px);
         transition: .3s padding-left .2s;
-        vertical-align: middle;
+        vertical-align: top;
       }
 
       a,
@@ -65,7 +65,7 @@
 
         .icon {
           @include rem(height, 20px);
-          @include rem(margin-top, 5px);
+          @include rem(margin-top, 3px);
           @include rem(width, 20px);
           margin-bottom: 0;
         }
@@ -234,7 +234,7 @@
 .page-header-tools {
   position: absolute;
   right: 0;
-  top: -2px;
+  top: 0;
 
   .page-header-icon {
     @include rem(font-size, 9px);
@@ -301,7 +301,7 @@
 
       .icon {
         @include rem(height, 34px);
-        @include rem(margin-top, 24px);
+        @include rem(margin-top, 22px);
         @include rem(width, 34px);
       }
     }

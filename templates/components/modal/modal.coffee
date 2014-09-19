@@ -7,6 +7,12 @@ unless window.UOMModal
       blanket.setAttribute('class', 'modal__blanket')
       document.body.appendChild blanket
 
+    # Move modal dialogs to document root
+    parent = document.body
+    for modal in document.querySelectorAll('.modal__dialog')
+      modal.parentNode.removeChild(modal)
+      parent.appendChild modal
+
     for trigger in document.querySelectorAll("[data-modal-target]")
       trigger.addEventListener 'click', (e) ->
         e.preventDefault()
