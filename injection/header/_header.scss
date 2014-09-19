@@ -105,6 +105,9 @@
       @include rem(width, 60px);
       background-color: $darkblue;
       background-image: url("#{asset_path('header/logo.svg')}");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
       margin-left: 0;
       text-indent: -999em;
 
