@@ -143,6 +143,10 @@
         counter-increment: steps;
         list-style-type: none;
 
+        &:first-child {
+          border-top: none;
+        }
+
         &::before {
           @include adjust-font-size-to(50px);
           @include rem(margin-left, -50px);
@@ -153,6 +157,10 @@
           float: left;
           font-weight: $bold;
           position: absolute;
+        }
+
+        & > p:first-child {
+          @include padding-leader(1);
         }
       }
 

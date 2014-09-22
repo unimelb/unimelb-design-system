@@ -49,7 +49,7 @@
 
       .page-header-navigation {
         @include rem(height, 40px);
-        @include rem(line-height, 32px);
+        @include rem(line-height, 30px);
         @include rem(padding-left, 15px);
         transition: .3s padding-left .1s, .2s height;
         vertical-align: top;
