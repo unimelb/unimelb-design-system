@@ -46,9 +46,13 @@
   }
 
   h1 {
-    @include adjust-font-size-to(33px);
+    @include adjust-font-size-to(26px);
     @include padding-trailer(1);
     font-weight: $light;
+
+    @include breakpoint(desktop) {
+      @include adjust-font-size-to(33px);
+    }
   }
 
   h2 {
@@ -125,6 +129,49 @@
     @include rem(padding-left, 30px);
     li {
       list-style-type: decimal;
+    }
+
+    &.steps {
+      @include rem(max-width, $w-mid);
+      counter-reset: steps;
+      padding-left: 0;
+
+      li {
+        @include rem(max-width, $w-mid);
+        @include rem(padding-left, 50px);
+        border-top: 1px solid rgba(#000000, 0.1);
+        counter-increment: steps;
+        list-style-type: none;
+
+        &::before {
+          @include adjust-font-size-to(50px);
+          @include rem(margin-left, -50px);
+          @include rem(padding-top, 20px);
+          color: $black;
+          content: counter(steps);
+          display: inline-block;
+          float: left;
+          font-weight: $bold;
+          position: absolute;
+        }
+      }
+
+      h2 {
+        @extend h1;
+        @include padding-leader(1);
+        text-transform: none;
+      }
+
+      @include breakpoint(desktop) {
+        li {
+          @include rem(padding-left, 100px);
+
+          &::before {
+            @include adjust-font-size-to(80px);
+            @include rem(margin-left, -70px);
+          }
+        }
+      }
     }
   }
 

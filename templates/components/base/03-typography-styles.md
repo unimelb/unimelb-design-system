@@ -82,3 +82,33 @@ Below are some basic typographic styles with their associated renderings
   <li>Another item</li>
   <li class="no-li">This one is not ticked</li>
 </ul>
+```html
+<ol class="steps">
+  <li>
+    <h2>Headline</h2>
+    <p>Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.</p>
+  </li>
+  <li>
+    <h2>Headline</h2>
+    <p>Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.</p>
+  </li>
+  <li>
+    <h2>Headline</h2>
+    <p>Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.</p>
+  </li>
+</ol>
+```
+<ol class="steps">
+  <li>
+    <h2>Headline</h2>
+    <p>Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.</p>
+  </li>
+  <li>
+    <h2>Headline</h2>
+    <p>Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.</p>
+  </li>
+  <li>
+    <h2>Headline</h2>
+    <p>Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.</p>
+  </li>
+</ol>
