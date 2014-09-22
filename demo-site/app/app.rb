@@ -197,14 +197,14 @@ module WebTemplates
           @settings['title'] = File.basename(view_name).capitalize
           @settings.merge! file_settings(file)
 
-          @content = case filetype
+          case filetype
           when 'md' then
-            render_markdown render_markdown file_content(file)
+            @content = render_markdown render_markdown file_content(file)
+            return slim :page
           when 'slim' then
-            slim file_content(file), layout: false
+            @content = slim file_content(file), layout: false
+            return slim :page_slim
           end
-
-          return slim :page
         end
       end
 
