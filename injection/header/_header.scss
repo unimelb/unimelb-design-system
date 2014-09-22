@@ -27,7 +27,7 @@
       width: 100%;
 
       header {
-        @include single-box-shadow(rgba($black, .3), 0, 3px, 6px, -3px);
+        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
         width: 100%;
       }
 

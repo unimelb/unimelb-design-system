@@ -1,14 +1,8 @@
 @mixin horizontal-align {
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
 @mixin vertical-align {
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 
@@ -22,8 +16,6 @@
   margin: 0 auto;
   max-width: $w-lge;
 
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 
   li {

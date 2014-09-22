@@ -1,17 +1,4 @@
-@mixin transition($props) {
-  -webkit-transition: $props;
-  -moz-transition: $props;
-  -ms-transition: $props;
-  transition: $props;
-}
-
-@mixin animate-once($n) {
-  -webkit-animation: $n .4s .1s 1 ease-in-out;
-  -moz-animation: $n .4s .1s 1 ease-in-out;
-  animation: $n .4s .1s 1 ease-in-out;
-}
-
-@-webkit-keyframes flash {
+@keyframes flash {
   0%,
   100% {
     color: lighten($cherry, 25%);
@@ -19,17 +6,6 @@
 
   66% {
     color: lighten($cherry, 60%);
-  }
-}
-
-@keyframes flash {
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  66% {
-    opacity: .4;
   }
 }
 
@@ -135,9 +111,9 @@ fieldset {
   }
 
   .invalid small {
-    @include animate-once(flash);
     @include rem(font-size, 14px);
     @include rem(padding, 5px 0);
+    animation: flash .4s .1s 1 ease-in-out;
     color: $cherry;
     display: block;
     font-style: italic;
@@ -206,13 +182,8 @@ fieldset {
         opacity: 0;
         position: absolute;
         top: 4px;
-        width: 10px;
-
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        -o-transform: rotate(-45deg);
-        -ms-transform: rotate(-45deg);
         transform: rotate(-45deg);
+        width: 10px;
       }
 
       &:active::after {

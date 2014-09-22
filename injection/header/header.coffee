@@ -78,7 +78,7 @@ window.UOMinjectHeader = ->
     header.appendChild tools
 
     window.addEventListener "scroll", ->
-      if /(Firefox)/g.test(navigator.userAgent)
+      if /(Firefox)/g.test(navigator.userAgent) or /(Trident)/g.test(navigator.userAgent)
         outer = document.querySelector('html')
       else
         outer = document.body

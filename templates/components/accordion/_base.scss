@@ -1,38 +1,12 @@
-@mixin transition-duration($p) {
-  -ms-transition-duration: $p;
-  -o-transition-duration: $p;
-  -moz-transition-duration: $p;
-  -webkit-transition-duration: $p;
-  transition-duration: $p;
-}
-
-@mixin transition-property($p) {
-  -ms-transition-property: $p;
-  -o-transition-property: $p;
-  -moz-transition-property: $p;
-  -webkit-transition-property: $p;
-  transition-property: $p;
-}
-
-@mixin transition-timing-function($p) {
-  -ms-transition-timing-function: $p;
-  -o-transition-timing-function: $p;
-  -moz-transition-timing-function: $p;
-  -webkit-transition-timing-function: $p;
-  transition-timing-function: $p;
-}
-
 .accordion__title {
   cursor: pointer;
 }
 
 .accordion__hidden {
-  @include transition-duration(10ms);
-  @include transition-property(max-height);
-  @include transition-timing-function(ease-in-out);
   display: block;
   max-height: 0;
   overflow: hidden;
+  transition: 10ms ease-in-out max-height;
 
   td {
     display: none;
@@ -44,10 +18,8 @@
 }
 
 .accordion__visible .accordion__hidden {
-  @include transition-duration(500ms);
-  @include transition-property(max-height);
-  @include transition-timing-function(ease-in-out);
   max-height: 1000px;
+  transition: 500ms max-height ease-in-out;
 }
 
 .accordion__visible tr.accordion__hidden {
@@ -61,8 +33,7 @@
 .accordion__noanim {
   .accordion__hidden,
   .accordion__visible .accordion__hidden {
-    @include transition-duration(0);
-    @include transition-property(none);
+    transition: 0 none;
   }
 }
 
@@ -86,10 +57,10 @@
         @include rem(height, 30px);
         @include rem(line-height, 30px);
         //@include rem(width, 30px);
-        @include transition(transform 0.2s ease-in-out);
         content: "+";
         display: inline-block;
         text-align: center;
+        transition: transform 0.2s ease-in-out;
       }
       &:last-child {
         @include padding-trailer(0.5);

@@ -59,13 +59,8 @@
   margin: 0 3%;
   max-width: 100%;
   padding-left: 0;
-
-  -webkit-transition-property: height, width;
-     -moz-transition-property: height, width;
-          transition-property: height, width;
-  -webkit-transition-duration: 0.4s;
-     -moz-transition-duration: 0.4s;
-          transition-duration: 0.4s;
+  transition-property: height, width;
+  transition-duration: 0.4s;
 
   @include breakpoint(desktop) {
     margin: 0;
@@ -81,17 +76,8 @@
     opacity: 1;
     padding: 0;
     width: 100%;
-
-    -webkit-transition-duration: 0.4s;
-    -moz-transition-duration: 0.4s;
-    -ms-transition-duration: 0.4s;
     transition-duration: 0.4s;
-
-     -webkit-transition-property: opacity;
-     -ms-transition-property: opacity;
-     -moz-transition-property: opacity;
     transition-property: opacity;
-
 
     @include breakpoint($w-sml) {
       float: left;

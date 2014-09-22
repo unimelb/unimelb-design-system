@@ -1,11 +1,5 @@
 @mixin translateX($d) {
-  -webkit-transform: translate3d($d, 0, 0);
-  -moz-transform: translate3d($d, 0, 0);
-  -ms-transform: translate3d($d, 0, 0);
   transform: translate3d($d, 0, 0);
-  -webkit-transition: -webkit-transform .3s ease;
-  -moz-transition: -moz-transform .3s ease;
-  -ms-transition: -ms-transform .3s ease;
   transition: transform .3s ease;
 }
 
@@ -70,9 +64,8 @@ $round-to-nearest-half-line: true;
 
   @include breakpoint(tablet) {
     @include rem(max-width, $w-lge);
-    // @include rem(padding, 15px 25px);
-    // width: 100%;
   }
+
   @include breakpoint(desktop) {
     width: 100%;
   }

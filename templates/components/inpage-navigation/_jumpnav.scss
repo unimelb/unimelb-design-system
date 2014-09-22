@@ -61,11 +61,7 @@
   @extend %jump;
 
   // MAGIC FAIRY DUST
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -webkit-transform: translateZ(0);
   transform: translateZ(0);
-
 
   @include breakpoint(desktop) {
     left: 0;

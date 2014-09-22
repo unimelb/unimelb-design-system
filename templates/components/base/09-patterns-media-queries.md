@@ -2,21 +2,63 @@
 
 ```scss
 @mixin breakpoint($point) {
-  @if $point == desktop {
-    @media screen and (min-width: 1100px) { 
+  @if $point == wide {
+    @media screen and (min-width: 1099px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == desktop {
+    @media screen and (min-width: 769px) {
       & {
         @content;
       }
     }
   }
   @else if $point == tablet {
-    @media screen and (min-width: 1099px) { 
+    @media screen and (min-width: 481px){
       & {
         @content;
       }
-    } // , screen and (max-width: 500px) and (-webkit-min-device-pixel-ratio: 1.3)
+    }
   }
-  @else if $point {
+  @else if $point == mobile {
+    @media screen and (max-width: 480px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == height-smallest {
+    @media screen and (min-height: 640px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == height-small {
+    @media screen and (min-height: 740px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == height-medium {
+    @media screen and (min-height: 850px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else if $point == height-big {
+    @media screen and (min-height: 1200px) {
+      & {
+        @content;
+      }
+    }
+  }
+  @else {
     @media screen and (min-width: $point) {
       & {
         @content;
@@ -30,9 +72,10 @@
 
 ```scss
 .banner {
-  width: 100%;
+  max-width: 100%;
+
   @include breakpoint(desktop) {
-    width: 1100px;
+    max-width: 900px;
   }
 }
 ```
