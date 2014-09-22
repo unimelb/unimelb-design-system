@@ -40,6 +40,11 @@
       background-color: $black;
     }
 
+    &.solid-paleblue {
+      background-color: $paleblue;
+      color: $black;
+    }
+
     &.image {
       @extend %bannerbox;
       //@include rem(height, 300px);
