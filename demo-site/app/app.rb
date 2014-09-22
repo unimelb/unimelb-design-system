@@ -186,18 +186,26 @@ module WebTemplates
     ### Documentation pages
 
     get '/*' do
-      view_name = params[:splat].first
-      file  = File.join settings.pages_dir, "#{view_name}.md"
-      index = File.join settings.pages_dir, "#{view_name}/index.md"
-      file  = index unless File.exist?(file)
+      ['md', 'slim'].each do |filetype|
+        view_name = params[:splat].first
+        file  = File.join settings.pages_dir, "#{view_name}.#{filetype}"
+        index = File.join settings.pages_dir, "#{view_name}/index.#{filetype}"
+        file  = index unless File.exist?(file)
 
-      if File.exist?(file)
-        # Default title from dirname, can be overriden in frontmatter of first .md
-        @settings['title'] = File.basename(view_name).capitalize
+        if File.exist?(file)
+          # Default title from dirname, can be overriden in frontmatter of first .md
+          @settings['title'] = File.basename(view_name).capitalize
+          @settings.merge! file_settings(file)
 
-        @settings.merge! file_settings(file)
-        @content = render_markdown render_markdown file_content(file)
-        return slim :page
+          @content = case filetype
+          when 'md' then
+            render_markdown render_markdown file_content(file)
+          when 'slim' then
+            slim file_content(file), layout: false
+          end
+
+          return slim :page
+        end
       end
 
       return_page_not_found
