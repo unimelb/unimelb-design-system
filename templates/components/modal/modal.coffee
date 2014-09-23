@@ -9,7 +9,7 @@ unless window.UOMModal
       document.querySelector('.uomcontent').appendChild blanket
 
     # Move modal dialogs to document root
-    parent = document.body
+    parent = document.querySelector('.uomcontent')
     for modal in document.querySelectorAll('.modal__dialog')
       modal.parentNode.removeChild(modal)
       parent.appendChild modal
