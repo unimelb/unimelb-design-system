@@ -35,7 +35,10 @@
         padding: 0;
 
         > a {
-          @include rem(padding, 20px);
+          @include rem(padding-bottom, 15px);
+          @include rem(padding-left, 20px);
+          @include rem(padding-right, 20px);
+          @include rem(padding-top, 15px);
           color: black;
           display: block;
           text-decoration: none;
@@ -79,7 +82,7 @@
         }
 
         span.time {
-          @include rem(font-size, 14px);
+          @include rem(font-size, 18px);
           color: $lighterblue;
           font-weight: 400;
         }
@@ -218,11 +221,11 @@
           @include rem(max-width, 1105px);
 
           > a {
-            width: 63%;
+            min-width: 63%;
           }
 
           > .presenters {
-            width: 37%;
+            min-width: 37%;
 
             > ul li {
               width: 48%;
