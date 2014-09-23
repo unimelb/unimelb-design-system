@@ -105,13 +105,14 @@
       padding-left: 0;
 
       li {
-        @include rem(font-size, 14px);
+        @include rem(font-size, 13px);
         display: inline-block;
         font-weight: 300;
         list-style: none;
         margin-left: 0;
         margin-right: 1%;
         padding-bottom: 0;
+        vertical-align: top;
         width: 48%;
       }
     }
