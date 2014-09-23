@@ -1,6 +1,14 @@
 @import 'compass';
 
 @import 'components/base/base';
+
+@import '../injection/header/header';
+@import '../injection/footer/footer';
+@import '../injection/global-nav/modal';
+@import '../injection/global-nav/nav';
+@import '../injection/global-nav/localnav';
+@import '../injection/global-nav/globalnav';
+
 @import 'components/text/text';
 @import 'components/buttons/buttons';
 @import 'components/headers/headers';
@@ -16,7 +24,7 @@
 @import 'components/maps/maps';
 @import 'components/modal/modal';
 @import 'components/news/news';
-@import 'components/persons/persons';
+@import 'components/people/people';
 @import 'components/search/search';
 @import 'components/loading-animation/loading-animation';
 

@@ -144,7 +144,7 @@ window.UOMinjectGlobalNav = ->
     #localnav.appendChild sitemaplink
 
     localnav.removeClass('no-js')
-    document.body.appendChild(localnav)
+    document.querySelector('.uomcontent').appendChild(localnav)
 
     for group in localnav.querySelectorAll('a')
 
@@ -191,7 +191,7 @@ window.UOMinjectGlobalNav = ->
     trigger.innerHTML = """
       <span>University Sitemap</span>
     """
-    document.body.appendChild(trigger)
+    document.querySelector('.uomcontent').appendChild(trigger)
 
   # Create global nav
   nav = document.querySelector('[role="sitemap"]')
@@ -305,7 +305,7 @@ window.UOMinjectGlobalNav = ->
       e.preventDefault()
       window.location = this.action + "#gsc.q=" + this.elements[1].value
 
-    document.body.appendChild(nav)
+    document.querySelector('.uomcontent').appendChild(nav)
 
     # Add link state behaviour
     navstate = new UOMGlobalNavState()

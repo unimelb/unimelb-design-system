@@ -20,6 +20,7 @@ $white:         #fff !default;
 
 $navy:          #0c304a;
 $blue:          #304e64;
+$menu:          #036;
 $darkblue:      #004576;
 $borderblue:    #7399b7;
 $midblue:       #366996;
@@ -99,4 +100,29 @@ $round-to-nearest-half-line: true;
   background: -ms-linear-gradient(right, rgba($cyan, 0) 66%, rgba($cyan, .9) 100%); // /* IE10+ */
   background: linear-gradient(to left, rgba($cyan, 0) 66%, rgba($cyan, .9) 100%); // /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=1); // /* IE6-9 */
+}
+
+$cdnurl: '//uom-templates.s3.amazonaws.com/shared';
+
+%imgreplace {
+  background-color: transparent;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+%smooth-translate {
+  -moz-transition: -moz-transform .3s ease;
+  -ms-transition: -ms-transform .3s ease;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+}
+
+%normalise {
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }

@@ -186,24 +186,26 @@ module WebTemplates
     ### Documentation pages
 
     get '/*' do
-      ['md', 'slim'].each do |filetype|
-        view_name = params[:splat].first
-        file  = File.join settings.pages_dir, "#{view_name}.#{filetype}"
-        index = File.join settings.pages_dir, "#{view_name}/index.#{filetype}"
-        file  = index unless File.exist?(file)
+      unless params[:splat].first[-4,4] == "slim"
+        ['slim.md', 'md'].each do |filetype|
+          view_name = params[:splat].first
+          file  = File.join settings.pages_dir, "#{view_name}.#{filetype}"
+          index = File.join settings.pages_dir, "#{view_name}/index.#{filetype}"
+          file  = index unless File.exist?(file)
 
-        if File.exist?(file)
-          # Default title from dirname, can be overriden in frontmatter of first .md
-          @settings['title'] = File.basename(view_name).capitalize
-          @settings.merge! file_settings(file)
+          if File.exist?(file)
+            # Default title from dirname, can be overriden in frontmatter of first .md
+            @settings['title'] = File.basename(view_name).capitalize
+            @settings.merge! file_settings(file)
 
-          case filetype
-          when 'md' then
-            @content = render_markdown render_markdown file_content(file)
-            return slim :page
-          when 'slim' then
-            @content = slim file_content(file), layout: false
-            return slim :page_slim
+            case filetype
+            when 'md' then
+              @content = render_markdown render_markdown file_content(file)
+              return slim :page
+            when 'slim.md' then
+              @content = slim file_content(file), layout: false
+              return slim :page_slim
+            end
           end
         end
       end
@@ -226,7 +228,7 @@ module WebTemplates
     end
 
     def doc_href(file)
-      file = file.gsub(/(index)?\.md/, '')
+      file = file.gsub(/(index)?\.md|\.slim/, '')
       file[settings.pages_dir.length, file.length]
     end
 

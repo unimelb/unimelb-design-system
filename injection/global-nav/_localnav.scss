@@ -26,7 +26,7 @@
     //@include transform(translate(-100%, 0));
     right: 0;
     @include transition(right .25s ease);
-    z-index: 13;
+    z-index: 15;
 
     .sitemap-label {
       margin-left: -100px;
@@ -48,7 +48,7 @@
     display: block;
 
     @include breakpoint(tablet) {
-      @include transform(translate(-100%, 0) translate(110px, 0));
+      transform: translate(-100%, 0) translate(110px, 0);
     }
   }
 

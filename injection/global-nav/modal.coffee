@@ -5,7 +5,7 @@ unless window.UOMModal
     unless blanket
       blanket = document.createElement 'div'
       blanket.setAttribute('class', 'modal__blanket')
-      document.body.appendChild blanket
+      document.querySelector('.uomcontent').appendChild blanket
 
     # Move modal dialogs to document root
     parent = document.body

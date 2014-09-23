@@ -9,7 +9,17 @@ window.UOMinjectHeader = ->
   defaultlink = 'https://www.unimelb.edu.au'
 
   # Create page wrapper if it doesn't already exist
-  parent = document.body
+  parent = document.querySelector('.uomcontent')
+  unless parent
+    parent = document.createElement('div')
+    parent.addClass('uomcontent')
+    document.body.appendChild parent
+
+    for n in document.body.childNodes
+      if n and n != parent
+        document.body.removeChild(n)
+        parent.appendChild(n)
+
   page = document.querySelector('.page-inner')
   unless page
     page = document.createElement('div')
@@ -95,11 +105,6 @@ window.UOMinjectHeader = ->
   else
     main.parentNode.removeChild(main)
 
-  # Move existing child nodes of body into main (volatile)
-  # for node in document.body.childNodes
-  #   if node and node.nodeType==1 and !node.hasClass('.page-inner')
-  #     main.appendChild(node)
-
   footer = document.querySelector('.page-footer')
   page.insertBefore(main, footer)
 
@@ -109,10 +114,7 @@ window.UOMinjectHeader = ->
       parent.removeChild(n)
       main.appendChild(n)
 
-  # if parent.childNodes > 0
-  #   parent.insertBefore(page, parent.firstChild)
-  # else
-  parent.appendChild(page)
+  parent.appendChild page
 
   # Set up login modal and attach to page
   login = document.querySelector('.page-login')

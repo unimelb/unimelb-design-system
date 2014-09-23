@@ -1,3 +1,6 @@
+---
+title: For developers
+---
 header.solid-paleblue
   h1 Developers
 

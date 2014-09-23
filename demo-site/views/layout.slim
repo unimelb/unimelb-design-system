@@ -9,9 +9,9 @@ html.no-js
     /[if lt IE 9]
       == javascript_tag "//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
 
-    == javascript_tag 'injection'
+    / == javascript_tag 'injection'
     /== javascript_tag '//uom-templates.s3.amazonaws.com/injection/injection.js'
-    == stylesheet_tag 'injection'
+    / == stylesheet_tag 'injection'
     /== stylesheet_tag '//uom-templates.s3.amazonaws.com/injection/injection.css'
 
     == stylesheet_tag 'uom'
@@ -24,6 +24,7 @@ html.no-js
     /== javascript_tag '//uom-templates.s3.amazonaws.com/templates/beta/uom.js'
 
   body
-    .page-inner
-      == yield
-      == slim :nav
+    .uomcontent
+      .page-inner
+        == yield
+        == slim :nav
