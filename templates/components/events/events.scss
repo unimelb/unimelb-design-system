@@ -150,27 +150,28 @@
         span {
           color: $lighterblue;
           display: block;
-          font-weight: 400;
-          margin-left: -80px;
+          font-weight: 700;
+          @include rem(margin-left, -80px);
 
           &.date {
+            @include rem(font-size, 80px);
             @include rem(margin-right, -5px);
-            font-size: 5rem;
           }
 
           &.day {
-            font-weight: 300;
+            @include rem(font-size, 18px);
+            font-weight: 400;
             text-transform: none;
           }
 
           &.month {
+            @include rem(font-size, 40px);
             @include rem(padding-bottom, 5px);
-            font-size: 2.5rem;
           }
 
           &.year {
-            @include rem(font-size, 16px);
-            font-weight: 300;
+            @include rem(font-size, 18px);
+            font-weight: 400;
           }
         }
       }
