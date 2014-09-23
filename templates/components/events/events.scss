@@ -1,6 +1,8 @@
 [role="main"] ul.event-listing {
-  padding: 0;
   @include rem(padding-bottom, 50px);
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
 
   > li {
     @include rem(padding-bottom, 20px);
@@ -19,9 +21,10 @@
     }
 
     > ul {
-      margin: 0 auto;
       @include rem(margin-bottom, 15px);
       @include rem(margin-right, 5px);
+      margin-top: 0;
+      margin-left: auto;
       padding: 0;
 
       > li {
@@ -44,8 +47,10 @@
 
         h3 {
           @include rem(font-size, 22px);
-          padding: 0;
           @include rem(padding-bottom, 10px);
+          padding-top: 0;
+          padding-left: 0;
+          padding-right: 0;
           font-weight: 400;
           width: 100%;
         }
@@ -64,11 +69,11 @@
             @include rem(margin-right, 3px);
           }
 
-          span:after {
+          span::after {
             content: ',';
           }
 
-          span:last-child:after {
+          span:last-child::after {
             content: '.';
           }
         }
@@ -91,8 +96,10 @@
 
     span {
       @include rem(font-size, 22px);
-      margin: 0;
       @include rem(margin-right, 6px);
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-top: 0;
       text-align: right;
     }
   }
@@ -223,6 +230,18 @@
           }
         }
       }
+    }
+  }
+}
+
+.ie8 {
+  [role="main"] ul.event-listing ul li small {
+    span::after {
+      content: ',';
+    }
+
+    span:last-child::after {
+      content: '.';
     }
   }
 }
