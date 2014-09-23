@@ -69,7 +69,7 @@
           }
 
           span:last-child:after {
-            content: '.'
+            content: '.';
           }
         }
 
@@ -130,7 +130,6 @@
       @include rem(max-width, 950px);
 
       > h2 {
-        //@include rem(margin-left, -110px);
         border: none;
         font-weight: 700;
         line-height: 1;
