@@ -1,8 +1,9 @@
 ---
-title: Start with why
+title: How do I work out who my website is for?
+hidden: true
 ---
 
-# Start with why
+## Start with why it needs to exist in the first place
 
 > Unless you know why your site needs to exist, you’ll end up simply adding to the noise.
 
@@ -14,8 +15,3 @@ If your site does not have a clear purpose and reason for being, it will become 
 * Is there budget to maintain it over time?
 * Should this be an extension of an existing site?
 * Am I creating this site because it needs to be created, or because I just want to build something?
-
-Resources
-* A guide to user stories
-
-[Next: Learn about the templates](/build/templates)

@@ -1,3 +1,8 @@
+---
+title: How to use accordions well
+hidden: true
+---
+
 Accordians are an efficient way of grouping and communicating multiple pieces of contextually related information. They display a large amount of content in a small amount of space.
 
 ## When to use an accordon

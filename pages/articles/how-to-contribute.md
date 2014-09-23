@@ -1,11 +1,9 @@
 ---
-title: Contribution
+title: How to Contribute
 hidden: true
 ---
 
-# Contribution
-
-These templates are open for modification by anyone in the university community.
+A core philosophy behind web.unimelb is that it is open for suggested modification by anyone in the university community.
 
 You can contribute by creating a 'fork' of this project, applying your modifications and then sending a 'pull request' back to the main repository.
 
