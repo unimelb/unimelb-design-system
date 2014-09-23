@@ -18,7 +18,10 @@
         position: relative;
         text-align: center;
 
-        
+        strong {
+          @include rem(padding-left, 6px);
+          @include rem(padding-right, 6px);
+        }
 
         @include breakpoint(desktop) {
           display: block;
