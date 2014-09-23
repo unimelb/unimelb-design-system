@@ -108,8 +108,11 @@
   }
 
   .presenters {
-    font-weight: 400;
     padding-left: 20px;
+
+    p {
+      font-weight: 400;
+    }
 
     ul {
       padding-left: 0;
@@ -191,24 +194,12 @@
             vertical-align: top;
             width: 75%;
           }
-
-          .presenters {
-            @include rem(margin-right, -440px);
-            border-left: 1px solid $lightergray;
-            display: table-cell;
-            width: 25%;
-
-            ul li {
-              margin-right: 0;
-              width: 100%;
-            }
-          }
         }
       }
     }
   }
 
-  @include breakpoint(1600px){
+  @include breakpoint(1350px){
     @include rem(max-width, 1265px);
 
     > li {
@@ -225,6 +216,9 @@
           }
 
           > .presenters {
+            @include rem(margin-right, -440px);
+            border-left: 1px solid $lightergray;
+            display: table-cell;
             min-width: 37%;
 
             > ul li {
