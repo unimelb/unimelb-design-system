@@ -1,5 +1,5 @@
 ---
-title: Our Design Principles
+title: For Designers
 ---
 header.image style="background-image:url(/assets/images/desktop.jpg)"
   .mid-align
@@ -32,4 +32,4 @@ section
 hr
 section
   p.center
-    a.button-hero href="/articles/designers-start" Next: How to start
+    a.button-hero href="/articles/designers-start" Next: Start designing

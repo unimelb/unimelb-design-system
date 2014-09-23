@@ -1,5 +1,10 @@
-@import 'compass';
-@import 'components/base/base';
+@import 'components/base/patterns_normalize';
+@import 'components/base/patterns_accessibility';
+@import 'components/base/patterns_clearfix';
+@import 'components/base/patterns_rem';
+@import 'components/base/patterns_media-queries';
+@import 'components/base/globals';
+@import 'components/base/typography_fonts';
 
 [role="main"] {
   padding-bottom: 0;

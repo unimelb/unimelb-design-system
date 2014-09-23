@@ -27,11 +27,16 @@
       width: 100%;
 
       header {
-        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
+        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .6));
         width: 100%;
+
+        @include breakpoint(desktop) {
+          @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
+        }
       }
 
       .page-header-logo {
+        position: absolute;
         top: -140px;
         transition: .2s top;
       }
@@ -127,6 +132,7 @@
     @include breakpoint(desktop) {
       @include rem(height, 90px);
       @include rem(line-height, 90px);
+
       &.page-header-logo {
         @include rem(margin-left, 40px);
         @include rem(height, 140px);
