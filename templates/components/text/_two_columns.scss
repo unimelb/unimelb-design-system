@@ -16,7 +16,7 @@
       width: 100%;
     }
 
-    section {
+    & > section {
       margin: 0;
       padding: 0;
       width: 100%;
@@ -34,9 +34,9 @@
         width: 100%;
       }
 
-      iframe {
-        width: 100%;
-      }
+      // iframe {
+      //   width: 100%;
+      // }
 
       @include breakpoint(desktop) {
         @include rem(padding, 30px 15px);
@@ -50,11 +50,11 @@
           margin-left: 0;
         }
 
-        iframe {
-          @include rem(margin-top, 60px);
-          @include rem(margin-bottom, 60px);
-          @include rem(padding-right, 30px);
-        }
+        // iframe {
+        //   @include rem(margin-top, 60px);
+        //   @include rem(margin-bottom, 60px);
+        //   @include rem(padding-right, 30px);
+        // }
       }
     }
 

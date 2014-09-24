@@ -1,8 +1,8 @@
 [role="main"] {
 	.lead {
 		@include adjust-font-size-to(19px);
-		@include padding-leader(2);
-		@include padding-trailer(2);
+		@include padding-leader(3);
+		@include padding-trailer(3);
 		@include rem(max-width, $w-mid);
 		background: transparent;
 		color: $black;

@@ -126,6 +126,10 @@
     text-decoration: none;
     width: 100%;
 
+    &.inactive {
+      opacity: 0.3;
+    }
+
     @include breakpoint(desktop) {
       @include rem(max-width, 180px);
     }

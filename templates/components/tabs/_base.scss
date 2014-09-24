@@ -65,8 +65,8 @@
 
         &[data-current]::after {
           border: solid transparent;
-          border-top-color: #23445a;
-          border-top-color: rgba($navy, .9);
+          border-top-color: $darkblue;
+          // border-top-color: rgba($navy, .9);
           border-width: 10px;
           content: ' ';
           height: 0;
