@@ -1,8 +1,6 @@
 require 'rubygems' unless defined?(Gem)
 require 'rake/sprocketstask'
 require 'compass'
-require 'asset_sync'
-require 'dotenv/tasks'
 require 'autoprefixer-rails'
 
 ROOT_DIR  = File.expand_path File.dirname(__FILE__)
@@ -16,19 +14,6 @@ module Sprockets
       return logical_path if logical_path =~ /\.(css|js)$/
       return logical_path if logical_path =~ /\bfonts\b\/.+\.(eot|svg|ttf|woff)$/
       logical_path.sub(/\.(\w+)$/) { |ext| "-#{digest}#{ext}" }
-    end
-  end
-end
-
-### Monkey patch asset sync
-
-# This can be removed once this Pull Request is accepted
-# https://github.com/rumblelabs/asset_sync/pull/272
-module AssetSync
-  class << self
-    def reset_config!
-      remove_instance_variable :@config if defined?(@config)
-      remove_instance_variable :@storage if defined?(@storage)
     end
   end
 end
@@ -71,31 +56,6 @@ namespace :injection do
     t.log_level   = :debug
     t.keep        = 0
   end
-
-  desc 'Uploads everything in the injection build directory to S3'
-  task sync: :dotenv do
-    AssetSync.reset_config!
-    AssetSync.configure do |config|
-      config.fog_provider          = 'AWS'
-      config.fog_directory         = ENV['FOG_DIRECTORY']
-      config.aws_access_key_id     = ENV['AWS_ACCESS_KEY_ID']
-      config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
-      config.existing_remote_files = 'delete'
-      config.manifest              = false
-      config.gzip_compression      = true
-      config.run_on_precompile     = false
-      config.log_silently          = false
-      config.prefix                = 'injection'
-      config.public_path           = BUILD_DIR
-      config.always_upload         = %w{injection.css injection.js}
-      config.ignored_files         = /manifest.*\.json/
-    end
-    AssetSync.sync
-  end
-
-  desc 'Clean, compile and sync injection'
-  task deploy: ['injection:clobber_assets', 'injection:assets', 'injection:sync']
-
 end
 
 ### Templates
@@ -138,35 +98,9 @@ namespace :templates do
     t.log_level   = :debug
     t.keep        = 0
   end
-
-  desc 'Uploads everything in the templates build directory to S3'
-  task sync: :dotenv do
-    AssetSync.reset_config!
-    AssetSync.configure do |config|
-      config.fog_provider          = 'AWS'
-      config.fog_directory         = ENV['FOG_DIRECTORY']
-      config.aws_access_key_id     = ENV['AWS_ACCESS_KEY_ID']
-      config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
-      config.existing_remote_files = 'delete'
-      config.manifest              = false
-      config.gzip_compression      = true
-      config.run_on_precompile     = false
-      config.log_silently          = false
-      config.prefix                = TEMPLATES_VERSION_PATH
-      config.public_path           = BUILD_DIR
-      config.always_upload         = %w{uom.js uom.css}
-      config.ignored_files         = /manifest.*\.json/
-    end
-    AssetSync.sync
-  end
-
-  desc 'Clean, compile and sync templates'
-  task deploy: ['templates:clobber_assets', 'templates:assets', 'templates:sync']
-
 end
 
 namespace :assets do
-
   task :version_check do
     raise "Please specify a version. e.g. rake assets:deploy VERSION=2" unless ENV['VERSION']
   end
@@ -176,11 +110,4 @@ namespace :assets do
 
   desc 'Compile all assets'
   task compile: ['assets:version_check', 'templates:assets', 'injection:assets']
-
-  desc 'Upload all assets to s3'
-  task sync: ['assets:version_check', 'templates:sync', 'injection:sync']
-
-  desc 'Clean, compile and sync all assets'
-  task deploy: ['assets:version_check', 'templates:deploy', 'injection:deploy']
-
 end

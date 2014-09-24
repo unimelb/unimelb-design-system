@@ -23,6 +23,4 @@ gem "thin", "~> 1.6.2"
 group :development do
   gem "uglifier", "~> 2.5.0"
   gem "rake", "~> 10.3.2"
-  gem "asset_sync", "~> 1.0.0"
-  gem "dotenv", "~> 0.11.1"
 end
