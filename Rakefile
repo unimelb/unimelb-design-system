@@ -21,21 +21,14 @@ end
 ### Injection
 
 namespace :injection do
-
   INJECTION_ASSETS      = File.expand_path File.join(ROOT_DIR,  'injection')
   INJECTION_BUILD_DIR   = File.expand_path File.join(BUILD_DIR, 'injection')
-  INJECTION_SERVER_PATH = '/injection/'
 
   module InjectionHelper
     def asset_path(path, options={})
-      if path[0..1] == '//'
-        File.join(INJECTION_SERVER_PATH, path)
-      else
-        asset = environment[path]
-        raise "Unknown asset: #{path}" if asset.nil?
-        digest = asset.digest_path
-        File.join(INJECTION_SERVER_PATH, digest)
-      end
+      asset = environment[path]
+      raise "Unknown asset: #{path}" if asset.nil?
+      asset.digest_path
     end
   end
 
@@ -53,7 +46,7 @@ namespace :injection do
     t.output      = INJECTION_BUILD_DIR
     t.assets      = %w{*.svg *.png *.jpg *.jpeg injection.js injection.css}
     t.logger      = Logger.new($stdout)
-    t.log_level   = :debug
+    # t.log_level   = :debug
     t.keep        = 0
   end
 end
@@ -61,17 +54,11 @@ end
 ### Templates
 
 namespace :templates do
-
   module TemplatesHelper
     def asset_path(path, options={})
-      if path[0..1] == '//'
-        File.join(INJECTION_SERVER_PATH, path)
-      else
-        asset = environment[path]
-        raise "Unknown asset: #{path}" if asset.nil?
-        digest = asset.digest_path
-        File.join(TEMPLATES_SERVER_PATH, digest)
-      end
+      asset = environment[path]
+      raise "Unknown asset: #{path}" if asset.nil?
+      asset.digest_path
     end
   end
 
@@ -102,7 +89,7 @@ end
 
 namespace :assets do
   task :version_check do
-    raise "Please specify a version. e.g. rake assets:deploy VERSION=2" unless ENV['VERSION']
+    raise "Please specify a version. e.g. rake assets:deploy VERSION=0.2" unless ENV['VERSION']
   end
 
   desc 'Clobber all local assets'
