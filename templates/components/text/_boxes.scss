@@ -1,0 +1,54 @@
+[role="main"] {
+  .contact-box {
+    @include padding-leader(1);
+    @include padding-trailer(1);
+    @include rem(max-width, $w-sml);
+    @include rem(padding-left, 25px);
+    @include rem(padding-right, 25px);
+    background-color: $paleblue;
+    margin: 0 auto;
+
+    h1 {
+      @include adjust-font-size-to(15px);
+      @include rem(letter-spacing, 2px);
+      @include rem(padding, 10px 0 15px 0);
+      font-weight: $bold;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    dl {
+      margin: 0 auto;
+      overflow: hidden;
+      padding-left: 0;
+    }
+    dt {
+      @include adjust-font-size-to(16px);
+      color: $black;
+      display: block;
+      float: none;
+      font-weight: 100;
+      width: auto;
+    }
+    dd {
+      @include adjust-font-size-to(20px);
+      @include rem(margin, 0 0 20px 0);
+      display: block;
+      float: none;
+      font-weight: $regular;
+      width: auto;
+    }
+    a {
+      //color: $cherry;
+    }
+    p {
+      padding-bottom: 0;
+    }
+    @include breakpoint(desktop) {
+      dd {
+        @include trailer(2);
+        font-weight: $regular;
+        line-height: 1;
+      }
+    }
+  }
+}
