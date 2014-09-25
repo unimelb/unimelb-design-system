@@ -21,74 +21,73 @@
     @extend %normalise;
   }
 
-  @include breakpoint(desktop) {
-    &.fixed:not(.floating) {
-      position: fixed;
+  &.fixed:not(.floating) {
+    position: fixed;
+    width: 100%;
+
+    header {
+      @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .6));
       width: 100%;
 
-      header {
-        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .6));
-        width: 100%;
-
-        @include breakpoint(desktop) {
-          @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
-        }
+      @include breakpoint(desktop) {
+        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
       }
+    }
 
-      .page-header-logo {
-        position: absolute;
-        top: -140px;
-        transition: .2s top;
-      }
+    .page-header-logo {
+      position: absolute;
+      top: -140px;
+      transition: .2s top;
+    }
 
-      a,
-      span {
-        @include rem(height, 40px);
-        @include rem(line-height, 40px);
-      }
+    a,
+    span {
+      @include rem(height, 40px);
+      @include rem(line-height, 40px);
+    }
 
-      header {
-        @include rem(height, 40px);
-        @include rem(line-height, 40px);
-      }
+    header {
+      @include rem(height, 40px);
+      @include rem(line-height, 40px);
+    }
 
-      .page-header-navigation {
-        @include rem(height, 40px);
-        @include rem(line-height, 30px);
-        @include rem(padding-left, 15px);
-        transition: .3s padding-left .1s, .2s height;
-        vertical-align: top;
-      }
+    .page-header-navigation {
+      @include rem(height, 40px);
+      @include rem(line-height, 30px);
+      @include rem(padding-left, 15px);
+      transition: .3s padding-left .1s, .2s height;
+      vertical-align: top;
+    }
 
-      a,
-      span {
-        vertical-align: middle;
-      }
+    a,
+    span {
+      vertical-align: middle;
+    }
 
-      .page-header-tools .page-header-icon {
-        line-height: 1;
+    .page-header-tools .page-header-icon {
+      @include rem(height, 39px);
+      border-left-color: $lightgray;
+      line-height: 1;
 
-        .icon {
-          @include rem(height, 20px);
-          @include rem(margin-top, 3px);
-          @include rem(width, 20px);
-          margin-bottom: 0;
-        }
+      .icon {
+        @include rem(height, 20px);
+        @include rem(margin-top, 3px);
+        @include rem(width, 20px);
+        margin-bottom: 0;
       }
     }
   }
 
   header {
     @include rem(height, 60px);
-
-    // god damn it compass
     @include single-box-shadow(0, 6px, 6px, -3px, rgba($black, .3));
-
+    border-bottom: 1px solid $lightgray;
     padding: 0;
     position: relative;
 
     @include breakpoint(desktop) {
       @include rem(height, 90px);
+      border-bottom: 0 none;
     }
   }
 
