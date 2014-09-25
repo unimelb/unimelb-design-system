@@ -291,7 +291,8 @@ module WebTemplates
       (@pipeline_with_section.call(md))[:output].to_s
     end
 
-    def syntax_highlight(html)
+    def syntax_highlight(html = '')
+      html = yield if block_given?
       Pygments.highlight(html, lexer: 'html')
     end
 
