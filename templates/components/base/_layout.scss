@@ -390,12 +390,16 @@ body {
       vertical-align: top;
       width: 100%;
 
+      & > h2:first-child {
+        padding-top: 0;
+      }
+
       & > p:first-child {
-        @include padding-leader(1);
+        @include padding-leader(0);
       }
 
       @include breakpoint(desktop) {
-        @include rem(padding, 45px 30px);
+        @include rem(padding, 75px 30px);
         display: table-cell;
         max-width: 25%;
         position: relative;
@@ -410,8 +414,16 @@ body {
       clear: both;
       width: 100%;
 
+      & > section:first-child {
+        padding-top: 0;
+
+        & > h2:first-child {
+          padding-top: 0;
+        }
+      }
+
       @include breakpoint(desktop) {
-        @include rem(padding, 45px 30px);
+        @include rem(padding, 75px 30px);
         clear: none;
         display: table-cell;
         width: 75%;

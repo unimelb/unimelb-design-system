@@ -173,6 +173,76 @@ table.course-progression {
   }
 }
 
+[role="main"] ul.degree-plan-nav {
+  display: block;
+  line-height: 1.4;
+  padding: 0;
+
+  @include breakpoint(desktop) {
+    @include rem(margin, 0 -30px 0 -15px);
+  }
+
+  li {
+    list-style-type: none;
+    margin-left: 0;
+    padding-bottom: 0;
+  }
+
+  a {
+    @include rem(padding, 10px 30px 10px 15px);
+    border-left: 5px solid transparent;
+    display: block;
+    text-decoration: none;
+  }
+
+  a.current,
+  a:hover.current {
+    background-color: $white;
+    border-left-color: #0084ee;
+  }
+}
+
+.degree-plan-section {
+  position: relative;
+}
+
+[role="main"] .with-aside div.degree-plan {
+  display: none;
+
+  &.current {
+    display: block;
+
+    h2 {
+      padding-top: 0;
+    }
+  }
+}
+
+#overview h2 {
+  padding-top: 0;
+}
+
+.pricing,
+[role="main"] .with-aside aside .pricing {
+  h2{
+    @include padding-leader(1);
+    padding-bottom: 0;
+  }
+
+  h3{
+    @include adjust-font-size-to(26px);
+    @include padding-leader(0);
+    @include padding-trailer(1);
+    font-weight: $light;
+  }
+
+  p{
+    @include adjust-font-size-to(14px);
+    @include padding-leader(0);
+    padding-bottom: 0;
+  }
+}
+
 [role="main"] form.course-select {
   @extend .filtered-listing-select;
   box-shadow: none;

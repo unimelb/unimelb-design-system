@@ -32,7 +32,7 @@
 
 [role="main"] {
   .tabbed-nav {
-    .full-width {
+    & > .full-width {
       background-color: $darkblue;
       border-bottom: 1px solid transparent;
       position: relative;

@@ -46,7 +46,7 @@ unless window.UOMInpageScrolling
                 target = tabbed
 
               if target
-                t.to = target.offsetTop
+                t.to = if document.querySelectorAll('.page-header.floating').length then target.offsetTop else target.offsetTop - 40;
                 t.element = outer
                 t.scrollTo()
 
