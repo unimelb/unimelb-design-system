@@ -199,7 +199,7 @@
     }
   }
 
-  @include breakpoint(1350px){
+  @include breakpoint(1350px) {
     @include rem(max-width, 1265px);
 
     > li {
@@ -212,7 +212,12 @@
           @include rem(max-width, 1105px);
 
           > a {
-            min-width: 63%;
+            width: 63%;
+
+            h3,
+            p {
+              margin-left: 0;
+            }
           }
 
           > .presenters {
