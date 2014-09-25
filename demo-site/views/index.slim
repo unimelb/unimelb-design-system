@@ -46,15 +46,16 @@ div role="main"
         p
           a.button-hero href="/developers" Code guidelines
 
-  section.navigation-text-listing
-    h1
-      a href="/layouts" Page Templates
-    p Page templates to get you started building the most commonly used page types across the unimelb domain.
-    ul
-      - @layouts.reject{ |l| l =~ /(layout)$/ }.each do |path|
-        li
-          a href=(layout_path(path))
-            = layout_title(path)
+  section
+    h1 Example Layouts
+    p Example layouts to get you started building the most commonly used page types across the unimelb domain.
+    p
+      a.button-hero href="/layouts" View example layouts
+    //ul
+    //  - @layouts.reject{ |l| l =~ /(layout)$/ }.each do |path|
+    //    li
+    //      a href=(layout_path(path))
+    //        = layout_title(path)
 
   hr
 
