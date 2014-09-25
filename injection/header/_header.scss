@@ -82,7 +82,7 @@
     @include rem(height, 60px);
 
     // god damn it compass
-    @include single-box-shadow(rgba($black, .3), 0, 6px, 6px, -3px);
+    @include single-box-shadow(0, 6px, 6px, -3px, rgba($black, .3));
 
     padding: 0;
     position: relative;
