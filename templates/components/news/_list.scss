@@ -61,6 +61,7 @@
         @include rem(max-width, 230px);
         display: block;
         float: left;
+        margin-left: 0;
 
         & + p,
         & + p + h1,
