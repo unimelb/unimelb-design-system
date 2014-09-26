@@ -4,15 +4,19 @@ body {
 
 .page-inner {
   @extend %smooth-translate;
+  @include rem(padding-top, 60px);
   @include translateX(0);
   background-color: $navy;
   min-height: 100%;
-  padding-top: 90px;
   position: relative;
   z-index: 2;
 
   .floating {
     margin-top: -90px;
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(padding-top, 90px);
   }
 
   &.active {
@@ -44,6 +48,7 @@ body {
       @include transform(translate(-100%, 0) translate(90px, 0));
     }
   }
+
 }
 
 .page-header {
