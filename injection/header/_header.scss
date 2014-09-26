@@ -22,6 +22,7 @@
   }
 
   &.fixed:not(.floating) {
+    background-color: rgba($white, .9);
     position: fixed;
     width: 100%;
 

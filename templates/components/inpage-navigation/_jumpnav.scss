@@ -44,6 +44,9 @@
 
   @include breakpoint(desktop) {
     li {
+      padding-left: 15px;
+      text-indent: -15px;
+      white-space: normal;
       width: 100%;
     }
 
@@ -59,17 +62,21 @@
 
 #outer {
   @extend %jump;
+  background-color: rgba($white, .7);
+  display: none;
 
-  // MAGIC FAIRY DUST
-  transform: translateZ(0);
-
-  @include breakpoint(desktop) {
+  @include breakpoint(1300px) {
+    display: block;
     left: 0;
-    padding: 30px 15px;
+    padding: 15px 15px 30px;
     position: fixed;
-    top: 30px;
+    top: 255px;
     width: 200px;
     z-index: 100;
   }
-}
 
+  &.fixed {
+    font-family: $ff-sans;
+    top: 45px;
+  }
+}

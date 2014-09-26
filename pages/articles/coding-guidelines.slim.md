@@ -8,7 +8,7 @@ section.lead
   p The design system has been built using <a href="http://sass-lang.com">Sass</a>, a CSS pre-processor that adds program logic, variables and nesting to simplify long and complicated stylesheet files.
 
 section
-  h2.title CSS Rules
+  h2#css.title CSS Rules
 
   p To make style code easier to maintain, we use a few rules to keep it consistent.
 
@@ -54,7 +54,7 @@ section
     }
 
 section
-  h2.title Sass Rules
+  h2#sass.title Sass Rules
 
   p We use the SCSS (CSS-compatible) syntax of Sass.
 
@@ -171,3 +171,8 @@ section
 
 section
   h2.title Javascript
+
+  p We follow the rules outlined in <a href="https://github.com/rwaldron/idiomatic.js">idiomatic.js</a>
+
+blockquote
+  | All code in any code-base should look like a single person typed it, no matter how many people contributed

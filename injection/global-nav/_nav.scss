@@ -2,10 +2,13 @@ body {
   overflow-x: hidden;
 }
 
+.uomcontent {
+  @extend %smooth-translate;
+}
+
 .page-inner {
   @extend %smooth-translate;
   @include rem(padding-top, 60px);
-  @include translateX(0);
   background-color: $navy;
   min-height: 100%;
   position: relative;

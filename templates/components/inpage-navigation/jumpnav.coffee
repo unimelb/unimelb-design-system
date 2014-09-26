@@ -6,7 +6,7 @@ unless window.UOMStickyNav
       constructor: (el) ->
         @main = el
 
-        if /(Firefox)/g.test(navigator.userAgent)
+        if /(Firefox)/g.test(navigator.userAgent) or /(Trident)/g.test(navigator.userAgent)
           @outer = document.querySelector('html')
         else
           @outer = document.body
@@ -29,22 +29,22 @@ unless window.UOMStickyNav
 
         new window.InPage(el) for el in @n.querySelectorAll('a[href^="#"]')
 
-
-        # Arbitrary delay to allow calculation of CSS block hiding - page load on local can run up to 400ms
-
         @nPadding = 30 # 15 top + 15 bottom
         @fPadding = 60 # 30 top + 30 bottom
         @arbitraryOffset = 50
 
+        # Arbitrary delay to allow calculation of CSS block hiding - page load on local can run up to 400ms
+
         t = this
         timeout = setTimeout(->
           t.stickyTop = t.n.offsetTop
+          console.log t.stickyTop
           t.stickyEnd = t.main.offsetHeight + t.main.offsetTop - t.n.offsetHeight - t.nPadding
           t.stickyEnd = t.stickyEnd - t.fPadding - document.querySelector('footer.cta').offsetHeight if Array.prototype.slice.call(document.querySelectorAll('footer.cta')).length>0
 
-          # window.addEventListener "scroll", ->
-          #   t.stickify()
-          #   t.progress()
+          window.addEventListener "scroll", ->
+            t.stickify()
+            t.progress()
 
           t.stickify()
           t.progress()
@@ -54,6 +54,11 @@ unless window.UOMStickyNav
           t.progress()
           t.stickify() unless t.main.hasClass 'tab'
 
+          if t.outer.scrollTop > 210
+            jump.addClass 'fixed' unless jump.hasClass 'fixed'
+          else
+            jump.removeClass 'fixed' if jump.hasClass 'fixed'
+
         @progress()
         @stickify() unless @main.hasClass 'tab'
 
@@ -61,14 +66,15 @@ unless window.UOMStickyNav
           @main.querySelector('.with-aside aside').appendChild jump
         else
           jump.id = 'outer'
-          @outer.insertBefore(jump, @outer.firstChild.nextSibling)
+          main = document.querySelector('[role="main"]')
+          main.insertBefore(jump, main.firstChild.nextSibling)
 
       stickify: ->
-        if @stickyTop < @outer.scrollTop and @stickyEnd > @outer.scrollTop
-          @n.parentElement.style.height = @n.offsetHeight+"px"
-          @n.addClass('jump-fixed')
-        else
-          @n.removeClass('jump-fixed')
+        # if @stickyTop < @outer.scrollTop and @stickyEnd > @outer.scrollTop
+        #   @n.parentElement.style.height = @n.offsetHeight+"px"
+        #   @n.addClass('jump-fixed')
+        # else
+        #   @n.removeClass('jump-fixed')
 
       progress: ->
         for pos, link of @nav
@@ -83,9 +89,9 @@ unless window.UOMStickyNav
         for el in document.querySelectorAll('.tab')
           if el.countSelector('h2[id]') > 0
             new StickyNav(el)
-      # else
-      #   if document.countSelector('h2[id]') > 0
-      #     new StickyNav(document.querySelector('div[role="main"]'))
+      else
+        if document.countSelector('h2[id]') > 0
+          new StickyNav(document.querySelector('div[role="main"]'))
 
 if window.attachEvent
   window.attachEvent 'onload', ->
