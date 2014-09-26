@@ -186,7 +186,7 @@
 
           &::before {
             @include adjust-font-size-to(68px);
-            margin-left: 0;
+            @include rem(margin-left, 10px);
           }
         }
       }
