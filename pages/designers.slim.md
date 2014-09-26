@@ -1,10 +1,9 @@
 ---
 title: For Designers
 ---
-header.image style="background-image:url(/assets/images/desktop.jpg)"
-  .mid-align
-    h1 Our Design Principles
-    p These are the principles we're working with throughout the whole design system
+header
+  h1 Our Design Principles
+  p These are the principles we're working with throughout the whole design system
 
 section
   ol.steps

@@ -127,14 +127,15 @@
 
   ol {
     @include rem(padding-left, 30px);
-    li {
-      list-style-type: decimal;
-    }
+    // li {
+    //   list-style-type: decimal;
+    // }
 
     &.steps {
       @include rem(max-width, $w-mid);
       counter-reset: steps;
       padding-left: 0;
+      padding-right: 0;
 
       li {
         @include rem(max-width, $w-mid);
@@ -172,11 +173,29 @@
 
       @include breakpoint(desktop) {
         li {
-          @include rem(padding-left, 100px);
+          &::before {
+            @include adjust-font-size-to(68px);
+          }
+        }
+      }
+
+      @include breakpoint(860px) {
+        li {
+          margin-left: 0;
+          padding-left: 0;
+
+          &::before {
+            @include adjust-font-size-to(68px);
+            margin-left: 0;
+          }
+        }
+      }
+
+      @include breakpoint(wide) {
+        li {
 
           &::before {
             @include adjust-font-size-to(80px);
-            @include rem(margin-left, -70px);
           }
         }
       }

@@ -45,6 +45,7 @@ Below are some basic typographic styles with their associated renderings
 ```
 <p><strong>Bold </strong>, <em>italic</em> and <u>underlined</u> text</p>
 
+## Default bullet points
 ```html
 <ul>
   <li>Unordered list items</li>
@@ -58,18 +59,7 @@ Below are some basic typographic styles with their associated renderings
   <li>Unordered list items</li>
 </ul>
 
-```html
-<ol>
-  <li>Ordered list items</li>
-  <li>Ordered list items</li>
-  <li>Ordered list items</li>
-</ol>
-```
-<ol>
-  <li>Ordered list items</li>
-  <li>Ordered list items</li>
-  <li>Ordered list items</li>
-</ol>
+## Ticked list
 ```html
 <ul class="ticked-list">
   <li>Item</li>
@@ -82,6 +72,62 @@ Below are some basic typographic styles with their associated renderings
   <li>Another item</li>
   <li class="no-li">This one is not ticked</li>
 </ul>
+
+## Default ordered list
+```html
+<ol>
+  <li>Ordered list items</li>
+  <li>Ordered list items</li>
+  <li>Ordered list items</li>
+</ol>
+```
+<ol>
+  <li>Ordered list items</li>
+  <li>Ordered list items</li>
+  <li>Ordered list items</li>
+</ol>
+
+## Alphabetically ordered list, lowercase
+```html
+<ol type="a">
+```
+<ol type="a">
+  <li>Ordered list items</li>
+  <li>Ordered list items</li>
+  <li>Ordered list items</li>
+</ol>
+
+## Alphabetically ordered list, uppercase
+```html
+<ol type="A">
+```
+<ol type="A">
+  <li>Ordered list items</li>
+  <li>Ordered list items</li>
+  <li>Ordered list items</li>
+</ol>
+
+## Roman numbers, lowercase
+```html
+<ol type="i">
+```
+<ol type="i">
+  <li>Ordered list items</li>
+  <li>Ordered list items</li>
+  <li>Ordered list items</li>
+</ol>
+
+## Roman numbers, uppercase
+```html
+<ol type="I">
+```
+<ol type="I">
+  <li>Ordered list items</li>
+  <li>Ordered list items</li>
+  <li>Ordered list items</li>
+</ol>
+
+## Ordered list, steps
 ```html
 <ol class="steps">
   <li>
