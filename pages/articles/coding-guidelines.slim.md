@@ -25,7 +25,36 @@ section
 
   p Follow the "inception rule", no nesting more than 3 levels deep, wherever possible.
 
-==Pygments.highlight("h1,\np {\n  @extend %wrapper;\n  @include rem(padding-top, 15px);\n  line-height: 1;\n  padding-bottom: 0;\n\n  .tight {\n    padding: 0;\n  }\n\n  a {\n    color: $highlight;\n    text-decoration: none;\n\n    &:hover {\n      text-decoration: underline;\n    }\n  }\n\n  span {\n    display: inline-block;\n  }\n}\n\nsmall {\n  color: $navy;\n}", lexer: 'scss')
+==syntax_highlight :html, 'scss'
+  erb:
+    h1,
+    p {
+      @extend %wrapper;
+      @include rem(padding-top, 15px);
+      line-height: 1;
+      padding-bottom: 0;
+
+      .tight {
+        padding: 0;
+      }
+
+      a {
+        color: $highlight;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      span {
+        display: inline-block;
+      }
+    }
+
+    small {
+      color: $navy;
+    }
 
 section
   p A new element should always have an empty line separating it from the element above, even when nested.
@@ -36,12 +65,31 @@ section
 
   p For numbers less than one, do not use a leading 0. eg.
 
-==Pygments.highlight(".disabled {\n  opacity: .6;\n}", lexer: 'scss')
+==syntax_highlight :html, 'scss'
+  erb:
+    .disabled {
+      opacity: .6;
+    }
 
 section
   p For naming, use semantic elements contained within an anonymously classed container, with additional variants defined by anonymous class. eg.
 
-==Pygments.highlight(".box {\n  a {\n    color: $highlight;\n    text-decoration: none;\n\n    &:hover {\n      text-decoration: underline;\n    }\n\n    &.error {\n      color: $red;\n    }\n  }\n}", lexer: 'scss')
+==syntax_highlight :html, 'scss'
+  erb:
+    .box {
+      a {
+        color: $highlight;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &.error {
+          color: $red;
+        }
+      }
+    }
 
 section
   p Always use <code>$variables</code> in place of raw color values, and remember that these can still be used in <code>lighten()</code> and <code>darken()</code> SASS functions, as well as <code>rgba()</code> values.

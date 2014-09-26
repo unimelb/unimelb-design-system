@@ -291,9 +291,9 @@ module WebTemplates
       (@pipeline_with_section.call(md))[:output].to_s
     end
 
-    def syntax_highlight(html = '')
+    def syntax_highlight(html = '', lexer = 'html')
       html = yield if block_given?
-      Pygments.highlight(html, lexer: 'html')
+      Pygments.highlight(html, lexer: lexer)
     end
 
     def front_matter(file)
