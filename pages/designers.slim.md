@@ -3,7 +3,7 @@ title: For Designers
 ---
 header
   h1 Our Design Principles
-  p These are the principles we've used throughout the design system. 
+  p These are the principles we've used to inform the creation of the design system.
 
 section
   ol.steps
