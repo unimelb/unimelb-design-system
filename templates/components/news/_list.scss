@@ -1,3 +1,65 @@
+[role="main"] .news-hero {
+  @include padding-trailer(2);
+  @include rem(max-width, $w-lge);
+  margin: 0 auto;
+  text-align: right;
+
+  a {
+    @include padding-leader(6);
+    @include rem(max-width, 1150px);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    text-decoration: none;
+    text-align: left;
+    width: 100%;
+
+
+    &:hover {
+      .inner {
+        background-color: $darkblue;
+      }
+    }
+  }
+
+  .inner {
+    @include padding-leader(1);
+    @include padding-trailer(1);
+    @include rem(padding-left, 20px);
+    @include rem(padding-right, 20px);
+
+    background-color: $darkblue;
+    background-color: rgba($darkblue, .7);
+    color: $white;
+  }
+
+  h1 {
+    @include rem(max-width, $w-mid);
+    font-weight: $thin;
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    @include rem(max-width, $w-mid);
+    margin: 0;
+    padding: 0;
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(padding-left, 20px);
+    @include rem(padding-right, 20px);
+
+    a {
+      @include padding-leader(14);
+    }
+  }
+  @include breakpoint(wide) {
+
+  }
+}
+
 [role="main"] .news-index {
 
   article {
@@ -6,6 +68,10 @@
     @include rem(max-width, $w-mid);
     border-bottom: 1px solid $lightergray;
     margin: 0 auto;
+
+    &:first-child {
+      padding-top: 0;
+    }
   }
 
   a {
