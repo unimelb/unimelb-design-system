@@ -28,7 +28,7 @@ unless window.UOMStickyNav
         new window.InPage(el) for el in @n.querySelectorAll('a[href^="#"]')
 
         # Arbitrary delay to allow calculation of CSS block hiding
-        @nPadding = 30 # 15 top + 15 bottom
+        @nPadding = 60 # 30 top + 30 bottom
         @fPadding = 60 # 30 top + 30 bottom
         @arbitraryOffset = 50
 

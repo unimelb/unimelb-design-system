@@ -170,9 +170,11 @@ section
     }
 
 section
-  h2.title Javascript
+  h2#javascript.title Javascript
 
   p We follow the rules outlined in <a href="https://github.com/rwaldron/idiomatic.js">idiomatic.js</a>
 
 blockquote
   | All code in any code-base should look like a single person typed it, no matter how many people contributed
+
+.jumpnav
