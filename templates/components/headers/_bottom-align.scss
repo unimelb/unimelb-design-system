@@ -50,6 +50,17 @@
         background-color: rgba($white, .8);
         color: $black;
       }
+      &.black {
+        background-color: rgba($black, .5);
+      }
+
+      form {
+        background-color: transparent;
+
+        label {
+          color: $white;
+        }
+      }
 
       @include breakpoint(desktop) {
         @include rem(margin-bottom, -48px);
