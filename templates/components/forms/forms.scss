@@ -359,3 +359,57 @@ select {
   }
 }
 
+[role="main"] .newsletter-box {
+  @include leader(1);
+  @include padding-leader(1);
+  @include padding-trailer(1);
+  @include rem(max-width, $w-mid);
+  background-color: transparent;
+  border-top: 1px solid rgba($white, 0.2);
+  color: $white;
+  margin-left: auto;
+  margin-right: auto;
+
+  p {
+    @include adjust-font-size-to(20px);
+    @include padding-trailer(1);
+    font-weight: $thin;
+  }
+
+  form {
+    @include rem(max-width, $w-lge);
+    background-color: transparent;
+
+    label {
+      color: $white;
+    }
+
+    @include breakpoint(desktop) {
+
+      fieldset {
+        display: table;
+        margin: 0 auto;
+        width: auto;
+
+        label {
+          width: auto;
+        }
+      }
+
+      fieldset > div {
+        @include rem(padding-left, 10px);
+        @include rem(padding-right, 10px);
+        display: table-cell;
+      }
+
+      input[type="submit"] {
+        @include rem(padding, 12px 20px);
+        border: 0;
+      }
+    }
+  }
+
+  @include breakpoint(desktop) {
+    @include padding-leader(0);
+  }
+}
