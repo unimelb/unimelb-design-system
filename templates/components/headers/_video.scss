@@ -1,5 +1,25 @@
 [role="main"] {
   header {
+
+    &.embed-video:first-child {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    &.embed-video {
+
+      .video {
+        margin-bottom: 0;
+        max-width: 3000px;
+        padding-bottom: 56.25%;
+      }
+
+      iframe {
+        margin: 0;
+        width: 100%;
+      }
+    }
+
     .video-loop {
       background-color: $black;
       display: none;
