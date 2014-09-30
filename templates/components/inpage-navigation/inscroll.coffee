@@ -74,4 +74,3 @@ unless window.UOMInpageScrolling
   else
     document.addEventListener 'DOMContentLoaded', ->
       UOMInpageScrolling()
-

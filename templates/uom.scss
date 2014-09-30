@@ -1,14 +1,6 @@
 @import 'compass';
 
 @import 'components/base/base';
-
-// @import '../injection/header/header';
-// @import '../injection/footer/footer';
-// @import '../injection/global-nav/modal';
-// @import '../injection/global-nav/nav';
-// @import '../injection/global-nav/localnav';
-// @import '../injection/global-nav/globalnav';
-
 @import 'components/text/text';
 @import 'components/buttons/buttons';
 @import 'components/headers/headers';
@@ -21,20 +13,12 @@
 @import 'components/accordion/accordion';
 @import 'components/events/events';
 @import 'components/filtered-listings/filtered-listings';
-@import 'components/maps/maps';
 @import 'components/modal/modal';
 @import 'components/news/news';
 @import 'components/people/people';
 @import 'components/search/search';
 @import 'components/loading-animation/loading-animation';
-
 @import 'components/socialmedia/socialmedia';
-
-///* Layouts */
-///@import 'components/globals/profile';
-///@import 'components/globals/courses';
-///@import 'components/globals/timetable';
-///@import 'components/globals/detail';
 
 ///* Print */
 @import 'print';

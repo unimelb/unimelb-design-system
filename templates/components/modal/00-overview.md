@@ -1,6 +1,7 @@
 ---
 title: Modal
 ---
+<div class="jumpnav"></div>
 ## Overview
 
 A simple two&ndash;part modal component, with a triggering link and a modal container.

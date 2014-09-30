@@ -271,6 +271,7 @@ module WebTemplates
       # Delete no-source for section title display
       title = basename_without_index_and_extension(f)
       title = title[0..-11] if title[-9..-1] == 'no-source'
+      title = title[3..-1] if title[0..2] =~ /\d\d\-/
       "<h2 id=\"#{title}\">#{title.gsub('-', ' ').capitalize}</h2>"
     end
 
