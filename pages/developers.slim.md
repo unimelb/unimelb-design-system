@@ -5,10 +5,10 @@ header.solid-paleblue
   h1 Developers
 
 section
-  p The design system has been created with the following development principles in mind.
+  p The design system has been created with the following principles in mind.
 
   ol
-    li The system has been built so that you'll never <em>need</em> a custom.css or custom.js file.
+    li The system has been built so that you should never <em>need</em> a custom.css or custom.js file. 
     li Code examples for page templates and components should be provided along with examples of implementation.
     li The design system is technology agnostic in the first instance. We cannot support CMS implementations of template code.
     li However, we will work with CMS experts (eg. Squiz) to integrate with major, university supported CMS's
