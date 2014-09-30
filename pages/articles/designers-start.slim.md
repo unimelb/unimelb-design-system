@@ -9,13 +9,13 @@ section
   ol.steps
     li
       h2 Research
-      p Find out user needs by doing research and get to know the audience you are talking to
+      p Find out user needs by doing research and get to know the audience you are talking to.
     li
       h2 Get content
-      p Gather as much real content as possible before you start layouting and designing the pages
+      p Gather as much real content as possible before you start laying out pages.
     li
       h2 Structure
-      p Structure your content in a linear and — for your audience — useful way
+      p Structure your content in a linear and useful way.
     li
       h2 Layout your page
       p
@@ -23,10 +23,10 @@ section
         '
         a href="/assets/downloads/web.unimelb.paper_cutout.pdf" paper cutout pdf
         '
-        |and start to layout the page on your table or whiteboard
+        |and start to layout the page on your table or whiteboard.
     li
       h2 Code
-      p Jump into code and build a prototype to test your layout, content and interactions
+      p <a href="/developers">Jump into code</a> and build a prototype to test your layout, content and interactions.
     li
       h2 Test early
       p Test your HTML prototypes as early as possible. You don't need to setup expensive formal user testing scenarios but you should start to test with your target audience as soon as possible in informal small testing sessions.
