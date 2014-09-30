@@ -360,11 +360,15 @@ select {
 }
 
 [role="main"] .newsletter-box {
-  //@include padding-leader(1);
+  @include leader(1);
+  @include padding-leader(1);
   @include padding-trailer(1);
-  background-color: $navy;
-  border-bottom: 1px solid rgba($white, 0.2);
+  @include rem(max-width, $w-mid);
+  background-color: transparent;
+  border-top: 1px solid rgba($white, 0.2);
   color: $white;
+  margin-left: auto;
+  margin-right: auto;
 
   p {
     @include adjust-font-size-to(20px);
@@ -403,5 +407,9 @@ select {
         border: 0;
       }
     }
+  }
+
+  @include breakpoint(desktop) {
+    @include padding-leader(0);
   }
 }
