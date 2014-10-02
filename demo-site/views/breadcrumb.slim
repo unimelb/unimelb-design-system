@@ -1,16 +1,12 @@
-.page-header
-  header
-    a.page-header-logo href="https://www.unimelb.edu.au" Home
-    .page-header-navigation
-      a href="/" Web.Unimelb
-      .page-local-history
-        - if @component
-          span="/"
-          a title="Components" href="/components" Components
-        - if @layout
-          span="/"
-          a title="Layouts" href="/layouts" Layouts
-        - if page_title
-          span="/"
-          a.last title=(page_title) href=""
-            = page_title
+.page-local-history
+  a.root href="/" Web.Unimelb
+  - if @component
+    span="/"
+    a title="Components" href="/components" Components
+  - if @layout
+    span="/"
+    a title="Layouts" href="/layouts" Layouts
+  - if page_title
+    span="/"
+    a.last title=(page_title) href=""
+      = page_title

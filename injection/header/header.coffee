@@ -42,26 +42,35 @@ window.UOMinjectHeader = ->
         header.addClass('reverse')
 
     else
+      if document.countSelector('.page-local-history .root') == 0
+        rootlink = """
+        <a href="https://unimelb.edu.au/" title="The University of Melbourne">The University of Melbourne</a>
+        """
+      else
+        rootlink = ""
+
       # General header
       header.innerHTML = """
       <header>
         <a class="page-header-logo" href="#{defaultlink}">Home</a>
         <div class="page-header-navigation">
-          <a href="https://unimelb.edu.au/" title="The University of Melbourne">The University of Melbourne</a>
+          #{rootlink}
         </div>
       </header>
       """
+
+    parent.insertBefore(header, page)
 
     local = document.querySelector('.page-local-history')
     if local
       local.parentNode.removeChild(local)
       navparent = document.querySelector('.page-header-navigation')
-      sep = document.createElement "span"
-      sep.innerHTML = "/"
-      navparent.appendChild(sep)
-      navparent.appendChild(local)
+      if rootlink != ""
+        sep = document.createElement "span"
+        sep.innerHTML = "/"
+        navparent.appendChild(sep)
 
-    parent.insertBefore(header, page)
+      navparent.appendChild(local)
 
   else
     page.removeChild(header)
