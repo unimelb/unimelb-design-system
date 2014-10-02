@@ -5,10 +5,10 @@ hidden: true
 
 Creating a new site using the UoM Design System requires setting up a basic page boilerplate and then using either the [example layouts](/layouts) or [components](/components) to place component inside the ```div role="main"```.
 
-Demonstration examples of this code can be found for:
+Demonstration examples of this code can be found for many different page types in our [example layouts directory](/layouts) similar to these :
 
-- [A Homepage](http://waitingallday.com/unimelb-templates-boilerplate/homepage/full.html)
-- [A Subpage](http://waitingallday.com/unimelb-templates-boilerplate/subpage/full.html)
+- [A Homepage](/layouts/homepage) - [(Source)](/layouts/homepage?view=source)
+- [A Subpage](/layouts/article) - [(Source)](/layouts/article?view=source)
 
 ### Document structure
 
