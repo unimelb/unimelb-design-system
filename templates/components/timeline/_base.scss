@@ -1,114 +1,105 @@
-[role="main"] #dates section.lead { text-align: left; }
-[role="main"] #dates section.lead::after { border-bottom: none; }
-[role="main"] h1 sup {font-size: 40%; opacity: 0.75; }
-[role="main"] p small { font-size: 12px; font-size: 0.75rem; }
-/* line 967, ../../app/assets/stylesheets/change_of_preference.css.scss */
-.timeline {
-  color: #939393;
-  font-size: 20px;
-  font-weight: 300;
+[role="main"] .timeline {
+  @extend %clearfix;
+  font-size: 1em;
+  color: $midgray;
+  font-family: $ff-sans;
+  font-weight: $thin;
   position: relative;
-}
-/* line 974, ../../app/assets/stylesheets/change_of_preference.css.scss */
-/*.timeline::before {
-  background-color: #eeeeee;
-  content: " ";
-  height: 20px;
-  left: 36%;
-  position: absolute;
-  top: 0;
-  width: 20px;
-  z-index: 2;
-}*/
-[role="main"] dl.timeline {
-  font-size: 16px;
-  font-size: 1rem;
-}
-/* line 984, ../../app/assets/stylesheets/change_of_preference.css.scss */
-[role="main"] .timeline dt {
-  float: left;
-  margin: 0 3% 0 0;
-  padding-top: 10px;
-  text-align: right;
-  text-transform: uppercase;
-  width: 33%;
-}
-/* line 992, ../../app/assets/stylesheets/change_of_preference.css.scss */
-.timeline dd {
-  border-left: 1px solid #dedede;
-  float: left;
-  margin: 0;
-  padding-bottom: 20px;
-  padding-top: 10px;
-  position: relative;
-  width: 63%;
-}
 
-.timeline dd span { font-weight: bold; }
+  &::before {
+    @include rem(height, 20px);
+    @include rem(top, 19px);
+    @include rem(width, 20px);
+    background-color: $white;
+    content: '';
+    left: 36%;
+    position: absolute;
+    z-index: 2;
+  }
 
-/* line 1000, ../../app/assets/stylesheets/change_of_preference.css.scss */
-.timeline dd:last-child {
-  border-bottom: 0;
-}
-/* line 1003, ../../app/assets/stylesheets/change_of_preference.css.scss */
-.timeline dd::before {
-  background-color: #dedede;
-  border-radius: 50%;
-  content: " ";
-  display: block;
-  height: 15px;
-  left: -7px;
-  position: absolute;
-  top: 15px;
-  width: 15px;
-  z-index: 2;
-}
-/* line 1016, ../../app/assets/stylesheets/change_of_preference.css.scss */
-.timeline dd span,
-.timeline dd p {
-  display: block;
-  margin: 0;
-  padding-bottom: 10px;
-  margin-left: 40px;
-}
-/* line 1022, ../../app/assets/stylesheets/change_of_preference.css.scss */
-.timeline dd a.location {
-  color: #003467;
-  display: block;
-  font-size: 16px;
-  font-style: italic;
-  padding-bottom: 20px;
-  text-decoration: none;
-}
-/* line 1029, ../../app/assets/stylesheets/change_of_preference.css.scss */
-.timeline dd a.location:hover {
-  text-decoration: underline;
-}
-/* line 1034, ../../app/assets/stylesheets/change_of_preference.css.scss */
-.timeline dd ul:last-child,
-.timeline dd p:last-child {
-  border-bottom: 1px solid #dedede;
-  padding-bottom: 20px;
-}
-/* line 1038, ../../app/assets/stylesheets/change_of_preference.css.scss */
-.timeline dd ul {
-  color: #444444;
-  font-size: 18px;
-  margin-left: 40px;
-  padding-bottom: 10px;
-  padding-left: 30px;
-}
-/* line 1044, ../../app/assets/stylesheets/change_of_preference.css.scss */
-.timeline dd ul li {
-  list-style-type: disc;
-}
-/* line 1048, ../../app/assets/stylesheets/change_of_preference.css.scss */
-.timeline dd:last-child p:last-child {
-  border-bottom: 0;
-  padding-bottom: 60px;
-}
-/* line 1054, ../../app/assets/stylesheets/change_of_preference.css.scss */
-.timeline strong,
-.timeline span {
-  color: #003467;
+  dt {
+    @include rem(padding-top, 10px);
+    float: left;
+    margin: 0 3% 0 0;
+    text-align: right;
+    text-transform: uppercase;
+    width: 33%;
+  }
+
+  dd {
+    @include rem(padding-bottom, 20px);
+    @include rem(padding-top, 10px);
+    border-left: 1px solid darken($lightgray, 3%);
+    float: left;
+    margin: 0;
+    position: relative;
+    width: 63%;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &::before {
+      @include rem(height, 15px);
+      @include rem(left, -7px);
+      @include rem(top, 15px);
+      @include rem(width, 15px);
+      background-color: darken($lightgray, 3%);
+      border-radius: 50%;
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: 2;
+    }
+
+    span,
+    p {
+      @include rem(margin-left, 40px);
+      @include rem(padding-bottom, 10px);
+      @include rem(padding-left, 30px);
+      display: block;
+      margin: 0;
+    }
+
+    a.location {
+      @include rem(font-size, 16px);
+      @include rem(padding-bottom, 20px);
+      color: $navy;
+      display: block;
+      font-style: italic;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    ul:last-child,
+    p:last-child {
+      @include rem(padding-bottom, 20px);
+      border-bottom: 1px solid darken($lightgray, 3%);
+    }
+
+    ul {
+      @include rem(font-size, 18px);
+      @include rem(margin-left, 40px);
+      @include rem(padding-bottom, 10px);
+      @include rem(padding-left, 30px);
+      color: $base;
+
+      li {
+        list-style-type: disc;
+      }
+    }
+
+    &:last-child p:last-child {
+      @include rem(padding-bottom, 60px);
+      border-bottom: 0;
+    }
+  }
+
+  strong,
+  span {
+    color: $navy;
+  }
 }

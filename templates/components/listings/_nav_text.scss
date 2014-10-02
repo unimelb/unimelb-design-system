@@ -26,6 +26,10 @@
     padding-top: 0;
 
     li {
+      // Include vendored fallbacks, autoprefixer does not recognise columns module
+      -moz-column-break-inside: avoid;
+      -ms-column-break-inside: avoid;
+      -webkit-column-break-inside: avoid;
       column-break-inside: avoid;
       list-style-type: none;
       margin: 0;
