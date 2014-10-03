@@ -1,8 +1,10 @@
 ---
-title: Design System Boilerplate
+title: Design System Usage Instructions
 ---
 header.solid-paleblue
-  h1 Design System Boilerplate
+  h1 Usage Instructions
+
+  .jumpnav
 
 section.lead
   p Creating a new site using the UoM Design System requires setting up a basic page markup and then using either the [example layouts](/layouts) or [components](/components) to place component inside the ```div role="main"```.

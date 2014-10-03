@@ -32,10 +32,15 @@ unless window.UOMStickyNav
         @fPadding = 60 # 30 top + 30 bottom
         @arbitraryOffset = 50
 
+        if document.countSelector('.floating') == 0
+          @fixPoint = 210
+        else
+          @fixPoint = 250
+
         t = this
         window.addEventListener "scroll", ->
           t.progress()
-          if t.outer.scrollTop > 210 and t.contained()
+          if t.outer.scrollTop > t.fixPoint and t.contained()
             jump.addClass 'fixed' unless jump.hasClass 'fixed'
           else
             jump.removeClass 'fixed' if jump.hasClass 'fixed'

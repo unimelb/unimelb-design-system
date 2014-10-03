@@ -75,14 +75,15 @@ window.UOMinjectHeader = ->
 
     local = document.querySelector('.page-local-history')
     if local
-      local.parentNode.removeChild(local)
       navparent = document.querySelector('.page-header-navigation')
-      if rootlink != ""
-        sep = document.createElement "span"
-        sep.innerHTML = "/"
-        navparent.appendChild(sep)
+      local.parentNode.removeChild(local)
+      if navparent
+        if rootlink != ""
+          sep = document.createElement "span"
+          sep.innerHTML = "/"
+          navparent.appendChild(sep)
 
-      navparent.appendChild(local)
+        navparent.appendChild(local)
 
   else
     page.removeChild(header)

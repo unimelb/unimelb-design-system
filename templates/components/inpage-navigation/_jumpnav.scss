@@ -72,15 +72,16 @@
   @include breakpoint(1300px) {
     border-right: 1px solid lighten($lightergray, 10%);
     display: block;
+    margin-top: 45px;
     padding: 15px 15px 30px;
     position: absolute;
-    top: 255px;
     width: 200px;
     z-index: 100;
   }
 
   &.fixed {
     font-family: $ff-sans;
+    margin-top: 35px;
     position: fixed;
     top: 45px;
   }
