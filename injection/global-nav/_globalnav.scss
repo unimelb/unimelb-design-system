@@ -102,19 +102,23 @@
     }
 
     fieldset {
+      @include rem(padding-right, 45px);
       border: 0;
-      padding: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-top: 0;
       position: relative;
 
       input[type="search"] {
         @include appearance(none);
         @include rem(height, 45px);
-        @include rem(border-radius, 3px);
+        @include rem(border-radius, 3px 0 0 3px);
         @include rem(font-size, 20px);
         @include rem(padding, 8px 10px);
         background-color: $lightergray;
         border: 1px solid darken($lightergray, 5%);
         box-shadow: inset 0 1px 3px rgba($black, .15);
+        display: block;
         font-family: $ff-sans;
         font-weight: $light;
         margin: 0;
@@ -146,6 +150,7 @@
         &:focus {
           background-color: $white;
           border-color: $borderblue;
+          border-right-color: transparent;
           color: $black;
           outline: 0;
         }
@@ -157,19 +162,29 @@
         @include rem(border-radius, 0 3px 3px 0);
         @include rem(height, 45px);
         @include rem(margin, 0 0 15px);
-        @include rem(padding, 10px);
+        @include rem(padding, 3px);
         @include rem(width, 45px);
         background-color: $white;
         background-image: url("#{asset_path('header/icon-s-b.png')}");
         border: 0 none;
-        color: $white;
+        color: $darkblue;
+        cursor: pointer;
         position: absolute;
         right: 0;
-        text-indent: -999em;
+        // text-indent: -999em;
         top: 0;
+        transition: color .2s, background-color .2s;
+
+        svg {
+          fill: currentColor;
+          height: 100%;
+          width: 100%;
+        }
 
         &:hover {
+          background-color: $highlight;
           border-bottom-width: 0;
+          color: $white;
         }
       }
     }
@@ -180,13 +195,20 @@
     @include rem(height, 140px);
     @include rem(margin-top, 15px);
     @include rem(width, 140px);
-    background-image: url("#{asset_path('header/logo.svg')}");
+    // background-image: url("#{asset_path('header/logo.svg')}");
     border: 0 none;
     clear: none;
     margin-left: auto;
     margin-right: auto;
+    padding: 0;
     text-decoration: none;
-    text-indent: -9999em;
+    // text-indent: -9999em;
+
+    svg {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
 
     @include breakpoint(desktop) {
       float: left;
@@ -224,6 +246,7 @@
     }
 
     &:hover::before {
+      @include animation(chevronback 1s infinite ease-in-out);
       color: $white;
     }
   }
@@ -281,8 +304,8 @@ body.ie {
     }
 
     .logo {
-      background-image: url("#{asset_path('header/m-logo.png')}");
-      float: left;
+      // background-image: url("#{asset_path('header/m-logo.png')}");
+      // float: left;
     }
 
     h2,
@@ -300,7 +323,6 @@ body.ie {
       fieldset .search-button {
         color: $black;
         text-indent: 0;
-        width: auto;
       }
     }
 
@@ -338,9 +360,9 @@ body.ie {
 
 body.ie9 {
   [role="sitemap"] {
-    h2.logo {
-      background-image: url("#{asset_path('header/logo.png')}");
-    }
+    // h2.logo {
+    //   background-image: url("#{asset_path('header/logo.png')}");
+    // }
 
     form fieldset .inline .search-button {
       text-indent: -999em;

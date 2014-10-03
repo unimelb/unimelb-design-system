@@ -1,3 +1,4 @@
+//= require ./svg4everybody.js
 //= require ./global.js
 //= require ./header/header
 //= require ./global-nav/modal

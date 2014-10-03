@@ -109,18 +109,23 @@
       @include rem(height, 60px);
       @include rem(width, 60px);
       background-color: $darkblue;
-      background-image: url("#{asset_path('header/logo.svg')}");
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+      // background-image: url("#{asset_path('header/logo.svg')}");
+      // background-position: center;
+      // background-repeat: no-repeat;
+      // background-size: cover;
       margin-left: 0;
-      text-indent: -999em;
+      //text-indent: -999em;
 
       // opacity: 1;
       // transition: 0 opacity .4s;
 
       top: 0;
       transition: .2s top .3s;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
 
       img {
         border: 0;
@@ -254,38 +259,24 @@
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
 
     box-sizing: content-box;
 
-    .icon {
-      @include rem(height, 20px);
-      @include rem(margin-bottom, 3px);
-      @include rem(margin-top, 14px);
-      @include rem(padding-bottom, 3px);
-      @include rem(padding-top, 15px);
-      @include rem(width, 20px);
+    svg {
+      @include rem(height, 30px);
+      @include rem(margin-bottom, 4px);
+      @include rem(margin-top, 7px);
+      @include rem(width, 30px);
+      fill: currentColor;
       display: block;
       margin-left: auto;
       margin-right: auto;
-
-      &.search {
-        @extend %imgreplace;
-        background-image: url("#{asset_path('header/icon-s.png')}");
-      }
-
-      &.login {
-        @extend %imgreplace;
-        background-image: url("#{asset_path('header/icon-p.png')}");
-      }
-
-      &.menu {
-        @extend %imgreplace;
-        background-image: url("#{asset_path('header/menu.png')}");
-      }
     }
 
     &:hover {
-      background-color: $paleblue;
+      background-color: $darkblue;
+      color: $white;
       text-decoration: none;
     }
 
@@ -307,10 +298,10 @@
       @include rem(font-size, 10px);
       @include rem(padding, 0 23px);
 
-      .icon {
-        @include rem(height, 34px);
-        @include rem(margin-top, 22px);
-        @include rem(width, 34px);
+      svg {
+        @include rem(height, 38px);
+        @include rem(margin-top, 18px);
+        @include rem(width, 38px);
       }
     }
   }
@@ -336,47 +327,36 @@
     background-color: transparent;
 
     a.page-header-icon {
+      @include rem(border-radius, 3px);
       background-color: transparent;
-      border-left: 0 none;
+      border: 1px solid transparent;
       color: $white;
+      transition: background-color 0.3s, color 0.3s, transform 0.3s;
 
       &:hover {
-        background-color: transparent;
-        color: $white;
-      }
-
-      .search {
-        background-image: url('#{asset_path('header/icon-s-w.png')}');
-      }
-
-      .login {
-        background-image: url('#{asset_path('header/icon-p-w.png')}');
-      }
-
-      .menu {
-        background-image: url('#{asset_path('header/menu-w.png')}');
+        background-color: rgba($white, 0.7);
+        color: $black;
+        transform: scale(1.1);
       }
     }
 
     @include breakpoint(desktop) {
       @include rem(margin, 40px);
+
+      a.page-header-icon {
+        @include rem(height, 70px);
+        @include rem(margin-left, 20px);
+        @include rem(padding, 0 15px);
+
+        svg {
+          @include rem(margin-top, 7px);
+        }
+      }
     }
   }
 
   &.reverse .page-header-tools a.page-header-icon {
     color: $navy;
-
-    .search {
-      background-image: url('#{asset_path('header/icon-s.png')}');
-    }
-
-    .login {
-      background-image: url('#{asset_path('header/icon-p.png')}');
-    }
-
-    .menu {
-      background-image: url('#{asset_path('header/menu.png')}');
-    }
   }
 }
 

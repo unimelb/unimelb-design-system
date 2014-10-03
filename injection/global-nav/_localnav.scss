@@ -1,3 +1,15 @@
+@include keyframes(chevronback) {
+  0% { 
+    @include transform(translateX(0));
+  }
+  50% { 
+    @include transform(translateX(-5px));
+  }
+  100% { 
+    @include transform(translateX(0));
+  }
+}
+
 [role="navigation"] {
   @extend %normalise;
   @extend %smooth-translate;
@@ -129,6 +141,24 @@
     display: block;
     font-weight: 400;
     text-decoration: none;
+
+    &:before {
+      @include rem(font-size, 24px);
+      content: '\2039';
+      float: left;
+      font-weight: $regular;
+      line-height: .9;
+      padding-right: 10px;
+      //transition: transform 1s;
+    }
+
+    &:hover {
+      color: $white;
+
+      &:before {
+        @include animation(chevronback 1s infinite ease-in-out);
+      }
+    }
   }
 
   a,
@@ -168,6 +198,12 @@
         font-weight: $regular;
         line-height: .9;
         padding-right: 10px;
+      }
+    }
+
+    &:hover {
+      span::before {
+        @include animation(chevronback 1s infinite ease-in-out);
       }
     }
   }
