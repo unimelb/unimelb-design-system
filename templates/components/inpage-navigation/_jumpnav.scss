@@ -84,5 +84,9 @@
     margin-top: 35px;
     position: fixed;
     top: 45px;
+
+    &.floating {
+      margin-top: 0;
+    }
   }
 }

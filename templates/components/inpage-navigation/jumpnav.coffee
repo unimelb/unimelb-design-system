@@ -32,20 +32,17 @@ unless window.UOMStickyNav
         @fPadding = 60 # 30 top + 30 bottom
         @arbitraryOffset = 50
 
-        if document.countSelector('.floating') == 0
-          @fixPoint = 210
-        else
-          @fixPoint = 250
-
         t = this
         window.addEventListener "scroll", ->
           t.progress()
-          if t.outer.scrollTop > t.fixPoint and t.contained()
+          if t.contained()
             jump.addClass 'fixed' unless jump.hasClass 'fixed'
           else
             jump.removeClass 'fixed' if jump.hasClass 'fixed'
 
         @progress()
+
+        jump.addClass 'floating' if document.countSelector('.floating') > 0
 
         if @main.countSelector('.with-aside aside') > 0
           @main.querySelector('.with-aside aside').appendChild jump
@@ -54,12 +51,15 @@ unless window.UOMStickyNav
           main = document.querySelector('[role="main"]')
           main.insertBefore(jump, main.firstChild.nextSibling)
 
+        @fixPoint = @n.offsetTop - 45
+        @fixpoint = @fixpoint - 35 unless @n.hasClass('floating')
+
       contained: ->
         @stickyEnd = @main.offsetHeight + @main.offsetTop - @n.offsetHeight - @nPadding
         if document.countSelector('[role="main"] > footer:last-of-type')>0
           @stickyEnd = @stickyEnd - @fPadding - document.querySelector('[role="main"] > footer:last-of-type').offsetHeight
 
-        @outer.scrollTop < @stickyEnd
+        @outer.scrollTop > @fixPoint and @outer.scrollTop < @stickyEnd
 
       progress: ->
         for pos, link of @nav

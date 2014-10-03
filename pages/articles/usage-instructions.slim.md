@@ -1,8 +1,8 @@
 ---
 title: Design System Usage Instructions
 ---
-header.solid-paleblue
-  h1 Usage Instructions
+header
+  h1 Design System Usage Instructions
 
   .jumpnav
 

@@ -37,8 +37,12 @@
 
     .page-header-logo {
       position: absolute;
-      top: -140px;
+      top: -60px;
       transition: .2s top;
+
+      @include breakpoint(desktop) {
+        top: -140px;
+      }
     }
 
     a,
@@ -70,7 +74,7 @@
       border-left-color: $lightgray;
       line-height: 1;
 
-      .icon {
+      svg {
         @include rem(height, 20px);
         @include rem(margin-top, 3px);
         @include rem(width, 20px);
@@ -253,7 +257,6 @@
     @include rem(font-size, 9px);
     @include rem(padding, 0 10px);
     @include rem(width, 40px);
-    background-color: $white;
     border-left: 1px solid darken($lightgray, 10%);
     font-weight: $regular;
     line-height: 1;
@@ -292,7 +295,6 @@
 
   @include breakpoint(desktop) {
     @include rem(padding-left, 15px);
-    background-color: $white;
 
     .page-header-icon {
       @include rem(font-size, 10px);
