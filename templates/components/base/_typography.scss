@@ -315,10 +315,34 @@
     }
   }
 
+  h1.highlight {
+    @include adjust-font-size-to(75px);
+    background: -webkit-linear-gradient($navy, $highlight);
+    color: $highlight;
+    font-weight: $thin;
+    letter-spacing: -5px;
+    text-align: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include breakpoint(desktop) {
+      @include adjust-font-size-to(160px);
+    }
+  }
+
   .center {
     @include rem(padding, 0 0 60px);
     margin: 0 auto;
     text-align: center;
+  }
+
+  .no-padding {
+    padding-bottom: 0;
+  }
+
+  .grey {
+    @include adjust-font-size-to(16px);
+    color: $midgray;
   }
 
   .main-title {
