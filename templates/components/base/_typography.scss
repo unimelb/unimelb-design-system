@@ -1,3 +1,12 @@
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(0deg);
+  }
+
+  to {
+    -webkit-filter: hue-rotate(-360deg);
+  }
+}
 [role="main"] {
 	background-color: $white;
   font-weight: $regular;
@@ -324,9 +333,25 @@
     text-align: center;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 80s infinite linear;
 
     @include breakpoint(desktop) {
       @include adjust-font-size-to(160px);
+    }
+  }
+  header h1,
+  & > header:first-child h1,
+  header.image h1,
+  & > header.image:first-child h1,
+  header.banner h1,
+  & > header.banner:first-child h1 {
+    @include adjust-font-size-to(60px);
+    background: -webkit-linear-gradient($highlight, lighten($highlight, 25%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include breakpoint(desktop) {
+      @include adjust-font-size-to(100px);
     }
   }
 
