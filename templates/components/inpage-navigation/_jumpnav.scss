@@ -3,6 +3,7 @@
   list-style-position: inside;
   margin: 0 auto;
   padding: 30px 0;
+  width: 94%;
 
   li {
     color: $gray;
@@ -11,7 +12,9 @@
     font-weight: $regular;
     list-style-type: none;
     margin-left: 0;
-    white-space: nowrap;
+    padding-left: 15px;
+    text-indent: -15px;
+    white-space: normal;
     width: 50%;
 
     &:first-child {
@@ -31,6 +34,7 @@
   a {
     color: $gray;
     text-decoration: none;
+    white-space: normal;
 
     &::before {
       content: '\25cf';
@@ -43,10 +47,9 @@
   }
 
   @include breakpoint(desktop) {
+    width: auto;
+
     li {
-      padding-left: 15px;
-      text-indent: -15px;
-      white-space: normal;
       width: 100%;
     }
 
@@ -66,7 +69,6 @@
 
 #outer {
   @extend %jump;
-  display: none;
 
   @include breakpoint(wide) {
     display: block;
@@ -75,16 +77,16 @@
     position: absolute;
     width: 200px;
     z-index: 100;
-  }
 
-  &.fixed {
-    font-family: $ff-sans;
-    margin-top: 35px;
-    position: fixed;
-    top: 45px;
+    &.fixed {
+      font-family: $ff-sans;
+      margin-top: 35px;
+      position: fixed;
+      top: 45px;
 
-    &.floating {
-      margin-top: 0;
+      &.floating {
+        margin-top: 0;
+      }
     }
   }
 }
