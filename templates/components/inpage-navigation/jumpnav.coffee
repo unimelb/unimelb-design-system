@@ -51,8 +51,8 @@ unless window.UOMStickyNav
           main = document.querySelector('[role="main"]')
           main.insertBefore(jump, main.firstChild.nextSibling)
 
-        @fixPoint = @n.offsetTop - 45
-        @fixpoint = @fixpoint - 35 unless @n.hasClass('floating')
+        @fixPoint = @n.offsetTop - 80
+        @fixPoint = @fixPoint + 35 if jump.hasClass('floating')
 
       contained: ->
         @stickyEnd = @main.offsetHeight + @main.offsetTop - @n.offsetHeight - @nPadding
