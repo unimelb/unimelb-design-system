@@ -7,10 +7,12 @@ header
   .jumpnav
 
 section.lead
-  p Creating a new site using the UoM Design System requires setting up a basic page markup and then using either the [example layouts](/layouts) or [components](/components) to place component inside the ```div role="main"```.
+  p Creating a new site using the Design System requires setting up a basic page markup and then using either the <a href="/layouts">example layouts</a> or <a href="/components">components</a> to place component inside the ```div role="main"```.
 
 section
   p Demonstration examples of this code can be found for many different page types in our [example layouts directory](/layouts) similar to these :
+
+hr
 
 section
   h2#document-structure.subtitle Document structure
@@ -26,7 +28,7 @@ section
 section
   p The first provides a universal <abbr title="Reproduce modern functionality in older browser">polyfill</abbr> for styling on HTML5 semantic elements such as <code>header</code>, <code>nav</code> and <code>section</code> We use these elements as selectors in the design system stylesheet.
 
-  p At its most minimal, you should include the following "boilerplate" layout:
+  p At a bare minimum, you should include the following markup in your page:
 
 ==syntax_highlight :html
   erb:
@@ -57,5 +59,87 @@ section
     </html>
 
 section
-  p Please note that in the example above, <code>v0.3</code> refers to a specific version of the design system and may not be the current version! Please refer to the homepage.
+  p: em Please note that in the example above, <b class="red">v0.3</b> refers to a specific version of the design system and may not be the current version! Please refer to the homepage.
+
+hr
+
+section
+  h2#local-nav Local nav
+
+  p To integrate a local nav into your site, include the following structure after the <code>div role="main"</code>.
+
+  p For nested navigation, use a <code>div class="inner"</code> as demonstrated below.
+
+==syntax_highlight :html
+  erb:
+    <div class="no-js" id="sitemap" role="navigation">
+      <h2>Section title</h2>
+      <ul>
+        <li>
+          <a href="/another">Link to another page</a>
+        </li>
+        <li>
+          <a href="/sub-section">Sub-section</a>
+
+          <div class="inner">
+            <ul>
+              <li>
+                <a href="/sub-section/a-page">A page in the sub-section</a>
+              </li>
+              <li>
+                <a href="/sub-section/another">Another page</a>
+
+                <div class="inner">
+                  <ul>
+                    <li>
+                      <a href="/sub-section/another/another">3rd level</a>
+                    </li>
+                  </ul>
+                </div>
+
+              </li>
+            </ul>
+          </div>
+
+        </li>
+        <li><a href="/last-one">Last one</a></li>
+      </ul>
+    </div>
+
+hr
+
+section
+  h2#breadcrumbs Breadcrumbs
+
+  p To use the breadcrumb navigation, include a ```div class="page-local-history"``` *before* the div role="main" with the following structure:
+
+==syntax_highlight :html
+  erb:
+    <div class="page-local-history">
+      <a class="last" href="/" title="This page">This page</a>
+      <span>/</span>
+      <a href="" title="A sub-page">A sub-page</a>
+    </div>
+
+section
+  p The link with ```class="last"``` is the only one that will be shown in a responsive mobile view.
+
+hr
+
+section
+  h2#homepage Homepage alternate
+
+  p Include a ```div class="floating"``` *before* the ```div role="main"``` (and note that this page layout cannot include a breadcrumb as well)
+
+  p Additionally, a header element must be included within the ```div role="main"```. Inline styles have been added to the header in the example below to illustrate how it should be styled in your local styles - the css provided in the full design system already has this defined.
+
+==syntax_highlight :html
+  erb:
+    <div class="floating"></div>
+    <div role="main">
+      <header style="background-image:url(//uom-templates.s3.amazonaws.com/templates/0.1/components/globals/bg-banner-2edd2279a97e316344e7831983ef6868.jpg);background-size:cover;min-height:300px"></header>
+
+      (your website markup goes here)
+
+    </div>
 

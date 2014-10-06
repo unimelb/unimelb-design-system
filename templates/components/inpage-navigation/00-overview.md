@@ -4,9 +4,9 @@ title: Inpage Navigation
 <div class="jumpnav"></div>
 The inpage Navigation provides a convenient way for the user to see all sections at a glance and jump between them. This can be useful for long, text-heavy pages.
 
-Please note, this feature is only available on larger desktop screen resolutions and cannot be used with any full-width component (headers, some listings, some media blocks, page tabs, filtered listings, news & events).
+Please note, this feature is only available on larger desktop screen resolutions!
 
-To include this feature on your page, add an empty div with class <code>jumpnav</code> somewhere in the page structure.
+To include this feature on your page, simply add an empty div with class <code>jumpnav</code> somewhere in the page structure.
 
 ```html
 <div class="jumpnav"></div>
