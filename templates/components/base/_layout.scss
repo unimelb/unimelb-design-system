@@ -132,7 +132,7 @@ body {
 
     &.contrib {
       background-color: $paleyellow;
-      box-shadow: 0 6px 6px 4px rgba($black, .3);
+      border: 1px solid darken($paleyellow, 10%);
 
       p {
         padding-top: 0;

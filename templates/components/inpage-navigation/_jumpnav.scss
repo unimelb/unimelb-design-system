@@ -66,11 +66,9 @@
 
 #outer {
   @extend %jump;
-  background-color: rgba($white, .7);
   display: none;
 
-  @include breakpoint(1300px) {
-    border-right: 1px solid lighten($lightergray, 10%);
+  @include breakpoint(wide) {
     display: block;
     margin-top: 45px;
     padding: 15px 15px 30px;
@@ -87,6 +85,30 @@
 
     &.floating {
       margin-top: 0;
+    }
+  }
+}
+
+
+body.jumpnav-active {
+  @include breakpoint(wide) {
+    .page-inner {
+      background-color: $white;
+    }
+
+    [role="main"] {
+      @include single-box-shadow(0, 3px, 6px, 0, rgba($black, .3), true);
+      margin-left: 200px;
+
+      > header:first-child,
+      footer.contrib {
+        margin-left: -200px;
+        width: auto;
+      }
+
+      #outer {
+        margin-left: -200px;
+      }
     }
   }
 }

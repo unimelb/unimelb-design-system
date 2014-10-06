@@ -1,6 +1,7 @@
 ---
 title: Headers
 ---
+<div class="jumpnav"></div>
 These headers are available in the design system:
 
 - `.image` — auto height, with background image, gets expanded by content
