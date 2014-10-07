@@ -9,8 +9,11 @@
 
       h1 {
         @extend .title;
+        @include adjust-font-size-to(15px);
         @include padding-leader(1);
         @include trailer(1);
+        font-weight: $bold;
+        text-align: center;
       }
 
       p {
