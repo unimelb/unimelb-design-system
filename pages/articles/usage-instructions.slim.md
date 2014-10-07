@@ -111,14 +111,14 @@ hr
 section
   h2#breadcrumbs Breadcrumbs
 
-  p To use the breadcrumb navigation, include a ```div class="page-local-history"``` *before* the div role="main" with the following structure:
+  p To use the breadcrumb navigation, include a <code>div class="page-local-history"</code> before the <code>div role="main"</code> with the following structure:
 
 ==syntax_highlight :html
   erb:
     <div class="page-local-history">
-      <a class="last" href="/" title="This page">This page</a>
+      <a class="root" href="/" title="Website Home">Home</a>
       <span>/</span>
-      <a href="" title="A sub-page">A sub-page</a>
+      <a class="last" href="" title="A sub-page">A sub-page</a>
     </div>
 
 section

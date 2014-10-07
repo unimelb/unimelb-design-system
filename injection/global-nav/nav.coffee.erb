@@ -196,28 +196,33 @@ window.UOMinjectGlobalNav = ->
   # Create global nav
   nav = document.querySelector('[role="sitemap"]')
   unless nav
+    if "<%=ENV['RACK_ENV']%>" == 'production'
+      assethost = '//uom-design-system.s3-ap-southeast-2.amazonaws.com/shared'
+    else
+      assethost = '/assets/shared'
+
     nav = document.createElement('div')
     nav.setAttribute('role', 'sitemap')
     nav.innerHTML = """
       <a class="close-button" href="">Close</a>
       <a href="https://www.unimelb.edu.au" class="logo">
         <svg width="100" height="100" viewBox="0 0 140 140">
-          <image xlink:href="<%=asset_path('header/logo.svg')%>" src="<%=asset_path('header/logo.png')%>" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
+          <image xlink:href="#{assethost}/logo.svg" src="#{assethost}/logo.png" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
         </svg>
       </a>
       <form action="https://search.unimelb.edu.au" method="get">
         <fieldset>
           <input data-required placeholder="Search" name="q" type="search" title="Please enter a keyword." />
-          <button type="submit" value="Go" class="search-button"><svg><use xlink:href="<%=asset_path('icons.svg')%>#search" /></svg></button>
+          <button type="submit" value="Go" class="search-button"><svg><use xlink:href="#{assethost}/icons.svg#search" /></svg></button>
         </fieldset>
       </form>
       <ul class="quicklinks">
-        <li><a href="http://about.unimelb.edu.au/governance-and-leadership/faculties"><svg class="icon"><use xlink:href="<%=asset_path('icons.svg')%>#faculties" /></svg> Faculties and Graduate Schools</a></li>
-        <li><a href="http://students.unimelb.edu.au/"><svg class="icon"><use xlink:href="<%=asset_path('icons.svg')%>#students" /></svg> Current Students</a></li>
-        <li><a href="http://library.unimelb.edu.au/"><svg class="icon"><use xlink:href="<%=asset_path('icons.svg')%>#library" /></svg> Library</a></li>
-        <li><a href="http://www.unimelb.edu.au/contact/"><svg class="icon"><use xlink:href="<%=asset_path('icons.svg')%>#phone" /></svg> Contact us</a></li>
-        <li><a href="http://maps.unimelb.edu.au/"><svg class="icon"><use xlink:href="<%=asset_path('icons.svg')%>#maps" /></svg> Maps</a></li>
-        <li><a href="http://www.campaign.unimelb.edu.au/"><svg class="icon"><use xlink:href="<%=asset_path('icons.svg')%>#campaign" /></svg> Support the Campaign</a></li>
+        <li><a href="http://about.unimelb.edu.au/governance-and-leadership/faculties"><svg class="icon"><use xlink:href="#{assethost}/icons.svg#faculties" /></svg> Faculties and Graduate Schools</a></li>
+        <li><a href="http://students.unimelb.edu.au/"><svg class="icon"><use xlink:href="#{assethost}/icons.svg#students" /></svg> Current Students</a></li>
+        <li><a href="http://library.unimelb.edu.au/"><svg class="icon"><use xlink:href="#{assethost}/icons.svg#library" /></svg> Library</a></li>
+        <li><a href="http://www.unimelb.edu.au/contact/"><svg class="icon"><use xlink:href="#{assethost}/icons.svg#phone" /></svg> Contact us</a></li>
+        <li><a href="http://maps.unimelb.edu.au/"><svg class="icon"><use xlink:href="#{assethost}/icons.svg#maps" /></svg> Maps</a></li>
+        <li><a href="http://www.campaign.unimelb.edu.au/"><svg class="icon"><use xlink:href="#{assethost}/icons.svg#campaign" /></svg> Support the Campaign</a></li>
       </ul>
       <div>
         <div class="col-3">
