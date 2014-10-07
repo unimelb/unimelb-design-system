@@ -1,7 +1,7 @@
 ---
 title: Tabs
 ---
-
+<div class="jumpnav"></div>
 Tabs are assigned an <code>id</code> to allow the link to snap to the top, and degrade gracefully in older browsers. To prevent hidden content on unsupported browsers, the <code>nav</code> is hidden and all tab content is displayed by default.
 <ul class="nobullet">
   <li><code>data-tabbed</code> &ndash; Overall tab container <small>required</small></li>
