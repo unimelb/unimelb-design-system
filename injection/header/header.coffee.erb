@@ -7,10 +7,11 @@ window.UOMinjectHeader = ->
 
   # Logo links to
   defaultlink = 'https://www.unimelb.edu.au'
-  if "<%=ENV['RACK_ENV']%>" == 'production'
-    assethost = '//uom-design-system.s3-ap-southeast-2.amazonaws.com/shared'
-  else
+
+  if "<%=ENV["ASSET_ENV"]%>" == 'development'
     assethost = '/assets/shared'
+  else
+    assethost = '//uom-design-system.s3-ap-southeast-2.amazonaws.com/shared'
 
   # Create page wrapper if it doesn't already exist
   parent = document.querySelector('.uomcontent')

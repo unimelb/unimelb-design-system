@@ -2,10 +2,10 @@ window.UOMinjectFooter= ->
   # Only inject footer if it doesn't already exist
   footer = document.querySelector('.page-footer')
   unless footer
-    if "<%=ENV['RACK_ENV']%>" == 'production'
-      assethost = '//uom-design-system.s3-ap-southeast-2.amazonaws.com/shared'
-    else
+    if "<%=ENV["ASSET_ENV"]%>" == 'development'
       assethost = '/assets/shared'
+    else
+      assethost = '//uom-design-system.s3-ap-southeast-2.amazonaws.com/shared'
 
     footer = document.createElement('div')
     footer.addClass('page-footer')
