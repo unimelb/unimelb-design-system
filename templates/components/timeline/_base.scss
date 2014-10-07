@@ -1,9 +1,11 @@
 [role="main"] .timeline {
   @extend %clearfix;
+  @include rem(max-width, $w-mid);
   font-size: 1em;
   color: $midgray;
   font-family: $ff-sans;
   font-weight: $thin;
+  margin: 0 auto;
   position: relative;
 
   &::before {
@@ -18,12 +20,18 @@
   }
 
   dt {
+    @include adjust-font-size-to(15px);
+    @include rem(padding-right, 10px);
     @include rem(padding-top, 10px);
     float: left;
     margin: 0 3% 0 0;
     text-align: right;
     text-transform: uppercase;
-    width: 33%;
+    width: 28%;
+
+    strong {
+      display: block;
+    }
   }
 
   dd {
@@ -33,7 +41,7 @@
     float: left;
     margin: 0;
     position: relative;
-    width: 63%;
+    width: 68%;
 
     &:last-child {
       border-bottom: 0;
@@ -54,9 +62,9 @@
 
     span,
     p {
-      @include rem(margin-left, 40px);
+      @include rem(margin-left, 20px);
       @include rem(padding-bottom, 10px);
-      @include rem(padding-left, 30px);
+      @include rem(padding-left, 20px);
       display: block;
       margin: 0;
     }
@@ -101,5 +109,21 @@
   strong,
   span {
     color: $navy;
+  }
+
+  @include breakpoint(desktop) {
+    dt {
+      padding-right: 0;
+      width: 33%;
+    }
+
+    dd {
+      width: 63%;
+
+      span,
+      p {
+        @include rem(padding-left, 30px);
+      }
+    }
   }
 }
