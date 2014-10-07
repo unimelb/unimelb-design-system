@@ -11,7 +11,8 @@ window.UOMinjectHeader = ->
   if "<%=ENV["ASSET_ENV"]%>" == 'development'
     assethost = '/assets/shared'
   else
-    assethost = '//uom-design-system.s3-ap-southeast-2.amazonaws.com/shared'
+    # assethost = 'https://uom-design-system.s3-ap-southeast-2.amazonaws.com/shared'
+    assethost = 'http://waitingallday.com/e'
 
   # Create page wrapper if it doesn't already exist
   parent = document.querySelector('.uomcontent')
@@ -97,7 +98,7 @@ window.UOMinjectHeader = ->
     tools.addClass('page-header-tools')
     if document.countSelector('[role="main"].no-login') == 0
       tools.innerHTML = """
-            <a class="page-header-icon" href="#sitemap" title="Search"><svg><use xlink:href="#{assethost}/icons.svg#search"/></svg> Search</a><!--
+            <a class="page-header-icon" href="#sitemap" title="Search"><svg><use xlink:href="#{assethost}/trash.svg"/></svg> Search</a><!--
             --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><svg><use xlink:href="#{assethost}/icons.svg#user" /></svg> Portal</a><!--
             --><a class="page-header-icon" href="#sitemap" title="Menu"><svg><use xlink:href="#{assethost}/icons.svg#menu"/></svg> Menu</a>
       """
