@@ -1,7 +1,7 @@
 ---
 title: Tables
 ---
-
+<div class="jumpnav"></div>
 This component can be used to apply basic styles to tabular data. 
 
 Rows or cells can be highlighted by applying the ```highlight``` class appropriately.
