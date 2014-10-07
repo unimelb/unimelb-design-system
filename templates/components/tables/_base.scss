@@ -1,0 +1,25 @@
+[role="main"] table { 
+
+    border: 1px solid $lightgray;
+    border-collapse: collapse;
+
+    .highlight { 
+        background: $cyan;
+        color: $white;
+    }
+
+    thead { 
+        background: $darkgray;
+        color: $white;
+    }
+
+    th { 
+        border: 1px solid $lightgray;
+        font-weight: normal;
+    }
+    td { 
+        border: 1px solid $midgray;
+        cell-padding: 0px;
+        padding: 0px 20px;
+    }
+}
