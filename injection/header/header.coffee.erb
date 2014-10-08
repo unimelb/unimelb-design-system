@@ -98,14 +98,14 @@ window.UOMinjectHeader = ->
     tools.addClass('page-header-tools')
     if document.countSelector('[role="main"].no-login') == 0
       tools.innerHTML = """
-            <a class="page-header-icon" href="#sitemap" title="Search"><svg><use xlink:href="#{assethost}/trash.svg"/></svg> Search</a><!--
-            --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><svg><use xlink:href="#{assethost}/icons.svg#user" /></svg> Portal</a><!--
-            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg><use xlink:href="#{assethost}/icons.svg#menu"/></svg> Menu</a>
+            <a class="page-header-icon" href="#sitemap" title="Search"><svg><use xlink:href="#icon-search"/></svg> Search</a><!--
+            --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><svg><use xlink:href="#icon-user" /></svg> Portal</a><!--
+            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg><use xlink:href="#icon-menu"/></svg> Menu</a>
       """
     else
       tools.innerHTML = """
-            <a class="page-header-icon" href="#sitemap" title="Search"><svg><use xlink:href="#{assethost}/icons.svg#search" /></svg> Search</a><!--
-            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg><use xlink:href="#{assethost}/icons.svg#menu" /></svg> Menu</a>
+            <a class="page-header-icon" href="#sitemap" title="Search"><svg><use xlink:href="#icon-search" /></svg> Search</a><!--
+            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg><use xlink:href="#icon-menu" /></svg> Menu</a>
       """
 
     header.appendChild tools
@@ -151,12 +151,12 @@ window.UOMinjectHeader = ->
               <h2 class="title">Please Choose</h2>
               <div class="half">
                 <a class="button-fill" href="https://my.unimelb.edu.au/studentportal/faces/home">
-                  <svg><use xlink:href="#{assethost}/icons.svg#students" /></svg>
+                  <svg><use xlink:href="#icon-students" /></svg>
                   <h2>Current Student</h2>
                   <p>Click here to get to the student portal</p>
                 </a>
                 <a class="button-fill" href="https://staff.unimelb.edu.au">
-                  <svg><use xlink:href="#{assethost}/icons.svg#user" /></svg>
+                  <svg><use xlink:href="#icon-user" /></svg>
                   <h2>Staff Member</h2>
                   <p>Click here to get to the staff portal</p>
                 </a>
