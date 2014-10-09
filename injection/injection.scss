@@ -71,3 +71,7 @@ body {
 @import 'global-nav/nav';
 @import 'global-nav/localnav';
 @import 'global-nav/globalnav';
+
+.hidden {
+  display: none;
+}

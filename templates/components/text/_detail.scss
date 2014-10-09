@@ -1,5 +1,6 @@
 [role="main"] .detail {
   @extend %wrapper;
+  @include padding-leader(1);
 
   aside {
     @include padding-leader(2);

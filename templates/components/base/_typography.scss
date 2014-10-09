@@ -146,7 +146,7 @@
       padding-left: 0;
       padding-right: 0;
 
-      li {
+      & > li {
         @include rem(max-width, $w-mid);
         @include rem(padding-left, 50px);
         border-top: 1px solid rgba(#000000, 0.1);
@@ -178,6 +178,10 @@
         @extend h1;
         @include padding-leader(1);
         text-transform: none;
+      }
+      ul {
+        @include rem(padding-left, 20px);
+        @include rem(padding-right, 20px);
       }
 
       @include breakpoint(desktop) {

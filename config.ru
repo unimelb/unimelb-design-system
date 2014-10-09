@@ -10,6 +10,8 @@ require 'compass'
 
 require_relative './demo-site/app/app'
 
+ENV["ASSET_ENV"] = 'development'
+
 if ENV["RACK_ENV"] == 'production'
   use Rack::Auth::Basic, "Protected Area" do |username, password|
     username == 'uom' and password == 'webtemplates2014'

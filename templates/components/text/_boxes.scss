@@ -1,7 +1,7 @@
 [role="main"] {
   .contact-box {
     @include padding-leader(1);
-    @include padding-trailer(1);
+    @include padding-trailer(0);
     @include rem(max-width, $w-sml);
     @include rem(padding-left, 25px);
     @include rem(padding-right, 25px);
@@ -16,11 +16,13 @@
       margin: 0;
       text-transform: uppercase;
     }
+
     dl {
       margin: 0 auto;
       overflow: hidden;
       padding-left: 0;
     }
+
     dt {
       @include adjust-font-size-to(16px);
       color: $black;
@@ -29,25 +31,31 @@
       font-weight: 100;
       width: auto;
     }
+
     dd {
       @include adjust-font-size-to(20px);
-      @include rem(margin, 0 0 20px 0);
+      @include trailer(1);
+      @include rem(margin-left, 0px);
+      @include rem(margin-right, 0px);
+      @include rem(margin-top, 0px);
       display: block;
       float: none;
       font-weight: $regular;
       width: auto;
     }
+
     a {
       //color: $cherry;
     }
+    
     p {
       padding-bottom: 0;
     }
+
     @include breakpoint(desktop) {
       dd {
-        @include trailer(2);
+        @include trailer(1);
         font-weight: $regular;
-        line-height: 1;
       }
     }
   }

@@ -14,9 +14,22 @@
     @include rem(width, 20px);
     background-color: $white;
     content: '';
-    left: 36%;
+    left: 30%;
     position: absolute;
     z-index: 2;
+  }
+
+  &.full-width {
+    @include rem(max-width, $w-lge);
+  }
+
+  &.has-accordion {
+    dd {
+      ul:last-child,
+      p:last-child {
+        border-bottom: 0;
+      }
+    }
   }
 
   dt {
@@ -88,17 +101,38 @@
       border-bottom: 1px solid darken($lightgray, 3%);
     }
 
-    ul {
-      @include rem(font-size, 18px);
-      @include rem(margin-left, 40px);
-      @include rem(padding-bottom, 10px);
-      @include rem(padding-left, 30px);
-      color: $base;
+    ul.accordion {
+      @include rem(margin-top, 12px);
+      margin-left: 0;
 
-      li {
-        list-style-type: disc;
-      }
+      & > li:first-child {
+        border-top: 1px solid darken($lightgray, 5%);
+
+        &.accordion__visible {
+          border-top: 1px solid $cyan;
+        }
+      }      
+
+      // & > li:last-child {
+      //   border-bottom: 0;
+
+      //   &.accordion__visible {
+      //     border-bottom: 1px solid $cyan;
+      //   }
+      // }
     }
+
+    // ul {
+    //   @include rem(font-size, 18px);
+    //   @include rem(margin-left, 40px);
+    //   @include rem(padding-bottom, 10px);
+    //   @include rem(padding-left, 30px);
+    //   color: $base;
+
+    //   li {
+    //     list-style-type: disc;
+    //   }
+    // }
 
     &:last-child p:last-child {
       @include rem(padding-bottom, 60px);
@@ -112,6 +146,10 @@
   }
 
   @include breakpoint(desktop) {
+    &::before {
+      left: 35%;
+    }
+
     dt {
       padding-right: 0;
       width: 33%;
@@ -123,6 +161,50 @@
       span,
       p {
         @include rem(padding-left, 30px);
+      }
+    }
+
+    &.full-width {
+      &::before {
+        left: 26%;
+      }
+
+      dt {
+        width: 23%;
+      }
+
+      dd {
+        width: 73%;
+      }
+    }
+  }
+}
+
+[role="main"] .alt .timeline{
+  &::before {
+    background-color: $paleblue;
+  }
+
+  dd {
+    border-left-color: lighten($lightblue, 25%);
+
+    &::before {
+      background-color: lighten($lightblue, 25%);
+    }
+
+    ul:last-child,
+    p:last-child {
+      border-bottom-color: lighten($lightblue, 25%);
+    }
+
+    ul.accordion {
+      
+      & > li:first-child {
+        border-top: 1px solid lighten($lightblue, 25%);
+
+        &.accordion__visible {
+          border-top: 1px solid $cyan;
+        }
       }
     }
   }

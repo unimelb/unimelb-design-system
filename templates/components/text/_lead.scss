@@ -12,6 +12,22 @@
     position: static;
     text-align: center;
 
+    & + p {
+      @include leader(0);
+      @include padding-leader(0);
+
+      &::before {
+        @include padding-trailer(2);
+        @include rem(margin-top, 30px);
+        @include rem(width, 80px);
+        border-top: 2px solid $darkblue;
+        content: '';
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
     p {
       @include padding-trailer(0);
       @include rem(max-width, $w-mid);
@@ -27,4 +43,9 @@
       margin: 0 auto;
     }
 	}
+}
+
+[role="main"] section > .lead {
+  @include padding-leader(1);
+  @include padding-trailer(1);
 }
