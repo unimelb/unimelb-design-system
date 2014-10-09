@@ -445,6 +445,11 @@ body {
 
   .alt {
     background-color: $paleblue;
+
+    & + .spacer {
+      margin-top: 0;
+      padding-top: 0;
+    }
   }
 
   .margin-rule {

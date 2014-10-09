@@ -28,6 +28,10 @@
       }
     }
 
+    h2 {
+      @include padding-leader(0);
+    }
+
     p {
       @include padding-trailer(0);
       @include rem(max-width, $w-mid);
