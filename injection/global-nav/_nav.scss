@@ -440,7 +440,6 @@ ul.quicklinks {
     a {
       color: $white;
       display: block;
-      height: 100px;
       text-align: center;
       vertical-align: middle;
 
@@ -450,33 +449,7 @@ ul.quicklinks {
     }
 
     .icon {
-      display: block;
-      float: none;
-      margin: 0 auto;
-
-      &.faculties {
-        background-image: url("#{asset_path('global-nav/s-icon-faculties-w.png')}");
-      }
-
-      &.students {
-        background-image: url("#{asset_path('global-nav/s-icon-students-w.png')}");
-      }
-
-      &.library {
-        background-image: url("#{asset_path('global-nav/s-icon-library-w.png')}");
-      }
-
-      &.contact {
-        background-image: url("#{asset_path('global-nav/s-icon-contact-w.png')}");
-      }
-
-      &.maps {
-        background-image: url("#{asset_path('global-nav/s-icon-maps-w.png')}");
-      }
-
-      &.support {
-        background-image: url("#{asset_path('global-nav/s-icon-support-w.png')}");
-      }
+      display: none;
     }
   }
 

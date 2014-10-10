@@ -303,11 +303,6 @@ body.ie {
       z-index: 100;
     }
 
-    .logo {
-      // background-image: url("#{asset_path('header/m-logo.png')}");
-      // float: left;
-    }
-
     h2,
     a {
       color: $lightblue;
@@ -315,14 +310,18 @@ body.ie {
 
     form {
       clear: none;
-      float: right;
-      margin-top: 45px;
+      float: none;
+      margin: 30px auto;
       padding: 0;
       width: 600px;
 
       fieldset .search-button {
         color: $black;
         text-indent: 0;
+
+        * {
+          display: none;
+        }
       }
     }
 
