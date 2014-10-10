@@ -133,31 +133,6 @@ ul.quicklinks {
       margin-right: auto;
       padding-right: 0;
     }
-
-    &.faculties {
-      background-image: url("#{asset_path('global-nav/icon-faculties-w.png')}");
-    }
-
-    &.students {
-      background-image: url("#{asset_path('header/m-icon-m-w.png')}");
-    }
-
-    &.library {
-      background-image: url("#{asset_path('global-nav/icon-library-w.png')}");
-    }
-
-    &.contact {
-      background-image: url("#{asset_path('global-nav/icon-contact-w.png')}");
-    }
-
-    &.maps {
-      background-image: url("#{asset_path('global-nav/icon-maps-w.png')}");
-    }
-
-    &.support {
-      background-image: url("#{asset_path('global-nav/icon-support-w.png')}");
-    }
-
   }
 
   @include breakpoint(desktop) {
@@ -260,36 +235,12 @@ ul.quicklinks {
         transition: transform 0.3s;
       }
 
-      // .icon-staff {
-      //   @include rem(height, 100px);
-      //   @include rem(width, 100px);
-      //   background-image: url("#{asset_path('header/icon-p-b.png')}");
-      //   background-position: center;
-      //   background-repeat: no-repeat;
-      //   background-size: cover;
-      //   display: block;
-      //   margin: 0 auto;
-      // }
-
-      // .icon-student {
-      //   @extend .icon-staff;
-      //   background-image: url("#{asset_path('header/icon-m-b.png')}");
-      // }
-
       &:hover {
         color: $white;
 
         svg {
           transform: scale(1.2);
         }
-
-        // .icon-staff {
-        //   background-image: url("#{asset_path('header/icon-p-w.png')}");
-        // }
-
-        // .icon-student {
-        //   background-image: url("#{asset_path('header/icon-m-w.png')}");
-        // }
       }
 
       @include breakpoint(desktop) {
@@ -398,22 +349,6 @@ ul.quicklinks {
 
     .half .button-fill {
       width: 50%;
-
-      .icon-staff {
-        background-image: url("#{asset_path('header/m-icon-p-b.png')}");
-      }
-
-      &:hover .icon-staff {
-        background-image: url("#{asset_path('header/m-icon-p-w.png')}");
-      }
-
-      .icon-student {
-        background-image: url("#{asset_path('header/m-icon-m-b.png')}");
-      }
-
-      &:hover .icon-student {
-        background-image: url("#{asset_path('header/m-icon-m-w.png')}");
-      }
     }
   }
 
@@ -455,27 +390,5 @@ ul.quicklinks {
 
   .sitemap-label {
     display: none;
-  }
-}
-
-.ie9 {
-  .modal__dialog {
-    .half .button-fill {
-      .icon-staff {
-        background-image: url("#{asset_path('header/icon-p-b.png')}");
-      }
-
-      &:hover .icon-staff {
-        background-image: url("#{asset_path('header/icon-p-w.png')}");
-      }
-
-      .icon-student {
-          background-image: url("#{asset_path('header/icon-m-b.png')}");
-      }
-
-      &:hover .icon-student {
-        background-image: url("#{asset_path('header/icon-m-w.png')}");
-      }
-    }
   }
 }
