@@ -364,12 +364,7 @@
 
 .ie {
   .page-header {
-    border-bottom: 2px solid #f0f0f0;
-
-    a.page-header-logo {
-      background-image: url("#{asset_path('header/s-logo.png')}");
-      background-size: cover;
-    }
+    border-bottom: 1px solid #f0f0f0;
 
     .page-header-tools .page-header-icon[title="Login"],
     .page-header-tools .page-header-icon[title="Search"] {
@@ -377,106 +372,7 @@
     }
 
     .page-header-tools a.page-header-icon {
-      color: $navy;
-
-      .search {
-        background-image: url("#{asset_path('header/s-icon-s.png')}");
-      }
-
-      .login {
-        background-image: url("#{asset_path('header/s-icon-p.png')}");
-      }
-
-      .menu {
-        background-image: url("#{asset_path('header/s-menu.png')}");
-      }
-    }
-  }
-
-  .floating {
-    .page-header-tools a.page-header-icon {
-      color: $white;
-
-      .search {
-        background-image: url("#{asset_path('header/s-icon-s-w.png')}");
-      }
-
-      .login {
-        background-image: url("#{asset_path('header/s-icon-p-w.png')}");
-      }
-
-      .menu {
-        background-image: url("#{asset_path('header/s-menu-w.png')}");
-      }
-    }
-
-    &.reverse .page-header-tools a.page-header-icon {
-      color: $navy;
-
-      .search {
-        background-image: url("#{asset_path('header/s-icon-s.png')}");
-      }
-
-      .login {
-        background-image: url("#{asset_path('header/s-icon-p.png')}");
-      }
-
-      .menu {
-        background-image: url("#{asset_path('header/s-menu.png')}");
-      }
-    }
-  }
-
-}
-
-.ie9 {
-  .page-header {
-    a.page-header-logo {
-      background-image: url("#{asset_path('header/logo-w.png')}");
-    }
-
-    .page-header-tools a.page-header-icon {
-      .search {
-        background-image: url("#{asset_path('header/icon-s.png')}");
-      }
-
-      .login {
-        background-image: url("#{asset_path('header/icon-p.png')}");
-      }
-
-      .menu {
-        background-image: url("#{asset_path('header/menu.png')}");
-      }
-    }
-  }
-
-  .floating {
-    .page-header-tools a.page-header-icon {
-      .search {
-        background-image: url("#{asset_path('header/icon-s-w.png')}");
-      }
-
-      .login {
-        background-image: url("#{asset_path('header/icon-p-w.png')}");
-      }
-
-      .menu {
-        background-image: url("#{asset_path('header/menu-w.png')}");
-      }
-    }
-
-    &.reverse .page-header-tools a.page-header-icon {
-      .search {
-        background-image: url("#{asset_path('header/icon-s.png')}");
-      }
-
-      .login {
-        background-image: url("#{asset_path('header/icon-p.png')}");
-      }
-
-      .menu {
-        background-image: url("#{asset_path('header/menu.png')}");
-      }
+      line-height: 60px;
     }
   }
 }

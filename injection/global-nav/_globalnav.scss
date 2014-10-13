@@ -165,7 +165,6 @@
         @include rem(padding, 3px);
         @include rem(width, 45px);
         background-color: $white;
-        background-image: url("#{asset_path('header/icon-s-b.png')}");
         border: 0 none;
         color: $darkblue;
         cursor: pointer;
@@ -303,9 +302,9 @@ body.ie {
       z-index: 100;
     }
 
-    .logo {
-      // background-image: url("#{asset_path('header/m-logo.png')}");
-      // float: left;
+    .logo * {
+      border: 0 none;
+      outline: 0;
     }
 
     h2,
@@ -315,14 +314,18 @@ body.ie {
 
     form {
       clear: none;
-      float: right;
-      margin-top: 45px;
+      float: none;
+      margin: 30px auto;
       padding: 0;
       width: 600px;
 
       fieldset .search-button {
         color: $black;
         text-indent: 0;
+
+        * {
+          display: none;
+        }
       }
     }
 
@@ -360,10 +363,6 @@ body.ie {
 
 body.ie9 {
   [role="sitemap"] {
-    // h2.logo {
-    //   background-image: url("#{asset_path('header/logo.png')}");
-    // }
-
     form fieldset .inline .search-button {
       text-indent: -999em;
       width: 40px;
