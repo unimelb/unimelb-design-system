@@ -1,16 +1,16 @@
 @include keyframes(chevronback) {
-  0% { 
+  0% {
     @include transform(translateX(0));
   }
-  50% { 
+  50% {
     @include transform(translateX(-5px));
   }
-  100% { 
+  100% {
     @include transform(translateX(0));
   }
 }
 
-[role="navigation"] {
+.uomcontent [role="navigation"] {
   @extend %normalise;
   @extend %smooth-translate;
   @include translateX(0);
@@ -223,7 +223,7 @@
 }
 
 body.ie {
-  [role="navigation"] {
+  .uomcontent [role="navigation"] {
     display: none;
 
     .w,

@@ -1,4 +1,4 @@
-[role="main"] {
+.uomcontent {
   .staff-listing {
     @extend %wrapper;
     @include leader(1);
@@ -6,9 +6,6 @@
     @include trailer(1);
     border-collapse: collapse;
     display: table;
-    // margin-left: 3%;
-    // margin-right: 3%;
-    // width: 94%;
 
     &.min {
       margin-left: auto;

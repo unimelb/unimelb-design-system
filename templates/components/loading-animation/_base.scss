@@ -1,34 +1,36 @@
 @include keyframes(rotateplane) {
-  0% { 
+  0% {
     @include transform(perspective(120px) rotateX(0deg) rotateY(0deg));
   }
-  50% { 
+  50% {
     @include transform(perspective(120px) rotateX(-180deg) rotateY(0deg));
   }
-  100% { 
+  100% {
     @include transform(perspective(120px) rotateX(-180deg) rotateY(-180deg));
   }
 }
 
-.loading {
-  @include padding-leader(3);
-  @include padding-trailer(3);
-  width: 100%;
-}
+.uomcontent {
+  .loading {
+    @include padding-leader(3);
+    @include padding-trailer(3);
+    width: 100%;
+  }
 
-.loading-blue {
-  @extend .loading;
-  background-color: $darkblue;
+  .loading-blue {
+    @extend .loading;
+    background-color: $darkblue;
+
+    .cube {
+      background-color: $white;
+    }
+  }
 
   .cube {
-    background-color: $white;
+    @include animation(rotateplane 1.2s infinite ease-in-out);
+    @include rem(height, 50px);
+    @include rem(width, 50px);
+    background-color: $darkblue;
+    margin: 0 auto;
   }
-}
-
-.cube {
-  @include animation(rotateplane 1.2s infinite ease-in-out);
-  @include rem(height, 50px);
-  @include rem(width, 50px);
-  background-color: $darkblue;
-  margin: 0 auto;
 }

@@ -6,7 +6,7 @@
   vertical-align: middle;
 }
 
-.page-header {
+.uomcontent .page-header {
   @extend %normalise;
   @include rem(font-size, 20px);
   background-color: $white;
@@ -23,6 +23,7 @@
 
   &.fixed:not(.floating) {
     background-color: rgba($white, .9);
+    font-family: $ff-sans;
     position: fixed;
     width: 100%;
 
@@ -86,7 +87,9 @@
   header {
     @include rem(height, 60px);
     @include single-box-shadow(0, 6px, 6px, -3px, rgba($black, .3));
+    background: $white;
     border-bottom: 1px solid $lightgray;
+    overflow: visible;
     padding: 0;
     position: relative;
 
@@ -113,16 +116,7 @@
       @include rem(height, 60px);
       @include rem(width, 60px);
       background-color: $darkblue;
-      // background-image: url("#{asset_path('header/logo.svg')}");
-      // background-position: center;
-      // background-repeat: no-repeat;
-      // background-size: cover;
       margin-left: 0;
-      //text-indent: -999em;
-
-      // opacity: 1;
-      // transition: 0 opacity .4s;
-
       top: 0;
       transition: .2s top .3s;
 
@@ -176,7 +170,7 @@
   }
 }
 
-.page-header-navigation {
+.uomcontent .page-header-navigation {
   @include rem(padding-left, 25px);
   display: inline;
   transition: .3s padding-left;
@@ -233,7 +227,7 @@
   }
 }
 
-.page-local-history {
+.uomcontent .page-local-history {
   @extend %wrapper;
   @include rem(padding-top, 30px);
   color: $white;
@@ -248,7 +242,7 @@
   }
 }
 
-.page-header-tools {
+.uomcontent .page-header-tools {
   position: absolute;
   right: 0;
   top: 0;
@@ -309,7 +303,7 @@
   }
 }
 
-.floating {
+.uomcontent .floating {
   .page-header-logo {
     @include rem(left, 10px);
     @include rem(top, 10px);
@@ -363,15 +357,15 @@
 }
 
 .ie {
-  .page-header {
+  .uomcontent .page-header {
     border-bottom: 1px solid #f0f0f0;
 
-    .page-header-tools .page-header-icon[title="Login"],
-    .page-header-tools .page-header-icon[title="Search"] {
+    .uomcontent .page-header-tools .page-header-icon[title="Login"],
+    .uomcontent .page-header-tools .page-header-icon[title="Search"] {
       display: inline-block;
     }
 
-    .page-header-tools a.page-header-icon {
+    .uomcontent .page-header-tools a.page-header-icon {
       line-height: 60px;
     }
   }

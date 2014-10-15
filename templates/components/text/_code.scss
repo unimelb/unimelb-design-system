@@ -1,14 +1,14 @@
-[role="main"] {
-  %code {
-    @include adjust-font-size-to(16px);
-    @include rem(border-radius, 3px);
-    background-color: darken($lightgray, 2%);
-    border-color: darken($lightgray, 7%);
-    border-style: solid;
-    border-width: 0;
-    font-family: $ff-fixed;
-  }
+%code {
+  @include adjust-font-size-to(16px);
+  @include rem(border-radius, 3px);
+  background-color: darken($lightgray, 2%);
+  border-color: darken($lightgray, 7%);
+  border-style: solid;
+  border-width: 0;
+  font-family: $ff-fixed;
+}
 
+.uomcontent {
   code {
     @extend %code;
     @include rem(border-bottom-width, 2px);

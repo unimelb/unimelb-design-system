@@ -1,43 +1,43 @@
-.accordion__title {
-  cursor: pointer;
-}
+.uomcontent {
+  .accordion__title {
+    cursor: pointer;
+  }
 
-.accordion__hidden {
-  display: block;
-  max-height: 0;
-  overflow: hidden;
-  transition: 10ms ease-in-out max-height;
+  .accordion__hidden {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: 10ms ease-in-out max-height;
 
-  td {
+    td {
+      display: none;
+    }
+  }
+
+  .accordion__close {
     display: none;
   }
-}
 
-.accordion__close {
-  display: none;
-}
-
-.accordion__visible .accordion__hidden {
-  max-height: 1000px;
-  transition: 500ms max-height ease-in-out;
-}
-
-.accordion__visible tr.accordion__hidden {
-  display: table-row;
-
-  td {
-    display: table-cell;
-  }
-}
-
-.accordion__noanim {
-  .accordion__hidden,
   .accordion__visible .accordion__hidden {
-    transition: 0 none;
+    max-height: 1000px;
+    transition: 500ms max-height ease-in-out;
   }
-}
 
-[role="main"] {
+  .accordion__visible tr.accordion__hidden {
+    display: table-row;
+
+    td {
+      display: table-cell;
+    }
+  }
+
+  .accordion__noanim {
+    .accordion__hidden,
+    .accordion__visible .accordion__hidden {
+      transition: 0 none;
+    }
+  }
+
   ul.accordion {
 
     & > li {
@@ -67,7 +67,7 @@
         &:before {
           color: $cyan;
         }
-        
+
         .accordion__title {
           color: $cyan;
         }
@@ -122,14 +122,14 @@
       }
     }
   }
-}
 
-[role="main"] .alt ul.accordion {
-  & > li {
-    border-bottom-color: lighten($lightblue, 25%);
+  .alt ul.accordion {
+    & > li {
+      border-bottom-color: lighten($lightblue, 25%);
 
-    &.accordion__visible {
-      border-color: $cyan;
+      &.accordion__visible {
+        border-color: $cyan;
+      }
     }
   }
 }

@@ -1,5 +1,5 @@
-[role="main"] article header,
-[role="main"] article header:first-child {
+.uomcontent article header,
+.uomcontent article header:first-child {
   @extend .banner;
   position: relative;
 
@@ -11,19 +11,18 @@
   }
 
   h1 {
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: $ff-serif;
   }
 
   .bottom-align {
     @include padding-trailer(2);
     position: relative;
-    //z-index: 2;
   }
 }
 
 .ie9 {
-  [role="main"] article header,
-  [role="main"] article header:first-child {
+  .uomcontent article header,
+  .uomcontent article header:first-child {
     .bottom-align {
       position: absolute;
     }

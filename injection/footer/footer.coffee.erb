@@ -5,7 +5,7 @@ window.UOMinjectFooter= ->
     if "<%=ENV["ASSET_ENV"]%>" == 'development'
       assethost = '/assets/shared'
     else
-      assethost = '//uom-design-system.s3-ap-southeast-2.amazonaws.com/shared'
+      assethost = '//uom-design-system.s3.amazonaws.com/shared'
 
     footer = document.createElement('div')
     footer.addClass('page-footer')

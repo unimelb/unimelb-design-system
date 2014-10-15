@@ -11,8 +11,7 @@ window.UOMinjectHeader = ->
   if "<%=ENV["ASSET_ENV"]%>" == 'development'
     assethost = '/assets/shared'
   else
-    # assethost = 'https://uom-design-system.s3-ap-southeast-2.amazonaws.com/shared'
-    assethost = 'http://waitingallday.com/e'
+    assethost = '//uom-design-system.s3.amazonaws.com/shared'
 
   # Create page wrapper if it doesn't already exist
   parent = document.querySelector('.uomcontent')

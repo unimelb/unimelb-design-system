@@ -13,14 +13,14 @@
   ));
   @include flex-wrap(wrap);
 }
-[role="main"] {
+
+.uomcontent {
   & > article:first-child {
     padding-top: 0;
   }
 
   header,
   & > header:first-child {
-    //@include rem(min-height, 144px);
     @include padding-leader(1);
     @include padding-trailer(1);
     background-color: $navy;
@@ -28,13 +28,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: $white;
-    //display: table;
-    //position: relative;
     width: 100%;
-
-    // &.tight {
-    //   margin-bottom: 0;
-    // }
 
     &.solid-black {
       background-color: $black;
@@ -47,7 +41,6 @@
 
     &.image {
       @extend %bannerbox;
-      //@include rem(height, 300px);
       @include rem(min-height, 300px);
 
       & > h1,
@@ -99,36 +92,6 @@
       }
     }
 
-    // &.short {
-    //   height: auto;
-    //   padding-bottom: 0;
-
-    //   p {
-    //     @include rem(font-size, 20px);
-    //     @include rem(padding-bottom, 15px);
-    //     @include rem(padding-top, 15px);
-    //     line-height: 1.3;
-    //     padding-left: 3%;
-    //     padding-right: 3%;
-    //     width: 100%;
-    //   }
-
-    //   @include breakpoint(desktop) {
-    //     @include rem(padding-bottom, 160px);
-    //     p {
-    //       @include rem(font-size, 24px);
-    //       @include rem(max-width, $w-mid);
-    //       @include rem(padding-bottom, 120px);
-    //       @include rem(padding-top, 60px);
-    //       line-height: 1.4;
-    //       margin: 0 auto;
-    //       padding-left: 0;
-    //       padding-right: 0;
-    //       text-align: center;
-    //     }
-    //   }
-    // }
-
     &.with-box {
       padding: 0;
 
@@ -137,19 +100,6 @@
         @include rem(padding-top, 30px);
       }
     }
-
-    // section {
-    //   @include rem(max-width, $w-mid);
-    //   @include rem(min-height, 82px);
-    //   margin: 0 auto;
-    //   text-align: left;
-
-    //   p,
-    //   h1 {
-    //     max-width: 100%;
-    //     text-align: left;
-    //   }
-    // }
 
     h1 {
       @include adjust-font-size-to(33px);
@@ -197,7 +147,7 @@
 }
 
 
-.floating + [role="main"] {
+.uomcontent .floating + [role="main"] {
   header,
   & > header:first-child {
     @include rem(padding-top, 100px);
@@ -209,7 +159,7 @@
 }
 
 .ie9 {
-  [role="main"] header,
+  .uomcontent header,
   & > header:first-child {
     display: table;
     position: relative;

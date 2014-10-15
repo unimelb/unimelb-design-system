@@ -1,4 +1,4 @@
-[role="main"] .news-hero {
+.uomcontent .news-hero {
   @include padding-trailer(2);
   @include rem(max-width, $w-lge);
   margin: 0 auto;
@@ -60,8 +60,7 @@
   }
 }
 
-[role="main"] .news-index {
-
+.uomcontent .news-index {
   article {
     @include padding-leader(2);
     @include padding-trailer(2);

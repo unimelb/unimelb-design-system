@@ -1,17 +1,19 @@
-.filtered-listing-wrapper {
+.uomcontent .filtered-listing-wrapper {
   @include padding-leader(1);
   @include padding-trailer(1);
   background-color: $navy;
 }
-.bottom-align-flat .filtered-listing-wrapper {
+
+.uomcontent .bottom-align-flat .filtered-listing-wrapper {
   background-color: transparent;
 }
-header .filtered-listing-wrapper{
+
+.uomcontent header .filtered-listing-wrapper{
   padding-bottom: 0;
   padding-top: 0;
 }
 
-[role="main"] form.filtered-listing-select {
+.uomcontent form.filtered-listing-select {
   @include rem(max-width, $w-lge);
   background-color: transparent;
   color: $white;
@@ -31,7 +33,6 @@ header .filtered-listing-wrapper{
 
   h2 {
     @include rem(font-size, 30px);
-    //@include rem(letter-spacing, 2px);
     font-weight: $thin;
     line-height: 1.2;
     margin-left: 0;

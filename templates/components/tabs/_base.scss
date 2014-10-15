@@ -1,36 +1,36 @@
-[data-tabbed] {
-  nav {
-    display: none;
+.uomcontent {
+  [data-tabbed] {
+    nav {
+      display: none;
 
-    a {
-      cursor: pointer;
-      font-weight: 400;
+      a {
+        cursor: pointer;
+        font-weight: 400;
 
-      &[data-current] {
-        font-weight: bold;
+        &[data-current] {
+          font-weight: bold;
+        }
+      }
+
+      &.active {
+        display: block;
       }
     }
 
-    &.active {
-      display: block;
+    .tab {
+      margin: 0;
+      padding: 0;
+
+      &[data-current] {
+        display: block;
+      }
     }
   }
 
-  .tab {
-    margin: 0;
-    padding: 0;
-
-    &[data-current] {
-      display: block;
-    }
+  [data-tab] {
+    cursor: pointer;
   }
-}
 
-[data-tab] {
-  cursor: pointer;
-}
-
-[role="main"] {
   .tabbed-nav {
     & > .full-width {
       background-color: $darkblue;
@@ -262,7 +262,7 @@
       text-align: center;
 
       @include breakpoint(tablet) {
-        text-align: left;        
+        text-align: left;
       }
 
       a {
@@ -304,30 +304,30 @@
       }
     }
   }
-}
 
-.tabbed-course {
-  @extend .tabbed-nav;
-  @extend .thin;
+  .tabbed-course {
+    @extend .tabbed-nav;
+    @extend .thin;
 
-  .tab {
-    @extend %clearfix;
-    background-color: $white;
-    max-width: 1200px;
-  }
+    .tab {
+      @extend %clearfix;
+      background-color: $white;
+      max-width: 1200px;
+    }
 
-  .half {
-    background-color: $lightgray;
-  }
+    .half {
+      background-color: $lightgray;
+    }
 
-  aside h2.subtitle {
-    @include rem(padding-bottom, 5px);
+    aside h2.subtitle {
+      @include rem(padding-bottom, 5px);
+    }
   }
 }
 
 .ie {
-  [role="main"] .tabbed-course,
-  [role="main"] .tabbed-nav {
+  .uomcontent .tabbed-course,
+  .uomcontent .tabbed-nav {
     nav a[data-current]:after {
       border: solid transparent;
       border-top-color: $black;
@@ -354,7 +354,7 @@
     }
   }
 
-  [role="main"] .tabbed-nav .fullwidth {
+  .uomcontent .tabbed-nav .fullwidth {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e50c304a, endColorstr=#e50c304a);
 
     nav a[data-current]:after {

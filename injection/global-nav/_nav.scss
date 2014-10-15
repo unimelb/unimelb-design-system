@@ -23,7 +23,6 @@ body {
   }
 
   &.active {
-    // @include transform(translate(-100%, 0) translate(30px, 0));
     @include translateX(-100%);
     overflow: hidden;
     position: fixed;
@@ -37,7 +36,6 @@ body {
   }
 
   &.global-active {
-    // @include transform(translate(-100%, 0));
     @include translateX(-100%);
     position: fixed;
     top: 0;
@@ -74,7 +72,7 @@ body {
   background-color: $white;
 }
 
-ul.quicklinks {
+.uomcontent ul.quicklinks {
   @include rem(margin, 30px 0);
   @include rem(padding, 15px 0);
   clear: both;
@@ -114,6 +112,7 @@ ul.quicklinks {
 
     &:hover {
       background-color: $highlight;
+      color: $white;
       text-decoration: none;
       transform: scale(1.2);
     }
@@ -157,7 +156,7 @@ ul.quicklinks {
   }
 }
 
-.page-login {
+.uomcontent .page-login {
   @extend %normalise;
   font-family: $ff-sans;
 
@@ -260,14 +259,10 @@ ul.quicklinks {
   }
 }
 
-.sitemap-label {
+.uomcontent .sitemap-label {
   @include rem(width, 40px);
   @include transform(translate(100%, 0) translate(-40px, 0));
   @include transition(width .3s ease, right .3s ease);
-  // @include transition(-moz-transform .3s ease);
-  // @include transition(-ms-transform .3s ease);
-  // @include transition(-webkit-transform .3s ease);
-  // @include transition(transform .3s ease);
   background-color: $navy;
   box-shadow: 3px 0 6px rgba($black, .4) inset;
   cursor: pointer;
@@ -281,11 +276,6 @@ ul.quicklinks {
   &:hover {
     @include rem(right, 5px);
     @include rem(width, 45px);
-    // @include transition(right .3s ease);
-    // @include transition(-moz-transform .3s ease);
-    // @include transition(-ms-transform .3s ease);
-    // @include transition(-webkit-transform .3s ease);
-    // @include transition(transform .3s ease);
 
     span {
       @include transition(color .3s ease);
@@ -341,7 +331,7 @@ ul.quicklinks {
     }
   }
 
-  .modal__dialog {
+  .uomcontent .modal__dialog {
     left: 20%;
     right: 20%;
     top: 20%;
@@ -352,14 +342,14 @@ ul.quicklinks {
     }
   }
 
-  .modal__blanket {
+  .uomcontent .modal__blanket {
     min-height: 100%;
     width: 120%;
   }
 }
 
 .ie8 {
-  ul.quicklinks {
+  .uomcontent ul.quicklinks {
     border-bottom: 1px solid $blue;
     border-top: 1px solid $blue;
     padding-bottom: 10px;
@@ -388,7 +378,7 @@ ul.quicklinks {
     }
   }
 
-  .sitemap-label {
+  .uomcontent .sitemap-label {
     display: none;
   }
 }

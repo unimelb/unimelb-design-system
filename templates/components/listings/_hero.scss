@@ -1,4 +1,4 @@
-[role="main"] .hero-listing {
+.uomcontent .hero-listing {
   @extend .feature-listing;
   padding-left: 3%;
   padding-right: 3%;
@@ -11,7 +11,6 @@
 
   h2 {
     @include trailer(1);
-    // @include rem(margin-bottom, 30px);
     background-size: cover;
     max-width: 100%;
     padding: 0;
@@ -46,15 +45,12 @@
     strong {
       @include adjust-font-size-to(40px);
       @include padding-leader(1);
-      // @include rem(font-size, 40px);
-      // @include rem(padding-top, 30px);
       color: $white;
       line-height: 1.1;
     }
 
     p {
       @include adjust-font-size-to(18px);
-      // @include rem(font-size, 18px);
       color: $white;
       font-weight: $thin;
       max-width: 100%;
@@ -73,13 +69,9 @@
 
       strong {
         @include padding-leader(0.5);
-        // @include adjust-font-size-to(60px);
-        // @include rem(font-size, 60px);
-        // line-height: 1.2;
       }
 
       p {
-        // @include rem(font-size, 24px);
         @include padding-trailer(1);
         text-align: center;
       }

@@ -101,7 +101,7 @@ $round-to-nearest-half-line: true;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=1); // /* IE6-9 */
 }
 
-$cdnurl: '//uom-templates.s3.amazonaws.com/shared';
+$cdnurl: '//uom-design-system.s3.amazonaws.com/shared';
 
 %imgreplace {
   background-color: transparent;

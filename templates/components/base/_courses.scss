@@ -1,4 +1,4 @@
-table.course-progression {
+.uomcontent table.course-progression {
   @include rem(margin-bottom, 30px);
   border-collapse: collapse;
   width: 100%;
@@ -149,7 +149,7 @@ table.course-progression {
 
 
 
-[role="main"] .course-application-checklist {
+.uomcontent .course-application-checklist {
   margin-left: 0;
 
   li {
@@ -173,7 +173,7 @@ table.course-progression {
   }
 }
 
-[role="main"] ul.degree-plan-nav {
+.uomcontent ul.degree-plan-nav {
   display: block;
   line-height: 1.4;
   padding: 0;
@@ -202,11 +202,11 @@ table.course-progression {
   }
 }
 
-.degree-plan-section {
+.uomcontent .degree-plan-section {
   position: relative;
 }
 
-[role="main"] .with-aside div.degree-plan {
+.uomcontent .with-aside div.degree-plan {
   display: none;
 
   &.current {
@@ -218,12 +218,12 @@ table.course-progression {
   }
 }
 
-#overview h2 {
+.uomcontent #overview h2 {
   padding-top: 0;
 }
 
-.pricing,
-[role="main"] .with-aside aside .pricing {
+.uomcontent .pricing,
+.uomcontent .with-aside aside .pricing {
   h2{
     @include padding-leader(1);
     padding-bottom: 0;
@@ -243,7 +243,7 @@ table.course-progression {
   }
 }
 
-[role="main"] form.course-select {
+.uomcontent form.course-select {
   @extend .filtered-listing-select;
   box-shadow: none;
 
@@ -291,7 +291,7 @@ table.course-progression {
 }
 
 .ie {
-  [role="main"] form.course-select {
+  .uomcontent form.course-select {
     @extend %clearfix;
 
     .left {
@@ -315,7 +315,7 @@ table.course-progression {
     }
   }
 
-  .course-section {
+  .uomcontent .course-section {
     aside {
       float: left;
       margin: 0;
@@ -330,14 +330,14 @@ table.course-progression {
     }
   }
 
-  [role="main"] .course-grid {
+  .uomcontent .course-grid {
     li {
       margin: .25%;
       width: 23.5%;
     }
   }
 
-  [role="main"] table.course-progression {
+  .uomcontent table.course-progression {
     td,
     th {
       padding-left: 0;

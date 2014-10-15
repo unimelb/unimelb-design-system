@@ -49,7 +49,16 @@ unless window.UOMStickyNav
         else
           jump.id = 'outer'
           main = document.querySelector('[role="main"]')
-          main.insertBefore(jump, main.firstChild.nextSibling)
+
+          elements = []
+          for node in main.childNodes
+            if node.nodeType==1
+              elements.push node
+
+          if elements.length > 1
+            main.insertBefore(jump, elements[1])
+          else
+            main.appendChild(jump)
 
         document.body.addClass 'jumpnav-active'
 

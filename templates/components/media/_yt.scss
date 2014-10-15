@@ -1,4 +1,4 @@
-[role="main"] {
+.uomcontent {
   .video {
     height: 0;
     margin-left: auto;
@@ -83,7 +83,6 @@
   }
 
   .half .video {
-    //@include rem(margin, 30px 0 0);
     padding-bottom: 56.25%;
 
     [data-ytid] {
@@ -92,12 +91,6 @@
     }
 
     @include breakpoint(desktop) {
-      //@include rem(margin-bottom, 60px);
-      //@include rem(margin-top, 60px);
-      //margin-right: 2.5%;
-      //max-width: 47.5%;
-      //padding-bottom: 27.5%;
-
       iframe {
         margin-left: 0;
         width: 90%;

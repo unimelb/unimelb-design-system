@@ -1,4 +1,4 @@
-[role="main"] {
+.uomcontent {
 	.half {
     @extend %wrapper;
     @include rem(padding-bottom, 30px);
@@ -34,10 +34,6 @@
         width: 100%;
       }
 
-      // iframe {
-      //   width: 100%;
-      // }
-
       @include breakpoint(desktop) {
         @include rem(padding, 30px 15px);
         display: table-cell;
@@ -49,12 +45,6 @@
         h2 {
           margin-left: 0;
         }
-
-        // iframe {
-        //   @include rem(margin-top, 60px);
-        //   @include rem(margin-bottom, 60px);
-        //   @include rem(padding-right, 30px);
-        // }
       }
     }
 

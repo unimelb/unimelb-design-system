@@ -1,4 +1,4 @@
-[role="sitemap"] {
+.uomcontent [role="sitemap"] {
   @extend %normalise;
   @extend %smooth-translate;
   @extend %wrapper;
@@ -194,14 +194,12 @@
     @include rem(height, 140px);
     @include rem(margin-top, 15px);
     @include rem(width, 140px);
-    // background-image: url("#{asset_path('header/logo.svg')}");
     border: 0 none;
     clear: none;
     margin-left: auto;
     margin-right: auto;
     padding: 0;
     text-decoration: none;
-    // text-indent: -9999em;
 
     svg {
       display: block;
@@ -292,7 +290,7 @@
 }
 
 body.ie {
-  [role="sitemap"] {
+  .uomcontent [role="sitemap"] {
     display: none;
     z-index: 0;
 
@@ -362,7 +360,7 @@ body.ie {
 }
 
 body.ie9 {
-  [role="sitemap"] {
+  .uomcontent [role="sitemap"] {
     form fieldset .inline .search-button {
       text-indent: -999em;
       width: 40px;
