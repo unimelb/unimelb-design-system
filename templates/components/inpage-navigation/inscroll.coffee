@@ -15,15 +15,15 @@ unless window.UOMInpageScrolling
         unless @el.hasAttribute('data-no-scroll')
           @el.addEventListener 'click', (e) ->
 
+            tel = e.srcElement
+            outer = document.documentElement
+
             if e.target
               tel = e.target
               if /(Firefox)/g.test(navigator.userAgent)
                 outer = document.querySelector('html')
               else
                 outer = document.body
-            else
-              tel = e.srcElement
-              outer = document.documentElement
 
             target = tel.getAttribute('href')
 

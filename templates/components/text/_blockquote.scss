@@ -1,14 +1,14 @@
-[role="main"] {
-  %quote-style {
-    @include rem(font-size, 100px);
-    @include rem(margin-left, -50px);
-    @include rem(margin-right, 10px);
-    color: darken($lightgray, 10%);
-    content: open-quote;
-    line-height: .1em;
-    vertical-align: -.333em;
-  }
+%quote-style {
+  @include rem(font-size, 100px);
+  @include rem(margin-left, -50px);
+  @include rem(margin-right, 10px);
+  color: darken($lightgray, 10%);
+  content: open-quote;
+  line-height: .1em;
+  vertical-align: -.333em;
+}
 
+.uomcontent {
   blockquote {
     @include adjust-font-size-to(19px);
     @include adjust-leading-to(1);

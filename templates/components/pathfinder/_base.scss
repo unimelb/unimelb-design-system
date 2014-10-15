@@ -1,4 +1,4 @@
-[role="main"] .pathfinder-3 {
+.uomcontent .pathfinder-3 {
   @extend .feature-listing-3;
   @include leader(2);
   @include trailer(2);
@@ -144,7 +144,7 @@
   }
 }
 
-[role="main"] .pathfinder-2 {
+.uomcontent .pathfinder-2 {
   @extend .pathfinder-3;
 
   @include breakpoint(desktop) {
@@ -166,7 +166,7 @@
   }
 }
 
-[role="main"] .pathfinder-4 {
+.uomcontent .pathfinder-4 {
   @extend .pathfinder-3;
 
   @include breakpoint(desktop) {
@@ -238,15 +238,15 @@
     }
   }
 }
-[role="main"] .lead + .pathfinder-2,
-[role="main"] .lead + .pathfinder-3,
-[role="main"] .lead + .pathfinder-4 {
+.uomcontent .lead + .pathfinder-2,
+.uomcontent .lead + .pathfinder-3,
+.uomcontent .lead + .pathfinder-4 {
   @include leader(0);
   padding-top: 0;
 }
 
 .ie {
-  [role="main"] .pathfinder-3 {
+  .uomcontent .pathfinder-3 {
     float: none;
     margin-left: auto;
     margin-right: auto;
@@ -295,7 +295,7 @@
 }
 
 .ie9 {
-  [role="main"] .pathfinder .button-small {
+  .uomcontent .pathfinder .button-small {
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
     left: 50%;

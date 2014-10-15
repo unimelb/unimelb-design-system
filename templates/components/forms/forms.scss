@@ -74,7 +74,7 @@
   }
 }
 
-fieldset {
+.uomcontent fieldset {
   border: 0;
   padding: 0;
 
@@ -278,7 +278,7 @@ fieldset {
   }
 }
 
-select {
+.uomcontent select {
   @extend %control;
   @extend %controlhack;
   @include appearance(none);
@@ -359,7 +359,7 @@ select {
   }
 }
 
-[role="main"] .newsletter-box {
+.uomcontent .newsletter-box {
   @include leader(1);
   @include padding-leader(1);
   @include padding-trailer(1);

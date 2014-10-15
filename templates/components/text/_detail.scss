@@ -1,4 +1,4 @@
-[role="main"] .detail {
+.uomcontent .detail {
   @extend %wrapper;
   @include padding-leader(1);
 
@@ -64,7 +64,6 @@
     }
 
     div {
-      //@include rem(padding, 30px 0 30px);
       @include padding-leader(1);
       @include padding-trailer(1);
       border-top: 1px solid $black;

@@ -1,4 +1,4 @@
-[role="main"] .feature-listing {
+.uomcontent .feature-listing {
   @extend .listing;
 
   li {
@@ -21,7 +21,6 @@
   strong {
     @include adjust-font-size-to(20px);
     @include adjust-leading-to(1);
-    // @include rem(font-size, 20px);
     text-align: left;
   }
 
@@ -53,7 +52,6 @@
     strong {
       @include adjust-font-size-to(20px);
       @include padding-trailer(0.5);
-      // @include rem(padding, 15px 0);
       text-align: center;
     }
 
@@ -64,7 +62,7 @@
   }
 }
 
-[role="main"] .feature-listing-3 {
+.uomcontent .feature-listing-3 {
   @extend .feature-listing;
 
   strong {

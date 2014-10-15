@@ -1,4 +1,4 @@
-[role="main"] {
+.uomcontent {
 	.lead {
 		@include adjust-font-size-to(19px);
 		@include padding-leader(3);
@@ -47,9 +47,9 @@
       margin: 0 auto;
     }
 	}
-}
 
-[role="main"] section > .lead {
-  @include padding-leader(1);
-  @include padding-trailer(1);
+  section > .lead {
+    @include padding-leader(1);
+    @include padding-trailer(1);
+  }
 }

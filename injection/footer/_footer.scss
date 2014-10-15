@@ -1,4 +1,4 @@
-.page-footer {
+.uomcontent .page-footer {
   @extend %normalise;
   @include rem(font-size, 20px);
   background-color: $navy;
@@ -46,15 +46,11 @@
   }
 }
 
-.unimelb-lge {
-  // @extend %imgreplace;
-  //@include rem(height, 100px);
+.uomcontent .unimelb-lge {
   @include rem(margin, 30px auto);
-  //@include rem(max-height, 100px);
   @include rem(width, 270px);
-  // background-image: url("#{asset_path('footer/lockup.png')}");
   display: block;
-  // text-indent: -999em;
+
   svg,
   img {
     display: block;
@@ -63,7 +59,7 @@
   }
 }
 
-.page-footer-section {
+.uomcontent .page-footer-section {
   @include rem(height, 50px);
   @include rem(line-height, 50px);
   border-bottom: 1px solid $blue;
@@ -185,25 +181,14 @@
 
       &.social-twitter {
         @include rem(padding-top, 1px);
-        a {
-          //background-image: url("#{asset_path('footer/tw.png')}");
-        }
       }
 
       &.social-facebook {
         margin-left: 20%;
-
-        a {
-          //background-image: url("#{asset_path('footer/fb.png')}");
-        }
       }
 
       &.social-linkedin {
         margin-right: 20%;
-
-        a {
-          //background-image: url("#{asset_path('footer/li.png')}");
-        }
       }
     }
 
@@ -215,7 +200,6 @@
       display: inline-block;
       text-decoration: none;
       overflow: hidden;
-      //text-indent: -999em;
       transition: all 0.2s linear;
 
       &:hover {
@@ -262,7 +246,7 @@
 }
 
 .ie8 {
-  .page-footer {
+  .uomcontent .page-footer {
     background-color: $navy;
     clear: left;
     color: $white;
@@ -296,7 +280,7 @@
     }
   }
 
-  .page-footer-section {
+  .uomcontent .page-footer-section {
     border: 0 none;
     &.nav {
       margin-bottom: 60px;
@@ -368,7 +352,7 @@
     }
   }
 
-  [role="main"] footer.cta ul.quarter {
+  .uomcontent footer.cta ul.quarter {
     padding: 30px 0 60px;
     text-align: center;
 

@@ -7,7 +7,7 @@
     -webkit-filter: hue-rotate(-360deg);
   }
 }
-[role="main"] {
+.uomcontent {
 	background-color: $white;
   font-weight: $regular;
 
@@ -343,6 +343,7 @@
       @include adjust-font-size-to(160px);
     }
   }
+
   header h1.highlight,
   & > header:first-child h1.highlight,
   header.image h1.highlight,

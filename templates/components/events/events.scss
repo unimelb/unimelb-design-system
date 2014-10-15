@@ -1,4 +1,4 @@
-[role="main"] ul.event-listing {
+.uomcontent ul.event-listing {
   @include rem(padding-bottom, 50px);
   padding-left: 0;
   padding-right: 0;
@@ -238,12 +238,12 @@
 }
 
 .ie8 {
-  [role="main"] ul.event-listing ul li small {
-    span::after {
+  .uomcontent ul.event-listing ul li small {
+    span:after {
       content: ',';
     }
 
-    span:last-child::after {
+    span:last-child:after {
       content: '.';
     }
   }

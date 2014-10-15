@@ -1,13 +1,11 @@
-[role="main"] {
+.uomcontent {
   header {
-
     &.embed-video:first-child {
       padding-bottom: 0;
       padding-top: 0;
     }
 
     &.embed-video {
-
       .video {
         margin-bottom: 0;
         max-width: 3000px;

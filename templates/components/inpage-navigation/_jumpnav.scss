@@ -14,8 +14,6 @@
     margin-bottom: 0;
     margin-left: 0;
     padding-bottom: 0;
-    // padding-left: 15px;
-    // text-indent: -15px;
     vertical-align: top;
     white-space: normal;
     width: 50%;
@@ -38,16 +36,10 @@
   a {
     @include rem(padding-bottom, 7px);
     @include rem(padding-top, 7px);
-    //color: $gray;
     display: block;
     font-weight: $light;
     text-decoration: none;
     white-space: normal;
-
-    // &::before {
-    //   content: '\25cf';
-    //   padding-right: 5px;
-    // }
 
     &:hover {
       text-decoration: underline;
@@ -77,11 +69,11 @@
   }
 }
 
-[role="main"] .jump-navigation {
+.uomcontent .jump-navigation {
   @extend %jump;
 }
 
-#outer {
+.uomcontent #outer {
   @extend %jump;
 
   @include breakpoint(wide) {
@@ -112,7 +104,7 @@ body.jumpnav-active {
       background-color: $white;
     }
 
-    [role="main"] {
+    .uomcontent [role="main"] {
       @include single-box-shadow(0, 3px, 6px, 0, rgba($black, .3), true);
       margin-left: 300px;
 

@@ -113,11 +113,7 @@
   text-transform: uppercase;
 
   &:hover {
-    // background-color: rgba($white, .5);
-    // filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fffffff,endColorstr=#7fffffff);
-
     background-color: $cyan;
-
     color: $white;
     border-color: transparent;
   }
@@ -214,8 +210,8 @@
   }
 }
 
-[role="main"] input[type="submit"],
-[role="main"] input[type="button"] {
+.uomcontent input[type="submit"],
+.uomcontent input[type="button"] {
   @extend %raisedbutton;
   @extend %raisedbutton.cta;
   @extend %flatbutton.cta;
@@ -223,99 +219,81 @@
   width: auto;
 }
 
-[role="main"] .button {
-  @extend %raisedbutton;
-}
-
-[role="main"] .button-small {
-  @extend %flatbutton;
-}
-
-[role="main"] .with-arrow {
-  @extend %arrow-right;
-}
-
-[role="main"] .button-hero {
-  @extend %outlinebutton;
-  @extend %outlinearrow;
-}
-
-[role="main"] .button-hero-reverse {
-  @extend %outlinebutton;
-  @extend %outlinearrow-reverse;
-}
-
-[role="main"] .button-hero-inverse {
-  @extend %outlinebutton;
-  @extend %outlinearrow;
-  border-color: $white;
-  color: $white;
-
-  &:hover {
-    //color: $brand;
+.uomcontent {
+  .button {
+    @extend %raisedbutton;
   }
-}
 
-[role="main"] .button-map {
-  @extend %iconbutton;
-
-  &::after {
-    background-image: url(asset_path('components/base/assets/icon-pin-b.png'));
+  .button-small {
+    @extend %flatbutton;
   }
-}
 
-[role="main"] .button-share {
-  @extend %iconbutton;
-
-  &::after {
-    background-image: url(asset_path('components/base/assets/icon-share-b.png'));
+  .with-arrow {
+    @extend %arrow-right;
   }
-}
 
-[role="main"] .button-fill {
-  color: $black;
-  text-align: center;
-  text-decoration: none;
-  width: 100%;
+  .button-hero {
+    @extend %outlinebutton;
+    @extend %outlinearrow;
+  }
 
-  &:hover {
-    background-color: $highlight;
+  .button-hero-reverse {
+    @extend %outlinebutton;
+    @extend %outlinearrow-reverse;
+  }
+
+  .button-hero-inverse {
+    @extend %outlinebutton;
+    @extend %outlinearrow;
+    border-color: $white;
     color: $white;
   }
 
-  h2 {
-    @include rem(font-size, 24px);
+  .button-map {
+    @extend %iconbutton;
+
+    &::after {
+      background-image: url(asset_path('components/base/assets/icon-pin-b.png'));
+    }
   }
 
-  p {
-    @include rem(font-size, 16px);
+  [role="main"] .button-share {
+    @extend %iconbutton;
+
+    &::after {
+      background-image: url(asset_path('components/base/assets/icon-share-b.png'));
+    }
+  }
+
+  .button-fill {
+    color: $black;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover {
+      background-color: $highlight;
+      color: $white;
+    }
+
+    h2 {
+      @include rem(font-size, 24px);
+    }
+
+    p {
+      @include rem(font-size, 16px);
+    }
   }
 }
 
 .ie {
-  /*%button-arrow {
-    content: '\2192';
-    font-size: 30px;
-    padding-left: 5px;
-    position: absolute;
-    top: 4px;
-  }
-
-  .button-hero-inverse:after {
-    @extend %button-arrow;
-  }
-
-  .button-hero:after {
-    @extend %button-arrow;
-  }*/
-
-  [role="main"] .button-map {
+  .uomcontent .button-map {
     &:after {
       background-image: url(asset_path('components/base/assets/s-icon-pin-b.png'));
     }
   }
 
-  [role="main"] .button-share {
+  .uomcontent .button-share {
     &:after {
       background-image: url(asset_path('components/base/assets/s-icon-share-b.png'));
     }

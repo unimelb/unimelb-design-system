@@ -1,4 +1,4 @@
-[role="main"] .timetable {
+.uomcontent .timetable {
   background-color: $white;
 
   @include breakpoint(desktop) {
@@ -240,96 +240,5 @@
         }
       }
     }
-
-    //   td.unit-description {
-    //     @include rem(padding, 15px 0);
-    //     background-color: $navy;
-    //     color: $white;
-    //     position: relative;
-    //     text-align: left;
-
-    //     @include breakpoint(desktop) {
-    //       @include rem(padding-left, 15px);
-    //       @include rem(padding-right, 15px);
-    //     }
-
-    //     &::before {
-    //       border: solid transparent;
-    //       border-bottom-color: $navy;
-    //       border-width: 10px;
-    //       bottom: 100%;
-    //       content: ' ';
-    //       height: 0;
-    //       left: 0;
-    //       margin-left: 20px;
-    //       margin-top: 0;
-    //       pointer-events: none;
-    //       position: absolute;
-    //       width: 0;
-    //     }
-
-    //     h2 {
-    //       @extend .subtitle;
-    //       @include rem(padding-right, 60px);
-    //       padding-left: 3%;
-
-    //       @include breakpoint(desktop) {
-    //         @include rem(padding-left, 15px);
-    //       }
-    //     }
-
-    //     p {
-    //       @include rem(font-size, 16px);
-    //       padding-left: 3%;
-    //       padding-right: 3%;
-
-    //       @include breakpoint(desktop) {
-    //         @include rem(padding-left, 15px);
-    //         @include rem(padding-right, 15px);
-    //       }
-    //     }
-
-    //     hr {
-    //       @include rem(margin, 15px);
-    //       border-color: rgba($white, .2);
-    //       margin-left: 3%;
-    //       margin-right: 3%;
-
-    //       @include breakpoint(desktop) {
-    //         @include rem(margin, 15px);
-    //       }
-    //     }
-
-    //     .col1_3 {
-    //       @include rem(padding, 15px);
-    //       clear: none;
-
-    //       @include breakpoint(desktop) {
-    //         float: left;
-    //         width: 33%;
-    //       }
-
-    //       a {
-    //         color: $white;
-    //       }
-
-    //       strong {
-    //         color: rgba($white, .4);
-    //         display: block;
-    //       }
-    //     }
-    //   }
-
-    //   &:last-child td,
-    //   &:last-child th {
-    //     border-bottom: 0;
-    //   }
-    // }
-
-    // thead th:first-child + th {
-    //   border-color: $black;
-    //   text-align: left;
-    // }
-
   }
 }

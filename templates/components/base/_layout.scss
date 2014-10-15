@@ -27,7 +27,7 @@ body {
 }
 
 
-[role="main"] {
+.uomcontent [role="main"] {
 
   & > *:first-child {
     @include rem(padding-top, 100px);
@@ -503,7 +503,7 @@ body {
 }
 
 .ie {
-  .fullwidth {
+  .uomcontent .fullwidth {
     p,
     p.black {
       margin: 0 auto;
@@ -512,7 +512,7 @@ body {
     }
   }
 
-  ul.ticked-list li:before {
+  .uomcontent ul.ticked-list li:before {
     color: #3fc76e;
     content: '\221a';
     font-size: 16px;
@@ -524,14 +524,14 @@ body {
 }
 
 .ie9 {
-  ul.ticked-list li:before {
+  .uomcontent ul.ticked-list li:before {
     content: '';
   }
 }
 
 // Uninjected styles
-.page-local-history,
-[role="navigation"].no-js {
+.uomcontent .page-local-history,
+.uomcontent [role="navigation"].no-js {
   @include rem(padding, 15px 30px);
   color: $midblue;
   display: block;
