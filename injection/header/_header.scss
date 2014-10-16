@@ -55,6 +55,7 @@
     header {
       @include rem(height, 40px);
       @include rem(line-height, 40px);
+      background-color: transparent;
     }
 
     .page-header-navigation {
