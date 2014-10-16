@@ -49,8 +49,6 @@
       text-align: center;
 
       a {
-        //@include adjust-font-size-to(18px);
-        // @include rem(font-size, 16px);
         @include rem(padding, 20px 10px);
         color: $white;
         display: inline-block;
@@ -66,7 +64,6 @@
         &[data-current]::after {
           border: solid transparent;
           border-top-color: $darkblue;
-          // border-top-color: rgba($navy, .9);
           border-width: 10px;
           content: ' ';
           height: 0;
@@ -94,6 +91,10 @@
 
     .desktop-nav {
       display: none;
+
+      &.active {
+        display: none;
+      }
 
       @include breakpoint(desktop) {
         &.active {
@@ -241,7 +242,6 @@
     &.thin {
       nav a {
         @include adjust-font-size-to(13px);
-        //@include rem(font-size, 15px);
         @include rem(padding, 15px);
       }
 
@@ -267,7 +267,6 @@
 
       a {
         @include padding-trailer(0.5);
-        //@include rem(border-radius, 5px 5px 0 0);
         @include rem(padding-left, 25px);
         @include rem(padding-right, 25px);
         background-color: inherit;
@@ -284,7 +283,6 @@
 
         &[data-current] {
           border-bottom: 2px solid $cyan;
-          //background-color: $paleblue;
           color: $cyan;
         }
       }
@@ -296,7 +294,6 @@
       @include rem(padding-left, 25px);
       @include rem(padding-right, 25px);
       border-bottom: 1px solid $lightergray;
-      //background-color: $paleblue;
       margin: 0;
 
       p {
@@ -312,7 +309,6 @@
     .tab {
       @extend %clearfix;
       background-color: $white;
-      max-width: 1200px;
     }
 
     .half {
