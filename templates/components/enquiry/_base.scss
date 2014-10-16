@@ -4,22 +4,44 @@
     @include padding-trailer(2);
     background-color: $paleblue;
 
-    &.accordion__visible .accordion__hidden {
-      @include rem(max-height, 2000px);
-    }
-
     .enquiry__cta {
       @extend %wrapper;
       @include adjust-font-size-to(20px);
+      @include padding-trailer(1);
       @include rem(max-width, $w-sml);
+      border-bottom: 1px solid rgba($lightblue, 0.3);
       text-align: center;
+
+      a {
+        @include rem(margin-left, 10px);
+      }
+
+      @include breakpoint(desktop) {
+        @include adjust-font-size-to(22px);
+      }
+    }
+    .enquiry__subline {
+      @extend %wrapper;
+      @include adjust-font-size-to(16px);
+      @include padding-leader(1);
+      @include rem(max-width, $w-sml);
+      color: $midblue;
+      text-align: center;
+
+      @include breakpoint(tablet) {
+        & > div {
+          display: inline-block;
+        }
+        .secondary {
+          @include rem(margin-left, 20px);
+        }
+      }
     }
 
     .enquiry__form {
       //background-color: $white;
       // border-top: 1px solid $highlight;
       form {
-        @include leader(1);
         @include padding-leader(1);
         max-width: 100%;
         //background-color: transparent;
@@ -28,6 +50,7 @@
         &::before {
           border-bottom: 1px solid #e0e0e0;
           content: '';
+          display: none;
           left: 50%;
           margin-top: -39px;
           max-width: 600px;
@@ -78,6 +101,18 @@
           input[type="checkbox"] + label {
             @include rem(width, 20px);
           }
+        }
+      }
+    }
+    &.accordion__visible {
+      .enquiry__cta {
+        border-color: transparent;
+      }
+      .accordion__hidden {
+        @include rem(max-height, 2000px);
+
+        &.enquiry__form fieldset::before {
+          display: block;
         }
       }
     }
