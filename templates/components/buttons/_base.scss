@@ -1,7 +1,7 @@
 %raisedbutton {
   @include rem(border-radius, 5px);
   @include rem(font-size, 13px);
-  @include rem(padding, 7px 20px);
+  @include rem(padding, 15px 20px);
   background-color: $highlight;
   border: 0;
   border-bottom: 5px solid darken($highlight, 10%);
@@ -63,9 +63,29 @@
   margin: 0;
   position: relative;
 
+  &:hover {
+    background-color: darken($highlight, 10%);
+  }
+
+  &.warning:hover {
+    background-color: darken($warning, 10%);
+  }
+
+  &.cta:hover {
+    background-color: darken($cta, 10%);
+  }
+
+  &.brand:hover {
+    background-color: darken($brand, 10%);
+  }
+
   &.soft {
     background-color: $gray;
     color: $darkblue;
+
+    &:hover {
+      background-color: darken($gray, 10%);
+    }
   }
 
   &:hover {
@@ -74,22 +94,19 @@
 }
 
 %arrow-right {
-  @include rem(padding-right, 40px);
 
   &::after {
-    @include rem(font-size, 30px);
+    @include rem(font-size, 20px);
     @include rem(padding-left, 5px);
-    @include rem(top, -7px);
     content: '\2192';
-    position: absolute;
+    line-height: 0;
   }
 
   &:after {
+    @include rem(font-size, 20px);
+    @include rem(padding-left, 5px);
     content: '\2192';
-    font-size: 30px;
-    padding-left: 5px;
-    position: absolute;
-    top: -7px;
+    line-height: 0;
   }
 }
 
