@@ -1,0 +1,45 @@
+.enquiry
+  .enquiry__cta.accordion__title
+    |Have a question?
+    '
+    a.button-small Enquire now
+  .enquiry__form.accordion__hidden
+    form#enquiry-form data-validate=""
+      .fields
+        .errors.copy style='display: none;'
+        fieldset.enquiry-form__details
+          legend Have a question?
+          div
+            label.enquiry-form__label
+              |Given name
+              input.input-medium type="text" placeholder="Given name" name="first_name" data-required=""
+          div
+            label.enquiry-form__label
+              |Family name
+              input.input-medium type="text" placeholder="Family name" name="last_name" data-required=""
+          div
+            label.enquiry-form__label
+              |Email
+              input.input-medium type="email" placeholder="your@email.com" name="email_address" data-required=""
+          div
+            label.enquiry-form__label
+              |Phone
+              input.input-medium type="text" placeholder="04..." name="phone" data-required=""
+          div
+            label.enquiry-form__label
+              |Message
+              textarea name="enquiry" placeholder="Your enquiry" data-required=""
+          div.align-checkbox
+            input type="checkbox" name="opt_in_faculty" id="faculty_newsletter" value=""
+            label for="faculty_newsletter"
+            | Subscribe to stay up to date with the latest news, events and information
+          div
+            input.enquiry-form__submit-button type='submit' value='Send your question'
+          hr.spacer
+            p
+              small
+                ' The information on this form is being collected by the University of Melbourne for further communication regarding various courses, programs and events at the University in which you have expressed interest. Information collected will only be used by authorised staff for the purpose for which it was collected and will be protected against unauthorized access and use. You can access any personal information the University holds about you. Contact the
+                a href="http://www.unimelb.edu.au/unisec/privacy/contact.html" Privacy Officer
+                '  to find out more. The University’s Privacy Policy is
+                a href="http://www.unimelb.edu.au/disclaimer/privacy.html" available online
+                |.
