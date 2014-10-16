@@ -61,12 +61,8 @@
 
     &.banner {
       @extend %bannerbox;
-      @include rem(height, 300px);
       @include rem(min-height, 300px);
-
-      @include breakpoint(height-smallest) {
-        @include rem(height, 500px);
-      }
+      height: auto;
 
       @include breakpoint(height-small) {
         @include rem(height, 650px);
