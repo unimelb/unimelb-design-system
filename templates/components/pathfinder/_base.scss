@@ -1,248 +1,255 @@
-.uomcontent .pathfinder-3 {
-  @extend .feature-listing-3;
-  @include leader(2);
-  @include trailer(2);
-  background-color: transparent;
-  border: 0 none;
-  padding: 0 3%;
-  width: 94%;
-
-  li {
-    @include leader(1);
-    @include trailer(1);
-    margin-left: 0;
-    margin-right: 0;
-    overflow: visible;
-    padding: 0;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  p {
-    @include leader(1);
-    @include padding-trailer(1);
-    @include rem(padding-left, 20px);
-    @include rem(padding-right, 20px);
+.uomcontent [role="main"] {
+  .pathfinder-3 {
+    @extend .feature-listing-3;
+    @include leader(2);
+    @include trailer(2);
     background-color: transparent;
-    color: $white;
-    padding-top: 0;
-    text-align: center;
-  }
+    border: 0 none;
+    padding: 0 3%;
+    width: 94%;
 
-  strong {
-    @include adjust-font-size-to(15px);
-    @include padding-leader(2);
-    @include padding-trailer(2);
-    @include rem(letter-spacing, 1px);
-    background-color: transparent;
-    border-bottom: 1px solid $white;
-    color: $white;
-    font-weight: $regular;
-    position: relative;
-    text-align: center;
-    text-transform: uppercase;
-
-    span {
-      @include vertical-align;
-      left: 0;
-      position: absolute;
-      top: 50%;
+    li {
+      @include leader(1);
+      @include trailer(1);
+      margin-left: 0;
+      margin-right: 0;
+      overflow: visible;
+      padding: 0;
       width: 100%;
-    }
-  }
-
-  a {
-    @include padding-trailer(2);
-    @include rem(max-width, 350px);
-    background-color: $brand;
-    border-bottom: 3px solid darken($brand, 50%);
-    margin: 0 auto;
-    position: relative;
-    transition: all 200ms ease-out;
-
-    .button-small {
-      background-color: darken($brand, 5%);
+      max-width: 100%;
     }
 
-    &:hover {
-      background-color: lighten($brand, 3%);
-      box-shadow: 0 0 10px rgba($black, 0.5);
-      transform: scale(1.06);
-      z-index: 2;
+    p {
+      @include leader(1);
+      @include padding-trailer(1);
+      @include rem(padding-left, 20px);
+      @include rem(padding-right, 20px);
+      background-color: transparent;
+      padding-top: 0;
+      text-align: center;
+    }
+
+    strong {
+      @include adjust-font-size-to(15px);
+      @include padding-leader(2);
+      @include padding-trailer(2);
+      @include rem(letter-spacing, 1px);
+      background-color: transparent;
+      border-bottom: 1px solid $white;
+      color: $white;
+      font-weight: $regular;
+      position: relative;
+      text-align: center;
+      text-transform: uppercase;
+
+      span {
+        @include vertical-align;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        width: 100%;
+      }
+    }
+
+    a {
+      @include padding-trailer(2);
+      @include rem(max-width, 350px);
+      background-color: $brand;
+      border-bottom: 3px solid darken($brand, 50%);
+      margin: 0 auto;
+      position: relative;
+      transition: all 200ms ease-out;
+
+      strong,
+      p {
+        color: $white;
+      }
 
       .button-small {
         background-color: darken($brand, 5%);
       }
-    }
-  }
 
-  span {
-    background-color: transparent;
-  }
+      &:hover {
+        background-color: lighten($brand, 3%);
+        box-shadow: 0 0 10px rgba($black, 0.5);
+        transform: scale(1.06);
+        z-index: 2;
 
-  @include breakpoint(desktop) {
-    @include padding-leader(2);
-    @include padding-trailer(4);
-    display: table;
-    float: none;
-    height: 100%;
-    margin: 0 auto;
-    max-width: $w-lge;
-    table-layout: fixed;
-
-    // override clearfix
-    &::before,
-    &::after {
-      display: none;
-    }
-
-    li {
-      background-color: transparent;
-      display: table-cell;
-      float: none;
-      height: 100%;
-      margin: 0;
-      padding-left: 0.5%;
-      padding-right: 0.5%;
-      vertical-align: top;
-      width: auto;
-    }
-
-    p {
-      @include padding-leader(1);
-      @include padding-trailer(5);
-      @include rem(max-width, 350px);
-      margin: 0 auto;
-      padding-left: 0;
-      padding-right: 0;
-      text-align: left;
-    }
-
-    strong {
-      @include rem(height, 120px);
-      @include rem(max-width, 350px);
-      margin: 0 auto;
-      padding: 0;
-    }
-
-    a {
-      @include rem(max-width, 350px);
-      @include rem(min-height, 400px);
-      @include rem(padding, 0 35px);
-      height: 100%;
-      margin: 0 auto;
-      position: relative;
-    }
-
-    .button-small {
-      @include horizontal-align;
-      @include rem(bottom, 30px);
-      display: inline-block;
-      left: 50%;
-      position: absolute;
-    }
-  }
-}
-
-.uomcontent .pathfinder-2 {
-  @extend .pathfinder-3;
-
-  @include breakpoint(desktop) {
-    li {
-      @include rem(padding-left, 1px);
-      padding-right: 0;
-      text-align: left;
-
-      &:first-child {
-        padding-left: 0;
-        text-align: right;
+        .button-small {
+          background-color: darken($brand, 5%);
+        }
       }
     }
 
-    a {
-      display: inline-block;
-      margin: 0;
+    span {
+      background-color: transparent;
+    }
+
+    @include breakpoint(desktop) {
+      @include padding-leader(2);
+      @include padding-trailer(4);
+      display: table;
+      float: none;
+      height: 100%;
+      margin: 0 auto;
+      max-width: $w-lge;
+      table-layout: fixed;
+
+      // override clearfix
+      &::before,
+      &::after {
+        display: none;
+      }
+
+      li {
+        background-color: transparent;
+        display: table-cell;
+        float: none;
+        height: 100%;
+        margin: 0;
+        padding-left: 0.5%;
+        padding-right: 0.5%;
+        vertical-align: top;
+        width: auto;
+      }
+
+      p {
+        @include padding-leader(1);
+        @include padding-trailer(5);
+        @include rem(max-width, 350px);
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left;
+      }
+
+      strong {
+        @include rem(height, 120px);
+        @include rem(max-width, 350px);
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      a {
+        @include rem(max-width, 350px);
+        @include rem(min-height, 400px);
+        @include rem(padding, 0 35px);
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .button-small {
+        @include horizontal-align;
+        @include rem(bottom, 30px);
+        display: inline-block;
+        left: 50%;
+        position: absolute;
+      }
     }
   }
-}
 
-.uomcontent .pathfinder-4 {
-  @extend .pathfinder-3;
+  .pathfinder-2 {
+    @extend .pathfinder-3;
 
-  @include breakpoint(desktop) {
-    @include flexbox((
-      display: box,
-      box-orient: vertical
-    ), $version: 1);
-    -ms-flex-wrap: wrap;
-    @include flexbox((
-      display: flexbox,
-      flex-direction: row wrap
-    ), $version: 2);
-    @include flexbox((
-      display: flex,
-      flex-direction: row wrap
-    ));
-    @include flex-flow(row wrap);
-    @include rem(max-width, $w-mid);
+    @include breakpoint(desktop) {
+      li {
+        @include rem(padding-left, 1px);
+        padding-right: 0;
+        text-align: left;
 
-    li {
+        &:first-child {
+          padding-left: 0;
+          text-align: right;
+        }
+      }
+
+      a {
+        display: inline-block;
+        margin: 0;
+      }
+    }
+  }
+
+  .pathfinder-4 {
+    @extend .pathfinder-3;
+
+    @include breakpoint(desktop) {
       @include flexbox((
         display: box,
         box-orient: vertical
       ), $version: 1);
+      -ms-flex-wrap: wrap;
       @include flexbox((
         display: flexbox,
-        flex-direction: row
+        flex-direction: row wrap
       ), $version: 2);
       @include flexbox((
         display: flex,
-        flex-direction: row
+        flex-direction: row wrap
       ));
-      @include rem(padding-left, 1px);
-      @include rem(padding-bottom, 1px);
-      @include flex(1 1 40%);
-      height: auto;
-      padding-right: 0;
+      @include flex-flow(row wrap);
+      @include rem(max-width, $w-mid);
 
-      &:nth-child(2n+1) {
-        @include justify-content(flex-end);
-        padding-left: 0;
-      }
-    }
-
-    a {
-      @include flex(1);
-      height: auto;
-      margin: 0;
-    }
-  }
-
-  @include breakpoint(1350px) {
-    display: table;
-    @include rem(max-width, $w-lge);
-    table-layout: fixed;
-
-    li {
-      display: table-cell;
-      height: 100%;
-
-      &:nth-child(2n+1) {
+      li {
+        @include flexbox((
+          display: box,
+          box-orient: vertical
+        ), $version: 1);
+        @include flexbox((
+          display: flexbox,
+          flex-direction: row
+        ), $version: 2);
+        @include flexbox((
+          display: flex,
+          flex-direction: row
+        ));
         @include rem(padding-left, 1px);
+        @include rem(padding-bottom, 1px);
+        @include flex(1 1 40%);
+        height: auto;
+        padding-right: 0;
+
+        &:nth-child(2n+1) {
+          @include justify-content(flex-end);
+          padding-left: 0;
+        }
+      }
+
+      a {
+        @include flex(1);
+        height: auto;
+        margin: 0;
       }
     }
 
-    a {
-      height: 100%;
-      margin: 0 auto;
+    @include breakpoint(1350px) {
+      display: table;
+      @include rem(max-width, $w-lge);
+      table-layout: fixed;
+
+      li {
+        display: table-cell;
+        height: 100%;
+
+        &:nth-child(2n+1) {
+          @include rem(padding-left, 1px);
+        }
+      }
+
+      a {
+        height: 100%;
+        margin: 0 auto;
+      }
     }
   }
-}
-.uomcontent .lead + .pathfinder-2,
-.uomcontent .lead + .pathfinder-3,
-.uomcontent .lead + .pathfinder-4 {
-  @include leader(0);
-  padding-top: 0;
+
+  .lead + .pathfinder-2,
+  .lead + .pathfinder-3,
+  .lead + .pathfinder-4 {
+    @include leader(0);
+    padding-top: 0;
+  }
 }
 
 .ie {
