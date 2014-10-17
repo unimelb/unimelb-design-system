@@ -1,0 +1,35 @@
+.uomcontent {
+  .checklist {
+    margin-left: 0;
+
+    li {
+      @include rem(padding, 30px 0 30px 45px);
+      @include rem(text-indent, -45px);
+      border-top: 1px solid $lightergray;
+      list-style-type: none;
+
+      &:first-child {
+        border-top: 0 none;
+      }
+
+      &.on {
+        color: $green;
+        text-decoration: line-through;
+      }
+
+      @include breakpoint(desktop) {
+        @include rem(padding, 15px 15px 15px 60px);
+      }
+    }
+  }
+
+  .button.disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+
+    &:hover {
+      border-bottom-width: 5px;
+      margin-top: 20px;
+    }
+  }
+}

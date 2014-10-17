@@ -12,3 +12,6 @@
 default short
 mid
 banner
+
+# Checklist
+- rename .course-application-checklist to .checklist
