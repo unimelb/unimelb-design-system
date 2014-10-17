@@ -1,0 +1,250 @@
+.uomcontent [role="main"] ul.event-listing {
+  @include rem(padding-bottom, 50px);
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+
+  li {
+    @include rem(padding-bottom, 20px);
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+
+    > h2 {
+      @include rem(border-left-width, 5px);
+      @include rem(margin-left, 15px);
+      @include rem(padding-left, 20px);
+      @include rem(padding-top, 10px);
+      @include rem(padding-bottom, 15px);
+      border-left-color: $lighterblue;
+      border-left-style: solid;
+    }
+
+    > ul {
+      @include rem(margin-bottom, 15px);
+      @include rem(margin-right, 5px);
+      margin-top: 0;
+      margin-left: auto;
+      padding: 0;
+
+      > li {
+        @include rem(border-left-width, 5px);
+        border-left-style: solid;
+        border-left-color: $lighterblue;
+        list-style-type: none;
+        padding: 0;
+
+        > a {
+          @include rem(padding-bottom, 15px);
+          @include rem(padding-left, 20px);
+          @include rem(padding-right, 20px);
+          @include rem(padding-top, 15px);
+          color: black;
+          display: block;
+          text-decoration: none;
+
+          &:hover {
+            background-color: #f0f0f0;
+          }
+        }
+
+        h3 {
+          @include rem(font-size, 22px);
+          @include rem(padding-bottom, 10px);
+          padding-top: 0;
+          padding-left: 0;
+          padding-right: 0;
+          font-weight: 400;
+          width: 100%;
+        }
+
+        p {
+          @include rem(font-size, 16px);
+          padding: 0;
+          width: 100%;
+        }
+
+        small {
+          @include rem(font-size, 12px);
+          color: $gray;
+
+          span {
+            @include rem(margin-right, 3px);
+          }
+
+          span::after {
+            content: ',';
+          }
+
+          span:last-child::after {
+            content: '.';
+          }
+        }
+
+        span.time {
+          @include rem(font-size, 18px);
+          color: $lighterblue;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  h2 {
+    @include rem(padding-bottom, 5px);
+    color: $lighterblue;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: none;
+
+    span {
+      @include rem(font-size, 22px);
+      @include rem(margin-right, 6px);
+      margin-bottom: 0;
+      margin-left: 0;
+      margin-top: 0;
+      text-align: right;
+    }
+  }
+
+  .presenters {
+    padding-left: 20px;
+
+    p {
+      font-weight: 400;
+    }
+
+    ul {
+      padding-left: 0;
+
+      li {
+        @include rem(font-size, 13px);
+        display: inline-block;
+        font-weight: 300;
+        list-style: none;
+        margin-left: 0;
+        margin-right: 1%;
+        padding-bottom: 0;
+        vertical-align: top;
+        width: 48%;
+      }
+    }
+  }
+
+  @include breakpoint(desktop) {
+    li {
+      position: relative;
+    }
+  }
+
+  @include breakpoint(wide) {
+    @include rem(max-width, 950px);
+
+    > li {
+      @include rem(max-width, 950px);
+
+      > h2 {
+        border: none;
+        font-weight: 700;
+        line-height: 1;
+        padding: 0;
+        position: absolute;
+        text-align: right;
+        text-transform: uppercase;
+        width: 100px;
+
+        span {
+          color: $lighterblue;
+          display: block;
+          font-weight: 700;
+          @include rem(margin-left, -80px);
+
+          &.date {
+            @include rem(font-size, 80px);
+            @include rem(margin-right, -5px);
+          }
+
+          &.day {
+            @include rem(font-size, 18px);
+            font-weight: 400;
+            text-transform: none;
+          }
+
+          &.month {
+            @include rem(font-size, 40px);
+            @include rem(padding-bottom, 5px);
+          }
+
+          &.year {
+            @include rem(font-size, 18px);
+            font-weight: 400;
+          }
+        }
+      }
+
+      > ul {
+        @include rem(margin-right, 20px);
+        @include rem(max-width, 800px);
+
+        li {
+          @include rem(max-width, 800px);
+
+          a {
+            display: table-cell;
+            vertical-align: top;
+            width: 75%;
+          }
+        }
+      }
+    }
+  }
+
+  @include breakpoint(1350px) {
+    @include rem(max-width, 1265px);
+
+    > li {
+      @include rem(max-width, 1265px);
+
+      > ul {
+        @include rem(max-width, 1105px);
+
+        > li {
+          @include rem(max-width, 1105px);
+
+          > a {
+            width: 63%;
+
+            h3,
+            p {
+              margin-left: 0;
+            }
+          }
+
+          > .presenters {
+            @include rem(margin-right, -440px);
+            border-left: 1px solid $lightergray;
+            display: table-cell;
+            min-width: 37%;
+
+            > ul li {
+              width: 48%;
+              margin-right: 1%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.ie8 {
+  .uomcontent ul.event-listing ul li small {
+    span:after {
+      content: ',';
+    }
+
+    span:last-child:after {
+      content: '.';
+    }
+  }
+}
