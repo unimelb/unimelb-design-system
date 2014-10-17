@@ -79,6 +79,17 @@
           background-color: darken($brand, 5%);
         }
       }
+
+      &.prominent {
+        background-color: lighten($brand, 3%);
+        box-shadow: 0 0 10px rgba($black, 0.5);
+        transform: scale(1.06);
+        z-index: 2;
+
+        .button-small {
+          background-color: darken($brand, 5%);
+        }
+      }
     }
 
     span {
