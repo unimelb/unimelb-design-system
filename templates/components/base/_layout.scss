@@ -64,6 +64,7 @@ body {
       &.youtube5placeholder {
         @include rem(margin-bottom, 45px);
         @include rem(margin-top, 45px);
+        max-width: 100% !important;
         width: 100% !important;
       }
 

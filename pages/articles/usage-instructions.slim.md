@@ -2,15 +2,18 @@
 title: Design System Usage Instructions
 ---
 header
+  / uncomment below to demonstrate header image
+  / style="background:url(/assets/components/headers/assets/repeating-dk.png) center repeat;"
+
   h1 Design System Usage Instructions
 
   .jumpnav
 
 section.lead
-  p Creating a new site using the Design System requires setting up a basic page markup and then using either the <a href="/layouts">example layouts</a> or <a href="/components">components</a> to place component inside the ```div role="main"```.
+  p Creating a new site using the Design System requires setting up a basic page markup and then using either the <a href="/layouts">example layouts</a> or <a href="/components">components</a> to place component inside the <code>div role="main"</code>.
 
 section
-  p Demonstration examples of this code can be found for many different page types in our [example layouts directory](/layouts) similar to these :
+  p Demonstration examples of this code can be found for many different page types in our <a href="/layouts">example layouts directory</a> similar to these:
 
 hr
 

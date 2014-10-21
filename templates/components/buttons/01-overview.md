@@ -8,8 +8,6 @@ Buttons are a highly visual way to encourage a user to complete an action. The t
 
 To use buttons well, you must consider that people associate specific colours with specific actions. For example, while the default button colour is light blue (to differentiate it from the branding colours on the page and make it stand out), if you are asking a user to complete something where they should be especially cautious -- like deleting an account -- using a red button might be more appropriate. Similarly, the soft button is designed for situations where you might need a less obtrusive button. Green is often used to submit a form.
 
-Hero buttons also exist for situations where
-
 ## When you should use buttons
 
 Buttons are especially useful where:

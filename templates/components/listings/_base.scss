@@ -10,10 +10,8 @@
   .listing {
     @extend %clearfix;
     @include padding-trailer(2);
-    // @include rem(padding-bottom, 30px);
     @include rem(padding-left, 15px);
     @include rem(padding-right, 15px);
-    //background-color: $white;
     margin: 0 auto;
     max-width: $w-lge;
 
@@ -22,9 +20,6 @@
     li {
       @include padding-leader(0.5);
       @include padding-trailer(0.5);
-      // @include rem(margin-top, 10px);
-      // @include rem(min-height, 100px);
-      // @include rem(padding-top, 10px);
       border-top: 1px solid darken($lightgray, 5%);
       list-style-type: none;
       margin-bottom: 0;
@@ -44,11 +39,9 @@
 
     figure {
       @include trailer(0.5);
-      // @include rem(margin-bottom, 10px);
       @include rem(margin-right, 15px);
       @include rem(max-height, 100px);
       @include rem(max-width, 100px);
-      // @include rem(padding-top, 10px);
       float: left;
       margin-left: 0;
       margin-top: 0;
@@ -66,7 +59,6 @@
     strong {
       @include adjust-font-size-to(16px);
       @include adjust-leading-to(1);
-      // @include rem(font-size, 16px);
       color: $darkblue;
       display: block;
       font-weight: $light;
@@ -74,7 +66,6 @@
 
     p {
       @include adjust-font-size-to(13px);
-      // @include rem(font-size, 14px);
       @include rem(margin-left, 115px);
       color: $midgray;
       padding: 0;
@@ -111,7 +102,6 @@
         border: 0;
         display: inline-block;
         vertical-align: top;
-        // float: left;
         width: 49%;
       }
 
