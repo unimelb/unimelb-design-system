@@ -53,6 +53,11 @@ body {
     min-width: 0;
   }
 
+  .half .youtube5container {
+    height: 50% !important;
+  }
+
+
   section {
     @include padding-leader(2);
     @include padding-trailer(2);
@@ -62,8 +67,7 @@ body {
       margin: 0 auto;
 
       &.youtube5placeholder {
-        @include rem(margin-bottom, 45px);
-        @include rem(margin-top, 45px);
+        margin: 0 auto;
         max-width: 100% !important;
         width: 100% !important;
       }

@@ -8,7 +8,7 @@ unless window.UOMUnlockChecklist
           e.preventDefault() if this.hasClass 'disabled'
 
         @items = @el.querySelectorAll('li')
-        @active = 0
+        @active = @el.countSelector('.on')
         @toggleDisable()
 
         for item in @items

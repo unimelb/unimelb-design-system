@@ -70,14 +70,14 @@ div role="main"
             p
               | The Doctor of Veterinary Medicine (DVM) can be taken in three years via the ‘accelerated pathway’ if you have a Bachelor of Science degree from the University of Melbourne with a major in Animal Health and Disease (Veterinary Bioscience specialisation) and meet the
               br entry requirements.
-            ul.degree-plan-nav
+            ul.degree-plan-nav.inner-nav-tab
               li
                 a.current data-no-scroll="true" href="#doctor-of-veterinary-medicine-4-years"  Doctor of Veterinary Medicine  (4 years)
               li
                 a data-no-scroll="true" href="#doctor-of-veterinary-medicine-accelerated-pathway-3-years"  Doctor of Veterinary Medicine  - Accelerated Pathway (3 years)
           .bside
             .degree-plan-section
-              #doctor-of-veterinary-medicine-4-years.degree-plan.current
+              #doctor-of-veterinary-medicine-4-years.degree-plan.inner-nav-page.current
                 h2 Doctor of Veterinary Medicine  (4 years)
                 table.course-progression
                   thead
@@ -271,7 +271,7 @@ div role="main"
                             | Core
                           .col1_3
                           a.accordion__close
-              #doctor-of-veterinary-medicine-accelerated-pathway-3-years.degree-plan
+              #doctor-of-veterinary-medicine-accelerated-pathway-3-years.degree-plan.inner-nav-page
                 h2 Doctor of Veterinary Medicine  - Accelerated Pathway (3 years)
                 table.course-progression
                   thead
@@ -758,7 +758,7 @@ div role="main"
       section
         h2.title Application Checklist
         fieldset
-          ul.checklist
+          ul.checklist data-unlock-target="continue"
             li.on.cursor
               input#c-999.checkbox checked="checked" type="checkbox"
                 label for="c-999"
@@ -777,5 +777,5 @@ div role="main"
                 | Apply online or via the hardcopy application form
       section
         p.center
-          a.button.cta href="http://futurestudents.unimelb.edu.au/admissions/applications/grad-int"  Start your online application
+          a#continue.button.cta href="http://futurestudents.unimelb.edu.au/admissions/applications/grad-int"  Start your online application
 

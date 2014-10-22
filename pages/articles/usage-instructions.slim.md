@@ -125,16 +125,16 @@ section
     </div>
 
 section
-  p The link with ```class="last"``` is the only one that will be shown in a responsive mobile view.
+  p The link with <code>class="last"</code> is the only one that will be shown in a responsive mobile view.
 
 hr
 
 section
   h2#homepage Homepage alternate
 
-  p Include a ```div class="floating"``` *before* the ```div role="main"``` (and note that this page layout cannot include a breadcrumb as well)
+  p Include a <code>div class="floating"</code> *before* the <code>div role="main"</code> (and note that this page layout cannot include a breadcrumb as well)
 
-  p Additionally, a header element must be included within the ```div role="main"```. Inline styles have been added to the header in the example below to illustrate how it should be styled in your local styles - the css provided in the full design system already has this defined.
+  p Additionally, a header element must be included within the <code>div role="main"</code>. Inline styles have been added to the header in the example below to illustrate how it should be styled in your local styles - the css provided in the full design system already has this defined.
 
 ==syntax_highlight :html
   erb:

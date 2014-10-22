@@ -13,6 +13,7 @@ window.UOMloadComponents = function() {
   window.UOMInpageScrolling()
   window.UOMStickyNav()
   window.UOMUnlockChecklist()
+  window.UOMInnerNavTab()
   window.UOMYtEmbed() // unused?
 };
 
