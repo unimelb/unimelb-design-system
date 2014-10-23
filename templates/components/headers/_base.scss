@@ -65,15 +65,15 @@
       height: auto;
 
       @include breakpoint(height-small) {
-        @include rem(height, 650px);
+        @include rem(min-height, 650px);
       }
 
       @include breakpoint(height-medium) {
-        @include rem(height, 720px);
+        @include rem(min-height, 720px);
       }
 
       @include breakpoint(height-big) {
-        @include rem(height, 800px);
+        @include rem(min-height, 800px);
       }
 
       @include breakpoint(desktop) {

@@ -4,9 +4,9 @@ unless window.UOMYtEmbed
       constructor: (@el) ->
         @ytid = @el.getAttribute('data-ytid')
 
-        @trigger = document.createElement 'img'
-        @trigger.setAttribute('class', 'video-trigger')
-        @trigger.setAttribute('src', '/assets/images/play-video.png')
+        @trigger = document.createElement 'div'
+        @trigger.setAttribute('class', 'embed-video-button')
+        @trigger.innerHTML = '<svg x="0px" y="0px" viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve"><circle class="st0" cx="500" cy="500" r="368.3"/><polygon points="398.5,309.5 700.3,500 398.5,690.5 "/></svg>'
 
         t = this
         @el.addEventListener 'click', (e) ->
@@ -20,6 +20,7 @@ unless window.UOMYtEmbed
             events:
               'onReady': t.onPlayerReady
           )
+          
 
         @el.appendChild @trigger
 
