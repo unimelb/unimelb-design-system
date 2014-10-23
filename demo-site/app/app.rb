@@ -74,7 +74,7 @@ module WebTemplates
     get '/' do
       @components = settings.components
       @layouts    = settings.layouts
-      @ver        = "v0.3"
+      @ver        = "v0.4"
       slim :index
     end
 

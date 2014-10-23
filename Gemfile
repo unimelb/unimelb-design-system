@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-ruby "2.1.0"
+ruby "2.1.3"
 
 gem "sinatra", "~> 1.4.4", require: "sinatra/base"
 gem 'sinatra-partial', '~> 0.4.0'

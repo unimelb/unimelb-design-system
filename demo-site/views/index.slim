@@ -18,12 +18,13 @@ div role="main"
     h1.highlight UOM #{@ver}
     p.center
       a.button-hero href="/articles/usage-instructions" Set up a new site with #{@ver}
-    p.center.no-padding
-      a href="#" View markup for version #{@ver}
+    / p.center.no-padding
+    /   a href="#" View markup for version #{@ver}
     p.center.grey
-      |Please note that we only support the current and the previous version of the design system. If you run on an older version please
-      '
-      a href="#" view our update guide
+      | Please note that we only support the current and the previous version of the design system.
+      / If you run on an older version please
+      /'
+      /a href="#" view our update guide
 
 
   section.alt
@@ -55,30 +56,23 @@ div role="main"
           image xlink:href="/assets/images/home_developers.svg" width="100%" height="100%" src="/assets/images/home_developers.png"
       section
         h1 For developers
-        p Learn how to build your next web app without a custom.css file.
+        p Learn about the units of page style and functionality you can assemble into unique page templates.
         p
-          a.button-hero href="/developers" Code guidelines
+          a.button-hero href="/components" Components
+
+    section.navigation-text-listing
+      ul
+        - @components.each do |path|
+          li
+            a href=(component_path(path))
+              = component_title(path)
+
+  hr
 
   section
     h1 Example Layouts
     p Example layouts to get you started building the most commonly used page types across the unimelb domain.
     p
       a.button-hero href="/layouts" View example layouts
-    //ul
-    //  - @layouts.reject{ |l| l =~ /(layout)$/ }.each do |path|
-    //    li
-    //      a href=(layout_path(path))
-    //        = layout_title(path)
 
-  hr
-
-  section.navigation-text-listing
-    h1
-      a href="/components" Components
-    p Small units of page style and functionality you can assemble or populate to create unique page templates.
-    ul
-      - @components.each do |path|
-        li
-          a href=(component_path(path))
-            = component_title(path)
   footer

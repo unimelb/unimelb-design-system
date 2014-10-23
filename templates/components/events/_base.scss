@@ -38,6 +38,7 @@
 
       @include breakpoint(desktop) {
         @include rem(padding-left, 15px);
+        border-left: 0 none;
       }
     }
   }
@@ -50,8 +51,9 @@
   h2 {
     @include rem(border-left, 5px solid $lighterblue);
     @include rem(font-size, 26px);
-    @include rem(padding-bottom, 10px 0);
+    @include rem(padding-bottom, 10px);
     @include rem(padding-right, 15px);
+    border-right: 0 none;
     color: $lighterblue;
     margin: 0 3% 0 0;
     padding-top: 0;
@@ -64,10 +66,11 @@
     }
 
     @include breakpoint(desktop) {
+      @include rem(border-right, 5px solid $lighterblue);
       @include rem(font-size, 14px);
       @include rem(width, 140px);
       border-left: 0 none;
-      display: inline-block;
+      display: table-cell;
       line-height: 1;
       margin-right: 0;
       text-align: right;
@@ -97,8 +100,7 @@
     padding: 0;
 
     @include breakpoint(desktop) {
-      display: inline-block;
-      width: 83%;
+      display: table-cell;
     }
   }
 
@@ -183,6 +185,7 @@
 
     a {
       @include rem(font-size, 14px);
+      @include rem(padding-right, 10px);
       color: $lighterblue;
       display: inline-block;
       vertical-align: top;
