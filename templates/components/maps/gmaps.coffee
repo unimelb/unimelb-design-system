@@ -43,7 +43,7 @@ unless window.UOMGMap
       if Array.prototype.slice.call(document.querySelectorAll('[data-latlng]')).length > 0
         script = document.createElement("script")
         script.type = "text/javascript"
-        script.src = "https://maps.googleapis.com/maps/api/js?sensor=true&callback=maps_loaded"
+        script.src = "https://maps.googleapis.com/maps/api/js?callback=maps_loaded"
         document.body.appendChild script
 
     window.maps_loaded = ->
