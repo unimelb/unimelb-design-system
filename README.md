@@ -1,4 +1,4 @@
-# Web Templates
+# Unimelb Design System
 
 ## Copyright Notice
 Copyright 2011 The University of Melbourne
@@ -7,8 +7,8 @@ The contents of this repository have been produced by The University of Melbourn
 
 ## Development environment
 
-    git clone git@github.com:marcom-unimelb/unimelb-web-templates.git
-    cd unimelb-web-templates
+    git clone git@github.com:marcom-unimelb/unimelb-design-system.git
+    cd unimelb-design-system
     bundle install
     ./bin/server
 
@@ -21,7 +21,6 @@ Setup a `.env` with the following keys:
     AWS_ACCESS_KEY_ID='...key id...'
     AWS_SECRET_ACCESS_KEY='...secret key...'
     FOG_DIRECTORY='...bucket...'
-
 
 Run the following command:
 
