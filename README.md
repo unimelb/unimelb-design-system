@@ -1,5 +1,10 @@
 # Web Templates
 
+## Copyright Notice
+Copyright 2011 The University of Melbourne
+
+The contents of this repository have been produced by The University of Melbourne for internal use and must not be distributed without the express permission of The University of Melbourne.
+
 ## Development environment
 
     git clone git@github.com:marcom-unimelb/unimelb-web-templates.git
@@ -8,7 +13,6 @@
     ./bin/server
 
 The development site will be available at [http://localhost:3000/](http://localhost:3000/)
-
 
 ## Deploying to production
 
