@@ -1,7 +1,8 @@
-.uomcontent {
+.uomcontent [role="main"] {
   header {
     .mid-align {
       @include align-self(center);
+      @include rem(padding-top, 100px);
       padding-bottom: 0;
       position: relative;
       text-align: center;
@@ -19,7 +20,7 @@
 }
 
 .ie9 {
-  .uomcontent header .mid-align,
+  .uomcontent [role="main"] header .mid-align,
   & > header:first-child .mid-align {
     display: table-cell;
   }
