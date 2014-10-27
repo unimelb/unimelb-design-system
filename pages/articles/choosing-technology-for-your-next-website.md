@@ -1,4 +1,4 @@
-# How do I choose a technology for my website.
+# How do I choose a technology for my website?
 
 **Note**: This article relates to the selection of technology for a public facing website and is not necessarily relevant to staff intranet or student teaching purposes. 
 
