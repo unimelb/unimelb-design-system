@@ -74,7 +74,7 @@
 
     @include breakpoint(0) {
       img {
-        margin: 0 auto 0 -33%;
+        margin: 0 auto;
         max-height: 100%;
         max-width: 200%;
       }
