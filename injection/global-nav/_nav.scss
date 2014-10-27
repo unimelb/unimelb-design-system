@@ -169,6 +169,7 @@ body {
     @include rem(font-size, 15px);
     @include rem(letter-spacing, 2px);
     font-weight: $regular;
+    max-width: 100%;
     padding-bottom: 0;
     text-align: center;
     text-transform: uppercase;
