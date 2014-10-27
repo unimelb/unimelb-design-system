@@ -51,7 +51,7 @@ The events calendar does not currently support ticketing - if required you are a
 
 Course search is a CMS for storing and allowing prospective students to find our graduate and undergraduate courses. 
 
-If you create a course page on your website, it is import that you add it to this directory. To add courses to Course Search contact [Brooke Lyons](mailto:brooke.lyons@unimelb.edu.au) in the Office of Admissions. 
+If you create a course page on your website, it is important that you add it to this directory. To add courses to Course Search contact [Brooke Lyons](mailto:brooke.lyons@unimelb.edu.au) in the Office of Admissions. 
 
 ### No CMS - static website hosted on the webfarm
 
