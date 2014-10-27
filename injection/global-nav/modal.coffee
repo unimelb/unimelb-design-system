@@ -16,14 +16,10 @@ unless window.UOMModal
     for trigger in document.querySelectorAll("[data-modal-target]")
       trigger.addEventListener 'click', (e) ->
         e.preventDefault()
-        t = e.target || e.srcElement
-        while t.nodeName != 'A'
-          t = t.parentNode
+        target = document.getElementById(this.getAttribute 'data-modal-target')
 
-        target = document.getElementById(t.getAttribute 'data-modal-target')
-
-        if t.getAttribute('data-modal-offset')==''
-          target.style.top = t.offsetTop-160+'px'
+        if this.getAttribute('data-modal-offset')==''
+          target.style.top = this.offsetTop-160+'px'
           target.addClass('on')
         else
           viewport = document.body.getBoundingClientRect()

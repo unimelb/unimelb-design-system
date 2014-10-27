@@ -8,7 +8,7 @@
     background-color: #fff;
     box-shadow: 0 3px 6px 3px rgba(0, 0, 0, .2);
     left: 5%;
-    max-width: 900px;
+    max-width: 100%;
     padding: 20px;
     position: absolute;
     right: 5%;
@@ -17,14 +17,20 @@
     visibility: hidden;
     z-index: 1;
 
+    * {
+      max-width: 100%;
+    }
+
     &.on {
       visibility: visible;
       z-index: 14;
     }
 
     @media screen and (min-width: 1100px) {
-      left: 20%;
-      right: 20%;
+      left: 0;
+      margin: 0 auto;
+      max-width: 900px;
+      right: 0;
       top: 20%;
     }
   }

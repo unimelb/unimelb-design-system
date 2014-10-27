@@ -25,30 +25,30 @@ unless window.UOMInpageScrolling
               else
                 outer = document.body
 
-            target = tel.getAttribute('href')
+            if tel
+              target = tel.getAttribute('href')
+              if target != "#" and target != "#sitemap"
+                e.preventDefault()
+                target = document.querySelector(tel.getAttribute('href'))
 
-            if target != "#" and target != "#sitemap"
-              e.preventDefault()
-              target = document.querySelector(tel.getAttribute('href'))
-
-              # Tabs scroll to nav
-              up = (el) ->
-                if el.getAttribute('data-tabbed') == '' and el.getAttribute('role') == 'tabs'
-                  return el
-                else
-                  if el.parentNode and el.parentNode!=document
-                    return up(el.parentNode)
+                # Tabs scroll to nav
+                up = (el) ->
+                  if el.getAttribute('data-tabbed') == '' and el.getAttribute('role') == 'tabs'
+                    return el
                   else
-                    return false
+                    if el.parentNode and el.parentNode!=document
+                      return up(el.parentNode)
+                    else
+                      return false
 
-              tabbed = up(tel)
-              if tabbed and this.parentNode.parentNode.hasClass("jump-navigation") == false
-                target = tabbed
+                tabbed = up(tel)
+                if tabbed and this.parentNode.parentNode.hasClass("jump-navigation") == false
+                  target = tabbed
 
-              if target
-                t.to = if document.querySelectorAll('.page-header.floating').length then target.offsetTop else target.offsetTop - 40;
-                t.element = outer
-                t.scrollTo()
+                if target
+                  t.to = if document.querySelectorAll('.page-header.floating').length then target.offsetTop else target.offsetTop - 40;
+                  t.element = outer
+                  t.scrollTo()
 
       scrollTo: ->
         element = @element
