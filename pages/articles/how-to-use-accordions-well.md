@@ -13,7 +13,7 @@ Accordions are recommended for use where the following criteria are met:
 * It is *highly likely* that people will only need the content in one or two of the items (eg. FAQs)
 * The accordion tabs can be named using short and descriptive titles (eg. 1-3 words) in order to make them easy to scan
 * A logical ordering can be imposed to the items (eg. A numerical or alphabetically sorted list)
-* The content underneath each item is short enough that it does not fill the screen when expanded making it difficult to close the item again (consider mobile use in particular here)
+* The content underneath each item is short enough that it does not fill the screen when expanded making it difficult to close the item again (consider mobile use in particular here)
 
 As accordions require a lot of content to be displayed in a small area, it is best used in a single column layout without information to either side. This allows the use to process the content of the accordion free of distraction.
 

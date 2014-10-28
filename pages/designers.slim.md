@@ -20,12 +20,12 @@ section
       p There should be always a clear difference between the main content on a page and secondary content. Help people by providing them with suggestions about where to go after consuming the main content. Build pathways for people to follow.
     li
       h2 Make it simple
-      p Websites are often inhernetly informationally complex and it is hard to make them appear simple. This is exactly what we should be striving for in the display of our content and information architectures.
-      p We provide information and services that are of great importance. By working hard to make sites simple and usable, we give people an experience that is efficient and doesn't waste their time. Especially when we are creating sites and services that students and staff _have_ to use, we must ensure that we optimise continuosly. With great power comes great responsibility.
+      p Websites are often inherently informationally complex and it is hard to make them appear simple. This is exactly what we should be striving for in the display of our content and information architectures.
+      p We provide information and services that are of great importance. By working hard to make sites simple and usable, we give people an experience that is efficient and doesn't waste their time. Especially when we are creating sites and services that students and staff _have_ to use, we must ensure that we optimise continuously. With great power comes great responsibility.
     li
       h2 Iterate. And never stop.
       p By starting with the basics - a minimal feature set and an early release - we get the chance to test with real people early. From there it is easier to add features and refinements using constant feedback.
-      p In most cases it is better to avoid 200 page specifications documents as these can turn into a bottleneck, or worse, fail to address the real users needs completely. Working iteratively minimizes the risk of large failures. 
+      p In most cases it is better to avoid 200 page specifications documents as these can turn into a bottleneck, or worse, fail to address the real users needs completely. Working iteratively minimizes the risk of large failures.
 hr
 section
   p.center
