@@ -25,8 +25,8 @@ section
 ==syntax_highlight :html
   erb:
     <!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="http://uom-design-system.s3.amazonaws.com/v0.4/uom.css">
-    <script src="http://uom-design-system.s3.amazonaws.com/v0.4/uom.js"></script>
+    <link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/v0.4/uom.css">
+    <script src="//uom-design-system.s3.amazonaws.com/v0.4/uom.js"></script>
 
 section
   p The first provides a universal <abbr title="Reproduce modern functionality in older browser">polyfill</abbr> for styling on HTML5 semantic elements such as <code>header</code>, <code>nav</code> and <code>section</code> We use these elements as selectors in the design system stylesheet.
@@ -44,8 +44,8 @@ section
       <title> (any page title) </title>
 
       <!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
-      <link rel="stylesheet" href="http://uom-design-system.s3.amazonaws.com/v0.4/uom.css">
-      <script src="http://uom-design-system.s3.amazonaws.com/v0.4/uom.js"></script>
+      <link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/v0.4/uom.css">
+      <script src="//uom-design-system.s3.amazonaws.com/v0.4/uom.js"></script>
     </head>
 
     <body>
@@ -140,7 +140,7 @@ section
   erb:
     <div class="floating"></div>
     <div role="main">
-      <header style="background-image:url(//uom-templates.s3.amazonaws.com/templates/0.1/components/globals/bg-banner-2edd2279a97e316344e7831983ef6868.jpg);background-size:cover;min-height:300px"></header>
+      <header style="background-image:url(//uom-design-system.s3.amazonaws.com/templates/0.1/components/globals/bg-banner-2edd2279a97e316344e7831983ef6868.jpg);background-size:cover;min-height:300px"></header>
 
       (your website markup goes here)
 

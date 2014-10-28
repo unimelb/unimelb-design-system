@@ -210,14 +210,14 @@
     font-weight: $light;
   }
 
-  p{
+  p {
     @include adjust-font-size-to(14px);
     @include padding-leader(0);
     padding-bottom: 0;
   }
 }
 
-.uomcontent form.course-select {
+.uomcontent [role="main"] form.course-select {
   @extend .filtered-listing-select;
   box-shadow: none;
 
@@ -264,8 +264,8 @@
   }
 }
 
-.ie {
-  .uomcontent form.course-select {
+.ie .uomcontent [role="main"] {
+   form.course-select {
     @extend %clearfix;
 
     .left {
@@ -289,7 +289,7 @@
     }
   }
 
-  .uomcontent .course-section {
+  .course-section {
     aside {
       float: left;
       margin: 0;
@@ -304,14 +304,14 @@
     }
   }
 
-  .uomcontent .course-grid {
+  .course-grid {
     li {
       margin: .25%;
       width: 23.5%;
     }
   }
 
-  .uomcontent table.course-progression {
+  table.course-progression {
     td,
     th {
       padding-left: 0;
