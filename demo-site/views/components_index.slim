@@ -6,47 +6,7 @@ div role="main"
 
   section.navigation-text-listing
     ul
-      li
-        a href="/components/accordion" Accordion
-      li
-        a href="/components/base" Base
-      li
-        a href="/components/buttons" Buttons
-      li
-        a href="/components/events" Events
-      li
-        a href="/components/filtered-listings" Filtered Listings
-      li
-        a href="/components/forms" Forms
-      li
-        a href="/components/globals" Globals
-      li
-        a href="/components/headers" Headers
-      li
-        a href="/components/inpage-navigation" Inpage Navigation
-      li
-        a href="/components/listings" Listings
-      li
-        a href="/components/maps" Maps
-      li
-        a href="/components/media" Media
-      li
-        a href="/components/modal" Modal
-      li
-        a href="/components/news" News
-      li
-        a href="/components/pathfinder" Pathfinder
-      li
-        a href="/components/people" People
-      li
-        a href="/components/search" Search
-      li
-        a href="/components/socialmedia" Socialmedia
-      li
-        a href="/components/tabs" Tabs
-      li
-        a href="/components/tables" Tables
-      li
-        a href="/components/text" Text
-      li
-        a href="/components/timeline" Timeline
+      - @components.sort.each do |path|
+        li
+          a href=(component_path(path))
+            = component_title(path)
