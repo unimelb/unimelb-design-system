@@ -11,9 +11,9 @@ All changes are reviewed by the Web Marketing team before being accepted into th
 
 // TODO - write a section explaining how to log an issue when you don't have time to write a component. 
 
-//TODO - hide the majority of the next paragraph behind an accordian to make the page friendlier
+//TODO - hide the majority of the next paragraph behind an accordion to make the page friendlier
 
-**Please note:** The ability to fork the templates repository does theoretically enable you to create your own set of bespoke templates and use these to power your site. _This is not permitted outside of development_. It is not acceptable to fork the repository, modify code and use this instead of the centrally hosted assets. Doing so contravenes policy, trademark and copyright obligations and will be policed. The reason this has to be strictly enforced is that there are elements of the templates that are centrally managed. If you go rougue, we will not be able to maintain a consistent web presence.
+**Please note:** The ability to fork the templates repository does theoretically enable you to create your own set of bespoke templates and use these to power your site. _This is not permitted outside of development_. It is not acceptable to fork the repository, modify code and use this instead of the centrally hosted assets. Doing so contravenes policy, trademark and copyright obligations and will be policed. The reason this has to be strictly enforced is that there are elements of the templates that are centrally managed. If you go rogue, we will not be able to maintain a consistent web presence.
 
 
 ## Getting a copy of the code
@@ -22,7 +22,7 @@ All changes are reviewed by the Web Marketing team before being accepted into th
 
 ### 1. Sign up for github
 
-[Github](https://github.com/) is a social coding platform that enables multiple people to contirbute to the same set of code at the same time. [Signing up for an account is free](https://github.com/join). 
+[Github](https://github.com/) is a social coding platform that enables multiple people to contribute to the same set of code at the same time. [Signing up for an account is free](https://github.com/join). 
 
 ### 2. Create a fork
 
@@ -56,7 +56,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
 
 Once you've forked the templates repository, if you are making changes to code or examples you may need to set up a local copy of the templates to make sure they work properly. If you're just modifying documentation, you probably don't need to worry about this step (it's also pretty complicated).
 
-- Prerequisit set up steps (bundler )
+- Prerequisite set up steps (bundler )
 - Mac / Windows instructions
 
 NEIL TO ADD. 
@@ -87,7 +87,7 @@ A **page** created at `/pages/build/[page-name.md]` will have the url `http://..
 
 Component and page template documentation and examples are stored in a very specific way in order to allow for the auto-generation of documentation and production code from the same place. 
 
-![Screenshot of compontents directory](/assets/images/component-listing.png)
+![Screenshot of components directory](/assets/images/component-listing.png)
 
 Files inside each of the components are specifically named and the naming conventions must be preserved if you look to add additional components. 
 
@@ -128,7 +128,7 @@ Markdown is compatible with HTML, however raw HTML-based pull requests will not 
 
 #### Slim
 
-Slim ([http://slim-lang.com](http://slim-lang.com))is a templating engine that makes it faster to write HTML code. In particular, by being festidious about the way that indentation is used, it means HTML can be written without closing tags. This makes it easier to avoid situations where you have to hunt around for missing closing divs or tags. 
+Slim ([http://slim-lang.com](http://slim-lang.com))is a templating engine that makes it faster to write HTML code. In particular, by being fastidious about the way that indentation is used, it means HTML can be written without closing tags. This makes it easier to avoid situations where you have to hunt around for missing closing divs or tags. 
 
 If you get to a page with the .slim extension, we suggest [reading the documentation pages](http://rdoc.info/gems/slim) before starting to change that page. 
 
