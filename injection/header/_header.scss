@@ -188,7 +188,7 @@
       display: none;
     }
 
-    a.last {
+    a.last, a:last-child {
       display: inline-block;
       max-width: 55%;
       overflow: hidden;
