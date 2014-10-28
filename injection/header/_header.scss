@@ -200,7 +200,7 @@
   @include breakpoint(desktop) {
     @include rem(height, 90px);
     @include rem(padding-left, 205px);
-    @include rem(margin-right, 115px);
+    @include rem(margin-right, 260px);
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
