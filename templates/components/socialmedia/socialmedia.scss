@@ -52,5 +52,11 @@
         width: auto;
       }
     }
+
+    &.site-links {
+      @include breakpoint(desktop) {
+        @include rem(padding-top, 30px);
+      }
+    }
   }
 }

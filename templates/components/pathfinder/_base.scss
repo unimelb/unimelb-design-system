@@ -98,7 +98,7 @@
 
     @include breakpoint(desktop) {
       @include padding-leader(2);
-      @include padding-trailer(4);
+      @include padding-trailer(2);
       display: table;
       float: none;
       height: 100%;
