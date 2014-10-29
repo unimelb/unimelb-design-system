@@ -369,8 +369,14 @@
     }
   }
 
-  &.reverse .page-header-tools a.page-header-icon {
-    color: $navy;
+  &.reverse {
+    .page-header-home {
+      color: $black;
+    }
+
+    .page-header-tools a.page-header-icon {
+      color: $navy;
+    }
   }
 }
 
