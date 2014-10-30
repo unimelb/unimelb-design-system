@@ -44,8 +44,8 @@ unless window.UOMStickyNav
 
         jump.addClass 'floating' if document.countSelector('.floating') > 0
 
-        if @main.countSelector('.with-aside aside') > 0
-          @main.querySelector('.with-aside aside').appendChild jump
+        if @main.countSelector('.tab .with-aside aside') > 0
+          @main.querySelector('.tab .with-aside aside').appendChild jump
         else
           jump.id = 'outer'
           main = document.querySelector('[role="main"]')
