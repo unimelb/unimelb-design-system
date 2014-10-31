@@ -130,6 +130,7 @@
     list-style-type: none;
     margin-left: 0;
     padding: 0;
+    width: auto;
   }
 
   h2 {
@@ -142,6 +143,7 @@
     display: block;
     font-weight: 400;
     text-decoration: none;
+    width: auto;
 
     &:before {
       @include rem(font-size, 24px);
