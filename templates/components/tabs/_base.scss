@@ -103,15 +103,22 @@
     }
 
     .mobile-nav {
+      background-color: $brand;
+      border-color: $brand;
       display: none;
       margin: 0 3%;
       position: relative;
       width: 94%;
 
+
       select {
         @include rem(margin, 5px 0);
         background-color: $brand;
         border-color: $brand;
+
+        &:hover {
+          background-color: $highlight;
+        }
       }
 
       &.active {
@@ -141,6 +148,10 @@
           display: none;
         }
       }
+    }
+
+    select.mobile-nav:hover {
+      background-color: $highlight;
     }
 
     .tab {
