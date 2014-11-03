@@ -81,13 +81,21 @@
       }
 
       &.prominent {
-        background-color: lighten($brand, 3%);
-        box-shadow: 0 0 10px rgba($black, 0.5);
+        background-color: darken($green, 5%);
+        color: $black;
+        
         transform: scale(1.06);
-        z-index: 2;
+        z-index: 1;
+
+        &:hover {
+          background-color: lighten($green, 2%);
+          box-shadow: 0 0 10px rgba($black, 0.5);
+          transform: scale(1.07);
+          z-index: 1;
+        }
 
         .button-small {
-          background-color: darken($brand, 5%);
+          background-color: darken($green, 10%);
         }
       }
     }
