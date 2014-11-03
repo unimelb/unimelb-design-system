@@ -93,6 +93,7 @@
     }
 
     &.with-box {
+      display: table;
       padding: 0;
 
       @include breakpoint(tablet) {
