@@ -8,6 +8,38 @@
     padding: 0 3%;
     width: 94%;
 
+    &.white {
+      a {
+        background-color: rgba($white, 0.9);
+        border-bottom: 3px solid $highlight;
+        color: $black;
+
+        &:hover {
+          background-color: $white;
+        }
+
+        &.featured {
+          color: $white;
+
+          p,
+          strong {
+            border-color: $white;
+            color: $white;
+          }
+        }
+
+        .button-small {
+          background-color: $highlight;
+        }
+      }
+
+      p,
+      strong {
+        border-color: $black;
+        color: $black;
+      }
+    }
+
     li {
       @include leader(1);
       @include trailer(1);
@@ -80,7 +112,7 @@
         }
       }
 
-      &.prominent {
+      &.featured {
         background-color: darken($green, 5%);
         color: $black;
         
