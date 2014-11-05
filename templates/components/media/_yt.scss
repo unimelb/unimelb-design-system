@@ -83,6 +83,7 @@
   }
 
   .half .video {
+    @include rem(margin-bottom, 30px);
     padding-bottom: 56.25%;
 
     [data-ytid] {
@@ -91,9 +92,11 @@
     }
 
     @include breakpoint(desktop) {
+      @include rem(margin-right, 30px);
+
       iframe {
         margin-left: 0;
-        width: 90%;
+        width: 100%;
       }
     }
   }
