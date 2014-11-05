@@ -7,6 +7,54 @@
     -webkit-filter: hue-rotate(-360deg);
   }
 }
+
+%ticks {
+  @include rem(padding-left, 30px);
+
+  @include breakpoint(desktop) {
+    @include rem(padding-left, 20px);
+  }
+
+  li {
+    list-style-type: none;
+    position: relative;
+
+    &::before {
+      @include rem(height, 5px);
+      @include rem(margin-left, -30px);
+      @include rem(top, 10px);
+      @include rem(width, 10px);
+      background: transparent;
+      border: 3px solid $green;
+      border-right: 0 none;
+      border-top: 0 none;
+      content: '';
+      left: 0;
+      position: absolute;
+      transform: rotate(-45deg);
+    }
+
+    &.disabled::before {
+      opacity: .2;
+    }
+
+
+    ul {
+      @include padding-leader(.5);
+      @include padding-trailer(0);
+    }
+
+    li {
+      list-style-type: disc;
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+
 .uomcontent {
 	background-color: $white;
   font-weight: $regular;
@@ -220,37 +268,13 @@
   		list-style-type: disc;
   	}
 
-  	&.ticked-list {
-	  	@include rem(padding-left, 30px);
+    &.ticked-list {
+      @extend %ticks;
+    }
+  }
 
-	    @include breakpoint(desktop) {
-	      @include rem(padding-left, 20px);
-	    }
-
-	    li {
-	      list-style-type: none;
-	      position: relative;
-
-	      &::before {
-	        @include rem(height, 5px);
-	        @include rem(margin-left, -30px);
-	        @include rem(top, 10px);
-	        @include rem(width, 10px);
-	        background: transparent;
-	        border: 3px solid $green;
-	        border-right: 0 none;
-	        border-top: 0 none;
-	        content: '';
-	        left: 0;
-	        position: absolute;
-	        transform: rotate(-45deg);
-	      }
-
-	      &.disabled::before {
-	        opacity: .2;
-	      }
-	    }
-	  }
+  .ticked-list ul {
+    @extend %ticks;
   }
 
   dl {

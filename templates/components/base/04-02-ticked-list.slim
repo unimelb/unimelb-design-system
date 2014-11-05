@@ -1,4 +1,14 @@
 ul.ticked-list
   li Item
-  li Another item
-  li.no-li This one is not ticked
+  li
+    ' Another item
+    ul
+      li A nested list
+      li reverts to the standard bullet style
+
+  li.no-li This one is not ticked at all, via assigned class
+
+.ticked-list
+  ul
+    li Can also be set at the parent level
+    li For easier use with a CMS
