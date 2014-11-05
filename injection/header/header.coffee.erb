@@ -8,7 +8,7 @@ window.UOMinjectHeader = ->
   # Logo links to
   defaultlink = 'https://www.unimelb.edu.au'
 
-  if "<%=ENV["ASSET_ENV"]%>" == 'development'
+  if "<%=ENV['ASSET_ENV']%>" == 'development'
     assethost = '/assets/shared'
   else
     assethost = '//uom-design-system.s3.amazonaws.com/shared'
@@ -37,7 +37,7 @@ window.UOMinjectHeader = ->
     header = document.createElement('div')
     header.addClass('page-header')
 
-    if document.countSelector('.page-inner > .floating') > 0
+    if document.countSelector('.page-inner > .floating') == 1
       # Landing page header
       header.innerHTML = """
       <a class="page-header-logo" href="#{defaultlink}">
@@ -49,6 +49,10 @@ window.UOMinjectHeader = ->
       header.addClass('floating')
       if document.querySelector('.page-inner > .floating').hasClass('reverse')
         header.addClass('reverse')
+
+      # Add any customisations
+      for n in document.querySelector('.floating').childNodes
+        header.appendChild n
 
     else
       if document.countSelector('.page-local-history .root') == 0

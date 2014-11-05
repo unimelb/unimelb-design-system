@@ -132,16 +132,16 @@ window.UOMinjectGlobalNav = ->
     localnav = document.querySelector('div[role="navigation"]')
     rootmenu = localnav.querySelector('ul')
 
+    navtitle = localnav.querySelector('h2')
+    firstli = document.createElement 'li'
+    firstli.addClass 'home'
+    firstli.innerHTML = '<a href="/">' + navtitle.innerText + '</a>'
+    rootmenu.insertBefore(firstli, rootmenu.firstChild)
+    navtitle.innerText = 'Close'
+
     lastli = document.createElement 'li'
     lastli.innerHTML = '<a class="sitemap-link" href="https://unimelb.edu.au/sitemap">Browse University</a>'
     rootmenu.appendChild lastli
-
-    # firstli = document.createElement 'li'
-    # firstli.addClass 'back'
-    # firstli.innerHTML = '<span>close</span>'
-    # rootmenu.insertBefore(firstli, rootmenu.firstChild)
-
-    #localnav.appendChild sitemaplink
 
     localnav.removeClass('no-js')
     document.querySelector('.uomcontent').appendChild(localnav)
@@ -156,17 +156,13 @@ window.UOMinjectGlobalNav = ->
       if elements.length > 1
         childgroup = elements[1]
 
-        back = document.createElement 'li'
+        back = document.createElement 'span'
         back.addClass 'back'
-        back.innerHTML = "<span>" + group.firstChild.data + "</span>"
+        back.innerHTML = group.firstChild.data
         childgroup.insertBefore(back, childgroup.firstChild)
 
         childgroup.firstChild.addEventListener 'click', (e) ->
           e.preventDefault()
-          # Root menu
-          # this.parentNode.parentNode.parentNode.removeClass 'hide'
-
-          # This group
           this.parentNode.toggleClass 'hide'
           this.parentNode.toggleClass 'active'
 
@@ -174,14 +170,9 @@ window.UOMinjectGlobalNav = ->
         childgroup.addClass('hide')
         group.addEventListener 'click', (e) ->
           e.preventDefault()
-          # Root menu
-          # this.parentNode.parentNode.addClass 'hide'
-
-          # This group
           this.parentNode.querySelector('div').toggleClass 'hide'
           this.parentNode.querySelector('div').toggleClass 'active'
           localnav.scrollTop = 0
-
 
   # Create global nav trigger
   trigger = document.querySelector('div.sitemap-label')

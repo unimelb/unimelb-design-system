@@ -36,11 +36,10 @@
       background-color: $darkblue;
       border-bottom: 1px solid transparent;
       position: relative;
+    }
 
-      // IE fix
-      @include breakpoint(0) {
-        border-bottom: 0 none;
-      }
+    & > figure.full-width {
+      background-color: transparent;
     }
 
     nav {
@@ -104,15 +103,22 @@
     }
 
     .mobile-nav {
+      background-color: $brand;
+      border-color: $brand;
       display: none;
       margin: 0 3%;
       position: relative;
       width: 94%;
 
+
       select {
         @include rem(margin, 5px 0);
         background-color: $brand;
         border-color: $brand;
+
+        &:hover {
+          background-color: $highlight;
+        }
       }
 
       &.active {
@@ -144,6 +150,10 @@
       }
     }
 
+    select.mobile-nav:hover {
+      background-color: $highlight;
+    }
+
     .tab {
       @include rem(margin-top, -70px);
       @include rem(padding-top, 70px);
@@ -154,9 +164,6 @@
       padding-right: 0;
 
       section.lead {
-        /*@include rem(font-size, 22px);
-        @include rem(padding-bottom, 45px);
-        @include rem(padding-top, 65px);*/
         background: transparent;
         color: $black;
         filter: none;
@@ -178,6 +185,10 @@
     &.black {
       .full-width {
         background-color: $black;
+      }
+
+      figure.full-width {
+        background-color: transparent;
       }
 
       .tab {
@@ -208,6 +219,10 @@
     &.navy {
       .full-width {
         background-color: $darkblue;
+      }
+
+      figure.full-width {
+        background-color: transparent;
       }
 
       .tab {
@@ -351,6 +366,7 @@
   }
 
   .uomcontent .tabbed-nav .fullwidth {
+    border-bottom: 0 none;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e50c304a, endColorstr=#e50c304a);
 
     nav a[data-current]:after {

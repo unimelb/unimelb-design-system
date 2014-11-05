@@ -2,7 +2,6 @@
   header {
     .mid-align {
       @include align-self(center);
-      @include rem(padding-top, 100px);
       padding-bottom: 0;
       position: relative;
       text-align: center;

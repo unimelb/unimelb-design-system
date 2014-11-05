@@ -379,6 +379,12 @@ body {
   .with-aside {
     @extend %clearfix;
     background-color: $paleblue;
+    background-image: url("#{asset_path('components/base/assets/with-aside-r-bg-b.png')}");
+    background-position-x: 59%;
+
+    &.left {
+      background-image: url("#{asset_path('components/base/assets/with-aside-bg-b.png')}");
+    }
 
     div {
       @include rem(max-width, $w-lge);
@@ -445,6 +451,10 @@ body {
       hr {
         @include rem(margin-top, 50px);
       }
+    }
+
+    &:first-child {
+      padding-top: 0;
     }
   }
 

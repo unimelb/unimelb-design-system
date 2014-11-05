@@ -30,6 +30,10 @@
     color: $white;
     width: 100%;
 
+    &.reverse {
+      color: $black;
+    }
+
     &.solid-black {
       background-color: $black;
     }
@@ -89,6 +93,7 @@
     }
 
     &.with-box {
+      display: table;
       padding: 0;
 
       @include breakpoint(tablet) {
@@ -143,7 +148,7 @@
 }
 
 
-.uomcontent [role="main"] + .floating {
+.uomcontent .floating + [role="main"] {
   header,
   & > header:first-child {
     @include rem(padding-top, 100px);

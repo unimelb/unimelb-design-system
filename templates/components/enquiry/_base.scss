@@ -3,6 +3,7 @@
     @include padding-leader(2);
     @include padding-trailer(2);
     background-color: $paleblue;
+    box-shadow: 0 -1px 9px rgba($lightblue, 0.3) inset;
 
     .enquiry__cta {
       @extend %wrapper;
@@ -20,6 +21,7 @@
         @include adjust-font-size-to(22px);
       }
     }
+
     .enquiry__subline {
       @extend %wrapper;
       @include adjust-font-size-to(16px);
@@ -103,6 +105,7 @@
         }
       }
     }
+
     &.accordion__visible {
       .enquiry__cta {
         border-color: transparent;

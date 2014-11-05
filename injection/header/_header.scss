@@ -19,6 +19,7 @@
 
   * {
     @extend %normalise;
+    font-family: $ff-sans;
   }
 
   &.fixed:not(.floating) {
@@ -100,7 +101,6 @@
     }
   }
 
-
   a {
     @extend %headerblock;
     @include rem(height, 60px);
@@ -117,7 +117,7 @@
       @include rem(height, 60px);
       @include rem(width, 60px);
       background-color: $darkblue;
-      margin-left: 0;
+      left: 0;
       top: 0;
       transition: .2s top .3s;
 
@@ -172,7 +172,7 @@
 }
 
 .uomcontent .page-header-navigation {
-  @include rem(padding-left, 25px);
+  @include rem(padding-left, 15px);
   display: inline;
   transition: .3s padding-left;
   vertical-align: middle;
@@ -188,7 +188,7 @@
       display: none;
     }
 
-    a.last {
+    a.last, a:last-child {
       display: inline-block;
       max-width: 55%;
       overflow: hidden;
@@ -200,7 +200,7 @@
   @include breakpoint(desktop) {
     @include rem(height, 90px);
     @include rem(padding-left, 205px);
-    @include rem(margin-right, 115px);
+    @include rem(margin-right, 260px);
     display: block;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -306,16 +306,33 @@
 
 .uomcontent .floating {
   .page-header-logo {
-    @include rem(left, 10px);
-    @include rem(top, 10px);
-    margin-top: 0;
+    @include rem(margin-left, 15px);
+    @include rem(margin-top, 15px);
     position: absolute;
 
     @include breakpoint(desktop) {
       @include rem(margin-top, 30px);
-      left: 0;
       position: relative;
-      top: 0;
+    }
+  }
+
+  .page-header-home {
+    @include rem(left, 90px);
+    @include rem(margin-top, 15px);
+    @include rem(width, 160px);
+    color: $white;
+    font-weight: $light;
+    line-height: 1.3;
+    position: absolute;
+
+    &:hover {
+      color: $white;
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(font-size, 20px);
+      @include rem(left, 200px);
+      @include rem(margin-top, 30px);
     }
   }
 
@@ -352,8 +369,14 @@
     }
   }
 
-  &.reverse .page-header-tools a.page-header-icon {
-    color: $navy;
+  &.reverse {
+    .page-header-home {
+      color: $black;
+    }
+
+    .page-header-tools a.page-header-icon {
+      color: $navy;
+    }
   }
 }
 

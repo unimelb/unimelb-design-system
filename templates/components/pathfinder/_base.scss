@@ -8,6 +8,38 @@
     padding: 0 3%;
     width: 94%;
 
+    &.white {
+      a {
+        background-color: rgba($white, 0.9);
+        border-bottom: 3px solid $highlight;
+        color: $black;
+
+        &:hover {
+          background-color: $white;
+        }
+
+        &.featured {
+          color: $white;
+
+          p,
+          strong {
+            border-color: $white;
+            color: $white;
+          }
+        }
+
+        .button-small {
+          background-color: $highlight;
+        }
+      }
+
+      p,
+      strong {
+        border-color: $black;
+        color: $black;
+      }
+    }
+
     li {
       @include leader(1);
       @include trailer(1);
@@ -80,14 +112,22 @@
         }
       }
 
-      &.prominent {
-        background-color: lighten($brand, 3%);
-        box-shadow: 0 0 10px rgba($black, 0.5);
+      &.featured {
+        background-color: darken($green, 5%);
+        color: $black;
+        
         transform: scale(1.06);
-        z-index: 2;
+        z-index: 1;
+
+        &:hover {
+          background-color: lighten($green, 2%);
+          box-shadow: 0 0 10px rgba($black, 0.5);
+          transform: scale(1.07);
+          z-index: 1;
+        }
 
         .button-small {
-          background-color: darken($brand, 5%);
+          background-color: darken($green, 10%);
         }
       }
     }
@@ -98,7 +138,7 @@
 
     @include breakpoint(desktop) {
       @include padding-leader(2);
-      @include padding-trailer(4);
+      @include padding-trailer(2);
       display: table;
       float: none;
       height: 100%;

@@ -39,8 +39,16 @@
       height: auto;
     }
 
-    &.alt {
-      background-color: $lightgray;
+    &.fixed-background {
+      background-attachment: fixed;
+
+      .title {
+        color: $white;
+
+        &::after {
+          border-color: $white;
+        }
+      }
     }
 
     .gmap__canvas {

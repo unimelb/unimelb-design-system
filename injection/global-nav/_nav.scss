@@ -84,6 +84,7 @@ body {
     clear: both;
     list-style-type: none;
     margin-left: 0;
+    width: 100%;
 
     @include breakpoint(desktop) {
       clear: none;
@@ -102,7 +103,6 @@ body {
     margin-left: 0;
     margin-right: 0;
     text-decoration: none;
-
     transition: background-color 0.2s, transform 0.3s;
 
     svg {
@@ -114,7 +114,11 @@ body {
       background-color: $highlight;
       color: $white;
       text-decoration: none;
-      transform: scale(1.2);
+      transform: scale(1.02);
+
+      @include breakpoint(desktop) {
+        transform: scale(1.2);
+      }
     }
   }
 
@@ -141,7 +145,7 @@ body {
 
     li {
       float: left;
-      width: 16.667%;
+      width: 16.666%;
     }
 
     a {
