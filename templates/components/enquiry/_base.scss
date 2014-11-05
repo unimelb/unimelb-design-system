@@ -8,12 +8,14 @@
     .enquiry__cta {
       @extend %wrapper;
       @include adjust-font-size-to(20px);
+      @include rem(line-height, 50px);
       @include padding-trailer(1);
       @include rem(max-width, $w-sml);
       border-bottom: 1px solid rgba($lightblue, 0.3);
       text-align: center;
 
       a {
+        @include rem(line-height, 30px);
         @include rem(margin-left, 10px);
       }
 
