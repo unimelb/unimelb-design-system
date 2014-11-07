@@ -134,10 +134,10 @@ window.UOMinjectGlobalNav = ->
     absroot = localnav.getAttribute('data-absolute-root') || '/'
 
     # Add absolute /
-    absroot = '/'+ absroot if absroot.charAt(0) != '/'
+    # absroot = '/'+ absroot if absroot.charAt(0) != '/'
 
     # Strip trailing slash
-    absroot = absroot.substr(0, absroot.length-1) if absroot.charAt(absroot.length-1) == '/'
+    # absroot = absroot.substr(0, absroot.length-1) if absroot.charAt(absroot.length-1) == '/'
 
     navtitle = localnav.querySelector('h2')
     firstli = document.createElement 'li'
