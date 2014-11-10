@@ -127,3 +127,7 @@
     }
   }
 }
+
+.ie8 .uomcontent [role="main"] svg {
+  display: none;
+}

@@ -515,6 +515,10 @@ body {
   .center {
     text-align: center;
   }
+
+  .showie {
+    display: none;
+  }
 }
 
 .ie {
@@ -541,6 +545,16 @@ body {
 .ie9 {
   .uomcontent ul.ticked-list li:before {
     content: '';
+  }
+}
+
+.ie8 {
+  .uomcontent [role="main"] .noie {
+    display: none;
+  }
+
+  .uomcontent [role="main"] .showie {
+    display: block;
   }
 }
 
