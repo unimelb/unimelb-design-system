@@ -159,17 +159,8 @@
     }
 
     input[type="checkbox"] + label {
-      background-color: $white;
-      border: 1px solid $lightergray;
-      border-radius: 3px;
-      cursor: default;
-      display: inline-block;
-      height: 20px;
-      margin: 0 10px -3px 0;
-      padding: 1px;
+      display: block;
       position: relative;
-      text-indent: -999em;
-      width: 20px;
 
       &::after {
         background: transparent;
@@ -191,12 +182,25 @@
       }
 
       span {
-        @include rem(margin-top, -2px);
+        @include rem(margin-top, -5px);
         @include rem(padding-left, 35px);
-        @include rem(width, 638px);
+        @include rem(width, 640px);
         cursor: pointer;
         display: block;
         text-indent: 0;
+
+        &::before {
+          background-color: $white;
+          border: 1px solid $lightergray;
+          border-radius: 3px;
+          cursor: default;
+          display: inline-block;
+          height: 20px;
+          margin: 0 10px -3px 0;
+          padding: 1px;
+          text-indent: -999em;
+          width: 20px;
+        }
       }
     }
 

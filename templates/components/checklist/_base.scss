@@ -18,7 +18,7 @@
       }
 
       @include breakpoint(desktop) {
-        @include rem(padding, 15px 15px 15px 60px);
+        @include rem(padding, 15px);
       }
     }
   }

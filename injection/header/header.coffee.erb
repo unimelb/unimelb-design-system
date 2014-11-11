@@ -41,10 +41,9 @@ window.UOMinjectHeader = ->
       # Landing page header
       header.innerHTML = """
       <a class="page-header-logo" href="#{defaultlink}">
-        <svg width="100" height="100" viewBox="0 0 140 140" aria-label="The University of Melbourne">
-          <title>The University of Melbourne</title>
-          <desc><div class="noie">The University of Melbourne's Blue Logo Crest depicting Nike, the Winged Goddess of Victory above a scroll with the latin motto "Postera Crescam Laude" written on it.</div></desc>
-          <image xlink:href="#{assethost}/logo.svg" src="#{assethost}/logo.png" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
+        <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
+          <title id="aria-uom-title">The University of Melbourne Logo</title>
+          <image xlink:href="#{assethost}/logo.svg" src="#{assethost}/logo.png" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
         </svg>
       </a>
       """
@@ -68,10 +67,9 @@ window.UOMinjectHeader = ->
       header.innerHTML = """
       <header>
         <a class="page-header-logo" href="#{defaultlink}">
-          <svg width="100" height="100" viewBox="0 0 140 140">
-            <title>The University of Melbourne</title>
-            <desc><div class="noie">The University of Melbourne's Blue Logo Crest depicting Nike, the Winged Goddess of Victory, above a scroll with the latin motto "Postera Crescam Laude" written on it.</div></desc>
-            <image xlink:href="#{assethost}/logo.svg" src="#{assethost}/logo.png" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
+          <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
+            <title id="aria-uom-title">The University of Melbourne Logo</title>
+            <image xlink:href="#{assethost}/logo.svg" src="#{assethost}/logo.png" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
           </svg>
         </a>
         <div class="page-header-navigation">
@@ -105,14 +103,14 @@ window.UOMinjectHeader = ->
     tools.addClass('page-header-tools')
     if document.countSelector('[role="main"].no-login') == 0
       tools.innerHTML = """
-            <a class="page-header-icon" href="#sitemap" title="Search"><svg><use xlink:href="#icon-search"/></svg> Search</a><!--
-            --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><svg><use xlink:href="#icon-user" /></svg> Portal</a><!--
-            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg><use xlink:href="#icon-menu"/></svg> Menu</a>
+            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--
+            --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-user" /></svg> Portal</a><!--
+            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>
       """
     else
       tools.innerHTML = """
-            <a class="page-header-icon" href="#sitemap" title="Search"><svg><use xlink:href="#icon-search" /></svg> Search</a><!--
-            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg><use xlink:href="#icon-menu" /></svg> Menu</a>
+            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search" /></svg> Search</a><!--
+            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu" /></svg> Menu</a>
       """
 
     header.appendChild tools
@@ -158,12 +156,12 @@ window.UOMinjectHeader = ->
               <h2 class="title">Please Choose</h2>
               <div class="half">
                 <a class="button-fill" href="https://my.unimelb.edu.au/studentportal/faces/home">
-                  <svg><use xlink:href="#icon-students" /></svg>
+                  <svg role="img"><use xlink:href="#icon-students" /></svg>
                   <h2>Current Student</h2>
                   <p>Click here to go to my.unimelb</p>
                 </a>
                 <a class="button-fill" href="https://staff.unimelb.edu.au">
-                  <svg><use xlink:href="#icon-user" /></svg>
+                  <svg role="img"><use xlink:href="#icon-user" /></svg>
                   <h2>Staff Member</h2>
                   <p>Click here to get to the staff portal</p>
                 </a>

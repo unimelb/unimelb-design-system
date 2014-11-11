@@ -12,19 +12,17 @@ window.UOMinjectFooter= ->
     footer.innerHTML = """
     <footer>
       <a class="unimelb-lge" href="https://unimelb.edu.au">
-        <svg width="300" height="100" viewBox="0 0 300 100" aria-label="The University of Melbourne">
-          <title>The University of Melbourne</title>
-          <desc><div class="noie">The University of Melbourne's Blue Logo Crest depicting Nike, the Winged Goddess of Victory, above a scroll with the latin motto "Postera Crescam Laude" written on it.</div></desc>
-          <image xlink:href="#{assethost}/lockup.svg" src="#{assethost}/lockup.png" width="300" height="100" preserveAspectRatio="xMaxYMin meet"/>
+        <svg width="300" height="100" viewBox="0 0 300 100" aria-labelledby="aria-uom-title" role="img">
+          <image xlink:href="#{assethost}/lockup.svg" src="#{assethost}/lockup.png" alt="The University of Melbourne Logo" width="300" height="100" preserveAspectRatio="xMaxYMin meet"/>
         </svg>
       </a>
       <ul class="quicklinks">
-        <li><a href="http://about.unimelb.edu.au/governance-and-leadership/faculties"><svg class="icon"><use xlink:href="#icon-faculties" /></svg> Faculties and Graduate Schools</a></li>
-        <li><a href="http://students.unimelb.edu.au/"><svg class="icon"><use xlink:href="#icon-students" /></svg> Current Students</a></li>
-        <li><a href="http://library.unimelb.edu.au/"><svg class="icon"><use xlink:href="#icon-library" /></svg> Library</a></li>
-        <li><a href="http://www.unimelb.edu.au/contact/"><svg class="icon"><use xlink:href="#icon-phone" /></svg> Contact us</a></li>
-        <li><a href="http://maps.unimelb.edu.au/"><svg class="icon"><use xlink:href="#icon-maps" /></svg> Maps</a></li>
-        <li><a href="http://www.campaign.unimelb.edu.au/"><svg class="icon"><use xlink:href="#icon-campaign" /></svg> Support the Campaign</a></li>
+        <li><a href="http://about.unimelb.edu.au/governance-and-leadership/faculties"><svg role="img" class="icon"><use xlink:href="#icon-faculties" /></svg> Faculties and Graduate Schools</a></li>
+        <li><a href="http://students.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-students" /></svg> Current Students</a></li>
+        <li><a href="http://library.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-library" /></svg> Library</a></li>
+        <li><a href="http://www.unimelb.edu.au/contact/"><svg role="img" class="icon"><use xlink:href="#icon-phone" /></svg> Contact us</a></li>
+        <li><a href="http://maps.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-maps" /></svg> Maps</a></li>
+        <li><a href="http://www.campaign.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-campaign" /></svg> Support the Campaign</a></li>
       </ul>
       <ul class="page-footer-section nav">
         <li>
@@ -42,13 +40,13 @@ window.UOMinjectFooter= ->
       </ul>
       <ul class="page-footer-section social">
         <li class="social-facebook">
-          <a href="http://www.facebook.com/melbuni"><svg class="icon"><use xlink:href="#icon-facebook" /></svg> Facebook</a>
+          <a href="http://www.facebook.com/melbuni"><svg role="img" class="icon"><use xlink:href="#icon-facebook" /></svg> Facebook</a>
         </li>
         <li class="social-twitter">
-          <a href="http://www.twitter.com/unimelb"><svg class="icon"><use xlink:href="#icon-twitter" /></svg> Twitter</a>
+          <a href="http://www.twitter.com/unimelb"><svg role="img" class="icon"><use xlink:href="#icon-twitter" /></svg> Twitter</a>
         </li>
         <li class="social-linkedin">
-          <a href="http://au.linkedin.com/pub/the-university-of-melbourne/61/430/215"><svg class="icon"><use xlink:href="#icon-linkedin" /></svg> LinkedIn</a>
+          <a href="http://au.linkedin.com/pub/the-university-of-melbourne/61/430/215"><svg role="img" class="icon"><use xlink:href="#icon-linkedin" /></svg> LinkedIn</a>
         </li>
       </ul>
       <small>Phone: 13 MELB (13 6352) | International: +61 3 9035 5511</small>
@@ -58,7 +56,6 @@ window.UOMinjectFooter= ->
 
     <div class="hidden">
       <svg xmlns="http://www.w3.org/2000/svg">
-
         <symbol id="icon-trash" viewBox="5 5 20 20">
           <path d="M19.7,12.2c0,0.1-0.1,0.2-0.2,0.2h-0.6v6.4c0,0.7-0.5,1.4-1.1,1.4h-5.6c-0.6,0-1.1-0.6-1.1-1.3v-6.4h-0.6 c-0.1,0-0.2-0.1-0.2-0.2v-0.4c0-0.1,0.1-0.2,0.2-0.2h2.1l0.5-1.1c0.1-0.3,0.5-0.6,0.9-0.6h2.1c0.4,0,0.8,0.3,0.9,0.6l0.5,1.1h2.1 c0.1,0,0.2,0.1,0.2,0.2V12.2z M18,12.4h-6v6.4c0,0.3,0.2,0.5,0.2,0.5h5.6c0,0,0.2-0.2,0.2-0.5V12.4z M13.7,17.8 c0,0.1-0.1,0.2-0.2,0.2h-0.4c-0.1,0-0.2-0.1-0.2-0.2v-3.9c0-0.1,0.1-0.2,0.2-0.2h0.4c0.1,0,0.2,0.1,0.2,0.2V17.8z M16.5,11.6 l-0.3-0.8c0,0-0.1-0.1-0.1-0.1h-2.1c0,0-0.1,0-0.1,0.1l-0.3,0.8H16.5z M15.4,17.8c0,0.1-0.1,0.2-0.2,0.2h-0.4 c-0.1,0-0.2-0.1-0.2-0.2v-3.9c0-0.1,0.1-0.2,0.2-0.2h0.4c0.1,0,0.2,0.1,0.2,0.2V17.8z M17.1,17.8c0,0.1-0.1,0.2-0.2,0.2h-0.4 c-0.1,0-0.2-0.1-0.2-0.2v-3.9c0-0.1,0.1-0.2,0.2-0.2h0.4c0.1,0,0.2,0.1,0.2,0.2V17.8z"/>
         </symbol>
