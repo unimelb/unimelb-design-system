@@ -69,15 +69,22 @@
 
   li {
     @include rem(font-size, 14px);
-    color: $white;
+    color: rgba($white, .6);
     line-height: 1.4;
-    list-style-type: none;
+    list-style-type: disc;
     margin-left: 0;
     padding: 0;
   }
 
   ul {
+    @include rem(padding-left, 20px);
     margin: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  ul.quicklinks {
     padding: 0;
   }
 
