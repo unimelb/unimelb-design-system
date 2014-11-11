@@ -165,7 +165,7 @@
       cursor: default;
       display: inline-block;
       height: 20px;
-      margin: 0 10px -3px;
+      margin: 0 10px -3px 0;
       padding: 1px;
       position: relative;
       text-indent: -999em;
@@ -188,6 +188,15 @@
 
       &:active::after {
         opacity: .2;
+      }
+
+      span {
+        @include rem(margin-top, -2px);
+        @include rem(padding-left, 35px);
+        @include rem(width, 638px);
+        cursor: pointer;
+        display: block;
+        text-indent: 0;
       }
     }
 
@@ -239,6 +248,15 @@
 
       &:active::after {
         opacity: .2;
+      }
+
+      span {
+        @include rem(margin-top, -10px);
+        @include rem(padding-left, 27px);
+        @include rem(width, 638px);
+        cursor: pointer;
+        display: block;
+        text-indent: 0;
       }
     }
   }

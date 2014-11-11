@@ -549,11 +549,11 @@ body {
 }
 
 .ie8 {
-  .uomcontent [role="main"] .noie {
+  .uomcontent .noie {
     display: none;
   }
 
-  .uomcontent [role="main"] .showie {
+  .uomcontent .showie {
     display: block;
   }
 }

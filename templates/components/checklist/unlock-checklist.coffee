@@ -10,11 +10,12 @@ unless window.UOMUnlockChecklist
         @items = @el.querySelectorAll('li')
         @active = @el.countSelector('.on')
         @toggleDisable()
+        console.log t.active
 
         for item in @items
           item.addEventListener 'click', (e) ->
             target = e.target || e.srcElement
-            if (target.nodeName=='INPUT' or target.nodeName=='LABEL')
+            if (target.nodeName=='LABEL' or target.nodeName=='SPAN')
               if this.hasClass('on')
                 t.active -= 1
               else
