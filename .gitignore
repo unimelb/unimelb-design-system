@@ -4,3 +4,4 @@ demo-site/tmp/*
 tmp/*
 build/
 .env
+.ruby-version
