@@ -187,7 +187,7 @@
           width: 100%;
         }
 
-        &:hover {
+        &:hover, &:focus {
           background-color: $highlight;
           border-bottom-width: 0;
           color: $white;
