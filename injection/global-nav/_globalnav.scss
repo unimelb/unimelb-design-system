@@ -77,11 +77,11 @@
   }
 
   ul {
+    @include rem(padding-left, 20px);
     margin: 0;
-    padding-top: 0;
     padding-bottom: 0;
     padding-right: 0;
-    @include rem(padding-left, 20px);
+    padding-top: 0;
   }
 
   ul.quicklinks {
