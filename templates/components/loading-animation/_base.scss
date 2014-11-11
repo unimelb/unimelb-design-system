@@ -15,6 +15,12 @@
     @include padding-leader(3);
     @include padding-trailer(3);
     width: 100%;
+
+    span {
+      display: block;
+      height: 0;
+      text-indent: -999em;
+    }
   }
 
   .loading-blue {
