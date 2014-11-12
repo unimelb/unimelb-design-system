@@ -293,13 +293,21 @@
       @include rem(border-radius, 0 3px 3px 0);
       @include rem(height, 45px);
       @include rem(margin, 15px 0);
-      @include rem(padding, 10px);
       @include rem(width, 45px);
       background-color: $highlight;
+      border: 0 none;
       color: $white;
+      padding: 0;
       position: absolute;
       right: 0;
       top: 0;
+
+      svg {
+        cursor: pointer;
+        fill: currentColor;
+        max-height: 100%;
+      }
+
     }
   }
 }
