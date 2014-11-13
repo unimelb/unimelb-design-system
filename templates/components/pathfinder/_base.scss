@@ -119,7 +119,8 @@
         transform: scale(1.06);
         z-index: 1;
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
           background-color: lighten($green, 2%);
           box-shadow: 0 0 10px rgba($black, 0.5);
           transform: scale(1.07);
@@ -128,6 +129,19 @@
 
         .button-small {
           background-color: darken($green, 10%);
+        }
+      }
+
+      &.disabled {
+        cursor: not-allowed;
+        opacity: .5;
+
+        &:hover {
+          transform: scale(1);
+
+          .button-small {
+            cursor: not-allowed;
+          }
         }
       }
     }
