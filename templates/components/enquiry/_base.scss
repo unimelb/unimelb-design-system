@@ -1,4 +1,4 @@
-.uomcontent {
+.uomcontent [role="main"] {
   .enquiry {
     @include padding-leader(2);
     @include padding-trailer(2);
@@ -6,14 +6,11 @@
     box-shadow: 0 -1px 9px rgba($lightblue, 0.3) inset;
 
     .errors {
+      @include rem(font-size, 22px);
+      @include rem(max-width, 700px);
+      @include rem(padding-top, 30px);
       background-color: #fad8dc;
-      font-size: 22px;
-      font-size: 1.375rem;
       margin: 0 auto;
-      max-width: 700px;
-      max-width: 43.75rem;
-      padding-top: 30px;
-      padding-top: 1.875rem;
 
       ul li {
         list-style-type: none;
