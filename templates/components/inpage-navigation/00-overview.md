@@ -12,7 +12,7 @@ To include this feature on your page, simply add an empty div with class <code>j
 <div class="jumpnav"></div>
 ```
 
-Every <code>h2</code> on the page with a unique ID will be added, in order of appearance, to the inpage navigation. The heading text will be used as nav item, eg. "Testjump 1" in the example below:
+Every <code>h2</code> on the page with a unique ID will be added, in order of appearance, to the inpage navigation. The heading text will be used as nav item, eg. "Testjump 1" in the example below
 
 <h2 id="jump1">Testjump 1</h2>
 Mercedem aut nummos unde unde extricat, amaras. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Quam diu etiam furor iste tuus nos eludet? Curabitur blandit tempus ardua ridiculus sed magna. Cras mattis iudicium purus sit amet fermentum.
@@ -36,3 +36,12 @@ At nos hinc posthac, sitientis piros Afros. Quam temere in vitiis, legem sancimu
 Plura mihi bona sunt, inclinet, amari petere vellent. Gallia est omnis divisa in partes tres, quarum. Hi omnes lingua, institutis, legibus inter se differunt. Morbi odio eros, volutpat ut pharetra vitae, lobortis sed nibh.
 
 Unam incolunt Belgae, aliam Aquitani, tertiam. Plura mihi bona sunt, inclinet, amari petere vellent. A communi observantia non est recedendum. Me non paenitet nullum festiviorem excogitasse ad hoc. Cum ceteris in veneratione tui montes, nascetur mus.
+
+<h2 id="index">Index Navigation</h2>
+A-Z indices can be done via a simple class change:
+
+```html
+<div class="indexnav"></div>
+```
+
+As you can't have both navigations in one document, you find an <a href="/layouts/indexnav">example of an index-navigation</a> in the example layouts.
