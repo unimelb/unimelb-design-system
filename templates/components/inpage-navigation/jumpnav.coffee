@@ -10,7 +10,8 @@ unless window.UOMStickyNav
           @outer = document.body
 
         jump = document.createElement "ul"
-        jump.addClass "jump-navigation"
+        className = if document.countSelector('.indexnav')==1 then "index-navigation" else "jump-navigation"
+        jump.addClass className
         jump.innerHTML = """
     <li>On this page</li>
     """
@@ -60,7 +61,7 @@ unless window.UOMStickyNav
           else
             main.appendChild(jump)
 
-        document.body.addClass 'jumpnav-active'
+        document.body.addClass if document.countSelector('.indexnav')==1 then "indexnav-active" else "jumpnav-active"
 
         @fixPoint = @n.offsetTop - 80
         @fixPoint = @fixPoint + 35 if jump.hasClass('floating')
@@ -90,7 +91,7 @@ unless window.UOMStickyNav
 
       # Scrolling jump nav
       else
-        if document.countSelector('h2[id]') > 0 and document.countSelector('.jumpnav')==1
+        if document.countSelector('h2[id]') > 0 and document.countSelector('.jumpnav, .indexnav')==1
           new StickyNav(document.querySelector('div[role="main"]'))
 
 if window.attachEvent

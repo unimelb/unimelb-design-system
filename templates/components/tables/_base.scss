@@ -75,6 +75,9 @@
   }
 
   &.zebra {
+    border: 0;
+    border-bottom: 1px solid $lightergray;
+
     thead th,
     tr td,
     tr td:first-child {
