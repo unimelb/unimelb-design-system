@@ -130,6 +130,10 @@
       opacity: 0.3;
     }
 
+    &:hover {
+      color: $darkgray;
+    }
+
     @include breakpoint(desktop) {
       @include rem(max-width, 180px);
     }
