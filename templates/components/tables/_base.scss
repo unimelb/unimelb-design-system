@@ -1,4 +1,4 @@
-.uomcontent table.styled {
+/*.uomcontent table.styled {
   border: 1px solid $lightgray;
   border-collapse: collapse;
 
@@ -20,5 +20,125 @@
   td {
     @include rem(padding, 0 20px);
     border: 1px solid $midgray;
+  }
+}*/
+
+.uomcontent [role="main"] table {
+  @include leader(1);
+  @include rem(max-width, 600px);
+  @include trailer(1);
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  width: 100%;
+
+  thead {
+    display: none;
+  }
+
+  tr {
+    &.header {
+      color: $navy;
+      font-weight: $bold;
+
+      td,
+      td:first-child {
+        @include rem(padding, 20px 10px 10px 10px);
+        background-color: transparent;
+        border-top: 0;
+      }
+    }
+
+    td {
+      @include rem(padding, 10px 10px 10px 10px);
+      display: block;
+      width: auto;
+
+      &:first-child {
+        border-top: 1px solid $lightergray;
+        padding-bottom: 0;
+      }
+
+      &:empty {
+        display: none;
+      }
+
+      &::before {
+        @include rem(font-size, 14px);
+        color: $midgray;
+        content: attr(data-label);
+        display: block;
+        font-style: italic;
+      }
+    }
+  }
+
+  &.zebra {
+    thead th,
+    tr td,
+    tr td:first-child {
+      border: 0;
+    }
+    thead th {
+      border-bottom: 2px solid $lightergray;
+    }
+    tr:nth-child(odd) td {
+      background-color: $paleblue;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(max-width, $w-mid);
+    border: 1px solid $lightergray;
+    overflow: visible;
+
+    thead {
+      display: table-header-group;
+
+      th {
+        @include rem(font-size, 14px);
+        @include rem(padding, 10px);
+        border: 1px solid $lightergray;
+        border-bottom-width: 2px;
+        text-align: left;
+        vertical-align: bottom;
+      }
+    }
+
+    tr {
+      &.header {
+        td,
+        td:first-child {
+          @include rem(padding, 10px);
+          background-color: $paleblue;
+          border: 1px solid $lightergray;
+        }
+      }
+
+      td {
+        @include rem(font-size, 16px);
+        @include rem(padding, 10px);
+        border: 1px solid $lightergray;
+        display: table-cell;
+
+        &:first-child {
+          @include rem(padding-bottom, 10px);
+        }
+
+        &:empty {
+          display: table-cell;
+        }
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &.wide {
+      @include rem(max-width, $w-lge);
+      table-layout: fixed;
+    }
   }
 }
