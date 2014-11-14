@@ -16,7 +16,8 @@
     width: 100%;
 
 
-    &:hover {
+    &:hover,
+    &:focus {
       .inner {
         background-color: $darkblue;
       }
@@ -90,7 +91,7 @@
 
     &.topic {
       @include adjust-font-size-to(14px);
-      color: $gray;
+      color: $midgray;
     }
   }
 
