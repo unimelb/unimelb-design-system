@@ -102,7 +102,6 @@
     }
 
     &.coursework a,
-    &.research a,
     &.category-c a {
       background-color: $lightestblue;
     }
@@ -110,6 +109,11 @@
     &.phd a,
     &.category-d a {
       background-color: $lightblue;
+    }
+
+    &.research a,
+    &.category-e a {
+      background-color: $paleyellow;
     }
   }
 

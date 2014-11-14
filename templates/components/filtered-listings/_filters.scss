@@ -119,7 +119,7 @@
       color: $lightestblue;
 
       input[type="checkbox"] + label span::before {
-        background-color: l$lightestblue;
+        background-color: lighten($lightestblue, 10%);
         border-color: darken($lightestblue, 20%);
 
         &::after {
@@ -138,6 +138,20 @@
 
         &::after {
           border-color: darken($lightblue, 20%);
+        }
+      }
+    }
+
+    .research,
+    .category-e {
+      color: $paleyellow;
+
+      input[type="checkbox"] + label span::before {
+        background-color: lighten($paleyellow, 10%);
+        border-color: darken($paleyellow, 20%);
+
+        &::after {
+          border-color: darken($paleyellow, 30%);
         }
       }
     }
