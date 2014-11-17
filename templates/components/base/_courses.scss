@@ -1,5 +1,7 @@
-.uomcontent table.course-progression {
+.uomcontent [role="main"] table.course-progression {
   @include rem(margin-bottom, 30px);
+  @include rem(max-width, 700px);
+  border: 0 none;
   border-collapse: collapse;
   width: 100%;
 
@@ -8,8 +10,12 @@
     @include rem(font-size, 14px);
     @include rem(padding, 30px 0 10px);
     border-bottom: 1px solid $lightergray;
-    padding-left: 3%;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-top: 0 none;
+    padding-left: 0;
     padding-right: 3%;
+
     text-align: left;
 
     @include breakpoint(tablet) {
@@ -23,7 +29,11 @@
     @include rem(padding-bottom, 10px);
     @include rem(padding-top, 10px);
     border-bottom: 1px solid $lightergray;
-    padding-left: 3%;
+    border-left: 0 none;
+    border-right: 0 none;
+    border-top: 0 none;
+    display: table-cell;
+    padding-left: 0;
     padding-right: 3%;
 
     @include breakpoint(tablet) {
@@ -145,6 +155,36 @@
   thead th:first-child + th {
     border-color: $black;
     text-align: left;
+  }
+
+  tbody tr.accordion__hidden {
+    display: none;
+  }
+
+  tbody tr.accordion__hidden td {
+    display: block;
+    width: 100%;
+
+    &::before {
+      display: none;
+    }
+
+    p,
+    h2 {
+      margin: 0;
+    }
+  }
+
+  tbody.accordion__visible tr.accordion__hidden {
+    display: table-row;
+  }
+
+  tbody.accordion__visible tr.accordion__hidden td {
+    display: table-cell;
+
+    &.unit-description::before {
+      display: block;
+    }
   }
 }
 
