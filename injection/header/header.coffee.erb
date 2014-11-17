@@ -126,6 +126,8 @@ window.UOMinjectHeader = ->
       else
         header.removeClass 'fixed'
 
+  header.setAttribute('role', 'banner')
+
   main = document.querySelector('[role="main"]')
   unless main
     main = document.createElement('div')
