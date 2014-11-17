@@ -113,7 +113,7 @@
       }
 
       &.featured {
-        background-color: darken($green, 5%);
+        background-color: darken($highlight, 5%);
         color: $black;
 
         transform: scale(1.06);
@@ -121,14 +121,14 @@
 
         &:hover,
         &:focus {
-          background-color: lighten($green, 2%);
+          background-color: lighten($highlight, 2%);
           box-shadow: 0 0 10px rgba($black, 0.5);
           transform: scale(1.07);
           z-index: 1;
         }
 
         .button-small {
-          background-color: darken($green, 10%);
+          background-color: darken($highlight, 15%);
         }
       }
 
