@@ -43,8 +43,12 @@
   }
 
   .accordion__title {
-    color: $lighterblue;
+    color: $cyan;
     text-decoration: underline;
+
+    &:hover {
+      color: darken($cyan, 15%);
+    }
   }
 
   .accordion__close {
