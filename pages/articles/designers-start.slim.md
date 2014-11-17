@@ -55,4 +55,4 @@ section
       p Your page will never be done. It is better to start with a very small and scoped feature set. After shipping the product you continue to improve and add features as needed, based on feedback from real users.
     li
       h2 Contribute
-      p If you couldn't find an adequate component in the Design System and you had to come up with your own, please contribute it back. It is highly likely that someone else from the University’s web community could use your component as well.
+      p If you couldn't find an adequate component in the Design System and you had to come up with your own, please contribute it back. It is highly likely that someone else from the University's web community could use your component as well.
