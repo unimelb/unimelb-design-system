@@ -42,7 +42,8 @@
     }
   }
 
-  .accordion__title:hover {
+  .accordion__title {
+    color: $lighterblue;
     text-decoration: underline;
   }
 
