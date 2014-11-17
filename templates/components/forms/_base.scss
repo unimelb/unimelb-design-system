@@ -107,7 +107,7 @@
   legend {
     @include rem(font-size, 24px);
     @include rem(padding, 30px 0);
-    color: $gray;
+    color: $midgray;
   }
 
   .invalid small {
