@@ -134,11 +134,11 @@
   }
 
   h2 {
-    @include rem(font-size, 14px);
+    @include rem(font-size, 12px);
     @include rem(letter-spacing, 1px);
     @include rem(padding, 20px);
     background-color: darken($menu, 3%);
-    color: rgba($white, .3);
+    color: rgba($white, .6);
     cursor: pointer;
     display: block;
     font-weight: 400;
@@ -146,11 +146,11 @@
     width: auto;
 
     &:before {
-      @include rem(font-size, 24px);
+      @include rem(font-size, 20px);
       content: '\2039';
       float: left;
       font-weight: $regular;
-      line-height: .9;
+      line-height: 1;
       padding-right: 10px;
     }
 
