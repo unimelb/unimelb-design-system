@@ -18,6 +18,8 @@ unless window.UOMAccordion
           else
             @hidden.appendChild(close)
 
+        @el.setAttribute('tabindex', '0')
+
         @el.addEventListener 'click', (e) ->
           e.preventDefault()
           target = e.target || e.srcElement
@@ -42,8 +44,17 @@ unless window.UOMAccordion
         new UOMAccordionComponent(el)
 
   if window.attachEvent
-    window.attachEvent 'onload', ->
+    window.attachEvent 'onload', (x) ->
       UOMAccordion()
   else
     document.addEventListener 'DOMContentLoaded', ->
       UOMAccordion()
+
+    window.addEventListener('keydown', ->
+      elem = document.activeElement
+      if (elem != document.body && elem.getAttribute('tabindex') != null)
+      # look for window.event in case event isn't passed in
+      e = window.event if (typeof e == 'undefined' && window.event)
+      # trigger click if ENTER is clicked
+      elem.click() if (e.keyCode == 13)
+    )
