@@ -207,6 +207,7 @@
 
         &::before {
           @include adjust-font-size-to(50px);
+          @include rem(letter-spacing, -5px);
           @include rem(margin-left, -50px);
           @include rem(padding-top, 20px);
           color: $black;
@@ -236,6 +237,7 @@
         li {
           &::before {
             @include adjust-font-size-to(68px);
+            @include rem(letter-spacing, -7px);
           }
         }
       }
@@ -247,6 +249,7 @@
 
           &::before {
             @include adjust-font-size-to(68px);
+            @include rem(letter-spacing, -7px);
             @include rem(margin-left, 10px);
           }
         }
@@ -257,6 +260,7 @@
 
           &::before {
             @include adjust-font-size-to(80px);
+            @include rem(letter-spacing, -11px);
           }
         }
       }
