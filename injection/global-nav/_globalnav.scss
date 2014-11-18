@@ -182,9 +182,9 @@
         transition: color .2s, background-color .2s;
 
         svg {
+          @include rem(height, 39px);
+          @include rem(width, 39px);
           fill: currentColor;
-          height: 100%;
-          width: 100%;
         }
 
         &:hover, &:focus {
