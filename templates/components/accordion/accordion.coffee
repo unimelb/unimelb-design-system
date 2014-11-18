@@ -18,6 +18,8 @@ unless window.UOMAccordion
           else
             @hidden.appendChild(close)
 
+        @el.setAttribute('tabindex', '0')
+
         @el.addEventListener 'click', (e) ->
           e.preventDefault()
           target = e.target || e.srcElement
@@ -47,3 +49,17 @@ unless window.UOMAccordion
   else
     document.addEventListener 'DOMContentLoaded', ->
       UOMAccordion()
+
+  clickWithEnter = (e) ->
+    elem = document.activeElement
+    if elem != document.body && elem.getAttribute('tabindex') != null
+      # look for window.event in case event isn't passed in
+      e = window.event if (typeof e == 'undefined' && window.event)
+      # trigger click if ENTER is clicked
+      elem.click() if (e.keyCode == 13)
+
+  if window.addEventListener
+    window.addEventListener('keydown', clickWithEnter)
+  else if window.attachEvent
+    # IE 10 down
+    window.attachEvent('KeyboardEvent', clickWithEnter)
