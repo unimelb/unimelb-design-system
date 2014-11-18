@@ -50,7 +50,7 @@ unless window.UOMAccordion
     document.addEventListener 'DOMContentLoaded', ->
       UOMAccordion()
 
-    window.addEventListener('keydown', ->
+    window.addEventListener('keydown', (e) ->
       elem = document.activeElement
       if (elem != document.body && elem.getAttribute('tabindex') != null)
         # look for window.event in case event isn't passed in
