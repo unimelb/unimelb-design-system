@@ -50,11 +50,16 @@ unless window.UOMAccordion
     document.addEventListener 'DOMContentLoaded', ->
       UOMAccordion()
 
-    window.addEventListener('keydown', (e) ->
-      elem = document.activeElement
-      if (elem != document.body && elem.getAttribute('tabindex') != null)
-        # look for window.event in case event isn't passed in
-        e = window.event if (typeof e == 'undefined' && window.event)
-        # trigger click if ENTER is clicked
-        elem.click() if (e.keyCode == 13)
-    )
+  clickWithEnter = (e) ->
+    elem = document.activeElement
+    if elem != document.body && elem.getAttribute('tabindex') != null
+      # look for window.event in case event isn't passed in
+      e = window.event if (typeof e == 'undefined' && window.event)
+      # trigger click if ENTER is clicked
+      elem.click() if (e.keyCode == 13)
+
+  if window.addEventListener
+    window.addEventListener('keydown', clickWithEnter)
+  else if window.attachEvent
+    # IE 10 down
+    window.attachEvent('KeyboardEvent', clickWithEnter)
