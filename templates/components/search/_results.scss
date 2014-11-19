@@ -1,0 +1,62 @@
+.uomcontent {
+  p.search-spelling {
+    @include trailer(1);
+    border-bottom: 1px solid rgba(#000000, 0.1);
+
+    strong {
+      font-style: italic;
+    }
+  }
+
+  h2.search-title {
+    @include adjust-font-size-to(12px);
+    color: $midgray;
+  }
+
+  ol.search-results {
+    padding-left: 0;
+
+    li {
+      @include padding-trailer(1);
+      @include trailer(1);
+      border-bottom: 1px solid rgba(#000000, 0.1);
+      list-style-type: none;
+      margin-left: 0;
+      margin-right: 0;
+      padding-right: 0;
+
+      &:last-child {
+        @include padding-trailer(1);
+      }
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+
+    h3 {
+      @include adjust-font-size-to(20px);
+      @include padding-trailer(0.5);
+      font-weight: $regular;
+    }
+
+    p {
+      @include adjust-font-size-to(16px);
+      @include padding-trailer(0);
+      color: $black;
+
+      &.url {
+        @include adjust-font-size-to(12px);
+        color: $highlight;
+      }
+    }
+
+    @include breakpoint(desktop) {
+      h3,
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
