@@ -1,0 +1,32 @@
+.uomcontent {
+  ul.search-pagination {
+    @include padding-leader(1);
+    @include padding-trailer(1);
+    text-align: center;
+
+    li {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0;
+      max-width: auto;
+      padding: 0;
+      width: auto;
+    }
+
+    a,
+    span {
+      @include rem(border-radius, 2px);
+      @include rem(font-size, 16px);
+      @include rem(padding, 5px 15px);
+      display: block;
+
+      &.button-small {
+        @include rem(font-size, 12px);
+      }
+    }
+
+    span {
+      background-color: $paleblue;
+    }
+  }
+}

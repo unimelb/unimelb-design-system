@@ -336,6 +336,71 @@
   }
 }
 
+.uomcontent {
+  .with-aside {
+    ul.sidebar-tab-nav {
+      display: block;
+      line-height: 1.4;
+      padding: 0;
+
+      @include breakpoint(desktop) {
+        @include rem(margin, 0 -30px 0 -15px);
+      }
+
+      li {
+        list-style-type: none;
+        margin-left: 0;
+        padding-bottom: 0;
+      }
+
+      a {
+        @include rem(padding, 10px 30px 10px 15px);
+        border-left: 5px solid transparent;
+        display: block;
+        text-decoration: none;
+      }
+
+      a.current,
+      a:hover.current {
+        background-color: $white;
+        border-left-color: #0084ee;
+      }
+    }
+
+    .bside + aside ul.sidebar-tab-nav {
+      @include breakpoint(desktop) {
+        @include rem(margin, 0 -15px 0 -30px);
+      }
+
+      a {
+        border-left: 0;
+        border-right: 5px solid transparent;
+      }
+
+      a.current,
+      a:hover.current {
+        border-right-color: #0084ee;
+      }
+    }
+  }
+
+  .sidebar-tab-section {
+    position: relative;
+  }
+
+  .with-aside div.sidebar-tab {
+    display: none;
+
+    &.current {
+      display: block;
+
+      h2 {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
 .ie {
   .uomcontent .tabbed-course,
   .uomcontent .tabbed-nav {
