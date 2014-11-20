@@ -94,9 +94,10 @@ module WebTemplates
       @component = path
 
       # Determine next and previous links from dir array
-      curr = settings.components.index(@component)
-      @next = curr == settings.components.length - 1 ? settings.components[0] : settings.components[curr + 1]
-      @prev = curr == 0 ? settings.components[settings.components.length - 1] : settings.components[curr - 1]
+      allcomps = settings.components.sort
+      curr = allcomps.index(@component)
+      @next = curr == allcomps.length - 1 ? allcomps[0] : allcomps[curr + 1]
+      @prev = curr == 0 ? allcomps[allcomps.length - 1] : allcomps[curr - 1]
 
       @documents = {}
       raw_documents = []
