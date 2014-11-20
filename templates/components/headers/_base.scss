@@ -142,7 +142,7 @@
     @include breakpoint(desktop) {
       @include padding-leader(2);
       @include padding-trailer(2);
-      overflow: hidden;
+      // overflow: hidden;
     }
   }
 }
