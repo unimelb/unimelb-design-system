@@ -1,0 +1,37 @@
+.uomcontent {
+  .search-autocomplete {
+    @include rem(border-radius, 0 0 3px 3px);
+    @include rem(margin-top, -10px);
+    @include rem(max-width, $w-lge);
+    background-color: $white;
+    border: 1px solid $lightergray;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    position: absolute;
+    width: 97%;
+    z-index: 5;
+
+    @include breakpoint(desktop) {
+      width: 91.5%;
+    }
+
+    ol {
+      margin: 0;
+      padding: 0;
+    }
+
+    li,
+    li:last-child {
+      @include padding-leader(0.5);
+      @include padding-trailer(0.5);
+      @include rem(padding-left, 15px);
+      list-style-type: none;
+      margin: 0;
+
+      &:hover,
+      &:focus {
+        background-color: $highlight;
+        color: $white;
+      }
+    }
+  }
+}
