@@ -38,6 +38,15 @@
     }
   }
   div.soundcloud {
-    @include rem(max-width, $w-lge);
+    max-width: 100%;
+
+    iframe {
+      width: 100%;
+
+      @include breakpoint(wide) {
+        margin-left: 15%;
+        width: 70%;
+      }
+    }
   }
 }
