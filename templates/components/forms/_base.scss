@@ -74,6 +74,16 @@
   }
 }
 
+.uomcontent .form-error {
+  // @include rem(padding, 10px);
+  // background-color: rgba($warning, 0.1);
+  color: $warning;
+
+  p {
+    padding-bottom: 0;
+  }
+}
+
 .uomcontent fieldset {
   border: 0;
   padding: 0;

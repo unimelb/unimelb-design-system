@@ -1,0 +1,27 @@
+== slim :breadcrumb
+
+div role="main"
+  header
+    h1 Login
+  section
+    p Login with your University of Melbourne username and password.
+    form method="post" action="#" data-validate=""
+      .form-error role="alert" aria-atomic="true"
+        p We didn't recognise the username or password you entered.
+      fieldset
+        div
+          label
+            ' Username:
+            input data-required="" name="f[username]" type="text" title="Please enter your username."
+        div
+          label
+            ' Password:
+            input data-required="" name="f[password]" type="password" title="Please enter your password."
+        div
+          a href="#" Problems logging in?
+        div
+          input type="submit" value="Login"
+    p
+      |Are you a library member who is not a University student or staff?
+      '
+      a href="#" Login as guest
