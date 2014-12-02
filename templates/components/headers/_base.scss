@@ -160,14 +160,19 @@
 }
 
 .ie9 {
-  .uomcontent header,
-  & > header:first-child {
-    display: table;
-    position: relative;
-    width: 100%;
+  .uomcontent {
+    header,
+    & > header:first-child {
+      display: block;
+      position: relative;
+      width: 100%;
 
-    &.image > p {
-      padding-bottom: 200px;
+      &.image > p {
+        padding-bottom: 200px;
+      }
+    }
+    header.image, header.banner {
+      display: table;
     }
   }
 }
