@@ -24,3 +24,11 @@
     display: table-cell;
   }
 }
+
+.ie10 {
+  .uomcontent [role="main"] header.banner {
+    display: table-cell;
+    vertical-align: middle;
+    width: 9999px;
+  }
+}
