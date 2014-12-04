@@ -86,68 +86,74 @@ module WebTemplates
     end
 
     get '/components/*' do |path|
-      return_page_not_found unless settings.components.include? path
+      if path.empty?
+        @components = settings.components
+        slim :components_index
 
-      # Default title from dirname, can be overriden in frontmatter of first .md
-      @settings['title'] = File.basename(path).capitalize
+      else
+        return_page_not_found unless settings.components.include? path
 
-      @component = path
+        # Default title from dirname, can be overriden in frontmatter of first .md
+        @settings['title'] = File.basename(path).capitalize
 
-      # Determine next and previous links from dir array
-      allcomps = settings.components.sort
-      curr = allcomps.index(@component)
-      @next = curr == allcomps.length - 1 ? allcomps[0] : allcomps[curr + 1]
-      @prev = curr == 0 ? allcomps[allcomps.length - 1] : allcomps[curr - 1]
+        @component = path
 
-      @documents = {}
-      raw_documents = []
-      ['md', 'html', 'slim'].each do |ext|
-        raw_documents << Dir.glob(File.join(settings.components_dir, path, "*.#{ext}"))
-      end
-      raw_documents.flatten.sort.map do |f|
-        section = File.basename(f)[0..1]
+        # Determine next and previous links from dir array
+        allcomps = settings.components.sort
+        curr = allcomps.index(@component)
+        @next = curr == allcomps.length - 1 ? allcomps[0] : allcomps[curr + 1]
+        @prev = curr == 0 ? allcomps[allcomps.length - 1] : allcomps[curr - 1]
 
-        case File.extname(f)
-        when '.md' then
-          @settings.merge! file_settings(f)
-          render_method = !!@settings['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
-          if @documents[section]
-            @documents[section] << send(render_method, file_content(f))
+        @documents = {}
+        raw_documents = []
+        ['md', 'html', 'slim'].each do |ext|
+          raw_documents << Dir.glob(File.join(settings.components_dir, path, "*.#{ext}"))
+        end
+        raw_documents.flatten.sort.map do |f|
+          section = File.basename(f)[0..1]
+
+          case File.extname(f)
+          when '.md' then
+            @settings.merge! file_settings(f)
+            render_method = !!@settings['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
+            if @documents[section]
+              @documents[section] << send(render_method, file_content(f))
+            else
+              @documents[section] = [ send(render_method, file_content(f)) ]
+            end
+
+          when '.slim' then
+            if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
+              source = ''
+            else
+              source = syntax_highlight(slim file_content(f), layout: false, pretty: true)
+            end
+            output = slim file_content(f), layout: false, pretty: true
+            if @documents[section]
+              @documents[section] << [ title_from_filename(f), source, output ]
+            else
+              @documents[section] = [ [ title_from_filename(f), source, output ] ]
+            end
+
           else
-            @documents[section] = [ send(render_method, file_content(f)) ]
+            # Raw HTML
+            if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
+              source = ''
+            else
+              source = syntax_highlight(file_content(f))
+            end
+            output = file_content(f)
+            if @documents[section]
+              @documents[section] << [ title_from_filename(f), source, output ]
+            else
+              @documents[section] = [ [ title_from_filename(f), source, output ] ]
+            end
           end
 
-        when '.slim' then
-          if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
-            source = ''
-          else
-            source = syntax_highlight(slim file_content(f), layout: false, pretty: true)
-          end
-          output = slim file_content(f), layout: false, pretty: true
-          if @documents[section]
-            @documents[section] << [ title_from_filename(f), source, output ]
-          else
-            @documents[section] = [ [ title_from_filename(f), source, output ] ]
-          end
-
-        else
-          # Raw HTML
-          if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
-            source = ''
-          else
-            source = syntax_highlight(file_content(f))
-          end
-          output = file_content(f)
-          if @documents[section]
-            @documents[section] << [ title_from_filename(f), source, output ]
-          else
-            @documents[section] = [ [ title_from_filename(f), source, output ] ]
-          end
         end
 
+        slim :component
       end
-
-      slim :component
     end
 
     ### Layouts
