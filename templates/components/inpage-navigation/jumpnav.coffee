@@ -21,7 +21,7 @@ unless window.UOMStickyNav
         for h in @main.querySelectorAll('h2[id]')
           @nav[h.offsetTop] = document.createElement "a"
           @nav[h.offsetTop].href = "#"+h.id
-          @nav[h.offsetTop].appendChild document.createTextNode h.textContent
+          @nav[h.offsetTop].appendChild document.createTextNode (h.textContent || h.innerText)
           li = document.createElement "li"
           li.appendChild @nav[h.offsetTop]
           @n.appendChild li

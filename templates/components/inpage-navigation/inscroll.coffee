@@ -20,7 +20,7 @@ unless window.UOMInpageScrolling
 
             if e.target
               tel = e.target
-              if /(Firefox)/g.test(navigator.userAgent)
+              if /(Firefox)/g.test(navigator.userAgent) or /(MSIE)/g.test(navigator.userAgent)
                 outer = document.querySelector('html')
               else
                 outer = document.body

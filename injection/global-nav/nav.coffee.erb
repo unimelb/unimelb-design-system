@@ -142,7 +142,7 @@ window.UOMinjectGlobalNav = ->
     navtitle = localnav.querySelector('h2')
     firstli = document.createElement 'li'
     firstli.addClass 'home'
-    firstli.innerHTML = '<a href="' + absroot + '">' + (navtitle.textContent || navtitle.innerText)+ '</a>'
+    firstli.innerHTML = '<a href="' + absroot + '">' + (navtitle.textContent || navtitle.innerText) + '</a>'
     rootmenu.insertBefore(firstli, rootmenu.firstChild)
     navtitle.textContent = 'Close'
     navtitle.innerText = 'Close'
