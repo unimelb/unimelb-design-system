@@ -1,24 +1,24 @@
-div.tabbed-nav data-tabbed="" id="nav" role="tabs"
+div.tabbed-nav data-tabbed="" id="nav"
     .full-width
         .mobile-nav
-            select
-                option value="#tab1" Tab1
-                option value="#tab2" selected="selected" Tab2
-                option value="#tab3" Tab3
-                option value="/" Home
-        nav.desktop-nav
-            a href="#tab1" Tab1
-            a href="#tab2" data-current="" Tab2
-            a href="#tab3" Tab3
-            a href="/" Home
-    .tab id="tab1"
+            select role="tablist"
+                option value="#tab1" role="tab" Tab1
+                option value="#tab2" role="tab" selected="selected" Tab2
+                option value="#tab3" role="tab" Tab3
+                option value="/" role="tab" Home
+        nav.desktop-nav role="tablist"
+            a href="#tab1" role="tab" Tab1
+            a href="#tab2" role="tab" data-current="" Tab2
+            a href="#tab3" role="tab" Tab3
+            a href="/" role="tab" Home
+    .tab role="tabpanel" id="tab1"
         section.lead
             p Lorem ipsum dolor sit amet, dissentiet definitiones vix te, libris quaeque repudiandae mei cu, at duo indoctum instructior delicatissimi. Et sed stet partem, enim altera eam ei. Pro erat zril omittam ea. Eu choro aeterno vix, nonumy aliquip mei ne, cum putant perpetua periculis at.
-    .tab id="tab2"
+    .tab role="tabpanel" id="tab2"
         section
             h2.title Lorem ipsum dolor sit
             p Amet, dissentiet definitiones vix te, libris quaeque repudiandae mei cu, at duo indoctum instructior delicatissimi. Et sed stet partem, enim altera eam ei. Pro erat zril omittam ea. Eu choro aeterno vix, nonumy aliquip mei ne, cum putant perpetua periculis at.
-    .tab id="tab3"
+    .tab role="tabpanel" id="tab3"
         section.lead
             p Vis ne ullum voluptatibus, qui te veniam dictas cotidieque. Ut his sale audire aperiri. Augue novum cu nec, vel id brute meliore oporteat. In tation expetendis eos.
         section
