@@ -7,7 +7,7 @@ div role="main"
       .filtered-listing-wrapper
         form.filtered-listing-select
           fieldset.left
-            strong Filter by type
+            legend Filter by type
             div.all
               input.checkbox type="checkbox" name="f[degree_type]" checked="checked" data-tag="all" id="c00"
               label for="c00"
@@ -24,10 +24,10 @@ div role="main"
               input#c3.checkbox type="checkbox" name="f[course_type]" data-tag="category-c"
               label for="c3"
                 span Mixed views
-          fieldset.right
-            strong Filter by category
+          .right
+            label for="f-select2" Filter by category
             div
-              select.clear name="f[select2]" title="Please make a selection from the 2nd dropdown"
+              select#f-select2.clear name="f[select2]" title="Please make a selection from the 2nd dropdown"
                 option value="-1" All categories
                 option value="websitesections" Website sections
                 option value="news" News

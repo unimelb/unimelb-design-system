@@ -49,13 +49,18 @@
     text-align: left;
   }
 
-  fieldset.left {
+  .left {
     @include breakpoint(tablet) {
       @include rem(line-height, 30px);
       margin: 0;
 
-      strong {
+      legend,
+      label {
+        @include rem(font-size, 15px);
         @include rem(padding-bottom, 15px);
+        color: $white;
+        display: block;
+        padding-top: 0;
       }
 
       div {
@@ -156,7 +161,7 @@
     }
   }
 
-  fieldset.right {
+  .right {
     @include rem(padding-top, 15px);
 
     div {
@@ -167,15 +172,17 @@
       }
     }
 
+    label {
+      @include rem(font-size, 15px);
+      @include rem(padding-bottom, 15px);
+      display: block;
+    }
+
     @include breakpoint(desktop) {
       float: right;
       margin: 0;
       padding-top: 0;
       width: 25%;
-
-      strong {
-        @include rem(padding-bottom, 15px);
-      }
     }
   }
 }

@@ -1,7 +1,7 @@
 .filtered-listing-wrapper
   form.filtered-listing-select
     fieldset.left
-      strong Filter by type
+      legend Filter by type
       div.all
         input.checkbox type="checkbox" name="f[degree_type]" checked="checked" data-tag="all" id="c00"
         label for="c00"
@@ -26,10 +26,10 @@
         input#c5.checkbox type="checkbox" name="f[course_type]" data-tag="category-d"
         label for="c5"
           span Audiam delectus
-    fieldset.right
-      strong Filter by section
+    .right
+      label for="f-select2" Filter by section
       div
-        select.clear name="f[select2]" title="Please make a selection from the 2nd dropdown"
+        select#f-select2.clear name="f[select2]" title="Please make a selection from the 2nd dropdown"
           option value="-1" All sections
           option value="section1" Section heading 1
           option value="section2" Different Section
