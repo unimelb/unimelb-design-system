@@ -242,3 +242,98 @@
     }
   }
 }
+
+.uomcontent [role="main"] .block-listing {
+  .crop-height {
+    img {
+      display: block;
+      height: auto;
+      -ms-interpolation-mode: bicubic;
+      width: 100%;
+    }
+
+    @include breakpoint(wide) {
+      img {
+        max-height: 100%;
+        max-width: none;
+        width: auto;
+      }
+    }
+
+    @include breakpoint(desktop) {
+      height: 180px;
+      overflow: hidden;
+
+      img {
+      }
+    }
+  }
+
+  li {
+    border-bottom: 4px solid $cta;
+  }
+
+  .event {
+    background-color: $white;
+    border-bottom: 4px solid $highlight;
+    color: $black;
+
+    .when {
+      color: $highlight;
+    }
+
+    .meta {
+      border-top: 0 none;
+      margin-top: 0;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    .event .crop-height::before {
+      @include rem(height, 50px);
+      @include rem(margin-top, -20px);
+      background: -moz-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+      background: -ms-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+      background: -webkit-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+      content: ' ';
+      display: block;
+      position: relative;
+      width: 100%;
+    }
+
+    .news .meta::before {
+      @include rem(height, 80px);
+      @include rem(margin-bottom, 9px);
+      @include rem(margin-top, -91px);
+      background: -moz-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+      background: -ms-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+      background: -webkit-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+      content: ' ';
+      display: block;
+      width: 100%;
+    }
+
+    .top-unit {
+      @include rem(max-height, 395px);
+      overflow: hidden;
+    }
+
+    .mid-unit {
+      height: 90px;
+    }
+  }
+
+  .news a:hover {
+    color: inherit;
+  }
+}
+
+.uomcontent [role="main"] .block-listing .when.range {
+  @include rem(margin-bottom, 13px);
+
+  time:first-child::after {
+    border-color: $highlight;
+  }
+}
