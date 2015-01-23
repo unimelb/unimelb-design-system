@@ -157,6 +157,22 @@
       @include rem(padding-top, 180px);
     }
   }
+
+  .contrast-helper {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 0;
+
+    header {
+      background-color: rgba($black, .5);
+    }
+  }
+}
+
+.ie .uomcontent [role="main"] .contrast-helper header {
+  background-color: transparent;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7f000000', endColorstr='#7f000000', GradientType=1); // /* IE6-9 */
 }
 
 .ie9 {
