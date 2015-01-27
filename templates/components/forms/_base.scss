@@ -313,6 +313,8 @@
       top: 0;
 
       svg {
+        @include rem(height, 45px);
+        @include rem(width, 45px);
         cursor: pointer;
         fill: currentColor;
         max-height: 100%;

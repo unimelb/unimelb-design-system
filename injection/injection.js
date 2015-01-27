@@ -3,6 +3,7 @@
 //= require ./global-nav/modal
 //= require ./global-nav/nav
 //= require ./footer/footer
+//= require ./footer/icons
 //= require ./tracking/gtm
 
 window.UOMloadInjection = function() {
@@ -10,6 +11,7 @@ window.UOMloadInjection = function() {
   window.UOMModal()
   window.UOMinjectGlobalNav();
   window.UOMinjectFooter();
+  window.UOMinjectIcons();
 };
 
 if (window.attachEvent) {
