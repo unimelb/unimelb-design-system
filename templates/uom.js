@@ -5,6 +5,7 @@
 window.UOMloadComponents = function() {
   window.UOMAccordion()
   window.UOMExtraLabel()
+  window.UOMformIcons();
   window.UOMValid()
   window.UOMListFilter()
   window.UOMGMap()
