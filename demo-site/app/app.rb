@@ -46,6 +46,9 @@ module WebTemplates
       sprockets.append_path File.join(compass_gem_root, 'stylesheets')
       sprockets.cache = Sprockets::Cache::FileStore.new(File.join(root, 'tmp'))
 
+      # sprockets.js_compressor  = :uglify
+      # sprockets.css_compressor = :scss
+
       Sprockets::Helpers.configure do |config|
         config.environment = sprockets
         config.prefix      = assets_prefix
@@ -76,6 +79,62 @@ module WebTemplates
       @layouts    = settings.layouts
       @ver        = "v0.5"
       slim :index
+    end
+
+    ### Forms standalone
+
+    get '/forms' do
+      @component = 'forms'
+
+      @documents = {}
+      raw_documents = []
+      ['md', 'html', 'slim'].each do |ext|
+        raw_documents << Dir.glob(File.join(settings.components_dir, @component, "*.#{ext}"))
+      end
+      raw_documents.flatten.sort.map do |f|
+        section = File.basename(f)[0..1]
+
+        case File.extname(f)
+        when '.md' then
+          @settings.merge! file_settings(f)
+          render_method = !!@settings['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
+          if @documents[section]
+            @documents[section] << send(render_method, file_content(f))
+          else
+            @documents[section] = [ send(render_method, file_content(f)) ]
+          end
+
+        when '.slim' then
+          if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
+            source = ''
+          else
+            source = syntax_highlight(slim file_content(f), layout: false, pretty: true)
+          end
+          output = slim file_content(f), layout: false, pretty: true
+          if @documents[section]
+            @documents[section] << [ title_from_filename(f), source, output ]
+          else
+            @documents[section] = [ [ title_from_filename(f), source, output ] ]
+          end
+
+        else
+          # Raw HTML
+          if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
+            source = ''
+          else
+            source = syntax_highlight(file_content(f))
+          end
+          output = file_content(f)
+          if @documents[section]
+            @documents[section] << [ title_from_filename(f), source, output ]
+          else
+            @documents[section] = [ [ title_from_filename(f), source, output ] ]
+          end
+        end
+
+      end
+
+      slim :forms, layout: "forms_layout".to_sym
     end
 
     ### Components

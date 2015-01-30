@@ -77,29 +77,42 @@ unless window.UOMValid
 
       # Move error message out to new node
       setupMsg: (f) ->
-        if f.parentNode.countSelector('small') == 0
+        parent = f.parentNode
+        parent = parent.parentNode if f.nodeName == 'SELECT'
+
+        if parent.countSelector('small') == 0
           error = document.createElement 'small'
           if f.hasAttribute('title')
             error.appendChild document.createTextNode f.getAttribute('title')
           else
             error.appendChild document.createTextNode 'Required'
-          f.parentNode.appendChild error
+          parent.appendChild error
 
       invalid: (f) ->
-        if f.parentNode.hasClass('invalid')
+        parent = f.parentNode
+
+        if parent.hasClass('invalid')
           window.setTimeout ->
-            f.parentNode.removeClass('invalid')
+            if f.nodeName == 'SELECT'
+              parent.parentNode.removeClass('invalid')
+            parent.removeClass('invalid')
             f.removeClass('invalid')
             window.setTimeout ->
-              f.parentNode.addClass('invalid')
+              if f.nodeName == 'SELECT'
+                parent.parentNode.addClass('invalid')
+              parent.addClass('invalid')
               f.addClass('invalid')
             , 0
           , 100
         else
-          f.parentNode.addClass('invalid')
+          if f.nodeName == 'SELECT'
+            parent.parentNode.addClass('invalid')
+          parent.addClass('invalid')
           f.addClass('invalid')
 
       valid: (f) ->
+        if f.nodeName == 'SELECT'
+          f.parentNode.parentNode.removeClass('invalid')
         f.parentNode.removeClass('invalid')
         f.removeClass('invalid')
 

@@ -1,0 +1,29 @@
+header
+  p.lead University of Melbourne design system Forms (stand-alone)
+
+hr
+
+section
+  h2 Installation
+
+  ol
+    li Download <a href="/assets/uomforms.zip">package</a>
+
+    li
+      p Include the three required dependencies in <code>head</code>
+
+      ==syntax_highlight :html
+        erb:
+          <!--[if lt IE 9]><script src="html5shiv.js"></script><![endif]-->
+          <link rel="stylesheet" href="uomforms.min.css">
+          <script src="uomforms.min.js"></script>
+
+    li Profit
+
+  p Code examples follow for each form control:
+
+- @documents.each_value do |section|
+  - section.each do |doc|
+    == doc
+  hr
+

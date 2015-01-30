@@ -153,11 +153,6 @@
     display: inline;
   }
 
-  input[type="checkbox"] + label,
-  input[type="radio"] + label {
-    display: none;
-  }
-
   @include breakpoint(0) {
     input[type="checkbox"] {
       display: none;
@@ -201,7 +196,7 @@
 
         &::before {
           background-color: $white;
-          border: 1px solid $lightergray;
+          border: 1px solid lighten($midgray, 40%);
           border-radius: 3px;
           box-sizing: border-box;
           content: '';
@@ -239,7 +234,7 @@
     input[type="radio"] + label {
       @include appearance(none);
       background-color: $white;
-      border: 1px solid $lightergray;
+      border: 1px solid lighten($midgray, 40%);
       border-radius: 50px;
       display: inline-block;
       height: 1em;
@@ -312,7 +307,13 @@
       right: 0;
       top: 0;
 
+      span {
+        display: none;
+      }
+
       svg {
+        @include rem(height, 45px);
+        @include rem(width, 45px);
         cursor: pointer;
         fill: currentColor;
         max-height: 100%;
@@ -322,84 +323,207 @@
   }
 }
 
+.uomcontent .styled-select {
+  @include rem(margin-top, 5px);
+  padding: 0;
+  position: relative;
+
+  svg.icon {
+    @include rem(height, 20px);
+    @include rem(top, 15px);
+    @include rem(width, 20px);
+    display: block;
+    fill: $white;
+    position: absolute;
+    right: 0;
+  }
+}
+
 .uomcontent select {
   @extend %control;
   @extend %controlhack;
   @include appearance(none);
   @include rem(font-size, 18px);
   background-color: $highlight;
-  background-image: url(asset_path('components/forms/n-s.png'));
-  background-position: 98% 50%;
-  background-repeat: no-repeat;
   border: 1px solid $highlight;
   color: $white;
   cursor: pointer;
   line-height: 1.55;
+  margin-top: 0;
   width: 100%;
 
   option {
-    background-color: $white;
-    color: $black;
+    background-color: transparent;
+    color: $white;
   }
 
   &::-ms-expand {
     display: none;
   }
 
-  &.invalid {
-    background-image: url(asset_path('components/forms/n-s-invalid.png'));
+  &.invalid,
+  &.invalid:hover,
+  &.alt.invalid,
+  &.alt.invalid:hover {
+    background-color: $white;
+    border-color: $cherry;
     color: $cherry;
+
+    option {
+      color: $cherry;
+    }
+  }
+
+  &.invalid + svg.icon,
+  &.alt.invalid + svg.icon {
+    fill: $cherry;
   }
 
   &:hover {
     background-color: $brand;
-    background-image: url(asset_path('components/forms/n-s.png'));
     border-color: $brand;
     color: $white;
   }
 
   &.alt {
     background-color: $white;
-    background-image: url(asset_path('components/forms/n-s-alt.png'));
     border-color: $highlight;
     color: $highlight;
+
+    option {
+      color: $highlight;
+    }
+  }
+
+  &.alt + svg.icon {
+    fill: $highlight;
   }
 
   &.alt:hover {
     background-color: $lightestblue;
-    background-image: url(asset_path('components/forms/n-s-alt.png'));
     border-color: $highlight;
     color: $highlight;
   }
 
-  &.alt.invalid {
-    background-image: url(asset_path('components/forms/n-s-invalid.png'));
-    border-color: lighten($cherry, 25%);
-    color: $cherry;
-  }
-
-  &.alt.invalid:hover {
-    background-image: url(asset_path('components/forms/n-s-alt.png'));
-    border-color: $highlight;
-    color: $highlight;
-  }
-
-  &.clear {
+  &.clear,
+  &.clear-dark {
     background-color: transparent;
     border-color: $white;
   }
 
-  &.clear:hover {
+  &.clear:hover,
+  &.clear-dark:hover {
     background-color: rgba($white, .3);
   }
 
-  &.clear.invalid:over {
-    background-image: url(asset_path('components/forms/n-s-invalid.png'));
+  &.clear-dark.invalid,
+  &.clear-dark.invalid:hover {
+    background-color: rgba($white, .3);
+    border-color: $cherry;
     color: $cherry;
+  }
+
+  &.clear.invalid,
+  &.clear.invalid:hover {
+    background-color: rgba($white, .3);
+    border-color: lighten($cherry, 25%);
+    color: lighten($cherry, 25%);
+  }
+
+  &.clear.invalid + svg.icon + small {
+    color: lighten($cherry, 25%);
+  }
+
+  &.clear.invalid + svg.icon {
+    fill: lighten($cherry, 25%);
   }
 
   @include breakpoint(desktop) {
     @include rem(width, 412px);
+  }
+}
+
+// The horror
+@-moz-document url-prefix() {
+  .uomcontent .styled-select {
+    @include rem(border-radius, 3px);
+    background-color: $highlight;
+    border: 1px solid $highlight;
+    padding: 0;
+
+    select {
+      -moz-appearance: window;
+    }
+
+    &.invalid,
+    &.invalid:hover,
+    &.alt.invalid,
+    &.alt.invalid:hover {
+      background-color: $white;
+      border-color: $cherry;
+      color: $cherry;
+    }
+
+    &.invalid + svg.icon,
+    &.alt.invalid + svg.icon {
+      fill: $cherry;
+    }
+
+    &:hover {
+      background-color: $brand;
+      border-color: $brand;
+      color: $white;
+    }
+
+    &.alt {
+      background-color: $white;
+      border-color: $highlight;
+      color: $highlight;
+    }
+
+    &.alt + svg.icon {
+      fill: $highlight;
+    }
+
+    &.alt:hover {
+      background-color: $lightestblue;
+      border-color: $highlight;
+      color: $highlight;
+    }
+
+    &.clear,
+    &.clear-dark {
+      background-color: transparent;
+      border-color: $white;
+    }
+
+    &.clear:hover,
+    &.clear-dark:hover {
+      background-color: rgba($white, .3);
+    }
+
+    &.clear-dark.invalid,
+    &.clear-dark.invalid:hover {
+      background-color: rgba($white, .3);
+      border-color: $cherry;
+      color: $cherry;
+    }
+
+    &.clear.invalid,
+    &.clear.invalid:hover {
+      background-color: rgba($white, .3);
+      border-color: lighten($cherry, 25%);
+      color: lighten($cherry, 25%);
+    }
+
+    &.clear.invalid + svg.icon + small {
+      color: lighten($cherry, 25%);
+    }
+
+    &.clear.invalid + svg.icon {
+      fill: lighten($cherry, 25%);
+    }
+
   }
 }
 
@@ -455,5 +579,12 @@
 
   @include breakpoint(desktop) {
     @include padding-leader(0);
+  }
+}
+
+.ie .uomcontent fieldset {
+  .search-button span,
+  label {
+    display: inline;
   }
 }
