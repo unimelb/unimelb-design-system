@@ -114,12 +114,6 @@
     }
   }
 
-  legend {
-    @include rem(font-size, 24px);
-    @include rem(padding, 30px 0);
-    color: $midgray;
-  }
-
   .invalid small {
     @include rem(font-size, 14px);
     @include rem(padding, 5px 0);
@@ -155,7 +149,9 @@
 
   @include breakpoint(0) {
     input[type="checkbox"] {
-      display: none;
+      position: absolute !important;
+      clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+      clip: rect(1px, 1px, 1px, 1px);
 
       &:checked + label:active,
       &:checked + label::after {
@@ -212,13 +208,23 @@
         }
       }
     }
+    
+    input[type="checkbox"]:focus + label {
+      span {
+        &::before {
+          border-color: $highlight;
+        }
+      }
+    }
 
     .invalid input[type="checkbox"] + label {
       border-color: lighten($cherry, 25%);
     }
 
     input[type="radio"] {
-      display: none;
+      position: absolute !important;
+      clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+      clip: rect(1px, 1px, 1px, 1px);
 
       &:checked + label {
         border-color: $highlight;
