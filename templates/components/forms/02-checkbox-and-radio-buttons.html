@@ -1,30 +1,41 @@
 <form method="post" action="" data-validate>
+
   <fieldset>
-
     <div>
-      <input type="checkbox" id="c1" class="checkbox" data-required name="f[approve]" title="Please tick the box" />
-      <label for="c1" tabindex="0">
-        <span>Tick the box (required)</span>
-      </label>
+      <legend>Select preferred option (required):</legend>
+      <div class="inline">
+        <input type="checkbox" id="c1" class="checkbox" data-required name="f[approve]" title="Please select an option" />
+        <label for="c1">
+          <span>Option 1</span>
+        </label>
+      </div>
+      <div class="inline">
+        <input type="checkbox" id="c2" class="checkbox" data-required name="f[approve]" title="Please select an option" />
+        <label for="c2">
+          <span>Option 2</span>
+        </label>
+      </div>
     </div>
+  </fieldset>
 
+  <fieldset>
     <div>
-      Make a selection (implicitly required):
+      <legend>Make a selection (implicitly required):</legend>
       <div class="inline">
         <input checked name="f[radio]" type="radio" id="radio-1-1" value="yes" title="Please make a selection" />
-        <label for="radio-1-1" tabindex="0">
+        <label for="radio-1-1">
           <span>Yes</span>
         </label>
       </div>
       <div class="inline">
         <input name="f[radio]" type="radio" id="radio-1-2" value="no" title="Please make a selection" />
-        <label for="radio-1-2" tabindex="0">
+        <label for="radio-1-2">
           <span>No</span>
         </label>
       </div>
     </div>
-
   </fieldset>
+  
   <footer>
     <input type="submit">
   </footer>
