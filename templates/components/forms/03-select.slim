@@ -2,7 +2,7 @@ form method="post" action="" data-validate=""
   fieldset
     div
       label
-        select data-required="" name="f[select]"
+        select aria-required="true" name="f[select]"
           option value="-1" Please select
           optgroup
             option Hi
@@ -13,7 +13,7 @@ form method="post" action="" data-validate=""
     div
       label
         ' Alternate style dropdown
-        select class="alt" data-required="" name="f[select2]" title="Please make a selection from the 2nd dropdown, this help error message is particularly long to test out just how long an error message can be"
+        select class="alt" aria-required="true" name="f[select2]" title="Please make a selection from the 2nd dropdown, this help error message is particularly long to test out just how long an error message can be"
           option value="-1" Please select
           optgroup
             option Hi
@@ -29,7 +29,7 @@ form method="post" action="" data-validate="" style="background-image:url(data:i
     div
       label style="color:#fff"
         ' Clear style dropdown
-        select class="clear" data-required="" name="f[select3]"
+        select class="clear" aria-required="true" name="f[select3]"
           option value="-1" Please select
           optgroup
             option Hi
@@ -45,7 +45,7 @@ form method="post" action="" data-validate="" style="background-image:url(data:i
     div
       label
         ' Clear style on lighter background
-        select class="clear-dark" data-required="" name="f[select3]"
+        select class="clear-dark" aria-required="true" name="f[select3]"
           option value="-1" Please select
           optgroup
             option Hi
