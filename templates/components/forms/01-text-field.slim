@@ -1,24 +1,24 @@
 form method="post" action="" data-validate=""
   fieldset
     div
-      label
+      label for="f[name]"
         ' Name (required):
-        input data-required="" name="f[name]" type="text" title="Please enter your name."
+      input aria-required="true" id="f[name]" name="f[name]" type="text" title="Please enter your name."
 
     div
-      label
+      label for="f[email]"
         ' Email (pattern matching):
-        input data-pattern="email" name="f[email]" type="email" title="Please enter a valid email."
+      input data-pattern="email" id="f[email]" name="f[email]" type="email" title="Please enter a valid email."
 
     div
-      label
+      label for="f[p_id]"
         ' Product Code (regex pattern matching):
-        input data-pattern="[0-9][A-Z]{3}" maxlength="4" name="f[p_id]" type="text" title="Single digit followed by three uppercase letters."
+      input data-pattern="[0-9][A-Z]{3}" maxlength="4" id="f[p_id]" name="f[p_id]" type="text" title="Single digit followed by three uppercase letters."
 
     div
-      label
+      label for="f[message]"
         ' Message:
-        textarea data-required="" name="f[message]" title="Please enter a message."
+      textarea aria-required="true" id="f[message]" name="f[message]" title="Please enter a message."
 
   footer
     input type="submit"
