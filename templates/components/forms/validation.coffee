@@ -81,8 +81,8 @@ unless window.UOMValid
 
         if parent.countSelector('small') == 0
           error = document.createElement 'small'
-          if f.hasAttribute('title')
-            error.appendChild document.createTextNode f.getAttribute('title')
+          if f.hasAttribute('data-error')
+            error.appendChild document.createTextNode f.getAttribute('data-error')
           else
             error.appendChild document.createTextNode 'Required'
           parent.appendChild error
