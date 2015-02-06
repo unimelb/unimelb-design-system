@@ -74,7 +74,8 @@
   }
   
   [data-required=true]:after {
-    content: url('images/required.png');
+    content: '*';
+    color: $cherry;
   }
 }
 
