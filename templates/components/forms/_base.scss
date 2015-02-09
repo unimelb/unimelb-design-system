@@ -95,13 +95,13 @@
 
   div {
     padding: 10px 0;
-
-    small {
+  }
+  
+  small {
       @include rem(font-size, 18px);
       display: none;
       margin: 0;
       text-transform: none;
-    }
   }
 
   .cursor {
