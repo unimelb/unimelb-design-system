@@ -56,7 +56,7 @@ unless window.UOMInpageScrolling
         duration = 600
         start = element.scrollTop
         change = @to - start
-        if document.countSelector('.page-header.fixed') == 1
+        if document.countSelector('.page-header.fixed') == 1 and document.countSelector('.floating') == 0
           change = change - 40
         curr = 0
         increment = 10
