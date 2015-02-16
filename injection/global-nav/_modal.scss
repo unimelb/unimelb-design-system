@@ -47,9 +47,10 @@
   .modal__close {
     color: #aaa;
     cursor: pointer;
-    float: right;
     font-size: 11px;
     font-weight: 400;
+    position: absolute;
+    right: 20px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
