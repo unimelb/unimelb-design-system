@@ -3,10 +3,10 @@ form method="post" action="#" data-validate=""
     p We didn't recognise the username or password you entered.
   fieldset
     div
-      label
+      label for="f-username"
         ' Username:
-        input data-required="" name="f[username]" type="text" title="Please enter your username."
+      input aria-required="true" id="f-username" name="f[username]" type="text" data-error="Please enter your username."
     div
-      label
+      label for="f-password"
         ' Password:
-        input data-required="" name="f[password]" type="password" title="Please enter your password."
+      input aria-required="true" id="f-password" name="f[password]" type="password" data-error="Please enter your password."

@@ -72,6 +72,11 @@
   footer {
     padding: 0;
   }
+  
+  [data-required=true]:after {
+    content: '*';
+    color: $cherry;
+  }
 }
 
 .uomcontent .form-error {
@@ -90,13 +95,13 @@
 
   div {
     padding: 10px 0;
-
-    small {
+  }
+  
+  small {
       @include rem(font-size, 18px);
       display: none;
       margin: 0;
       text-transform: none;
-    }
   }
 
   .cursor {
