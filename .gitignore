@@ -5,3 +5,4 @@ tmp/*
 build/
 .env
 .ruby-version
+.idea
