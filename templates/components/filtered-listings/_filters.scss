@@ -93,12 +93,14 @@
     .category-a {
       color: lighten($green, 30%);
 
-      input[type="checkbox"] + label span::before {
-        background-color: lighten($green, 30%);
-        border-color: darken($green, 10%);
+      input[type="checkbox"] + label {
+        span::before {
+          background-color: desaturate(lighten($green, 60%), 40%);
+          border-color: darken($green, 5%);
+        }
 
         &::after {
-          border-color: darken($green, 20%);
+          border-color: $green;
         }
       }
     }
@@ -108,9 +110,11 @@
     .category-b {
       color: $bronze;
 
-      input[type="checkbox"] + label span::before {
-        background-color: $bronze;
-        border-color: darken($bronze, 20%);
+      input[type="checkbox"] + label {
+        span::before {
+          background-color: $bronze;
+          border-color: darken($bronze, 20%);
+        }
 
         &::after {
           border-color: darken($bronze, 40%);
@@ -122,12 +126,14 @@
     .category-c {
       color: $lightestblue;
 
-      input[type="checkbox"] + label span::before {
-        background-color: lighten($lightestblue, 10%);
-        border-color: darken($lightestblue, 20%);
+      input[type="checkbox"] + label {
+        span::before {
+          background-color: darken($lightestblue, 5%);
+          border-color: darken($lightestblue, 10%);
+        }
 
         &::after {
-          border-color: darken($lightestblue, 30%);
+          border-color: darken($lightestblue, 40%);
         }
       }
     }
@@ -136,9 +142,11 @@
     .category-d {
       color: lighten($lightblue, 10%);
 
-      input[type="checkbox"] + label span::before {
-        background-color: lighten($lightblue, 10%);
-        border-color: darken($lightblue, 10%);
+      input[type="checkbox"] + label {
+        span::before {
+          background-color: lighten($lightblue, 10%);
+          border-color: darken($lightblue, 10%);
+        }
 
         &::after {
           border-color: darken($lightblue, 20%);
@@ -150,9 +158,11 @@
     .category-e {
       color: $paleyellow;
 
-      input[type="checkbox"] + label span::before {
-        background-color: lighten($paleyellow, 10%);
-        border-color: darken($paleyellow, 20%);
+      input[type="checkbox"] + label {
+        span::before {
+          background-color: lighten($paleyellow, 10%);
+          border-color: darken($paleyellow, 20%);
+        }
 
         &::after {
           border-color: darken($paleyellow, 30%);
