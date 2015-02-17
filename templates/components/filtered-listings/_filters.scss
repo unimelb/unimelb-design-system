@@ -81,6 +81,7 @@
     }
 
     input[type="checkbox"] + label::after {
+      left: 3px;
       top: 9px;
     }
 
@@ -89,11 +90,26 @@
       top: 5px;
     }
 
+    input[type="checkbox"] + label {
+      @include rem(padding-left, 5px);
+      @include rem(padding-top, 5px);
+
+      @include breakpoint(tablet) {
+        padding: 0;
+      }
+    }
+
+    input[type="checkbox"] + label span {
+      @include rem(padding-left, 25px);
+    }
+
     .undergraduate,
     .category-a {
-      color: lighten($green, 30%);
-
       input[type="checkbox"] + label {
+        span {
+          color: desaturate(lighten($green, 60%), 40%);
+        }
+
         span::before {
           background-color: desaturate(lighten($green, 60%), 40%);
           border-color: darken($green, 5%);
@@ -108,9 +124,11 @@
     .certificates_diplomas,
     .n_award,
     .category-b {
-      color: $bronze;
-
       input[type="checkbox"] + label {
+        span {
+          color: $bronze;
+        }
+
         span::before {
           background-color: $bronze;
           border-color: darken($bronze, 20%);
@@ -124,9 +142,11 @@
 
     .coursework,
     .category-c {
-      color: $lightestblue;
-
       input[type="checkbox"] + label {
+        span {
+          color: $lightestblue;
+        }
+
         span::before {
           background-color: darken($lightestblue, 5%);
           border-color: darken($lightestblue, 10%);
@@ -140,9 +160,11 @@
 
     .phd,
     .category-d {
-      color: lighten($lightblue, 10%);
-
       input[type="checkbox"] + label {
+        span {
+          color: lighten($lightblue, 10%);
+        }
+
         span::before {
           background-color: lighten($lightblue, 10%);
           border-color: darken($lightblue, 10%);
@@ -156,16 +178,18 @@
 
     .research,
     .category-e {
-      color: $paleyellow;
-
       input[type="checkbox"] + label {
+        span {
+          color: $paleyellow;
+        }
+
         span::before {
-          background-color: lighten($paleyellow, 10%);
-          border-color: darken($paleyellow, 20%);
+          background-color: $paleyellow;
+          border-color: darken($paleyellow, 10%);
         }
 
         &::after {
-          border-color: darken($paleyellow, 30%);
+          border-color: darken($paleyellow, 60%);
         }
       }
     }

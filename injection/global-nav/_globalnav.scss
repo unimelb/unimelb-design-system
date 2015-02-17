@@ -42,7 +42,7 @@
     display: block;
     font-weight: $light;
     padding-bottom: 0;
-    padding-left: 3%;
+    padding-left: 0;
     padding-right: 3%;
     text-decoration: none;
 
@@ -253,6 +253,10 @@
       @include animation(chevronback 1s infinite ease-in-out);
       color: $white;
     }
+  }
+
+  .col-3 {
+    padding-left: 3%;
   }
 
   @include breakpoint(desktop) {

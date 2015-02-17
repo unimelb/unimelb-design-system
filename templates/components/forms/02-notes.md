@@ -1,1 +1,0 @@
-Notes about this component
