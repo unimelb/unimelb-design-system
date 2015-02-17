@@ -35,10 +35,3 @@ unless window.UOMModal
         for modal in document.querySelectorAll('.modal__dialog')
           modal.removeClass 'on'
         blanket.removeClass 'on'
-
-  if window.attachEvent
-    window.attachEvent 'onload', ->
-      UOMModal()
-  else
-    document.addEventListener 'DOMContentLoaded', ->
-      UOMModal()

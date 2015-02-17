@@ -48,10 +48,3 @@ unless window.UOMGMap
 
     window.maps_loaded = ->
       new Gmap(m) for m in document.querySelectorAll '[data-latlng]'
-
-  if window.attachEvent
-    window.attachEvent 'onload', ->
-      UOMGMap()
-  else
-    document.addEventListener 'DOMContentLoaded', ->
-      UOMGMap()

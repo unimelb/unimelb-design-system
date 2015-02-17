@@ -20,7 +20,7 @@ unless window.UOMYtEmbed
             events:
               'onReady': t.onPlayerReady
           )
-          
+
 
         @el.appendChild @trigger
 
@@ -37,10 +37,3 @@ unless window.UOMYtEmbed
 
         document.body.appendChild script
         new YtEmbed(el) for el in document.querySelectorAll '[data-ytid]'
-
-  if window.attachEvent
-    window.attachEvent 'onload', ->
-      UOMYtEmbed()
-  else
-    document.addEventListener 'DOMContentLoaded', ->
-      UOMYtEmbed()

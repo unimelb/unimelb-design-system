@@ -12,7 +12,7 @@ unless window.UOMInpageScrolling
       constructor: (@el) ->
         t = this
 
-        unless @el.hasAttribute('data-no-scroll')
+        unless @el.hasAttribute('data-no-scroll') or @el.hasAttribute('data-modal-target')
           @el.addEventListener 'click', (e) ->
 
             tel = e.srcElement
@@ -70,10 +70,3 @@ unless window.UOMInpageScrolling
 
     if supportedmodernbrowser
       new InPage(el) for el in document.querySelectorAll('a[href^="#"]')
-
-  if window.attachEvent
-    window.attachEvent 'onload', ->
-      UOMInpageScrolling()
-  else
-    document.addEventListener 'DOMContentLoaded', ->
-      UOMInpageScrolling()

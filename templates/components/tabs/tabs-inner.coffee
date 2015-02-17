@@ -42,10 +42,3 @@ unless window.UOMInnerNavTab
     if (supportedmodernbrowser)
       for el in document.querySelectorAll('.inner-nav-tab')
         new InnerNavTab(el)
-
-  if window.attachEvent
-    window.attachEvent 'onload', ->
-      UOMInnerNavTab()
-  else
-    document.addEventListener 'DOMContentLoaded', ->
-      UOMInnerNavTab()

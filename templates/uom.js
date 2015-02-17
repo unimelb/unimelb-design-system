@@ -4,17 +4,22 @@
 
 window.UOMloadComponents = function() {
   window.UOMAccordion();
+  window.UOMModal();
+  window.UOMTabs();
+  window.UOMInnerNavTab();
+  window.UOMSidebarTabs(); // duplicate?
+  window.UOMInpageScrolling();
+
+  window.UOMListFilter();
+  window.UOMStickyNav();
+
   window.UOMExtraLabel();
   window.UOMFancySelect();
   window.UOMValid();
-  window.UOMListFilter();
+  window.UOMUnlockChecklist(); // possibly unused
+  window.UOMTableLabels();
   window.UOMGMap();
-  window.UOMModal();
-  window.UOMTabs();
-  window.UOMInpageScrolling();
-  window.UOMStickyNav();
-  window.UOMUnlockChecklist();
-  window.UOMInnerNavTab();
+//  window.UOMYtEmbed(); // unused
 };
 
 if (window.attachEvent) {

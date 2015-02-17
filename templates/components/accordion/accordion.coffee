@@ -6,17 +6,19 @@ unless window.UOMAccordion
         @hidden = @container.querySelector('.accordion__hidden')
         t = this
 
-        close = document.createElement 'a'
-        close.addClass 'accordion__close'
+        close = @container.querySelector('.accordion__close')
+        unless close
+          close = document.createElement 'a'
+          close.addClass 'accordion__close'
+          if @hidden.countSelector('.accordion__close') == 0
+            if @hidden.nodeName == 'TR'
+              @hidden.firstChild.appendChild(close)
+            else
+              @hidden.appendChild(close)
+
         close.addEventListener 'click', (e) ->
           e.preventDefault()
           t.container.toggleClass('accordion__visible')
-
-        if @hidden.countSelector('.accordion__close') == 0
-          if @hidden.nodeName == 'TR'
-            @hidden.firstChild.appendChild(close)
-          else
-            @hidden.appendChild(close)
 
         @el.setAttribute('tabindex', '0')
 
@@ -37,29 +39,23 @@ unless window.UOMAccordion
             for s in container.querySelectorAll('.accordion__visible')
               s.removeClass('accordion__visible')
 
+          # unless (target.nodeName=='INPUT' or target.nodeName=='LABEL')
           t.container.toggleClass('accordion__visible')
 
     if (supportedmodernbrowser)
       for el in document.querySelectorAll('.accordion__title')
         new UOMAccordionComponent(el)
 
-  if window.attachEvent
-    window.attachEvent 'onload', ->
-      UOMAccordion()
-  else
-    document.addEventListener 'DOMContentLoaded', ->
-      UOMAccordion()
+    clickWithEnter = (e) ->
+      elem = document.activeElement
+      if elem != document.body && elem.getAttribute('tabindex') != null
+        # look for window.event in case event isn't passed in
+        e = window.event if (typeof e == 'undefined' && window.event)
+        # trigger click if ENTER is clicked
+        elem.click() if (e.keyCode == 13)
 
-  clickWithEnter = (e) ->
-    elem = document.activeElement
-    if elem != document.body && elem.getAttribute('tabindex') != null
-      # look for window.event in case event isn't passed in
-      e = window.event if (typeof e == 'undefined' && window.event)
-      # trigger click if ENTER is clicked
-      elem.click() if (e.keyCode == 13)
-
-  if window.addEventListener
-    window.addEventListener('keydown', clickWithEnter)
-  else if window.attachEvent
-    # IE 10 down
-    window.attachEvent('KeyboardEvent', clickWithEnter)
+    if window.addEventListener
+      window.addEventListener('keydown', clickWithEnter)
+    else if window.attachEvent
+      # IE 10 down
+      window.attachEvent('KeyboardEvent', clickWithEnter)

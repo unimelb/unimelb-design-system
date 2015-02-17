@@ -10,7 +10,6 @@ unless window.UOMUnlockChecklist
         @items = @el.querySelectorAll('li')
         @active = @el.countSelector('.on')
         @toggleDisable()
-        console.log t.active
 
         for item in @items
           item.addEventListener 'click', (e) ->
@@ -33,10 +32,3 @@ unless window.UOMUnlockChecklist
 
     for list in document.querySelectorAll('ul.checklist[data-unlock-target]')
       new UnlockChecklist(list)
-
-  if window.attachEvent
-    window.attachEvent 'onload', ->
-      UOMUnlockChecklist()
-  else
-    document.addEventListener 'DOMContentLoaded', ->
-      UOMUnlockChecklist()
