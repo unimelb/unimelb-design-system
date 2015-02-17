@@ -93,10 +93,3 @@ unless window.UOMStickyNav
       else
         if document.countSelector('h2[id]') > 0 and document.countSelector('.jumpnav, .indexnav')==1
           new StickyNav(document.querySelector('div[role="main"]'))
-
-if window.attachEvent
-  window.attachEvent 'onload', ->
-    UOMStickyNav()
-else
-  document.addEventListener 'DOMContentLoaded', ->
-    UOMStickyNav()

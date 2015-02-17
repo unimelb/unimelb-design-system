@@ -117,11 +117,3 @@ unless window.UOMValid
 
     if (supportedmodernbrowser)
       new Valid(f) for f in document.querySelectorAll("[data-validate]")
-
-  if window.attachEvent
-    window.attachEvent 'onload', ->
-      UOMValid()
-  else
-    document.addEventListener 'DOMContentLoaded', ->
-      UOMValid()
-

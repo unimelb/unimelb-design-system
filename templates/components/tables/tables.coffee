@@ -12,10 +12,3 @@ unless window.UOMTableLabels
 
     for table in document.querySelectorAll('table')
       new TableLabels(table)
-
-  if window.attachEvent
-    window.attachEvent 'onload', ->
-      UOMTableLabels()
-  else
-    document.addEventListener 'DOMContentLoaded', ->
-      UOMTableLabels()

@@ -9,21 +9,22 @@ div role="main"
           br
           |Only at Melbourne
         a.button-hero-inverse href="" Graduate Study at Melbourne
-  #nav.tabbed-nav data-tabbed="" role="tabs"
+
+  #nav.tabbed-nav data-tabbed=""
     .full-width
       div.mobile-nav
-        select
-          option value="#study" Study
-          option value="#today" Today
-          option value="#research" Research
-          option value="#about" About
-      nav.desktop-nav
-        a href="#study" Study
-        a href="#today" Today
-        a href="#research" Research
-        a href="#about" About
+        select role="tablist"
+          option role="tab" value="#study" Study
+          option role="tab" value="#today" Today
+          option role="tab" value="#research" Research
+          option role="tab" value="#about" About
+      nav.desktop-nav role="tablist"
+        a role="tab" href="#study" Study
+        a role="tab" href="#today" Today
+        a role="tab" href="#research" Research
+        a role="tab" href="#about" About
 
-    #study.tab
+    #study.tab role="tabpanel"
       section.lead
         p To compete on the world stage, you need a world-standard education. At the University of Melbourne, you’ll gain an internationally recognised degree that will open doors to an outstanding future.
       ul.pathfinder-3
@@ -53,7 +54,8 @@ div role="main"
           section
             h1 Create your own Melbourne
             p The Melbourne experience is more than just lectures and study sessions. As a University of Melbourne student, you can get involved in the many campus activities on offer, enjoy amazing new experiences and make lifelong friends along the way.
-    #today.tab
+
+    #today.tab role="tabpanel"
       ul.block-listing
         li.news
           .block-container
@@ -103,7 +105,8 @@ div role="main"
             .meta
               span.meta-left Location
               em.meta-right Event
-    #research.tab
+
+    #research.tab role="tabpanel"
       section.lead
         p The University of Melbourne is a globally engaged, comprehensive, research-intensive university uniquely positioned to respond to the major social, economic and environmental challenges of our time.
       ul.pathfinder-3
@@ -138,6 +141,7 @@ div role="main"
                 a href="" Learn more about Research at Melbourne
               li
                 a href="" Meet our Graduate Researchers
-    #about.tab
+
+    #about.tab role="tabpanel"
       section.lead
         p Established in 1853, the University of Melbourne makes distinctive contributions to society in research, learning and teaching and engagement.

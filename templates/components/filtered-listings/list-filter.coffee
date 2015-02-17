@@ -111,10 +111,3 @@ unless window.UOMListFilter
             el.addClass('item')
 
     new ListFilter(el) for el in document.querySelectorAll('form.filtered-listing-select')
-
-  if window.attachEvent
-    window.attachEvent 'onload', ->
-      UOMListFilter()
-  else
-    document.addEventListener 'DOMContentLoaded', ->
-      UOMListFilter()

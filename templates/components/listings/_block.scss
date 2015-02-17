@@ -320,10 +320,14 @@
       overflow: hidden;
     }
 
+    .double .top-unit {
+      @include rem(max-height, 430px);
+    }
+
     .mid-unit {
       height: 90px;
     }
-  }
+ }
 
   .news a:hover {
     color: inherit;

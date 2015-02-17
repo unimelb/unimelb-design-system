@@ -11,10 +11,3 @@ unless window.UOMExtraLabel
 
     for control in document.querySelectorAll('input[type="radio"],input[type="checkbox"]')
       new ExtraLabel(control)
-
-  if window.attachEvent
-    window.attachEvent 'onload', ->
-      UOMExtraLabel()
-  else
-    document.addEventListener 'DOMContentLoaded', ->
-      UOMExtraLabel()

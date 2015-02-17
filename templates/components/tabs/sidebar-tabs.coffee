@@ -47,10 +47,3 @@ unless window.UOMSidebarTabs
     if (supportedmodernbrowser)
       for el in document.querySelectorAll('.sidebar-tab-nav')
         new UOMSidebarTabsComponent(el)
-
-  if window.attachEvent
-    window.attachEvent 'onload', ->
-      UOMSidebarTabs()
-  else
-    document.addEventListener 'DOMContentLoaded', ->
-      UOMSidebarTabs()
