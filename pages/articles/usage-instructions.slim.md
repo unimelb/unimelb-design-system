@@ -25,8 +25,8 @@ section
 ==syntax_highlight :html
   erb:
     <!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/v0.5/uom.css">
-    <script src="//uom-design-system.s3.amazonaws.com/v0.5/uom.js"></script>
+    <link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/v0.6/uom.css">
+    <script src="//uom-design-system.s3.amazonaws.com/v0.6/uom.js"></script>
 
 section
   p The first provides a universal <abbr title="Reproduce modern functionality in older browser">polyfill</abbr> for styling on HTML5 semantic elements such as <code>header</code>, <code>nav</code> and <code>section</code> We use these elements as selectors in the design system stylesheet.
@@ -44,8 +44,8 @@ section
       <title> (any page title) </title>
 
       <!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
-      <link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/v0.5/uom.css">
-      <script src="//uom-design-system.s3.amazonaws.com/v0.5/uom.js"></script>
+      <link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/v0.6/uom.css">
+      <script src="//uom-design-system.s3.amazonaws.com/v0.6/uom.js"></script>
     </head>
 
     <body>
@@ -62,7 +62,7 @@ section
     </html>
 
 section
-  p: em Please note that in the example above, <b class="red">v0.5</b> refers to a specific version of the design system and may not be the current version! Please refer to the homepage.
+  p: em Please note that in the example above, <b class="red">v0.6</b> refers to a specific version of the design system and may not be the current version! Please refer to the homepage.
 
 hr
 
