@@ -14,22 +14,23 @@ div role="main"
               option value="domestic" a domestic student
               option selected="selected" value="international" an international student
 
-  #nav.tabbed-course data-tabbed="" role="tabs"
+  #nav.tabbed-course data-tabbed=""
     .full-width
       div.mobile-nav
-        select
-          option value="#overview" Overview
-          option value="#course-structure" Course Structure
-          option value="#requirements" Entry Requirements
-          option value="#fees" Fees &amp; Scholarships
-          option value="#apply" Apply now
-      nav.desktop-nav
-        a href="#overview" Overview
-        a href="#course-structure" Course Structure
-        a href="#requirements" Entry Requirements
-        a href="#fees" Fees &amp; Scholarships
-        a href="#apply" Apply now
-    #overview.tab
+        select role="tablist"
+          option role="tab" value="#overview" Overview
+          option role="tab" value="#course-structure" Course Structure
+          option role="tab" value="#requirements" Entry Requirements
+          option role="tab" value="#fees" Fees &amp; Scholarships
+          option role="tab" value="#apply" Apply now
+      nav.desktop-nav role="tablist"
+        a role="tab" href="#overview" Overview
+        a role="tab" href="#course-structure" Course Structure
+        a role="tab" href="#requirements" Entry Requirements
+        a role="tab" href="#fees" Fees &amp; Scholarships
+        a role="tab" href="#apply" Apply now
+
+    #overview.tab role="tabpanel"
       .alt
         div.half
           section
@@ -61,7 +62,8 @@ div role="main"
           li Personal and professional development
         p.center
           a.button-hero href="#degree" data-tab="2" Next : See what subjects you’ll be studying
-    #course-structure.tab
+
+    #course-structure.tab role="tabpanel"
       .with-aside.left
         div
           aside
@@ -524,7 +526,8 @@ div role="main"
             section
               p.center
                 a.button-hero href="#requirements" data-tab="3"  Next : Entry requirements
-    #requirements.tab
+
+    #requirements.tab role="tabpanel"
       .with-aside.left
         div
           aside
@@ -595,7 +598,7 @@ div role="main"
               p.center
                 a.button-hero href="#fees" data-tab="4"  Next : Fees &amp; scholarships
 
-    #fees.tab
+    #fees.tab role="tabpanel"
       .with-aside
         div
           .bside
@@ -696,7 +699,8 @@ div role="main"
             p The fees displayed are for international students. If you are a domestic student, please select this option at the top right of this page.
             p Typical course fee for 2015: $58,016 AUD / year
             p Duration indicated is maximum course duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
-    #apply.tab
+
+    #apply.tab role="tabpanel"
       section.alt
         h2.title International applicant for graduate entry in 2015 (February intake)
         p

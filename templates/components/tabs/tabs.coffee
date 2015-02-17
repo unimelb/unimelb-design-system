@@ -8,16 +8,17 @@ unless window.UOMTabs
         if @el.countSelector('.mobile-nav') > 0
           @el.querySelector('.mobile-nav').addClass('active')
 
-        if @el.hasAttribute('role') and @el.getAttribute('role') == 'tabs'
+        if @el.hasAttribute('data-tabbed')
           t = this
           tabs = []
 
-          for tab in @el.querySelectorAll('.tab')
+          for tab in @el.querySelectorAll('[role="tabpanel"]')
             tab.style.display = 'none'
             tabs.push tab.id || ''
 
           for item in @el.querySelectorAll('nav a')
             item.addEventListener 'click', (e) ->
+
               target = e.target || e.srcElement
               if target.hasAttribute('href')
                 # go to href
@@ -25,13 +26,9 @@ unless window.UOMTabs
                 if target.getAttribute('href').substr(0, 1) == '#'
                   # nav tab
                   t.move(target)
-                  setTimeout(->
-                  if target.getAttribute('href')
-                    window.location.hash = target.getAttribute('href').substr(1)
-                  , 600)
 
               else
-                # lightweight tabs
+                # nav tab
                 t.move(target)
 
           if @el.countSelector('select') > 0
@@ -84,7 +81,7 @@ unless window.UOMTabs
           else
             opt.removeAttribute('selected')
 
-        for tab, i in @el.querySelectorAll('.tab')
+        for tab, i in @el.querySelectorAll('[role="tabpanel"]')
           if i == index-1
             tab.setAttribute('data-current', '')
             tab.style.display = 'block'
@@ -107,7 +104,7 @@ unless window.UOMTabs
           else
             opt.removeAttribute('selected')
 
-        for tab, i in @el.querySelectorAll('.tab')
+        for tab, i in @el.querySelectorAll('[role="tabpanel"]')
           if i == curr
             tab.setAttribute('data-current', '')
             tab.style.display = 'block'

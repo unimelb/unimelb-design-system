@@ -4,18 +4,18 @@ div role="main"
   header.image style="background-image:url(/assets/images/bg-banner-small.jpg);"
     .mid-align
       h1 About us
-  #nav.tabbed-nav data-tabbed="" role="tabs"
+  #nav.tabbed-nav data-tabbed=""
     .full-width
       div.mobile-nav
-        select
-          option value="#welcome" Welcome
-          option value="#staff" Our staff
-          option value="#contact" Contact
-      nav.desktop-nav
-        a href="#welcome" Welcome
-        a href="#staff" Our Staff
-        a href="#contact" Contact
-    #welcome.tab
+        select role="tablist"
+          option value="#welcome" role="tab" Welcome
+          option value="#staff" role="tab" Our staff
+          option value="#contact" role="tab" Contact
+      nav.desktop-nav role="tablist"
+        a href="#welcome" role="tab" Welcome
+        a href="#staff" role="tab" Our Staff
+        a href="#contact" role="tab" Contact
+    #welcome.tab role="tabpanel"
       section.with-figure
         h2.title Welcome from the Dean
         p We’re excited to announce that the University of Melbourne is strengthening its cross-disciplinary teaching and research capabilities by aligning agriculture and food systems with veterinary sciences within a new combined Faculty.
@@ -32,7 +32,7 @@ div role="main"
       hr.spacer
       p.center
         a.button-hero href="" Our Staff
-    #staff.tab
+    #staff.tab role="tabpanel"
       section
         ul.staff-listing-detailed
           li
@@ -74,7 +74,7 @@ div role="main"
           li
             .profile
               .frame
-                
+
             .details
               a href="#" Anne Shea
               |,
@@ -89,7 +89,7 @@ div role="main"
               |,
               '
               em Crepe Expert
-    #contact.tab
+    #contact.tab role="tabpanel"
       section
         .contact-box
           h1 Parkville Campus

@@ -33,7 +33,7 @@ unless window.UOMInpageScrolling
 
                 # Tabs scroll to nav
                 up = (el) ->
-                  if el.getAttribute('data-tabbed') == '' and el.getAttribute('role') == 'tabs'
+                  if el.hasAttribute('data-tabbed')
                     return el
                   else
                     if el.parentNode and el.parentNode!=document
@@ -46,8 +46,9 @@ unless window.UOMInpageScrolling
                   target = tabbed
 
                 if target
-                  t.to = if document.querySelectorAll('.page-header.floating').length then target.offsetTop else target.offsetTop - 40;
                   t.element = outer
+                  t.to = target.offsetTop
+
                   t.scrollTo()
 
       scrollTo: ->
@@ -55,6 +56,8 @@ unless window.UOMInpageScrolling
         duration = 600
         start = element.scrollTop
         change = @to - start
+        if document.countSelector('.floating') == 0
+          change = change - 40
         curr = 0
         increment = 10
 

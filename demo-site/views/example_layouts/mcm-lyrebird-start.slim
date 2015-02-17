@@ -7,19 +7,19 @@ div role="main"
       p
         a.button-hero-inverse href="#currentvideo" Watch video
 
-  #nav.tabbed-nav data-tabbed="" role="tabs"
+  #nav.tabbed-nav data-tabbed=""
     .full-width
       div.mobile-nav
-        select
-          option value="#performance" Current Performance
-          option value="#artists" Artists
-          option value="#about" About
-      nav.desktop-nav
-        a href="#performance" Current Performance
-        a href="#artists" Artists
-        a href="#about" About
+        select role="tablist"
+          option role="tab" value="#performance" Current Performance
+          option role="tab" value="#artists" Artists
+          option role="tab" value="#about" About
+      nav.desktop-nav role="tablist"
+        a role="tab" href="#performance" Current Performance
+        a role="tab" href="#artists" Artists
+        a role="tab" href="#about" About
 
-    #performance.tab
+    #performance.tab role="tabpanel"
       section#currentvideo
         h2.title Current performance
         .video
@@ -28,7 +28,7 @@ div role="main"
           iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/14287113&amp;color=000000&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"
       section
         h2.title ANZAC
-        p This work for orchestra and nine soloists is a personal reflection on the ANZAC phenomenon. The nine soloists, supported by the orchestra, may be seen as suggesting characters, moods, images, or memories, in dream-like references to confusion, nostalgia, ceremony and contradiction. 
+        p This work for orchestra and nine soloists is a personal reflection on the ANZAC phenomenon. The nine soloists, supported by the orchestra, may be seen as suggesting characters, moods, images, or memories, in dream-like references to confusion, nostalgia, ceremony and contradiction.
         p The work is in two parts, each having a number of continuous sections. Here they are, with (in brackets) the soloists featured.
         ul.accordion
           li
@@ -56,11 +56,12 @@ div role="main"
         figure.inset-right
           img src="/assets/images/vca/lyrebird-people/Barry_Conyngham.jpg" alt="Picture of Barry Conyngham"
           figcaption Barry Conyngham, Composer
-        p Australian composer Barry Conyngham studied with Peter Sculthorpe and Toru Takemitsu. He is Emeritus Professor from the University of Wollongong, and from Southern Cross University where he was Foundation Vice-Chancellor (1994–2000). Conyngham was also the first musician to hold the Chair of Australian Studies at Harvard University (2000–2001), has been a Churchill, Harkness and Fulbright Fellowship holder. In 1997, he was awarded a Member of the Order of Australia for his contribution to music.  
+        p Australian composer Barry Conyngham studied with Peter Sculthorpe and Toru Takemitsu. He is Emeritus Professor from the University of Wollongong, and from Southern Cross University where he was Foundation Vice-Chancellor (1994–2000). Conyngham was also the first musician to hold the Chair of Australian Studies at Harvard University (2000–2001), has been a Churchill, Harkness and Fulbright Fellowship holder. In 1997, he was awarded a Member of the Order of Australia for his contribution to music.
       section.alt
         p.center
           a.button-hero href="#artists" data-tab="2" See all artists
-    #artists.tab
+
+    #artists.tab role="tabpanel"
       section
         h2.title Artists
         ul.staff-listing-detailed
@@ -170,6 +171,7 @@ div role="main"
       section.alt
         p.center
           a.button-hero href="#about" data-tab="3" About Lyrebird Productions
-    #about.tab
+
+    #about.tab role="tabpanel"
       section
         h2.title About section is missing
