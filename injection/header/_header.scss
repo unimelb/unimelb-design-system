@@ -75,6 +75,7 @@
     .page-header-tools .page-header-icon {
       @include rem(height, 39px);
       border-left-color: $lightgray;
+      -moz-box-sizing: content-box;
       line-height: 1;
 
       svg {
