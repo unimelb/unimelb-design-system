@@ -142,9 +142,11 @@
 }
 
 %normalise {
+  /* autoprefixer: off */
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  /* autoprefixer: on */
   box-sizing: border-box;
   margin: 0;
   padding: 0;
