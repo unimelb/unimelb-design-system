@@ -17,14 +17,11 @@ $regular: 400;
 $bold: 700;
 
 @import 'components/base/typography';
-// @import 'layout';
-// @import 'courses';
-// @import 'profile';
-// @import 'timetable';
-
 @import 'components/text/text';
 @import 'components/buttons/buttons';
 @import 'components/forms/forms';
+
+@import 'components/accordion/accordion';
 
 .uomcontent [role="main"] form {
   color: $midgray;

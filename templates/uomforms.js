@@ -2,6 +2,7 @@
 //= require ./components/forms/fancyselect
 //= require ./components/forms/validation
 //= require ./components/modal/modal
+//= require ./components/accordion/accordion
 //= require_self
 
 window.UOMFormIcons = function() {
@@ -32,6 +33,7 @@ window.UOMFormLoadComponents = function() {
   window.UOMValid();
   window.UOMFormIcons();
   window.UOMModal();
+  window.UOMAccordion();
 };
 
 if (window.attachEvent) {
