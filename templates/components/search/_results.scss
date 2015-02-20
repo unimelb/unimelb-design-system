@@ -15,6 +15,11 @@
 
   ol.search-results {
     padding-left: 0;
+    padding-right: 0;
+
+    &.promoted {
+
+    }
 
     li {
       @include padding-trailer(1);
@@ -24,6 +29,7 @@
       margin-left: 0;
       margin-right: 0;
       padding-right: 0;
+      width: 100%;
 
       &:last-child {
         @include padding-trailer(1);
@@ -31,20 +37,64 @@
     }
 
     a {
+      @extend %wrapper;
       display: block;
       text-decoration: none;
+
+      &.more {
+        @include padding-leader(0.5);
+        clear: both;
+
+        &:after {
+          @include rem(font-size, 20px);
+          @include rem(padding-left, 5px);
+          content: '\2192';
+          line-height: 0;
+        }
+      }
+
+      @include breakpoint(tablet) {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
 
     h3 {
       @include adjust-font-size-to(20px);
       @include padding-trailer(0.5);
       font-weight: $regular;
+      width: 100%;
+
+      svg {
+        @include rem(height, 30px);
+        @include rem(margin-left, -5px);
+        @include rem(margin-top, -3px);
+        @include rem(width, 30px);
+        float: left;
+        fill: $gray;
+      }
+    }
+
+    figure {
+      @include rem(margin, 5px 10px 10px 0);
+      @include rem(max-width, 110px);
+      float: left;
+      padding: 0;
+
+      @include breakpoint(desktop) {
+        @include rem(max-width, 180px);
+      }
     }
 
     p {
-      @include adjust-font-size-to(16px);
+      @include adjust-font-size-to(15px);
       @include padding-trailer(0);
       color: $black;
+      width: 100%;
+
+      @include breakpoint(desktop) {
+        @include adjust-font-size-to(16px);
+      }
 
       &.url {
         @include adjust-font-size-to(12px);
