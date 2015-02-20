@@ -10,25 +10,20 @@
         fieldset.enquiry-form__details
           legend Have a question?
           div
-            label.enquiry-form__label
-              |Given name
-              input.input-medium type="text" placeholder="Given name" name="first_name" data-required=""
+            label.enquiry-form__label for="f_given" data-required="true" Given name
+            input#f_given.input-medium type="text" placeholder="Given name" name="first_name" aria-required="true"
           div
-            label.enquiry-form__label
-              |Family name
-              input.input-medium type="text" placeholder="Family name" name="last_name" data-required=""
+            label.enquiry-form__label for="f_family" data-required="true" Family name
+            input#f_family.input-medium type="text" placeholder="Family name" name="last_name" aria-required="true"
           div
-            label.enquiry-form__label
-              |Email
-              input.input-medium type="email" placeholder="your@email.com" name="email_address" data-required=""
+            label.enquiry-form__label for="f_email" data-required="true" Email
+            input#f_email.input-medium type="email" placeholder="your@email.com" name="email_address" aria-required="true"
           div
-            label.enquiry-form__label
-              |Phone
-              input.input-medium type="text" placeholder="04..." name="phone" data-required=""
+            label.enquiry-form__label for="f_phone" data-required="true" Phone
+            input#f_phone.input-medium type="text" placeholder="04..." name="phone" aria-required="true"
           div
-            label.enquiry-form__label
-              |Message
-              textarea name="enquiry" placeholder="Your enquiry" data-required=""
+            label.enquiry-form__label for="f_message" data-required="true" Message
+            textarea#f_message name="enquiry" placeholder="Your enquiry" aria-required="true"
           div.align-checkbox
             input type="checkbox" name="opt_in_faculty" id="faculty_newsletter" value=""
             label for="faculty_newsletter"
