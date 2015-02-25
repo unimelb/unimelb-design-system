@@ -147,6 +147,17 @@
   }
 }
 
+.uomcontent [role="main"] .contrast-helper {
+  background-color: $midblue;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 0;
+
+  header {
+    background-color: rgba($black, .5);
+  }
+}
 
 .uomcontent .floating + [role="main"] {
   header,
@@ -155,17 +166,6 @@
 
     @include breakpoint(desktop) {
       @include rem(padding-top, 180px);
-    }
-  }
-
-  .contrast-helper {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-top: 0;
-
-    header {
-      background-color: rgba($black, .5);
     }
   }
 }
