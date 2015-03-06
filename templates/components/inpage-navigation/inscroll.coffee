@@ -25,7 +25,7 @@ unless window.UOMInpageScrolling
               else
                 outer = document.body
 
-            if tel
+            if tel and tel.hasAttribute('href')
               target = tel.getAttribute('href')
               if target != "#" and target != "#sitemap"
                 e.preventDefault()
