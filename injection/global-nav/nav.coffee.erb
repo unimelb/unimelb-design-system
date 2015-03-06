@@ -13,8 +13,8 @@ window.UOMinjectGlobalNav = ->
 
     setupEvents: ->
       t = this
-      if document.countSelector('div[role="navigation"]') == 1
-        @localnav = document.querySelector('div[role="navigation"]')
+      if document.countSelector('.uomcontent div[role="navigation"]') == 1
+        @localnav = document.querySelector('.uomcontent div[role="navigation"]')
         @localsitemaptrigger = @localnav.querySelector('.sitemap-link')
 
         @menutrigger.addEventListener 'click', (e) ->
@@ -128,8 +128,8 @@ window.UOMinjectGlobalNav = ->
             t.sitemap.querySelector('input[type="search"]').focus()
 
   # Move local nav outside page container
-  if document.countSelector('div[role="navigation"]') == 1
-    localnav = document.querySelector('div[role="navigation"]')
+  if document.countSelector('.uomcontent div[role="navigation"]') == 1
+    localnav = document.querySelector('.uomcontent div[role="navigation"]')
     rootmenu = localnav.querySelector('ul')
     absroot = localnav.getAttribute('data-absolute-root') || '/'
 
