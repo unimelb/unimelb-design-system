@@ -363,7 +363,7 @@
       a.current,
       a:hover.current {
         background-color: $white;
-        border-left-color: #0084ee;
+        border-left-color: $highlight;
       }
     }
 
@@ -379,7 +379,7 @@
 
       a.current,
       a:hover.current {
-        border-right-color: #0084ee;
+        border-right-color: $highlight;
       }
     }
   }

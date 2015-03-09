@@ -218,7 +218,7 @@
   a.current,
   a:hover.current {
     background-color: $white;
-    border-left-color: #0084ee;
+    border-left-color: $highlight;
   }
 }
 
