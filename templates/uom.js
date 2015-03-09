@@ -6,8 +6,7 @@ window.UOMloadComponents = function() {
   window.UOMAccordion();
   window.UOMModal();
   window.UOMTabs();
-  window.UOMInnerNavTab();
-  window.UOMSidebarTabs(); // duplicate?
+  window.UOMSidebarTabs();
   window.UOMInpageScrolling();
 
   window.UOMListFilter();
@@ -16,10 +15,8 @@ window.UOMloadComponents = function() {
   window.UOMExtraLabel();
   window.UOMFancySelect();
   window.UOMValid();
-  window.UOMUnlockChecklist(); // possibly unused
   window.UOMTableLabels();
   window.UOMGMap();
-//  window.UOMYtEmbed(); // unused
 };
 
 if (window.attachEvent) {
