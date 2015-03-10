@@ -1,6 +1,6 @@
 unless window.UOMSidebarTabs
   window.UOMSidebarTabs = ->
-    class window.UOMSidebarTabsComponent
+    class window.SidebarTabs
       constructor: (@el, selector) ->
         @nav = @el.querySelectorAll('a')
         @pages = document.querySelectorAll(selector)
@@ -40,7 +40,7 @@ unless window.UOMSidebarTabs
 
     if (supportedmodernbrowser)
       for el in document.querySelectorAll('.sidebar-tab-nav')
-        new UOMSidebarTabsComponent(el, '.sidebar-tab')
+        new SidebarTabs(el, '.sidebar-tab')
 
       for el in document.querySelectorAll('.inner-nav-tab')
-        new UOMSidebarTabsComponent(el, '.inner-nav-page')
+        new SidebarTabs(el, '.inner-nav-page')
