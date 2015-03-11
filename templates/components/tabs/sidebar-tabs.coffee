@@ -9,18 +9,17 @@ unless window.UOMSidebarTabs
         for item in @nav
           item.addEventListener 'click', (e) ->
             e.preventDefault()
-            t.hide()
 
             for rec, i in t.nav
               if rec == this
+                t.hide()
                 t.current = i
                 t.show()
 
         if window.location.hash
-          @hide()
-
           for rec, i in @nav
             if rec.getAttribute('href')==window.location.hash
+              @hide()
               @current = i
               @show()
 
