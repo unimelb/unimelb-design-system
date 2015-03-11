@@ -220,6 +220,16 @@
       z-index: 9;
     }
   }
+
+  // Local search form
+  form.search {
+    @include rem(margin, 5px 0 10px 15px);
+    @include rem(max-width, 270px);
+  }
+
+  fieldset .inline .search-button {
+    @include rem(margin-top, 5px);
+  }
 }
 
 body.ie {
