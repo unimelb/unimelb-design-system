@@ -1,0 +1,1 @@
+Use the alternate markup <code>span class="text"</code> rather than <code>p</code> in systems where XHTML rules are enforced (eg. Wordpress), to prevent code cleaners from rearranging the markup.

@@ -55,13 +55,15 @@
         @include adjust-font-size-to(18px);
         @include rem(font-size, 18px);
         @include rem(height, 30px);
-        @include rem(line-height, 30px);
-        //@include rem(width, 30px);
+        @include rem(width, 30px);
         content: "+";
         display: inline-block;
+        line-height: 1;
         position: relative;
-        text-align: center;
+        text-align: left;
+        transform-origin: 25% 33%;
         transition: transform 0.2s ease-in-out;
+        vertical-align: middle;
         z-index: 0;
       }
 
@@ -84,11 +86,11 @@
         @include rem(margin-top, -1px);
         border-top: 1px solid;
         border-color: $cyan;
-        //background-color: $paleblue;
 
         &:before {
           @include transform(rotate(45deg));
           color: $cyan;
+          transform-origin: 25% 33%;
         }
 
         .accordion__title {
