@@ -1,21 +1,107 @@
 // Print
-
 $black: #000000;
+$gray: #aaaaaa;
 $white: #ffffff;
-@mixin defaultfont {
-  font-family: Arial, Helvetica, sans-serif !important;
+
+@mixin defaults {
+  background-color: $white;
+  font-size: 11pt;
+  font-weight: 400;
+  line-height: 1.2;
 }
 
 @media print {
-  body {
-    @include defaultfont;
+  body .uomcontent {
+    @include defaults();
     color: $black !important;
-    background: $white !important;
-    font-size: 11pt;
-    line-height: 1.2;
-  }
-  body>header,
-  body>footer {
-    display: none !important;
+    font-family: Arial, Helvetica, sans-serif;
+
+    * {
+      @include defaults();
+    }
+
+    .page-header-tools,
+    .page-footer,
+    [role="sitemap"],
+    [role="navigation"],
+    .sitemap-label {
+      display: none;
+    }
+
+    .page-header {
+      position: static !important;
+
+      header {
+        border: 0 none;
+        box-shadow: 0 0 0 0;
+        height: auto;
+
+        a.page-header-logo {
+          display: none;
+        }
+      }
+
+      .page-header-navigation {
+        display: block;
+        height: auto;
+        padding-left: 20px;
+        padding-top: 10px;
+        text-align: left;
+
+        .page-local-history {
+          color: $gray;
+
+          a {
+            color: $gray;
+          }
+        }
+      }
+    }
+
+    .page-inner {
+      padding-top: 0;
+    }
+
+    [role="main"] {
+      hr,
+      ul.jump-navigation {
+        display: none;
+      }
+
+      a[href^="http"]:after {
+        content: " (" attr(href) ") ";
+        color: $gray;
+        display: inline-block;
+        font-size: 90%;
+        padding-left: 5px;
+        text-decoration: none;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        color: $black;
+      }
+
+      header,
+      section,
+      pre,
+      footer,
+      footer.contrib {
+        border: 0 none;
+        margin: 0;
+        padding: 0 0 1em;
+        text-align: left;
+      }
+
+      pre,
+      code {
+        border: 0 none;
+        font-family: 'Courier New', Courier, fixed !important;
+        overflow: visible;
+        white-space: pre-wrap;
+      }
+    }
   }
 }
