@@ -421,6 +421,11 @@
   &.clear-dark {
     background-color: transparent;
     border-color: $white;
+    color: $white;
+
+    option {
+      color: $black;
+    }
   }
 
   &.clear:hover,
