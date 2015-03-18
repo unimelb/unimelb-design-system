@@ -39,7 +39,6 @@
   }
 
   ul.accordion {
-
     & > li {
       @include padding-leader(0.5);
       @include padding-trailer(0.5);
@@ -135,6 +134,42 @@
 
       &.accordion__visible {
         border-color: $cyan;
+      }
+    }
+  }
+
+  .code {
+    @include rem(max-width, $w-mid);
+    clear: both;
+    margin: 0 auto;
+
+    ul.accordion {
+      @include rem(max-width, $w-mid);
+
+      li {
+        @include rem(max-width, $w-mid);
+
+        &:before,
+        .accordion__title {
+          color: $gray;
+        }
+
+        .accordion__hidden {
+          @include rem(max-width, $w-mid);
+        }
+
+        &.accordion__visible .accordion__hidden {
+          @include rem(max-height, 10000px);
+        }
+
+        &.accordion__visible:before,
+        &.accordion__visible .accordion__title {
+          color: $cyan;
+        }
+
+        div.highlight {
+          @include rem(max-width, $w-mid);
+        }
       }
     }
   }
