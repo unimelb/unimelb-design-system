@@ -36,7 +36,7 @@ Below are some basic typographic styles with their associated renderings
 <h6>Heading 6</h6>
 
 ```html
-<p>A paragraph of text</h1>
+<p>A paragraph of text</p>
 ```
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
 
