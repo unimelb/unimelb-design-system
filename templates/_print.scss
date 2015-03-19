@@ -17,7 +17,7 @@ $white: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
 
     * {
-      @include defaults();
+      @include defaults;
     }
 
     .page-header-tools,
@@ -29,6 +29,7 @@ $white: #ffffff;
     }
 
     .page-header {
+      background: red !important;
       position: static !important;
 
       header {
@@ -38,20 +39,33 @@ $white: #ffffff;
 
         a.page-header-logo {
           display: none;
+
+          svg {
+            display: none;
+            height: 0;
+            width: 0;
+          }
         }
       }
 
       .page-header-navigation {
+        border: 0 none;
         display: block;
         height: auto;
+        line-height: 1;
         padding-left: 20px;
         padding-top: 10px;
         text-align: left;
+        width: 100%;
 
         .page-local-history {
           color: $gray;
+          display: block;
+          line-height: 1;
+          text-align: left;
 
-          a {
+          a,
+          span {
             color: $gray;
           }
         }
@@ -63,6 +77,29 @@ $white: #ffffff;
     }
 
     [role="main"] {
+      .tabbed-nav,
+      .tabbed-course {
+        .desktop-nav,
+        .mobile-nav {
+          display: none;
+        }
+      }
+
+      [data-tabbed] [role="tabpanel"] {
+        display: block !important;
+      }
+
+      .button-hero,
+      .video,
+      iframe,
+      .pathfinder-2,
+      .pathfinder-3,
+      .pathfinder-4,
+      .pathfinder-5,
+      footer.cta,
+      .filtered-listing-wrapper,
+      .enquiry,
+      form.course-select .right,
       hr,
       ul.jump-navigation {
         display: none;
@@ -89,10 +126,34 @@ $white: #ffffff;
       pre,
       footer,
       footer.contrib {
+        background: $white;
         border: 0 none;
+        color: $black;
         margin: 0;
         padding: 0 0 1em;
         text-align: left;
+      }
+
+      & > header:first-child {
+        background: $white;
+        border: 0 none;
+        color: $black;
+      }
+
+      header.banner,
+      header.image,
+      &>header:first-child.image {
+        min-height: 0 !important;
+        padding-bottom: 0;
+
+        p {
+          text-align: left;
+        }
+      }
+
+
+      header .bottom-align-flat {
+        padding: 0;
       }
 
       pre,
@@ -101,6 +162,33 @@ $white: #ffffff;
         font-family: 'Courier New', Courier, fixed !important;
         overflow: visible;
         white-space: pre-wrap;
+      }
+
+      .filtered-listing-section aside {
+        margin: 0;
+        padding-bottom: 0;
+        width: 100%;
+
+        h2,
+        p {
+          margin: 0 2%;
+        }
+      }
+
+      .filtered-listing-grid {
+        height: auto !important;
+        margin: 0;
+        position: static !important;
+
+        li {
+          display: inline-block;
+          height: auto !important;
+          left: auto !important;
+          position: static !important;
+          top: auto !important;
+          vertical-align: top;
+          width: 31.333% !important;
+        }
       }
     }
   }

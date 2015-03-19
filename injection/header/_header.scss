@@ -23,65 +23,67 @@
   }
 
   &.fixed:not(.floating) {
-    background-color: rgba($white, .9);
-    font-family: $ff-sans;
-    position: fixed;
-    width: 100%;
-
-    header {
-      @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .6));
+    @media screen {
+      background-color: rgba($white, .9);
+      font-family: $ff-sans;
+      position: fixed;
       width: 100%;
 
-      @include breakpoint(desktop) {
-        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
+      header {
+        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .6));
+        width: 100%;
+
+        @include breakpoint(desktop) {
+          @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
+        }
       }
-    }
 
-    .page-header-logo {
-      position: absolute;
-      top: -60px;
-      transition: .2s top;
+      .page-header-logo {
+        position: absolute;
+        top: -60px;
+        transition: .2s top;
 
-      @include breakpoint(desktop) {
-        top: -140px;
+        @include breakpoint(desktop) {
+          top: -140px;
+        }
       }
-    }
 
-    a,
-    span {
-      @include rem(height, 40px);
-      @include rem(line-height, 40px);
-    }
+      a,
+      span {
+        @include rem(height, 40px);
+        @include rem(line-height, 40px);
+      }
 
-    header {
-      @include rem(height, 40px);
-      @include rem(line-height, 40px);
-      background-color: transparent;
-    }
+      header {
+        @include rem(height, 40px);
+        @include rem(line-height, 40px);
+        background-color: transparent;
+      }
 
-    .page-header-navigation {
-      @include rem(height, 40px);
-      @include rem(line-height, 30px);
-      @include rem(padding-left, 15px);
-      transition: .3s padding-left .1s, .2s height;
-      vertical-align: top;
-    }
+      .page-header-navigation {
+        @include rem(height, 40px);
+        @include rem(line-height, 30px);
+        @include rem(padding-left, 15px);
+        transition: .3s padding-left .1s, .2s height;
+        vertical-align: top;
+      }
 
-    a,
-    span {
-      vertical-align: middle;
-    }
+      a,
+      span {
+        vertical-align: middle;
+      }
 
-    .page-header-tools .page-header-icon {
-      @include rem(height, 39px);
-      border-left-color: $lightgray;
-      line-height: 1;
+      .page-header-tools .page-header-icon {
+        @include rem(height, 39px);
+        border-left-color: $lightgray;
+        line-height: 1;
 
-      svg {
-        @include rem(height, 20px);
-        @include rem(margin-top, 3px);
-        @include rem(width, 20px);
-        margin-bottom: 0;
+        svg {
+          @include rem(height, 20px);
+          @include rem(margin-top, 3px);
+          @include rem(width, 20px);
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -134,14 +136,16 @@
     }
 
     @include breakpoint(desktop) {
-      @include rem(height, 90px);
-      @include rem(line-height, 90px);
+      @media screen {
+        @include rem(height, 90px);
+        @include rem(line-height, 90px);
 
-      &.page-header-logo {
-        @include rem(margin-left, 40px);
-        @include rem(height, 140px);
-        @include rem(width, 140px);
-        position: absolute;
+        &.page-header-logo {
+          @include rem(margin-left, 40px);
+          @include rem(height, 140px);
+          @include rem(width, 140px);
+          position: absolute;
+        }
       }
     }
 
@@ -164,9 +168,11 @@
     font-weight: $light;
 
     @include breakpoint(desktop) {
-      @include rem(height, 75px);
-      @include rem(line-height, 75px);
-      @include rem(padding, 0 10px 7.5px 10px);
+      @media screen {
+        @include rem(height, 75px);
+        @include rem(line-height, 75px);
+        @include rem(padding, 0 10px 7.5px 10px);
+      }
     }
   }
 }
@@ -198,17 +204,19 @@
   }
 
   @include breakpoint(desktop) {
-    @include rem(height, 90px);
-    @include rem(padding-left, 205px);
-    @include rem(margin-right, 260px);
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    @media screen {
+      @include rem(height, 90px);
+      @include rem(padding-left, 205px);
+      @include rem(margin-right, 260px);
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
 
-    a,
-    span {
-      display: inline;
+      a,
+      span {
+        display: inline;
+      }
     }
   }
 
@@ -292,16 +300,18 @@
   }
 
   @include breakpoint(desktop) {
-    @include rem(padding-left, 15px);
+    @media screen {
+      @include rem(padding-left, 15px);
 
-    .page-header-icon {
-      @include rem(font-size, 10px);
-      @include rem(padding, 0 23px);
+      .page-header-icon {
+        @include rem(font-size, 10px);
+        @include rem(padding, 0 23px);
 
-      svg {
-        @include rem(height, 38px);
-        @include rem(margin-top, 18px);
-        @include rem(width, 38px);
+        svg {
+          @include rem(height, 38px);
+          @include rem(margin-top, 18px);
+          @include rem(width, 38px);
+        }
       }
     }
   }
@@ -358,15 +368,17 @@
     }
 
     @include breakpoint(desktop) {
-      @include rem(margin, 40px);
+      @media screen {
+        @include rem(margin, 40px);
 
-      a.page-header-icon {
-        @include rem(height, 70px);
-        @include rem(margin-left, 20px);
-        @include rem(padding, 0 15px);
+        a.page-header-icon {
+          @include rem(height, 70px);
+          @include rem(margin-left, 20px);
+          @include rem(padding, 0 15px);
 
-        svg {
-          @include rem(margin-top, 7px);
+          svg {
+            @include rem(margin-top, 7px);
+          }
         }
       }
     }
