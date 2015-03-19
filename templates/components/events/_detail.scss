@@ -19,6 +19,15 @@
         position: relative;
         text-align: center;
 
+        & + time::before {
+          @include rem(margin-right, 5px);
+          @include rem(width, 16px);
+          border-bottom: 2px solid #000;
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+        }
+
         strong {
           @include rem(padding-left, 6px);
           @include rem(padding-right, 6px);
@@ -35,12 +44,12 @@
             position: relative;
           }
 
-          &:first-child::after {
-            @include padding-leader(1);
+          & + time::before {
+            @include rem(margin-top, -24px);
             @include rem(width, 20px);
             border-bottom: 4px solid $black;
-            content: "";
             display: block;
+            margin-right: 0;
             position: absolute;
             right: 0;
           }
