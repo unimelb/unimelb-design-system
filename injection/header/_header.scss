@@ -123,29 +123,29 @@
       top: 0;
       transition: .2s top .3s;
 
-      svg {
-        width: 100%;
-        height: 100%;
-      }
+      @media screen {
+        svg {
+          width: 100%;
+          height: 100%;
+        }
 
-      img {
-        border: 0;
-        max-height: 100%;
-        max-width: 100%;
+        img {
+          border: 0;
+          max-height: 100%;
+          max-width: 100%;
+        }
       }
     }
 
     @include breakpoint(desktop) {
-      @media screen {
-        @include rem(height, 90px);
-        @include rem(line-height, 90px);
+      @include rem(height, 90px);
+      @include rem(line-height, 90px);
 
-        &.page-header-logo {
-          @include rem(margin-left, 40px);
-          @include rem(height, 140px);
-          @include rem(width, 140px);
-          position: absolute;
-        }
+      &.page-header-logo {
+        @include rem(margin-left, 40px);
+        @include rem(height, 140px);
+        @include rem(width, 140px);
+        position: absolute;
       }
     }
 
@@ -168,11 +168,9 @@
     font-weight: $light;
 
     @include breakpoint(desktop) {
-      @media screen {
-        @include rem(height, 75px);
-        @include rem(line-height, 75px);
-        @include rem(padding, 0 10px 7.5px 10px);
-      }
+      @include rem(height, 75px);
+      @include rem(line-height, 75px);
+      @include rem(padding, 0 10px 7.5px 10px);
     }
   }
 }
@@ -185,7 +183,7 @@
 
   a,
   span {
-    display: inline-block;
+    display: inline;
   }
 
   @include breakpoint(0) {
@@ -204,19 +202,17 @@
   }
 
   @include breakpoint(desktop) {
-    @media screen {
-      @include rem(height, 90px);
-      @include rem(padding-left, 205px);
-      @include rem(margin-right, 260px);
-      display: block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+    @include rem(height, 90px);
+    @include rem(padding-left, 205px);
+    @include rem(margin-right, 260px);
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
-      a,
-      span {
-        display: inline;
-      }
+    a,
+    span {
+      display: inline;
     }
   }
 
@@ -300,18 +296,16 @@
   }
 
   @include breakpoint(desktop) {
-    @media screen {
-      @include rem(padding-left, 15px);
+    @include rem(padding-left, 15px);
 
-      .page-header-icon {
-        @include rem(font-size, 10px);
-        @include rem(padding, 0 23px);
+    .page-header-icon {
+      @include rem(font-size, 10px);
+      @include rem(padding, 0 23px);
 
-        svg {
-          @include rem(height, 38px);
-          @include rem(margin-top, 18px);
-          @include rem(width, 38px);
-        }
+      svg {
+        @include rem(height, 38px);
+        @include rem(margin-top, 18px);
+        @include rem(width, 38px);
       }
     }
   }
@@ -368,17 +362,15 @@
     }
 
     @include breakpoint(desktop) {
-      @media screen {
-        @include rem(margin, 40px);
+      @include rem(margin, 40px);
 
-        a.page-header-icon {
-          @include rem(height, 70px);
-          @include rem(margin-left, 20px);
-          @include rem(padding, 0 15px);
+      a.page-header-icon {
+        @include rem(height, 70px);
+        @include rem(margin-left, 20px);
+        @include rem(padding, 0 15px);
 
-          svg {
-            @include rem(margin-top, 7px);
-          }
+        svg {
+          @include rem(margin-top, 7px);
         }
       }
     }

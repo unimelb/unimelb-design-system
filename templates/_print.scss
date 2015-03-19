@@ -11,10 +11,16 @@ $white: #ffffff;
 }
 
 @media print {
+  body {
+    background-color: $white;
+  }
+
   body .uomcontent {
     @include defaults();
     color: $black !important;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    max-width: 700px;
 
     * {
       @include defaults;
@@ -29,7 +35,8 @@ $white: #ffffff;
     }
 
     .page-header {
-      background: red !important;
+      margin: 0 auto;
+      max-width: 700px;
       position: static !important;
 
       header {
@@ -40,11 +47,17 @@ $white: #ffffff;
         a.page-header-logo {
           display: none;
 
-          svg {
+          * {
             display: none;
-            height: 0;
-            width: 0;
           }
+        }
+      }
+
+      a.page-header-logo {
+        display: none;
+
+        * {
+          display: none;
         }
       }
 
@@ -62,6 +75,7 @@ $white: #ffffff;
           color: $gray;
           display: block;
           line-height: 1;
+          padding: 0;
           text-align: left;
 
           a,
@@ -87,6 +101,8 @@ $white: #ffffff;
 
       [data-tabbed] [role="tabpanel"] {
         display: block !important;
+        margin: 0;
+        padding: 0;
       }
 
       .button-hero,
@@ -105,6 +121,15 @@ $white: #ffffff;
         display: none;
       }
 
+      .button {
+        background: $white;
+        border: 0 none;
+        color: $black;
+        font-size: 1em;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+
       a[href^="http"]:after {
         content: " (" attr(href) ") ";
         color: $gray;
@@ -119,6 +144,23 @@ $white: #ffffff;
       h3,
       p {
         color: $black;
+      }
+
+      h1.highlight {
+        background: $white !important;
+        color: $black !important;
+        -webkit-background-clip: inherit !important;
+        -webkit-text-fill-color: inherit !important;
+      }
+
+      .alt,
+      .with-aside aside,
+      .tabbed-course .half {
+        background: $white;
+      }
+
+      .navigation-text-listing ul {
+        padding-left: 40px;
       }
 
       header,
@@ -143,17 +185,36 @@ $white: #ffffff;
       header.banner,
       header.image,
       &>header:first-child.image {
+        background: $white !important;
         min-height: 0 !important;
-        padding-bottom: 0;
+        padding: 0;
 
         p {
           text-align: left;
         }
       }
 
+      .tabbed-course > .full-width {
+        border: 0 none;
+      }
 
       header .bottom-align-flat {
-        padding: 0;
+        background: $white !important;
+        margin: 0 auto;
+        max-width: 700px;
+        padding: 0 10px 10px;
+      }
+
+      form.course-select {
+        padding-top: 0;
+
+        .left {
+          padding-top: 0;
+
+          h2 {
+            padding-top: 0;
+          }
+        }
       }
 
       pre,
@@ -188,6 +249,10 @@ $white: #ffffff;
           top: auto !important;
           vertical-align: top;
           width: 31.333% !important;
+
+          a {
+            background: $white !important;
+          }
         }
       }
     }
