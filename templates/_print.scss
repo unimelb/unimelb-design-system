@@ -99,6 +99,29 @@ $white: #ffffff;
         }
       }
 
+      .news-hero {
+        a {
+          background-image: none !important;
+          padding-top: 0;
+        }
+
+        .inner {
+          background: $white;
+          color: $black;
+
+          h1,
+          p {
+            font-size: 1.4em;
+          }
+        }
+      }
+
+      .alert {
+        background: $white;
+        box-shadow: 0 0 0 0;
+        padding: 0;
+      }
+
       [data-tabbed] [role="tabpanel"] {
         display: block !important;
         margin: 0;
@@ -106,6 +129,7 @@ $white: #ffffff;
       }
 
       .button-hero,
+      .button-hero-reverse,
       .video,
       iframe,
       .pathfinder-2,
@@ -114,14 +138,59 @@ $white: #ffffff;
       .pathfinder-5,
       footer.cta,
       .filtered-listing-wrapper,
-      .enquiry,
       form.course-select .right,
       hr,
-      ul.jump-navigation {
+      .styled-select svg.icon,
+      ul.jump-navigation,
+      ul.accordion > li:before,
+      [data-tabbed].tabbed nav {
         display: none;
       }
 
-      .button {
+      .accordion__hidden {
+        margin-top: 15px;
+        max-height: 100%;
+      }
+
+      form {
+        background-image: none !important;
+      }
+
+      .hero-listing a {
+        background-image: none !important;
+
+        .inner {
+          background: $white;
+
+          strong,
+          p {
+            color: $black;
+          }
+        }
+      }
+
+      .search-button {
+        background-color: #f6f6f6;
+        height: 40px;
+        right: 2px;
+        top: 2px;
+        width: 40px;
+
+        svg {
+          color: $black;
+        }
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="search"],
+      input[type="email"],
+      textarea {
+        box-shadow: 0 0 0 0;
+      }
+
+      .button,
+      input[type="submit"] {
         background: $white;
         border: 0 none;
         color: $black;
@@ -142,8 +211,21 @@ $white: #ffffff;
       h1,
       h2,
       h3,
-      p {
+      p,
+      blockquote {
         color: $black;
+      }
+
+      .enquiry {
+        background-color: $white;
+        box-shadow: 0 0 0 0;
+      }
+
+      select {
+        background-color: #f6f6f6;
+        border-color: $black;
+        color: $black;
+        -webkit-appearance: menulist;
       }
 
       h1.highlight {
@@ -155,7 +237,8 @@ $white: #ffffff;
 
       .alt,
       .with-aside aside,
-      .tabbed-course .half {
+      .tabbed-course .half,
+      .contact-box {
         background: $white;
       }
 

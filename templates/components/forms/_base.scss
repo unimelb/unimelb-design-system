@@ -111,12 +111,13 @@
 
   label {
     @include rem(font-size, 16px);
-    display: inline-block;
+    display: inline;
     position: relative;
     width: 100%;
 
     @include breakpoint(desktop) {
       @include rem(width, 412px);
+      display: inline-block;
     }
   }
 
@@ -326,6 +327,7 @@
       svg {
         @include rem(height, 45px);
         @include rem(width, 45px);
+        background-color: transparent;
         cursor: pointer;
         fill: currentColor;
         max-height: 100%;
