@@ -51,6 +51,10 @@ $white: #ffffff;
             display: none;
           }
         }
+
+        .page-header-navigation {
+          margin: 0;
+        }
       }
 
       a.page-header-logo {
@@ -83,7 +87,7 @@ $white: #ffffff;
           a,
           span {
             color: $gray;
-            line-height: 1;
+            line-height: 1.2;
           }
         }
       }
