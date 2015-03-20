@@ -66,6 +66,8 @@ $white: #ffffff;
         display: block;
         height: auto;
         line-height: 1;
+        margin: 0;
+        padding-bottom: 30px;
         padding-left: 20px;
         padding-top: 10px;
         text-align: left;
@@ -81,6 +83,7 @@ $white: #ffffff;
           a,
           span {
             color: $gray;
+            line-height: 1;
           }
         }
       }
@@ -130,6 +133,7 @@ $white: #ffffff;
 
       .button-hero,
       .button-hero-reverse,
+      .button-hero-inverse,
       .video,
       iframe,
       .pathfinder-2,
@@ -214,6 +218,30 @@ $white: #ffffff;
       p,
       blockquote {
         color: $black;
+      }
+
+      .block-listing li {
+        border: 0 none;
+        box-shadow: 0 0 0 0;
+        margin: 15px 0;
+
+        &.event {
+          border-bottom: 0 none;
+
+          .when {
+            color: $black;
+          }
+        }
+
+        &.double .block-container {
+          color: $black;
+        }
+
+        .crop-height img {
+          margin: 0 auto;
+          max-height: 340px;
+          width: auto !important;
+        }
       }
 
       .enquiry {
