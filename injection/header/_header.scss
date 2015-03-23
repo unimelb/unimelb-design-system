@@ -23,65 +23,67 @@
   }
 
   &.fixed:not(.floating) {
-    background-color: rgba($white, .9);
-    font-family: $ff-sans;
-    position: fixed;
-    width: 100%;
-
-    header {
-      @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .6));
+    @media screen {
+      background-color: rgba($white, .9);
+      font-family: $ff-sans;
+      position: fixed;
       width: 100%;
 
-      @include breakpoint(desktop) {
-        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
+      header {
+        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .6));
+        width: 100%;
+
+        @include breakpoint(desktop) {
+          @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
+        }
       }
-    }
 
-    .page-header-logo {
-      position: absolute;
-      top: -60px;
-      transition: .2s top;
+      .page-header-logo {
+        position: absolute;
+        top: -60px;
+        transition: .2s top;
 
-      @include breakpoint(desktop) {
-        top: -140px;
+        @include breakpoint(desktop) {
+          top: -140px;
+        }
       }
-    }
 
-    a,
-    span {
-      @include rem(height, 40px);
-      @include rem(line-height, 40px);
-    }
+      a,
+      span {
+        @include rem(height, 40px);
+        @include rem(line-height, 40px);
+      }
 
-    header {
-      @include rem(height, 40px);
-      @include rem(line-height, 40px);
-      background-color: transparent;
-    }
+      header {
+        @include rem(height, 40px);
+        @include rem(line-height, 40px);
+        background-color: transparent;
+      }
 
-    .page-header-navigation {
-      @include rem(height, 40px);
-      @include rem(line-height, 30px);
-      @include rem(padding-left, 15px);
-      transition: .3s padding-left .1s, .2s height;
-      vertical-align: top;
-    }
+      .page-header-navigation {
+        @include rem(height, 40px);
+        @include rem(line-height, 30px);
+        @include rem(padding-left, 15px);
+        transition: .3s padding-left .1s, .2s height;
+        vertical-align: top;
+      }
 
-    a,
-    span {
-      vertical-align: middle;
-    }
+      a,
+      span {
+        vertical-align: middle;
+      }
 
-    .page-header-tools .page-header-icon {
-      @include rem(height, 39px);
-      border-left-color: $lightgray;
-      line-height: 1;
+      .page-header-tools .page-header-icon {
+        @include rem(height, 39px);
+        border-left-color: $lightgray;
+        line-height: 1;
 
-      svg {
-        @include rem(height, 20px);
-        @include rem(margin-top, 3px);
-        @include rem(width, 20px);
-        margin-bottom: 0;
+        svg {
+          @include rem(height, 20px);
+          @include rem(margin-top, 3px);
+          @include rem(width, 20px);
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -121,15 +123,17 @@
       top: 0;
       transition: .2s top .3s;
 
-      svg {
-        width: 100%;
-        height: 100%;
-      }
+      @media screen {
+        svg {
+          width: 100%;
+          height: 100%;
+        }
 
-      img {
-        border: 0;
-        max-height: 100%;
-        max-width: 100%;
+        img {
+          border: 0;
+          max-height: 100%;
+          max-width: 100%;
+        }
       }
     }
 
@@ -179,7 +183,7 @@
 
   a,
   span {
-    display: inline-block;
+    display: inline;
   }
 
   @include breakpoint(0) {

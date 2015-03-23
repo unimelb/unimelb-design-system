@@ -20,12 +20,14 @@ div role="main"
         select role="tablist"
           option role="tab" value="#overview" Overview
           option role="tab" value="#course-structure" Course Structure
+          option role="tab" value="#course-structure-2" Course Structure 2
           option role="tab" value="#requirements" Entry Requirements
           option role="tab" value="#fees" Fees &amp; Scholarships
           option role="tab" value="#apply" Apply now
       nav.desktop-nav role="tablist"
         a role="tab" href="#overview" Overview
         a role="tab" href="#course-structure" Course Structure
+        a role="tab" href="#course-structure-2" Course Structure 2
         a role="tab" href="#requirements" Entry Requirements
         a role="tab" href="#fees" Fees &amp; Scholarships
         a role="tab" href="#apply" Apply now
@@ -525,7 +527,33 @@ div role="main"
                           | Core
             section
               p.center
-                a.button-hero href="#requirements" data-tab="3"  Next : Entry requirements
+                a.button-hero href="#course-structure-2" data-tab="3"  Next : Course Structure 2
+
+    #course-structure-2.tab role="tabpanel"
+      .with-aside.left
+        div
+          aside
+            h2.subtitle Second inner tab test
+            p The Doctor of Veterinary Medicine is&nbsp; four years full-time, and is delivered at the Parkville campus (Years One and Two) and at the Werribee campus (Years Three and Four).
+
+            ul.degree-plan-nav.inner-nav-tab
+              li
+                a.current data-no-scroll="true" href="#inner-2" Inner 2
+              li
+                a data-no-scroll="true" href="#inner-3" Inner 3
+          .bside
+            .degree-plan-section
+              #inner-2.degree-plan.inner-nav-page.current
+                h2 Inner 2
+                p Lorem ipsum
+
+              #inner-3.degree-plan.inner-nav-page
+                h2 Inner 3!
+                p Lorem ipsum
+
+            section
+              p.center
+                a.button-hero href="#requirements" data-tab="4"  Next : Entry requirements
 
     #requirements.tab role="tabpanel"
       .with-aside.left
@@ -596,7 +624,7 @@ div role="main"
           .bside
             section
               p.center
-                a.button-hero href="#fees" data-tab="4"  Next : Fees &amp; scholarships
+                a.button-hero href="#fees" data-tab="5"  Next : Fees &amp; scholarships
 
     #fees.tab role="tabpanel"
       .with-aside

@@ -77,7 +77,7 @@ module WebTemplates
     get '/' do
       @components = settings.components
       @layouts    = settings.layouts
-      @ver        = "v0.6"
+      @ver        = "v0.7"
       slim :index
     end
 
@@ -185,13 +185,13 @@ module WebTemplates
             if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
               source = ''
             else
-              source = syntax_highlight(slim file_content(f), layout: false, pretty: true)
+              source = render_syntax_highlight(slim file_content(f), layout: false, pretty: true)
             end
             output = slim file_content(f), layout: false, pretty: true
             if @documents[section]
-              @documents[section] << [ title_from_filename(f), source, output ]
+              @documents[section] << [ title_from_filename(f), output, source ]
             else
-              @documents[section] = [ [ title_from_filename(f), source, output ] ]
+              @documents[section] = [ [ title_from_filename(f), output, source ] ]
             end
 
           else
@@ -199,13 +199,13 @@ module WebTemplates
             if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
               source = ''
             else
-              source = syntax_highlight(file_content(f))
+              source = render_syntax_highlight(file_content(f))
             end
             output = file_content(f)
             if @documents[section]
-              @documents[section] << [ title_from_filename(f), source, output ]
+              @documents[section] << [ title_from_filename(f), output, source ]
             else
-              @documents[section] = [ [ title_from_filename(f), source, output ] ]
+              @documents[section] = [ [ title_from_filename(f), output, source ] ]
             end
           end
 
@@ -358,6 +358,21 @@ module WebTemplates
         SectionFilter
       ]
       (@pipeline_with_section.call(md))[:output].to_s
+    end
+
+    def render_syntax_highlight(block)
+      '
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+' + syntax_highlight(block) + '
+          </div>
+        </li>
+      </ul>
+    </section>
+'
     end
 
     def syntax_highlight(html = '', lexer = 'html')

@@ -24,10 +24,11 @@
           div
             label.enquiry-form__label for="f_message" data-required="true" Message
             textarea#f_message name="enquiry" placeholder="Your enquiry" aria-required="true"
-          div.align-checkbox
+          .inline
             input type="checkbox" name="opt_in_faculty" id="faculty_newsletter" value=""
             label for="faculty_newsletter"
-            | Subscribe to stay up to date with the latest news, events and information
+              span Subscribe to stay up to date with the latest news, events and information
+
           div
             input.enquiry-form__submit-button type='submit' value='Send your question'
           hr.spacer

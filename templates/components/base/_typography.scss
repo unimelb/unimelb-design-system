@@ -197,7 +197,7 @@
 
       & > li {
         @include rem(max-width, $w-mid);
-        @include rem(padding-left, 50px);
+        @include rem(padding-left, 70px);
         border-top: 1px solid rgba(#000000, 0.1);
         counter-increment: steps;
         list-style-type: none;
@@ -209,14 +209,16 @@
         &::before {
           @include adjust-font-size-to(50px);
           @include rem(letter-spacing, -5px);
-          @include rem(margin-left, -50px);
+          @include rem(margin-left, -80px);
           @include rem(padding-top, 20px);
+          @include rem(width, 60px);
           color: $black;
           content: counter(steps);
           display: inline-block;
           float: left;
           font-weight: $bold;
           position: absolute;
+          text-align: right;
         }
 
         & > p:first-child {
@@ -236,21 +238,25 @@
 
       @include breakpoint(desktop) {
         li {
+
+          * {
+            max-width: 650px;
+          }
+
           &::before {
             @include adjust-font-size-to(68px);
             @include rem(letter-spacing, -7px);
+            @include rem(margin-left, -60px);
           }
         }
       }
 
       @include breakpoint(860px) {
         li {
-          margin-left: 0;
+          margin-right: 0;
           padding-left: 0;
 
           &::before {
-            @include adjust-font-size-to(68px);
-            @include rem(letter-spacing, -7px);
             @include rem(margin-left, 10px);
           }
         }
@@ -259,9 +265,22 @@
       @include breakpoint(wide) {
         li {
 
+          * {
+            max-width: 650px;
+            margin-left: 110px;
+          }
+
           &::before {
             @include adjust-font-size-to(80px);
             @include rem(letter-spacing, -11px);
+          }
+        }
+      }
+
+      @include breakpoint(1400px) {
+        li {
+          * {
+            max-width: 700px;
           }
         }
       }
