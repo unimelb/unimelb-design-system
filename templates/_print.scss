@@ -77,18 +77,18 @@ $white: #ffffff;
         text-align: left;
         width: 100%;
 
+        a,
+        span {
+          color: $gray;
+          line-height: 1.6;
+        }
+
         .page-local-history {
           color: $gray;
-          display: block;
+          display: inline;
           line-height: 1;
           padding: 0;
           text-align: left;
-
-          a,
-          span {
-            color: $gray;
-            line-height: 1.2;
-          }
         }
       }
     }
@@ -129,12 +129,6 @@ $white: #ffffff;
         padding: 0;
       }
 
-      [data-tabbed] [role="tabpanel"] {
-        display: block !important;
-        margin: 0;
-        padding: 0;
-      }
-
       .button-hero,
       .button-hero-reverse,
       .button-hero-inverse,
@@ -153,11 +147,6 @@ $white: #ffffff;
       ul.accordion > li:before,
       [data-tabbed].tabbed nav {
         display: none;
-      }
-
-      .accordion__hidden {
-        margin-top: 15px;
-        max-height: 100%;
       }
 
       form {
@@ -340,6 +329,21 @@ $white: #ffffff;
         white-space: pre-wrap;
       }
 
+      .with-aside {
+        aside {
+          padding-bottom: 0;
+
+          h2:first-child {
+            margin-left: 0;
+            padding-bottom: 0;
+          }
+        }
+
+        .bside {
+          padding-top: 0;
+        }
+      }
+
       .filtered-listing-section aside {
         margin: 0;
         padding-bottom: 0;
@@ -369,6 +373,26 @@ $white: #ffffff;
             background: $white !important;
           }
         }
+      }
+
+      // Opinion follows
+      [data-tabbed] [role="tabpanel"] {
+        display: block !important;
+        margin: 0;
+        padding: 0;
+      }
+
+      .accordion__hidden {
+        margin-top: 15px;
+        max-height: 100%;
+      }
+
+      table.course-progression tr td.unit-description {
+        background: $white;
+      }
+
+      table.course-progression tbody tr.accordion__hidden {
+        display: block;
       }
     }
   }

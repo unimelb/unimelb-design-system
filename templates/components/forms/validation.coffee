@@ -45,11 +45,12 @@ unless window.UOMValid
                     t.invalid(f)
                     invalid++
                 else if f.getAttribute('type')=='checkbox'
-                    if f.checked
-                      t.valid(f)
-                    else
-                      t.invalid(f)
-                      invalid++
+                  checked = t.el.countSelector('[name="' + f.getAttribute('name') + '"]:checked')
+                  if checked > 0
+                    t.valid(f)
+                  else
+                    t.invalid(f)
+                    invalid++
                 else
                   if f.value.length > 0
                     t.valid(f)
@@ -58,7 +59,10 @@ unless window.UOMValid
                     invalid++
 
             if f.hasAttribute('data-pattern')
-              re = if t.patterns.hasOwnProperty(f.getAttribute 'data-pattern') then new RegExp(t.patterns[f.getAttribute 'data-pattern']) else new RegExp(f.getAttribute 'data-pattern')
+              if t.patterns.hasOwnProperty(f.getAttribute 'data-pattern')
+                re = new RegExp(t.patterns[f.getAttribute 'data-pattern'])
+              else
+                re = new RegExp(f.getAttribute 'data-pattern')
               if re.test(f.value)
                 t.valid(f)
               else
@@ -78,6 +82,11 @@ unless window.UOMValid
       setupMsg: (f) ->
         parent = f.parentNode
         parent = parent.parentNode if f.nodeName == 'SELECT'
+
+        if f.getAttribute('type')=='checkbox'
+          nameval = '[name="' + f.getAttribute('name') + '"]'
+          # Get the last wrapped checkbox in this node
+          parent = parent.parentNode.querySelector(nameval).parentNode.parentNode.querySelector('div:last-child').querySelector(nameval).parentNode
 
         if parent.countSelector('small') == 0
           error = document.createElement 'small'
