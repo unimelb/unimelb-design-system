@@ -7,6 +7,6 @@ To use the Maps component, you will need to know the latitude and longitude of t
 
 This implementation is for basic mapping only, anything complex or requiring some level of interaction should work directly on the [Google Maps API](https://developers.google.com/maps/) in a custom JS script.
 
-## Open Street Maps
+## New! Open Street Maps
 
-<span class="sticky"><b class="text">New!</b></span> We also provide an alternative for use with the community-curated Open Street Maps data, using the open source Leaflet.js.
+We also provide an alternative for use with the community-curated Open Street Maps data, using the open source Leaflet.js.
