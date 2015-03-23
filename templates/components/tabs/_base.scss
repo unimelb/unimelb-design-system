@@ -110,7 +110,6 @@
       position: relative;
       width: 94%;
 
-
       select {
         @include rem(margin, 5px 0);
         background-color: $brand;
@@ -119,6 +118,10 @@
         &:hover {
           background-color: $highlight;
         }
+      }
+
+      .styled-select svg.icon {
+        @include rem(top, 20px);
       }
 
       &.active {

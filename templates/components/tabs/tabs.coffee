@@ -7,6 +7,8 @@ unless window.UOMTabs
 
         if @el.countSelector('.mobile-nav') > 0
           @el.querySelector('.mobile-nav').addClass('active')
+        else
+          @buildMobileNav()
 
         if @el.hasAttribute('data-tabbed')
           t = this
@@ -111,6 +113,25 @@ unless window.UOMTabs
           else
             tab.removeAttribute('data-current')
             tab.style.display = 'none'
+
+      buildMobileNav: ->
+        mobile = document.createElement 'div'
+        mobile.addClass('mobile-nav')
+
+        selector = document.createElement 'select'
+        selector.setAttribute('role', 'tablist')
+
+        for tab, i in @el.querySelectorAll('nav a')
+          opt = document.createElement 'option'
+          opt.setAttribute('role', 'tab')
+          opt.setAttribute('value', tab.getAttribute('href'))
+          opt.appendChild document.createTextNode tab.firstChild.nodeValue
+
+          selector.appendChild opt
+
+        mobile.appendChild selector
+        root = @el.querySelector('.full-width')
+        root.insertBefore(mobile, root.firstChild)
 
     if (supportedmodernbrowser)
       new Tabbed(el) for el in document.querySelectorAll('[data-tabbed]')
