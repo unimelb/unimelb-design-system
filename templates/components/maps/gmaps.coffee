@@ -2,13 +2,13 @@ unless window.UOMGMap
   window.UOMGMap = ->
     class Gmap
       constructor: (@el) ->
-        @center = @el.getAttribute('data-latlng').split(',')
+        [@lat, @lng] = @el.getAttribute('data-latlng').split(',')
         @width = parseInt(@el.getAttribute 'data-width') || 400
         @height = parseInt(@el.getAttribute 'data-height') || 300
         @zoom = parseInt(@el.getAttribute 'data-zoom') || 17
         @pin = @el.getAttribute('data-pin')
         @options =
-          center: new google.maps.LatLng @center[0], @center[1]
+          center: new google.maps.LatLng @lat, @lng
           zoom: @zoom
           scrollwheel: false
           mapTypeId: google.maps.MapTypeId.ROADMAP
