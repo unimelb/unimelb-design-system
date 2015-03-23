@@ -17,6 +17,7 @@ window.UOMloadComponents = function() {
   window.UOMValid();
   window.UOMTableLabels();
   window.UOMGMap();
+  window.UOMLeafletMap();
 };
 
 if (window.attachEvent) {

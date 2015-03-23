@@ -45,7 +45,7 @@ unless window.UOMSidebarTabs
 
     if (supportedmodernbrowser)
       for el in document.querySelectorAll('.sidebar-tab-nav')
-        new UOMSidebarTabsComponent(el, '.sidebar-tab')
+        new SidebarTabs(el, '.sidebar-tab')
 
       for el in document.querySelectorAll('.inner-nav-tab')
-        new UOMSidebarTabsComponent(el, '.inner-nav-page')
+        new SidebarTabs(el, '.inner-nav-page')
