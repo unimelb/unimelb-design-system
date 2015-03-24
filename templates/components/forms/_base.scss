@@ -346,6 +346,7 @@
     @include rem(height, 20px);
     @include rem(top, 15px);
     @include rem(width, 20px);
+    cursor: pointer;
     display: block;
     fill: $white;
     position: absolute;

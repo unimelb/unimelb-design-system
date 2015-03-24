@@ -140,7 +140,8 @@ window.UOMinjectHeader = ->
             --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu" /></svg> Menu</a>
       """
 
-    navparent = document.querySelector('.page-header-navigation').parentNode
+    navparent = header.querySelector('header')
+    navparent = header unless navparent
     navparent.appendChild tools
 
     window.addEventListener "scroll", ->

@@ -8,7 +8,7 @@ body {
 
 .page-inner {
   @extend %smooth-translate;
-  @include rem(padding-top, 60px);
+  // @include rem(padding-top, 60px);
   background-color: $navy;
   min-height: 100%;
   position: relative;

@@ -30,7 +30,7 @@
 
   &.fixed:not(.floating) {
     @media screen {
-      @include rem(height, 42px);
+      @include rem(height, 40px);
       background-color: rgba($white, .9);
       font-family: $ff-sans;
       position: fixed;
@@ -73,6 +73,10 @@
         @include rem(padding-left, 15px);
         transition: .3s padding-left .1s, .2s height;
         vertical-align: top;
+
+        .mobile-nav .styled-select.alt {
+          @include rem(margin-top, 5px);
+        }
       }
 
       a,
@@ -81,9 +85,10 @@
       }
 
       .page-header-tools .page-header-icon {
-        @include rem(height, 39px);
+        @include rem(height, 40px);
         border-left-color: $lightgray;
         line-height: 1;
+        vertical-align: top;
 
         svg {
           @include rem(height, 20px);
@@ -198,10 +203,21 @@
       @include rem(padding, 0 10px);
       border: 0 none;
       border-radius: 3px;
+      color: $darkblue;
+      max-width: 90%;
+
+      &:hover {
+        color: $darkblue;
+      }
+    }
+
+    .styled-select.alt {
+      @include rem(margin-top, 13px);
     }
 
     .styled-select svg.icon {
       @include rem(top, 10px);
+      fill: $darkblue;
     }
 
     @include breakpoint(0) {
@@ -231,6 +247,7 @@
     @include rem(margin-right, 260px);
     display: block;
     overflow: hidden;
+    position: absolute;
     text-overflow: ellipsis;
     white-space: nowrap;
 
@@ -281,6 +298,7 @@
   right: 0;
   text-align: right;
   top: 0;
+  vertical-align: top;
 
   @include breakpoint(tablet) {
     @include rem(width, 185px);
@@ -288,6 +306,8 @@
 
   @include breakpoint(desktop) {
     @include rem(width, 300px);
+    background-color: $white;
+    position: absolute;
   }
 
   .page-header-icon {
@@ -348,6 +368,8 @@
 }
 
 .uomcontent .floating {
+  background-color: transparent;
+
   .page-header-logo {
     @include rem(margin-left, 15px);
     @include rem(margin-top, 15px);
