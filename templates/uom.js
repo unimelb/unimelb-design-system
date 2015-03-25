@@ -16,8 +16,11 @@ window.UOMloadComponents = function() {
   window.UOMFancySelect();
   window.UOMValid();
   window.UOMTableLabels();
+
   window.UOMGMap();
   window.UOMLeafletMap();
+
+  window.UOMImageGallery();
 };
 
 if (window.attachEvent) {
