@@ -265,7 +265,7 @@
       @include breakpoint(wide) {
         li {
 
-          * {
+          > * {
             max-width: 650px;
             margin-left: 110px;
           }
