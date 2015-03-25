@@ -109,6 +109,15 @@ section
       </ul>
     </div>
 
+section
+  p In situations where the site does not sit at the root of its domain (ie. within a subdirectory), the site root can be set to any arbitrary value by adding a <code>data-absolute-root</code> attribute to the local nav div. This value will be inserted before any nav links, so make sure you use relative links, eg.
+
+==syntax_highlight :html
+  erb:
+    <div class="no-js" id="sitemap" role="navigation" data-absolute-root="/sitehome">
+    ...
+    </div>
+
 hr
 
 section
