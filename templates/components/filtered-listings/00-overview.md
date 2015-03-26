@@ -6,5 +6,5 @@ title: Filtered listings
 An extra Javascript library is required to use this component, include this on your page:
 
 ```html
-<script src="//uom-templates.s3.amazonaws.com/templates/beta/isotope.pkgd.min.js"></script>
+<script src="//uom-design-system.s3.amazonaws.com/shared/isotope.pkgd.min.js"></script>
 ```
