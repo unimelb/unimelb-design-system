@@ -7,8 +7,7 @@ unless window.UOMTableLabels
         for row in t.el.querySelectorAll('tr:not(.header)')
           for cell, index in row.querySelectorAll('td')
             if labels[index]
-              cell.setAttribute "data-label", labels[index].innerText
-
+              cell.setAttribute "data-label", (labels[index].textContent || labels[index].innerText)
 
     for table in document.querySelectorAll('table')
       new TableLabels(table)
