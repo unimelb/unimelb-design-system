@@ -36,9 +36,9 @@ if(typeof UOMImageGallery === 'undefined') {
         var PhotoSwipeHTML = document.createElement('div');
         PhotoSwipeHTML.innerHTML = '<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true"><div class="pswp__bg"></div><div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button><button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button><button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button><button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div>';
         document.querySelectorAll('div.uomcontent')[0].appendChild(PhotoSwipeHTML);
-        
+
         for (var i = galleries.length - 1; i >= 0; i--) {
-          var gallery = galleries[i]; 
+          var gallery = galleries[i];
           imagesLoaded(gallery, function(){
             ImageGallery(gallery);
           });
@@ -82,7 +82,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
             if(figureEl.children.length > 1) {
                 // <figcaption> content
-                item.title = figureEl.children[1].innerHTML; 
+                item.title = figureEl.children[1].innerHTML;
                 item.msrc = figureEl.children[0].getAttribute('src');
             }
 
@@ -121,8 +121,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             index;
 
         for (var i = 0; i < numChildNodes; i++) {
-            if(childNodes[i].nodeType !== 1) { 
-                continue; 
+            if(childNodes[i].nodeType !== 1) {
+                continue;
             }
 
             if(childNodes[i] === clickedListItem) {
@@ -154,10 +154,10 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             if(!vars[i]) {
                 continue;
             }
-            var pair = vars[i].split('=');  
+            var pair = vars[i].split('=');
             if(pair.length < 2) {
                 continue;
-            }           
+            }
             params[pair[0]] = pair[1];
         }
 
@@ -192,7 +192,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                 // See Options -> getThumbBoundsFn section of documentation for more info
                 var thumbnail = items[index].el.getElementsByTagName('a')[0], // find thumbnail
                     pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                    rect = thumbnail.getBoundingClientRect(); 
+                    rect = thumbnail.getBoundingClientRect();
                 return {x:rect.left, y:rect.top + pageYScroll + 20, w:rect.width};
             }
 
