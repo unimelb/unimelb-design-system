@@ -45,3 +45,14 @@ A-Z indices can be done via a simple class change:
 ```
 
 As you can't have both navigations in one document, you find an <a href="/layouts/indexnav">example of an index-navigation</a> in the example layouts.
+
+<h2 id="jsmethods">Javascript Call</h2>
+The smooth scroll methods can be invoked in your own project, independently of inpage navigation, by calling <code>smoothScrollTo</code>, as in the following example:
+
+```javascript
+var el = document.querySelector('#block'); // where #block is any element with id="block"
+smoothScrollTo(el);
+```
+
+<code>smoothScrollTo</code> is declared in the window (global) scope.
+
