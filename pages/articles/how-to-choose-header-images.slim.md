@@ -14,14 +14,13 @@ article
           '
           strong Andi Weis
 
-  section.lead
-    p Intro
-
   section
-    h2.title What's the purpose
-    p Emotional scene setting or explanation of content
+    p.lead Using and choosing images can be quite difficult. This guide helps you through all considerations you have to take into account for choosing the right images.
+
+    p The first question should always be about the purpose of the image.
 
     h2.title Content images
+    p http://mcm.unimelb.edu.au/
 
     h2.title Header images
     p Readability of text on top
