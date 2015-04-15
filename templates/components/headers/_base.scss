@@ -65,11 +65,17 @@
 
     &.banner {
       @extend %bannerbox;
+      // @include rem(margin-top, -60px);
       @include rem(min-height, 300px);
+      // height: 100vh;
       height: auto;
 
+      @include breakpoint(height-smallest) {
+        @include rem(min-height, 520px);
+      }
+
       @include breakpoint(height-small) {
-        @include rem(min-height, 650px);
+        @include rem(min-height, 620px);
       }
 
       @include breakpoint(height-medium) {
@@ -81,6 +87,8 @@
       }
 
       @include breakpoint(desktop) {
+        // @include rem(margin-top, -90px);
+
         h1 {
           @include adjust-font-size-to(50px);
         }

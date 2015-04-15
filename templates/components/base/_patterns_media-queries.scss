@@ -28,14 +28,14 @@
     }
   }
   @else if $point == height-smallest {
-    @media screen and (min-height: 640px) {
+    @media screen and (min-height: 620px) {
       & {
         @content;
       }
     }
   }
   @else if $point == height-small {
-    @media screen and (min-height: 740px) {
+    @media screen and (min-height: 700px) {
       & {
         @content;
       }
