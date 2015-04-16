@@ -34,8 +34,6 @@ section
       ul
         li
           a href="http://www.nngroup.com/articles/minimize-cognitive-load/" Minimize Cognitive Load to Maximize Usability
-        li
-          a href="/articles/one-thing-at-a-time" One. Thing. At. A. Time.
     li
       h2 Layout your page
       p
