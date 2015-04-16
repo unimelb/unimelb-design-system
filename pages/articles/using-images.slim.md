@@ -15,20 +15,27 @@ article
           strong Andi Weis
 
   section
-    p.lead Using and choosing images can be quite difficult. This guide helps you through all considerations you have to take into account for choosing the right image.
+    p.lead Choosing & using images on websites can be quite difficult. This guide aims to help make you aware of various things you should consider to help you choose the right image.
 
-    p Images can be a good way to help the user understanding what you want to communicate. Good imagery informs, captures attention or even persuades our visitors. The wrong image, however, can confuse, misguide, annoy or even repel the user. You may not even get the chance to correct this negative impact.
-    p Selecting the right image can be crucial for the success of a page so you should start with the very first important question of all.
+    p Images can be a good way to help the user understand what you are trying to communicate. Good imagery informs, captures attention and even persuades our visitors. The wrong image, however, can confuse, misguide, annoy or even repel. You may never get the chance to correct this negative impact.
+
+    p Before you look to find an image at all thought, you should start with the most first important question...
 
     h2.title Do I need an image at all?
-    p Just using an image for the sake of using an image is never helpful. There should always be a clear purpose. Sometimes you are given an image that you have to use, but even in this case you should ask this question.
 
-    p You should always be aware what the user is trying to accomplish on your page. Is it a guide about how to connect to the wireless network or is it an in-depth article about the latest discovery in the field of neuroscience? I am quite certain that images would help the user a lot in these cases. However, if it is a course listing, a contact page or entry requirements you probably don't need an image.
-    p It is a blurry line when to use an image, but it is always good to ask yourself if an image would be helpful or not. So lets have a closer look on the purpose of images.
+    p Using an image for the sake of using an image is never helpful. There should always be a clear purpose for every element you include on your page as every element you add either supports or detracts from it's purpose. If it doesn't need to be there, get rid of it. Sometimes (read often) you are given an image that you are told you have to use, but even in this case (and often especially in this case) you should ask this of the person demanding the image.
+
+    p Answering this questions requires being aware of what the user is trying to accomplish on your page. Is it a guide about how to connect to the wireless network, or is it an in-depth article about the latest discovery in the field of neuroscience? In these cases, an image will likely be very useful in either establishing an emotive connection or a more instantateous understanding of what is being discussed. If, however, the page is a course listing or highly functional contact page or entry requirements you probably don't need an image and stand between the user and the task they are trying to achieve (eg. find a course or find contact details respectively).
+
+    p There is often a blurry line when choosing to use an image, but it is always good to ask yourself if an image would be helpful or not? Lets have a closer look at the purpose of images.
 
     h2.title What's the purpose of the image?
-    p We distinguish between two types of images: The content image and the background image. The content images explains, informs or generally adds value to your content. The background image on the other hand sets the scene, complements your content and could even change the mood of the user.
-    p So what's the difference between those two?
+
+    p It is useful to distinguish between two different types of images often used on web pages: the content image and the background image. 
+
+    p The <strong>content images</strong> explains, informs or generally adds value to your content. The <strong>background image</strong> on the other hand, sets the scene, complements your content and even changes the mood of the user.
+    
+    p So what's the difference between those two with regards to how they are displayed in the design system?
 
     h3 Content images
     p Content images are displayed within the text flow, can have captions and are never cropped or masked with text
