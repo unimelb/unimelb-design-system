@@ -31,25 +31,26 @@ window.UOMinjectGlobalNav = ->
           t.header.removeClass 'fixed'
           t.header.toggleClass 'active'
 
-        @localnav.querySelector('h2:first-child').addEventListener 'click', (e) ->
-          e.preventDefault()
-          if t.page.hasClass 'global-active'
-            t.page.removeClass 'global-active'
-            t.page.addClass 'active'
-            t.header.addClass 'active'
-            t.localnav.removeClass 'global-active'
-            t.localnav.addClass 'active'
-            t.sitemap.removeClass 'active'
-          else
-            t.blanket.removeClass 'on'
-            t.trigger.addClass 'active'
-            t.page.removeClass 'global-active'
-            t.header.removeClass 'global-active'
-            t.localnav.removeClass 'global-active'
-            t.sitemap.removeClass 'active'
-            t.page.toggleClass 'active'
-            t.localnav.toggleClass 'active'
-            t.header.toggleClass 'active'
+        for trigger in @localnav.querySelectorAll('h2:first-child,a[href^="#"]')
+          trigger.addEventListener 'click', (e) ->
+            e.preventDefault()
+            if t.page.hasClass 'global-active'
+              t.page.removeClass 'global-active'
+              t.page.addClass 'active'
+              t.header.addClass 'active'
+              t.localnav.removeClass 'global-active'
+              t.localnav.addClass 'active'
+              t.sitemap.removeClass 'active'
+            else
+              t.blanket.removeClass 'on'
+              t.trigger.addClass 'active'
+              t.page.removeClass 'global-active'
+              t.header.removeClass 'global-active'
+              t.localnav.removeClass 'global-active'
+              t.sitemap.removeClass 'active'
+              t.page.toggleClass 'active'
+              t.localnav.toggleClass 'active'
+              t.header.toggleClass 'active'
 
         @trigger.addEventListener 'click', (e) ->
           e.preventDefault()

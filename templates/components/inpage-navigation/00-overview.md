@@ -54,5 +54,5 @@ var el = document.querySelector('#block'); // where #block is any element with i
 smoothScrollTo(el);
 ```
 
-<code>smoothScrollTo</code> is declared in the window (global) scope.
+<code>smoothScrollTo</code> is declared in the window (global) scope. <a href="javascript:smoothScrollTo(document.getElementById('jsmethods'))" class="button-small">Try it out!</a>
 
