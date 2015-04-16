@@ -8,32 +8,82 @@ article
     header.banner.blurred
       .mid-align
         h1 Hey, that looks nice!
-        p On the use of images in the Design System
+        p Using images in the Design System
         p.author
           |By
           '
           strong Andi Weis
 
   section
-    p.lead Using and choosing images can be quite difficult. This guide helps you through all considerations you have to take into account for choosing the right images.
+    p.lead Using and choosing images can be quite difficult. This guide helps you through all considerations you have to take into account for choosing the right image.
 
-    p The first question should always be about the purpose of the image.
+    p Images can be a good way to help the user understanding what you want to communicate. Good imagery informs, captures attention or even persuades our visitors. The wrong image, however, can confuse, misguide, annoy or even repel the user. You may not even get the chance to correct this negative impact.
+    p Selecting the right image can be crucial for the success of a page so you should start with the very first important question of all.
 
-    h2.title Content images
-    p http://mcm.unimelb.edu.au/
+    h2.title Do I need an image at all?
+    p Just using an image for the sake of using an image is never helpful. There should always be a clear purpose. Sometimes you are given an image that you have to use, but even in this case you should ask this question.
 
-    h2.title Header images
-    p Readability of text on top
-    p Use your background image to reinforce the overall message, not as an attempt to communicate all at once!
-    p Responsiveness
-    p Colours
-    p Don’t pick an image that draws more attention than the primary objective of the page.
-    p Faces are not necessarily relevant (http://blog.eyequant.com/2014/01/15/the-3-most-surprising-insights-from-a-200-website-eye-tracking-study/)
-    p Think of more options than only the obvious. Get creative but don't get too attached to one image.
-    p If you don't find one, dont use one!
+    p You should always be aware what the user is trying to accomplish on your page. Is it a guide about how to connect to the wireless network or is it an in-depth article about the latest discovery in the field of neuroscience? I am quite certain that images would help the user a lot in these cases. However, if it is a course listing, a contact page or entry requirements you probably don't need an image.
+    p It is a blurry line when to use an image, but it is always good to ask yourself if an image would be helpful or not. So lets have a closer look on the purpose of images.
+
+    h2.title What's the purpose of the image?
+    p We distinguish between two types of images: The content image and the background image. The content images explains, informs or generally adds value to your content. The background image on the other hand sets the scene, complements your content and could even change the mood of the user.
+    p So what's the difference between those two?
+
+    h3 Content images
+    p Content images are displayed within the text flow, can have captions and are never cropped or masked with text
+    ul
+      li Explains content in a better way than text (infographics, etc...)
+      li Displays what the text is talking about (pictures, items, etc...)
+      li Shows a person
+      li Offers additional information
+    p
+      a href="#content-images" Read how to pick content images
+
+    h3 Background images
+    p Background images mostly have text on top and can be cropped according to the device sice, which means not all parts of the image is visible at all times
+    ul
+      li Complements your content
+      li Sets a mood
+      li Sets a color scheme
+      li Hints what the topic is about (without showing something crucial for the content)
+    p
+      a href="#background-images" Read how to use background images
+
+  .fullwidth style="background-image: url('/assets/images/choose-header-images/science.jpg')}');"
+    section
+      p.center The science of choosing and using images is actually easier than one might think
+
+  section
+
+    h2#content-images Content images
+    p Picking images for content is definitely easier than selecting background images. You don't have to worry about sizes or that some parts might not be seen by the audience as they are always shown in full proportion. However here are some dos and dont'ts for the selection and usage of content images:
+
+    p
+      em # 'dos and donts' with examples go here
+
+    h2#background-images Background images
+    ul
+      li
+        em # Readability of text on top
+      li
+        em # Use your background image to reinforce the overall message, not as an attempt to communicate all at once!
+      li
+        em # Responsiveness
+      li
+        em # Colours
+      li
+        em # Don’t pick an image that draws more attention than the primary objective of the page.
+      li
+        em # Faces are not necessarily relevant (http://blog.eyequant.com/2014/01/15/the-3-most-surprising-insights-from-a-200-website-eye-tracking-study/)
+      li
+        em # Think of more options than only the obvious. Get creative but don't get too attached to one image.
+
 
 
     h2.title Image resources
+    p
+      em # A list of resources
 
 javascript:
   /*!
