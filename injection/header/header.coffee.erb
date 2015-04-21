@@ -14,7 +14,7 @@ window.UOMinjectHeader = ->
   else
     assethost = '//uom-design-system.s3.amazonaws.com/shared'
 
-  if document.countSelector('.page-header') == 0
+  if document.countSelector('.page-header-tools') == 0
 
     # Create page wrapper if it doesn't already exist
     parent = document.querySelector('.uomcontent')
@@ -94,6 +94,10 @@ window.UOMinjectHeader = ->
             navparent.appendChild(sep)
 
           navparent.appendChild(local)
+
+    else
+      page.removeChild(header)
+      parent.insertBefore(header, page)
 
     # Header tools
     tools = document.querySelector('.page-header-tools')
