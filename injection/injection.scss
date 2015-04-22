@@ -29,30 +29,6 @@ $baseline-px:  16px;
 
 @import 'patterns';
 
-$cdnurl: '//uom-design-system.s3.amazonaws.com/shared';
-
-@font-face {
-  font-family: 'Roboto';
-  src: url("#{$cdnurl}/fonts/Roboto-Regular.eot");
-  src: url("#{$cdnurl}/fonts/Roboto-Regular.eot#iefix") format('embedded-opentype'),
-       url("#{$cdnurl}/fonts/Roboto-Regular.woff") format('woff'),
-       url("#{$cdnurl}/fonts/Roboto-Regular.ttf")  format('truetype'),
-       url("#{$cdnurl}/fonts/Roboto-Regular.svg#f4ba68a9596ca53347cecdb9c6e48d01") format('svg');
-  font-style: normal;
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Roboto';
-  src: url("#{$cdnurl}/fonts/Roboto-Light.eot");
-  src: url("#{$cdnurl}/fonts/Roboto-Light.eot#iefix") format('embedded-opentype'),
-       url("#{$cdnurl}/fonts/Roboto-Light.woff") format('woff'),
-       url("#{$cdnurl}/fonts/Roboto-Light.ttf")  format('truetype'),
-       url("#{$cdnurl}/fonts/Roboto-Light.svg#14cfc794995ce651ee6fc06de48ff027") format('svg');
-  font-style: normal;
-  font-weight: 300;
-}
-
 $regular: 400;
 $light: 300;
 
