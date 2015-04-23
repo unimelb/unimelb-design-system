@@ -155,3 +155,15 @@ section
 
     </div>
 
+section
+  p Occasionally, a site will need to co-brand the logo space - this can be done by adding a special link inside the <code>div class="floating"</code> as shown in the example below:
+
+==syntax_highlight :html
+  erb:
+    <div class="floating">
+      <a class="page-header-home" href="/">Faculty of Veterinary and Agricultural Sciences</a>
+    </div>
+
+section
+  p
+    <img src="/assets/images/fvas-header.jpg" alt="">
