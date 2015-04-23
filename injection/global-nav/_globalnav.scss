@@ -1,4 +1,4 @@
-.uomcontent [role="sitemap"] {
+.uomcontent [role="navigation"]#sitemap {
   @extend %normalise;
   @extend %smooth-translate;
   @extend %wrapper;
@@ -85,6 +85,7 @@
   }
 
   ul.quicklinks {
+    @extend %quicklinks;
     padding: 0;
   }
 
@@ -301,7 +302,7 @@
 }
 
 body.ie {
-  .uomcontent [role="sitemap"] {
+  .uomcontent [role="navigation"]#sitemap {
     display: none;
     z-index: 0;
 
@@ -371,7 +372,7 @@ body.ie {
 }
 
 body.ie9 {
-  .uomcontent [role="sitemap"] {
+  .uomcontent [role="navigation"]#sitemap {
     form fieldset .inline .search-button {
       text-indent: -999em;
       width: 40px;

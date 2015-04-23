@@ -3,7 +3,7 @@ window.UOMinjectGlobalNav = ->
     constructor: ->
       @page = document.querySelector('.page-inner')
       @header = document.querySelector('.page-header')
-      @sitemap = document.querySelector('div[role="sitemap"]')
+      @sitemap = document.querySelector('#sitemap')
       @trigger = document.querySelector('.sitemap-label')
       @menutrigger = document.querySelector('.page-header-tools a[title="Menu"]')
       @searchtrigger = document.querySelector('.page-header-tools a[title="Search"]')
@@ -13,8 +13,8 @@ window.UOMinjectGlobalNav = ->
 
     setupEvents: ->
       t = this
-      if document.countSelector('.uomcontent div[role="navigation"]') == 1
-        @localnav = document.querySelector('.uomcontent div[role="navigation"]')
+      if document.countSelector('#navigation') == 1
+        @localnav = document.querySelector('#navigation')
         @localsitemaptrigger = @localnav.querySelector('.sitemap-link')
 
         @menutrigger.addEventListener 'click', (e) ->
@@ -151,8 +151,8 @@ window.UOMinjectGlobalNav = ->
             t.sitemap.querySelector('input[type="search"]').focus()
 
   # Move local nav outside page container
-  if document.countSelector('.uomcontent div[role="navigation"]') == 1
-    localnav = document.querySelector('.uomcontent div[role="navigation"]')
+  if document.countSelector('#navigation') == 1
+    localnav = document.querySelector('#navigation')
 
     if localnav.countSelector('a.sitemap-link') == 0
       rootmenu = localnav.querySelector('ul')
@@ -218,7 +218,7 @@ window.UOMinjectGlobalNav = ->
     document.querySelector('.uomcontent').appendChild(trigger)
 
   # Create global nav
-  nav = document.querySelector('[role="sitemap"]')
+  nav = document.querySelector('#sitemap')
   unless nav
 
     if "<%=ENV["ASSET_ENV"]%>" == 'development'
@@ -227,7 +227,8 @@ window.UOMinjectGlobalNav = ->
       assethost = '//uom-design-system.s3.amazonaws.com/shared'
 
     nav = document.createElement('div')
-    nav.setAttribute('role', 'sitemap')
+    nav.setAttribute('role', 'navigation')
+    nav.setAttribute('id', 'sitemap')
     nav.innerHTML = """
       <a class="close-button" href="">Close</a>
       <a href="https://www.unimelb.edu.au" class="logo">

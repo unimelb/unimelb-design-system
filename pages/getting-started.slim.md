@@ -1,5 +1,5 @@
 ---
-title: Design System Usage Instructions
+title: Getting started
 ---
 header
   / uncomment below to demonstrate header image

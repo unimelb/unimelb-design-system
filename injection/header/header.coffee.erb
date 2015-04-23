@@ -141,7 +141,7 @@ window.UOMinjectHeader = ->
     footer = document.querySelector('.page-footer')
     page.insertBefore(main, footer)
 
-    sitemap = document.querySelector('[role="sitemap"]')
+    sitemap = document.querySelector('#sitemap')
     for n in parent.childNodes
       if n and n != page and n != sitemap and n != header
         parent.removeChild(n)

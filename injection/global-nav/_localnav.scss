@@ -10,7 +10,7 @@
   }
 }
 
-.uomcontent [role="navigation"] {
+.uomcontent [role="navigation"]#navigation {
   @extend %normalise;
   @extend %smooth-translate;
   @include translateX(0);
@@ -233,7 +233,7 @@
 }
 
 body.ie {
-  .uomcontent [role="navigation"] {
+  .uomcontent [role="navigation"]#navigation {
     display: none;
 
     .w,
