@@ -42,11 +42,12 @@
       color: $navy;
       font-weight: $bold;
 
-      td,
-      td:first-child {
+      th,
+      th:first-child {
         @include rem(padding, 20px 10px 10px 10px);
         background-color: transparent;
         border-top: 0;
+        text-align: left;
       }
     }
 
@@ -111,11 +112,12 @@
 
     tr {
       &.header {
-        td,
-        td:first-child {
+        th,
+        th:first-child {
           @include rem(padding, 10px);
           background-color: $paleblue;
           border: 1px solid $lightergray;
+          text-align: left;
         }
       }
 

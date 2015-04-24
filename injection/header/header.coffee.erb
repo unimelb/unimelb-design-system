@@ -14,189 +14,191 @@ window.UOMinjectHeader = ->
   else
     assethost = '//uom-design-system.s3.amazonaws.com/shared'
 
-  # Create page wrapper if it doesn't already exist
-  parent = document.querySelector('.uomcontent')
-  unless parent
-    parent = document.createElement('div')
-    parent.addClass('uomcontent')
-    document.body.appendChild parent
+  if document.countSelector('.page-header-tools') == 0
 
-    for n in document.body.childNodes
-      if n and n != parent
-        document.body.removeChild(n)
-        parent.appendChild(n)
+    # Create page wrapper if it doesn't already exist
+    parent = document.querySelector('.uomcontent')
+    unless parent
+      parent = document.createElement('div')
+      parent.addClass('uomcontent')
+      document.body.appendChild parent
 
-  page = document.querySelector('.page-inner')
-  unless page
-    page = document.createElement('div')
-    page.addClass('page-inner')
+      for n in document.body.childNodes
+        if n and n != parent
+          document.body.removeChild(n)
+          parent.appendChild(n)
 
-  # Create header if it doesn't already exist
-  header = document.querySelector('.page-header')
-  unless header
-    # Create header and move local breadcrumb
-    header = document.createElement('div')
-    header.addClass('page-header')
+    page = document.querySelector('.page-inner')
+    unless page
+      page = document.createElement('div')
+      page.addClass('page-inner')
 
-    if document.countSelector('.page-inner > .floating') == 1
-      # Landing page header
-      header.innerHTML = """
-      <a class="page-header-logo" href="#{defaultlink}">
-        <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
-          <title id="aria-uom-title">The University of Melbourne Logo</title>
-          <image xlink:href="#{assethost}/logo.svg" src="#{assethost}/logo.png" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
-        </svg>
-      </a>
-      """
-      header.addClass('floating')
-      if document.querySelector('.page-inner > .floating').hasClass('reverse')
-        header.addClass('reverse')
+    # Create header if it doesn't already exist
+    header = document.querySelector('.page-header')
+    unless header
+      # Create header and move local breadcrumb
+      header = document.createElement('div')
+      header.addClass('page-header')
 
-      # Add any customisations
-      for n in document.querySelector('.floating').childNodes
-        header.appendChild n
-
-    else
-      if document.countSelector('.page-local-history .root') == 0
-        rootlink = """
-        <a href="https://unimelb.edu.au/" title="The University of Melbourne">The University of Melbourne</a>
-        """
-      else
-        rootlink = ""
-
-      # General header
-      header.innerHTML = """
-      <header>
+      if document.countSelector('.page-inner > .floating') == 1
+        # Landing page header
+        header.innerHTML = """
         <a class="page-header-logo" href="#{defaultlink}">
           <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
             <title id="aria-uom-title">The University of Melbourne Logo</title>
             <image xlink:href="#{assethost}/logo.svg" src="#{assethost}/logo.png" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
           </svg>
         </a>
-        <div class="page-header-navigation">
-          #{rootlink}
-        </div>
-      </header>
-      """
+        """
+        header.addClass('floating')
+        if document.querySelector('.page-inner > .floating').hasClass('reverse')
+          header.addClass('reverse')
 
-    parent.insertBefore(header, page)
+        # Add any customisations
+        for n in document.querySelector('.floating').childNodes
+          header.appendChild n
 
-    local = document.querySelector('.page-local-history')
-    if local
-      navparent = document.querySelector('.page-header-navigation')
-      local.parentNode.removeChild(local)
-      if navparent
-        if rootlink != ""
-          sep = document.createElement "span"
-          sep.innerHTML = "/"
-          navparent.appendChild(sep)
+      else
+        if document.countSelector('.page-local-history .root') == 0
+          rootlink = """
+          <a href="https://unimelb.edu.au/" title="The University of Melbourne">The University of Melbourne</a>
+          """
+        else
+          rootlink = ""
 
-        navparent.appendChild(local)
+        # General header
+        header.innerHTML = """
+        <header>
+          <a class="page-header-logo" href="#{defaultlink}">
+            <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
+              <title id="aria-uom-title">The University of Melbourne Logo</title>
+              <image xlink:href="#{assethost}/logo.svg" src="#{assethost}/logo.png" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
+            </svg>
+          </a>
+          <div class="page-header-navigation">
+            #{rootlink}
+          </div>
+        </header>
+        """
 
-        mobile = document.createElement 'div'
-        mobile.addClass('mobile-nav')
+      parent.insertBefore(header, page)
 
-        selector = document.createElement 'select'
-        selector.setAttribute('role', 'tablist')
-        selector.addClass('alt')
-        selector.addEventListener 'change', (e) ->
-          if this.value
-            if this.value.substr(0, 1) != '#'
-              window.location = this.value
+      local = document.querySelector('.page-local-history')
+      if local
+        navparent = document.querySelector('.page-header-navigation')
+        local.parentNode.removeChild(local)
+        if navparent
+          if rootlink != ""
+            sep = document.createElement "span"
+            sep.innerHTML = "/"
+            navparent.appendChild(sep)
 
-        max = local.countSelector('a') - 1
-        for nav, i in local.querySelectorAll('a')
-          opt = document.createElement 'option'
-          opt.setAttribute('role', 'tab')
-          opt.setAttribute('value', nav.getAttribute('href'))
-          opt.appendChild document.createTextNode nav.firstChild.nodeValue
+          navparent.appendChild(local)
 
-          opt.setAttribute('selected', 'selected') if i==max
+          mobile = document.createElement 'div'
+          mobile.addClass('mobile-nav')
 
-          selector.appendChild opt
+          selector = document.createElement 'select'
+          selector.setAttribute('role', 'tablist')
+          selector.addClass('alt')
+          selector.addEventListener 'change', (e) ->
+            if this.value
+              if this.value.substr(0, 1) != '#'
+                window.location = this.value
 
-        mobile.appendChild selector
-        pagenav = local.parentNode
-        pagenav.insertBefore(mobile, pagenav.firstChild)
+          max = local.countSelector('a') - 1
+          for nav, i in local.querySelectorAll('a')
+            opt = document.createElement 'option'
+            opt.setAttribute('role', 'tab')
+            opt.setAttribute('value', nav.getAttribute('href'))
+            opt.appendChild document.createTextNode nav.firstChild.nodeValue
 
-  else
-    page.removeChild(header)
-    parent.insertBefore(header, page)
+            opt.setAttribute('selected', 'selected') if i==max
 
-  # Header tools
-  tools = document.querySelector('.page-header-tools')
-  unless tools
-    tools = document.createElement "div"
-    tools.addClass('page-header-tools')
-    if document.countSelector('[role="main"].no-login') == 0
-      tools.innerHTML = """
-            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--
-            --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-user" /></svg> Portals</a><!--
-            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>
-      """
+            selector.appendChild opt
+
+          mobile.appendChild selector
+          pagenav = local.parentNode
+          pagenav.insertBefore(mobile, pagenav.firstChild)
+
     else
-      tools.innerHTML = """
-            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search" /></svg> Search</a><!--
-            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu" /></svg> Menu</a>
-      """
+      page.removeChild(header)
+      parent.insertBefore(header, page)
 
-    navparent = header.querySelector('header')
-    navparent = header unless navparent
-    navparent.appendChild tools
-
-    window.addEventListener "scroll", ->
-      if /(Firefox)/g.test(navigator.userAgent) or /(Trident)/g.test(navigator.userAgent)
-        outer = document.querySelector('html')
+    # Header tools
+    tools = document.querySelector('.page-header-tools')
+    unless tools
+      tools = document.createElement "div"
+      tools.addClass('page-header-tools')
+      if document.countSelector('[role="main"].no-login') == 0
+        tools.innerHTML = """
+              <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--
+              --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-user" /></svg> Portals</a><!--
+              --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>
+        """
       else
-        outer = document.body
+        tools.innerHTML = """
+              <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search" /></svg> Search</a><!--
+              --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu" /></svg> Menu</a>
+        """
 
-      if outer.scrollTop > 40
-        header.addClass 'fixed'
-      else
-        header.removeClass 'fixed'
+      navparent = header.querySelector('header')
+      navparent = header unless navparent
+      navparent.appendChild tools
 
-  header.setAttribute('role', 'banner')
+      window.addEventListener "scroll", ->
+        if /(Firefox)/g.test(navigator.userAgent) or /(Trident)/g.test(navigator.userAgent)
+          outer = document.querySelector('html')
+        else
+          outer = document.body
 
-  main = document.querySelector('[role="main"]')
-  unless main
-    main = document.createElement('div')
-    main.setAttribute('role', 'main')
-  else
-    main.parentNode.removeChild(main)
+        if outer.scrollTop > 40
+          header.addClass 'fixed'
+        else
+          header.removeClass 'fixed'
 
-  footer = document.querySelector('.page-footer')
-  page.insertBefore(main, footer)
+    header.setAttribute('role', 'banner')
 
-  sitemap = document.querySelector('[role="sitemap"]')
-  for n in parent.childNodes
-    if n and n != page and n != sitemap and n != header
-      parent.removeChild(n)
-      main.appendChild(n)
+    main = document.querySelector('[role="main"]')
+    unless main
+      main = document.createElement('div')
+      main.setAttribute('role', 'main')
+    else
+      main.parentNode.removeChild(main)
 
-  parent.appendChild page
+    footer = document.querySelector('.page-footer')
+    page.insertBefore(main, footer)
 
-  # Set up login modal and attach to page
-  login = document.querySelector('.page-login')
-  unless login
-    if document.countSelector('[role="main"].no-login') == 0
-      login = document.createElement "div"
-      login.addClass('modal__dialog')
-      login.addClass('page-login')
-      login.id = 'uom-login'
-      login.innerHTML = """
-              <a class="modal__close">Close</a>
-              <h2 class="title">Please Choose</h2>
-              <div class="half">
-                <a class="button-fill" href="https://my.unimelb.edu.au/studentportal/faces/home">
-                  <svg role="img"><use xlink:href="#icon-students" /></svg>
-                  <h2>Current Students</h2>
-                  <p>Go to my.unimelb</p>
-                </a>
-                <a class="button-fill" href="https://staff.unimelb.edu.au">
-                  <svg role="img"><use xlink:href="#icon-user" /></svg>
-                  <h2>Staff Members</h2>
-                  <p>Go to the staff hub</p>
-                </a>
-              </div>
-      """
-      parent.appendChild login
+    sitemap = document.querySelector('#sitemap')
+    for n in parent.childNodes
+      if n and n != page and n != sitemap and n != header
+        parent.removeChild(n)
+        main.appendChild(n)
+
+    parent.appendChild page
+
+    # Set up login modal and attach to page
+    login = document.querySelector('.page-login')
+    unless login
+      if document.countSelector('[role="main"].no-login') == 0
+        login = document.createElement "div"
+        login.addClass('modal__dialog')
+        login.addClass('page-login')
+        login.id = 'uom-login'
+        login.innerHTML = """
+                <a class="modal__close">Close</a>
+                <h2 class="title">Please Choose</h2>
+                <div class="half">
+                  <a class="button-fill" href="https://my.unimelb.edu.au/studentportal/faces/home">
+                    <svg role="img"><use xlink:href="#icon-students" /></svg>
+                    <h2>Current Students</h2>
+                    <p>Go to my.unimelb</p>
+                  </a>
+                  <a class="button-fill" href="https://staff.unimelb.edu.au">
+                    <svg role="img"><use xlink:href="#icon-user" /></svg>
+                    <h2>Staff Members</h2>
+                    <p>Go to the staff hub</p>
+                  </a>
+                </div>
+        """
+        parent.appendChild login

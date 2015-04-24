@@ -8,6 +8,27 @@ unless window.UOMInpageScrolling
         curr--
         -change/2 * (curr*(curr-2) - 1) + start
 
+    window.smoothScrollTo = (to) ->
+      if /(Firefox)/g.test(navigator.userAgent) or /(Trident)/g.test(navigator.userAgent)
+        element = document.querySelector('html')
+      else
+        element = document.body
+
+      duration = 600
+      start = element.scrollTop
+      change = to.offsetTop - start
+      if document.countSelector('.floating') == 0
+        change = change - 40
+      curr = 0
+      increment = 10
+
+      animateScroll = ->
+        curr += increment
+        element.scrollTop = Math.easeInOutQuad(curr, start, change, duration)
+        setTimeout(animateScroll, increment) if curr < duration
+
+      animateScroll() if change != 0
+
     class window.InPage
       constructor: (@el) ->
         t = this
@@ -20,10 +41,6 @@ unless window.UOMInpageScrolling
 
             if e.target
               tel = e.target
-              if /(Firefox)/g.test(navigator.userAgent) or /(Trident)/g.test(navigator.userAgent)
-                outer = document.querySelector('html')
-              else
-                outer = document.body
 
             if tel and tel.hasAttribute('href')
               target = tel.getAttribute('href')
@@ -46,27 +63,7 @@ unless window.UOMInpageScrolling
                   target = tabbed
 
                 if target
-                  t.element = outer
-                  t.to = target.offsetTop
-
-                  t.scrollTo()
-
-      scrollTo: ->
-        element = @element
-        duration = 600
-        start = element.scrollTop
-        change = @to - start
-        if document.countSelector('.floating') == 0
-          change = change - 40
-        curr = 0
-        increment = 10
-
-        animateScroll = ->
-          curr += increment
-          element.scrollTop = Math.easeInOutQuad(curr, start, change, duration)
-          setTimeout(animateScroll, increment) if curr < duration
-
-        animateScroll() if change != 0
+                  smoothScrollTo(target)
 
     if supportedmodernbrowser
       new InPage(el) for el in document.querySelectorAll('a[href^="#"]')

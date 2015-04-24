@@ -3,7 +3,7 @@ window.UOMinjectGlobalNav = ->
     constructor: ->
       @page = document.querySelector('.page-inner')
       @header = document.querySelector('.page-header')
-      @sitemap = document.querySelector('div[role="sitemap"]')
+      @sitemap = document.querySelector('#sitemap')
       @trigger = document.querySelector('.sitemap-label')
       @menutrigger = document.querySelector('.page-header-tools a[title="Menu"]')
       @searchtrigger = document.querySelector('.page-header-tools a[title="Search"]')
@@ -13,8 +13,8 @@ window.UOMinjectGlobalNav = ->
 
     setupEvents: ->
       t = this
-      if document.countSelector('.uomcontent div[role="navigation"]') == 1
-        @localnav = document.querySelector('.uomcontent div[role="navigation"]')
+      if document.countSelector('#navigation') == 1
+        @localnav = document.querySelector('#navigation')
         @localsitemaptrigger = @localnav.querySelector('.sitemap-link')
 
         @menutrigger.addEventListener 'click', (e) ->
@@ -31,25 +31,48 @@ window.UOMinjectGlobalNav = ->
           t.header.removeClass 'fixed'
           t.header.toggleClass 'active'
 
-        @localnav.querySelector('h2:first-child').addEventListener 'click', (e) ->
-          e.preventDefault()
-          if t.page.hasClass 'global-active'
-            t.page.removeClass 'global-active'
-            t.page.addClass 'active'
-            t.header.addClass 'active'
-            t.localnav.removeClass 'global-active'
-            t.localnav.addClass 'active'
-            t.sitemap.removeClass 'active'
-          else
-            t.blanket.removeClass 'on'
-            t.trigger.addClass 'active'
-            t.page.removeClass 'global-active'
-            t.header.removeClass 'global-active'
-            t.localnav.removeClass 'global-active'
-            t.sitemap.removeClass 'active'
-            t.page.toggleClass 'active'
-            t.localnav.toggleClass 'active'
-            t.header.toggleClass 'active'
+        for trigger in @localnav.querySelectorAll('h2:first-child')
+          trigger.addEventListener 'click', (e) ->
+            e.preventDefault()
+            if t.page.hasClass 'global-active'
+              t.page.removeClass 'global-active'
+              t.page.addClass 'active'
+              t.header.addClass 'active'
+              t.localnav.removeClass 'global-active'
+              t.localnav.addClass 'active'
+              t.sitemap.removeClass 'active'
+            else
+              t.blanket.removeClass 'on'
+              t.trigger.addClass 'active'
+              t.page.removeClass 'global-active'
+              t.header.removeClass 'global-active'
+              t.localnav.removeClass 'global-active'
+              t.sitemap.removeClass 'active'
+              t.page.toggleClass 'active'
+              t.localnav.toggleClass 'active'
+              t.header.toggleClass 'active'
+
+        # Dup for internals
+        for trigger in @localnav.querySelectorAll('a')
+          if trigger.getAttribute('href').indexOf('#') != -1
+            trigger.addEventListener 'click', (e) ->
+              if t.page.hasClass 'global-active'
+                t.page.removeClass 'global-active'
+                t.page.addClass 'active'
+                t.header.addClass 'active'
+                t.localnav.removeClass 'global-active'
+                t.localnav.addClass 'active'
+                t.sitemap.removeClass 'active'
+              else
+                t.blanket.removeClass 'on'
+                t.trigger.addClass 'active'
+                t.page.removeClass 'global-active'
+                t.header.removeClass 'global-active'
+                t.localnav.removeClass 'global-active'
+                t.sitemap.removeClass 'active'
+                t.page.toggleClass 'active'
+                t.localnav.toggleClass 'active'
+                t.header.toggleClass 'active'
 
         @trigger.addEventListener 'click', (e) ->
           e.preventDefault()
@@ -128,59 +151,61 @@ window.UOMinjectGlobalNav = ->
             t.sitemap.querySelector('input[type="search"]').focus()
 
   # Move local nav outside page container
-  if document.countSelector('.uomcontent div[role="navigation"]') == 1
-    localnav = document.querySelector('.uomcontent div[role="navigation"]')
-    rootmenu = localnav.querySelector('ul')
-    absroot = localnav.getAttribute('data-absolute-root') || '/'
+  if document.countSelector('#navigation') == 1
+    localnav = document.querySelector('#navigation')
 
-    # Add absolute /
-    # absroot = '/'+ absroot if absroot.charAt(0) != '/'
+    if localnav.countSelector('a.sitemap-link') == 0
+      rootmenu = localnav.querySelector('ul')
+      absroot = localnav.getAttribute('data-absolute-root') || '/'
 
-    # Strip trailing slash
-    # absroot = absroot.substr(0, absroot.length-1) if absroot.charAt(absroot.length-1) == '/'
+      # Add absolute /
+      # absroot = '/'+ absroot if absroot.charAt(0) != '/'
 
-    navtitle = localnav.querySelector('h2')
-    firstli = document.createElement 'li'
-    firstli.addClass 'home'
-    firstli.innerHTML = '<a href="' + absroot + '">' + (navtitle.textContent || navtitle.innerText) + '</a>'
-    rootmenu.insertBefore(firstli, rootmenu.firstChild)
-    navtitle.textContent = 'Close'
-    navtitle.innerText = 'Close'
+      # Strip trailing slash
+      # absroot = absroot.substr(0, absroot.length-1) if absroot.charAt(absroot.length-1) == '/'
 
-    lastli = document.createElement 'li'
-    lastli.innerHTML = '<a class="sitemap-link" href="https://unimelb.edu.au/sitemap">Browse University</a>'
-    rootmenu.appendChild lastli
+      navtitle = localnav.querySelector('h2')
+      firstli = document.createElement 'li'
+      firstli.addClass 'home'
+      firstli.innerHTML = '<a href="' + absroot + '">' + (navtitle.textContent || navtitle.innerText) + '</a>'
+      rootmenu.insertBefore(firstli, rootmenu.firstChild)
+      navtitle.textContent = 'Close'
+      navtitle.innerText = 'Close'
 
-    localnav.removeClass('no-js')
-    document.querySelector('.uomcontent').appendChild(localnav)
+      lastli = document.createElement 'li'
+      lastli.innerHTML = '<a class="sitemap-link" href="https://unimelb.edu.au/sitemap">Browse University</a>'
+      rootmenu.appendChild lastli
 
-    for group in localnav.querySelectorAll('a')
+      localnav.removeClass('no-js')
+      document.querySelector('.uomcontent').appendChild(localnav)
 
-      elements = []
-      for node in group.parentNode.childNodes
-        if node.nodeType==1 and !node.hasClass('sitemap-link') and node.nodeName != 'H2'
-          elements.push node
+      for group in localnav.querySelectorAll('a')
 
-      if elements.length > 1
-        childgroup = elements[1]
+        elements = []
+        for node in group.parentNode.childNodes
+          if node.nodeType==1 and !node.hasClass('sitemap-link') and node.nodeName != 'H2'
+            elements.push node
 
-        back = document.createElement 'span'
-        back.addClass 'back'
-        back.innerHTML = group.firstChild.data
-        childgroup.insertBefore(back, childgroup.firstChild)
+        if elements.length > 1
+          childgroup = elements[1]
 
-        childgroup.firstChild.addEventListener 'click', (e) ->
-          e.preventDefault()
-          this.parentNode.toggleClass 'hide'
-          this.parentNode.toggleClass 'active'
+          back = document.createElement 'span'
+          back.addClass 'back'
+          back.innerHTML = group.firstChild.data
+          childgroup.insertBefore(back, childgroup.firstChild)
 
-        group.addClass('parent')
-        childgroup.addClass('hide')
-        group.addEventListener 'click', (e) ->
-          e.preventDefault()
-          this.parentNode.querySelector('div').toggleClass 'hide'
-          this.parentNode.querySelector('div').toggleClass 'active'
-          localnav.scrollTop = 0
+          childgroup.firstChild.addEventListener 'click', (e) ->
+            e.preventDefault()
+            this.parentNode.toggleClass 'hide'
+            this.parentNode.toggleClass 'active'
+
+          group.addClass('parent')
+          childgroup.addClass('hide')
+          group.addEventListener 'click', (e) ->
+            e.preventDefault()
+            this.parentNode.querySelector('div').toggleClass 'hide'
+            this.parentNode.querySelector('div').toggleClass 'active'
+            localnav.scrollTop = 0
 
   # Create global nav trigger
   trigger = document.querySelector('div.sitemap-label')
@@ -193,7 +218,7 @@ window.UOMinjectGlobalNav = ->
     document.querySelector('.uomcontent').appendChild(trigger)
 
   # Create global nav
-  nav = document.querySelector('[role="sitemap"]')
+  nav = document.querySelector('#sitemap')
   unless nav
 
     if "<%=ENV["ASSET_ENV"]%>" == 'development'
@@ -202,7 +227,8 @@ window.UOMinjectGlobalNav = ->
       assethost = '//uom-design-system.s3.amazonaws.com/shared'
 
     nav = document.createElement('div')
-    nav.setAttribute('role', 'sitemap')
+    nav.setAttribute('role', 'navigation')
+    nav.setAttribute('id', 'sitemap')
     nav.innerHTML = """
       <a class="close-button" href="">Close</a>
       <a href="https://www.unimelb.edu.au" class="logo">

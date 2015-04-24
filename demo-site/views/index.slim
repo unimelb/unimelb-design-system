@@ -12,17 +12,18 @@ div role="main"
   section#intro
     h2.title A digital design system for The University of Melbourne.
     p This site explains how we plan, design and build web sites and web applications consistently across the unimelb domain in the pursuit of improved usability and to a strong digital brand.
-    p Use this site to learn how to write effective content, design your site or develop using the university templates. If you cannot find what you are looking for, <a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">please request it!</a>
+
+    p Use this site to learn how to write effective content, design your site or develop using the university templates. If you can't find what you are looking for, <a href="https://staff.unimelb.edu.au/services/it-support/web-help#/">log a support ticket</a> (staff login required) or <a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">create an issue on GitHub!</a>
 
   hr.spacer
   section
-    h1.highlight UOM #{@ver}
+    h1.highlight UOM #{settings.version}
     p.center
-      a.button-hero href="/articles/usage-instructions" Set up a new site with #{@ver}
+      a.button-hero href="/getting-started" Set up a new site with #{settings.version}
     / p.center.no-padding
-    /   a href="#" View markup for version #{@ver}
+    /   a href="#" View markup for version #{settings.version}
     p.center.grey
-      | Please note that we only support the current and the previous version of the design system.
+      | Please note that after v1.0 goes live, we will only support the current and previous version of the design system.
       / If you run on an older version please
       /'
       /a href="#" view our update guide

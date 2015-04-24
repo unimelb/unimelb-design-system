@@ -1,6 +1,6 @@
 unless window.UOMSidebarTabs
   window.UOMSidebarTabs = ->
-    class window.SidebarTabs
+    class SidebarTabs
       constructor: (@el, @selector) ->
         @nav = @el.querySelectorAll('a')
         @current = 0

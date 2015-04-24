@@ -25,8 +25,8 @@ section
 ==syntax_highlight :html
   erb:
     <!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
-    <link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/v0.7/uom.css">
-    <script src="//uom-design-system.s3.amazonaws.com/v0.7/uom.js"></script>
+    <link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/<%=settings.version%>/uom.css">
+    <script src="//uom-design-system.s3.amazonaws.com/<%=settings.version%>/uom.js"></script>
 
 section
   p The first provides a universal <abbr title="Reproduce modern functionality in older browser">polyfill</abbr> for styling on HTML5 semantic elements such as <code>header</code>, <code>nav</code> and <code>section</code> We use these elements as selectors in the design system stylesheet.
@@ -44,8 +44,8 @@ section
       <title> (any page title) </title>
 
       <!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
-      <link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/v0.7/uom.css">
-      <script src="//uom-design-system.s3.amazonaws.com/v0.7/uom.js"></script>
+      <link rel="stylesheet" href="//uom-design-system.s3.amazonaws.com/<%=settings.version%>/uom.css">
+      <script src="//uom-design-system.s3.amazonaws.com/<%=settings.version%>/uom.js"></script>
     </head>
 
     <body>
@@ -61,9 +61,6 @@ section
     </body>
     </html>
 
-section
-  p: em Please note that in the example above, <b class="red">v0.7</b> refers to a specific version of the design system and may not be the current version! Please refer to the homepage.
-
 hr
 
 section
@@ -75,7 +72,7 @@ section
 
 ==syntax_highlight :html
   erb:
-    <div class="no-js" id="sitemap" role="navigation">
+    <div class="no-js" id="navigation" role="navigation">
       <h2>Section title</h2>
       <ul>
         <li>
@@ -107,6 +104,15 @@ section
         </li>
         <li><a href="/last-one">Last one</a></li>
       </ul>
+    </div>
+
+section
+  p In situations where the site does not sit at the root of its domain (ie. within a subdirectory), the site root can be set to any arbitrary value by adding a <code>data-absolute-root</code> attribute to the local nav div. This value will be inserted before any nav links, so make sure you use relative links, eg.
+
+==syntax_highlight :html
+  erb:
+    <div class="no-js" id="navigation" role="navigation" data-absolute-root="/sitehome">
+    ...
     </div>
 
 hr
@@ -146,3 +152,15 @@ section
 
     </div>
 
+section
+  p Occasionally, a site will need to co-brand the logo space - this can be done by adding a special link inside the <code>div class="floating"</code> as shown in the example below:
+
+==syntax_highlight :html
+  erb:
+    <div class="floating">
+      <a class="page-header-home" href="/">Faculty of Veterinary and Agricultural Sciences</a>
+    </div>
+
+section
+  p
+    <img src="/assets/images/fvas-header.jpg" alt="">

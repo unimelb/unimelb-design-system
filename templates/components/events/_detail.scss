@@ -15,22 +15,18 @@
       padding: 0;
 
       time {
+        @include rem(font-size, 20px);
         display: block;
         position: relative;
         text-align: center;
 
-        & + time::before {
-          @include rem(margin-right, 5px);
-          @include rem(width, 16px);
-          border-bottom: 2px solid #000;
-          content: "";
-          display: inline-block;
-          vertical-align: middle;
-        }
-
         strong {
           @include rem(padding-left, 6px);
           @include rem(padding-right, 6px);
+
+          &.date {
+            padding-right: 0;
+          }
         }
 
         @include breakpoint(desktop) {
@@ -44,15 +40,37 @@
             position: relative;
           }
 
-          & + time::before {
-            @include rem(margin-top, -24px);
-            @include rem(width, 20px);
-            border-bottom: 4px solid $black;
-            display: block;
-            margin-right: 0;
-            position: absolute;
-            right: 0;
+          strong {
+            padding: 0;
+
+            &.date {
+              @include rem(font-size, 60px);
+              @include rem(padding-top, 10px);
+            }
+
+            &.month {
+              @include rem(padding-bottom, 5px);
+            }
           }
+        }
+      }
+
+      &.range time + time::before {
+        @include rem(margin-right, 5px);
+        @include rem(width, 16px);
+        border-bottom: 2px solid #000;
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+
+        @include breakpoint(desktop) {
+          @include rem(margin-top, -24px);
+          @include rem(width, 20px);
+          border-bottom: 4px solid $black;
+          display: block;
+          margin-right: 0;
+          position: absolute;
+          right: 0;
         }
       }
 
@@ -75,7 +93,7 @@
     div {
       @include padding-leader(1);
       @include padding-trailer(1);
-      border-top: 1px solid $black;
+      border-top: 1px solid darken($lightgray, 10%);
       text-align: center;
 
       @include breakpoint(desktop) {
@@ -122,6 +140,18 @@
   }
 
   .lower {
+    .presenters {
+      @extend %presenters;
+
+      @include breakpoint(desktop) {
+        @include rem(margin-left, 300px);
+        border: 0 none;
+        display: block;
+        padding-left: 0;
+        width: auto;
+      }
+    }
+
     h2,
     p,
     hr {
@@ -129,6 +159,10 @@
         @include rem(margin-left, 300px);
         width: auto;
       }
+    }
+
+    aside {
+      padding-top: 0;
     }
 
     aside p {

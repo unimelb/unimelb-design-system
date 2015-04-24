@@ -5,7 +5,6 @@ require_relative 'section_filter'
 
 module WebTemplates
   class App < Sinatra::Base
-
     ### Register addons
 
     register Sinatra::Partial
@@ -13,8 +12,9 @@ module WebTemplates
     ### Configure default paths
 
     set :root,           File.expand_path(File.join(File.dirname(__FILE__), '..'))
-    set :views,          File.join(root, "views")
-    set :public_dir,     File.join(root, "public")
+    set :views,          File.join(root, 'views')
+    set :public_dir,     File.join(root, 'public')
+    set :version,        'v1.0'
 
     ### Partials
 
@@ -77,7 +77,6 @@ module WebTemplates
     get '/' do
       @components = settings.components
       @layouts    = settings.layouts
-      @ver        = "v0.7"
       slim :index
     end
 
@@ -304,7 +303,7 @@ module WebTemplates
       pages = []
 
       Dir.entries(dir).each do |entry|
-        next if entry =~ /^(\.|index)/
+        next if entry =~ /^(\.|index|icons|developers)/
         path     = File.join(dir, entry)
         children = []
 
