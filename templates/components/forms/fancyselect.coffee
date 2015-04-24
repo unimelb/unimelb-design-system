@@ -25,5 +25,5 @@ unless window.UOMFancySelect
                 view: window
               this.parentNode.querySelector('select').dispatchEvent(event)
 
-    if (supportedmodernbrowser)
+    if (supportedmodernbrowser) and !/(MSIE 9)/g.test(navigator.userAgent)
       new FancySelect(f) for f in document.querySelectorAll("select")

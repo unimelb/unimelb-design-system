@@ -203,6 +203,11 @@
 
       select {
         width: 100%;
+
+        option {
+          background-color: $navy;
+          color: $white;
+        }
       }
     }
 

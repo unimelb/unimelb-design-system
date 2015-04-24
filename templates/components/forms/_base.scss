@@ -427,6 +427,10 @@
     color: $white;
 
     option {
+      color: $white;
+    }
+
+    &:hover option {
       color: $black;
     }
   }
@@ -598,7 +602,7 @@
   }
 }
 
-.ie .uomcontent fieldset {
+.ie8 .uomcontent fieldset {
   .search-button span,
   label {
     display: inline;

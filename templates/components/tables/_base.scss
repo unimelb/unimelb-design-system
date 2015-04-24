@@ -1,28 +1,3 @@
-/*.uomcontent table.styled {
-  border: 1px solid $lightgray;
-  border-collapse: collapse;
-
-  .highlight {
-    background: $cyan;
-    color: $white;
-  }
-
-  thead {
-    background: $darkgray;
-    color: $white;
-  }
-
-  th {
-    border: 1px solid $lightgray;
-    font-weight: normal;
-  }
-
-  td {
-    @include rem(padding, 0 20px);
-    border: 1px solid $midgray;
-  }
-}*/
-
 .uomcontent [role="main"] table {
   @include leader(1);
   @include rem(max-width, 600px);
@@ -51,9 +26,16 @@
       }
     }
 
+    th {
+      text-align: left;
+      vertical-align: top;
+    }
+
     td {
       @include rem(padding, 10px 10px 10px 10px);
       display: block;
+      text-align: left;
+      vertical-align: top;
       width: auto;
 
       &:first-child {

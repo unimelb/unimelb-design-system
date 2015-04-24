@@ -8,7 +8,8 @@ unless window.UOMTabs
         if @el.countSelector('.mobile-nav') > 0
           @el.querySelector('.mobile-nav').addClass('active')
         else
-          @buildMobileNav()
+          if @el.countSelector('div.full-width') == 1
+            @buildMobileNav()
 
         if @el.hasAttribute('data-tabbed')
           t = this
