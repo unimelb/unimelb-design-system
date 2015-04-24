@@ -301,7 +301,7 @@
   vertical-align: top;
 
   @include breakpoint(tablet) {
-    @include rem(width, 185px);
+    @include rem(width, 186px);
   }
 
   @include breakpoint(desktop) {
@@ -367,8 +367,13 @@
   }
 }
 
-.uomcontent .floating {
+.uomcontent .page-header.floating {
   background-color: transparent;
+  position: relative;
+
+  @include breakpoint(desktop) {
+    position: absolute;
+  }
 
   .page-header-logo {
     @include rem(margin-left, 15px);
@@ -377,7 +382,6 @@
 
     @include breakpoint(desktop) {
       @include rem(margin-top, 30px);
-      position: relative;
     }
   }
 
@@ -404,6 +408,7 @@
   .page-header-tools {
     @include rem(margin, 15px);
     background-color: transparent;
+    position: absolute;
 
     a.page-header-icon {
       @include rem(border-radius, 3px);
