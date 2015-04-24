@@ -15,13 +15,15 @@ unless window.UOMFancySelect
         wrapper.insertBefore(@el, wrapper.firstChild)
 
         @parent.appendChild(wrapper)
-        for i in @parent.querySelectorAll('svg.icon')
-          i.addEventListener 'click', (e) ->
-            event = new MouseEvent 'mousedown',
-              bubbles: true
-              cancelable: true
-              view: window
-            this.parentNode.querySelector('select').dispatchEvent(event)
+
+        unless /(MSIE|Trident)/g.test(navigator.userAgent)
+          for i in @parent.querySelectorAll('svg.icon')
+            i.addEventListener 'click', (e) ->
+              event = new MouseEvent 'mousedown',
+                bubbles: true
+                cancelable: true
+                view: window
+              this.parentNode.querySelector('select').dispatchEvent(event)
 
     if (supportedmodernbrowser)
       new FancySelect(f) for f in document.querySelectorAll("select")
