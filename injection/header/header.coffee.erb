@@ -83,47 +83,47 @@ window.UOMinjectHeader = ->
 
       parent.insertBefore(header, page)
 
-      local = document.querySelector('.page-local-history')
-      if local
-        navparent = document.querySelector('.page-header-navigation')
-        local.parentNode.removeChild(local)
-        if navparent
-          if rootlink != ""
-            sep = document.createElement "span"
-            sep.innerHTML = "/"
-            navparent.appendChild(sep)
-
-          navparent.appendChild(local)
-
-          mobile = document.createElement 'div'
-          mobile.addClass('mobile-nav')
-
-          selector = document.createElement 'select'
-          selector.setAttribute('role', 'tablist')
-          selector.addClass('alt')
-          selector.addEventListener 'change', (e) ->
-            if this.value
-              if this.value.substr(0, 1) != '#'
-                window.location = this.value
-
-          max = local.countSelector('a') - 1
-          for nav, i in local.querySelectorAll('a')
-            opt = document.createElement 'option'
-            opt.setAttribute('role', 'tab')
-            opt.setAttribute('value', nav.getAttribute('href'))
-            opt.appendChild document.createTextNode nav.firstChild.nodeValue
-
-            opt.setAttribute('selected', 'selected') if i==max
-
-            selector.appendChild opt
-
-          mobile.appendChild selector
-          pagenav = local.parentNode
-          pagenav.insertBefore(mobile, pagenav.firstChild)
-
     else
       page.removeChild(header)
       parent.insertBefore(header, page)
+
+    local = document.querySelector('.page-local-history')
+    if local
+      navparent = document.querySelector('.page-header-navigation')
+      local.parentNode.removeChild(local)
+      if navparent
+        if rootlink != ""
+          sep = document.createElement "span"
+          sep.innerHTML = "/"
+          navparent.appendChild(sep)
+
+        navparent.appendChild(local)
+
+        mobile = document.createElement 'div'
+        mobile.addClass('mobile-nav')
+
+        selector = document.createElement 'select'
+        selector.setAttribute('role', 'tablist')
+        selector.addClass('alt')
+        selector.addEventListener 'change', (e) ->
+          if this.value
+            if this.value.substr(0, 1) != '#'
+              window.location = this.value
+
+        max = local.countSelector('a') - 1
+        for nav, i in local.querySelectorAll('a')
+          opt = document.createElement 'option'
+          opt.setAttribute('role', 'tab')
+          opt.setAttribute('value', nav.getAttribute('href'))
+          opt.appendChild document.createTextNode nav.firstChild.nodeValue
+
+          opt.setAttribute('selected', 'selected') if i==max
+
+          selector.appendChild opt
+
+        mobile.appendChild selector
+        pagenav = local.parentNode
+        pagenav.insertBefore(mobile, pagenav.firstChild)
 
     # Header tools
     tools = document.querySelector('.page-header-tools')
