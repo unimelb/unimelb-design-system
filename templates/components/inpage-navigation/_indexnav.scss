@@ -36,7 +36,7 @@
   a {
     color: $white;
     display: block;
-    text-align: center;    
+    text-align: center;
   }
 
   @include breakpoint(desktop) {
@@ -74,6 +74,21 @@
       @include rem(height, 60px);
       @include rem(line-height, 45px);
       font-weight: $bold;
+    }
+  }
+}
+
+.ie .uomcontent #outer.index-navigation {
+  display: table;
+  width: 100%;
+
+  li {
+    display: table-cell;
+    width: 3.8%;
+    zoom: 1;
+
+    &:first-child {
+      display: none;
     }
   }
 }
