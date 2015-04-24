@@ -10,7 +10,7 @@
   }
 }
 
-.uomcontent [role="navigation"]#navigation {
+.uomcontent [role="navigation"]#sitemap {
   @extend %normalise;
   @extend %smooth-translate;
   @include translateX(0);
@@ -233,7 +233,7 @@
 }
 
 body.ie {
-  .uomcontent [role="navigation"]#navigation {
+  .uomcontent [role="navigation"]#sitemap {
     display: none;
 
     .w,

@@ -3,7 +3,7 @@ window.UOMinjectGlobalNav = ->
     constructor: ->
       @page = document.querySelector('.page-inner')
       @header = document.querySelector('.page-header')
-      @sitemap = document.querySelector('#sitemap')
+      @sitemap = document.querySelector('#globalsitemap')
       @trigger = document.querySelector('.sitemap-label')
       @menutrigger = document.querySelector('.page-header-tools a[title="Menu"]')
       @searchtrigger = document.querySelector('.page-header-tools a[title="Search"]')
@@ -13,8 +13,8 @@ window.UOMinjectGlobalNav = ->
 
     setupEvents: ->
       t = this
-      if document.countSelector('#navigation') == 1
-        @localnav = document.querySelector('#navigation')
+      if document.countSelector('#sitemap') == 1
+        @localnav = document.querySelector('#sitemap')
         @localsitemaptrigger = @localnav.querySelector('.sitemap-link')
 
         @menutrigger.addEventListener 'click', (e) ->
@@ -151,8 +151,8 @@ window.UOMinjectGlobalNav = ->
             t.sitemap.querySelector('input[type="search"]').focus()
 
   # Move local nav outside page container
-  if document.countSelector('#navigation') == 1
-    localnav = document.querySelector('#navigation')
+  if document.countSelector('#sitemap') == 1
+    localnav = document.querySelector('#sitemap')
 
     if localnav.countSelector('a.sitemap-link') == 0
       rootmenu = localnav.querySelector('ul')
@@ -218,7 +218,7 @@ window.UOMinjectGlobalNav = ->
     document.querySelector('.uomcontent').appendChild(trigger)
 
   # Create global nav
-  nav = document.querySelector('#sitemap')
+  nav = document.querySelector('#globalsitemap')
   unless nav
 
     if "<%=ENV["ASSET_ENV"]%>" == 'development'
@@ -228,7 +228,7 @@ window.UOMinjectGlobalNav = ->
 
     nav = document.createElement('div')
     nav.setAttribute('role', 'navigation')
-    nav.setAttribute('id', 'sitemap')
+    nav.setAttribute('id', 'globalsitemap')
     nav.innerHTML = """
       <a class="close-button" href="">Close</a>
       <a href="https://www.unimelb.edu.au" class="logo">

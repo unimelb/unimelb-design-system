@@ -292,17 +292,3 @@
     }
   }
 }
-
-.ie8 {
-  .uomcontent .button-map {
-    &:after {
-      background-image: url(asset_path('components/base/assets/s-icon-pin.png'));
-    }
-  }
-
-  .uomcontent .button-share {
-    &:after {
-      background-image: url(asset_path('components/base/assets/s-icon-share.png'));
-    }
-  }
-}

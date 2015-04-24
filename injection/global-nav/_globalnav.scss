@@ -1,4 +1,4 @@
-.uomcontent [role="navigation"]#sitemap {
+.uomcontent [role="navigation"]#globalsitemap {
   @extend %normalise;
   @extend %smooth-translate;
   @extend %wrapper;
@@ -302,7 +302,7 @@
 }
 
 body.ie {
-  .uomcontent [role="navigation"]#sitemap {
+  .uomcontent [role="navigation"]#globalsitemap {
     display: none;
     z-index: 0;
 
@@ -372,7 +372,7 @@ body.ie {
 }
 
 body.ie9 {
-  .uomcontent [role="navigation"]#sitemap {
+  .uomcontent [role="navigation"]#globalsitemap {
     form fieldset .inline .search-button {
       text-indent: -999em;
       width: 40px;
