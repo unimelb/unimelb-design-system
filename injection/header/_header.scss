@@ -465,13 +465,21 @@
   .uomcontent .page-header {
     border-bottom: 1px solid #f0f0f0;
 
-    .uomcontent .page-header-tools .page-header-icon[title="Login"],
-    .uomcontent .page-header-tools .page-header-icon[title="Search"] {
-      display: inline-block;
+    &.floating {
+      border-bottom: 0 none;
     }
 
-    .uomcontent .page-header-tools a.page-header-icon {
-      line-height: 60px;
+    .page-header-tools {
+      @include rem(width, 186px);
+
+      a.page-header-icon {
+        display: inline-block;
+        line-height: 60px;
+
+        &:hover {
+          color: $white;
+        }
+      }
     }
   }
 }

@@ -359,6 +359,7 @@ body {
 }
 
 .ie8 {
+  .uomcontent [role="navigation"]#globalsitemap ul.quicklinks,
   .uomcontent ul.quicklinks {
     border-bottom: 1px solid $blue;
     border-top: 1px solid $blue;

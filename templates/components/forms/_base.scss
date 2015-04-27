@@ -338,7 +338,6 @@
 }
 
 .uomcontent .styled-select {
-  @include rem(margin-top, 5px);
   padding: 0;
   position: relative;
 
@@ -351,6 +350,10 @@
     fill: $white;
     position: absolute;
     right: 0;
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(margin-top, 5px);
   }
 }
 

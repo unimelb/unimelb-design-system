@@ -69,6 +69,7 @@
 
   li {
     @include rem(font-size, 14px);
+    color: #B9C2CA;
     color: rgba($white, .6);
     line-height: 1.4;
     list-style-type: disc;
@@ -181,6 +182,10 @@
         // text-indent: -999em;
         top: 0;
         transition: color .2s, background-color .2s;
+
+        span {
+          display: none;
+        }
 
         svg {
           @include rem(height, 39px);
@@ -330,11 +335,16 @@ body.ie {
       width: 600px;
 
       fieldset .search-button {
+        border-left: 1px solid $lightergray;
         color: $black;
         text-indent: 0;
 
         * {
           display: none;
+        }
+
+        span {
+          display: block;
         }
       }
     }

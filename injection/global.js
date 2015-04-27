@@ -5,8 +5,18 @@ var supportedmodernbrowser = !/(MSIE 7.0)/g.test(navigator.userAgent);
 
   if (supportedmodernbrowser) {
     // Count selectors
-    document.countSelector = function(selectors) {
-      return Array.prototype.slice.call(document.querySelectorAll(selectors)).length
+    if (typeof document.countSelector === "undefined") {
+      document.countSelector = function(selectors) {
+        try {
+          if (document.querySelectorAll(selectors) === null) {
+            return 0;
+          } else {
+            return Array.prototype.slice.call(document.querySelectorAll(selectors)).length
+          }
+        } catch(e) {
+          // IE8 throws an invalid argument when querySelectorAll returns null (0)
+        }
+      }
     }
 
     if (!Element.prototype.countSelector) {

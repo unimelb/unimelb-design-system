@@ -13,6 +13,7 @@ window.UOMinjectGlobalNav = ->
 
     setupEvents: ->
       t = this
+
       if document.countSelector('#sitemap') == 1
         @localnav = document.querySelector('#sitemap')
         @localsitemaptrigger = @localnav.querySelector('.sitemap-link')
@@ -239,7 +240,7 @@ window.UOMinjectGlobalNav = ->
       <form action="https://search.unimelb.edu.au" method="get">
         <fieldset>
           <input data-required placeholder="Search" name="q" type="search" title="Please enter a keyword" aria-label="Search the University" />
-          <button type="submit" value="Go" class="search-button"><svg role="img"><use xlink:href="#icon-search" /></svg></button>
+          <button type="submit" class="search-button"><span>GO</span><svg class="icon" role="img"><use xlink:href="#icon-search"></use></svg></button>
         </fieldset>
       </form>
       <ul class="quicklinks">
