@@ -267,6 +267,10 @@
             margin-left: 110px;
           }
 
+          li > * {
+            margin-left: 0;
+          }
+
           &::before {
             @include adjust-font-size-to(80px);
             @include rem(letter-spacing, -11px);
