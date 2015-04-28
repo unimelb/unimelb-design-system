@@ -22,6 +22,8 @@ window.UOMloadComponents = function() {
   window.UOMValid();
   window.UOMTableLabels();
 
+  window.UOMIconHelper();
+
   window.UOMGMap();
   window.UOMLeafletMap();
 

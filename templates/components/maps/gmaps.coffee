@@ -60,7 +60,7 @@ unless window.UOMGMap
 
     # Only load if element with data attribute exists
     if (supportedmodernbrowser)
-      if Array.prototype.slice.call(document.querySelectorAll('[data-latlng],[data-address]')).length > 0
+      if document.countSelector('[data-latlng],[data-address]') > 0
         script = document.createElement("script")
         script.type = "text/javascript"
         script.src = "https://maps.googleapis.com/maps/api/js?callback=maps_loaded"

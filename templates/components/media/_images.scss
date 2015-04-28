@@ -5,6 +5,16 @@
     max-width: 100%;
   }
 
+  svg {
+    fill: currentColor;
+  }
+
+  [data-icon] {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+  }
+
   figure.full-width {
     text-align: center;
 
