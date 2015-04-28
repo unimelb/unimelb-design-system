@@ -129,7 +129,6 @@
     }
 
     p {
-      @include padding-trailer(0);
       @include rem(max-width, $w-sml);
       font-weight: $thin;
       margin: 0 auto;
