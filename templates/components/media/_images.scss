@@ -7,12 +7,40 @@
 
   svg {
     fill: currentColor;
+    max-height: 100%;
   }
 
   [data-icon] {
     display: inline-block;
     height: 60px;
+    margin: 0;
+    vertical-align: middle;
     width: 60px;
+
+    &.small {
+      height: 30px;
+      width: 30px;
+    }
+
+    &.large {
+      height: 100px;
+      width: 100px;
+    }
+
+    &.fill {
+      height: 100%;
+      width: 100%;
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  p [data-icon] {
+    margin: auto -7px;
+    padding-bottom: 3px;
   }
 
   figure.full-width {

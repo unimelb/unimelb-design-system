@@ -48,6 +48,10 @@
     }
   }
 
+  [data-icon] {
+    padding-bottom: 3px;
+  }
+
   @include breakpoint(height-small) {
     @include rem(font-size, 15px);
     @include rem(padding, 17px 40px);
@@ -255,21 +259,6 @@
     @extend %outlinearrow;
     border-color: $white;
     color: $white;
-  }
-
-  .button-map {
-    @extend %iconbutton;
-
-    svg.icon {
-      @include rem(height, 24px);
-      @include rem(width, 24px);
-      margin: 0;
-      vertical-align: bottom;
-    }
-  }
-
-  [role="main"] .button-share {
-    @extend %iconbutton;
   }
 
   .button-fill {
