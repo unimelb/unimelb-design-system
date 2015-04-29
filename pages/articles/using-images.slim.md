@@ -3,7 +3,7 @@ title: How to use images in the design system
 ---
 
 article
-  .contrast-helper style="background-image: url('/assets/images/choose-header-images/header.jpg')}');"
+  .contrast-helper style="background-image: url(/assets/images/choose-header-images/header.jpg);"
     .stage#particles
     header.banner.blurred
       .mid-align
@@ -15,7 +15,7 @@ article
           strong Andi Weis
 
   section
-    p.lead Choosing & using images on websites can be quite difficult. This guide aims to help make you aware of various things you should consider to help you choose the right image.
+    p.lead Choosing & using images on websites can be quite difficult. This guide helps to make you aware of various things you should consider to help you choose the right image.
 
     p Images can be a good way to help the user understand what you are trying to communicate. Good imagery informs, captures attention and even persuades our visitors. The wrong image, however, can confuse, misguide, annoy or even repel. You may never get the chance to correct this negative impact.
 
@@ -57,17 +57,75 @@ article
     p
       a href="#background-images" Read how to use background images
 
-  .fullwidth style="background-image: url('/assets/images/choose-header-images/science.jpg')}');"
+  .fullwidth style="background-image: url(/assets/images/choose-header-images/science.jpg);"
     section
       p.center The science of choosing and using images is actually easier than one might think
 
-  section
+  section.with-figure
+    h2.title#content-images Content images
+    p Picking images for content is definitely easier than selecting background images. You don't have to worry about sizes or cropped parts as they are always shown in full proportion. However here are some guidelines for the selection and usage of content images:
 
-    h2#content-images Content images
-    p Picking images for content is definitely easier than selecting background images. You don't have to worry about sizes or that some parts might not be seen by the audience as they are always shown in full proportion. However here are some dos and dont'ts for the selection and usage of content images:
+    hr.spacer
+
+    h2 #1 Add information
+    p If an image does not add any information to the page it shouldn't be used in the first place. Still, some images provide more information than others:
+
+    p Imagine you're writing an article about cancer research. Which of these two images provide more information?
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_01_01.jpg" alt="Laboratory Equipment (fig. 1)"
+      figcaption Laboratory Equipment (fig. 1)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_01_02.jpg" alt="Electron micrograph (fig. 2)"
+      figcaption
+        |Electron micrographs like this are used by
+        br
+        |scientists to compare surface structures
+        br
+        |of normal cells with cancer cells. (fig. 2)
+
+    p Okay, that was easy. Although the laboratory shows a bit of movement, it is rather generic and could be used in any other article relating to laboratories. The micrograph on the other hand needs a caption to explain what the user is looking at, but adds a lot of value by visualising the rather abstract topic.
 
     p
-      em # 'dos and donts' with examples go here
+      em Hint: If you can't think of a caption that relates directly to your content, the image might not be the right choice.
+
+    hr.spacer
+
+    h2 #2 Be consistent
+    p Images that are close to each other should use consistent colours and style of photography:
+
+    p
+      em # Several images
+
+    hr.spacer
+
+    h2 #3 Convey the right feeling
+    p Look critically at image details to ensure the images communicates the right mood to the audience. Get others' opinions on how they are affected by an images.
+
+    p
+      em # Three images
+
+    hr.spacer
+ 
+    h2 #4 Infographics
+    p Infographics are a good way to display statistics or illustrate processes. Just be aware that there is no text (or at least not much) on the image as it will be displayed on small screens as well and therefore resized.
+
+    p
+      em # a good and a bad example of infographics
+
+
+    / ol.steps
+    /   li
+    /     h2 Does it add information
+    /   li
+    /     h2 Does it convey the right feeling
+    /   li
+    /     h2 Is the image language consistent
+    /   li
+    /     h2 Does it match the colour palette
+    /   li
+    /     h2 Infographics
 
     h2#background-images Background images
     ul
@@ -76,7 +134,7 @@ article
       li
         em # Use your background image to reinforce the overall message, not as an attempt to communicate all at once!
       li
-        em # Responsiveness
+        em # Responsiveness / Dimensions
       li
         em # Colours
       li
