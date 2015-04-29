@@ -14,7 +14,7 @@ window.UOMinjectHeader = ->
   else
     assethost = '//uom-design-system.s3.amazonaws.com/shared'
 
-  if document.countSelector('.page-header') == 0
+  if document.countSelector('.page-header-tools') == 0
 
     # Create page wrapper if it doesn't already exist
     parent = document.querySelector('.uomcontent')
@@ -83,17 +83,47 @@ window.UOMinjectHeader = ->
 
       parent.insertBefore(header, page)
 
-      local = document.querySelector('.page-local-history')
-      if local
-        navparent = document.querySelector('.page-header-navigation')
-        local.parentNode.removeChild(local)
-        if navparent
-          if rootlink != ""
-            sep = document.createElement "span"
-            sep.innerHTML = "/"
-            navparent.appendChild(sep)
+    else
+      page.removeChild(header)
+      parent.insertBefore(header, page)
 
-          navparent.appendChild(local)
+    local = document.querySelector('.page-local-history')
+    if local
+      navparent = document.querySelector('.page-header-navigation')
+      local.parentNode.removeChild(local)
+      if navparent
+        if rootlink != ""
+          sep = document.createElement "span"
+          sep.innerHTML = "/"
+          navparent.appendChild(sep)
+
+        navparent.appendChild(local)
+
+        mobile = document.createElement 'div'
+        mobile.addClass('mobile-nav')
+
+        selector = document.createElement 'select'
+        selector.setAttribute('role', 'tablist')
+        selector.addClass('alt')
+        selector.addEventListener 'change', (e) ->
+          if this.value
+            if this.value.substr(0, 1) != '#'
+              window.location = this.value
+
+        max = local.countSelector('a') - 1
+        for nav, i in local.querySelectorAll('a')
+          opt = document.createElement 'option'
+          opt.setAttribute('role', 'tab')
+          opt.setAttribute('value', nav.getAttribute('href'))
+          opt.appendChild document.createTextNode nav.firstChild.nodeValue
+
+          opt.setAttribute('selected', 'selected') if i==max
+
+          selector.appendChild opt
+
+        mobile.appendChild selector
+        pagenav = local.parentNode
+        pagenav.insertBefore(mobile, pagenav.firstChild)
 
     # Header tools
     tools = document.querySelector('.page-header-tools')
@@ -112,7 +142,9 @@ window.UOMinjectHeader = ->
               --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu" /></svg> Menu</a>
         """
 
-      header.appendChild tools
+      navparent = header.querySelector('header')
+      navparent = header unless navparent
+      navparent.appendChild tools
 
       window.addEventListener "scroll", ->
         if /(Firefox)/g.test(navigator.userAgent) or /(Trident)/g.test(navigator.userAgent)
@@ -137,7 +169,7 @@ window.UOMinjectHeader = ->
     footer = document.querySelector('.page-footer')
     page.insertBefore(main, footer)
 
-    sitemap = document.querySelector('[role="sitemap"]')
+    sitemap = document.querySelector('#globalsitemap')
     for n in parent.childNodes
       if n and n != page and n != sitemap and n != header
         parent.removeChild(n)

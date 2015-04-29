@@ -1,5 +1,5 @@
 ---
-title: Design System Usage Instructions
+title: Getting started
 ---
 header
   / uncomment below to demonstrate header image
@@ -111,7 +111,7 @@ section
 
 ==syntax_highlight :html
   erb:
-    <div class="no-js" id="navigation" role="navigation" data-absolute-root="/sitehome">
+    <div class="no-js" id="sitemap" role="navigation" data-absolute-root="/sitehome">
     ...
     </div>
 

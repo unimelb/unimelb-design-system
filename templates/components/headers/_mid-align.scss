@@ -11,7 +11,9 @@
       h1 {
         text-align: center;
       }
+
       p {
+        @include padding-trailer(0);
         text-align: center;
       }
     }

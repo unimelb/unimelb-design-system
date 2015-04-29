@@ -1,3 +1,45 @@
+%presenters {
+  margin: 0 3%;
+  width: 94%;
+
+  strong {
+    @include rem(font-size, 16px);
+    @include rem(padding, 15px 0 5px);
+    display: block;
+    font-weight: $regular;
+  }
+
+  a {
+    @include rem(font-size, 14px);
+    @include rem(padding-right, 10px);
+    color: $lighterblue;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+
+    &:hover {
+      color: darken($lighterblue, 10%);
+      text-decoration: underline;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    margin-left: 0;
+  }
+
+  @include breakpoint(wide) {
+    @include rem(padding-left, 15px);
+    border-left: 1px solid darken($lightgray, 5%);
+    display: table-cell;
+    vertical-align: top;
+    width: 30%;
+
+    strong {
+      padding-top: 0;
+    }
+  }
+}
+
 .uomcontent [role="main"] ul.event-listing {
   @include rem(max-width, $w-lge);
   padding: 0;
@@ -184,45 +226,7 @@
   }
 
   .presenters {
-    margin: 0 3%;
-    width: 94%;
-
-    strong {
-      @include rem(font-size, 16px);
-      @include rem(padding, 15px 0 5px);
-      display: block;
-      font-weight: $regular;
-    }
-
-    a {
-      @include rem(font-size, 14px);
-      @include rem(padding-right, 10px);
-      color: $lighterblue;
-      display: inline-block;
-      vertical-align: top;
-      width: 50%;
-
-      &:hover {
-        color: darken($lighterblue, 10%);
-        text-decoration: underline;
-      }
-    }
-
-    @include breakpoint(desktop) {
-      margin-left: 0;
-    }
-
-    @include breakpoint(wide) {
-      @include rem(padding-left, 15px);
-      border-left: 1px solid darken($lightgray, 5%);
-      display: table-cell;
-      vertical-align: top;
-      width: 30%;
-
-      strong {
-        padding-top: 0;
-      }
-    }
+    @extend %presenters;
   }
 }
 

@@ -195,33 +195,24 @@
 }
 
 %iconbutton {
-  @extend %outlinebutton;
+  @extend %flatbutton;
+  @include appearance(none);
   @include rem(font-size, 14px);
   @include rem(margin, 10px 0);
-  @include rem(padding, 5px 30px 5px 20px);
+  @include rem(padding, 5px 10px 5px 20px);
   display: inline-block;
   font-weight: $regular;
 
-  &:after {
-    @include rem(height, 20px);
-    @include rem(padding-left, 15px);
-    @include rem(width, 7px);
-    content: '';
-    position: absolute;
-    top: 6px;
-  }
-
-  &::after {
-    @include rem(height, 20px);
-    @include rem(padding-left, 15px);
-    @include rem(width, 7px);
-    background-size: cover;
-    content: '';
-    position: absolute;
-    top: 6px;
+  svg.icon {
+    @include rem(height, 16px);
+    @include rem(margin, 0 5px);
+    @include rem(width, 16px);
+    fill: currentcolor;
+    vertical-align: middle;
   }
 
   &:hover {
+    @include rem(margin, 10px 0);
     background-color: rgba($black, .1);
     color: $black;
   }
@@ -269,17 +260,16 @@
   .button-map {
     @extend %iconbutton;
 
-    &::after {
-      background-image: url(asset_path('components/base/assets/icon-pin-b.png'));
+    svg.icon {
+      @include rem(height, 24px);
+      @include rem(width, 24px);
+      margin: 0;
+      vertical-align: bottom;
     }
   }
 
   [role="main"] .button-share {
     @extend %iconbutton;
-
-    &::after {
-      background-image: url(asset_path('components/base/assets/icon-share-b.png'));
-    }
   }
 
   .button-fill {
@@ -299,20 +289,6 @@
 
     p {
       @include rem(font-size, 16px);
-    }
-  }
-}
-
-.ie {
-  .uomcontent .button-map {
-    &:after {
-      background-image: url(asset_path('components/base/assets/s-icon-pin-b.png'));
-    }
-  }
-
-  .uomcontent .button-share {
-    &:after {
-      background-image: url(asset_path('components/base/assets/s-icon-share-b.png'));
     }
   }
 }

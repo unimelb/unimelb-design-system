@@ -1,4 +1,4 @@
-.uomcontent [role="sitemap"] {
+.uomcontent [role="navigation"]#globalsitemap {
   @extend %normalise;
   @extend %smooth-translate;
   @extend %wrapper;
@@ -69,6 +69,7 @@
 
   li {
     @include rem(font-size, 14px);
+    color: #B9C2CA;
     color: rgba($white, .6);
     line-height: 1.4;
     list-style-type: disc;
@@ -85,6 +86,7 @@
   }
 
   ul.quicklinks {
+    @extend %quicklinks;
     padding: 0;
   }
 
@@ -180,6 +182,10 @@
         // text-indent: -999em;
         top: 0;
         transition: color .2s, background-color .2s;
+
+        span {
+          display: none;
+        }
 
         svg {
           @include rem(height, 39px);
@@ -301,7 +307,7 @@
 }
 
 body.ie {
-  .uomcontent [role="sitemap"] {
+  .uomcontent [role="navigation"]#globalsitemap {
     display: none;
     z-index: 0;
 
@@ -329,11 +335,16 @@ body.ie {
       width: 600px;
 
       fieldset .search-button {
+        border-left: 1px solid $lightergray;
         color: $black;
         text-indent: 0;
 
         * {
           display: none;
+        }
+
+        span {
+          display: block;
         }
       }
     }
@@ -371,7 +382,7 @@ body.ie {
 }
 
 body.ie9 {
-  .uomcontent [role="sitemap"] {
+  .uomcontent [role="navigation"]#globalsitemap {
     form fieldset .inline .search-button {
       text-indent: -999em;
       width: 40px;

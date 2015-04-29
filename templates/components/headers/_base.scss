@@ -1,17 +1,8 @@
 %bannerbox {
-  @include flexbox((
-    display: box,
-    box-orient: vertical
-  ), $version: 1);
-  @include flexbox((
-    display: flexbox,
-    flex-direction: row
-  ), $version: 2);
-  @include flexbox((
-    display: flex,
-    flex-direction: row
-  ));
-  @include flex-wrap(wrap);
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .uomcontent [role="main"] {
@@ -45,6 +36,7 @@
 
     &.image {
       @extend %bannerbox;
+      @include rem(height, 300px);
       @include rem(min-height, 300px);
 
       & > h1,
@@ -61,28 +53,37 @@
         @include rem(padding-right, 20px);
         text-align: center;
       }
+
+      &.with-filters {
+        height: auto;
+      }
     }
 
     &.banner {
       @extend %bannerbox;
       // @include rem(margin-top, -60px);
+      @include rem(height, 300px);
       @include rem(min-height, 300px);
       // height: 100vh;
       height: auto;
 
       @include breakpoint(height-smallest) {
+        @include rem(height, 520px);
         @include rem(min-height, 520px);
       }
 
       @include breakpoint(height-small) {
+        @include rem(height, 620px);
         @include rem(min-height, 620px);
       }
 
       @include breakpoint(height-medium) {
+        @include rem(height, 720px);
         @include rem(min-height, 720px);
       }
 
       @include breakpoint(height-big) {
+        @include rem(height, 800px);
         @include rem(min-height, 800px);
       }
 
@@ -128,7 +129,6 @@
     }
 
     p {
-      @include padding-trailer(0);
       @include rem(max-width, $w-sml);
       font-weight: $thin;
       margin: 0 auto;

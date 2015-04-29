@@ -185,9 +185,6 @@
 
   ol {
     @include rem(padding-left, 30px);
-    // li {
-    //   list-style-type: decimal;
-    // }
 
     &.steps {
       @include rem(max-width, $w-mid);
@@ -268,6 +265,10 @@
           > * {
             max-width: 650px;
             margin-left: 110px;
+          }
+
+          li > * {
+            margin-left: 0;
           }
 
           &::before {
@@ -507,3 +508,8 @@
     }
   }
 }
+
+.ie .uomcontent ol.steps li:before {
+  padding-top: 60px;
+}
+

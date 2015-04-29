@@ -338,7 +338,6 @@
 }
 
 .uomcontent .styled-select {
-  @include rem(margin-top, 5px);
   padding: 0;
   position: relative;
 
@@ -346,10 +345,15 @@
     @include rem(height, 20px);
     @include rem(top, 15px);
     @include rem(width, 20px);
+    cursor: pointer;
     display: block;
     fill: $white;
     position: absolute;
     right: 0;
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(margin-top, 5px);
   }
 }
 
@@ -426,6 +430,10 @@
     color: $white;
 
     option {
+      color: $white;
+    }
+
+    &:hover option {
       color: $black;
     }
   }
@@ -597,7 +605,7 @@
   }
 }
 
-.ie .uomcontent fieldset {
+.ie8 .uomcontent fieldset {
   .search-button span,
   label {
     display: inline;

@@ -17,11 +17,14 @@
     a {
       color: $black;
       text-decoration: none;
+
+      strong {
+        text-decoration: underline;
+      }
     }
 
     strong {
       font-weight: $regular;
-      text-decoration: underline;
     }
 
     p {
