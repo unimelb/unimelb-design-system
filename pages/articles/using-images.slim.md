@@ -92,42 +92,82 @@ article
 
     hr.spacer
 
-    h2 #2 Be consistent
-    p Images that are close to each other should use consistent colours and style of photography:
-
-    p
-      em # Several images
-
-    hr.spacer
-
-    h2 #3 Convey the right feeling
+    h2 #2 Convey the right feeling
     p Look critically at image details to ensure the images communicates the right mood to the audience. Get others' opinions on how they are affected by an images.
 
-    p
-      em # Three images
+    p You were given the following three images to complement an article about celebrating 25 years of internet in Australia. Which one would you choose?
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_03_01.jpg" alt="Data highway (fig. 1)"
+      figcaption The data highway (fig. 1)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_03_02.jpg" alt="Kids celebrating"
+      figcaption Two children celebrating the web (fig. 2)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_03_03.jpg" alt="Browsing the web (fig. 3)"
+      figcaption Using the web in an everyday situation (fig. 3)
+
+    p This one is tricky. Of course the "data highway" is not appropriate in any way. However, the decision between the children and the tablet is a bit harder. The everyday browsing may look adequate at first but there are two arguments not to choose it:
+    ol
+      li It is a very generic stock photo. We see them all over the internet and we've stopped being emotional about them all together. They are nearly depicted as advertisment.
+      li The visible screen could potentionally show unwanted content. This may lead to more work, e.g., montaging a different screen into the tablet.
+    p The children on the other hand are celebrating, pointing towards the laptop and there is no screen content visible. Furthermore it is the only image that shows human emotions to which we respond positively. It also complements a possible headline that contains the word celebration in some form. Therefore photo number 2 would be the recommended photo to use in this case.
 
     hr.spacer
- 
-    h2 #4 Infographics
-    p Infographics are a good way to display statistics or illustrate processes. Just be aware that there is no text (or at least not much) on the image as it will be displayed on small screens as well and therefore resized.
 
-    p
-      em # a good and a bad example of infographics
+    h2 #3 Be consistent
+    p Multiple images that are located closely to each other should use consistent colours and style of photography:
 
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_02_01.jpg" alt="Multiple nature images with different colours (fig. 1)"
+      figcaption Multiple images without colour correction (fig. 1)
 
-    / ol.steps
-    /   li
-    /     h2 Does it add information
-    /   li
-    /     h2 Does it convey the right feeling
-    /   li
-    /     h2 Is the image language consistent
-    /   li
-    /     h2 Does it match the colour palette
-    /   li
-    /     h2 Infographics
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_02_02.jpg" alt="Multiple nature images with adjusted colours (fig. 2)"
+      figcaption The same images after adjustment of colours and contrast (fig. 2)
 
-    h2#background-images Background images
+    p While all images are related to the topic nature, they feel disconnected in the first row. Colour corrections and contrast adjustments bring them closer together and provide a more coherent experience.
+
+    hr.spacer
+
+    h2 #4 Charts and infographics
+    p Charts and infographics are a good way to display statistics or illustrate processes. Just be aware that there is no text (or at least not much) on the image as it will be displayed on small screens as well and therefore resized.
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_04_01.jpg" alt="Texas Registered Drivers 1980–2004 (fig. 1)"
+      figcaption Texas Registered Drivers 1980–2004 (fig. 1)
+
+    p This chart is heavily formatted and therefore hard to figure out. It also contains too much text which will not be readable on smaller screens.
+
+    hr.spacer
+
+    figure.full-width role="group"
+      h3 Texas Registered Drivers 1980–2004
+      img src="/assets/images/choose-header-images/ci_04_02.jpg" alt="Texas Registered Drivers 1980–2004 (fig. 2)"
+      figcaption
+        |The number of registered drivers in Texas rose from
+        br
+        |initially 10 million to 17 million drivers between 1980 and 2004 (fig. 2)
+
+    p The same chart works much better when all unneccessary formatting and redundant information is left out. The header and caption are written in HTML and through that are exposed to google and screenreaders. Using the caption to summarize the table also adds value to this piece of information
+
+    hr.spacer
+
+    figure.full-width role="group"
+      h3 Texas Registered Drivers 1980–2004
+      div#googlechart
+      figcaption
+        |The number of registered drivers in Texas rose from
+        br
+        |initially 10 million to 17 million drivers between 1980 and 2004 (fig. 2)
+
+    p Okay, this interactive chart is a bit of a show off. But it can be done and would be the most prefered version (readability and responsiveness). We aim to provide these charts in the Design System at one point.
+
+    hr.spacer
+
+    h2#background-images.title Background images
     ul
       li
         em # Readability of text on top
@@ -140,8 +180,6 @@ article
       li
         em # Don’t pick an image that draws more attention than the primary objective of the page.
       li
-        em # Faces are not necessarily relevant (http://blog.eyequant.com/2014/01/15/the-3-most-surprising-insights-from-a-200-website-eye-tracking-study/)
-      li
         em # Think of more options than only the obvious. Get creative but don't get too attached to one image.
 
 
@@ -149,6 +187,9 @@ article
     h2.title Image resources
     p
       em # A list of resources
+
+
+script src="https://www.google.com/jsapi"
 
 javascript:
   /*!
@@ -176,3 +217,41 @@ javascript:
       parallax: true,
       density: 7000
   });
+
+
+
+  google.load('visualization', '1', {'packages':['corechart', 'line']});
+  google.setOnLoadCallback(drawChart);
+
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Registered Drivers', '1980–2004'],
+      ['1980', 10475000],
+      ['1985', 12444000],
+      ['1990', 12800000],
+      ['1995', 13682000],
+      ['2000', 14070000],
+      ['2003', 14888000],
+      ['2004', 16906000]
+    ]);
+
+    var options = {
+      chart: {
+        title: 'Texas Registered Drivers 1980–2004',
+        subtitle: ''
+      },
+      pointSize: 10,
+      hAxis: {
+        title: '',
+        minValue: 0
+      },
+      vAxis: {
+        title: '',
+        format: 'short'
+      },
+      height: 400
+    };
+    var material = new google.visualization.LineChart(document.getElementById('googlechart'));
+    material.draw(data, options);
+  }
