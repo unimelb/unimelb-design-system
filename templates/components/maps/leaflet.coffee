@@ -21,7 +21,7 @@ unless window.UOMLeafletMap
       if document.countSelector('[data-leaflet-latlng]') > 0
         script = document.createElement("script")
         script.type = "text/javascript"
-        script.src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"
         document.body.appendChild script
 
         # style = document.createElement("link")
