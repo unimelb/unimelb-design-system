@@ -3,7 +3,7 @@ title: How to use images in the design system
 ---
 
 article
-  .contrast-helper style="background-image: url('/assets/images/choose-header-images/header.jpg')}');"
+  .contrast-helper style="background-image: url(/assets/images/choose-header-images/header.jpg);"
     .stage#particles
     header.banner.blurred
       .mid-align
@@ -15,7 +15,7 @@ article
           strong Andi Weis
 
   section
-    p.lead Choosing & using images on websites can be quite difficult. This guide aims to help make you aware of various things you should consider to help you choose the right image.
+    p.lead Choosing & using images on websites can be quite difficult. This guide helps to make you aware of various things you should consider to help you choose the right image.
 
     p Images can be a good way to help the user understand what you are trying to communicate. Good imagery informs, captures attention and even persuades our visitors. The wrong image, however, can confuse, misguide, annoy or even repel. You may never get the chance to correct this negative impact.
 
@@ -57,40 +57,263 @@ article
     p
       a href="#background-images" Read how to use background images
 
-  .fullwidth style="background-image: url('/assets/images/choose-header-images/science.jpg')}');"
+  .fullwidth.mid-align style="background-image: url(/assets/images/choose-header-images/science.jpg);"
     section
-      p.center The science of choosing and using images is actually easier than one might think
+      h2.title#content-images Content images
+      p The science of choosing and using content images is actually easier than one might think
 
-  section
+  section.with-figure
+    p Picking images for content is definitely easier than selecting background images. You don't have to worry about sizes or cropped parts as they are always shown in full proportion. However here are some guidelines for the selection and usage of content images:
 
-    h2#content-images Content images
-    p Picking images for content is definitely easier than selecting background images. You don't have to worry about sizes or that some parts might not be seen by the audience as they are always shown in full proportion. However here are some dos and dont'ts for the selection and usage of content images:
+    hr.spacer
+
+    h2 #1 Add information
+    p If an image does not add any information to the page it shouldn't be used in the first place. Still, some images provide more information than others:
+
+    p Imagine you're writing an article about cancer research. Which of these two images provide more information?
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_01_01.jpg" alt="Laboratory Equipment (fig. 1)"
+      figcaption Laboratory Equipment (fig. 1)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_01_02.jpg" alt="Electron micrograph (fig. 2)"
+      figcaption
+        |Electron micrographs like this are used by
+        br
+        |scientists to compare surface structures
+        br
+        |of normal cells with cancer cells. (fig. 2)
+
+    p Okay, that was easy. Although the laboratory shows a bit of movement, it is rather generic and could be used in any other article relating to laboratories. The micrograph on the other hand needs a caption to explain what the user is looking at, but adds a lot of value by visualising the rather abstract topic.
 
     p
-      em # 'dos and donts' with examples go here
+      em Hint: If you can't think of a caption that relates directly to your content, the image might not be the right choice.
 
-    h2#background-images Background images
+    hr.spacer
+
+    h2 #2 Convey the right feeling
+    p Look critically at image details to ensure the images communicates the right mood to the audience. Get others' opinions on how they are affected by an images.
+
+    p You were given the following three images to complement an article about celebrating 25 years of internet in Australia. Which one would you choose?
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_03_01.jpg" alt="Data highway (fig. 1)"
+      figcaption The data highway (fig. 1)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_03_02.jpg" alt="Kids celebrating"
+      figcaption Two children celebrating the web (fig. 2)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_03_03.jpg" alt="Browsing the web (fig. 3)"
+      figcaption Using the web in an everyday situation (fig. 3)
+
+    p This one is tricky. Of course the "data highway" is not appropriate in any way. However, the decision between the children and the tablet is a bit harder. The everyday browsing may look adequate at first but there are two arguments not to choose it:
+    ol
+      li It is a very generic stock photo. We see them all over the internet and we've stopped being emotional about them all together. They are nearly depicted as advertisment.
+      li The visible screen could potentionally show unwanted content. This may lead to more work, e.g., montaging a different screen into the tablet.
+    p The children on the other hand are celebrating, pointing towards the laptop and there is no screen content visible. Furthermore it is the only image that shows human emotions to which we respond positively. It also complements a possible headline that contains the word celebration in some form. Therefore photo number 2 would be the recommended photo to use in this case.
+
+    ul.accordion
+      li
+        span.accordion__title Bonus image (click me)
+        .accordion__hidden
+          p Or you scrap all of the above, do some research and just use the actual photo of a terminal connected to the computer that established the first internet connection 25 years ago :-)
+          figure.full-width role="group"
+            img src="/assets/images/choose-header-images/ci_03_04.jpg" alt="Terminal connected to the internet (fig. 4)"
+            figcaption Terminal connected to the internet (fig. 3)
+
+    hr.spacer
+
+    h2 #3 Be consistent
+    p Multiple images that are located closely to each other should use consistent colours and style of photography:
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_02_01.jpg" alt="Multiple nature images with different colours (fig. 1)"
+      figcaption Multiple images without colour correction (fig. 1)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_02_02.jpg" alt="Multiple nature images with adjusted colours (fig. 2)"
+      figcaption The same images after adjustment of colours and contrast (fig. 2)
+
+    p While all images are related to the topic nature, they feel disconnected in the first row. Colour corrections and contrast adjustments bring them closer together and provide a more coherent experience.
+
+    hr.spacer
+
+    h2 #4 Charts and infographics
+    p Charts and infographics are a good way to display statistics or illustrate processes. Just be aware that there is no text (or at least not much) on the image as it will be displayed on small screens as well and therefore resized.
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/ci_04_01.jpg" alt="Texas Registered Drivers 1980–2004 (fig. 1)"
+      figcaption Texas Registered Drivers 1980–2004 (fig. 1)
+
+    p This chart is heavily formatted and therefore hard to figure out. It also contains too much text which will not be readable on smaller screens.
+
+    hr.spacer
+
+    figure.full-width role="group"
+      h3 Texas Registered Drivers 1980–2004
+      img src="/assets/images/choose-header-images/ci_04_02.jpg" alt="Texas Registered Drivers 1980–2004 (fig. 2)"
+      figcaption
+        |The number of registered drivers in Texas rose from
+        br
+        |initially 10 million to 17 million drivers between 1980 and 2004 (fig. 2)
+
+    p The same chart works much better when all unneccessary formatting and redundant information is left out. The header and caption are written in HTML and through that are exposed to google and screenreaders. Using the caption to summarize the table also adds value to this piece of information
+
+    hr.spacer
+
+    figure.full-width role="group"
+      h3 Texas Registered Drivers 1980–2004
+      div#googlechart
+      figcaption
+        |The number of registered drivers in Texas rose from
+        br
+        |initially 10 million to 17 million drivers between 1980 and 2004 (fig. 2)
+
+    p Okay, this interactive chart is a bit of a show off. But it can be done and would be the most prefered version (readability and responsiveness). We aim to provide these charts in the Design System at one point.
+
+  .fullwidth.mid-align style="background-image: url(/assets/images/choose-header-images/rocket.jpg);"
+    section
+      h2#background-images.title Background images
+      p Start with a bang and engage with your readers right from the start
+
+  section.with-figure
+    p The right background image can easily boost any message you try to convey to your audience. Selecting the right image however can be quite painful. Before you get down to searching for that perfect image, you’ll need to make a few considerations to ensure you’re picking the best image possible. Here are some of the best practices for choosing your perfect background image.
+
+    hr.spacer
+
+    h2 #1 Don't forget the text
+    p A background image never appears without text on top. Always make sure that the text is easily readable because it is always more important than the image. If the image contains information that should not be cut off or overlayed by text it is a content image and should not be used as background.
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/bi_01_01.jpg" alt="Bright background image with text on top (fig. 1)"
+      figcaption Bright background image (fig. 1)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/bi_01_02.jpg" alt="Bright background image with dark layer between image and text (fig. 2)"
+      figcaption The same image with a black layer between image and text (fig. 2)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/bi_01_03.jpg" alt="Portrait of Glyn Davis overlayed with text (fig. 3)"
+      figcaption Never use portrait photography. (fig. 3)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/bi_01_04.jpg" alt="Group of students (fig. 4)"
+      figcaption Always remember that images might get cropped according to the current screen size and ratio. (fig. 4)
+
+    hr.spacer
+
+    h2 #2 Reinforce without explaining
+    p Choose a background image that can complement or even help explain your message without taking away from the main purpose. Use your background image to reinforce the overall message, not as an attempt to communicate all at once. Don’t pick an image that draws more attention than the primary objective (read the content) of the page.
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/bi_02_01.jpg" alt="Study findings about the universe (fig. 1)"
+      figcaption This background image shows actual study findings (fig. 1)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/bi_02_02.jpg" alt="Space (fig. 2)"
+      figcaption A different image sets the topic as space, universe, etc while not distracting the reader (fig. 2)
+
+    hr.spacer
+
+    h2 #3 Only use gigantically sized images
+    p Because of the vast amount of different screen sizes the image has to be highly scalable. From small phone displays to massive Retina screens and everything in between. In a perfect world, you don't have to take care of any further optimisations. However, if you are not sure ask your webmaster if the webserver deals with it or not.
+    p Generally we recommend the minimum width of a background image to be <strong>2000 Pixel</strong>
+
+    hr.spacer
+
+    h2 #4 Think about the colours
+    p Through associations with natural, cultural and artistic uses of colour, we subconsciously relate different colours with a subtext of characteristics. Controlling the use of colour in your background images (which take up a huge chunk of space on the website), is a good way to reinforce your message.
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/bi_03_01.jpg" alt="Picture of old lab and scientists (fig. 1)"
+      figcaption Black and white (fig. 1)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/bi_03_02.jpg" alt="Picture of old lab and scientists (fig. 2)"
+      figcaption Red filter (fig. 2)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/bi_03_03.jpg" alt="Picture of old lab and scientists (fig. 3)"
+      figcaption Purple filter (fig. 3)
+
+    figure.full-width role="group"
+      img src="/assets/images/choose-header-images/bi_03_04.jpg" alt="Picture of old lab and scientists (fig. 4)"
+      figcaption Blue filter (fig. 4)
+
+    
+
+    hr.spacer
+
+    h2 #5 Don't get attached
+    p Getting too attached to a particular image is never a good idea. Try to play with different angles on a topic to find images that might fit better. You will be surprised how many different images you sometimes find by letting go the one image you were given or you picked yourself. Sometimes you might go with the first choice you've made, but often you find something that fits even better. Get creative, but not attached!
+
+    hr.spacer
+
+    h2 #6 If you can't find an image, don't use one
+    p That is by far the most important rule. Remember the first paragraph of this article?
+    blockquote Images can be a good way to help the user understand what you are trying to communicate
+    p And do you remember the third sentence as well?
+    blockquote The wrong image, however, can confuse, misguide, annoy or even repel. You may never get the chance to correct this negative impact.
+    p This is really important to keep in mind at all times. No image is sometimes better than some random image that does not help your message at all.
+
+    
+  .fullwidth.mid-align style="background-image: url(/assets/images/choose-header-images/supplies.jpg);"
+    section
+      h2.title Image resources
+      p Knowing the supply chain, or where to find all the good images
+
+
+  section.with-figure
+    p There’s a number of places online where you can find potential images for your page. As with most resources, there are paid and free versions.
+
+    hr.spacer
+
+    h2 Free images
+    p Make sure these images are really free to use by always checking their individual license.
+
     ul
       li
-        em # Readability of text on top
+        a href="http://images.marketing.unimelb.edu.au/images/" University of Melbourne Imagebank
       li
-        em # Use your background image to reinforce the overall message, not as an attempt to communicate all at once!
+        a href="http://allthefreestock.com/" AllTheFreeStock.com
       li
-        em # Responsiveness
+        a href="http://littlevisuals.co/" Little Visuals
       li
-        em # Colours
+        a href="https://unsplash.com/" Unsplash
       li
-        em # Don’t pick an image that draws more attention than the primary objective of the page.
+        a href="http://deathtothestockphoto.com/" Death to the Stock Photo
       li
-        em # Faces are not necessarily relevant (http://blog.eyequant.com/2014/01/15/the-3-most-surprising-insights-from-a-200-website-eye-tracking-study/)
+        a href="http://nos.twnsnd.co/" New Old Stock
       li
-        em # Think of more options than only the obvious. Get creative but don't get too attached to one image.
+        a href="http://picjumbo.com/" Picjumbo
+      li
+        a href="http://thepatternlibrary.com/" The Pattern Library
+      li
+        a href="http://www.gratisography.com/" Gratisography
+      li
+        a href="http://getrefe.tumblr.com/" Getrefe
+      li
+        a href="http://www.imcreator.com/free" IMCreator
+
+    h2 Stock photography
+    ul
+      li
+        a href="https://www.dollarphotoclub.com/" Dollar Photo Club
+      li
+        a href="http://www.shutterstock.com/" Shutterstock
+      li
+        a href="http://www.istockphoto.com/" iStockphoto
+      li
+        a href="http://us.fotolia.com/" Fotolia
+      li
+        a href="http://www.gettyimages.co.uk/" Getty Images
 
 
 
-    h2.title Image resources
-    p
-      em # A list of resources
+script src="https://www.google.com/jsapi"
 
 javascript:
   /*!
@@ -118,3 +341,41 @@ javascript:
       parallax: true,
       density: 7000
   });
+
+
+
+  google.load('visualization', '1', {'packages':['corechart', 'line']});
+  google.setOnLoadCallback(drawChart);
+
+
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+      ['Registered Drivers', '1980–2004'],
+      ['1980', 10475000],
+      ['1985', 12444000],
+      ['1990', 12800000],
+      ['1995', 13682000],
+      ['2000', 14070000],
+      ['2003', 14888000],
+      ['2004', 16906000]
+    ]);
+
+    var options = {
+      chart: {
+        title: 'Texas Registered Drivers 1980–2004',
+        subtitle: ''
+      },
+      pointSize: 10,
+      hAxis: {
+        title: '',
+        minValue: 0
+      },
+      vAxis: {
+        title: '',
+        format: 'short'
+      },
+      height: 400
+    };
+    var material = new google.visualization.LineChart(document.getElementById('googlechart'));
+    material.draw(data, options);
+  }

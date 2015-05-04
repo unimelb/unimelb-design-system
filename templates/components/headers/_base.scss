@@ -110,6 +110,10 @@
       margin: 0 auto;
       text-align: left;
 
+      &.article {
+        font-weight: $bold;
+      }
+
       @include breakpoint(desktop) {
         @include adjust-font-size-to(45px);
       }
