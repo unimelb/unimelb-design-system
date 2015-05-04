@@ -1,5 +1,5 @@
-.uomcontent article header,
-.uomcontent article header:first-child {
+.uomcontent [role="main"] article header,
+.uomcontent [role="main"] article header:first-child {
   @extend .banner;
   position: relative;
 
@@ -11,7 +11,8 @@
   }
 
   h1 {
-    font-family: $ff-serif;
+    // font-family: $ff-serif;
+    font-weight: $bold;
   }
 
   .bottom-align {
