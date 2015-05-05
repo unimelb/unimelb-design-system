@@ -31,10 +31,10 @@ article
 
     h2.title What's the purpose of the image?
 
-    p It is useful to distinguish between two different types of images often used on web pages: the content image and the background image. 
+    p It is useful to distinguish between two different types of images often used on web pages: the content image and the background image.
 
     p The <strong>content images</strong> explains, informs or generally adds value to your content. The <strong>background image</strong> on the other hand, sets the scene, complements your content and even changes the mood of the user.
-    
+
     p So what's the difference between those two with regards to how they are displayed in the design system?
 
     h3 Content images
@@ -57,9 +57,9 @@ article
     p
       a href="#background-images" Read how to use background images
 
-  .fullwidth.mid-align style="background-image: url(/assets/images/choose-header-images/science.jpg);"
+  #content-images.fullwidth.mid-align style="background-image: url(/assets/images/choose-header-images/science.jpg);"
     section
-      h2.title#content-images Content images
+      h2.title Content images
       p The science of choosing and using content images is actually easier than one might think
 
   section.with-figure
@@ -174,9 +174,9 @@ article
 
     p Okay, this interactive chart is a bit of a show off. But it can be done and would be the most prefered version (readability and responsiveness). We aim to provide these charts in the Design System at one point.
 
-  .fullwidth.mid-align style="background-image: url(/assets/images/choose-header-images/rocket.jpg);"
+  #background-images.fullwidth.mid-align style="background-image: url(/assets/images/choose-header-images/rocket.jpg);"
     section
-      h2#background-images.title Background images
+      h2.title Background images
       p Start with a bang and engage with your readers right from the start
 
   section.with-figure
@@ -243,7 +243,7 @@ article
       img src="/assets/images/choose-header-images/bi_03_04.jpg" alt="Picture of old lab and scientists (fig. 4)"
       figcaption Blue filter (fig. 4)
 
-    
+
 
     hr.spacer
 
@@ -259,7 +259,7 @@ article
     blockquote The wrong image, however, can confuse, misguide, annoy or even repel. You may never get the chance to correct this negative impact.
     p This is really important to keep in mind at all times. No image is sometimes better than some random image that does not help your message at all.
 
-    
+
   .fullwidth.mid-align style="background-image: url(/assets/images/choose-header-images/supplies.jpg);"
     section
       h2.title Image resources
