@@ -19,7 +19,7 @@ Buttons are especially useful where:
 
 #### Light blue - highlight
 
-* A simple call to action on a page where there is only one call to action (if there are multiple, a [list pattern](../listings) should be used).
+* A simple call to action on a page where there is only one call to action (if there are multiple, a [list pattern](/components/listings) should be used).
 
 #### Green - call to action
 
