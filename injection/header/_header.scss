@@ -28,21 +28,17 @@
     font-family: $ff-sans;
   }
 
-  &.fixed:not(.floating) {
-    @media screen {
+  @include breakpoint(desktop) {
+    &.fixed:not(.floating) {
       @include rem(height, 40px);
-      background-color: rgba($white, .9);
+      background-color: $white;
       font-family: $ff-sans;
       position: fixed;
       width: 100%;
 
       header {
-        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .6));
+        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
         width: 100%;
-
-        @include breakpoint(desktop) {
-          @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
-        }
       }
 
       .page-header-logo {
@@ -104,12 +100,12 @@
     @include rem(height, 60px);
     @include single-box-shadow(0, 6px, 6px, -3px, rgba($black, .3));
     background: $white;
-    border-bottom: 1px solid $lightgray;
     display: table;
     overflow: visible;
     padding: 0;
-    position: relative;
+    //position: relative;
     width: 100%;
+    z-index: 3;
 
     @include breakpoint(desktop) {
       @include rem(height, 90px);
@@ -480,6 +476,19 @@
           color: $white;
         }
       }
+    }
+  }
+}
+
+.ie9 {
+  .uomcontent .page-header {
+    header {
+      position: static;
+    }
+
+    .page-header-tools {
+      background-color: $white;
+      position: absolute;
     }
   }
 }
