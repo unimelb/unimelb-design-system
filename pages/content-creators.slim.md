@@ -14,7 +14,7 @@ hr.spacer
 h2.title Guidelines
 
 section.navigation-block-listing
-  ul
+  ul.narrow
     li
       a href="/articles/editorial-guidelines"
         h3 Editorial Guidelines
@@ -24,10 +24,10 @@ section.navigation-block-listing
     /     h3 Writing for the web
     /     p Optimising copy for search engines and users
     li
-      a href="#"
+      a href="/articles/using-images"
         h3 Image guidelines
         p Choosing &amp; using images on websites can be quite difficult
     li
-      a href="#"
+      a href="/articles/audio-video-guidelines"
         h3 Audio &amp; Video guidelines
         p Things to remember when using media files
