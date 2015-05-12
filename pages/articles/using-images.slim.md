@@ -44,6 +44,8 @@ article
       li Displays what the text is talking about (pictures, items, etc...)
       li Shows a person
       li Offers additional information
+    p
+     a href="#content-images" Read how to pick content images
     
 
     h3 Background images
@@ -53,6 +55,8 @@ article
       li Sets a mood
       li Sets a color scheme
       li Hints what the topic is about (without attempting to show something crucial for the content as they could be covered or cropped)
+    p
+      a href="#background-images" Read how to use background images
 
 
   #content-images.fullwidth.mid-align style="background-image: url(/assets/images/choose-header-images/science.jpg);"
@@ -266,8 +270,8 @@ article
 
 
   section.with-figure
-    p There’s a number of places online where you can find potential images for your page. As with most resources, there are paid and free versions so make sure you choose an appropriate license for your purposes. 
-
+    p There’s a number of places online where you can find potential images for your page. As with most resources, there are paid and free versions so make sure you choose an appropriate license for your purposes.
+    p Make sure all images comply with <a href="http://marketing.unimelb.edu.au/imagebank/guidelines.html">the university image guidelines</a>.
     hr.spacer
 
     h2 Free images
@@ -310,7 +314,10 @@ article
       li
         a href="http://www.gettyimages.co.uk/" Getty Images
 
-
+hr
+section
+  p.center
+    a.button-hero href="/articles/audio-video-guidelines" Next: Audio & Video guidelines
 
 script src="https://www.google.com/jsapi"
 
