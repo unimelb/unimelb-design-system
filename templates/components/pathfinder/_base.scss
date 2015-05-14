@@ -58,6 +58,7 @@
       @include leader(1);
       @include padding-trailer(1);
       @include rem(font-size, 13px);
+      @include rem(min-width, 165px);
       @include rem(padding-left, 20px);
       @include rem(padding-right, 20px);
       background-color: transparent;
@@ -244,6 +245,10 @@
         display: inline-block;
         margin: 0;
       }
+
+      p {
+        @include rem(min-width, 280px);
+      }
     }
   }
 
@@ -296,6 +301,10 @@
         @include flex(1);
         height: auto;
         margin: 0;
+      }
+
+      p {
+        @include rem(min-width, 175px);
       }
     }
 
