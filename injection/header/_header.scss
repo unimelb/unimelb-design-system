@@ -36,11 +36,6 @@
       position: fixed;
       width: 100%;
 
-      header {
-        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
-        width: 100%;
-      }
-
       .page-header-logo {
         position: absolute;
         top: -60px;
@@ -55,12 +50,15 @@
       span {
         @include rem(height, 40px);
         @include rem(line-height, 40px);
+        vertical-align: middle;
       }
 
       header {
         @include rem(height, 40px);
         @include rem(line-height, 40px);
+        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
         background-color: transparent;
+        width: 100%;
       }
 
       .page-header-navigation {
@@ -73,11 +71,6 @@
         .mobile-nav .styled-select.alt {
           @include rem(margin-top, 5px);
         }
-      }
-
-      a,
-      span {
-        vertical-align: middle;
       }
 
       .page-header-tools .page-header-icon {
@@ -103,7 +96,7 @@
     display: table;
     overflow: visible;
     padding: 0;
-    //position: relative;
+    position: relative;
     width: 100%;
     z-index: 3;
 
@@ -129,8 +122,9 @@
       @include rem(height, 60px);
       @include rem(width, 60px);
       background-color: $darkblue;
-      display: table-cell;
+      display: block;
       left: 0;
+      position: absolute;
       top: 0;
       transition: .2s top .3s;
 
@@ -192,7 +186,7 @@
 }
 
 .uomcontent .page-header-navigation {
-  @include rem(padding, 0 15px);
+  @include rem(padding, 0 15px 0 75px);
   display: table-cell;
   transition: .3s padding-left;
   vertical-align: baseline;
