@@ -6,7 +6,10 @@ unless window.UOMListFilter
 
         @tables = document.querySelectorAll('ul.filtered-listing-grid')
         @select = @el.querySelector('select')
-        @curr = @select.value
+        if @select
+          @curr = @select.value
+        else
+          @curr = -1
 
         if typeof Isotope != 'undefined'
           @isos = new Array
@@ -44,9 +47,10 @@ unless window.UOMListFilter
 
         @process()
 
-        @select.addEventListener 'change', (e) ->
-          t.curr = this.value
-          t.redraw()
+        if @select
+          @select.addEventListener 'change', (e) ->
+            t.curr = this.value
+            t.redraw()
 
       process: (target) ->
         if @allcategories and target and target.getAttribute('data-tag') == 'all' and target.checked
@@ -79,7 +83,8 @@ unless window.UOMListFilter
       redraw: ->
         for table in @tables
           category = table.parentNode.parentNode
-          if table.countSelector('.item') > 0 and (@curr == '-1' or (category.hasAttribute('data-category') and @curr in category.getAttribute('data-category').split('|')))
+          if (!@select and table.countSelector('.item') > 0) or
+             (table.countSelector('.item') > 0 and (@curr == '-1' or (category.hasAttribute('data-category') and @curr in category.getAttribute('data-category').split('|'))))
             category.removeClass('hide')
           else
             category.addClass('hide')
@@ -100,10 +105,6 @@ unless window.UOMListFilter
             el.addClass('item')
           else
             el.removeClass('item')
-
-      hideTable: (table, tag) ->
-        for el in table.querySelectorAll('li')
-          el.removeClass('item') if el.hasClass(tag)
 
       showAllTables: ->
         for table in @tables
