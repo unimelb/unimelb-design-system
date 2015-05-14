@@ -490,5 +490,9 @@
       background-color: $white;
       position: absolute;
     }
+
+    &.floating .page-header-tools {
+      background-color: transparent;
+    }
   }
 }
