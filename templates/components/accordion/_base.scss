@@ -19,7 +19,7 @@
   }
 
   .accordion__visible .accordion__hidden {
-    max-height: 1000px;
+    @include rem(max-height, 50000px);
     transition: 500ms max-height ease-in-out;
   }
 
@@ -39,6 +39,9 @@
   }
 
   ul.accordion {
+    padding-left: 0;
+    padding-right: 0;
+
     & > li {
       @include padding-leader(0.5);
       @include padding-trailer(0.5);
@@ -107,6 +110,11 @@
         @include rem(padding-left, 25px);
         position: relative;
         z-index: 1;
+
+        &:focus {
+          outline: 0;
+          text-decoration: underline;
+        }
       }
 
       span.accordion__title {

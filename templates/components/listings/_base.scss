@@ -61,7 +61,7 @@
       @include adjust-leading-to(1);
       color: $darkblue;
       display: block;
-      font-weight: $light;
+      font-weight: $regular;
     }
 
     p {
@@ -123,7 +123,7 @@
 
       strong,
       p {
-        text-align: center;
+        text-align: left;
       }
     }
 

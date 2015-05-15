@@ -53,12 +53,9 @@
       strong {
         @include adjust-font-size-to(20px);
         @include padding-trailer(0.5);
-        text-align: center;
       }
 
       p {
-        padding-left: 5%;
-        padding-right: 5%;
       }
     }
   }
@@ -88,15 +85,6 @@
 
       li:nth-child(3n+1) {
         clear: left;
-      }
-
-      strong {
-        text-align: center;
-      }
-
-      p {
-        @include rem(padding, 15px);
-        text-align: center;
       }
     }
   }

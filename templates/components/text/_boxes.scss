@@ -1,112 +1,84 @@
+%boxes {
+  @include padding-leader(1);
+  @include padding-trailer(0);
+  @include trailer(2);
+  @include rem(max-width, $w-sml);
+  @include rem(padding-left, 25px);
+  @include rem(padding-right, 25px);
+  background-color: lighten($highlight, 54);
+  margin: 0 auto;
+
+  h1 {
+    @include adjust-font-size-to(15px);
+    @include rem(letter-spacing, 2px);
+    @include rem(padding, 0px 0 15px 0);
+    font-weight: $bold;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  dl {
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  dt {
+    @include adjust-font-size-to(15px);
+    color: $black;
+    display: block;
+    float: none;
+    font-weight: $light;
+    width: auto;
+  }
+
+  dd {
+    @include adjust-font-size-to(20px);
+    @include trailer(1);
+    @include rem(margin-left, 0px);
+    @include rem(margin-right, 0px);
+    @include rem(margin-top, 0px);
+    display: block;
+    float: none;
+    font-weight: $regular;
+    width: auto;
+  }
+
+  p {
+    padding-bottom: 0;
+  }
+}
+
 .uomcontent [role="main"] {
   .contact-box {
-    @include padding-leader(1);
-    @include padding-trailer(0);
-    @include rem(max-width, $w-sml);
-    @include rem(padding-left, 25px);
-    @include rem(padding-right, 25px);
-    background-color: $paleblue;
-    margin: 0 auto;
+    @extend %boxes;
+  }
 
-    h1 {
-      @include adjust-font-size-to(15px);
-      @include rem(letter-spacing, 2px);
-      @include rem(padding, 10px 0 15px 0);
-      font-weight: $bold;
-      margin: 0;
-      text-transform: uppercase;
-    }
-
-    dl {
-      margin: 0 auto;
-      overflow: hidden;
-      padding-left: 0;
-    }
-
-    dt {
-      @include adjust-font-size-to(16px);
-      color: $black;
-      display: block;
-      float: none;
-      font-weight: 100;
-      width: auto;
-    }
+  .highlight-box {
+    @extend %boxes;
 
     dd {
-      @include adjust-font-size-to(20px);
-      @include trailer(1);
-      @include rem(margin-left, 0px);
-      @include rem(margin-right, 0px);
-      @include rem(margin-top, 0px);
-      display: block;
-      float: none;
-      font-weight: $regular;
-      width: auto;
-    }
-
-    p {
-      padding-bottom: 0;
-    }
-
-    @include breakpoint(desktop) {
-      dd {
-        @include trailer(1);
-        font-weight: $regular;
-      }
+      @include adjust-font-size-to(40px);
+      font-weight: $bold;
     }
   }
 
   .emergency-box {
-    @include rem(max-width, $w-sml);
-    @include rem(padding, 25px);
-    background-color: $paleblue;
+    @extend %boxes;
     color: $cherry;
-    margin: 0 auto;
 
-    h1 {
-      @include rem(font-size, 15px);
-      @include rem(letter-spacing, 2px);
-      @include rem(padding, 10px 0 15px 0);
-      font-weight: $bold;
-      margin: 0;
-      text-transform: uppercase;
-    }
-    dl {
-      margin: 0 auto;
-      overflow: hidden;
-      padding-left: 0;
-    }
-    dt {
-      @include rem(font-size, 18px);
-      color: $black;
-      display: block;
-      float: none;
-      font-weight: 100;
-      width: auto;
-    }
     dd {
-      @include rem(font-size, 24px);
-      @include rem(margin, 0 0 20px 0);
-      display: block;
-      float: none;
-      font-weight: 700;
-      width: auto;
+      @include adjust-font-size-to(24px);
+      font-weight: $bold;
     }
+
     a {
       color: $cherry;
     }
-    p {
-      padding-bottom: 0;
-    }
+
     @include breakpoint(desktop) {
-      dt {
-        @include rem(font-size, 18px);
-      }
       dd {
-        @include rem(font-size, 40px);
-        @include rem(margin, 0 0 40px 0);
-        font-weight: 400;
-        line-height: 1;
+        font-weight: $regular;
       }
     }
   }
