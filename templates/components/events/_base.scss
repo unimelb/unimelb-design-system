@@ -105,7 +105,7 @@
 
   p {
     @include rem(padding-bottom, 5px);
-    
+
   }
 
   h2 {
@@ -179,12 +179,20 @@
   }
 
   .time {
-    @include rem(padding-bottom, 10px);
     color: $lighterblue;
     display: block;
     font-weight: $regular;
     margin: 0 3%;
     width: 94%;
+
+    svg {
+      @include rem(height, 20px);
+      @include rem(margin-top, -4px);
+      @include rem(width, 20px);
+      display: inline-block;
+      fill: $highlight;
+      vertical-align: middle;
+    }
 
     @include breakpoint(desktop) {
       margin-left: 0;
@@ -257,7 +265,7 @@
     p {
       max-width: 100%;
     }
-    
+
     @include breakpoint(wide) {
       @include rem(padding-right, 15px);
       display: table-cell;
