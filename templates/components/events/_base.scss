@@ -52,6 +52,10 @@
   a {
     color: $black;
     text-decoration: none;
+
+    &:hover {
+      color: $highlight;
+    }
   }
 
   li {
@@ -72,15 +76,21 @@
     }
 
     li {
+      border-bottom: 1px solid darken($lightgray, 5%);
       @include rem(border-left, 5px solid $lighterblue);
       @include rem(margin-left, -15px);
-      @include rem(padding-top, 45px);
+      @include rem(padding-bottom, 20px);
+      @include rem(padding-top, 20px);
       margin-bottom: 0;
       padding-left: 0;
       width: auto;
 
       &:first-child {
         padding-top: 0;
+      }
+
+      &:last-child {
+        border-bottom: 0;
       }
 
       @include breakpoint(desktop) {
@@ -95,7 +105,7 @@
 
   p {
     @include rem(padding-bottom, 5px);
-    max-width: 100%;
+    
   }
 
   h2 {
@@ -208,6 +218,32 @@
       }
     }
 
+    .tag {
+      @include adjust-font-size-to(11px);
+      @include rem(border-radius, 3px);
+      @include rem(margin-right, 10px);
+      @include rem(padding, 0 7px 0 3px);
+      border: 1px solid $midgray;
+      //background-color: $lightblue;
+      color: $midgray;
+      display: inline-block;
+      font-weight: $regular;
+      text-transform: uppercase;
+
+      svg {
+        fill: $midgray;
+      }
+    }
+
+    svg {
+      @include rem(height, 18px);
+      @include rem(margin-top, -3px);
+      @include rem(width, 18px);
+      display: inline-block;
+      fill: $midgray;
+      vertical-align: middle;
+    }
+
     @include breakpoint(desktop) {
       border-bottom: 0 none;
       border-top: 0 none;
@@ -218,6 +254,10 @@
   }
 
   .col {
+    p {
+      max-width: 100%;
+    }
+    
     @include breakpoint(wide) {
       @include rem(padding-right, 15px);
       display: table-cell;

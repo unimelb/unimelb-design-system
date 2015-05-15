@@ -19,6 +19,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: $white;
+    overflow: hidden;
     width: 100%;
 
     &.reverse {
@@ -139,20 +140,27 @@
     }
 
     p.author {
-      @include adjust-font-size-to(18px);
-      @include padding-leader(1);
-      @include trailer(-1);
+      @include adjust-font-size-to(16px);
+      // @include padding-leader(1);
+      // @include trailer(-1);
+      @include rem(max-width, 350px);
       font-style: italic;
 
       &:before {
         @include leader(0);
         @include trailer(1);
         @include rem(width, 80px);
-        border-top: 2px solid currentColor;
+        border-top: 5px solid currentColor;
         content: '';
         display: block;
         margin-left: auto;
         margin-right: auto;
+      }
+
+      em {
+        @include adjust-font-size-to(18px);
+        font-style: normal;
+        font-weight: $bold;
       }
     }
 

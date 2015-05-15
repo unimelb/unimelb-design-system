@@ -47,6 +47,54 @@
     }
   }
 
+  header ul.staff-listing-detailed {
+    li {
+      background: rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 100px 71px rgba(0, 0, 0, 0.3);
+    }
+
+    .frame {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+
+      img {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+    }
+
+    strong {
+      @include adjust-font-size-to(20px);
+      @include padding-leader(1);
+      display: block;
+      color: $white;
+      text-decoration: none;
+    }
+
+    p {
+      @include adjust-font-size-to(16px);
+      @include padding-leader(1);
+      @include padding-trailer(0.5);
+      @include rem(max-width, 500px);
+      color: $white;
+      font-style: italic;
+
+      a {
+        @include adjust-font-size-to(15px);
+        @include rem(padding, 0px 10px);
+        color: $white;
+        font-style: normal;
+        font-weight: $regular;
+        text-decoration: underline;
+      }
+
+      &.links {
+        @include padding-leader(0.5);
+        border-top: 1px solid rgba($white, 0.2);
+      }
+    }
+  }
+
   .diamond-mask {
     @include trailer(1);
     @include transform(rotate(45deg) scale(.7));
