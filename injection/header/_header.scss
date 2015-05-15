@@ -188,6 +188,7 @@
 .uomcontent .page-header-navigation {
   @include rem(padding, 0 15px 0 75px);
   display: table-cell;
+  left: 0;
   transition: .3s padding-left;
   vertical-align: baseline;
 
