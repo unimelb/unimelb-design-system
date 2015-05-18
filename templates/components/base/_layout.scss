@@ -324,17 +324,6 @@ body {
     }
   }
 
-  .alert {
-    @include rem(margin-bottom, 15px);
-    @include rem(padding, 15px);
-    background-color: $paleyellow;
-    box-shadow: 0 2px 3px rgba($black, .1);
-
-    a {
-      color: darken($paleyellow, 65%);
-    }
-  }
-
   .fifth {
     @include rem(padding, 0 15px 30px);
     float: left;
