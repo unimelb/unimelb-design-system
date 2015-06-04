@@ -4,9 +4,7 @@ unless window.UOMIconHelper
       constructor: (@el) ->
         @ref = @el.getAttribute('data-icon')
 
-        # Protection
-        @ref = 'icon-' + @ref if @ref.substr(0,5) != 'icon-'
-        @ref = '#' + @ref if @ref.substr(0,1) != '#'
+        @ref = '#icon-' + @ref if @ref.substr(0,5) != '#icon-'
 
         # Save inner
         @inner = []
@@ -18,13 +16,13 @@ unless window.UOMIconHelper
           <use xlink:href="#{@ref}"></use>
         </svg>
 """
+        if @inner.length > 0
+          label = document.createElement "div"
+          label.addClass "icon-label"
+          for n in @inner
+            label.appendChild n
 
-        label = document.createElement "div"
-        label.addClass "icon-label"
-        for n in @inner
-          label.appendChild n
-
-        @el.appendChild label
+          @el.appendChild label
 
     if (supportedmodernbrowser)
       new IconHelper(m) for m in document.querySelectorAll '[data-icon]'
