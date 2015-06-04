@@ -72,7 +72,7 @@ section
 
 ==syntax_highlight :html
   erb:
-    <div class="no-js" id="navigation" role="navigation">
+    <div class="no-js" id="sitemap" role="navigation">
       <h2>Section title</h2>
       <ul>
         <li>
@@ -111,9 +111,12 @@ section
 
 ==syntax_highlight :html
   erb:
-    <div class="no-js" id="navigation" role="navigation" data-absolute-root="/sitehome">
+    <div class="no-js" id="sitemap" role="navigation" data-absolute-root="/sitehome">
     ...
     </div>
+
+section
+  p This is part of a much larger discussion, but please be aware that the local navigation only displays <strong>end pages</strong> in the structure, so in the example listed above there is no direct link to <code>/sub-section</code> or <code>/sub-section/another</code>. This is intentional, and in most circumstances this type of page ("landing" page) should only contain a basic list of links to its children, eg. <a href="/components">the index of components on this site</a>.
 
 hr
 
