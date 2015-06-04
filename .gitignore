@@ -3,6 +3,7 @@ demo-site/tmp/*
 .DS_Store
 tmp/*
 build/
+node_modules/
 .env
 .ruby-version
 .idea

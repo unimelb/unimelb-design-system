@@ -1,6 +1,6 @@
 //= require ./global.js
 //= require ./header/header
-//= require ./global-nav/modal
+//= stub ./global-nav/modal
 //= require ./global-nav/nav
 //= require ./footer/footer
 //= require ./footer/icons
@@ -8,8 +8,8 @@
 
 window.UOMloadInjection = function() {
   window.UOMinjectHeader();
-  window.UOMModal()
-  window.UOMinjectGlobalNav();
+  // window.UOMModal()
+  // window.UOMinjectGlobalNav();
   window.UOMinjectFooter();
   window.UOMinjectIcons();
 };
