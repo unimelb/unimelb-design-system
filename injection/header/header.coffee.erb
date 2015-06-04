@@ -2,7 +2,8 @@ window.UOMinjectHeader = ->
   # IE helper
   bodyclass = 'ie ie8' if /(MSIE 8.0)/g.test(navigator.userAgent)
   bodyclass = 'ie ie9' if /(MSIE 9.0)/g.test(navigator.userAgent)
-  bodyclass = 'ie ie10' if /(MSIE 10.0)/g.test(navigator.userAgent)
+  bodyclass = 'ie10' if /(MSIE 10.0)/g.test(navigator.userAgent)
+  bodyclass = 'ie11' if /(Trident\/7.0)/g.test(navigator.userAgent)
   unless document.body.hasClass('ie') or (typeof bodyclass == 'undefined')
     document.body.addClass(bodyclass)
 

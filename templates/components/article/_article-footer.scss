@@ -1,0 +1,102 @@
+.uomcontent [role="main"] {
+  article footer {
+    padding-top: 0;
+
+    .staff-listing-detailed {
+      @include padding-trailer(2);
+      @include rem(margin, 0 auto);
+      @include rem(max-width, $w-sml);
+
+      .frame {
+        @include rem(max-width, 100px);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      p {
+        @include rem(max-width, 250px);
+      }
+    }
+
+    .republish-wrapper {
+      @include padding-leader(0.5);
+      @include padding-trailer(0.5);
+      @include rem(max-width, $w-sml);
+      border-bottom: 1px solid $lightergray;
+      border-top: 1px solid $lightergray;
+      margin: 0 auto;
+      overflow: hidden;
+      width: 94%;
+
+      @include breakpoint(desktop) {
+        width: 100%;
+      }
+    }
+
+    .share {
+      @include rem(margin, 0 auto);
+      @include rem(max-width, $w-sml);
+      @include rem(padding-top, 5px);
+      display: table;
+      float: left;
+      padding-bottom: 0;
+      width: auto;
+
+      ul {
+        display: table-cell;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0;
+      }
+
+      li {
+        @include adjust-font-size-to(14px);
+        @include rem(margin, 0 10px 0 0);
+        display: inline-block;
+        list-style-type: none;
+        padding: 0;
+        width: auto;
+
+        a {
+          @include rem(border-radius, 3px);
+          @include rem(height, 30px);
+          @include rem(width, 30px);
+          background-color: #4099FF;
+          color: $white;
+          display: block;
+          overflow: hidden;
+          vertical-align: top;
+
+          svg {
+            @include rem(height, 30px);
+            @include rem(width, 30px);
+            fill: currentColor;
+          }
+        }
+
+        &.facebook a {
+          background-color: #3b5998;
+        }
+
+        &.linkedin a {
+          background-color: #0976b4;
+        }
+      }
+    }
+
+    .republish {
+      float: right;
+      text-align: right;
+    }
+
+    .categories {
+      @include adjust-font-size-to(17px);
+      @include padding-leader(1);
+      text-align: left;
+
+      a {
+        font-weight: $bold;
+      }
+    }
+  }
+}

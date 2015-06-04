@@ -1,0 +1,91 @@
+.uomcontent [role="main"] {
+  article {
+    header,
+    header:first-child {
+      @extend .banner;
+      position: relative;
+
+      h1,
+      p {
+        @include rem(max-width, $w-mid);
+        @include rem(padding-left, 20px);
+        @include rem(padding-right, 20px);
+      }
+
+      h1 {
+        font-weight: $bold;
+      }
+
+      p.author {
+        em {
+          @include adjust-font-size-to(18px);
+          font-style: normal;
+          font-weight: $bold;
+        }
+      }
+
+      .bottom-align {
+        @include padding-trailer(2);
+        position: relative;
+      }
+    }
+
+    header.noimg,
+    header.noimg:first-child {
+      background-color: transparent;
+      display: block;
+      height: auto;
+      min-height: 0;
+
+      h1,
+      p {
+        color: $black;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left;
+      }
+
+      h1 {
+        @include padding-leader(2);
+        @include padding-trailer(1);
+        @include rem(max-width, $w-sml);
+      }
+
+      p {
+        @include rem(max-width, $w-sml);
+
+        &.author {
+          @include padding-trailer(2);
+          @include rem(max-width, $w-sml);
+          border-bottom: 1px solid $lightergray;
+
+          &:before {
+            border-color: $black;
+            margin-left: 0;
+          }
+        }
+      }
+
+      & + section.with-figure > figure.full-width {
+        @include rem(margin-top, -25px);
+      }
+    }
+
+    .with-aside article header.noimg,
+    .with-aside article header.noimg:first-child {
+      h1 {
+        @include padding-leader(0);
+        @include padding-trailer(0);
+      }
+    }
+  }
+}
+
+.ie, .ie8, .ie9, .ie10 {
+  .uomcontent article header,
+  .uomcontent article header:first-child {
+    .bottom-align {
+      position: absolute;
+    }
+  }
+}

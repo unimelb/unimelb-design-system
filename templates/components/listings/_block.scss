@@ -332,6 +332,190 @@
   .news a:hover {
     color: inherit;
   }
+
+  &.narrow {
+    li {
+      @include transition(transform 0.15s);
+      background-color: $white;
+      position: relative;
+
+      &:hover {
+        @include transform(scale(1.03));
+        z-index: 100;
+
+        p,
+        strong {
+          color: $highlight;
+        }
+      }
+
+      &.double {
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        p,
+        strong {
+          color: $white;
+        }
+      }
+
+      &.newshero {
+        @include rem(min-height, 300px);
+
+        a {
+          background-color: transparent;
+        }
+
+        strong {
+          @include adjust-font-size-to(22px);
+          @include rem(padding, 10px);
+          background-color: rgba($highlight, .8);
+          bottom: 0;
+          font-weight: $regular;
+          margin: 0;
+          position: absolute;
+
+          em {
+            @include adjust-font-size-to(17px);
+            font-weight: $thin;
+          }
+
+          @include breakpoint(tablet) {
+            @include rem(padding, 10px 25px);
+            width: 100%
+          }
+
+          @include breakpoint(wide) {
+            @include adjust-font-size-to(26px);
+            @include rem(padding, 20px 25px);
+          }
+        }
+
+        &.special {
+          border-bottom-color: $highlight;
+
+          strong {
+            @include rem(padding-bottom, 20px);
+            @include rem(padding-left, 30px);
+            background-color: transparent;
+
+            em {
+              font-weight: $bold;
+            }
+
+            span {
+              background-color: $white;
+              box-shadow: 10px 0 0 $white, -10px 0 0 $white;
+              color: $highlight;
+              font-weight: $bold;
+              line-height: 1.2;
+
+              -webkit-box-decoration-break: clone;
+              box-decoration-break: clone;
+            }
+
+            @include breakpoint(wide) {
+              @include adjust-font-size-to(40px);
+            }
+          }
+        }
+      }
+
+      &.column {
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        a {
+          @include rem(padding-left, 25px);
+          @include rem(padding-right, 25px);
+        }
+
+        span {
+          @include adjust-font-size-to(20px);
+          @include padding-leader(4);
+          display: block;
+          font-style: normal;
+          font-weight: regular;
+
+          svg {
+            @include rem(height, 50px);
+            @include rem(margin-bottom, -7px);
+            @include rem(margin-left, -10px);
+            fill: $cyan;
+          }
+        }
+
+        strong {
+          @include adjust-font-size-to(40px);
+          background-color: $cyan;
+          box-shadow: 10px 0 0 $cyan, -10px 0 0 $cyan;
+          color: $white;
+          display: inline;
+          font-weight: $bold;
+          line-height: 1.3;
+          padding: 0;
+
+          -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+        }
+      }
+
+      strong,
+      p {
+        @include transition(color 0.15s);
+      }
+
+      figure {
+        line-height: 0;
+        margin: 0;
+        padding: 0;
+        position: relative;
+
+        &.video-thumb,
+        &.audio-thumb {
+          &:after {
+            @include transition(opacity 0.2s);
+            background-color: rgba($black, 0.1);
+            background-image: url(/assets/images/pursuit/video-thumb.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 35%;
+            content: '';
+            display: block;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+        }
+        &.audio-thumb:after {
+          background-image: url(/assets/images/pursuit/audio-thumb.svg);
+        }
+      }
+    }
+
+    @include breakpoint(desktop) {
+      li {
+        max-width: 100%;
+        width: 32%;
+      }
+
+      .double {
+        width: 65%;
+      }
+    }
+
+    @include breakpoint(wide) {
+      li {
+        width: 24%;
+      }
+
+      .double {
+        width: 49%;
+      }
+    }
+  }
 }
 
 .uomcontent [role="main"] .block-listing .when.range {

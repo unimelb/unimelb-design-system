@@ -19,6 +19,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: $white;
+    overflow: hidden;
     width: 100%;
 
     &.reverse {
@@ -36,8 +37,8 @@
 
     &.image {
       @extend %bannerbox;
-      @include rem(height, 300px);
       @include rem(min-height, 300px);
+      height: auto;
 
       & > h1,
       & > p,
@@ -61,35 +62,26 @@
 
     &.banner {
       @extend %bannerbox;
-      // @include rem(margin-top, -60px);
-      @include rem(height, 300px);
       @include rem(min-height, 300px);
-      // height: 100vh;
       height: auto;
 
       @include breakpoint(height-smallest) {
-        @include rem(height, 520px);
         @include rem(min-height, 520px);
       }
 
       @include breakpoint(height-small) {
-        @include rem(height, 620px);
         @include rem(min-height, 620px);
       }
 
       @include breakpoint(height-medium) {
-        @include rem(height, 720px);
         @include rem(min-height, 720px);
       }
 
       @include breakpoint(height-big) {
-        @include rem(height, 800px);
         @include rem(min-height, 800px);
       }
 
       @include breakpoint(desktop) {
-        // @include rem(margin-top, -90px);
-
         h1 {
           @include adjust-font-size-to(50px);
         }
@@ -119,6 +111,10 @@
       margin: 0 auto;
       text-align: left;
 
+      &.article {
+        font-weight: $bold;
+      }
+
       @include breakpoint(desktop) {
         @include adjust-font-size-to(45px);
       }
@@ -144,20 +140,27 @@
     }
 
     p.author {
-      @include adjust-font-size-to(18px);
-      @include padding-leader(1);
-      @include trailer(-1);
+      @include adjust-font-size-to(16px);
+      // @include padding-leader(1);
+      // @include trailer(-1);
+      @include rem(max-width, 350px);
       font-style: italic;
 
       &:before {
         @include leader(0);
         @include trailer(1);
         @include rem(width, 80px);
-        border-top: 2px solid currentColor;
+        border-top: 5px solid currentColor;
         content: '';
         display: block;
         margin-left: auto;
         margin-right: auto;
+      }
+
+      em {
+        @include adjust-font-size-to(18px);
+        font-style: normal;
+        font-weight: $bold;
       }
     }
 
@@ -244,6 +247,40 @@
     }
     header.image, header.banner {
       display: table;
+    }
+  }
+}
+
+.ie10 .uomcontent [role="main"],
+.ie11 .uomcontent [role="main"] {
+  header,
+  & > header:first-child {
+    &.image {
+      @include rem(height, 300px);
+
+      &.with-filters {
+        height: auto;
+      }
+    }
+
+    &.banner {
+      @include rem(height, 300px);
+
+      @include breakpoint(height-smallest) {
+        @include rem(height, 520px);
+      }
+
+      @include breakpoint(height-small) {
+        @include rem(height, 620px);
+      }
+
+      @include breakpoint(height-medium) {
+        @include rem(height, 720px);
+      }
+
+      @include breakpoint(height-big) {
+        @include rem(height, 800px);
+      }
     }
   }
 }
