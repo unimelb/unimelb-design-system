@@ -2,14 +2,14 @@ p Add the <code>data-icon</code> attribute to any empty element and give it the 
 
 ==syntax_highlight :html
   erb:
-    <div data-icon="#icon-maps"></div>
-    <span data-icon="#icon-trash"></span>
+    <div data-icon="maps">Map</div>
+    <span data-icon="trash">Trash</span>
 
 p This will be replaced at load time with an <code>svg</code> DOM element referencing the desired icon.
 
 p By default, the icon will inherit the <code>currentColor</code> value of its parent element, and will be constrained to 60px &times; 60px.
 
-p There are three CSS helper classes that can be used to modify this behaviour:
+p There are three CSS helper classes that can be used to adjust the size:
 
 ul
   li.no-li
@@ -22,6 +22,4 @@ ul
     code> fill
     | 100% of container width and height
 
-==syntax_highlight :html
-  erb:
-    <p>Inline example <span class="small" data-icon="#icon-maps"></span></p>
+p All text within the element will be kept as a label (try and keep it short). All labels are centred on their containing element.

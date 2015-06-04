@@ -37,6 +37,13 @@
         width: 100%;
       }
     }
+
+    .icon-label {
+      font-weight: $regular;
+      margin: 0;
+      text-align: center;
+      white-space: nowrap;
+    }
   }
 
   p [data-icon] {
