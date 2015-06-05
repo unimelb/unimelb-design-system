@@ -4,13 +4,18 @@ unless window.UOMStickyNav
       constructor: (el) ->
         @main = el
 
-        if /(Firefox)/g.test(navigator.userAgent) or /(Trident)/g.test(navigator.userAgent)
+        if /(Firefox)/g.test(navigator.userAgent) or
+           /(Trident)/g.test(navigator.userAgent)
           @outer = document.querySelector('html')
         else
           @outer = document.body
 
         jump = document.createElement "ul"
-        className = if document.countSelector('.indexnav')==1 then "index-navigation" else "jump-navigation"
+        if document.countSelector('.indexnav')==1
+          className = "index-navigation"
+        else
+          className = "jump-navigation"
+
         jump.addClass className
         jump.innerHTML = """
     <li>On this page</li>
@@ -61,7 +66,10 @@ unless window.UOMStickyNav
           else
             main.appendChild(jump)
 
-        document.body.addClass if document.countSelector('.indexnav')==1 then "indexnav-active" else "jumpnav-active"
+        if document.countSelector('.indexnav')==1
+          document.body.addClass = "indexnav-active"
+        else
+          document.body.addClass = "jumpnav-active"
 
         @fixPoint = @n.offsetTop - 80
         @fixPoint = @fixPoint + 35 if jump.hasClass('floating')
@@ -86,10 +94,12 @@ unless window.UOMStickyNav
       # Static tab aside
       if document.countSelector('.tab') > 0
         for el in document.querySelectorAll('.tab')
-          if el.countSelector('h2[id]') > 0
+          if el.countSelector('.inner-nav-tab') > 0 and
+             el.countSelector('h2[id]') > 0
             new StickyNav(el)
 
       # Scrolling jump nav
       else
-        if document.countSelector('h2[id]') > 0 and document.countSelector('.jumpnav, .indexnav')==1
+        if document.countSelector('h2[id]') > 0 and
+           document.countSelector('.jumpnav, .indexnav')==1
           new StickyNav(document.querySelector('div[role="main"]'))
