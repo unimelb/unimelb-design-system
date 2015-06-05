@@ -94,7 +94,7 @@ unless window.UOMStickyNav
       # Static tab aside
       if document.countSelector('.tab') > 0
         for el in document.querySelectorAll('.tab')
-          if el.countSelector('aside') > 0 and
+          if el.countSelector('.inner-nav-tab') > 0 and
              el.countSelector('h2[id]') > 0
             new StickyNav(el)
 
