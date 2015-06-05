@@ -67,9 +67,10 @@ unless window.UOMStickyNav
             main.appendChild(jump)
 
         if document.countSelector('.indexnav')==1
-          document.body.addClass = "indexnav-active"
+          document.body.addClass("indexnav-active")
         else
-          document.body.addClass = "jumpnav-active"
+          console.log "hi there"
+          document.body.addClass("jumpnav-active")
 
         @fixPoint = @n.offsetTop - 80
         @fixPoint = @fixPoint + 35 if jump.hasClass('floating')
