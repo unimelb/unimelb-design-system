@@ -8,7 +8,7 @@ Bundler.require
 
 require 'compass'
 
-require_relative './demo-site/app/app'
+require_relative './doc-site/app/app'
 
 ENV["ASSET_ENV"] = 'development'
 

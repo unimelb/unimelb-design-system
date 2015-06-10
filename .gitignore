@@ -1,4 +1,4 @@
-demo-site/tmp/*
+doc-site/tmp/*
 .bundle/*
 .DS_Store
 tmp/*

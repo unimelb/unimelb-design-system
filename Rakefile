@@ -98,6 +98,11 @@ namespace :assets do
 
   desc 'Compile all assets'
   task compile: ['assets:version_check', 'templates:assets', 'injection:assets']
+
+  desc "Build the public assets with node"
+  task :build do
+    system "npm run build-production"
+  end
 end
 
 task :default do
