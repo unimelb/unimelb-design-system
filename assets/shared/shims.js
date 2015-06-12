@@ -18,18 +18,18 @@ Shims.prototype.defineCountSelector = function() {
         if (document.querySelectorAll(selectors) === null) {
           return 0;
         } else {
-          return Array.prototype.slice.call(document.querySelectorAll(selectors)).length
+          return Array.prototype.slice.call(document.querySelectorAll(selectors)).length;
         }
       } catch(e) {
         // IE8 throws an invalid argument when querySelectorAll returns null (0)
       }
-    }
+    };
   }
 
   if (!Element.prototype.countSelector) {
     Element.prototype.countSelector = function(selectors) {
-      return Array.prototype.slice.call(this.querySelectorAll(selectors)).length
-    }
+      return Array.prototype.slice.call(this.querySelectorAll(selectors)).length;
+    };
   }
 };
 
@@ -68,18 +68,18 @@ Shims.prototype.defineClassHelpers = function() {
         curr = "";
       }
       if (!this.hasClass(q)) {
-        return this.className = curr + q;
+        this.className = curr + q;
       }
     };
   }
   if (!Element.prototype.removeClass) {
     Element.prototype.removeClass = function(q) {
       if (this.className === null || this.className === " ") {
-        return this.classname = "";
+        this.classname = "";
       } else {
         this.className = this.className.replace(q, '');
         if (this.className === " ") {
-          return this.className = "";
+          this.className = "";
         }
       }
     };
@@ -87,9 +87,9 @@ Shims.prototype.defineClassHelpers = function() {
   if (!Element.prototype.toggleClass) {
     Element.prototype.toggleClass = function(q) {
       if (this.hasClass(q)) {
-        return this.removeClass(q);
+        this.removeClass(q);
       } else {
-        return this.addClass(q);
+        this.addClass(q);
       }
     };
   }
@@ -99,17 +99,17 @@ Shims.prototype.polyfillEventListener = function() {
   (function(win, doc){
     if(win.addEventListener)return;   //No need to polyfill
 
-    function docHijack(p){var old = doc[p];doc[p] = function(v){return addListen(old(v))}}
+    function docHijack(p){var old = doc[p];doc[p] = function(v){return addListen(old(v));};}
     function addEvent(on, fn, self){
       return (self = this).attachEvent('on' + on, function(e){
-        var e = e || win.event;
-        e.preventDefault  = e.preventDefault  || function(){e.returnValue = false}
-        e.stopPropagation = e.stopPropagation || function(){e.cancelBubble = true}
+        e = e || win.event;
+        e.preventDefault  = e.preventDefault  || function(){e.returnValue = false;};
+        e.stopPropagation = e.stopPropagation || function(){e.cancelBubble = true;};
         fn.call(self, e);
       });
     }
     function addListen(obj, i){
-      if(i = obj.length)while(i--)obj[i].addEventListener = addEvent;
+      if(i == obj.length)while(i--)obj[i].addEventListener = addEvent;
       else obj.addEventListener = addEvent;
       return obj;
     }
@@ -117,7 +117,7 @@ Shims.prototype.polyfillEventListener = function() {
     addListen([doc, win]);
     if('Element' in win)win.Element.prototype.addEventListener = addEvent;      //IE8
     else{                                     //IE < 8
-      doc.attachEvent('onreadystatechange', function(){addListen(doc.all)});    //Make sure we also init at domReady
+      doc.attachEvent('onreadystatechange', function(){addListen(doc.all);});    //Make sure we also init at domReady
       docHijack('getElementsByTagName');
       docHijack('getElementById');
       docHijack('createElement');

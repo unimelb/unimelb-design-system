@@ -41,7 +41,7 @@ module.exports = {
     preLoaders: [
       {
         test: /\.js$/, // include .js files
-        exclude: /node_modules/, // exclude any and all files in the node_modules folder
+        exclude: /node_modules|vendor/, // exclude any and all files in the node_modules folder
         loader: "jshint-loader"
       }
     ],
@@ -89,7 +89,7 @@ function isFile(file) {
 
 function createEntries(entries, dir) {
   if (isDirectory(path.join(TARGETS, dir))) {
-    var target = (process.env.DEVELOPMENT === "true") ? ['webpack-dev-server/client?http://localhost:8080', 'webpack/hot/dev-server'] : [];
+    var target = (process.env.DEVELOPMENT === "true") ? ['webpack-dev-server/client?http://localhost:5002', 'webpack/hot/dev-server'] : [];
     var file = path.join(TARGETS, dir, "target.js");
     try {
       isFile(file);

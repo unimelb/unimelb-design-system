@@ -18,4 +18,4 @@ ENV["ASSET_ENV"] = 'development'
 #   end
 # end
 
-run WebTemplates::App
+run DocSite::App

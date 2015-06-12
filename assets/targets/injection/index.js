@@ -1,17 +1,28 @@
-//= require ./global.js
-//= require ./header/header
-//= stub ./global-nav/modal
-//= require ./global-nav/nav
-//= require ./footer/footer
-//= require ./footer/icons
-//= require ./tracking/gtm
+// //= require ./global.js
+// //= require ./header/header
+// //= stub ./global-nav/modal
+// //= require ./global-nav/nav
+// //= require ./footer/footer
+// //= require ./footer/icons
+// //= require ./tracking/gtm
 
+// window.UOMloadInjection = function() {
+//   window.UOMinjectHeader();
+//   // window.UOMModal()
+//   // window.UOMinjectGlobalNav();
+//   window.UOMinjectFooter();
+//   window.UOMinjectIcons();
+// };
+
+require("../../shared/shims");
+
+// replace with viewloader
 window.UOMloadInjection = function() {
-  window.UOMinjectHeader();
-  // window.UOMModal()
-  // window.UOMinjectGlobalNav();
-  window.UOMinjectFooter();
-  window.UOMinjectIcons();
+  var Footer = require('./footer');
+  new Footer();
+
+  var Icons = require('./icons');
+  new Icons();
 };
 
 if (window.attachEvent) {

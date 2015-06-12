@@ -3,7 +3,7 @@
 require_relative 'helpers'
 require_relative 'section_filter'
 
-module WebTemplates
+module DocSite
   class App < Sinatra::Base
     ### Register addons
 
@@ -36,29 +36,29 @@ module WebTemplates
     ### Sprockets settings
 
     set :sprockets,      Sprockets::Environment.new(root)
-    set :assets_prefix,  '/assets'
+    set :assets_prefix,  '/bassets'
     set :digest_assets,  true
 
     set :compass_gem_root, Gem.loaded_specs['compass-core'].full_gem_path
 
     configure do
-      sprockets.append_path injection
-      sprockets.append_path web_templates
-      sprockets.append_path File.join(compass_gem_root, 'stylesheets')
-      sprockets.cache = Sprockets::Cache::FileStore.new(File.join(root, 'tmp'))
+      # sprockets.append_path injection
+      # sprockets.append_path web_templates
+      # sprockets.append_path File.join(compass_gem_root, 'stylesheets')
+      # sprockets.cache = Sprockets::Cache::FileStore.new(File.join(root, 'tmp'))
 
       # sprockets.js_compressor  = :uglify
       # sprockets.css_compressor = :scss
 
       Sprockets::Helpers.configure do |config|
         config.environment = sprockets
-        config.prefix      = assets_prefix
-        config.digest      = digest_assets
-        config.public_path = public_dir
+      #   config.prefix      = assets_prefix
+      #   config.digest      = digest_assets
+      #   config.public_path = public_dir
       end
     end
 
-    AutoprefixerRails.install(sprockets)
+    # AutoprefixerRails.install(sprockets)
 
     ## Helpers
 

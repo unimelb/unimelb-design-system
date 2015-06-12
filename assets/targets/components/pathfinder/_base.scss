@@ -256,38 +256,20 @@
     @extend .pathfinder-3;
 
     @include breakpoint(desktop) {
-      @include flexbox((
-        display: box,
-        box-orient: vertical
-      ), $version: 1);
-      -ms-flex-wrap: wrap;
-      @include flexbox((
-        display: flexbox,
-        flex-direction: row wrap
-      ), $version: 2);
-      @include flexbox((
-        display: flex,
-        flex-direction: row wrap
-      ));
-      @include flex-flow(row wrap);
       @include rem(max-width, $w-mid);
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
 
       li {
-        @include flexbox((
-          display: box,
-          box-orient: vertical
-        ), $version: 1);
-        @include flexbox((
-          display: flexbox,
-          flex-direction: row
-        ), $version: 2);
-        @include flexbox((
-          display: flex,
-          flex-direction: row
-        ));
         @include rem(padding-left, 1px);
         @include rem(padding-bottom, 1px);
         @include flex(1 1 40%);
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         height: auto;
         padding-right: 0;
 

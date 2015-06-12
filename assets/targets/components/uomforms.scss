@@ -1,11 +1,11 @@
 @import 'compass';
 
-@import 'components/base/patterns_normalize';
-@import 'components/base/patterns_accessibility';
-@import 'components/base/patterns_clearfix';
-@import 'components/base/patterns_rem';
-@import 'components/base/patterns_media-queries';
-@import 'components/base/globals';
+@import 'base/patterns_normalize';
+@import 'base/patterns_accessibility';
+@import 'base/patterns_clearfix';
+@import 'base/patterns_rem';
+@import 'base/patterns_media-queries';
+@import 'base/globals';
 
 $ff-sans: Helvetica, Arial, sans-serif;
 $ff-fixed: 'Courier New', Courier, fixed;
@@ -16,21 +16,21 @@ $light: 300;
 $regular: 400;
 $bold: 700;
 
-@import 'components/base/typography';
-@import 'components/text/text';
-@import 'components/buttons/buttons';
-@import 'components/forms/forms';
+@import 'base/typography';
+@import 'text/text';
+@import 'buttons/buttons';
+@import 'forms/forms';
 
-@import 'components/accordion/accordion';
+@import 'accordion/accordion';
 
 .uomcontent [role="main"] form {
   color: $midgray;
 }
 
-@import 'components/modal/modal';
-@import 'components/search/search';
+@import 'modal/modal';
+@import 'search/search';
 
-@import 'components/filtered-listings/filtered-listings';
+@import 'filtered-listings/filtered-listings';
 
 ///* Print */
 @import 'print';

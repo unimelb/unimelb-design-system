@@ -10,10 +10,11 @@ var webpackConfig = require("./webpack.config.js");
 
 // Configuration
 var BUILD   = path.join(__dirname, "build");
-// TODO move to ENVs
-var DEVELOPMENT_PORT = process.env.ASSETS_DEVELOPMENT_PORT || 1234;
-var WEBPACK_PORT     = process.env.ASSETS_WEBPACK_PORT || "8080";
-var PROXY_URL = process.env.ASSETS_PROXY_URL || "http://localhost:3000";
+
+// Default ENV
+var DEVELOPMENT_PORT = process.env.ASSETS_DEVELOPMENT_PORT || 5001;
+var WEBPACK_PORT     = process.env.ASSETS_WEBPACK_PORT || "5002";
+var PROXY_URL = process.env.ASSETS_PROXY_URL || "http://localhost:5000";
 
 // Webpack middleware
 var webpackMiddleware = webpackDevMiddleware(webpack(webpackConfig), {
@@ -21,9 +22,10 @@ var webpackMiddleware = webpackDevMiddleware(webpack(webpackConfig), {
   publicPath: "/assets/"
 });
 
-// Rails proxy
+// Calling app proxy
 var proxy = httpProxy.createProxyServer();
 var proxyTarget = PROXY_URL;
+
 // Listen for the `error` event on `proxy`.
 proxy.on('error', function (err, req, res) {
   res.writeHead(500, {
@@ -46,15 +48,19 @@ app.use(function(req, res, next) {
   next();
 });
 
-// Check each request and proxies misses through to Rails
+// Check each request and proxies misses through to Calling app
 app.get("*", function(req, res, next) {
   // Check if a file exists in the webpack bundle
+  console.log(webpackMiddleware.fileSystem);
+
   try {
     // Throws if path doesn't exist
-    webpackMiddleware.fileSystem.readFileSync(__dirname + '/build'+req.url)
+    webpackMiddleware.fileSystem.readFileSync(__dirname + '/build'+req.url);
+
+
   } catch (e) {
     console.log("Proxying to "+proxyTarget+req.url);
-    // Proxy through to Rails if doesn't exist
+    // Proxy through to Calling app if doesn't exist
     proxy.web(req, res, {
       target: proxyTarget
     });

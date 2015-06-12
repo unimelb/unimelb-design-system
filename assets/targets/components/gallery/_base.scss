@@ -69,7 +69,7 @@
       }
 
       span {
-        @include background-image(linear-gradient(left top, rgba(0,150,255,0.3) 0%,rgba(255,0,126,0.3) 100%));
+        @include background(linear-gradient(left top, rgba(0, 150, 255, 0.3) 0%, rgba(255, 0, 126, 0.3) 100%));
         background-color: rgba($black, 0.6);
         bottom: 0;
         cursor: pointer;

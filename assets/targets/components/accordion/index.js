@@ -9,7 +9,7 @@ function Accordion(el, props) {
   this.props = props;
 
   this.props.container = this.el.parentNode;
-  this.props.hidden = this.props.container.querySelector('.accordion__hidden')
+  this.props.hidden = this.props.container.querySelector('.accordion__hidden');
 
   this.setupCloseButton();
   this.el.setAttribute('tabindex', '0');
@@ -25,7 +25,7 @@ function Accordion(el, props) {
 
 Accordion.prototype.handleClick = function(e) {
   e.preventDefault();
-  var target = (e.target || e.srcElement);
+  // var target = (e.target || e.srcElement);
 
   // Determine overall container to check for single focus
   var container = this.props.container.parentNode;
@@ -38,7 +38,7 @@ Accordion.prototype.handleClick = function(e) {
     }
   }
 
-  if (container && container.getAttribute('data-single-focus')=="") {
+  if (container && container.getAttribute('data-single-focus') === '') {
     for (var recs=container.querySelectorAll('.accordion__visible'), i=recs.length - 1; i >= 0; i--) {
       recs[i].removeClass('accordion__visible');
     }
@@ -48,12 +48,12 @@ Accordion.prototype.handleClick = function(e) {
 };
 
 Accordion.prototype.setupCloseButton = function() {
-  var close = this.props.container.querySelector('.accordion__close')
+  var close = this.props.container.querySelector('.accordion__close');
   if (!close) {
-    var close = document.createElement('a');
+    close = document.createElement('a');
     close.addClass('accordion__close');
 
-    if (this.props.hidden.countSelector('.accordion__close') == 0) {
+    if (this.props.hidden.countSelector('.accordion__close') === 0) {
       if (this.props.hidden.nodeName == 'TR') {
           this.props.hidden.firstChild.appendChild(close);
       } else {
@@ -81,6 +81,6 @@ Accordion.prototype.clickWithEnter = function(e) {
       elem.click();
     }
   }
-}
+};
 
 module.exports = Accordion;
