@@ -26,7 +26,7 @@ module DocSite
     set :web_templates,  File.join(project_root, 'assets/targets')
     set :injection,      File.join(web_templates, 'injection')
     set :components_dir, File.join(web_templates, 'components')
-    set :components,     Dir.entries(components_dir).select { |f| f =~ /^[^\.]/ }
+    set :components,     Dir.entries(components_dir).select { |f| f =~ /^[^\.|\_]*[^\.]$/ }
 
     set :layouts_dir,    File.join(root, 'views', 'example_layouts')
     set :layouts,        Dir.glob(File.join(layouts_dir, '*.slim')).map { |f| File.basename(f, '.slim') }
