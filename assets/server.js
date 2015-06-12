@@ -50,11 +50,8 @@ app.use(function(req, res, next) {
 
 // Check each request and proxies misses through to Calling app
 app.get("*", function(req, res, next) {
-  console.log(1);
 
   // Check if a file exists in the webpack bundle
-  console.log(webpackMiddleware.fileSystem);
-
   try {
     // Throws if path doesn't exist
     webpackMiddleware.fileSystem.readFileSync(BUILD + req.url);

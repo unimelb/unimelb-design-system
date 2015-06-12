@@ -1,10 +1,11 @@
-@import 'patterns_normalize';
-@import 'patterns_accessibility';
-@import 'patterns_clearfix';
-@import 'patterns_rem';
-@import 'patterns_media-queries';
-@import 'globals';
-@import 'typography_fonts';
+@import '../../../shared/patterns_normalize';
+@import '../../../shared/patterns_accessibility';
+@import '../../../shared/patterns_clearfix';
+@import '../../../shared/patterns_rem';
+@import '../../../shared/patterns_media-queries';
+@import '../../../shared/globals';
+@import '../../../shared/typography_fonts';
+
 @import 'typography';
 @import 'layout';
 @import 'courses';

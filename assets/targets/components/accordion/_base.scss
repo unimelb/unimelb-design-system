@@ -7,7 +7,6 @@
     display: block;
     max-height: 0;
     overflow: hidden;
-    transition: 10ms ease-in-out max-height;
 
     td {
       display: none;
@@ -20,7 +19,6 @@
 
   .accordion__visible .accordion__hidden {
     @include rem(max-height, 50000px);
-    transition: 500ms max-height ease-in-out;
   }
 
   .accordion__visible tr.accordion__hidden {

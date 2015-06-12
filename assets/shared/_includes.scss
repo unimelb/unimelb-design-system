@@ -1,9 +1,10 @@
 @import 'compass';
 
-@import '../targets/components/base/patterns_accessibility';
-@import '../targets/components/base/patterns_clearfix';
-@import '../targets/components/base/patterns_rem';
-@import '../targets/components/base/patterns_media-queries';
-@import '../targets/components/base/globals';
-@import '../targets/components/base/typography_fonts';
+@import 'patterns_accessibility';
+@import 'patterns_clearfix';
+@import 'patterns_rem';
+@import 'patterns_media-queries';
+@import 'globals';
+@import 'typography_fonts';
+
 @import '../targets/components/base/typography';

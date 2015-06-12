@@ -1,6 +1,10 @@
 // REM mixin
 $baseline-px: 16px;
 
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
 @mixin rem($property, $px-values) {
   $baseline-rem: $baseline-px / 1rem;
 
@@ -8,10 +12,10 @@ $baseline-px: 16px;
   @if type-of($px-values) == 'number' {
     @if unit($px-values) != 'rem' {
       #{$property}: $px-values;
-      #{$property}: #{$px-values} / #{$baseline-rem};
+      #{$property}: #{strip-units($px-values) / strip-units($baseline-rem)}rem;
 
     } @else {
-      #{$property}: #{$px-values} * #{$baseline-rem};
+      #{$property}: #{strip-units($px-values) * strip-units($baseline-rem)}px;
       #{$property}: $px-values;
     }
 

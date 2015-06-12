@@ -1,4 +1,3 @@
-// //= require ./global.js
 // //= require ./header/header
 // //= stub ./global-nav/modal
 // //= require ./global-nav/nav
