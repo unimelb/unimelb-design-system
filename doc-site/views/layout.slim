@@ -17,8 +17,8 @@ html.no-js lang="en"
     / == stylesheet_tag 'components'
     link rel="stylesheet" href="http://localhost:5001/assets/components.css"
     / == stylesheet_tag '//uom-design-system.s3.amazonaws.com/v0.3/uom.css'
-    / == stylesheet_tag 'docs'
-    link rel="stylesheet" href="http://localhost:5001/assets/docs.css"
+    == stylesheet_tag 'docs'
+    / link rel="stylesheet" href="/assets/docs.css"
     == stylesheet_tag '/assets/stylesheets/syntax.css'
 
     / == javascript_tag 'components'
@@ -26,7 +26,7 @@ html.no-js lang="en"
     / == javascript_tag '//uom-design-system.s3.amazonaws.com/v0.3/uom.js'
 
     - if ENV["ASSET_ENV"] == 'development'
-      == javascript_tag "http://#{ENV['ASSETS_DEVELOPMENT_HOST']}:#{ENV['ASSETS_WEBPACK_PORT']}/webpack-dev-server.js"
+      == javascript_tag "http://#{ENV['WEB_SERVER_HOST']}:#{ENV['WEBPACK_SERVER_PORT']}/webpack-dev-server.js"
 
   body
     .uomcontent

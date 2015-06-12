@@ -36,10 +36,10 @@ module DocSite
     ### Sprockets settings
 
     set :sprockets,      Sprockets::Environment.new(root)
-    set :assets_prefix,  '/bassets'
+    set :assets_prefix,  '/assets'
     set :digest_assets,  true
 
-    set :compass_gem_root, Gem.loaded_specs['compass-core'].full_gem_path
+    # set :compass_gem_root, Gem.loaded_specs['compass-core'].full_gem_path
 
     configure do
       # sprockets.append_path injection

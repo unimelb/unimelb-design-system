@@ -1,4 +1,7 @@
 require('dotenv').load("../");
+var ASSETS_URL = "http://"+process.env.WEB_SERVER_HOST+":"+process.env.ASSETS_SERVER_PORT;
+var WEBPACK_URL = "http://"+process.env.WEB_SERVER_HOST+":"+process.env.WEBPACK_SERVER_PORT;
+
 var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
@@ -29,7 +32,7 @@ var output = {
   filename: "[name].js"
 };
 if (process.env.DEVELOPMENT === "true") {
-  output.publicPath = "http://localhost:"+process.env.ASSETS_DEVELOPMENT_PORT+"/assets/";
+  output.publicPath = ASSETS_URL + "/assets/";
 };
 
 module.exports = {
@@ -89,7 +92,7 @@ function isFile(file) {
 
 function createEntries(entries, dir) {
   if (isDirectory(path.join(TARGETS, dir))) {
-    var target = (process.env.DEVELOPMENT === "true") ? ['webpack-dev-server/client?http://localhost:5002', 'webpack/hot/dev-server'] : [];
+    var target = (process.env.DEVELOPMENT === "true") ? ['webpack-dev-server/client?' + WEBPACK_URL, 'webpack/hot/dev-server'] : [];
     var file = path.join(TARGETS, dir, "target.js");
     try {
       isFile(file);

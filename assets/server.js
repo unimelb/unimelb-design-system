@@ -1,4 +1,9 @@
 require('dotenv').load("../");
+var DEVELOPMENT_HOST = process.env.WEB_SERVER_HOST     || 'localhost';
+var DEVELOPMENT_PORT = process.env.ASSETS_SERVER_PORT  || 5001;
+var WEBPACK_PORT     = process.env.WEBPACK_SERVER_PORT || 5002;
+var PROXY_URL        = ('http://' + DEVELOPMENT_HOST + ':' + process.env.WEB_SERVER_PORT) || "http://localhost:5000";
+
 var http = require("http");
 var path = require('path');
 var express = require("express");
@@ -10,11 +15,6 @@ var webpackConfig = require("./webpack.config.js");
 
 // Configuration
 var BUILD   = path.join(__dirname, "build");
-
-// Default ENV
-var DEVELOPMENT_PORT = process.env.ASSETS_DEVELOPMENT_PORT || 5001;
-var WEBPACK_PORT     = process.env.ASSETS_WEBPACK_PORT || "5002";
-var PROXY_URL = process.env.ASSETS_PROXY_URL || "http://localhost:5000";
 
 // Webpack middleware
 var webpackMiddleware = webpackDevMiddleware(webpack(webpackConfig), {
@@ -31,7 +31,7 @@ proxy.on('error', function (err, req, res) {
   res.writeHead(500, {
     'Content-Type': 'text/plain'
   });
-  res.end('Oh noes, we tried to proxy through to '+proxyTarget+req.url+" and failed.");
+  res.end('Tried to proxy to '+proxyTarget+req.url+" and failed.");
 });
 
 
@@ -50,16 +50,18 @@ app.use(function(req, res, next) {
 
 // Check each request and proxies misses through to Calling app
 app.get("*", function(req, res, next) {
+  console.log(1);
+
   // Check if a file exists in the webpack bundle
   console.log(webpackMiddleware.fileSystem);
 
   try {
     // Throws if path doesn't exist
-    webpackMiddleware.fileSystem.readFileSync(__dirname + '/build'+req.url);
-
+    webpackMiddleware.fileSystem.readFileSync(BUILD + req.url);
 
   } catch (e) {
-    console.log("Proxying to "+proxyTarget+req.url);
+    console.log("Proxying to " + proxyTarget + req.url);
+
     // Proxy through to Calling app if doesn't exist
     proxy.web(req, res, {
       target: proxyTarget
@@ -72,7 +74,7 @@ app.get("*", function(req, res, next) {
 var port = DEVELOPMENT_PORT;
 var server = http.Server(app);
 server.listen(port, function() {
-  console.log("Listening at http://localhost:" + DEVELOPMENT_PORT + "/");
+  console.log("Listening at http://" + DEVELOPMENT_HOST + ":" + DEVELOPMENT_PORT + "/");
 });
 
 // User the webpack-dev-server specifically for hot-loading
@@ -87,4 +89,4 @@ var devServer = new WebpackDevServer(webpack(webpackConfig), {
 });
 
 // Needs to be on 8080 as the websocket expects that
-devServer.listen(WEBPACK_PORT, "localhost", function() {});
+devServer.listen(WEBPACK_PORT, DEVELOPMENT_HOST, function() {});
