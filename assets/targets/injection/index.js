@@ -18,11 +18,6 @@ window.UOMloadInjection = function() {
     'defaultlink': 'https://www.unimelb.edu.au'
   });
 
-  var Modal = require("../components/modal");
-  for (recs=document.querySelectorAll('[data-modal-target]'), i=recs.length - 1; i >= 0; i--) {
-    new Modal(recs[i], {});
-  }
-
   var Nav = require('./nav');
   new Nav({
     'assethost': assethost, // + '/injection/header'

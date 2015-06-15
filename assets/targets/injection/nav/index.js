@@ -14,12 +14,17 @@ function InjectNav(props) {
     'sitemaptrigger': document.querySelector('.sitemap-label'),
     'menutrigger':    document.querySelector('.page-header-tools a[title="Menu"]'),
     'searchtrigger':  document.querySelector('.page-header-tools a[title="Search"]'),
-    'blanket':        document.querySelector('.modal__blanket'),
     'localnav':       (document.countSelector('#sitemap') == 1)
   };
 
   // Add to props
   for (var prop in elements) { this.props[prop] = elements[prop]; }
+
+  Blanket = require('../../components/modal/blanket');
+  var blanketObj = new Blanket({
+    'root': this.props.root
+  });
+  this.props.blanket = blanketObj.props.el;
 
   this.moveLocalNav();
   this.renderGlobalSitemap();
