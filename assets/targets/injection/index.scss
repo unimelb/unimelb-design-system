@@ -1,5 +1,5 @@
 @import 'compass';
-@import "animation/core";
+@import 'animation/core';
 
 // Global
 $black:        #000 !default;
@@ -42,8 +42,8 @@ body {
   padding: 0;
 }
 
-@import 'header/header';
-@import 'footer/footer';
+@import 'header/index';
+@import 'footer/index';
 @import 'global-nav/modal';
 @import 'global-nav/nav';
 @import 'global-nav/localnav';

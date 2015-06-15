@@ -1,3 +1,7 @@
+// Dependencies
+var SmoothScroll = require("../../shared/smoothscroll");
+new SmoothScroll();
+
 var Shims = require("../../shared/shims");
 new Shims();
 
@@ -21,7 +25,11 @@ window.UOMloadComponents = function() {
 
   // window.UOMTabs();
   // window.UOMSidebarTabs();
-  // window.UOMInpageScrolling();
+
+  var InpageNavigation = require("./inpage-navigation");
+  for (recs=document.querySelectorAll('a[href^="#"]'), i=recs.length - 1; i >= 0; i--) {
+    new InpageNavigation(recs[i], {});
+  }
 
   // window.UOMListFilter();
   // window.UOMStickyNav();

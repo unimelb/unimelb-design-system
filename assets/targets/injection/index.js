@@ -1,22 +1,17 @@
-// //= require ./header/header
-// //= stub ./global-nav/modal
-// //= require ./global-nav/nav
-// //= require ./footer/footer
-// //= require ./footer/icons
-// //= require ./tracking/gtm
+// Dependencies
+var SmoothScroll = require("../../shared/smoothscroll");
+new SmoothScroll();
 
-// window.UOMloadInjection = function() {
-//   window.UOMinjectHeader();
-//   // window.UOMModal()
-//   // window.UOMinjectGlobalNav();
-//   window.UOMinjectFooter();
-//   window.UOMinjectIcons();
-// };
+var Shims = require("../../shared/shims");
+new Shims();
 
-require("../../shared/shims");
-
-// replace with viewloader
 window.UOMloadInjection = function() {
+  var Header = require('./header');
+  new Header();
+
+  // var GlobalNav = require('./global-nav');
+  // new GlobalNav();
+
   var Footer = require('./footer');
   new Footer();
 
