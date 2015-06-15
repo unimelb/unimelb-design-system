@@ -53,7 +53,7 @@ Modal.prototype.activateDialog = function(e) {
   }
 
   this.props.targetElement.addClass('on');
-  this.props.blanketElement.props.el.addClass('on');
+  this.props.blanketElement.show();
 };
 
 module.exports = Modal;

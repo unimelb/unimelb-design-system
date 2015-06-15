@@ -21,10 +21,9 @@ function InjectNav(props) {
   for (var prop in elements) { this.props[prop] = elements[prop]; }
 
   Blanket = require('../../components/modal/blanket');
-  var blanketObj = new Blanket({
+  this.props.blanket = new Blanket({
     'root': this.props.root
   });
-  this.props.blanket = blanketObj.props.el;
 
   this.moveLocalNav();
   this.renderGlobalSitemap();
@@ -65,7 +64,7 @@ InjectNav.prototype.setupEventBindings = function() {
   }
 
   if (this.props.blanket)
-    this.props.blanket.addEventListener('click', this.handleBlanket.bind(this));
+    this.props.blanket.props.el.addEventListener('click', this.handleBlanket.bind(this));
 
   if (this.props.searchtrigger) {
     this.props.searchtrigger.addEventListener('click', this.handleSearchTrigger.bind(this));
@@ -74,7 +73,7 @@ InjectNav.prototype.setupEventBindings = function() {
 
 InjectNav.prototype.handleBlanket = function(e) {
   e.preventDefault();
-  this.props.blanket.removeClass('on');
+  this.props.blanket.hide();
   this.props.sitemaptrigger.addClass('active');
   this.props.page.removeClass('global-active');
   this.props.page.removeClass('active');
@@ -89,7 +88,7 @@ InjectNav.prototype.handleBlanket = function(e) {
 
 InjectNav.prototype.handleSearchTrigger = function(e) {
   e.preventDefault();
-  this.props.blanket.toggleClass('on');
+  this.props.blanket.toggle();
   this.props.sitemaptrigger.addClass('active');
   this.props.page.addClass('global-active');
   this.props.header.addClass('global-active');
@@ -105,7 +104,7 @@ InjectNav.prototype.handleSearchTrigger = function(e) {
 
 InjectNav.prototype.handleTrigger = function(e) {
   e.preventDefault();
-  this.props.blanket.addClass('on');
+  this.props.blanket.show();
   this.props.sitemaptrigger.addClass('active');
   this.props.page.addClass('global-active');
   this.props.header.addClass('global-active');
@@ -142,7 +141,7 @@ InjectNav.prototype.handleMenuTrigger = function(e) {
   e.preventDefault();
   this.props.localnav.offsetTop = 0; // Snap to top
 
-  this.props.blanket.toggleClass('on');
+  this.props.blanket.toggle();
   this.props.sitemaptrigger.removeClass('active');
   this.props.page.toggleClass('active');
   this.props.page.removeClass('global-active');
@@ -165,7 +164,7 @@ InjectNav.prototype.handleInnerTrigger = function(e) {
     this.props.localnav.addClass('active');
     this.props.sitemap.removeClass('active');
   } else {
-    this.props.blanket.removeClass('on');
+    this.props.blanket.hide();
     this.props.sitemaptrigger.addClass('active');
     if (this.props.localnav) {
       this.props.page.toggleClass('active');
