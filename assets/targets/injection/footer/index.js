@@ -1,13 +1,15 @@
 /**
  * InjectFooter
  *
+ * @param  {Object} props
  */
-function InjectFooter() {
+function InjectFooter(props) {
   this.el = document.querySelector('.page-footer');
 
+  // Only add if the footer is not already present
   if (!this.el) {
-    this.props = {};
-    this.props.assethost = 'http://localhost:5001/assets/injection/footer'; //'//uom-design-system.s3.amazonaws.com/shared';
+    this.props = props;
+    this.props.assethost += '/injection/footer';
     this.props.page = document.querySelector('.page-inner');
 
     this.renderFooter();

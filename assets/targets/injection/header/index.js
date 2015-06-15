@@ -1,15 +1,15 @@
 /**
  * InjectHeader
  *
+ * @param  {Object} props
  */
-function InjectHeader() {
-  this.ieHelpers();
+function InjectHeader(props) {
+  this.props = props;
+  this.props.assethost += '/injection/header';
 
-  this.props = {};
-  this.props.defaultlink = 'https://www.unimelb.edu.au';
-  this.props.assethost = 'http://localhost:5001/assets/injection/header'; //'//uom-design-system.s3.amazonaws.com/shared';
-
+  // Only add if the header is not already present
   if (document.countSelector('.page-header-tools') === 0) {
+    this.ieHelpers();
     this.wrapInner();
     this.renderPageHeader();
     this.renderBreadcrumb();

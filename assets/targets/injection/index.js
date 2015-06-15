@@ -9,14 +9,28 @@ var GTM = require("./gtm");
 new GTM();
 
 window.UOMloadInjection = function() {
+  var assethost = 'http://localhost:5001/assets'; //'//uom-design-system.s3.amazonaws.com/shared';
+
   var Header = require('./header');
-  new Header();
+  new Header({
+    'assethost':   assethost,
+    'defaultlink': 'https://www.unimelb.edu.au'
+  });
+
+  var Modal = require("../components/modal");
+  for (recs=document.querySelectorAll('[data-modal-target]'), i=recs.length - 1; i >= 0; i--) {
+    new Modal(recs[i], {});
+  }
 
   var Nav = require('./nav');
-  new Nav();
+  new Nav({
+    'assethost': assethost
+  });
 
   var Footer = require('./footer');
-  new Footer();
+  new Footer({
+    'assethost': assethost
+  });
 
   var Icons = require('./icons');
   new Icons();

@@ -1,9 +1,13 @@
 /**
  * InjectNav
  *
+ * @param  {Object} props
  */
-function InjectNav() {
-  this.props = {
+function InjectNav(props) {
+  this.props = props;
+  this.props.assethost += '/injection/header';
+
+  var elements = {
     'root':           document.querySelector('.uomcontent'),
     'page':           document.querySelector('.page-inner'),
     'header':         document.querySelector('.page-header'),
@@ -12,15 +16,11 @@ function InjectNav() {
     'menutrigger':    document.querySelector('.page-header-tools a[title="Menu"]'),
     'searchtrigger':  document.querySelector('.page-header-tools a[title="Search"]'),
     'blanket':        document.querySelector('.modal__blanket'),
-    'assethost':      'http://localhost:5001/assets/injection/header',
     'localnav':       (document.countSelector('#sitemap') == 1)
   };
 
-  if (!this.props.blanket) {
-    this.props.blanket = document.createElement('div');
-    this.props.blanket.setAttribute('class', 'modal__blanket');
-    this.props.root.appendChild(this.props.blanket);
-  }
+  // Add to props
+  for (var prop in elements) { this.props[prop] = elements[prop]; }
 
   this.moveLocalNav();
   this.renderGlobalSitemap();
@@ -136,6 +136,8 @@ InjectNav.prototype.handleSitemapTrigger = function(e) {
 
 InjectNav.prototype.handleMenuTrigger = function(e) {
   e.preventDefault();
+  this.props.localnav.offsetTop = 0; // Snap to top
+
   this.props.blanket.toggleClass('on');
   this.props.sitemaptrigger.removeClass('active');
   this.props.page.toggleClass('active');
