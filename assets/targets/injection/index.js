@@ -9,11 +9,12 @@ var GTM = require("./gtm");
 new GTM();
 
 window.UOMloadInjection = function() {
-  var assethost = 'http://localhost:5001/assets'; //'//uom-design-system.s3.amazonaws.com/shared';
+  //var assethost = 'http://localhost:5001/assets';
+  var assethost = '//uom-design-system.s3.amazonaws.com/shared/assets';
 
   var Header = require('./header');
   new Header({
-    'assethost':   assethost,
+    'assethost':   assethost, // + '/injection/header',
     'defaultlink': 'https://www.unimelb.edu.au'
   });
 
@@ -24,12 +25,12 @@ window.UOMloadInjection = function() {
 
   var Nav = require('./nav');
   new Nav({
-    'assethost': assethost
+    'assethost': assethost, // + '/injection/header'
   });
 
   var Footer = require('./footer');
   new Footer({
-    'assethost': assethost
+    'assethost': assethost, // + '/injection/footer'
   });
 
   var Icons = require('./icons');

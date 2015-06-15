@@ -5,7 +5,6 @@
  */
 function InjectNav(props) {
   this.props = props;
-  this.props.assethost += '/injection/header';
 
   var elements = {
     'root':           document.querySelector('.uomcontent'),

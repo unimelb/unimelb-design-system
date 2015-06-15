@@ -5,7 +5,6 @@
  */
 function InjectHeader(props) {
   this.props = props;
-  this.props.assethost += '/injection/header';
 
   // Only add if the header is not already present
   if (document.countSelector('.page-header-tools') === 0) {

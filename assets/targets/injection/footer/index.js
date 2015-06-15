@@ -9,7 +9,6 @@ function InjectFooter(props) {
   // Only add if the footer is not already present
   if (!this.el) {
     this.props = props;
-    this.props.assethost += '/injection/footer';
     this.props.page = document.querySelector('.page-inner');
 
     this.renderFooter();
