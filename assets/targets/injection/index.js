@@ -5,12 +5,15 @@ new SmoothScroll();
 var Shims = require("../../shared/shims");
 new Shims();
 
+var GTM = require("./gtm");
+new GTM();
+
 window.UOMloadInjection = function() {
   var Header = require('./header');
   new Header();
 
-  // var GlobalNav = require('./global-nav');
-  // new GlobalNav();
+  var Nav = require('./nav');
+  new Nav();
 
   var Footer = require('./footer');
   new Footer();

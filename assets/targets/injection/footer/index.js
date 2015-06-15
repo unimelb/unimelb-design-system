@@ -7,7 +7,7 @@ function InjectFooter() {
 
   if (!this.el) {
     this.props = {};
-    this.props.assethost = '/assets/shared'; //'//uom-design-system.s3.amazonaws.com/shared';
+    this.props.assethost = 'http://localhost:5001/assets/injection/footer'; //'//uom-design-system.s3.amazonaws.com/shared';
     this.props.page = document.querySelector('.page-inner');
 
     this.renderFooter();

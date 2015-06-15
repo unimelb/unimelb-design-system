@@ -50,6 +50,8 @@ app.use(function(req, res, next) {
 
 // Check each request and proxies misses through to Calling app
 app.get("*", function(req, res, next) {
+  console.log(BUILD + req.url);
+
 
   // Check if a file exists in the webpack bundle
   try {

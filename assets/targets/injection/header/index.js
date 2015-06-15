@@ -7,7 +7,7 @@ function InjectHeader() {
 
   this.props = {};
   this.props.defaultlink = 'https://www.unimelb.edu.au';
-  this.props.assethost = '/assets/shared'; //'//uom-design-system.s3.amazonaws.com/shared';
+  this.props.assethost = 'http://localhost:5001/assets/injection/header'; //'//uom-design-system.s3.amazonaws.com/shared';
 
   if (document.countSelector('.page-header-tools') === 0) {
     this.wrapInner();
@@ -101,7 +101,7 @@ InjectHeader.prototype.renderPageHeader = function() {
 
 InjectHeader.prototype.renderBreadcrumb = function() {
   this.props.local = document.querySelector('.page-local-history');
-  if (!this.props.local) {
+  if (this.props.local) {
     this.props.navparent = document.querySelector('.page-header-navigation');
     this.props.local.parentNode.removeChild(this.props.local);
 
@@ -133,7 +133,7 @@ InjectHeader.prototype.renderBreadcrumb = function() {
         var opt = document.createElement('option');
         opt.setAttribute('role', 'tab');
         opt.setAttribute('value', nodes[i].getAttribute('href'));
-        opt.appendChild(document.createTextNode(nav.firstChild.nodeValue));
+        opt.appendChild(document.createTextNode(nodes[i].firstChild.nodeValue));
 
         if (i==max)
           opt.setAttribute('selected', 'selected');
@@ -142,7 +142,7 @@ InjectHeader.prototype.renderBreadcrumb = function() {
       }
 
       mobile.appendChild(selector);
-      var pagenav = local.parentNode;
+      var pagenav = this.props.local.parentNode;
       pagenav.insertBefore(mobile, pagenav.firstChild);
     }
   }

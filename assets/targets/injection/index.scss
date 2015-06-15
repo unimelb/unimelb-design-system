@@ -44,10 +44,7 @@ body {
 
 @import 'header/index';
 @import 'footer/index';
-@import 'global-nav/modal';
-@import 'global-nav/nav';
-@import 'global-nav/localnav';
-@import 'global-nav/globalnav';
+@import 'nav/index';
 
 .hidden {
   display: none;

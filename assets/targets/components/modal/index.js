@@ -12,13 +12,16 @@ function Modal(el, props) {
   this.rootElement = document.querySelector('.uomcontent');
   this.targetElement = document.getElementById(this.el.getAttribute('data-modal-target'));
 
-  this.initBlanket();
-  this.initTarget();
+  // Only bind if modal has a target
+  if (this.targetElement) {
+    this.initBlanket();
+    this.initTarget();
 
-  // Event bindings
-  this.el.addEventListener('click', this.activateDialog.bind(this));
-  for (var recs=this.targetElement.querySelectorAll('.modal__close'), i=recs.length - 1; i >= 0; i--) {
-    recs[i].addEventListener('click', this.hideDialog.bind(this));
+    // Event bindings
+    this.el.addEventListener('click', this.activateDialog.bind(this));
+    for (var recs=this.targetElement.querySelectorAll('.modal__close'), i=recs.length - 1; i >= 0; i--) {
+      recs[i].addEventListener('click', this.hideDialog.bind(this));
+    }
   }
 }
 

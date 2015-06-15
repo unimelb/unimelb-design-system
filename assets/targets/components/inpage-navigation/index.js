@@ -8,10 +8,6 @@ function InpageNavigation(el, props) {
   this.el = el;
   this.props = props;
 
-  this.props.noscroll = el.getAttribute('data-no-scroll');
-  this.rootElement = document.querySelector('.uomcontent');
-  this.targetElement = document.getElementById(this.el.getAttribute('data-InpageNavigation-target'));
-
   // Event bindings, exclude noscroll and modal
   if (!el.getAttribute('data-no-scroll') && !el.getAttribute('data-modal-target')) {
     this.el.addEventListener('click', this.delegateScroll.bind(this));
@@ -40,6 +36,7 @@ InpageNavigation.prototype.delegateScroll = function(e) {
     tel = e.target;
   }
 
+  console.log(tel);
   if (tel && tel.hasAttribute('href')) {
     var target = tel.getAttribute('href');
 
