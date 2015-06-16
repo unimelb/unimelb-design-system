@@ -68,23 +68,4 @@
       color: #444;
     }
   }
-
-  .modal__blanket {
-    @include opacity(0);
-    background: #000;
-    display: none;
-    height: 101.5%;
-    left: 0;
-    overflow: scroll;
-    position: fixed;
-    top: 0;
-    width: 101.5%;
-    z-index: 1;
-
-    &.on {
-      @include opacity(.5);
-      display: block;
-      z-index: 14;
-    }
-  }
 }
