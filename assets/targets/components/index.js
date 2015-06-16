@@ -32,8 +32,6 @@ window.UOMloadComponents = function() {
   for (recs=document.querySelectorAll('a[href^="#"]'), i=recs.length - 1; i >= 0; i--)
     new InpageNavigation(recs[i], {});
 
-  // window.UOMListFilter();
-
 //       # Static tab aside
 //       if document.countSelector('.tab') > 0
 //         for el in document.querySelectorAll('.tab')
@@ -55,7 +53,17 @@ window.UOMloadComponents = function() {
   // window.UOMGMap();
   // window.UOMLeafletMap();
 
-  // window.UOMImageGallery();
+  if (typeof Isotope !== 'undefined') {
+    // window.UOMListFilter();
+
+    var ImageGallery = require("./gallery");
+    for (recs=document.querySelectorAll('ul.image-gallery'), i=recs.length - 1; i >= 0; i--)
+      var g = recs[i];
+      imagesLoaded(g, function() {
+        new ImageGallery(g, {});
+      });
+  }
+
 };
 
 // Execute when ready
