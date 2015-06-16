@@ -14,7 +14,9 @@ function Modal(el, props) {
 
   // Only bind if modal has a target
   if (this.props.targetElement) {
-    Blanket = require('./blanket');
+
+    // Setup a blanket object
+    Blanket = require('../../../shared/blanket');
     this.props.blanketElement = new Blanket({
       'root': this.props.root
     });
@@ -24,8 +26,11 @@ function Modal(el, props) {
     // Event bindings
     this.el.addEventListener('click', this.activateDialog.bind(this));
     for (var recs=this.props.targetElement.querySelectorAll('.modal__close'), i=recs.length - 1; i >= 0; i--) {
-      recs[i].addEventListener('click', this.props.blanketElement.hideDialog.bind(this));
+      recs[i].addEventListener('click', this.hideAllDialogs.bind(this));
     }
+
+    // Attach closing event to blanket
+    this.props.blanketElement.el.addEventListener('click', this.hideAllDialogs.bind(this));
   }
 }
 
@@ -54,6 +59,19 @@ Modal.prototype.activateDialog = function(e) {
 
   this.props.targetElement.addClass('on');
   this.props.blanketElement.show();
+};
+
+/**
+ * Deactivate blanket, hide ~all~ modal dialogs
+ */
+Modal.prototype.hideAllDialogs = function(e) {
+  e.preventDefault();
+
+  for (var recs=document.querySelectorAll('.modal__dialog'), i=recs.length - 1; i >= 0; i--) {
+    recs[i].removeClass('on');
+  }
+
+  this.props.blanketElement.hide();
 };
 
 module.exports = Modal;

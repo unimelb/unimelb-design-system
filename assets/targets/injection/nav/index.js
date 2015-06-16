@@ -20,7 +20,8 @@ function InjectNav(props) {
   // Add to props
   for (var prop in elements) { this.props[prop] = elements[prop]; }
 
-  Blanket = require('../../components/modal/blanket');
+  // Setup a blanket object
+  Blanket = require('../../../shared/blanket');
   this.props.blanket = new Blanket({
     'root': this.props.root
   });
@@ -64,7 +65,7 @@ InjectNav.prototype.setupEventBindings = function() {
   }
 
   if (this.props.blanket)
-    this.props.blanket.props.el.addEventListener('click', this.handleBlanket.bind(this));
+    this.props.blanket.el.addEventListener('click', this.handleBlanket.bind(this));
 
   if (this.props.searchtrigger) {
     this.props.searchtrigger.addEventListener('click', this.handleSearchTrigger.bind(this));
