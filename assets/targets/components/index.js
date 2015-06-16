@@ -57,11 +57,13 @@ window.UOMloadComponents = function() {
     // window.UOMListFilter();
 
     var ImageGallery = require("./gallery");
-    for (recs=document.querySelectorAll('ul.image-gallery'), i=recs.length - 1; i >= 0; i--)
+    var slingshot = function() {
+      new ImageGallery(g, {});
+    };
+    for (recs=document.querySelectorAll('ul.image-gallery'), i=recs.length - 1; i >= 0; i--) {
       var g = recs[i];
-      imagesLoaded(g, function() {
-        new ImageGallery(g, {});
-      });
+      imagesLoaded(g, slingshot);
+    }
   }
 
 };

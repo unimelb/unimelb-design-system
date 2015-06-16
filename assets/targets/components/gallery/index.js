@@ -105,7 +105,10 @@ ImageGallery.prototype.initPhotoSwipeFromDOM = function() {
 
   var onThumbnailsClick = function(e) {
       e = e || window.event;
-      e.preventDefault ? e.preventDefault() : e.returnValue = false;
+      if (typeof e.preventDefault !=="undefined")
+        e.preventDefault();
+      else
+        e.returnValue = false;
 
       var eTarget = e.target || e.srcElement;
 
