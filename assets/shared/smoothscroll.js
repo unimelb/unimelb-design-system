@@ -24,11 +24,12 @@ function SmoothScroll() {
         element = document.querySelector('html');
       }
 
-      var duration  = 600;
+      // Incr and dur numbers are completely arbitrary, but seem good
       var start     = element.scrollTop;
       var curr      = 0;
-      var increment = 10;
       var change    = to.offsetTop - start;
+      var increment = Math.abs(change / 500);
+      var duration  = Math.abs(change / 10);
 
       if (document.countSelector('.floating') === 0) {
         change -= 40;

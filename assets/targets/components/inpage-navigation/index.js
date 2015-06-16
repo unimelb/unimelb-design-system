@@ -9,7 +9,7 @@ function InpageNavigation(el, props) {
   this.props = props;
 
   // Event bindings, exclude noscroll and modal
-  if (!el.getAttribute('data-no-scroll') && !el.getAttribute('data-modal-target')) {
+  if (!this.el.getAttribute('data-no-scroll') && !this.el.getAttribute('data-modal-target')) {
     this.el.addEventListener('click', this.delegateScroll.bind(this));
   }
 }
@@ -36,7 +36,7 @@ InpageNavigation.prototype.delegateScroll = function(e) {
     tel = e.target;
   }
 
-  console.log(tel);
+  // console.log(tel);
   if (tel && tel.hasAttribute('href')) {
     var target = tel.getAttribute('href');
 
