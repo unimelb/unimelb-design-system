@@ -69,6 +69,10 @@ module.exports = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!cssnext-loader")
+      },
+      {
+        test: /(isotope-layout|imagesloaded)/,
+        loader: 'imports?define=>false&this=>window'
       }
     ]
   },

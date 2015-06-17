@@ -53,15 +53,20 @@ window.UOMloadComponents = function() {
   // window.UOMGMap();
   // window.UOMLeafletMap();
 
-  if (typeof Isotope !== 'undefined') {
-    // window.UOMListFilter();
+  // window.UOMListFilter();
 
+  // Require deps only if galleries exist
+  var galleries = document.querySelectorAll('ul.image-gallery');
+  if (galleries.length > 0) {
+    var imagesLoaded = require('imagesloaded');
     var ImageGallery = require("./gallery");
+
     var slingshot = function() {
       new ImageGallery(g, {});
     };
-    for (recs=document.querySelectorAll('ul.image-gallery'), i=recs.length - 1; i >= 0; i--) {
-      var g = recs[i];
+
+    for (i=galleries.length - 1; i >= 0; i--) {
+      var g = galleries[i];
       imagesLoaded(g, slingshot);
     }
   }
