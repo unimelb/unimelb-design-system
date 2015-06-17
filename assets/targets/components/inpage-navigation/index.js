@@ -30,22 +30,17 @@ InpageNavigation.prototype.up = function(el) {
 };
 
 InpageNavigation.prototype.delegateScroll = function(e) {
-  var outer = document.documentElement;
-  var tel = e.srcElement;
-  if (e.target) {
-    tel = e.target;
-  }
+  var tel = e.target || e.srcElement;
 
-  // console.log(tel);
   if (tel && tel.hasAttribute('href')) {
     var target = tel.getAttribute('href');
 
     if (target != "#" && target != "#sitemap") {
       e.preventDefault();
-      target = document.querySelector(tel.getAttribute('href'));
+      target = document.querySelector(target);
 
       var tabbed = this.up(tel);
-      if (tabbed && this.parentNode.parentNode.hasClass("jump-navigation") === false) {
+      if (tabbed && tel.parentNode.parentNode.hasClass("jump-navigation") === false) {
         target = tabbed;
       }
 
