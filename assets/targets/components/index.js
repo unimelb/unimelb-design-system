@@ -22,7 +22,7 @@ WebFont.load({
 window.UOMloadComponents = function() {
   "use strict";
 
-  var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation, JumpNav, imagesloaded, ImageGallery, slingshot;
+  var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation, JumpNav, ListFilter, imagesloaded, ImageGallery, slingshot;
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
@@ -81,7 +81,12 @@ window.UOMloadComponents = function() {
   // window.UOMGMap();
   // window.UOMLeafletMap();
 
-  // window.UOMListFilter();
+  recs = document.querySelectorAll('form.filtered-listing-select');
+  if (recs.length > 0) {
+    ListFilter = require("./filtered-listings");
+    for (i=recs.length - 1; i >= 0; i--)
+      new ListFilter(recs[i], {});
+  }
 
   recs = document.querySelectorAll('ul.image-gallery');
   if (recs.length > 0) {
