@@ -22,7 +22,7 @@ WebFont.load({
 window.UOMloadComponents = function() {
   "use strict";
 
-  var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation, JumpNav, ListFilter, imagesloaded, ImageGallery, slingshot;
+  var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation, JumpNav, ListFilter, imagesloaded, ImageGallery, slingshot, script;
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
@@ -78,9 +78,6 @@ window.UOMloadComponents = function() {
   // window.UOMTableLabels();
   // Checklist?
 
-  // window.UOMGMap();
-  // window.UOMLeafletMap();
-
   recs = document.querySelectorAll('form.filtered-listing-select');
   if (recs.length > 0) {
     ListFilter = require("./filtered-listings");
@@ -103,6 +100,22 @@ window.UOMloadComponents = function() {
     }
   }
 
+  // GMaps will load via callback
+  if (document.countSelector('[data-latlng],[data-address]') > 0) {
+    script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://maps.googleapis.com/maps/api/js?callback=maps_loaded_go";
+    document.body.appendChild(script);
+  }
+
+  // window.UOMLeafletMap();
+};
+
+// GMaps callback
+window.maps_loaded_go = function() {
+  var GMaps = require("./maps/gmaps");
+  for (var recs = document.querySelectorAll('[data-latlng],[data-address]'), i=recs.length - 1; i >= 0; i--)
+    new GMaps(recs[i], {});
 };
 
 // Execute when ready
