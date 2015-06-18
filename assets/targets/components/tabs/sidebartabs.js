@@ -7,64 +7,57 @@
 function SidebarTabs(el, props) {
   this.el = el;
   this.props = props;
-  this.props.tabs = this.el.querySelectorAll('nav a');
-  this.props.panels = [];
+  this.props.nav = this.el.querySelectorAll('a');
+  this.props.current = 0;
 
-  // this.activateContainer();
+  for (var i=this.props.nav.length - 1; i >= 0; i--)
+    this.props.nav[i].addEventListener('click', this.handleClick.bind(this));
 
-  // // Event bindings
-  // if (this.el.hasAttribute('data-tabbed')) {
-  //   this.setupPanels();
-  //   this.selectPanel();
-  // }
+  if (window.location.hash) {
+    var search = this.el.querySelector('a[href="' + window.location.hash + '"]');
+    if (search) {
+      this.matchEl(search);
+    }
+  }
 }
 
-SidebarTabs.prototype.setupPanels = function() {
+SidebarTabs.prototype.handleClick = function(e) {
+  e.preventDefault();
+  this.matchEl(e.srcElement);
+};
+
+SidebarTabs.prototype.matchEl = function(el) {
+  for (var i=this.props.nav.length - 1; i >= 0; i--) {
+    if (this.props.nav[i] == el) {
+      this.hide();
+      this.props.current = i;
+      this.show();
+    }
+  }
+};
+
+SidebarTabs.prototype.hide = function() {
+  var root = document;
+  if (document.countSelector('.tab') > 1)
+    root = document.querySelector('.tab[data-current]');
+
+  for (var pages=root.querySelectorAll(this.props.selector), i=pages.length - 1; i >= 0; i--)
+    pages[i].removeClass('current');
+
+  for (i=this.props.nav.length - 1; i >= 0; i--)
+    this.props.nav[i].removeClass('current');
+};
+
+SidebarTabs.prototype.show = function() {
+  for (var i=this.props.nav.length - 1; i >= 0; i--) {
+    if (i == this.props.current) {
+      var target = document.querySelector(this.props.nav[i].getAttribute('href'));
+      if (target) {
+        this.props.nav[i].addClass('current');
+        target.addClass('current');
+      }
+    }
+  }
 };
 
 module.exports = SidebarTabs;
-
-// unless window.UOMSidebarTabs
-//   window.UOMSidebarTabs = ->
-//     class SidebarTabs
-//       constructor: (@el, @selector) ->
-//         @nav = @el.querySelectorAll('a')
-//         @current = 0
-//         t = this
-
-//         for item in @nav
-//           item.addEventListener 'click', (e) ->
-//             e.preventDefault()
-
-//             for rec, i in t.nav
-//               if rec == this
-//                 t.hide()
-//                 t.current = i
-//                 t.show()
-
-//         if window.location.hash
-//           for rec, i in @nav
-//             if rec.getAttribute('href')==window.location.hash
-//               @hide()
-//               @current = i
-//               @show()
-
-//               # TODO move the outer tab (edge)
-
-//       hide: ->
-//         root = document
-//         if document.countSelector('.tab') > 1
-//           root = document.querySelector('.tab[data-current]')
-
-//         @pages = root.querySelectorAll(@selector)
-
-//         p.removeClass('current') for p in @nav
-//         p.removeClass('current') for p in @pages
-
-//       show: ->
-//         for rec, i in @nav
-//           if i==@current
-//             target = document.querySelector(rec.getAttribute('href'))
-//             if target
-//               rec.addClass('current')
-//               target.addClass('current')

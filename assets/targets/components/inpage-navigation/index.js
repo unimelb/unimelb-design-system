@@ -14,21 +14,6 @@ function InpageNavigation(el, props) {
   }
 }
 
-/**
- * Traverse upward
- */
-InpageNavigation.prototype.up = function(el) {
-  if (el.hasAttribute('data-tabbed')) {
-    return el;
-  } else {
-    if (el.parentNode && el.parentNode!=document) {
-      return this.up(el.parentNode);
-    } else {
-      return false;
-    }
-  }
-};
-
 InpageNavigation.prototype.delegateScroll = function(e) {
   var tel = e.target || e.srcElement;
 
@@ -39,12 +24,13 @@ InpageNavigation.prototype.delegateScroll = function(e) {
       e.preventDefault();
       target = document.querySelector(target);
 
-      var tabbed = this.up(tel);
+      var tabbed = findUp(tel, 'data-tabbed');
       if (tabbed && tel.parentNode.parentNode.hasClass("jump-navigation") === false) {
         target = tabbed;
       }
 
-      if (target) {
+      // If link is not a tab, or a full width tab
+      if ((target && !tabbed) || (tabbed && tabbed.countSelector('.full-width nav') > 0)) {
         smoothScrollTo(target);
       }
     }

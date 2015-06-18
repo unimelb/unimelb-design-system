@@ -2,9 +2,15 @@
 var Shims = require("../../shared/shims");
 new Shims();
 
+// Global scoped search for a class or attr up the DOM tree
+var FindUp = require("../../shared/findup");
+new FindUp();
+
 // Global scoped smooth inner scroll
 var SmoothScroll = require("../../shared/smoothscroll");
 new SmoothScroll();
+
+// Also need one to find non-text nodes in a list of children
 
 // Async load fonts from google
 var WebFont = require("webfontloader");
@@ -61,14 +67,6 @@ window.UOMloadComponents = function() {
       new InpageNavigation(recs[i], {});
   }
 
-//       # Static tab aside
-//       if document.countSelector('.tab') > 0
-//         for el in document.querySelectorAll('.tab')
-//           if el.countSelector('h2[id]') > 0
-//             new StickyNav(el)
-
-//       # Scrolling jump nav
-//       else
   if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1) {
     JumpNav = require("./inpage-navigation/jumpnav");
     new JumpNav({});

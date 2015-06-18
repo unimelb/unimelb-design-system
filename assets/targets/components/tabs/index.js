@@ -34,6 +34,9 @@ Tabs.prototype.setupPanels = function() {
     tabs[i].addEventListener('click', this.handleInternalClick.bind(this));
 };
 
+/*
+ * There are four ways of selecting which tab to start on!
+ */
 Tabs.prototype.selectPanel = function() {
   var idx = 0;
   if (window.location.hash) {
@@ -42,15 +45,29 @@ Tabs.prototype.selectPanel = function() {
         idx = i;
   }
 
-  // Matches window hash
-  if (idx > 0) {
+  // Check for inner tabs
+  if (idx === 0) {
+    var search = this.el.querySelector(window.location.hash);
+    if (search) {
+      search = findUp(search, 'tab');
+      search = this.el.querySelector('nav a[href="#' + search.id + '"]');
+      this.move(search);
+    }
+  }
+
+  // Preselect via js props
+  if (this.props.preselect) {
+    this.move(this.props.preselect);
+
+  // Match window hash
+  } else if (idx > 0) {
     this.moveindex(idx);
 
   // Default to 1st
   } else if (this.el.countSelector('[data-current]') === 0) {
     this.move(this.el.querySelector('nav a:first-child'));
 
-  // Preselect
+  // Selected in markup
   } else {
     this.move(this.el.querySelector('[data-current]'));
   }
