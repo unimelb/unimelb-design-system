@@ -1,4 +1,6 @@
 function SmoothScroll() {
+  "use strict";
+
   if (typeof Math.easeInOutQuad === "undefined") {
     Math.easeInOutQuad = function(curr, start, change, duration) {
       curr /= duration/2;
@@ -25,11 +27,11 @@ function SmoothScroll() {
       }
 
       // Incr and dur numbers are completely arbitrary, but seem good
-      var start     = element.scrollTop;
-      var curr      = 0;
-      var change    = to.offsetTop - start;
-      var increment = Math.abs(change / 500);
-      var duration  = Math.abs(change / 10);
+      var start     = element.scrollTop,
+          curr      = 0,
+          change    = to.offsetTop - start,
+          increment = Math.abs(change / 500),
+          duration  = Math.abs(change / 10);
 
       if (document.countSelector('.floating') === 0) {
         change -= 40;

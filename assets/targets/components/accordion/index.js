@@ -25,7 +25,6 @@ function Accordion(el, props) {
 
 Accordion.prototype.handleClick = function(e) {
   e.preventDefault();
-  // var target = (e.target || e.srcElement);
 
   // Determine overall container to check for single focus
   var container = this.props.container.parentNode;
@@ -70,13 +69,13 @@ Accordion.prototype.setupCloseButton = function() {
 
 Accordion.prototype.clickWithEnter = function(e) {
   var elem = document.activeElement;
-  if (elem != document.body && elem.getAttribute('tabindex') != null) {
-    // look for window.event in case event isn't passed in
-    if (typeof e == 'undefined' && window.event) {
+  if (elem == this.el) {
+    // Use window.event if available
+    if (typeof e === 'undefined' && window.event) {
       e = window.event;
     }
 
-    // trigger click if ENTER is clicked
+    // Trigger click on ENTER (13)
     if (e.keyCode == 13) {
       elem.click();
     }

@@ -14,29 +14,52 @@ WebFont.load({
 
 // replace with viewloader eventually
 window.UOMloadComponents = function() {
-  var Accordion = require("./accordion");
-  for (var recs=document.querySelectorAll('.accordion__title'), i=recs.length - 1; i >= 0; i--)
-    new Accordion(recs[i], {});
+  "use strict";
 
-  var Modal = require("./modal");
-  for (recs=document.querySelectorAll('[data-modal-target]'), i=recs.length - 1; i >= 0; i--)
-    new Modal(recs[i], {});
+  var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation, JumpNav, imagesloaded, ImageGallery, slingshot;
 
-  var Tabs = require("./tabs");
-  for (recs=document.querySelectorAll('[data-tabbed]'), i=recs.length - 1; i >= 0; i--)
-    new Tabs(recs[i], {});
+  recs = document.querySelectorAll('.accordion__title');
+  if (recs.length > 0) {
+    Accordion = require("./accordion");
+    for (i=recs.length - 1; i >= 0; i--)
+      new Accordion(recs[i], {});
+  }
 
-  var SidebarTabs = require("./tabs/sidebartabs");
-  for (recs=document.querySelectorAll('.sidebar-tab-nav'), i=recs.length - 1; i >= 0; i--)
-    new SidebarTabs(recs[i], {'selector': '.sidebar-tab'});
+  recs = document.querySelectorAll('[data-modal-target]');
+  if (recs.length > 0) {
+    Modal = require("./modal");
+    for (i=recs.length - 1; i >= 0; i--)
+      new Modal(recs[i], {});
+  }
+
+  recs = document.querySelectorAll('[data-tabbed]');
+  if (recs.length > 0) {
+    Tabs = require("./tabs");
+    for (i=recs.length - 1; i >= 0; i--)
+      new Tabs(recs[i], {});
+  }
+
+  recs = document.querySelectorAll('.sidebar-tab-nav');
+  if (recs.length > 0) {
+    SidebarTabs = require("./tabs/sidebartabs");
+    for (i=recs.length - 1; i >= 0; i--)
+      new SidebarTabs(recs[i], {'selector': '.sidebar-tab'});
+  }
 
   // Should combine with above
-  for (recs=document.querySelectorAll('.inner-nav-tab'), i=recs.length - 1; i >= 0; i--)
-    new SidebarTabs(recs[i], {'selector': '.inner-nav-page'});
+  recs = document.querySelectorAll('.inner-nav-tab');
+  if (recs.length > 0) {
+    SidebarTabs = require("./tabs/sidebartabs");
+    for (i=recs.length - 1; i >= 0; i--)
+      new SidebarTabs(recs[i], {'selector': '.inner-nav-page'});
+  }
 
-  var InpageNavigation = require("./inpage-navigation");
-  for (recs=document.querySelectorAll('a[href^="#"]'), i=recs.length - 1; i >= 0; i--)
-    new InpageNavigation(recs[i], {});
+  recs = document.querySelectorAll('a[href^="#"]');
+  if (recs.length > 0) {
+    InpageNavigation = require("./inpage-navigation");
+    for (i=recs.length - 1; i >= 0; i--)
+      new InpageNavigation(recs[i], {});
+  }
 
 //       # Static tab aside
 //       if document.countSelector('.tab') > 0
@@ -46,9 +69,10 @@ window.UOMloadComponents = function() {
 
 //       # Scrolling jump nav
 //       else
-  var JumpNav = require("./inpage-navigation/jumpnav");
-  if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1)
+  if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1) {
+    JumpNav = require("./inpage-navigation/jumpnav");
     new JumpNav({});
+  }
 
   // window.UOMExtraLabel();
   // window.UOMFancySelect();
@@ -61,18 +85,17 @@ window.UOMloadComponents = function() {
 
   // window.UOMListFilter();
 
-  // Require deps only if galleries exist
-  var galleries = document.querySelectorAll('ul.image-gallery');
-  if (galleries.length > 0) {
-    var imagesLoaded = require('imagesloaded');
-    var ImageGallery = require("./gallery");
+  recs = document.querySelectorAll('ul.image-gallery');
+  if (recs.length > 0) {
+    imagesLoaded = require('imagesloaded');
+    ImageGallery = require("./gallery");
 
-    var slingshot = function() {
+    slingshot = function() {
       new ImageGallery(g, {});
     };
 
-    for (i=galleries.length - 1; i >= 0; i--) {
-      var g = galleries[i];
+    for (i=recs.length - 1; i >= 0; i--) {
+      g = recs[i];
       imagesLoaded(g, slingshot);
     }
   }

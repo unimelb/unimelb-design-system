@@ -2,41 +2,35 @@
 var Shims = require("../../shared/shims");
 new Shims();
 
-// Global scoped smooth inner scroll
-var SmoothScroll = require("../../shared/smoothscroll");
-new SmoothScroll();
-
-// Async load fonts from google
-// var WebFont = require("webfontloader");
-// WebFont.load({
-//   google: { families: [ 'Roboto:400,300,100,700,100italic,300italic,400italic,700italic:latin' ] }
-// });
-
 // Tag manager setup
 var GTM = require("./gtm");
 new GTM();
 
 window.UOMloadInjection = function() {
-  //var assethost = 'http://localhost:5001/assets';
-  var assethost = '//uom-design-system.s3.amazonaws.com/shared/assets';
+  "use strict";
 
-  var Header = require('./header');
+  var assethost, Header, Nav, Footer, Icons;
+
+  //var assethost = 'http://localhost:5001/assets';
+  assethost = '//uom-design-system.s3.amazonaws.com/shared/assets';
+
+  Header = require('./header');
   new Header({
     'assethost':   assethost, // + '/injection/header',
     'defaultlink': 'https://www.unimelb.edu.au'
   });
 
-  var Nav = require('./nav');
+  Nav = require('./nav');
   new Nav({
     'assethost': assethost, // + '/injection/header'
   });
 
-  var Footer = require('./footer');
+  Footer = require('./footer');
   new Footer({
     'assethost': assethost, // + '/injection/footer'
   });
 
-  var Icons = require('./icons');
+  Icons = require('./icons');
   new Icons();
 };
 

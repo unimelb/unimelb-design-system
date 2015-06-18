@@ -1,5 +1,5 @@
 require('dotenv').load("../");
-var ASSETS_URL = "http://"+process.env.WEB_SERVER_HOST+":"+process.env.ASSETS_SERVER_PORT;
+var ASSETS_URL = "http://"+process.env.WEB_SERVER_HOST+":"+process.env.ASSET_SERVER_PORT;
 var WEBPACK_URL = "http://"+process.env.WEB_SERVER_HOST+":"+process.env.WEBPACK_SERVER_PORT;
 
 var fs = require('fs');

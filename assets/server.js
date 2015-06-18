@@ -1,8 +1,8 @@
 require('dotenv').load("../");
-var DEVELOPMENT_HOST = process.env.WEB_SERVER_HOST     || 'localhost';
-var DEVELOPMENT_PORT = process.env.ASSETS_SERVER_PORT  || 5001;
-var WEBPACK_PORT     = process.env.WEBPACK_SERVER_PORT || 5002;
-var PROXY_URL        = ('http://' + DEVELOPMENT_HOST + ':' + process.env.WEB_SERVER_PORT) || "http://localhost:5000";
+var WEB_SERVER_HOST   = process.env.WEB_SERVER_HOST     || 'localhost';
+var ASSET_SERVER_PORT = process.env.ASSETS_SERVER_PORT  || 5001;
+var WEBPACK_PORT      = process.env.WEBPACK_SERVER_PORT || 5002;
+var PROXY_URL         = ('http://' + WEB_SERVER_HOST + ':' + process.env.WEB_SERVER_PORT) || "http://localhost:5000";
 
 var http = require("http");
 var path = require('path');
@@ -70,10 +70,10 @@ app.get("*", function(req, res, next) {
 });
 
 // Boot the server
-var port = DEVELOPMENT_PORT;
+var port = ASSET_SERVER_PORT;
 var server = http.Server(app);
 server.listen(port, function() {
-  console.log("Listening at http://" + DEVELOPMENT_HOST + ":" + DEVELOPMENT_PORT + "/");
+  console.log("Listening at http://" + WEB_SERVER_HOST + ":" + ASSET_SERVER_PORT + "/");
 });
 
 // User the webpack-dev-server specifically for hot-loading
@@ -88,4 +88,4 @@ var devServer = new WebpackDevServer(webpack(webpackConfig), {
 });
 
 // Needs to be on 8080 as the websocket expects that
-devServer.listen(WEBPACK_PORT, DEVELOPMENT_HOST, function() {});
+devServer.listen(WEBPACK_PORT, WEB_SERVER_HOST, function() {});
