@@ -46,7 +46,7 @@ Tabs.prototype.selectPanel = function() {
   }
 
   // Check for inner tabs
-  if (idx === 0) {
+  if (idx === 0 && window.location.hash) {
     var search = this.el.querySelector(window.location.hash);
     if (search) {
       search = findUp(search, 'tab');
