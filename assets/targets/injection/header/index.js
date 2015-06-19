@@ -153,10 +153,36 @@ InjectHeader.prototype.renderHeaderTools = function() {
     tools = document.createElement("div");
     tools.addClass('page-header-tools');
 
-    if (document.countSelector('[role="main"].no-login') === 0) {
-      tools.innerHTML = '            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--            --><a class="page-header-icon" href="#sitemap" title="Login" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-user" /></svg> Portals</a><!--            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>      ';
-    } else {
+    // Need to use innerHTML for <svg><use>
+    if (document.countSelector('[role="main"].with-login') === 0) {
       tools.innerHTML = '            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search" /></svg> Search</a><!--            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu" /></svg> Menu</a>      ';
+
+    } else {
+      var modalContent = document.querySelector('.page-local-login');
+      if (modalContent) {
+        // Title override for logout
+        var title = 'Login';
+        if (modalContent.hasAttribute('data-title') && modalContent.getAttribute('data-title').length < 8) {
+          title = modalContent.getAttribute('data-title');
+        }
+        tools.innerHTML = '            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--            --><a class="page-header-icon" href="#' + title + '" title="' + title + '" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-user" /></svg> ' + title + '</a><!--            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>      ';
+
+        var Modal = require('../../components/modal'),
+            modalDialog = document.createElement('div'),
+            trigger = tools.querySelector('[data-modal-target]');
+
+        modalDialog.id = 'uom-login';
+        modalDialog.addClass('modal__dialog');
+        modalContent.parentNode.removeChild(modalContent);
+        modalDialog.appendChild(modalContent);
+        tools.appendChild(modalDialog);
+
+        new Modal(trigger, {});
+
+      } else {
+        // Fall back to default
+        tools.innerHTML = '            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search" /></svg> Search</a><!--            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu" /></svg> Menu</a>      ';
+      }
     }
 
     var navparent = this.props.header.querySelector('header');

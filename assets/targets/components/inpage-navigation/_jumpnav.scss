@@ -94,6 +94,12 @@
         margin-top: 0;
       }
     }
+
+    &.endpoint {
+      position: absolute;
+      bottom: 545px;
+      top: auto;
+    }
   }
 }
 

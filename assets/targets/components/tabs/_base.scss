@@ -5,10 +5,10 @@
 
       a {
         cursor: pointer;
-        font-weight: 400;
+        font-weight: $regular;
 
         &[data-current] {
-          font-weight: bold;
+          font-weight: $bold;
         }
       }
 
@@ -51,12 +51,10 @@
         @include rem(padding, 20px 10px);
         color: $white;
         display: inline-block;
-        font-weight: $light;
         text-decoration: none;
         text-transform: uppercase;
 
         &[data-current] {
-          font-weight: $light;
           position: relative;
         }
 

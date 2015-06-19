@@ -2,7 +2,7 @@
 
 div role="main"
   header.image.with-filters style="background-image:url(/assets/images/desktop.jpg)"
-    p These layouts are examples how we use the design system for common pages across the university
+    p These layouts are examples how we use the design system for common pages across the university.
     .bottom-align-flat
       .filtered-listing-wrapper
         form.filtered-listing-select
@@ -37,7 +37,10 @@ div role="main"
                 option value="staff" Staff
                 option value="serverpages" Server pages
 
+  footer.cta.center Pro tip: the pre-DOM source of any template can be viewed by adding <small>?view=source</small> to the end of the URL.
+
   hr.spacer
+
   .filtered-listing-section data-category="websitesections"
     aside
       h2 Website sections
@@ -69,6 +72,11 @@ div role="main"
             |Website section
             '
             strong Search
+        li class="category-c item"
+          a href="/layouts/with-login"
+            |Website section
+            '
+            strong Header Login
   hr.spacer
   .filtered-listing-section data-category="news"
     aside

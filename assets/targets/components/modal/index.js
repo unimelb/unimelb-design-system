@@ -22,6 +22,7 @@ function Modal(el, props) {
     });
 
     this.initTarget();
+    this.setupCloseButton();
 
     // Event bindings
     this.el.addEventListener('click', this.activateDialog.bind(this));
@@ -33,6 +34,18 @@ function Modal(el, props) {
     this.props.blanketElement.el.addEventListener('click', this.hideAllDialogs.bind(this));
   }
 }
+
+Modal.prototype.setupCloseButton = function() {
+  var close = this.props.targetElement.querySelector('.modal__close');
+  if (!close) {
+    close = document.createElement('a');
+    close.addClass('modal__close');
+    close.innerText = 'Close';
+    this.props.targetElement.insertBefore(close, this.props.targetElement.firstChild);
+
+    close.addEventListener('click', this.hideAllDialogs.bind(this));
+  }
+};
 
 /**
  * Move modal dialogs back to document root (default higher z-index)

@@ -16,50 +16,47 @@ function JumpNav(props) {
   var offsets = {
     'root':            document.querySelector('div[role="main"]'),
     'header':          document.querySelector('div[role="main"] > header'),
-    'navOffset':       60, // 30 top + 30 bottom
     'arbitraryOffset': 50  // scroll clearance
   };
 
   // Add to props
   for (var prop in offsets) { this.props[prop] = offsets[prop]; }
 
-  // Does the page include an inner footer
-  var innerFooter = document.querySelector('[role="main"] > footer:last-of-type');
-  if (innerFooter) {
-    this.props.footerOffset = innerFooter.offsetHeight - 60; // 30 top + 30 bottom
-  } else {
-    this.props.footerOffset = 0;
-  }
-
-
   // Build nav menu
   this.buildNavMenu();
 
+  // Calculations for transition points, delay after page render
+  setTimeout(this.initCalcs.bind(this), 1000);
+
   // Event binding
   window.addEventListener('scroll', this.handleScroll.bind(this));
+  // window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
 
   // Initial calc
   this.trackProgress();
 }
 
+JumpNav.prototype.handleResize = function() {
+  setTimeout(this.initCalcs.bind(this), 1000);
+};
+
 JumpNav.prototype.handleScroll = function() {
   this.trackProgress();
 
-  if (this.contained()) {
-    this.el.addClass('fixed');
+  if ((this.props.outer.scrollTop > this.props.stickyEnd) ||
+    (this.el.offsetHeight > this.props.outer.offsetHeight)) {
+    this.el.addClass('endpoint');
   } else {
+    this.el.removeClass('endpoint');
+  }
+
+  if (this.props.outer.scrollTop > this.props.fixPoint) {
+    this.el.addClass('fixed');
+    this.el.style.bottom = this.props.footerOffset;
+  } else {
+    this.el.style.bottom = '';
     this.el.removeClass('fixed');
   }
-};
-
-/*
- * Is element contained in viewport
- */
-JumpNav.prototype.contained = function() {
-  var stickyEnd = this.props.root.offsetHeight + this.props.root.offsetTop -
-   this.el.offsetHeight - this.props.navOffset - this.props.footerOffset;
-
-  return (this.props.outer.scrollTop > this.props.fixPoint && this.props.outer.scrollTop < stickyEnd);
 };
 
 /*
@@ -139,5 +136,35 @@ JumpNav.prototype.buildNavMenu = function() {
   }
 };
 
+JumpNav.prototype.initCalcs = function() {
+  // Does the page include an inner footer
+  var innerFooterHeight = document.querySelector('[role="main"] > footer:last-of-type');
+  if (innerFooterHeight) {
+    innerFooterHeight = innerFooterHeight.offsetHeight;
+  } else {
+    innerFooterHeight = 0;
+  }
+
+  var outerFooter = document.querySelector('.page-footer');
+
+  // Not really sure what this 60 represents, but it makes it Good
+  this.props.stickyEnd = this.props.root.offsetTop + this.props.root.offsetHeight - this.el.offsetHeight - innerFooterHeight - 60;
+
+  // 10px margin-top
+  this.props.footerOffset = (innerFooterHeight + outerFooter.offsetHeight + 10) + 'px';
+
+  if (this.el.hasClass('fixed')) {
+    this.el.style.bottom = this.props.footerOffset;
+  } else {
+    this.el.style.bottom = '';
+  }
+
+  if ((this.props.outer.scrollTop > this.props.stickyEnd) ||
+    (this.el.offsetHeight > this.props.outer.offsetHeight)) {
+    this.el.addClass('endpoint');
+  } else {
+    this.el.removeClass('endpoint');
+  }
+};
 
 module.exports = JumpNav;

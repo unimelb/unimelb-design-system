@@ -452,6 +452,12 @@
   }
 }
 
+.uomcontent #uom-login.modal__dialog {
+  @include rem(max-width, 450px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .ie8 {
   .uomcontent .page-header {
     border-bottom: 1px solid #f0f0f0;

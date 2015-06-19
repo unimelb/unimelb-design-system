@@ -13,7 +13,6 @@ body {
   font-family: $ff-sans;
 
   @include breakpoint(desktop) {
-    font-size: 112.5%;
     line-height: 1.68;
   }
 }
