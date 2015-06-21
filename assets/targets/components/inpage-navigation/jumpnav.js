@@ -43,8 +43,8 @@ JumpNav.prototype.handleResize = function() {
 JumpNav.prototype.handleScroll = function() {
   this.trackProgress();
 
-  if ((this.props.outer.scrollTop > this.props.stickyEnd) ||
-    (this.el.offsetHeight > this.props.outer.offsetHeight)) {
+  if (this.props.outer.scrollTop > this.props.stickyEnd) {
+  //  || (this.el.offsetHeight > this.props.outer.offsetHeight))
     this.el.addClass('endpoint');
   } else {
     this.el.removeClass('endpoint');
@@ -148,7 +148,7 @@ JumpNav.prototype.initCalcs = function() {
   var outerFooter = document.querySelector('.page-footer');
 
   // Not really sure what this 60 represents, but it makes it Good
-  this.props.stickyEnd = this.props.root.offsetTop + this.props.root.offsetHeight - this.el.offsetHeight - innerFooterHeight - 60;
+  this.props.stickyEnd = this.props.root.offsetTop + this.props.root.offsetHeight - innerFooterHeight - 60;
 
   // 10px margin-top
   this.props.footerOffset = (innerFooterHeight + outerFooter.offsetHeight + 10) + 'px';

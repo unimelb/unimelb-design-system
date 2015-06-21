@@ -96,8 +96,9 @@
     }
 
     &.endpoint {
-      position: absolute;
       bottom: 545px;
+      display: none; // temp fix
+      position: absolute;
       top: auto;
     }
   }
