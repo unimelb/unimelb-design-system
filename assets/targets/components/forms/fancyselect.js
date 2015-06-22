@@ -9,33 +9,44 @@ function FancySelect(el, props) {
 
   this.el = el;
   this.props = props;
+  this.props.parent = this.el.parentNode;
+
+  this.buildWrapper();
+
+  // Can't trigger select externally in IE
+  if (!/(MSIE|Trident)/g.test(navigator.userAgent)) {
+    for (var recs=this.props.parent.querySelectorAll('svg.icon'), i=recs.length - 1; i >= 0; i--)
+      recs[i].addEventListener('click', this.handleClick);
+  }
 }
 
+FancySelect.prototype.handleClick = function(e) {
+  var evt = new MouseEvent('mousedown', {
+    bubbles:    true,
+    cancelable: true,
+    view:       window
+  });
+  this.parentNode.querySelector('select').dispatchEvent(evt);
+};
+
+FancySelect.prototype.buildWrapper = function() {
+  var wrapper = document.createElement('div');
+  wrapper.addClass('styled-select');
+
+  if (this.el.hasClass('alt'))
+    wrapper.addClass('alt');
+
+  if (this.el.hasClass('clear'))
+    wrapper.addClass('clear');
+
+  if (this.el.hasClass('clear-dark'))
+    wrapper.addClass('clear-dark');
+
+  wrapper.innerHTML = '<svg class="icon" role="img"><use xlink:href="#icon-north-south"></use></svg>';
+
+  this.props.parent.removeChild(this.el);
+  wrapper.insertBefore(this.el, wrapper.firstChild);
+  this.props.parent.appendChild(wrapper);
+};
+
 module.exports = FancySelect;
-
-// unless window.UOMFancySelect
-//   window.UOMFancySelect = ->
-//     class FancySelect
-//       constructor: (@el) ->
-//         @parent = @el.parentNode
-
-//         wrapper = document.createElement('div')
-//         wrapper.addClass('styled-select')
-//         wrapper.addClass('alt') if @el.hasClass('alt')
-//         wrapper.addClass('clear') if @el.hasClass('clear')
-//         wrapper.addClass('clear-dark') if @el.hasClass('clear-dark')
-//         wrapper.innerHTML = """<svg class="icon" role="img"><use xlink:href="#icon-north-south"></use></svg>"""
-
-//         @el.parentNode.removeChild(@el)
-//         wrapper.insertBefore(@el, wrapper.firstChild)
-
-//         @parent.appendChild(wrapper)
-
-//         unless /(MSIE|Trident)/g.test(navigator.userAgent)
-//           for i in @parent.querySelectorAll('svg.icon')
-//             i.addEventListener 'click', (e) ->
-//               event = new MouseEvent 'mousedown',
-//                 bubbles: true
-//                 cancelable: true
-//                 view: window
-//               this.parentNode.querySelector('select').dispatchEvent(event)
