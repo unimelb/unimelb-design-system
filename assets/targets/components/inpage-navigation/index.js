@@ -15,7 +15,7 @@ function InpageNavigation(el, props) {
 }
 
 InpageNavigation.prototype.delegateScroll = function(e) {
-  var tel = e.target || e.srcElement;
+  var tel = e.target;
 
   if (tel && tel.hasAttribute('href')) {
     var target = tel.getAttribute('href');

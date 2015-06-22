@@ -23,7 +23,7 @@ function Checklist(el, props) {
 }
 
 Checklist.prototype.handleClick = function(e) {
-  var target = e.target || e.srcElement;
+  var target = e.target;
   if (target.nodeName=='LABEL' || target.nodeName=='SPAN') {
     if (target.hasClass('on')) {
       this.props.active--;
@@ -35,7 +35,7 @@ Checklist.prototype.handleClick = function(e) {
 };
 
 Checklist.prototype.handleTargetClick = function(e) {
-  if (e.srcElement.hasClass('disabled'))
+  if (e.target.hasClass('disabled'))
     e.preventDefault();
 };
 

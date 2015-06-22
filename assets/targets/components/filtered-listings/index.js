@@ -29,7 +29,7 @@ function ListFilter(el, props) {
 }
 
 ListFilter.prototype.handleChange = function(e) {
-  this.props.curr = e.srcElement.value;
+  this.props.curr = e.target.value;
   this.filterCategories();
 };
 
@@ -86,7 +86,7 @@ ListFilter.prototype.filterQuerystring = function() {
 };
 
 ListFilter.prototype.handleClick = function(e) {
-  this.process(e.target || e.srcElement);
+  this.process(e.target);
 };
 
 ListFilter.prototype.process = function(target) {

@@ -23,7 +23,7 @@ function SidebarTabs(el, props) {
 
 SidebarTabs.prototype.handleClick = function(e) {
   e.preventDefault();
-  this.matchEl(e.srcElement);
+  this.matchEl(e.target);
 };
 
 SidebarTabs.prototype.matchEl = function(el) {

@@ -74,7 +74,7 @@ Tabs.prototype.selectPanel = function() {
 };
 
 Tabs.prototype.handleClick = function(e) {
-  var target = e.target || e.srcElement;
+  var target = e.target;
   if (target.hasAttribute('href')) {
     // go to href
 
@@ -101,7 +101,7 @@ Tabs.prototype.setLocation = function(hash) {
 
 // Match index - could potentially match ID instead
 Tabs.prototype.handleInternalClick = function(e) {
-  var target = e.target || e.srcElement;
+  var target = e.target;
   var idx = target.getAttribute('data-tab') - 1;
   this.moveindex(idx);
   this.setLocation(this.props.tabs[idx].hash);
@@ -144,7 +144,7 @@ Tabs.prototype.buildMobileNav = function() {
 };
 
 Tabs.prototype.handleChange = function(e) {
-  var target = e.srcElement.value;
+  var target = e.target.value;
   if (target) {
     if (target.substr(0,1) != '#') {
       window.location = target;

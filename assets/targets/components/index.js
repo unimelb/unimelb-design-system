@@ -19,8 +19,8 @@ window.UOMloadComponents = function() {
   "use strict";
 
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
-    JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ListFilter,
-    imagesloaded, ImageGallery, slingshot, LMaps, style, script, p;
+    JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
+    ListFilter, imagesloaded, ImageGallery, slingshot, LMaps, style, script, p;
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
@@ -94,7 +94,12 @@ window.UOMloadComponents = function() {
       new UnlockChecklist(recs[i], {});
   }
 
-  // window.UOMValid();
+  recs = document.querySelectorAll('form[data-validate]');
+  if (recs.length > 0) {
+    ValidateForm = require("./forms");
+    for (i=recs.length - 1; i >= 0; i--)
+      new ValidateForm(recs[i], {});
+  }
 
   // window.UOMTableLabels();
 
