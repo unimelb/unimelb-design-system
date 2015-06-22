@@ -9,20 +9,19 @@ function ImageGallery(el, props) {
   this.props = props;
 
   this.setupPhotoSwipe();
+  this.setupGallery();
 
-  // Load Photoswipe via promise
-  var Promise = require('promise');
-  var p = new Promise(function(resolve, reject) {
-    script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://uom-design-system.s3.amazonaws.com/shared/photoswipe.pkgd.min.js';
-    document.body.appendChild(script);
-    script.addEventListener('load', resolve);
+  var Isotope = require('isotope-layout');
+  new Isotope(this.el, {
+    itemSelector: '.item',
+    layoutMode: 'masonry',
+    masonry: {
+      columnWidth: 1,
+      gutter: 0
+    }
+  });
 
-  }).done(function() {
-    this.setupGallery();
-    this.initPhotoSwipeFromDOM();
-  }.bind(this));
+  loadScript('https://uom-design-system.s3.amazonaws.com/shared/photoswipe.pkgd.min.js', this.initPhotoSwipeFromDOM.bind(this));
 }
 
 /**
@@ -40,16 +39,6 @@ ImageGallery.prototype.setupGallery = function() {
     img.addClass('hidden');
     imageLink.appendChild(span);
   }
-
-  var Isotope = require('isotope-layout');
-  new Isotope(this.el, {
-    itemSelector: '.item',
-    layoutMode: 'masonry',
-    masonry: {
-      columnWidth: 1,
-      gutter: 0
-    }
-  });
 };
 
 /**

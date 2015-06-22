@@ -2,6 +2,7 @@
 require("../../shared/shims");
 require("../../shared/smoothscroll");
 require("../../shared/findup");
+require("../../shared/loadscript");
 
 // Also need one to find non-text nodes in a list of children
 
@@ -97,20 +98,9 @@ window.UOMloadComponents = function() {
     }
   }
 
-  // Leaflet load via promise
-  var loadScript = function();
-
   recs = document.querySelectorAll('[data-leaflet-latlng]');
   if (recs.length > 0) {
-    var Promise = require('promise');
-    p = new Promise(function(resolve, reject) {
-      script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js';
-      document.body.appendChild(script);
-      script.addEventListener('load', resolve);
-
-    }).done(function() {
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
       style = document.createElement('link');
       style.rel = 'stylesheet';
       style.href = 'http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
