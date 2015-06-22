@@ -1,4 +1,4 @@
-function FindUp() {
+(function(root) {
   "use strict";
 
   if (typeof window.findUp === "undefined") {
@@ -14,6 +14,4 @@ function FindUp() {
       }
     };
   }
-}
-
-module.exports = FindUp;
+})(this);

@@ -1,17 +1,5 @@
-function Shims() {
-  // Polyfills
-  this.polyfillWindowHeight();
-  this.polyfillEventListener();
-  this.polyfillArraySlice();
+(function(root) {
 
-  // document.countSelector
-  this.defineCountSelector();
-
-  // jQuery-style element class helpers
-  this.defineClassHelpers();
-}
-
-Shims.prototype.defineCountSelector = function() {
   if (typeof document.countSelector === "undefined") {
     document.countSelector = function(selectors) {
       try {
@@ -31,9 +19,7 @@ Shims.prototype.defineCountSelector = function() {
       return Array.prototype.slice.call(this.querySelectorAll(selectors)).length;
     };
   }
-};
 
-Shims.prototype.polyfillWindowHeight = function() {
   // Window height helper
   if (typeof window.height === "undefined") {
     window.height = function() {
@@ -50,9 +36,8 @@ Shims.prototype.polyfillWindowHeight = function() {
       return h;
     };
   }
-};
 
-Shims.prototype.defineClassHelpers = function() {
+  // jQuery-style element class helpers
   if (!Element.prototype.hasClass) {
     Element.prototype.hasClass = function(q) {
       var re;
@@ -93,9 +78,7 @@ Shims.prototype.defineClassHelpers = function() {
       }
     };
   }
-};
 
-Shims.prototype.polyfillEventListener = function() {
   (function(win, doc){
     if(win.addEventListener)return;   //No need to polyfill
 
@@ -124,9 +107,7 @@ Shims.prototype.polyfillEventListener = function() {
       addListen(doc.all);
     }
   })(window, document);
-};
 
-Shims.prototype.polyfillArraySlice = function() {
   // IE polyfill for Array.prototype.slice returning Object, source: MDN
   var _slice = Array.prototype.slice;
 
@@ -161,6 +142,5 @@ Shims.prototype.polyfillArraySlice = function() {
       return _slice.call(a, begin, end || a.length);
     };
   }
-};
 
-module.exports = Shims;
+})(this);

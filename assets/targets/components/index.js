@@ -1,28 +1,25 @@
-// Dep
-var Shims = require("../../shared/shims");
-new Shims();
-
-// Global scoped search for a class or attr up the DOM tree
-var FindUp = require("../../shared/findup");
-new FindUp();
-
-// Global scoped smooth inner scroll
-var SmoothScroll = require("../../shared/smoothscroll");
-new SmoothScroll();
+// Deps
+require("../../shared/shims");
+require("../../shared/smoothscroll");
+require("../../shared/findup");
 
 // Also need one to find non-text nodes in a list of children
 
 // Async load fonts from google
 var WebFont = require("webfontloader");
 WebFont.load({
-  google: { families: [ 'Roboto:400,300,100,700,100italic,300italic,400italic,700italic:latin' ] }
+  google: { families: [
+    'Roboto:400,300,100,700,100italic,300italic,400italic,700italic:latin'
+  ] }
 });
 
 // replace with viewloader eventually
 window.UOMloadComponents = function() {
   "use strict";
 
-  var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation, JumpNav, ListFilter, imagesloaded, ImageGallery, slingshot, script;
+  var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
+    JumpNav, ListFilter, imagesloaded, ImageGallery, slingshot, LMaps, style,
+    script, p;
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
@@ -87,7 +84,7 @@ window.UOMloadComponents = function() {
 
   recs = document.querySelectorAll('ul.image-gallery');
   if (recs.length > 0) {
-    imagesLoaded = require('imagesloaded');
+    var imagesLoaded = require('imagesloaded');
     ImageGallery = require("./gallery");
 
     slingshot = function() {
@@ -100,6 +97,32 @@ window.UOMloadComponents = function() {
     }
   }
 
+  // Leaflet load via promise
+  var loadScript = function();
+
+  recs = document.querySelectorAll('[data-leaflet-latlng]');
+  if (recs.length > 0) {
+    var Promise = require('promise');
+    p = new Promise(function(resolve, reject) {
+      script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js';
+      document.body.appendChild(script);
+      script.addEventListener('load', resolve);
+
+    }).done(function() {
+      style = document.createElement('link');
+      style.rel = 'stylesheet';
+      style.href = 'http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
+      document.body.appendChild(style);
+
+      LMaps = require("./maps/lmaps");
+      for (i=recs.length - 1; i >= 0; i--) {
+        new LMaps(recs[i], {});
+      }
+    });
+  }
+
   // GMaps will load via callback
   if (document.countSelector('[data-latlng],[data-address]') > 0) {
     script = document.createElement("script");
@@ -107,8 +130,6 @@ window.UOMloadComponents = function() {
     script.src = "https://maps.googleapis.com/maps/api/js?callback=maps_loaded_go";
     document.body.appendChild(script);
   }
-
-  // window.UOMLeafletMap();
 };
 
 // GMaps callback

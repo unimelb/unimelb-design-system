@@ -1,10 +1,6 @@
-// Dep
-var Shims = require("../../shared/shims");
-new Shims();
-
-// Tag manager setup
-var GTM = require("./gtm");
-new GTM();
+// Deps
+require("../../shared/shims");
+require("./gtm");
 
 window.UOMloadInjection = function() {
   "use strict";

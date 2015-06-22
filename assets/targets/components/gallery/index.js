@@ -9,19 +9,20 @@ function ImageGallery(el, props) {
   this.props = props;
 
   this.setupPhotoSwipe();
-  this.setupGallery();
 
-  var Isotope = require('isotope-layout');
-  new Isotope(this.el, {
-    itemSelector: '.item',
-    layoutMode: 'masonry',
-    masonry: {
-      columnWidth: 1,
-      gutter: 0
-    }
-  });
+  // Load Photoswipe via promise
+  var Promise = require('promise');
+  var p = new Promise(function(resolve, reject) {
+    script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://uom-design-system.s3.amazonaws.com/shared/photoswipe.pkgd.min.js';
+    document.body.appendChild(script);
+    script.addEventListener('load', resolve);
 
-  this.initPhotoSwipeFromDOM();
+  }).done(function() {
+    this.setupGallery();
+    this.initPhotoSwipeFromDOM();
+  }.bind(this));
 }
 
 /**
@@ -39,6 +40,16 @@ ImageGallery.prototype.setupGallery = function() {
     img.addClass('hidden');
     imageLink.appendChild(span);
   }
+
+  var Isotope = require('isotope-layout');
+  new Isotope(this.el, {
+    itemSelector: '.item',
+    layoutMode: 'masonry',
+    masonry: {
+      columnWidth: 1,
+      gutter: 0
+    }
+  });
 };
 
 /**
@@ -58,8 +69,8 @@ ImageGallery.prototype.setupPhotoSwipe = function() {
 };
 
 ImageGallery.prototype.initPhotoSwipeFromDOM = function() {
-  var PhotoSwipe = require('photoswipe');
-  var PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default'); // missing assets?
+  // var PhotoSwipe = require('photoswipe');
+  // var PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default'); // missing assets?
 
   var gallerySelector = this.el;
 

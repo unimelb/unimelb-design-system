@@ -1,4 +1,4 @@
-function SmoothScroll() {
+(function(root) {
   "use strict";
 
   if (typeof Math.easeInOutQuad === "undefined") {
@@ -49,6 +49,4 @@ function SmoothScroll() {
       }
     };
   }
-}
-
-module.exports = SmoothScroll;
+})(this);
