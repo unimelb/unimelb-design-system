@@ -19,8 +19,8 @@ window.UOMloadComponents = function() {
   "use strict";
 
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
-    JumpNav, ListFilter, imagesloaded, ImageGallery, slingshot, LMaps, style,
-    script, p;
+    JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ListFilter,
+    imagesloaded, ImageGallery, slingshot, LMaps, style, script, p;
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
@@ -34,6 +34,16 @@ window.UOMloadComponents = function() {
     Modal = require("./modal");
     for (i=recs.length - 1; i >= 0; i--)
       new Modal(recs[i], {});
+  }
+
+  // IE9 unsupported at this stage
+  if (!/(MSIE 9)/g.test(navigator.userAgent)) {
+    recs = document.querySelectorAll('select');
+    if (recs.length > 0) {
+      FancySelect = require("./forms/fancyselect");
+      for (i=recs.length - 1; i >= 0; i--)
+        new FancySelect(recs[i], {});
+    }
   }
 
   recs = document.querySelectorAll('[data-tabbed]');
@@ -70,11 +80,23 @@ window.UOMloadComponents = function() {
     new JumpNav({});
   }
 
-  // window.UOMExtraLabel();
-  // window.UOMFancySelect();
+  recs = document.querySelectorAll('input[type="radio"],input[type="checkbox"]');
+  if (recs.length > 0) {
+    CheckboxHelper = require("./checklist/checkboxhelper");
+    for (i=recs.length - 1; i >= 0; i--)
+      new CheckboxHelper(recs[i], {});
+  }
+
+  recs = document.querySelectorAll('ul.checklist[data-unlock-target]');
+  if (recs.length > 0) {
+    UnlockChecklist = require("./checklist");
+    for (i=recs.length - 1; i >= 0; i--)
+      new UnlockChecklist(recs[i], {});
+  }
+
   // window.UOMValid();
+
   // window.UOMTableLabels();
-  // Checklist?
 
   recs = document.querySelectorAll('form.filtered-listing-select');
   if (recs.length > 0) {
