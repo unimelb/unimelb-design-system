@@ -145,13 +145,18 @@ JumpNav.prototype.initCalcs = function() {
     innerFooterHeight = 0;
   }
 
-  var outerFooter = document.querySelector('.page-footer');
+  var outerFooterHeight = document.querySelector('.page-footer');
+  if (outerFooterHeight) {
+    outerFooterHeight = outerFooterHeight.offsetHeight;
+  } else {
+    outerFooterHeight = 0;
+  }
 
   // Not really sure what this 60 represents, but it makes it Good
   this.props.stickyEnd = this.props.root.offsetTop + this.props.root.offsetHeight - innerFooterHeight - 60;
 
   // 10px margin-top
-  this.props.footerOffset = (innerFooterHeight + outerFooter.offsetHeight + 10) + 'px';
+  this.props.footerOffset = (innerFooterHeight + outerFooter + 10) + 'px';
 
   if (this.el.hasClass('fixed')) {
     this.el.style.bottom = this.props.footerOffset;
