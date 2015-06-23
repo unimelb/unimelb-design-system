@@ -1,11 +1,12 @@
-//= require ./global.js
-//= require ./components/forms/fancyselect
-//= require ./components/forms/validation
-//= require ./components/modal/modal
-//= require ./components/accordion/accordion
-//= require_self
+// Deps
+require("../../shared/shims");
+require("../../shared/smoothscroll");
+require("../../shared/findup");
+require("../../shared/loadscript");
 
-window.UOMFormIcons = function() {
+var FormIcons = function() {
+  "use strict";
+
   var icons, page, bodyclass;
 
   if (/(MSIE 8.0)/g.test(navigator.userAgent)) {
@@ -29,11 +30,45 @@ window.UOMFormIcons = function() {
 };
 
 window.UOMFormLoadComponents = function() {
-  window.UOMFancySelect();
-  window.UOMValid();
-  window.UOMFormIcons();
-  window.UOMModal();
-  window.UOMAccordion();
+  "use strict";
+
+  // components
+  var recs, i, Accordion, Modal, FancySelect, ValidateForm, Icons;
+
+  recs = document.querySelectorAll('.accordion__title');
+  if (recs.length > 0) {
+    Accordion = require("../components/accordion");
+    for (i=recs.length - 1; i >= 0; i--)
+      new Accordion(recs[i], {});
+  }
+
+  recs = document.querySelectorAll('[data-modal-target]');
+  if (recs.length > 0) {
+    Modal = require("../components/modal");
+    for (i=recs.length - 1; i >= 0; i--)
+      new Modal(recs[i], {});
+  }
+
+  // IE9 unsupported at this stage
+  if (!/(MSIE 9)/g.test(navigator.userAgent)) {
+    recs = document.querySelectorAll('select');
+    if (recs.length > 0) {
+      FancySelect = require("../components/forms/fancyselect");
+      for (i=recs.length - 1; i >= 0; i--)
+        new FancySelect(recs[i], {});
+    }
+  }
+
+  recs = document.querySelectorAll('form[data-validate]');
+  if (recs.length > 0) {
+    ValidateForm = require("../components/forms");
+    for (i=recs.length - 1; i >= 0; i--)
+      new ValidateForm(recs[i], {});
+  }
+
+  // Icons = require('../injection/icons');
+  // new Icons();
+  new FormIcons();
 };
 
 if (window.attachEvent) {

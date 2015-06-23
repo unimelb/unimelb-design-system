@@ -4,10 +4,6 @@ require("../../shared/smoothscroll");
 require("../../shared/findup");
 require("../../shared/loadscript");
 
-// Also need one to find non-text nodes in a list of children
-
-require("../injection/gtm");
-
 // Async load fonts from google
 var WebFont = require("webfontloader");
 WebFont.load({
@@ -17,36 +13,8 @@ WebFont.load({
 });
 
 // replace with viewloader eventually
-window.UOMloadComponents = function() {
+window.DSComponentsLoad = function() {
   "use strict";
-
-  // injection
-
-  var assethost, Header, Nav, Footer, Icons;
-
-  //var assethost = 'http://localhost:5001/assets';
-  assethost = '//uom-design-system.s3.amazonaws.com/shared/assets';
-
-  Header = require('../injection/header');
-  new Header({
-    'assethost':   assethost, // + '/injection/header',
-    'defaultlink': 'https://www.unimelb.edu.au'
-  });
-
-  Nav = require('../injection/nav');
-  new Nav({
-    'assethost': assethost, // + '/injection/header'
-  });
-
-  Footer = require('../injection/footer');
-  new Footer({
-    'assethost': assethost, // + '/injection/footer'
-  });
-
-  Icons = require('../injection/icons');
-  new Icons();
-
-  // components
 
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
@@ -54,14 +22,14 @@ window.UOMloadComponents = function() {
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
-    Accordion = require("./accordion");
+    Accordion = require("../components/accordion");
     for (i=recs.length - 1; i >= 0; i--)
       new Accordion(recs[i], {});
   }
 
   recs = document.querySelectorAll('[data-modal-target]');
   if (recs.length > 0) {
-    Modal = require("./modal");
+    Modal = require("../components/modal");
     for (i=recs.length - 1; i >= 0; i--)
       new Modal(recs[i], {});
   }
@@ -70,7 +38,7 @@ window.UOMloadComponents = function() {
   if (!/(MSIE 9)/g.test(navigator.userAgent)) {
     recs = document.querySelectorAll('select');
     if (recs.length > 0) {
-      FancySelect = require("./forms/fancyselect");
+      FancySelect = require("../components/forms/fancyselect");
       for (i=recs.length - 1; i >= 0; i--)
         new FancySelect(recs[i], {});
     }
@@ -78,14 +46,14 @@ window.UOMloadComponents = function() {
 
   recs = document.querySelectorAll('[data-tabbed]');
   if (recs.length > 0) {
-    Tabs = require("./tabs");
+    Tabs = require("../components/tabs");
     for (i=recs.length - 1; i >= 0; i--)
       new Tabs(recs[i], {});
   }
 
   recs = document.querySelectorAll('.sidebar-tab-nav');
   if (recs.length > 0) {
-    SidebarTabs = require("./tabs/sidebartabs");
+    SidebarTabs = require("../components/tabs/sidebartabs");
     for (i=recs.length - 1; i >= 0; i--)
       new SidebarTabs(recs[i], {'selector': '.sidebar-tab'});
   }
@@ -93,40 +61,40 @@ window.UOMloadComponents = function() {
   // Should combine with above
   recs = document.querySelectorAll('.inner-nav-tab');
   if (recs.length > 0) {
-    SidebarTabs = require("./tabs/sidebartabs");
+    SidebarTabs = require("../components/tabs/sidebartabs");
     for (i=recs.length - 1; i >= 0; i--)
       new SidebarTabs(recs[i], {'selector': '.inner-nav-page'});
   }
 
   recs = document.querySelectorAll('a[href^="#"]');
   if (recs.length > 0) {
-    InpageNavigation = require("./inpage-navigation");
+    InpageNavigation = require("../components/inpage-navigation");
     for (i=recs.length - 1; i >= 0; i--)
       new InpageNavigation(recs[i], {});
   }
 
   if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1) {
-    JumpNav = require("./inpage-navigation/jumpnav");
+    JumpNav = require("../components/inpage-navigation/jumpnav");
     new JumpNav({});
   }
 
   recs = document.querySelectorAll('input[type="radio"],input[type="checkbox"]');
   if (recs.length > 0) {
-    CheckboxHelper = require("./checklist/checkboxhelper");
+    CheckboxHelper = require("../components/checklist/checkboxhelper");
     for (i=recs.length - 1; i >= 0; i--)
       new CheckboxHelper(recs[i], {});
   }
 
   recs = document.querySelectorAll('ul.checklist[data-unlock-target]');
   if (recs.length > 0) {
-    UnlockChecklist = require("./checklist");
+    UnlockChecklist = require("../components/checklist");
     for (i=recs.length - 1; i >= 0; i--)
       new UnlockChecklist(recs[i], {});
   }
 
   recs = document.querySelectorAll('form[data-validate]');
   if (recs.length > 0) {
-    ValidateForm = require("./forms");
+    ValidateForm = require("../components/forms");
     for (i=recs.length - 1; i >= 0; i--)
       new ValidateForm(recs[i], {});
   }
@@ -135,7 +103,7 @@ window.UOMloadComponents = function() {
 
   recs = document.querySelectorAll('form.filtered-listing-select');
   if (recs.length > 0) {
-    ListFilter = require("./filtered-listings");
+    ListFilter = require("../components/filtered-listings");
     for (i=recs.length - 1; i >= 0; i--)
       new ListFilter(recs[i], {});
   }
@@ -143,7 +111,7 @@ window.UOMloadComponents = function() {
   recs = document.querySelectorAll('ul.image-gallery');
   if (recs.length > 0) {
     var imagesLoaded = require('imagesloaded');
-    ImageGallery = require("./gallery");
+    ImageGallery = require("../components/gallery");
 
     slingshot = function() {
       new ImageGallery(g, {});
@@ -163,7 +131,7 @@ window.UOMloadComponents = function() {
       style.href = 'http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
       document.body.appendChild(style);
 
-      LMaps = require("./maps/lmaps");
+      LMaps = require("../components/maps/lmaps");
       for (i=recs.length - 1; i >= 0; i--) {
         new LMaps(recs[i], {});
       }
@@ -181,17 +149,17 @@ window.UOMloadComponents = function() {
 
 // GMaps callback
 window.maps_loaded_go = function() {
-  var GMaps = require("./maps/gmaps");
+  var GMaps = require("../components/maps/gmaps");
   for (var recs = document.querySelectorAll('[data-latlng],[data-address]'), i=recs.length - 1; i >= 0; i--)
     new GMaps(recs[i], {});
 };
 
 // Execute when ready
 if (window.attachEvent) {
-  window.attachEvent('onload', window.UOMloadComponents);
+  window.attachEvent('onload', window.DSComponentsLoad);
 } else {
-  document.addEventListener('DOMContentLoaded', window.UOMloadComponents, false);
+  document.addEventListener('DOMContentLoaded', window.DSComponentsLoad, false);
   document.addEventListener('page:change', function() {
-    window.UOMloadComponents();
+    window.DSComponentsLoad();
   }, false);
 }

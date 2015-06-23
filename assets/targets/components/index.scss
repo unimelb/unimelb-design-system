@@ -1,7 +1,23 @@
 @import 'compass';
-@import "animation/core";
+@import 'animation/core';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
+}
 
 @import './base/base';
+
+@import '../injection/header/index';
+@import '../injection/footer/index';
+@import '../injection/nav/index';
+
 @import './text/text';
 @import './buttons/buttons';
 @import './headers/headers';
