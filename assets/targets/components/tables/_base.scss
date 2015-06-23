@@ -1,8 +1,12 @@
-.uomcontent [role="main"] table {
+.uomcontent [role="main"] .mobile-wrap {
+  overflow: scroll;
+  width: 100%;
+}
+
+.uomcontent [role="main"] table.mobile-friendly {
   @include leader(1);
   @include rem(max-width, 600px);
   @include trailer(1);
-  border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -10,6 +14,35 @@
 
   thead {
     display: none;
+  }
+
+  tr {
+    th {
+      border: 0;
+    }
+
+    td {
+      border: 0;
+      display: block;
+      width: auto;
+
+      &::before {
+        @include rem(font-size, 14px);
+        color: $midgray;
+        content: attr(data-label);
+        display: block;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+.uomcontent [role="main"] table,
+.uomcontent [role="main"] table.mobile-friendly {
+  border-collapse: collapse;
+
+  tbody th {
+    text-align: left;
   }
 
   tr {
@@ -27,16 +60,17 @@
     }
 
     th {
+      @include rem(padding, 10px);
+      border: 1px solid $lightergray;
       text-align: left;
       vertical-align: top;
     }
 
     td {
-      @include rem(padding, 10px 10px 10px 10px);
-      display: block;
+      @include rem(padding, 10px);
+      border: 1px solid $lightergray;
       text-align: left;
       vertical-align: top;
-      width: auto;
 
       &:first-child {
         border-top: 1px solid $lightergray;
@@ -45,14 +79,6 @@
 
       &:empty {
         display: none;
-      }
-
-      &::before {
-        @include rem(font-size, 14px);
-        color: $midgray;
-        content: attr(data-label);
-        display: block;
-        font-style: italic;
       }
     }
   }

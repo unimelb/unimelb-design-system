@@ -156,7 +156,7 @@ JumpNav.prototype.initCalcs = function() {
   this.props.stickyEnd = this.props.root.offsetTop + this.props.root.offsetHeight - innerFooterHeight - 60;
 
   // 10px margin-top
-  this.props.footerOffset = (innerFooterHeight + outerFooter + 10) + 'px';
+  this.props.footerOffset = (innerFooterHeight + outerFooterHeight + 10) + 'px';
 
   if (this.el.hasClass('fixed')) {
     this.el.style.bottom = this.props.footerOffset;
