@@ -33,7 +33,7 @@ window.UOMFormLoadComponents = function() {
   "use strict";
 
   // components
-  var recs, i, Accordion, Modal, FancySelect, ValidateForm, Icons;
+  var recs, i, Accordion, Modal, FancySelect, ValidateForm;
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {

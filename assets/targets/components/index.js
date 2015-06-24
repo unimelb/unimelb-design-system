@@ -50,8 +50,8 @@ window.UOMloadComponents = function() {
 
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
-    ListFilter, MobileTableHelper, imagesloaded, ImageGallery, slingshot,
-    LMaps, style, script, p;
+    ListFilter, MobileTableHelper, ImageGallery, imagesLoaded, slingshot,
+    LMaps, style, script;
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
@@ -148,7 +148,7 @@ window.UOMloadComponents = function() {
 
   recs = document.querySelectorAll('ul.image-gallery');
   if (recs.length > 0) {
-    var imagesLoaded = require('imagesloaded');
+    imagesLoaded = require('imagesloaded');
     ImageGallery = require("./gallery");
 
     slingshot = function() {

@@ -1,5 +1,4 @@
-@import 'compass';
-@import 'animation/core';
+@import '../../shared/vendor/compass';
 
 html,
 body {
@@ -12,12 +11,19 @@ body {
   display: none;
 }
 
-@import './base/base';
+@import '../../shared/patterns_normalize';
+@import '../../shared/patterns_accessibility';
+@import '../../shared/patterns_clearfix';
+@import '../../shared/patterns_rem';
+@import '../../shared/patterns_media-queries';
+@import '../../shared/globals';
+@import '../../shared/typography_fonts';
 
 @import '../injection/header/index';
 @import '../injection/footer/index';
 @import '../injection/nav/index';
 
+@import './base/base';
 @import './text/text';
 @import './buttons/buttons';
 @import './headers/headers';
@@ -45,5 +51,5 @@ body {
 @import './article/article';
 @import './notices/notices';
 
-///* Print */
+// ///* Print */
 @import './print';

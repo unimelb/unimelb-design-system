@@ -1,10 +1,3 @@
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   @include establish-baseline;
 
@@ -55,7 +48,6 @@ body {
   .half .youtube5container {
     height: 50% !important;
   }
-
 
   section {
     @include padding-leader(2);
@@ -259,69 +251,69 @@ body {
     }
   }
 
-  .wide-wrap {
-    max-width: 100%;
-    overflow: scroll;
-    padding-top: 60px;
-    position: relative;
+//   .wide-wrap {
+//     max-width: 100%;
+//     overflow: scroll;
+//     padding-top: 60px;
+//     position: relative;
 
-    &:before {
-      color: $cyan;
-      content: '\21e0';
-      float: left;
-      font-size: 50px;
-      line-height: 50px;
-      margin-top: -60px;
-      text-align: right;
-      width: 100%;
-    }
+//     &:before {
+//       color: $cyan;
+//       content: '\21e0';
+//       float: left;
+//       font-size: 50px;
+//       line-height: 50px;
+//       margin-top: -60px;
+//       text-align: right;
+//       width: 100%;
+//     }
 
-    &::before {
-      color: $cyan;
-      content: '\21e0';
-      float: left;
-      font-size: 50px;
-      line-height: 50px;
-      margin-top: -60px;
-      text-align: right;
-      width: 100%;
-    }
+//     &::before {
+//       color: $cyan;
+//       content: '\21e0';
+//       float: left;
+//       font-size: 50px;
+//       line-height: 50px;
+//       margin-top: -60px;
+//       text-align: right;
+//       width: 100%;
+//     }
 
-    div:before {
-      @extend %grad-left;
-      content: '';
-      height: 50px;
-      margin-top: -60px;
-      position: absolute;
-      width: 100%;
-    }
+//     div:before {
+//       @extend %grad-left;
+//       content: '';
+//       height: 50px;
+//       margin-top: -60px;
+//       position: absolute;
+//       width: 100%;
+//     }
 
-    div::before {
-      @extend %grad-left;
-      content: '';
-      height: 50px;
-      margin-top: -60px;
-      position: absolute;
-      width: 100%;
-    }
+//     div::before {
+//       @extend %grad-left;
+//       content: '';
+//       height: 50px;
+//       margin-top: -60px;
+//       position: absolute;
+//       width: 100%;
+//     }
 
-    @include breakpoint(desktop) {
-      overflow: visible;
-      padding-top: 0;
+//     @include breakpoint(desktop) {
+//       overflow: visible;
+//       padding-top: 0;
 
-      &:before,
-      &::before {
-        content: none;
-        height: 0;
-        position: static;
-      }
+//       &:before,
+//       &::before {
+//         content: none;
+//         height: 0;
+//         position: static;
+//       }
 
-      div:before,
-      div::before {
-        content: none;
-      }
-    }
-  }
+//       div:before,
+//       div::before {
+//         content: none;
+//       }
+//     }
+//   }
 
   .fifth {
     @include rem(padding, 0 15px 30px);

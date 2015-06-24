@@ -1,5 +1,4 @@
-@import 'compass';
-@import 'animation/core';
+@import '../../shared/vendor/compass';
 
 html,
 body {
@@ -12,11 +11,15 @@ body {
   display: none;
 }
 
-@import '../components/base/base';
+@import '../../shared/patterns_normalize';
+@import '../../shared/patterns_accessibility';
+@import '../../shared/patterns_clearfix';
+@import '../../shared/patterns_rem';
+@import '../../shared/patterns_media-queries';
+@import '../../shared/globals';
+@import '../../shared/typography_fonts';
 
-@import '../injection/header/index';
-@import '../injection/footer/index';
-@import '../injection/nav/index';
+@import '../components/base/base';
 
 @import '../components/text/text';
 @import '../components/buttons/buttons';

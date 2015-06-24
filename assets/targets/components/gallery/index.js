@@ -115,8 +115,6 @@ ImageGallery.prototype.initPhotoSwipeFromDOM = function() {
     else
       e.returnValue = false;
 
-    var eTarget = e.target || e.srcElement;
-
     // find root element of slide
     var clickedListItem = closest(this, function(el) {
       return (el.tagName && el.tagName.toUpperCase() === 'LI');

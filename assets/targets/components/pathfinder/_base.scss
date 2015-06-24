@@ -84,7 +84,7 @@
       text-transform: uppercase;
 
       span {
-        @include vertical-align;
+        box-orient: vertical;
         left: 0;
         position: absolute;
         top: 50%;
@@ -217,8 +217,8 @@
       }
 
       .button-small {
-        @include horizontal-align;
         @include rem(bottom, 30px);
+        box-align: horizontal;
         display: inline-block;
         left: 50%;
         position: absolute;

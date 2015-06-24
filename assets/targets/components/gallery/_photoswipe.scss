@@ -4,9 +4,10 @@ $pswp__background-color: #000 !default;
 $pswp__placeholder-color: #222 !default;
 $pswp__box-sizing-border-box: true !default; // disable .pswp * { box-sizing:border-box } (in case you already have it in your site css)
 $pswp__root-z-index: 1500 !default;
-$pswp__assets-path: 'components/gallery/assets/' !default; // path to skin assets folder (preloader, PNG and SVG sprite)
+$pswp__assets-path: 'https://uom-design-system.s3.amazonaws.com/shared/assets/' !default; // path to skin assets folder (preloader, PNG and SVG sprite)
 $pswp__error-text-color: #CCC !default; // "Image not loaded" text color
 $pswp__include-minimal-style: true !default;
+
 /*! PhotoSwipe main CSS by Dmitry Semenov | photoswipe.com | MIT license */
 
 /*! PhotoSwipe Default UI CSS by Dmitry Semenov | photoswipe.com | MIT license */
@@ -73,7 +74,7 @@ $pswp__include-minimal-style: true !default;
 .pswp__button,
 .pswp__button--arrow--left:before,
 .pswp__button--arrow--right:before {
-  // background: url("#{asset_path($pswp__assets-path + 'default-skin.png')}") 0 0 no-repeat;
+  background: url($pswp__assets-path + 'default-skin.png') 0 0 no-repeat;
   background-size: 264px 88px;
   width: 44px;
   height: 44px;
@@ -85,7 +86,7 @@ $pswp__include-minimal-style: true !default;
     .pswp--svg .pswp__button,
     .pswp--svg .pswp__button--arrow--left:before,
   .pswp--svg .pswp__button--arrow--right:before {
-        // background-image: url("#{asset_path($pswp__assets-path + 'default-skin.svg')}");
+        background-image: url($pswp__assets-path + 'default-skin.svg');
     }
 
     .pswp--svg .pswp__button--arrow--left,
@@ -400,7 +401,7 @@ a.pswp__share--download {
 
   .pswp__preloader__icn {
     /* We use .gif in browsers that don't support CSS animation */
-    // background: url("#{asset_path($pswp__assets-path + 'preloader.gif')}") 0 0 no-repeat;
+    background: url($pswp__assets-path + 'preloader.gif') 0 0 no-repeat;
   }
 }
 

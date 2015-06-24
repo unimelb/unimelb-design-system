@@ -5,7 +5,7 @@
   if (typeof window.loadScript === "undefined") {
     window.loadScript = function(url, callback) {
       var Promise = require('promise');
-      var p = new Promise(function(resolve, reject) {
+      new Promise(function(resolve, reject) {
         var script = document.createElement('script');
         script.type = 'text/javascript';
         script.src = url;

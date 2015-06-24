@@ -64,11 +64,11 @@ module.exports = {
       {
         test: /\.scss$/,
         // Crazy shiz for Compass
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!sass-loader?includePaths[]=" + path.resolve(__dirname, "../node_modules/compass-mixins/lib"))
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!sass-loader")
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!cssnext-loader")
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader")//!cssnext-loader")
       },
       {
         test: /(isotope-layout|imagesloaded)/,
@@ -77,14 +77,16 @@ module.exports = {
     ]
   },
   // Plugin specific-configuration
-  cssnext: {
-    map: false
-  },
+  // cssnext: {
+  //   map: false
+  // },
   jshint: {
     eqnull: true,
     failOnHint: false
   }
 };
+
+// ?includePaths[]=" + path.resolve(__dirname, "../node_modules/compass-mixins/lib"))
 
 function isDirectory(dir) {
   return fs.lstatSync(dir).isDirectory();

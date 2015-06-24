@@ -18,7 +18,7 @@ window.DSComponentsLoad = function() {
 
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
-    ListFilter, imagesloaded, ImageGallery, slingshot, LMaps, style, script, p;
+    ListFilter, ImageGallery, imagesLoaded, slingshot, LMaps, style, script;
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
@@ -110,7 +110,7 @@ window.DSComponentsLoad = function() {
 
   recs = document.querySelectorAll('ul.image-gallery');
   if (recs.length > 0) {
-    var imagesLoaded = require('imagesloaded');
+    imagesLoaded = require('imagesloaded');
     ImageGallery = require("../components/gallery");
 
     slingshot = function() {
