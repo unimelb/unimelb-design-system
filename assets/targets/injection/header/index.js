@@ -41,13 +41,13 @@ InjectHeader.prototype.wrapInner = function() {
   this.props.parent = document.querySelector('.uomcontent');
   if (!this.props.parent) {
     this.props.parent = document.createElement('div');
-    this.props.addClass('uomcontent');
+    this.props.parent.addClass('uomcontent');
     document.body.appendChild(this.props.parent);
 
     for (var nodes=document.body.childNodes, i=nodes.length - 1; i >= 0; i--) {
       if (nodes[i] && nodes[i] != this.props.parent) {
-        document.body.removeChild(nodes[i]);
-        this.props.parent.appendChild(nodes[i]);
+        var move = document.body.removeChild(nodes[i]);
+        this.props.parent.appendChild(move);
       }
     }
   }
@@ -210,8 +210,8 @@ InjectHeader.prototype.reorderStructure = function() {
   this.props.sitemap = document.querySelector('#globalsitemap');
   for (var nodes=this.props.parent.childNodes, i=nodes.length - 1; i >= 0; i--) {
     if (nodes[i] && nodes[i] != this.props.page && nodes[i] != this.props.sitemap && nodes[i] != this.props.header) {
-      this.props.parent.removeChild(nodes[i]);
-      this.props.main.appendChild(nodes[i]);
+      var move = this.props.parent.removeChild(nodes[i]);
+      this.props.main.appendChild(move);
     }
   }
 
