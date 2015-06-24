@@ -15,23 +15,23 @@ function InpageNavigation(el, props) {
 }
 
 InpageNavigation.prototype.delegateScroll = function(e) {
-  var tel = e.target;
+  if (e.target.nodeName === 'A') {
+    var target = e.target.getAttribute('href');
 
-  if (tel && tel.hasAttribute('href')) {
-    var target = tel.getAttribute('href');
+    if (target) {
+      if (target != "#" && target != "#sitemap") {
+        e.preventDefault();
+        target = document.querySelector(target);
 
-    if (target != "#" && target != "#sitemap") {
-      e.preventDefault();
-      target = document.querySelector(target);
+        var tabbed = findUp(e.target, 'data-tabbed');
+        if (tabbed && e.target.parentNode.parentNode.hasClass("jump-navigation") === false) {
+          target = tabbed;
+        }
 
-      var tabbed = findUp(tel, 'data-tabbed');
-      if (tabbed && tel.parentNode.parentNode.hasClass("jump-navigation") === false) {
-        target = tabbed;
-      }
-
-      // If link is not a tab, or a full width tab
-      if ((target && !tabbed) || (tabbed && tabbed.countSelector('.full-width nav') > 0)) {
-        smoothScrollTo(target);
+        // If link is not a tab, or a full width tab
+        if ((target && !tabbed) || (tabbed && tabbed.countSelector('.full-width nav') > 0)) {
+          smoothScrollTo(target);
+        }
       }
     }
   }

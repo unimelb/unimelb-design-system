@@ -13,7 +13,6 @@
 .uomcontent [role="navigation"]#sitemap {
   @extend %normalise;
   @extend %smooth-translate;
-  @include translateX(0);
   @include transform-origin(0% 0%);
   @include transform-style(preserve-3d);
   background-color: $menu;
@@ -34,7 +33,7 @@
   }
 
   &.active {
-    @include transition(right .25s ease);
+    @include transition(right .3s ease-out);
     box-shadow: 1px 0 12px 3px rgba($black, .6);
     right: 0;
     z-index: 15;
