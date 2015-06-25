@@ -115,10 +115,7 @@ JumpNav.prototype.buildNavMenu = function() {
     document.body.addClass('jumpnav-active');
   }
 
-  this.props.fixPoint = this.props.root.offsetTop + this.props.header.offsetHeight - 20;
-
-  if (this.props.root.hasClass('floating'))
-    this.props.fixPoint = this.props.fixPoint + 35;
+  this.initCalcs();
 
   // Rebind smooth scrolling to new links
   var InpageNavigation = require("../inpage-navigation");
@@ -128,6 +125,11 @@ JumpNav.prototype.buildNavMenu = function() {
 };
 
 JumpNav.prototype.initCalcs = function() {
+  this.props.fixPoint = this.props.root.offsetTop + this.props.header.offsetHeight - 20;
+
+  if (this.props.root.hasClass('floating'))
+    this.props.fixPoint = this.props.fixPoint + 35;
+
   // Does the page include an inner footer
   var innerFooterHeight = document.querySelector('[role="main"] > footer:last-of-type');
   if (innerFooterHeight) {
@@ -168,13 +170,8 @@ JumpNav.prototype.setFixed = function() {
   }
 };
 
-JumpNav.prototype.endpointPos = function() {
-  return (this.props.outer.scrollTop < props.stickyEnd);
-};
-
 JumpNav.prototype.setEndpoint = function() {
-  if (this.props.outer.scrollTop > this.props.stickyEnd ||
-    (this.el.offsetHeight > this.props.outer.offsetHeight && this.endpointPos()) ) {
+  if (this.props.outer.scrollTop > this.props.stickyEnd) {
     this.el.addClass('endpoint');
   } else {
     this.el.removeClass('endpoint');
