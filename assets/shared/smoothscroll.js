@@ -33,7 +33,7 @@
           increment = Math.abs(change / 500),
           duration  = Math.abs(change / 10);
 
-      if (document.countSelector('.floating') === 0) {
+      if (document.countSelector('.page-header') === 1 && document.countSelector('.floating') === 0) {
         change -= 40;
       }
 

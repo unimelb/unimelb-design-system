@@ -68,7 +68,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader")//!cssnext-loader")
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader")
       },
       {
         test: /(isotope-layout|imagesloaded)/,
@@ -76,17 +76,11 @@ module.exports = {
       }
     ]
   },
-  // Plugin specific-configuration
-  // cssnext: {
-  //   map: false
-  // },
   jshint: {
     eqnull: true,
     failOnHint: false
   }
 };
-
-// ?includePaths[]=" + path.resolve(__dirname, "../node_modules/compass-mixins/lib"))
 
 function isDirectory(dir) {
   return fs.lstatSync(dir).isDirectory();

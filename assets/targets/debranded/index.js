@@ -20,6 +20,9 @@ window.DSComponentsLoad = function() {
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
     ListFilter, ImageGallery, imagesLoaded, slingshot, LMaps, style, script;
 
+  require('../injection/header/createnamespace');
+  require('../injection/icons');
+
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
     Accordion = require("../components/accordion");

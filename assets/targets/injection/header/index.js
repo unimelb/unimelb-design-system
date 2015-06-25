@@ -6,10 +6,13 @@
 function InjectHeader(props) {
   this.props = props;
 
+  require('./createnamespace');
+
+  this.props.parent = document.querySelector('.uomcontent');
+  this.props.page = document.querySelector('.page-inner');
+
   // Only add if the header is not already present
   if (document.countSelector('.page-header-tools') === 0) {
-    this.ieHelpers();
-    this.wrapInner();
     this.renderPageHeader();
     this.renderBreadcrumb();
     this.renderHeaderTools();
@@ -18,46 +21,6 @@ function InjectHeader(props) {
 
   window.addEventListener("scroll", this.handleScroll.bind(this));
 }
-
-InjectHeader.prototype.ieHelpers = function() {
-  var bodyclass = '';
-
-  if (/(MSIE 8.0)/g.test(navigator.userAgent))
-    bodyclass = 'ie ie8';
-  else if (/(MSIE 9.0)/g.test(navigator.userAgent))
-    bodyclass = 'ie ie9';
-  else if (/(MSIE 10.0)/g.test(navigator.userAgent))
-    bodyclass = 'ie10';
-  else if (/(Trident\/7.0)/g.test(navigator.userAgent))
-    bodyclass = 'ie11';
-
-  if (!document.body.hasClass('ie') || (typeof bodyclass !== 'undefined')) {
-    document.body.addClass(bodyclass);
-  }
-};
-
-InjectHeader.prototype.wrapInner = function() {
-  // Create page wrapper if it doesn't already exist
-  this.props.parent = document.querySelector('.uomcontent');
-  if (!this.props.parent) {
-    this.props.parent = document.createElement('div');
-    this.props.parent.addClass('uomcontent');
-    document.body.appendChild(this.props.parent);
-
-    for (var nodes=document.body.childNodes, i=nodes.length - 1; i >= 0; i--) {
-      if (nodes[i] && nodes[i] != this.props.parent) {
-        var move = document.body.removeChild(nodes[i]);
-        this.props.parent.appendChild(move);
-      }
-    }
-  }
-
-  this.props.page = document.querySelector('.page-inner');
-  if (!this.props.page) {
-    this.props.page = document.createElement('div');
-    this.props.page.addClass('page-inner');
-  }
-};
 
 InjectHeader.prototype.renderPageHeader = function() {
   // Create header if it doesn't already exist

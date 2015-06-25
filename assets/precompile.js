@@ -9,8 +9,8 @@ var gulpRevAll = require('gulp-rev-all');
 var gulpTap = require('gulp-tap');
 
 // Variables
-var BUILD = path.join(__dirname, "build")
-var DEST  = path.join(__dirname, "..", "doc-site", "public", "assets", "pre")
+var BUILD = path.join(__dirname, "build");
+var DEST  = path.join(__dirname, "..", "deploy");
 
 // Build digested versions of files using gulp-rev-all
 gulp.task('manifest:digest', function(cb) {

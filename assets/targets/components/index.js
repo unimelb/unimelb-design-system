@@ -22,7 +22,7 @@ window.UOMloadComponents = function() {
 
   // injection
 
-  var assethost, Header, Nav, Footer, Icons;
+  var assethost, Header, Nav, Footer;
 
   //var assethost = 'http://localhost:5001/assets';
   assethost = '//uom-design-system.s3.amazonaws.com/shared/assets';
@@ -43,8 +43,7 @@ window.UOMloadComponents = function() {
     'assethost': assethost, // + '/injection/footer'
   });
 
-  Icons = require('../injection/icons');
-  new Icons();
+  require('../injection/icons');
 
   // components
 
