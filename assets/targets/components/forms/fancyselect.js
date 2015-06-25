@@ -11,12 +11,15 @@ function FancySelect(el, props) {
   this.props = props;
   this.props.parent = this.el.parentNode;
 
-  this.buildWrapper();
+  // Only fancify if it hasn't already been done
+  if (!this.props.parent.hasClass('styled-select')) {
+    this.buildWrapper();
 
-  // Can't trigger select externally in IE
-  if (!/(MSIE|Trident)/g.test(navigator.userAgent)) {
-    for (var recs=this.props.parent.querySelectorAll('svg.icon'), i=recs.length - 1; i >= 0; i--)
-      recs[i].addEventListener('click', this.handleClick);
+    // Can't trigger select externally in IE
+    if (!/(MSIE|Trident)/g.test(navigator.userAgent)) {
+      for (var recs=this.props.parent.querySelectorAll('svg.icon'), i=recs.length - 1; i >= 0; i--)
+        recs[i].addEventListener('click', this.handleClick);
+    }
   }
 }
 

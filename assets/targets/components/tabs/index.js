@@ -138,9 +138,14 @@ Tabs.prototype.buildMobileNav = function() {
     selector.appendChild(opt);
   }
 
-  selector.addEventListener('change', this.handleChange.bind(this));
   this.props.mobilenav.appendChild(selector);
   this.props.root.insertBefore(this.props.mobilenav, this.props.root.firstChild);
+
+  selector.addEventListener('change', this.handleChange.bind(this));
+  if (!/(MSIE 9)/g.test(navigator.userAgent)) {
+    var FancySelect = require("../forms/fancyselect");
+    new FancySelect(selector, {});
+  }
 };
 
 Tabs.prototype.handleChange = function(e) {

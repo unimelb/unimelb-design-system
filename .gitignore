@@ -1,4 +1,5 @@
 doc-site/tmp/*
+deploy/
 .bundle/*
 .DS_Store
 tmp/*

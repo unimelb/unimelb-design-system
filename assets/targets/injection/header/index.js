@@ -108,6 +108,11 @@ InjectHeader.prototype.renderBreadcrumb = function() {
       mobile.appendChild(selector);
       var pagenav = this.props.local.parentNode;
       pagenav.insertBefore(mobile, pagenav.firstChild);
+
+      if (!/(MSIE 9)/g.test(navigator.userAgent)) {
+        var FancySelect = require("../../components/forms/fancyselect");
+        new FancySelect(selector, {});
+      }
     }
   }
 };
