@@ -30,33 +30,24 @@ function JumpNav(props) {
 
   // Event binding
   window.addEventListener('scroll', this.handleScroll.bind(this));
-  // window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
+  window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
 
   // Initial calc
   this.trackProgress();
 }
 
 JumpNav.prototype.handleResize = function() {
-  setTimeout(this.initCalcs.bind(this), 1000);
+  this.initCalcs();
+
+  this.trackProgress();
+  this.setEndpoint();
+  this.setFixed();
 };
 
 JumpNav.prototype.handleScroll = function() {
   this.trackProgress();
-
-  if (this.props.outer.scrollTop > this.props.stickyEnd) {
-  //  || (this.el.offsetHeight > this.props.outer.offsetHeight))
-    this.el.addClass('endpoint');
-  } else {
-    this.el.removeClass('endpoint');
-  }
-
-  if (this.props.outer.scrollTop > this.props.fixPoint) {
-    this.el.addClass('fixed');
-    this.el.style.bottom = this.props.footerOffset;
-  } else {
-    this.el.style.bottom = '';
-    this.el.removeClass('fixed');
-  }
+  this.setEndpoint();
+  this.setFixed();
 };
 
 /*
@@ -153,7 +144,7 @@ JumpNav.prototype.initCalcs = function() {
   }
 
   // Not really sure what this 60 represents, but it makes it Good
-  this.props.stickyEnd = this.props.root.offsetTop + this.props.root.offsetHeight - innerFooterHeight - 60;
+  this.props.stickyEnd = this.props.root.offsetTop + this.props.root.offsetHeight - this.el.offsetHeight - innerFooterHeight - 60;
 
   // 10px margin-top
   this.props.footerOffset = (innerFooterHeight + outerFooterHeight + 10) + 'px';
@@ -164,8 +155,26 @@ JumpNav.prototype.initCalcs = function() {
     this.el.style.bottom = '';
   }
 
-  if ((this.props.outer.scrollTop > this.props.stickyEnd) ||
-    (this.el.offsetHeight > this.props.outer.offsetHeight)) {
+  this.setEndpoint();
+};
+
+JumpNav.prototype.setFixed = function() {
+  if (this.props.outer.scrollTop > this.props.fixPoint) {
+    this.el.addClass('fixed');
+    this.el.style.bottom = this.props.footerOffset;
+  } else {
+    this.el.style.bottom = '';
+    this.el.removeClass('fixed');
+  }
+};
+
+JumpNav.prototype.endpointPos = function() {
+  return (this.props.outer.scrollTop < props.stickyEnd);
+};
+
+JumpNav.prototype.setEndpoint = function() {
+  if (this.props.outer.scrollTop > this.props.stickyEnd ||
+    (this.el.offsetHeight > this.props.outer.offsetHeight && this.endpointPos()) ) {
     this.el.addClass('endpoint');
   } else {
     this.el.removeClass('endpoint');

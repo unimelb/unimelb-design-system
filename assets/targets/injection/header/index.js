@@ -79,9 +79,11 @@ InjectHeader.prototype.renderBreadcrumb = function() {
       // Mobile nav
       var mobile = document.createElement('div');
       mobile.addClass('mobile-nav');
+      mobile.setAttribute('role', 'navigation');
 
       var selector = document.createElement('select');
       selector.setAttribute('role', 'tablist');
+      selector.setAttribute('aria-label', 'Breadcrumb list');
       selector.addClass('alt');
       selector.addEventListener('change', function(e) {
         if (this.value)

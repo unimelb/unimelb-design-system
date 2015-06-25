@@ -30,7 +30,7 @@ $baseline-px: 16px;
         $rem-values: append($rem-values, $value);
 
       } @else {
-        $rem-values: append($rem-values, $value / $baseline-rem);
+        $rem-values: #{append($rem-values, strip-units($value) / strip-units($baseline-rem))}rem;
       }
     }
 
