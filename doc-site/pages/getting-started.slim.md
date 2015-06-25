@@ -164,3 +164,32 @@ section
 section
   p
     <img src="/assets/images/fvas-header.jpg" alt="">
+
+section
+  h2#login Login section
+
+  p To include a login section in the page header, add a code block as with the breadcrumbs above, but this time include a <code>div class="page-local-login"</code> before the <code>div role="main"</code>. Everything inside this div will be moved to a modal window, so you can use the login markup you require:
+
+==syntax_highlight :html
+  erb:
+    <div class="page-local-login">
+      <h1>
+        Login
+      </h1>
+      <form action="" data-validate="" method="post">
+        <fieldset>
+          <div>
+            <label data-required="true" for="f-email">Email: </label><input aria-required="true" data-error="Please enter a valid email." data-pattern="email" id="f-email" name="f[email]" type="email" />
+          </div>
+          <div>
+            <label data-required="true" for="f-password">Password: </label><input aria-required="true" data-error="Please enter your password." id="f-password" name="f[password]" type="password" />
+          </div>
+        </fieldset>
+        <footer>
+          <input type="submit" value="Login" />
+        </footer>
+      </form>
+    </div>
+
+section
+  p An example of this can be seen on <a href="/layouts/with-login">this example layout</a>. Note that the title of the login button in the header can be manipulated by using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The title will be "Login" by default, and there is a hard limit of 7 characters to protect the header design.
