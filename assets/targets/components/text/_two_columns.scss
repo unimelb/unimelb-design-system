@@ -60,6 +60,7 @@
     }
 
     @include breakpoint(desktop) {
+      @include rem(max-width, $w-lge);
       display: table;
     }
   }
