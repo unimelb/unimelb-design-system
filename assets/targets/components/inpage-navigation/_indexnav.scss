@@ -8,8 +8,10 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  height: 100%;
   position: fixed;
   right: 0;
+  top: 0;
 
   li:first-child {
     display: none;
