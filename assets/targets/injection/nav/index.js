@@ -61,7 +61,7 @@ InjectNav.prototype.setupEventBindings = function() {
     if (this.props.menutrigger)
       this.props.menutrigger.addEventListener('click', this.handleTrigger.bind(this));
     if (this.props.sitemap)
-      this.props.sitemap.querySelector('.close-button').addEventListener('click', this.handleInnerTrigger.bind(this));
+      this.props.sitemap.querySelector('.close-button').addEventListener('click', this.handleBlanket.bind(this));
   }
 
   if (this.props.blanket)
