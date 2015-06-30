@@ -128,7 +128,7 @@
       top: 0;
       transition: .2s top .3s;
 
-      @media screen {
+      // @media screen {
         svg {
           @include rem(height, 60px);
           @include rem(width, 60px);
@@ -144,7 +144,7 @@
           max-height: 100%;
           max-width: 100%;
         }
-      }
+      // }
     }
 
     @include breakpoint(desktop) {
