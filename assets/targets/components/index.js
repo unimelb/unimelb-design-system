@@ -49,8 +49,8 @@ window.UOMloadComponents = function() {
 
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
-    ListFilter, MobileTableHelper, ImageGallery, imagesLoaded, slingshot,
-    LMaps, style, script;
+    ListFilter, MobileTableHelper, IconHelper, ImageGallery, imagesLoaded,
+    slingshot, LMaps, style, script;
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
@@ -143,6 +143,13 @@ window.UOMloadComponents = function() {
     ListFilter = require("./filtered-listings");
     for (i=recs.length - 1; i >= 0; i--)
       new ListFilter(recs[i], {});
+  }
+
+  recs = document.querySelectorAll('[data-icon]');
+  if (recs.length > 0) {
+    IconHelper = require("./icons");
+    for (i=recs.length - 1; i >= 0; i--)
+      new IconHelper(recs[i], {});
   }
 
   recs = document.querySelectorAll('ul.image-gallery');
