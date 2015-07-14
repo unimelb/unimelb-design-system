@@ -18,7 +18,8 @@ window.DSComponentsLoad = function() {
 
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
-    ListFilter, ImageGallery, imagesLoaded, slingshot, LMaps, style, script;
+    ListFilter, IconHelper, ImageGallery, imagesLoaded, slingshot, LMaps,
+    style, script;
 
   require('../injection/header/createnamespace');
   require('../injection/icons');
@@ -109,6 +110,13 @@ window.DSComponentsLoad = function() {
     ListFilter = require("../components/filtered-listings");
     for (i=recs.length - 1; i >= 0; i--)
       new ListFilter(recs[i], {});
+  }
+
+  recs = document.querySelectorAll('[data-icon]');
+  if (recs.length > 0) {
+    IconHelper = require("../components/icons");
+    for (i=recs.length - 1; i >= 0; i--)
+      new IconHelper(recs[i], {});
   }
 
   recs = document.querySelectorAll('ul.image-gallery');

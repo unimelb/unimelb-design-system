@@ -239,7 +239,13 @@
       text-transform: uppercase;
 
       svg {
+        display: inline;
         fill: $midgray;
+      }
+
+      [data-icon],
+      .icon-label {
+        display: inline;
       }
     }
 
