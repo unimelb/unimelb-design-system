@@ -1,0 +1,67 @@
+.uomcontent [role="main"] {
+	.half {
+    @extend %wrapper;
+    @include rem(padding-bottom, 30px);
+    @include rem(padding-top, 30px);
+    max-width: 100%;
+
+    h1 {
+      margin-left: 0;
+    }
+
+    em {
+      @include rem(font-size, 13px);
+      @include rem(padding-bottom, 30px);
+      display: block;
+    }
+
+    img {
+      @include rem(margin-top, 30px);
+      max-width: 95%;
+      width: 100%;
+    }
+
+    img,
+    svg {
+      @include rem(padding-left, 15px);
+      @include rem(padding-right, 15px);
+    }
+
+    & > section {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+
+      &.tight {
+        padding: 0;
+      }
+
+      h1 {
+        width: 100%;
+      }
+
+      p {
+        max-width: 100%;
+        width: 100%;
+      }
+
+      @include breakpoint(desktop) {
+        @include rem(padding, 30px 15px);
+        display: table-cell;
+        padding-left: 0;
+        padding-right: 0;
+        vertical-align: top;
+        width: 50%;
+
+        h2 {
+          margin-left: 0;
+        }
+      }
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(max-width, $w-lge);
+      display: table;
+    }
+  }
+}

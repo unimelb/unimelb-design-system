@@ -1,0 +1,143 @@
+%jump {
+  color: $gray;
+  list-style-position: inside;
+  margin: 0 auto;
+  padding: 30px 0;
+  width: 94%;
+
+  li {
+    color: $midgray;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: $regular;
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-bottom: 0;
+    vertical-align: top;
+    white-space: normal;
+    width: 50%;
+
+    &:first-child {
+      @include rem(padding-bottom, 7px);
+      border-bottom: 1px solid $lightergray;
+      letter-spacing: 1px;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      width: 100%;
+
+      a::before {
+        content: '';
+        padding-right: 0;
+      }
+    }
+  }
+
+  a {
+    @include rem(padding-bottom, 7px);
+    @include rem(padding-top, 7px);
+    display: block;
+    font-weight: $light;
+    text-decoration: none;
+    white-space: normal;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    a {
+      border-bottom: 1px solid $lightergray;
+    }
+  }
+
+  @include breakpoint(wide) {
+    width: auto;
+
+    li {
+      width: 100%;
+    }
+
+    a.current {
+      color: $black;
+    }
+  }
+
+  &.fixed {
+    font-family: $ff-sans;
+  }
+}
+
+.uomcontent .jump-navigation {
+  @extend %jump;
+}
+
+.uomcontent #outer {
+  @extend %jump;
+
+  @include breakpoint(wide) {
+    display: table;
+    margin-top: 33px;
+    padding: 15px 15px 30px;
+    position: absolute;
+    width: 240px;
+    z-index: 100;
+
+    &.fixed {
+      font-family: $ff-sans;
+      margin-top: 10px;
+      position: fixed;
+      top: 45px;
+
+      &.floating {
+        margin-top: 0;
+      }
+    }
+
+    &.endpoint {
+      bottom: 545px;
+      position: absolute;
+      top: auto;
+    }
+  }
+}
+
+
+body.jumpnav-active {
+  @include breakpoint(wide) {
+    .page-inner {
+      background-color: $white;
+    }
+
+    .uomcontent [role="main"] {
+      @include single-box-shadow(0, 3px, 6px, 0, rgba($black, .3), true);
+      margin-left: 300px;
+
+      > header:first-child,
+      footer.cta,
+      footer.contrib {
+        margin-left: -300px;
+        width: auto;
+      }
+
+      > header:first-child {
+        padding-left: 300px;
+      }
+
+      > header.banner:first-child,
+      > header.image:first-child {
+        padding-left: 0;
+      }
+
+      .with-aside {
+        margin-left: 5px;
+        margin-top: -100px;
+      }
+
+      #outer {
+        margin-left: -270px;
+      }
+    }
+  }
+}
