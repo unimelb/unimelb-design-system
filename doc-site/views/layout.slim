@@ -1,0 +1,36 @@
+doctype html
+html.no-js lang="en"
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    title== page_title ? "#{page_title} | Web.Unimelb" : "Web.Unimelb"
+
+    /[if lt IE 9]
+      == javascript_tag "//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
+
+    / == javascript_tag 'injection'
+    / == stylesheet_tag 'injection'
+    / script src="http://#{ENV['WEB_SERVER_HOST']}:#{ENV['ASSET_SERVER_PORT']}/assets/injection.js"
+    / link rel="stylesheet" href="http://#{ENV['WEB_SERVER_HOST']}:#{ENV['ASSET_SERVER_PORT']}/assets/injection.css"
+
+    / == stylesheet_tag 'components'
+    link rel="stylesheet" href="http://#{ENV['WEB_SERVER_HOST']}:#{ENV['ASSET_SERVER_PORT']}/assets/components.css"
+    / == stylesheet_tag '//uom-design-system.s3.amazonaws.com/v0.3/uom.css'
+
+    / == stylesheet_tag 'docs'
+    link rel="stylesheet" href="http://#{ENV['WEB_SERVER_HOST']}:#{ENV['ASSET_SERVER_PORT']}/assets/docs.css"
+    == stylesheet_tag '/assets/stylesheets/syntax.css'
+
+    / == javascript_tag 'components'
+    script src="http://#{ENV['WEB_SERVER_HOST']}:#{ENV['ASSET_SERVER_PORT']}/assets/components.js"
+    / == javascript_tag '//uom-design-system.s3.amazonaws.com/v0.3/uom.js'
+
+    - if ENV["ASSET_ENV"] == 'development'
+      == javascript_tag "http://#{ENV['WEB_SERVER_HOST']}:#{ENV['WEBPACK_SERVER_PORT']}/webpack-dev-server.js"
+
+  body
+    .uomcontent
+      .page-inner
+        == yield
+        == slim :nav

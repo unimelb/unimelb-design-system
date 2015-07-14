@@ -1,8 +1,10 @@
-demo-site/tmp/*
+doc-site/tmp/*
+deploy/
 .bundle/*
 .DS_Store
 tmp/*
 build/
+node_modules/
 .env
 .ruby-version
 .idea

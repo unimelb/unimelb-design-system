@@ -32,6 +32,8 @@ GEM
     eventmachine (1.0.4)
     execjs (2.2.2)
     ffi (1.9.6)
+    foreman (0.78.0)
+      thor (~> 0.19.1)
     front_matter_parser (0.0.4)
     github-linguist (2.10.15)
       charlock_holmes (~> 0.6.6)
@@ -84,6 +86,7 @@ GEM
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
       rack (~> 1.0)
+    thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
     tzinfo (1.2.2)
@@ -100,6 +103,7 @@ DEPENDENCIES
   autoprefixer-rails
   coffee-script (~> 2.3.0)
   compass (~> 1.0.1)
+  foreman
   front_matter_parser (~> 0.0.2)
   github-linguist (~> 2.10.9)
   github-markdown (~> 0.6.4)

@@ -1,0 +1,70 @@
+@import '../../shared/patterns_rem';
+@import '../../shared/patterns_media-queries';
+
+// X-axis translation
+@mixin translateX($d) {
+  -moz-transform: translate3d($d, 0, 0);
+  -ms-transform: translate3d($d, 0, 0);
+  -webkit-transform: translate3d($d, 0, 0);
+  transform: translate3d($d, 0, 0);
+  -moz-transition: -moz-transform .3s ease;
+  -ms-transition: -ms-transform .3s ease;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+}
+
+// Wrapper
+%wrapper {
+  @include rem(max-width, 1400px);
+  @include rem(padding, 15px);
+  margin: 0 auto;
+}
+
+%clearfix {
+  zoom: 1;
+
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+%imgreplace {
+  background-color: transparent;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+%smooth-translate {
+  -moz-transition: -moz-transform .3s ease;
+  -ms-transition: -ms-transform .3s ease;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+}
+
+%normalise {
+  /* autoprefixer: off */
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  /* autoprefixer: on */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

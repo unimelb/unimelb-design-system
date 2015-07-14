@@ -1,0 +1,84 @@
+.uomcontent #outer.index-navigation {
+  @include rem(padding-top, 20px);
+  @include rem(top, 40px);
+  @include rem(width, 40px);
+  align-items: center;
+  background-color: rgba($navy, 0.9);
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  li:first-child {
+    display: none;
+  }
+
+  li {
+    display: block;
+    height: 20px;
+    width: 100%;
+  }
+
+  a {
+    color: $white;
+    display: block;
+    text-align: center;
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(max-width, 4000px);
+    background-color: transparent;
+    display: table;
+    margin-top: 0;
+    padding: 0;
+    position: static;
+    table-layout: fixed;
+    width: 100%;
+
+    &.fixed {
+      position: static;
+    }
+
+    li {
+      @include rem(height, 40px);
+      display: table-cell;
+    }
+
+    a {
+      @include rem(height, 40px);
+      color: $highlight;
+      font-weight: $regular;
+    }
+  }
+
+  @include breakpoint(wide) {
+    li {
+      @include rem(height, 60px);
+    }
+    a {
+      @include adjust-font-size-to(18px);
+      @include rem(height, 60px);
+      @include rem(line-height, 45px);
+      font-weight: $bold;
+    }
+  }
+}
+
+.ie .uomcontent #outer.index-navigation {
+  display: table;
+  width: 100%;
+
+  li {
+    display: table-cell;
+    width: 3.8%;
+    zoom: 1;
+
+    &:first-child {
+      display: none;
+    }
+  }
+}

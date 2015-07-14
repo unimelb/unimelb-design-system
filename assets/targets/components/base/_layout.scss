@@ -1,0 +1,620 @@
+body {
+  @include establish-baseline;
+
+  background-color: $navy;
+  color: $black;
+  font-family: $ff-sans;
+
+  @include breakpoint(desktop) {
+    line-height: 1.68;
+  }
+}
+
+.clearfix {
+  @extend %clearfix;
+}
+
+.spacer {
+  @include rem(padding, 0 15px);
+}
+
+
+.uomcontent [role="main"] {
+
+  & > *:first-child {
+    @include rem(padding-top, 100px);
+  }
+
+  article {
+    @include padding-trailer(2);
+  }
+
+  aside {
+    @include adjust-font-size-to(14px);
+    color: $darkgray;
+    float: right;
+
+    section {
+      margin-left: 0;
+    }
+  }
+
+  fieldset {
+    @include rem(max-width, $w-sml);
+    margin: 0 auto;
+    min-width: 0;
+  }
+
+  .half .youtube5container {
+    height: 50% !important;
+  }
+
+  section {
+    @include padding-leader(2);
+    @include padding-trailer(2);
+
+    div {
+      @include rem(max-width, $w-sml);
+      margin: 0 auto;
+
+      &.youtube5placeholder {
+        margin: 0 auto;
+        max-width: 100% !important;
+        width: 100% !important;
+      }
+
+      &.youtube5container {
+        width: 100% !important;
+      }
+    }
+
+    &.tight {
+      padding-bottom: 0;
+
+      p:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+
+    &.links {
+      padding-top: 0;
+
+      h2 {
+        @include adjust-font-size-to(13px);
+        font-weight: $bold;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+
+      ul {
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      p,
+      li {
+        @include adjust-font-size-to(16px);
+      }
+
+      li {
+        list-style-type: none;
+        margin-left: 0;
+      }
+    }
+
+    & + .video {
+      @include rem(margin-top, -30px);
+      @include rem(max-width, $w-lge);
+      @include breakpoint($w-lge) {
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: 550px;
+      }
+    }
+  }
+
+  footer {
+    @include padding-leader(2);
+    @include padding-trailer(2);
+    clear: both;
+
+    &.alt {
+      background-color: $paleblue;
+      box-shadow: 0 6px 6px 4px rgba($black, .3);
+    }
+
+    &.contrib {
+      background-color: $paleyellow;
+      border: 1px solid darken($paleyellow, 10%);
+
+      p {
+        padding-top: 0;
+
+        @include breakpoint(desktop) {
+          padding-left: 0;
+        }
+      }
+
+      ul {
+        @include rem(padding-left, 20px);
+        @include rem(max-width, $w-sml);
+        margin: 0 auto;
+        padding-top: 0;
+      }
+    }
+  }
+
+  @include breakpoint(desktop) {
+    font-weight: $light;
+  }
+
+  aside {
+    clear: both;
+    float: left;
+    width: 100%;
+
+    dt {
+      @include rem(letter-spacing, 1px);
+      @include rem(padding-bottom, 5px);
+      font-weight: $bold;
+      margin-left: 0;
+      text-transform: uppercase;
+      width: 100%;
+    }
+
+    dd {
+      margin-left: 0;
+      width: 100%;
+    }
+
+    @include breakpoint(desktop) {
+      display: inline-block;
+      float: none;
+      width: 25%;
+    }
+  }
+
+  .hold {
+    @include rem(max-width, $w-mid);
+    margin: 0 auto;
+
+    aside {
+      @include rem(padding-bottom, 15px);
+      @include rem(padding-top, 5px);
+      vertical-align: top;
+
+      dt {
+        width: 100%;
+      }
+
+      @include breakpoint(desktop) {
+        width: 24%;
+
+      }
+    }
+
+    .bside {
+      @include breakpoint(desktop) {
+        @include rem(padding-bottom, 20px);
+        @include rem(padding-top, 20px);
+      }
+
+      dd {
+        @include rem(padding-bottom, 10px);
+      }
+    }
+  }
+
+  .overview {
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    @include breakpoint(desktop) {
+      width: 814px;
+    }
+
+    img {
+      border: 1px solid $lightergray;
+      display: inline;
+      margin-right: 10px;
+      vertical-align: top;
+
+      &.last {
+        margin-right: 0;
+      }
+    }
+
+    .block {
+      background-color: rgba($black, .7);
+      color: $white;
+      font-weight: $bold;
+      left: 50%;
+      margin-left: -406px;
+      position: absolute;
+      text-decoration: none;
+      width: 200px;
+
+      &:hover {
+        background-color: rgba($paleyellow, .8);
+        color: $black;
+      }
+
+      &.desktop {
+        margin-left: -194px;
+        width: 601px;
+      }
+    }
+  }
+
+//   .wide-wrap {
+//     max-width: 100%;
+//     overflow: scroll;
+//     padding-top: 60px;
+//     position: relative;
+
+//     &:before {
+//       color: $cyan;
+//       content: '\21e0';
+//       float: left;
+//       font-size: 50px;
+//       line-height: 50px;
+//       margin-top: -60px;
+//       text-align: right;
+//       width: 100%;
+//     }
+
+//     &::before {
+//       color: $cyan;
+//       content: '\21e0';
+//       float: left;
+//       font-size: 50px;
+//       line-height: 50px;
+//       margin-top: -60px;
+//       text-align: right;
+//       width: 100%;
+//     }
+
+//     div:before {
+//       @extend %grad-left;
+//       content: '';
+//       height: 50px;
+//       margin-top: -60px;
+//       position: absolute;
+//       width: 100%;
+//     }
+
+//     div::before {
+//       @extend %grad-left;
+//       content: '';
+//       height: 50px;
+//       margin-top: -60px;
+//       position: absolute;
+//       width: 100%;
+//     }
+
+//     @include breakpoint(desktop) {
+//       overflow: visible;
+//       padding-top: 0;
+
+//       &:before,
+//       &::before {
+//         content: none;
+//         height: 0;
+//         position: static;
+//       }
+
+//       div:before,
+//       div::before {
+//         content: none;
+//       }
+//     }
+//   }
+
+  .fifth {
+    @include rem(padding, 0 15px 30px);
+    float: left;
+    width: 100%;
+
+    .col {
+      margin: 1%;
+
+      @include breakpoint(desktop) {
+        float: left;
+        margin: 0 1%;
+        text-align: center;
+        width: 18%;
+      }
+    }
+  }
+
+  .quarter {
+    li {
+      @include rem(padding-bottom, 20px);
+      line-height: 1;
+      margin-left: 9%;
+      margin-right: 9%;
+      text-align: left;
+      width: 82%;
+
+      @include breakpoint(desktop) {
+        float: left;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 25%;
+      }
+    }
+  }
+
+  .with-figure {
+    @include rem(max-width, $w-sml);
+    margin: 0 auto;
+  }
+
+  .with-aside {
+    @extend %clearfix;
+    background-color: $paleblue;
+    // r-bg-b
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAD6AAAAABCAIAAABFFcb3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjNFNkRERDdGOEVGMTFFM0EwQThBMjNGMTQ3OTQ5MzkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjNFNkRERDZGOEVGMTFFM0EwQThBMjNGMTQ3OTQ5MzkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NzI4NEIyRkVERDBDMTFFM0IyOEY4MDc0NEQ1ODBDOUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NzI4NEIyRkZERDBDMTFFM0IyOEY4MDc0NEQ1ODBDOUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4DBbEGAAAAMElEQVR42uzQsQkAMAwDsPT/cwOFTu4RXqUTdJIMAAAAAADQ2fskAAAAAABA6QswAAhNBeHHgVZaAAAAAElFTkSuQmCC');
+    background-position-x: 59%;
+
+    &.left {
+      // bg-b
+      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAC7gAAAABCAIAAADBtXRpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzlCNjZBNkFGOEQ0MTFFM0EwQThBMjNGMTQ3OTQ5MzkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzlCNjZBNjlGOEQ0MTFFM0EwQThBMjNGMTQ3OTQ5MzkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NzI4NEIyRkVERDBDMTFFM0IyOEY4MDc0NEQ1ODBDOUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NzI4NEIyRkZERDBDMTFFM0IyOEY4MDc0NEQ1ODBDOUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4PeCQAAAAAMUlEQVR42uzQsQkAIAwAsDoVCv3/T0Ho6BEuDskJWftMAAAAf+tKCQAAAAAA8OgKMAD4VgL/lPaYtgAAAABJRU5ErkJggg==');
+    }
+
+    div {
+      @include rem(max-width, $w-lge);
+      clear: both;
+      display: table;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    aside {
+      @include rem(padding, 30px 15px);
+      background-color: $paleblue;
+      clear: none;
+      vertical-align: top;
+      width: 100%;
+
+      & > h2:first-child {
+        padding-top: 0;
+      }
+
+      & > p:first-child {
+        @include padding-leader(0);
+      }
+
+      @include breakpoint(desktop) {
+        @include rem(padding, 75px 30px);
+        display: table-cell;
+        max-width: 25%;
+        position: relative;
+        width: 25%;
+      }
+    }
+
+    .bside {
+      @include rem(padding, 30px 15px);
+      @include rem(max-width, 1099px);
+      background-color: $white;
+      clear: both;
+      width: 100%;
+
+      & > section:first-child {
+        padding-top: 0;
+
+        & > h2:first-child {
+          padding-top: 0;
+        }
+      }
+
+      @include breakpoint(desktop) {
+        @include rem(padding, 75px 30px);
+        clear: none;
+        display: table-cell;
+        width: 75%;
+      }
+    }
+
+    &.clear {
+      background-color: $white;
+
+      aside {
+        background-color: $white;
+      }
+
+      hr {
+        @include rem(margin-top, 50px);
+      }
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  .alt {
+    background-color: $paleblue;
+
+    & + .spacer {
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+
+  .margin-rule {
+    .floating {
+      @include rem(padding, 15px 15px 30px);
+      background-color: $lightgray;
+
+      h2,
+      p {
+        padding-bottom: 0;
+      }
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(width, 1099px);
+      margin: 0 auto;
+
+      section {
+        @include rem(margin, 30px 0 30px 300px);
+        padding-bottom: 0;
+        padding-top: 0;
+
+        &.ruled {
+          @include rem(margin-bottom, 60px);
+          @include rem(margin-top, 60px);
+          border-left: 1px solid $black;
+          float: left;
+          margin-left: 0;
+        }
+      }
+
+      .floating {
+        @include rem(padding-right, 20px);
+        @include rem(padding-top, 50px);
+        @include rem(width, 280px);
+        background-color: transparent;
+        float: left;
+        text-align: right;
+
+        h2 {
+          @include rem(font-size, 26px);
+          @include rem(padding-bottom, 15px);
+        }
+      }
+    }
+  }
+
+  .center {
+    text-align: center;
+  }
+
+  .showie {
+    display: none;
+  }
+}
+
+.ie {
+  .uomcontent .fullwidth {
+    p,
+    p.black {
+      margin: 0 auto;
+      max-width: 900px;
+      text-align: center;
+    }
+  }
+
+  .uomcontent ul.ticked-list li:before {
+    color: #3fc76e;
+    content: '\221a';
+    font-size: 16px;
+    font-weight: 600;
+    left: 0;
+    margin-left: -22px;
+    position: absolute;
+  }
+}
+
+.ie9 {
+  .uomcontent ul.ticked-list li:before {
+    content: '';
+  }
+}
+
+.ie8 {
+  .uomcontent .noie {
+    display: none;
+  }
+
+  .uomcontent .showie {
+    display: block;
+  }
+}
+
+// Uninjected styles
+.uomcontent .page-local-history,
+.uomcontent [role="navigation"].no-js {
+  @include rem(padding, 15px 30px);
+  color: $midblue;
+  display: block;
+
+  a {
+    color: $midblue;
+
+    &:hover {
+      color: $white;
+    }
+  }
+}
+
+.uomcontent footer.cta {
+  @include rem(padding-top, 30px);
+  background-color: $blue;
+  color: $white;
+
+  .overview {
+    @include rem(padding, 30px 0 0);
+  }
+
+  .button-hero-inverse {
+    @include rem(margin-left, 30px);
+    @include rem(padding-bottom, 10px);
+    @include rem(padding-top, 10px);
+
+    &::after {
+      @include rem(top, -4px);
+    }
+  }
+
+  hr {
+    border: 0 none;
+    border-top: 1px solid rgba($white, .2);
+  }
+
+  ul {
+    @include rem (max-width, $w-lge);
+    margin: 0 auto;
+
+    li {
+      @include rem(padding, 15px);
+      list-style-type: none;
+    }
+
+    a {
+      color: $white;
+    }
+
+    img {
+      @include rem(margin-right, 10px);
+      @include rem(max-width, 24px);
+      vertical-align: middle;
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(padding, 0 0 30px);
+      text-align: center;
+
+      li {
+        @include rem(padding, 30px);
+        display: inline-block;
+        float: none;
+        width: auto;
+      }
+    }
+
+    &.site-links {
+      @include breakpoint(desktop) {
+        @include rem(padding-top, 30px);
+      }
+    }
+  }
+}

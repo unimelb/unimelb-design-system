@@ -7,22 +7,21 @@ The contents of this repository have been produced by The University of Melbourn
 
 ## Development environment
 
+This app now runs on webpack, so ruby is required to run the documentation/demo site, and node is required to build the system.
+
     git clone git@github.com:marcom-unimelb/unimelb-design-system.git
     cd unimelb-design-system
+    cp .env.example .env
     bundle install
-    ./bin/server
+    npm install
+    foreman start -f Procfile.dev
 
-The development site will be available at [http://localhost:3000/](http://localhost:3000/)
+The development site will be available at [http://localhost:5000/](http://localhost:5000/)
 
 ## Deploying to production
 
-Setup a `.env` with the following keys:
+A precompiled package of all target builds can be created by running
 
-    AWS_ACCESS_KEY_ID='...key id...'
-    AWS_SECRET_ACCESS_KEY='...secret key...'
-    FOG_DIRECTORY='...bucket...'
+    rake assets:build
 
-Run the following command:
-
-    bundle exec rake assets:deploy VERSION=...
-
+The compiled output can be found under /deploy
