@@ -82,14 +82,13 @@
 
     @include breakpoint(tablet) {
       img {
-        margin-left: auto;
+        margin-left: 0;
       }
     }
 
     @include breakpoint(tablet) {
       @include padding-leader(2);
       img {
-        margin: 0 auto;
         max-width: 100%;
       }
 
@@ -134,7 +133,7 @@
     }
     @include breakpoint(wide) {
       li {
-        width: 24.5%;
+        width: 24.7%;
       }
     }
   }
@@ -146,5 +145,19 @@
   .tight {
     padding-bottom: 0;
     padding-top: 0;
+  }
+}
+
+body.jumpnav-active .uomcontent .listing {
+  @include breakpoint(wide) {
+    li {
+      width: 32%;
+    }
+  }
+
+  @include breakpoint(1400px) {
+    li {
+      width: 24.7%;
+    }
   }
 }
