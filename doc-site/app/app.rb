@@ -33,32 +33,14 @@ module DocSite
     set :pages_dir,      File.join(root, 'pages')
     set :temp_dir,       File.join(root, 'tmp')
 
-    ### Sprockets settings
-
-    set :sprockets,      Sprockets::Environment.new(root)
-    set :assets_prefix,  '/assets'
-    set :digest_assets,  true
-
-    # set :compass_gem_root, Gem.loaded_specs['compass-core'].full_gem_path
-
+    # override sprockets defaults to coexist with webpack
     configure do
-      # sprockets.append_path injection
-      # sprockets.append_path web_templates
-      # sprockets.append_path File.join(compass_gem_root, 'stylesheets')
-      # sprockets.cache = Sprockets::Cache::FileStore.new(File.join(root, 'tmp'))
-
-      # sprockets.js_compressor  = :uglify
-      # sprockets.css_compressor = :scss
-
       Sprockets::Helpers.configure do |config|
-        config.environment = sprockets
-      #   config.prefix      = assets_prefix
-      #   config.digest      = digest_assets
-      #   config.public_path = public_dir
+        config.environment = Sprockets::Environment.new(root)
+        config.default_path_options[:javascript_path] = { :dir => 'assets', :ext => 'js' }
+        config.default_path_options[:stylesheet_path] = { :dir => 'assets', :ext => 'css' }
       end
     end
-
-    # AutoprefixerRails.install(sprockets)
 
     ## Helpers
 

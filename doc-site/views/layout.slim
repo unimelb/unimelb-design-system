@@ -11,20 +11,15 @@ html.no-js lang="en"
 
     / == javascript_tag 'injection'
     / == stylesheet_tag 'injection'
-    / script src="http://#{ENV['WEB_SERVER_HOST']}:#{ENV['ASSET_SERVER_PORT']}/assets/injection.js"
-    / link rel="stylesheet" href="http://#{ENV['WEB_SERVER_HOST']}:#{ENV['ASSET_SERVER_PORT']}/assets/injection.css"
 
-    / == stylesheet_tag 'components'
-    link rel="stylesheet" href="http://#{ENV['WEB_SERVER_HOST']}:#{ENV['ASSET_SERVER_PORT']}/assets/components.css"
-    / == stylesheet_tag '//uom-design-system.s3.amazonaws.com/v0.3/uom.css'
+    == stylesheet_tag 'components'
+    / == stylesheet_tag '//uom-design-system.s3.amazonaws.com/v2.0/uom.css'
 
-    / == stylesheet_tag 'docs'
-    link rel="stylesheet" href="http://#{ENV['WEB_SERVER_HOST']}:#{ENV['ASSET_SERVER_PORT']}/assets/docs.css"
+    == stylesheet_tag 'docs'
     == stylesheet_tag '/assets/stylesheets/syntax.css'
 
-    / == javascript_tag 'components'
-    script src="http://#{ENV['WEB_SERVER_HOST']}:#{ENV['ASSET_SERVER_PORT']}/assets/components.js"
-    / == javascript_tag '//uom-design-system.s3.amazonaws.com/v0.3/uom.js'
+    == javascript_tag 'components'
+    / == javascript_tag '//uom-design-system.s3.amazonaws.com/v2.0/uom.js'
 
     - if ENV["ASSET_ENV"] == 'development'
       == javascript_tag "http://#{ENV['WEB_SERVER_HOST']}:#{ENV['WEBPACK_SERVER_PORT']}/webpack-dev-server.js"
