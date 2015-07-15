@@ -34,9 +34,11 @@ module DocSite
     set :temp_dir,       File.join(root, 'tmp')
 
     # override sprockets defaults to coexist with webpack
+    set :sprockets,      Sprockets::Environment.new(root)
+
     configure do
       Sprockets::Helpers.configure do |config|
-        config.environment = Sprockets::Environment.new(root)
+        config.environment = sprockets
         config.default_path_options[:javascript_path] = { :dir => 'assets', :ext => 'js' }
         config.default_path_options[:stylesheet_path] = { :dir => 'assets', :ext => 'css' }
       end
