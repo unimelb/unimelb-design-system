@@ -16,7 +16,7 @@ This app now runs on webpack, so ruby is required to run the documentation/demo 
     npm install
     foreman start -f Procfile.dev
 
-The development site will be available at [http://localhost:5000/](http://localhost:5000/)
+The development site will be available at [http://localhost:5001/](http://localhost:5001/)
 
 ## Deploying to production
 

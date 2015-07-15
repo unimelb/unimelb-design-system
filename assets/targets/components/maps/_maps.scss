@@ -2,5 +2,9 @@
   .map-canvas {
     height: 400px;
     max-width: 600px;
+
+    img {
+      max-width: none;
+    }
   }
 }
