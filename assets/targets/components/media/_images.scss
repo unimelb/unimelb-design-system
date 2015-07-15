@@ -7,7 +7,6 @@
   svg {
     border: 0;
     fill: currentColor;
-    height: 100%;
     width: 100%;
   }
 
@@ -17,6 +16,10 @@
     display: inline-block;
     margin: 0;
     vertical-align: middle;
+
+    svg {
+      height: 100%;
+    }
 
     &.small {
       @include rem(height, 30px);

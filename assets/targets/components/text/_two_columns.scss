@@ -17,14 +17,15 @@
 
     img {
       @include rem(margin-top, 30px);
+      @include rem(padding-left, 15px);
+      @include rem(padding-right, 15px);
       max-width: 95%;
       width: 100%;
     }
 
-    img,
     svg {
-      @include rem(padding-left, 15px);
-      @include rem(padding-right, 15px);
+      @include rem(margin-left, 15px);
+      @include rem(margin-right, 15px);
     }
 
     & > section {
