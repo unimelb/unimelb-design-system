@@ -1,4 +1,4 @@
-- unless @navigation.blank?
+- unless @navigation.nil?
   div#sitemap.no-js role="navigation"
     h2 Web.Unimelb
     == partial :nav_list, locals: { nav_list: @navigation }

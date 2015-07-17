@@ -229,7 +229,7 @@ InjectNav.prototype.moveLocalNav = function() {
 
           var back = document.createElement('span');
           back.addClass('back');
-          back.innerHTML = group.firstChild.data;
+          back.innerHTML = groups[i].firstChild.data;
           childgroup.insertBefore(back, childgroup.firstChild);
 
           childgroup.firstChild.addEventListener('click', function(e) {
