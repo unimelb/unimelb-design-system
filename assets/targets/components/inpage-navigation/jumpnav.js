@@ -16,7 +16,7 @@ function JumpNav(props) {
   var offsets = {
     'root':            document.querySelector('div[role="main"]'),
     'header':          document.querySelector('div[role="main"] > header'),
-    'arbitraryOffset': 50  // scroll clearance
+    'arbitraryOffset': 60  // scroll clearance
   };
 
   // Add to props

@@ -261,8 +261,13 @@
     a {
       color: $darkblue;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: $midblue;
+      }
+
+      &:active {
+        color: $black;
       }
     }
   }
