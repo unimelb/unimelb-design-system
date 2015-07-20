@@ -236,6 +236,7 @@
       color: $midgray;
       display: inline-block;
       font-weight: $regular;
+      line-height: 14px;
       text-transform: uppercase;
 
       svg {
@@ -250,9 +251,10 @@
     }
 
     svg {
-      @include rem(height, 18px);
-      @include rem(margin-top, -3px);
-      @include rem(width, 18px);
+      @include rem(height, 13px);
+      @include rem(margin-right, 3px);
+      @include rem(margin-top, -2px);
+      @include rem(width, 13px);
       display: inline-block;
       fill: $midgray;
       vertical-align: middle;

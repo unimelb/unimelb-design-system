@@ -12,8 +12,8 @@
 
   footer {
     @extend %wrapper;
+    @include rem(padding, 15px);
     @include rem(padding-bottom, 60px);
-    @include rem(padding-top, 15px);
     margin-left: auto;
     margin-right: auto;
   }
@@ -169,19 +169,21 @@
 
       a {
         @include rem(border-radius, 3px);
+        @include rem(padding-top, 6px);
         color: $white;
         vertical-align: top;
 
         svg {
-          @include rem(height, 36px);
-          @include rem(width, 36px);
+          @include rem(height, 24px);
+          @include rem(margin-bottom, 5px);
+          @include rem(width, 24px);
           fill: currentColor;
         }
       }
 
-      &.social-twitter {
-        @include rem(padding-top, 1px);
-      }
+      // &.social-twitter {
+      //   @include rem(padding-top, 1px);
+      // }
 
       &.social-facebook {
         margin-left: 20%;

@@ -107,7 +107,8 @@ body {
 
     svg {
       fill: currentColor;
-      @include rem(margin-bottom, 5px);
+      @include rem(margin-bottom, 14px);
+      @include rem(margin-top, 10px);
     }
 
     &:hover {
@@ -124,9 +125,9 @@ body {
 
   .icon {
     @extend %imgreplace;
-    @include rem(height, 40px);
+    @include rem(height, 24px);
     @include rem(margin-right, 10px);
-    @include rem(width, 40px);
+    @include rem(width, 24px);
     display: block;
     float: left;
 

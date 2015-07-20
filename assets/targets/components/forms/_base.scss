@@ -325,8 +325,8 @@
       }
 
       svg {
-        @include rem(height, 45px);
-        @include rem(width, 45px);
+        @include rem(height, 24px);
+        @include rem(width, 24px);
         background-color: transparent;
         cursor: pointer;
         fill: currentColor;
@@ -342,14 +342,14 @@
   position: relative;
 
   svg.icon {
-    @include rem(height, 20px);
-    @include rem(top, 15px);
-    @include rem(width, 20px);
+    @include rem(height, 30px);
+    @include rem(right, 7px);
+    @include rem(top, 7px);
+    @include rem(width, 30px);
     cursor: pointer;
     display: block;
     fill: $white;
     position: absolute;
-    right: 0;
   }
 
   @include breakpoint(desktop) {

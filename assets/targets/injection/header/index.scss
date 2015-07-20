@@ -80,10 +80,10 @@
         vertical-align: top;
 
         svg {
-          @include rem(height, 20px);
-          @include rem(margin-top, 3px);
-          @include rem(width, 20px);
-          margin-bottom: 0;
+          @include rem(height, 14px);
+          @include rem(margin-bottom, 3px);
+          @include rem(margin-top, 7px);
+          @include rem(width, 14px);
         }
       }
     }
@@ -212,8 +212,9 @@
     }
 
     .styled-select svg.icon {
-      @include rem(top, 10px);
+      @include rem(top, 1px);
       fill: $darkblue;
+      right: 0;
     }
 
     @include breakpoint(0) {
@@ -334,10 +335,10 @@
     /* autoprefixer: on */
 
     svg {
-      @include rem(height, 30px);
+      @include rem(height, 20px);
       @include rem(margin-bottom, 4px);
-      @include rem(margin-top, 7px);
-      @include rem(width, 30px);
+      @include rem(margin-top, 14px);
+      @include rem(width, 20px);
       fill: currentColor;
       display: block;
       margin-left: auto;
@@ -366,9 +367,10 @@
       @include rem(padding, 0 23px);
 
       svg {
-        @include rem(height, 38px);
-        @include rem(margin-top, 18px);
-        @include rem(width, 38px);
+        @include rem(height, 24px);
+        @include rem(margin-bottom, 10px);
+        @include rem(margin-top, 26px);
+        @include rem(width, 24px);
       }
     }
   }
