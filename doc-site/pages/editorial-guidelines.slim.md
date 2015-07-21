@@ -1,5 +1,6 @@
 ---
 title: Editorial guidelines
+hidden: true
 ---
 
 header
@@ -9,7 +10,7 @@ section
   p
     |To be used with the
     '
-    a href="/articles/editorial-style-guide" University style guide
+    a href="/editorial-style-guide" University style guide
   hr.spacer
   h2 Golden rules
   ul.ticked-list
@@ -179,9 +180,9 @@ section
 
   h3 Referring to our students – avoiding a power imbalance:
   p Referring to students in stories can be tricky.  Oftentimes they are still very young people, and referring to them as Mr or Ms seems awfully formal, especially if they are high school students attending events or receiving accolades as part of engagement programs etc.
-  p However, it is usually the case that we are mentioning students in stories where eminent academics are also referenced, and a striking imbalance of power and respect can arise if we use titles and last names for some people, and first names alone for others, based on hierarchies of seniority.  In such cases, offering students the respect of using more formal titles addresses this imbalance. 
+  p However, it is usually the case that we are mentioning students in stories where eminent academics are also referenced, and a striking imbalance of power and respect can arise if we use titles and last names for some people, and first names alone for others, based on hierarchies of seniority.  In such cases, offering students the respect of using more formal titles addresses this imbalance.
   p If it just looks too weird, manoeuvring your copy so you can reference the student with both their names and thereafter use he or she is the best action.
 hr
 section
   p.center
-    a.button-hero href="/articles/using-images" Next: Choosing and using images
+    a.button-hero href="/using-images" Next: Choosing and using images

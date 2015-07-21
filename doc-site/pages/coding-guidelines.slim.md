@@ -1,5 +1,6 @@
 ---
 title: Coding guidelines
+hidden: true
 ---
 header.solid-paleblue
   h1 Coding guidelines

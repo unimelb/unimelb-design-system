@@ -1,5 +1,6 @@
 ---
 title: Editorial style guide
+hidden: true
 ---
 
 header
@@ -290,4 +291,4 @@ section
 hr
 section
   p.center
-    a.button-hero href="/articles/editorial-guidelines" Next: Editorial guidelines
+    a.button-hero href="/editorial-guidelines" Next: Editorial guidelines

@@ -42,12 +42,13 @@ module DocSite
     set :web_templates,  File.join(project_root, 'assets/targets')
     set :injection,      File.join(web_templates, 'injection')
     set :components_dir, File.join(web_templates, 'components')
-    set :components,     Dir.entries(components_dir).select { |f| f =~ /^[^\.|\_]*[^\.]$/ }
-
     set :layouts_dir,    File.join(root, 'views', 'example_layouts')
-    set :layouts,        Dir.glob(File.join(layouts_dir, '*.slim')).map { |f| File.basename(f, '.slim') }.select { |f| f =~ /^.*[^_layout]$/ }
-    set :pages_dir,      File.join(root, 'pages')
+    set :articles_dir,   File.join(root, 'pages')
     set :temp_dir,       File.join(root, 'tmp')
+
+    set :components,     Dir.entries(components_dir).select { |f| f =~ /^[^\.|\_]*[^\.]$/ }
+    set :layouts,        Dir.glob(File.join(layouts_dir, '*.slim')).map { |f| File.basename(f, '.slim') }.select { |f| f =~ /^.*[^_layout]$/ }
+    set :articles,       Dir.glob(File.join(articles_dir, '*.md')).map { |f| File.basename(File.basename(f, '.md'), '.slim') }
 
     # override sprockets defaults to coexist with webpack
     set :sprockets,      Sprockets::Environment.new(root)
@@ -189,6 +190,29 @@ module DocSite
       end
     end
 
+    ### Documentation pages
+    settings.articles.each do |path|
+      get "/#{path}" do
+
+        # Fancy pants slim
+        file = File.join(settings.articles_dir, "#{path}.slim.md")
+        if File.exist?(file)
+          @content = slim(file_content(file), layout: false)
+          return slim(:page_slim)
+
+        else
+          # Straight up markdown
+          file = File.join(settings.articles_dir, "#{path}.md")
+          if File.exist?(file)
+            @settings['title'] = path.capitalize
+            @settings.merge!(file_settings(file))
+            @content = render_markdown(render_markdown(file_content(file)))
+            return slim(:page)
+          end
+        end
+      end
+    end
+
     ### Assets
 
     unless EXPORT
@@ -197,37 +221,20 @@ module DocSite
         env_sprockets['PATH_INFO'] = path
         settings.sprockets.call env_sprockets
       end
+
+      # 404 for prod
+      get '/components/*' do
+        return_page_not_found
+      end
+
+      get '/layouts/*' do
+        return_page_not_found
+      end
+
+      get '/*' do
+        return_page_not_found
+      end
     end
-
-    ### Documentation pages
-
-    # get '/*' do
-    #   unless params[:splat].first[-4,4] == "slim"
-    #     ['slim.md', 'md'].each do |filetype|
-    #       view_name = params[:splat].first
-    #       file  = File.join settings.pages_dir, "#{view_name}.#{filetype}"
-    #       index = File.join settings.pages_dir, "#{view_name}/index.#{filetype}"
-    #       file  = index unless File.exist?(file)
-
-    #       if File.exist?(file)
-    #         # Default title from dirname, can be overriden in frontmatter of first .md
-    #         @settings['title'] = File.basename(view_name).capitalize
-    #         @settings.merge! file_settings(file)
-
-    #         case filetype
-    #         when 'md' then
-    #           @content = render_markdown render_markdown file_content(file)
-    #           return slim :page
-    #         when 'slim.md' then
-    #           @content = slim file_content(file), layout: false
-    #           return slim :page_slim
-    #         end
-    #       end
-    #     end
-    #   end
-
-    #   return_page_not_found
-    # end
 
     private
 
@@ -245,7 +252,7 @@ module DocSite
 
     def doc_href(file)
       file = file.gsub(/(index)?\.md|\.slim/, '')
-      file[settings.pages_dir.length, file.length]
+      file[settings.articles_dir.length, file.length]
     end
 
     def dir_to_menu(dir)
@@ -273,7 +280,7 @@ module DocSite
     end
 
     def build_navigation
-      @navigation = dir_to_menu(settings.pages_dir)
+      @navigation = dir_to_menu(settings.articles_dir)
       @navigation << {
         title: 'Page Templates', href: '/layouts', children: []
       }

@@ -1,10 +1,11 @@
 ---
 title: Information Architecture
+hidden: true
 ---
 
 # Information Architecture
 
-> Once you have an understanding of the page types available to you, we suggest you use these resources to create a site map. 
+> Once you have an understanding of the page types available to you, we suggest you use these resources to create a site map.
 
 - Site map template
 - Site mapping tools & techniques (post)

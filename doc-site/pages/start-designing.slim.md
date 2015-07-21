@@ -1,3 +1,7 @@
+---
+title: Start Designing
+hidden: true
+---
 header.image style="background-image:url(/assets/images/desktop.jpg)"
   .mid-align
     h1 Start designing

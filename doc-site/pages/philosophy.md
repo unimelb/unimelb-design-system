@@ -1,5 +1,6 @@
 ---
 title: A philosophy for our web design system
+hidden: true
 ---
 
 # Philosophical templates

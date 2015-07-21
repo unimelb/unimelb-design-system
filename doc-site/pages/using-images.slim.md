@@ -1,5 +1,6 @@
 ---
 title: How to use images in the design system
+hidden: true
 ---
 
 article
@@ -46,7 +47,7 @@ article
       li Offers additional information
     p
      a href="#content-images" Read how to pick content images
-    
+
 
     h3 Background images
     p Background images usually have text on top of them and can be cropped according to the device size. This means that not all parts of the image are visible at all times
@@ -182,7 +183,7 @@ article
       p Start with a bang and engage with your readers right from the start
 
   section.with-figure
-    p The right background image can easily boost any message you are trying to convey to your audience. Selecting the right image however can be quite involved. Before you start searching for that perfect image, you’ll need to make a few considerations to ensure you’re picking the best image possible. 
+    p The right background image can easily boost any message you are trying to convey to your audience. Selecting the right image however can be quite involved. Before you start searching for that perfect image, you’ll need to make a few considerations to ensure you’re picking the best image possible.
     p Here are some of the best practices for choosing your perfect background image.
 
     hr.spacer
@@ -317,7 +318,7 @@ article
 hr
 section
   p.center
-    a.button-hero href="/articles/audio-video-guidelines" Next: Audio & Video guidelines
+    a.button-hero href="/audio-video-guidelines" Next: Audio & Video guidelines
 
 script src="https://www.google.com/jsapi"
 
