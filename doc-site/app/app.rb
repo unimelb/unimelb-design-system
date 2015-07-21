@@ -89,7 +89,7 @@ module DocSite
 
     ### Components
 
-    get /\A^\/components(\/*)$\z/ do
+    get %r{\A^\/components(\/*)$\z} do
       @components = settings.components
       slim :components_index
     end
@@ -110,7 +110,8 @@ module DocSite
         @documents = {}
         raw_documents = []
         %w(md html slim).each do |ext|
-          raw_documents << Dir.glob(File.join(settings.components_dir, path, "*.#{ext}"))
+          parent = File.join(settings.components_dir, path, "*.#{ext}")
+          raw_documents << Dir.glob(parent)
         end
         raw_documents.flatten.sort.map do |f|
           section = File.basename(f)[0..1]
@@ -161,7 +162,7 @@ module DocSite
 
     ### Layouts
 
-    get /\A^\/layouts(\/*)$\z/ do
+    get %r{\A^\/layouts(\/*)$\z} do
       @layouts = settings.layouts
       slim :layouts_index
     end
@@ -191,7 +192,7 @@ module DocSite
     ### Assets
 
     unless EXPORT
-      get "/assets/*" do |path|
+      get '/assets/*' do |path|
         env_sprockets = request.env.dup
         env_sprockets['PATH_INFO'] = path
         settings.sprockets.call env_sprockets
@@ -313,16 +314,14 @@ module DocSite
 
     def render_syntax_highlight(block)
       '
-    <section class="code">
-      <ul class="accordion">
-        <li>
-          <span class="accordion__title">Sample Markup</span>
-          <div class="accordion__hidden">
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
 ' + syntax_highlight(block) + '
-          </div>
-        </li>
-      </ul>
-    </section>
+        </div>
+      </li>
+    </ul></section>
 '
     end
 

@@ -4,6 +4,6 @@ ul
     li
       a href=(nav_item[:href])
         == nav_item[:title]
-      - unless nav_item[:children].select{|p| !p[:hidden] }.nil?
+      - unless nav_item[:children].select{|p| !p[:hidden] }.empty?
         .inner
           == partial :nav_list, locals: { nav_list: nav_item[:children] }
