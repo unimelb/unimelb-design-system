@@ -212,9 +212,11 @@
     }
 
     .styled-select svg.icon {
-      @include rem(top, 1px);
+      @include rem(height, 20px);
+      @include rem(right, 5px);
+      @include rem(top, 5px);
+      @include rem(width, 20px);
       fill: $darkblue;
-      right: 0;
     }
 
     @include breakpoint(0) {
@@ -309,13 +311,23 @@
   vertical-align: top;
 
   @include breakpoint(tablet) {
-    @include rem(width, 186px);
+    @include rem(width, 122px);
   }
 
   @include breakpoint(desktop) {
-    @include rem(width, 300px);
+    @include rem(width, 200px);
     background-color: $white;
     position: absolute;
+  }
+
+  &.with-login {
+    @include breakpoint(tablet) {
+      @include rem(width, 186px);
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(width, 300px);
+    }
   }
 
   .page-header-icon {
@@ -351,7 +363,7 @@
       text-decoration: none;
     }
 
-    &[title="Login"],
+    &[data-modal-target="uom-login"],
     &[title="Search"] {
       display: none;
 

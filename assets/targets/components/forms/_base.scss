@@ -315,10 +315,19 @@
       background-color: $highlight;
       border: 0 none;
       color: $white;
+      cursor: pointer;
       padding: 0;
       position: absolute;
       right: 0;
       top: 0;
+
+      &:hover {
+        background-color: darken($highlight, 10%);
+      }
+
+      &:active {
+        opacity: .3;
+      }
 
       span {
         display: none;
@@ -332,7 +341,6 @@
         fill: currentColor;
         max-height: 100%;
       }
-
     }
   }
 }
@@ -473,6 +481,11 @@
     background-color: $highlight;
     border: 1px solid $highlight;
     padding: 0;
+
+    svg.icon {
+      @include rem(height, 30px);
+      @include rem(width, 30px);
+    }
 
     select {
       -moz-appearance: window;

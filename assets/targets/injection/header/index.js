@@ -128,6 +128,7 @@ InjectHeader.prototype.renderHeaderTools = function() {
       tools.innerHTML = '            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search" /></svg> Search</a><!--            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu" /></svg> Menu</a>      ';
 
     } else {
+      tools.addClass('with-login');
       var modalContent = document.querySelector('.page-local-login');
       if (modalContent) {
         // Title override for logout
@@ -135,7 +136,7 @@ InjectHeader.prototype.renderHeaderTools = function() {
         if (modalContent.hasAttribute('data-title') && modalContent.getAttribute('data-title').length < 8) {
           title = modalContent.getAttribute('data-title');
         }
-        tools.innerHTML = '            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--            --><a class="page-header-icon" href="#' + title + '" title="' + title + '" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-user" /></svg> ' + title + '</a><!--            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>      ';
+        tools.innerHTML = '            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--            --><a class="page-header-icon" href="#' + title + '" title="' + title + '" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-profile" /></svg> ' + title + '</a><!--            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>      ';
 
         var Modal = require('../../components/modal'),
             modalDialog = document.createElement('div'),

@@ -229,19 +229,18 @@
     .tag {
       @include adjust-font-size-to(11px);
       @include rem(border-radius, 3px);
+      @include rem(line-height, 18px);
       @include rem(margin-right, 10px);
-      @include rem(padding, 0 7px 0 3px);
+      @include rem(padding, 2px 7px 0 3px);
       border: 1px solid $midgray;
-      //background-color: $lightblue;
       color: $midgray;
       display: inline-block;
       font-weight: $regular;
-      line-height: 14px;
       text-transform: uppercase;
 
       svg {
         display: inline;
-        fill: $midgray;
+        fill: lighten($midgray, 15%);
       }
 
       [data-icon],
@@ -252,6 +251,7 @@
 
     svg {
       @include rem(height, 13px);
+      @include rem(margin-left, 1px);
       @include rem(margin-right, 3px);
       @include rem(margin-top, -2px);
       @include rem(width, 13px);

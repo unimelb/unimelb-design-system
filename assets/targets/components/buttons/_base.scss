@@ -53,7 +53,14 @@
   }
 
   [data-icon] {
-    padding-bottom: 3px;
+    @include rem(margin-left, 2px);
+    @include rem(padding-bottom, 3px);
+    @include rem(padding-top, 1px);
+
+    &.small {
+      @include rem(height, 20px);
+      @include rem(width, 20px);
+    }
   }
 
   @include breakpoint(height-small) {
