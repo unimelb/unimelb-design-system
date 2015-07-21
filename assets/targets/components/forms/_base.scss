@@ -354,6 +354,7 @@
     @include rem(right, 7px);
     @include rem(top, 7px);
     @include rem(width, 30px);
+    color: $white;
     cursor: pointer;
     display: block;
     fill: $white;
@@ -402,6 +403,7 @@
 
   &.invalid + svg.icon,
   &.alt.invalid + svg.icon {
+    color: $cherry;
     fill: $cherry;
   }
 
@@ -422,6 +424,7 @@
   }
 
   &.alt + svg.icon {
+    color: $highlight;
     fill: $highlight;
   }
 
@@ -470,6 +473,7 @@
   }
 
   &.clear.invalid + svg.icon {
+    color: lighten($cherry, 25%);
     fill: lighten($cherry, 25%);
   }
 }
@@ -485,6 +489,8 @@
     svg.icon {
       @include rem(height, 30px);
       @include rem(width, 30px);
+      color: $white;
+      fill: $white;
     }
 
     select {
@@ -502,6 +508,7 @@
 
     &.invalid + svg.icon,
     &.alt.invalid + svg.icon {
+      color: $cherry;
       fill: $cherry;
     }
 
@@ -518,6 +525,7 @@
     }
 
     &.alt + svg.icon {
+      color: $highlight;
       fill: $highlight;
     }
 
@@ -557,6 +565,7 @@
     }
 
     &.clear.invalid + svg.icon {
+      color: lighten($cherry, 25%);
       fill: lighten($cherry, 25%);
     }
 
