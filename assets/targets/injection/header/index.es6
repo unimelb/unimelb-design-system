@@ -32,7 +32,14 @@ InjectHeader.prototype.renderPageHeader = function() {
 
     if (document.countSelector('.page-inner > .floating') == 1) {
       // Landing page header
-      this.props.header.innerHTML = '      <a class="page-header-logo" href="' + this.props.defaultlink + '">        <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">          <title id="aria-uom-title">The University of Melbourne Logo</title>          <image xlink:href="' + this.props.assethost + '/logo.svg" src="' + this.props.assethost + '/logo.png" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>        </svg>      </a>';
+      this.props.header.innerHTML = `
+<a class="page-header-logo" href="${this.props.defaultlink}">
+  <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
+    <title id="aria-uom-title">The University of Melbourne Logo</title>
+    <image xlink:href="${this.props.assethost}/logo.svg" src="${this.props.assethost}/logo.png" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
+  </svg>
+</a>
+`;
       this.props.header.addClass('floating');
       if (document.querySelector('.page-inner > .floating').hasClass('reverse')) {
         this.props.header.addClass('reverse');
@@ -47,11 +54,25 @@ InjectHeader.prototype.renderPageHeader = function() {
 
       this.props.rootlink = '';
       if (document.countSelector('.page-local-history .root') === 0) {
-        this.props.rootlink = '<a href="https://unimelb.edu.au/" title="The University of Melbourne">The University of Melbourne</a>';
+        this.props.rootlink = `
+<a href="https://unimelb.edu.au/" title="The University of Melbourne">The University of Melbourne</a>
+`;
       }
 
       // General header
-      this.props.header.innerHTML = '        <header>          <a class="page-header-logo" href="' + this.props.defaultlink + '">            <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">              <title id="aria-uom-title">The University of Melbourne Logo</title>              <image xlink:href="' + this.props.assethost + '/logo.svg" src="' + this.props.assethost + '/logo.png" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>            </svg>          </a>          <div class="page-header-navigation">            ' + this.props.rootlink + '          </div>        </header>';
+      this.props.header.innerHTML = `
+<header>
+  <a class="page-header-logo" href="${this.props.defaultlink}">
+    <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
+      <title id="aria-uom-title">The University of Melbourne Logo</title>
+      <image xlink:href="${this.props.assethost}/logo.svg" src="${this.props.assethost}/logo.png" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
+    </svg>
+  </a>
+  <div class="page-header-navigation">
+    ${this.props.rootlink}
+  </div>
+</header>
+`;
     }
 
   } else {
@@ -68,12 +89,6 @@ InjectHeader.prototype.renderBreadcrumb = function() {
     this.props.local.parentNode.removeChild(this.props.local);
 
     if (this.props.navparent) {
-      if (this.props.rootlink !== '') {
-        var sep = document.createElement("span");
-        sep.innerHTML = '/';
-        this.props.navparent.appendChild(sep);
-      }
-
       this.props.navparent.appendChild(this.props.local);
 
       // Mobile nav
@@ -93,10 +108,10 @@ InjectHeader.prototype.renderBreadcrumb = function() {
 
       var max = this.props.local.countSelector('a') - 1;
 
-      for (var nodes=this.props.local.querySelectorAll('a'), i=nodes.length - 1; i >= 0; i--) {
+      for (var nodes=this.props.local.querySelectorAll('span[itemprop="name"]'), i=nodes.length - 1; i >= 0; i--) {
         var opt = document.createElement('option');
         opt.setAttribute('role', 'tab');
-        opt.setAttribute('value', nodes[i].getAttribute('href'));
+        opt.setAttribute('value', nodes[i].parentNode.getAttribute('href'));
         opt.appendChild(document.createTextNode(nodes[i].firstChild.nodeValue));
 
         if (i==max)
@@ -123,9 +138,14 @@ InjectHeader.prototype.renderHeaderTools = function() {
     tools = document.createElement("div");
     tools.addClass('page-header-tools');
 
+    var template = `
+<a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search" /></svg> Search</a><!--
+--><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu" /></svg> Menu</a>
+`;
+
     // Need to use innerHTML for <svg><use>
     if (document.countSelector('[role="main"].with-login') === 0) {
-      tools.innerHTML = '            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search" /></svg> Search</a><!--            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu" /></svg> Menu</a>      ';
+      tools.innerHTML = template;
 
     } else {
       tools.addClass('with-login');
@@ -136,8 +156,11 @@ InjectHeader.prototype.renderHeaderTools = function() {
         if (modalContent.hasAttribute('data-title') && modalContent.getAttribute('data-title').length < 8) {
           title = modalContent.getAttribute('data-title');
         }
-        tools.innerHTML = '            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--            --><a class="page-header-icon" href="#' + title + '" title="' + title + '" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-profile" /></svg> ' + title + '</a><!--            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>      ';
-
+        tools.innerHTML = `
+<a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--
+--><a class="page-header-icon" href="#${title}" title="${title}" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-profile" /></svg> ${title}</a><!--
+--><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>
+`;
         var Modal = require('../../components/modal'),
             modalDialog = document.createElement('div'),
             trigger = tools.querySelector('[data-modal-target]');
@@ -152,7 +175,7 @@ InjectHeader.prototype.renderHeaderTools = function() {
 
       } else {
         // Fall back to default
-        tools.innerHTML = '            <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search" /></svg> Search</a><!--            --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu" /></svg> Menu</a>      ';
+        tools.innerHTML = template;
       }
     }
 

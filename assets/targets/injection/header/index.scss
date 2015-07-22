@@ -258,8 +258,13 @@
 
   .page-local-history {
     color: $darkblue;
+    display: none;
     margin: 0;
-    padding: 0 30px 0 0;
+    padding: 0;
+
+    @include breakpoint(desktop) {
+      display: block;
+    }
 
     a {
       color: $darkblue;
@@ -284,21 +289,40 @@
 
 .uomcontent .page-local-history {
   @extend %wrapper;
-  @include rem(padding, 0 30px);
+  @include rem(padding, 0 0 0 30px);
   color: $white;
-  display: none;
+  list-style-type: none;
 
-  @include breakpoint(desktop) {
-    display: block;
+  li {
+    @include rem(font-size, 15px);
+    @include rem(padding-right, 10px);
+    display: inline;
+
+    &::after {
+      @include rem(margin-top, 2px);
+      @include rem(padding-left, 10px);
+      content: '/';
+      color: $darkblue;
+      display: inline-block;
+      font-weight: $light;
+      vertical-align: middle;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  span {
+    @include rem(font-size, 15px);
+    height: auto;
+    line-height: 1;
+    padding: 0;
   }
 
   a {
     color: $white;
     font-weight: $light;
-  }
-
-  span {
-    @include rem(padding, 0 10px);
   }
 }
 
