@@ -123,18 +123,37 @@ hr
 section
   h2#breadcrumbs Breadcrumbs
 
-  p To use the breadcrumb navigation, include a <code>div class="page-local-history"</code> before the <code>div role="main"</code> with the following structure:
+  p We use <a href="http://schema.org/itemListElement">schema.org microdata for breadcrumbs</a> to enhance machine understanding. To use the breadcrumb navigation on your site, include the following markup structure before the <code>div role="main"</code>:
 
 ==syntax_highlight :html
   erb:
-    <div class="page-local-history">
-      <a class="root" href="/" title="Website Home">Home</a>
-      <span>/</span>
-      <a class="last" href="" title="A sub-page">A sub-page</a>
-    </div>
+    <ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+      <li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <a href="/" title="Website Home" itemprop="item">
+          <span itemprop="name">Website Home</span>
+        </a>
+        <meta content="1" itemprop="position" />
+      </li>
+      <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <a href="/layouts" itemprop="item" title="Layouts">
+          <span itemprop="name">Layouts</span>
+        </a>
+        <meta content="2" itemprop="position" />
+      </li>
+      <li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+        <a href="" itemprop="item" title="Source">
+          <span itemprop="name">Source</span>
+        </a>
+        <meta content="3" itemprop="position" />
+      </li>
+    </ol>
 
 section
-  p The link with <code>class="last"</code> is the only one that will be shown in a responsive mobile view.
+  p Please note this replaces the previous markup used in v1.0 and earlier.
+
+  p Each <code>meta itemprop="position"</code> should be numbered consecutively, and remember to duplicate the link text in the parent link <code>title</code>.
+
+  p The mobile breadcrumb selector is generated from the above markup (you can try it <a href="#top">on this page</a> at less than 768px width).
 
 hr
 
@@ -168,8 +187,12 @@ section
   p
     <img src="/assets/images/fvas-header.jpg" alt="">
 
+hr
+
 section
   h2#login Login section
+
+  h3 Login modal dialog (popup box)
 
   p To include a login section in the page header, add a code block as with the breadcrumbs above, but this time include a <code>div class="page-local-login"</code> before the <code>div role="main"</code>. Everything inside this div will be moved to a modal window, so you can use the login markup you require:
 
@@ -196,3 +219,13 @@ section
 
 section
   p An example of this can be seen on <a href="/layouts/with-login">this example layout</a>. Note that the title of the login button in the header can be manipulated by using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The title will be "Login" by default, and there is a hard limit of 7 characters to protect the header design.
+
+  h3 Login link
+
+  p If your login requires a direct link to a known page instead, you can leave the <code>div class="page-local-login"</code> empty and add a <code>data-href</code> attribute with the link location. This method is demonstrated on <a href="/layouts/with-login-link">this example layout</a> instead.
+
+==syntax_highlight :html
+  erb:
+    <div class="page-local-login" data-href="/login"></div>
+
+footer

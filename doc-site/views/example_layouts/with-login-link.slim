@@ -16,7 +16,7 @@ div role="main" class="with-login"
       section.with-figure
         h2.title Login demo page
         p This layout demonstrates a local login feature with link only (no modal), if you need to link away to a login page.
-        p This is a basic copy of the About Us template, but has a login <a href="#{request.env['REQUEST_PATH']}/source">built into the source</a>, in a class called <code>page-local-login</code>. If this is left empty, and a <code>date-href</code> attribute is added the system will convert this to a login link as above. Note that the title of the login button in the header can be manipulated by using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The title will be "Login" by default, and there is a hard limit of 7 characters.
+        p This is a basic copy of the About Us template, but has a login <a href="#{@settings[:current_url]}/source">built into the source</a>, in a class called <code>page-local-login</code>. If this is left empty, and a <code>date-href</code> attribute is added the system will convert this to a login link as above. Note that the title of the login button in the header can be manipulated by using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The title will be "Login" by default, and there is a hard limit of 7 characters.
         p <a href="/layouts/with-login">This layout</a> builds in a modal dialog from local markup instead, if you are using ajax methods to manage login.
         figure.inset-right
           img src="/assets/images/about_prof_hinchcliff.jpg" alt="Professor Ken Hinchcliff"

@@ -24,6 +24,8 @@
     document.body.appendChild(parent);
   }
 
+  parent.id = 'top';
+
   var page = document.querySelector('.page-inner');
   if (!page) {
     page = document.createElement('div');

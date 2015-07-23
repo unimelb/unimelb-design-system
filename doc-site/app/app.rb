@@ -64,8 +64,9 @@ module DocSite
     before do
       build_navigation
 
-      @settings   = {
-        'no_section_wrap' => false
+      @settings = {
+        'no_section_wrap' => false,
+        :current_url      => request.path_info
       }
     end
 
