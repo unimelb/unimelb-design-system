@@ -2,17 +2,6 @@
 
 EXPORT = (ENV['ASSET_ENV'] == 'export')
 
-if EXPORT
-  require 'sinatra'
-  require 'sinatra/partial'
-  require 'sinatra/export'
-  require 'sprockets'
-  require 'sprockets/helpers'
-  require 'front_matter_parser'
-  require 'slim'
-  require 'html/pipeline'
-end
-
 require_relative 'helpers'
 require_relative 'section_filter'
 
@@ -90,7 +79,7 @@ module DocSite
 
     ### Components
 
-    get %r{\A^\/components(\/*)$\z} do
+    get '/components' do
       @components = settings.components
       slim :components_index
     end
@@ -163,7 +152,7 @@ module DocSite
 
     ### Layouts
 
-    get %r{\A^\/layouts(\/*)$\z} do
+    get '/layouts' do
       @layouts = settings.layouts
       slim :layouts_index
     end
@@ -220,6 +209,16 @@ module DocSite
         env_sprockets = request.env.dup
         env_sprockets['PATH_INFO'] = path
         settings.sprockets.call env_sprockets
+      end
+
+      get '/components/' do
+        @components = settings.components
+        slim :components_index
+      end
+
+      get '/layouts/' do
+        @layouts = settings.layouts
+        slim :layouts_index
       end
 
       # 404 for prod
