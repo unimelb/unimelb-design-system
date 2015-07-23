@@ -279,6 +279,10 @@
       }
     }
   }
+
+  div.page-local-history {
+    padding: 0 30px 0 0;
+  }
 }
 
 @-moz-document url-prefix() {
@@ -289,8 +293,16 @@
 
 .uomcontent .page-local-history {
   @extend %wrapper;
-  @include rem(padding, 0 0 0 30px);
   color: $white;
+
+  a {
+    color: $white;
+    font-weight: $light;
+  }
+}
+
+.uomcontent ol.page-local-history {
+  @include rem(padding, 0 0 0 30px);
   list-style-type: none;
 
   li {
@@ -319,12 +331,16 @@
     line-height: 1;
     padding: 0;
   }
+}
 
-  a {
-    color: $white;
-    font-weight: $light;
+.uomcontent div.page-local-history {
+  @include rem(padding, 0 30px);
+
+  span {
+    @include rem(padding, 0 10px);
   }
 }
+
 
 .uomcontent .page-header-tools {
   @include rem(width, 60px);

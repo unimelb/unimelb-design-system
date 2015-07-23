@@ -96,11 +96,11 @@ InjectHeader.prototype.renderBreadcrumb = function() {
       mobile.addClass('mobile-nav');
       mobile.setAttribute('role', 'navigation');
 
-      var selector = document.createElement('select');
-      selector.setAttribute('role', 'tablist');
-      selector.setAttribute('aria-label', 'Breadcrumb list');
-      selector.addClass('alt');
-      selector.addEventListener('change', function(e) {
+      var select = document.createElement('select');
+      select.setAttribute('role', 'tablist');
+      select.setAttribute('aria-label', 'Breadcrumb list');
+      select.addClass('alt');
+      select.addEventListener('change', function(e) {
         if (this.value)
           if (this.value.substr(0, 1) != '#')
             window.location = this.value;
@@ -108,25 +108,36 @@ InjectHeader.prototype.renderBreadcrumb = function() {
 
       var max = this.props.local.countSelector('a') - 1;
 
-      for (var nodes=this.props.local.querySelectorAll('span[itemprop="name"]'), i=nodes.length - 1; i >= 0; i--) {
-        var opt = document.createElement('option');
+      // Backwards compat
+      var selector = 'span[itemprop="name"]';
+      if (this.props.local.countSelector(selector) === 0)
+        selector = 'a';
+
+      for (var nodes=this.props.local.querySelectorAll(selector), i=nodes.length - 1; i >= 0; i--) {
+        var opt = document.createElement('option'),
+            link = nodes[i].parentNode;
+
+        // Backwards compat
+        if (selector === 'a')
+          link = nodes[i];
+
         opt.setAttribute('role', 'tab');
-        opt.setAttribute('value', nodes[i].parentNode.getAttribute('href'));
+        opt.setAttribute('value', link.getAttribute('href'));
         opt.appendChild(document.createTextNode(nodes[i].firstChild.nodeValue));
 
-        if (i==max)
+        if (i === max)
           opt.setAttribute('selected', 'selected');
 
-        selector.appendChild(opt);
+        select.appendChild(opt);
       }
 
-      mobile.appendChild(selector);
+      mobile.appendChild(select);
       var pagenav = this.props.local.parentNode;
       pagenav.insertBefore(mobile, pagenav.firstChild);
 
       if (!/(MSIE 9)/g.test(navigator.userAgent)) {
         var FancySelect = require("../../components/forms/fancyselect");
-        new FancySelect(selector, {});
+        new FancySelect(select, {});
       }
     }
   }

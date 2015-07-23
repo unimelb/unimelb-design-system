@@ -36,7 +36,7 @@ module DocSite
     set :temp_dir,       File.join(root, 'tmp')
 
     set :components,     Dir.entries(components_dir).select { |f| f =~ /^[^\.|\_]*[^\.]$/ }
-    set :layouts,        Dir.glob(File.join(layouts_dir, '*.slim')).map { |f| File.basename(f, '.slim') }.select { |f| f =~ /^.*[^_layout]$/ }
+    set :layouts,        Dir.glob(File.join(layouts_dir, '*.slim')).map { |f| File.basename(f, '.slim') }.reject { |f| f =~ /_layout$/ }
     set :articles,       Dir.glob(File.join(articles_dir, '*.md')).map { |f| File.basename(File.basename(f, '.md'), '.slim') }
 
     # override sprockets defaults to coexist with webpack

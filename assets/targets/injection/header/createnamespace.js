@@ -22,18 +22,20 @@
     parent = document.createElement('div');
     parent.addClass('uomcontent');
     document.body.appendChild(parent);
-
-    for (var nodes=document.body.childNodes, i=nodes.length - 1; i >= 0; i--) {
-      if (nodes[i] && nodes[i] != parent) {
-        var move = document.body.removeChild(nodes[i]);
-        parent.appendChild(move);
-      }
-    }
   }
 
   var page = document.querySelector('.page-inner');
   if (!page) {
     page = document.createElement('div');
     page.addClass('page-inner');
+
+    for (var nodes=document.body.childNodes, i=nodes.length - 1; i >= 0; i--) {
+      if (nodes[i] && nodes[i] != parent) {
+        var move = document.body.removeChild(nodes[i]);
+        page.appendChild(move);
+      }
+    }
+
+    parent.appendChild(page);
   }
 })(this);
