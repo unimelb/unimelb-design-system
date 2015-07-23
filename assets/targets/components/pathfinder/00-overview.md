@@ -8,4 +8,4 @@ The pathfinder is used to funnel the user to a certain area and can have up to f
 
 ## Reference articles
 
-* [Using the pathfinder component effectively](/articles/using-the-pathfinder-component-effectively)
+* [Using the pathfinder component effectively](/using-the-pathfinder-component-effectively)

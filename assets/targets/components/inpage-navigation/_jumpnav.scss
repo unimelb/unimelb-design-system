@@ -61,6 +61,10 @@
 
     a.current {
       color: $black;
+
+      &:active {
+        color: darken($cherry, 15%);
+      }
     }
   }
 

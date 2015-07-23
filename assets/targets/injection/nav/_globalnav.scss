@@ -188,8 +188,8 @@
         }
 
         svg {
-          @include rem(height, 39px);
-          @include rem(width, 39px);
+          @include rem(height, 24px);
+          @include rem(width, 24px);
           fill: currentColor;
         }
 

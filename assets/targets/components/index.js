@@ -27,7 +27,7 @@ window.UOMloadComponents = function() {
   //var assethost = 'http://localhost:5001/assets';
   assethost = '//uom-design-system.s3.amazonaws.com/shared/assets';
 
-  Header = require('../injection/header');
+  Header = require('../injection/header/index.es6');
   new Header({
     'assethost':   assethost, // + '/injection/header',
     'defaultlink': 'https://www.unimelb.edu.au'

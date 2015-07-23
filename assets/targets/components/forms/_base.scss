@@ -315,24 +315,32 @@
       background-color: $highlight;
       border: 0 none;
       color: $white;
+      cursor: pointer;
       padding: 0;
       position: absolute;
       right: 0;
       top: 0;
+
+      &:hover {
+        background-color: darken($highlight, 10%);
+      }
+
+      &:active {
+        opacity: .3;
+      }
 
       span {
         display: none;
       }
 
       svg {
-        @include rem(height, 45px);
-        @include rem(width, 45px);
+        @include rem(height, 24px);
+        @include rem(width, 24px);
         background-color: transparent;
         cursor: pointer;
         fill: currentColor;
         max-height: 100%;
       }
-
     }
   }
 }
@@ -342,14 +350,15 @@
   position: relative;
 
   svg.icon {
-    @include rem(height, 20px);
-    @include rem(top, 15px);
-    @include rem(width, 20px);
+    @include rem(height, 30px);
+    @include rem(right, 7px);
+    @include rem(top, 7px);
+    @include rem(width, 30px);
+    color: $white;
     cursor: pointer;
     display: block;
     fill: $white;
     position: absolute;
-    right: 0;
   }
 
   @include breakpoint(desktop) {
@@ -394,6 +403,7 @@
 
   &.invalid + svg.icon,
   &.alt.invalid + svg.icon {
+    color: $cherry;
     fill: $cherry;
   }
 
@@ -414,6 +424,7 @@
   }
 
   &.alt + svg.icon {
+    color: $highlight;
     fill: $highlight;
   }
 
@@ -462,6 +473,7 @@
   }
 
   &.clear.invalid + svg.icon {
+    color: lighten($cherry, 25%);
     fill: lighten($cherry, 25%);
   }
 }
@@ -473,6 +485,13 @@
     background-color: $highlight;
     border: 1px solid $highlight;
     padding: 0;
+
+    svg.icon {
+      @include rem(height, 30px);
+      @include rem(width, 30px);
+      color: $white;
+      fill: $white;
+    }
 
     select {
       -moz-appearance: window;
@@ -489,6 +508,7 @@
 
     &.invalid + svg.icon,
     &.alt.invalid + svg.icon {
+      color: $cherry;
       fill: $cherry;
     }
 
@@ -505,6 +525,7 @@
     }
 
     &.alt + svg.icon {
+      color: $highlight;
       fill: $highlight;
     }
 
@@ -544,6 +565,7 @@
     }
 
     &.clear.invalid + svg.icon {
+      color: lighten($cherry, 25%);
       fill: lighten($cherry, 25%);
     }
 
