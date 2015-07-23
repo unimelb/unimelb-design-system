@@ -160,32 +160,45 @@ InjectHeader.prototype.renderHeaderTools = function() {
 
     } else {
       tools.addClass('with-login');
-      var modalContent = document.querySelector('.page-local-login');
-      if (modalContent) {
+
+      var loginContent = document.querySelector('.page-local-login');
+      if (loginContent) {
         // Title override for logout
         var title = 'Login';
-        if (modalContent.hasAttribute('data-title') && modalContent.getAttribute('data-title').length < 8) {
-          title = modalContent.getAttribute('data-title');
+        if (loginContent.hasAttribute('data-title') && loginContent.getAttribute('data-title').length < 8) {
+          title = loginContent.getAttribute('data-title');
         }
-        tools.innerHTML = `
+
+        // Link only
+        if (loginContent.hasAttribute('data-href')) {
+          var link = loginContent.getAttribute('data-href');
+          tools.innerHTML = `
 <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--
---><a class="page-header-icon" href="#${title}" title="${title}" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-profile" /></svg> ${title}</a><!--
+--><a class="page-header-icon" href="${link}" title="${title}" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-profile" /></svg> ${title}</a><!--
 --><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>
 `;
-        var Modal = require('../../components/modal'),
-            modalDialog = document.createElement('div'),
-            trigger = tools.querySelector('[data-modal-target]');
+        // Modal content
+        } else {
+          tools.innerHTML = `
+<a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--
+--><a class="page-header-icon" href="#login" title="${title}" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-profile" /></svg> ${title}</a><!--
+--><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>
+`;
+          var Modal = require('../../components/modal'),
+              modalDialog = document.createElement('div'),
+              trigger = tools.querySelector('[data-modal-target]');
 
-        modalDialog.id = 'uom-login';
-        modalDialog.addClass('modal__dialog');
-        modalContent.parentNode.removeChild(modalContent);
-        modalDialog.appendChild(modalContent);
-        tools.appendChild(modalDialog);
+          modalDialog.id = 'uom-login';
+          modalDialog.addClass('modal__dialog');
+          loginContent.parentNode.removeChild(loginContent);
+          modalDialog.appendChild(loginContent);
+          tools.appendChild(modalDialog);
 
-        new Modal(trigger, {});
+          new Modal(trigger, {});
+        }
 
       } else {
-        // Fall back to default
+        // Fallback to default
         tools.innerHTML = template;
       }
     }

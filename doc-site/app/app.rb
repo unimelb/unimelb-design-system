@@ -162,20 +162,22 @@ module DocSite
         layout_view = "example_layouts/#{path}".to_sym
         @layout = true
 
-        # ?view=source
-        if request['view'].to_s.downcase == 'source'
-          @file   = path
-          @source = slim layout_view, layout: false, pretty: true
-          @source = syntax_highlight(@source)
-          return slim :source_view
-        end
-
         # Use custom layout if there is one
         if File.exist? File.join(settings.layouts_dir, path + '_layout.slim')
           slim layout_view, layout: "example_layouts/#{path}_layout".to_sym
         else
           slim layout_view
         end
+      end
+
+      get "/layouts/#{path}/source" do
+        layout_view = "example_layouts/#{path}".to_sym
+        @layout = true
+
+        @file   = path
+        @source = slim layout_view, layout: false, pretty: true
+        @source = syntax_highlight(@source)
+        slim :source_view
       end
     end
 
