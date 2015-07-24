@@ -8,15 +8,27 @@ if ENV['RACK_ENV'] == 'production'
 
   run lambda { |env|
     req = Rack::Request.new(env)
+    page = File.join('build', req.path, '/index.html')
 
-    [
-      200,
-      {
-        'Content-Type'  => 'text/html',
-        'Cache-Control' => 'public, max-age=86400'
-      },
-      File.open(File.join('build', req.path, '/index.html'), File::RDONLY)
-    ]
+    if File.exist?(page)
+      [
+        200,
+        {
+          'Content-Type'  => 'text/html',
+          'Cache-Control' => 'public, max-age=86400'
+        },
+        File.open(File.join('build', req.path, '/index.html'), File::RDONLY)
+      ]
+    else
+      [
+        404,
+        {
+          'Content-Type'  => 'text/html',
+          'Cache-Control' => 'public, max-age=86400'
+        },
+        File.open(File.join('build', 'layouts', '404', 'index.html'), File::RDONLY)
+      ]
+    end
   }
 
 else
