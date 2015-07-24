@@ -1,19 +1,33 @@
 #!/usr/bin/env rackup
 # encoding: utf-8
 
-require 'rubygems'
-require 'bundler'
+if ENV['RACK_ENV'] == 'production'
+  use Rack::Static,
+      urls:  ['/assets/', '/assets/images/'],
+      root:  'build'
 
-Bundler.require
+  run lambda { |env|
+    req = Rack::Request.new(env)
 
-require_relative './doc-site/app/app'
+    [
+      200,
+      {
+        'Content-Type'  => 'text/html',
+        'Cache-Control' => 'public, max-age=86400'
+      },
+      File.open(File.join('build', req.path, '/index.html'), File::RDONLY)
+    ]
+  }
 
-ENV["ASSET_ENV"] = 'development'
+else
+  require 'rubygems'
+  require 'bundler'
 
-# if ENV["RACK_ENV"] == 'production'
-#   use Rack::Auth::Basic, "Protected Area" do |username, password|
-#     username == 'uom' and password == 'webtemplates2014'
-#   end
-# end
+  Bundler.require
 
-run DocSite::App
+  require_relative './doc-site/app/app'
+
+  ENV['ASSET_ENV'] = 'development'
+
+  run DocSite::App
+end
