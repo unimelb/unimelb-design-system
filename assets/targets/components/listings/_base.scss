@@ -161,3 +161,39 @@ body.jumpnav-active .uomcontent .listing {
     }
   }
 }
+
+body.jumpnav-active .uomcontent [role="main"] .pathfinder-4 {
+  @include breakpoint(desktop) {
+    li {
+      display: inline-block;
+      height: auto;
+      margin-bottom: 1px;
+      width: 49%;
+
+      &:nth-child(2n+1) {
+        padding-left: 0;
+        text-align: right;
+      }
+    }
+  }
+
+  @include breakpoint(1400px) {
+    li {
+      display: table-cell;
+      height: 100%;
+      width: 25%;
+
+      a {
+        display: block;
+      }
+
+      p {
+        min-width: 0;
+      }
+
+      &:nth-child(2n+1) {
+        padding-left: 1px;
+      }
+    }
+  }
+}

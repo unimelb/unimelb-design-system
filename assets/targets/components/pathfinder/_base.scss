@@ -124,6 +124,7 @@
       }
 
       &.featured {
+        @include rem(margin-bottom, -15px);
         background-color: darken($highlight, 5%);
         color: $black;
 
@@ -254,60 +255,39 @@
   }
 
   .pathfinder-4 {
-    @extend .pathfinder-3;
+    @extend .pathfinder-2;
 
     @include breakpoint(desktop) {
-      @include rem(max-width, $w-mid);
-      align-items: center;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-
       li {
-        @include rem(padding-left, 1px);
-        @include rem(padding-bottom, 1px);
-        @include flex(1 1 40%);
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        @include rem(margin-bottom, 1px);
+        display: inline-block;
         height: auto;
-        padding-right: 0;
+        width: 49%;
 
         &:nth-child(2n+1) {
-          @include justify-content(flex-end);
           padding-left: 0;
+          text-align: right;
         }
-      }
-
-      a {
-        @include flex(1);
-        height: auto;
-        margin: 0;
-      }
-
-      p {
-        @include rem(min-width, 175px);
       }
     }
 
-    @include breakpoint(1350px) {
-      display: table;
-      @include rem(max-width, $w-lge);
-      table-layout: fixed;
-
+    @include breakpoint(1400px) {
       li {
         display: table-cell;
         height: 100%;
+        width: 25%;
+
+        a {
+          display: block;
+        }
+
+        p {
+          min-width: 0;
+        }
 
         &:nth-child(2n+1) {
           @include rem(padding-left, 1px);
         }
-      }
-
-      a {
-        height: 100%;
-        margin: 0 auto;
       }
     }
   }
