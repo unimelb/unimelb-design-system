@@ -96,6 +96,7 @@ DEPENDENCIES
   github-markdown (~> 0.6.4)
   html-pipeline (~> 1.6.0)
   pygments.rb (~> 0.5.4)
+  rack
   rake (~> 10.3.2)
   sinatra (~> 1.4.4)
   sinatra-advanced-routes
