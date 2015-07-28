@@ -30,37 +30,33 @@ LocalNav.prototype.moveLocalNav = function() {
     this.props.localnav.removeClass('no-js');
     this.props.root.appendChild(this.props.localnav);
 
-    for (var groups=this.props.localnav.querySelectorAll('a'), i=groups.length - 1; i >= 0; i--) {
-      var elements = [];
-      for (var nodes=groups[i].parentNode.childNodes, j=nodes.length - 1; j >= 0; j--) {
-        if (nodes[j].nodeType==1 && !nodes[j].hasClass('sitemap-link') && nodes[j].nodeName != 'H2') {
-          elements.push(nodes[j]);
-        }
-      }
+    var elements = [];
+    for (var groups=this.props.localnav.querySelectorAll('.inner'), i=groups.length - 1; i >= 0; i--) {
+      elements.push(groups[i]);
+    }
 
-      if (elements.length > 1) {
-        var childgroup = elements[1];
+    for (i=elements.length - 1; i >= 0; i--) {
+      var childgroup = elements[i], parent = childgroup.parentNode.firstChild;
+      childgroup.addClass('hide');
 
-        var back = document.createElement('span');
-        back.addClass('back');
-        back.innerHTML = groups[i].firstChild.data;
-        childgroup.insertBefore(back, childgroup.firstChild);
+      var back = document.createElement('span');
+      back.addClass('back');
+      back.innerHTML = parent.textContent;
+      childgroup.insertBefore(back, childgroup.firstChild);
 
-        childgroup.firstChild.addEventListener('click', function(e) {
-          e.preventDefault();
-          this.parentNode.toggleClass('hide');
-          this.parentNode.toggleClass('active');
-        });
+      back.addEventListener('click', function(e) {
+        e.preventDefault();
+        this.parentNode.toggleClass('hide');
+        this.parentNode.toggleClass('active');
+      });
 
-        groups[i].addClass('parent');
-        childgroup.addClass('hide');
-        groups[i].addEventListener('click', function(e) {
-          e.preventDefault();
-          var div = this.parentNode.querySelector('div');
-          div.toggleClass('hide');
-          div.toggleClass('active');
-        });
-      }
+      parent.addClass('parent');
+      parent.addEventListener('click', function(e) {
+        e.preventDefault();
+        var div = this.parentNode.querySelector('div');
+        div.toggleClass('hide');
+        div.toggleClass('active');
+      });
     }
   }
 };

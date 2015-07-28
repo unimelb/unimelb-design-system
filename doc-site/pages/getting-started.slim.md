@@ -218,6 +218,14 @@ section
     </div>
 
 section
+  p You will also need to add a class <code>with-login</code> to the main section below it:
+
+==syntax_highlight :html
+  erb:
+    <div role="main" class="with-login">
+      ...
+
+section
   p An example of this can be seen on <a href="/layouts/with-login">this example layout</a>. Note that the title of the login button in the header can be manipulated by using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The title will be "Login" by default, and there is a hard limit of 7 characters to protect the header design.
 
   h3 Login link

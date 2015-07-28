@@ -35,7 +35,7 @@ else
   require 'rubygems'
   require 'bundler'
 
-  Bundler.require
+  Bundler.require(:default, :development)
 
   require_relative './doc-site/app/app'
 
