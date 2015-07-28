@@ -301,8 +301,8 @@
   }
 }
 
-.uomcontent ol.page-local-history {
-  @include rem(padding, 0 0 0 30px);
+.uomcontent .page-header-navigation ol.page-local-history {
+  @include rem(line-height, 90px);
   list-style-type: none;
 
   li {
@@ -490,9 +490,9 @@
       @include rem(margin, 40px);
 
       a.page-header-icon {
-        @include rem(height, 70px);
+        @include rem(height, 63px);
         @include rem(margin-left, 20px);
-        @include rem(padding, 0 15px);
+        @include rem(padding, 7px 15px 0);
 
         svg {
           @include rem(margin-top, 7px);

@@ -36,7 +36,7 @@ LocalNav.prototype.moveLocalNav = function() {
     }
 
     for (i=elements.length - 1; i >= 0; i--) {
-      var childgroup = elements[i], parent = childgroup.parentNode.firstChild;
+      var childgroup = elements[i], parent = childgroup.parentNode.querySelector('a');
       childgroup.addClass('hide');
 
       var back = document.createElement('span');
