@@ -4,11 +4,11 @@
 if ENV['RACK_ENV'] == 'production'
   use Rack::Static,
       urls:  ['/assets/', '/assets/images/'],
-      root:  'build'
+      root:  'build/' + ENV['VERSION']
 
   run lambda { |env|
     req = Rack::Request.new(env)
-    page = File.join('build', req.path, '/index.html')
+    page = File.join('build', ENV['VERSION'], req.path, '/index.html')
 
     if File.exist?(page)
       [
@@ -17,7 +17,7 @@ if ENV['RACK_ENV'] == 'production'
           'Content-Type'  => 'text/html',
           'Cache-Control' => 'public, max-age=86400'
         },
-        File.open(File.join('build', req.path, '/index.html'), File::RDONLY)
+        File.open(page, File::RDONLY)
       ]
     else
       [
@@ -26,7 +26,7 @@ if ENV['RACK_ENV'] == 'production'
           'Content-Type'  => 'text/html',
           'Cache-Control' => 'public, max-age=86400'
         },
-        File.open(File.join('build', 'layouts', '404', 'index.html'), File::RDONLY)
+        File.open(File.join('build', ENV['VERSION'], 'layouts', '404', 'index.html'), File::RDONLY)
       ]
     end
   }

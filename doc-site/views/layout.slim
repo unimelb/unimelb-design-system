@@ -13,13 +13,13 @@ html.no-js lang="en"
     / == stylesheet_tag 'injection'
 
     == stylesheet_tag 'components'
-    / == stylesheet_tag '//uom-design-system.s3.amazonaws.com/v2.0/uom.css'
+    / == stylesheet_tag '//uom-design-system.s3.amazonaws.com/v3.0/uom.css'
 
     == stylesheet_tag 'docs'
     == stylesheet_tag '/assets/stylesheets/syntax.css'
 
     == javascript_tag 'components'
-    / == javascript_tag '//uom-design-system.s3.amazonaws.com/v2.0/uom.js'
+    / == javascript_tag '//uom-design-system.s3.amazonaws.com/v3.0/uom.js'
 
     - if ENV["ASSET_ENV"] == 'development'
       == javascript_tag "http://#{ENV['WEB_SERVER_HOST']}:#{ENV['WEBPACK_SERVER_PORT']}/webpack-dev-server.js"

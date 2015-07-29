@@ -68,6 +68,10 @@
         transition: .3s padding-left .1s, .2s height;
         vertical-align: top;
 
+        ol.page-local-history {
+          line-height: 1;
+        }
+
         .mobile-nav .styled-select.alt {
           @include rem(margin-top, 5px);
         }

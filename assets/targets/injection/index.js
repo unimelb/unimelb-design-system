@@ -5,25 +5,27 @@ require("./gtm");
 window.UOMloadInjection = function() {
   "use strict";
 
-  var assethost, Header, Nav, Footer;
+  var assethostFooter, assethostHeader, Header, Nav, Footer;
 
-  //var assethost = 'http://localhost:5001/assets';
-  assethost = '//uom-design-system.s3.amazonaws.com/shared/assets';
+  assethostHeader = assethostFooter = '//uom-design-system.s3.amazonaws.com/shared/assets';
+  // assethostHeader = assethostFooter = 'http://localhost:5001/assets';
+  // assethostHeader += '/injection/header';
+  // assethostFooter += '/injection/footer';
 
   Header = require('./header/index.es6');
   new Header({
-    'assethost':   assethost, // + '/injection/header',
+    'assethost':   assethostHeader,
     'defaultlink': 'https://www.unimelb.edu.au'
   });
 
   Nav = require('./nav');
   new Nav({
-    'assethost': assethost, // + '/injection/header'
+    'assethost': assethostHeader,
   });
 
-  Footer = require('./footer');
+  Footer = require('./footer/index.es6');
   new Footer({
-    'assethost': assethost, // + '/injection/footer'
+    'assethost': assethostFooter
   });
 
   require('./icons');
