@@ -1,0 +1,544 @@
+<!DOCTYPE html><html class="no-js" lang="en">
+<head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Forms | Web.Unimelb</title><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection-6c6ce6ed41bccee5138981422a4f82ae.js"></script><link rel="stylesheet" href="/assets/injection-b6dcd5a6fb35000db868f4d4dfcb7c00.css"><link rel="stylesheet" href="/assets/uom-dd8251d343266e826ae9f85b9414918c.css"><link rel="stylesheet" href="/assets/docs-b96103cc7a47d232242cefd918ec717a.css"><link rel="stylesheet" href="/assets/stylesheets/syntaxbd74.css?1433382385"><script src="/assets/uom-9a2c06a916a7c8f502f8e083d7dfa670.js"></script></head><body><div class="uomcontent"><div class="page-inner"><div class="page-local-history"><a class="root" href="/">Web.Unimelb</a><span>/</span><a href="/components/" title="Components">Components</a><span>/</span><a class="last" href="#" title="Forms">Forms</a></div><div role="main"><header class="solid"><h1>Forms</h1></header><section><div class="jumpnav"></div></section><hr /><h2 id="text-field">Text field</h2><form action="#" data-validate="" method="post">
+  <fieldset>
+    <div>
+      <label for="f-name">Name (required): </label><input aria-required="true" data-error="Please enter your name." id="f-name" name="f[name]" type="text" />
+    </div>
+    <div>
+      <label for="f-email">Email (pattern matching): </label><input data-error="Please enter a valid email." data-pattern="email" id="f-email" name="f[email]" type="email" />
+    </div>
+    <div>
+      <label for="f-id">Product Code (regex pattern matching): </label><input data-error="Single digit followed by three uppercase letters." data-pattern="[0-9][A-Z]{3}" id="f-id" maxlength="4" name="f[p_id]" type="text" />
+    </div>
+    <div>
+      <label for="f-message">Message: </label><textarea aria-required="true" data-error="Please enter a message." id="f-message" name="f[message]"></textarea>
+    </div>
+  </fieldset>
+  <footer>
+    <input type="submit" />
+  </footer>
+</form>
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">data-validate=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;f-name&quot;</span><span class="nt">&gt;</span>Name (required): <span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please enter your name.&quot;</span> <span class="na">id=</span><span class="s">&quot;f-name&quot;</span> <span class="na">name=</span><span class="s">&quot;f[name]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;f-email&quot;</span><span class="nt">&gt;</span>Email (pattern matching): <span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">data-error=</span><span class="s">&quot;Please enter a valid email.&quot;</span> <span class="na">data-pattern=</span><span class="s">&quot;email&quot;</span> <span class="na">id=</span><span class="s">&quot;f-email&quot;</span> <span class="na">name=</span><span class="s">&quot;f[email]&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;f-id&quot;</span><span class="nt">&gt;</span>Product Code (regex pattern matching): <span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">data-error=</span><span class="s">&quot;Single digit followed by three uppercase letters.&quot;</span> <span class="na">data-pattern=</span><span class="s">&quot;[0-9][A-Z]{3}&quot;</span> <span class="na">id=</span><span class="s">&quot;f-id&quot;</span> <span class="na">maxlength=</span><span class="s">&quot;4&quot;</span> <span class="na">name=</span><span class="s">&quot;f[p_id]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;f-message&quot;</span><span class="nt">&gt;</span>Message: <span class="nt">&lt;/label&gt;&lt;textarea</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please enter a message.&quot;</span> <span class="na">id=</span><span class="s">&quot;f-message&quot;</span> <span class="na">name=</span><span class="s">&quot;f[message]&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+  <span class="nt">&lt;footer&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<hr /><h2 id="checkbox-and-radio-buttons">Checkbox and radio buttons</h2><form method="post" action="#" data-validate>
+
+  <fieldset>
+    <div>
+      <legend>Select preferred option (required):</legend>
+      <div class="inline">
+        <input type="checkbox" id="c1" class="checkbox" aria-required="true" name="f[approve]" data-error="Please select an option" />
+        <label for="c1">
+          <span>Option 1</span>
+        </label>
+      </div>
+      <div class="inline">
+        <input type="checkbox" id="c2" class="checkbox" aria-required="true" name="f[approve]" data-error="Please select an option" />
+        <label for="c2">
+          <span>Option 2</span>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div>
+      <legend>Make a selection (implicitly required):</legend>
+      <div class="inline">
+        <input checked name="f[radio]" type="radio" id="radio-1-1" value="yes" data-error="Please make a selection" />
+        <label for="radio-1-1">
+          <span>Yes</span>
+        </label>
+      </div>
+      <div class="inline">
+        <input name="f[radio]" type="radio" id="radio-1-2" value="no" data-error="Please make a selection" />
+        <label for="radio-1-2">
+          <span>No</span>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+
+  <footer>
+    <input type="submit">
+  </footer>
+</form>
+
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">data-validate</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;legend&gt;</span>Select preferred option (required):<span class="nt">&lt;/legend&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;inline&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c1&quot;</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">name=</span><span class="s">&quot;f[approve]&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please select an option&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;c1&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span&gt;</span>Option 1<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;inline&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c2&quot;</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">name=</span><span class="s">&quot;f[approve]&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please select an option&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;c2&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span&gt;</span>Option 2<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;legend&gt;</span>Make a selection (implicitly required):<span class="nt">&lt;/legend&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;inline&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">checked</span> <span class="na">name=</span><span class="s">&quot;f[radio]&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">id=</span><span class="s">&quot;radio-1-1&quot;</span> <span class="na">value=</span><span class="s">&quot;yes&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please make a selection&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radio-1-1&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span&gt;</span>Yes<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;inline&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">&quot;f[radio]&quot;</span> <span class="na">type=</span><span class="s">&quot;radio&quot;</span> <span class="na">id=</span><span class="s">&quot;radio-1-2&quot;</span> <span class="na">value=</span><span class="s">&quot;no&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please make a selection&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;radio-1-2&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span&gt;</span>No<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;/label&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+
+  <span class="nt">&lt;footer&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<hr /><h2 id="select">Select</h2><form action="#" data-validate="" method="post">
+  <fieldset>
+    <div>
+      <select aria-label="This label is hidden from view but not from screen readers" aria-required="true" name="f[select]">
+        <option value="-1">
+          Please select
+        </option>
+        <optgroup>
+          <option>
+            Hi
+          </option>
+        </optgroup><optgroup>
+          <option>
+            Another group
+          </option>
+          <option>
+            Another group, another opt
+          </option>
+        </optgroup></select>
+    </div>
+    <div style="width:50%">
+      <label for="s2">Alternate style dropdown </label><select aria-required="true" class="alt" data-error="Please make a selection from the 2nd dropdown, this help error message is particularly long to test out just how long an error message can be" id="s2" name="f[select2]">
+        <option value="-1">
+          Please select
+        </option>
+        <optgroup>
+          <option>
+            Hi
+          </option>
+        </optgroup><optgroup>
+          <option>
+            Another group
+          </option>
+          <option>
+            Another group, another opt
+          </option>
+        </optgroup></select>
+    </div>
+  </fieldset>
+  <footer>
+    <input type="submit" />
+  </footer>
+</form>
+<form action="#" data-validate="" method="post" style="background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANgAAADhCAMAAACdi4u6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NkQwRjg5ODc1MEYyMTFFNEJBMUNBNkZFRTExOEI2ODUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkQwRjg5ODg1MEYyMTFFNEJBMUNBNkZFRTExOEI2ODUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2RDBGODk4NTUwRjIxMUU0QkExQ0E2RkVFMTE4QjY4NSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2RDBGODk4NjUwRjIxMUU0QkExQ0E2RkVFMTE4QjY4NSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnP3su4AAAAzUExURVQj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)">
+  <fieldset>
+    <div>
+      <label for="s3" style="color:#fff">Clear style dropdown </label><select aria-required="true" class="clear" id="s3" name="f[select3]">
+        <option value="-1">
+          Please select
+        </option>
+        <optgroup>
+          <option>
+            Hi
+          </option>
+        </optgroup><optgroup>
+          <option>
+            Another group
+          </option>
+          <option>
+            Another group, another opt
+          </option>
+        </optgroup></select>
+    </div>
+  </fieldset>
+  <footer>
+    <input type="submit" />
+  </footer>
+</form>
+<form action="#" data-validate="" method="post" style="background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANgAAADhCAMAAACdi4u6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Mjk3MkQyMzA1MEYzMTFFNEJBMUNBNkZFRTExOEI2ODUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Mjk3MkQyMzE1MEYzMTFFNEJBMUNBNkZFRTExOEI2ODUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2RDBGODk4OTUwRjIxMUU0QkExQ0E2RkVFMTE4QjY4NSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2RDBGODk4QTUwRjIxMUU0QkExQ0E2RkVFMTE4QjY4NSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuQwFBIAAAAeUExURbS8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)">
+  <fieldset>
+    <div>
+      <label for="s4">Clear style on lighter background </label><select aria-required="true" class="clear-dark" id="s4" name="f[select4]">
+        <option value="-1">
+          Please select
+        </option>
+        <optgroup>
+          <option>
+            Hi
+          </option>
+        </optgroup><optgroup>
+          <option>
+            Another group
+          </option>
+          <option>
+            Another group, another opt
+          </option>
+        </optgroup></select>
+    </div>
+  </fieldset>
+  <footer>
+    <input type="submit" />
+  </footer>
+</form>
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">data-validate=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;select</span> <span class="na">aria-label=</span><span class="s">&quot;This label is hidden from view but not from screen readers&quot;</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">name=</span><span class="s">&quot;f[select]&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>
+          Please select
+        <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;optgroup&gt;</span>
+          <span class="nt">&lt;option&gt;</span>
+            Hi
+          <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/optgroup&gt;&lt;optgroup&gt;</span>
+          <span class="nt">&lt;option&gt;</span>
+            Another group
+          <span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option&gt;</span>
+            Another group, another opt
+          <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/optgroup&gt;&lt;/select&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;width:50%&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;s2&quot;</span><span class="nt">&gt;</span>Alternate style dropdown <span class="nt">&lt;/label&gt;&lt;select</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;alt&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please make a selection from the 2nd dropdown, this help error message is particularly long to test out just how long an error message can be&quot;</span> <span class="na">id=</span><span class="s">&quot;s2&quot;</span> <span class="na">name=</span><span class="s">&quot;f[select2]&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>
+          Please select
+        <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;optgroup&gt;</span>
+          <span class="nt">&lt;option&gt;</span>
+            Hi
+          <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/optgroup&gt;&lt;optgroup&gt;</span>
+          <span class="nt">&lt;option&gt;</span>
+            Another group
+          <span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option&gt;</span>
+            Another group, another opt
+          <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/optgroup&gt;&lt;/select&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+  <span class="nt">&lt;footer&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">data-validate=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANgAAADhCAMAAACdi4u6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NkQwRjg5ODc1MEYyMTFFNEJBMUNBNkZFRTExOEI2ODUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkQwRjg5ODg1MEYyMTFFNEJBMUNBNkZFRTExOEI2ODUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2RDBGODk4NTUwRjIxMUU0QkExQ0E2RkVFMTE4QjY4NSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2RDBGODk4NjUwRjIxMUU0QkExQ0E2RkVFMTE4QjY4NSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PnP3su4AAAAzUExURVQj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)&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;s3&quot;</span> <span class="na">style=</span><span class="s">&quot;color:#fff&quot;</span><span class="nt">&gt;</span>Clear style dropdown <span class="nt">&lt;/label&gt;&lt;select</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;clear&quot;</span> <span class="na">id=</span><span class="s">&quot;s3&quot;</span> <span class="na">name=</span><span class="s">&quot;f[select3]&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>
+          Please select
+        <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;optgroup&gt;</span>
+          <span class="nt">&lt;option&gt;</span>
+            Hi
+          <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/optgroup&gt;&lt;optgroup&gt;</span>
+          <span class="nt">&lt;option&gt;</span>
+            Another group
+          <span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option&gt;</span>
+            Another group, another opt
+          <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/optgroup&gt;&lt;/select&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+  <span class="nt">&lt;footer&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">data-validate=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANgAAADhCAMAAACdi4u6AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NTc3MiwgMjAxNC8wMS8xMy0xOTo0NDowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6Mjk3MkQyMzA1MEYzMTFFNEJBMUNBNkZFRTExOEI2ODUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6Mjk3MkQyMzE1MEYzMTFFNEJBMUNBNkZFRTExOEI2ODUiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2RDBGODk4OTUwRjIxMUU0QkExQ0E2RkVFMTE4QjY4NSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2RDBGODk4QTUwRjIxMUU0QkExQ0E2RkVFMTE4QjY4NSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PuQwFBIAAAAeUExURbS8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)&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;s4&quot;</span><span class="nt">&gt;</span>Clear style on lighter background <span class="nt">&lt;/label&gt;&lt;select</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;clear-dark&quot;</span> <span class="na">id=</span><span class="s">&quot;s4&quot;</span> <span class="na">name=</span><span class="s">&quot;f[select4]&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>
+          Please select
+        <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;optgroup&gt;</span>
+          <span class="nt">&lt;option&gt;</span>
+            Hi
+          <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/optgroup&gt;&lt;optgroup&gt;</span>
+          <span class="nt">&lt;option&gt;</span>
+            Another group
+          <span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option&gt;</span>
+            Another group, another opt
+          <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/optgroup&gt;&lt;/select&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+  <span class="nt">&lt;footer&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<hr /><h2 id="search-field">Search field</h2><form action="http://search-au.funnelback.com/s/search/" method="get">
+  <fieldset>
+    <div class="inline">
+      <input type="hidden" name="collection" value="unimelb-researchers">
+      <input aria-required="true" placeholder="Search for experts by name or research topic" name="query" type="search" data-error="Please enter a keyword" aria-label="Search for experts by name or research topic">
+      <button type="submit" class="search-button"><span>GO</span><svg class="icon" role="img"><use xlink:href="#icon-search"></use></svg></button>
+    </div>
+
+    <div>
+      <input type="checkbox" class="checkbox" name="facetScope" id="s-c1" value="f.Supervisor%20Availability%7C1=Available">
+      <label for="s-c1" tabindex="0">
+        <span>Show only available supervisors</span>
+      </label>
+    </div>
+  </fieldset>
+</form>
+
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;http://search-au.funnelback.com/s/search/&quot;</span> <span class="na">method=</span><span class="s">&quot;get&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;inline&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;collection&quot;</span> <span class="na">value=</span><span class="s">&quot;unimelb-researchers&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Search for experts by name or research topic&quot;</span> <span class="na">name=</span><span class="s">&quot;query&quot;</span> <span class="na">type=</span><span class="s">&quot;search&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please enter a keyword&quot;</span> <span class="na">aria-label=</span><span class="s">&quot;Search for experts by name or research topic&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">class=</span><span class="s">&quot;search-button&quot;</span><span class="nt">&gt;&lt;span&gt;</span>GO<span class="nt">&lt;/span&gt;&lt;svg</span> <span class="na">class=</span><span class="s">&quot;icon&quot;</span> <span class="na">role=</span><span class="s">&quot;img&quot;</span><span class="nt">&gt;&lt;use</span> <span class="na">xlink:href=</span><span class="s">&quot;#icon-search&quot;</span><span class="nt">&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/button&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">name=</span><span class="s">&quot;facetScope&quot;</span> <span class="na">id=</span><span class="s">&quot;s-c1&quot;</span> <span class="na">value=</span><span class="s">&quot;f.Supervisor%20Availability%7C1=Available&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;s-c1&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span&gt;</span>Show only available supervisors<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<hr /><h2 id="form-error">Form error</h2><form action="#" data-validate="" method="post">
+  <div aria-atomic="true" class="form-error" role="alert">
+    <p>
+      We didn't recognise the username or password you entered.
+    </p>
+  </div>
+  <fieldset>
+    <div>
+      <label for="f-username">Username: </label><input aria-required="true" data-error="Please enter your username." id="f-username" name="f[username]" type="text" />
+    </div>
+    <div>
+      <label for="f-password">Password: </label><input aria-required="true" data-error="Please enter your password." id="f-password" name="f[password]" type="password" />
+    </div>
+  </fieldset>
+</form>
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;#&quot;</span> <span class="na">data-validate=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">aria-atomic=</span><span class="s">&quot;true&quot;</span> <span class="na">class=</span><span class="s">&quot;form-error&quot;</span> <span class="na">role=</span><span class="s">&quot;alert&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      We didn&#39;t recognise the username or password you entered.
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;f-username&quot;</span><span class="nt">&gt;</span>Username: <span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please enter your username.&quot;</span> <span class="na">id=</span><span class="s">&quot;f-username&quot;</span> <span class="na">name=</span><span class="s">&quot;f[username]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;f-password&quot;</span><span class="nt">&gt;</span>Password: <span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please enter your password.&quot;</span> <span class="na">id=</span><span class="s">&quot;f-password&quot;</span> <span class="na">name=</span><span class="s">&quot;f[password]&quot;</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<hr /><section><h2 id="required-fields">Required Fields</h2>
+
+<ul>
+<li>The aria-required attribute informs screen readers that input fields require a value.</li>
+</ul>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>First name (required):<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">aria-required=</span><span class="s">"true"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"firstname"</span> <span class="na">name=</span><span class="s">"fname"</span> <span class="nt">/&gt;</span>
+</pre></div>
+
+<ul>
+<li>The data-required attribute can be used to display a * symbol next to a label.</li>
+</ul>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"firstname"</span> <span class="na">data-required=</span><span class="s">"true"</span><span class="nt">&gt;</span>First name:<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">aria-required=</span><span class="s">"true"</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"firstname"</span> <span class="na">name=</span><span class="s">"fname"</span> <span class="nt">/&gt;</span>
+</pre></div></section><hr /><h2 id="required-fields-example">Required fields example</h2><form action="#" data-validate="" method="post">
+  <fieldset>
+    <div>
+      <label data-required="true" for="f-name-2">Name: </label><input aria-required="true" data-error="Please enter your name." id="f-name-2" name="f[name]" type="text" />
+    </div>
+    <div>
+      <label data-required="true" for="f-email-2">Email: </label><input data-error="Please enter a valid email." data-pattern="email" id="f-email-2" name="f[email]" type="email" />
+    </div>
+  </fieldset>
+  <footer>
+    <input type="submit" />
+  </footer>
+</form>
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">data-validate=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">data-required=</span><span class="s">&quot;true&quot;</span> <span class="na">for=</span><span class="s">&quot;f-name-2&quot;</span><span class="nt">&gt;</span>Name: <span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please enter your name.&quot;</span> <span class="na">id=</span><span class="s">&quot;f-name-2&quot;</span> <span class="na">name=</span><span class="s">&quot;f[name]&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;label</span> <span class="na">data-required=</span><span class="s">&quot;true&quot;</span> <span class="na">for=</span><span class="s">&quot;f-email-2&quot;</span><span class="nt">&gt;</span>Email: <span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">data-error=</span><span class="s">&quot;Please enter a valid email.&quot;</span> <span class="na">data-pattern=</span><span class="s">&quot;email&quot;</span> <span class="na">id=</span><span class="s">&quot;f-email-2&quot;</span> <span class="na">name=</span><span class="s">&quot;f[email]&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/fieldset&gt;</span>
+  <span class="nt">&lt;footer&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<hr /><section><h2 id="why-labels">Why Labels are Important</h2>
+
+<ul>
+<li>Screen readers go into forms mode when they encounter form input fields. Unless form elements have labels associated with them, the screen reader cannot tell the user what data needs to be entered.</li>
+<li>Adding a 'for' attribute to the label and an 'id' to the input field tells the screen reader that the input field has a label.</li>
+</ul>
+
+<h3>Example 1a - How to do it</h3>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"firstname"</span><span class="nt">&gt;</span>First name:<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"firstname"</span> <span class="na">name=</span><span class="s">"fname"</span> <span class="nt">/&gt;</span>
+</pre></div>
+
+<h3>Example 1b - How not to do it</h3>
+
+<div class="highlight highlight-html"><pre>First name:
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"fname"</span> <span class="nt">/&gt;</span>
+</pre></div>
+
+<h3>Example 1c - How not to do it</h3>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"fname"</span> <span class="na">placeholder=</span><span class="s">"First name"</span> <span class="nt">/&gt;</span>
+</pre></div></section><hr /><section><h2 id="why-fieldsets">Why Fieldsets are Important</h2>
+
+<ul>
+<li>Fieldsets are a semantic grouping of related form elements.</li>
+<li>The first element inside the fieldset should be a legend element, which provides a label for the group.</li>
+</ul>
+
+<h3>Example 2a - How to do it</h3>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;legend&gt;</span>Is this your country of citizenship as well?<span class="nt">&lt;/legend&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"yes"</span> <span class="na">id=</span><span class="s">"citizenship-yes"</span> <span class="na">value=</span><span class="s">"yes"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"citizenship-yes"</span><span class="nt">&gt;</span>Yes<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"no"</span> <span class="na">id=</span><span class="s">"citizenship-no"</span> <span class="na">value=</span><span class="s">"no"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"citizenship-no"</span><span class="nt">&gt;</span>No<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span>
+</pre></div>
+
+<h3>Example 2b - How not to do it</h3>
+
+<div class="highlight highlight-html"><pre>Is this your country of citizenship as well?
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"yes"</span> <span class="na">id=</span><span class="s">"citizenship-yes"</span> <span class="na">value=</span><span class="s">"yes"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"citizenship-yes"</span><span class="nt">&gt;</span>Yes<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"no"</span> <span class="na">id=</span><span class="s">"citizenship-no"</span> <span class="na">value=</span><span class="s">"no"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"citizenship-no"</span><span class="nt">&gt;</span>No<span class="nt">&lt;/label&gt;</span>
+</pre></div>
+
+<h3>Example 3a - How to do it</h3>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;fieldset&gt;</span>
+    <span class="nt">&lt;legend&gt;</span>Please select research area or department you wish to study<span class="nt">&lt;/legend&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"biomedical"</span> <span class="na">id=</span><span class="s">"research-biomedical"</span> <span class="na">value=</span><span class="s">"Biomedical"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"research-biomedical"</span><span class="nt">&gt;</span>Biomedical<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"chem-bio"</span> <span class="na">id=</span><span class="s">"research-chem-bio"</span> <span class="na">value=</span><span class="s">"Chemical &amp; Biomolecular"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"research-chem-bio"</span><span class="nt">&gt;</span>Chemical <span class="err">&amp;</span> Biomolecular<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span>
+</pre></div>
+
+<h3>Example 3b - How not to do it</h3>
+
+<div class="highlight highlight-html"><pre>Please select research area or department you wish to study
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"biomedical"</span> <span class="na">id=</span><span class="s">"research-biomedical"</span> <span class="na">value=</span><span class="s">"Biomedical"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"research-biomedical"</span><span class="nt">&gt;</span>Biomedical<span class="nt">&lt;/label&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"chem-bio"</span> <span class="na">id=</span><span class="s">"research-chem-bio"</span> <span class="na">value=</span><span class="s">"Chemical &amp; Biomolecular"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"research-chem-bio"</span><span class="nt">&gt;</span>Chemical <span class="err">&amp;</span> Biomolecular<span class="nt">&lt;/label&gt;</span>
+</pre></div></section><hr /><div class="half"><section class="center"><a class="button-hero-reverse" href="../filtered-listings/">Filtered Listings</a></section><section class="center"><a class="button-hero" href="../gallery/">Gallery</a></section></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/designers/">For Designers</a></li><li><a href="/getting-started/">Getting started</a></li><li><a href="/content-creators/">For Content Creators</a></li><li><a href="/layouts/">Page Templates</a></li><li><a href="/components/">Component reference</a></li></ul></div></div></div></body>
+</html>
