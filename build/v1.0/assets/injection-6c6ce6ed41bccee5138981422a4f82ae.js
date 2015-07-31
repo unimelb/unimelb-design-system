@@ -172,7 +172,7 @@ var supportedmodernbrowser = !/(MSIE 7.0)/g.test(navigator.userAgent);
     }
     defaultlink = 'https://www.unimelb.edu.au';
     if ("development" === 'development') {
-      assethost = '/assets/shared';
+      assethost = '/releases/v1.0/assets/shared';
     } else {
       assethost = '//uom-design-system.s3.amazonaws.com/shared';
     }
@@ -615,7 +615,7 @@ var supportedmodernbrowser = !/(MSIE 7.0)/g.test(navigator.userAgent);
     nav = document.querySelector('#globalsitemap');
     if (!nav) {
       if ("development" === 'development') {
-        assethost = '/assets/shared';
+        assethost = '/releases/v1.0/assets/shared';
       } else {
         assethost = '//uom-design-system.s3.amazonaws.com/shared';
       }
@@ -646,7 +646,7 @@ var supportedmodernbrowser = !/(MSIE 7.0)/g.test(navigator.userAgent);
     footer = document.querySelector('.page-footer');
     if (!footer) {
       if ("development" === 'development') {
-        assethost = '/assets/shared';
+        assethost = '/releases/v1.0/assets/shared';
       } else {
         assethost = '//uom-design-system.s3.amazonaws.com/shared';
       }
