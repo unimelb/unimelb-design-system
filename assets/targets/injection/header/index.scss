@@ -80,10 +80,10 @@
         vertical-align: top;
 
         svg {
-          @include rem(height, 20px);
-          @include rem(margin-top, 3px);
-          @include rem(width, 20px);
-          margin-bottom: 0;
+          @include rem(height, 14px);
+          @include rem(margin-bottom, 3px);
+          @include rem(margin-top, 7px);
+          @include rem(width, 14px);
         }
       }
     }
@@ -212,7 +212,10 @@
     }
 
     .styled-select svg.icon {
-      @include rem(top, 10px);
+      @include rem(height, 20px);
+      @include rem(right, 5px);
+      @include rem(top, 5px);
+      @include rem(width, 20px);
       fill: $darkblue;
     }
 
@@ -255,16 +258,30 @@
 
   .page-local-history {
     color: $darkblue;
+    display: none;
     margin: 0;
-    padding: 0 30px 0 0;
+    padding: 0;
+
+    @include breakpoint(desktop) {
+      display: block;
+    }
 
     a {
       color: $darkblue;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         color: $midblue;
       }
+
+      &:active {
+        color: $black;
+      }
     }
+  }
+
+  div.page-local-history {
+    padding: 0 30px 0 0;
   }
 }
 
@@ -276,23 +293,54 @@
 
 .uomcontent .page-local-history {
   @extend %wrapper;
-  @include rem(padding, 0 30px);
   color: $white;
-  display: none;
-
-  @include breakpoint(desktop) {
-    display: block;
-  }
 
   a {
     color: $white;
     font-weight: $light;
   }
+}
+
+.uomcontent .page-header-navigation ol.page-local-history {
+  @include rem(line-height, 90px);
+  list-style-type: none;
+
+  li {
+    @include rem(font-size, 15px);
+    @include rem(padding-right, 10px);
+    display: inline;
+
+    &::after {
+      @include rem(margin-top, 2px);
+      @include rem(padding-left, 10px);
+      content: '/';
+      color: $darkblue;
+      display: inline-block;
+      font-weight: $light;
+      vertical-align: middle;
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+
+  span {
+    @include rem(font-size, 15px);
+    height: auto;
+    line-height: 1;
+    padding: 0;
+  }
+}
+
+.uomcontent div.page-local-history {
+  @include rem(padding, 0 30px);
 
   span {
     @include rem(padding, 0 10px);
   }
 }
+
 
 .uomcontent .page-header-tools {
   @include rem(width, 60px);
@@ -303,13 +351,23 @@
   vertical-align: top;
 
   @include breakpoint(tablet) {
-    @include rem(width, 186px);
+    @include rem(width, 122px);
   }
 
   @include breakpoint(desktop) {
-    @include rem(width, 300px);
+    @include rem(width, 200px);
     background-color: $white;
     position: absolute;
+  }
+
+  &.with-login {
+    @include breakpoint(tablet) {
+      @include rem(width, 186px);
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(width, 300px);
+    }
   }
 
   .page-header-icon {
@@ -329,10 +387,10 @@
     /* autoprefixer: on */
 
     svg {
-      @include rem(height, 30px);
+      @include rem(height, 20px);
       @include rem(margin-bottom, 4px);
-      @include rem(margin-top, 7px);
-      @include rem(width, 30px);
+      @include rem(margin-top, 14px);
+      @include rem(width, 20px);
       fill: currentColor;
       display: block;
       margin-left: auto;
@@ -345,7 +403,7 @@
       text-decoration: none;
     }
 
-    &[title="Login"],
+    &[data-modal-target="uom-login"],
     &[title="Search"] {
       display: none;
 
@@ -361,9 +419,10 @@
       @include rem(padding, 0 23px);
 
       svg {
-        @include rem(height, 38px);
-        @include rem(margin-top, 18px);
-        @include rem(width, 38px);
+        @include rem(height, 24px);
+        @include rem(margin-bottom, 10px);
+        @include rem(margin-top, 26px);
+        @include rem(width, 24px);
       }
     }
   }
@@ -383,6 +442,7 @@
     position: absolute;
 
     @include breakpoint(desktop) {
+      @include rem(margin-left, 30px);
       @include rem(margin-top, 30px);
     }
   }
@@ -430,9 +490,9 @@
       @include rem(margin, 40px);
 
       a.page-header-icon {
-        @include rem(height, 70px);
+        @include rem(height, 63px);
         @include rem(margin-left, 20px);
-        @include rem(padding, 0 15px);
+        @include rem(padding, 7px 15px 0);
 
         svg {
           @include rem(margin-top, 7px);

@@ -375,6 +375,10 @@
     &:hover {
       color: darken($cyan, 15%);
     }
+
+    &:active {
+      color: $black;
+    }
   }
 
   .center {

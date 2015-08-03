@@ -29,10 +29,10 @@ div role="main"
 
   .half
     section.center
-      a.button-hero-reverse href=(@prev)
+      a.button-hero-reverse href=('/components/'+@prev)
         =component_title(@prev)
     section.center
-      a.button-hero href=(@next)
+      a.button-hero href=('/components/'+@next)
         =component_title(@next)
 
   == slim :contrib

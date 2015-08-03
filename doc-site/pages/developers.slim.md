@@ -9,9 +9,9 @@ section
   / p How to get started
 
   / ol
-  /   li: a href="/articles/development-boilerplate" Development boilerplate
-  /   li: a href="/articles/using-example-layouts" Using example layouts
-  /   li: a href="/articles/development-adding-components" Adding components
+  /   li: a href="/development-boilerplate" Development boilerplate
+  /   li: a href="/using-example-layouts" Using example layouts
+  /   li: a href="/development-adding-components" Adding components
 
   / p Contributing to the templates
 
@@ -36,8 +36,8 @@ section
     li The design system is technology agnostic in the first instance. We cannot support CMS implementations of template code.
     li However, we will work with CMS experts (eg. Squiz) to integrate with major, university supported CMS's
     li Assets are stored centrally on a CDN to ensure maximum performance and maintainability over time.
-    li If something is broken, you should <a href="/articles/how-to-contribute">contribute a fix</a>.
-    li If something is not there, it is better to <a href="/articles/how-to-contribute">contribute it</a>.
+    li If something is broken, you should <a href="/how-to-contribute">contribute a fix</a>.
+    li If something is not there, it is better to <a href="/how-to-contribute">contribute it</a>.
     li Component code should be isolated and stored separately as far as is practical.
     li The documentation site should immediately show you the effect of changes made to enable contribution
     li Pull-requests should be used to

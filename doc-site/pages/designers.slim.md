@@ -29,4 +29,4 @@ section
 hr
 section
   p.center
-    a.button-hero href="/articles/designers-start" Next: Start designing
+    a.button-hero href="/designers-start" Next: Start designing

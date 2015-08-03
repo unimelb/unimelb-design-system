@@ -1,6 +1,6 @@
 module Helpers
   def path_to_title(path)
-    return nil if path.blank?
+    return nil if path.nil? || path == ''
     path.gsub(/^todo-/, '').split('-').map(&:capitalize).join(' ')
   end
 
@@ -23,5 +23,9 @@ module Helpers
   def layout_path(layout, opt=false)
     path = "/layouts/#{layout.downcase}"
     !!opt ? "#{path}?view=" + opt : path
+  end
+
+  def blank?
+      self !~ /\S/
   end
 end

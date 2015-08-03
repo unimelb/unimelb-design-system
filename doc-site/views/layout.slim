@@ -25,7 +25,5 @@ html.no-js lang="en"
       == javascript_tag "http://#{ENV['WEB_SERVER_HOST']}:#{ENV['WEBPACK_SERVER_PORT']}/webpack-dev-server.js"
 
   body
-    .uomcontent
-      .page-inner
-        == yield
-        == slim :nav
+    == yield
+    == slim :nav
