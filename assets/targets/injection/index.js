@@ -5,7 +5,7 @@ require("./gtm");
 window.UOMloadInjection = function() {
   "use strict";
 
-  var assethostFooter, assethostHeader, Header, Nav, Footer;
+  var assethostFooter, assethostHeader, Header, Nav, Footer, Icons;
 
   assethostHeader = assethostFooter = '//uom-design-system.s3.amazonaws.com/shared/assets';
   // assethostHeader = assethostFooter = 'http://localhost:5001/assets';
@@ -29,6 +29,7 @@ window.UOMloadInjection = function() {
   });
 
   require('./icons');
+  new Icons();
 };
 
 // Execute when ready
@@ -36,7 +37,5 @@ if (window.attachEvent) {
   window.attachEvent('onload', window.UOMloadInjection);
 } else {
   document.addEventListener('DOMContentLoaded', window.UOMloadInjection, false);
-  document.addEventListener('page:change', function() {
-    window.UOMloadInjection();
-  }, false);
+  document.addEventListener('page:load', window.UOMloadInjection, false);
 }

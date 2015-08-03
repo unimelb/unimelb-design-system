@@ -6,13 +6,14 @@
 function InjectHeader(props) {
   this.props = props;
 
-  require('./createnamespace');
+  var CreateNameSpace = require('./createnamespace');
+  new CreateNameSpace();
 
   this.props.parent = document.querySelector('.uomcontent');
   this.props.page = document.querySelector('.page-inner');
 
   // Only add if the header is not already present
-  if (document.countSelector('.page-header-tools') === 0) {
+  if (document.countSelector('.page-header') === 0) {
     this.renderPageHeader();
     this.renderBreadcrumb();
     this.renderHeaderTools();

@@ -48,7 +48,5 @@ if (window.attachEvent) {
   window.attachEvent('onload', window.UOMFormLoadComponents);
 } else {
   document.addEventListener('DOMContentLoaded', window.UOMFormLoadComponents, false);
-  document.addEventListener('page:change', function() {
-    window.UOMFormLoadComponents();
-  }, false);
+  document.addEventListener('page:load', window.UOMFormLoadComponents, false);
 }
