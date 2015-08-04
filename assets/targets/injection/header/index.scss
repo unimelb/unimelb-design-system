@@ -74,6 +74,7 @@
 
         .mobile-nav .styled-select.alt {
           @include rem(margin-top, 5px);
+          position: relative;
         }
       }
 
@@ -164,11 +165,27 @@
     }
 
     &.wide {
-      @include rem(width, 142px);
-      background-color: $black;
+      @include rem(width, 140px);
+      background-color: transparent;
+
+      svg {
+        @include rem(width, 140px);
+      }
 
       @include breakpoint(desktop) {
         @include rem(width, 320px);
+
+        svg {
+          @include rem(width, 320px);
+        }
+      }
+    }
+
+    &.wide + .page-header-navigation {
+      @include rem(padding-left, 155px);
+
+      @include breakpoint(desktop) {
+        @include rem(padding-left, 380px);
       }
     }
   }
@@ -221,6 +238,7 @@
       @include rem(top, 5px);
       @include rem(width, 20px);
       fill: $darkblue;
+      position: absolute;
     }
 
     @include breakpoint(0) {
@@ -355,7 +373,7 @@
   vertical-align: top;
 
   @include breakpoint(tablet) {
-    @include rem(width, 122px);
+    @include rem(width, 124px);
   }
 
   @include breakpoint(desktop) {

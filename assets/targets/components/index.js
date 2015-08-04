@@ -20,35 +20,6 @@ WebFont.load({
 window.UOMloadComponents = function() {
   "use strict";
 
-  // injection
-  var assethostFooter, assethostHeader, Header, Nav, Footer, Icons;
-
-  assethostHeader = assethostFooter = '//uom-design-system.s3.amazonaws.com/shared/assets';
-  // assethostHeader = assethostFooter = 'http://localhost:5001/assets';
-  // assethostHeader += '/injection/header';
-  // assethostFooter += '/injection/footer';
-
-  Header = require('../injection/header/index.es6');
-  new Header({
-    'assethost':   assethostHeader,
-    'defaultlink': 'https://www.unimelb.edu.au'
-  });
-
-  Nav = require('../injection/nav');
-  new Nav({
-    'assethost': assethostHeader,
-  });
-
-  Footer = require('../injection/footer/index.es6');
-  new Footer({
-    'assethost': assethostFooter
-  });
-
-  Icons = require('../injection/icons');
-  new Icons();
-
-  // components
-
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
     ListFilter, MobileTableHelper, IconHelper, ImageGallery, imagesLoaded,

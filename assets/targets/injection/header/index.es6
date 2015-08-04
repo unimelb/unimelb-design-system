@@ -13,7 +13,7 @@ function InjectHeader(props) {
   this.props.page = document.querySelector('.page-inner');
 
   // Only add if the header is not already present
-  if (document.countSelector('.page-header') === 0) {
+  if (document.countSelector('.page-header-tools') === 0) {
     this.renderPageHeader();
     this.renderBreadcrumb();
     this.renderHeaderTools();

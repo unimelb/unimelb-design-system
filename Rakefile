@@ -47,7 +47,7 @@ namespace :assets do
     system "cp -a #{root}/deploy/* #{build_dir}/assets"
 
     # remove fingerprint on running precompiled assets
-    %w(components docs).each do |asset|
+    %w(components docs injection).each do |asset|
       system "mv #{build_dir}/assets/#{asset}*.css #{build_dir}/assets/#{asset}.css"
       system "mv #{build_dir}/assets/#{asset}*.js #{build_dir}/assets/#{asset}.js"
     end

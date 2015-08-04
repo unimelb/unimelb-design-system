@@ -28,7 +28,7 @@ window.UOMloadInjection = function() {
     'assethost': assethostFooter
   });
 
-  require('./icons');
+  Icons = require('./icons');
   new Icons();
 };
 
