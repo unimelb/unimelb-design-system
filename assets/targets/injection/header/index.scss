@@ -74,7 +74,6 @@
 
         .mobile-nav .styled-select.alt {
           @include rem(margin-top, 5px);
-          position: relative;
         }
       }
 
@@ -230,6 +229,7 @@
 
     .styled-select.alt {
       @include rem(margin-top, 13px);
+      position: relative;
     }
 
     .styled-select svg.icon {
