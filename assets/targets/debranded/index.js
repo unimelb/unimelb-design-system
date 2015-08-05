@@ -19,10 +19,13 @@ window.DSComponentsLoad = function() {
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
     ListFilter, IconHelper, ImageGallery, imagesLoaded, slingshot, LMaps,
-    style, script;
+    style, script, CreateNameSpace, Icons;
 
-  require('../injection/header/createnamespace');
-  require('../injection/icons');
+  CreateNameSpace = require('../injection/header/createnamespace');
+  new CreateNameSpace();
+
+  Icons = require('../injection/icons');
+  new Icons();
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
@@ -170,7 +173,5 @@ if (window.attachEvent) {
   window.attachEvent('onload', window.DSComponentsLoad);
 } else {
   document.addEventListener('DOMContentLoaded', window.DSComponentsLoad, false);
-  document.addEventListener('page:change', function() {
-    window.DSComponentsLoad();
-  }, false);
+  document.addEventListener('page:load', window.DSComponentsLoad, false);
 }

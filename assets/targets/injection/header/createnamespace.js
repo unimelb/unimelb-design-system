@@ -1,4 +1,9 @@
-(function(root) {
+/**
+ * CreateNameSpace
+ *
+ * @param  {Object} props
+ */
+function CreateNameSpace() {
   "use strict";
 
   var bodyclass = '';
@@ -40,4 +45,6 @@
 
     parent.appendChild(page);
   }
-})(this);
+}
+
+module.exports = CreateNameSpace;

@@ -44,7 +44,7 @@ function InjectNav(props) {
 
 InjectNav.prototype.setupEventBindings = function() {
   // Local nav is defined
-  if (this.props.localnav) {
+  if (this.props.localnav && this.props.menutrigger) {
     this.props.menutrigger.addEventListener('click', this.handleMenuTrigger.bind(this));
 
     for (var triggers=this.props.localnav.querySelectorAll('h2:first-child'), i=triggers.length - 1; i >= 0; i--) {

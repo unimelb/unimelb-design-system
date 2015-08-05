@@ -6,7 +6,8 @@
 function InjectHeader(props) {
   this.props = props;
 
-  require('./createnamespace');
+  var CreateNameSpace = require('./createnamespace');
+  new CreateNameSpace();
 
   this.props.parent = document.querySelector('.uomcontent');
   this.props.page = document.querySelector('.page-inner');

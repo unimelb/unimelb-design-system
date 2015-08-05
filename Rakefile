@@ -25,11 +25,12 @@ namespace :assets do
 
   desc 'Export static site'
   task :export do
-    if ENV['ASSET_ENV'].nil? || ENV['ASSET_ENV'].empty?
-      abort 'Missing ASSET_ENV parameter'
+    if ENV['VERSION'].nil? || ENV['VERSION'].empty?
+      abort 'Missing VERSION parameter'
     end
+
     root =      File.expand_path(File.join(File.dirname(__FILE__)))
-    build_dir = File.join(root, 'build')
+    build_dir = File.join(root, 'build', ENV['VERSION'])
     app_dir =   File.join(root, 'doc-site', 'public', 'assets')
 
     # clear out existing build
@@ -46,7 +47,7 @@ namespace :assets do
     system "cp -a #{root}/deploy/* #{build_dir}/assets"
 
     # remove fingerprint on running precompiled assets
-    %w(components docs).each do |asset|
+    %w(components docs injection).each do |asset|
       system "mv #{build_dir}/assets/#{asset}*.css #{build_dir}/assets/#{asset}.css"
       system "mv #{build_dir}/assets/#{asset}*.js #{build_dir}/assets/#{asset}.js"
     end

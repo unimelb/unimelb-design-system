@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-EXPORT = (ENV['ASSET_ENV'] == 'export')
+EXPORT = (ENV['VERSION'])
 
 require_relative 'helpers'
 require_relative 'section_filter'
@@ -19,7 +19,7 @@ module DocSite
     set :public_dir,     File.join(root, 'public')
     set :version,        'v3.0'
 
-    set :public_folder,  File.join(root, '..', 'build') if EXPORT
+    set :public_folder,  File.join(root, '..', 'build', ENV['VERSION']) if EXPORT
 
     ### Partials
 
