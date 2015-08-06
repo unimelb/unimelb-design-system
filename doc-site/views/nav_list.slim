@@ -7,3 +7,9 @@ ul
       - unless nav_item[:children].select{|p| !p[:hidden] }.empty?
         .inner
           == partial :nav_list, locals: { nav_list: nav_item[:children] }
+  li
+    a href="link"
+      ' link1
+    .inner: ul
+      li: a href="link2" link2
+      li: a href="link3" link3

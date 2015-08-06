@@ -115,7 +115,8 @@ InjectNav.prototype.handleSearchTrigger = function(e) {
 InjectNav.prototype.handleTrigger = function(e) {
   e.preventDefault();
   this.props.blanket.show();
-  this.props.localnav.offsetTop = 0; // Snap to top
+  if (this.props.localnav.offsetTop)
+    this.props.localnav.offsetTop = 0; // Snap to top
 
   this.props.sitemaptrigger.addClass('active');
   this.props.page.addClass('global-active');
@@ -130,7 +131,8 @@ InjectNav.prototype.handleTrigger = function(e) {
 
 InjectNav.prototype.handleSitemap = function(e) {
   e.preventDefault();
-  this.props.localnav.offsetTop = 0; // Snap to top
+  if (this.props.localnav.offsetTop)
+    this.props.localnav.offsetTop = 0; // Snap to top
 
   this.props.sitemaptrigger.removeClass('active');
   this.props.page.removeClass('global-active');
@@ -144,7 +146,8 @@ InjectNav.prototype.handleSitemap = function(e) {
 
 InjectNav.prototype.handleSitemapTrigger = function(e) {
   e.preventDefault();
-  this.props.localnav.offsetTop = 0; // Snap to top
+  if (this.props.localnav.offsetTop)
+    this.props.localnav.offsetTop = 0; // Snap to top
 
   this.props.sitemaptrigger.addClass('active');
   this.props.page.addClass('global-active');
@@ -155,7 +158,8 @@ InjectNav.prototype.handleSitemapTrigger = function(e) {
 
 InjectNav.prototype.handleMenuTrigger = function(e) {
   e.preventDefault();
-  this.props.localnav.offsetTop = 0; // Snap to top
+  if (this.props.localnav.offsetTop)
+    this.props.localnav.offsetTop = 0; // Snap to top
 
   this.props.blanket.toggle();
   this.props.sitemaptrigger.removeClass('active');
@@ -172,7 +176,8 @@ InjectNav.prototype.handleMenuTrigger = function(e) {
 
 InjectNav.prototype.handleInnerTrigger = function(e) {
   e.preventDefault();
-  this.props.localnav.offsetTop = 0; // Snap to top
+  if (this.props.localnav.offsetTop)
+    this.props.localnav.offsetTop = 0; // Snap to top
 
   if (this.props.page.hasClass('global-active')) {
     this.props.page.removeClass('global-active');

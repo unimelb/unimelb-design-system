@@ -544,6 +544,29 @@
   .uomcontent .page-header {
     border-bottom: 1px solid #f0f0f0;
 
+    .page-local-history {
+      display: block;
+      line-height: 56px;
+
+      li {
+        line-height: 56px;
+
+        &:after {
+          @include rem(margin-top, 2px);
+          @include rem(padding-left, 10px);
+          content: '/';
+          color: $darkblue;
+          display: inline-block;
+          font-weight: $light;
+          vertical-align: middle;
+        }
+
+        &.last:after {
+          display: none;
+        }
+      }
+    }
+
     &.floating {
       border-bottom: 0 none;
     }

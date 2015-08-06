@@ -20,7 +20,10 @@ function InjectHeader(props) {
     this.reorderStructure();
   }
 
-  window.addEventListener("scroll", this.handleScroll.bind(this));
+  // Exclude IE8, can't polyfill window scroll event
+  if (!/(MSIE 8.0)/g.test(navigator.userAgent)) {
+    window.addEventListener("scroll", this.handleScroll.bind(this));
+  }
 }
 
 InjectHeader.prototype.renderPageHeader = function() {
