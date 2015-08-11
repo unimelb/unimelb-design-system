@@ -55,9 +55,9 @@ ListFilter.prototype.triggerIsotope = function() {
     });
 };
 
-// Preselect via query ?filter=data-tag,other-data-tag
+// Preselect via query ?filter=data-tag,other-data-tag&category=a
 ListFilter.prototype.filterQuerystring = function() {
-  var q = window.location.search.split(/\?/), q2 = '';
+  var q = window.location.search.split(/\?/), q2 = '', q3 = '';
 
   if (q.length > 1)
     q = q[1];
@@ -68,12 +68,12 @@ ListFilter.prototype.filterQuerystring = function() {
   for (var i=q.length - 1; i >= 0; i--) {
     var tmp = q[i].split("=");
     if (tmp[0] == "filter") {
-      q2 = tmp[1];
+      q2 = tmp[1].split(",");
+    }
+    if (tmp[0] == "section") {
+      q3 = tmp[1];
     }
   }
-
-  if (q2.length > 1)
-    q2 = q2.split(",");
 
   for (recs=this.el.querySelectorAll('input.checkbox'), i=recs.length - 1; i >= 0; i--) {
     recs[i].addEventListener('click', this.handleClick.bind(this));
@@ -82,6 +82,11 @@ ListFilter.prototype.filterQuerystring = function() {
     for (var j=q2.length - 1; j >= 0; j--)
       if (q2[j] == recs[i].getAttribute('data-tag'))
         recs[i].click();
+  }
+
+  if (q3 !== '') {
+    this.props.curr = q3;
+    this.filterCategories();
   }
 };
 
