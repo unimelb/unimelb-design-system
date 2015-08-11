@@ -149,3 +149,13 @@
     line-height: 1.2;
   }
 }
+
+.ie8 .uomcontent .filtered-listing-grid {
+  li {
+    display: none;
+
+    &.item {
+      display: list-item;
+    }
+  }
+}

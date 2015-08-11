@@ -19,12 +19,17 @@ function ListFilter(el, props) {
     this.props.select.addEventListener('change', this.handleChange.bind(this));
   }
 
-  this.props.categories = this.el.querySelectorAll('input.checkbox:not([data-tag="all"])');
-  this.props.allcategories = this.el.querySelector('input.checkbox[data-tag="all"]');
+  this.props.categories = [];
+  for (var recs=this.el.querySelectorAll('input.checkbox'), i=recs.length - 1; i >= 0; i--)
+    if (recs[i].getAttribute('data-tag') == 'all')
+      this.props.allcategories = recs[i];
+    else
+      this.props.categories.push(recs[i]);
 
-  this.setupIsotope();
+  if (MSIE_version > 8)
+    this.setupIsotope();
+
   this.filterQuerystring();
-
   this.process();
 }
 
@@ -40,19 +45,21 @@ ListFilter.prototype.setupIsotope = function() {
   for (var i=this.props.tables.length - 1; i >= 0; i--) {
     this.props.isos.push(new Isotope(this.props.tables[i], {
       itemSelector: '.item',
+      percentPosition: true,
       layoutMode: 'fitRows',
       masonry: {
-        columnWidth: '.item'
+        columnWidth: '.item-grid'
       }
     }));
   }
 };
 
 ListFilter.prototype.triggerIsotope = function() {
-  for (var i=this.props.isos.length - 1; i >= 0; i--)
-    this.props.isos[i].arrange({
-      filter: '.item'
-    });
+  if (MSIE_version > 8)
+    for (var i=this.props.isos.length - 1; i >= 0; i--)
+      this.props.isos[i].arrange({
+        filter: '.item'
+      });
 };
 
 // Preselect via query ?filter=data-tag,other-data-tag&category=a

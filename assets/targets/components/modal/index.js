@@ -9,7 +9,12 @@ function Modal(el, props) {
   this.props = props;
 
   this.props.offset = el.getAttribute('data-modal-offset');
+
+  var CreateNameSpace = require('../../../shared/createnamespace');
+  new CreateNameSpace();
+
   this.props.root = document.querySelector('.uomcontent');
+
   this.props.targetElement = document.getElementById(this.el.getAttribute('data-modal-target'));
 
   // Only bind if modal has a target
@@ -21,7 +26,7 @@ function Modal(el, props) {
       'root': this.props.root
     });
 
-    this.initTarget();
+    // this.initTarget();
     this.setupCloseButton();
 
     // Event bindings
@@ -60,6 +65,8 @@ Modal.prototype.initTarget = function() {
  */
 Modal.prototype.activateDialog = function(e) {
   e.preventDefault();
+
+  this.initTarget();
 
   if (this.props.offset) {
     this.props.targetElement.style.top = (this.el.offsetTop - 160) + 'px';

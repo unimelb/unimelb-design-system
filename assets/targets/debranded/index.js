@@ -21,7 +21,7 @@ window.DSComponentsLoad = function() {
     ListFilter, IconHelper, ImageGallery, imagesLoaded, slingshot, LMaps,
     style, script, CreateNameSpace, Icons;
 
-  CreateNameSpace = require('../injection/header/createnamespace');
+  CreateNameSpace = require('../../shared/createnamespace');
   new CreateNameSpace();
 
   Icons = require('../injection/icons');
