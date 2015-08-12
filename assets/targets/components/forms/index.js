@@ -72,7 +72,8 @@ ValidateForm.prototype.processField = function(field) {
         this.props.invalid++;
       }
     } else if (field.getAttribute('type') == 'checkbox') {
-      if (this.el.countSelector('[name="' + field.getAttribute('name') + '"]:checked') > 0) {
+      if ((MSIE_version < 9 && field.parentNode.parentNode.countSelector('.on') > 0) ||
+        (this.el.countSelector('[name="' + field.getAttribute('name') + '"]:checked') > 0)) {
         this.setValid(field);
       } else {
         this.setInvalid(field);
@@ -115,8 +116,14 @@ ValidateForm.prototype.setupMessage = function(field) {
   if (field.getAttribute('type') == 'checkbox') {
     var nameval = '[name="' + field.getAttribute('name') + '"]';
     // Get the last wrapped checkbox in this node
-    var node = parent.parentNode.querySelector(nameval);
-    parent = node.parentNode.parentNode.querySelector('div:last-child').querySelector(nameval).parentNode;
+    // var node = parent.parentNode.querySelector(nameval);
+    // parent = node.parentNode.parentNode.querySelector('div:last-child').querySelector(nameval).parentNode;
+    // parent = node.parentNode.parentNode.querySelectorAll('div');
+    // parent = parent[parent.length-1];
+    // parent = parent.querySelector(nameval).parentNode;
+    // console.log(parent);
+    parent = this.el.querySelectorAll(nameval);
+    parent = parent[parent.length-1].parentNode;
   }
 
   if (parent.countSelector('small') === 0) {

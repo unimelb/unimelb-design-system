@@ -27,8 +27,6 @@ $menu:         #036;
 // Rem
 $baseline-px:  16px;
 
-@import 'patterns';
-
 $regular: 400;
 $light: 300;
 
@@ -40,6 +38,8 @@ body {
   margin: 0;
   padding: 0;
 }
+
+@import 'patterns';
 
 @import 'header/index';
 @import 'footer/index';

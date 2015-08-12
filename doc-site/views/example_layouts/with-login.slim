@@ -29,7 +29,8 @@ div role="main" class="with-login"
     #welcome.tab role="tabpanel"
       section.with-figure
         h2.title Login demo page
-        p This is a basic copy of the About Us template, but has a login form <a href="?view=source">built into the source</a>, in a class called <code>page-local-login</code>. You can mark up whatever is needed for the login form within this element. Note that the title of the login button in the header can be manipulated by using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The title will be "Login" by default, and there is a hard limit of 7 characters.
+        p This is a basic copy of the About Us template, but has a login form <a href="#{@settings[:current_url]}/source">built into the source</a>, in a class called <code>page-local-login</code>. You can mark up whatever is needed for the login form within this element. Note that the title of the login button in the header can be manipulated by using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The title will be "Login" by default, and there is a hard limit of 7 characters.
+        p <a href="/layouts/with-login-link">This layout</a> demonstrates a local login feature with link only (no modal), if you need to link away to a login page.
         figure.inset-right
           img src="/assets/images/about_prof_hinchcliff.jpg" alt="Professor Ken Hinchcliff"
           figcaption Professor Ken Hinchcliff

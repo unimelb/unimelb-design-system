@@ -1,12 +1,25 @@
-.page-local-history
-  a.root href="/" Web.Unimelb
+- pos = 0
+ol.page-local-history itemscope="" itemtype="http://schema.org/BreadcrumbList"
+  li.root itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+    a itemprop="item" href="/"
+      span itemprop="name" Web.Unimelb v3.0
+    meta itemprop="position" content=(pos += 1)
+
   - if @component
-    span="/"
-    a title="Components" href="/components" Components
+    li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+      a itemprop="item" title="Components" href="/components"
+        span itemprop="name" Components
+      meta itemprop="position" content=(pos += 1)
+
   - if @layout
-    span="/"
-    a title="Layouts" href="/layouts" Layouts
+    li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+      a itemprop="item" title="Layouts" href="/layouts"
+        span itemprop="name" Layouts
+      meta itemprop="position" content=(pos += 1)
+
   - if page_title
-    span="/"
-    a.last title=(page_title) href=""
-      = page_title
+    li.last itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"
+      a itemprop="item" title=(page_title) href=""
+        span itemprop="name"
+          = page_title
+      meta itemprop="position" content=(pos += 1)

@@ -19,12 +19,17 @@ function ListFilter(el, props) {
     this.props.select.addEventListener('change', this.handleChange.bind(this));
   }
 
-  this.props.categories = this.el.querySelectorAll('input.checkbox:not([data-tag="all"])');
-  this.props.allcategories = this.el.querySelector('input.checkbox[data-tag="all"]');
+  this.props.categories = [];
+  for (var recs=this.el.querySelectorAll('input.checkbox'), i=recs.length - 1; i >= 0; i--)
+    if (recs[i].getAttribute('data-tag') == 'all')
+      this.props.allcategories = recs[i];
+    else
+      this.props.categories.push(recs[i]);
 
-  this.setupIsotope();
+  if (MSIE_version > 8)
+    this.setupIsotope();
+
   this.filterQuerystring();
-
   this.process();
 }
 
@@ -40,24 +45,26 @@ ListFilter.prototype.setupIsotope = function() {
   for (var i=this.props.tables.length - 1; i >= 0; i--) {
     this.props.isos.push(new Isotope(this.props.tables[i], {
       itemSelector: '.item',
+      percentPosition: true,
       layoutMode: 'fitRows',
       masonry: {
-        columnWidth: '.item'
+        columnWidth: '.item-grid'
       }
     }));
   }
 };
 
 ListFilter.prototype.triggerIsotope = function() {
-  for (var i=this.props.isos.length - 1; i >= 0; i--)
-    this.props.isos[i].arrange({
-      filter: '.item'
-    });
+  if (MSIE_version > 8)
+    for (var i=this.props.isos.length - 1; i >= 0; i--)
+      this.props.isos[i].arrange({
+        filter: '.item'
+      });
 };
 
-// Preselect via query ?filter=data-tag,other-data-tag
+// Preselect via query ?filter=data-tag,other-data-tag&category=a
 ListFilter.prototype.filterQuerystring = function() {
-  var q = window.location.search.split(/\?/), q2 = '';
+  var q = window.location.search.split(/\?/), q2 = '', q3 = '';
 
   if (q.length > 1)
     q = q[1];
@@ -68,12 +75,12 @@ ListFilter.prototype.filterQuerystring = function() {
   for (var i=q.length - 1; i >= 0; i--) {
     var tmp = q[i].split("=");
     if (tmp[0] == "filter") {
-      q2 = tmp[1];
+      q2 = tmp[1].split(",");
+    }
+    if (tmp[0] == "section") {
+      q3 = tmp[1];
     }
   }
-
-  if (q2.length > 1)
-    q2 = q2.split(",");
 
   for (recs=this.el.querySelectorAll('input.checkbox'), i=recs.length - 1; i >= 0; i--) {
     recs[i].addEventListener('click', this.handleClick.bind(this));
@@ -82,6 +89,11 @@ ListFilter.prototype.filterQuerystring = function() {
     for (var j=q2.length - 1; j >= 0; j--)
       if (q2[j] == recs[i].getAttribute('data-tag'))
         recs[i].click();
+  }
+
+  if (q3 !== '') {
+    this.props.curr = q3;
+    this.filterCategories();
   }
 };
 

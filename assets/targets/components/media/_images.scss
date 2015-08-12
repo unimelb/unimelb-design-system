@@ -22,8 +22,8 @@
     }
 
     &.small {
-      @include rem(height, 30px);
-      @include rem(width, 30px);
+      @include rem(height, 24px);
+      @include rem(width, 24px);
     }
 
     &.large {
@@ -50,7 +50,6 @@
   }
 
   p [data-icon] {
-    margin: auto -7px;
     padding-bottom: 3px;
   }
 
@@ -102,6 +101,7 @@
       }
     }
 
+    // Deprecated?
     .gmap__canvas {
       width: 100% !important;
 

@@ -1,9 +1,9 @@
 doc-site/tmp/*
+assets/build
 deploy/
 .bundle/*
 .DS_Store
 tmp/*
-build/
 node_modules/
 .env
 .ruby-version

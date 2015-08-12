@@ -1,110 +1,91 @@
-require 'rubygems' unless defined?(Gem)
-require 'rake/sprocketstask'
-require 'compass'
-require 'autoprefixer-rails'
+### Static export
+
+APP_FILE  = './doc-site/app/app.rb'
+APP_CLASS = 'Sinatra::Application'
+
 require 'securerandom'
-
-ROOT_DIR  = File.expand_path File.dirname(__FILE__)
-BUILD_DIR = File.expand_path File.join(ROOT_DIR,  'build')
-
-### Monkey patch sprockets
-
-module Sprockets
-  class Asset
-    def digest_path
-      return logical_path if logical_path =~ /\.(css|js)$/
-      return logical_path if logical_path =~ /\bfonts\b\/.+\.(eot|svg|ttf|woff)$/
-      logical_path.sub(/\.(\w+)$/) { |ext| "-#{digest}#{ext}" }
-    end
-  end
-end
-
-### Injection
-
-namespace :injection do
-  INJECTION_ASSETS      = File.expand_path File.join(ROOT_DIR,  'injection')
-  INJECTION_BUILD_DIR   = File.expand_path File.join(BUILD_DIR, 'injection')
-
-  module InjectionHelper
-    def asset_path(path, options={})
-      asset = environment[path]
-      raise "Unknown asset: #{path}" if asset.nil?
-      asset.digest_path
-    end
-  end
-
-  Rake::SprocketsTask.new(:assets) do |t|
-    t.environment = Sprockets::Environment.new do |e|
-      e.js_compressor  = :uglify
-      e.css_compressor = :scss
-      e.append_path File.join(Gem.loaded_specs['compass-core'].full_gem_path, 'stylesheets')
-      e.append_path INJECTION_ASSETS
-      e.context_class.class_eval do
-        include InjectionHelper
-      end
-    end
-    AutoprefixerRails.install(t.environment)
-    t.output      = INJECTION_BUILD_DIR
-    t.assets      = %w{*.svg *.png *.jpg *.jpeg injection.js injection.css}
-    t.logger      = Logger.new($stdout)
-    # t.log_level   = :debug
-    t.keep        = 0
-  end
-end
-
-### Templates
-
-namespace :templates do
-  module TemplatesHelper
-    def asset_path(path, options={})
-      asset = environment[path]
-      raise "Unknown asset: #{path}" if asset.nil?
-      asset.digest_path
-    end
-  end
-
-  TEMPLATE_VERSION       = ENV['VERSION'] ? ENV['VERSION'] : 'beta'
-  TEMPLATES_ASSETS       = File.expand_path File.join(ROOT_DIR,  'templates')
-  TEMPLATES_VERSION_PATH = File.join('templates', TEMPLATE_VERSION)
-  TEMPLATES_BUILD_DIR    = File.expand_path File.join(BUILD_DIR, TEMPLATES_VERSION_PATH)
-  TEMPLATES_SERVER_PATH  = "/#{TEMPLATES_VERSION_PATH}/"
-
-  Rake::SprocketsTask.new(:assets) do |t|
-    t.environment = Sprockets::Environment.new do |e|
-      e.js_compressor  = :uglify
-      e.css_compressor = :scss
-      e.append_path File.join(Gem.loaded_specs['compass-core'].full_gem_path, 'stylesheets')
-      e.append_path TEMPLATES_ASSETS
-      e.context_class.class_eval do
-        include TemplatesHelper
-      end
-    end
-    AutoprefixerRails.install(t.environment)
-    t.output      = "#{TEMPLATES_BUILD_DIR}/manifest-#{SecureRandom.hex(16)}.json"
-    t.assets      = %w{*.svg *.png *.jpg *.jpeg uom.js isotope.pkgd.min.js uom.css}
-    t.logger      = Logger.new($stdout)
-    t.log_level   = :debug
-    t.keep        = 0
-  end
-end
+require 'sinatra'
+require 'sinatra/partial'
+require 'sinatra/export'
+require 'sinatra/export/rake'
+require 'sprockets'
+require 'sprockets/helpers'
+require 'front_matter_parser'
+require 'slim'
+require 'html/pipeline'
+require_relative './doc-site/app/app'
 
 namespace :assets do
-  task :version_check do
-    raise "Please specify a version. e.g. rake assets:deploy VERSION=0.2" unless ENV['VERSION']
+  desc 'Build the public assets with node'
+  task :build do
+    deploy = File.expand_path(File.join(File.dirname(__FILE__), 'deploy'))
+    system "rm -rf #{deploy}"
+    system 'npm run build-production'
   end
 
-  desc 'Clobber all local assets'
-  task clean: ['assets:version_check', 'templates:clobber_assets', 'injection:clobber_assets']
+  desc 'Export static site'
+  task :export do
+    if ENV['VERSION'].nil? || ENV['VERSION'].empty?
+      abort 'Missing VERSION parameter'
+    end
 
-  desc 'Compile all assets'
-  task compile: ['assets:version_check', 'templates:assets', 'injection:assets']
+    root =      File.expand_path(File.join(File.dirname(__FILE__)))
+    build_dir = File.join(root, 'build', ENV['VERSION'])
+    app_dir =   File.join(root, 'doc-site', 'public', 'assets')
 
-  desc "Build the public assets with node"
-  task :build do
-    system "npm run build-production"
+    # clear out existing build
+    system "cd #{root}/ && rm -rf #{build_dir} && mkdir #{build_dir}"
+
+    # sinatra:export
+    DocSite::App.export!
+
+    # copy static assets
+    system "cp -a #{app_dir} #{build_dir}"
+
+    # build webpack and copy deploy files
+    Rake::Task['assets:build'].invoke
+    system "cp -a #{root}/deploy/* #{build_dir}/assets"
+
+    # remove fingerprint on running precompiled assets
+    %w(components docs injection).each do |asset|
+      system "mv #{build_dir}/assets/#{asset}*.css #{build_dir}/assets/#{asset}.css"
+      system "mv #{build_dir}/assets/#{asset}*.js #{build_dir}/assets/#{asset}.js"
+    end
+  end
+end
+
+namespace :icons do
+  desc 'Combine atomic icon files into single file'
+  task :combine do
+    chunks = File.expand_path(File.join(File.dirname(__FILE__), 'src', 'symbols'))
+    combo = './src/combo.svg'
+    open(combo, 'w') do |saved_file|
+      saved_file.write('<svg xmlns="http://www.w3.org/2000/svg">
+    ')
+    end
+
+    Dir.entries(chunks).reject { |f| f =~ /^[\.|\_]*[\.]$/ }.each do |vol|
+      begin
+        open(combo, 'a') do |saved_file|
+          open(File.join(chunks, vol), 'rb') do |read_file|
+            buf = read_file.read
+            buf.gsub!('svg xmlns="http://www.w3.org/2000/svg"', 'symbol id="' + File.basename(vol, '.svg') + '"')
+            buf.gsub!('</svg>', '</symbol>')
+            buf += '
+    ';
+            saved_file.write(buf)
+          end
+        end
+        puts vol + ' copied'
+      end
+    end
+
+    open(combo, 'a') do |saved_file|
+      saved_file.write('</svg>')
+    end
   end
 end
 
 task :default do
-  # TODO js tests, visual diff
+  # TODO: js tests, visual diff
 end

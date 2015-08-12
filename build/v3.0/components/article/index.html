@@ -1,0 +1,181 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Article | Web.Unimelb</title><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.0</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Article"><span itemprop="name">Article</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><header class="solid"><h1>Article</h1></header><section><h2>Overview</h2>
+
+<p>These are the components used in articles</p></section><hr /><h2 id="header-without-image">Header without image</h2><article>
+  <header class="noimg">
+    <h1>
+      Article headline
+    </h1>
+    <p class="author">
+      <em>By Author Name</em><br />Occupation of author
+    </p>
+  </header>
+</article>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;article&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;noimg&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>
+      Article headline
+    <span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;author&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;em&gt;</span>By Author Name<span class="nt">&lt;/em&gt;&lt;br</span> <span class="nt">/&gt;</span>Occupation of author
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="header-with-image">Header with image</h2><article>
+  <header style="background-image:url(http://placeimg.com/1000/800/any);">
+    <div class="mid-align blurred">
+      <h1>
+        Article headline
+      </h1>
+      <p class="author">
+        <em>By Author Name</em><br />Occupation of author
+      </p>
+    </div>
+  </header>
+</article>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;article&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">style=</span><span class="s">&quot;background-image:url(http://placeimg.com/1000/800/any);&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mid-align blurred&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1&gt;</span>
+        Article headline
+      <span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;author&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;em&gt;</span>By Author Name<span class="nt">&lt;/em&gt;&lt;br</span> <span class="nt">/&gt;</span>Occupation of author
+      <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="article-footer">Article footer</h2><article>
+  <footer>
+    <ul class="staff-listing-detailed">
+      <li>
+        <a href="#">
+          <div class="frame">
+            <img src="http://placeimg.com/100/100/people" />
+          </div>
+          <strong>Author Name</strong>
+          <p>
+            Occupation of author
+          </p>
+        </a>
+      </li>
+    </ul>
+    <div class="republish-wrapper">
+      <div class="share">
+        <ul>
+          <li class="twitter">
+            <a href="#"><svg class="icon" role="img"><use xlink:href="#icon-twitter"></use></svg> Twitter</a>
+          </li>
+          <li class="facebook">
+            <a class="facebook" href="#"><svg class="icon" role="img"><use xlink:href="#icon-facebook"></use></svg> Facebook</a>
+          </li>
+          <li class="linkedin">
+            <a href="#"><svg class="icon" role="img"><use xlink:href="#icon-linkedin"></use></svg> LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+      <div class="republish">
+        <a class="button-small soft" data-modal-target="republish1" href="#">Republish</a>
+        <div class="modal__dialog" id="republish1">
+          <a class="modal__close">Close</a>
+          <h1>
+            Republish
+          </h1>
+          <p>
+            We believe in the free flow of information. We use a Creative Commons license, so you can republish our articles for free, online or in print.
+          </p>
+          <p class="center">
+            <a class="button with-arrow" href="#">Republish</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="categories">
+      <p>
+        Written in <a href="#">Category</a>, <a href="#">Category 2</a>, <a href="#">Category 3</a>, <a href="#">Category 4</a>
+      </p>
+    </div>
+    <p class="credit">
+      This article originally appeared on <a href="#">The Conversation</a> on 7 April. <a href="#">View the original here</a>.
+    </p>
+  </footer>
+</article>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;article&gt;</span>
+  <span class="nt">&lt;footer&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;staff-listing-detailed&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;frame&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;http://placeimg.com/100/100/people&quot;</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;strong&gt;</span>Author Name<span class="nt">&lt;/strong&gt;</span>
+          <span class="nt">&lt;p&gt;</span>
+            Occupation of author
+          <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;republish-wrapper&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;share&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;twitter&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;&lt;svg</span> <span class="na">class=</span><span class="s">&quot;icon&quot;</span> <span class="na">role=</span><span class="s">&quot;img&quot;</span><span class="nt">&gt;&lt;use</span> <span class="na">xlink:href=</span><span class="s">&quot;#icon-twitter&quot;</span><span class="nt">&gt;&lt;/use&gt;&lt;/svg&gt;</span> Twitter<span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;facebook&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;facebook&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;&lt;svg</span> <span class="na">class=</span><span class="s">&quot;icon&quot;</span> <span class="na">role=</span><span class="s">&quot;img&quot;</span><span class="nt">&gt;&lt;use</span> <span class="na">xlink:href=</span><span class="s">&quot;#icon-facebook&quot;</span><span class="nt">&gt;&lt;/use&gt;&lt;/svg&gt;</span> Facebook<span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;linkedin&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;&lt;svg</span> <span class="na">class=</span><span class="s">&quot;icon&quot;</span> <span class="na">role=</span><span class="s">&quot;img&quot;</span><span class="nt">&gt;&lt;use</span> <span class="na">xlink:href=</span><span class="s">&quot;#icon-linkedin&quot;</span><span class="nt">&gt;&lt;/use&gt;&lt;/svg&gt;</span> LinkedIn<span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;republish&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button-small soft&quot;</span> <span class="na">data-modal-target=</span><span class="s">&quot;republish1&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Republish<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;modal__dialog&quot;</span> <span class="na">id=</span><span class="s">&quot;republish1&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;modal__close&quot;</span><span class="nt">&gt;</span>Close<span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;h1&gt;</span>
+            Republish
+          <span class="nt">&lt;/h1&gt;</span>
+          <span class="nt">&lt;p&gt;</span>
+            We believe in the free flow of information. We use a Creative Commons license, so you can republish our articles for free, online or in print.
+          <span class="nt">&lt;/p&gt;</span>
+          <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button with-arrow&quot;</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Republish<span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;categories&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Written in <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Category<span class="nt">&lt;/a&gt;</span>, <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Category 2<span class="nt">&lt;/a&gt;</span>, <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Category 3<span class="nt">&lt;/a&gt;</span>, <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>Category 4<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;credit&quot;</span><span class="nt">&gt;</span>
+      This article originally appeared on <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>The Conversation<span class="nt">&lt;/a&gt;</span> on 7 April. <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>View the original here<span class="nt">&lt;/a&gt;</span>.
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><div class="half"><section class="center"><a class="button-hero-reverse" href="/components/accordion">Accordion</a></section><section class="center"><a class="button-hero" href="/components/base">Base</a></section></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li><li><a href="link">link1 </a><div class="inner"><ul><li><a href="link2">link2</a></li><li><a href="link3">link3</a></li></ul></div></li></ul></div></body></html>

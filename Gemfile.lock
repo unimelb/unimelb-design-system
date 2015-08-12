@@ -7,31 +7,11 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    autoprefixer-rails (5.0.0.1)
-      execjs
     charlock_holmes (0.6.9.4)
-    chunky_png (1.3.3)
-    coffee-script (2.3.0)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.8.0)
-    compass (1.0.3)
-      chunky_png (~> 1.2)
-      compass-core (~> 1.0.2)
-      compass-import-once (~> 1.0.5)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
-      sass (>= 3.3.13, < 3.5)
-    compass-core (1.0.3)
-      multi_json (~> 1.0)
-      sass (>= 3.3.0, < 3.5)
-    compass-import-once (1.0.5)
-      sass (>= 3.2, < 3.5)
     daemons (1.1.9)
     escape_utils (1.0.1)
     eventmachine (1.0.4)
     execjs (2.2.2)
-    ffi (1.9.6)
     foreman (0.78.0)
       thor (~> 0.19.1)
     front_matter_parser (0.0.4)
@@ -60,15 +40,22 @@ GEM
     rack (1.6.0)
     rack-protection (1.5.3)
       rack
+    rack-test (0.6.3)
+      rack (>= 1.0)
     rake (10.3.2)
-    rb-fsevent (0.9.4)
-    rb-inotify (0.9.5)
-      ffi (>= 0.5.0)
-    sass (3.4.10)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    sinatra-advanced-routes (0.5.3)
+      sinatra (~> 1.0)
+    sinatra-export (1.0.1)
+      rack
+      rack-test
+      rake
+      sinatra
+      sinatra-advanced-routes
+      term-ansicolor
     sinatra-partial (0.4.0)
       sinatra
     slim (2.0.3)
@@ -82,6 +69,8 @@ GEM
     sprockets-helpers (1.1.0)
       sprockets (~> 2.0)
     temple (0.6.10)
+    term-ansicolor (1.3.2)
+      tins (~> 1.0)
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
@@ -89,6 +78,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
+    tins (1.5.4)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.5.3)
@@ -100,18 +90,17 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  autoprefixer-rails
-  coffee-script (~> 2.3.0)
-  compass (~> 1.0.1)
   foreman
   front_matter_parser (~> 0.0.2)
   github-linguist (~> 2.10.9)
   github-markdown (~> 0.6.4)
   html-pipeline (~> 1.6.0)
   pygments.rb (~> 0.5.4)
+  rack
   rake (~> 10.3.2)
-  sass (~> 3.4.3)
   sinatra (~> 1.4.4)
+  sinatra-advanced-routes
+  sinatra-export
   sinatra-partial (~> 0.4.0)
   slim (~> 2.0.3)
   sprockets (~> 2.12.2)

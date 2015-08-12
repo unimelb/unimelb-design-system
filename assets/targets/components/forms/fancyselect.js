@@ -1,3 +1,6 @@
+// Deps
+require("../../../shared/shims");
+
 /**
  * FancySelect
  *
@@ -45,7 +48,7 @@ FancySelect.prototype.buildWrapper = function() {
   if (this.el.hasClass('clear-dark'))
     wrapper.addClass('clear-dark');
 
-  wrapper.innerHTML = '<svg class="icon" role="img"><use xlink:href="#icon-north-south"></use></svg>';
+  wrapper.innerHTML = '<svg class="icon" role="img"><use xlink:href="#icon-select"></use></svg>';
 
   this.props.parent.removeChild(this.el);
   wrapper.insertBefore(this.el, wrapper.firstChild);

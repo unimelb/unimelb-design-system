@@ -5,6 +5,7 @@
  */
 function Blanket(props) {
   this.props = props;
+
   this.initBlanket();
 }
 
@@ -18,10 +19,19 @@ Blanket.prototype.initBlanket = function() {
     this.el.addClass('modal__blanket');
 
     // White version for search with header offset
-    if (this.props.inverse) {
+    if (this.props.inverse)
       this.el.addClass('inverse');
-    }
 
+    var CreateNameSpace = require('./createnamespace');
+    new CreateNameSpace();
+
+    this.props.root = document.querySelector('.uomcontent');
+    this.props.root.appendChild(this.el);
+  }
+
+  // Correct IE8 out-of-order bug
+  if (!this.el.parentNode.hasClass('uomcontent')) {
+    this.el.parentNode.removeChild(this.el);
     this.props.root.appendChild(this.el);
   }
 };

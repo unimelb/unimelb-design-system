@@ -1,0 +1,2105 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Tables | Web.Unimelb</title><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.0</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Tables"><span itemprop="name">Tables</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><header class="solid"><h1>Tables</h1></header><section><div class="jumpnav"></div>
+
+<p>This component can be used to apply basic styles to tabular data. </p>
+
+<p>Rows or cells can be highlighted by applying the <code>highlight</code> class appropriately.</p>
+
+<p>Tables should contain a <code>thead</code> and <code>tbody</code> at a minimum, and heading labels should make use of the <code>scope</code> attribute to denote where they apply. </p>
+
+<p>Content within tables can also be centered by applying the <code>center</code> class to the entire table. </p></section><hr /><h2 id="tables">Tables</h2><table class="zebra">
+  <thead>
+    <tr>
+      <th scope="col">
+        Preference
+      </th>
+      <th scope="col">
+        Offer made
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        1
+      </td>
+      <td>
+        Yes
+      </td>
+    </tr>
+    <tr class="highlight">
+      <td>
+        2
+      </td>
+      <td>
+        No
+      </td>
+    </tr>
+    <tr>
+      <td>
+        3
+      </td>
+      <td>
+        Yes
+      </td>
+    </tr>
+    <tr>
+      <td>
+        4
+      </td>
+      <td class="highlight">
+        Yes
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;zebra&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">&quot;col&quot;</span><span class="nt">&gt;</span>
+        Preference
+      <span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">scope=</span><span class="s">&quot;col&quot;</span><span class="nt">&gt;</span>
+        Offer made
+      <span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>
+        1
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>
+        Yes
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;highlight&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;td&gt;</span>
+        2
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>
+        No
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>
+        3
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td&gt;</span>
+        Yes
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td&gt;</span>
+        4
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;highlight&quot;</span><span class="nt">&gt;</span>
+        Yes
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="complex-sample-table-1">Complex sample table 1</h2><table>
+  <thead>
+    <tr>
+      <th id="wcag-date" scope="col">
+        Day/Date
+      </th>
+      <th id="wcag-activity" scope="col">
+        Activity
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="header">
+      <th colspan="2" id="wcag-jan">
+        January
+      </th>
+    </tr>
+    <tr>
+      <td headers="wcag-jan wcag-date">
+        Monday 6 January to Sunday 2 March
+      </td>
+      <td headers="wcag-jan wcag-activity">
+        Summer Term (8 weeks)
+      </td>
+    </tr>
+    <tr>
+      <td headers="wcag-jan wcag-date">
+        Wednesday 22 January
+      </td>
+      <td headers="wcag-jan wcag-activity">
+        Academic Advice Day 1
+      </td>
+    </tr>
+    <tr>
+      <td headers="wcag-jan wcag-date">
+        Monday 27 January
+      </td>
+      <td headers="wcag-jan wcag-activity">
+        University holiday for Australia Day
+      </td>
+    </tr>
+    <tr>
+      <td headers="wcag-jan wcag-date">
+        Friday 31 January
+      </td>
+      <td headers="wcag-jan wcag-activity">
+        Council Planning Day
+      </td>
+    </tr>
+    <tr class="header">
+      <th colspan="2" id="wcag-feb">
+        February
+      </th>
+    </tr>
+    <tr>
+      <td headers="wcag-feb wcag-date">
+        Wednesday 12 February to Friday 14 February
+      </td>
+      <td headers="wcag-feb wcag-activity">
+        Conference of Deans and Heads of Departments
+      </td>
+    </tr>
+    <tr>
+      <td headers="wcag-feb wcag-date">
+        Thursday 20 February
+      </td>
+      <td headers="wcag-feb wcag-activity">
+        Academic Advice Day 2
+      </td>
+    </tr>
+    <tr>
+      <td headers="wcag-feb wcag-date">
+        Tuesday 25 February to Friday 28 February
+      </td>
+      <td headers="wcag-feb wcag-activity">
+        Week O: Orientation for all students
+      </td>
+    </tr>
+    <tr class="header">
+      <th colspan="2" id="wcag-mar">
+        March
+      </th>
+    </tr>
+    <tr>
+      <td headers="wcag-mar wcag-date">
+        Monday 3 March to Sunday 1 June
+      </td>
+      <td headers="wcag-mar wcag-activity">
+        Semester 1 (12 teaching weeks)
+      </td>
+    </tr>
+    <tr>
+      <td headers="wcag-mar wcag-date">
+        Monday 10 March
+      </td>
+      <td headers="wcag-mar wcag-activity">
+        Labour Day (not a  University Holiday)
+      </td>
+    </tr>
+    <tr class="header">
+      <th colspan="2" id="wcag-apr">
+        April
+      </th>
+    </tr>
+    <tr>
+      <td headers="wcag-apr wcag-date">
+        Good Friday 18 April to Sunday 27 April
+      </td>
+      <td headers="wcag-apr wcag-activity">
+        Easter Non Teaching Period &amp; UA (previously AVCC) Common Week
+      </td>
+    </tr>
+    <tr>
+      <td headers="wcag-apr wcag-date">
+        Friday 25 April
+      </td>
+      <td headers="wcag-apr wcag-activity">
+        Anzac Day – University Holiday
+      </td>
+    </tr>
+  </tbody>
+</table>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;table&gt;</span>
+  <span class="nt">&lt;thead&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-date&quot;</span> <span class="na">scope=</span><span class="s">&quot;col&quot;</span><span class="nt">&gt;</span>
+        Day/Date
+      <span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-activity&quot;</span> <span class="na">scope=</span><span class="s">&quot;col&quot;</span><span class="nt">&gt;</span>
+        Activity
+      <span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/thead&gt;</span>
+  <span class="nt">&lt;tbody&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span> <span class="na">id=</span><span class="s">&quot;wcag-jan&quot;</span><span class="nt">&gt;</span>
+        January
+      <span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-jan wcag-date&quot;</span><span class="nt">&gt;</span>
+        Monday 6 January to Sunday 2 March
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-jan wcag-activity&quot;</span><span class="nt">&gt;</span>
+        Summer Term (8 weeks)
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-jan wcag-date&quot;</span><span class="nt">&gt;</span>
+        Wednesday 22 January
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-jan wcag-activity&quot;</span><span class="nt">&gt;</span>
+        Academic Advice Day 1
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-jan wcag-date&quot;</span><span class="nt">&gt;</span>
+        Monday 27 January
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-jan wcag-activity&quot;</span><span class="nt">&gt;</span>
+        University holiday for Australia Day
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-jan wcag-date&quot;</span><span class="nt">&gt;</span>
+        Friday 31 January
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-jan wcag-activity&quot;</span><span class="nt">&gt;</span>
+        Council Planning Day
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span> <span class="na">id=</span><span class="s">&quot;wcag-feb&quot;</span><span class="nt">&gt;</span>
+        February
+      <span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-feb wcag-date&quot;</span><span class="nt">&gt;</span>
+        Wednesday 12 February to Friday 14 February
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-feb wcag-activity&quot;</span><span class="nt">&gt;</span>
+        Conference of Deans and Heads of Departments
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-feb wcag-date&quot;</span><span class="nt">&gt;</span>
+        Thursday 20 February
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-feb wcag-activity&quot;</span><span class="nt">&gt;</span>
+        Academic Advice Day 2
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-feb wcag-date&quot;</span><span class="nt">&gt;</span>
+        Tuesday 25 February to Friday 28 February
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-feb wcag-activity&quot;</span><span class="nt">&gt;</span>
+        Week O: Orientation for all students
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span> <span class="na">id=</span><span class="s">&quot;wcag-mar&quot;</span><span class="nt">&gt;</span>
+        March
+      <span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-mar wcag-date&quot;</span><span class="nt">&gt;</span>
+        Monday 3 March to Sunday 1 June
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-mar wcag-activity&quot;</span><span class="nt">&gt;</span>
+        Semester 1 (12 teaching weeks)
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-mar wcag-date&quot;</span><span class="nt">&gt;</span>
+        Monday 10 March
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-mar wcag-activity&quot;</span><span class="nt">&gt;</span>
+        Labour Day (not a  University Holiday)
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span> <span class="na">id=</span><span class="s">&quot;wcag-apr&quot;</span><span class="nt">&gt;</span>
+        April
+      <span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-apr wcag-date&quot;</span><span class="nt">&gt;</span>
+        Good Friday 18 April to Sunday 27 April
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-apr wcag-activity&quot;</span><span class="nt">&gt;</span>
+        Easter Non Teaching Period <span class="ni">&amp;amp;</span> UA (previously AVCC) Common Week
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-apr wcag-date&quot;</span><span class="nt">&gt;</span>
+        Friday 25 April
+      <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-apr wcag-activity&quot;</span><span class="nt">&gt;</span>
+        Anzac Day – University Holiday
+      <span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+  <span class="nt">&lt;/tbody&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="complex-sample-table-2">Complex sample table 2</h2><div class="mobile-wrap">
+  <table class="wide">
+    <thead>
+      <tr>
+        <th id="wcag-name">
+          Course name
+        </th>
+        <th id="wcag-duration">
+          Duration (EFTSL)
+        </th>
+        <th id="wcag-cricos">
+          CRICOS code
+        </th>
+        <th id="wcag-fee-int">
+          2015 International course fee ($AUD/EFTSL)
+        </th>
+        <th id="wcag-fee-aus">
+          2015 Estimated fee year 1 ($AUD)
+        </th>
+        <th id="wcag-fee-total">
+          Indicative total course fee ($AUD)
+        </th>
+        <th id="wcag-notes">
+          Notes for commencing international students
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="header">
+        <th colspan="7">
+          Graduate/Postgraduate Certificates
+        </th>
+      </tr>
+      <tr>
+        <th id="wcag-c1">
+          Graduate Certificate in Arts
+        </th>
+        <td headers="wcag-c1 wcag-duration">
+          0.5
+        </td>
+        <td headers="wcag-c1 wcag-cricos">
+          031944F
+        </td>
+        <td headers="wcag-c1 wcag-fee-int">
+          $27,360
+        </td>
+        <td headers="wcag-c1 wcag-fee-aus">
+          $13,680
+        </td>
+        <td headers="wcag-c1 wcag-fee-total">
+          $13,680
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <th id="wcag-c2">
+          Postgraduate Certificate in Arts
+        </th>
+        <td headers="wcag-c2 wcag-duration">
+          0.5
+        </td>
+        <td headers="wcag-c2 wcag-cricos">
+          031945E
+        </td>
+        <td headers="wcag-c2 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-c2 wcag-fee-aus">
+          $14,672
+        </td>
+        <td headers="wcag-c2 wcag-fee-total">
+          $14,672
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <th id="wcag-c3">
+          Postgraduate Certificate in Professional Ethics
+        </th>
+        <td headers="wcag-c3 wcag-duration">
+          0.5
+        </td>
+        <td headers="wcag-c3 wcag-cricos">
+          044107C
+        </td>
+        <td headers="wcag-c3 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-c3 wcag-fee-aus">
+          $14,672
+        </td>
+        <td headers="wcag-c3 wcag-fee-total">
+          $14,672
+        </td>
+        <td></td>
+      </tr>
+      <tr class="header">
+        <th colspan="7">
+          Graduate/Postgraduate Diplomas
+        </th>
+      </tr>
+      <tr>
+        <th id="wcag-d1">
+          Graduate Diploma in Arts
+        </th>
+        <td headers="wcag-d1 wcag-duration">
+          1
+        </td>
+        <td headers="wcag-d1 wcag-cricos">
+          023190K
+        </td>
+        <td headers="wcag-d1 wcag-fee-int">
+          $27,360
+        </td>
+        <td headers="wcag-d1 wcag-fee-aus">
+          $27,360
+        </td>
+        <td headers="wcag-d1 wcag-fee-total">
+          $27,360
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <th id="wcag-d2">
+          Postgraduate Diploma in Arts
+        </th>
+        <td headers="wcag-d2 wcag-duration">
+          1
+        </td>
+        <td headers="wcag-d2 wcag-cricos">
+          023185G
+        </td>
+        <td headers="wcag-d2 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-d2 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-d2 wcag-fee-total">
+          $29,344
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <th id="wcag-d3">
+          Postgraduate Diploma in Arts (Cultural Material Conservation)
+        </th>
+        <td headers="wcag-d3 wcag-duration">
+          1
+        </td>
+        <td headers="wcag-d3 wcag-cricos">
+          023185G
+        </td>
+        <td headers="wcag-d3 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-d3 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-d3 wcag-fee-total">
+          $29,344
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <th id="wcag-d4">
+          Postgraduate Diploma in Arts (Editing and Communications)
+        </th>
+        <td headers="wcag-d4 wcag-duration">
+          1
+        </td>
+        <td headers="wcag-d4 wcag-cricos">
+          023185G
+        </td>
+        <td headers="wcag-d4 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-d4 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-d4 wcag-fee-total">
+          $29,344
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <th id="wcag-d5">
+          Postgraduate Diploma in Arts (Media and Communication)
+        </th>
+        <td headers="wcag-d5 wcag-duration">
+          1
+        </td>
+        <td headers="wcag-d5 wcag-cricos">
+          045363A
+        </td>
+        <td headers="wcag-d5 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-d5 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-d5 wcag-fee-total">
+          $29,344
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <th id="wcag-d6">
+          Postgraduate Diploma in Arts and Cultural Management
+        </th>
+        <td headers="wcag-d6 wcag-duration">
+          1
+        </td>
+        <td headers="wcag-d6 wcag-cricos">
+          075125M
+        </td>
+        <td headers="wcag-d6 wcag-fee-int">
+          $30,880
+        </td>
+        <td headers="wcag-d6 wcag-fee-aus">
+          td $30,880
+        </td>
+        <td headers="wcag-d6 wcag-fee-total">
+          $30,880
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <th id="wcag-d7">
+          Postgraduate Diploma in Islamic Studies
+        </th>
+        <td headers="wcag-d7 wcag-duration">
+          1
+        </td>
+        <td headers="wcag-d7 wcag-cricos">
+          064483B
+        </td>
+        <td headers="wcag-d7 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-d7 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-d7 wcag-fee-total">
+          $29,344
+        </td>
+        <td></td>
+      </tr>
+      <tr>
+        <th id="wcag-d8">
+          Postgraduate Diploma in Professional Ethics
+        </th>
+        <td headers="wcag-d8 wcag-duration">
+          1
+        </td>
+        <td headers="wcag-d8 wcag-cricos">
+          044108B
+        </td>
+        <td headers="wcag-d8 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-d8 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-d8 wcag-fee-total">
+          $29,344
+        </td>
+        <td></td>
+      </tr>
+      <tr class="header">
+        <th colspan="7">
+          Masters by coursework
+        </th>
+      </tr>
+      <tr>
+        <th id="wcag-m1">
+          Executive Master of Arts (200 points)
+        </th>
+        <td headers="wcag-m1 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m1 wcag-cricos">
+          068099M
+        </td>
+        <td headers="wcag-m1 wcag-fee-int">
+          $29,632
+        </td>
+        <td headers="wcag-m1 wcag-fee-aus">
+          $29,632
+        </td>
+        <td headers="wcag-m1 wcag-fee-total">
+          $60,768
+        </td>
+        <td headers="wcag-m1 wcag-notes">
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-m2">
+          Master of Applied Linguistics
+        </th>
+        <td headers="wcag-m2 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m2 wcag-cricos">
+          077928D
+        </td>
+        <td headers="wcag-m2 wcag-fee-int">
+          tbc
+        </td>
+        <td headers="wcag-m2 wcag-fee-aus">
+          –
+        </td>
+        <td headers="wcag-m2 wcag-fee-total">
+          –
+        </td>
+        <td headers="wcag-m2 wcag-notes">
+          Fees for 2015 to be confirmed.
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-m3">
+          Master of Art Curatorship
+        </th>
+        <td headers="wcag-m3 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m3 wcag-cricos">
+          027565G
+        </td>
+        <td headers="wcag-m3 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-m3 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-m3 wcag-fee-total">
+          $60,160
+        </td>
+        <td headers="wcag-m3 wcag-notes">
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-m4">
+          Master of Arts and Cultural Management
+        </th>
+        <td headers="wcag-m4 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m4 wcag-cricos">
+          073305A
+        </td>
+        <td headers="wcag-m4 wcag-fee-int">
+          $30,880
+        </td>
+        <td headers="wcag-m4 wcag-fee-aus">
+          $30,880
+        </td>
+        <td headers="wcag-m4 wcag-fee-total">
+          $63,328
+        </td>
+        <td headers="wcag-m4 wcag-notes">
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-m5">
+          Master of Arts in Professional and Applied Ethics
+        </th>
+        <td headers="wcag-m5 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m5 wcag-cricos">
+          058722J
+        </td>
+        <td headers="wcag-m5 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-m5 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-m5 wcag-fee-total">
+          $60,160
+        </td>
+        <td headers="wcag-m5 wcag-notes"></td>
+      </tr>
+      <tr>
+        <th id="wcag-m6">
+          Master of Creative Writing, Publishing and Editing
+        </th>
+        <td headers="wcag-m6 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m6 wcag-cricos">
+          058718E
+        </td>
+        <td headers="wcag-m6 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-m6 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-m6 wcag-fee-total">
+          $60,160
+        </td>
+        <td headers="wcag-m6 wcag-notes">
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-m7">
+          Master of Criminology
+        </th>
+        <td headers="wcag-m7 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m7 wcag-cricos">
+          055074E
+        </td>
+        <td headers="wcag-m7 wcag-fee-int">
+          tbc
+        </td>
+        <td headers="wcag-m7 wcag-fee-aus">
+          –
+        </td>
+        <td headers="wcag-m7 wcag-fee-total">
+          –
+        </td>
+        <td headers="wcag-m7 wcag-notes">
+          Fees for 2015 to be confirmed.
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-m8">
+          Master of Cultural Material Conservation
+        </th>
+        <td headers="wcag-m8 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m8 wcag-cricos">
+          061638A
+        </td>
+        <td headers="wcag-m8 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-m8 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-m8 wcag-fee-total">
+          $60,160
+        </td>
+        <td headers="wcag-m8 wcag-notes">
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-m9">
+          Master of Global Media Communication
+        </th>
+        <td headers="wcag-m9 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m9 wcag-cricos">
+          045345C
+        </td>
+        <td headers="wcag-m9 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-m9 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-m9 wcag-fee-total">
+          $60,160
+        </td>
+        <td headers="wcag-m9 wcag-notes">
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-m10">
+          Master of Journalism
+        </th>
+        <td headers="wcag-m10 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m10 wcag-cricos">
+          075464C
+        </td>
+        <td headers="wcag-m10 wcag-fee-int">
+          $29,632
+        </td>
+        <td headers="wcag-m10 wcag-fee-aus">
+          $29,632
+        </td>
+        <td headers="wcag-m10 wcag-fee-total">
+          $60,768
+        </td>
+        <td headers="wcag-m10 wcag-notes"></td>
+      </tr>
+      <tr>
+        <th id="wcag-m11" rowspan="2">
+          Master of Marketing Communication
+        </th>
+        <td headers="wcag-m11 wcag-duration">
+          1.5
+        </td>
+        <td headers="wcag-m11 wcag-cricos">
+          TBC
+        </td>
+        <td headers="wcag-m11 wcag-fee-int">
+          $30,016
+        </td>
+        <td headers="wcag-m11 wcag-fee-aus">
+          $30,016
+        </td>
+        <td headers="wcag-m11 wcag-fee-total">
+          $45,775
+        </td>
+        <td headers="wcag-m11 wcag-notes"></td>
+      </tr>
+      <tr>
+        <td headers="wcag-m11 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m11 wcag-cricos">
+          TBC
+        </td>
+        <td headers="wcag-m11 wcag-fee-int">
+          $30,016
+        </td>
+        <td headers="wcag-m11 wcag-fee-aus">
+          $30,016
+        </td>
+        <td headers="wcag-m11 wcag-fee-total">
+          $61,534
+        </td>
+        <td headers="wcag-m11 wcag-notes"></td>
+      </tr>
+      <tr>
+        <th id="wcag-m12">
+          Master of Publishing and Communications
+        </th>
+        <td headers="wcag-m12 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m12 wcag-cricos">
+          061634E
+        </td>
+        <td headers="wcag-m12 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-m12 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-m12 wcag-fee-total">
+          $60,160
+        </td>
+        <td headers="wcag-m12 wcag-notes">
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-m13">
+          Master of Social Policy
+        </th>
+        <td headers="wcag-m13 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m13 wcag-cricos">
+          049598E
+        </td>
+        <td headers="wcag-m13 wcag-fee-int">
+          tbc
+        </td>
+        <td headers="wcag-m13 wcag-fee-aus">
+          –
+        </td>
+        <td headers="wcag-m13 wcag-fee-total">
+          –
+        </td>
+        <td headers="wcag-m13 wcag-notes">
+          Fees for 2015 to be confirmed.
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-m14" rowspan="2">
+          Master of Translation
+        </th>
+        <td headers="wcag-m14 wcag-duration">
+          1.5
+        </td>
+        <td headers="wcag-m14 wcag-cricos">
+          TBC
+        </td>
+        <td headers="wcag-m14 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-m14 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-m14 wcag-fee-total">
+          $44,750
+        </td>
+        <td headers="wcag-m14 wcag-notes"></td>
+      </tr>
+      <tr>
+        <td headers="wcag-m14 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-m14 wcag-cricos">
+          TBC
+        </td>
+        <td headers="wcag-m14 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-m14 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-m14 wcag-fee-total">
+          $60,155
+        </td>
+        <td headers="wcag-m14 wcag-notes"></td>
+      </tr>
+      <tr class="header">
+        <th colspan="7">
+          Graduate research courses
+        </th>
+      </tr>
+      <tr>
+        <th id="wcag-r1">
+          Doctor of Philosophy (Arts)
+        </th>
+        <td headers="wcag-r1 wcag-duration">
+          4
+        </td>
+        <td headers="wcag-r1 wcag-cricos">
+          056954J
+        </td>
+        <td headers="wcag-r1 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-r1 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-r1 wcag-fee-total">
+          $126,560
+        </td>
+        <td headers="wcag-r1 wcag-notes">
+          Maximum course wcag-duration shown. Total indicative fee based on maximum wcag-duration. May be completed in 3-4 EFTSL.
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-r2">
+          Master of Arts (Advanced Seminars and Shorter Thesis)
+        </th>
+        <td headers="wcag-r2 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-r2 wcag-cricos">
+          014779M
+        </td>
+        <td headers="wcag-r2 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-r2 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-r2 wcag-fee-total">
+          $60,160
+        </td>
+        <td headers="wcag-r2 wcag-notes">
+          Maximum course wcag-duration shown. Total indicative fee based on maximum wcag-duration. May be completed in 1.5-2 EFTSL.
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-r3">
+          Master of Arts (all current streams)
+        </th>
+        <td headers="wcag-r3 wcag-duration">
+          2
+        </td>
+        <td headers="wcag-r3 wcag-cricos">
+          007306C
+        </td>
+        <td headers="wcag-r3 wcag-fee-int">
+          $29,344
+        </td>
+        <td headers="wcag-r3 wcag-fee-aus">
+          $29,344
+        </td>
+        <td headers="wcag-r3 wcag-fee-total">
+          $60,160
+        </td>
+        <td headers="wcag-r3 wcag-notes">
+          Maximum course wcag-duration shown. Total indicative fee based on maximum wcag-duration. May be completed in 1.5-2 EFTSL.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mobile-wrap&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;wide&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-name&quot;</span><span class="nt">&gt;</span>
+          Course name
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-duration&quot;</span><span class="nt">&gt;</span>
+          Duration (EFTSL)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          CRICOS code
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          2015 International course fee ($AUD/EFTSL)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          2015 Estimated fee year 1 ($AUD)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          Indicative total course fee ($AUD)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Notes for commencing international students
+        <span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+      <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+          Graduate/Postgraduate Certificates
+        <span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-c1&quot;</span><span class="nt">&gt;</span>
+          Graduate Certificate in Arts
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c1 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          0.5
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c1 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          031944F
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c1 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $27,360
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c1 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $13,680
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c1 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $13,680
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-c2&quot;</span><span class="nt">&gt;</span>
+          Postgraduate Certificate in Arts
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c2 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          0.5
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c2 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          031945E
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c2 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c2 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $14,672
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c2 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $14,672
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-c3&quot;</span><span class="nt">&gt;</span>
+          Postgraduate Certificate in Professional Ethics
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c3 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          0.5
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c3 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          044107C
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c3 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c3 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $14,672
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-c3 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $14,672
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+          Graduate/Postgraduate Diplomas
+        <span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-d1&quot;</span><span class="nt">&gt;</span>
+          Graduate Diploma in Arts
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d1 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          1
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d1 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          023190K
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d1 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $27,360
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d1 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $27,360
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d1 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $27,360
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-d2&quot;</span><span class="nt">&gt;</span>
+          Postgraduate Diploma in Arts
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d2 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          1
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d2 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          023185G
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d2 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d2 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d2 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-d3&quot;</span><span class="nt">&gt;</span>
+          Postgraduate Diploma in Arts (Cultural Material Conservation)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d3 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          1
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d3 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          023185G
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d3 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d3 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d3 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-d4&quot;</span><span class="nt">&gt;</span>
+          Postgraduate Diploma in Arts (Editing and Communications)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d4 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          1
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d4 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          023185G
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d4 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d4 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d4 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-d5&quot;</span><span class="nt">&gt;</span>
+          Postgraduate Diploma in Arts (Media and Communication)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d5 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          1
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d5 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          045363A
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d5 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d5 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d5 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-d6&quot;</span><span class="nt">&gt;</span>
+          Postgraduate Diploma in Arts and Cultural Management
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d6 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          1
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d6 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          075125M
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d6 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $30,880
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d6 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          td $30,880
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d6 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $30,880
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-d7&quot;</span><span class="nt">&gt;</span>
+          Postgraduate Diploma in Islamic Studies
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d7 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          1
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d7 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          064483B
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d7 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d7 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d7 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-d8&quot;</span><span class="nt">&gt;</span>
+          Postgraduate Diploma in Professional Ethics
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d8 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          1
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d8 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          044108B
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d8 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d8 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-d8 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+          Masters by coursework
+        <span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m1&quot;</span><span class="nt">&gt;</span>
+          Executive Master of Arts (200 points)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m1 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m1 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          068099M
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m1 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,632
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m1 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,632
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m1 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $60,768
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m1 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m2&quot;</span><span class="nt">&gt;</span>
+          Master of Applied Linguistics
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m2 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m2 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          077928D
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m2 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          tbc
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m2 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          –
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m2 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          –
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m2 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Fees for 2015 to be confirmed.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m3&quot;</span><span class="nt">&gt;</span>
+          Master of Art Curatorship
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m3 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m3 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          027565G
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m3 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m3 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m3 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $60,160
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m3 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m4&quot;</span><span class="nt">&gt;</span>
+          Master of Arts and Cultural Management
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m4 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m4 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          073305A
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m4 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $30,880
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m4 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $30,880
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m4 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $63,328
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m4 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m5&quot;</span><span class="nt">&gt;</span>
+          Master of Arts in Professional and Applied Ethics
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m5 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m5 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          058722J
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m5 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m5 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m5 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $60,160
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m5 wcag-notes&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m6&quot;</span><span class="nt">&gt;</span>
+          Master of Creative Writing, Publishing and Editing
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m6 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m6 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          058718E
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m6 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m6 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m6 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $60,160
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m6 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m7&quot;</span><span class="nt">&gt;</span>
+          Master of Criminology
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m7 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m7 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          055074E
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m7 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          tbc
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m7 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          –
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m7 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          –
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m7 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Fees for 2015 to be confirmed.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m8&quot;</span><span class="nt">&gt;</span>
+          Master of Cultural Material Conservation
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m8 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m8 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          061638A
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m8 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m8 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m8 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $60,160
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m8 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m9&quot;</span><span class="nt">&gt;</span>
+          Master of Global Media Communication
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m9 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m9 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          045345C
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m9 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m9 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m9 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $60,160
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m9 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m10&quot;</span><span class="nt">&gt;</span>
+          Master of Journalism
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m10 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m10 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          075464C
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m10 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,632
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m10 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,632
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m10 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $60,768
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m10 wcag-notes&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m11&quot;</span> <span class="na">rowspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+          Master of Marketing Communication
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m11 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          1.5
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m11 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          TBC
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m11 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $30,016
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m11 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $30,016
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m11 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $45,775
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m11 wcag-notes&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m11 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m11 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          TBC
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m11 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $30,016
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m11 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $30,016
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m11 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $61,534
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m11 wcag-notes&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m12&quot;</span><span class="nt">&gt;</span>
+          Master of Publishing and Communications
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m12 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m12 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          061634E
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m12 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m12 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m12 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $60,160
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m12 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Wcag-duration indicated is maximum course wcag-duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m13&quot;</span><span class="nt">&gt;</span>
+          Master of Social Policy
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m13 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m13 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          049598E
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m13 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          tbc
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m13 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          –
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m13 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          –
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m13 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Fees for 2015 to be confirmed.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-m14&quot;</span> <span class="na">rowspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+          Master of Translation
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m14 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          1.5
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m14 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          TBC
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m14 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m14 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m14 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $44,750
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m14 wcag-notes&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m14 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m14 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          TBC
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m14 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m14 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m14 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $60,155
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-m14 wcag-notes&quot;</span><span class="nt">&gt;&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;header&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;7&quot;</span><span class="nt">&gt;</span>
+          Graduate research courses
+        <span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-r1&quot;</span><span class="nt">&gt;</span>
+          Doctor of Philosophy (Arts)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r1 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          4
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r1 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          056954J
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r1 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r1 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r1 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $126,560
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r1 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Maximum course wcag-duration shown. Total indicative fee based on maximum wcag-duration. May be completed in 3-4 EFTSL.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-r2&quot;</span><span class="nt">&gt;</span>
+          Master of Arts (Advanced Seminars and Shorter Thesis)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r2 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r2 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          014779M
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r2 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r2 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r2 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $60,160
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r2 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Maximum course wcag-duration shown. Total indicative fee based on maximum wcag-duration. May be completed in 1.5-2 EFTSL.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-r3&quot;</span><span class="nt">&gt;</span>
+          Master of Arts (all current streams)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r3 wcag-duration&quot;</span><span class="nt">&gt;</span>
+          2
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r3 wcag-cricos&quot;</span><span class="nt">&gt;</span>
+          007306C
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r3 wcag-fee-int&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r3 wcag-fee-aus&quot;</span><span class="nt">&gt;</span>
+          $29,344
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r3 wcag-fee-total&quot;</span><span class="nt">&gt;</span>
+          $60,160
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-r3 wcag-notes&quot;</span><span class="nt">&gt;</span>
+          Maximum course wcag-duration shown. Total indicative fee based on maximum wcag-duration. May be completed in 1.5-2 EFTSL.
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+  <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="complex-sample-table-3">Complex sample table 3</h2><div class="mobile-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2" id="wcag-typeofaccomodation">
+          Type of Accommodation
+        </th>
+        <th id="wcag-numberofweek">
+          No. of Weeks
+        </th>
+        <th id="wcag-weeklyrent">
+          <strong>Weekly Rent / Board Range ($)</strong>
+        </th>
+        <th id="wcag-estimatedtotal">
+          Estimated Total ($) Rent or Board and other expenses
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th id="wcag-share" rowspan="3">
+          Sharing Rented Premises (with 2 others)
+        </th>
+        <th id="wcag-a1">
+          Close to Parkville campus
+        </th>
+        <td headers="wcag-share wcag-a1 wcag-numberofweek">
+          52
+        </td>
+        <td headers="wcag-share wcag-a1 wcag-weeklyrent">
+          190 - 230
+        </td>
+        <td headers="wcag-share wcag-a1 wcag-estimatedtotal">
+          22,000 - 28,800
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-a2">
+          Within 6 kilometres of Uni
+        </th>
+        <td headers="wcag-share wcag-a2 wcag-numberofweek">
+          252
+        </td>
+        <td headers="wcag-share wcag-a2 wcag-weeklyrent">
+          155 -185
+        </td>
+        <td headers="wcag-share wcag-a2 wcag-estimatedtotal">
+          20,000 - 26,300
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-a3">
+          Rural area
+        </th>
+        <td headers="wcag-share wcag-a3 wcag-numberofweek">
+          52
+        </td>
+        <td headers="wcag-share wcag-a3 wcag-weeklyrent">
+          80 - 100
+        </td>
+        <td headers="wcag-share wcag-a3 wcag-estimatedtotal">
+          15,600 - 20,700
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-apartment" rowspan="2">
+          Student Apartments
+        </th>
+        <th id="wcag-a4">
+          Two bedroom, shared
+        </th>
+        <td headers="wcag-apartment wcag-a4 wcag-numberofweek">
+          52
+        </td>
+        <td headers="wcag-apartment wcag-a4 wcag-weeklyrent">
+          215 - 260
+        </td>
+        <td headers="wcag-apartment wcag-a4 wcag-estimatedtotal">
+          23,400 - 30,500
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-a5">
+          One bedroom not shared
+        </th>
+        <td headers="wcag-apartment wcag-a5 wcag-numberofweek">
+          52
+        </td>
+        <td headers="wcag-apartment wcag-a5 wcag-weeklyrent">
+          305 - 370
+        </td>
+        <td headers="wcag-apartment wcag-a5 wcag-estimatedtotal">
+          28,500 - 36,700
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-hostel">
+          Hostel
+        </th>
+        <th id="wcag-a6">
+          One bedroom - shared bathroom/kitchen
+        </th>
+        <td headers="wcag-hostel wcag-a6 wcag-numberofweek">
+          52
+        </td>
+        <td headers="wcag-hostel wcag-a6 wcag-weeklyrent">
+          185 - 225
+        </td>
+        <td headers="wcag-hostel wcag-a6 wcag-estimatedtotal">
+          22,100 - 28,200
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-college" rowspan="2">
+          Residential Colleges (near or on campus)
+        </th>
+        <th id="wcag-a7">
+          35 week stay
+        </th>
+        <td headers="wcag-college wcag-a7 wcag-numberofweek">
+          35
+        </td>
+        <td headers="wcag-college wcag-a7 wcag-weeklyrent">
+          552 - 712*
+        </td>
+        <td headers="wcag-college wcag-a7 wcag-estimatedtotal">
+          27,600 - 36,600
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-a8">
+          44 week stay
+        </th>
+        <td headers="wcag-college wcag-a8 wcag-numberofweek">
+          44
+        </td>
+        <td headers="wcag-college wcag-a8 wcag-weeklyrent">
+          552 - 712*
+        </td>
+        <td headers="wcag-college wcag-a8 wcag-estimatedtotal">
+          34,072 - 45,017
+        </td>
+      </tr>
+      <tr>
+        <th id="wcag-homestay">
+          Homestay
+        </th>
+        <th id="wcag-a9">
+          Living with a local family
+        </th>
+        <td headers="wcag-homestay wcag-a9 wcag-numberofweek">
+          40
+        </td>
+        <td headers="wcag-homestay wcag-a9 wcag-weeklyrent">
+          240 - 290*
+        </td>
+        <td headers="wcag-homestay wcag-a9 wcag-estimatedtotal">
+          16,000 - 20,700
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mobile-wrap&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;table&gt;</span>
+    <span class="nt">&lt;thead&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span> <span class="na">id=</span><span class="s">&quot;wcag-typeofaccomodation&quot;</span><span class="nt">&gt;</span>
+          Type of Accommodation
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-numberofweek&quot;</span><span class="nt">&gt;</span>
+          No. of Weeks
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-weeklyrent&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;strong&gt;</span>Weekly Rent / Board Range ($)<span class="nt">&lt;/strong&gt;</span>
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-estimatedtotal&quot;</span><span class="nt">&gt;</span>
+          Estimated Total ($) Rent or Board and other expenses
+        <span class="nt">&lt;/th&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/thead&gt;</span>
+    <span class="nt">&lt;tbody&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-share&quot;</span> <span class="na">rowspan=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;</span>
+          Sharing Rented Premises (with 2 others)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-a1&quot;</span><span class="nt">&gt;</span>
+          Close to Parkville campus
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-share wcag-a1 wcag-numberofweek&quot;</span><span class="nt">&gt;</span>
+          52
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-share wcag-a1 wcag-weeklyrent&quot;</span><span class="nt">&gt;</span>
+          190 - 230
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-share wcag-a1 wcag-estimatedtotal&quot;</span><span class="nt">&gt;</span>
+          22,000 - 28,800
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-a2&quot;</span><span class="nt">&gt;</span>
+          Within 6 kilometres of Uni
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-share wcag-a2 wcag-numberofweek&quot;</span><span class="nt">&gt;</span>
+          252
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-share wcag-a2 wcag-weeklyrent&quot;</span><span class="nt">&gt;</span>
+          155 -185
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-share wcag-a2 wcag-estimatedtotal&quot;</span><span class="nt">&gt;</span>
+          20,000 - 26,300
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-a3&quot;</span><span class="nt">&gt;</span>
+          Rural area
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-share wcag-a3 wcag-numberofweek&quot;</span><span class="nt">&gt;</span>
+          52
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-share wcag-a3 wcag-weeklyrent&quot;</span><span class="nt">&gt;</span>
+          80 - 100
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-share wcag-a3 wcag-estimatedtotal&quot;</span><span class="nt">&gt;</span>
+          15,600 - 20,700
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-apartment&quot;</span> <span class="na">rowspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+          Student Apartments
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-a4&quot;</span><span class="nt">&gt;</span>
+          Two bedroom, shared
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-apartment wcag-a4 wcag-numberofweek&quot;</span><span class="nt">&gt;</span>
+          52
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-apartment wcag-a4 wcag-weeklyrent&quot;</span><span class="nt">&gt;</span>
+          215 - 260
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-apartment wcag-a4 wcag-estimatedtotal&quot;</span><span class="nt">&gt;</span>
+          23,400 - 30,500
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-a5&quot;</span><span class="nt">&gt;</span>
+          One bedroom not shared
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-apartment wcag-a5 wcag-numberofweek&quot;</span><span class="nt">&gt;</span>
+          52
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-apartment wcag-a5 wcag-weeklyrent&quot;</span><span class="nt">&gt;</span>
+          305 - 370
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-apartment wcag-a5 wcag-estimatedtotal&quot;</span><span class="nt">&gt;</span>
+          28,500 - 36,700
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-hostel&quot;</span><span class="nt">&gt;</span>
+          Hostel
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-a6&quot;</span><span class="nt">&gt;</span>
+          One bedroom - shared bathroom/kitchen
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-hostel wcag-a6 wcag-numberofweek&quot;</span><span class="nt">&gt;</span>
+          52
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-hostel wcag-a6 wcag-weeklyrent&quot;</span><span class="nt">&gt;</span>
+          185 - 225
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-hostel wcag-a6 wcag-estimatedtotal&quot;</span><span class="nt">&gt;</span>
+          22,100 - 28,200
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-college&quot;</span> <span class="na">rowspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+          Residential Colleges (near or on campus)
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-a7&quot;</span><span class="nt">&gt;</span>
+          35 week stay
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-college wcag-a7 wcag-numberofweek&quot;</span><span class="nt">&gt;</span>
+          35
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-college wcag-a7 wcag-weeklyrent&quot;</span><span class="nt">&gt;</span>
+          552 - 712*
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-college wcag-a7 wcag-estimatedtotal&quot;</span><span class="nt">&gt;</span>
+          27,600 - 36,600
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-a8&quot;</span><span class="nt">&gt;</span>
+          44 week stay
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-college wcag-a8 wcag-numberofweek&quot;</span><span class="nt">&gt;</span>
+          44
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-college wcag-a8 wcag-weeklyrent&quot;</span><span class="nt">&gt;</span>
+          552 - 712*
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-college wcag-a8 wcag-estimatedtotal&quot;</span><span class="nt">&gt;</span>
+          34,072 - 45,017
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+      <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-homestay&quot;</span><span class="nt">&gt;</span>
+          Homestay
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th</span> <span class="na">id=</span><span class="s">&quot;wcag-a9&quot;</span><span class="nt">&gt;</span>
+          Living with a local family
+        <span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-homestay wcag-a9 wcag-numberofweek&quot;</span><span class="nt">&gt;</span>
+          40
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-homestay wcag-a9 wcag-weeklyrent&quot;</span><span class="nt">&gt;</span>
+          240 - 290*
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td</span> <span class="na">headers=</span><span class="s">&quot;wcag-homestay wcag-a9 wcag-estimatedtotal&quot;</span><span class="nt">&gt;</span>
+          16,000 - 20,700
+        <span class="nt">&lt;/td&gt;</span>
+      <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;/tbody&gt;</span>
+  <span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><div class="half"><section class="center"><a class="button-hero-reverse" href="/components/search">Search</a></section><section class="center"><a class="button-hero" href="/components/tabs">Tabs</a></section></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li><li><a href="link">link1 </a><div class="inner"><ul><li><a href="link2">link2</a></li><li><a href="link3">link3</a></li></ul></div></li></ul></div></body></html>

@@ -54,8 +54,9 @@ module.exports = {
         loader: "file-loader?name=[path][name].[ext]"
       },
       {
-        test: /\.coffee$/,
-        loader: "coffee-loader"
+        test: /\.es6?$/,
+        exclude: /(node_modules)/,
+        loader: 'babel'
       },
       {
         test: /\.html$/,
@@ -63,7 +64,6 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        // Crazy shiz for Compass
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!sass-loader")
       },
       {

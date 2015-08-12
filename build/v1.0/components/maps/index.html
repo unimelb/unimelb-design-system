@@ -1,0 +1,135 @@
+<!DOCTYPE html><html class="no-js" lang="en">
+<head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Maps | Web.Unimelb</title><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="../../assets/injection-6c6ce6ed41bccee5138981422a4f82ae.js"></script><link rel="stylesheet" href="../../assets/injection-b6dcd5a6fb35000db868f4d4dfcb7c00.css"><link rel="stylesheet" href="../../assets/uom-dd8251d343266e826ae9f85b9414918c.css"><link rel="stylesheet" href="../../assets/docs-b96103cc7a47d232242cefd918ec717a.css"><link rel="stylesheet" href="../../assets/stylesheets/syntaxbd74.css?1433382385"><script src="../../assets/uom-9a2c06a916a7c8f502f8e083d7dfa670.js"></script></head><body><div class="uomcontent"><div class="page-inner"><div class="page-local-history"><a class="root" href="../..">Web.Unimelb</a><span>/</span><a href=".." title="Components">Components</a><span>/</span><a class="last" href="#" title="Maps">Maps</a></div><div role="main"><header class="solid"><h1>Maps</h1></header><section><div class="jumpnav"></div>
+
+<h2 id="simplegmap">Simple Google maps</h2>
+
+<p>Adding a map to a page is a great way to describe a location in addition to a text-based description. This component uses the Google Maps API to embed a functional google map into one of your pages easily.</p>
+
+<p>To use the Maps component, you will need to know the latitude and longitude of the location you are looking to map. These can be found easily using <a href="http://maps.google.com/">Google Maps</a> (the latitude and longitude can be found in the url) or a service like <a href="http://itouchmap.com/latlong/">itouchmap.com</a>.</p>
+
+<p>This implementation is for basic mapping only, anything complex or requiring some level of interaction should work directly on the <a href="https://developers.google.com/maps/">Google Maps API</a> in a custom JS script.</p>
+
+<h2>New! Open Street Maps</h2>
+
+<p>We also provide <a href="#openstreetmap">an alternative</a> for use with the community-curated Open Street Maps data, using the open source Leaflet.js.</p>
+
+<h2>New! Geocoding</h2>
+
+<p>There is now <a href="#geocode">a method</a> for generating a map directly from an address searched against Google Maps, rather than lat lng coordinates.</p></section><hr /><h2 id="basic-example">Basic example</h2><section>
+  <div class="map-canvas" data-latlng="-37.798535, 144.960605"></div>
+</section>
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;section&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;map-canvas&quot;</span> <span class="na">data-latlng=</span><span class="s">&quot;-37.798535, 144.960605&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<hr /><h2 id="height-width-and-zoom">Height width and zoom</h2><section>
+  <div class="map-canvas" data-height="400" data-latlng="-37.798535, 144.960605" data-width="600" data-zoom="17"></div>
+</section>
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;section&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;map-canvas&quot;</span> <span class="na">data-height=</span><span class="s">&quot;400&quot;</span> <span class="na">data-latlng=</span><span class="s">&quot;-37.798535, 144.960605&quot;</span> <span class="na">data-width=</span><span class="s">&quot;600&quot;</span> <span class="na">data-zoom=</span><span class="s">&quot;17&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<hr /><h2 id="grayscale">Grayscale</h2><section>
+  <div class="map-canvas" data-grayscale="" data-latlng="-37.798535, 144.960605"></div>
+</section>
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;section&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;map-canvas&quot;</span> <span class="na">data-grayscale=</span><span class="s">&quot;&quot;</span> <span class="na">data-latlng=</span><span class="s">&quot;-37.798535, 144.960605&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<hr /><h2 id="pin">Pin</h2><section>
+  <div class="map-canvas" data-latlng="-37.798535, 144.960605" data-pin="-37.798535, 144.960605"></div>
+</section>
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;section&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;map-canvas&quot;</span> <span class="na">data-latlng=</span><span class="s">&quot;-37.798535, 144.960605&quot;</span> <span class="na">data-pin=</span><span class="s">&quot;-37.798535, 144.960605&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<hr /><h2 id="geocode">Geocode</h2><section>
+  <div class="map-canvas" data-address="780 Elizabeth St, Parkville"></div>
+</section>
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;section&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;map-canvas&quot;</span> <span class="na">data-address=</span><span class="s">&quot;780 Elizabeth St, Parkville&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<hr /><h2 id="all-options">All options</h2><section>
+  <div class="map-canvas" data-address="780 Elizabeth St, Parkville" data-grayscale="" data-height="400" data-pin="-37.798535, 144.960605" data-width="600" data-zoom="17"></div>
+</section>
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;section&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;map-canvas&quot;</span> <span class="na">data-address=</span><span class="s">&quot;780 Elizabeth St, Parkville&quot;</span> <span class="na">data-grayscale=</span><span class="s">&quot;&quot;</span> <span class="na">data-height=</span><span class="s">&quot;400&quot;</span> <span class="na">data-pin=</span><span class="s">&quot;-37.798535, 144.960605&quot;</span> <span class="na">data-width=</span><span class="s">&quot;600&quot;</span> <span class="na">data-zoom=</span><span class="s">&quot;17&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<hr /><h2 id="openstreetmap">Openstreetmap</h2><section>
+  <div class="map-canvas" data-leaflet-latlng="-37.798535, 144.960605" data-pin="-37.798535, 144.960605" data-zoom="17"></div>
+</section>
+    <section class="code">
+      <ul class="accordion">
+        <li>
+          <span class="accordion__title">Sample Markup</span>
+          <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;section&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;map-canvas&quot;</span> <span class="na">data-leaflet-latlng=</span><span class="s">&quot;-37.798535, 144.960605&quot;</span> <span class="na">data-pin=</span><span class="s">&quot;-37.798535, 144.960605&quot;</span> <span class="na">data-zoom=</span><span class="s">&quot;17&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+<section><p>The above component provides a simple alternative to google maps, using Leaflet.js with Open Street Map data.</p>
+
+<p>To use this provider instead, use the attr <code>data-leaflet-latlng</code> instead of <code>data-latlng</code> used in the google examples.</p>
+
+<p>Differences to the gmap: height and width are not needed (this map will expand to fill its container), and there is no grayscale option at the moment. <code>data-pin</code> and <code>data-zoom</code> will work as expected.</p></section><hr /><div class="half"><section class="center"><a class="button-hero-reverse" href="../loading-animation/">Loading Animation</a></section><section class="center"><a class="button-hero" href="../media/">Media</a></section></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="../../designers/">For Designers</a></li><li><a href="../../getting-started/">Getting started</a></li><li><a href="../../content-creators/">For Content Creators</a></li><li><a href="../../layouts/">Page Templates</a></li><li><a href="../../components/">Component reference</a></li></ul></div></div></div></body>
+</html>
