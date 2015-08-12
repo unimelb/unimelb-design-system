@@ -53,6 +53,22 @@
   }
 }
 
+.item-grid {
+  width: 100%;
+
+  @include breakpoint($w-sml) {
+    width: 48%;
+  }
+
+  @include breakpoint($w-mid) {
+    width: 31.333%;
+  }
+
+  @include breakpoint(1100px) {
+    width: 24%;
+  }
+}
+
 .uomcontent .filtered-listing-grid {
   @extend %clearfix;
   left: 0;

@@ -103,16 +103,16 @@ window.UOMloadComponents = function() {
       new ValidateForm(recs[i], {});
   }
 
+  if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1) {
+    JumpNav = require("./inpage-navigation/jumpnav");
+    new JumpNav({});
+  }
+
   recs = document.querySelectorAll('form.filtered-listing-select');
   if (recs.length > 0) {
     ListFilter = require("./filtered-listings");
     for (i=recs.length - 1; i >= 0; i--)
       new ListFilter(recs[i], {});
-  }
-
-  if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1) {
-    JumpNav = require("./inpage-navigation/jumpnav");
-    new JumpNav({});
   }
 
   // IE9+
