@@ -16,7 +16,9 @@ function Accordion(el, props) {
 
   // Event bindings
   this.el.addEventListener('click', this.handleClick.bind(this));
-  window.addEventListener('keydown', this.clickWithEnter.bind(this));
+
+  if ('onkeydown' in window.window)
+    window.addEventListener('keydown', this.clickWithEnter.bind(this));
 
   if (window.attachEvent) { // IE 10 down
     window.attachEvent('KeyboardEvent', this.clickWithEnter.bind(this));

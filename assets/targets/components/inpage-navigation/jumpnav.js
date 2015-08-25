@@ -25,15 +25,20 @@ function JumpNav(props) {
   // Build nav menu
   this.buildNavMenu();
 
-  // Calculations for transition points, delay after page render
-  setTimeout(this.initCalcs.bind(this), 1000);
+  if (MSIE_version > 8) {
+    // Calculations for transition points, delay after page render
+    setTimeout(this.initCalcs.bind(this), 1000);
 
-  // Event binding
-  window.addEventListener('scroll', this.handleScroll.bind(this));
-  window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
+    // Event binding
+    if ('onscroll' in window.window)
+      window.addEventListener('scroll', this.handleScroll.bind(this));
 
-  // Initial calc
-  this.trackProgress();
+    if ('onresize' in window.window)
+      window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
+
+    // Initial calc
+    this.trackProgress();
+  }
 }
 
 JumpNav.prototype.handleResize = function() {
@@ -125,39 +130,41 @@ JumpNav.prototype.buildNavMenu = function() {
 };
 
 JumpNav.prototype.initCalcs = function() {
-  this.props.fixPoint = this.props.root.offsetTop + this.props.header.offsetHeight - 20;
+  if (MSIE_version > 8) {
+    this.props.fixPoint = this.props.root.offsetTop + this.props.header.offsetHeight - 20;
 
-  if (this.props.root.hasClass('floating'))
-    this.props.fixPoint = this.props.fixPoint + 35;
+    if (this.props.root.hasClass('floating'))
+      this.props.fixPoint = this.props.fixPoint + 35;
 
-  // Does the page include an inner footer
-  var innerFooterHeight = document.querySelector('[role="main"] > footer:last-of-type');
-  if (innerFooterHeight) {
-    innerFooterHeight = innerFooterHeight.offsetHeight;
-  } else {
-    innerFooterHeight = 0;
+    // Does the page include an inner footer
+    var innerFooterHeight = document.querySelector('[role="main"] > footer:last-of-type');
+    if (innerFooterHeight) {
+      innerFooterHeight = innerFooterHeight.offsetHeight;
+    } else {
+      innerFooterHeight = 0;
+    }
+
+    var outerFooterHeight = document.querySelector('.page-footer');
+    if (outerFooterHeight) {
+      outerFooterHeight = outerFooterHeight.offsetHeight;
+    } else {
+      outerFooterHeight = 0;
+    }
+
+    // Not really sure what this 60 represents, but it makes it Good
+    this.props.stickyEnd = this.props.root.offsetTop + this.props.root.offsetHeight - this.el.offsetHeight - innerFooterHeight - 60;
+
+    // 10px margin-top
+    this.props.footerOffset = (innerFooterHeight + outerFooterHeight + 10) + 'px';
+
+    if (this.el.hasClass('fixed')) {
+      this.el.style.bottom = this.props.footerOffset;
+    } else {
+      this.el.style.bottom = '';
+    }
+
+    this.setEndpoint();
   }
-
-  var outerFooterHeight = document.querySelector('.page-footer');
-  if (outerFooterHeight) {
-    outerFooterHeight = outerFooterHeight.offsetHeight;
-  } else {
-    outerFooterHeight = 0;
-  }
-
-  // Not really sure what this 60 represents, but it makes it Good
-  this.props.stickyEnd = this.props.root.offsetTop + this.props.root.offsetHeight - this.el.offsetHeight - innerFooterHeight - 60;
-
-  // 10px margin-top
-  this.props.footerOffset = (innerFooterHeight + outerFooterHeight + 10) + 'px';
-
-  if (this.el.hasClass('fixed')) {
-    this.el.style.bottom = this.props.footerOffset;
-  } else {
-    this.el.style.bottom = '';
-  }
-
-  this.setEndpoint();
 };
 
 JumpNav.prototype.setFixed = function() {

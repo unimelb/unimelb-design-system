@@ -41,7 +41,7 @@ LocalNav.prototype.moveLocalNav = function() {
 
       var back = document.createElement('span');
       back.addClass('back');
-      back.innerHTML = parent.textContent;
+      back.innerHTML = parent.textContent || parent.innerText;
       childgroup.insertBefore(back, childgroup.firstChild);
 
       back.addEventListener('click', function(e) {

@@ -9,14 +9,15 @@ function CheckboxHelper(el, props) {
 
   this.el = el;
   this.props = props;
-  this.el.parentNode.addEventListener('click', this.handleClick.bind(this));
+  this.props.parent = this.el.parentNode;
+  this.props.parent.addEventListener('click', this.handleClick.bind(this));
 }
 
 CheckboxHelper.prototype.handleClick = function(e) {
   if (this.el.checked) {
-    this.el.parentNode.addClass('on');
+    this.props.parent.addClass('on');
   } else {
-    this.el.parentNode.removeClass('on');
+    this.props.parent.removeClass('on');
   }
 };
 

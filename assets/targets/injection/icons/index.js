@@ -1,4 +1,9 @@
-(function(root) {
+/**
+ * Icons
+ *
+ * @param  {Object} props
+ */
+function Icons() {
   "use strict";
 
   var el = document.querySelector('div#iconset.hidden');
@@ -15,4 +20,6 @@
 
     page.appendChild(el);
   }
-})(this);
+}
+
+module.exports = Icons;

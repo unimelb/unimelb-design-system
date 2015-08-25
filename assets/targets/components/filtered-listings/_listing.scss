@@ -53,6 +53,22 @@
   }
 }
 
+.item-grid {
+  width: 100%;
+
+  @include breakpoint($w-sml) {
+    width: 48%;
+  }
+
+  @include breakpoint($w-mid) {
+    width: 31.333%;
+  }
+
+  @include breakpoint(1100px) {
+    width: 24%;
+  }
+}
+
 .uomcontent .filtered-listing-grid {
   @extend %clearfix;
   left: 0;
@@ -147,5 +163,15 @@
     @include adjust-font-size-to(16px);
     display: block;
     line-height: 1.2;
+  }
+}
+
+.ie8 .uomcontent .filtered-listing-grid {
+  li {
+    display: none;
+
+    &.item {
+      display: list-item;
+    }
   }
 }

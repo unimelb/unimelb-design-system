@@ -6,6 +6,10 @@ require("../../shared/loadscript");
 
 // Also need one to find non-text nodes in a list of children
 
+// Simple sniff
+if (typeof window.MSIE_version === "undefined")
+  window.MSIE_version = /MSIE\s(\d)/g.exec(navigator.userAgent) === null ? 100 : /MSIE\s(\d)/g.exec(navigator.userAgent)[1];
+
 require("../injection/gtm");
 
 // Async load fonts from google
@@ -19,33 +23,6 @@ WebFont.load({
 // replace with viewloader eventually
 window.UOMloadComponents = function() {
   "use strict";
-
-  // injection
-
-  var assethost, Header, Nav, Footer;
-
-  //var assethost = 'http://localhost:5001/assets';
-  assethost = '//uom-design-system.s3.amazonaws.com/shared/assets';
-
-  Header = require('../injection/header/index.es6');
-  new Header({
-    'assethost':   assethost, // + '/injection/header',
-    'defaultlink': 'https://www.unimelb.edu.au'
-  });
-
-  Nav = require('../injection/nav');
-  new Nav({
-    'assethost': assethost, // + '/injection/header'
-  });
-
-  Footer = require('../injection/footer');
-  new Footer({
-    'assethost': assethost, // + '/injection/footer'
-  });
-
-  require('../injection/icons');
-
-  // components
 
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
@@ -66,8 +43,8 @@ window.UOMloadComponents = function() {
       new Modal(recs[i], {});
   }
 
-  // IE9 unsupported at this stage
-  if (!/(MSIE 9)/g.test(navigator.userAgent)) {
+  // IE10+
+  if (MSIE_version > 9) {
     recs = document.querySelectorAll('select');
     if (recs.length > 0) {
       FancySelect = require("./forms/fancyselect");
@@ -105,11 +82,6 @@ window.UOMloadComponents = function() {
       new InpageNavigation(recs[i], {});
   }
 
-  if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1) {
-    JumpNav = require("./inpage-navigation/jumpnav");
-    new JumpNav({});
-  }
-
   recs = document.querySelectorAll('input[type="radio"],input[type="checkbox"]');
   if (recs.length > 0) {
     CheckboxHelper = require("./checklist/checkboxhelper");
@@ -131,11 +103,9 @@ window.UOMloadComponents = function() {
       new ValidateForm(recs[i], {});
   }
 
-  recs = document.querySelectorAll('table');
-  if (recs.length > 0) {
-    MobileTableHelper = require("./tables");
-    for (i=recs.length - 1; i >= 0; i--)
-      new MobileTableHelper(recs[i], {});
+  if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1) {
+    JumpNav = require("./inpage-navigation/jumpnav");
+    new JumpNav({});
   }
 
   recs = document.querySelectorAll('form.filtered-listing-select');
@@ -145,41 +115,51 @@ window.UOMloadComponents = function() {
       new ListFilter(recs[i], {});
   }
 
-  recs = document.querySelectorAll('[data-icon]');
-  if (recs.length > 0) {
-    IconHelper = require("./icons");
-    for (i=recs.length - 1; i >= 0; i--)
-      new IconHelper(recs[i], {});
-  }
-
-  recs = document.querySelectorAll('ul.image-gallery');
-  if (recs.length > 0) {
-    imagesLoaded = require('imagesloaded');
-    ImageGallery = require("./gallery");
-
-    slingshot = function() {
-      new ImageGallery(g, {});
-    };
-
-    for (i=recs.length - 1; i >= 0; i--) {
-      g = recs[i];
-      imagesLoaded(g, slingshot);
+  // IE9+
+  if (MSIE_version > 8) {
+    recs = document.querySelectorAll('[data-icon]');
+    if (recs.length > 0) {
+      IconHelper = require("./icons");
+      for (i=recs.length - 1; i >= 0; i--)
+        new IconHelper(recs[i], {});
     }
-  }
 
-  recs = document.querySelectorAll('[data-leaflet-latlng]');
-  if (recs.length > 0) {
-    loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
-      style = document.createElement('link');
-      style.rel = 'stylesheet';
-      style.href = 'http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
-      document.body.appendChild(style);
+    recs = document.querySelectorAll('table');
+    if (recs.length > 0) {
+      MobileTableHelper = require("./tables");
+      for (i=recs.length - 1; i >= 0; i--)
+        new MobileTableHelper(recs[i], {});
+    }
 
-      LMaps = require("./maps/lmaps");
+    recs = document.querySelectorAll('ul.image-gallery');
+    if (recs.length > 0) {
+      imagesLoaded = require('imagesloaded');
+      ImageGallery = require("./gallery");
+
+      slingshot = function() {
+        new ImageGallery(g, {});
+      };
+
       for (i=recs.length - 1; i >= 0; i--) {
-        new LMaps(recs[i], {});
+        g = recs[i];
+        imagesLoaded(g, slingshot);
       }
-    });
+    }
+
+    recs = document.querySelectorAll('[data-leaflet-latlng]');
+    if (recs.length > 0) {
+      loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
+        style = document.createElement('link');
+        style.rel = 'stylesheet';
+        style.href = 'http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
+        document.body.appendChild(style);
+
+        LMaps = require("./maps/lmaps");
+        for (i=recs.length - 1; i >= 0; i--) {
+          new LMaps(recs[i], {});
+        }
+      });
+    }
   }
 
   // GMaps will load via callback
@@ -203,7 +183,5 @@ if (window.attachEvent) {
   window.attachEvent('onload', window.UOMloadComponents);
 } else {
   document.addEventListener('DOMContentLoaded', window.UOMloadComponents, false);
-  document.addEventListener('page:change', function() {
-    window.UOMloadComponents();
-  }, false);
+  document.addEventListener('page:load', window.UOMloadComponents, false);
 }

@@ -23,13 +23,16 @@ function Checklist(el, props) {
 }
 
 Checklist.prototype.handleClick = function(e) {
-  var target = e.target;
-  if (target.nodeName=='LABEL' || target.nodeName=='SPAN') {
-    if (target.hasClass('on')) {
+  var parent = e.target.parentNode;
+  if (e.target.nodeName=='LABEL' || e.target.nodeName=='SPAN') {
+    if (e.target.nodeName=='SPAN')
+      parent = parent.parentNode;
+
+    if (parent.hasClass('on'))
       this.props.active--;
-    } else {
+    else
       this.props.active++;
-    }
+
     this.toggleDisable();
   }
 };

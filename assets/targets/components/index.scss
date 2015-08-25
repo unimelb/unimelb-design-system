@@ -19,10 +19,6 @@ body {
 @import '../../shared/globals';
 @import '../../shared/typography_fonts';
 
-@import '../injection/header/index';
-@import '../injection/footer/index';
-@import '../injection/nav/index';
-
 @import './base/base';
 @import './text/text';
 @import './buttons/buttons';

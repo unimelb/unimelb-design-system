@@ -6,7 +6,8 @@
 function InjectHeader(props) {
   this.props = props;
 
-  require('./createnamespace');
+  var CreateNameSpace = require('../../../shared/createnamespace');
+  new CreateNameSpace();
 
   this.props.parent = document.querySelector('.uomcontent');
   this.props.page = document.querySelector('.page-inner');
@@ -17,9 +18,14 @@ function InjectHeader(props) {
     this.renderBreadcrumb();
     this.renderHeaderTools();
     this.reorderStructure();
+  } else {
+    this.props.header = document.querySelector('.page-header');
   }
 
-  window.addEventListener("scroll", this.handleScroll.bind(this));
+  // Exclude IE8, can't polyfill window scroll event
+  if (!/(MSIE 8.0)/g.test(navigator.userAgent)) {
+    window.addEventListener("scroll", this.handleScroll.bind(this));
+  }
 }
 
 InjectHeader.prototype.renderPageHeader = function() {

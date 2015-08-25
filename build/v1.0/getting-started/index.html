@@ -1,0 +1,82 @@
+<!DOCTYPE html><html class="no-js" lang="en">
+<head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Getting started | Web.Unimelb</title><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="../assets/injection-6c6ce6ed41bccee5138981422a4f82ae.js"></script><link rel="stylesheet" href="../assets/injection-b6dcd5a6fb35000db868f4d4dfcb7c00.css"><link rel="stylesheet" href="../assets/uom-dd8251d343266e826ae9f85b9414918c.css"><link rel="stylesheet" href="../assets/docs-b96103cc7a47d232242cefd918ec717a.css"><link rel="stylesheet" href="../assets/stylesheets/syntaxbd74.css?1433382385"><script src="../assets/uom-9a2c06a916a7c8f502f8e083d7dfa670.js"></script></head><body><div class="uomcontent"><div class="page-inner"><div class="page-local-history"><a class="root" href="..">Web.Unimelb</a><span>/</span><a class="last" href="#" title="Getting started">Getting started</a></div><div role="main"><header><h1>Design System Usage Instructions</h1><div class="jumpnav"></div></header><section class="lead"><p>Creating a new site using the Design System requires setting up a basic page markup and then using either the <a href="../layouts/">example layouts</a> or <a href="../components/">components</a> to place component inside the <code>div role="main"</code>.</p></section><section><p>Demonstration examples of this code can be found for many different page types in our <a href="../layouts/">example layouts directory</a> similar to these:</p></section><hr /><section><h2 class="subtitle" id="document-structure">Document structure</h2><p>To use the design system, add the following three resource includes into the <code>head</code> section of your page:</p></section><div class="highlight"><pre><span class="c">&lt;!--[if lt IE 9]&gt;&lt;script src=&quot;//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;&lt;![endif]--&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//uom-design-system.s3.amazonaws.com/v1.0/uom.css&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//uom-design-system.s3.amazonaws.com/v1.0/uom.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div><section><p>The first provides a universal <abbr title="Reproduce modern functionality in older browser">polyfill</abbr> for styling on HTML5 semantic elements such as <code>header</code>, <code>nav</code> and <code>section</code> We use these elements as selectors in the design system stylesheet.</p><p>At a bare minimum, you should include the following markup in your page:</p></section><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;IE=edge&quot;</span> <span class="na">http-equiv=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;title&gt;</span> (any page title) <span class="nt">&lt;/title&gt;</span>
+
+  <span class="c">&lt;!--[if lt IE 9]&gt;&lt;script src=&quot;//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;&lt;![endif]--&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//uom-design-system.s3.amazonaws.com/v1.0/uom.css&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//uom-design-system.s3.amazonaws.com/v1.0/uom.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;uomcontent&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-inner&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+
+        (your website markup goes here)
+
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div><hr /><section><h2 id="local-nav">Local nav</h2><p>To integrate a local nav into your site, include the following structure after the <code>div role="main"</code>.</p><p>For nested navigation, use a <code>div class="inner"</code> as demonstrated below.</p></section><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;no-js&quot;</span> <span class="na">id=</span><span class="s">&quot;sitemap&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h2&gt;</span>Section title<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/another&quot;</span><span class="nt">&gt;</span>Link to another page<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/sub-section&quot;</span><span class="nt">&gt;</span>Sub-section<span class="nt">&lt;/a&gt;</span>
+
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;inner&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/sub-section/a-page&quot;</span><span class="nt">&gt;</span>A page in the sub-section<span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/sub-section/another&quot;</span><span class="nt">&gt;</span>Another page<span class="nt">&lt;/a&gt;</span>
+
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;inner&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/sub-section/another/another&quot;</span><span class="nt">&gt;</span>3rd level<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/last-one&quot;</span><span class="nt">&gt;</span>Last one<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div><section><p>In situations where the site does not sit at the root of its domain (ie. within a subdirectory), the site root can be set to any arbitrary value by adding a <code>data-absolute-root</code> attribute to the local nav div. This value will be inserted before any nav links, so make sure you use relative links, eg.</p></section><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;no-js&quot;</span> <span class="na">id=</span><span class="s">&quot;sitemap&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span> <span class="na">data-absolute-root=</span><span class="s">&quot;/sitehome&quot;</span><span class="nt">&gt;</span>
+...
+<span class="nt">&lt;/div&gt;</span>
+</pre></div><section><p>This is part of a much larger discussion, but please be aware that the local navigation only displays <strong>end pages</strong> in the structure, so in the example listed above there is no direct link to <code>/sub-section</code> or <code>/sub-section/another</code>. This is intentional, and in most circumstances this type of page ("landing" page) should only contain a basic list of links to its children, eg. <a href="../components/">the index of components on this site</a>.</p></section><hr /><section><h2 id="breadcrumbs">Breadcrumbs</h2><p>To use the breadcrumb navigation, include a <code>div class="page-local-history"</code> before the <code>div role="main"</code> with the following structure:</p></section><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-local-history&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;root&quot;</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span> <span class="na">title=</span><span class="s">&quot;Website Home&quot;</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;span&gt;</span>/<span class="nt">&lt;/span&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;last&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span> <span class="na">title=</span><span class="s">&quot;A sub-page&quot;</span><span class="nt">&gt;</span>A sub-page<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div><section><p>The link with <code>class="last"</code> is the only one that will be shown in a responsive mobile view.</p></section><hr /><section><h2 id="homepage">Homepage alternate</h2><p>Include a <code>div class="floating"</code> *before* the <code>div role="main"</code> (and note that this page layout cannot include a breadcrumb as well)</p><p>Additionally, a header element must be included within the <code>div role="main"</code>. Inline styles have been added to the header in the example below to illustrate how it should be styled in your local styles - the css provided in the full design system already has this defined.</p></section><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;floating&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">style=</span><span class="s">&quot;background-image:url(//uom-design-system.s3.amazonaws.com/templates/0.1/components/globals/bg-banner-2edd2279a97e316344e7831983ef6868.jpg);background-size:cover;min-height:300px&quot;</span><span class="nt">&gt;&lt;/header&gt;</span>
+
+  (your website markup goes here)
+
+<span class="nt">&lt;/div&gt;</span>
+</pre></div><section><p>Occasionally, a site will need to co-brand the logo space - this can be done by adding a special link inside the <code>div class="floating"</code> as shown in the example below:</p></section><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;floating&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;page-header-home&quot;</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>Faculty of Veterinary and Agricultural Sciences<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div><section><p><img src="../assets/images/fvas-header.jpg" alt=""></p></section></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="../designers/">For Designers</a></li><li><a href="../getting-started/">Getting started</a></li><li><a href="../content-creators/">For Content Creators</a></li><li><a href="../layouts/">Page Templates</a></li><li><a href="../components/">Component reference</a></li></ul></div></div></div></body>
+</html>
