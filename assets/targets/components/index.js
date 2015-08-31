@@ -10,8 +10,6 @@ require("../../shared/loadscript");
 if (typeof window.MSIE_version === "undefined")
   window.MSIE_version = /MSIE\s(\d)/g.exec(navigator.userAgent) === null ? 100 : /MSIE\s(\d)/g.exec(navigator.userAgent)[1];
 
-require("../injection/gtm");
-
 // Async load fonts from google
 var WebFont = require("webfontloader");
 WebFont.load({
