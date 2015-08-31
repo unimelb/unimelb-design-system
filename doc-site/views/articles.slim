@@ -1,0 +1,17 @@
+== slim :breadcrumb
+
+div role="main"
+  header.solid-blue
+    h1 Articles
+
+  .jumpnav
+
+  section.navigation-block-listing
+    ul.narrow
+      - @pages.each do |page|
+        li
+          a href=("/#{page[:url]}")
+            h3== page[:props]["title"]
+            p== page[:props]["summary"]
+
+  == slim :contrib

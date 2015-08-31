@@ -120,9 +120,53 @@ body {
     @include padding-trailer(2);
     clear: both;
 
+    a.social {
+      @include rem(border-radius, 3px);
+      @include rem(margin, 0 15px);
+      background-color: transparent;
+      color: $white;
+      display: inline-block;
+      text-decoration: none;
+      vertical-align: top;
+
+      [data-icon] {
+        @include rem(padding, 10px);
+        height: auto;
+        width: auto;
+      }
+
+      .icon {
+        @include rem(height, 34px);
+        @include rem(width, 34px);
+      }
+
+      &:hover {
+        background-color: $highlight;
+        transition: all 0.2s linear;
+        transform: scale(1.1);
+      }
+    }
+
     &.alt {
       background-color: $paleblue;
       box-shadow: 0 6px 6px 4px rgba($black, .3);
+      color: $black;
+
+      .center {
+        padding-bottom: 0;
+      }
+
+      ul a {
+        color: $black;
+      }
+
+      a.social {
+        color: $black;
+
+        &:hover {
+          color: $white;
+        }
+      }
     }
 
     &.contrib {

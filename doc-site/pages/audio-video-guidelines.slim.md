@@ -1,5 +1,6 @@
 ---
 title: Audio & Video guidelines
+summary: Simple guidelines for the use of audio and video.
 hidden: true
 ---
 
