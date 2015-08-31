@@ -11,7 +11,8 @@ function LocalNav(props) {
 LocalNav.prototype.moveLocalNav = function() {
   // Move local nav outside page container
   if (this.props.localnav.countSelector('a.sitemap-link') === 0) {
-    var rootmenu = this.props.localnav.querySelector('ul');
+    var menus = this.props.localnav.querySelectorAll('ul');
+    var rootmenu = menus[0];
     var absroot = (this.props.localnav.getAttribute('data-absolute-root') || '/');
 
     var navtitle = this.props.localnav.querySelector('h2');
@@ -19,10 +20,12 @@ LocalNav.prototype.moveLocalNav = function() {
     firstli.addClass('home');
     firstli.innerHTML = `<a href="${absroot}">${(navtitle.textContent || navtitle.innerText)}</a>`;
     rootmenu.insertBefore(firstli, rootmenu.firstChild);
+
     navtitle.textContent = 'Close';
     navtitle.innerText = 'Close';
 
     // Create inner link to sitemap
+    rootmenu = menus[menus.length - 1];
     var lastli = document.createElement('li');
     lastli.innerHTML = '<a class="sitemap-link" href="https://unimelb.edu.au/sitemap">Browse University</a>';
     rootmenu.appendChild(lastli);
