@@ -7,6 +7,7 @@
     font-family: $ff-sans;
     font-weight: $thin;
     margin: 0 auto;
+    padding-bottom: 0;
     position: relative;
 
     &::before {
@@ -15,7 +16,7 @@
       @include rem(width, 20px);
       background-color: $white;
       content: '';
-      left: 30%;
+      left: 28%;
       position: absolute;
       z-index: 2;
     }
@@ -36,9 +37,9 @@
     dt {
       @include adjust-font-size-to(15px);
       @include rem(padding-bottom, 30px);
-      @include rem(padding-right, 10px);
+      @include rem(padding-right, 20px);
       float: left;
-      margin: -3px 3% 0 0;
+      margin: -3px 0 0;
       text-align: right;
       text-transform: uppercase;
       width: 28%;
@@ -103,7 +104,6 @@
       ul:last-child,
       p:last-child {
         @include rem(padding-bottom, 20px);
-        // border-bottom: 1px solid $lightergray;
       }
 
       ul.accordion {
@@ -132,11 +132,10 @@
 
     @include breakpoint(desktop) {
       &::before {
-        left: 35%;
+        left: 32.5%;
       }
 
       dt {
-        padding-right: 0;
         width: 33%;
       }
 
@@ -145,7 +144,7 @@
 
         span,
         p {
-          @include rem(padding-left, 30px);
+          @include rem(padding-left, 20px);
         }
       }
 
@@ -191,6 +190,26 @@
             border-top: 1px solid $cyan;
           }
         }
+      }
+    }
+  }
+
+  figure .timeline {
+    padding-top: 0;
+
+    dd:last-child p:last-child {
+      padding-bottom: 0;
+    }
+
+    &::before {
+      top: -5px;
+    }
+
+    @include breakpoint(desktop) {
+      padding: 0;
+
+      &::before {
+        left: 30.5%;
       }
     }
   }
