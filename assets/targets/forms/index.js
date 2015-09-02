@@ -8,7 +8,7 @@ window.UOMFormLoadComponents = function() {
   "use strict";
 
   // components
-  var recs, i, Accordion, Modal, FancySelect, ValidateForm;
+  var recs, i, Accordion, Modal, FancySelect, ValidateForm, Icons;
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
@@ -41,7 +41,8 @@ window.UOMFormLoadComponents = function() {
       new ValidateForm(recs[i], {});
   }
 
-  require('../injection/icons');
+  Icons = require('../injection/icons');
+  new Icons();
 };
 
 if (window.attachEvent) {
