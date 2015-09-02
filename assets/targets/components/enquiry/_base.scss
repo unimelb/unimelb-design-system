@@ -121,6 +121,18 @@
             @include rem(width, 20px);
           }
         }
+
+        input[type="checkbox"] + label span {
+          width: auto;
+
+          @include breakpoint(tablet) {
+            @include rem(width, 480px);
+          }
+
+          @include breakpoint(desktop) {
+            @include rem(width, 640px);
+          }
+        }
       }
     }
 

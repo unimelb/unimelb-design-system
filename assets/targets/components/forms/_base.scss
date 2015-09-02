@@ -192,7 +192,6 @@
       span {
         @include rem(margin-top, -5px);
         @include rem(padding-left, 35px);
-        @include rem(width, 640px);
         cursor: pointer;
         display: block;
         text-indent: 0;
@@ -279,7 +278,6 @@
       span {
         @include rem(margin-top, -10px);
         @include rem(padding-left, 27px);
-        @include rem(width, 638px);
         cursor: pointer;
         display: block;
         text-indent: 0;
