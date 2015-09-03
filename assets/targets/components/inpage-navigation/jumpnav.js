@@ -22,6 +22,9 @@ function JumpNav(props) {
   // Add to props
   for (var prop in offsets) { this.props[prop] = offsets[prop]; }
 
+  if (!this.props.header)
+    this.props.header = 0;
+
   // Build nav menu
   this.buildNavMenu();
 
