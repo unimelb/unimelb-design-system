@@ -8,7 +8,7 @@ window.UOMFormLoadComponents = function() {
   "use strict";
 
   // components
-  var recs, i, Accordion, Modal, FancySelect, ValidateForm;
+  var recs, i, Accordion, Modal, InpageNavigation, FancySelect, ValidateForm, Icons;
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
@@ -22,6 +22,13 @@ window.UOMFormLoadComponents = function() {
     Modal = require("../components/modal");
     for (i=recs.length - 1; i >= 0; i--)
       new Modal(recs[i], {});
+  }
+
+  recs = document.querySelectorAll('a[href^="#"]');
+  if (recs.length > 0) {
+    InpageNavigation = require("../components/inpage-navigation");
+    for (i=recs.length - 1; i >= 0; i--)
+      new InpageNavigation(recs[i], {});
   }
 
   // IE9 unsupported at this stage
@@ -41,7 +48,8 @@ window.UOMFormLoadComponents = function() {
       new ValidateForm(recs[i], {});
   }
 
-  require('../injection/icons');
+  Icons = require('../injection/icons');
+  new Icons();
 };
 
 if (window.attachEvent) {

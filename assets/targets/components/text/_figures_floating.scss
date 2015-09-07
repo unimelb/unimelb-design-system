@@ -95,3 +95,38 @@
     }
   }
 }
+
+
+body.jumpnav-active .uomcontent {
+  .inset-left {
+    @include breakpoint(wide) {
+      float: none;
+      margin: 0;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    @include breakpoint(1400px) {
+      @include rem(margin-bottom, 20px);
+      @include rem(margin-left, -180px);
+      float: left;
+      max-width: 80%;
+    }
+  }
+
+  .inset-right {
+    @include breakpoint(wide) {
+      float: none;
+      margin: 0;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    @include breakpoint(1400px) {
+      @include rem(margin-bottom, 20px);
+      @include rem(margin-right, -180px);
+      float: right;
+      max-width: 80%;
+    }
+  }
+}

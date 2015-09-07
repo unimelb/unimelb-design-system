@@ -7,3 +7,6 @@ ul
       - unless nav_item[:children].select{|p| !p[:hidden] }.empty?
         .inner
           == partial :nav_list, locals: { nav_list: nav_item[:children] }
+
+ul.meta
+  li: a href="https://github.com/marcom-unimelb/unimelb-design-system/issues" Report an Issue

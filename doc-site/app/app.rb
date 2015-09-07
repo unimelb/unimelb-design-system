@@ -183,6 +183,21 @@ module DocSite
     end
 
     ### Documentation pages
+    # get '/articles' do
+    #   @pages = []
+    #   settings.articles.each do |p|
+    #     file = File.join(settings.articles_dir, "#{p}.slim.md")
+    #     if File.exist?(file)
+    #       props = file_settings(file)
+    #     else
+    #       file = File.join(settings.articles_dir, "#{p}.md")
+    #       props = file_settings(file)
+    #     end
+    #     @pages << { url: p, props: props }
+    #   end
+    #   return slim(:articles)
+    # end
+
     settings.articles.each do |path|
       get "/#{path}" do
 

@@ -264,6 +264,12 @@
       [role="tabpanel"] {
         @include rem(margin-top, -55px);
         @include rem(padding-top, 55px);
+        background-color: transparent;
+
+        @include breakpoint(desktop) {
+          @include rem(margin-top, -95px);
+          @include rem(padding-top, 95px);
+        }
       }
     }
   }
@@ -324,7 +330,6 @@
 
     [role="tabpanel"] {
       @extend %clearfix;
-      background-color: $white;
     }
 
     .half {

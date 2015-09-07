@@ -6,6 +6,11 @@
   vertical-align: middle;
 }
 
+// .uomcontent .page-header.fixed:not(.floating) + .page-inner {
+//   @include rem(margin-top, 40px);
+//   transition: 0s .2s margin-top;
+// }
+
 .uomcontent .page-header {
   @extend %normalise;
   @include rem(font-size, 20px);
