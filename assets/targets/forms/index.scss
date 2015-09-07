@@ -23,6 +23,10 @@ $bold: 700;
 
 @import '../components/accordion/accordion';
 
+.hidden {
+  display: none;
+}
+
 .uomcontent [role="main"] form {
   color: $midgray;
 }
