@@ -38,4 +38,5 @@ if (window.attachEvent) {
 } else {
   document.addEventListener('DOMContentLoaded', window.UOMloadInjection, false);
   document.addEventListener('page:load', window.UOMloadInjection, false);
+  document.addEventListener('page:restore', window.UOMloadInjection, false);
 }

@@ -182,4 +182,5 @@ if (window.attachEvent) {
 } else {
   document.addEventListener('DOMContentLoaded', window.UOMloadComponents, false);
   document.addEventListener('page:load', window.UOMloadComponents, false);
+  document.addEventListener('page:restore', window.UOMloadComponents, false);
 }
