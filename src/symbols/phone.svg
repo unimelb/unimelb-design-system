@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g fill="#000000">
+            <path d="M13.25,21.59 C16.13,27.25 20.76,31.88 26.43,34.76 L30.83,30.35 C31.38,29.8 32.17,29.64 32.86,29.86 C35.1,30.6 37.51,31 40,31 C41.11,31 42,31.89 42,33 L42,40 C42,41.11 41.11,42 40,42 C21.22,42 6,26.78 6,8 C6,6.89 6.9,6 8,6 L15,6 C16.11,6 17,6.89 17,8 C17,10.49 17.4,12.9 18.14,15.14 C18.36,15.83 18.2,16.62 17.65,17.17 L13.25,21.59 L13.25,21.59 Z"></path>
+        </g>
+    </g>
+</svg>
