@@ -17,12 +17,13 @@ div role="main"
   #nav.tabbed-course data-tabbed=""
     .full-width
       nav.desktop-nav role="tablist"
-        a role="tab" href="course#overview" Overview
-        a role="tab" href="course#course-structure" Course Structure
-        a role="tab" href="course#course-structure-2" Course Structure 2
-        a role="tab" data-current="" href="#requirements" Entry Requirements
-        a role="tab" href="course#fees" Fees &amp; Scholarships
-        a role="tab" href="course#apply" Apply now
+        ul
+          li: a role="tab" href="course#overview" Overview
+          li: a role="tab" href="course#course-structure" Course Structure
+          li: a role="tab" href="course#course-structure-2" Course Structure 2
+          li: a role="tab" data-current="" href="#requirements" Entry Requirements
+          li: a role="tab" href="course#fees" Fees &amp; Scholarships
+          li: a role="tab" href="course#apply" Apply now
 
     #requirements.tab data-current="" role="tabpanel"
       .with-aside.left
