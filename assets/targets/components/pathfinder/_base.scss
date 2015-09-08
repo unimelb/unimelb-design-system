@@ -42,6 +42,56 @@
       }
     }
 
+    &.soft {
+      a {
+        background-color: rgba($white, .9);
+        border-bottom: 0 none;
+        color: $black;
+
+        &:hover, &:focus {
+          background-color: $white;
+
+          .button-small {
+            background-color: transparent;
+            color: $black;
+          }
+        }
+
+        &.featured {
+          color: $white;
+
+          p,
+          span.text,
+          strong {
+            border-color: $white;
+            color: $white;
+          }
+        }
+
+        .button-small {
+          background-color: transparent;
+          color: $black;
+        }
+      }
+
+      p,
+      span.text,
+      strong {
+        border-color: $black;
+        color: $black;
+      }
+
+      @include breakpoint(desktop) {
+        li {
+          border-left: 1px solid $lightergray;
+
+          &:first-child {
+            border-left: none;
+          }
+        }
+      }
+    }
+
     li {
       @include leader(1);
       @include trailer(1);
@@ -78,7 +128,7 @@
       background-color: transparent;
       border-bottom: 1px solid $white;
       color: $white;
-      font-weight: $regular;
+      font-weight: $bold;
       position: relative;
       text-align: center;
       text-transform: uppercase;
@@ -298,6 +348,14 @@
   .lead + .pathfinder-4 {
     @include leader(0);
     padding-top: 0;
+  }
+
+  .fixed-background .pathfinder-2.soft,
+  .fixed-background .pathfinder-3.soft,
+  .fixed-background .pathfinder-4.soft {
+    li {
+      border: 0 none;
+    }
   }
 }
 
