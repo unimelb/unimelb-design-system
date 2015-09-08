@@ -18,6 +18,8 @@ function InjectHeader(props) {
     this.renderBreadcrumb();
     this.renderHeaderTools();
     this.reorderStructure();
+  } else {
+    this.props.header = document.querySelector('.page-header');
   }
 
   // Exclude IE8, can't polyfill window scroll event

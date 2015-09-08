@@ -20,6 +20,7 @@ function Tabs(el, props) {
 }
 
 Tabs.prototype.setupPanels = function() {
+  var recs, i, tabs;
   // Hide all tabs by default
   for (recs=this.el.querySelectorAll('[role="tabpanel"]'), i=recs.length - 1; i >= 0; i--) {
     recs[i].style.display = 'none';
@@ -38,7 +39,8 @@ Tabs.prototype.setupPanels = function() {
  * There are four ways of selecting which tab to start on!
  */
 Tabs.prototype.selectPanel = function() {
-  var idx = 0;
+  var idx = 0, max, i, search;
+
   if (window.location.hash) {
     for (max=this.props.tabs.length, i=0; i < max; i++)
       if (window.location.hash == this.props.tabs[i].hash)
@@ -47,7 +49,7 @@ Tabs.prototype.selectPanel = function() {
 
   // Check for inner tabs
   if (idx === 0 && window.location.hash) {
-    var search = this.el.querySelector(window.location.hash);
+    search = this.el.querySelector(window.location.hash);
     if (search) {
       search = findUp(search, 'tab');
       search = this.el.querySelector('nav a[href="#' + search.id + '"]');
@@ -61,7 +63,7 @@ Tabs.prototype.selectPanel = function() {
 
   // Match window hash
   } else if (idx > 0) {
-    this.moveindex(idx);
+    this.move(this.el.querySelector('[href="' + window.location.hash + '"]'));
 
   // Default to 1st
   } else if (this.el.countSelector('[data-current]') === 0) {
@@ -89,20 +91,20 @@ Tabs.prototype.handleClick = function(e) {
 };
 
 Tabs.prototype.setLocation = function(hash) {
-  var pos = document.body.scrollTop;
+  var pos = document.body.scrollTop, slug;
   window.location.hash = hash;
   document.body.scrollTop = pos;
 
   if (history.pushState) {
-    var slug = this.href;
+    slug = this.href;
     history.pushState({'title': document.title, 'url': slug}, document.title, slug);
   }
 };
 
 // Match index - could potentially match ID instead
 Tabs.prototype.handleInternalClick = function(e) {
-  var target = e.target;
-  var idx = target.getAttribute('data-tab') - 1;
+  var target = e.target,
+      idx = target.getAttribute('data-tab') - 1;
   this.moveindex(idx);
   this.setLocation(this.props.tabs[idx].hash);
 };
@@ -124,14 +126,15 @@ Tabs.prototype.activateContainer = function() {
 };
 
 Tabs.prototype.buildMobileNav = function() {
+  var selector, i, max, FancySelect, opt;
   this.props.mobilenav = document.createElement('div');
   this.props.mobilenav.addClass('mobile-nav');
 
-  var selector = document.createElement('select');
+  selector = document.createElement('select');
   selector.setAttribute('role', 'tablist');
 
   for (i=0, max=this.props.tabs.length; i < max; i++) {
-    var opt = document.createElement('option');
+    opt = document.createElement('option');
     opt.setAttribute('role', 'tab');
     opt.setAttribute('value', this.props.tabs[i].getAttribute('href'));
     opt.appendChild(document.createTextNode(this.props.tabs[i].firstChild.nodeValue));
@@ -143,7 +146,7 @@ Tabs.prototype.buildMobileNav = function() {
 
   selector.addEventListener('change', this.handleChange.bind(this));
   if (!/(MSIE 9)/g.test(navigator.userAgent)) {
-    var FancySelect = require("../forms/fancyselect");
+    FancySelect = require("../forms/fancyselect");
     new FancySelect(selector, {});
   }
 };
@@ -164,10 +167,10 @@ Tabs.prototype.handleChange = function(e) {
  * Match target
  */
 Tabs.prototype.getIndex = function(target) {
-  var curr = 0;
+  var curr = 0, max, i;
 
   for (max=this.props.tabs.length, i=0; i < max; i++)
-    if (this.props.tabs[i] == target)
+    if (this.props.tabs[i] === target)
       curr = i;
 
   return curr;
@@ -177,12 +180,46 @@ Tabs.prototype.getIndex = function(target) {
  * Match target
  */
 Tabs.prototype.move = function(target) {
-  this.moveindex(this.getIndex(target));
+  var current, panels, max, i;
+
+  this.movetab(this.getIndex(target));
+
+  if (this.props.panels.length === 1) {
+    current = this.el.querySelector('[role="tabpanel"]');
+    this.showPanel(current);
+
+  } else {
+    current = this.el.querySelector(target.getAttribute('href'));
+
+    for (panels=this.el.querySelectorAll('[role="tabpanel"]'), max=panels.length, i=0; i < max; i++) {
+      if (target.getAttribute('href') === '#'+panels[i].id) {
+        this.showPanel(panels[i]);
+      } else {
+        this.hidePanel(panels[i]);
+      }
+    }
+  }
 };
 
 Tabs.prototype.moveindex = function(index) {
+  var panels, max, i;
+
+  this.movetab(index);
+
+  for (panels=this.el.querySelectorAll('[role="tabpanel"]'), max=panels.length, i=0; i < max; i++) {
+    if (index === i) {
+      this.showPanel(panels[i]);
+    } else {
+      this.hidePanel(panels[i]);
+    }
+  }
+};
+
+Tabs.prototype.movetab = function(index) {
+  var max, i, opts, panels, current;
+
   for (max=this.props.tabs.length, i=0; i < max; i++) {
-    if (i == index) {
+    if (i === index) {
       this.props.tabs[i].setAttribute('data-current', '');
     } else {
       this.props.tabs[i].removeAttribute('data-current');
@@ -190,22 +227,22 @@ Tabs.prototype.moveindex = function(index) {
   }
 
   for (opts=this.el.querySelectorAll('option'), max=opts.length, i=0; i < max; i++) {
-    if (i == index) {
+    if (i === index) {
       opts[i].setAttribute('selected', 'selected');
     } else {
       opts[i].removeAttribute('selected');
     }
   }
+};
 
-  for (panels=this.el.querySelectorAll('[role="tabpanel"]'), max=panels.length, i=0; i < max; i++) {
-    if (i == index) {
-      panels[i].setAttribute('data-current', '');
-      panels[i].style.display = 'block';
-    } else {
-      panels[i].removeAttribute('data-current');
-      panels[i].style.display = 'none';
-    }
-  }
+Tabs.prototype.showPanel = function(panel) {
+  panel.setAttribute('data-current', '');
+  panel.style.display = 'block';
+};
+
+Tabs.prototype.hidePanel = function(panel) {
+  panel.removeAttribute('data-current');
+  panel.style.display = 'none';
 };
 
 module.exports = Tabs;

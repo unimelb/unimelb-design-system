@@ -45,10 +45,15 @@ ListFilter.prototype.setupIsotope = function() {
   for (var i=this.props.tables.length - 1; i >= 0; i--) {
     this.props.isos.push(new Isotope(this.props.tables[i], {
       itemSelector: '.item',
-      percentPosition: true,
       layoutMode: 'fitRows',
       masonry: {
         columnWidth: '.item-grid'
+      },
+      hiddenStyle: {
+        opacity: 0
+      },
+      visibleStyle: {
+        opacity: 1
       }
     }));
   }

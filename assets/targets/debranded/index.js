@@ -174,4 +174,5 @@ if (window.attachEvent) {
 } else {
   document.addEventListener('DOMContentLoaded', window.DSComponentsLoad, false);
   document.addEventListener('page:load', window.DSComponentsLoad, false);
+  document.addEventListener('page:restore', window.DSComponentsLoad, false);
 }

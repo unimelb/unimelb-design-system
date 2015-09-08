@@ -97,6 +97,10 @@
       &.floating {
         margin-top: 0;
       }
+
+      &.headless {
+        margin-top: 123px;
+      }
     }
 
     &.endpoint {
@@ -117,9 +121,12 @@ body.jumpnav-active {
     .uomcontent [role="main"] {
       @include single-box-shadow(0, 3px, 6px, 0, rgba($black, .3), true);
       margin-left: 300px;
+      margin-top: -10px;
+      padding-top: 10px;
 
       > header:first-child,
       footer.cta,
+      footer.end,
       footer.contrib {
         margin-left: -300px;
         width: auto;

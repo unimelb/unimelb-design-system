@@ -15,12 +15,19 @@ function JumpNav(props) {
   // Arbitrary delay to allow calculation of CSS block hiding
   var offsets = {
     'root':            document.querySelector('div[role="main"]'),
-    'header':          document.querySelector('div[role="main"] > header'),
     'arbitraryOffset': 60  // scroll clearance
   };
 
   // Add to props
   for (var prop in offsets) { this.props[prop] = offsets[prop]; }
+
+  // Does layout contain a header (I really hope so)
+  for (var i=0, max=this.props.root.children.length; i < max; i++)
+    if (this.props.root.children[i].nodeType == 1) {
+      if (this.props.root.children[i].nodeName == 'HEADER')
+        this.props.header = this.props.root.children[i];
+      break;
+    }
 
   // Build nav menu
   this.buildNavMenu();
@@ -95,6 +102,11 @@ JumpNav.prototype.buildNavMenu = function() {
   if (document.countSelector('.floating') > 0)
     this.el.addClass('floating');
 
+  if (!this.props.header) {
+    this.el.addClass('headless');
+    this.el.addClass('fixed');
+  }
+
   if (this.props.root.countSelector('.tab .with-aside aside') > 0) {
     this.props.root.querySelector('.tab .with-aside aside').appendChild(this.el);
 
@@ -131,7 +143,8 @@ JumpNav.prototype.buildNavMenu = function() {
 
 JumpNav.prototype.initCalcs = function() {
   if (MSIE_version > 8) {
-    this.props.fixPoint = this.props.root.offsetTop + this.props.header.offsetHeight - 20;
+    var headerOffset =  (this.props.header ? this.props.header.offsetHeight: 0);
+    this.props.fixPoint = this.props.root.offsetTop + headerOffset - 20;
 
     if (this.props.root.hasClass('floating'))
       this.props.fixPoint = this.props.fixPoint + 35;
@@ -167,13 +180,21 @@ JumpNav.prototype.initCalcs = function() {
   }
 };
 
+// Will now check if a header is present, otherwise leave fixed
 JumpNav.prototype.setFixed = function() {
   if (this.props.outer.scrollTop > this.props.fixPoint) {
+    this.el.removeClass('headless');
     this.el.addClass('fixed');
     this.el.style.bottom = this.props.footerOffset;
+
   } else {
-    this.el.style.bottom = '';
-    this.el.removeClass('fixed');
+    if (this.props.header) {
+      this.el.style.bottom = '';
+      this.el.removeClass('fixed');
+
+    } else {
+      this.el.addClass('headless');
+    }
   }
 };
 

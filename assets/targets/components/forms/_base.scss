@@ -192,7 +192,6 @@
       span {
         @include rem(margin-top, -5px);
         @include rem(padding-left, 35px);
-        @include rem(width, 640px);
         cursor: pointer;
         display: block;
         text-indent: 0;
@@ -279,7 +278,6 @@
       span {
         @include rem(margin-top, -10px);
         @include rem(padding-left, 27px);
-        @include rem(width, 638px);
         cursor: pointer;
         display: block;
         text-indent: 0;
@@ -482,12 +480,14 @@
 @-moz-document url-prefix() {
   .uomcontent .styled-select {
     @include rem(border-radius, 3px);
+    @include rem(margin-top, 5px);
     background-color: $highlight;
     border: 1px solid $highlight;
-    padding: 0;
 
     svg.icon {
       @include rem(height, 30px);
+      @include rem(right, 5px);
+      @include rem(top, 3px);
       @include rem(width, 30px);
       color: $white;
       fill: $white;
@@ -495,6 +495,7 @@
 
     select {
       -moz-appearance: window;
+      margin-top: 0;
     }
 
     &.invalid,

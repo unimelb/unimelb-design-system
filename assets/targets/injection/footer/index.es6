@@ -61,13 +61,13 @@ InjectFooter.prototype.renderFooter = function() {
   </ul>
   <ul class="page-footer-section social">
     <li class="social-facebook">
-      <a href="http://www.facebook.com/melbuni"><svg role="img" class="icon"><use xlink:href="#icon-facebook" /></svg> Facebook</a>
+      <a href="https://www.facebook.com/melbuni"><svg role="img" class="icon"><use xlink:href="#icon-facebook" /></svg> Facebook</a>
     </li>
     <li class="social-twitter">
-      <a href="http://www.twitter.com/unimelb"><svg role="img" class="icon"><use xlink:href="#icon-twitter" /></svg> Twitter</a>
+      <a href="https://www.twitter.com/unimelb"><svg role="img" class="icon"><use xlink:href="#icon-twitter" /></svg> Twitter</a>
     </li>
     <li class="social-linkedin">
-      <a href="http://au.linkedin.com/pub/the-university-of-melbourne/61/430/215"><svg role="img" class="icon"><use xlink:href="#icon-linkedin" /></svg> LinkedIn</a>
+      <a href="https://www.linkedin.com/company/university-of-melbourne"><svg role="img" class="icon"><use xlink:href="#icon-linkedin" /></svg> LinkedIn</a>
     </li>
   </ul>
   <small>Phone: 13 MELB (13 6352) | International: +61 3 9035 5511</small>
