@@ -51,6 +51,11 @@ namespace :assets do
       system "mv #{build_dir}/assets/#{asset}*.css #{build_dir}/assets/#{asset}.css"
       system "mv #{build_dir}/assets/#{asset}*.js #{build_dir}/assets/#{asset}.js"
     end
+
+    # delete unused targets for static site
+    %w(debranded forms manifest docs.js).each do |asset|
+      system "rm #{build_dir}/assets/#{asset}*"
+    end
   end
 end
 
