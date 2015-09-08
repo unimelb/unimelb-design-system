@@ -1,35 +1,49 @@
+%alert {
+  @include rem(margin-bottom, 15px);
+  @include rem(padding, 15px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
+}
+
 .uomcontent [role="main"] {
-  .alert-success, .alert-info, .alert-warning, .alert-danger {
-    @include rem(margin-bottom, 15px);
-    @include rem(padding, 15px);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border: 1px solid transparent;
-    // box-shadow: 0 2px 3px rgba($black, .1);
+  .alert-success,
+  .alert-info,
+  .alert-warning,
+  .alert-danger {
+    @extend %alert;
   }
+
   .alert-success {
-    color: darken($palegreen, 65%);
     background-color: $palegreen;
+    color: darken($palegreen, 65%);
+
     a {
       color: darken($palegreen, 65%);
     }
   }
+
   .alert-info {
-    color: darken($lightestblue, 65%);
     background-color: $lightestblue;
+    color: darken($lightestblue, 65%);
+
     a {
       color: darken($lightestblue, 65%);
     }
   }
+
   .alert-warning {
-    color: darken($paleyellow, 65%);
     background-color: $paleyellow;
+    color: darken($paleyellow, 65%);
+
     a {
       color: darken($palegreen, 65%);
     }
   }
+
   .alert-danger {
-    color: lighten($salmon, 35%);
     background-color: $salmon;
+    color: lighten($salmon, 35%);
+
     a {
       color: lighten($salmon, 65%);
     }

@@ -17,11 +17,11 @@ $regular: 400;
 $bold: 700;
 
 @import '../components/base/typography';
-@import '../components/text/text';
-@import '../components/buttons/buttons';
-@import '../components/forms/forms';
+@import '../components/text/index';
+@import '../components/buttons/index';
+@import '../components/forms/index';
 
-@import '../components/accordion/accordion';
+@import '../components/accordion/index';
 
 .hidden {
   display: none;
@@ -31,10 +31,10 @@ $bold: 700;
   color: $midgray;
 }
 
-@import '../components/modal/modal';
-@import '../components/search/search';
+@import '../components/modal/index';
+@import '../components/search/index';
 
-@import '../components/filtered-listings/filtered-listings';
+@import '../components/filtered-listings/index';
 
 ///* Print */
 @import '../components/print';
