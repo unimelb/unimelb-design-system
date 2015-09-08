@@ -64,11 +64,11 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!sass-loader")
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader?-minimize!autoprefixer-loader!sass-loader")
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader")
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader?-minimize!autoprefixer-loader")
       },
       {
         test: /(isotope-layout|imagesloaded)/,
