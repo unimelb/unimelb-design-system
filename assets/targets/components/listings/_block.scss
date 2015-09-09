@@ -589,7 +589,6 @@
             content: '\2192';
             display: inline-block;
             line-height: 1;
-            veetical-align: middle;
 
             @include breakpoint(height-small) {
               @include rem(font-size, 18px);
