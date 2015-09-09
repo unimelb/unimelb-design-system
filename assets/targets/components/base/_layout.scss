@@ -1,3 +1,11 @@
+%tilt {
+  @include rem(height, 100px);
+  content: "";
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+
 body {
   @include establish-baseline;
 
@@ -473,6 +481,47 @@ body {
         }
       }
     }
+  }
+
+  .tilt-before {
+    @include rem(padding-top, 50px);
+
+    &:before,
+    &::before {
+      @extend %tilt;
+      @include rem(margin-top, -100px);
+      background-color: $white;
+      transform: skewY(-2deg);
+    }
+
+    &.alt:before,
+    &.alt::before {
+      background-color: $paleblue;
+    }
+  }
+
+  .tilt-after {
+    @include rem(padding-bottom, 50px);
+
+    &:after,
+    &::after {
+      @extend %tilt;
+      background-color: $white;
+      transform: skewY(2deg);
+    }
+
+    &.alt:after,
+    &.alt::after {
+      background-color: $paleblue;
+    }
+
+    & + * {
+      @include rem(padding-top, 100px);
+    }
+  }
+
+  .with-tilt-sibling {
+    @include rem(padding-bottom, 100px);
   }
 
   .center {
