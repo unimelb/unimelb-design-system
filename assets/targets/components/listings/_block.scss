@@ -25,22 +25,23 @@
   }
 
   p {
-    @include rem(font-size, 14px);
+    @include rem(font-size, 13px);
     @include rem(padding, 15px 25px 0);
     background-color: transparent;
     color: inherit;
+    line-height: 1.5;
     margin: 0;
     text-align: left;
   }
 
   strong {
-    @include rem(font-size, 22px);
+    @include rem(font-size, 20px);
     @include rem(padding, 15px 25px 0);
     background-color: transparent;
     color: inherit;
     display: block;
     font-weight: $regular;
-    line-height: 1.2;
+    line-height: 1.5;
     text-align: left;
   }
 
@@ -144,7 +145,7 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @include breakpoint(tablet) {
     @include rem(max-width, $w-lge);
     li {
       margin-bottom: 1%;
@@ -410,12 +411,15 @@
               font-weight: $bold;
               line-height: 1.2;
 
-              -webkit-box-decoration-break: clone;
               box-decoration-break: clone;
             }
 
-            @include breakpoint(wide) {
-              @include adjust-font-size-to(40px);
+            @include breakpoint(tablet) {
+              @include rem(font-size, 40px);
+
+              span {
+                line-height: 1.1;
+              }
             }
           }
         }
@@ -495,9 +499,19 @@
       }
     }
 
-    @include breakpoint(desktop) {
+    @include breakpoint(tablet) {
       li {
         max-width: 100%;
+        width: 49%;
+      }
+
+      .double {
+        width: 99%;
+      }
+    }
+
+    @include breakpoint(950px) {
+      li {
         width: 32%;
       }
 
@@ -506,7 +520,7 @@
       }
     }
 
-    @include breakpoint(wide) {
+    @include breakpoint(1280px) {
       li {
         width: 24%;
       }
