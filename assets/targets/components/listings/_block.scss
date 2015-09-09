@@ -109,7 +109,6 @@
     color: $white;
 
     strong {
-      // @include rem(font-size, 24px);
       @include rem(margin-bottom, 30px);
     }
 
