@@ -109,7 +109,7 @@
     color: $white;
 
     strong {
-      @include rem(font-size, 24px);
+      // @include rem(font-size, 24px);
       @include rem(margin-bottom, 30px);
     }
 
@@ -504,11 +504,16 @@
       }
 
       &.instagram {
+        @include rem(border-bottom-width, 5px);
         @include rem(min-height, 350px);
-        border-bottom-color: $black;
-        border-left-color: transparent;
-        border-right-color: transparent;
-        border-top-color: transparent;
+        border-bottom-color: $navy;
+        border-left: 0;
+        border-right: 0;
+        border-top: 0;
+
+        // border-left-color: transparent;
+        // border-right-color: transparent;
+        // border-top-color: transparent;
 
         a {
           background-color: transparent;
