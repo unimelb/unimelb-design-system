@@ -145,7 +145,7 @@
     }
   }
 
-  @include breakpoint(tablet) {
+  @include breakpoint(600px) {
     @include rem(max-width, $w-lge);
     li {
       margin-bottom: 1%;
@@ -464,6 +464,159 @@
         }
       }
 
+      &.twitter {
+        border-bottom-color: #55acee;
+
+        &:hover {
+          transform: none;
+
+          p,
+          strong {
+            color: currentColor;
+          }
+        }
+
+        a {
+          color: #55acee;
+
+          &:hover {
+            color: $highlight;
+          }
+        }
+
+        svg {
+          fill: #55acee;
+        }
+
+        em {
+          float: right;
+        }
+
+        strong {
+          @include adjust-font-size-to(20px);
+
+          @include breakpoint(desktop) {
+            @include adjust-font-size-to(24px);
+            font-weight: $light;
+            word-wrap: break-word;
+          }
+        }
+      }
+
+      &.instagram {
+        @include rem(min-height, 350px);
+        border-bottom-color: $black;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        border-top-color: transparent;
+
+        a {
+          background-color: transparent;
+        }
+
+        .meta {
+          @include rem(padding, 12px 20px);
+          background-color: rgba($brand, 0.8);
+          border: none;
+          bottom: 0;
+          color: $white;
+          left: 0;
+          margin: 0;
+          padding-bottom: 0;
+          position: absolute;
+          width: 100%;
+
+          em {
+            @include rem(padding-bottom, 10px);
+            float: right;
+          }
+        }
+      }
+
+      &.more {
+        border-bottom-color: $highlight;
+
+        &:hover {
+          transform: none;
+        }
+
+        a {
+          @include rem(padding, 10px 0px);
+          border: 0;
+          border-bottom: 1px solid $lightergray;
+          color: $highlight;
+          display: block;
+          height: 20%;
+          position: relative;
+          text-align: center;
+          vertical-align: middle;
+          width: 100%;
+
+          &:hover {
+            background-color: $highlight;
+            color: $white;
+          }
+        }
+
+        strong {
+          @include adjust-font-size-to(13px);
+          @include rem(letter-spacing, 1px);
+          @include rem(padding, 15px 0px);
+          color: currentColor;
+          display: inline-block;
+          font-weight: $bold;
+          line-height: 1;
+          margin-bottom: 0;
+          text-align: center;
+          text-transform: uppercase;
+          vertical-align: middle;
+          white-space: nowrap;
+
+          span.small {
+            @include rem(margin-top, -7px);
+          }
+
+          svg {
+            fill: currentColor;
+          }
+
+
+          &:after,
+          &::after {
+            @include rem(font-size, 10px);
+            @include rem(margin-top, -10px);
+            @include rem(padding-left, 10px);
+            content: '\2192';
+            display: inline-block;
+            line-height: 1;
+
+            @include breakpoint(height-small) {
+              @include rem(font-size, 18px);
+              @include rem(padding-left, 10px);
+            }
+          }
+
+          @include breakpoint(height-small) {
+            @include adjust-font-size-to(15px);
+          }
+        }
+
+        @include breakpoint(600px) {
+          .block-container {
+            align-items: flex-start;
+            display: flex;
+            flex-direction: column;
+          }
+
+          a {
+            align-items: center;
+            display: flex;
+            flex: 1 0 0;
+            justify-content: center;
+          }
+        }
+      }
+
       strong,
       p {
         @include transition(color 0.15s);
@@ -499,7 +652,7 @@
       }
     }
 
-    @include breakpoint(tablet) {
+    @include breakpoint(600px) {
       li {
         max-width: 100%;
         width: 49%;
