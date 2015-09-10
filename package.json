@@ -55,5 +55,8 @@
     "build": "node_modules/.bin/webpack --config ./assets/webpack.config.js -p",
     "precompile": "node ./assets/precompile.js",
     "build-production": "npm run clean && npm run build && npm run precompile"
+  },
+  "devDependencies": {
+    "sass-loader": "^0.4.2"
   }
 }
