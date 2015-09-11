@@ -115,13 +115,6 @@ ValidateForm.prototype.setupMessage = function(field) {
   // Do a crazy search if field is a checkbox
   if (field.getAttribute('type') == 'checkbox') {
     var nameval = '[name="' + field.getAttribute('name') + '"]';
-    // Get the last wrapped checkbox in this node
-    // var node = parent.parentNode.querySelector(nameval);
-    // parent = node.parentNode.parentNode.querySelector('div:last-child').querySelector(nameval).parentNode;
-    // parent = node.parentNode.parentNode.querySelectorAll('div');
-    // parent = parent[parent.length-1];
-    // parent = parent.querySelector(nameval).parentNode;
-    // console.log(parent);
     parent = this.el.querySelectorAll(nameval);
     parent = parent[parent.length-1].parentNode;
   }

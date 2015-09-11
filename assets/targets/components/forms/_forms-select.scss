@@ -1,0 +1,187 @@
+@mixin theme {
+  background-color: $highlight;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
+  background-repeat: no-repeat;
+  background-position: 99% center;
+  border: 1px solid $highlight;
+  color: $white;
+  cursor: pointer;
+  line-height: 1.55;
+  margin-top: 0;
+  width: 100%;
+
+  &.invalid,
+  &.invalid:hover,
+  &.alt.invalid,
+  &.alt.invalid:hover {
+    background-color: $white;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iI2RmMDYyMCI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
+    border-color: $cherry;
+    color: $cherry;
+
+    option {
+      color: $cherry;
+    }
+  }
+
+  &.invalid + svg.icon,
+  &.alt.invalid + svg.icon {
+    color: $cherry;
+    fill: $cherry;
+  }
+
+  &:hover {
+    background-color: $brand;
+    border-color: $brand;
+    color: $white;
+  }
+
+  &.alt {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iIzAwNzZkZSI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
+    background-color: $white;
+    border-color: $highlight;
+    color: $highlight;
+
+    option {
+      color: $highlight;
+    }
+  }
+
+  &.alt + svg.icon {
+    color: $highlight;
+    fill: $highlight;
+  }
+
+  &.alt:hover {
+    background-color: $lightestblue;
+    border-color: $highlight;
+    color: $highlight;
+  }
+
+  &.clear,
+  &.clear-dark {
+    background-color: transparent;
+    border-color: $white;
+    color: $white;
+
+    option {
+      color: $black;
+    }
+
+    // &:hover option {
+    //   color: $black;
+    // }
+  }
+
+  &.clear:hover,
+  &.clear-dark:hover {
+    background-color: rgba($white, .3);
+  }
+
+  &.clear-dark.invalid,
+  &.clear-dark.invalid:hover {
+    background-color: rgba($white, .3);
+    border-color: $cherry;
+    color: $cherry;
+  }
+
+  &.clear.invalid,
+  &.clear.invalid:hover {
+    background-color: rgba($white, .3);
+    border-color: lighten($cherry, 25%);
+    color: lighten($cherry, 25%);
+  }
+
+  &.clear.invalid + svg.icon + small {
+    color: lighten($cherry, 25%);
+  }
+
+  &.clear.invalid + svg.icon {
+    color: lighten($cherry, 25%);
+    fill: lighten($cherry, 25%);
+  }
+}
+
+.uomcontent .styled-select {
+  padding: 0;
+  position: relative;
+
+  svg.icon {
+    @include rem(height, 30px);
+    @include rem(right, 7px);
+    @include rem(top, 7px);
+    @include rem(width, 30px);
+    color: $white;
+    cursor: pointer;
+    display: block;
+    fill: $white;
+    position: absolute;
+  }
+
+  .icon-over {
+    @include rem(height, 30px);
+    @include rem(top, 5px);
+    @include rem(right, 7px);
+    @include rem(width, 30px);
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    z-index: 1;
+  }
+
+  &:hover select {
+    background-color: $brand;
+    border-color: $brand;
+    color: $white;
+  }
+
+  &:hover select.alt {
+    background-color: $lightestblue;
+    border-color: $highlight;
+    color: $highlight;
+  }
+
+  &:hover select.clear,
+  &:hover select.clear-dark {
+    background-color: rgba($white, .3);
+    border-color: $white;
+    color: $white;
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(margin-top, 5px);
+  }
+}
+
+.uomcontent select {
+  @include rem(font-size, 18px);
+  font-family: $ff-sans;
+  font-weight: $light;
+  width: 100%;
+}
+
+// The horror
+.uomcontent .styled-select {
+  @include theme;
+  @include rem(border-radius, 3px);
+  @include rem(margin-top, 5px);
+  padding: 0;
+
+  select {
+    @include theme;
+    @include rem(border-radius, 3px);
+    @include rem(padding, 8px 10px);
+    appearance: none;
+    -moz-appearance: window;
+    border: 0;
+
+    option {
+      background-color: transparent;
+      color: $white;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+}
