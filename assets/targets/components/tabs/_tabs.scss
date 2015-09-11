@@ -91,9 +91,21 @@
         }
       }
 
+      [data-icon] .icon {
+        display: none;
+      }
+
       @include breakpoint(desktop) {
         @include rem(padding, 0 15px);
         margin: 0 auto;
+
+        [data-icon] .icon {
+          display: inline-block;
+        }
+
+        [data-icon] .icon-label {
+          display: none;
+        }
       }
     }
 
@@ -112,6 +124,7 @@
     }
 
     .mobile-nav {
+      @include rem(padding, 5px 0);
       background-color: $brand;
       border-color: $brand;
       display: none;
@@ -119,8 +132,7 @@
       position: relative;
       width: 94%;
 
-      select {
-        @include rem(margin, 5px 0);
+      .styled-select {
         background-color: $brand;
         border-color: $brand;
 
@@ -129,8 +141,13 @@
         }
       }
 
-      .styled-select svg.icon {
-        @include rem(top, 13px);
+      select {
+        background-color: $brand;
+        border-color: $brand;
+
+        &:hover {
+          background-color: $highlight;
+        }
       }
 
       &.active {
@@ -156,6 +173,7 @@
 
       @include breakpoint(desktop) {
         display: none;
+
         &.active {
           display: none;
         }

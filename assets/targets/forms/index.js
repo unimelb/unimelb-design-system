@@ -4,6 +4,10 @@ require("../../shared/smoothscroll");
 require("../../shared/findup");
 require("../../shared/loadscript");
 
+// Simple sniff
+if (typeof window.MSIE_version === "undefined")
+  window.MSIE_version = /MSIE\s(\d{1,2})/g.exec(navigator.userAgent) === null ? 100 : /MSIE\s(\d{1,2})/g.exec(navigator.userAgent)[1];
+
 window.UOMFormLoadComponents = function() {
   "use strict";
 
@@ -31,8 +35,8 @@ window.UOMFormLoadComponents = function() {
       new InpageNavigation(recs[i], {});
   }
 
-  // IE9 unsupported at this stage
-  if (!/(MSIE 9)/g.test(navigator.userAgent)) {
+  // IE10+
+  if (MSIE_version > 9) {
     recs = document.querySelectorAll('select');
     if (recs.length > 0) {
       FancySelect = require("../components/forms/fancyselect");

@@ -4,55 +4,6 @@
     max-width: 100%;
   }
 
-  svg {
-    border: 0;
-    fill: currentColor;
-    width: 100%;
-  }
-
-  [data-icon] {
-    @include rem(height, 60px);
-    @include rem(width, 60px);
-    display: inline-block;
-    margin: 0;
-    vertical-align: middle;
-
-    svg {
-      height: 100%;
-    }
-
-    &.small {
-      @include rem(height, 24px);
-      @include rem(width, 24px);
-    }
-
-    &.large {
-      @include rem(height, 100px);
-      @include rem(width, 100px);
-    }
-
-    &.fill {
-      height: 100%;
-      width: 100%;
-
-      svg {
-        height: 100%;
-        width: 100%;
-      }
-    }
-
-    .icon-label {
-      font-weight: $regular;
-      margin: 0;
-      text-align: center;
-      white-space: nowrap;
-    }
-  }
-
-  p [data-icon] {
-    padding-bottom: 3px;
-  }
-
   figure.full-width {
     margin-left: 0;
     margin-right: 0;

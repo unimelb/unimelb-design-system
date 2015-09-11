@@ -15,11 +15,13 @@ function IconHelper(el, props) {
 
   this.saveChildren();
 
-  this.el.innerHTML = '<svg class="icon" role="img"><use xlink:href="' + this.props.ref + '"></use></svg>';
+  this.el.innerHTML = '<svg class="icon" role="img"><use xlink:href="' + this.props.ref + '"></use></svg><span class="icon-over"></span>';
 
   if (this.props.inner.length > 0) {
     this.restoreChildren();
   }
+
+  this.el.querySelector('.icon-over').addEventListener('click', this.passClickThrough.bind(this));
 }
 
 IconHelper.prototype.saveChildren = function() {
@@ -35,6 +37,11 @@ IconHelper.prototype.restoreChildren = function() {
     label.appendChild(recs[i]);
 
   this.el.appendChild(label);
+};
+
+IconHelper.prototype.passClickThrough = function(e) {
+  e.preventDefault();
+  this.el.parentNode.click();
 };
 
 module.exports = IconHelper;

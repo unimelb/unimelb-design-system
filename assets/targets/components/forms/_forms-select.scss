@@ -67,10 +67,6 @@
     option {
       color: $black;
     }
-
-    // &:hover option {
-    //   color: $black;
-    // }
   }
 
   &.clear:hover,
@@ -147,10 +143,6 @@
     border-color: $white;
     color: $white;
   }
-
-  @include breakpoint(desktop) {
-    @include rem(margin-top, 5px);
-  }
 }
 
 .uomcontent select {
@@ -164,7 +156,6 @@
 .uomcontent .styled-select {
   @include theme;
   @include rem(border-radius, 3px);
-  @include rem(margin-top, 5px);
   padding: 0;
 
   select {
@@ -184,4 +175,8 @@
       display: none;
     }
   }
+}
+
+.uomcontent fieldset .styled-select {
+  @include rem(margin-top, 5px);
 }

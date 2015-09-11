@@ -77,6 +77,8 @@ Tabs.prototype.selectPanel = function() {
 
 Tabs.prototype.handleClick = function(e) {
   var target = e.target;
+  if (target.hasClass('icon-over'))
+    return;
   if (target.hasAttribute('href')) {
     // go to href
 
@@ -126,7 +128,7 @@ Tabs.prototype.activateContainer = function() {
 };
 
 Tabs.prototype.buildMobileNav = function() {
-  var selector, i, max, FancySelect, opt;
+  var selector, i, max, FancySelect, opt, label;
   this.props.mobilenav = document.createElement('div');
   this.props.mobilenav.addClass('mobile-nav');
 
@@ -134,10 +136,14 @@ Tabs.prototype.buildMobileNav = function() {
   selector.setAttribute('role', 'tablist');
 
   for (i=0, max=this.props.tabs.length; i < max; i++) {
+    label = this.props.tabs[i].firstChild.nodeValue;
+    if (label === null)
+      label = this.props.tabs[i].firstChild.firstChild.nodeValue;
+
     opt = document.createElement('option');
     opt.setAttribute('role', 'tab');
     opt.setAttribute('value', this.props.tabs[i].getAttribute('href'));
-    opt.appendChild(document.createTextNode(this.props.tabs[i].firstChild.nodeValue));
+    opt.appendChild(document.createTextNode(label));
     selector.appendChild(opt);
   }
 
