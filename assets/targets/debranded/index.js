@@ -4,6 +4,12 @@ require("../../shared/smoothscroll");
 require("../../shared/findup");
 require("../../shared/loadscript");
 
+// Also need one to find non-text nodes in a list of children
+
+// Simple sniff
+if (typeof window.MSIE_version === "undefined")
+  window.MSIE_version = /MSIE\s(\d{1,2})/g.exec(navigator.userAgent) === null ? 100 : /MSIE\s(\d{1,2})/g.exec(navigator.userAgent)[1];
+
 // Async load fonts from google
 var WebFont = require("webfontloader");
 WebFont.load({
@@ -41,8 +47,8 @@ window.DSComponentsLoad = function() {
       new Modal(recs[i], {});
   }
 
-  // IE9 unsupported at this stage
-  if (!/(MSIE 9)/g.test(navigator.userAgent)) {
+  // IE10+
+  if (MSIE_version > 9) {
     recs = document.querySelectorAll('select');
     if (recs.length > 0) {
       FancySelect = require("../components/forms/fancyselect");
