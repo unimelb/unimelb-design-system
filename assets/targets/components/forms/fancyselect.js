@@ -4,6 +4,8 @@ require("../../../shared/shims");
 /**
  * FancySelect
  *
+ * It's a wrapper for selects, so you can @-moz-document url-prefix() and then hide under the desk crying
+ *
  * @param  {Element} el
  * @param  {Object} props
  */
@@ -17,23 +19,8 @@ function FancySelect(el, props) {
   // Only fancify if it hasn't already been done
   if (!this.props.parent.hasClass('styled-select')) {
     this.buildWrapper();
-
-    // Can't trigger select externally in IE
-    if (!/(MSIE|Trident)/g.test(navigator.userAgent)) {
-      for (var recs=this.props.parent.querySelectorAll('svg.icon'), i=recs.length - 1; i >= 0; i--)
-        recs[i].addEventListener('click', this.handleClick);
-    }
   }
 }
-
-FancySelect.prototype.handleClick = function(e) {
-  var evt = new MouseEvent('mousedown', {
-    bubbles:    true,
-    cancelable: true,
-    view:       window
-  });
-  this.parentNode.querySelector('select').dispatchEvent(evt);
-};
 
 FancySelect.prototype.buildWrapper = function() {
   var wrapper = document.createElement('div');
@@ -47,8 +34,6 @@ FancySelect.prototype.buildWrapper = function() {
 
   if (this.el.hasClass('clear-dark'))
     wrapper.addClass('clear-dark');
-
-  wrapper.innerHTML = '<svg class="icon" role="img"><use xlink:href="#icon-select"></use></svg>';
 
   this.props.parent.removeChild(this.el);
   wrapper.insertBefore(this.el, wrapper.firstChild);

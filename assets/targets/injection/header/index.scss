@@ -221,8 +221,8 @@
     display: none;
 
     select {
-      @include rem(padding, 0 25px 0 10px);
-      border: 1px solid $lightestblue;
+      @include rem(padding, 5px 25px 5px 10px);
+      border: 0;
       border-radius: 3px;
       color: $darkblue;
       max-width: 100%;
@@ -233,7 +233,7 @@
     }
 
     .styled-select.alt {
-      @include rem(margin-top, 13px);
+      @include rem(margin-top, 10px);
       position: relative;
     }
 
@@ -309,12 +309,6 @@
 
   div.page-local-history {
     padding: 0 30px 0 0;
-  }
-}
-
-@-moz-document url-prefix() {
-  .uomcontent .mobile-nav .styled-select.alt {
-    border: 1px solid $lightestblue;
   }
 }
 
