@@ -61,7 +61,7 @@ InjectFooter.prototype.renderFooter = function() {
   </ul>
   <ul class="page-footer-section social">
     <li class="social-facebook">
-      <a href="https://www.facebook.com/melbuni"><svg role="img" class="icon"><use xlink:href="#icon-facebook" /></svg> Facebook</a>
+      <a href="https://www.facebook.com/unimelb"><svg role="img" class="icon"><use xlink:href="#icon-facebook" /></svg> Facebook</a>
     </li>
     <li class="social-twitter">
       <a href="https://www.twitter.com/unimelb"><svg role="img" class="icon"><use xlink:href="#icon-twitter" /></svg> Twitter</a>
