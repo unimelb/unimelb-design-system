@@ -126,3 +126,30 @@
     }
   }
 }
+
+%navigation-block-listing-fallback {
+  margin: 0 auto;
+
+  ul li {
+    float: left;
+    margin-right: 2%;
+    width: 31%;
+
+    li {
+      float: none;
+      width: 100%;
+    }
+  }
+
+  // 3 rows, hope that is enough
+  ul li:first-child + li + li + li,
+  ul li:first-child + li + li + li + li + li + li,
+  ul li:first-child + li + li + li + li + li + li + li + li + li {
+    clear: left;
+  }
+}
+
+.ie8 .uomcontent [role="main"] .navigation-block-listing,
+.ie9 .uomcontent [role="main"] .navigation-block-listing {
+  @extend %navigation-block-listing-fallback;
+}

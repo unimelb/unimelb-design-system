@@ -49,8 +49,6 @@
       @include breakpoint(desktop) {
         @include rem(padding, 30px 15px);
         display: table-cell;
-        padding-left: 0;
-        padding-right: 0;
         vertical-align: top;
         width: 50%;
 
@@ -63,6 +61,22 @@
     @include breakpoint(desktop) {
       @include rem(max-width, $w-lge);
       display: table;
+    }
+  }
+}
+
+.ie8 .uomcontent [role="main"] .half {
+  display: table;
+  max-width: $w-lge;
+
+  section {
+    display: table-cell;
+    padding: 30px 15px;
+    vertical-align: top;
+    width: 50%;
+
+    h2 {
+      margin-left: 0;
     }
   }
 }

@@ -225,3 +225,14 @@
     }
   }
 }
+
+.ie8 .uomcontent form.filtered-listing-select {
+  legend {
+    color: $white;
+  }
+
+  div.right {
+    margin: 0 auto;
+    max-width: $w-sml;
+  }
+}

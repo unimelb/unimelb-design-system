@@ -54,3 +54,24 @@
     }
   }
 }
+
+%navigation-text-listing-fallback {
+  margin: 0 auto;
+
+  h1,
+  p,
+  ul {
+    margin: 0 auto;
+    max-width: $w-sml;
+  }
+
+  li {
+    display: inline-block;
+    width: 32%;
+  }
+}
+
+.ie8 .uomcontent [role="main"] .navigation-text-listing,
+.ie9 .uomcontent [role="main"] .navigation-text-listing {
+  @extend %navigation-text-listing-fallback;
+}

@@ -53,3 +53,7 @@
     @include padding-trailer(1);
   }
 }
+
+.ie8 .uomcontent .lead {
+  margin: 0 auto;
+}

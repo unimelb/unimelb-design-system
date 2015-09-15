@@ -7,8 +7,7 @@
   margin-right: auto;
 
   & > figure {
-    @include rem(margin-left, 30px);
-    @include rem(margin-right, 30px);
+    margin: 0;
     padding: 0;
   }
 

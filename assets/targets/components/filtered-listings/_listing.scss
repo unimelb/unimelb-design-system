@@ -167,8 +167,14 @@
 }
 
 .ie8 .uomcontent .filtered-listing-grid {
+  margin: 0 auto;
+  max-width: $w-sml;
+
   li {
     display: none;
+    float: left;
+    margin-right: 4%;
+    width: 45%;
 
     &.item {
       display: list-item;

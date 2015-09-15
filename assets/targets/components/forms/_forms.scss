@@ -341,6 +341,10 @@
 }
 
 .ie8 .uomcontent fieldset {
+  legend {
+    color: $black;
+  }
+
   .search-button span,
   label {
     display: inline;
