@@ -10,6 +10,7 @@
 
     &.white {
       a {
+        background-color: $white;
         background-color: rgba($white, .9);
         border-bottom: 3px solid $highlight;
         color: $black;
@@ -44,6 +45,7 @@
 
     &.soft {
       a {
+        background-color: $white;
         background-color: rgba($white, .9);
         border-bottom: 0 none;
         color: $black;
@@ -94,6 +96,7 @@
 
     &.buttons {
       a {
+        background-color: $white;
         background-color: rgba($white, 0.9);
         border: 0 none;
         color: $black;

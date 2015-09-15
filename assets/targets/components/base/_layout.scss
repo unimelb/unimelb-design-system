@@ -648,3 +648,16 @@ body {
     }
   }
 }
+
+.ie8 .uomcontent {
+  .fifth .col {
+    float: left;
+    margin: 0 1%;
+    text-align: center;
+    width: 18%;
+  }
+
+  .with-aside .bside {
+    max-width: 100%;
+  }
+}

@@ -204,12 +204,14 @@
     border-bottom: 0;
 
     article {
-      overflow: hidden;
+      clear: left;
 
-      h1,
+      h1 {
+        max-width: 1000px;
+      }
+
       p {
         max-width: 1000px;
-        width: 100%;
       }
 
       img {
@@ -225,9 +227,36 @@
       }
     }
 
+    @include breakpoint(tablet) {
+      h1,
+      p {
+        width: auto;
+      }
+    }
+
     @include breakpoint(desktop) {
       padding-left: 0;
       padding-right: 0;
     }
+  }
+}
+
+.ie8 .uomcontent {
+  .news-hero {
+    max-width: $w-mid;
+  }
+
+  .news-index article {
+    img:first-child {
+      max-height: 150px;
+    }
+  }
+
+  [data-tabbed].tabbed nav {
+    text-align: left;
+  }
+
+  [data-tabbed].tabbed .news-index.tab article h1 {
+    width: 100%;
   }
 }

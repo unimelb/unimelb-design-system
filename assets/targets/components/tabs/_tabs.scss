@@ -441,7 +441,7 @@
   .uomcontent .tabbed-nav {
     nav a[data-current]:after {
       border: solid transparent;
-      border-top-color: $black;
+      border-top-color: $darkblue;
       border-width: 10px;
       content: ' ';
       height: 0;
@@ -470,7 +470,7 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e50c304a, endColorstr=#e50c304a);
 
     nav a[data-current]:after {
-      border-top-color: #23445a;
+      border-top-color: $darkblue;
     }
 
     &.short {

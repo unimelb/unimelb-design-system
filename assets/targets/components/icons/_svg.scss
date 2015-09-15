@@ -69,3 +69,12 @@
     padding-bottom: 3px;
   }
 }
+
+.ie8 .uomcontent {
+  [data-icon],
+  [data-icon].fill,
+  [data-icon].small,
+  [data-icon].large {
+    width: auto;
+  }
+}

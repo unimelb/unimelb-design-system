@@ -33,3 +33,13 @@
     }
   }
 }
+
+.ie8 .uomcontent .checklist {
+  padding-left: 0;
+  padding-right: 0;
+
+  li {
+    padding-left: 20px;
+    text-indent: -20px;
+  }
+}
