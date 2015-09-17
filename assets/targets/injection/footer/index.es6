@@ -25,12 +25,20 @@ InjectFooter.prototype.renderFooter = function() {
       <image xlink:href="${this.props.assethost}/lockup.svg" src="${this.props.assethost}/lockup.png" alt="The University of Melbourne Logo" width="300" height="100" preserveAspectRatio="xMaxYMin meet"/>
     </svg>
   </a>
+  <ul class="people-links">
+    <li>
+      <a href="http://students.unimelb.edu.au">Current Students</a>
+    </li>
+    <li>
+      <a href="http://staff.unimelb.edu.au">Staff</a>
+    </li>
+    <li>
+      <a href="http://alumni.unimelb.edu.au/">Alumni</a>
+    </li>
+  </ul>
   <ul class="quicklinks">
     <li>
       <a href="http://about.unimelb.edu.au/governance-and-leadership/faculties"><svg role="img" class="icon"><use xlink:href="#icon-faculty" /></svg> Faculties and Graduate Schools</a>
-    </li>
-    <li>
-      <a href="http://students.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-student" /></svg> Current Students</a>
     </li>
     <li>
       <a href="http://library.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-library" /></svg> Library</a>
@@ -43,6 +51,9 @@ InjectFooter.prototype.renderFooter = function() {
     </li>
     <li>
       <a href="http://www.campaign.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-campaign" /></svg> Support the Campaign</a>
+    </li>
+    <li>
+      <a href="http://about.unimelb.edu.au/careers"><svg role="img" class="icon"><use xlink:href="#icon-jobs" /></svg> Jobs</a>
     </li>
   </ul>
   <ul class="page-footer-section nav">
