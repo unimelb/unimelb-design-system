@@ -50,8 +50,8 @@
   ul.people-links {
     @include rem(max-width, 1400px);
     @include rem(padding, 0px 15px);
-    border-bottom: 1px solid #304e64;
-    border-top: 1px solid #304e64;
+    border-bottom: 1px solid $blue;
+    border-top: 1px solid $blue;
     margin: 0 auto;
     text-align: left;
     width: 100%;
@@ -226,10 +226,6 @@
           fill: currentColor;
         }
       }
-
-      // &.social-twitter {
-      //   @include rem(padding-top, 1px);
-      // }
 
       &.social-facebook {
         margin-left: 20%;
