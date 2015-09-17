@@ -3,8 +3,9 @@
   @include rem(max-width, $w-lge);
   @include padding-leader(2);
 
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
 
   & > figure {
     margin: 0;
@@ -57,6 +58,9 @@
   }
 
   @include breakpoint(desktop) {
+    margin-left: auto;
+    margin-right: auto;
+
     .article {
       float: right;
       width: 70%;

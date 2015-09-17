@@ -136,6 +136,7 @@
       position: absolute;
       top: 0;
       transition: .2s top .3s;
+      z-index: 1;
 
       // @media screen {
         svg {
@@ -364,16 +365,12 @@
 
 
 .uomcontent .page-header-tools {
-  @include rem(width, 60px);
+  @include rem(width, 124px);
   display: table-cell;
   right: 0;
   text-align: right;
   top: 0;
   vertical-align: top;
-
-  @include breakpoint(tablet) {
-    @include rem(width, 124px);
-  }
 
   @include breakpoint(desktop) {
     @include rem(width, 200px);
@@ -424,13 +421,16 @@
       text-decoration: none;
     }
 
-    &[data-modal-target="uom-login"],
-    &[title="Search"] {
+    &[data-modal-target="uom-login"] {
       display: none;
 
       @include breakpoint(tablet) {
         display: inline-block;
       }
+    }
+
+    &[title="Search"] {
+      display: inline-block;
     }
   }
 

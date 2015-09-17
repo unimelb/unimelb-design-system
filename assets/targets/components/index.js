@@ -113,15 +113,15 @@ window.UOMloadComponents = function() {
       new ListFilter(recs[i], {});
   }
 
+  recs = document.querySelectorAll('[data-icon]');
+  if (recs.length > 0) {
+    IconHelper = require("./icons");
+    for (i=recs.length - 1; i >= 0; i--)
+      new IconHelper(recs[i], {});
+  }
+
   // IE9+
   if (MSIE_version > 8) {
-    recs = document.querySelectorAll('[data-icon]');
-    if (recs.length > 0) {
-      IconHelper = require("./icons");
-      for (i=recs.length - 1; i >= 0; i--)
-        new IconHelper(recs[i], {});
-    }
-
     recs = document.querySelectorAll('table');
     if (recs.length > 0) {
       MobileTableHelper = require("./tables");

@@ -73,6 +73,7 @@
     }
 
     @include breakpoint(desktop) {
+      border-bottom: 0;
       text-align: center;
 
       li {
@@ -412,6 +413,31 @@
       margin: 0;
       padding: 0 30px;
       width: auto;
+    }
+  }
+}
+
+.ie8 .uomcontent .page-footer {
+  ul.quicklinks {
+    border-bottom: 0;
+  }
+
+  ul.people-links {
+    border-bottom: 0;
+    text-align: center;
+
+    li {
+      width: auto;
+
+      a {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &:hover {
+          color: $white;
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

@@ -28,6 +28,19 @@ body {
 
 
 .uomcontent [role="main"] {
+  .hide-from-all {
+    @include hide-from-all;
+  }
+  .screenreaders-only {
+    @include screenreaders-only;
+  }
+  .invisible {
+    @include invisible;
+  }
+  .hide-text {
+    @include hide-text;
+  }
+
   & > *:first-child {
     @include rem(padding-top, 100px);
   }
