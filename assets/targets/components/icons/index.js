@@ -45,7 +45,6 @@ IconHelper.prototype.restoreChildren = function() {
     label.appendChild(recs[i]);
 
   this.el.appendChild(label);
-  console.log('conf');
 };
 
 IconHelper.prototype.passClickThrough = function(e) {
