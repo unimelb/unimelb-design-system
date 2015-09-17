@@ -207,6 +207,7 @@
       clear: left;
 
       h1 {
+        margin: 0;
         max-width: 1000px;
       }
 
@@ -220,6 +221,12 @@
 
       img:first-child + p + h1 + p {
         width: auto;
+      }
+
+      @include breakpoint(desktop) {
+        img + p + h1 {
+          @include rem(margin-left, 270px);
+        }
       }
 
       &:last-child {

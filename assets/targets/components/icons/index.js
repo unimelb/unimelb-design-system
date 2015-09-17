@@ -8,20 +8,28 @@ function IconHelper(el, props) {
   this.el = el;
   this.props = props;
 
-  this.props.ref = this.el.getAttribute('data-icon');
-  if (this.props.ref.substr(0,5) != '#icon-') {
-    this.props.ref = '#icon-' + this.props.ref;
+  if (MSIE_version > 8) {
+    this.props.ref = this.el.getAttribute('data-icon');
+    if (this.props.ref.substr(0,5) != '#icon-') {
+      this.props.ref = '#icon-' + this.props.ref;
+    }
+
+    this.saveChildren();
+
+    this.el.innerHTML = '<svg class="icon" role="img"><use xlink:href="' + this.props.ref + '"></use></svg><span class="icon-over"></span>';
+
+    if (this.props.inner.length > 0) {
+      this.restoreChildren();
+    }
+
+    this.el.querySelector('.icon-over').addEventListener('click', this.passClickThrough.bind(this));
+
+  } else {
+    this.saveChildren();
+    if (this.props.inner.length > 0) {
+      this.restoreChildren();
+    }
   }
-
-  this.saveChildren();
-
-  this.el.innerHTML = '<svg class="icon" role="img"><use xlink:href="' + this.props.ref + '"></use></svg><span class="icon-over"></span>';
-
-  if (this.props.inner.length > 0) {
-    this.restoreChildren();
-  }
-
-  this.el.querySelector('.icon-over').addEventListener('click', this.passClickThrough.bind(this));
 }
 
 IconHelper.prototype.saveChildren = function() {
@@ -37,6 +45,7 @@ IconHelper.prototype.restoreChildren = function() {
     label.appendChild(recs[i]);
 
   this.el.appendChild(label);
+  console.log('conf');
 };
 
 IconHelper.prototype.passClickThrough = function(e) {

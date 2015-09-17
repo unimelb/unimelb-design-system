@@ -197,15 +197,6 @@
     }
   }
 
-  .sitemap-link {
-    @include rem(font-size, 14px);
-    @include rem(margin, 20px);
-    @include rem(padding, 10px 15px);
-    background-color: rgba($white, .1);
-    border: 1px solid rgba($white, .1);
-    display: inline-block;
-  }
-
   .back {
     background-color: $menu;
     color: rgba($white, .6);
@@ -264,6 +255,18 @@ body.ie {
       border-top: 1px solid darken($borderblue, 30%);
     }
 
+    ul.meta {
+      border-top: 1px solid darken($borderblue, 30%);
+
+      li {
+        border-top: none;
+      }
+
+      a {
+        color: #8CA2B8;
+      }
+    }
+
     h2 {
       color: $lightblue;
     }
@@ -285,10 +288,6 @@ body.ie {
           -ms-transform: rotate(0deg);
         }
       }
-    }
-
-    .sitemap-link {
-      background-color: lighten($navy, 10%);
     }
 
     .parent:after {

@@ -50,7 +50,6 @@
   ul.people-links {
     @include rem(max-width, 1400px);
     @include rem(padding, 0px 15px);
-    border-bottom: 1px solid $blue;
     border-top: 1px solid $blue;
     margin: 0 auto;
     text-align: left;
@@ -412,6 +411,24 @@
       margin: 0;
       padding: 0 30px;
       width: auto;
+    }
+  }
+}
+
+.ie8 .uomcontent .page-footer ul.people-links {
+  text-align: center;
+
+  li {
+    width: auto;
+
+    a {
+      padding-left: 20px;
+      padding-right: 20px;
+
+      &:hover {
+        color: $white;
+        text-decoration: underline;
+      }
     }
   }
 }
