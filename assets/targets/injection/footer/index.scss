@@ -41,8 +41,54 @@
   }
 
   ul.quicklinks {
-    margin-bottom: 0;
+    @include rem(margin-bottom, 25px);
+    border-bottom: 0 none;
+    margin-top: 0;
     padding: 0;
+  }
+
+  ul.people-links {
+    @include rem(max-width, 1400px);
+    @include rem(padding, 0px 15px);
+    border-bottom: 1px solid $blue;
+    border-top: 1px solid $blue;
+    margin: 0 auto;
+    text-align: left;
+    width: 100%;
+
+    li {
+      display: inline-block;
+      list-style-type: none;
+      width: 100%;
+
+      a {
+        @include adjust-font-size-to(10px);
+        @include rem(padding, 20px 0px);
+        color: $white;
+        display: block;
+        letter-spacing: 2px;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+    }
+
+    @include breakpoint(desktop) {
+      text-align: center;
+
+      li {
+        width: auto;
+
+        a {
+          @include rem(padding-left, 20px);
+          @include rem(padding-right, 20px);
+
+          &:hover {
+            color: $white;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -180,10 +226,6 @@
           fill: currentColor;
         }
       }
-
-      // &.social-twitter {
-      //   @include rem(padding-top, 1px);
-      // }
 
       &.social-facebook {
         margin-left: 20%;

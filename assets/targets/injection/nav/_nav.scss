@@ -112,12 +112,10 @@ body {
     }
 
     &:hover {
-      background-color: $highlight;
-      color: $white;
-      text-decoration: none;
-      transform: scale(1.02);
-
       @include breakpoint(desktop) {
+        background-color: $highlight;
+        color: $white;
+        text-decoration: none;
         transform: scale(1.2);
       }
     }
