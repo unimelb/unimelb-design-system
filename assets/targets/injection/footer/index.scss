@@ -50,6 +50,7 @@
   ul.people-links {
     @include rem(max-width, 1400px);
     @include rem(padding, 0px 15px);
+    border-bottom: 1px solid $blue;
     border-top: 1px solid $blue;
     margin: 0 auto;
     text-align: left;
@@ -72,6 +73,7 @@
     }
 
     @include breakpoint(desktop) {
+      border-bottom: 0;
       text-align: center;
 
       li {
@@ -415,19 +417,26 @@
   }
 }
 
-.ie8 .uomcontent .page-footer ul.people-links {
-  text-align: center;
+.ie8 .uomcontent .page-footer {
+  ul.quicklinks {
+    border-bottom: 0;
+  }
 
-  li {
-    width: auto;
+  ul.people-links {
+    border-bottom: 0;
+    text-align: center;
 
-    a {
-      padding-left: 20px;
-      padding-right: 20px;
+    li {
+      width: auto;
 
-      &:hover {
-        color: $white;
-        text-decoration: underline;
+      a {
+        padding-left: 20px;
+        padding-right: 20px;
+
+        &:hover {
+          color: $white;
+          text-decoration: underline;
+        }
       }
     }
   }
