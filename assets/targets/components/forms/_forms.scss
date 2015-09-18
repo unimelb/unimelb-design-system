@@ -1,7 +1,33 @@
+%formbutton {
+  @include rem(border-radius, 0 3px 3px 0);
+  @include rem(font-size, 13px);
+  @include rem(height, 45px);
+  @include rem(margin, 15px 0);
+  @include rem(padding, 0 15px);
+  background-color: $highlight;
+  border: 0 none;
+  color: $white;
+  cursor: pointer;
+  font-weight: $bold;
+  letter-spacing: 1px;
+  position: absolute;
+  right: 0;
+  text-transform: uppercase;
+  top: 0;
+
+  &:hover {
+    background-color: darken($highlight, 10%);
+  }
+
+  &:active {
+    opacity: .3;
+  }
+}
+
 [role="main"] form {
   @include rem(font-size, 16px);
   @include rem(padding, 0 10px);
-  background-color: $white;
+  background-color: transparent;
   color: $darkgray;
   line-height: 1.2;
   margin: 0 auto;
@@ -239,7 +265,8 @@
   .inline {
     position: relative;
 
-    input[type="search"] {
+    input[type="search"],
+    input[type="text"] {
       @extend %textcontrol;
       @include appearance(none);
       @include rem(height, 45px);
@@ -248,26 +275,8 @@
 
     input[type="image"],
     .search-button {
-      @include rem(border-radius, 0 3px 3px 0);
-      @include rem(height, 45px);
-      @include rem(margin, 15px 0);
+      @extend %formbutton;
       @include rem(width, 45px);
-      background-color: $highlight;
-      border: 0 none;
-      color: $white;
-      cursor: pointer;
-      padding: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-
-      &:hover {
-        background-color: darken($highlight, 10%);
-      }
-
-      &:active {
-        opacity: .3;
-      }
 
       span {
         display: none;
@@ -280,6 +289,65 @@
         cursor: pointer;
         fill: currentColor;
         max-height: 100%;
+      }
+    }
+
+    .inline-button {
+      @extend %formbutton;
+      @include rem(font-size, 13px);
+      @include rem(padding, 0 15px);
+      font-weight: $bold;
+      letter-spacing: 1px;
+    }
+  }
+
+  .detached {
+    input[type="search"],
+    input[type="text"] {
+      width: 75%;
+    }
+
+    .detached-button {
+      @extend %formbutton;
+      @include rem(border-radius, 3px);
+      margin-left: 3%;
+      width: 22%;
+    }
+  }
+
+  .big {
+    input[type="search"],
+    input[type="text"] {
+      @include rem(font-size, 24px);
+      @include rem(height, 60px);
+      @include rem(line-height, 36px);
+      @include rem(padding, 15px);
+      border-color: $highlight;
+      width: 70%;
+
+      &:focus {
+        background-color: $white;
+        color: $highlight;
+      }
+    }
+
+    .detached-button {
+      @include rem(font-size, 16px);
+      @include rem(height, 60px);
+      @include rem(padding, 15px);
+      line-height: 1;
+      width: 27%;
+
+      [data-icon] {
+        @include rem(margin-top, -2px);
+      }
+
+      span + [data-icon] {
+        @include rem(margin-left, 10px);
+      }
+
+      [data-icon] + span {
+        @include rem(margin-left, 10px);
       }
     }
   }
