@@ -162,6 +162,13 @@ body {
         @include rem(width, 24px);
       }
 
+      .icon-over {
+        @include rem(height, 24px);
+        @include rem(margin-left, -24px);
+        @include rem(margin-top, -24px);
+        @include rem(width, 24px);
+      }
+
       &:hover {
         background-color: $highlight;
         transition: all 0.2s linear;

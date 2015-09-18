@@ -25,7 +25,15 @@ LocalNav.prototype.moveLocalNav = function() {
     navtitle.innerText = 'Close';
 
     // Create inner link to sitemap
-    rootmenu = menus[menus.length - 1];
+    if (menus.length > 1) {
+      rootmenu = menus[menus.length - 1];
+
+    } else {
+      rootmenu = document.createElement('ul');
+      rootmenu.addClass('meta');
+      menus[0].parentNode.appendChild(rootmenu);
+    }
+
     var lastli = document.createElement('li');
     lastli.innerHTML = '<a class="sitemap-link" href="https://unimelb.edu.au/sitemap">Browse University</a>';
     rootmenu.appendChild(lastli);
