@@ -45,6 +45,13 @@
     border-bottom: 0 none;
     margin-top: 0;
     padding: 0;
+
+    a {
+      @include rem(font-size, 11px);
+      letter-spacing: 1px;
+      line-height: 1.6em;
+      text-transform: uppercase;
+    }
   }
 
   ul.people-links {
