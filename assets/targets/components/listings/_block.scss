@@ -475,7 +475,8 @@
       }
 
       &.twitter {
-        border-bottom-color: #55acee;
+        $twitter-brand: #55acee;
+        border-bottom-color: $twitter-brand;
 
         &:hover {
           transform: none;
@@ -487,7 +488,7 @@
         }
 
         a {
-          color: #55acee;
+          color: $twitter-brand;
 
           &:hover {
             color: $highlight;
@@ -495,7 +496,7 @@
         }
 
         svg {
-          fill: #55acee;
+          fill: $twitter-brand;
         }
 
         em {
@@ -509,6 +510,14 @@
             @include adjust-font-size-to(24px);
             font-weight: $light;
             word-wrap: break-word;
+          }
+        }
+
+        @include breakpoint(0) {
+          // Hide label for modern browsers
+          .icon-label {
+            height: 0;
+            text-indent: -999em;
           }
         }
       }
@@ -540,6 +549,14 @@
           em {
             @include rem(padding-bottom, 10px);
             float: right;
+          }
+
+          @include breakpoint(0) {
+            // Hide label for modern browsers
+            .icon-label {
+              height: 0;
+              text-indent: -999em;
+            }
           }
         }
       }

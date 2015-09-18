@@ -247,6 +247,12 @@
       .icon-label {
         display: inline;
       }
+
+      .icon-over {
+        @include rem(height, 13px);
+        @include rem(margin-left, -13px);
+        @include rem(width, 13px);
+      }
     }
 
     svg {
