@@ -11,8 +11,14 @@ function LocalNav(props) {
 LocalNav.prototype.moveLocalNav = function() {
   // Move local nav outside page container
   if (this.props.localnav.countSelector('a.sitemap-link') === 0) {
-    var rootmenu, lastmenu;
-    for (var recs=this.props.localnav.childNodes, max=recs.length, i=0; i < max; i++) {
+    var rootmenu, lastmenu, noderoot;
+
+    // Check for deprecated markup
+    noderoot = this.props.localnav.querySelector('.w');
+    if (!noderoot)
+      noderoot = this.props.localnav;
+
+    for (var recs=noderoot.childNodes, max=recs.length, i=0; i < max; i++) {
       if (recs[i].nodeType == 1 && recs[i].nodeName == 'UL') {
         lastmenu = recs[i];
         if (rootmenu === undefined)
@@ -21,7 +27,7 @@ LocalNav.prototype.moveLocalNav = function() {
     }
     var absroot = (this.props.localnav.getAttribute('data-absolute-root') || '/');
 
-    var navtitle = this.props.localnav.querySelector('h2');
+    var navtitle = noderoot.querySelector('h2');
     var firstli = document.createElement('li');
     firstli.addClass('home');
     firstli.innerHTML = `<a href="${absroot}">${(navtitle.textContent || navtitle.innerText)}</a>`;
@@ -34,7 +40,7 @@ LocalNav.prototype.moveLocalNav = function() {
     if (lastmenu == rootmenu) {
       lastmenu = document.createElement('ul');
       lastmenu.addClass('meta');
-      this.props.localnav.appendChild(lastmenu);
+      noderoot.appendChild(lastmenu);
     }
 
     var lastli = document.createElement('li');
