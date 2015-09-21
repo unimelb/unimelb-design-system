@@ -1,19 +1,26 @@
 form action="" method="get"
   fieldset
-    .inline
-      input aria-required="true" placeholder="Inline form" name="query" type="text" data-error="Please enter a keyword" aria-label="Inline form"
-      input.inline-button type="submit" value="Go for it!"
+    .inline.attached
+      span.inline-fill
+        input aria-required="true" placeholder="Inline form" name="query" type="text" data-error="Please enter a keyword" aria-label="Inline form"
+      span
+        input.inline-button type="submit" value="Go for it!"
 
 form action="" method="get"
   fieldset
     .inline.detached
-      input aria-required="true" placeholder="Inline form (detached)" name="query" type="text" data-error="Please enter a keyword" aria-label="Inline form (detached)"
-      input.detached-button type="submit" value="Go for it!"
+      span.inline-fill
+        input aria-required="true" placeholder="Inline form (detached)" name="query" type="text" data-error="Please enter a keyword" aria-label="Inline form (detached)"
+      span
+        input.inline-button type="submit" value="Go for it!"
 
 form action="" method="get"
   fieldset
     .inline.detached.big
-      input aria-required="true" placeholder="Inline form (detached, big)" name="query" type="text" data-error="Please enter a keyword" aria-label="Inline form (detached)"
-      button.detached-button
-        span.small data-icon="search"
-        span Search
+      span.inline-fill
+        input aria-required="true" placeholder="Inline form (detached, big)" name="query" type="text" data-error="Please enter a keyword" aria-label="Inline form (detached)"
+      span
+        button.inline-button
+          span
+            span.small data-icon="search"
+            | Search

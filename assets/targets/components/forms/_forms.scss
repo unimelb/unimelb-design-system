@@ -1,8 +1,7 @@
-%formbutton {
-  @include rem(border-radius, 0 3px 3px 0);
+%inlinebutton {
+  @include rem(border-radius, 3px);
   @include rem(font-size, 13px);
   @include rem(height, 45px);
-  @include rem(margin, 15px 0);
   @include rem(padding, 0 15px);
   background-color: $highlight;
   border: 0 none;
@@ -10,10 +9,8 @@
   cursor: pointer;
   font-weight: $bold;
   letter-spacing: 1px;
-  position: absolute;
-  right: 0;
+  position: relative;
   text-transform: uppercase;
-  top: 0;
 
   &:hover {
     background-color: darken($highlight, 10%);
@@ -270,13 +267,20 @@
       @extend %textcontrol;
       @include appearance(none);
       @include rem(height, 45px);
+      display: block;
       width: 100%;
     }
 
     input[type="image"],
     .search-button {
-      @extend %formbutton;
+      @extend %inlinebutton;
+      @include rem(border-radius, 0 3px 3px 0);
+      @include rem(margin, 15px 0 0);
       @include rem(width, 45px);
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
 
       span {
         display: none;
@@ -293,7 +297,35 @@
     }
 
     .inline-button {
-      @extend %formbutton;
+      @extend %inlinebutton;
+      @include rem(margin, 5px 0 0);
+    }
+  }
+
+  .attached,
+  .detached {
+    display: table;
+    width: 100%;
+
+    & > span {
+      display: table-cell;
+      vertical-align: top;
+
+      &.inline-fill {
+        width: 100%;
+      }
+    }
+  }
+
+  .attached {
+    input[type="search"],
+    input[type="text"] {
+      @include rem(border-radius, 3px 0 0 3px);
+      border-right: 0;
+    }
+
+    .inline-button {
+      @include rem(border-radius, 0 3px 3px 0);
       @include rem(font-size, 13px);
       @include rem(padding, 0 15px);
       font-weight: $bold;
@@ -302,16 +334,10 @@
   }
 
   .detached {
-    input[type="search"],
-    input[type="text"] {
-      width: 75%;
-    }
-
-    .detached-button {
-      @extend %formbutton;
-      @include rem(border-radius, 3px);
-      margin-left: 3%;
-      width: 22%;
+    & > span {
+      &:first-child {
+        @include rem(padding-right, 15px);
+      }
     }
   }
 
@@ -323,7 +349,6 @@
       @include rem(line-height, 36px);
       @include rem(padding, 15px);
       border-color: $highlight;
-      width: 70%;
 
       &:focus {
         background-color: $white;
@@ -331,24 +356,25 @@
       }
     }
 
-    .detached-button {
+    .inline-button {
       @include rem(font-size, 16px);
       @include rem(height, 60px);
       @include rem(padding, 15px);
       line-height: 1;
-      width: 27%;
 
-      [data-icon] {
-        @include rem(margin-top, -2px);
+      & > span {
+        @include rem(padding-left, 34px); /* 24px for small icon + 10px for spacing */
+        position: relative;
+        white-space: nowrap;
+
+        .small[data-icon] {
+          @include rem(margin-top, -2px);
+          left: 0;
+          position: absolute;
+          top: 0;
+        }
       }
 
-      span + [data-icon] {
-        @include rem(margin-left, 10px);
-      }
-
-      [data-icon] + span {
-        @include rem(margin-left, 10px);
-      }
     }
   }
 }
