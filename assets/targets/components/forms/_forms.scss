@@ -339,42 +339,41 @@
         @include rem(padding-right, 15px);
       }
     }
-  }
 
-  .big {
-    input[type="search"],
-    input[type="text"] {
-      @include rem(font-size, 24px);
-      @include rem(height, 60px);
-      @include rem(line-height, 36px);
-      @include rem(padding, 15px);
-      border-color: $highlight;
+    &.big {
+      input[type="search"],
+      input[type="text"] {
+        @include rem(font-size, 24px);
+        @include rem(height, 60px);
+        @include rem(line-height, 36px);
+        @include rem(padding, 15px);
+        border-color: $highlight;
 
-      &:focus {
-        background-color: $white;
-        color: $highlight;
-      }
-    }
-
-    .inline-button {
-      @include rem(font-size, 16px);
-      @include rem(height, 60px);
-      @include rem(padding, 15px);
-      line-height: 1;
-
-      & > span {
-        @include rem(padding-left, 34px); /* 24px for small icon + 10px for spacing */
-        position: relative;
-        white-space: nowrap;
-
-        .small[data-icon] {
-          @include rem(margin-top, -2px);
-          left: 0;
-          position: absolute;
-          top: 0;
+        &:focus {
+          background-color: $white;
+          color: $highlight;
         }
       }
 
+      .inline-button {
+        @include rem(font-size, 16px);
+        @include rem(height, 60px);
+        @include rem(padding, 15px);
+        line-height: 1;
+
+        & > span {
+          @include rem(padding-left, 34px); /* 24px for small icon + 10px for spacing */
+          position: relative;
+          white-space: nowrap;
+
+          .small[data-icon] {
+            @include rem(margin-top, -2px);
+            left: 0;
+            position: absolute;
+            top: 0;
+          }
+        }
+      }
     }
   }
 }
