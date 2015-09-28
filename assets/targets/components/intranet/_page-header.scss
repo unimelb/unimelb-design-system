@@ -9,6 +9,7 @@ $tabcolor: $brand;
     background-position: center center;
     background-size: cover;
     position: relative;
+    display: table;
 
     .page-header-logo {
       background-color: $brand;
@@ -16,6 +17,8 @@ $tabcolor: $brand;
 
     .page-header-home {
       @include rem(padding-top, 20px);
+      display: table-cell;
+      vertical-align: middle;
     }
 
     @include breakpoint(desktop) {
@@ -31,7 +34,7 @@ $tabcolor: $brand;
       .page-header-home {
         @include adjust-font-size-to(24px);
         @include rem(padding-top, 80px);
-        border: solid 1px orange;
+        @include rem(min-width, 450px);
       }
 
       .page-header-tools {
