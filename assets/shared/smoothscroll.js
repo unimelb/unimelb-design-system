@@ -29,7 +29,7 @@
       // Incr and dur numbers are completely arbitrary, but seem good
       var start     = element.scrollTop,
           curr      = 0,
-          change    = to.offsetTop - start,
+          change    = to.getBoundingClientRect().top, 
           increment = Math.abs(change / 500),
           duration  = Math.abs(change / 10);
 
