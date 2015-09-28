@@ -1,0 +1,42 @@
+/.announcement
+  a.message href="#"
+    h2 Coffee Comp countdown
+    p Only one more week to vote and win
+  a#close-announcement.close-announcement href=""
+    span data-icon="close"
+  javascript:
+    document.getElementById('close-announcement').onclick = function(e){
+      e.preventDefault();
+      this.parentNode.addClass('closed');
+    }
+.floating.reverse
+  a class="page-header-home" href="/pages/staff-hub" Faculty of Veterinary and Agricultural Sciences
+
+
+div.with-login role="main"
+  div.tabbed-nav data-tabbed="" id="nav" role="tabs"
+    .full-width
+      nav.desktop-nav
+        a href="#home" data-current="" role="tab"
+          span.small data-icon="home"
+          '
+          span.label.oops Home
+        a href="#news-events" role="tab" News and events
+        a href="#structure-governance" role="tab" Structure &amp; governance
+        a href="#intranets" role="tab" Local intranets
+
+    .tab id="home" role="tabpanel"
+      / == partial 'pages/staff-hub/tab_home'
+    .tab id="news-events" role="tabpanel"
+      section
+        / == partial 'pages/staff-hub/tab_news-events'
+    .tab id="structure-governance" role="tabpanel"
+      / == partial 'pages/staff-hub/tab_structure-governance'
+        
+    .tab id="intranets" role="tabpanel"
+      section
+        h1 intranets
+
+  / == partial 'pages/staff-hub/login'
+  / == partial "pages/staff-hub/enquiry"
+/ == partial 'pages/staff-hub/localnav'

@@ -1,0 +1,54 @@
+.uomcontent [role="main"] {
+  .dialpad {
+    @include rem(max-width, $w-mid);
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+
+    li {
+      @include rem(margin, 10px 10px);
+      display: inline-block;
+      list-style-type: none;
+      padding: 0;
+      vertical-align: top;
+      width: auto;
+
+      @include breakpoint(desktop) {
+        @include rem(margin, 10px 28px);
+      }
+    }
+
+    a {
+      @include adjust-font-size-to(13px);
+      @include rem(border-radius, 4px);
+      @include rem(height, 70px);
+      @include rem(padding-top, 9px);
+      @include rem(width, 70px);
+      @include transition(transform 0.15s);
+      color: $highlight;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        background-color: $highlight;
+        color: $white;
+        transform: scale(1.1);
+      }
+
+      & > div {
+        font-weight: 400;
+        margin: 0;
+      }
+    }
+
+    svg.icon {
+      @include rem(height, 24px);
+      @include rem(width, 24px);
+      color: currentColor;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

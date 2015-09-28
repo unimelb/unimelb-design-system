@@ -1,0 +1,73 @@
+.pathfinder-style {
+  padding: 10em;
+
+  li {
+    @include rem(padding, 10px 30px 30px 30px);
+    // border: 1px solid $highlight;
+    background-color: $brand;
+    color: $white;
+    margin: 0 0.4% 0.8% 0.4%;
+
+    .header {
+      @include adjust-font-size-to(20px);
+      @include padding-leader(1);
+      @include padding-trailer(2);
+      overflow: hidden;
+
+      div {
+        margin: 0;
+        text-align: left;
+      }
+
+      svg {
+        @include rem(height, 50px);
+        @include rem(margin-top, -3px);
+        @include rem(margin-left, 10px);
+        @include rem(margin-right, 30px);
+        @include rem(width, 50px);
+        display: block;
+        float: left;
+      }
+
+      @include breakpoint(wide) {
+        @include adjust-font-size-to(20px);
+      }
+    }
+
+    @include breakpoint(desktop) {
+      margin: 0 1.5% 3% 1.5%;
+      width: 30.333333%;
+    }
+  }
+
+  & + hr + .feature-listing-3 {
+    padding: 0;
+
+    li {
+      a {
+        @include transition(color 0.15s);
+        padding: 0;
+
+        &:hover {
+          strong {
+            color: $black;
+          }
+
+          p {
+            color: $black;
+          }
+        }
+      }
+
+      strong {
+        color: $highlight;
+        text-decoration: underline;
+      }
+
+      @include breakpoint(desktop) {
+        margin: 0 1.5% 3% 1.5%;
+        width: 30.333333%;
+      }
+    }
+  }
+}
