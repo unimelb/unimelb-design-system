@@ -1,17 +1,5 @@
-/.announcement
-  a.message href="#"
-    h2 Coffee Comp countdown
-    p Only one more week to vote and win
-  a#close-announcement.close-announcement href=""
-    span data-icon="close"
-  javascript:
-    document.getElementById('close-announcement').onclick = function(e){
-      e.preventDefault();
-      this.parentNode.addClass('closed');
-    }
 .floating.reverse
-  a class="page-header-home" href="/pages/staff-hub" Faculty of Veterinary and Agricultural Sciences
-
+  a class="page-header-home" href="/pages/staff-hub" Staff hub
 
 div.with-login role="main"
   div.tabbed-nav data-tabbed="" id="nav" role="tabs"
@@ -20,7 +8,7 @@ div.with-login role="main"
         a href="#home" data-current="" role="tab"
           span.small data-icon="home"
           '
-          span.label.oops Home
+          span.label Home
         a href="#news-events" role="tab" News and events
         a href="#structure-governance" role="tab" Structure &amp; governance
         a href="#intranets" role="tab" Local intranets
@@ -37,6 +25,18 @@ div.with-login role="main"
       section
         h1 intranets
 
-  / == partial 'pages/staff-hub/login'
+div.page-local-login
+  h1 Login
+  form action="" data-validate="" method="post"
+    fieldset
+      div
+        label data-required="true" for="f-email" Email:
+        input aria-required="true" data-error="Please enter a valid email." data-pattern="email" id="f-email" name="f[email]" type="email"
+      div
+        label data-required="true" for="f-password" Password:
+        input aria-required="true" data-error="Please enter your password." id="f-password" name="f[password]" type="password"
+    footer
+      input type="submit" value="Login"
+
   / == partial "pages/staff-hub/enquiry"
 / == partial 'pages/staff-hub/localnav'
