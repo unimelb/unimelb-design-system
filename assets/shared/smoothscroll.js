@@ -31,7 +31,8 @@
       // Incr and dur numbers are completely arbitrary, but seem good
       var start     = element.scrollTop,
           curr      = 0,
-          change    = to.getBoundingClientRect().top, 
+          change    = to.getBoundingClientRect().top,
+          offset    = 0,
           increment = Math.abs(change / 500),
           duration  = Math.abs(change / 10);
       
@@ -40,15 +41,22 @@
         // Assume fixed position when unable to retrieve the computed position (e.g. in IE8)
         var headerPosition = window.getComputedStyle ? window.getComputedStyle(headerElem).getPropertyValue('position') : 'fixed';
         if (headerPosition === 'fixed' || headerPosition === 'absolute') {
-          change -= 40;
+          offset = 40;
         }
       }
-
+      
+      // Deduct offset
+      change -= offset;
+      
       var animateScroll = function() {
         curr += increment;
         element.scrollTop = Math.easeInOutQuad(curr, start, change, duration);
-        if (curr < duration)
+        if (curr < duration) {
           setTimeout(animateScroll, increment);
+        } else {
+          // Fix scrolling inaccuracy (always 1 or 2 pixels off without it)
+          element.scrollTop += to.getBoundingClientRect().top - offset;
+        }
       };
 
       if (change !== 0) {
