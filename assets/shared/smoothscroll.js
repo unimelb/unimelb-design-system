@@ -21,7 +21,9 @@
    */
   if (typeof window.smoothScrollTo === "undefined") {
     window.smoothScrollTo = function(to) {
-      var element = document.body;
+      var element = document.body,
+          headerElem = document.querySelector('.page-header');
+      
       if (/(Firefox)/g.test(navigator.userAgent) || /(Trident)/g.test(navigator.userAgent)) {
         element = document.querySelector('html');
       }
@@ -32,9 +34,14 @@
           change    = to.getBoundingClientRect().top, 
           increment = Math.abs(change / 500),
           duration  = Math.abs(change / 10);
-
-      if (document.countSelector('.page-header') === 1 && document.countSelector('.floating') === 0) {
-        change -= 40;
+      
+      // If the page contains a non-floating header AND it is fixed in the current viewport, substract the height of the fixed header (40px)
+      if (headerElem && !headerElem.hasClass('floating')) {
+        // Assume fixed position when unable to retrieve the computed position (e.g. in IE8)
+        var headerPosition = window.getComputedStyle ? window.getComputedStyle(headerElem).getPropertyValue('position') : 'fixed';
+        if (headerPosition === 'fixed' || headerPosition === 'absolute') {
+          change -= 40;
+        }
       }
 
       var animateScroll = function() {
