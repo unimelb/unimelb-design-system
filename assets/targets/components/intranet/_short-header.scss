@@ -1,24 +1,28 @@
-$headercolor: $lighterblue;
-$tabcolor: $brand;
-
 .uomcontent {
-  .page-header.floating {
-    @include rem(min-height, 90px);
-    background-color: $headercolor;
-    background-image: url(/assets/headers/clock-tower.jpg);
-    background-position: center center;
-    background-size: cover;
-    position: relative;
-    display: table;
 
-    .page-header-logo {
-      background-color: $brand;
-    }
+  .page-header.short {
+      @include rem(min-height, 90px);
+      background-image: url(/assets/headers/header_light.jpg);
+      background-position: center center;
+      background-size: cover;
+      position: relative;
 
     .page-header-home {
-      @include rem(padding-top, 20px);
-      display: table-cell;
-      vertical-align: middle;
+      @include flexbox((
+        display: box,
+        align-items: center
+      ), $version: 1);
+      @include flexbox((
+        display: flexbox,
+        align-items: center
+      ), $version: 2);
+      @include flexbox((
+        display: flex,
+        align-items: center
+      ));
+      @include rem(height, 60px);
+      @include rem(max-width, 110px);
+      @include rem(width, 110px);
     }
 
     @include breakpoint(desktop) {
@@ -33,8 +37,10 @@ $tabcolor: $brand;
 
       .page-header-home {
         @include adjust-font-size-to(24px);
-        @include rem(padding-top, 80px);
-        @include rem(min-width, 450px);
+        @include rem(height, 120px);
+        @include rem(margin-top, 70px);
+        @include rem(max-width, 300px);
+        @include rem(width, 300px);
       }
 
       .page-header-tools {
@@ -44,8 +50,8 @@ $tabcolor: $brand;
   }
 }
 
-.uomcontent .page-header.floating + .page-inner {
-  padding-top: 0;
+.uomcontent .page-header.short + .page-inner {
+    padding-top: 0;
 
   .floating {
     display: none;
@@ -56,15 +62,15 @@ $tabcolor: $brand;
   }
 
   .tabbed-nav > .full-width {
-    background-color: $tabcolor;
+    // background-color: $tabcolor;
 
     nav a[data-current]::after {
-      border-top-color: $tabcolor;
+      // border-top-color: $tabcolor;
     }
   }
 
   .filtered-listing-wrapper.light {
-    background-color: $paleblue;
+    // background-color: $paleblue;
 
     form.filtered-listing-select,
     form.filtered-listing-select .left legend,
@@ -72,7 +78,7 @@ $tabcolor: $brand;
     form.filtered-listing-select .left .category-a input[type="checkbox"]+label span,
     form.filtered-listing-select .left .category-b input[type="checkbox"]+label span,
     form.filtered-listing-select .left .category-c input[type="checkbox"]+label span {
-      color: $black;
+      // color: $black;
 
     }
   }
