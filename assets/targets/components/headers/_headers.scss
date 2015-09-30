@@ -9,6 +9,10 @@
   & > article:first-child {
     padding-top: 0;
   }
+  
+  &.headerless {
+    border-top: 8px solid $navy;
+  }
 
   header,
   & > header:first-child {
