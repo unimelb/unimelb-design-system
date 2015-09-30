@@ -20,11 +20,14 @@
     display: block;
   }
 
-  & > ul > li > a {
-    text-decoration: none;
+  & > ul > li {
+    & > a,
+    & > .with-dropdown > a {
+      text-decoration: none;
 
-    h3 {
-      text-decoration: underline;
+      h3 {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -62,10 +65,12 @@
     }
 
     @include breakpoint(tablet) {
+      h3,
       p {
         margin: 0;
         width: 88%;
       }
+      
       li {
         display: inline-block;
         vertical-align: top;
@@ -119,6 +124,26 @@
     @include breakpoint(desktop) {
       li {
         width: 32%;
+      }
+    }
+  }
+  
+  ul.wide {
+    li.with-dropdown {
+      .styled-select {
+        @include margin-leader(1);
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      @include breakpoint(tablet) {
+        .styled-select {
+          width: 88%;
+        }
+      }
+      
+      @include breakpoint(desktop) {
+        padding-bottom: 0;
       }
     }
   }
