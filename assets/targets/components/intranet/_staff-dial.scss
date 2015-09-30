@@ -1,0 +1,83 @@
+.uomcontent [role="main"] {
+
+  .staff-dial {
+    @include rem(max-width, $w-mid);
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+
+    li {
+      @include rem(margin, 10px 10px);
+      display: inline-block;
+      list-style-type: none;
+      padding: 0;
+      vertical-align: top;
+      width: auto;
+
+      @include breakpoint(desktop) {
+        @include rem(margin, 10px 28px);
+      }
+    }
+
+    a {
+      @include adjust-font-size-to(13px);
+      @include rem(border-radius, 4px);
+      @include rem(height, 70px);
+      @include rem(padding-top, 8px);
+      @include rem(width, 70px);
+      @include transition(transform 0.15s);
+      // border: 1px solid currentColor;
+      background-color: $highlight;
+      color: $white;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &.c1 {
+        background-color: #9c27b0;
+      }
+
+      &.c2 {
+        background-color: #673ab7;
+      }
+
+      &.c3 {
+        background-color: #2196f3;
+      }
+
+      &.c4 {
+        background-color: #009688;
+      }
+
+      &.c5 {
+        background-color: #009688;
+      }
+
+      &.c6 {
+        background-color: #ff9800;
+      }
+
+      &.c7 {
+        background-color: #607d8b;
+      }
+
+      &:hover {
+        // background-color: currentColor;
+        transform: scale(1.1);
+
+        svg {
+          fill: $white;
+        }
+
+        .icon-label {
+          color: $white;
+        }
+      }
+
+      & > div.small {
+        width: auto;
+      }
+    }
+  }
+}
