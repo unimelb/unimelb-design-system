@@ -99,16 +99,13 @@
     }
   }
 
+  ul.wide,
   ul.narrow {
     @include padding-leader(1);
-    @include rem(max-width, $w-mid);
-    margin-left: auto;
-    margin-right: auto;
 
     li {
       @include padding-trailer(1);
       @include trailer(1);
-      // border-bottom: 1px solid $lightergray;
     }
 
     a {
@@ -118,12 +115,18 @@
     p {
       @include padding-trailer(0);
     }
-
+    
     @include breakpoint(desktop) {
       li {
         width: 32%;
       }
     }
+  }
+  
+  ul.narrow {
+    @include rem(max-width, $w-mid);
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
