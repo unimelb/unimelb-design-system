@@ -186,6 +186,7 @@
 }
 
 %navigation-block-listing-fallback {
+  @extend %clearfix;
   margin: 0 auto;
 
   ul li {
