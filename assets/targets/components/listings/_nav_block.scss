@@ -20,11 +20,14 @@
     display: block;
   }
 
-  & > ul > li > a {
-    text-decoration: none;
+  & > ul > li {
+    & > a,
+    & > .with-dropdown > a {
+      text-decoration: none;
 
-    h3 {
-      text-decoration: underline;
+      h3 {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -62,10 +65,12 @@
     }
 
     @include breakpoint(tablet) {
+      h3,
       p {
         margin: 0;
         width: 88%;
       }
+      
       li {
         display: inline-block;
         vertical-align: top;
@@ -99,16 +104,13 @@
     }
   }
 
+  ul.wide,
   ul.narrow {
     @include padding-leader(1);
-    @include rem(max-width, $w-mid);
-    margin-left: auto;
-    margin-right: auto;
 
     li {
       @include padding-trailer(1);
       @include trailer(1);
-      // border-bottom: 1px solid $lightergray;
     }
 
     a {
@@ -118,16 +120,73 @@
     p {
       @include padding-trailer(0);
     }
-
+    
     @include breakpoint(desktop) {
       li {
         width: 32%;
       }
     }
   }
+  
+  ul.wide {
+    li.with-dropdown {
+      .styled-select {
+        @include margin-leader(1);
+        margin-left: 0;
+        margin-right: 0;
+      }
+      
+      @include breakpoint(tablet) {
+        .styled-select {
+          width: 88%;
+        }
+      }
+      
+      @include breakpoint(desktop) {
+        padding-bottom: 0;
+      }
+    }
+  }
+  
+  ul.narrow {
+    @include rem(max-width, $w-mid);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.stacked {
+    @include rem(max-width, $w-sml);
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+    width: 94%;
+
+    @include breakpoint(desktop) {
+      width: 100%;
+    }
+
+    ul {
+      h3,
+      p {
+        width: 100%;
+      }
+
+      li {
+        display: block;
+        max-width: none;
+        width: 100%;
+
+        p {
+          @include rem(font-size, $base-font-size);
+          line-height: inherit;
+        }
+      }
+    }
+  }
 }
 
 %navigation-block-listing-fallback {
+  @extend %clearfix;
   margin: 0 auto;
 
   ul li {

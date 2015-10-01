@@ -1,0 +1,134 @@
+.floating.reverse.short
+  a class="page-header-home" href="/pages/staff-hub" Staff Hub
+
+div.with-login role="main"
+  div.tabbed-nav data-tabbed="" id="nav" role="tabs"
+    .full-width
+      nav.desktop-nav
+        a href="#home" data-current="" role="tab"
+          span.small data-icon="home" Home
+        a href="#news-events" role="tab" News and events
+        a href="#structure-governance" role="tab" Structure &amp; governance
+        a href="#intranets" role="tab" Local intranets
+
+    .tab id="home" role="tabpanel"
+      .alt
+        section
+          ul.staff-dial
+            li
+              a.c1 href="#"
+                div.small data-icon="mail" Email
+            li
+              a.c2 href="#"
+                div.small data-icon="group" Themis
+            li
+              a.c3 href="#"
+                div.small data-icon="student" ISIS
+            li
+              a.c4 href="#"
+                div.small data-icon="edit" LMS
+            / li
+            /   a.c5 href="#"
+            /     div.small data-icon="jobs" Jobs
+            li
+              a.c6 href="#"
+                div.small data-icon="computer" IT help
+            / li
+            /   a.c7 href="#"
+            /     div.small data-icon="library" Library
+
+      section.navigation-block-listing
+        ul.wide
+          li.with-dropdown
+            a href="/pages/staff-hub/human-resources"
+              h3 Human Resources
+              p Leave, pay, HR advice, equity and fairness, training and development, career management and job search
+            select class="alt"
+              option Select
+              option Software and applications
+              option IT and computer security
+              option Networks and access support
+              option Computers and printers
+              option Telephones and voicemail
+              option Support for using University systems
+              option Email and calendar
+          li.with-dropdown
+            a href="#"
+              h3 Information Technology
+              p Networks, passwords, IT systems, email, collaboration tools, IT services and access to Themis resources
+            select class="alt"
+              option Select
+              option Software and applications
+              option IT and computer security
+              option Networks and access support
+              option Computers and printers
+              option Telephones and voicemail
+              option Support for using University systems
+              option Email and calendar
+          li.with-dropdown
+            a href="#"
+              h3 Finance, Purchasing & Travel
+              p Book and organise travel, manage expenses, purchase supplies and equipment, corporate finance
+            select class="alt"
+              option Select
+              option Software and applications
+              option IT and computer security
+              option Networks and access support
+              option Computers and printers
+              option Telephones and voicemail
+              option Support for using University systems
+              option Email and calendar
+
+      hr.spacer
+      section.navigation-block-listing
+        ul.wide
+          li
+            a href="#"
+              h3 Campus Maps & Facilities
+              p Campus maps, building access and security, transport and parking, maintenance, services and facilities
+          li
+            a href="#"
+              h3 New Staff
+              p Information for new staff, to help you get up and running at the University of Melbourne
+          li
+            a href="#"
+              h3 Research
+              p Funding opportunities, research supervisors, services, systems and tools for researchers
+          li
+            a href="#"
+              h3 Students
+              p Process and systems, programs and services, fellowships, grants and awards, learning environments
+          li
+            a href="#"
+              h3 Health and wellbeing
+              p Occupational health, sports facilities, health services, counselling, equity and diversity, personal safety
+          li
+            a href="#"
+              h3 Marketing & Communications
+              p Advancement, communications, marketing, media, industry and community engagement
+              
+    .tab id="news-events" role="tabpanel"
+      section
+        h1 News and events
+    .tab id="structure-governance" role="tabpanel"
+      section
+        h1 Structure and governance
+        
+    .tab id="intranets" role="tabpanel"
+      section
+        h1 Local intranets
+
+    div.page-local-login
+      h1 Login
+      form action="" data-validate="" method="post"
+        fieldset
+          div
+            label data-required="true" for="f-email" Email:
+            input aria-required="true" data-error="Please enter a valid email." data-pattern="email" id="f-email" name="f[email]" type="email"
+          div
+            label data-required="true" for="f-password" Password:
+            input aria-required="true" data-error="Please enter your password." id="f-password" name="f[password]" type="password"
+        footer
+          input type="submit" value="Login"
+  / == partial "pages/staff-hub/enquiry"
+/ == partial 'pages/staff-hub/localnav'

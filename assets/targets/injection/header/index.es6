@@ -46,9 +46,17 @@ InjectHeader.prototype.renderPageHeader = function() {
   </svg>
 </a>
 `;
+
+      // Copy over the `floating`, `reverse` and `short` classes
       this.props.header.addClass('floating');
-      if (document.querySelector('.page-inner > .floating').hasClass('reverse')) {
+
+      var floating = document.querySelector('.page-inner > .floating');
+      if (floating.hasClass('reverse')) {
         this.props.header.addClass('reverse');
+      }
+
+      if (floating.hasClass('short')) {
+        this.props.header.addClass('short');
       }
 
       // Add any customisations
