@@ -153,6 +153,36 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  &.stacked {
+    @include rem(max-width, $w-sml);
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+    width: 94%;
+
+    @include breakpoint(desktop) {
+      width: 100%;
+    }
+
+    ul {
+      h3,
+      p {
+        width: 100%;
+      }
+
+      li {
+        display: block;
+        max-width: none;
+        width: 100%;
+
+        p {
+          @include rem(font-size, $base-font-size);
+          line-height: inherit;
+        }
+      }
+    }
+  }
 }
 
 %navigation-block-listing-fallback {
