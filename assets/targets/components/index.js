@@ -131,16 +131,17 @@ window.UOMloadComponents = function() {
 
     recs = document.querySelectorAll('ul.image-gallery');
     if (recs.length > 0) {
-      imagesLoaded = require('imagesloaded');
+      imagesLoaded = require("imagesloaded");
       ImageGallery = require("./gallery");
 
       slingshot = function() {
-        new ImageGallery(g, {});
+        new ImageGallery(this, {});
       };
 
       for (i=recs.length - 1; i >= 0; i--) {
         g = recs[i];
-        imagesLoaded(g, slingshot);
+
+        imagesLoaded(g, slingshot.bind(g));
       }
     }
 
