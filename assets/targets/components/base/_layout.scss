@@ -383,6 +383,10 @@ body {
       display: table;
       margin: 0 auto;
       width: 100%;
+      
+      div {
+        display: block;
+      }
     }
 
     aside {
