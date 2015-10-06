@@ -15,7 +15,7 @@ $darkblue:     #004576;
 $borderblue:   #7399b7;
 $midblue:      #366996;
 $lightblue:    #82a1bd;
-$lighterblue:  #359aec;
+$lighterblue:  #0076de;
 $paleblue:     #f2f5f8;
 $lightestblue: #e1eaf5;
 
@@ -43,6 +43,7 @@ body {
 
 @import 'header/index';
 @import 'footer/index';
+@import 'announcement/index';
 @import 'nav/index';
 
 .hidden {

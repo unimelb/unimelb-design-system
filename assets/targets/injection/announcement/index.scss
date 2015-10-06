@@ -1,6 +1,6 @@
 .uomcontent {
 
-  .announcement {
+  .page-announcement {
     color: $white;
     position: relative;
 
@@ -17,18 +17,13 @@
         color: $white;
       }
       
-      span {
-        text-transform: uppercase;
-        @include adjust-font-size-to(13px);
-        color: $lightestblue;
-      }
-      
       h2 {
         @include adjust-font-size-to(13px);
         @include rem(line-height, 24px);
-        @include rem(padding-bottom, 5px);
+        @include rem(padding-bottom, 3px);
         color: $lightestblue;
         font-weight: normal;
+        letter-spacing: normal;
         margin: 0;
         padding-top: 0;
         text-transform: uppercase;
@@ -64,11 +59,15 @@
 
     &__close {
       @include rem(border-radius, 3px);
+      @include rem(font-size, 13px);
+      @include rem(margin-top, -((10px * 2 + 24px) / 2));
       @include rem(padding, 10px);
       @include rem(right, 15px);
-      @include rem(margin-top, -((10px * 2 + 24px) / 2));
       @include transition(background-color 0.15s, color 0.15s);
+      background: none;
+      border: none;
       color: $white;
+      cursor: pointer;
       position: absolute;
       top: 50%;
 

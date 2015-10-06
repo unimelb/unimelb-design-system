@@ -5,7 +5,7 @@ require("./gtm");
 window.UOMloadInjection = function() {
   "use strict";
 
-  var assethostFooter, assethostHeader, Header, Nav, Footer, Icons;
+  var assethostFooter, assethostHeader, Header, Nav, Footer, Icons, Accouncement;
 
   assethostHeader = assethostFooter = '//uom-design-system.s3.amazonaws.com/shared/assets';
   // assethostHeader = assethostFooter = 'http://localhost:5001/assets';
@@ -30,6 +30,9 @@ window.UOMloadInjection = function() {
 
   Icons = require('./icons');
   new Icons();
+  
+  Accouncement = require('./announcement/index.es6');
+  new Accouncement();
 };
 
 // Execute when ready
