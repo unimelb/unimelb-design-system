@@ -1,0 +1,95 @@
+.uomcontent {
+
+  .announcement {
+    color: $white;
+    position: relative;
+
+    &__message {
+      @include rem(padding, 20px 50px 20px 15px);
+      background-color: $highlight;
+      color: $white;
+      display: block;
+      text-align: left;
+      text-decoration: none;
+
+      &:hover {
+        background-color: $brand;
+        color: $white;
+      }
+      
+      span {
+        text-transform: uppercase;
+        @include adjust-font-size-to(13px);
+        color: $lightestblue;
+      }
+      
+      h2 {
+        @include adjust-font-size-to(13px);
+        @include rem(line-height, 24px);
+        @include rem(padding-bottom, 5px);
+        color: $lightestblue;
+        font-weight: normal;
+        margin: 0;
+        padding-top: 0;
+        text-transform: uppercase;
+      }
+
+      p {
+        @include adjust-font-size-to(18px);
+        margin: 0;
+        padding: 0;
+
+        &.with-arrow:after {
+          @include rem(font-size, 20px);
+          @include rem(padding-left, 10px);
+          content: '\2192';
+          line-height: 0;
+        }
+        
+        strong {
+          @include rem(margin-right, 10px);
+        }
+      }
+      
+      @include breakpoint(tablet) {
+        @include rem(padding, 20px 90px);
+        text-align: center;
+        
+        h2,
+        p {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &__close {
+      @include rem(border-radius, 3px);
+      @include rem(padding, 10px);
+      @include rem(right, 15px);
+      @include rem(margin-top, -((10px * 2 + 24px) / 2));
+      @include transition(background-color 0.15s, color 0.15s);
+      color: $white;
+      position: absolute;
+      top: 50%;
+
+      &:hover {
+        background-color: $white;
+        color: $highlight;
+      }
+
+      & > [data-icon="close"] {
+        @include rem(height, 24px);
+        @include rem(width, 24px);
+        
+        .icon-label {
+          @include screenreaders-only;
+        }
+      }
+      
+      @include breakpoint(tablet) {
+        @include rem(right, 30px);
+      }
+    }
+  }
+  
+}
