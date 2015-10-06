@@ -32,7 +32,7 @@ window.UOMloadInjection = function() {
   new Icons();
   
   Accouncement = require('./announcement/index.es6');
-  new Accouncement();
+  new Accouncement({});
 };
 
 // Execute when ready

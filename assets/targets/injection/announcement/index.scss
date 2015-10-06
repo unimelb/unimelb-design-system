@@ -3,6 +3,11 @@
   .page-announcement {
     color: $white;
     position: relative;
+    
+    .page-inner &,
+    &--dismissed {
+      display: none;
+    }
 
     &__message {
       @include rem(padding, 20px 50px 20px 15px);
