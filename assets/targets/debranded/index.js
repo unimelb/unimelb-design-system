@@ -133,13 +133,14 @@ window.DSComponentsLoad = function() {
     imagesLoaded = require('imagesloaded');
     ImageGallery = require("../components/gallery");
 
+    slingshot = function() {
+      new ImageGallery(this, {});
+    };
+
     for (i=recs.length - 1; i >= 0; i--) {
       g = recs[i];
-      imagesLoaded(g, (function(g) {
-        return function() {
-          new ImageGallery(g, {});
-        };
-      }(g)));
+
+      imagesLoaded(g, slingshot.bind(g));
     }
   }
 
