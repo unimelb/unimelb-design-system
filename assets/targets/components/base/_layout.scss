@@ -390,6 +390,7 @@ body {
       width: 100%;
       
       div {
+        @include rem(max-width, $w-sml);
         display: block;
       }
     }
