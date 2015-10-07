@@ -1,11 +1,11 @@
 .uomcontent {
-	.lead {
-		@include adjust-font-size-to(19px);
-		@include padding-leader(3);
-		@include padding-trailer(3);
-		@include rem(max-width, $w-mid);
-		background: transparent;
-		color: $black;
+  .lead {
+    @include adjust-font-size-to(19px);
+    @include padding-leader(3);
+    @include padding-trailer(3);
+    @include rem(max-width, $w-mid);
+    background: transparent;
+    color: $black;
     filter: none;
     font-weight: $light;
     margin: 0 3%;
@@ -46,7 +46,18 @@
     @include breakpoint(wide) {
       margin: 0 auto;
     }
-	}
+    
+    &.left {
+      @include rem(max-width, $w-sml);
+      @include rem(padding, 48px 0);
+      margin: 0 auto;
+      text-align: left;
+      
+      p {
+        font-style: normal;
+      }
+    }
+  }
 
   section > .lead {
     @include padding-leader(1);
