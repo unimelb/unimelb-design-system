@@ -71,6 +71,7 @@ InjectAnnouncement.prototype.dismiss = function () {
  * Hide the announcement.
  */
 InjectAnnouncement.prototype.hide = function () {
+  this.props.announcement.style['max-height'] = '0';
   this.props.announcement.addClass('page-announcement--dismissed');
   
   // Current implementation of closing animation (max-height) prevents the use of `display:none`

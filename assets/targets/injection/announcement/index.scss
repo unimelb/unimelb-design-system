@@ -5,13 +5,14 @@
   }
   
   .page-announcement {
+    @include rem(max-height, 30rem); // In case the max-height cannot be set with JS
     color: $white;
     position: relative;
     opacity: 1;
     transition: max-height .2s ease;
     
     &--dismissed {
-      max-height: 0 !important; // Override inline style set with JS
+      max-height: 0; // In case the max-height cannot be set with JS
     }
 
     &__message {
