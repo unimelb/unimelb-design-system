@@ -42,8 +42,11 @@ InjectAnnouncement.prototype.inject = function () {
   this.props.parent.insertBefore(this.props.announcement, this.props.header);
   
   if (this.props.wasDismissed) {
-    this.props.announcement.addClass('page-announcement--dismissed');
+    this.hide();
   } else {
+    // Set max-height to height of element
+    this.props.announcement.style['max-height'] = this.props.announcement.clientHeight + 'px';
+    
     // Register handler on close button
     this.props.closeBtn = this.props.announcement.querySelector('.page-announcement__close');
     this.props.closeBtn.addEventListener('click', this.dismiss.bind(this));
@@ -57,10 +60,22 @@ InjectAnnouncement.prototype.dismiss = function () {
   this.props.wasDismissed = true;
   
   if (hasLocalStorage) {
+    // Mark the announcement as dismissed in local storage
     localStorage.setItem(STORAGE_PREFIX + this.props.hash, DISMISSED);
   }
   
+  this.hide();
+};
+
+/**
+ * Hide the announcement.
+ */
+InjectAnnouncement.prototype.hide = function () {
   this.props.announcement.addClass('page-announcement--dismissed');
+  
+  // Current implementation of closing animation (max-height) prevents the use of `display:none`
+  // Hide the announcement to screen readers with ARIA
+  this.props.announcement.setAttribute('aria-hidden', true);
 };
 
 module.exports = InjectAnnouncement;

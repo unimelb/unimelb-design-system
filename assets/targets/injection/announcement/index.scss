@@ -1,13 +1,18 @@
 .uomcontent {
 
-  .page-inner .page-announcement,
-  .page-announcement--dismissed {
+  .page-inner .page-announcement {
     display: none;
   }
   
   .page-announcement {
     color: $white;
     position: relative;
+    opacity: 1;
+    transition: max-height .2s ease;
+    
+    &--dismissed {
+      max-height: 0 !important; // Override inline style set with JS
+    }
 
     &__message {
       @include rem(padding, 20px 50px 20px 15px);
