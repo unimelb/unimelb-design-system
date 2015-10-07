@@ -67,7 +67,7 @@
     @include breakpoint(tablet) {
       h3,
       p {
-        margin: 0;
+        margin: 0 auto;
         width: 88%;
       }
       
@@ -78,17 +78,23 @@
 
         li {
           display: block;
-          width: 100%;
+          margin: 0 auto;
+          width: 88%;
         }
       }
     }
 
     @include breakpoint(desktop) {
+      h3,
+      p {
+        margin: 0 auto;
+      }
+      
       li {
-        width: 32%;
+        width: 32.33%;
 
         li {
-          width: 100%;
+          width: 88%;
         }
       }
     }
@@ -98,7 +104,7 @@
         width: 24%;
 
         li {
-          width: 100%;
+          width: 88%;
         }
       }
     }
@@ -123,7 +129,7 @@
     
     @include breakpoint(desktop) {
       li {
-        width: 32%;
+        width: 32.5%;
       }
     }
   }
@@ -138,6 +144,8 @@
       
       @include breakpoint(tablet) {
         .styled-select {
+          margin-left: auto;
+          margin-right: auto;
           width: 88%;
         }
       }
