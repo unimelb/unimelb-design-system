@@ -102,7 +102,9 @@
   input[type="text"],
   input[type="email"],
   input[type="number"],
-  input[type="password"] {
+  input[type="password"],
+  input[type="search"],
+  input[type="url"] {
     @extend %textcontrol;
     width: 100%;
   }
@@ -262,8 +264,12 @@
   .inline {
     position: relative;
 
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
     input[type="search"],
-    input[type="text"] {
+    input[type="url"] {
       @extend %textcontrol;
       @include appearance(none);
       @include rem(height, 45px);
@@ -318,8 +324,12 @@
   }
 
   .attached {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
     input[type="search"],
-    input[type="text"] {
+    input[type="url"] {
       @include rem(border-radius, 3px 0 0 3px);
       border-right: 0;
     }
@@ -341,8 +351,12 @@
     }
 
     &.big {
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="password"],
       input[type="search"],
-      input[type="text"] {
+      input[type="url"] {
         @include rem(font-size, 24px);
         @include rem(height, 60px);
         @include rem(line-height, 36px);

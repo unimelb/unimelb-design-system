@@ -178,6 +178,10 @@
       p {
         width: 100%;
       }
+      
+      p {
+        @include padding-trailer(1);
+      }
 
       li {
         display: block;

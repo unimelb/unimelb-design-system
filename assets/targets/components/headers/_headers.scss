@@ -224,7 +224,7 @@
 .uomcontent .floating + [role="main"] {
   header,
   & > header:first-child {
-    @include rem(padding-top, 100px);
+    @include rem(padding-top, 120px);
 
     @include breakpoint(desktop) {
       @include rem(padding-top, 180px);
