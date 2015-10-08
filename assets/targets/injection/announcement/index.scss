@@ -103,3 +103,16 @@
   }
   
 }
+
+.ie8 {
+  .uomcontent .page-announcement {
+    &__close {
+      & > [data-icon="close"] {
+        .icon-label {
+          clip: auto !important;
+          position: static !important;
+        }
+      }
+    }
+  }
+}
