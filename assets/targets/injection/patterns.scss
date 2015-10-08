@@ -1,5 +1,6 @@
 @import '../../shared/patterns_rem';
 @import '../../shared/patterns_media-queries';
+@import '../../shared/patterns_accessibility';
 
 // X-axis translation
 @mixin translateX($d) {
