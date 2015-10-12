@@ -94,11 +94,17 @@ Tabs.prototype.handleClick = function(e) {
 
 Tabs.prototype.setLocation = function(hash) {
   var pos = document.body.scrollTop, slug;
-  window.location.hash = hash;
+
+  if (hash.charAt(0) === '#') {
+    window.location.hash = hash.split('#')[1];
+  } else {
+    window.location = hash;
+  }
+
   document.body.scrollTop = pos;
 
   if (history.pushState) {
-    slug = this.href;
+    slug = window.location.href;
     history.pushState({'title': document.title, 'url': slug}, document.title, slug);
   }
 };
