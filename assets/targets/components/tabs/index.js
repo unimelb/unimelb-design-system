@@ -95,7 +95,7 @@ Tabs.prototype.handleClick = function(e) {
 Tabs.prototype.setLocation = function(hash) {
   var pos = document.body.scrollTop, slug;
 
-  if (hash.substr(0,1) == '#') {
+  if (hash.charAt(0) === '#') {
     window.location.hash = hash.split('#')[1];
   } else {
     window.location = hash;
