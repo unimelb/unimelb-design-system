@@ -47,7 +47,7 @@
     "webpack-dev-server": "^1.8.2"
   },
   "engines": {
-    "node": "0.10.35"
+    "node": "~0.12.7"
   },
   "scripts": {
     "clean": "rm -rf ./assets/build/*",
