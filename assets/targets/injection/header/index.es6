@@ -58,6 +58,12 @@ InjectHeader.prototype.renderPageHeader = function() {
       if (floating.hasClass('short')) {
         this.props.header.addClass('short');
       }
+      
+      // Copy over inline background-image, if provided
+      var bgImg = floating.style.backgroundImage;
+      if (bgImg) {
+        this.props.header.style.backgroundImage = bgImg;
+      }
 
       // Add any customisations
       for (var nodes=document.querySelector('.floating').childNodes, i=nodes.length - 1; i >= 0; i--) {
