@@ -96,3 +96,55 @@ div role="main"
               p.center
                 a.button-hero href="course#fees" data-tab="5"  Next : Fees &amp; scholarships
 
+      .enquiry style="clear:both; width:100%"
+        .enquiry__cta.accordion__title
+          |Have a question?
+          '
+          a.button-small href="#enquiry-form" Enquire now
+        .enquiry__form.accordion__hidden
+          form#enquiry-form data-validate=""
+            .fields
+              .errors.copy style='display: none;'
+              fieldset.enquiry-form__details
+                legend Have a question?
+                div
+                  label.enquiry-form__label for="f_given" data-required="true" Given name
+                  input#f_given.input-medium type="text" placeholder="Given name" name="first_name" aria-required="true"
+                div
+                  label.enquiry-form__label for="f_family" data-required="true" Family name
+                  input#f_family.input-medium type="text" placeholder="Family name" name="last_name" aria-required="true"
+                div
+                  label.enquiry-form__label for="f_email" data-required="true" Email
+                  input#f_email.input-medium type="email" placeholder="your@email.com" name="email_address" aria-required="true"
+                div
+                  label.enquiry-form__label for="f_phone" data-required="true" Phone
+                  input#f_phone.input-medium type="text" placeholder="04..." name="phone" aria-required="true"
+                div
+                  label.enquiry-form__label for="f_message" data-required="true" Message
+                  textarea#f_message name="enquiry" placeholder="Your enquiry" aria-required="true"
+                .inline
+                  input type="checkbox" name="opt_in_faculty" id="faculty_newsletter" value=""
+                  label for="faculty_newsletter"
+                    span Subscribe to stay up to date with the latest news, events and information
+
+                div
+                  input.enquiry-form__submit-button type='submit' value='Send your question'
+                hr.spacer
+                  p
+                    small
+                      ' The information on this form is being collected by the University of Melbourne for further communication regarding various courses, programs and events at the University in which you have expressed interest. Information collected will only be used by authorised staff for the purpose for which it was collected and will be protected against unauthorized access and use. You can access any personal information the University holds about you. Contact the
+                      a> href="http://www.unimelb.edu.au/unisec/privacy/contact.html" Privacy Officer
+                      ' to find out more. The
+                      a> href="http://www.unimelb.edu.au/disclaimer/privacy.html" University’s Privacy Policy
+                      ' is available online
+                      |.
+        .enquiry__subline
+          .first
+            |or call
+            '
+            a href="tel:136352" 13 MELB (13 6352)
+          .secondary
+            |International:
+            '
+            a href="tel:0061390355511" +61 3 9035 5511
+

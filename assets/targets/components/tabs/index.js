@@ -82,7 +82,7 @@ Tabs.prototype.handleClick = function(e) {
   if (target.hasAttribute('href')) {
     // go to href
 
-    if (target.getAttribute('href').substr(0,1) == '#') {
+    if (target.getAttribute('href').charAt(0) == '#') {
       this.move(target);
       this.setLocation(target.getAttribute('href'));
     }
@@ -92,20 +92,30 @@ Tabs.prototype.handleClick = function(e) {
   }
 };
 
+Tabs.prototype.panelExists = function(label) {
+  var exists = false;
+  for (max=this.props.panels.length, i=0; i < max; i++)
+      if (window.location.hash == this.props.panels[i].id)
+        exists = true;
+  return exists;
+};
+
 Tabs.prototype.setLocation = function(hash) {
-  var pos = document.body.scrollTop, slug;
+  if (this.panelExists(hash)) {
+    var pos = document.body.scrollTop, slug;
 
-  if (hash.charAt(0) === '#') {
-    window.location.hash = hash.split('#')[1];
-  } else {
-    window.location = hash;
-  }
+    if (hash.charAt(0) === '#') {
+      window.location.hash = hash.split('#')[1];
+    } else {
+      window.location = hash;
+    }
 
-  document.body.scrollTop = pos;
+    document.body.scrollTop = pos;
 
-  if (history.pushState) {
-    slug = window.location.href;
-    history.pushState({'title': document.title, 'url': slug}, document.title, slug);
+    if (history.pushState) {
+      slug = window.location.href;
+      history.pushState({'title': document.title, 'url': slug}, document.title, slug);
+    }
   }
 };
 
@@ -166,7 +176,7 @@ Tabs.prototype.buildMobileNav = function() {
 Tabs.prototype.handleChange = function(e) {
   var target = e.target.value;
   if (target) {
-    if (target.substr(0,1) != '#') {
+    if (target.charAt(0) != '#') {
       window.location = target;
     } else {
       this.move(this.el.querySelector('nav a[href="' + target + '"]'));

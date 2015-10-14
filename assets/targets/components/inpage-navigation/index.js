@@ -25,7 +25,8 @@ InpageNavigation.prototype.delegateScroll = function(e) {
 
         var tabbed = findUp(e.target, 'data-tabbed');
         if (tabbed && e.target.parentNode.parentNode.hasClass("jump-navigation") === false) {
-          target = tabbed;
+          if (tabbed.countSelector('.tab#' + target.id + '') === 1)
+            target = tabbed;
         }
 
         // If link is not a tab, or a full width tab
