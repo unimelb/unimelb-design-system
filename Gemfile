@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.2.3'
 
 gem 'rack'
 gem 'thin', '~> 1.6.2'
@@ -13,6 +13,7 @@ group :development do
   gem 'sprockets-helpers', '~> 1.1.0'
 
   gem 'slim', '~> 2.0.3'
+  gem 'json', '1.8.1'
 
   gem 'html-pipeline', '~> 1.6.0'
   gem 'github-linguist', '~> 2.10.9'
