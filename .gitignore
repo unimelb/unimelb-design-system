@@ -7,4 +7,6 @@ tmp/*
 node_modules/
 .env
 .ruby-version
+.node-version
+.nvmrc
 .idea

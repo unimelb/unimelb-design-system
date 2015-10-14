@@ -17,7 +17,7 @@ module DocSite
     set :root,           File.expand_path(File.join(File.dirname(__FILE__), '..'))
     set :views,          File.join(root, 'views')
     set :public_dir,     File.join(root, 'public')
-    set :version,        'v3.2.1'
+    set :version,        'v3.3'
 
     set :public_folder,  File.join(root, '..', 'build', ENV['VERSION']) if EXPORT
 
