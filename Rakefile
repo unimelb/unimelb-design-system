@@ -31,7 +31,7 @@ namespace :assets do
 
     root =      File.expand_path(File.join(File.dirname(__FILE__)))
     build_dir = File.join(root, 'build', ENV['VERSION'])
-    app_dir =   File.join(root, 'doc-site', 'public', 'assets')
+    public_dir =   File.join(root, 'doc-site', 'public')
 
     # clear out existing build
     system "cd #{root}/ && rm -rf #{build_dir} && mkdir #{build_dir}"
@@ -40,7 +40,7 @@ namespace :assets do
     DocSite::App.export!
 
     # copy static assets
-    system "cp -a #{app_dir} #{build_dir}"
+    system "cp -a #{public_dir}/. #{build_dir}"
 
     # build webpack and copy deploy files
     Rake::Task['assets:build'].invoke
