@@ -21,7 +21,7 @@ function ImageGallery(el, props) {
     }
   });
 
-  loadScript('https://uom-design-system.s3.amazonaws.com/shared/photoswipe.pkgd.min.js', this.initPhotoSwipeFromDOM.bind(this));
+  loadScript('/assets/photoswipe.js', this.initPhotoSwipeFromDOM.bind(this));
 }
 
 /**
@@ -58,9 +58,6 @@ ImageGallery.prototype.setupPhotoSwipe = function() {
 };
 
 ImageGallery.prototype.initPhotoSwipeFromDOM = function() {
-  // var PhotoSwipe = require('photoswipe');
-  // var PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default'); // missing assets?
-
   var gallerySelector = this.el;
 
   var parseThumbnailElements = function(el) {
