@@ -92,30 +92,20 @@ Tabs.prototype.handleClick = function(e) {
   }
 };
 
-Tabs.prototype.panelExists = function(label) {
-  var exists = false;
-  for (max=this.props.panels.length, i=0; i < max; i++)
-      if (window.location.hash == this.props.panels[i].id)
-        exists = true;
-  return exists;
-};
-
 Tabs.prototype.setLocation = function(hash) {
-  if (this.panelExists(hash)) {
-    var pos = document.body.scrollTop, slug;
+  var pos = document.body.scrollTop, slug;
 
-    if (hash.charAt(0) === '#') {
-      window.location.hash = hash.split('#')[1];
-    } else {
-      window.location = hash;
-    }
+  if (hash.charAt(0) === '#') {
+    window.location.hash = hash.split('#')[1];
+  } else {
+    window.location = hash;
+  }
 
-    document.body.scrollTop = pos;
+  document.body.scrollTop = pos;
 
-    if (history.pushState) {
-      slug = window.location.href;
-      history.pushState({'title': document.title, 'url': slug}, document.title, slug);
-    }
+  if (history.pushState) {
+    slug = window.location.href;
+    history.pushState({'title': document.title, 'url': slug}, document.title, slug);
   }
 };
 
