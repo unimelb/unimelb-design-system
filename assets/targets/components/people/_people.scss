@@ -37,6 +37,8 @@
       background-color: $lightestblue;
       border-radius: 50%;
       line-height: 0;
+      margin-left: auto;
+      margin-right: auto;
       max-width: 200px;
 
       img {
@@ -54,8 +56,6 @@
     }
 
     .frame {
-      margin-left: auto;
-      margin-right: auto;
       text-align: center;
 
       img {
@@ -96,10 +96,13 @@
   }
 
   .diamond-mask {
+    @include rem(max-width, 300px);
     @include trailer(1);
     @include transform(rotate(45deg) scale(.7));
     // border: 1px solid $black;
     display: block;
+    margin-left: auto;
+    margin-right: auto;
     overflow: hidden;
 
     img {
