@@ -13,31 +13,36 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var TARGETS = path.join(__dirname, "targets");
 var BUILD   = path.join(__dirname, "build");
 
-// Plugins
-var plugins = [
-  new ExtractTextPlugin("[name].css", {
-    allChunks: true
-  })
-];
-if (process.env.DEVELOPMENT === "true") {
-  plugins.push(new webpack.HotModuleReplacementPlugin());
-  plugins.push(new webpack.NoErrorsPlugin());
-};
+// Entry
+var entry = parseTargets(TARGETS, {});
 
-// Configure webpack output
+// Output
 var output = {
   path: BUILD,
   // Template based on keys in entry above
   // Generate hashed names for production
   filename: "[name].js"
 };
+
 if (process.env.DEVELOPMENT === "true") {
   output.publicPath = ASSETS_URL + "/assets/";
-};
+}
+
+// Plugins
+var plugins = [
+  new ExtractTextPlugin("[name].css", {
+    allChunks: true
+  })
+];
+
+if (process.env.DEVELOPMENT === "true") {
+  plugins.push(new webpack.HotModuleReplacementPlugin());
+  plugins.push(new webpack.NoErrorsPlugin());
+}
 
 module.exports = {
   context: TARGETS,
-  entry: fs.readdirSync(TARGETS).reduce(createEntries, {}),
+  entry: entry,
   output: output,
   plugins: plugins,
   module: {
@@ -90,17 +95,23 @@ function isFile(file) {
   return fs.lstatSync(file).isFile();
 }
 
-function createEntries(entries, dir) {
-  if (isDirectory(path.join(TARGETS, dir))) {
+function createEntries(root, entries, dir) {
+  var dirPath = path.join(root, dir);
+  if (isDirectory(dirPath)) {
     var target = (process.env.DEVELOPMENT === "true") ? ['webpack-dev-server/client?' + WEBPACK_URL, 'webpack/hot/dev-server'] : [];
-    var file = path.join(TARGETS, dir, "target.js");
+    var file = path.join(dirPath, "target.js");
     try {
       isFile(file);
     } catch (e) {
-      return;
+      // If target.js is not found, look into the sub-folders
+      return parseTargets(dirPath, entries);
     }
     target.push(file);
     entries[dir] = target;
   }
   return entries;
+}
+
+function parseTargets(root, entries) {
+  return fs.readdirSync(root).reduce(createEntries.bind(null, root), entries);
 }
