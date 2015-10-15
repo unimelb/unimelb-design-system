@@ -92,11 +92,13 @@ Tabs.prototype.handleClick = function(e) {
   }
 };
 
-Tabs.prototype.panelExists = function(label) {
+Tabs.prototype.panelExists = function(hash) {
   var exists = false;
+
   for (max=this.props.panels.length, i=0; i < max; i++)
-      if (window.location.hash == this.props.panels[i].id)
-        exists = true;
+    if (hash.substr(1) === this.props.panels[i])
+      exists = true;
+
   return exists;
 };
 
