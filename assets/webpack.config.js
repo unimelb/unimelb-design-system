@@ -24,10 +24,6 @@ var output = {
   filename: "[name].js"
 };
 
-if (process.env.DEVELOPMENT === "true") {
-  output.publicPath = ASSETS_URL + "/assets/";
-}
-
 // Plugins
 var plugins = [
   new ExtractTextPlugin("[name].css", {
@@ -36,8 +32,12 @@ var plugins = [
 ];
 
 if (process.env.DEVELOPMENT === "true") {
+  output.publicPath = ASSETS_URL + "/assets/";
+  
   plugins.push(new webpack.HotModuleReplacementPlugin());
   plugins.push(new webpack.NoErrorsPlugin());
+} else {
+  plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
 }
 
 module.exports = {
