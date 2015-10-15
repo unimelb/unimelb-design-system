@@ -92,12 +92,11 @@ Tabs.prototype.handleClick = function(e) {
   }
 };
 
-Tabs.prototype.panelExists = function(label) {
-  var exists = false,
-      current = this.el.querySelector('nav a[data-current]');
+Tabs.prototype.panelExists = function(hash) {
+  var exists = false;
 
   for (max=this.props.panels.length, i=0; i < max; i++)
-    if (window.location.hash == this.props.panels[i] || current.href.split('#')[1] == this.props.panels[i])
+    if (hash.substr(1) === this.props.panels[i])
       exists = true;
 
   return exists;
