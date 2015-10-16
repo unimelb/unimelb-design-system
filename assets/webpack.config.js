@@ -14,7 +14,7 @@ var TARGETS = path.join(__dirname, "targets");
 var BUILD   = path.join(__dirname, "build");
 
 // Entry
-var entry = parseTargets(TARGETS, {});
+var entry = parseTargets(TARGETS, '', {});
 
 // Output
 var output = {
@@ -95,23 +95,24 @@ function isFile(file) {
   return fs.lstatSync(file).isFile();
 }
 
-function createEntries(root, entries, dir) {
-  var dirPath = path.join(root, dir);
-  if (isDirectory(dirPath)) {
-    var target = (process.env.DEVELOPMENT === "true") ? ['webpack-dev-server/client?' + WEBPACK_URL, 'webpack/hot/dev-server'] : [];
-    var file = path.join(dirPath, "target.js");
+function createEntries(dir, relDir, entries, target) {
+  var targetPath = path.join(dir, target);
+  if (isDirectory(targetPath)) {
+    var entry = (process.env.DEVELOPMENT === "true") ? ['webpack-dev-server/client?' + WEBPACK_URL, 'webpack/hot/dev-server'] : [];
+    var file = path.join(targetPath, "target.js");
+    var targetName = relDir ? (relDir + '/' + target) : target;
     try {
       isFile(file);
     } catch (e) {
       // If target.js is not found, look into the sub-folders
-      return parseTargets(dirPath, entries);
+      return parseTargets(targetPath, relDir + '/' + target, entries);
     }
-    target.push(file);
-    entries[dir] = target;
+    entry.push(file);
+    entries[targetName] = entry;
   }
   return entries;
 }
 
-function parseTargets(root, entries) {
-  return fs.readdirSync(root).reduce(createEntries.bind(null, root), entries);
+function parseTargets(dir, relDir, entries) {
+  return fs.readdirSync(dir).reduce(createEntries.bind(null, dir, relDir), entries);
 }
