@@ -161,7 +161,7 @@ ListFilter.prototype.filterCategories = function() {
       // Category matches
       var recs = category.getAttribute('data-category').split('|');
       for (var j=recs.length - 1; j >= 0; j--) {
-        if (recs[j] == this.props.curr)
+        if (recs[j].replace(' ','%20') == this.props.curr.replace(' ','%20'))
           showcategory = true;
       }
     }
