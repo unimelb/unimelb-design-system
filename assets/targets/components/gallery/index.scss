@@ -1,14 +1,11 @@
 // Global settings
-@import '../../../shared/global';
+@import '../../../shared/globals';
 
 // Custom configuration
 $pswp__assets-path: $cdnurl + '/assets/';
 
-// Photoswipe's default configuration
-@import '~photoswipe/src/css/main-settings';
-
 // Import Photoswipe's stylesheets from the `node_modules` folder
-@import '~photoswipe/src/css/main';
-@import '~photoswipe/src/css/default-skin/default-skin';
+@import '../../../../node_modules/photoswipe/src/css/main';
+@import '../../../../node_modules/photoswipe/src/css/default-skin/default-skin';
 
 @import 'gallery';
