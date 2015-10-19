@@ -33,9 +33,10 @@ var output = {
   // Generate hashed names for production
   filename: "[name].js"
 };
+
 if (process.env.DEVELOPMENT === "true") {
   output.publicPath = ASSETS_URL + "/assets/";
-};
+}
 
 module.exports = {
   context: TARGETS,
