@@ -161,9 +161,8 @@ ListFilter.prototype.filterCategories = function() {
       // Category matches
       var recs = category.getAttribute('data-category').split('|');
       for (var j=recs.length - 1; j >= 0; j--) {
-        console.log(decodeURIComponent(recs[j]));
-        console.log(decodeURIComponent(this.props.curr));
-        if (decodeURIComponent(recs[j]) == decodeURIComponent(this.props.curr))
+        // Compare lowered, URI decoded with same
+        if (strtolower(decodeURIComponent(recs[j])) == strtolower(decodeURIComponent(this.props.curr)))
           showcategory = true;
       }
     }
