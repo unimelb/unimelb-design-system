@@ -352,7 +352,9 @@
       }
     }
   }
+}
 
+.uomcontent [role="main"] {
   .tabbed-course {
     @extend .tabbed-nav;
     @extend .thin;
@@ -367,6 +369,14 @@
 
     aside h2.subtitle {
       @include rem(padding-bottom, 5px);
+    }
+
+    .degree-plan {
+      display: none;
+
+      &.current {
+        display: block;
+      }
     }
   }
 }
