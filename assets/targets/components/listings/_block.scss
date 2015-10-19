@@ -524,6 +524,8 @@
 
       &.instagram {
         @include rem(min-height, 350px);
+        background-position: center;
+        background-size: cover;
         border-bottom-color: $navy;
         border-bottom-width: 5px;
         border-left: 0;
