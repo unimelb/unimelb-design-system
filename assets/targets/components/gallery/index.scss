@@ -5,7 +5,7 @@
 $pswp__assets-path: $cdnurl + '/assets/';
 
 // Import Photoswipe's stylesheets from the `node_modules` folder
-@import '../../../../node_modules/photoswipe/src/css/main';
-@import '../../../../node_modules/photoswipe/src/css/default-skin/default-skin';
+@import '~photoswipe/src/css/main';
+@import '~photoswipe/src/css/default-skin/default-skin';
 
 @import 'gallery';
