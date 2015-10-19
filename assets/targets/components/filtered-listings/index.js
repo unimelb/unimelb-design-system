@@ -161,7 +161,8 @@ ListFilter.prototype.filterCategories = function() {
       // Category matches
       var recs = category.getAttribute('data-category').split('|');
       for (var j=recs.length - 1; j >= 0; j--) {
-        if (recs[j] == this.props.curr)
+        // Compare lowered, URI decoded with same
+        if (decodeURIComponent(recs[j]).toLowerCase() == decodeURIComponent(this.props.curr).toLowerCase())
           showcategory = true;
       }
     }
