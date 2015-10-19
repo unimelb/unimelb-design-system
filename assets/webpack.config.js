@@ -22,7 +22,9 @@ var plugins = [
 if (process.env.DEVELOPMENT === "true") {
   plugins.push(new webpack.HotModuleReplacementPlugin());
   plugins.push(new webpack.NoErrorsPlugin());
-};
+} else {
+  plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
+}
 
 // Configure webpack output
 var output = {
