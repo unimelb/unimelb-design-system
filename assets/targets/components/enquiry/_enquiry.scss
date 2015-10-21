@@ -135,6 +135,24 @@
         }
       }
     }
+    
+    &--dark {
+      background-color: $blue;
+      color: $white;
+      box-shadow: none;
+      
+      .enquiry__subline {
+        color: inherit;
+
+        a {
+          color: inherit;
+          
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
 
     &.accordion__visible {
       .enquiry__cta {
