@@ -364,6 +364,17 @@
         @include rem(min-width, 280px);
       }
     }
+
+    &.soft {
+      @include breakpoint(desktop) {
+        max-width: 1100px;
+
+        li {
+          padding: 0;
+          text-align: center;
+        }
+      }
+    }
   }
 
   .pathfinder-4 {
