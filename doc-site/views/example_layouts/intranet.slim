@@ -50,44 +50,44 @@ div.with-login role="main"
       section.navigation-block-listing
         ul.wide
           li.with-dropdown
-            a href="/pages/staff-hub/human-resources"
+            a href="#"
               h3 Human Resources
               p Leave, pay, HR advice, equity and fairness, training and development, career management and job search
-            select class="alt"
-              option Select
-              option Software and applications
-              option IT and computer security
-              option Networks and access support
-              option Computers and printers
-              option Telephones and voicemail
-              option Support for using University systems
-              option Email and calendar
+            select class="alt select--nav"
+              option value="" Select
+              option value="/layouts/no-header" Software and applications
+              option value="#" IT and computer security
+              option value="#" Networks and access support
+              option value="#" Computers and printers
+              option value="#" Telephones and voicemail
+              option value="#" Support for using University systems
+              option value="#" Email and calendar
           li.with-dropdown
             a href="#"
               h3 Information Technology
               p Networks, passwords, IT systems, email, collaboration tools, IT services and access to Themis resources
-            select class="alt"
+            select class="alt select--nav"
               option Select
-              option Software and applications
-              option IT and computer security
-              option Networks and access support
-              option Computers and printers
-              option Telephones and voicemail
-              option Support for using University systems
-              option Email and calendar
+              option value="#" Software and applications
+              option value="#" IT and computer security
+              option value="#" Networks and access support
+              option value="#" Computers and printers
+              option value="#" Telephones and voicemail
+              option value="#" Support for using University systems
+              option value="#" Email and calendar
           li.with-dropdown
             a href="#"
               h3 Finance, Purchasing & Travel
               p Book and organise travel, manage expenses, purchase supplies and equipment, corporate finance
-            select class="alt"
+            select class="alt select--nav"
               option Select
-              option Software and applications
-              option IT and computer security
-              option Networks and access support
-              option Computers and printers
-              option Telephones and voicemail
-              option Support for using University systems
-              option Email and calendar
+              option value="#" Software and applications
+              option value="#" IT and computer security
+              option value="#" Networks and access support
+              option value="#" Computers and printers
+              option value="#" Telephones and voicemail
+              option value="#" Support for using University systems
+              option value="#" Email and calendar
 
       hr.spacer
       section.navigation-block-listing
@@ -140,5 +140,55 @@ div.with-login role="main"
             input aria-required="true" data-error="Please enter your password." id="f-password" name="f[password]" type="password"
         footer
           input type="submit" value="Login"
-  / == partial "pages/staff-hub/enquiry"
-/ == partial 'pages/staff-hub/localnav'
+          
+  .enquiry
+    .enquiry__cta.accordion__title
+      |Have a question?
+      '
+      a.button-small href="enquiry-form" Enquire now
+    .enquiry__form.accordion__hidden
+      form#enquiry-form data-validate=""
+        .fields
+          .errors.copy style='display: none;'
+          fieldset.enquiry-form__details
+            legend Have a question?
+            div
+              label.enquiry-form__label for="f_given" data-required="true" Given name
+              input#f_given.input-medium type="text" placeholder="Given name" name="first_name" aria-required="true"
+            div
+              label.enquiry-form__label for="f_family" data-required="true" Family name
+              input#f_family.input-medium type="text" placeholder="Family name" name="last_name" aria-required="true"
+            div
+              label.enquiry-form__label for="f_email" data-required="true" Email
+              input#f_email.input-medium type="email" placeholder="your@email.com" name="email_address" aria-required="true"
+            div
+              label.enquiry-form__label for="f_phone" data-required="true" Phone
+              input#f_phone.input-medium type="text" placeholder="04..." name="phone" aria-required="true"
+            div
+              label.enquiry-form__label for="f_message" data-required="true" Message
+              textarea#f_message name="enquiry" placeholder="Your enquiry" aria-required="true"
+            .inline
+              input type="checkbox" name="opt_in_faculty" id="faculty_newsletter" value=""
+              label for="faculty_newsletter"
+                span Subscribe to stay up to date with the latest news, events and information
+
+            div
+              input.enquiry-form__submit-button type='submit' value='Send your question'
+              p
+                small
+                  ' The information on this form is being collected by the University of Melbourne for further communication regarding various courses, programs and events at the University in which you have expressed interest. Information collected will only be used by authorised staff for the purpose for which it was collected and will be protected against unauthorized access and use. You can access any personal information the University holds about you. Contact the
+                  a> href="http://www.unimelb.edu.au/unisec/privacy/contact.html" Privacy Officer
+                  ' to find out more. The
+                  a> href="http://www.unimelb.edu.au/disclaimer/privacy.html" University’s Privacy Policy
+                  ' is available online
+                  |.
+    .enquiry__subline
+      .first
+        |or call
+        '
+        a href="tel:136352" 13 MELB (13 6352)
+      .secondary
+        |International:
+        '
+        a href="tel:0061390355511" +61 3 9035 5511
+
