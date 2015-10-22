@@ -1,7 +1,6 @@
 .enquiry.enquiry--dark
   .enquiry__cta.accordion__title
-    | Questions or feedback?
-    ' 
+    ' Questions or feedback?
     a.button-small href="enquiry-form" Send an enquiry
   .enquiry__form.accordion__hidden
     form#enquiry-form data-validate=""
@@ -9,34 +8,32 @@
         .errors.copy style='display: none;'
         fieldset.enquiry-form__details
           div
-            label.enquiry-form__label for="f_given" data-required="true" Given name
-            input#f_given.input-medium type="text" placeholder="Given name" name="first_name" aria-required="true"
-          div
-            label.enquiry-form__label for="f_family" data-required="true" Family name
-            input#f_family.input-medium type="text" placeholder="Family name" name="last_name" aria-required="true"
-          div
-            label.enquiry-form__label for="f_email" data-required="true" Email
-            input#f_email.input-medium type="email" placeholder="your@email.com" name="email_address" aria-required="true"
-          div
-            label.enquiry-form__label for="f_phone" data-required="true" Phone
-            input#f_phone.input-medium type="text" placeholder="04..." name="phone" aria-required="true"
-          div
-            label.enquiry-form__label for="f_message" data-required="true" Message
-            textarea#f_message name="enquiry" placeholder="Your enquiry" aria-required="true"
+            div
+              label.enquiry-form__label for="f_given" data-required="true" Given name
+              input#f_given.input-medium type="text" placeholder="Given name" name="first_name" aria-required="true"
+            div
+              label.enquiry-form__label for="f_family" data-required="true" Family name
+              input#f_family.input-medium type="text" placeholder="Family name" name="last_name" aria-required="true"
+            div
+              label.enquiry-form__label for="f_email" data-required="true" Email
+              input#f_email.input-medium type="email" placeholder="your@email.com" name="email_address" aria-required="true"
+            div
+              label.enquiry-form__label for="f_phone" data-required="true" Phone
+              input#f_phone.input-medium type="text" placeholder="04..." name="phone" aria-required="true"
+            div
+              label.enquiry-form__label for="f_message" data-required="true" Message
+              textarea#f_message name="enquiry" placeholder="Your enquiry" aria-required="true"
 
-          div
-            input.enquiry-form__submit-button type='submit' value='Send your question'
-          hr.spacer
-            p
-              small
-                ' The information on this form is being collected by the University of Melbourne for further communication regarding various courses, programs and events at the University in which you have expressed interest. Information collected will only be used by authorised staff for the purpose for which it was collected and will be protected against unauthorized access and use. You can access any personal information the University holds about you. Contact the
-                a> href="http://www.unimelb.edu.au/unisec/privacy/contact.html" Privacy Officer
-                ' to find out more. The
-                a> href="http://www.unimelb.edu.au/disclaimer/privacy.html" University’s Privacy Policy
-                ' is available online
-                |.
+            div
+              input.enquiry-form__submit-button type='submit' value='Send your question'
+            hr.spacer
+            p.form__subtext
+              ' The information on this form is being collected by the University of Melbourne for further communication regarding various courses, programs and events at the University in which you have expressed interest. Information collected will only be used by authorised staff for the purpose for which it was collected and will be protected against unauthorized access and use. You can access any personal information the University holds about you. Contact the
+              a> href="http://www.unimelb.edu.au/unisec/privacy/contact.html" Privacy Officer
+              ' to find out more. The
+              a> href="http://www.unimelb.edu.au/disclaimer/privacy.html" University’s Privacy Policy
+              | is available online.
   .enquiry__subline
     .first
-      | or call
-      ' 
+      ' or call
       a href="tel:0061383440777" +61 3 8344 0777
