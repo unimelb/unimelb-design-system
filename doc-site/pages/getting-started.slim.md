@@ -1,10 +1,9 @@
 ---
 title: Getting started
 ---
-header
-  / uncomment below to demonstrate header image
-  / style="background:url(/assets/components/headers/assets/repeating-dk.png) center repeat;"
+.headerless
 
+section
   h1 Design System Usage Instructions
 
   .jumpnav

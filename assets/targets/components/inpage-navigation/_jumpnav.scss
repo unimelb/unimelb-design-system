@@ -125,6 +125,7 @@ body.jumpnav-active {
       padding-top: 10px;
 
       > header:first-child,
+      .headerless,
       footer.cta,
       footer.end,
       footer.contrib {
