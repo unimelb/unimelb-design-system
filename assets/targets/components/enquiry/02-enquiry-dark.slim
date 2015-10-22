@@ -1,14 +1,14 @@
-.enquiry
+.enquiry.enquiry--dark
   .enquiry__cta.accordion__title
-    | Have a question?
+    | Questions or feedback?
     ' 
-    a.button-small href="enquiry-form" Enquire now
+    a.button-small href="enquiry-form" Send an enquiry
   .enquiry__form.accordion__hidden
     form#enquiry-form data-validate=""
       .fields
         .errors.copy style='display: none;'
         fieldset.enquiry-form__details
-          legend Have a question?
+          legend Questions or feedback?
           div
             label.enquiry-form__label for="f_given" data-required="true" Given name
             input#f_given.input-medium type="text" placeholder="Given name" name="first_name" aria-required="true"
@@ -24,10 +24,6 @@
           div
             label.enquiry-form__label for="f_message" data-required="true" Message
             textarea#f_message name="enquiry" placeholder="Your enquiry" aria-required="true"
-          .inline
-            input type="checkbox" name="opt_in_faculty" id="faculty_newsletter" value=""
-            label for="faculty_newsletter"
-              span Subscribe to stay up to date with the latest news, events and information
 
           div
             input.enquiry-form__submit-button type='submit' value='Send your question'
@@ -44,8 +40,4 @@
     .first
       |or call
       '
-      a href="tel:136352" 13 MELB (13 6352)
-    .secondary
-      |International:
-      '
-      a href="tel:0061390355511" +61 3 9035 5511
+      a href="tel:0061383440777" +61 3 8344 0777

@@ -28,6 +28,7 @@
       a {
         @include rem(line-height, 30px);
         @include rem(margin-left, 10px);
+        vertical-align: middle;
       }
 
       @include breakpoint(desktop) {
@@ -131,6 +132,24 @@
 
           @include breakpoint(desktop) {
             @include rem(width, 640px);
+          }
+        }
+      }
+    }
+    
+    &--dark {
+      background-color: $blue;
+      color: $white;
+      box-shadow: none;
+      
+      .enquiry__subline {
+        color: inherit;
+
+        a {
+          color: inherit;
+          
+          &:hover {
+            text-decoration: none;
           }
         }
       }
