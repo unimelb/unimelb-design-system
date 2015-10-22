@@ -93,16 +93,7 @@
         }
 
         legend {
-          @include adjust-font-size-to(15px);
-          @include rem(letter-spacing, 2px);
-          @include rem(padding-left, 10px);
-          @include rem(padding-right, 10px);
-          background-color: #fff;
-          font-weight: $bold;
-          position: relative;
-          text-align: center;
-          text-transform: uppercase;
-          z-index: 1;
+          @include screenreaders-only;
         }
 
         div {
