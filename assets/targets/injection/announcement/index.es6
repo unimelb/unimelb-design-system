@@ -45,18 +45,18 @@ InjectAnnouncement.prototype.inject = function () {
     // Register handler on close button
     this.props.closeBtn = this.props.announcement.querySelector('.page-announcement__close');
     this.props.closeBtn.addEventListener('click', this.dismiss.bind(this));
+    
+    // Register handler on announcement link
+    // This does not close the announcement for performance reasons - it just marks it as dismissed in localStorage
+    this.props.message.addEventListener('click', this.markDisimissed.bind(this));
   }
 };
 
 /**
- * Dismiss the announcement
+ * Dismiss the announcement.
  */
 InjectAnnouncement.prototype.dismiss = function () {
-  this.props.wasDismissed = true;
-  if (hasLocalStorage) {
-    // Mark the announcement as dismissed in local storage
-    localStorage.setItem(STORAGE_PREFIX + this.props.hash, DISMISSED);
-  }
+  this.markDisimissed();
   
   // Set the max-height to the current height of the announcement
   this.props.announcement.style['max-height'] = this.props.announcement.clientHeight + 'px';
@@ -64,6 +64,18 @@ InjectAnnouncement.prototype.dismiss = function () {
   // Hide announcement after triggering a reflow
   this.props.announcement.clientHeight;
   this.hide();
+};
+
+/**
+ * Mark the announcement as dismissed.
+ */
+InjectAnnouncement.prototype.markDisimissed = function () {
+  this.props.wasDismissed = true;
+  
+  if (hasLocalStorage) {
+    // Mark the announcement as dismissed in local storage
+    localStorage.setItem(STORAGE_PREFIX + this.props.hash, DISMISSED);
+  }
 };
 
 /**
