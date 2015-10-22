@@ -47,14 +47,11 @@ window.DSComponentsLoad = function() {
       new Modal(recs[i], {});
   }
 
-  // IE10+
-  if (MSIE_version > 9) {
-    recs = document.querySelectorAll('select');
-    if (recs.length > 0) {
-      FancySelect = require("../components/forms/fancyselect");
-      for (i=recs.length - 1; i >= 0; i--)
-        new FancySelect(recs[i], {});
-    }
+  recs = document.querySelectorAll('select');
+  if (recs.length > 0) {
+    FancySelect = require("../components/forms/fancyselect");
+    for (i=recs.length - 1; i >= 0; i--)
+      new FancySelect(recs[i], {});
   }
 
   recs = document.querySelectorAll('[data-tabbed]');

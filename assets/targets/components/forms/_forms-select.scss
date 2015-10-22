@@ -180,3 +180,35 @@
 .uomcontent fieldset .styled-select {
   @include rem(margin-top, 5px);
 }
+
+.ie8, .ie9 {
+  .uomcontent .styled-select {
+    &,
+    select,
+    select option {
+      background-image: none !important;
+    }
+    
+    select {
+      &,
+      option {
+        background-color: $highlight !important;
+        color: #fff !important;
+      }
+      
+      &.alt,
+      &.alt option {
+        background-color: $white !important;
+        color: $highlight !important;
+      }
+
+      &.clear,
+      &.clear-dark,
+      &.clear option,
+      &.clear-dark option {
+        background-color: #fff !important;
+        color: #000 !important;
+      }
+    }
+  }
+}
