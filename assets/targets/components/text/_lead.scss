@@ -46,13 +46,13 @@
     @include breakpoint(wide) {
       margin: 0 auto;
     }
-    
+
     &.left {
       @include rem(max-width, $w-sml);
       @include rem(padding, 48px 0);
       margin: 0 auto;
       text-align: left;
-      
+
       p {
         font-style: normal;
       }
@@ -62,6 +62,22 @@
   section > .lead {
     @include padding-leader(1);
     @include padding-trailer(1);
+  }
+}
+
+.jumpnav-active .uomcontent {
+  h1 {
+    padding-bottom: 0;
+  }
+
+  .lead {
+    margin: 0 auto;
+    padding: 0;
+
+    @include breakpoint(wide) {
+      @include rem(max-width, $w-sml);
+      text-align: left;
+    }
   }
 }
 
