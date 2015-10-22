@@ -9,9 +9,15 @@
   & > article:first-child {
     padding-top: 0;
   }
-  
+
   &.headerless {
     border-top: 8px solid $navy;
+  }
+
+  // Alternate syntax to avoid class on parent container
+  .headerless {
+    border-top: 8px solid $navy;
+    padding-top: 0;
   }
 
   header,
