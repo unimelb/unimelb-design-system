@@ -67,21 +67,6 @@
       }
 
       fieldset {
-        &::before {
-          border-bottom: 1px solid #e0e0e0;
-          content: '';
-          display: none;
-          left: 50%;
-          margin-top: -42px;
-          max-width: 600px;
-          position: absolute;
-          -moz-transform: translateX(-50%);
-          -ms-transform: translateX(-50%);
-          -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-          width: 100%;
-        }
-
         input[type="text"],
         input[type="email"],
         input[type="number"],
@@ -93,16 +78,7 @@
         }
 
         legend {
-          @include adjust-font-size-to(15px);
-          @include rem(letter-spacing, 2px);
-          @include rem(padding-left, 10px);
-          @include rem(padding-right, 10px);
-          background-color: #fff;
-          font-weight: $bold;
-          position: relative;
-          text-align: center;
-          text-transform: uppercase;
-          z-index: 1;
+          @include screenreaders-only;
         }
 
         div {
@@ -157,7 +133,7 @@
 
     &.accordion__visible {
       .enquiry__cta {
-        border-color: transparent;
+        border-bottom: 1px solid rgba($lightblue, 0.3);
       }
 
       .accordion__hidden {

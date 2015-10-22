@@ -43,6 +43,11 @@
     content: '*';
     color: $cherry;
   }
+  
+  .form__subtext {
+    @include padding-trailer(.5);
+    font-size: smaller;
+  }
 }
 
 .uomcontent .form-error {
