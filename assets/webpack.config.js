@@ -13,20 +13,10 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var TARGETS = path.join(__dirname, "targets");
 var BUILD   = path.join(__dirname, "build");
 
-// Plugins
-var plugins = [
-  new ExtractTextPlugin("[name].css", {
-    allChunks: true
-  })
-];
-if (process.env.DEVELOPMENT === "true") {
-  plugins.push(new webpack.HotModuleReplacementPlugin());
-  plugins.push(new webpack.NoErrorsPlugin());
-} else {
-  plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
-}
+// Entry
+var entry = parseTargets(TARGETS, '', {});
 
-// Configure webpack output
+// Output
 var output = {
   path: BUILD,
   // Template based on keys in entry above
@@ -34,13 +24,25 @@ var output = {
   filename: "[name].js"
 };
 
+// Plugins
+var plugins = [
+  new ExtractTextPlugin("[name].css", {
+    allChunks: true
+  })
+];
+
 if (process.env.DEVELOPMENT === "true") {
   output.publicPath = ASSETS_URL + "/assets/";
+  
+  plugins.push(new webpack.HotModuleReplacementPlugin());
+  plugins.push(new webpack.NoErrorsPlugin());
+} else {
+  plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
 }
 
 module.exports = {
   context: TARGETS,
-  entry: fs.readdirSync(TARGETS).reduce(createEntries, {}),
+  entry: entry,
   output: output,
   plugins: plugins,
   module: {
@@ -93,17 +95,24 @@ function isFile(file) {
   return fs.lstatSync(file).isFile();
 }
 
-function createEntries(entries, dir) {
-  if (isDirectory(path.join(TARGETS, dir))) {
-    var target = (process.env.DEVELOPMENT === "true") ? ['webpack-dev-server/client?' + WEBPACK_URL, 'webpack/hot/dev-server'] : [];
-    var file = path.join(TARGETS, dir, "target.js");
+function createEntries(dir, relDir, entries, target) {
+  var targetPath = path.join(dir, target);
+  if (isDirectory(targetPath)) {
+    var entry = (process.env.DEVELOPMENT === "true") ? ['webpack-dev-server/client?' + WEBPACK_URL, 'webpack/hot/dev-server'] : [];
+    var file = path.join(targetPath, "target.js");
+    var targetName = relDir ? (relDir + '/' + target) : target;
     try {
       isFile(file);
     } catch (e) {
-      return;
+      // If target.js is not found, look into the sub-folders
+      return parseTargets(targetPath, relDir + '/' + target, entries);
     }
-    target.push(file);
-    entries[dir] = target;
+    entry.push(file);
+    entries[targetName] = entry;
   }
   return entries;
+}
+
+function parseTargets(dir, relDir, entries) {
+  return fs.readdirSync(dir).reduce(createEntries.bind(null, dir, relDir), entries);
 }
