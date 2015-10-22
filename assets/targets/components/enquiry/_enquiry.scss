@@ -67,21 +67,6 @@
       }
 
       fieldset {
-        &::before {
-          border-bottom: 1px solid #e0e0e0;
-          content: '';
-          display: none;
-          left: 50%;
-          margin-top: -42px;
-          max-width: 600px;
-          position: absolute;
-          -moz-transform: translateX(-50%);
-          -ms-transform: translateX(-50%);
-          -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-          width: 100%;
-        }
-
         input[type="text"],
         input[type="email"],
         input[type="number"],
@@ -148,7 +133,7 @@
 
     &.accordion__visible {
       .enquiry__cta {
-        border-color: transparent;
+        border-bottom: 1px solid rgba($lightblue, 0.3);
       }
 
       .accordion__hidden {
