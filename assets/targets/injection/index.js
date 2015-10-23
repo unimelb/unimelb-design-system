@@ -7,7 +7,7 @@ window.UOMloadInjection = function() {
 
   var assethostFooter, assethostHeader, Header, Nav, Footer, Icons, Accouncement;
 
-  assethostHeader = assethostFooter = '//uom-design-system.s3.amazonaws.com/shared/assets';
+  assethostHeader = assethostFooter = '//d2h9b02ioca40d.cloudfront.net/shared/assets';
   // assethostHeader = assethostFooter = 'http://localhost:5001/assets';
   // assethostHeader += '/injection/header';
   // assethostFooter += '/injection/footer';
@@ -30,7 +30,7 @@ window.UOMloadInjection = function() {
 
   Icons = require('./icons');
   new Icons();
-  
+
   Accouncement = require('./announcement/index.es6');
   new Accouncement({});
 };

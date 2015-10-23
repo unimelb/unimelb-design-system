@@ -21,7 +21,7 @@ function ImageGallery(el, props) {
     }
   });
 
-  loadScript('https://uom-design-system.s3.amazonaws.com/shared/photoswipe.pkgd.min.js', this.initPhotoSwipeFromDOM.bind(this));
+  loadScript('https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js', this.initPhotoSwipeFromDOM.bind(this));
 }
 
 /**
