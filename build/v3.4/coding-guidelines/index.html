@@ -1,0 +1,93 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Coding Guidelines | Web.Unimelb</title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.4</span></a><meta content="1" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Coding Guidelines"><span itemprop="name">Coding Guidelines</span></a><meta content="2" itemprop="position" /></li></ol><div role="main"><header class="solid-paleblue"><h1>Coding guidelines</h1></header><section class="lead"><p>The design system has been built using <a href="http://sass-lang.com">Sass</a>, a CSS pre-processor that adds program logic, variables and nesting to simplify long and complicated stylesheet files.</p></section><section><h2 class="title" id="css">CSS Rules</h2><p>To make style code easier to maintain, we use a few rules to keep it consistent.</p><p>Styles are defined one property-per-line, all lines end in a semi-colon, indented by 2 spaces, ordered alphabetically.</p></section><div class="highlight"><pre><span class="nt">a</span> <span class="p">{</span>
+  <span class="k">color</span> <span class="m">#036</span><span class="p">;</span>
+  <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div><section><p>A new element should always have an empty line separating it from the element above, unless stacking elements.</p><p>Never use IDs (<code>#</code>) for style, always classes (<code>.</code>) or attributes (<code>[]</code>).</p><p>Named elements should be followed by their related pseudo-classes, and then anonymous classes.</p></section><div class="highlight"><pre><span class="nt">a</span><span class="o">,</span>
+<span class="o">[</span><span class="nt">data-link</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">color</span> <span class="m">#036</span><span class="p">;</span>
+  <span class="k">text-decoration</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="k">text-decoration</span><span class="o">:</span> <span class="k">underline</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.error</span> <span class="p">{</span>
+  <span class="k">color</span><span class="o">:</span> <span class="m">#d33</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div><section><p>For numbers less than one, do not use a leading 0.</p></section><div class="highlight"><pre><span class="nc">.disabled</span> <span class="p">{</span>
+  <span class="k">opacity</span><span class="o">:</span> <span class="o">.</span><span class="m">6</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div><section><h2 class="title" id="sass">Sass Rules</h2><p>We use the SCSS (CSS-compatible) syntax of Sass.</p><p>Properties should be ordered:</p><ol><li><code>@extend</code></li><li><code>@include</code></li><li>Own properties</li><li>Child elements</li></ol><p>Where possible, follow the "inception rule": no nesting more than 3 levels deep.</p><p>Always use <code>$variables</code> in place of raw color values, and remember that these can still be used in <code>lighten()</code> and <code>darken()</code> SASS functions, as well as <code>rgba()</code> values.</p></section><div class="highlight"><pre><span class="nv">$navy</span><span class="o">:</span> <span class="mh">#036</span><span class="p">;</span>
+<span class="nv">$highlight</span><span class="o">:</span> <span class="mh">#69e</span><span class="p">;</span>
+
+<span class="nt">h1</span><span class="o">,</span>
+<span class="nt">p</span> <span class="p">{</span>
+  <span class="k">@extend</span> <span class="err">%</span><span class="nt">wrapper</span><span class="o">;</span>
+  <span class="o">@</span><span class="nt">include</span> <span class="nt">rem</span><span class="o">(</span><span class="nt">padding-top</span><span class="o">,</span> <span class="nt">15px</span><span class="o">);</span>
+  <span class="nt">line-height</span><span class="nd">:</span> <span class="nt">1</span><span class="o">;</span>
+  <span class="nt">padding-bottom</span><span class="nd">:</span> <span class="nt">0</span><span class="o">;</span>
+
+  <span class="nc">.tight</span> <span class="p">{</span>
+    <span class="na">padding</span><span class="o">:</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nt">a</span> <span class="p">{</span>
+    <span class="na">color</span><span class="o">:</span> <span class="nv">$highlight</span><span class="p">;</span>
+    <span class="na">text-decoration</span><span class="o">:</span> <span class="no">none</span><span class="p">;</span>
+
+    <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+      <span class="na">text-decoration</span><span class="o">:</span> <span class="no">underline</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="nt">span</span> <span class="p">{</span>
+    <span class="na">display</span><span class="o">:</span> <span class="no">inline</span><span class="o">-</span><span class="no">block</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nt">small</span> <span class="p">{</span>
+  <span class="na">color</span><span class="o">:</span> <span class="nv">$navy</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div><section><p>Styles are defined mobile-first, with media queries added to adjust for each larger device width/height.</p></section><div class="highlight"><pre><span class="nc">.box</span> <span class="p">{</span>
+  <span class="na">margin</span><span class="o">:</span> <span class="mi">0</span> <span class="no">auto</span><span class="p">;</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">94</span><span class="kt">%</span><span class="p">;</span>
+
+  <span class="k">@media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="nt">769px</span><span class="o">)</span> <span class="p">{</span>
+    <span class="na">width</span><span class="o">:</span> <span class="mi">700</span><span class="kt">px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div><section><p>Use the <code>breakpoint</code> mixin to reduce media query boilerplate.</p></section><div class="highlight"><pre><span class="nc">.box</span> <span class="p">{</span>
+  <span class="na">margin</span><span class="o">:</span> <span class="mi">0</span> <span class="no">auto</span><span class="p">;</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">94</span><span class="kt">%</span><span class="p">;</span>
+
+  <span class="k">@include</span><span class="nd"> breakpoint</span><span class="p">(</span><span class="n">desktop</span><span class="p">)</span> <span class="p">{</span>
+    <span class="na">width</span><span class="o">:</span> <span class="mi">700</span><span class="kt">px</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div><section><p>Use the <code>rem</code> mixin to convert pixel values to rem with pixel fallback.</p></section><div class="highlight"><pre><span class="nc">.box</span> <span class="p">{</span>
+  <span class="na">margin</span><span class="o">:</span> <span class="mi">0</span> <span class="no">auto</span><span class="p">;</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">94</span><span class="kt">%</span><span class="p">;</span>
+
+  <span class="k">@include</span><span class="nd"> breakpoint</span><span class="p">(</span><span class="n">desktop</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">@include</span><span class="nd"> rem</span><span class="p">(</span><span class="no">width</span><span class="o">,</span> <span class="mi">700</span><span class="kt">px</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div><section><p>For naming, use semantic elements contained within an anonymously classed container, with additional variants defined by anonymous class.</p></section><div class="highlight"><pre><span class="nv">$highlight</span><span class="o">:</span> <span class="mh">#69e</span><span class="p">;</span>
+<span class="nv">$red</span><span class="o">:</span> <span class="mh">#d33</span><span class="p">;</span>
+
+<span class="nc">.box</span> <span class="p">{</span>
+  <span class="nt">a</span> <span class="p">{</span>
+    <span class="na">color</span><span class="o">:</span> <span class="nf">darken</span><span class="p">(</span><span class="nv">$highlight</span><span class="o">,</span> <span class="mi">10</span><span class="kt">%</span><span class="p">);</span>
+    <span class="na">text-decoration</span><span class="o">:</span> <span class="no">none</span><span class="p">;</span>
+
+    <span class="k">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+      <span class="na">text-decoration</span><span class="o">:</span> <span class="no">underline</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">&amp;</span><span class="nc">.error</span> <span class="p">{</span>
+      <span class="na">color</span><span class="o">:</span> <span class="nv">$red</span><span class="p">;</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div><section><h2 class="title" id="javascript">Javascript</h2><p>We follow the rules outlined in <a href="https://github.com/rwaldron/idiomatic.js">idiomatic.js</a></p></section><blockquote>All code in any code-base should look like a single person typed it, no matter how many people contributed</blockquote><div class="jumpnav"></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
