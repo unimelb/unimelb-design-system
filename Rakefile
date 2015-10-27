@@ -18,8 +18,6 @@ require_relative './doc-site/app/app'
 namespace :assets do
   desc 'Build the public assets with node'
   task :build do
-    deploy = File.expand_path(File.join(File.dirname(__FILE__), 'deploy'))
-    system "rm -rf #{deploy}"
     system 'npm run build-production'
   end
 
@@ -42,18 +40,12 @@ namespace :assets do
     # copy static assets
     system "cp -a #{public_dir}/. #{build_dir}"
 
-    # build webpack and copy deploy files
+    # build assets with webpack and copy files to doc site
     Rake::Task['assets:build'].invoke
-    system "cp -a #{root}/deploy/* #{build_dir}/assets"
-
-    # remove fingerprint on running precompiled assets
-    %w(components docs injection).each do |asset|
-      system "mv #{build_dir}/assets/#{asset}*.css #{build_dir}/assets/#{asset}.css"
-      system "mv #{build_dir}/assets/#{asset}*.js #{build_dir}/assets/#{asset}.js"
-    end
+    system "cp -a #{root}/assets/build/** #{build_dir}/assets"
 
     # delete unused targets for static site
-    %w(debranded forms manifest docs.js).each do |asset|
+    %w(debranded forms docs.js).each do |asset|
       system "rm #{build_dir}/assets/#{asset}*"
     end
   end
