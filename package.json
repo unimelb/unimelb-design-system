@@ -5,10 +5,10 @@
   "repository": "marcom-unimelb/unimelb-design-system",
   "author": "University of Melbourne",
   "dependencies": {
-    "imagesloaded": "^3.1.8",
-    "isotope-layout": "^2.2.0",
-    "promise": "^7.0.3",
-    "webfontloader": "^1.6.3"
+    "imagesloaded": "~3.1.8",
+    "isotope-layout": "~2.2.0",
+    "promise": "~7.0.3",
+    "webfontloader": "~1.6.3"
   },
   "engines": {
     "node": "~4.2.1"
@@ -20,24 +20,24 @@
     "build-production": "npm run clean && npm run build"
   },
   "devDependencies": {
-    "autoprefixer-loader": "^2.0.0",
-    "babel-core": "^5.8.3",
-    "babel-loader": "^5.3.2",
-    "css-loader": "^0.9.1",
-    "dotenv": "^1.1.0",
-    "express": "^4.12.1",
-    "extract-text-webpack-plugin": "^0.3.8",
-    "file-loader": "^0.8.1",
-    "html-loader": "^0.3.0",
-    "http-proxy": "^1.8.1",
-    "imports-loader": "^0.6.3",
-    "jshint": "^2.6.3",
-    "jshint-loader": "^0.8.3",
-    "node-sass": "^3.3.3",
-    "sass-loader": "^3.0.0",
-    "style-loader": "^0.8.3",
+    "autoprefixer-loader": "~2.0.0",
+    "babel-core": "~5.8.3",
+    "babel-loader": "~5.3.2",
+    "css-loader": "~0.9.1",
+    "dotenv": "~1.1.0",
+    "express": "~4.12.1",
+    "extract-text-webpack-plugin": "~0.3.8",
+    "file-loader": "~0.8.1",
+    "html-loader": "~0.3.0",
+    "http-proxy": "~1.8.1",
+    "imports-loader": "~0.6.3",
+    "jshint": "~2.6.3",
+    "jshint-loader": "~0.8.3",
+    "node-sass": "~3.3.3",
+    "sass-loader": "~3.0.0",
+    "style-loader": "~0.8.3",
     "webpack": "^1.6.0",
-    "webpack-dev-middleware": "^1.0.11",
-    "webpack-dev-server": "^1.8.2"
+    "webpack-dev-middleware": "~1.0.11",
+    "webpack-dev-server": "~1.8.2"
   }
 }
