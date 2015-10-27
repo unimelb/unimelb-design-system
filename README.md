@@ -24,7 +24,7 @@ A precompiled package of all target builds can be created by running
 
     rake assets:build
 
-The compiled output can be found under /assets/build
+The compiled output can be found under /deploy
 
 ## Deploying to production
 
