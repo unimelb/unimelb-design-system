@@ -152,7 +152,11 @@
       }
     }
 
+    h1,
     h2,
+    h3,
+    ul,
+    ol,
     p,
     hr {
       @include breakpoint(desktop) {
@@ -176,9 +180,9 @@
       margin-left: auto;
     }
 
+    h1,
     h2 {
-      @include adjust-font-size-to(22px);
-      @include adjust-leading-to(1);
+      @include adjust-font-size-to(24px);
       @include padding-trailer(1);
       clear: none;
       font-weight: $light;
@@ -192,8 +196,22 @@
       }
 
       @include breakpoint(desktop) {
-        @include adjust-font-size-to(26px);
+        @include adjust-font-size-to(30px);
+        @include padding-leader(1);
       }
+    }
+
+    h2 {
+      @include adjust-font-size-to(20px);
+      @include adjust-leading-to(1);
+
+      @include breakpoint(desktop) {
+        @include adjust-font-size-to(24px);
+      }
+    }
+
+    h3 {
+      @include padding-trailer(1);
     }
   }
 
