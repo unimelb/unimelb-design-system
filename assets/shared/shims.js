@@ -174,4 +174,18 @@
       return fBound;
     };
   }
+  
+  // Find the first element child of a node (`Node.firstElementChild` not supported on IE8)
+  window.findFirstElementChild = function (node) {
+    if ('firstElementChild' in node) {
+      return node.firstElementChild;
+    }
+    
+    var child = node.firstChild;
+    while (child && child.nodeType !== 1) {
+      child = child.nextSibling;
+    }
+    return child;
+  };
+  
 })(this);
