@@ -45,7 +45,7 @@ namespace :assets do
     system "cp -a #{root}/assets/build/** #{build_dir}/assets"
 
     # delete unused targets for static site
-    %w(debranded forms manifest docs.js).each do |asset|
+    %w(debranded forms docs.js).each do |asset|
       system "rm #{build_dir}/assets/#{asset}*"
     end
   end
