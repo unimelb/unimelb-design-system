@@ -166,7 +166,47 @@ div.with-login role="main"
               div
                 label.enquiry-form__label for="f_message" data-required="true" Message
                 textarea#f_message name="enquiry" placeholder="Your enquiry" aria-required="true"
+              div
+                label.enquiry-form__label data-required="true" for="f_phone" Issue or suggestion
+                select aria-label="This label is hidden from view but not from screen readers" aria-required="true" name="f[select]" 
+                  option value="-1" 
+                    | Please select
+                  optgroup
+                    option
+                      | Broken link
+                    option
+                      | Editorial issue
+                    option
+                      | Incorrect information
+                    option
+                      | Blocker to task completion
+                    option
+                      | Suggestion for improvement
+                  
+              div
+                label.enquiry-form__label data-required="true" for="f_message" Message
+                textarea#f_message aria-required="true" name="enquiry" placeholder="Please describe the fault, issue or suggestion"
 
+              div
+                fieldset
+                  legend Make a selection (implicitly required):
+                  .inline
+                    input#radio-1-1 checked="" data-error="Please make a selection" name="f[radio]" type="radio" value="1" /
+                    label for="radio-1-1" 
+                      span 1 – Incorrect information – Highest priority – wrong date or contact
+                  .inline
+                    input#radio-1-2 data-error="Please make a selection" name="f[radio]" type="radio" value="2" /
+                    label for="radio-1-2" 
+                      span 2 – Can’t complete a task – Relatively high priority – missing form
+                  .inline
+                    input#radio-1-3 data-error="Please make a selection" name="f[radio]" type="radio" value="3" /
+                    label for="radio-1-3" 
+                      span 3 – Minor technical/editorial issue – e.g. a broken link or grammar correction
+                  .inline
+                    input#radio-1-4 data-error="Please make a selection" name="f[radio]" type="radio" value="4" /
+                    label for="radio-1-4" 
+                      span 4 – Nice to have – suggestion
+                  
               div
                 input.enquiry-form__submit-button type='submit' value='Send your question'
               hr.spacer
