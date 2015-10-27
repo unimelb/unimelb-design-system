@@ -65,12 +65,15 @@
         @include padding-leader(1);
         max-width: 100%;
       }
-
-      fieldset {
+      
+      /* Hide the main legend only if present */
+      & > .fields > fieldset {
         legend {
           @include screenreaders-only;
         }
+      }
 
+      fieldset {
         div {
           @include rem(max-width, 600px);
           margin-left: auto;
@@ -78,7 +81,8 @@
         }
 
         @include breakpoint(tablet) {
-          label {
+          label,
+          legend {
             font-weight: $regular;
           }
         }
@@ -87,6 +91,7 @@
         input[type="radio"] {
           & + label {
             width: 100%;
+            font-weight: $light;
           }
         }
       }
