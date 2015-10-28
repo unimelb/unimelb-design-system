@@ -146,7 +146,7 @@ Tabs.prototype.activateContainer = function() {
 };
 
 Tabs.prototype.buildMobileNav = function() {
-  var selector, i, max, FancySelect, opt, label;
+  var selector, i, max, firstElem, FancySelect, opt, label;
   this.props.mobilenav = document.createElement('div');
   this.props.mobilenav.addClass('mobile-nav');
 
@@ -154,9 +154,10 @@ Tabs.prototype.buildMobileNav = function() {
   selector.setAttribute('role', 'tablist');
 
   for (i=0, max=this.props.tabs.length; i < max; i++) {
-    label = this.props.tabs[i].firstChild.nodeValue;
-    if (label === null)
-      label = this.props.tabs[i].firstChild.firstChild.nodeValue;
+    firstElem = this.props.tabs[i].findFirstElementChild();
+    
+    // If a child element exist, it's an icon and the label to retrieve is one level deeper
+    label = firstElem ? firstElem.firstChild.nodeValue : this.props.tabs[i].firstChild.nodeValue;
 
     opt = document.createElement('option');
     opt.setAttribute('role', 'tab');
