@@ -175,17 +175,19 @@
     };
   }
   
-  // Find the first element child of a node (`Node.firstElementChild` not supported on IE8)
-  window.findFirstElementChild = function (node) {
-    if ('firstElementChild' in node) {
-      return node.firstElementChild;
-    }
-    
-    var child = node.firstChild;
-    while (child && child.nodeType !== 1) {
-      child = child.nextSibling;
-    }
-    return child;
-  };
+  // Find the first element child of an element (`Node.firstElementChild()` is not supported on IE8)
+  if (!Element.prototype.findFirstElementChild) {
+    Element.prototype.findFirstElementChild = function () {
+      if ('firstElementChild' in this) {
+        return this.firstElementChild;
+      }
+
+      var child = this.firstChild;
+      while (child && child.nodeType !== 1) {
+        child = child.nextSibling;
+      }
+      return child;
+    };
+  }
   
 })(this);

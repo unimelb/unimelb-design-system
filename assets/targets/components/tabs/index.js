@@ -154,7 +154,7 @@ Tabs.prototype.buildMobileNav = function() {
   selector.setAttribute('role', 'tablist');
 
   for (i=0, max=this.props.tabs.length; i < max; i++) {
-    firstElem = window.findFirstElementChild(this.props.tabs[i]);
+    firstElem = this.props.tabs[i].findFirstElementChild();
     
     // If a child element exist, it's an icon and the label to retrieve is one level deeper
     label = firstElem ? firstElem.firstChild.nodeValue : this.props.tabs[i].firstChild.nodeValue;
