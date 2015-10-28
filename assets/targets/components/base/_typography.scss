@@ -245,6 +245,11 @@
             @include rem(letter-spacing, -7px);
             @include rem(margin-left, -60px);
           }
+
+          .ticked-list li::before {
+            @include rem(margin-left, -22px);
+            @include rem(top, 7px);
+          }
         }
       }
 
