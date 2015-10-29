@@ -1,8 +1,8 @@
 require('dotenv').load("../");
 var WEB_SERVER_HOST   = process.env.WEB_SERVER_HOST     || 'localhost';
-var ASSET_SERVER_PORT = process.env.ASSETS_SERVER_PORT  || 5001;
-var WEBPACK_PORT      = process.env.WEBPACK_SERVER_PORT || 5002;
-var PROXY_URL         = ('http://' + WEB_SERVER_HOST + ':' + process.env.WEB_SERVER_PORT) || "http://localhost:5000";
+var ASSET_SERVER_PORT = process.env.ASSETS_SERVER_PORT  || 7001;
+var WEBPACK_PORT      = process.env.WEBPACK_SERVER_PORT || 7002;
+var PROXY_URL         = ('http://' + WEB_SERVER_HOST + ':' + process.env.WEB_SERVER_PORT) || "http://localhost:7000";
 
 var http = require("http");
 var path = require('path');

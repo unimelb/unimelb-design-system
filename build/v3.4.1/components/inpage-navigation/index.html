@@ -1,0 +1,56 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Inpage Navigation | Web.Unimelb</title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.4.1</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Inpage Navigation"><span itemprop="name">Inpage Navigation</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><header class="solid"><h1>Inpage Navigation</h1></header><section><div class="jumpnav"></div>
+
+<p>The inpage Navigation provides a convenient way for the user to see all sections at a glance and jump between them. This can be useful for long, text-heavy pages.</p>
+
+<p>Please note, this feature is only available on larger desktop screen resolutions!</p>
+
+<p>To include this feature on your page, simply add an empty div with class <code>jumpnav</code> somewhere in the page structure.</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"jumpnav"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+
+<p>Every <code>h2</code> on the page with a unique ID will be added, in order of appearance, to the inpage navigation. The heading text will be used as nav item, eg. "Testjump 1" in the example below</p>
+
+<h2 id="jump1">Testjump 1</h2>
+
+<p>Mercedem aut nummos unde unde extricat, amaras. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Quam diu etiam furor iste tuus nos eludet? Curabitur blandit tempus ardua ridiculus sed magna. Cras mattis iudicium purus sit amet fermentum.<br>
+Mercedem aut nummos unde unde extricat, amaras. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Quam diu etiam furor iste tuus nos eludet? Curabitur blandit tempus ardua ridiculus sed magna. Cras mattis iudicium purus sit amet fermentum.</p>
+
+<p>Phasellus laoreet lorem vel dolor tempus vehicula. Morbi odio eros, volutpat ut pharetra vitae, lobortis sed nibh. Nihil hic munitissimus habendi senatus locus, nihil horum? Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Cum sociis natoque penatibus et magnis dis parturient.</p>
+
+<p>Plura mihi bona sunt, inclinet, amari petere vellent. Pellentesque habitant morbi tristique senectus et netus. Nihil hic munitissimus habendi senatus locus, nihil horum? Sed haec quis possit intrepidus aestimare tellus.</p>
+
+<p>Tu quoque, Brute, fili mi, nihil timor populi, nihil! Quis aute iure reprehenderit in voluptate velit esse. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quae vero auctorem tractata ab fiducia dicuntur.</p>
+
+<p>Phasellus laoreet lorem vel dolor tempus vehicula. Tu quoque, Brute, fili mi, nihil timor populi, nihil! Quo usque tandem abutere, Catilina, patientia nostra? Tityre, tu patulae recubans sub tegmine fagi  dolor. Inmensae subtilitatis, obscuris et malesuada fames. Morbi fringilla convallis sapien, id pulvinar odio volutpat.</p>
+
+<h2 id="jump2">Testjump 2</h2>
+
+<p>Mercedem aut nummos unde unde extricat, amaras. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Quam diu etiam furor iste tuus nos eludet? Curabitur blandit tempus ardua ridiculus sed magna. Cras mattis iudicium purus sit amet fermentum.</p>
+
+<p>Cras mattis iudicium purus sit amet fermentum. Magna pars studiorum, prodita quaerimus. Tityre, tu patulae recubans sub tegmine fagi  dolor. Ab illo tempore, ab est sed immemorabili. A communi observantia non est recedendum.</p>
+
+<p>At nos hinc posthac, sitientis piros Afros. Quam temere in vitiis, legem sancimus haerentia. Cum sociis natoque penatibus et magnis dis parturient. Magna pars studiorum, prodita quaerimus. Idque Caesaris facere voluntate liceret: sese habere. Quam diu etiam furor iste tuus nos eludet?</p>
+
+<p>Plura mihi bona sunt, inclinet, amari petere vellent. Gallia est omnis divisa in partes tres, quarum. Hi omnes lingua, institutis, legibus inter se differunt. Morbi odio eros, volutpat ut pharetra vitae, lobortis sed nibh.</p>
+
+<p>Unam incolunt Belgae, aliam Aquitani, tertiam. Plura mihi bona sunt, inclinet, amari petere vellent. A communi observantia non est recedendum. Me non paenitet nullum festiviorem excogitasse ad hoc. Cum ceteris in veneratione tui montes, nascetur mus.</p>
+
+<h2 id="index">Index Navigation</h2>
+
+<p>A-Z indices can be done via a simple class change:</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"indexnav"</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div>
+
+<p>As you can't have both navigations in one document, you find an <a href="/layouts/indexnav">example of an index-navigation</a> in the example layouts.</p>
+
+<h2 id="jsmethods">Javascript Call</h2>
+
+<p>The smooth scroll methods can be invoked in your own project, independently of inpage navigation, by calling <code>smoothScrollTo</code>, as in the following example:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">el</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">'#block'</span><span class="p">);</span> <span class="c1">// where #block is any element with id="block"</span>
+<span class="nx">smoothScrollTo</span><span class="p">(</span><span class="nx">el</span><span class="p">);</span>
+</pre></div>
+
+<p><code>smoothScrollTo</code> is declared in the window (global) scope. <a href="javascript:smoothScrollTo(document.getElementById('jsmethods'))" class="button-small">Try it out!</a></p></section><hr /><div class="half"><section class="center"><a class="button-hero-reverse" href="/components/icons">Icons</a></section><section class="center"><a class="button-hero" href="/components/intranet">Intranet</a></section></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>

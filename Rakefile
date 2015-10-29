@@ -27,9 +27,9 @@ namespace :assets do
       abort 'Missing VERSION parameter'
     end
 
-    root =      File.expand_path(File.join(File.dirname(__FILE__)))
-    build_dir = File.join(root, 'build', ENV['VERSION'])
-    public_dir =   File.join(root, 'doc-site', 'public')
+    root =       File.expand_path(File.join(File.dirname(__FILE__)))
+    build_dir =  File.join(root, 'build', ENV['VERSION'])
+    public_dir = File.join(root, 'doc-site', 'public')
 
     # clear out existing build
     system "cd #{root}/ && rm -rf #{build_dir} && mkdir #{build_dir}"

@@ -16,7 +16,7 @@ This app now runs on webpack, so ruby is required to run the documentation/demo 
     npm install
     foreman start -f Procfile.dev
 
-The development server needs to run on 3 ports (node.js, webpack and rack) and will be available at [http://localhost:5001/](http://localhost:5001/)
+The development server needs to run on 3 ports (node.js, webpack and rack) and will be available at [http://localhost:7001/](http://localhost:7001/)
 
 ## Deploying asset package
 
