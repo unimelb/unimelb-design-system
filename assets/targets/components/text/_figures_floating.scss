@@ -1,6 +1,7 @@
 .uomcontent {
 	.inset-left {
     @include rem(margin-top, 6px);
+    float: none;
     margin-bottom: 0;
     margin-left: auto;
     margin-right: auto;
@@ -11,6 +12,7 @@
     figcaption {
       @include rem(font-size, 14px);
       @include rem(padding-bottom, 15px);
+      color: $midblue;
       font-style: italic;
       line-height: 1.2;
       text-align: center;
@@ -23,7 +25,7 @@
 
     @include breakpoint(tablet) {
       @include rem(margin-bottom, 30px);
-      @include rem(padding-right, 60px);
+      @include rem(margin-right, 30px);
       border: 0 none;
       float: left;
       max-width: 62%;
@@ -32,13 +34,13 @@
       figcaption {
         @include rem(margin-top, 15px);
         @include rem(padding-top, 15px);
-        color: $lighterblue;
+        padding-bottom: 0;
         position: relative;
         text-align: left;
 
         &:before {
           @include rem(width, 40px);
-          border-bottom: 2px solid $lighterblue;
+          border-bottom: 2px solid $midblue;
           content: '';
           display: block;
           left: 2px;
@@ -48,7 +50,7 @@
 
         &::before {
           @include rem(width, 40px);
-          border-bottom: 2px solid $lighterblue;
+          border-bottom: 2px solid $midblue;
           content: '';
           display: block;
           left: 2px;
@@ -69,7 +71,7 @@
     @extend .inset-left;
 
     @include breakpoint(tablet) {
-      @include rem(padding-left, 60px);
+      @include rem(margin-left, 30px);
       float: right;
       margin-right: 0;
       text-align: right;
@@ -91,7 +93,6 @@
 
     @include breakpoint(wide) {
       @include rem(margin-right, -180px);
-      margin-left: 0;
     }
   }
 }
@@ -100,8 +101,7 @@
 body.jumpnav-active .uomcontent {
   .inset-left {
     @include breakpoint(wide) {
-      float: none;
-      margin: 0;
+      margin-left: 0;
       max-width: 100%;
       padding: 0;
     }
@@ -109,15 +109,14 @@ body.jumpnav-active .uomcontent {
     @include breakpoint(1400px) {
       @include rem(margin-bottom, 20px);
       @include rem(margin-left, -180px);
-      float: left;
       max-width: 80%;
     }
   }
 
   .inset-right {
     @include breakpoint(wide) {
-      float: none;
-      margin: 0;
+      @include rem(margin-left, 30px);
+      margin-right: 0;
       max-width: 100%;
       padding: 0;
     }
@@ -125,7 +124,6 @@ body.jumpnav-active .uomcontent {
     @include breakpoint(1400px) {
       @include rem(margin-bottom, 20px);
       @include rem(margin-right, -180px);
-      float: right;
       max-width: 80%;
     }
   }
