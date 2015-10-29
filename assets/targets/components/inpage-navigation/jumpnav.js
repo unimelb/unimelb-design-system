@@ -21,13 +21,8 @@ function JumpNav(props) {
   // Add to props
   for (var prop in offsets) { this.props[prop] = offsets[prop]; }
 
-  // Does layout contain a header (I really hope so)
-  for (var i=0, max=this.props.root.children.length; i < max; i++)
-    if (this.props.root.children[i].nodeType == 1) {
-      if (this.props.root.children[i].nodeName == 'HEADER')
-        this.props.header = this.props.root.children[i];
-      break;
-    }
+  // Does layout contain a header
+  this.props.header = this.props.root.querySelector('header');
 
   // Build nav menu
   this.buildNavMenu();
@@ -113,17 +108,8 @@ JumpNav.prototype.buildNavMenu = function() {
   } else {
     this.el.id = 'outer';
 
-    // Insert into top of role=main after heading, exclude white space
-    var elements = [];
-    for (recs=this.props.root.childNodes, i=0, max=recs.length; i < max; i++) {
-      if (recs[i].nodeType == 1)
-        elements.push(recs[i]);
-    }
-    if (elements.length > 1) {
-      this.props.root.insertBefore(this.el, elements[1]);
-    } else {
-      this.props.root.appendChild(this.el);
-    }
+    // Insert into top of role=main after heading
+    this.props.root.insertBefore(this.el, this.props.header.nextSibling);
   }
 
   if (document.countSelector('.indexnav') == 1) {
