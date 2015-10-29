@@ -77,6 +77,12 @@ Tabs.prototype.selectPanel = function() {
 
 Tabs.prototype.handleClick = function(e) {
   var target = e.target;
+
+  // IE8/no-svg fallback
+  if (target.hasClass('icon-label')) {
+    target = target.parentNode.parentNode;
+  }
+
   if (target.hasClass('icon-over'))
     return;
   if (target.hasAttribute('href')) {
@@ -155,7 +161,7 @@ Tabs.prototype.buildMobileNav = function() {
 
   for (i=0, max=this.props.tabs.length; i < max; i++) {
     firstElem = this.props.tabs[i].findFirstElementChild();
-    
+
     // If a child element exist, it's an icon and the label to retrieve is one level deeper
     label = firstElem ? firstElem.firstChild.nodeValue : this.props.tabs[i].firstChild.nodeValue;
 
