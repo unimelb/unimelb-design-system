@@ -108,8 +108,14 @@ JumpNav.prototype.buildNavMenu = function() {
   } else {
     this.el.id = 'outer';
 
-    // Insert into top of role=main after heading
-    this.props.root.insertBefore(this.el, this.props.header.nextSibling);
+    // Insert after heading
+    if (this.props.header) {
+      this.props.root.insertBefore(this.el, this.props.header.nextSibling);
+
+    // Insert into top of role=main
+    } else {
+      this.props.root.insertBefore(this.el, this.props.root.firstChild);
+    }
   }
 
   if (document.countSelector('.indexnav') == 1) {
