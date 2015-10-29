@@ -124,7 +124,7 @@ body.jumpnav-active {
       margin-top: -10px;
       padding-top: 10px;
 
-      > header:first-child,
+      > header:first-of-type,
       .headerless,
       footer.cta,
       footer.end,
@@ -133,12 +133,12 @@ body.jumpnav-active {
         width: auto;
       }
 
-      > header:first-child {
+      > header:first-of-type {
         padding-left: 300px;
       }
 
-      > header.banner:first-child,
-      > header.image:first-child {
+      > header.banner:first-of-type,
+      > header.image:first-of-type {
         padding-left: 0;
       }
 
@@ -147,9 +147,17 @@ body.jumpnav-active {
         margin-top: -100px;
       }
 
+      .jumpnav {
+        padding-top: 0;
+      }
+
       #outer {
         margin-left: -270px;
       }
     }
   }
+}
+
+body.ie8.jumpnav-active .uomcontent [role="main"] .jumpnav {
+  display: none;
 }
