@@ -140,11 +140,20 @@
   }
 
   .lower {
+    @include breakpoint(desktop) {
+      @include rem(margin-left, 300px);
+
+      aside {
+        @include rem(margin-left, -300px);
+
+      }
+    }
+
     .presenters {
       @extend %presenters;
 
       @include breakpoint(desktop) {
-        @include rem(margin-left, 300px);
+        // @include rem(margin-left, 300px);
         border: 0 none;
         display: block;
         padding-left: 0;
@@ -160,7 +169,7 @@
     p,
     hr {
       @include breakpoint(desktop) {
-        @include rem(margin-left, 300px);
+        // @include rem(margin-left, 300px);
         width: auto;
       }
     }

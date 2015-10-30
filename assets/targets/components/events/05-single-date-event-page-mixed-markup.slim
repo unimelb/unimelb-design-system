@@ -13,42 +13,66 @@
     aside
       div
         p
-          | 780 Elizabeth Street
+          ' 780 Elizabeth Street
           br
-          | Melbourne VIC 3000
-        a.button-small href=""
-          | Map
-          span.small data-icon="location"
+          ' Melbourne VIC 3000
+          a.button-small href="http://maps.unimelb.edu.au/parkville/building/220" target="_blank"
+            ' Map
+            span.small data-icon="location"
       div
-        p
-          | T: +61 3 9035 9400
-        p :a href="mailto:mcd-web@unimelb.edu.au"
-          | mcd-web@unimelb.edu.au
+        p: em More Information
+        p Donna Kevey
+        p: a href="mailto:dkevey@unimelb.edu.au" dkevey@unimelb.edu.au
+        p: a href="tel:+61383441693" T: +61 3 8344 1693
 
-    h1 My Event's Title in a H1
+    h1 About this template and how to use it
 
-    p: em Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    p This template <strong>Event block listing (local assets)</strong> is available if you wish to create local calendar events for your site.&nbsp;
 
-    p Pellentesque convallis posuere placerat. Nam tristique, elit quis vehicula ullamcorper, tellus lacus rutrum lacus, vel pretium lectus elit non urna.
+    p If you wish to promote your event to a wider audience you should post on <a href="events.unimelb.edu.au">events.unimelb.edu.au</a> and use the feed as described on the <a href="http://cms.unimelb.edu.au/controlled-environment/events">events.unimelb examples</a>.
 
-    ol
-      li Mr Mathew Kenneally
-      li Beth Wilson
-      li Loruem Exum Ipsum
-
-    h2 Subtitle
-
-    p Nulla interdum magna a euismod laoreet. Pellentesque convallis posuere placerat. Nam tristique, elit quis vehicula ullamcorper, tellus lacus rutrum lacus, vel pretium lectus elit non urna. Nulla consectetur facilisis enim, in ultricies dui facilisis vel. Etiam vestibulum nec mi nec tempus. Ut luctus ex vitae imperdiet lobortis. Vestibulum placerat mi turpis, quis laoreet urna varius id. Curabitur id sagittis justo. Nam vitae arcu eget tellus sollicitudin vehicula. Ut lectus elit, semper ac feugiat sed, sagittis eget magna. In condimentum purus et libero fringilla, nec tincidunt libero suscipit. Nam fermentum velit et orci gravida, a hendrerit elit fermentum.
+    p This event listing is using an <a href="http://manuals.matrix.squizsuite.net/calendar/chapters/upcoming-events-list">upcoming events list </a>&nbsp;and is set to show:&nbsp;
 
     ul
-      li: a href="" Ms Louise Adler
-      li: a href="" Ms Hanifa Deen
+      li 360 events in the future
+      li Maximum of 20 events
 
-    p Nam vestibulum porttitor ipsum tincidunt semper. Suspendisse id euismod orci, quis egestas nulla. Donec sit amet auctor justo. Nam a turpis ac diam fringilla ullamcorper ac quis quam. Duis ultricies eget diam laoreet molestie. Donec accumsan est nibh, eu pretium ante volutpat vitae. Nam vitae arcu eget tellus sollicitudin vehicula. Ut lectus elit, semper ac feugiat sed, sagittis eget magna. In condimentum purus et libero fringilla, nec tincidunt libero suscipit. Nam fermentum velit et orci gravida, a hendrerit elit fermentum.
+    h2 Create the main events listing page
 
-    h3 Sub-Subtitle
+    ol
+      li Add a new standard page to your site
+      li From the metadata screen select the page template: Event block listing (local assets).&nbsp;
+      li
+        ' Fields that can be used are:&nbsp;
+        ul
+          li Header text
+          li Header subline
+          li Banner image
+          li Introductory text
+      li Create single calendar events under this asset and they will automatically be listed on this page.
+
+    h3 Adding calendar events
+
+    p When adding local calendar events they should be:&nbsp;
 
     ul.ticked-list
-      li Professor Doulum
-      li Endus Hoopes
-      li Exum Padamadahm III
+      li Single Calendar Events (recurring calendar events needs some further work)
+      li Type 2 (don't show in menu)
+      li Asset status needs to be <strong>Live </strong>to be included on the event listing page
+      li Only future upcoming events show
+
+    p Optional settings:
+
+    ul
+      li Thumbnail image (set on details screen)
+      li Contact details (set on metadata screen)
+      li Location details &nbsp;(set on metadata screen)
+
+    p: img src="http://cms.unimelb.edu.au/__data/assets/image/0010/1544977/research-three.jpg" alt="" width="450px"
+
+    .center
+      p
+        a href="http://cms.unimelb.edu.au/controlled-environment/melbourne-cshe/study/award-courses/graduate-certificate-in-university-teaching/Grad-Cert-University-Teaching.pdf" class="button-small" target="_blank" Course brochure
+
+    div
+      iframe src="//maps.unimelb.edu.au/parkville/building/220?SQ_DESIGN_NAME=embed" height="450" width="100%" frameborder="0"
