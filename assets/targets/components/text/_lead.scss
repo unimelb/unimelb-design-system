@@ -65,11 +65,15 @@
   }
 }
 
-.jumpnav-active .uomcontent {
-  h1 {
-    padding-bottom: 0;
-  }
+.uomcontent h1.aligned-title + .lead + p {
+  @include padding-leader(1);
 
+  &:before {
+    display: none;
+  }
+}
+
+.jumpnav-active .uomcontent {
   .lead {
     margin: 0 auto;
     padding: 0;

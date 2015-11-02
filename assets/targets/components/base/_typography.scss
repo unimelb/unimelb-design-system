@@ -435,86 +435,9 @@
     @include adjust-font-size-to(12px);
   }
 
-  .subtitle {
-    @include adjust-font-size-to(15px);
-    @include rem(letter-spacing, 2px);
-    font-weight: $bold;
-    text-transform: uppercase;
-  }
-
   .line {
     font-size: .8em;
     letter-spacing: 1px;
-  }
-
-  .title {
-    @extend .subtitle;
-    text-align: center;
-
-    &:after {
-      @include margin-leader(1);
-      @include rem(width, 80px);
-      border-bottom: 2px solid $black;
-      content: '';
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    &::after {
-      @include margin-leader(1);
-      @include rem(width, 80px);
-      border-bottom: 2px solid $black;
-      content: '';
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
-  .feature {
-    @include adjust-font-size-to(20px);
-  }
-}
-
-.uomcontent [role="main"] {
-  h1.highlight {
-    @include adjust-font-size-to(75px);
-    background: -webkit-linear-gradient($navy, $highlight);
-    color: $highlight;
-    font-weight: $thin;
-    letter-spacing: -5px;
-    text-align: center;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: hue 80s infinite linear;
-
-    @include breakpoint(desktop) {
-      @include adjust-font-size-to(160px);
-    }
-  }
-
-  header h1.highlight,
-  & > header:first-child h1.highlight,
-  header.image h1.highlight,
-  & > header.image:first-child h1.highlight,
-  header.banner h1.highlight,
-  & > header.banner:first-child h1.highlight {
-    @include adjust-font-size-to(60px);
-    @include rem(padding-top, 120px);
-    background: -webkit-linear-gradient($highlight, lighten($highlight, 25%));
-    -webkit-background-clip: text;
-    text-align: center;
-    -webkit-text-fill-color: transparent;
-
-    @include breakpoint(desktop) {
-      @include adjust-font-size-to(100px);
-      text-align: center;
-    }
-
-    @include breakpoint(height-medium) {
-      padding-top: 0;
-    }
   }
 }
 

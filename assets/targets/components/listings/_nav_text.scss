@@ -18,9 +18,15 @@
 
   h1 {
     @include padding-trailer(0);
+
+    &.aligned-title {
+      @extend %listing-title;
+      @include rem(padding-bottom, 48px);
+      max-width: 100%;
+    }
   }
 
-  ul{
+  ul {
     padding-bottom: 0;
     padding-top: 0;
 

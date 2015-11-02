@@ -1,0 +1,114 @@
+%aligned-title {
+  @include rem(font-size, 28px);
+  @include rem(padding-bottom, 48px);
+  @include rem(padding-right, 20px);
+  font-weight: $light;
+  letter-spacing: 0;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-top: 0;
+  text-align: left;
+  text-transform: none;
+  width: 94%;
+
+  @include breakpoint(desktop) {
+    @include rem(padding-top, 60px);
+    width: 100%;
+  }
+
+  &:after {
+    @include rem(margin-top, 36px);
+    @include rem(width, 50px);
+    border-bottom: 2px solid $black;
+    content: '';
+    display: block;
+    margin-left: 0;
+  }
+}
+
+.uomcontent {
+  .subtitle {
+    @include adjust-font-size-to(15px);
+    @include rem(letter-spacing, 2px);
+    font-weight: $bold;
+    text-transform: uppercase;
+  }
+
+  .title {
+    @extend .subtitle;
+    text-align: center;
+
+    &:after {
+      @include margin-leader(1);
+      @include rem(width, 80px);
+      border-bottom: 2px solid $black;
+      content: '';
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &::after {
+      @include margin-leader(1);
+      @include rem(width, 80px);
+      border-bottom: 2px solid $black;
+      content: '';
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  h1.aligned-title {
+    @extend %aligned-title;
+  }
+
+  h1.aligned-title + section {
+    padding-top: 0;
+  }
+
+  .feature {
+    @include adjust-font-size-to(20px);
+  }
+}
+
+.uomcontent [role="main"] {
+  h1.highlight {
+    @include adjust-font-size-to(75px);
+    background: -webkit-linear-gradient($navy, $highlight);
+    color: $highlight;
+    font-weight: $thin;
+    letter-spacing: -5px;
+    text-align: center;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 80s infinite linear;
+
+    @include breakpoint(desktop) {
+      @include adjust-font-size-to(160px);
+    }
+  }
+
+  header h1.highlight,
+  & > header:first-child h1.highlight,
+  header.image h1.highlight,
+  & > header.image:first-child h1.highlight,
+  header.banner h1.highlight,
+  & > header.banner:first-child h1.highlight {
+    @include adjust-font-size-to(60px);
+    @include rem(padding-top, 120px);
+    background: -webkit-linear-gradient($highlight, lighten($highlight, 25%));
+    -webkit-background-clip: text;
+    text-align: center;
+    -webkit-text-fill-color: transparent;
+
+    @include breakpoint(desktop) {
+      @include adjust-font-size-to(100px);
+      text-align: center;
+    }
+
+    @include breakpoint(height-medium) {
+      padding-top: 0;
+    }
+  }
+}
