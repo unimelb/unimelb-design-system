@@ -153,10 +153,6 @@
         &:active::after {
           opacity: .2;
         }
-        
-        .invalid & {
-          border-color: lighten($cherry, 25%);
-        }
 
         span {
           @include rem(padding-left, 35px);
@@ -218,6 +214,13 @@
       
       span::before {
         border-radius: 50%;
+      }
+    }
+
+    .invalid input[type="checkbox"],
+    .invalid input[type="radio"] {
+      & + label + small {
+        @include rem(padding-top, 18px); // Compensate for negative bottom margin on label
       }
     }
   }
