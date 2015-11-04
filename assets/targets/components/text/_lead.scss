@@ -30,6 +30,10 @@
       }
     }
 
+    & + section {
+      @include padding-leader(0);
+    }
+
     h2 {
       @include padding-leader(0);
     }
