@@ -105,6 +105,22 @@
     p {
       padding: 0;
     }
+    
+    .social-links {
+      list-style: none;
+      padding: 0;
+      
+      & > li {
+        display: inline-block;
+        list-style: none;
+        padding: 0;
+        width: auto;
+        
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
   }
 
   .upper {
