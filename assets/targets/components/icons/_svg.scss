@@ -48,6 +48,12 @@
       }
     }
 
+    &.icon--hide-label {
+      & > .icon-label {
+        @include screenreaders-only;
+      }
+    }
+
     .icon-label {
       font-weight: $regular;
       margin: 0;
