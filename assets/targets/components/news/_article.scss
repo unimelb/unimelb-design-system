@@ -51,6 +51,10 @@
     .eg-palette {
       width: 100%;
     }
+    
+    figure.full-width {
+      @include rem(max-width, 700px);
+    }
   }
 
   .video {
