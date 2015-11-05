@@ -56,13 +56,11 @@
       @include padding-leader(14);
     }
   }
-  @include breakpoint(wide) {
-
-  }
 }
 
 .uomcontent .news-index {
   article {
+    @extend %clearfix;
     @include padding-leader(2);
     @include padding-trailer(2);
     @include rem(max-width, $w-mid);
@@ -71,6 +69,21 @@
 
     &:first-child {
       padding-top: 0;
+    }
+
+    img {
+      @include rem(margin-bottom, 4px);
+      @include rem(margin-top, 4px);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 94%;
+
+      &:first-child {
+        @include rem(margin-left, 10px);
+        @include rem(max-width, 125px);
+        float: right;
+      }
     }
   }
 
@@ -95,49 +108,37 @@
     }
   }
 
-  article img {
-    @include padding-trailer(1);
-    display: block;
-    margin: 0 auto;
-    width: 94%;
-    &:first-child {
-      @include rem(margin-bottom, 0px);
-      @include rem(margin-left, 10px);
-      @include rem(max-width, 125px);
-      display: block;
-      float: right;
-      margin-right: 2%;
-    }
-  }
-
   @include breakpoint(desktop) {
     article {
       @include rem(padding-left, 20px);
       @include rem(padding-right, 20px);
+
+      img {
+        width: 100%;
+
+        &:first-child {
+          @include rem(margin-bottom, -16px);
+          @include rem(margin-top, -16px);
+          @include rem(max-width, 230px);
+          float: left;
+          margin-left: 0;
+          margin-right: 2%;
+
+          & + p,
+          & + p + h1,
+          & + p + h1 + p {
+            @include rem(margin-left, 270px);
+            margin-right: 0;
+            width: auto;
+          }
+        }
+      }
     }
 
     h1 {
       @include adjust-font-size-to(26px);
     }
 
-    article img {
-      width: 100%;
-
-      &:first-child {
-        @include rem(max-width, 230px);
-        display: block;
-        float: left;
-        margin-left: 0;
-
-        & + p,
-        & + p + h1,
-        & + p + h1 + p {
-          @include rem(margin-left, 270px);
-          margin-right: 0;
-          width: auto;
-        }
-      }
-    }
     @include breakpoint(925px) {
       article {
         padding-left: 0;
