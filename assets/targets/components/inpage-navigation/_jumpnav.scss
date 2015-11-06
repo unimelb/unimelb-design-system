@@ -154,6 +154,12 @@ body.jumpnav-active {
       #outer {
         margin-left: -270px;
       }
+
+      .tabbed .news-tabs,
+      .news-index {
+        margin: 0 auto;
+        width: 94%;
+      }
     }
   }
 }
