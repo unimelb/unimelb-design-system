@@ -22,7 +22,7 @@
     &::before {
       @include rem(height, 5px);
       @include rem(margin-left, -30px);
-      @include rem(top, 10px);
+      @include rem(top, 8px);
       @include rem(width, 10px);
       background: transparent;
       border: 3px solid $green;
@@ -236,7 +236,7 @@
       }
 
       @include breakpoint(desktop) {
-        li {
+        & > li {
           * {
             max-width: 650px;
           }
@@ -247,15 +247,11 @@
             @include rem(letter-spacing, -7px);
             line-height: 1.05;
           }
-
-          .ticked-list li::before {
-            @include rem(top, 7px);
-          }
         }
       }
 
       @include breakpoint(860px) {
-        li {
+        & > li {
           margin-right: 0;
           padding-left: 0;
         }
@@ -264,11 +260,8 @@
       @include breakpoint(wide) {
         & > li {
           @include rem(padding-left, 110px);
-        }
-        
-        li {
+          
           > * {
-            max-width: 650px;
             margin-left: 0;
           }
 
@@ -284,7 +277,7 @@
       }
 
       @include breakpoint(1400px) {
-        li {
+        & > li {
           * {
             max-width: 700px;
           }
