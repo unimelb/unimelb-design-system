@@ -72,11 +72,10 @@
     }
 
     img {
-      @include rem(margin-bottom, 4px);
-      @include rem(margin-top, 4px);
+      @include rem(margin-bottom, 15px);
       display: block;
       margin-left: auto;
-      margin-right: auto;
+      margin-right: 3%;
       width: 94%;
 
       &:first-child {
@@ -96,6 +95,7 @@
   h1 {
     @include adjust-font-size-to(22px);
     @include rem(max-width, $w-mid);
+    @include rem(padding-bottom, 15px);
   }
 
   p {
@@ -117,8 +117,6 @@
         width: 100%;
 
         &:first-child {
-          @include rem(margin-bottom, -16px);
-          @include rem(margin-top, -16px);
           @include rem(max-width, 230px);
           float: left;
           margin-left: 0;
