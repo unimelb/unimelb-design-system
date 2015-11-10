@@ -2,7 +2,7 @@
 @import '../../shared/includes_concat';
 
 // Documentation example styles
-.eg-palette {
+.uomcontent [role="main"] .eg-palette {
   @extend %clearfix;
   @extend %wrapper;
   @include rem(max-width, 1200px);
@@ -17,6 +17,11 @@
     margin: 20px;
     text-align: center;
     width: 100px;
+
+    &.icon-label {
+      margin: 0;
+      width: auto;
+    }
 
     strong {
       font-weight: $regular;

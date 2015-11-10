@@ -306,7 +306,6 @@
 
     nav {
       border-bottom: 1px solid $lightergray;
-      text-align: center;
 
       @include breakpoint(tablet) {
         text-align: left;

@@ -69,13 +69,20 @@
   }
 }
 
-.jumpnav-active .uomcontent {
-  h1 {
-    padding-bottom: 0;
-  }
+.uomcontent h1.aligned-title + .lead + p {
+  @include padding-leader(1);
 
-  @include breakpoint(wide) {
-    .lead {
+  &:before {
+    display: none;
+  }
+}
+
+.jumpnav-active .uomcontent {
+  .lead {
+    margin: 0 auto;
+    padding: 0;
+
+    @include breakpoint(wide) {
       @include rem(max-width, $w-sml);
       padding-left: 0;
       padding-right: 0;
@@ -90,7 +97,7 @@
     @include breakpoint(wide) {
       @include padding-leader(3);
     }
-    
+
     &.left {
       @include padding-leader(1);
 

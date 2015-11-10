@@ -38,6 +38,7 @@
 
   .article {
     @include rem(padding-top, 5px);
+    max-width: 100%;
 
     h1,
     ol.steps h2,

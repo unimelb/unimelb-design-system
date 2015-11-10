@@ -1,31 +1,33 @@
 == slim :breadcrumb
 
 div role="main"
-  header.solid
-    h1= @settings['title']
+  .headerless
 
-  - if component_pending?(@component)
-    section.alert
-      p
-        strong This component is not yet implemented.
-        '
-        ' Please help us
-        a href="https://github.com/marcom-unimelb/unimelb-design-system" build it.
+  section
+    h1.aligned-title= @settings['title']
 
-  - if @documents.empty?
-    section.alert
-      p
-        strong This component is not yet documented.
-        '
-        ' Please help us
-        a href="https://github.com/marcom-unimelb/unimelb-design-system" build it
-        ', by submitting documentation and examples.
-
-  - else
     - @documents.each_value do |section|
       - section.each do |doc|
         == doc
+
       hr
+
+    - if component_pending?(@component)
+      section.alert
+        p
+          strong This component is not yet implemented.
+          '
+          ' Please help us
+          a href="https://github.com/marcom-unimelb/unimelb-design-system" build it.
+
+    - if @documents.empty?
+      section.alert
+        p
+          strong This component is not yet documented.
+          '
+          ' Please help us
+          a href="https://github.com/marcom-unimelb/unimelb-design-system" build it
+          ', by submitting documentation and examples.
 
   .half
     section.center
