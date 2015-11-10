@@ -77,7 +77,7 @@ InjectNav.prototype.update = function () {
   this.props.page.toggleClass('active', either);
   
   if (this.props.localNav) {
-    this.props.localNav.toggleClass('active', either);
+    this.props.localNav.toggleClass('active', activeNav.local && !activeNav.global);
   }
   
   this.props.header.toggleClass('global-active', activeNav.global);
