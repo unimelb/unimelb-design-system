@@ -1,0 +1,34 @@
+.uomcontent {
+  .citation-list {
+    padding-left: 0;
+    padding-right: 0;
+    
+    & > .citation {
+      list-style: none;
+      margin-left: 0;
+      
+      &:last-child {
+        @include rem(padding-bottom, 15px);
+      }
+    }
+  }
+  
+  .citation {
+    @include adjust-font-size-to(15px);
+    @include rem(padding, 15px);
+    @include rem(margin-top, 4px);
+    @include rem(margin-bottom, 12px);
+    background-color: $paleblue;
+    border: 1px solid darken($paleblue, 7%);
+    font-family: $ff-fixed;
+  }
+
+  .alt .citation {
+    background-color: $white;
+    border-color: lighten($paleblue, 7%);
+    
+    &:last-child {
+      @include rem(margin-bottom, 4px);
+    }
+  }
+}
