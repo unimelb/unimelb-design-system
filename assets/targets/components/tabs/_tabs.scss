@@ -202,10 +202,6 @@
         max-width: $w-mid;
         position: static;
 
-        & + section {
-          padding-top: 0;
-        }
-
         p {
           color: $black;
         }

@@ -19,6 +19,7 @@
 
   h1 {
     @include padding-leader(0);
+    @include rem(padding-bottom, 15px);
   }
 
   aside {
@@ -36,6 +37,7 @@
   }
 
   .article {
+    @include rem(padding-top, 5px);
     max-width: 100%;
 
     h1,
@@ -52,6 +54,10 @@
     table,
     .eg-palette {
       width: 100%;
+    }
+
+    figure.full-width {
+      @include rem(max-width, 700px);
     }
   }
 

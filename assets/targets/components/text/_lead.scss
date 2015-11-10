@@ -1,4 +1,4 @@
-.uomcontent {
+.uomcontent [role="main"] {
   .lead {
     @include adjust-font-size-to(19px);
     @include padding-leader(3);
@@ -8,7 +8,9 @@
     color: $black;
     filter: none;
     font-weight: $light;
-    margin: 0 3%;
+    margin: 0 auto;
+    padding-left: 3%;
+    padding-right: 3%;
     position: static;
     text-align: center;
 
@@ -28,6 +30,10 @@
       }
     }
 
+    & + section {
+      @include padding-leader(0);
+    }
+
     h2 {
       @include padding-leader(0);
     }
@@ -43,14 +49,12 @@
       @include adjust-font-size-to(22px);
     }
 
-    @include breakpoint(wide) {
-      margin: 0 auto;
-    }
-
     &.left {
+      @include padding-leader(2);
+      @include padding-trailer(2);
       @include rem(max-width, $w-sml);
-      @include rem(padding, 48px 0);
-      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
       text-align: left;
 
       p {
@@ -80,11 +84,26 @@
 
     @include breakpoint(wide) {
       @include rem(max-width, $w-sml);
+      padding-left: 0;
+      padding-right: 0;
       text-align: left;
     }
   }
-}
 
-.ie8 .uomcontent .lead {
-  margin: 0 auto;
+  // Compensate for padding-bottom of jump-nav on mobile
+  .jump-navigation + .lead {
+    @include padding-leader(2);
+
+    @include breakpoint(wide) {
+      @include padding-leader(3);
+    }
+
+    &.left {
+      @include padding-leader(1);
+
+      @include breakpoint(wide) {
+        @include padding-leader(2);
+      }
+    }
+  }
 }

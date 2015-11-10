@@ -3,8 +3,7 @@
     margin-left: 0;
 
     li {
-      @include rem(padding, 30px 0 30px 45px);
-      @include rem(text-indent, -45px);
+      @include rem(padding, 30px 0);
       border-top: 1px solid $lightergray;
       list-style-type: none;
 
@@ -16,9 +15,22 @@
         color: $green;
         text-decoration: line-through;
       }
+      
+      input[type="checkbox"] + label {
+        margin-top: 0;
+        margin-bottom: 0;
+        
+        &::after {
+          top: 7px;
+        }
+        
+        > span::before {
+          top: 3px;
+        }
+      }
 
       @include breakpoint(desktop) {
-        @include rem(padding, 15px);
+        @include rem(padding, 15px 0);
       }
     }
   }
