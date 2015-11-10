@@ -8,6 +8,7 @@ var LocalNav = require('./localnav.es6');
  */
 function InjectNav(props) {
   this.props = props;
+  this.props.supportsHistory = (window.history && 'pushState' in window.history);
   
   // Retrieve elements
   var elements = {
@@ -16,9 +17,9 @@ function InjectNav(props) {
     header: document.querySelector('.page-header'),
     localNav: document.querySelector('#sitemap'),
     globalNav: document.querySelector('#globalsitemap'),
-    sitemapTrigger: document.querySelector('.sitemap-label'),
     menuTrigger: document.querySelector('.page-header-tools a[title="Menu"]'),
-    searchTrigger: document.querySelector('.page-header-tools a[title="Search"]')
+    searchTrigger: document.querySelector('.page-header-tools a[title="Search"]'),
+    sitemapTrigger: document.querySelector('.sitemap-label')
   };
 
   // Add elements to props
@@ -37,34 +38,94 @@ function InjectNav(props) {
     });
   }
   
-  // Render global sitemap and bind events
+  // Inialise nav state, render global sitemap and bind events
+  this.setActiveNav(null);
   this.renderGlobalSitemap();
   this.setupEventBindings();
-  
-  // Initialise nav states
-  this.props.activeNav = {
+}
+
+InjectNav.prototype.setActiveNav = function (state) {
+  this.props.activeNav = state ? state : {
     local: false,
     global: false
   };
-}
-
-InjectNav.prototype.toggleLocalNav = function (activate, e) {
-  if (e) { e.preventDefault(); }
-  this.props.activeNav.local = activate;
-  this.update();
 };
 
-InjectNav.prototype.toggleGlobalNav = function (activate, e) {
-  if (e) { e.preventDefault(); }
-  this.props.activeNav.global = activate;
-  this.update();
+InjectNav.prototype.setupEventBindings = function() {
+  // Local nav is defined
+  if (this.props.localNav && this.props.menuTrigger) {
+    this.props.menuTrigger.addEventListener('click', this.openLocalNav.bind(this));
+    
+    // TODO is there ever more than one close button?
+    for (var triggers=this.props.localNav.querySelectorAll('h2:first-child'), i=triggers.length - 1; i >= 0; i--) {
+      triggers[i].addEventListener('click', this.closeLocalNav.bind(this));
+    }
+
+    for (triggers=this.props.localNav.querySelectorAll('a'), i=triggers.length - 1; i >= 0; i--) {
+      if (triggers[i].getAttribute('href').indexOf('#') != -1) {
+        triggers[i].addEventListener('click', this.closeLocalNav.bind(this));
+      }
+    }
+
+    this.props.sitemapTrigger.addEventListener('click', this.openGlobalNav.bind(this));
+
+    this.props.localSitemapTrigger = this.props.localNav.querySelector('.sitemap-link');
+    if (this.props.localSitemapTrigger)
+      this.props.localSitemapTrigger.addEventListener('click', this.openGlobalNav.bind(this));
+
+  } else {
+    if (this.props.menuTrigger)
+      this.props.menuTrigger.addEventListener('click', this.openGlobalNav.bind(this));
+  }
+  
+  this.props.globalNav.querySelector('.close-button').addEventListener('click', this.closeGlobalNav.bind(this));
+  this.props.blanket.el.addEventListener('click', this.closeBothNavs.bind(this));
+
+  if (this.props.searchTrigger) {
+    this.props.searchTrigger.addEventListener('click', this.handleSearchTrigger.bind(this));
+  }
+  
+  // Restore nav states when use goes back/forward 
+  if (this.props.supportsHistory) {
+    window.addEventListener('popstate', function (e) {
+      this.setActiveNav(e.state);
+      this.update();
+    }.bind(this));
+  }
 };
 
-InjectNav.prototype.toggleBothNavs = function (activate, e) {
+InjectNav.prototype.openLocalNav = function (e) { this.toggleNav('local', true, e) };
+InjectNav.prototype.closeLocalNav = function (e) { this.toggleNav('local', false, e) };
+InjectNav.prototype.openGlobalNav = function (e) { this.toggleNav('global', true, e) };
+InjectNav.prototype.closeGlobalNav = function (e) { this.toggleNav('global', false, e) };
+
+InjectNav.prototype.closeBothNavs = function (e) {
   if (e) { e.preventDefault(); }
-  this.props.activeNav.local = activate;
-  this.props.activeNav.global = activate;
-  this.update();
+  var bothActive = this.props.activeNav.local && this.props.activeNav.global;
+  this.setActiveNav(null);
+  
+  if (this.props.supportsHistory) {
+    window.history.go(bothActive ? -2 : -1);
+  } else {
+    this.update();
+  }
+};
+
+InjectNav.prototype.toggleNav = function (nav, activate, e) {
+  if (e) { e.preventDefault(); }
+  
+  this.props.activeNav[nav] = activate;
+  
+  if (this.props.supportsHistory) {
+    if (activate) {
+      this.update();
+      window.history.pushState(this.props.activeNav, '');
+    } else {
+      window.history.back();
+    }
+  } else {
+    this.update();
+  }
 };
 
 InjectNav.prototype.update = function () {
@@ -92,44 +153,8 @@ InjectNav.prototype.update = function () {
 };
 
 
-InjectNav.prototype.setupEventBindings = function() {
-  // Local nav is defined
-  if (this.props.localNav && this.props.menuTrigger) {
-    this.props.menuTrigger.addEventListener('click', this.toggleLocalNav.bind(this, true));
-    
-    // TODO is there ever more than one close button?
-    for (var triggers=this.props.localNav.querySelectorAll('h2:first-child'), i=triggers.length - 1; i >= 0; i--) {
-      triggers[i].addEventListener('click', this.toggleLocalNav.bind(this, false));
-    }
-
-    for (triggers=this.props.localNav.querySelectorAll('a'), i=triggers.length - 1; i >= 0; i--) {
-      if (triggers[i].getAttribute('href').indexOf('#') != -1) {
-        triggers[i].addEventListener('click', this.toggleLocalNav.bind(this, false));
-      }
-    }
-
-    this.props.sitemapTrigger.addEventListener('click', this.toggleGlobalNav.bind(this, true));
-
-    this.props.localSitemapTrigger = this.props.localNav.querySelector('.sitemap-link');
-    if (this.props.localSitemapTrigger)
-      this.props.localSitemapTrigger.addEventListener('click', this.toggleGlobalNav.bind(this, true));
-
-  } else {
-    if (this.props.menuTrigger)
-      this.props.menuTrigger.addEventListener('click', this.toggleGlobalNav.bind(this, true));
-  }
-  
-  this.props.globalNav.querySelector('.close-button').addEventListener('click', this.toggleGlobalNav.bind(this, false));
-  this.props.blanket.el.addEventListener('click', this.toggleBothNavs.bind(this, false));
-
-  if (this.props.searchTrigger) {
-    this.props.searchTrigger.addEventListener('click', this.handleSearchTrigger.bind(this));
-  }
-};
-
-
 InjectNav.prototype.handleSearchTrigger = function(e) {
-  this.toggleGlobalNav(true, e);
+  this.openGlobalNav(e);
   this.props.globalNav.querySelector('input[type="search"]').focus();
 };
 
