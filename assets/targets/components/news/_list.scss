@@ -202,6 +202,8 @@
   .news-index.tab {
     @include padding-leader(1);
     border-bottom: 0;
+    padding-left: 3%;
+    padding-right: 3%;
 
     article {
       clear: left;
@@ -235,15 +237,23 @@
     }
 
     @include breakpoint(tablet) {
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+      width: 94%;
+
+      article {
+        padding-left: 0;
+      }
+
       h1,
       p {
         width: auto;
       }
     }
 
-    @include breakpoint(desktop) {
-      padding-left: 0;
-      padding-right: 0;
+    @include breakpoint(920) {
+      width: 94%;
     }
   }
 }
