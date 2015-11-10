@@ -1,10 +1,10 @@
 == slim :breadcrumb
 
 div role="main"
-  header
-    h1 Components
+  .headerless
 
   section.navigation-text-listing
+    h1.aligned-title Components
     ul
       - @components.sort.each do |path|
         li

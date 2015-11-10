@@ -86,6 +86,21 @@ body {
       &.youtube5container {
         width: 100% !important;
       }
+
+      &.fullwidth,
+      &.fifth,
+      &.bottom-align-flat,
+      &.video-loop,
+      &.bottom-align,
+      &.enquiry,
+      &.detail,
+      &.tabbed-nav,
+      &.full-width,
+      &.filtered-listing-wrapper,
+      &.filtered-listing-section,
+      &.filtered-listing-section .bside {
+        max-width: 100%;
+      }
     }
 
     &.tight {
