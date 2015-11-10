@@ -25,7 +25,6 @@
 
   .alt .citation {
     background-color: $white;
-    border-color: lighten($paleblue, 7%);
     
     &:last-child {
       @include rem(margin-bottom, 4px);
