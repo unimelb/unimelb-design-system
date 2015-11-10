@@ -22,7 +22,7 @@
     &::before {
       @include rem(height, 5px);
       @include rem(margin-left, -30px);
-      @include rem(top, 10px);
+      @include rem(top, 8px);
       @include rem(width, 10px);
       background: transparent;
       border: 3px solid $green;
@@ -198,24 +198,26 @@
         border-top: 1px solid rgba(#000000, 0.1);
         counter-increment: steps;
         list-style-type: none;
+        position: relative;
 
         &:first-child {
           border-top: none;
         }
 
         &::before {
-          @include adjust-font-size-to(50px);
+          @include rem(font-size, 50px);
           @include rem(letter-spacing, -5px);
-          @include rem(margin-left, -80px);
           @include rem(padding-top, 20px);
           @include rem(width, 60px);
           color: $black;
           content: counter(steps);
-          display: inline-block;
-          float: left;
+          display: block;
           font-weight: $bold;
+          left: 0;
+          line-height: 1.2;
           position: absolute;
           text-align: right;
+          top: 0;
         }
 
         & > p:first-child {
@@ -234,42 +236,33 @@
       }
 
       @include breakpoint(desktop) {
-        li {
-
+        & > li {
           * {
             max-width: 650px;
           }
 
           &::before {
-            @include adjust-font-size-to(68px);
+            @include rem(font-size, 68px);
+            @include rem(left, 10px);
             @include rem(letter-spacing, -7px);
-            @include rem(margin-left, -60px);
-          }
-
-          .ticked-list li::before {
-            @include rem(margin-left, -22px);
-            @include rem(top, 7px);
+            line-height: 1.05;
           }
         }
       }
 
       @include breakpoint(860px) {
-        li {
+        & > li {
           margin-right: 0;
           padding-left: 0;
-
-          &::before {
-            @include rem(margin-left, 10px);
-          }
         }
       }
 
       @include breakpoint(wide) {
-        li {
-
+        & > li {
+          @include rem(padding-left, 110px);
+          
           > * {
-            max-width: 650px;
-            margin-left: 110px;
+            margin-left: 0;
           }
 
           li > * {
@@ -277,14 +270,14 @@
           }
 
           &::before {
-            @include adjust-font-size-to(80px);
+            @include rem(font-size, 80px);
             @include rem(letter-spacing, -11px);
           }
         }
       }
 
       @include breakpoint(1400px) {
-        li {
+        & > li {
           * {
             max-width: 700px;
           }
@@ -439,10 +432,6 @@
     font-size: .8em;
     letter-spacing: 1px;
   }
-}
-
-.ie .uomcontent ol.steps li:before {
-  padding-top: 60px;
 }
 
 .ie8 .uomcontent ul.nobullet li {
