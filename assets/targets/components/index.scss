@@ -7,6 +7,12 @@ body {
   padding: 0;
 }
 
+// Force FOUC on webfontloader inactive and loading states
+.wf-inactive *,
+.wf-loading * {
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+
 .hidden {
   display: none;
 }
@@ -48,5 +54,5 @@ body {
 @import './notices/index';
 @import './intranet/index';
 
-// ///* Print */
+// Print
 @import './print';
