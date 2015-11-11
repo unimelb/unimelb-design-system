@@ -3,6 +3,7 @@
   @include rem(max-width, 700px);
   border: 0 none;
   border-collapse: collapse;
+  overflow: visible;
   width: 100%;
 
   th {

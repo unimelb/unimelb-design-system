@@ -1,7 +1,11 @@
 .uomcontent [role="main"] .mobile-wrap {
   max-width: 94%;
-  overflow: scroll;
+  overflow-x: scroll;
   width: 100%;
+
+  @include breakpoint(desktop) {
+    overflow-x: visible;
+  }
 }
 
 .uomcontent [role="main"] table.mobile-friendly {
