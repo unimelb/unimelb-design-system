@@ -9,7 +9,7 @@ var LocalNav = require('./localnav.es6');
 function InjectNav(props) {
   this.props = props;
   this.props.supportsHistory = (window.history && 'pushState' in window.history);
-  
+
   // Retrieve elements
   var elements = {
     root: document.querySelector('.uomcontent'),
@@ -37,14 +37,14 @@ function InjectNav(props) {
       localnav: this.props.localNav
     });
   }
-  
+
   // Inialise nav state, render global sitemap and bind events
   this.setActiveNav(null);
   this.renderGlobalSitemap();
   this.setupEventBindings();
 }
 
-InjectNav.prototype.setActiveNav = function (state) {
+InjectNav.prototype.setActiveNav = function(state) {
   this.props.activeNav = state ? state : {
     local: false,
     global: false
@@ -55,7 +55,7 @@ InjectNav.prototype.setupEventBindings = function() {
   // Local nav is defined
   if (this.props.localNav && this.props.menuTrigger) {
     this.props.menuTrigger.addEventListener('click', this.openLocalNav.bind(this));
-    
+
     // TODO is there ever more than one close button?
     for (var triggers=this.props.localNav.querySelectorAll('h2:first-child'), i=triggers.length - 1; i >= 0; i--) {
       triggers[i].addEventListener('click', this.closeLocalNav.bind(this));
@@ -77,33 +77,33 @@ InjectNav.prototype.setupEventBindings = function() {
     if (this.props.menuTrigger)
       this.props.menuTrigger.addEventListener('click', this.openGlobalNav.bind(this));
   }
-  
+
   this.props.globalNav.querySelector('.close-button').addEventListener('click', this.closeGlobalNav.bind(this));
   this.props.blanket.el.addEventListener('click', this.closeBothNavs.bind(this));
 
   if (this.props.searchTrigger) {
     this.props.searchTrigger.addEventListener('click', this.handleSearchTrigger.bind(this));
   }
-  
-  // Restore nav states when use goes back/forward 
+
+  // Restore nav states when use goes back/forward
   if (this.props.supportsHistory) {
-    window.addEventListener('popstate', function (e) {
+    window.addEventListener('popstate', function(e) {
       this.setActiveNav(e.state);
       this.update();
     }.bind(this));
   }
 };
 
-InjectNav.prototype.openLocalNav = function (e) { this.toggleNav('local', true, e) };
-InjectNav.prototype.closeLocalNav = function (e) { this.toggleNav('local', false, e) };
-InjectNav.prototype.openGlobalNav = function (e) { this.toggleNav('global', true, e) };
-InjectNav.prototype.closeGlobalNav = function (e) { this.toggleNav('global', false, e) };
+InjectNav.prototype.openLocalNav = function(e) { this.toggleNav('local', true, e); };
+InjectNav.prototype.closeLocalNav = function(e) { this.toggleNav('local', false, e); };
+InjectNav.prototype.openGlobalNav = function(e) { this.toggleNav('global', true, e); };
+InjectNav.prototype.closeGlobalNav = function(e) { this.toggleNav('global', false, e); };
 
-InjectNav.prototype.closeBothNavs = function (e) {
+InjectNav.prototype.closeBothNavs = function(e) {
   if (e) { e.preventDefault(); }
   var bothActive = this.props.activeNav.local && this.props.activeNav.global;
   this.setActiveNav(null);
-  
+
   if (this.props.supportsHistory) {
     window.history.go(bothActive ? -2 : -1);
   } else {
@@ -111,11 +111,11 @@ InjectNav.prototype.closeBothNavs = function (e) {
   }
 };
 
-InjectNav.prototype.toggleNav = function (nav, activate, e) {
+InjectNav.prototype.toggleNav = function(nav, activate, e) {
   if (e) { e.preventDefault(); }
-  
+
   this.props.activeNav[nav] = activate;
-  
+
   if (this.props.supportsHistory) {
     if (activate) {
       this.update();
@@ -128,25 +128,25 @@ InjectNav.prototype.toggleNav = function (nav, activate, e) {
   }
 };
 
-InjectNav.prototype.update = function () {
+InjectNav.prototype.update = function() {
   var activeNav = this.props.activeNav;
   var either = activeNav.local || activeNav.global;
   var both = activeNav.local && activeNav.global;
-  
+
   this.props.blanket.toggle(either);
   this.props.header.toggleClass('active', either);
   this.props.page.toggleClass('active', either);
-  
+
   if (this.props.localNav) {
     this.props.localNav.toggleClass('active', activeNav.local && !activeNav.global);
   }
-  
+
   this.props.header.toggleClass('global-active', activeNav.global);
   this.props.page.toggleClass('global-active', activeNav.global);
   this.props.globalNav.toggleClass('active', activeNav.global);
-  
+
   this.props.sitemapTrigger.toggleClass('active', !activeNav.local); // TODO should be the opposite (have `active` class when local nav is active)
-  
+
 //  this.props.localNav.toggleClass('global-active', activeNav.global); // TODO needed?
 //  this.props.header.toggleClass('fixed', either); // TODO needed if scrolling to top with `window.scrollTop(0, 0)`
 //  this.props.globalNav.toggleClass('reveal', activeNav.global); // TODO needed?
