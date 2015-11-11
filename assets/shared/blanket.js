@@ -48,8 +48,8 @@ Blanket.prototype.hide = function() {
   this.el.removeClass('on');
 };
 
-Blanket.prototype.toggle = function() {
-  this.el.toggleClass('on');
+Blanket.prototype.toggle = function(force) {
+  this.el.toggleClass('on', force);
 };
 
 module.exports = Blanket;

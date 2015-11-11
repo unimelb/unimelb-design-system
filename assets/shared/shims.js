@@ -78,8 +78,9 @@
     };
   }
   if (!Element.prototype.toggleClass) {
-    Element.prototype.toggleClass = function(q) {
-      if (this.hasClass(q)) {
+    Element.prototype.toggleClass = function(q, force) {
+      var has = typeof force !== 'boolean' ? this.hasClass(q) : !force;
+      if (has) {
         this.removeClass(q);
       } else {
         this.addClass(q);
