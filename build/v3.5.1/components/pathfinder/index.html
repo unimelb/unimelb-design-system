@@ -1,0 +1,523 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Pathfinder | Web.Unimelb</title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.5.1</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Pathfinder"><span itemprop="name">Pathfinder</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><section><h1 class="aligned-title">Pathfinder</h1><section><p>The pathfinder is used to funnel the user to a certain area and can have up to four boxes. If you would like one particular box to stand out above the rest, a class of <code>prominent</code> can be added.</p>
+
+<h2>Reference articles</h2>
+
+<ul>
+<li><a href="/using-the-pathfinder-component-effectively">Using the pathfinder component effectively</a></li>
+</ul></section><hr /><h2 id="two-boxes">Two boxes</h2><ul class="pathfinder-2">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong>
+      <p>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a class="disabled" href=""><strong><span>Ex debet appellantur eam</span></strong>
+      <p>
+        Cu&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+</ul>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pathfinder-2&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Prima vitae<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue<span class="ni">&amp;hellip;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;disabled&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ex debet appellantur eam<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Cu<span class="ni">&amp;hellip;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<h2 id="two-boxes-soft">Two boxes soft</h2><ul class="pathfinder-2 soft">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong>
+      <p>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a class="disabled" href=""><strong><span>Ex debet appellantur eam</span></strong>
+      <p>
+        Cu&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+</ul>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pathfinder-2 soft&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Prima vitae<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue<span class="ni">&amp;hellip;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;disabled&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ex debet appellantur eam<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Cu<span class="ni">&amp;hellip;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="three-boxes">Three boxes</h2><ul class="pathfinder-3">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong>
+      <p>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Ex debet appellantur eam</span></strong>
+      <p>
+        Cu&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Qui ut mucius fuisset</span></strong>
+      <p>
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+</ul>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pathfinder-3&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Prima vitae<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue<span class="ni">&amp;hellip;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ex debet appellantur eam<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Cu<span class="ni">&amp;hellip;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Qui ut mucius fuisset<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="four-boxes">Four boxes</h2><ul class="pathfinder-4">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong>
+      <p>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Ex debet appellantur eam</span></strong>
+      <p>
+        Cu&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Qui ut mucius fuisset</span></strong>
+      <p>
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Ea copiosae philosophia vim</span></strong>
+      <p>
+        Eripuit postulant honestatis eu has, vel an enim duis. Ei labore adolescens eum. Vidisse adolescens ei sit, eu feugiat adipisci qui
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+</ul>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pathfinder-4&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Prima vitae<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue<span class="ni">&amp;hellip;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ex debet appellantur eam<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Cu<span class="ni">&amp;hellip;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Qui ut mucius fuisset<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ea copiosae philosophia vim<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Eripuit postulant honestatis eu has, vel an enim duis. Ei labore adolescens eum. Vidisse adolescens ei sit, eu feugiat adipisci qui
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="featured-boxes">Featured boxes</h2><ul class="pathfinder-4">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong>
+      <p>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a class="featured" href=""><strong><span>Ex debet appellantur eam</span></strong>
+      <p>
+        Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo, nisl vide mei ei. Ea copiosae philosophia vim. Ex vel civibus inimicus consulatu, ad cetero ceteros rationibus&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Qui ut mucius fuisset</span></strong>
+      <p>
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Ea copiosae philosophia vim</span></strong>
+      <p>
+        Eripuit postulant honestatis eu has, vel an enim duis. Ei labore adolescens eum. Vidisse adolescens ei sit, eu feugiat adipisci qui
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+</ul>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pathfinder-4&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Prima vitae<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue<span class="ni">&amp;hellip;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;featured&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ex debet appellantur eam<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo, nisl vide mei ei. Ea copiosae philosophia vim. Ex vel civibus inimicus consulatu, ad cetero ceteros rationibus<span class="ni">&amp;hellip;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Qui ut mucius fuisset<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ea copiosae philosophia vim<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Eripuit postulant honestatis eu has, vel an enim duis. Ei labore adolescens eum. Vidisse adolescens ei sit, eu feugiat adipisci qui
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<section><p>Featured Boxes should never sit on the outside</p></section><hr /><h2 id="xhtml-compliant-markup">Xhtml compliant markup</h2><ul class="pathfinder-3">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong><span class="text">Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;</span><span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Ex debet appellantur eam</span></strong><span class="text">Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo, nisl vide mei ei. Ea copiosae philosophia vim. Ex vel civibus inimicus consulatu, ad cetero ceteros rationibus&hellip;</span><span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Qui ut mucius fuisset</span></strong><span class="text">Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis</span><span class="button-small brand">Call to action</span></a>
+  </li>
+</ul>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pathfinder-3&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Prima vitae<span class="nt">&lt;/span&gt;&lt;/strong&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue<span class="ni">&amp;hellip;</span><span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ex debet appellantur eam<span class="nt">&lt;/span&gt;&lt;/strong&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo, nisl vide mei ei. Ea copiosae philosophia vim. Ex vel civibus inimicus consulatu, ad cetero ceteros rationibus<span class="ni">&amp;hellip;</span><span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Qui ut mucius fuisset<span class="nt">&lt;/span&gt;&lt;/strong&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;text&quot;</span><span class="nt">&gt;</span>Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<section><p>Use the alternate markup <code>span class="text"</code> rather than <code>p</code> in systems where XHTML rules are enforced (eg. Wordpress), to prevent code cleaners from rearranging the markup.</p></section><hr /><h2 id="background-image">Background image</h2><section class="fullwidth short fixed-background" style="background-image:url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+  <h1 class="title">
+    Title
+  </h1>
+  <ul class="pathfinder-3 white">
+    <li>
+      <a href=""><strong><span>Ex debet appellantur eam</span></strong>
+        <p>
+          Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo, nisl vide mei ei. Ea copiosae philosophia vim. Ex vel civibus inimicus consulatu, ad cetero ceteros rationibus&hellip;
+        </p>
+        <span class="button-small brand">Call to action</span></a>
+    </li>
+    <li>
+      <a href=""><strong><span>Qui ut mucius fuisset</span></strong>
+        <p>
+          Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+        </p>
+        <span class="button-small brand">Call to action</span></a>
+    </li>
+    <li>
+      <a href=""><strong><span>Ea copiosae philosophia vim</span></strong>
+        <p>
+          Eripuit postulant honestatis eu has, vel an enim duis. Ei labore adolescens eum. Vidisse adolescens ei sit, eu feugiat adipisci qui
+        </p>
+        <span class="button-small brand">Call to action</span></a>
+    </li>
+  </ul>
+</section>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;fullwidth short fixed-background&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image:url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>
+    Title
+  <span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pathfinder-3 white&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ex debet appellantur eam<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo, nisl vide mei ei. Ea copiosae philosophia vim. Ex vel civibus inimicus consulatu, ad cetero ceteros rationibus<span class="ni">&amp;hellip;</span>
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Qui ut mucius fuisset<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ea copiosae philosophia vim<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Eripuit postulant honestatis eu has, vel an enim duis. Ei labore adolescens eum. Vidisse adolescens ei sit, eu feugiat adipisci qui
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="soft">Soft</h2><ul class="pathfinder-3 soft">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong>
+      <p>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      </p>
+      <span class="button-small">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Ex debet appellantur eam</span></strong>
+      <p>
+        Cu abitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne
+      </p>
+      <span class="button-small">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Qui ut mucius fuisset</span></strong>
+      <p>
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      </p>
+      <span class="button-small">Call to action</span></a>
+  </li>
+</ul>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pathfinder-3 soft&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Prima vitae<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue<span class="ni">&amp;hellip;</span>
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ex debet appellantur eam<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Cu abitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Qui ut mucius fuisset<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="soft-background-image">Soft background image</h2><section class="fullwidth short fixed-background" style="background-image:url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+  <h1 class="title">
+    Title
+  </h1>
+  <ul class="pathfinder-3 soft">
+    <li>
+      <a href=""><strong><span>Prima vitae</span></strong>
+        <p>
+          Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+        </p>
+        <span class="button-small">Call to action</span></a>
+    </li>
+    <li>
+      <a href=""><strong><span>Ex debet appellantur eam</span></strong>
+        <p>
+          Cu abitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne
+        </p>
+        <span class="button-small">Call to action</span></a>
+    </li>
+    <li>
+      <a href=""><strong><span>Qui ut mucius fuisset</span></strong>
+        <p>
+          Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+        </p>
+        <span class="button-small">Call to action</span></a>
+    </li>
+  </ul>
+</section>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;fullwidth short fixed-background&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image:url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>
+    Title
+  <span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pathfinder-3 soft&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Prima vitae<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue<span class="ni">&amp;hellip;</span>
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ex debet appellantur eam<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Cu abitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Qui ut mucius fuisset<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small&quot;</span><span class="nt">&gt;</span>Call to action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="buttons">Buttons</h2><section class="fullwidth short fixed-background" style="background-image:url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+  <ul class="pathfinder-3 buttons">
+    <li>
+      <a href=""><strong><span>Prima vitae</span></strong></a>
+    </li>
+    <li>
+      <a href=""><strong><span>Ex debet</span></strong></a>
+    </li>
+    <li>
+      <a href=""><strong><span>Mucius fuisset</span></strong></a>
+    </li>
+  </ul>
+</section>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;fullwidth short fixed-background&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image:url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pathfinder-3 buttons&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Prima vitae<span class="nt">&lt;/span&gt;&lt;/strong&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Ex debet<span class="nt">&lt;/span&gt;&lt;/strong&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Mucius fuisset<span class="nt">&lt;/span&gt;&lt;/strong&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /></section><div class="half"><section class="center"><a class="button-hero-reverse" href="/components/notices">Notices</a></section><section class="center"><a class="button-hero" href="/components/people">People</a></section></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
