@@ -163,7 +163,6 @@
     @include rem(border-radius, 3px);
     @include rem(padding, 8px 10px);
     appearance: none;
-    -moz-appearance: window;
     border: 0;
 
     option {
@@ -173,6 +172,16 @@
 
     &::-ms-expand {
       display: none;
+    }
+  }
+
+  @-moz-document url-prefix() {
+    overflow: hidden;
+
+    select {
+      background-position: calc(99% - 17px) center;
+      overflow: -moz-hidden-unscrollable;
+      width: calc(100% + 17px) !important;
     }
   }
 }
@@ -188,14 +197,14 @@
     select option {
       background-image: none !important;
     }
-    
+
     select {
       &,
       option {
         background-color: $highlight !important;
         color: #fff !important;
       }
-      
+
       &.alt,
       &.alt option {
         background-color: $white !important;
