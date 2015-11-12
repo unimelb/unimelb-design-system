@@ -58,7 +58,7 @@ InjectHeader.prototype.renderPageHeader = function() {
       if (floating.hasClass('short')) {
         this.props.header.addClass('short');
       }
-      
+
       // Copy over inline background-image, if provided
       var bgImg = floating.style.backgroundImage;
       if (bgImg) {
@@ -75,7 +75,7 @@ InjectHeader.prototype.renderPageHeader = function() {
       this.props.rootlink = '';
       if (document.countSelector('.page-local-history .root') === 0) {
         this.props.rootlink = `
-<a href="https://unimelb.edu.au/" title="The University of Melbourne">The University of Melbourne</a>
+<a href="https://unimelb.edu.au/" title="The University of Melbourne"><span data-icon="home"></span>The University of Melbourne</a>
 `;
       }
 
@@ -134,6 +134,7 @@ InjectHeader.prototype.renderBreadcrumb = function() {
         selector = 'a';
 
       for (var nodes=this.props.local.querySelectorAll(selector), i=nodes.length - 1; i >= 0; i--) {
+
         var opt = document.createElement('option'),
             link = nodes[i].parentNode;
 
@@ -149,6 +150,13 @@ InjectHeader.prototype.renderBreadcrumb = function() {
           opt.setAttribute('selected', 'selected');
 
         select.appendChild(opt);
+
+        // Inject icon for first (root) item
+        if (i === 0) {
+          var homeIcon = document.createElement('span');
+          homeIcon.setAttribute('data-icon', 'home');
+          nodes[i].insertBefore(homeIcon, nodes[i].firstChild);
+        }
       }
 
       mobile.appendChild(select);
