@@ -242,21 +242,41 @@
   .mobile-nav {
     display: none;
 
-    select {
-      @include rem(padding, 5px 25px 5px 10px);
-      border: 0;
-      border-radius: 3px;
-      color: $darkblue;
-      max-width: 100%;
-
-      &:hover {
-        color: $darkblue;
-      }
-    }
-
     .styled-select.alt {
       @include rem(margin-top, 10px);
       position: relative;
+
+      select {
+        @include rem(padding, 5px 25px 5px 10px);
+        border: 0;
+        border-radius: 3px;
+        color: $darkblue;
+        max-width: 100%;
+
+        &:hover {
+          color: $darkblue;
+        }
+      }
+
+    }
+
+    @-moz-document url-prefix() {
+      @include rem(margin-top, 10px);
+      border: 1px solid $highlight;
+      border-radius: 3px;
+      overflow: hidden;
+
+      .styled-select.alt {
+        border: 0;
+        margin-top: 0;
+        width: calc(100% + 17px) !important;
+
+        select {
+          -moz-appearance: none;
+          background-position: calc(99% - 17px) center;
+          overflow: -moz-hidden-unscrollable;
+        }
+      }
     }
 
     .styled-select svg.icon {
