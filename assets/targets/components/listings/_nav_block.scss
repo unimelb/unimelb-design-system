@@ -6,13 +6,20 @@
   @include rem(padding-right, 25px);
   margin: 0 auto;
 
-  h1.title {
-    @extend %listing-title;
-    max-width: 100%;
+    // &.title {
+    //   @extend %listing-title;
+    //   max-width: 100%;
 
-    @include breakpoint(tablet) {
-      @include rem(padding-left, 20px);
-    }
+    //   @include breakpoint(tablet) {
+    //     @include rem(padding-left, 20px);
+    //   }
+    // }
+
+  h1.aligned-title {
+    @extend %listing-title;
+    @include rem(padding-bottom, 48px);
+    margin-left: 0;
+    max-width: 100%;
   }
 
   ul,
@@ -76,7 +83,7 @@
     @include breakpoint(tablet) {
       h3,
       p {
-        margin: 0 auto;
+        margin: 0 auto 0 0;
         width: 88%;
       }
 
@@ -87,18 +94,13 @@
 
         li {
           display: block;
-          margin: 0 auto;
+          margin: 0 auto 0 0;
           width: 88%;
         }
       }
     }
 
     @include breakpoint(desktop) {
-      h3,
-      p {
-        margin: 0 auto;
-      }
-
       li {
         width: 32.33%;
 
