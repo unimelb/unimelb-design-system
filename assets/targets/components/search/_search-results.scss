@@ -36,35 +36,55 @@
       }
       
       &.person {
-        display: table;
-        
-        .person__photo,
-        .person__profile,
-        .person__contact {
-          display: table-cell;
-          vertical-align: top;
-        }
-        
         .person__photo {
           border-radius: 50%;
           max-width: 85px;
         }
         
-        .person__profile {
-          @include rem(padding-right, 24px);
-          width: 100%;
+        .person__info {
+          overflow: hidden;
         }
         
         .person__contact {
-          padding: 0;
-          text-align: right;
+          @include padding-leader(0.5);
         }
         
         .person__phone {
-          @include adjust-font-size-to(20px);
+          @include adjust-font-size-to(18px);
           
-          & + .person__email {
-            @include padding-leader(0.5);
+          & > a {
+            white-space: nowrap;
+          }
+        }
+        
+        @include breakpoint(desktop) {
+          .person__info {
+            display: table;
+          }
+
+          .person__profile,
+          .person__contact {
+            display: table-cell;
+            vertical-align: top;
+          }
+          
+          .person__profile {
+            @include rem(padding-right, 24px);
+            width: 100%;
+          }
+          
+          .person__contact {
+            padding-top: 0;
+            text-align: right;
+          }
+        
+          .person__phone {
+            @include adjust-font-size-to(20px);
+            white-space: nowrap;
+
+            & + .person__email {
+              @include padding-leader(0.5);
+            }
           }
         }
       }
@@ -120,8 +140,8 @@
       }
       
       & > [data-icon="lock"] {
-        width: 1.3rem;
-        height: 1.3rem;
+        @include rem(width, 20px);
+        @include rem(height, 20px);
         
         & > .icon-over {
           display: block;
