@@ -16,6 +16,11 @@
   ol.search-results {
     padding-left: 0;
     padding-right: 0;
+    width: 94%;
+    
+    @include breakpoint(desktop) {
+      width: 100%;
+    }
 
     & > li {
       @extend %clearfix;
@@ -24,8 +29,7 @@
       border-bottom: 1px solid rgba(#000000, 0.1);
       list-style-type: none;
       margin-left: 0;
-      margin-right: 0;
-      padding-right: 0;
+      width: auto;
 
       &:last-child {
         @include padding-trailer(1);
@@ -72,7 +76,7 @@
 
     img {
       @include rem(margin-right, 16px);
-      @include rem(max-width, 110px);
+      @include rem(max-width, 100px);
       display: block;
       float: left;
 
@@ -85,12 +89,14 @@
       @include adjust-font-size-to(20px);
       @include padding-trailer(0.5);
       font-weight: $regular;
+      width: auto;
     }
 
     p {
       @include adjust-font-size-to(15px);
       @include padding-trailer(0);
       color: $black;
+      width: auto;
 
       @include breakpoint(desktop) {
         @include adjust-font-size-to(16px);
