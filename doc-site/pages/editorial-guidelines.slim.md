@@ -3,16 +3,21 @@ title: Editorial guidelines
 hidden: true
 ---
 
-header
-  h1 Editorial guidelines
+.headerless
+
+.jumpnav
 
 section
+  h1.aligned-title Editorial guidelines
+
   p
     |To be used with the
     '
     a href="/editorial-style-guide" University style guide
+
   hr.spacer
-  h2 Golden rules
+
+  h2#goldenrules Golden rules
   ul.ticked-list
     li Avoid complex terminology when it’s not relevant – many of your readers will be intellectually curious, but their knowledge of your subject will still be minimal in most cases. Simple, clear language is always a good starting point.
     li In-house jargon will confuse and confound a reader, thus guaranteeing they stop reading your piece and move onto the next one. So keep it out.
@@ -21,10 +26,10 @@ section
     li Graphics are an essential part of Pursuit. Done well a graphic will give readers clarity and understanding in a way that words cannot.
     li Flag any potential legal issues or areas of conflict with the Pursuit editors early for advice and direction.
 
-  h2 Tone of voice
+  h2#toneofvoice Tone of voice
   p Pursuit is a story-telling platform, so facts come first. Opinion is welcome, but it must be informed by a strong knowledge base.
 
-  h2 University names and disciplines
+  h2#names University names and disciplines
   h3 We are a university first, academic divisions second:
   p When identifying the source of comments or a location of an event or similar, ALWAYS refer to the University of Melbourne first and include faculty or departmental information subsequently and ONLY in enough detail to sufficiently identify context for your reader, not to demonstrate organisational structure (readers don’t really care).
   p
@@ -152,7 +157,7 @@ section
     li Refer to diseases or syndromes carefully: Down syndrome (not Down’s), Alzheimer’s disease (not Alzheimer’s). Caps in disease names usually signal the disease is named for the identifier.  Otherwise use lower case. <em>Duchenne’s muscular dystrophy</em>, but <em>muscular dystrophy</em>.
     li A person <em>has diabetes, asthma etc</em>, not suffers from (they may feel fine) and <strong>isn’t a diabetic, asthmatic etc</strong> (they are also other things).
 
-  h2 Introducing people – minimalism respects your reader
+  h2#introducing Introducing people – minimalism respects your reader
   p Give an individual person’s first and last name, with their organisation and job name, in the first instance, and thereafter use their title and last name.
   p
     em Vice-Chancellor of the University of Melbourne Glyn Davis wished all staff a safe holiday.

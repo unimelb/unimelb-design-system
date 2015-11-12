@@ -21,8 +21,9 @@ function JumpNav(props) {
   // Add to props
   for (var prop in offsets) { this.props[prop] = offsets[prop]; }
 
-  // Does layout contain a header
-  this.props.header = this.props.root.querySelector('header');
+  // Does layout contain a header at the top
+  if (this.props.root.firstElementChild.nodeName === 'HEADER')
+    this.props.header = this.props.root.firstElementChild;
 
   // Build nav menu
   this.buildNavMenu();

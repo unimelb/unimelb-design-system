@@ -1,0 +1,211 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Source | Web.Unimelb</title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.5.1</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/layouts" itemprop="item" title="Layouts"><span itemprop="name">Layouts</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Source"><span itemprop="name">Source</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><header class="solid-blue"><h1>Source of <em>Floating Contrast</em></h1></header><div class="fullwidth short"><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;floating&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;contrast-helper&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image:url(/assets/images/contrast.jpg)&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;banner&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mid-align&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>
+          One defining choice.<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>Only at Melbourne
+        <span class="nt">&lt;/h1&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button-hero-inverse&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Graduate Study at Melbourne<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tabbed-nav&quot;</span> <span class="na">data-tabbed=</span><span class="s">&quot;&quot;</span> <span class="na">id=</span><span class="s">&quot;nav&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;full-width&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mobile-nav&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;select</span> <span class="na">role=</span><span class="s">&quot;tablist&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">value=</span><span class="s">&quot;#study&quot;</span><span class="nt">&gt;</span>
+            Study
+          <span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">value=</span><span class="s">&quot;#today&quot;</span><span class="nt">&gt;</span>
+            Today
+          <span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">value=</span><span class="s">&quot;#research&quot;</span><span class="nt">&gt;</span>
+            Research
+          <span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;option</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span> <span class="na">value=</span><span class="s">&quot;#about&quot;</span><span class="nt">&gt;</span>
+            About
+          <span class="nt">&lt;/option&gt;</span>
+        <span class="nt">&lt;/select&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;desktop-nav&quot;</span> <span class="na">role=</span><span class="s">&quot;tablist&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#study&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Study<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#today&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Today<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#research&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Research<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#about&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>About<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/nav&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab&quot;</span> <span class="na">id=</span><span class="s">&quot;study&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;lead&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          To compete on the world stage, you need a world-standard education. At the University of Melbourne, you’ll gain an internationally recognised degree that will open doors to an outstanding future.
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/section&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pathfinder-3&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Undergraduate<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              An undergraduate course is your first degree at university. Search here if you’re a secondary school student, or looking to start your first degree at University.
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>View courses<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Graduate coursework<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              Our graduate courses are ideal if you’re looking to continue your professional development, change your career or pursue a passion.
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>View courses<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>PhD <span class="err">&amp;</span> research programs<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              This challenging and dynamic degree involves a sustained piece of independent research and writing examining a specific problem, issue or topic.
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>View courses<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;alt&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;half&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;section&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;video&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;iframe</span> <span class="na">allowfullscreen=</span><span class="s">&quot;&quot;</span> <span class="na">frameborder=</span><span class="s">&quot;0&quot;</span> <span class="na">height=</span><span class="s">&quot;315&quot;</span> <span class="na">src=</span><span class="s">&quot;//www.youtube.com/embed/ngG3raoqSxY&quot;</span> <span class="na">title=</span><span class="s">&quot;video player&quot;</span> <span class="na">width=</span><span class="s">&quot;560&quot;</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/section&gt;</span>
+          <span class="nt">&lt;section&gt;</span>
+            <span class="nt">&lt;h1&gt;</span>
+              Create your own Melbourne
+            <span class="nt">&lt;/h1&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              The Melbourne experience is more than just lectures and study sessions. As a University of Melbourne student, you can get involved in the many campus activities on offer, enjoy amazing new experiences and make lifelong friends along the way.
+            <span class="nt">&lt;/p&gt;</span>
+          <span class="nt">&lt;/section&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab&quot;</span> <span class="na">id=</span><span class="s">&quot;today&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;block-listing&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;news&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;block-container&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;strong&gt;</span>Dicunt audiam aliquam eu sed, te mei decore<span class="nt">&lt;/strong&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              Ex debet appellantur eam, nam an case nemore mnesarchum. Sed porro iuvaret in, per eu natum conceptam, nam at essent petentium. Qui ut mucius fuisset oporteat, mei ea malis offendit periculis, mazim.
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;meta&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">&quot;meta-left&quot;</span> <span class="na">datetime=</span><span class="s">&quot;2015-02-30&quot;</span><span class="nt">&gt;</span> 30 Feb 2015<span class="nt">&lt;/time&gt;&lt;em</span> <span class="na">class=</span><span class="s">&quot;meta-right&quot;</span><span class="nt">&gt;</span>News<span class="nt">&lt;/em&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;event double&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image: url(http://placeimg.com/680/590/arch);&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;block-container&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;</span>Apeirian nominati partiendo<span class="nt">&lt;/strong&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              Ullum ornatus intellegam in sea
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-hero-inverse&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span> Call to Action<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;event&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;block-container&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;when range&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;time</span> <span class="na">datetime=</span><span class="s">&quot;2014-03-18&quot;</span><span class="nt">&gt;</span> 18 March<span class="nt">&lt;/time&gt;&lt;time</span> <span class="na">datetime=</span><span class="s">&quot;2014-05-04&quot;</span><span class="nt">&gt;</span> 4 May 2014<span class="nt">&lt;/time&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;strong&gt;</span>Sed porro iuvaret in 2014<span class="nt">&lt;/strong&gt;&lt;img</span> <span class="na">alt=</span><span class="s">&quot;&quot;</span> <span class="na">src=</span><span class="s">&quot;http://placeimg.com/640/320/animals&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;meta&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;meta-left&quot;</span><span class="nt">&gt;</span>Location<span class="nt">&lt;/span&gt;&lt;em</span> <span class="na">class=</span><span class="s">&quot;meta-right&quot;</span><span class="nt">&gt;</span>Event<span class="nt">&lt;/em&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;news&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;block-container&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;strong&gt;</span>Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo<span class="nt">&lt;/strong&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              Ex debet appellantur eam, nam an case nemore mnesarchum. Sed porro iuvaret in, per eu natum conceptam, nam at essent petentium. Dicunt audiam aliquam eu sed, te mei decore maiorum.
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;meta&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">&quot;meta-left&quot;</span> <span class="na">datetime=</span><span class="s">&quot;2015-02-30&quot;</span><span class="nt">&gt;</span> 30 Feb 2015<span class="nt">&lt;/time&gt;&lt;em</span> <span class="na">class=</span><span class="s">&quot;meta-right&quot;</span><span class="nt">&gt;</span>News<span class="nt">&lt;/em&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;news&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;block-container&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;img</span> <span class="na">alt=</span><span class="s">&quot;&quot;</span> <span class="na">src=</span><span class="s">&quot;http://placeimg.com/640/320/tech&quot;</span> <span class="nt">/&gt;&lt;strong&gt;</span>Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus<span class="nt">&lt;/strong&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              Cu nam integre copiosae lobortis. Qui ut mucius fuisset oporteat, mei ea malis
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;meta&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;time</span> <span class="na">class=</span><span class="s">&quot;meta-left&quot;</span> <span class="na">datetime=</span><span class="s">&quot;2015-02-30&quot;</span><span class="nt">&gt;</span> 30 Feb 2015<span class="nt">&lt;/time&gt;&lt;em</span> <span class="na">class=</span><span class="s">&quot;meta-right&quot;</span><span class="nt">&gt;</span>News<span class="nt">&lt;/em&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;event&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;block-container&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;when&quot;</span><span class="nt">&gt;</span>
+              Wednesday<span class="nt">&lt;time</span> <span class="na">datetime=</span><span class="s">&quot;2014-05-28&quot;</span><span class="nt">&gt;</span> 28 May 2014<span class="nt">&lt;/time&gt;</span>5:00 pm - 1:00 am
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;strong&gt;</span>Dicunt audiam aliquam eu sed<span class="nt">&lt;/strong&gt;&lt;img</span> <span class="na">alt=</span><span class="s">&quot;&quot;</span> <span class="na">src=</span><span class="s">&quot;http://placeimg.com/640/320/nature&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;meta&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;meta-left&quot;</span><span class="nt">&gt;</span>Location<span class="nt">&lt;/span&gt;&lt;em</span> <span class="na">class=</span><span class="s">&quot;meta-right&quot;</span><span class="nt">&gt;</span>Event<span class="nt">&lt;/em&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab&quot;</span> <span class="na">id=</span><span class="s">&quot;research&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;lead&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          The University of Melbourne is a globally engaged, comprehensive, research-intensive university uniquely positioned to respond to the major social, economic and environmental challenges of our time.
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/section&gt;</span>
+      <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;pathfinder-3&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Faculty and graduate school research areas<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              We have established a series of cross-disciplinary research institutes and our faculties and graduate schools are affiliated with many research centres, institutes and hospitals, placing us at the heart of biomedical research in Victoria and Australia.
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>View courses<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Research Institutes<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              The University of Melbourne is Australia&#39;s No. 1 university and a national leader for research income and social impact indicators.
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>View courses<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong&gt;&lt;span&gt;</span>Research Centres<span class="nt">&lt;/span&gt;&lt;/strong&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              The University of Melbourne has discipline specific faculties, and is affiliated with many research institutes and hospitals, putting the University at the heart of biomedical research in Melbourne and Australia.
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;button-small brand&quot;</span><span class="nt">&gt;</span>View courses<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;alt&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;half&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;section&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;video&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;iframe</span> <span class="na">allowfullscreen=</span><span class="s">&quot;&quot;</span> <span class="na">frameborder=</span><span class="s">&quot;0&quot;</span> <span class="na">height=</span><span class="s">&quot;315&quot;</span> <span class="na">src=</span><span class="s">&quot;//www.youtube.com/embed/ngG3raoqSxY&quot;</span> <span class="na">title=</span><span class="s">&quot;video player&quot;</span> <span class="na">width=</span><span class="s">&quot;560&quot;</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/section&gt;</span>
+          <span class="nt">&lt;section&gt;</span>
+            <span class="nt">&lt;h1&gt;</span>
+              Research at The University of Melbourne
+            <span class="nt">&lt;/h1&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              Every faculty and graduate school actively engages in research, with many affiliated with hospitals, other research entities, or one of our many cross-disciplinary research institutes.
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;ul&gt;</span>
+              <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Learn more about Research at Melbourne<span class="nt">&lt;/a&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Meet our Graduate Researchers<span class="nt">&lt;/a&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+          <span class="nt">&lt;/section&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab&quot;</span> <span class="na">id=</span><span class="s">&quot;about&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;lead&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Established in 1853, the University of Melbourne makes distinctive contributions to society in research, learning and teaching and engagement.
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>

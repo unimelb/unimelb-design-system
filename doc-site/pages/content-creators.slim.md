@@ -2,10 +2,11 @@
 title: For Content Creators
 ---
 
-header
-  h1 For Content Creators
+.headerless
 
 section
+  h1.aligned-title For Content Creators
+
   p This design system has been developed to place emphasis on content so that it is more easily consumed.
 
   p The focus on content means it is even more important than ever that you source the right imagery, text and video for each page on your site.
