@@ -4,10 +4,11 @@ summary: Simple guidelines for the use of audio and video.
 hidden: true
 ---
 
-header
-  h1 Audio & Video guidelines
+.headerless
 
 section
+  h1.aligned-title Audio & Video guidelines
+
   h2 Audio
 
   p All audio is required to provide a text transcript. This is to assist screen readers and search engines interpret the content.

@@ -3,12 +3,13 @@ title: Editorial style guide
 hidden: true
 ---
 
-header
-  h1 Editorial style guide
+.headerless
 
 .jumpnav
 
 section
+  h1.aligned-title Editorial style guide
+
   p.lead Adhering to the Marketing editorial style guide will ensure your publications are produced in a high standard, University-compliant, consistent style.
 
   h2#language Language
