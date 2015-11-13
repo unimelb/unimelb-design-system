@@ -1,6 +1,8 @@
 var Blanket = require('../../../shared/blanket');
 var LocalNav = require('./localnav.es6');
 
+var HISTORY_KEY = 'uom_injection';
+
 /**
  * InjectNav
  *
@@ -39,16 +41,16 @@ function InjectNav(props) {
   }
 
   // Inialise nav state, render global sitemap and bind events
-  this.setActiveNav(null);
+  this.setActiveNav();
   this.renderGlobalSitemap();
   this.setupEventBindings();
 }
 
 InjectNav.prototype.setActiveNav = function(state) {
-  this.props.activeNav = state ? state : {
+  this.props.activeNav = (state ? state : {
     local: false,
     global: false
-  };
+  });
 };
 
 InjectNav.prototype.setupEventBindings = function() {
@@ -88,7 +90,8 @@ InjectNav.prototype.setupEventBindings = function() {
   // Restore nav states when use goes back/forward
   if (this.props.supportsHistory) {
     window.addEventListener('popstate', function(e) {
-      this.setActiveNav(e.state);
+      var newState = e.state && e.state[HISTORY_KEY] ? e.state[HISTORY_KEY] : null;
+      this.setActiveNav(newState);
       this.update();
     }.bind(this));
   }
@@ -102,7 +105,7 @@ InjectNav.prototype.closeGlobalNav = function(e) { this.toggleNav('global', fals
 InjectNav.prototype.closeBothNavs = function(e) {
   if (e) { e.preventDefault(); }
   var bothActive = this.props.activeNav.local && this.props.activeNav.global;
-  this.setActiveNav(null);
+  this.setActiveNav();
 
   if (this.props.supportsHistory) {
     window.history.go(bothActive ? -2 : -1);
@@ -119,7 +122,10 @@ InjectNav.prototype.toggleNav = function(nav, activate, e) {
   if (this.props.supportsHistory) {
     if (activate) {
       this.update();
-      window.history.pushState(this.props.activeNav, '');
+      
+      var state = {};
+      state[HISTORY_KEY] = this.props.activeNav;
+      window.history.pushState(state, '');
     } else {
       window.history.back();
     }
