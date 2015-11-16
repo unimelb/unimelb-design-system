@@ -1,0 +1,135 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>How to Contribute | Web.Unimelb</title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.5.3</span></a><meta content="1" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="How to Contribute"><span itemprop="name">How to Contribute</span></a><meta content="2" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">How to Contribute</h1><div class="jumpnav"></div><section><p>A core philosophy behind web.unimelb is that it is open for suggested modification by anyone in the university community.</p>
+
+<p>You can contribute by creating a 'fork' of <a href="https://github.com/marcom-unimelb/unimelb-design-system">this project</a>, applying your modifications and then sending a 'pull request' back to the main repository.</p>
+
+<p>All changes are reviewed by the Web Marketing team before being accepted into the master branch.</p>
+
+<p>There is also an <a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">issue tracker</a> available if you want to suggest changes or report bugs without providing code.</p>
+
+<p><strong>Please note:</strong> The ability to fork the templates repository does theoretically enable you to create your own set of bespoke templates and use these to power your site. <em>This is not permitted outside of development</em>. It is not acceptable to fork the repository, modify code and use this instead of the centrally hosted assets. Doing so contravenes policy, trademark and copyright obligations and will be policed. The reason this has to be strictly enforced is that there are elements of the templates that are centrally managed. If you go rogue, we will not be able to maintain a consistent web presence.</p>
+
+<!-- ## Getting a copy of the code
+
+### 1. Sign up for github
+
+[GitHub](https://github.com/) is a social coding platform that enables multiple people to contribute to the same set of code at the same time. [Signing up for an account is free](https://github.com/join).
+
+### 2. Create a fork
+
+While signed into your GitHub account, visit the template repository and create a new 'fork' to your personal account.
+
+![](/assets/videos/forking.gif)
+
+### 3. Clone your fork
+
+Create a clone of your fork to your local machine so you can apply your changes. We recommend using [GitHub for Mac](http://mac.github.com) or [GitHub for Windows](http://windows.github.com/).
+
+![](/assets/videos/cloning.gif)
+
+### 4. Push the changes to your repository
+
+//TODO Neil to finish
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+
+
+### 5. Open a pull request to accept your changes
+
+// TODO Neil to finish
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.
+
+### Related resources
+
+* [A github guide to forking projects](https://guides.github.com/overviews/forking/) -->
+
+<!-- ## Running a local development server
+
+Once you've forked the templates repository, if you are making changes to code or examples you may need to set up a local copy of the templates to make sure they work properly. If you're just modifying documentation, you probably don't need to worry about this step (it's also pretty complicated).
+
+- Prerequisite set up steps (bundler )
+- Mac / Windows instructions
+
+NEIL TO ADD.
+ -->
+
+<h2>Making changes to template documentation</h2>
+
+<p>The web templates and their associated documentation are built into the same GitHub repository. This is an intentional design decision as it ensures creators explain how to use the code, and not just add it without this explanation.</p>
+
+<p>The documentation is stored in three file formats - Markdown (.md), Slim (.slim), and sometimes HTML. Occasionally, a .md file may also contain HTML or Slim within it in order to enable a more custom presentation of the information being discussed, but more on this later.</p>
+
+<!-- ### Understanding the structure of the templates
+
+JASON TO ADD -->
+
+<h3>Adding pages to the templates or documentation</h3>
+
+<p>Occasionally you may need to add pages to the documentation. This is especially the case if you're adding a new blog post.</p>
+
+<h4>Posts and pages (blog posts and standard pages - ie. not in the <code>/templates</code> directory)</h4>
+
+<p>To add a new page, simply create it in the folder that you would like it to appear. The URL of this new page will be similar to it's location in the file structure.</p>
+
+<p>For example:</p>
+
+<p>A <strong>page</strong> created at <code>/pages/build/[page-name.md]</code> will have the url <code>http://.../build/[page-name.md]</code>.</p>
+
+<h4>Component documentation (pages inside the <code>/templates</code> directory)</h4>
+
+<p>Component and page template documentation and examples are stored in a very specific way in order to allow for the auto-generation of documentation and production code from the same place.</p>
+
+<p><img src="/assets/images/component-listing.png" alt="Screenshot of components directory"></p>
+
+<p>Files inside each of the components are specifically named and the naming conventions must be preserved if you look to add additional components.</p>
+
+<p>Each component has, at a minimum, a file named <code>00-overview.md</code> and an SCSS file with the same name. SCSS files are precompiled into compressed CSS for use in production.</p>
+
+<p>If the component requires javascript, as is the case with the "Maps" component, it will also have a .coffee file. Coffee files are precompiled into javascript for use in production.</p>
+
+<p>Most components then have one or more example files sequentially numbered. Example files can either be written in Markdown (<code>.md</code>) or Slim (<code>.slim</code>) and must be sequentially numbered. eg. <code>01-example.md</code> comes before <code>01a-example.slim</code> comes before <code>02-example.md</code>. The file extension must be either a <code>.md</code> or <code>.slim</code> to be added into the page.</p>
+
+<p>Any pages that you add the component directory will be assembled together into the component page. For example the buttons component is created by combining the files listed above in order. The example pages are also styled and made functional by the SCSS and JS in the folder (as well as all other folders).</p>
+
+<p><img src="/assets/images/component-assembly-folder-structure.png" alt="Folder structure"><br>
+<a href="/assets/images/component-assembly-annotated.jpg"><img src="/assets/images/component-assembly-annotated-thumb.jpg" alt="Compiled page showing relationship"></a><br>
+<a href="/assets/images/component-assembly.jpg"><img src="/assets/images/component-assembly-thumb.jpg" alt="Compiled page"></a></p>
+
+<p>To add additional examples either add additionally sequentially numbered example files or create a new component by creating a new folder and starting it with, at minimum a <code>00-overview.md</code> file.</p>
+
+<h5>Related links</h5>
+
+<ul>
+<li><a href="http://sass-lang.com">SASS-Lang documentation website</a></li>
+</ul>
+
+<h3>File types used</h3>
+
+<h4>Markdown</h4>
+
+<p>Markdown is the primary language we have used to write the template documentation.</p>
+
+<p>Created by John Gruber in order to facilitate easy writing and easy reading of HTML without the cruft added by HTML syntax. This makes it easier for people who are not web developers.</p>
+
+<p>As the majority of this site is about explaining how to build great websites in general, and not all about code, we wanted to make it as easy as possible for people from a wide range of backgrounds to write markdown without having a complicated text editor (you can just use the web editor)</p>
+
+<p>Markdown is compatible with HTML, however raw HTML-based pull requests will not be accepted unless these are for the purpose of showing code examples.</p>
+
+<h5>Related links</h5>
+
+<ul>
+<li><a href="https://guides.github.com/overviews/mastering-markdown/">A Github guide to Markdown</a></li>
+<li><a href="http://howtomarkdown.com/">HowToMarkdown: A simple guide to the markdown syntax</a></li>
+</ul>
+
+<h4>Slim</h4>
+
+<p>Slim (<a href="http://slim-lang.com">http://slim-lang.com</a>)is a templating engine that makes it faster to write HTML code. In particular, by being fastidious about the way that indentation is used, it means HTML can be written without closing tags. This makes it easier to avoid situations where you have to hunt around for missing closing divs or tags.</p>
+
+<p>If you get to a page with the .slim extension, we suggest <a href="http://rdoc.info/gems/slim">reading the documentation pages</a> before starting to change that page.</p>
+
+<p>Slim is backwards compatible with HTML, however raw HTML-based pull requests will not be accepted unless these are for the purpose of showing code examples.</p>
+
+<h6>Related links</h6>
+
+<ul>
+<li><a href="http://slim-lang.com/">The Slim language documentation website</a></li>
+</ul></section></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
