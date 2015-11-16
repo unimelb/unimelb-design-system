@@ -15,13 +15,17 @@ function Accordion(el, props) {
   this.el.setAttribute('tabindex', '0');
 
   // Event bindings
-  this.el.addEventListener('click', this.handleClick.bind(this));
+  if (!this.el.hasAttribute('data-bound')) {
+    this.el.addEventListener('click', this.handleClick.bind(this));
 
-  if ('onkeydown' in window.window)
-    window.addEventListener('keydown', this.clickWithEnter.bind(this));
+    if ('onkeydown' in window.window)
+      window.addEventListener('keydown', this.clickWithEnter.bind(this));
 
-  if (window.attachEvent) { // IE 10 down
-    window.attachEvent('KeyboardEvent', this.clickWithEnter.bind(this));
+    if (window.attachEvent) { // IE 10 down
+      window.attachEvent('KeyboardEvent', this.clickWithEnter.bind(this));
+    }
+
+    this.el.setAttribute('data-bound', true);
   }
 }
 

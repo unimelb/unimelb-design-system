@@ -30,13 +30,16 @@ function Modal(el, props) {
     this.setupCloseButton();
 
     // Event bindings
-    this.el.addEventListener('click', this.activateDialog.bind(this));
-    for (var recs=this.props.targetElement.querySelectorAll('.modal__close'), i=recs.length - 1; i >= 0; i--) {
-      recs[i].addEventListener('click', this.hideAllDialogs.bind(this));
-    }
+    if (!this.el.hasAttribute('data-bound')) {
+      this.el.addEventListener('click', this.activateDialog.bind(this));
+      for (var recs=this.props.targetElement.querySelectorAll('.modal__close'), i=recs.length - 1; i >= 0; i--) {
+        recs[i].addEventListener('click', this.hideAllDialogs.bind(this));
+      }
 
-    // Attach closing event to blanket
-    this.props.blanketElement.el.addEventListener('click', this.hideAllDialogs.bind(this));
+      // Attach closing event to blanket
+      this.props.blanketElement.el.addEventListener('click', this.hideAllDialogs.bind(this));
+      this.el.setAttribute('data-bound', true);
+    }
   }
 }
 

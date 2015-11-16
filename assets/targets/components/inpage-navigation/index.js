@@ -8,9 +8,10 @@ function InpageNavigation(el, props) {
   this.el = el;
   this.props = props;
 
-  // Event bindings, exclude noscroll and modal
-  if (!this.el.getAttribute('data-no-scroll') && !this.el.getAttribute('data-modal-target')) {
+  // Event bindings, exclude noscroll and modal and rebind
+  if (!this.el.hasAttribute('data-bound') && !this.el.getAttribute('data-no-scroll') && !this.el.getAttribute('data-modal-target')) {
     this.el.addEventListener('click', this.delegateScroll.bind(this));
+    this.el.setAttribute('data-bound', true);
   }
 }
 

@@ -104,13 +104,16 @@ InjectNav.prototype.closeGlobalNav = function(e) { this.toggleNav('global', fals
 
 InjectNav.prototype.closeBothNavs = function(e) {
   if (e) { e.preventDefault(); }
-  var bothActive = this.props.activeNav.local && this.props.activeNav.global;
-  this.setActiveNav();
 
-  if (this.props.supportsHistory) {
-    window.history.go(bothActive ? -2 : -1);
-  } else {
-    this.update();
+  if (this.props.page.hasClass('active')) {
+    var bothActive = this.props.activeNav.local && this.props.activeNav.global;
+    this.setActiveNav();
+
+    if (this.props.supportsHistory) {
+      window.history.go(bothActive ? -2 : -1);
+    } else {
+      this.update();
+    }
   }
 };
 
@@ -122,7 +125,7 @@ InjectNav.prototype.toggleNav = function(nav, activate, e) {
   if (this.props.supportsHistory) {
     if (activate) {
       this.update();
-      
+
       var state = {};
       state[HISTORY_KEY] = this.props.activeNav;
       window.history.pushState(state, '');
