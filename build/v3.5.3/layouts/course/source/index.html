@@ -1,0 +1,1220 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Source | Web.Unimelb</title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.5.3</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/layouts" itemprop="item" title="Layouts"><span itemprop="name">Layouts</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Source"><span itemprop="name">Source</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><header class="solid-blue"><h1>Source of <em>Course</em></h1></header><div class="fullwidth short"><div class="highlight"><pre><span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">&quot;page-local-history&quot;</span> <span class="na">itemscope=</span><span class="s">&quot;&quot;</span> <span class="na">itemtype=</span><span class="s">&quot;http://schema.org/BreadcrumbList&quot;</span><span class="nt">&gt;&lt;li</span> <span class="na">class=</span><span class="s">&quot;root&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;itemListElement&quot;</span> <span class="na">itemscope=</span><span class="s">&quot;&quot;</span> <span class="na">itemtype=</span><span class="s">&quot;http://schema.org/ListItem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;item&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">itemprop=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Web.Unimelb v3.5.3<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;meta</span> <span class="na">content=</span><span class="s">&quot;1&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;position&quot;</span> <span class="nt">/&gt;&lt;/li&gt;&lt;li</span> <span class="na">itemprop=</span><span class="s">&quot;itemListElement&quot;</span> <span class="na">itemscope=</span><span class="s">&quot;&quot;</span> <span class="na">itemtype=</span><span class="s">&quot;http://schema.org/ListItem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/layouts&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;item&quot;</span> <span class="na">title=</span><span class="s">&quot;Layouts&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">itemprop=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Layouts<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;meta</span> <span class="na">content=</span><span class="s">&quot;2&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;position&quot;</span> <span class="nt">/&gt;&lt;/li&gt;&lt;li</span> <span class="na">class=</span><span class="s">&quot;last&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;itemListElement&quot;</span> <span class="na">itemscope=</span><span class="s">&quot;&quot;</span> <span class="na">itemtype=</span><span class="s">&quot;http://schema.org/ListItem&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;item&quot;</span> <span class="na">title=</span><span class="s">&quot;Source&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">itemprop=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Source<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;meta</span> <span class="na">content=</span><span class="s">&quot;3&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;position&quot;</span> <span class="nt">/&gt;&lt;/li&gt;&lt;/ol&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;banner&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image:url(/assets/images/course_example_banner.jpg);&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bottom-align-flat&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">class=</span><span class="s">&quot;course-select&quot;</span> <span class="na">data-view-visitor-select-form=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;get&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;left&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;h2&gt;</span>
+            Doctor of Veterinary Medicine
+          <span class="nt">&lt;/h2&gt;</span>
+          <span class="nt">&lt;p&gt;</span>
+            4 years full-time, Parkville — Domestic and International students. CRICOS code: 071999D
+          <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;residency&quot;</span><span class="nt">&gt;</span>You told us you’re<span class="nt">&lt;/label&gt;&lt;select</span> <span class="na">class=</span><span class="s">&quot;clear&quot;</span> <span class="na">id=</span><span class="s">&quot;residency&quot;</span> <span class="na">name=</span><span class="s">&quot;residency&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;domestic&quot;</span><span class="nt">&gt;</span>
+                a domestic student
+              <span class="nt">&lt;/option&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">selected=</span><span class="s">&quot;selected&quot;</span> <span class="na">value=</span><span class="s">&quot;international&quot;</span><span class="nt">&gt;</span>
+                an international student
+              <span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;/select&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tabbed-course&quot;</span> <span class="na">data-tabbed=</span><span class="s">&quot;&quot;</span> <span class="na">id=</span><span class="s">&quot;nav&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;full-width&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">&quot;desktop-nav&quot;</span> <span class="na">role=</span><span class="s">&quot;tablist&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#overview&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Overview<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#course-structure&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Course Structure<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#course-structure-2&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Course Structure 2<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/layouts/fake-tab/#requirements&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Entry Requirements<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#fees&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Fees <span class="ni">&amp;amp;</span> Scholarships<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#apply&quot;</span> <span class="na">role=</span><span class="s">&quot;tab&quot;</span><span class="nt">&gt;</span>Apply now<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/nav&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab&quot;</span> <span class="na">id=</span><span class="s">&quot;overview&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;alt&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;half&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;section&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;video&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;iframe</span> <span class="na">allowfullscreen=</span><span class="s">&quot;&quot;</span> <span class="na">frameborder=</span><span class="s">&quot;0&quot;</span> <span class="na">height=</span><span class="s">&quot;315&quot;</span> <span class="na">src=</span><span class="s">&quot;//www.youtube.com/embed/_r4_yME4I54&quot;</span> <span class="na">title=</span><span class="s">&quot;video player&quot;</span> <span class="na">width=</span><span class="s">&quot;560&quot;</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/section&gt;</span>
+          <span class="nt">&lt;section&gt;</span>
+            <span class="nt">&lt;div&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                Become a flexible, knowledgeable and highly capable veterinary scientist, who can easily work overseas
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;ticked-list&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  Four-year graduate entry program, including a final year of lecture-free practical training in our Veterinary Hospital and at other approved sites
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  International recognition through accreditation by the Australasian Veterinary Boards Council, American Veterinary Medicine Association and Royal College of Veterinary Surgeons
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  An interesting range of study areas taught in a stimulating way—tapping into the wealth of experience of our team of expert veterinarians
+                <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;/section&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;section&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>
+          Course Description
+        <span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            Internationally recognised and trained staff with extensive experience in veterinary education, advanced practice and research
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            Accessibility for local, rural and international students
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            Opportunities to pursue scientific investigations in a dynamic research environment
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            A positive cohort experience for our local and international students, with active mentorship by our dedicated teaching staff
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            Excellent networking, placement and employment opportunities, arising from our strong national and international links with the veterinary profession, agricultural and animal health industries and research agencies
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">&quot;full-width&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">&quot;Ben Porter - Veterinary Science Graduate&quot;</span> <span class="na">src=</span><span class="s">&quot;http://bespoke-production.s3.amazonaws.com/fvas/assets/e3/3a6890237111e4aa475185b3e3c0f7/e4526840237111e4aba6edc721c0fd06_content_image.jpg&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/figure&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          The DVM curriculum embraces the latest clinical technologies and evidenced-based practices. It has been developed around five learning domains, which infuse every subject and are based around the attributes of a veterinary scientist:
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            The scientific basis of clinical practice
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            Ethics and animal welfare
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            Biosecurity and population health
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            Clinical skills
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            Personal and professional development
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button-hero&quot;</span> <span class="na">data-tab=</span><span class="s">&quot;2&quot;</span> <span class="na">href=</span><span class="s">&quot;#degree&quot;</span><span class="nt">&gt;</span>Next : See what subjects you’ll be studying<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab&quot;</span> <span class="na">id=</span><span class="s">&quot;course-structure&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;with-aside left&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+          <span class="nt">&lt;aside&gt;</span>
+            <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;subtitle&quot;</span><span class="nt">&gt;</span>
+              Degree Structure
+            <span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              The Doctor of Veterinary Medicine is<span class="ni">&amp;nbsp;</span> four years full-time, and is delivered at the Parkville campus (Years One and Two) and at the Werribee campus (Years Three and Four).
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              The Doctor of Veterinary Medicine (DVM) can be taken in three years via the ‘accelerated pathway’ if you have a Bachelor of Science degree from the University of Melbourne with a major in Animal Health and Disease (Veterinary Bioscience specialisation) and meet the<span class="nt">&lt;br&gt;</span>entry requirements.<span class="nt">&lt;/br&gt;</span>
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;degree-plan-nav inner-nav-tab&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;current&quot;</span> <span class="na">data-no-scroll=</span><span class="s">&quot;true&quot;</span> <span class="na">href=</span><span class="s">&quot;#doctor-of-veterinary-medicine-4-years&quot;</span><span class="nt">&gt;</span> Doctor of Veterinary Medicine  (4 years)<span class="nt">&lt;/a&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">data-no-scroll=</span><span class="s">&quot;true&quot;</span> <span class="na">href=</span><span class="s">&quot;#doctor-of-veterinary-medicine-accelerated-pathway-3-years&quot;</span><span class="nt">&gt;</span> Doctor of Veterinary Medicine  - Accelerated Pathway (3 years)<span class="nt">&lt;/a&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+          <span class="nt">&lt;/aside&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bside&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;degree-plan-section&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;degree-plan mobile-wrap inner-nav-page current&quot;</span> <span class="na">id=</span><span class="s">&quot;doctor-of-veterinary-medicine-4-years&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>
+                  Doctor of Veterinary Medicine  (4 years)
+                <span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;course-progression&quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;thead&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        Year 1 - Year Long
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/thead&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th&gt;&lt;/th&gt;</span>
+                      <span class="nt">&lt;th&gt;</span>
+                        Points
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Veterinary Bioscience 1
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        62.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Veterinary Bioscience 1
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          VETS70003 Veterinary Bioscience 1 takes an integrated and interdisciplinary approach to the study of organ function and dysfunction in animals. Building on students’ prior knowledge and experience of scientific thinking, this subject introduces students to the structure and normal functioning of the digestive, metabolic, excretory, and cardiorespiratory systems, and to the principles of dysfunction of these systems. Students will be introduced to the clinical disciplines of pharmacology and therapeutics, diagnostic imaging and clinical pathology. Using case based teaching approaches students will apply their understanding of organ and system function and dysfunction to authentic situation...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70003&quot;</span><span class="nt">&gt;</span> VETS70003<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Applications in Animal Health 1
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        37.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Applications in Animal Health 1
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          VETS70006 Applications in Animal Health 1 provides students with a comprehensive introduction to the principles of animal health in individual animals and in populations of animals. Each of the six determinants of health ( genetics, environment, nutrition, welfare, infectious disease and exposure to toxic agents) is explored with reference to authentic case studies. Appreciation of the multifactorial nature of health determination is then developed as students apply their understanding to cases that require integration of multiple principles in the analysis of animal health issues. Through industry based placements as well as case based syndicate work, students apply their understanding o...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70006&quot;</span><span class="nt">&gt;</span> VETS70006<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                <span class="nt">&lt;/table&gt;</span>
+                <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;course-progression&quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;thead&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        Year 2 - Year Long
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/thead&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th&gt;&lt;/th&gt;</span>
+                      <span class="nt">&lt;th&gt;</span>
+                        Points
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Veterinary Bioscience 2
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        43.75
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Veterinary Bioscience 2
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          VETS70004 Veterinary Bioscience 2 continues the integrated and interdisciplinary approach to the study of organ function and dysfunction in animals that is introduced in Veterinary Bioscience 1. Building on students’ prior knowledge of organ function and dysfunction and their experience of scientific and clinical reasoning, this subject introduces students to the structure and normal functioning of the haemopoietic and lymphoreticular, locomotory and integumentary, reproductive and nervous and endocrine systems, and to the principles of dysfunction of these systems. Students will be introduced to the clinical disciplines of pharmacology and therapeutics, diagnostic imaging and clinical pa...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70004&quot;</span><span class="nt">&gt;</span> VETS70004<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Infections Population and Public Health
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        43.75
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Infections Population and Public Health
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject introduces students to the study of infectious agents as causes of disease in animals. It includes as appropriate, taxonomic and life cycle considerations of arthropods, nematodes, trematodes and cestodes, protozoa, fungi, bacteria and viruses; the host-parasite interaction and the pathogenesis of disease, disease transmission and epidemiology, methods of diagnosis of infectious disease as well as vaccination and treatment. This understanding is then applied to the public health and food safety context where the focus is on promotion and protection of human health; and to the herd or flock level, where the multifactorial nature of disease is reviewed, and techniques for measu...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70005&quot;</span><span class="nt">&gt;</span> VETS70005<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Applications in Animal Health 2
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        12.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Applications in Animal Health 2
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject introduces students to principles of animal health and production in the context of specific animal production industries.During placement in animal production industry, animal welfare and zoo settings, students acquire skills in animal handling and observe and participate in a range of animal management practices. Integrating knowledge and understanding derived from every subject in their course, students evaluate issues relating to animal health, welfare and production and conduct critical analysis of data provided to them. Successful completion of this subject will be based on participation in the requisite number of approved placements and submission of written reports.
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70008&quot;</span><span class="nt">&gt;</span> VETS70008<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                <span class="nt">&lt;/table&gt;</span>
+                <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;course-progression&quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;thead&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        Year 3 - Year Long
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/thead&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th&gt;&lt;/th&gt;</span>
+                      <span class="nt">&lt;th&gt;</span>
+                        Points
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Companion Animal Medicine and Surgery
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        37.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Companion Animal Medicine and Surgery
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject will be comprised of the following two modules. In both units within this subject a “clinical presentation” approach will be taken to the discussion of diseases of animals, their diagnosis, prevention and treatment. Dogs, cats and miscellaneous companion animalsclinical signs, diagnosis, treatment, prevention and public health aspects of infectious diseases of dogs and cats clinical signs, diagnosis and medical and surgical management of diseases of the neuroendocrine, musculoskeletal, haematopoietic, lymphoreticular, alimentary, cardiovascular, respiratory and urogenital systems, eyes and ears of dogs and cats clinical signs, diagnosis and treatment of poisonings of dogs a...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70011&quot;</span><span class="nt">&gt;</span> VETS70011<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Production Animal Medicine and Surgery
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        37.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Production Animal Medicine and Surgery
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject is comprised of the following four modules. CattlePhysical examination of cattle Diseases of the alimentary, respiratory, musculoskeletal, haematopoietic, lymphoreticular, urinary, nervous and cardiovascular systems and skin of cattle Diseases of calves Diseases of cattle in northern Australia Diseases of cattle that manifest as poor growth or wasting Disease of cattle that manifest as lameness Disease of cattle that manifest as sudden death Diseases of cattle in which recumbency is a primary sign Exotic diseases of cattle Zoonotic diseases of cattle Mastitis, milk quality and conditions of the udder and teats of cattle Management of reproduction and reproductive diseases o...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70010&quot;</span><span class="nt">&gt;</span> VETS70010<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Principles of Professional Practice
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        25
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Principles of Professional Practice
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject adopts a cross-species comparative approach, and has a focus on student acquisition of “clinic readiness” in areas such as anaesthesiology, imaging, principles of surgery, oncology, emergency medicine, economics and business skills, and consultation technique. As some of these principles (for examples principles of imaging) will be required in other subjects studied during this year, they will be taught during an intensive period at the start of the year. Others (for example practice economics and business skills) may form part of the “transition to the clinic” program at the conclusion of DVM3. Students will be introduced to principles of the diagnostic process, consultation...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70007&quot;</span><span class="nt">&gt;</span> VETS70007<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                <span class="nt">&lt;/table&gt;</span>
+                <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;course-progression&quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;thead&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        Year 4 - Year Long
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/thead&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th&gt;&lt;/th&gt;</span>
+                      <span class="nt">&lt;th&gt;</span>
+                        Points
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Veterinary Professional Practice
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        100
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Veterinary Professional Practice
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject is undertaken as a series of 25 weeks of scheduled clinical rotations, internally within the University Veterinary Hospital and in external placements, 19 weeks on extramural elective placements, and concludes with a one week capstone &#39;transition to the workplace&#39; lecture and workshop series. The subject comprises 45 weeks of study. This subject addresses and assesses the five core learning domains of Veterinary Professional Practice:Personal and Professional Development The Scientific Basis of Clinical Practice Clinical Skills Ethics and Animal Welfare, and Biosecurity and Population Health.The internal rotations include training in clinical disciplines such as; general ...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70009&quot;</span><span class="nt">&gt;</span> VETS70009<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                <span class="nt">&lt;/table&gt;</span>
+              <span class="nt">&lt;/div&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mobile-wrap degree-plan inner-nav-page&quot;</span> <span class="na">id=</span><span class="s">&quot;doctor-of-veterinary-medicine-accelerated-pathway-3-years&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>
+                  Doctor of Veterinary Medicine  - Accelerated Pathway (3 years)
+                <span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;course-progression&quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;thead&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        Year 1 - Semester 1  (Year 3 of the Bachelor of Science Veterinary Bioscience specialisation)
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/thead&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th&gt;&lt;/th&gt;</span>
+                      <span class="nt">&lt;th&gt;</span>
+                        Points
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Veterinary Bioscience: Cells to Systems
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        12.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Veterinary Bioscience: Cells to Systems
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This capstone subject takes a multi-disciplinary approach to the investigation of health and disease in domestic animals. Students will be introduced to the structural and functional organisational units of the body and to the fundamental principles of veterinary anatomy, physiology, biochemistry, pharmacology, general pathology and immunology. Students will gain a theoretical knowledge and practical laboratory skills that are fundamental to an appraisal of the health of domestic animals.
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS30015&quot;</span><span class="nt">&gt;</span> VETS30015<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Veterinary Bioscience: Digestive System
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        12.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Veterinary Bioscience: Digestive System
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          Using clinical cases to illustrate principles, this subject examines the structure, function and potenor dysfunction of the digestive system of the major domestic animal species. As students develop an understanding of the mechanisms of disease of this system, they will develop skills in the clinical evaluation of it and in the interpretation of relevant diagnostic procedures.
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS30016&quot;</span><span class="nt">&gt;</span> VETS30016<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Veterinary Bioscience: Metab <span class="ni">&amp;amp;</span> Excretion
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        12.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Veterinary Bioscience: Metab <span class="ni">&amp;amp;</span> Excretion
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          Using clinical cases to illustrate principles, this subject introduces students to the normal structure and function of the hepatobiliary system and urinary tract of the domestic animals, the disease processes that may affect these systems, and the causes and potential consequences of such disease. Students will develop skills in the clinical evaluation of the liver and urinary tract, including the selection and analysis of diagnostic tests of hepatic and renal function.
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS30017&quot;</span><span class="nt">&gt;</span> VETS30017<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Science Breadth Subject
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Science Breadth Subject
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Elective
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                <span class="nt">&lt;/table&gt;</span>
+                <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;course-progression&quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;thead&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        Year 1 - Semester 2  (Year 3 of the Bachelor of Science Veterinary Bioscience specialisation)
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/thead&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th&gt;&lt;/th&gt;</span>
+                      <span class="nt">&lt;th&gt;</span>
+                        Points
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Veterinary Bioscience: Cardiovasc System
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        12.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Veterinary Bioscience: Cardiovasc System
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          Using clinical cases to illustrate principles, this subject examines the structure, function and potential for dysfunction of the cardiovascular system of the major domestic animal species. As students develop an understanding of the mechanisms of disease of this system, they will develop skills in the clinincal evalution of it and in the interpretation of relevant diagnostic procedures.
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS30014&quot;</span><span class="nt">&gt;</span> VETS30014<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Veterinary Bioscience:Respiratory System
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        12.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Veterinary Bioscience:Respiratory System
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          Using clinical cases to illustrate principles, this subject examines the structure, function and potential for dysfunction of the respiratory system of the major domestic animal species. As students develop an understanding of the mechanisms of disease of this system, they will develop skills in the clinical evaluation of it and in the interpretation of relevant diagnostic procedures.
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS30018&quot;</span><span class="nt">&gt;</span> VETS30018<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Animal Health in Production Systems
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        12.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Animal Health in Production Systems
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject examines the major animal production systems in Australia, with a particular focus on the impact of management practices on the health and welfare of animal populations. Students will develop an appreciation of the economic drivers of these industries, measures of productivity utilised within these industries, and the role of the veterinary profession in ensuring the health and well being of animals.
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS30013&quot;</span><span class="nt">&gt;</span> VETS30013<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Science Breadth Subject
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Science Breadth Subject
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Elective
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                <span class="nt">&lt;/table&gt;</span>
+                <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;course-progression&quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;thead&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        Year 2 - Year Long
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/thead&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th&gt;&lt;/th&gt;</span>
+                      <span class="nt">&lt;th&gt;</span>
+                        Points
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Veterinary Bioscience 2
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        43.75
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Veterinary Bioscience 2
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          VETS70004 Veterinary Bioscience 2 continues the integrated and interdisciplinary approach to the study of organ function and dysfunction in animals that is introduced in Veterinary Bioscience 1. Building on students’ prior knowledge of organ function and dysfunction and their experience of scientific and clinical reasoning, this subject introduces students to the structure and normal functioning of the haemopoietic and lymphoreticular, locomotory and integumentary, reproductive and nervous and endocrine systems, and to the principles of dysfunction of these systems. Students will be introduced to the clinical disciplines of pharmacology and therapeutics, diagnostic imaging and clinical pa...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70004&quot;</span><span class="nt">&gt;</span> VETS70004<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Infections Population and Public Health
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        43.75
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Infections Population and Public Health
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject introduces students to the study of infectious agents as causes of disease in animals. It includes as appropriate, taxonomic and life cycle considerations of arthropods, nematodes, trematodes and cestodes, protozoa, fungi, bacteria and viruses; the host-parasite interaction and the pathogenesis of disease, disease transmission and epidemiology, methods of diagnosis of infectious disease as well as vaccination and treatment. This understanding is then applied to the public health and food safety context where the focus is on promotion and protection of human health; and to the herd or flock level, where the multifactorial nature of disease is reviewed, and techniques for measu...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70005&quot;</span><span class="nt">&gt;</span> VETS70005<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Applications in Animal Health 2
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        12.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Applications in Animal Health 2
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject introduces students to principles of animal health and production in the context of specific animal production industries.During placement in animal production industry, animal welfare and zoo settings, students acquire skills in animal handling and observe and participate in a range of animal management practices. Integrating knowledge and understanding derived from every subject in their course, students evaluate issues relating to animal health, welfare and production and conduct critical analysis of data provided to them. Successful completion of this subject will be based on participation in the requisite number of approved placements and submission of written reports.
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70008&quot;</span><span class="nt">&gt;</span> VETS70008<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                <span class="nt">&lt;/table&gt;</span>
+                <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;course-progression&quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;thead&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        Year 3 - Year Long
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/thead&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th&gt;&lt;/th&gt;</span>
+                      <span class="nt">&lt;th&gt;</span>
+                        Points
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Companion Animal Medicine and Surgery
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        37.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Companion Animal Medicine and Surgery
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject will be comprised of the following two modules. In both units within this subject a “clinical presentation” approach will be taken to the discussion of diseases of animals, their diagnosis, prevention and treatment. Dogs, cats and miscellaneous companion animalsclinical signs, diagnosis, treatment, prevention and public health aspects of infectious diseases of dogs and cats clinical signs, diagnosis and medical and surgical management of diseases of the neuroendocrine, musculoskeletal, haematopoietic, lymphoreticular, alimentary, cardiovascular, respiratory and urogenital systems, eyes and ears of dogs and cats clinical signs, diagnosis and treatment of poisonings of dogs a...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70011&quot;</span><span class="nt">&gt;</span> VETS70011<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Production Animal Medicine and Surgery
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        37.50
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Production Animal Medicine and Surgery
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject is comprised of the following four modules. CattlePhysical examination of cattle Diseases of the alimentary, respiratory, musculoskeletal, haematopoietic, lymphoreticular, urinary, nervous and cardiovascular systems and skin of cattle Diseases of calves Diseases of cattle in northern Australia Diseases of cattle that manifest as poor growth or wasting Disease of cattle that manifest as lameness Disease of cattle that manifest as sudden death Diseases of cattle in which recumbency is a primary sign Exotic diseases of cattle Zoonotic diseases of cattle Mastitis, milk quality and conditions of the udder and teats of cattle Management of reproduction and reproductive diseases o...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70010&quot;</span><span class="nt">&gt;</span> VETS70010<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Principles of Professional Practice
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        25
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Principles of Professional Practice
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject adopts a cross-species comparative approach, and has a focus on student acquisition of “clinic readiness” in areas such as anaesthesiology, imaging, principles of surgery, oncology, emergency medicine, economics and business skills, and consultation technique. As some of these principles (for examples principles of imaging) will be required in other subjects studied during this year, they will be taught during an intensive period at the start of the year. Others (for example practice economics and business skills) may form part of the “transition to the clinic” program at the conclusion of DVM3. Students will be introduced to principles of the diagnostic process, consultation...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70007&quot;</span><span class="nt">&gt;</span> VETS70007<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                <span class="nt">&lt;/table&gt;</span>
+                <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">&quot;course-progression&quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;thead&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        Year 4 - Year Long
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/thead&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr&gt;</span>
+                      <span class="nt">&lt;th&gt;&lt;/th&gt;</span>
+                      <span class="nt">&lt;th&gt;</span>
+                        Points
+                      <span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                  <span class="nt">&lt;tbody&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__title&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        Veterinary Professional Practice
+                      <span class="nt">&lt;/td&gt;</span>
+                      <span class="nt">&lt;td&gt;</span>
+                        100
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">&quot;accordion__hidden&quot;</span><span class="nt">&gt;</span>
+                      <span class="nt">&lt;td</span> <span class="na">class=</span><span class="s">&quot;unit-description&quot;</span> <span class="na">colspan=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;h2&gt;</span>
+                          Veterinary Professional Practice
+                        <span class="nt">&lt;/h2&gt;</span>
+                        <span class="nt">&lt;p&gt;</span>
+                          This subject is undertaken as a series of 25 weeks of scheduled clinical rotations, internally within the University Veterinary Hospital and in external placements, 19 weeks on extramural elective placements, and concludes with a one week capstone &#39;transition to the workplace&#39; lecture and workshop series. The subject comprises 45 weeks of study. This subject addresses and assesses the five core learning domains of Veterinary Professional Practice:Personal and Professional Development The Scientific Basis of Clinical Practice Clinical Skills Ethics and Animal Welfare, and Biosecurity and Population Health.The internal rotations include training in clinical disciplines such as; general ...
+                        <span class="nt">&lt;/p&gt;</span>
+                        <span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Detailed Information<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://handbook.unimelb.edu.au/view/2014/VETS70009&quot;</span><span class="nt">&gt;</span> VETS70009<span class="nt">&lt;/a&gt;</span>
+                        <span class="nt">&lt;/div&gt;</span>
+                        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;col1_3&quot;</span><span class="nt">&gt;</span>
+                          <span class="nt">&lt;strong&gt;</span>Type<span class="nt">&lt;/strong&gt;</span>Core
+                        <span class="nt">&lt;/div&gt;</span>
+                      <span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;/tr&gt;</span>
+                  <span class="nt">&lt;/tbody&gt;</span>
+                <span class="nt">&lt;/table&gt;</span>
+              <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;section&gt;</span>
+              <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button-hero&quot;</span> <span class="na">data-tab=</span><span class="s">&quot;3&quot;</span> <span class="na">href=</span><span class="s">&quot;#course-structure-2&quot;</span><span class="nt">&gt;</span> Next : Course Structure 2<span class="nt">&lt;/a&gt;</span>
+              <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/section&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab&quot;</span> <span class="na">id=</span><span class="s">&quot;course-structure-2&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;with-aside left&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+          <span class="nt">&lt;aside&gt;</span>
+            <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;subtitle&quot;</span><span class="nt">&gt;</span>
+              Second inner tab test
+            <span class="nt">&lt;/h2&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              The Doctor of Veterinary Medicine is<span class="ni">&amp;nbsp;</span> four years full-time, and is delivered at the Parkville campus (Years One and Two) and at the Werribee campus (Years Three and Four).
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;degree-plan-nav inner-nav-tab&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;current&quot;</span> <span class="na">data-no-scroll=</span><span class="s">&quot;true&quot;</span> <span class="na">href=</span><span class="s">&quot;#inner-2&quot;</span><span class="nt">&gt;</span>Inner 2<span class="nt">&lt;/a&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;li&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">data-no-scroll=</span><span class="s">&quot;true&quot;</span> <span class="na">href=</span><span class="s">&quot;#inner-3&quot;</span><span class="nt">&gt;</span>Inner 3<span class="nt">&lt;/a&gt;</span>
+              <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+          <span class="nt">&lt;/aside&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bside&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;degree-plan-section&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;degree-plan mobile-wrap inner-nav-page current&quot;</span> <span class="na">id=</span><span class="s">&quot;inner-2&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>
+                  Inner 2
+                <span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;p&gt;</span>
+                  Lorem ipsum
+                <span class="nt">&lt;/p&gt;</span>
+              <span class="nt">&lt;/div&gt;</span>
+              <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;degree-plan mobile-wrap inner-nav-page&quot;</span> <span class="na">id=</span><span class="s">&quot;inner-3&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;h2&gt;</span>
+                  Inner 3!
+                <span class="nt">&lt;/h2&gt;</span>
+                <span class="nt">&lt;p&gt;</span>
+                  Lorem ipsum
+                <span class="nt">&lt;/p&gt;</span>
+              <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;section&gt;</span>
+              <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button-hero&quot;</span> <span class="na">href=</span><span class="s">&quot;fake-tab#requirements&quot;</span><span class="nt">&gt;</span>Next : Entry requirements<span class="nt">&lt;/a&gt;</span>
+              <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/section&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab&quot;</span> <span class="na">id=</span><span class="s">&quot;fees&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;with-aside&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bside&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;section&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                Fees for international graduate students
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;p&gt;</span>
+                The course fee per year is calculated on the basis of one full-time year of study (1 EFTSL). If a course duration is less than one year, you will pay the indicative total course fee. Actual fees vary depending on the subjects you are taking. The University reviews fees annually. The indicative total course fee is based on typical subject enrolments, and includes an indexation of 5% per annum. <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://futurestudents.unimelb.edu.au/admissions/fees&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span> More information about tuition fees<span class="nt">&lt;/a&gt;</span>
+              <span class="nt">&lt;/p&gt;</span>
+              <span class="nt">&lt;p&gt;</span>
+                If you are an international student, you may be eligible for a range of scholarships or grants.
+              <span class="nt">&lt;/p&gt;</span>
+              <span class="nt">&lt;p&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/contact-us&quot;</span><span class="nt">&gt;</span> Please contact the School to find out more<span class="nt">&lt;/a&gt;</span>
+              <span class="nt">&lt;/p&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                Coursework Scholarships and Bursaries
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;p&gt;</span>
+                A number of scholarships and bursaries are available for coursework students studying Veterinary Science, to assist with study and living expenses, and the costs associated with undertaking veterinary placements.
+              <span class="nt">&lt;/p&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                Administered by the Faculty of Veterinary and Agricultural Sciences
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.vet.unimelb.edu.au/docs/NobleStewartHamilton.pdf&quot;</span><span class="nt">&gt;</span> Nobel Stewart Hamilton Scholarship<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.vet.unimelb.edu.au/docs/RuralVetStudent.pdf&quot;</span><span class="nt">&gt;</span> Rural Veterinary Students Scholarship<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.vet.unimelb.edu.au/docs/GannonScholarship2014.pdf&quot;</span><span class="nt">&gt;</span> Dr James (Jim) Richard Gannon Scholarship<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.vet.unimelb.edu.au/docs/MartinLewisEastScholarshipForExcellenceInVeterinaryScienceTermsAndConditions.pdf&quot;</span><span class="nt">&gt;</span> Martin Lewis East Memorial Scholarship for Excellence in Veterinary Science<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.vet.unimelb.edu.au/docs/MartinLewisEastScholarshipForStudentsInVeterinaryScience.pdf&quot;</span><span class="nt">&gt;</span> Martin Lewis East Scholarship for Students in Veterinary Science<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.unimelb.edu.au/unisec/awards/vetscience.html#11&quot;</span><span class="nt">&gt;</span> Robert Neville McCarthy Scholarship<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.unimelb.edu.au/unisec/utr/utr6072.html#99&quot;</span><span class="nt">&gt;</span> Maud Isabella Aird Scholarship<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.unimelb.edu.au/unisec/utr/pdf/utr6110.pdf&quot;</span><span class="nt">&gt;</span> Loxton Bequest Scholarship<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.vet.unimelb.edu.au/docs/WildlifeConfBursaries.pdf&quot;</span><span class="nt">&gt;</span> Wildlife Diseases Association (Australasian Section) – conference bursaries<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                Travel Bursaries
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.vet.unimelb.edu.au/docs/TravelBursaries2014.pdf&quot;</span><span class="nt">&gt;</span> Travel Bursaries<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.vet.unimelb.edu.au/docs/MaggsJohnsonBursary.pdf&quot;</span><span class="nt">&gt;</span> Maggs Johnson Travel Bursary<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                Other University of Melbourne scholarships
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://futurestudents.unimelb.edu.au/admissions/pathways/graduate-access-melbourne/graduate_equity_scholarships&quot;</span><span class="nt">&gt;</span> Graduate Access Melbourne (GAM) bursaries<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://services.unimelb.edu.au/scholarships/grad/local/future_gen_masters&quot;</span><span class="nt">&gt;</span> Future Generations Students scholarships<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                Additional scholarships via Melbourne Scholarships Office
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://services.unimelb.edu.au/scholarships/&quot;</span><span class="nt">&gt;</span> http://services.unimelb.edu.au/scholarships/<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                Residential College Scholarships
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.trinity.unimelb.edu.au/learning/residential-college/scholarships.html&quot;</span><span class="nt">&gt;</span> Trinity College<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ormond.unimelb.edu.au/future-students/graduates/financial-assistance&quot;</span><span class="nt">&gt;</span> Ormond College<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                Travel funding through Melbourne Global Mobility
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.mobility.unimelb.edu.au/outbound/funding/exchange-funding.html#grant&quot;</span><span class="nt">&gt;</span> Global Grants<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.mobility.unimelb.edu.au/outbound/funding/exchange-funding.html#assistance&quot;</span><span class="nt">&gt;</span> Global Financial Assistance<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                Externally administered Scholarships
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;p&gt;</span>
+                This is not an exhaustive list. Students are encouraged to consult organisations including government to investigate further scholarship opportunities.
+              <span class="nt">&lt;/p&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.gardinerfoundation.com.au/programs/scholarship.htm&quot;</span><span class="nt">&gt;</span> Gardiner Foundation Dairy Scholarship<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.ava.gov.sg/Careers/Scholarships/&quot;</span><span class="nt">&gt;</span> Agri-Food <span class="ni">&amp;amp;</span> Veterinary Authority of Singapore<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                Other Financial Assistance
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;p&gt;</span>
+                Grants, Scholarships and Bursaries – administered by Financial Aid
+              <span class="nt">&lt;/p&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://services.unimelb.edu.au/finaid&quot;</span><span class="nt">&gt;</span> http://services.unimelb.edu.au/finaid<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                Government Assistance
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://studyassist.gov.au/sites/studyassist/helppayingmyfees/fee-help/&quot;</span><span class="nt">&gt;</span> FEE-HELP<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://studyassist.gov.au/sites/studyassist/helppayingmyfees/hecs-help/pages/hecs-help-welcome&quot;</span><span class="nt">&gt;</span> HECS-HELP<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.humanservices.gov.au/customer/services/centrelink/&quot;</span><span class="nt">&gt;</span> Centrelink<span class="nt">&lt;/a&gt;</span>
+                  <span class="nt">&lt;ul&gt;</span>
+                    <span class="nt">&lt;li&gt;</span>
+                      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.humanservices.gov.au/customer/services/centrelink/austudy&quot;</span><span class="nt">&gt;</span> Austudy<span class="nt">&lt;/a&gt;</span>
+                    <span class="nt">&lt;/li&gt;</span>
+                    <span class="nt">&lt;li&gt;</span>
+                      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://www.humanservices.gov.au/customer/services/centrelink/youth-allowance&quot;</span><span class="nt">&gt;</span> Youth Allowance<span class="nt">&lt;/a&gt;</span>
+                    <span class="nt">&lt;/li&gt;</span>
+                  <span class="nt">&lt;/ul&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+            <span class="nt">&lt;/section&gt;</span>
+            <span class="nt">&lt;section&gt;</span>
+              <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button-hero&quot;</span> <span class="na">data-tab=</span><span class="s">&quot;6&quot;</span> <span class="na">href=</span><span class="s">&quot;#apply&quot;</span><span class="nt">&gt;</span> Next : Apply now<span class="nt">&lt;/a&gt;</span>
+              <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;/section&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;aside&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              The fees for this degree are listed below, indicative for 2015.
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;pricing&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;h2&gt;</span>
+                400 point program
+              <span class="nt">&lt;/h2&gt;</span>
+              <span class="nt">&lt;p&gt;</span>
+                4 years full-time / part-time unavailable
+              <span class="nt">&lt;/p&gt;</span>
+              <span class="nt">&lt;h3&gt;</span>
+                $250,057 AUD
+              <span class="nt">&lt;/h3&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              The fees displayed are for international students. If you are a domestic student, please select this option at the top right of this page.
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              Typical course fee for 2015: $58,016 AUD / year
+            <span class="nt">&lt;/p&gt;</span>
+            <span class="nt">&lt;p&gt;</span>
+              Duration indicated is maximum course duration. May be completed in less EFTSL depending upon academic background and/or relevant work experience.
+            <span class="nt">&lt;/p&gt;</span>
+          <span class="nt">&lt;/aside&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tab&quot;</span> <span class="na">id=</span><span class="s">&quot;apply&quot;</span> <span class="na">role=</span><span class="s">&quot;tabpanel&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;alt&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span> <span class="na">id=</span><span class="s">&quot;anchored2&quot;</span><span class="nt">&gt;</span>
+          International applicant for graduate entry in 2015 (February intake)
+        <span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          International graduates, or international students completing their undergraduate studies by the end of 2014 can apply online or download a hardcopy <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://futurestudents.unimelb.edu.au/__data/assets/pdf_file/0004/597604/2014-UoM-Application-for-admission-as-an-international-graduate-coursework-student.pdf&quot;</span><span class="nt">&gt;</span> application form<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Applications close <span class="nt">&lt;strong&gt;</span>Tuesday 23 December 2014<span class="nt">&lt;/strong&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/section&gt;</span>
+      <span class="nt">&lt;section&gt;</span>
+        <span class="nt">&lt;h2</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>
+          Application Checklist
+        <span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;fieldset&gt;</span>
+          <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;checklist&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;on cursor&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;checked&quot;</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c-999&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c-999&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Check the degree website.<span class="nt">&lt;/span&gt;&lt;/label&gt;&lt;/input&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;cursor&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c0&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c0&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Check the entry requirements to clarify your eligibility for application<span class="nt">&lt;/span&gt;&lt;/label&gt;&lt;/input&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;cursor&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c1&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c1&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Ensure you meet the University&#39;s language requirements<span class="nt">&lt;/span&gt;&lt;/label&gt;&lt;/input&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+            <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;cursor&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c2&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span><span class="nt">&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c2&quot;</span> <span class="na">tabindex=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Apply online or via the hardcopy application form<span class="nt">&lt;/span&gt;&lt;/label&gt;&lt;/input&gt;</span>
+            <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/fieldset&gt;</span>
+      <span class="nt">&lt;/section&gt;</span>
+      <span class="nt">&lt;section&gt;</span>
+        <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button cta&quot;</span> <span class="na">href=</span><span class="s">&quot;http://futurestudents.unimelb.edu.au/admissions/applications/grad-int&quot;</span><span class="nt">&gt;</span> Start your online application<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/section&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
