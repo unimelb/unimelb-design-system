@@ -4,6 +4,7 @@
  * @param  {Object} props
  */
 function JumpNav(props) {
+  this.el = document.querySelector('#outer.jump-navigation');
   this.props = props;
 
   if (/(Firefox)/g.test(navigator.userAgent) || /(Trident)/g.test(navigator.userAgent)) {
@@ -26,21 +27,25 @@ function JumpNav(props) {
     this.props.header = this.props.root.firstElementChild;
 
   // Build nav menu
-  this.buildNavMenu();
+  if (!this.el || !this.el.hasAttribute('data-bound')) {
+    this.buildNavMenu();
 
-  if (MSIE_version > 8) {
-    // Calculations for transition points, delay after page render
-    setTimeout(this.initCalcs.bind(this), 1000);
+    if (MSIE_version > 8) {
+      // Calculations for transition points, delay after page render
+      setTimeout(this.initCalcs.bind(this), 1000);
 
-    // Event binding
-    if ('onscroll' in window.window)
-      window.addEventListener('scroll', this.handleScroll.bind(this));
+      // Event binding
+      if ('onscroll' in window.window)
+        window.addEventListener('scroll', this.handleScroll.bind(this));
 
-    if ('onresize' in window.window)
-      window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
+      if ('onresize' in window.window)
+        window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
 
-    // Initial calc
-    this.trackProgress();
+      // Initial calc
+      this.trackProgress();
+    }
+
+    this.el.setAttribute('data-bound', true);
   }
 }
 

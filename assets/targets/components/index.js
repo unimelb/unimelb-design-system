@@ -18,28 +18,60 @@ WebFont.load({
   ] }
 });
 
-// replace with viewloader eventually
+window.UOMbind = function(component) {
+  "use strict";
+
+  if (!component)
+    return -1;
+
+  var recs, i, attachment, Base;
+
+  if (component === 'accordion') {
+    attachment = '.accordion__title';
+
+  } else if (component === 'modal') {
+    attachment = '[data-modal-target]';
+
+  } else if (component === 'tabs') {
+    attachment = '[data-tabbed]';
+
+  } else if (component === 'inpage-navigation') {
+    attachment = 'a[href^="#"]';
+
+  } else if (component === 'checklist') {
+    attachment = 'ul.checklist[data-unlock-target]';
+
+  } else if (component === 'filtered-listings') {
+    attachment = 'form.filtered-listing-select';
+
+  } else if (component === 'icons') {
+    attachment = '[data-icon]';
+
+  } else if (component === 'forms') {
+    attachment = 'form[data-validate]';
+
+  } else if (component === 'tables') {
+    attachment = 'table';
+  }
+
+  if (attachment) {
+    recs = document.querySelectorAll(attachment);
+    if (recs.length > 0) {
+      Base = require("./" + component + '/index.js');
+      for (i=recs.length - 1; i >= 0; i--)
+        new Base(recs[i], {});
+    }
+  }
+};
+
 window.UOMloadComponents = function() {
   "use strict";
 
-  var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
-    JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
-    ListFilter, MobileTableHelper, IconHelper, ImageGallery, imagesLoaded,
-    slingshot, LMaps, style, script;
+  var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect,
+    ImageGallery, imagesLoaded, slingshot, LMaps, style, script;
 
-  recs = document.querySelectorAll('.accordion__title');
-  if (recs.length > 0) {
-    Accordion = require("./accordion");
-    for (i=recs.length - 1; i >= 0; i--)
-      new Accordion(recs[i], {});
-  }
-
-  recs = document.querySelectorAll('[data-modal-target]');
-  if (recs.length > 0) {
-    Modal = require("./modal");
-    for (i=recs.length - 1; i >= 0; i--)
-      new Modal(recs[i], {});
-  }
+  window.UOMbind('accordion');
+  window.UOMbind('modal');
 
   recs = document.querySelectorAll('select');
   if (recs.length > 0) {
@@ -48,12 +80,7 @@ window.UOMloadComponents = function() {
       new FancySelect(recs[i], {});
   }
 
-  recs = document.querySelectorAll('[data-tabbed]');
-  if (recs.length > 0) {
-    Tabs = require("./tabs");
-    for (i=recs.length - 1; i >= 0; i--)
-      new Tabs(recs[i], {});
-  }
+  window.UOMbind('tabs');
 
   recs = document.querySelectorAll('.sidebar-tab-nav');
   if (recs.length > 0) {
@@ -70,12 +97,7 @@ window.UOMloadComponents = function() {
       new SidebarTabs(recs[i], {'selector': '.inner-nav-page'});
   }
 
-  recs = document.querySelectorAll('a[href^="#"]');
-  if (recs.length > 0) {
-    InpageNavigation = require("./inpage-navigation");
-    for (i=recs.length - 1; i >= 0; i--)
-      new InpageNavigation(recs[i], {});
-  }
+  window.UOMbind('inpage-navigation');
 
   recs = document.querySelectorAll('input[type="radio"],input[type="checkbox"]');
   if (recs.length > 0) {
@@ -84,47 +106,20 @@ window.UOMloadComponents = function() {
       new CheckboxHelper(recs[i], {});
   }
 
-  recs = document.querySelectorAll('ul.checklist[data-unlock-target]');
-  if (recs.length > 0) {
-    UnlockChecklist = require("./checklist");
-    for (i=recs.length - 1; i >= 0; i--)
-      new UnlockChecklist(recs[i], {});
-  }
-
-  recs = document.querySelectorAll('form[data-validate]');
-  if (recs.length > 0) {
-    ValidateForm = require("./forms");
-    for (i=recs.length - 1; i >= 0; i--)
-      new ValidateForm(recs[i], {});
-  }
+  window.UOMbind('checklist');
+  window.UOMbind('forms');
 
   if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1) {
     JumpNav = require("./inpage-navigation/jumpnav");
     new JumpNav({});
   }
 
-  recs = document.querySelectorAll('form.filtered-listing-select');
-  if (recs.length > 0) {
-    ListFilter = require("./filtered-listings");
-    for (i=recs.length - 1; i >= 0; i--)
-      new ListFilter(recs[i], {});
-  }
-
-  recs = document.querySelectorAll('[data-icon]');
-  if (recs.length > 0) {
-    IconHelper = require("./icons");
-    for (i=recs.length - 1; i >= 0; i--)
-      new IconHelper(recs[i], {});
-  }
+  window.UOMbind('filtered-listings');
+  window.UOMbind('icons');
 
   // IE9+
   if (MSIE_version > 8) {
-    recs = document.querySelectorAll('table');
-    if (recs.length > 0) {
-      MobileTableHelper = require("./tables");
-      for (i=recs.length - 1; i >= 0; i--)
-        new MobileTableHelper(recs[i], {});
-    }
+    window.UOMbind('tables');
 
     recs = document.querySelectorAll('ul.image-gallery');
     if (recs.length > 0) {
