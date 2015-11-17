@@ -80,6 +80,10 @@
 .uomcontent #outer {
   @extend %jump;
 
+  @include breakpoint(desktop) {
+    @include rem(padding-top, 80px);
+  }
+  
   @include breakpoint(wide) {
     display: table;
     margin-top: 33px;
