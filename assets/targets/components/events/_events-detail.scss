@@ -105,17 +105,17 @@
     p {
       padding: 0;
     }
-    
+
     .social-links {
       list-style: none;
       padding: 0;
-      
+
       & > li {
         display: inline-block;
         list-style: none;
         padding: 0;
         width: auto;
-        
+
         &:first-child {
           margin-left: 0;
         }
@@ -133,6 +133,15 @@
 
       @include breakpoint(desktop) {
         @include rem(margin-left, -300px);
+      }
+    }
+
+    h1 {
+      text-align: center;
+
+      @include breakpoint(desktop) {
+        margin-left: 0;
+        text-align: left;
       }
     }
 
@@ -185,7 +194,7 @@
     p,
     hr {
       @include breakpoint(desktop) {
-        // @include rem(margin-left, 300px);
+        margin-left: 0;
         width: auto;
       }
     }
