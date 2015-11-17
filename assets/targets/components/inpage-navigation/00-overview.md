@@ -10,7 +10,7 @@ To include this feature on your page, simply add an empty div with class <code>j
 <div class="jumpnav"></div>
 ```
 
-By default the generated navigation will take the form of a *table of contents* at the beginning of the page on smaller screens, and a *fixed menu* on the left hand side on larger screens. If you would prefer to use the *fixed menu* for all screen sizes, add the class `top` eg.
+By default the generated navigation will take the form of a *table of contents* at the beginning of the page on smaller screens, and a *fixed menu* on the left hand side on larger screens. If you would prefer to use the *table of contents* for all screen sizes, add the class `top` eg.
 
 ```html
 <div class="jumpnav top"></div>
