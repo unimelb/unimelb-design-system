@@ -1,0 +1,527 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Timeline | Web.Unimelb</title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.6</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Timeline"><span itemprop="name">Timeline</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">Timeline</h1><section><div class="jumpnav"></div>
+
+<p>A convenient way to show a linear progression of dates, times and occurences vertically on a page. Good for showing lists of dates that it is not possible to interact with (as opposed to <a href="/components/events">events</a>, which invite the user to learn more).</p>
+
+<p>Please note that the left side has a fixed width, and using non-breaking text that exceeds this width will visually break the effect.</p></section><hr /><h2 id="timeline">Timeline</h2><dl class="timeline">
+  <dt>
+    Monday <strong>24 November 2014</strong>
+  </dt>
+  <dd>
+    <span>9.00am</span>
+    <p>
+      VTAC Change of Preference period opens
+    </p>
+  </dd>
+  <dt>
+    Monday <strong>15 December 2014</strong>
+  </dt>
+  <dd>
+    <span>7.00am</span>
+    <p>
+      VCE results and ATARs available online
+    </p>
+  </dd>
+  <dt>
+    Wednesday <strong>17 December 2014</strong>
+  </dt>
+  <dd>
+    <span>10.00am–2.30pm</span>
+    <p>
+      University of Melbourne Course Information Day
+    </p>
+  </dd>
+  <dt>
+    Monday <strong>22 December 2014</strong>
+  </dt>
+  <dd>
+    <span>9.00am</span>
+    <p>
+      Change of Preference period closes
+    </p>
+    <p>
+      Applies to all VTAC applicants excluding QLD, WA, IB and NZ NCEA Year 12 applicants. Make sure you complete any changes well before the deadline!
+    </p>
+  </dd>
+  <dt>
+    Monday  <strong>5 January 2015</strong>
+  </dt>
+  <dd>
+    <span>4.00pm</span>
+    <p>
+      Change of Preference period closes (QLD, WA, IB and NZ NCEA Year 12 applicants)
+    </p>
+  </dd>
+</dl>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">&quot;timeline&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>
+    Monday <span class="nt">&lt;strong&gt;</span>24 November 2014<span class="nt">&lt;/strong&gt;</span>
+  <span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>
+    <span class="nt">&lt;span&gt;</span>9.00am<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      VTAC Change of Preference period opens
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>
+    Monday <span class="nt">&lt;strong&gt;</span>15 December 2014<span class="nt">&lt;/strong&gt;</span>
+  <span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>
+    <span class="nt">&lt;span&gt;</span>7.00am<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      VCE results and ATARs available online
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>
+    Wednesday <span class="nt">&lt;strong&gt;</span>17 December 2014<span class="nt">&lt;/strong&gt;</span>
+  <span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>
+    <span class="nt">&lt;span&gt;</span>10.00am–2.30pm<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      University of Melbourne Course Information Day
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>
+    Monday <span class="nt">&lt;strong&gt;</span>22 December 2014<span class="nt">&lt;/strong&gt;</span>
+  <span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>
+    <span class="nt">&lt;span&gt;</span>9.00am<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Change of Preference period closes
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Applies to all VTAC applicants excluding QLD, WA, IB and NZ NCEA Year 12 applicants. Make sure you complete any changes well before the deadline!
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/dd&gt;</span>
+  <span class="nt">&lt;dt&gt;</span>
+    Monday  <span class="nt">&lt;strong&gt;</span>5 January 2015<span class="nt">&lt;/strong&gt;</span>
+  <span class="nt">&lt;/dt&gt;</span>
+  <span class="nt">&lt;dd&gt;</span>
+    <span class="nt">&lt;span&gt;</span>4.00pm<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Change of Preference period closes (QLD, WA, IB and NZ NCEA Year 12 applicants)
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/dd&gt;</span>
+<span class="nt">&lt;/dl&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="timeline-as-figures">Timeline as figures</h2><section class="with-figure">
+  <figure class="inset-left" role="group">
+    <dl class="timeline">
+      <dt>
+        Monday <strong>24 November 2014</strong>
+      </dt>
+      <dd>
+        <span>9.00am</span>
+        <p>
+          VTAC Change of Preference period opens
+        </p>
+      </dd>
+      <dt>
+        Monday <strong>15 December 2014</strong>
+      </dt>
+      <dd>
+        <span>7.00am</span>
+        <p>
+          VCE results and ATARs available online
+        </p>
+      </dd>
+      <dt>
+        Wednesday <strong>17 December 2014</strong>
+      </dt>
+      <dd>
+        <span>10.00am–2.30pm</span>
+        <p>
+          University of Melbourne Course Information Day
+        </p>
+      </dd>
+      <dt>
+        Monday <strong>22 December 2014</strong>
+      </dt>
+      <dd>
+        <span>9.00am</span>
+        <p>
+          Change of Preference period closes
+        </p>
+        <p>
+          Applies to all VTAC applicants excluding QLD, WA, IB and NZ NCEA Year 12 applicants. Make sure you complete any changes well before the deadline!
+        </p>
+      </dd>
+      <dt>
+        Monday  <strong>5 January 2015</strong>
+      </dt>
+      <dd>
+        <span>4.00pm</span>
+        <p>
+          Change of Preference period closes (QLD, WA, IB and NZ NCEA Year 12 applicants)
+        </p>
+      </dd>
+    </dl>
+    <figcaption>Caption to the timeline (photo 1)</figcaption>
+  </figure>
+  <p>
+    Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper consequat sed non leo. Nam massa est, egestas ac felis id, blandit luctus metus. Mauris eu aliquet nisi. Donec nunc ipsum, fermentum quis enim posuere, dapibus fermentum libero. Aliquam erat volutpat. Nulla tempor tellus lorem, dapibus euismod mi mattis sit amet. Sed ac orci consequat, aliquet ligula vitae, facilisis elit. Sed et lobortis est, eu facilisis massa.
+  </p>
+  <p>
+    Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi. Integer rhoncus ante quis lectus facilisis, ac auctor enim mattis. Nullam gravida nec ante mattis accumsan. Donec pretium, leo tempor adipiscing posuere, risus ligula ornare erat, vitae euismod lectus nulla ac arcu. Morbi sed pharetra risus, nec auctor lorem. Phasellus neque quam, auctor ut tincidunt et, suscipit quis nibh. Praesent sed malesuada eros, eu volutpat tortor. Proin pharetra nisl sed eros ultrices, vitae condimentum felis tempor.
+  </p>
+</section>
+<section class="with-figure">
+  <figure class="inset-right" role="group">
+    <dl class="timeline">
+      <dt>
+        Monday <strong>24 November 2014</strong>
+      </dt>
+      <dd>
+        <span>9.00am</span>
+        <p>
+          VTAC Change of Preference period opens
+        </p>
+      </dd>
+      <dt>
+        Monday <strong>15 December 2014</strong>
+      </dt>
+      <dd>
+        <span>7.00am</span>
+        <p>
+          VCE results and ATARs available online
+        </p>
+      </dd>
+      <dt>
+        Wednesday <strong>17 December 2014</strong>
+      </dt>
+      <dd>
+        <span>10.00am–2.30pm</span>
+        <p>
+          University of Melbourne Course Information Day
+        </p>
+      </dd>
+      <dt>
+        Monday <strong>22 December 2014</strong>
+      </dt>
+      <dd>
+        <span>9.00am</span>
+        <p>
+          Change of Preference period closes
+        </p>
+        <p>
+          Applies to all VTAC applicants excluding QLD, WA, IB and NZ NCEA Year 12 applicants. Make sure you complete any changes well before the deadline!
+        </p>
+      </dd>
+      <dt>
+        Monday  <strong>5 January 2015</strong>
+      </dt>
+      <dd>
+        <span>4.00pm</span>
+        <p>
+          Change of Preference period closes (QLD, WA, IB and NZ NCEA Year 12 applicants)
+        </p>
+      </dd>
+    </dl>
+    <figcaption>Caption to the image (photo 2)</figcaption>
+  </figure>
+  <p>
+    Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper consequat sed non leo. Nam massa est, egestas ac felis id, blandit luctus metus. Mauris eu aliquet nisi. Donec nunc ipsum, fermentum quis enim posuere, dapibus fermentum libero. Aliquam erat volutpat. Nulla tempor tellus lorem, dapibus euismod mi mattis sit amet. Sed ac orci consequat, aliquet ligula vitae, facilisis elit. Sed et lobortis est, eu facilisis massa.
+  </p>
+  <p>
+    Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi. Integer rhoncus ante quis lectus facilisis, ac auctor enim mattis. Nullam gravida nec ante mattis accumsan. Donec pretium, leo tempor adipiscing posuere, risus ligula ornare erat, vitae euismod lectus nulla ac arcu. Morbi sed pharetra risus, nec auctor lorem. Phasellus neque quam, auctor ut tincidunt et, suscipit quis nibh. Praesent sed malesuada eros, eu volutpat tortor. Proin pharetra nisl sed eros ultrices, vitae condimentum felis tempor.
+  </p>
+</section>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;with-figure&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">&quot;inset-left&quot;</span> <span class="na">role=</span><span class="s">&quot;group&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">&quot;timeline&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        Monday <span class="nt">&lt;strong&gt;</span>24 November 2014<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;span&gt;</span>9.00am<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          VTAC Change of Preference period opens
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        Monday <span class="nt">&lt;strong&gt;</span>15 December 2014<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;span&gt;</span>7.00am<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          VCE results and ATARs available online
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        Wednesday <span class="nt">&lt;strong&gt;</span>17 December 2014<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;span&gt;</span>10.00am–2.30pm<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          University of Melbourne Course Information Day
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        Monday <span class="nt">&lt;strong&gt;</span>22 December 2014<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;span&gt;</span>9.00am<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Change of Preference period closes
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Applies to all VTAC applicants excluding QLD, WA, IB and NZ NCEA Year 12 applicants. Make sure you complete any changes well before the deadline!
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        Monday  <span class="nt">&lt;strong&gt;</span>5 January 2015<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;span&gt;</span>4.00pm<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Change of Preference period closes (QLD, WA, IB and NZ NCEA Year 12 applicants)
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+    <span class="nt">&lt;/dl&gt;</span>
+    <span class="nt">&lt;figcaption&gt;</span>Caption to the timeline (photo 1)<span class="nt">&lt;/figcaption&gt;</span>
+  <span class="nt">&lt;/figure&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper consequat sed non leo. Nam massa est, egestas ac felis id, blandit luctus metus. Mauris eu aliquet nisi. Donec nunc ipsum, fermentum quis enim posuere, dapibus fermentum libero. Aliquam erat volutpat. Nulla tempor tellus lorem, dapibus euismod mi mattis sit amet. Sed ac orci consequat, aliquet ligula vitae, facilisis elit. Sed et lobortis est, eu facilisis massa.
+  <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi. Integer rhoncus ante quis lectus facilisis, ac auctor enim mattis. Nullam gravida nec ante mattis accumsan. Donec pretium, leo tempor adipiscing posuere, risus ligula ornare erat, vitae euismod lectus nulla ac arcu. Morbi sed pharetra risus, nec auctor lorem. Phasellus neque quam, auctor ut tincidunt et, suscipit quis nibh. Praesent sed malesuada eros, eu volutpat tortor. Proin pharetra nisl sed eros ultrices, vitae condimentum felis tempor.
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;with-figure&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">&quot;inset-right&quot;</span> <span class="na">role=</span><span class="s">&quot;group&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">&quot;timeline&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        Monday <span class="nt">&lt;strong&gt;</span>24 November 2014<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;span&gt;</span>9.00am<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          VTAC Change of Preference period opens
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        Monday <span class="nt">&lt;strong&gt;</span>15 December 2014<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;span&gt;</span>7.00am<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          VCE results and ATARs available online
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        Wednesday <span class="nt">&lt;strong&gt;</span>17 December 2014<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;span&gt;</span>10.00am–2.30pm<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          University of Melbourne Course Information Day
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        Monday <span class="nt">&lt;strong&gt;</span>22 December 2014<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;span&gt;</span>9.00am<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Change of Preference period closes
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Applies to all VTAC applicants excluding QLD, WA, IB and NZ NCEA Year 12 applicants. Make sure you complete any changes well before the deadline!
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        Monday  <span class="nt">&lt;strong&gt;</span>5 January 2015<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;span&gt;</span>4.00pm<span class="nt">&lt;/span&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Change of Preference period closes (QLD, WA, IB and NZ NCEA Year 12 applicants)
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+    <span class="nt">&lt;/dl&gt;</span>
+    <span class="nt">&lt;figcaption&gt;</span>Caption to the image (photo 2)<span class="nt">&lt;/figcaption&gt;</span>
+  <span class="nt">&lt;/figure&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper consequat sed non leo. Nam massa est, egestas ac felis id, blandit luctus metus. Mauris eu aliquet nisi. Donec nunc ipsum, fermentum quis enim posuere, dapibus fermentum libero. Aliquam erat volutpat. Nulla tempor tellus lorem, dapibus euismod mi mattis sit amet. Sed ac orci consequat, aliquet ligula vitae, facilisis elit. Sed et lobortis est, eu facilisis massa.
+  <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi. Integer rhoncus ante quis lectus facilisis, ac auctor enim mattis. Nullam gravida nec ante mattis accumsan. Donec pretium, leo tempor adipiscing posuere, risus ligula ornare erat, vitae euismod lectus nulla ac arcu. Morbi sed pharetra risus, nec auctor lorem. Phasellus neque quam, auctor ut tincidunt et, suscipit quis nibh. Praesent sed malesuada eros, eu volutpat tortor. Proin pharetra nisl sed eros ultrices, vitae condimentum felis tempor.
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="simplified-timeline">Simplified timeline</h2><section class="with-figure">
+  <figure class="inset-right" role="group">
+    <dl class="timeline">
+      <dt>
+        <strong>1505-10</strong>
+      </dt>
+      <dd>
+        <p>
+          The Rothschild Prayer Book is produced in the Ghent-Bruges area of the Netherlands. It is probably bought on the market and not commissioned, the original owner is not known. 
+        </p>
+      </dd>
+      <dt>
+        <strong>1872</strong>
+      </dt>
+      <dd>
+        <p>
+          The Prayer Book appears in a catalogue of the collection of Anselm von Rothschild
+        </p>
+      </dd>
+      <dt>
+        <strong>1938</strong>
+      </dt>
+      <dd>
+        <p>
+          It is confiscated by the Nazis from his descendant Alphonse von Rothschild in the annexation of Austria.
+        </p>
+      </dd>
+      <dt>
+        <strong>After the end of WW2</strong>
+      </dt>
+      <dd>
+        <p>
+          The Austrian Government uses legislation to pressure the Rothschilds into "donating" a large number of works to Austrian museums, including the Prayer Book
+        </p>
+      </dd>
+      <dt>
+        <strong>1999</strong>
+      </dt>
+      <dd>
+        <p>
+          Bowing to international pressure, the Austrian government returns the book and other works of art to the Rothschilds.
+        </p>
+      </dd>
+      <dt>
+        <strong>July 8, 1999</strong>
+      </dt>
+      <dd>
+        <p>
+          The Rothschilds sell the Prayer Book through Christie's London for a world record price.
+        </p>
+      </dd>
+      <dt>
+        <strong>January 9, 2014</strong>
+      </dt>
+      <dd>
+        <p>
+          The Prayer Book is sold again, at Christie's New York. The bidder is anonymous.
+        </p>
+      </dd>
+      <dt>
+        <strong>September 2014</strong>
+      </dt>
+      <dd>
+        <p>
+          It is revealed that Kerry Stokes, Australian businessman and owner of the Seven Network, had purchased it. The Prayer Book forms part of the Stokes collection in Perth.
+        </p>
+      </dd>
+    </dl>
+    <figcaption>A history of the Rothschild Bible</figcaption>
+  </figure>
+  <p>
+    Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper consequat sed non leo. Nam massa est, egestas ac felis id, blandit luctus metus. Mauris eu aliquet nisi. Donec nunc ipsum, fermentum quis enim posuere, dapibus fermentum libero. Aliquam erat volutpat. Nulla tempor tellus lorem, dapibus euismod mi mattis sit amet. Sed ac orci consequat, aliquet ligula vitae, facilisis elit. Sed et lobortis est, eu facilisis massa.
+  </p>
+  <p>
+    Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi. Integer rhoncus ante quis lectus facilisis, ac auctor enim mattis. Nullam gravida nec ante mattis accumsan. Donec pretium, leo tempor adipiscing posuere, risus ligula ornare erat, vitae euismod lectus nulla ac arcu. Morbi sed pharetra risus, nec auctor lorem. Phasellus neque quam, auctor ut tincidunt et, suscipit quis nibh. Praesent sed malesuada eros, eu volutpat tortor. Proin pharetra nisl sed eros ultrices, vitae condimentum felis tempor.
+  </p>
+</section>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">&quot;with-figure&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;figure</span> <span class="na">class=</span><span class="s">&quot;inset-right&quot;</span> <span class="na">role=</span><span class="s">&quot;group&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;dl</span> <span class="na">class=</span><span class="s">&quot;timeline&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        <span class="nt">&lt;strong&gt;</span>1505-10<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          The Rothschild Prayer Book is produced in the Ghent-Bruges area of the Netherlands. It is probably bought on the market and not commissioned, the original owner is not known. 
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        <span class="nt">&lt;strong&gt;</span>1872<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          The Prayer Book appears in a catalogue of the collection of Anselm von Rothschild
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        <span class="nt">&lt;strong&gt;</span>1938<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          It is confiscated by the Nazis from his descendant Alphonse von Rothschild in the annexation of Austria.
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        <span class="nt">&lt;strong&gt;</span>After the end of WW2<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          The Austrian Government uses legislation to pressure the Rothschilds into &quot;donating&quot; a large number of works to Austrian museums, including the Prayer Book
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        <span class="nt">&lt;strong&gt;</span>1999<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Bowing to international pressure, the Austrian government returns the book and other works of art to the Rothschilds.
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        <span class="nt">&lt;strong&gt;</span>July 8, 1999<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          The Rothschilds sell the Prayer Book through Christie&#39;s London for a world record price.
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        <span class="nt">&lt;strong&gt;</span>January 9, 2014<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          The Prayer Book is sold again, at Christie&#39;s New York. The bidder is anonymous.
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+      <span class="nt">&lt;dt&gt;</span>
+        <span class="nt">&lt;strong&gt;</span>September 2014<span class="nt">&lt;/strong&gt;</span>
+      <span class="nt">&lt;/dt&gt;</span>
+      <span class="nt">&lt;dd&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          It is revealed that Kerry Stokes, Australian businessman and owner of the Seven Network, had purchased it. The Prayer Book forms part of the Stokes collection in Perth.
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/dd&gt;</span>
+    <span class="nt">&lt;/dl&gt;</span>
+    <span class="nt">&lt;figcaption&gt;</span>A history of the Rothschild Bible<span class="nt">&lt;/figcaption&gt;</span>
+  <span class="nt">&lt;/figure&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper consequat sed non leo. Nam massa est, egestas ac felis id, blandit luctus metus. Mauris eu aliquet nisi. Donec nunc ipsum, fermentum quis enim posuere, dapibus fermentum libero. Aliquam erat volutpat. Nulla tempor tellus lorem, dapibus euismod mi mattis sit amet. Sed ac orci consequat, aliquet ligula vitae, facilisis elit. Sed et lobortis est, eu facilisis massa.
+  <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi. Integer rhoncus ante quis lectus facilisis, ac auctor enim mattis. Nullam gravida nec ante mattis accumsan. Donec pretium, leo tempor adipiscing posuere, risus ligula ornare erat, vitae euismod lectus nulla ac arcu. Morbi sed pharetra risus, nec auctor lorem. Phasellus neque quam, auctor ut tincidunt et, suscipit quis nibh. Praesent sed malesuada eros, eu volutpat tortor. Proin pharetra nisl sed eros ultrices, vitae condimentum felis tempor.
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><div class="half"><section class="center"><a class="button-hero-reverse" href="/components/text">Text</a></section><section class="center"><a class="button-hero" href="/components/accordion">Accordion</a></section></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
