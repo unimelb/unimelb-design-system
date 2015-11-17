@@ -1,7 +1,7 @@
 ---
 title: Buttons
 ---
-<div class="jumpnav"></div>
+<div class="jumpnav top"></div>
 ## Overview
 
 Buttons are a highly visual way to encourage a user to complete an action. The templates provide buttons pre-styled in several different colours and formats so that there is always a standard button you can use for your site.

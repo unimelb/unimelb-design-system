@@ -4,7 +4,7 @@
  * @param  {Object} props
  */
 function JumpNav(props) {
-  this.el = document.querySelector('#outer.jump-navigation');
+  this.el = document.querySelector('.jump-navigation');
   this.props = props;
 
   if (/(Firefox)/g.test(navigator.userAgent) || /(Trident)/g.test(navigator.userAgent)) {
@@ -16,6 +16,7 @@ function JumpNav(props) {
   // Arbitrary delay to allow calculation of CSS block hiding
   var offsets = {
     'root':            document.querySelector('div[role="main"]'),
+    'topmode':         (document.countSelector('.jumpnav.top') === 1),
     'arbitraryOffset': 60  // scroll clearance
   };
 
@@ -112,7 +113,9 @@ JumpNav.prototype.buildNavMenu = function() {
     this.props.root.querySelector('.tab .with-aside aside').appendChild(this.el);
 
   } else {
-    this.el.id = 'outer';
+
+    if (!this.props.topmode)
+      this.el.id = 'outer';
 
     // Insert after heading
     if (this.props.header) {
@@ -124,13 +127,15 @@ JumpNav.prototype.buildNavMenu = function() {
     }
   }
 
-  if (document.countSelector('.indexnav') == 1) {
-    document.body.addClass('indexnav-active');
-  } else {
-    document.body.addClass('jumpnav-active');
-  }
+  if (!this.props.topmode) {
+    if (document.countSelector('.indexnav') == 1) {
+      document.body.addClass('indexnav-active');
+    } else {
+      document.body.addClass('jumpnav-active');
+    }
 
-  this.initCalcs();
+    this.initCalcs();
+  }
 
   // Rebind smooth scrolling to new links
   var InpageNavigation = require("../inpage-navigation");

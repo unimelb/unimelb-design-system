@@ -340,14 +340,21 @@ body {
   }
 
   .fifth {
-    @include rem(padding, 0 15px 30px);
-    float: left;
-    width: 100%;
+    @include rem(margin-bottom, 15px);
+    @include rem(max-width, $w-sml);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    width: 94%;
 
-    .col {
-      margin: 1%;
 
-      @include breakpoint(desktop) {
+    @include breakpoint(wide) {
+      @include rem(margin-bottom, 15px);
+      @include rem(max-width, $w-lge);
+      width: 100%;
+
+      .col {
+        margin: 1%;
         float: left;
         margin: 0 1%;
         text-align: center;
