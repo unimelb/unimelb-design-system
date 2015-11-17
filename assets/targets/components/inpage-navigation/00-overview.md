@@ -4,15 +4,21 @@ title: Inpage Navigation
 <div class="jumpnav"></div>
 The inpage Navigation provides a convenient way for the user to see all sections at a glance and jump between them. This can be useful for long, text-heavy pages.
 
-Please note, this feature is only available on larger desktop screen resolutions!
-
 To include this feature on your page, simply add an empty div with class <code>jumpnav</code> somewhere in the page structure.
 
 ```html
 <div class="jumpnav"></div>
 ```
 
-Every <code>h2</code> on the page with a unique ID will be added, in order of appearance, to the inpage navigation. The heading text will be used as nav item, eg. "Testjump 1" in the example below
+By default the generated navigation will take the form of a *table of contents* at the beginning of the page on smaller screens, and a *fixed menu* on the left hand side on larger screens. If you would prefer to use the *table of contents* for all screen sizes, add the class `top` eg.
+
+```html
+<div class="jumpnav top"></div>
+```
+
+This is demonstrated on the [buttons](/components/buttons) page, to better display the wide component mid-way down the page.
+
+Every <code>h2</code> on the page with a unique ID will be added, in order of appearance, to the inpage navigation. The heading text will be used as nav item, eg. "Testjump 1" in the example below:
 
 <h2 id="jump1">Testjump 1</h2>
 Mercedem aut nummos unde unde extricat, amaras. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Quam diu etiam furor iste tuus nos eludet? Curabitur blandit tempus ardua ridiculus sed magna. Cras mattis iudicium purus sit amet fermentum.
