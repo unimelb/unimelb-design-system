@@ -105,7 +105,7 @@ InjectNav.prototype.closeGlobalNav = function(e) { this.toggleNav('global', fals
 InjectNav.prototype.closeBothNavs = function(e) {
   if (e) { e.preventDefault(); }
 
-  if (this.props.page.hasClass('active')) {
+  if (this.props.activeNav.local || this.props.activeNav.global) {
     var bothActive = this.props.activeNav.local && this.props.activeNav.global;
     this.setActiveNav();
 
