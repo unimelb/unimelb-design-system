@@ -171,6 +171,9 @@
       aside {
         @include rem(margin-left, -300px);
 
+        .button-small {
+          @include rem(margin-top, 5px);
+        }
       }
     }
 
