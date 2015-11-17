@@ -12,7 +12,7 @@
   width: 94%;
 
   @include breakpoint(desktop) {
-    @include rem(padding-top, 60px);
+    @include rem(padding-top, 80px);
     width: 100%;
   }
 
