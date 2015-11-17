@@ -2,7 +2,7 @@
   color: $gray;
   list-style-position: inside;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 35px 0 30px;
   width: 94%;
 
   li {
@@ -80,6 +80,10 @@
 .uomcontent #outer {
   @extend %jump;
 
+  @include breakpoint(desktop) {
+    @include rem(padding-top, 80px);
+  }
+  
   @include breakpoint(wide) {
     display: table;
     margin-top: 33px;

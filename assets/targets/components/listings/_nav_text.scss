@@ -2,8 +2,8 @@
   @include padding-leader(3);
   @include padding-trailer(3);
   @include rem(max-width, 1400px);
-  @include rem(padding-left, 25px);
-  @include rem(padding-right, 25px);
+  @include rem(padding-left, 27px);
+  @include rem(padding-right, 27px);
   margin: 0 auto;
 
   h1,
@@ -21,6 +21,7 @@
 
     &.aligned-title {
       @extend %listing-title;
+      @include padding-leader(2);
       @include rem(padding-bottom, 48px);
       max-width: 100%;
     }
