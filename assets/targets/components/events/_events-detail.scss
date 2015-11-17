@@ -135,6 +135,10 @@
         @include rem(margin-left, -300px);
       }
     }
+    
+    img {
+      display: block;
+    }
 
     h1 {
       text-align: center;
