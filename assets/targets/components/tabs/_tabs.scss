@@ -52,6 +52,10 @@
     & > figure.full-width {
       background-color: transparent;
     }
+    
+    .mobile-nav {
+      display: none;
+    }
 
     nav {
       @include rem(padding, 0 40px);
