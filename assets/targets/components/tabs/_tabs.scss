@@ -1,8 +1,6 @@
 .uomcontent {
   [data-tabbed] {
     nav {
-      display: none;
-
       a {
         cursor: pointer;
         font-weight: $regular;
@@ -44,9 +42,11 @@
 
   .tabbed-nav {
     & > .full-width {
+      @include rem(height, 4rem);
       background-color: $darkblue;
       border-bottom: 1px solid transparent;
       position: relative;
+      text-align: center;
     }
 
     & > figure.full-width {
@@ -54,12 +54,13 @@
     }
 
     nav {
-      @extend %wrapper;
-      padding: 0;
-      text-align: center;
+      @include rem(padding, 0 40px);
+      display: inline-block;
+      white-space: nowrap;
 
       a {
-        @include rem(padding, 20px 10px);
+        @include rem(padding, 0 10px);
+        @include rem(line-height, 64px);
         color: $white;
         display: inline-block;
         text-decoration: none;
@@ -72,7 +73,7 @@
         &[data-current]::after {
           border: solid transparent;
           border-top-color: $darkblue;
-          border-width: 10px;
+          border-width: 10px 10px 0;
           content: ' ';
           height: 0;
           left: 50%;
@@ -96,9 +97,6 @@
       }
 
       @include breakpoint(desktop) {
-        @include rem(padding, 0 15px);
-        margin: 0 auto;
-
         [data-icon] .icon {
           display: inline-block;
         }
@@ -109,79 +107,37 @@
       }
     }
 
-    .desktop-nav {
-      display: none;
-
-      &.active {
-        display: none;
-      }
-
-      @include breakpoint(desktop) {
-        &.active {
-          display: block;
-        }
-      }
-    }
-
-    .mobile-nav {
-      @include rem(padding, 5px 0);
-      background-color: $brand;
-      border-color: $brand;
-      display: none;
-      margin: 0 3%;
+    /* wrapper added dynamically around nav element when tabs overflow */
+    .tabbed-nav__inner {
+      @include rem(padding-bottom, 15px);
       position: relative;
-      width: 94%;
+    }
 
-      .styled-select {
-        background-color: $brand;
-        border-color: $brand;
+    /* left/right arrows when screen size is too small to fit all the tabs */
+    .tab-arrow {
+      @include rem(font-size, 30px);
+      @include rem(padding, 0 20px 5px); /* bottom padding aligns arrows with tab labels */
+      color: $white;
+      cursor: pointer;
+      display: none;
+      font-weight: $bold;
+      height: 100%;
+      position: absolute;
+      top: 0;
 
-        &:hover {
-          background-color: $highlight;
-        }
+      &.tab-arrow--left {
+        @include rem(padding-right, 10px);
+        left: 0;
       }
-
-      select {
-        background-color: $brand;
-        border-color: $brand;
-
-        &:hover {
-          background-color: $highlight;
-        }
-      }
-
-      &.active {
-        display: block;
-      }
-
-      &::after {
-        border: solid transparent;
-        border-top-color: $brand;
-        border-width: 10px;
-        content: ' ';
-        height: 0;
-        left: 50%;
-        margin-bottom: -10px;
-        margin-left: -10px;
-        pointer-events: none;
-        position: absolute;
-        top: 100%;
-        width: 0;
-        z-index: 1;
-      }
-
-
-      @include breakpoint(desktop) {
-        display: none;
-
-        &.active {
-          display: none;
-        }
+      &.tab-arrow--right {
+        @include rem(padding-left, 10px);
+        right: 0;
       }
     }
 
-    select.mobile-nav:hover {
-      background-color: $highlight;
+    /* show the arrows when the tabs overflow */
+    .overflow .tab-arrow {
+      display: inline-block;
     }
 
     [role="tabpanel"] {
@@ -271,12 +227,6 @@
 
       nav a[data-current]::after {
         border-top-color: $darkblue;
-      }
-
-      .mobile-nav,
-      .mobile-nav select {
-        background-color: $darkblue;
-        border: 1px solid $darkblue;
       }
     }
 
@@ -462,15 +412,6 @@
       top: 100%;
       width: 0;
       z-index: 1;
-    }
-
-    .mobile-nav,
-    .mobile-nav.active {
-      display: none;
-    }
-
-    .desktop-nav {
-      display: block;
     }
   }
 

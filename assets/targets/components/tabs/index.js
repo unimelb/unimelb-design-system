@@ -1,3 +1,5 @@
+var OVERFLOW_PRECISION = 4;
+
 /**
  * Tabs
  *
@@ -7,15 +9,21 @@
 function Tabs(el, props) {
   this.el = el;
   this.props = props;
+  this.props.nav = this.el.querySelector('nav');
+  this.props.navParent = this.props.nav.parentElement;
   this.props.tabs = this.el.querySelectorAll('nav a');
   this.props.panels = [];
-
-  this.activateContainer();
+  this.props.isOverflowing = false;
+  this.props.isOverflowSetup = false;
+  this.props.isLoadingPs = false;
 
   // Event bindings
   if (this.el.hasAttribute('data-tabbed')) {
     this.setupPanels();
     this.selectPanel();
+    
+    this.handleResize();
+    window.addEventListener('resize', this.handleResize.bind(this));
   }
 }
 
@@ -73,6 +81,93 @@ Tabs.prototype.selectPanel = function() {
   } else {
     this.move(this.el.querySelector('[data-current]'));
   }
+};
+
+/**
+ * On page load and resize, check whether the tabs fit on one row.
+ * If they don't, activate the overflow behaviour (horizontal scroll) 
+ */
+Tabs.prototype.handleResize = function(e) {
+  // Check whether the full-width container is narrower than the navigation element
+  var isOverflowing = this.el.clientWidth <= this.props.nav.clientWidth + OVERFLOW_PRECISION;
+  
+  // Update the horizontal scrollbar, if initialised
+  if (isOverflowing && this.props.isOverflowSetup) {
+    Ps.update(this.props.inner);
+  }
+  
+  // Activate or deactivate the overflow behaviour when needed
+  if (isOverflowing !== this.props.isOverflowing) {
+    if (isOverflowing) {
+      if (!this.props.isOverflowSetup) {
+        if (!this.props.isLoadingPs) {
+          // Load the 'perfect-scrollbar' library then setup the overflow behaviour
+          this.props.isLoadingPs = true;
+          loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.7/js/min/perfect-scrollbar.min.js', this.setupOverflow.bind(this));
+        }
+      } else {
+        // Bring up the horizontal scrollbar
+        this.activateOverflow();
+      }
+    } else {
+      // Remove the horizontal scrollbar
+      this.destroyOverflow();
+    }
+    
+    // Save overflow state
+    this.props.isOverflowing = isOverflowing;
+  }
+};
+
+/**
+ * Prepare the DOM for the overflow behaviour.
+ */
+Tabs.prototype.setupOverflow = function() {
+  // Wrap nav in div to hold horizontal scrollbar
+  var inner = document.createElement('div');
+  inner.className = 'tabbed-nav__inner';
+  inner.appendChild(this.props.nav);
+  this.props.inner = inner;
+  
+  // Build arrows
+  var leftArrow = document.createElement('button');
+  leftArrow.className = 'button-ui tab-arrow';
+  leftArrow.setAttribute('type', 'button');
+  var rightArrow = leftArrow.cloneNode(false);
+  leftArrow.innerHTML = '&lsaquo;';
+  leftArrow.className += ' tab-arrow--left';
+  rightArrow.innerHTML = '&rsaquo;';
+  rightArrow.className += ' tab-arrow--right';
+  
+  // Append wrapper and arrows
+  this.props.navParent.appendChild(inner);
+  this.props.navParent.appendChild(leftArrow);
+  this.props.navParent.appendChild(rightArrow);
+  
+  // Activate the overflow behaviour
+  this.activateOverflow();
+  
+  this.props.isLoadingPs = false;
+  this.props.isOverflowSetup = true;
+};
+
+/**
+ * Activate the overflow behaviour and initialise the horizontal scrollbar.
+ */
+Tabs.prototype.activateOverflow = function() {
+  this.props.navParent.addClass('overflow');
+  Ps.initialize(this.props.inner, {
+    useBothWheelAxes: true,
+    wheelPropagation: true
+  });
+};
+
+/**
+ * Deactivate the overflow behaviour and destroy the horizontal scrollbar.
+ */
+Tabs.prototype.destroyOverflow = function() {
+  this.props.navParent.removeClass('overflow');
+  Ps.destroy(this.props.inner);
 };
 
 Tabs.prototype.handleClick = function(e) {
@@ -133,65 +228,6 @@ Tabs.prototype.handleInternalClick = function(e) {
       idx = target.getAttribute('data-tab') - 1;
   this.moveindex(idx);
   this.setLocation(this.props.tabs[idx].hash);
-};
-
-Tabs.prototype.activateContainer = function() {
-  this.props.nav = this.el.querySelector('nav');
-  if (this.props.nav) {
-    this.props.nav.addClass('active');
-  }
-
-  this.props.mobilenav = this.el.querySelector('.mobile-nav');
-  if (this.props.mobilenav) {
-    this.props.mobilenav.addClass('active');
-  } else if (this.el.countSelector('div.full-width') == 1) {
-    this.props.root = this.el.querySelector('.full-width');
-    this.buildMobileNav();
-    this.props.mobilenav.addClass('active');
-  }
-};
-
-Tabs.prototype.buildMobileNav = function() {
-  var selector, i, max, firstElem, FancySelect, opt, label;
-  this.props.mobilenav = document.createElement('div');
-  this.props.mobilenav.addClass('mobile-nav');
-
-  selector = document.createElement('select');
-  selector.setAttribute('role', 'tablist');
-
-  for (i=0, max=this.props.tabs.length; i < max; i++) {
-    firstElem = this.props.tabs[i].findFirstElementChild();
-
-    // If a child element exist, it's an icon and the label to retrieve is one level deeper
-    label = firstElem ? firstElem.firstChild.nodeValue : this.props.tabs[i].firstChild.nodeValue;
-
-    opt = document.createElement('option');
-    opt.setAttribute('role', 'tab');
-    opt.setAttribute('value', this.props.tabs[i].getAttribute('href'));
-    opt.appendChild(document.createTextNode(label));
-    selector.appendChild(opt);
-  }
-
-  this.props.mobilenav.appendChild(selector);
-  this.props.root.insertBefore(this.props.mobilenav, this.props.root.firstChild);
-
-  selector.addEventListener('change', this.handleChange.bind(this));
-  if (!/(MSIE 9)/g.test(navigator.userAgent)) {
-    FancySelect = require("../forms/fancyselect");
-    new FancySelect(selector, {});
-  }
-};
-
-Tabs.prototype.handleChange = function(e) {
-  var target = e.target.value;
-  if (target) {
-    if (target.charAt(0) != '#') {
-      window.location = target;
-    } else {
-      this.move(this.el.querySelector('nav a[href="' + target + '"]'));
-      this.setLocation(target.substr(1));
-    }
-  }
 };
 
 /**
