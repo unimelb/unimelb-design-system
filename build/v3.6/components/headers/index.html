@@ -1,0 +1,587 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Headers | Web.Unimelb</title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.6</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Headers"><span itemprop="name">Headers</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">Headers</h1><section><div class="jumpnav"></div>
+
+<p>These headers are available in the design system:</p>
+
+<ul>
+<li>
+<code>.image</code> — auto height, with background image, gets expanded by content</li>
+<li>
+<code>.banner</code> — with background image</li>
+<li>
+<code>.with-box</code> — contains a white box with more text content, auto height, gets expanded by content</li>
+</ul>
+
+<p>Every header can contain a wrapper div that determines how the content within the header is displayed.</p>
+
+<h2>A note on images</h2>
+
+<p>We don't provide a default image because images should always be relevant to the content.</p></section><hr /><section><h1>Default header</h1>
+
+<p>This header is the default header and generally needs no class. It can contain a sub line for further explanation what this page is about.</p>
+
+<p>Please do not use the name of the whole web presence as h1 but use a meaningful and short title for content on page shown.</p></section><hr /><h2 id="default-header">Default header</h2><header>
+  <h1>
+    In congue definiebas
+  </h1>
+</header>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;header&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>
+    In congue definiebas
+  <span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="default-header-subline">Default header subline</h2><header>
+  <h1>
+    In congue definiebas
+  </h1>
+  <p>
+    Pro id alienum epicurei, nam ne legimus vivendum lobortis
+  </p>
+</header>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;header&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>
+    In congue definiebas
+  <span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    Pro id alienum epicurei, nam ne legimus vivendum lobortis
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><section><h1>Image header</h1>
+
+<p>Using <code>.image</code> as class, this heading <strong>must</strong> have a background image specified in the <code>style</code> attribute.</p>
+
+<h2>Wrappers</h2>
+
+<p>There are several different inner wrappers to position the content within this header type:</p>
+
+<ul>
+<li>
+<code>.mid-align</code> — recommended as standard wrapper within this header. Positions content vertically centered</li>
+<li><code>.bottom-align</code></li>
+<li><code>.bottom-align-flat</code></li>
+</ul></section><hr /><h2 id="image-header-mid-align">Image header mid align</h2><header class="image" style="background-image: url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+  <div class="mid-align">
+    <h1>
+      In congue definiebas
+    </h1>
+    <p>
+      Pro id alienum epicurei, nam ne legimus vivendum lobortis
+    </p>
+  </div>
+</header>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;image&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image: url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mid-align&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>
+      In congue definiebas
+    <span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Pro id alienum epicurei, nam ne legimus vivendum lobortis
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="image-header-mid-align-enhanced">Image header mid align enhanced</h2><header class="image" style="background-image: url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+  <div class="mid-align blurred">
+    <h1>
+      In congue definiebas
+    </h1>
+    <p>
+      Pro id alienum epicurei, nam ne legimus vivendum lobortis
+    </p>
+  </div>
+</header>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;image&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image: url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mid-align blurred&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>
+      In congue definiebas
+    <span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Pro id alienum epicurei, nam ne legimus vivendum lobortis
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="image-header-bottom-align">Image header bottom align</h2><header class="image" style="background-image: url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+  <div class="bottom-align">
+    <h1>
+      In congue definiebas
+    </h1>
+    <p>
+      Pro id alienum epicurei, nam ne legimus vivendum lobortis
+    </p>
+  </div>
+</header>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;image&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image: url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bottom-align&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>
+      In congue definiebas
+    <span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Pro id alienum epicurei, nam ne legimus vivendum lobortis
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="image-header-bottom-align-flat">Image header bottom align flat</h2><header class="image" style="background-image: url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+  <div class="bottom-align-flat">
+    <h1>
+      In congue definiebas
+    </h1>
+    <p>
+      Pro id alienum epicurei, nam ne legimus vivendum lobortis
+    </p>
+  </div>
+</header>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;image&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image: url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bottom-align-flat&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>
+      In congue definiebas
+    <span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Pro id alienum epicurei, nam ne legimus vivendum lobortis
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="image-header-with-filters">Image header with filters</h2><header class="image with-filters" style="background-image: url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+  <p>
+    Non equidem invideo, miror magis posuere velit aliquet. Morbi fringilla convallis sapien, id pulvinar odio volutpat. Non equidem invideo, miror magis posuere velit aliquet. Praeterea iter est quasdam res quas ex communi.
+  </p>
+  <div class="bottom-align-flat">
+    <div class="filtered-listing-wrapper">
+      <form class="filtered-listing-select">
+        <fieldset class="left">
+          <legend>Filter by type</legend>
+          <div class="all">
+            <input checked="checked" class="checkbox" data-tag="all" id="c00" name="f[degree_type]" type="checkbox" /><label for="c00"><span>All</span></label>
+          </div>
+          <div class="color-one">
+            <input class="checkbox" data-tag="category-one" id="c1" name="f[course_type]" type="checkbox" /><label for="c1"><span>Nominavi appetere</span></label>
+          </div>
+          <div class="color-two">
+            <input class="checkbox" data-tag="category-two" id="c2" name="f[course_type]" type="checkbox" /><label for="c2"><span>Iudico corrumpit</span></label>
+          </div>
+        </fieldset>
+        <div class="right">
+          <label for="f-select2">Filter by section</label>
+          <div>
+            <select class="clear" id="f-select2" name="f[select2]" title="Please make a selection from the 2nd dropdown">
+              <option value="-1">
+                All sections
+              </option>
+              <option value="section1">
+                Section heading 1
+              </option>
+              <option value="section2">
+                Different Section
+              </option>
+              <option value="section3">
+                Third Example Section
+              </option>
+            </select>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</header>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;image with-filters&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image: url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;p&gt;</span>
+    Non equidem invideo, miror magis posuere velit aliquet. Morbi fringilla convallis sapien, id pulvinar odio volutpat. Non equidem invideo, miror magis posuere velit aliquet. Praeterea iter est quasdam res quas ex communi.
+  <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bottom-align-flat&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;filtered-listing-wrapper&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;filtered-listing-select&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;fieldset</span> <span class="na">class=</span><span class="s">&quot;left&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;legend&gt;</span>Filter by type<span class="nt">&lt;/legend&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;all&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;checked&quot;</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">data-tag=</span><span class="s">&quot;all&quot;</span> <span class="na">id=</span><span class="s">&quot;c00&quot;</span> <span class="na">name=</span><span class="s">&quot;f[degree_type]&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c00&quot;</span><span class="nt">&gt;&lt;span&gt;</span>All<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;color-one&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">data-tag=</span><span class="s">&quot;category-one&quot;</span> <span class="na">id=</span><span class="s">&quot;c1&quot;</span> <span class="na">name=</span><span class="s">&quot;f[course_type]&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c1&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Nominavi appetere<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;color-two&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">data-tag=</span><span class="s">&quot;category-two&quot;</span> <span class="na">id=</span><span class="s">&quot;c2&quot;</span> <span class="na">name=</span><span class="s">&quot;f[course_type]&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c2&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Iudico corrumpit<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/fieldset&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;f-select2&quot;</span><span class="nt">&gt;</span>Filter by section<span class="nt">&lt;/label&gt;</span>
+          <span class="nt">&lt;div&gt;</span>
+            <span class="nt">&lt;select</span> <span class="na">class=</span><span class="s">&quot;clear&quot;</span> <span class="na">id=</span><span class="s">&quot;f-select2&quot;</span> <span class="na">name=</span><span class="s">&quot;f[select2]&quot;</span> <span class="na">title=</span><span class="s">&quot;Please make a selection from the 2nd dropdown&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;-1&quot;</span><span class="nt">&gt;</span>
+                All sections
+              <span class="nt">&lt;/option&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;section1&quot;</span><span class="nt">&gt;</span>
+                Section heading 1
+              <span class="nt">&lt;/option&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;section2&quot;</span><span class="nt">&gt;</span>
+                Different Section
+              <span class="nt">&lt;/option&gt;</span>
+              <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;section3&quot;</span><span class="nt">&gt;</span>
+                Third Example Section
+              <span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;/select&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/form&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><section><h1>Banner</h1>
+
+<p>Banners take up the most important space on a website. So this is the place to promote the most important thing on your website. Be careful what background pictures you choose as the text on top <strong>must</strong> be readable.</p></section><hr /><h2 id="simple-header-banner">Simple header banner</h2><header class="banner" style="background-image: url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+  <div class="mid-align">
+    <h1>
+      In congue definiebas
+    </h1>
+    <p>
+      Pro id alienum epicurei, nam ne legimus vivendum lobortis Pro id alienum epicurei, nam ne legimus vivendum lobortis Pro id alienum epicurei, nam ne legimus vivendum lobortis
+    </p>
+    <p>
+      <a class="button-hero-inverse">Read more</a>
+    </p>
+  </div>
+</header>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;banner&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image: url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mid-align&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>
+      In congue definiebas
+    <span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Pro id alienum epicurei, nam ne legimus vivendum lobortis Pro id alienum epicurei, nam ne legimus vivendum lobortis Pro id alienum epicurei, nam ne legimus vivendum lobortis
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button-hero-inverse&quot;</span><span class="nt">&gt;</span>Read more<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><section><h1>Other headers</h1>
+
+<p>The following headers are for special purposes only.</p>
+
+<p>Please note! The <code>.with-box</code> style shown below cannot be combined with a fixed-height header, such as <code>.banner</code>, as the box height matches its container (fluid layout).</p></section><hr /><h2 id="header-with-box">Header with box</h2><header class="with-box" style="background-image: url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+  <div class="box">
+    <h1>
+      In congue definiebas
+    </h1>
+    <p>
+      In congue definiebas quo. Vivendo officiis vix an, eos at fabulas constituam dissentiunt. Id sit iuvaret habemus splendide, mei ea dicta quaestio. No malis eruditi maiorum vim, cu duo atqui dolorum imperdiet.
+    </p>
+    <p>
+      Pro id alienum epicurei, nam ne legimus vivendum lobortis. Docendi dissentiunt duo ad, eu vix nonumy legere. Ut vis iusto quidam virtute, harum convenire at his, option tacimates ea est. Ius et nisl nemore praesent. Sit ut meis porro velit, his cu malorum voluptatum sadipscing, tation atomorum dissentiet ne mea.
+    </p>
+  </div>
+</header>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;with-box&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image: url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;box&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>
+      In congue definiebas
+    <span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      In congue definiebas quo. Vivendo officiis vix an, eos at fabulas constituam dissentiunt. Id sit iuvaret habemus splendide, mei ea dicta quaestio. No malis eruditi maiorum vim, cu duo atqui dolorum imperdiet.
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Pro id alienum epicurei, nam ne legimus vivendum lobortis. Docendi dissentiunt duo ad, eu vix nonumy legere. Ut vis iusto quidam virtute, harum convenire at his, option tacimates ea est. Ius et nisl nemore praesent. Sit ut meis porro velit, his cu malorum voluptatum sadipscing, tation atomorum dissentiet ne mea.
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="course-header-short">Course header short</h2><header class="image" style="background-image: url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+  <div class="bottom-align-flat">
+    <form action="" class="course-select" data-view-visitor-select-form="" method="get">
+      <div class="left">
+        <h2>
+          Idque Caesaris facere voluntate
+        </h2>
+        <p>
+          Cum ceteris in veneratione tui montes, nascetur mus.
+        </p>
+      </div>
+      <div class="right">
+        <div>
+          <label for="residency-short">We have guessed you’re</label><select class="clear" id="residency-short" name="residency">
+            <option selected="selected" value="domestic">
+              a domestic student
+            </option>
+            <option value="international">
+              an international student
+            </option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+</header>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;image&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image: url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bottom-align-flat&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">class=</span><span class="s">&quot;course-select&quot;</span> <span class="na">data-view-visitor-select-form=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;get&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;left&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2&gt;</span>
+          Idque Caesaris facere voluntate
+        <span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Cum ceteris in veneratione tui montes, nascetur mus.
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+          <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;residency-short&quot;</span><span class="nt">&gt;</span>We have guessed you’re<span class="nt">&lt;/label&gt;&lt;select</span> <span class="na">class=</span><span class="s">&quot;clear&quot;</span> <span class="na">id=</span><span class="s">&quot;residency-short&quot;</span> <span class="na">name=</span><span class="s">&quot;residency&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">selected=</span><span class="s">&quot;selected&quot;</span> <span class="na">value=</span><span class="s">&quot;domestic&quot;</span><span class="nt">&gt;</span>
+              a domestic student
+            <span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;international&quot;</span><span class="nt">&gt;</span>
+              an international student
+            <span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;/select&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="course-header-banner">Course header banner</h2><header class="banner" style="background-image: url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+  <div class="bottom-align-flat">
+    <form action="" class="course-select" data-view-visitor-select-form="" method="get">
+      <div class="left">
+        <h2>
+          Idque Caesaris facere voluntate
+        </h2>
+        <p>
+          Cum ceteris in veneratione tui montes, nascetur mus.
+        </p>
+      </div>
+      <div class="right">
+        <div>
+          <label for="residency">We have guessed you’re</label><select class="clear" id="residency" name="residency">
+            <option selected="selected" value="domestic">
+              a domestic student
+            </option>
+            <option value="international">
+              an international student
+            </option>
+          </select>
+        </div>
+      </div>
+    </form>
+  </div>
+</header>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">&quot;banner&quot;</span> <span class="na">style=</span><span class="s">&quot;background-image: url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bottom-align-flat&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">class=</span><span class="s">&quot;course-select&quot;</span> <span class="na">data-view-visitor-select-form=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;get&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;left&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h2&gt;</span>
+          Idque Caesaris facere voluntate
+        <span class="nt">&lt;/h2&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Cum ceteris in veneratione tui montes, nascetur mus.
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;right&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div&gt;</span>
+          <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;residency&quot;</span><span class="nt">&gt;</span>We have guessed you’re<span class="nt">&lt;/label&gt;&lt;select</span> <span class="na">class=</span><span class="s">&quot;clear&quot;</span> <span class="na">id=</span><span class="s">&quot;residency&quot;</span> <span class="na">name=</span><span class="s">&quot;residency&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">selected=</span><span class="s">&quot;selected&quot;</span> <span class="na">value=</span><span class="s">&quot;domestic&quot;</span><span class="nt">&gt;</span>
+              a domestic student
+            <span class="nt">&lt;/option&gt;</span>
+            <span class="nt">&lt;option</span> <span class="na">value=</span><span class="s">&quot;international&quot;</span><span class="nt">&gt;</span>
+              an international student
+            <span class="nt">&lt;/option&gt;</span>
+          <span class="nt">&lt;/select&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/header&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="article-header">Article header</h2><article>
+  <header style="background-image: url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+    <div class="bottom-align blurred">
+      <h1>
+        Praeterea iter est quasdam res quas ex communi.
+      </h1>
+      <p>
+        At nos hinc posthac, sitientis piros Afros. Quisque ut dolor gravida, placerat libero vel, euismod.
+      </p>
+    </div>
+  </header>
+</article>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;article&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">style=</span><span class="s">&quot;background-image: url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bottom-align blurred&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1&gt;</span>
+        Praeterea iter est quasdam res quas ex communi.
+      <span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        At nos hinc posthac, sitientis piros Afros. Quisque ut dolor gravida, placerat libero vel, euismod.
+      <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="article-header">Article header</h2><article>
+  <header style="background-image: url(&#39;/assets/headers/alan_gilbert.jpg&#39;);">
+    <div class="mid-align blurred">
+      <h1>
+        Praeterea iter est quasdam res quas ex communi.
+      </h1>
+      <p>
+        At nos hinc posthac, ut dolor gravida, placerat libero vel, euismod.
+      </p>
+      <p class="author">
+        <em>By Hinc Posthac</em><br />Placerat libero Vel at The University of Melbourne
+      </p>
+    </div>
+  </header>
+</article>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;article&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">style=</span><span class="s">&quot;background-image: url(&amp;#39;/assets/headers/alan_gilbert.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;mid-align blurred&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1&gt;</span>
+        Praeterea iter est quasdam res quas ex communi.
+      <span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        At nos hinc posthac, ut dolor gravida, placerat libero vel, euismod.
+      <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;author&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;em&gt;</span>By Hinc Posthac<span class="nt">&lt;/em&gt;&lt;br</span> <span class="nt">/&gt;</span>Placerat libero Vel at The University of Melbourne
+      <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="article-header-with-background-video">Article header with background video</h2><article>
+  <header style="background-image: url(&#39;/assets/headers/on-the-waterfront.jpg&#39;);">
+    <div class="video-loop">
+      <video autoplay="" loop="" preload="auto">
+        <source src="/assets/headers/on-the-waterfront.mp4" type="video/mp4" /><source src="/assets/headers/on-the-waterfront.ogv" type="video/ogg" />
+      </video>
+    </div>
+    <div class="bottom-align">
+      <h1>
+        Praeterea iter est quasdam res quas ex communi.
+      </h1>
+      <p>
+        At nos hinc posthac, sitientis piros Afros. Quisque ut dolor gravida, placerat libero vel, euismod.
+      </p>
+    </div>
+  </header>
+</article>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;article&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">style=</span><span class="s">&quot;background-image: url(&amp;#39;/assets/headers/on-the-waterfront.jpg&amp;#39;);&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;video-loop&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;video</span> <span class="na">autoplay=</span><span class="s">&quot;&quot;</span> <span class="na">loop=</span><span class="s">&quot;&quot;</span> <span class="na">preload=</span><span class="s">&quot;auto&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">&quot;/assets/headers/on-the-waterfront.mp4&quot;</span> <span class="na">type=</span><span class="s">&quot;video/mp4&quot;</span> <span class="nt">/&gt;&lt;source</span> <span class="na">src=</span><span class="s">&quot;/assets/headers/on-the-waterfront.ogv&quot;</span> <span class="na">type=</span><span class="s">&quot;video/ogg&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/video&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;bottom-align&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h1&gt;</span>
+        Praeterea iter est quasdam res quas ex communi.
+      <span class="nt">&lt;/h1&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        At nos hinc posthac, sitientis piros Afros. Quisque ut dolor gravida, placerat libero vel, euismod.
+      <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/header&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><div class="half"><section class="center"><a class="button-hero-reverse" href="/components/gallery">Gallery</a></section><section class="center"><a class="button-hero" href="/components/headings">Headings</a></section></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
