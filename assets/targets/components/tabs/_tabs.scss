@@ -128,15 +128,21 @@
       height: 100%;
       position: absolute;
       top: 0;
-
-      &.tab-arrow--left {
-        @include rem(padding-right, 10px);
-        left: 0;
+      
+      &[disabled] {
+        cursor: default;
+        opacity: .5;
       }
-      &.tab-arrow--right {
-        @include rem(padding-left, 10px);
-        right: 0;
-      }
+    }
+    .tab-arrow--left {
+      @include rem(padding-right, 10px);
+      background-image: linear-gradient(to left, transparent, rgba($darkblue, .9) 10%);
+      left: 0;
+    }
+    .tab-arrow--right {
+      @include rem(padding-left, 10px);
+      background-image: linear-gradient(to right, transparent, rgba($darkblue, .9) 10%);
+      right: 0;
     }
 
     /* show the arrows when the tabs overflow */

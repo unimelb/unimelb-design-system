@@ -1,4 +1,5 @@
 var OVERFLOW_PRECISION = 4;
+var Ps = require('perfect-scrollbar');
 
 /**
  * Tabs
@@ -103,7 +104,8 @@ Tabs.prototype.handleResize = function(e) {
         if (!this.props.isLoadingPs) {
           // Load the 'perfect-scrollbar' library then setup the overflow behaviour
           this.props.isLoadingPs = true;
-          loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.7/js/min/perfect-scrollbar.min.js', this.setupOverflow.bind(this));
+          //loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.7/js/min/perfect-scrollbar.min.js', this.setupOverflow.bind(this));
+          this.setupOverflow();
         }
       } else {
         // Bring up the horizontal scrollbar
@@ -127,7 +129,6 @@ Tabs.prototype.setupOverflow = function() {
   var inner = document.createElement('div');
   inner.className = 'tabbed-nav__inner';
   inner.appendChild(this.props.nav);
-  this.props.inner = inner;
   
   // Build arrows
   var leftArrow = document.createElement('button');
@@ -139,10 +140,21 @@ Tabs.prototype.setupOverflow = function() {
   rightArrow.innerHTML = '&rsaquo;';
   rightArrow.className += ' tab-arrow--right';
   
+  // Store references to new elements
+  this.props.inner = inner;
+  this.props.leftArrow = leftArrow;
+  this.props.rightArrow = rightArrow;
+  
   // Append wrapper and arrows
   this.props.navParent.appendChild(inner);
   this.props.navParent.appendChild(leftArrow);
   this.props.navParent.appendChild(rightArrow);
+  
+  // Listen for events to enable/disable arrows
+  document.addEventListener('ps-scroll-right', this.updateArrow.bind(this, 'left', true));
+  document.addEventListener('ps-scroll-left', this.updateArrow.bind(this, 'right', true));
+  document.addEventListener('ps-x-reach-start', this.updateArrow.bind(this, 'left', false));
+  document.addEventListener('ps-x-reach-end', this.updateArrow.bind(this, 'right', false));
   
   // Activate the overflow behaviour
   this.activateOverflow();
@@ -160,6 +172,10 @@ Tabs.prototype.activateOverflow = function() {
     useBothWheelAxes: true,
     wheelPropagation: true
   });
+  
+  // TODO: scroll to the selected tab
+  //inner.scrollLeft = 50;
+  Ps.update(this.props.inner);
 };
 
 /**
@@ -168,6 +184,15 @@ Tabs.prototype.activateOverflow = function() {
 Tabs.prototype.destroyOverflow = function() {
   this.props.navParent.removeClass('overflow');
   Ps.destroy(this.props.inner);
+};
+
+Tabs.prototype.updateArrow = function(arrow, enable, e) {
+  var arrowElem = this.props[arrow + 'Arrow'];
+  if (enable) {
+    arrowElem.removeAttribute('disabled');
+  } else {
+    arrowElem.setAttribute('disabled', 'disabled');
+  }
 };
 
 Tabs.prototype.handleClick = function(e) {
@@ -290,14 +315,6 @@ Tabs.prototype.movetab = function(index) {
       this.props.tabs[i].setAttribute('data-current', '');
     } else {
       this.props.tabs[i].removeAttribute('data-current');
-    }
-  }
-
-  for (opts=this.el.querySelectorAll('option'), max=opts.length, i=0; i < max; i++) {
-    if (i === index) {
-      opts[i].setAttribute('selected', 'selected');
-    } else {
-      opts[i].removeAttribute('selected');
     }
   }
 };
