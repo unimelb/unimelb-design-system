@@ -2,7 +2,7 @@
   color: $gray;
   list-style-position: inside;
   margin: 0 auto;
-  padding: 30px 0;
+  padding: 35px 0 30px;
   width: 94%;
 
   li {
@@ -46,73 +46,79 @@
     }
   }
 
-  @include breakpoint(desktop) {
-    a {
-      border-bottom: 1px solid $lightergray;
-    }
-  }
-
-  @include breakpoint(wide) {
-    width: auto;
-
-    li {
-      width: 100%;
-    }
-
-    a.current {
-      color: $black;
-
-      &:active {
-        color: darken($cherry, 15%);
-      }
-    }
-  }
-
   &.fixed {
     font-family: $ff-sans;
   }
 }
 
-.uomcontent .jump-navigation {
+.uomcontent [role="main"] .jump-navigation {
   @extend %jump;
-}
+  @include rem(padding-top, 35px);
 
-.uomcontent #outer {
-  @extend %jump;
+  @include breakpoint(desktop) {
+    @include rem(padding-top, 80px);
+  }
 
   @include breakpoint(wide) {
-    display: table;
-    margin-top: 33px;
-    padding: 15px 15px 30px;
-    position: absolute;
-    width: 240px;
-    z-index: 100;
-
-    &.fixed {
-      font-family: $ff-sans;
-      margin-top: 10px;
-      position: fixed;
-      top: 45px;
-
-      &.floating {
-        margin-top: 0;
-      }
-
-      &.headless {
-        margin-top: 123px;
-      }
-    }
-
-    &.endpoint {
-      bottom: 545px;
-      position: absolute;
-      top: auto;
-    }
+    @include rem(padding-top, 35px);
   }
 }
 
-
 body.jumpnav-active {
+  .uomcontent #outer {
+    @extend %jump;
+
+    @include breakpoint(desktop) {
+      @include rem(padding-top, 80px);
+
+      a {
+        border-bottom: 1px solid $lightergray;
+      }
+    }
+
+    @include breakpoint(wide) {
+      display: table;
+      margin-top: 33px;
+      padding: 15px 15px 30px;
+      position: absolute;
+      width: 240px;
+      z-index: 100;
+
+      li {
+        width: 100%;
+      }
+
+      a.current {
+        color: $black;
+
+        &:active {
+          color: darken($cherry, 15%);
+        }
+      }
+
+      &.fixed {
+        font-family: $ff-sans;
+        margin-top: 10px;
+        position: fixed;
+        top: 45px;
+
+        &.floating {
+          margin-top: 0;
+        }
+
+        &.headless {
+          margin-top: 123px;
+        }
+      }
+
+      &.endpoint {
+        bottom: 545px;
+        position: absolute;
+        top: auto;
+      }
+    }
+  }
+
   @include breakpoint(wide) {
     .page-inner {
       background-color: $white;
