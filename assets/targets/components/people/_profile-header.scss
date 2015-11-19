@@ -1,0 +1,72 @@
+.uomcontent [role="main"] {
+
+  .profile-header {
+    @include rem(padding, 48px 16px);
+    background-color: $paleblue;
+    color: inherit;
+
+    &__summary {
+      text-align: center;
+
+      h1 {
+        @include rem(font-size, 25px);
+        font-weight: $regular;
+        text-align: inherit;
+
+        & + p {
+          padding-bottom: 0;
+        }
+      }
+
+      p {
+        @include rem(font-size, 18px);
+        font-weight: $light;
+      }
+    }
+
+    &__avatar {
+      @include rem(margin-bottom, 5px);
+      border-radius: 50%;
+    }
+
+    &__info {
+      @include rem(padding-top, 24px);
+      border-top: 1px solid $lightestblue;
+
+      a {
+        text-decoration: none;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__contact,
+    &__location {
+      padding: 0;
+      margin: 0;
+
+      & > li {
+        list-style: none;
+      }
+    }
+
+    &__contact {
+      @include rem(margin-bottom, 24px);
+
+      [data-icon],
+      [data-icon] > .icon-over {
+        @include rem(width, 20px);
+        @include rem(height, 20px);
+      }
+    }
+
+    &__location {
+      em {
+        color: $midgray;
+      }
+    }
+  }
+
+}
