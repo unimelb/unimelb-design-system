@@ -1,0 +1,134 @@
+== slim :breadcrumb
+
+div role="main"
+  header
+    form.search action="http://search-au.funnelback.com/s/search.html" method="get"
+      fieldset
+        .inline
+          input type="hidden" name="collection" value="unimelb-researchers"
+          input aria-required="true" placeholder="Search" name="query" type="search" data-error="Please enter a keyword" aria-label="Search" autocomplete="off"
+          button type="submit" class="search-button"
+            span Go
+            svg class="icon" role="img"
+              use xlink:href="#icon-search"
+  
+  .profile-header
+    .profile-header__summary
+      img.profile-header__photo src="/assets/images/chaz.jpg" alt="" width="150" height="150"
+      h1 Chaz Batrouney
+      p: em Web Producer
+      p Project Services
+    .profile-header__info
+      ul.profile-header__contact
+        li
+          span.icon--hide-label> data-icon="phone" Phone number
+          a href="tel:+61383440346" +61 3 8344 0346
+        li
+          span.icon--hide-label> data-icon="smartphone" Mobile number
+          a href="tel:+61408179965" +61 4 0817 9965
+        li
+          span.icon--hide-label> data-icon="mail" Email
+          a href="mailto:chaz.batrouney@unimelb.edu.au" chaz.batrouney@unimelb.edu.au
+        li
+          span> data-icon="profile"
+          a href="http://www.findanexpert.unimelb.edu.au/display/person443785#tab-overview" Find an Expert profile
+      ul.profile-header__location
+        li
+          em> Room:
+          | G16
+        li
+          em> Floor:
+          | GR
+        li
+          em> Building:
+          a href="http://www.google.com.au/maps?hl=en&q=-37.79772,144.96075" 33 Lincoln Square Sth
+        li
+          em> Campus:
+          | Parkville
+  
+  section
+    h2 Supervisor
+    ol.search-results
+      li.person
+        .person__photo style="background-image: url(//findanexpert.unimelb.edu.au/pictures/thumbnail195234picture);"
+        .person__info
+          .person__profile
+            h3
+              a href="#" Chaz Batrouney
+            p: em Web Producer
+            p Project Services
+          .person__contact
+            p.person__phone: a href="tel:+61383440346" +61 3 8344 0346
+            p.person__email: a href="mailto:chaz-batrouney@unimelb.edu.au" chaz-batrouney@unimelb.edu.au
+    h2 Direct reports (3)
+    ol.search-results
+      li.person
+        .person__photo style="background-image: url(//findanexpert.unimelb.edu.au/pictures/thumbnail195234picture);"
+        .person__info
+          .person__profile
+            h3
+              a href="#" Chaz Batrouney
+            p: em Web Producer
+            p Project Services
+          .person__contact
+            p.person__phone: a href="tel:+61383440346" +61 3 8344 0346
+            p.person__email: a href="mailto:chaz-batrouney@unimelb.edu.au" chaz-batrouney@unimelb.edu.au
+      li.person
+        .person__photo style="background-image: url(//findanexpert.unimelb.edu.au/pictures/thumbnail195234picture);"
+        .person__info
+          .person__profile
+            h3
+              a href="#" Chaz Batrouney
+            p: em Web Producer
+            p Project Services
+          .person__contact
+            p.person__phone: a href="tel:+61383440346" +61 3 8344 0346
+            p.person__email: a href="mailto:chaz-batrouney@unimelb.edu.au" chaz-batrouney@unimelb.edu.au
+    h2 Colleagues (100)
+    ol.search-results
+      li.person
+        .person__photo style="background-image: url(//findanexpert.unimelb.edu.au/pictures/thumbnail195234picture);"
+        .person__info
+          .person__profile
+            h3
+              a href="#" Chaz Batrouney
+            p: em Web Producer
+            p Project Services
+          .person__contact
+            p.person__phone: a href="tel:+61383440346" +61 3 8344 0346
+            p.person__email: a href="mailto:chaz-batrouney@unimelb.edu.au" chaz-batrouney@unimelb.edu.au
+      li.person
+        .person__photo style="background-image: url(//findanexpert.unimelb.edu.au/pictures/thumbnail195234picture);"
+        .person__info
+          .person__profile
+            h3
+              a href="#" Chaz Batrouney
+            p: em Web Producer
+            p Project Services
+          .person__contact
+            p.person__phone: a href="tel:+61383440346" +61 3 8344 0346
+            p.person__email: a href="mailto:chaz-batrouney@unimelb.edu.au" chaz-batrouney@unimelb.edu.au
+      li.person
+        .person__photo style="background-image: url(//findanexpert.unimelb.edu.au/pictures/thumbnail195234picture);"
+        .person__info
+          .person__profile
+            h3
+              a href="#" Chaz Batrouney
+            p: em Web Producer
+            p Project Services
+          .person__contact
+            p.person__phone: a href="tel:+61383440346" +61 3 8344 0346
+            p.person__email: a href="mailto:chaz-batrouney@unimelb.edu.au" chaz-batrouney@unimelb.edu.au
+      li.person
+        .person__photo style="background-image: url(//findanexpert.unimelb.edu.au/pictures/thumbnail195234picture);"
+        .person__info
+          .person__profile
+            h3
+              a href="#" Chaz Batrouney
+            p: em Web Producer
+            p Project Services
+          .person__contact
+            p.person__phone: a href="tel:+61383440346" +61 3 8344 0346
+            p.person__email: a href="mailto:chaz-batrouney@unimelb.edu.au" chaz-batrouney@unimelb.edu.au
+    
+    p.alert-info Incorrect or missing information? Read how you can update your details.
