@@ -4,7 +4,7 @@
     @include rem(padding, 48px 16px);
     background-color: $paleblue;
     color: inherit;
-    
+
     &__summary,
     &__info {
       @include rem(max-width, $w-sml);
@@ -33,10 +33,15 @@
       }
     }
 
-    &__avatar {
+    /* Photo can be an image element or a div with a background image */
+    &__photo {
+      background-position: center;
+      background-size: cover;
       border-radius: 50%;
       display: block;
       margin: 0 auto;
+      width: 150px;
+      height: 150px;
     }
 
     &__info {
@@ -45,7 +50,7 @@
 
       a {
         text-decoration: none;
-        
+
         &:hover {
           text-decoration: underline;
         }
@@ -83,13 +88,13 @@
         color: $midgray;
       }
     }
-    
+
     @include breakpoint(tablet) {
 
       &__info {
         @extend clearfix;
       }
-      
+
       &__location,
       &__contact {
         float: left;
