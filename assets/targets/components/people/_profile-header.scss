@@ -4,12 +4,20 @@
     @include rem(padding, 48px 16px);
     background-color: $paleblue;
     color: inherit;
+    
+    &__summary,
+    &__info {
+      @include rem(max-width, $w-sml);
+      margin: 0 auto;
+    }
 
     &__summary {
       text-align: center;
 
       h1 {
-        @include rem(font-size, 25px);
+        @include adjust-font-size-to(25px);
+        @include rem(margin-bottom, 8px);
+        @include rem(margin-top, 24px);
         font-weight: $regular;
         text-align: inherit;
 
@@ -19,14 +27,16 @@
       }
 
       p {
-        @include rem(font-size, 18px);
+        @include adjust-font-size-to(18px);
         font-weight: $light;
+        padding-top: 0;
       }
     }
 
     &__avatar {
-      @include rem(margin-bottom, 5px);
       border-radius: 50%;
+      display: block;
+      margin: 0 auto;
     }
 
     &__info {
@@ -49,6 +59,10 @@
 
       & > li {
         list-style: none;
+        margin-left: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
 
@@ -57,8 +71,10 @@
 
       [data-icon],
       [data-icon] > .icon-over {
-        @include rem(width, 20px);
         @include rem(height, 20px);
+        @include rem(margin-top, 4px);
+        @include rem(width, 20px);
+        vertical-align: top;
       }
     }
 
@@ -66,6 +82,20 @@
       em {
         color: $midgray;
       }
+    }
+    
+    @include breakpoint(tablet) {
+
+      &__info {
+        @extend clearfix;
+      }
+      
+      &__location,
+      &__contact {
+        float: left;
+        width: 50%;
+      }
+
     }
   }
 
