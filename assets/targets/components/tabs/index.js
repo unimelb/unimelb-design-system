@@ -1,7 +1,12 @@
+// Dependencies
+var Ps = require('perfect-scrollbar');
+var debounce = require('just-debounce');
+
 // Don't show sidebar until it's worth it
 var OVERFLOW_PRECISION = 10;
+// Debounce delay for resize event
+var DEBOUNCE_DELAY = 100;
 
-var Ps = require('perfect-scrollbar');
 
 /**
  * Tabs
@@ -25,8 +30,8 @@ function Tabs(el, props) {
     this.setupPanels();
     this.selectPanel();
     
-    this.handleResize();
-    window.addEventListener('resize', this.handleResize.bind(this));
+    this.handleResize(false);
+    window.addEventListener('resize', debounce(this.handleResize.bind(this, true), DEBOUNCE_DELAY));
   }
 }
 
@@ -90,7 +95,7 @@ Tabs.prototype.selectPanel = function() {
  * On page load and resize, check whether the tabs fit on one row.
  * If they don't, activate the overflow behaviour (horizontal scroll) 
  */
-Tabs.prototype.handleResize = function(e) {
+Tabs.prototype.handleResize = function(smooth, e) {
   // Check whether the full-width container is narrower than the navigation element
   var isOverflowing = this.el.clientWidth <= this.props.nav.clientWidth - OVERFLOW_PRECISION;
   
@@ -121,6 +126,9 @@ Tabs.prototype.handleResize = function(e) {
       this.destroyOverflow();
     }
   }
+  
+  // Scroll to the selected tab
+  this.scrollToTab(this.el.querySelector('[data-current]'), smooth);
 };
 
 /**
@@ -178,9 +186,6 @@ Tabs.prototype.activateOverflow = function() {
     useBothWheelAxes: true,
     wheelPropagation: true
   });
-  
-  // Scroll to the selected tab
-  this.scrollToTab(this.el.querySelector('[data-current]'), true);
 };
 
 /**
