@@ -1,4 +1,6 @@
-var OVERFLOW_PRECISION = 4;
+// Don't show sidebar until it's worth it
+var OVERFLOW_PRECISION = 10;
+
 var Ps = require('perfect-scrollbar');
 
 /**
@@ -90,7 +92,7 @@ Tabs.prototype.selectPanel = function() {
  */
 Tabs.prototype.handleResize = function(e) {
   // Check whether the full-width container is narrower than the navigation element
-  var isOverflowing = this.el.clientWidth <= this.props.nav.clientWidth + OVERFLOW_PRECISION;
+  var isOverflowing = this.el.clientWidth <= this.props.nav.clientWidth - OVERFLOW_PRECISION;
   
   // Update the horizontal scrollbar, if initialised
   if (isOverflowing && this.props.isOverflowSetup) {
@@ -99,6 +101,9 @@ Tabs.prototype.handleResize = function(e) {
   
   // Activate or deactivate the overflow behaviour when needed
   if (isOverflowing !== this.props.isOverflowing) {
+    // Save overflow state
+    this.props.isOverflowing = isOverflowing;
+    
     if (isOverflowing) {
       if (!this.props.isOverflowSetup) {
         if (!this.props.isLoadingPs) {
@@ -115,9 +120,6 @@ Tabs.prototype.handleResize = function(e) {
       // Remove the horizontal scrollbar
       this.destroyOverflow();
     }
-    
-    // Save overflow state
-    this.props.isOverflowing = isOverflowing;
   }
 };
 
@@ -150,7 +152,11 @@ Tabs.prototype.setupOverflow = function() {
   this.props.navParent.appendChild(leftArrow);
   this.props.navParent.appendChild(rightArrow);
   
-  // Listen for events to enable/disable arrows
+  // Listen for clicks on arrows
+  leftArrow.addEventListener('click', this.handleArrowClick.bind(this, 'left'));
+  rightArrow.addEventListener('click', this.handleArrowClick.bind(this, 'right'));
+  
+  // Listen for scroll events to enable/disable arrows
   document.addEventListener('ps-scroll-right', this.updateArrow.bind(this, 'left', true));
   document.addEventListener('ps-scroll-left', this.updateArrow.bind(this, 'right', true));
   document.addEventListener('ps-x-reach-start', this.updateArrow.bind(this, 'left', false));
@@ -173,9 +179,8 @@ Tabs.prototype.activateOverflow = function() {
     wheelPropagation: true
   });
   
-  // TODO: scroll to the selected tab
-  //inner.scrollLeft = 50;
-  Ps.update(this.props.inner);
+  // Scroll to the selected tab
+  this.scrollToTab(this.el.querySelector('[data-current]'), true);
 };
 
 /**
@@ -195,6 +200,13 @@ Tabs.prototype.updateArrow = function(arrow, enable, e) {
   }
 };
 
+Tabs.prototype.handleArrowClick = function(direction, e) {
+  var start = this.props.inner.scrollLeft;
+  var multiplier = direction === 'left' ? -1 : 1;
+  var to = start + multiplier * this.props.inner.clientWidth / 2;
+  this.scrollTabs(to, true);
+};
+
 Tabs.prototype.handleClick = function(e) {
   var target = e.target;
 
@@ -209,11 +221,11 @@ Tabs.prototype.handleClick = function(e) {
     // go to href
 
     if (target.getAttribute('href').charAt(0) == '#') {
-      this.move(target);
+      this.move(target, true);
       this.setLocation(target.getAttribute('href'));
     }
   } else {
-    this.move(target);
+    this.move(target, true);
     this.setLocation(target.getAttribute('href'));
   }
 };
@@ -271,10 +283,11 @@ Tabs.prototype.getIndex = function(target) {
 /**
  * Match target
  */
-Tabs.prototype.move = function(target) {
+Tabs.prototype.move = function(target, smooth) {
   var current, panels, max, i;
 
   this.movetab(this.getIndex(target));
+  this.scrollToTab(target, smooth);
 
   if (this.props.panels.length === 1) {
     current = this.el.querySelector('[role="tabpanel"]');
@@ -289,6 +302,39 @@ Tabs.prototype.move = function(target) {
       } else {
         this.hidePanel(panels[i]);
       }
+    }
+  }
+};
+
+Tabs.prototype.scrollToTab = function(tab, smooth) {
+  if (this.props.isOverflowing) {
+    var to = tab.offsetLeft - this.props.inner.clientWidth / 2 + tab.clientWidth / 2;
+    this.scrollTabs(to, smooth);
+  }
+};
+
+Tabs.prototype.scrollTabs = function(to, smooth) {
+  if (smooth) {
+    var start = this.props.inner.scrollLeft;
+    var change = to - start;
+    var increment = Math.abs(change / 500);
+    var duration = Math.abs(change / 10);
+    this.animateTabsScroll(0, start, change, duration, increment);
+  } else {
+    Ps.update(this.props.inner);
+  }
+};
+
+Tabs.prototype.animateTabsScroll = function(curr, start, change, duration, increment) {
+  curr += increment;
+  this.props.inner.scrollLeft = Math.easeInOutQuad(curr, start, change, duration);
+  
+  if (curr < duration) {
+    setTimeout(this.animateTabsScroll.bind(this, curr, start, change, duration, increment), increment);
+  } else {
+    // If the tabs are still overflowing when the scrolling ends, update the scrollbars
+    if (this.props.isOverflowing) {
+      Ps.update(this.props.inner);
     }
   }
 };
