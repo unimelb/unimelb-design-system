@@ -10,7 +10,7 @@ div role="main"
       | - the layout is being actively developed and is not yet ready for use.
     li
       strong> Stable
-      ' - the layout is ready for use; if you notice any issues please
+      ' - the layout is ready for use; if you notice any issue please
       a href="https://github.com/marcom-unimelb/unimelb-design-system/issues" let us know
       | .
     li
@@ -18,7 +18,7 @@ div role="main"
       | - the layout should no longer be used, as it will be removed in the next major release of the design system.
   p.alert-info
     strong> Tip:
-    | view the raw source of any template by adding <code>/source</code> to the end of the URL.
+    | view the raw source of any layout by adding <code>/source</code> to the end of its URL.
   
   section
     .filtered-listing-wrapper.alt
@@ -29,174 +29,153 @@ div role="main"
             input.checkbox type="checkbox" name="f[degree_type]" checked="checked" data-tag="all" id="c00"
             label for="c00" tabindex="0"
               span All
-          div.category-a
-            input#c1.checkbox type="checkbox" name="f[course_type]" data-tag="category-a"
+          div.category-e
+            input#c1.checkbox type="checkbox" name="f[course_type]" data-tag="category-e"
             label for="c1" tabindex="0"
               span Prototype
-          div.category-b
-            input#c2.checkbox type="checkbox" name="f[course_type]" data-tag="category-b"
+          div.category-a
+            input#c2.checkbox type="checkbox" name="f[course_type]" data-tag="category-a"
             label for="c2" tabindex="0"
               span Stable
-          div.category-c
-            input#c3.checkbox type="checkbox" name="f[course_type]" data-tag="category-c"
+          div.category-b
+            input#c3.checkbox type="checkbox" name="f[course_type]" data-tag="category-b"
             label for="c3" tabindex="0"
               span Deprecated
         .right
           label for="f-select2" Filter by category:
           div
-            select#f-select2.alt name="f[select2]" title="Please make a selection from the 2nd dropdown"
+            select#f-select2.alt name="f[select2]"
               option value="-1" All categories
-              option value="Website sections" Website sections
+              option value="website-sections" Website sections
               option value="news" News
               option value="events" Events
               option value="articles" Articles
-              option value="linkedlisting" Linked Listings
+              option value="linked-listing" Linked Listings
               option value="staff" Staff
-              option value="serverpages" Server pages
+              option value="de-co-branded" De/co-branded
+              option value="server-pages" Server pages
 
-  .filtered-listing-section data-category="Website sections"
+  .filtered-listing-section data-category="website-sections"
     aside
       h2 Website sections
-      p Combined Layouts across more than one page addressing common sections of a website
+      p Combined layouts across more than one page addressing common sections of a website.
     .bside
       ul.filtered-listing-grid
-        li class="category-c item"
+        li class="category-a item"
           a href="/layouts/homepage"
-            |Website section
-            '
-            strong Homepage (dark background)
-        li class="category-c item"
+            ' Website section
+            strong Homepage with dark header image
+        li class="category-a item"
           a href="/layouts/floating-contrast"
-            |Website section
-            '
-            strong Homepage (light background)
-        li class="category-c item"
+            ' Website section
+            strong Homepage with light header image
+        li class="category-a item"
           a href="/layouts/about"
-            |Website section
-            '
-            strong About section
-        li class="category-c item"
-          a href="/layouts/course"
-            |Website section
-            '
-            strong Course
-        li class="category-c item"
-          a href="/layouts/search"
-            |Website section
-            '
-            strong Search
-        li class="category-c item"
+            ' Website section
+            strong About
+        li class="category-a item"
           a href="/layouts/with-login"
-            |Website section
-            '
-            strong Header Login
+            ' Website section
+            strong About with login
+        li class="category-a item"
+          a href="/layouts/course"
+            ' Website section
+            strong Course
+        li class="category-a item"
+          a href="/layouts/search"
+            ' Website section
+            strong Search
   hr.spacer
   .filtered-listing-section data-category="news"
     aside
       h2 News
-      p Ways to display news
+      p Ways to display news.
     .bside
       ul.filtered-listing-grid
         li class="category-a item"
           a.inactive href=""
-            |News
-            '
+            ' News
             strong List (coming soon)
         li class="category-b item"
           a.inactive href=""
-            |News
-            '
+            ' News
             strong News article
         li class="category-b item"
           a.inactive href=""
-            |News
-            '
+            ' News
             strong News article with image
   hr.spacer
   .filtered-listing-section data-category="events"
     aside
       h2 Events
-      p Ways to display events
+      p Ways to display events.
     .bside
       ul.filtered-listing-grid
         li class="category-a item"
           a.inactive href=""
-            |Event
-            '
+            ' Event
             strong List
         li class="category-a item"
           a.inactive href=""
-            |Event
-            '
+            ' Event
             strong List with speakers
-        li class="category-b item"
+        li class="category-a item"
           a href="/layouts/event"
-            |Event
-            '
-            strong Detail
-        li class="category-b item"
+            ' Event
+            strong Details
+        li class="category-a item"
           a.inactive href=""
-            |Event
-            '
+            ' Event
             strong Events with image
   hr.spacer
   .filtered-listing-section data-category="articles"
     aside
       h2 Articles
-      p These examples can be used for blog posts, articles or general text heavy content
+      p These examples can be used for blog posts, articles or general text heavy content.
     .bside
       ul.filtered-listing-grid
         li class="category-a item"
           a.inactive href=""
-            |Article
-            '
+            ' Article
             strong List (coming soon)
-        li class="category-b item"
+        li class="category-a item"
           a href="/layouts/article"
-            |Article
-            '
+            ' Article
             strong Article
   hr.spacer
-  .filtered-listing-section data-category="linkedlisting"
+  .filtered-listing-section data-category="linked-listing"
     aside
       h2 Linked listings
-      p Different layouts for any kind of linked listing
+      p Different layouts for any kind of linked listing.
     .bside
       ul.filtered-listing-grid
         li class="category-a item"
           a.inactive href=""
-            |Listing
-            '
+            ' Listing
             strong Default
         li class="category-a item"
           a.inactive href=""
-            |Listing
-            '
+            ' Listing
             strong Featured
         li class="category-a item"
           a.inactive href=""
-            |Listing
-            '
+            ' Listing
             strong Featured (3-col)
         li class="category-a item"
           a.inactive href=""
-            |Listing
-            '
+            ' Listing
             strong Hero
         li class="category-a item"
-          a.inactive href=""
-            |Listing
-            '
-            strong Filtered Listing
+          a href="/layouts/filter-listing"
+            ' Listing
+            strong Filtered listing
         li class="category-a item"
           a.inactive href=""
-            |Listing
-            '
+            ' Listing
             strong Navigational index
         li class="category-one item"
           a href="/layouts/indexnav"
-            |Inpage
-            '
+            ' Inpage
             strong Index navigation
   hr.spacer
   .filtered-listing-section data-category="staff"
@@ -206,26 +185,41 @@ div role="main"
       ul.filtered-listing-grid
         li class="category-a item"
           a href="/layouts/staff-list"
-            |Staff
-            '
+            ' Staff
             strong List
         li class="category-a item"
           a href="/layouts/staff-list-fullwidth"
-            |Staff
-            '
+            ' Staff
             strong Full width list
         li class="category-a item"
           a href="/layouts/staff-list-featured"
-            |Staff
-            '
+            ' Staff
             strong Featured list
         li class="category-b item"
           a.inactive href=""
-            |Staff
-            '
+            ' Staff
             strong Profile page
   hr.spacer
-  .filtered-listing-section data-category="serverpages"
+  .filtered-listing-section data-category="de-co-branded"
+    aside
+      h2 De/co-branded
+      p Layouts without the Melbourne University branding, or with the branding of another faculty or organisation. 
+    .bside
+      ul.filtered-listing-grid
+        li class="category-a item"
+          a href="/layouts/debranded"
+            ' De/co-branded
+            strong About, debranded
+        li class="category-a item"
+          a href="/layouts/cobrand"
+            ' De/co-branded
+            strong Co-branded homepage
+        li class="category-a item"
+          a href="/layouts/cobrand-sub"
+            ' De/co-branded
+            strong Co-branded sub-page
+  hr.spacer
+  .filtered-listing-section data-category="server-pages"
     aside
       h2 Server pages
       p Server error, File not found, etc ...
@@ -233,12 +227,10 @@ div role="main"
       ul.filtered-listing-grid
         li class="category-b item"
           a href="/layouts/404"
-            |Server page
-            '
+            ' Server page
             strong 404
         li class="category-b item"
           a href="/layouts/500"
-            |Server page
-            '
+            ' Server page
             strong 500
   hr.spacer
