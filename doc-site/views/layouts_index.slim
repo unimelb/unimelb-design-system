@@ -1,45 +1,58 @@
 == slim :breadcrumb
 
 div role="main"
-  header.image.with-filters style="background-image:url(/assets/images/desktop.jpg)"
-    p These layouts are examples how we use the design system for common pages across the university.
-    .bottom-align-flat
-      .filtered-listing-wrapper
-        form.filtered-listing-select
-          fieldset.left
-            legend Filter by type
-            div.all
-              input.checkbox type="checkbox" name="f[degree_type]" checked="checked" data-tag="all" id="c00"
-              label for="c00" tabindex="0"
-                span All
-            div.category-a
-              input#c1.checkbox type="checkbox" name="f[course_type]" data-tag="category-a"
-              label for="c1" tabindex="0"
-                span Lists
-            div.category-b
-              input#c2.checkbox type="checkbox" name="f[course_type]" data-tag="category-b"
-              label for="c2" tabindex="0"
-                span Single view
-            div.category-c
-              input#c3.checkbox type="checkbox" name="f[course_type]" data-tag="category-c"
-              label for="c3" tabindex="0"
-                span Mixed views
-          .right
-            label for="f-select2" Filter by category
-            div
-              select#f-select2.clear name="f[select2]" title="Please make a selection from the 2nd dropdown"
-                option value="-1" All categories
-                option value="Website sections" Website sections
-                option value="news" News
-                option value="events" Events
-                option value="articles" Articles
-                option value="linkedlisting" Linked Listings
-                option value="staff" Staff
-                option value="serverpages" Server pages
-
-  footer.cta.center Pro tip: the pre-DOM source of any template can be viewed by adding <small>/source</small> to the end of the URL.
-
-  hr.spacer
+  .headerless
+  h1.aligned-title Layouts
+  p These layouts are examples of how we use the design system for common pages across the university. You can filter them by <em>category</em> and <em>status</em>. The status of a layout is one of:
+  ul
+    li
+      strong> Prototype
+      | - the layout is being actively developed and is not yet ready for use.
+    li
+      strong> Stable
+      ' - the layout is ready for use; if you notice any issues please
+      a href="https://github.com/marcom-unimelb/unimelb-design-system/issues" let us know
+      | .
+    li
+      strong> Deprecated
+      | - the layout should no longer be used, as it will be removed in the next major release of the design system.
+  p.alert-info
+    strong> Tip:
+    | view the raw source of any template by adding <code>/source</code> to the end of the URL.
+  
+  section
+    .filtered-listing-wrapper
+      form.filtered-listing-select
+        fieldset.left
+          legend Filter by status
+          div.all
+            input.checkbox type="checkbox" name="f[degree_type]" checked="checked" data-tag="all" id="c00"
+            label for="c00" tabindex="0"
+              span All
+          div.category-a
+            input#c1.checkbox type="checkbox" name="f[course_type]" data-tag="category-a"
+            label for="c1" tabindex="0"
+              span Prototype
+          div.category-b
+            input#c2.checkbox type="checkbox" name="f[course_type]" data-tag="category-b"
+            label for="c2" tabindex="0"
+              span Stable
+          div.category-c
+            input#c3.checkbox type="checkbox" name="f[course_type]" data-tag="category-c"
+            label for="c3" tabindex="0"
+              span Deprecated
+        .right
+          label for="f-select2" Filter by category
+          div
+            select#f-select2.clear name="f[select2]" title="Please make a selection from the 2nd dropdown"
+              option value="-1" All categories
+              option value="Website sections" Website sections
+              option value="news" News
+              option value="events" Events
+              option value="articles" Articles
+              option value="linkedlisting" Linked Listings
+              option value="staff" Staff
+              option value="serverpages" Server pages
 
   .filtered-listing-section data-category="Website sections"
     aside
