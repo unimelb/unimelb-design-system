@@ -95,7 +95,7 @@
           position: absolute;
           top: 100%;
           width: 0;
-          z-index: 1;
+          z-index: 10;
         }
 
         @include breakpoint(desktop) {
@@ -112,6 +112,10 @@
     .tabbed-nav__inner {
       @include rem(padding-bottom, 15px);
       position: relative;
+    }
+    
+    .ps-scrollbar-x-rail {
+      z-index: 5;
     }
 
     /* left/right arrows when screen size is too small to fit all the tabs */
@@ -240,7 +244,8 @@
     &.thin {
       nav a {
         @include adjust-font-size-to(13px);
-        @include rem(padding, 15px);
+        @include rem(line-height, 64px);
+        @include rem(padding, 0 15px);
       }
 
       [role="tabpanel"] {
