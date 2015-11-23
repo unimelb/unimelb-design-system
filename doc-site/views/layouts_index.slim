@@ -3,7 +3,7 @@
 div role="main"
   .headerless
   h1.aligned-title Layouts
-  p These layouts are examples of how we use the design system for common pages across the university. You can filter them by <em>category</em> and <em>status</em>. The status of a layout is one of:
+  p These layouts are examples of how we use the design system for common pages across the university. You can filter them by <em>status</em> and <em>category</em>. The status of a layout is one of:
   ul
     li
       strong> Prototype
@@ -21,10 +21,10 @@ div role="main"
     | view the raw source of any template by adding <code>/source</code> to the end of the URL.
   
   section
-    .filtered-listing-wrapper
+    .filtered-listing-wrapper.alt
       form.filtered-listing-select
         fieldset.left
-          legend Filter by status
+          legend Filter by status:
           div.all
             input.checkbox type="checkbox" name="f[degree_type]" checked="checked" data-tag="all" id="c00"
             label for="c00" tabindex="0"
@@ -42,9 +42,9 @@ div role="main"
             label for="c3" tabindex="0"
               span Deprecated
         .right
-          label for="f-select2" Filter by category
+          label for="f-select2" Filter by category:
           div
-            select#f-select2.clear name="f[select2]" title="Please make a selection from the 2nd dropdown"
+            select#f-select2.alt name="f[select2]" title="Please make a selection from the 2nd dropdown"
               option value="-1" All categories
               option value="Website sections" Website sections
               option value="news" News
