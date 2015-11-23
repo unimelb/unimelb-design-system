@@ -42,7 +42,7 @@
 
   .tabbed-nav {
     & > .full-width {
-      @include rem(height, 4rem);
+      @include rem(height, 64px);
       background-color: $darkblue;
       border-bottom: 1px solid transparent;
       position: relative;
@@ -63,14 +63,22 @@
       white-space: nowrap;
 
       a {
-        @include rem(padding, 0 10px);
+        @include adjust-font-size-to(15px);
         @include rem(line-height, 64px);
-        color: $white;
+        @include rem(padding, 0 20px);
+        color: rgba($white, .7);
         display: inline-block;
+        letter-spacing: .5px;
         text-decoration: none;
         text-transform: uppercase;
+        
+        &:hover {
+          color: $white;
+        }
 
         &[data-current] {
+          color: $white;
+          font-weight: $regular;
           position: relative;
         }
 
@@ -91,23 +99,12 @@
         }
 
         @include breakpoint(desktop) {
-          @include adjust-font-size-to(18px);
-          @include rem(padding, 20px 45px);
+          @include rem(padding, 0 30px);
         }
       }
 
-      [data-icon] .icon {
-        display: none;
-      }
-
-      @include breakpoint(desktop) {
-        [data-icon] .icon {
-          display: inline-block;
-        }
-
-        [data-icon] .icon-label {
-          display: none;
-        }
+      [data-icon] {
+        @extend .icon--hide-label;
       }
     }
 
