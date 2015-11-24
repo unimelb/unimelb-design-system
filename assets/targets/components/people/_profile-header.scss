@@ -1,0 +1,107 @@
+.uomcontent [role="main"] {
+
+  .profile-header {
+    @include rem(padding, 48px 16px);
+    background-color: $paleblue;
+    color: inherit;
+
+    &__summary,
+    &__info {
+      @include rem(max-width, $w-sml);
+      margin: 0 auto;
+    }
+
+    &__summary {
+      text-align: center;
+
+      h1 {
+        @include adjust-font-size-to(25px);
+        @include rem(margin-bottom, 8px);
+        @include rem(margin-top, 24px);
+        font-weight: $regular;
+        text-align: inherit;
+
+        & + p {
+          padding-bottom: 0;
+        }
+      }
+
+      p {
+        @include adjust-font-size-to(18px);
+        font-weight: $light;
+        padding-top: 0;
+      }
+    }
+
+    /* Photo can be an image element or a div with a background image */
+    &__photo {
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      height: 150px;
+    }
+
+    &__info {
+      @include rem(padding-top, 24px);
+      border-top: 1px solid $lightestblue;
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__contact,
+    &__location {
+      padding: 0;
+      margin: 0;
+
+      & > li {
+        list-style: none;
+        margin-left: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+
+    &__contact {
+      @include rem(margin-bottom, 24px);
+
+      [data-icon],
+      [data-icon] > .icon-over {
+        @include rem(height, 20px);
+        @include rem(margin-top, 4px);
+        @include rem(width, 20px);
+        vertical-align: top;
+      }
+    }
+
+    &__location {
+      em {
+        color: $midgray;
+      }
+    }
+
+    @include breakpoint(tablet) {
+
+      &__info {
+        @extend clearfix;
+      }
+
+      &__location,
+      &__contact {
+        float: left;
+        width: 50%;
+      }
+
+    }
+  }
+
+}

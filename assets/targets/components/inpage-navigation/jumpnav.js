@@ -123,7 +123,11 @@ JumpNav.prototype.buildNavMenu = function() {
 
     // Insert into top of role=main
     } else {
-      this.props.root.insertBefore(this.el, this.props.root.firstChild);
+      var refElem = this.props.root.findFirstElementChild();
+      // If first element is `.headerless`, take the next sibling so that the jumpnav appears below the blue bar on mobile and tablet
+      if (refElem.hasClass('headerless'))
+        refElem = refElem.findNextElementSibling();
+      this.props.root.insertBefore(this.el, refElem);
     }
   }
 
