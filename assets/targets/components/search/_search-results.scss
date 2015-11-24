@@ -56,14 +56,14 @@
         
         .person__contact {
           @include padding-leader(0.5);
+          
+          a {
+            white-space: nowrap;
+          }
         }
         
         .person__phone {
           @include adjust-font-size-to(18px);
-          
-          & > a {
-            white-space: nowrap;
-          }
         }
         
         @include breakpoint(desktop) {
