@@ -36,6 +36,12 @@
       }
       
       &.person {
+        /* work-around for `with-aside` layout */
+        div {
+          clear: none;
+          width: auto;
+        }
+        
         .person__photo {
           background-position: center;
           background-size: cover;
@@ -50,14 +56,14 @@
         
         .person__contact {
           @include padding-leader(0.5);
+          
+          a {
+            white-space: nowrap;
+          }
         }
         
         .person__phone {
           @include adjust-font-size-to(18px);
-          
-          & > a {
-            white-space: nowrap;
-          }
         }
         
         @include breakpoint(desktop) {

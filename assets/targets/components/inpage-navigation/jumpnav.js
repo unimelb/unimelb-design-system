@@ -24,8 +24,9 @@ function JumpNav(props) {
   for (var prop in offsets) { this.props[prop] = offsets[prop]; }
 
   // Does layout contain a header at the top
-  if (this.props.root.firstElementChild.nodeName === 'HEADER')
-    this.props.header = this.props.root.firstElementChild;
+  var firstElem = this.props.root.findFirstElementChild();
+  if (firstElem && firstElem.nodeName === 'HEADER')
+    this.props.header = firstElem;
 
   // Build nav menu
   if (!this.el || !this.el.hasAttribute('data-bound')) {

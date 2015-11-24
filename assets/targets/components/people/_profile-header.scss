@@ -19,6 +19,7 @@
         @include rem(margin-bottom, 8px);
         @include rem(margin-top, 24px);
         font-weight: $regular;
+        padding-bottom: 0;
         text-align: inherit;
 
         & + p {
@@ -92,12 +93,13 @@
     @include breakpoint(tablet) {
 
       &__info {
-        @extend clearfix;
+        @extend %clearfix;
       }
 
       &__location,
       &__contact {
         float: left;
+        margin-bottom: 0;
         width: 50%;
       }
 
