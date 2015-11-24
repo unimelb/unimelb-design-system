@@ -37,7 +37,6 @@
 
     /* Photo can be an image element or a `div` with a background image */
     &__photo {
-      @extend %fallbackAvatar; /* a fallback avatar is shown if the photo fails to load */
       background-position: center;
       background-size: cover;
       border-radius: 50%;
@@ -45,6 +44,11 @@
       height: 150px;
       margin: 0 auto;
       width: 150px;
+      
+      /* When using the background-image technique, show a fallback avatar if the photo fails to load */
+      &:not(img) {
+        @extend %fallbackAvatar;
+      }
     }
 
     &__info {
