@@ -12,6 +12,7 @@
     }
 
     &__summary {
+      @extend %fallbackAvatarWrapper;
       text-align: center;
 
       h1 {
@@ -34,15 +35,16 @@
       }
     }
 
-    /* Photo can be an image element or a div with a background image */
+    /* Photo can be an image element or a `div` with a background image */
     &__photo {
+      @extend %fallbackAvatar; /* a fallback avatar is shown if the photo fails to load */
       background-position: center;
       background-size: cover;
       border-radius: 50%;
       display: block;
+      height: 150px;
       margin: 0 auto;
       width: 150px;
-      height: 150px;
     }
 
     &__info {

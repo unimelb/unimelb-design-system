@@ -36,6 +36,8 @@
       }
       
       &.person {
+        @extend %fallbackAvatarWrapper;
+        
         /* work-around for `with-aside` layout */
         div {
           clear: none;
@@ -43,6 +45,7 @@
         }
         
         .person__photo {
+          @extend %fallbackAvatar; /* a fallback avatar is shown if the photo fails to load */
           background-position: center;
           background-size: cover;
           border-radius: 50%;
