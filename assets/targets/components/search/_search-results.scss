@@ -36,6 +36,12 @@
       }
       
       &.person {
+        /* work-around for `with-aside` layout */
+        div {
+          clear: none;
+          width: auto;
+        }
+        
         .person__photo {
           background-position: center;
           background-size: cover;
