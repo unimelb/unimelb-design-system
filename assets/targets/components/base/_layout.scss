@@ -448,6 +448,10 @@ body {
       clear: both;
       width: 100%;
 
+      & > .aligned-title:first-child {
+        padding-top: 0;
+      }
+
       & > section:first-child {
         padding-top: 0;
 

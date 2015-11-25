@@ -2,16 +2,14 @@
 title: Getting started
 ---
 .headerless
+.jumpnav
 
-section
-  .jumpnav
+h1.aligned-title Design System Usage Instructions
 
-  h1.aligned-title Design System Usage Instructions
+section.lead.left
+  p Creating a new site using the Design System requires setting up a basic page markup and then using either the <a href="/layouts">example layouts</a> or <a href="/components">components</a> to place component inside the <code>div role="main"</code>.
 
-  section.lead
-    p Creating a new site using the Design System requires setting up a basic page markup and then using either the <a href="/layouts">example layouts</a> or <a href="/components">components</a> to place component inside the <code>div role="main"</code>.
-
-  p Demonstration examples of this code can be found for many different page types in our <a href="/layouts">example layouts directory</a> similar to these:
+p Demonstration examples of this code can be found for many different page types in our <a href="/layouts">example layouts directory</a> similar to these:
 
 hr
 

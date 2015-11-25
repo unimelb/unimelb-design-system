@@ -16,43 +16,102 @@
   ol.search-results {
     padding-left: 0;
     padding-right: 0;
+    width: 94%;
+    
+    @include breakpoint(desktop) {
+      width: 100%;
+    }
 
-    li {
+    & > li {
       @extend %clearfix;
       @include padding-trailer(1);
       @include trailer(1);
       border-bottom: 1px solid rgba(#000000, 0.1);
       list-style-type: none;
       margin-left: 0;
-      margin-right: 0;
-      padding-right: 0;
-      width: 100%;
+      width: auto;
 
       &:last-child {
         @include padding-trailer(1);
       }
+      
+      &.person {
+        /* work-around for `with-aside` layout */
+        div {
+          clear: none;
+          width: auto;
+        }
+        
+        .person__photo {
+          background-position: center;
+          background-size: cover;
+          border-radius: 50%;
+          width: 85px;
+          height: 85px;
+        }
+        
+        .person__info {
+          overflow: hidden;
+        }
+        
+        .person__contact {
+          @include padding-leader(0.5);
+          
+          a {
+            white-space: nowrap;
+          }
+        }
+        
+        .person__phone {
+          @include adjust-font-size-to(18px);
+        }
+        
+        @include breakpoint(desktop) {
+          .person__info {
+            display: table;
+          }
+
+          .person__profile,
+          .person__contact {
+            display: table-cell;
+            vertical-align: top;
+          }
+          
+          .person__profile {
+            @include rem(padding-right, 24px);
+            width: 100%;
+          }
+          
+          .person__contact {
+            padding-top: 0;
+            text-align: right;
+          }
+        
+          .person__phone {
+            @include adjust-font-size-to(20px);
+            white-space: nowrap;
+
+            & + .person__email {
+              @include padding-leader(0.5);
+            }
+          }
+        }
+      }
     }
 
     a {
-      @extend %wrapper;
-      display: block;
       text-decoration: none;
+    }
 
-      &.more {
-        @include padding-leader(0.5);
-        clear: both;
+    img,
+    .person__photo {
+      @include rem(margin-right, 16px);
+      @include rem(max-width, 100px);
+      display: block;
+      float: left;
 
-        &:after {
-          @include rem(font-size, 20px);
-          @include rem(padding-left, 5px);
-          content: '\2192';
-          line-height: 0;
-        }
-      }
-
-      @include breakpoint(tablet) {
-        padding-left: 0;
-        padding-right: 0;
+      @include breakpoint(desktop) {
+        max-width: 130px;
       }
     }
 
@@ -60,35 +119,7 @@
       @include adjust-font-size-to(20px);
       @include padding-trailer(0.5);
       font-weight: $regular;
-      width: 100%;
-
-      .small {
-        vertical-align: bottom;
-      }
-
-      svg {
-        @include rem(height, 30px);
-        @include rem(margin-left, -5px);
-        @include rem(margin-top, -3px);
-        @include rem(width, 30px);
-        float: left;
-        fill: $gray;
-      }
-    }
-
-    figure {
-      @include rem(margin, 4px 16px 0 0);
-      @include rem(max-width, 110px);
-      float: left;
-      padding: 0;
-
-      img {
-        display: block;
-      }
-
-      @include breakpoint(desktop) {
-        @include rem(max-width, 180px);
-      }
+      width: auto;
     }
 
     p {
@@ -104,6 +135,27 @@
       &.url {
         @include adjust-font-size-to(12px);
         color: $highlight;
+      }
+      
+      &.more {
+        @include padding-leader(0.5);
+        clear: left;
+
+        & > a::after {
+          @include rem(font-size, 20px);
+          @include rem(padding-left, 5px);
+          content: '\2192';
+          line-height: 0;
+        }
+      }
+      
+      & > [data-icon="lock"] {
+        @include rem(width, 20px);
+        @include rem(height, 20px);
+        
+        & > .icon-over {
+          display: block;
+        }
       }
     }
   }
