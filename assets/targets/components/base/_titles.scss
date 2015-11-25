@@ -1,7 +1,7 @@
 %aligned-title {
   @include rem(font-size, 28px);
   @include rem(padding-top, 48px);
-  @include rem(padding-bottom, 48px);
+  @include rem(padding-bottom, 36px);
   @include rem(padding-right, 20px);
   font-weight: $light;
   letter-spacing: 0;
@@ -11,7 +11,7 @@
   text-transform: none;
   width: 94%;
 
-  @include breakpoint(desktop) {
+  @include breakpoint(wide) {
     @include rem(padding-top, 80px);
     width: 100%;
   }

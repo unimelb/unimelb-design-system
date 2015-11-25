@@ -50,6 +50,7 @@
     }
 
     &.left {
+      @extend %wrapper;
       @include padding-leader(2);
       @include padding-trailer(2);
       @include rem(max-width, $w-sml);
@@ -57,8 +58,8 @@
       padding-right: 0;
       text-align: left;
 
-      p {
-        font-style: normal;
+      & > p {
+        width: 100%;
       }
     }
   }
@@ -69,11 +70,21 @@
   }
 }
 
-.uomcontent h1.aligned-title + .lead + p {
-  @include padding-leader(1);
+.uomcontent h1.aligned-title + .lead {
+  & + p {
+    @include padding-leader(1);
 
-  &:before {
-    display: none;
+    &:before {
+      display: none;
+    }
+  }
+  
+  &.left {
+    padding-top: 0;
+    
+    & + p {
+      padding-top: 0;
+    }
   }
 }
 
