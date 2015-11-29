@@ -433,10 +433,10 @@
   }
 
   .with-aside div.sidebar-tab {
-    display: none;
+    display: none !important;
 
     &.current {
-      display: block;
+      display: block !important;
 
       h2 {
         padding-top: 0;
