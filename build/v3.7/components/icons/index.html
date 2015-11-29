@@ -1,0 +1,437 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Icons | Web.Unimelb</title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.7</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Icons"><span itemprop="name">Icons</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">Icons</h1><section><div class="jumpnav"></div>
+
+<p>There has been <a href="https://css-tricks.com/icon-fonts-vs-svg/">a lot</a> of <a href="http://ianfeather.co.uk/ten-reasons-we-switched-from-an-icon-font-to-svg/">discussion</a> in the industry about the best way of implementing icons on a web page. Icon fonts, such as <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>, are widely available and generally free to use, but have a high overhead and can be tricky to style efficiently.</p>
+
+<p>We've decided to use raw SVG vectors, and include a minimal set within the design system.</p>
+
+<p>Please note: this component will not work on IE8 and below, since it depends on SVG.</p></section><hr /><h2 id="labels">Labels</h2><p>
+  Before we get started, all icons in the sytem <strong>require</strong> a label to supplement the graphic with a clear definition of what it is, and also act as a fallback on devices and browsers that do not support SVG. By itself, what an icon represents can be a very subjective experience!
+</p>
+<section class="links with-figure">
+  <blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">My son saw this and asked why the sign for &quot;video&quot; was &quot;bunkbed&quot;. <a href="http://t.co/egrIvOwurj">pic.twitter.com/egrIvOwurj</a></p>&mdash; Ed Morrish (@edmorrish) <a href="https://twitter.com/edmorrish/status/575285436094017536">March 10, 2015</a></blockquote>
+  <script async="" charset="utf-8" src="//platform.twitter.com/widgets.js"></script>
+</section><hr /><h2 id="usage">Usage</h2><p>Add the <code>data-icon</code> attribute to any empty element and give it the value of the icon you wish to use, eg.
+</p><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">data-icon=</span><span class="s">&quot;maps&quot;</span><span class="nt">&gt;</span>Map<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;trash&quot;</span><span class="nt">&gt;</span>Trash<span class="nt">&lt;/span&gt;</span>
+</pre></div>
+<p>This will be replaced at load time with an <code>svg</code> DOM element referencing the desired icon.
+</p>
+<p>By default, the icon will inherit the <code>currentColor</code> value of its parent element, and will be constrained to 60px &times; 60px.
+</p>
+<p>
+  There are three CSS helper classes that can be used to adjust the size:
+</p>
+<ul>
+  <li class="no-li">
+    <code>small</code> 30px &times; 30px
+  </li>
+  <li class="no-li">
+    <code>large</code> 100px &times; 100px
+  </li>
+  <li class="no-li">
+    <code>fill</code> 100% of container width and height
+  </li>
+</ul>
+<p>
+  All text within the element will be kept as a label (try and keep it short). All labels are centred on their containing element.
+</p><hr /><h2 id="icon-list">Icon list</h2><div class="eg-palette">
+  <div>
+    <div class="fill" data-icon="add">
+      add
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="bar">
+      bar
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="bike">
+      bike
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="bus">
+      bus
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="cafe">
+      cafe
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="campaign">
+      campaign
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="car">
+      car
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="cart">
+      cart
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="chat">
+      chat
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="check-circle">
+      check-circle
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="city">
+      city
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="clock">
+      clock
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="close">
+      close
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="computer">
+      computer
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="cutlery">
+      cutlery
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="delete">
+      delete
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="devices">
+      devices
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="download">
+      download
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="edit">
+      edit
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="ellipsis">
+      ellipsis
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="face">
+      face
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="facebook">
+      facebook
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="faculty">
+      faculty
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="flight">
+      flight
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="group">
+      group
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="home">
+      home
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="hr">
+      hr
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="instagram">
+      instagram
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="jobs">
+      jobs
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="library">
+      library
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="linkedin">
+      linkedin
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="location">
+      location
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="lock">
+      lock
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="mail">
+      mail
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="map">
+      map
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="menu">
+      menu
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="money">
+      money
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="pharmacy">
+      pharmacy
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="phone">
+      phone
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="print">
+      print
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="profile">
+      profile
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="rss">
+      rss
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="search">
+      search
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="select">
+      select
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="send">
+      send
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="share">
+      share
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="smartphone">
+      smartphone
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="student">
+      student
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="tag">
+      tag
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="train">
+      train
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="twitter">
+      twitter
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="walk">
+      walk
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="world">
+      world
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="youtube">
+      youtube
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="zoom-in">
+      zoom-in
+    </div>
+  </div>
+  <div>
+    <div class="fill" data-icon="zoom-out">
+      zoom-out
+    </div>
+  </div>
+  <br class="clear" />
+</div><hr /><h2 id="preset-sizes">Preset sizes</h2><div class="center">
+  <div class="small" data-icon="world">
+    Small
+  </div>
+  <div data-icon="world">
+    Default
+  </div>
+  <div class="large" data-icon="world">
+    Large
+  </div>
+</div>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;world&quot;</span><span class="nt">&gt;</span>
+    Small
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">data-icon=</span><span class="s">&quot;world&quot;</span><span class="nt">&gt;</span>
+    Default
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;large&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;world&quot;</span><span class="nt">&gt;</span>
+    Large
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="inline">Inline</h2><p>
+  The report is available to <a href="" style="text-decoration:none">Download (PDF 180KB) <span class="small" data-icon="download"></span></a>
+</p>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;p&gt;</span>
+  The report is available to <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span> <span class="na">style=</span><span class="s">&quot;text-decoration:none&quot;</span><span class="nt">&gt;</span>Download (PDF 180KB) <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;download&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="linked">Linked</h2><div class="center">
+  <a href="#linked">
+    <div data-icon="profile">
+      Login
+    </div>
+  </a>
+</div>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#linked&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">data-icon=</span><span class="s">&quot;profile&quot;</span><span class="nt">&gt;</span>
+      Login
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="fill-container">Fill container</h2><div class="center" style="padding:0;background-color:#d44;color:#fff">
+  <div style="height:240px">
+    <div class="fill" data-icon="pharmacy"></div>
+  </div>
+  <h1 class="bold">
+    Pharmacy
+  </h1>
+</div>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span> <span class="na">style=</span><span class="s">&quot;padding:0;background-color:#d44;color:#fff&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">&quot;height:240px&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;fill&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;pharmacy&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;bold&quot;</span><span class="nt">&gt;</span>
+    Pharmacy
+  <span class="nt">&lt;/h1&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="buttons">Buttons</h2><div class="center">
+  <div class="button soft">
+    Directions<span class="small" data-icon="location"></span>
+  </div>
+</div>
+<div class="center">
+  <div class="button-small">
+    Email<span class="small" data-icon="mail"></span>
+  </div>
+</div>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;button soft&quot;</span><span class="nt">&gt;</span>
+    Directions<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;location&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;button-small&quot;</span><span class="nt">&gt;</span>
+    Email<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;mail&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><div class="half"><section class="center"><a class="button-hero-reverse" href="/components/headings">Headings</a></section><section class="center"><a class="button-hero" href="/components/inpage-navigation">Inpage Navigation</a></section></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
