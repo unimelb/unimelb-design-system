@@ -148,6 +148,10 @@
       display: inline-block;
       max-width: none;
     }
+    
+    .article {
+      max-width: none;
+    }
 
     /* `with-aside` sidebar comes up next to the content at a narrower breakpoint than `jumpnav` */
     @include breakpoint(desktop) {
