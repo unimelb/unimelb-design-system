@@ -11,3 +11,10 @@ If the profile photo is not scare, use a **background image**. With this techniq
 </div>
 ...
 ```
+
+<div class="profile-header__summary">
+  <div class="profile-header__photo"></div>
+  <h1>Chaz Batrouney</h1>
+  <p><em>Web Producer</em></p>
+  <p>Project Services</p>
+</div>
