@@ -1,12 +1,14 @@
 /**
  * Fallback avatar for a person's photo, for use in people components including people search results.
  */
+$fallback__assets-path: 'https://d2h9b02ioca40d.cloudfront.net/shared/assets/' !default;
+
 %fallbackAvatar {
   position: relative;
-  
+
   /* Fallback avatar for when the photo fails to load */
   &::before {
-    background: url(/assets/images/avatar.png) no-repeat center / cover transparent;
+    background: url($fallback__assets-path + 'avatar-lt.png') no-repeat center / cover transparent;
     border-radius: 50%;
     content: "";
     height: 100%;

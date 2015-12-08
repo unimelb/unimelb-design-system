@@ -192,11 +192,6 @@ InjectNav.prototype.renderGlobalSitemap = function() {
       });
     }
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      window.location = this.action + "#gsc.q=" + this.elements[1].value;
-    });
-
     this.props.root.appendChild(this.props.globalNav);
   }
 };
