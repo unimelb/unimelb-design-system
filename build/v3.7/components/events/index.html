@@ -1,0 +1,773 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Events | Web.Unimelb</title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.7</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Events"><span itemprop="name">Events</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">Events</h1><section><div class="jumpnav"></div>
+
+<p>Show event details as either an index of events or a show view for a particular event.</p></section><hr /><h2 id="event-listing">Event listing</h2><ul class="event-listing">
+  <li>
+    <h2>
+      Friday <strong class="date">12</strong><strong class="month">September</strong>2014 
+    </h2>
+    <ul>
+      <li>
+        <a href="">
+          <h3>
+            Lorem ipsum dolor
+          </h3>
+          <p>
+            Nam vestibulum porttitor ipsum tincidunt semper. Suspendisse id euismod orci, quis egestas nulla. Donec sit amet auctor justo. Nam a turpis ac diam fringilla ullamcorper ac quis quam.
+          </p>
+        </a>
+        <div class="tags">
+          <span class="tag"><span data-icon="tag">Etiam quis</span></span><span class="tag"><span data-icon="tag">aliquam sem</span></span><span class="tag"><span data-icon="tag">Aenean sed feugiat nulla</span></span>
+        </div>
+      </li>
+      <li>
+        <a href="">
+          <h3>
+            Duis ultricies eget diam laoreet molestie
+          </h3>
+          <p>
+            Nulla interdum magna a euismod laoreet. Pellentesque convallis posuere placerat.  Tempor dictum nisi vitae bibendum. Praesent nec quam tellus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </p>
+        </a>
+        <div class="tags">
+          <div class="tags">
+            <span class="tag"><span data-icon="tag">Etiam quis</span></span><span class="tag"><span data-icon="tag">Nulla</span></span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h2>
+      Saturday <strong class="date">13</strong><strong class="month">Sep</strong>2014 
+    </h2>
+    <ul>
+      <li>
+        <a href="">
+          <h3>
+            Mei liber scaevola
+          </h3>
+          <p>
+            Cu has assum consectetuer, omittam scriptorem est te. At mel verear verterem reformidans, ei sonet quodsi eripuit mei, per utinam vituperata an. Nam tristique, elit quis vehicula ullamcorper, tellus lacus rutrum lacus.
+          </p>
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;event-listing&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>
+      Friday <span class="nt">&lt;strong</span> <span class="na">class=</span><span class="s">&quot;date&quot;</span><span class="nt">&gt;</span>12<span class="nt">&lt;/strong&gt;&lt;strong</span> <span class="na">class=</span><span class="s">&quot;month&quot;</span><span class="nt">&gt;</span>September<span class="nt">&lt;/strong&gt;</span>2014 
+    <span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;h3&gt;</span>
+            Lorem ipsum dolor
+          <span class="nt">&lt;/h3&gt;</span>
+          <span class="nt">&lt;p&gt;</span>
+            Nam vestibulum porttitor ipsum tincidunt semper. Suspendisse id euismod orci, quis egestas nulla. Donec sit amet auctor justo. Nam a turpis ac diam fringilla ullamcorper ac quis quam.
+          <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tags&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>Etiam quis<span class="nt">&lt;/span&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>aliquam sem<span class="nt">&lt;/span&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>Aenean sed feugiat nulla<span class="nt">&lt;/span&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;h3&gt;</span>
+            Duis ultricies eget diam laoreet molestie
+          <span class="nt">&lt;/h3&gt;</span>
+          <span class="nt">&lt;p&gt;</span>
+            Nulla interdum magna a euismod laoreet. Pellentesque convallis posuere placerat.  Tempor dictum nisi vitae bibendum. Praesent nec quam tellus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tags&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tags&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>Etiam quis<span class="nt">&lt;/span&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>Nulla<span class="nt">&lt;/span&gt;&lt;/span&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>
+      Saturday <span class="nt">&lt;strong</span> <span class="na">class=</span><span class="s">&quot;date&quot;</span><span class="nt">&gt;</span>13<span class="nt">&lt;/strong&gt;&lt;strong</span> <span class="na">class=</span><span class="s">&quot;month&quot;</span><span class="nt">&gt;</span>Sep<span class="nt">&lt;/strong&gt;</span>2014 
+    <span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;h3&gt;</span>
+            Mei liber scaevola
+          <span class="nt">&lt;/h3&gt;</span>
+          <span class="nt">&lt;p&gt;</span>
+            Cu has assum consectetuer, omittam scriptorem est te. At mel verear verterem reformidans, ei sonet quodsi eripuit mei, per utinam vituperata an. Nam tristique, elit quis vehicula ullamcorper, tellus lacus rutrum lacus.
+          <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="event-listing-with-presenters">Event listing with presenters</h2><ul class="event-listing">
+  <li>
+    <h2>
+      Friday <strong class="date">12</strong><strong class="month">Sep</strong>2014 
+    </h2>
+    <ul>
+      <li>
+        <a class="col" href=""><strong class="time">2:00pm – 5:00pm</strong>
+          <h3>
+            Lorem ipsum dolor
+          </h3>
+          <p>
+            Nam vestibulum porttitor ipsum tincidunt semper. Suspendisse id euismod orci, quis egestas nulla. Donec sit amet auctor justo. Nam a turpis ac diam fringilla ullamcorper ac quis quam.
+          </p>
+        </a>
+        <div class="presenters">
+          <strong>Presenters</strong><a href="">Ms Louise Adler</a><a href="">Ms Hanifa Deen</a><a href="">Mr Mathew Kenneally</a><a href="">Beth Wilson</a><a href="">Loruem Exum Ipsum</a><a href="">Professor Doulum</a><a href="">Endus Hoopes</a><a href="">Exum Padamadahm III</a>
+        </div>
+      </li>
+      <li>
+        <a class="col" href=""><strong class="time">5:00pm – 9:00pm</strong>
+          <h3>
+            Duis ultricies eget diam laoreet molestie
+          </h3>
+          <p>
+            There is no doubt that technology is a powerful agent of transformation, and will be an essential component of any attempt at reforming the way healthcare is delivered. Making care safer, more efficient, and economically sustainable is unlikely to...
+          </p>
+          <div class="tags">
+            <span class="tag"><span data-icon="tag">Medical Informatics</span></span><span class="tag"><span data-icon="tag">Medical</span></span><span class="tag"><span data-icon="tag">Technology</span></span>
+          </div>
+        </a>
+        <div class="presenters">
+          <strong>Presenters</strong><a href="">Loruem Exum Ipsum</a><a href="">Professor Doulum</a><a href="">Endus Hoopes</a><a href="">Exum Padamadahm III</a>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <h2>
+      Saturday <strong class="date">13</strong><strong class="month">September</strong>2014 
+    </h2>
+    <ul>
+      <li>
+        <a class="col" href=""><strong class="time">9:30pm – 10:30am</strong>
+          <h3>
+            Mei liber scaevola
+          </h3>
+          <p>
+            Cu has assum consectetuer, omittam scriptorem est te. At mel verear verterem reformidans, ei sonet quodsi eripuit mei, per utinam vituperata an. Nam tristique, elit quis vehicula ullamcorper, tellus lacus rutrum lacus.
+          </p>
+          <div class="tags">
+            <span class="tag"><span data-icon="tag">Etiam quis</span></span><span class="tag"><span data-icon="tag">aliquam sem</span></span><span class="tag"><span data-icon="tag">Aenean sed feugiat nulla</span></span>
+          </div>
+        </a>
+        <div class="presenters">
+          <strong>Presenters</strong><a href="">Ms Louise Adler</a><a href="">Ms Hanifa Deen</a>
+        </div>
+      </li>
+      <li>
+        <a class="col" href=""><strong class="time">12 noon – 1:30pm</strong>
+          <h3>
+            sociis natoque penatibus et magnis ridiculus mus
+          </h3>
+          <p>
+            Cum dis parturient montes, nascetur. Aliquam pretium ante vitae pulvinar efficitur. In interdum finibus metus, et elementum quam fringilla at. Duis at diam nisi. Mauris consequat tincidunt dolor, vel tempor diam cursus nec. Curabitur vulputate porttitor scelerisque. Vestibulum vulputate porttitor maximus. Aenean facilisis, augue ut finibus placerat, sem nisi convallis mauris, eget molestie turpis eros eu libero. Donec sit amet luctus enim, sit amet ornare sem.
+          </p>
+          <div class="tags">
+            <span class="tag"><span data-icon="tag">Etiam quis</span></span><span class="tag"><span data-icon="tag">Nulla</span></span>
+          </div>
+        </a>
+        <div class="presenters">
+          <strong>Presenters</strong><a href="">Ms Louise Adler</a><a href="">Ms Hanifa Deen</a><a href="">Mr Mathew Kenneally</a><a href="">Beth Wilson</a>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;event-listing&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>
+      Friday <span class="nt">&lt;strong</span> <span class="na">class=</span><span class="s">&quot;date&quot;</span><span class="nt">&gt;</span>12<span class="nt">&lt;/strong&gt;&lt;strong</span> <span class="na">class=</span><span class="s">&quot;month&quot;</span><span class="nt">&gt;</span>Sep<span class="nt">&lt;/strong&gt;</span>2014 
+    <span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;col&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong</span> <span class="na">class=</span><span class="s">&quot;time&quot;</span><span class="nt">&gt;</span>2:00pm – 5:00pm<span class="nt">&lt;/strong&gt;</span>
+          <span class="nt">&lt;h3&gt;</span>
+            Lorem ipsum dolor
+          <span class="nt">&lt;/h3&gt;</span>
+          <span class="nt">&lt;p&gt;</span>
+            Nam vestibulum porttitor ipsum tincidunt semper. Suspendisse id euismod orci, quis egestas nulla. Donec sit amet auctor justo. Nam a turpis ac diam fringilla ullamcorper ac quis quam.
+          <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;presenters&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;strong&gt;</span>Presenters<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Ms Louise Adler<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Ms Hanifa Deen<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Mr Mathew Kenneally<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Beth Wilson<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Loruem Exum Ipsum<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Professor Doulum<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Endus Hoopes<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Exum Padamadahm III<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;col&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong</span> <span class="na">class=</span><span class="s">&quot;time&quot;</span><span class="nt">&gt;</span>5:00pm – 9:00pm<span class="nt">&lt;/strong&gt;</span>
+          <span class="nt">&lt;h3&gt;</span>
+            Duis ultricies eget diam laoreet molestie
+          <span class="nt">&lt;/h3&gt;</span>
+          <span class="nt">&lt;p&gt;</span>
+            There is no doubt that technology is a powerful agent of transformation, and will be an essential component of any attempt at reforming the way healthcare is delivered. Making care safer, more efficient, and economically sustainable is unlikely to...
+          <span class="nt">&lt;/p&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tags&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>Medical Informatics<span class="nt">&lt;/span&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>Medical<span class="nt">&lt;/span&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>Technology<span class="nt">&lt;/span&gt;&lt;/span&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;presenters&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;strong&gt;</span>Presenters<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Loruem Exum Ipsum<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Professor Doulum<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Endus Hoopes<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Exum Padamadahm III<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>
+      Saturday <span class="nt">&lt;strong</span> <span class="na">class=</span><span class="s">&quot;date&quot;</span><span class="nt">&gt;</span>13<span class="nt">&lt;/strong&gt;&lt;strong</span> <span class="na">class=</span><span class="s">&quot;month&quot;</span><span class="nt">&gt;</span>September<span class="nt">&lt;/strong&gt;</span>2014 
+    <span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;col&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong</span> <span class="na">class=</span><span class="s">&quot;time&quot;</span><span class="nt">&gt;</span>9:30pm – 10:30am<span class="nt">&lt;/strong&gt;</span>
+          <span class="nt">&lt;h3&gt;</span>
+            Mei liber scaevola
+          <span class="nt">&lt;/h3&gt;</span>
+          <span class="nt">&lt;p&gt;</span>
+            Cu has assum consectetuer, omittam scriptorem est te. At mel verear verterem reformidans, ei sonet quodsi eripuit mei, per utinam vituperata an. Nam tristique, elit quis vehicula ullamcorper, tellus lacus rutrum lacus.
+          <span class="nt">&lt;/p&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tags&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>Etiam quis<span class="nt">&lt;/span&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>aliquam sem<span class="nt">&lt;/span&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>Aenean sed feugiat nulla<span class="nt">&lt;/span&gt;&lt;/span&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;presenters&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;strong&gt;</span>Presenters<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Ms Louise Adler<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Ms Hanifa Deen<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;col&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;&lt;strong</span> <span class="na">class=</span><span class="s">&quot;time&quot;</span><span class="nt">&gt;</span>12 noon – 1:30pm<span class="nt">&lt;/strong&gt;</span>
+          <span class="nt">&lt;h3&gt;</span>
+            sociis natoque penatibus et magnis ridiculus mus
+          <span class="nt">&lt;/h3&gt;</span>
+          <span class="nt">&lt;p&gt;</span>
+            Cum dis parturient montes, nascetur. Aliquam pretium ante vitae pulvinar efficitur. In interdum finibus metus, et elementum quam fringilla at. Duis at diam nisi. Mauris consequat tincidunt dolor, vel tempor diam cursus nec. Curabitur vulputate porttitor scelerisque. Vestibulum vulputate porttitor maximus. Aenean facilisis, augue ut finibus placerat, sem nisi convallis mauris, eget molestie turpis eros eu libero. Donec sit amet luctus enim, sit amet ornare sem.
+          <span class="nt">&lt;/p&gt;</span>
+          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tags&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>Etiam quis<span class="nt">&lt;/span&gt;&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">data-icon=</span><span class="s">&quot;tag&quot;</span><span class="nt">&gt;</span>Nulla<span class="nt">&lt;/span&gt;&lt;/span&gt;</span>
+          <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;presenters&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;strong&gt;</span>Presenters<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Ms Louise Adler<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Ms Hanifa Deen<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Mr Mathew Kenneally<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Beth Wilson<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="multi-date-event-page">Multi date event page</h2><div class="detail">
+  <div class="upper">
+    <aside>
+      <div class="when range">
+        <time datetime="2014-09-01">Monday<strong>01 Sep</strong>2014</time><time datetime="2014-09-12">Friday<strong>12 Sep</strong>2014</time>
+      </div>
+    </aside>
+    <img alt="Photo of my event" src="http://placeimg.com/1000/500" />
+  </div>
+  <div class="lower">
+    <aside>
+      <div>
+        <p>
+          780 Elizabeth Street<br />Melbourne VIC 3000
+        </p>
+        <a class="button-small" href="">Map<span class="small" data-icon="location"></span></a>
+      </div>
+      <div>
+        <a class="button-small" href="">Share<span class="small" data-icon="share"></span></a>
+      </div>
+      <div>
+        <p>
+          T: +61 3 9035 9400
+        </p>
+        <p>
+          <a href="mailto:mcd-web@unimelb.edu.au">mcd-web@unimelb.edu.au</a>
+        </p>
+        <p>
+          Wheelchair accessible
+        </p>
+      </div>
+    </aside>
+    <h2>
+      My Event's Title
+    </h2>
+    <p>
+      <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</em>
+    </p>
+    <p>
+      Nam vestibulum porttitor ipsum tincidunt semper. Suspendisse id euismod orci, quis egestas nulla. Donec sit amet auctor justo. Nam a turpis ac diam fringilla ullamcorper ac quis quam. Duis ultricies eget diam laoreet molestie. Donec accumsan est nibh, eu pretium ante volutpat vitae. Nam vitae arcu eget tellus sollicitudin vehicula. Ut lectus elit, semper ac feugiat sed, sagittis eget magna. In condimentum purus et libero fringilla, nec tincidunt libero suscipit. Nam fermentum velit et orci gravida, a hendrerit elit fermentum.
+    </p>
+    <p>
+      Nulla interdum magna a euismod laoreet. Pellentesque convallis posuere placerat. Nam tristique, elit quis vehicula ullamcorper, tellus lacus rutrum lacus, vel pretium lectus elit non urna. Nulla consectetur facilisis enim, in ultricies dui facilisis vel. Etiam vestibulum nec mi nec tempus. Ut luctus ex vitae imperdiet lobortis. Vestibulum placerat mi turpis, quis laoreet urna varius id. Curabitur id sagittis justo.
+    </p>
+  </div>
+</div>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;detail&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;upper&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;aside&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;when range&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;time</span> <span class="na">datetime=</span><span class="s">&quot;2014-09-01&quot;</span><span class="nt">&gt;</span>Monday<span class="nt">&lt;strong&gt;</span>01 Sep<span class="nt">&lt;/strong&gt;</span>2014<span class="nt">&lt;/time&gt;&lt;time</span> <span class="na">datetime=</span><span class="s">&quot;2014-09-12&quot;</span><span class="nt">&gt;</span>Friday<span class="nt">&lt;strong&gt;</span>12 Sep<span class="nt">&lt;/strong&gt;</span>2014<span class="nt">&lt;/time&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/aside&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">&quot;Photo of my event&quot;</span> <span class="na">src=</span><span class="s">&quot;http://placeimg.com/1000/500&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;lower&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;aside&gt;</span>
+      <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          780 Elizabeth Street<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>Melbourne VIC 3000
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button-small&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Map<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;location&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button-small&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Share<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;share&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          T: +61 3 9035 9400
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;mailto:mcd-web@unimelb.edu.au&quot;</span><span class="nt">&gt;</span>mcd-web@unimelb.edu.au<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Wheelchair accessible
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/aside&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>
+      My Event&#39;s Title
+    <span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      <span class="nt">&lt;em&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span class="nt">&lt;/em&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Nam vestibulum porttitor ipsum tincidunt semper. Suspendisse id euismod orci, quis egestas nulla. Donec sit amet auctor justo. Nam a turpis ac diam fringilla ullamcorper ac quis quam. Duis ultricies eget diam laoreet molestie. Donec accumsan est nibh, eu pretium ante volutpat vitae. Nam vitae arcu eget tellus sollicitudin vehicula. Ut lectus elit, semper ac feugiat sed, sagittis eget magna. In condimentum purus et libero fringilla, nec tincidunt libero suscipit. Nam fermentum velit et orci gravida, a hendrerit elit fermentum.
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Nulla interdum magna a euismod laoreet. Pellentesque convallis posuere placerat. Nam tristique, elit quis vehicula ullamcorper, tellus lacus rutrum lacus, vel pretium lectus elit non urna. Nulla consectetur facilisis enim, in ultricies dui facilisis vel. Etiam vestibulum nec mi nec tempus. Ut luctus ex vitae imperdiet lobortis. Vestibulum placerat mi turpis, quis laoreet urna varius id. Curabitur id sagittis justo.
+    <span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="single-date-event-page-with-presenters">Single date event page with presenters</h2><div class="detail">
+  <div class="upper">
+    <aside>
+      <div class="when">
+        <time datetime="2014-09-01">Monday<strong class="date">12</strong><strong class="month">Sep</strong>2014</time><time datetime="13:00">1:00 - 5:00pm</time>
+      </div>
+    </aside>
+    <img alt="Photo of my event" src="http://placeimg.com/1000/500" />
+  </div>
+  <div class="lower">
+    <aside>
+      <div>
+        <p>
+          780 Elizabeth Street<br />Melbourne VIC 3000
+        </p>
+        <a class="button-small" href="">Map<span class="small" data-icon="location"></span></a>
+      </div>
+      <div>
+        <ul class="social-links">
+          <li>
+            <a href="#"><span class="small icon--hide-label" data-icon="twitter">Share on Twitter</span></a>
+          </li>
+          <li>
+            <a href="#"><span class="small icon--hide-label" data-icon="facebook">Share on Facebook</span></a>
+          </li>
+          <li>
+            <a href="#"><span class="small icon--hide-label" data-icon="linkedin">Share on LinkedIn</span></a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>
+          T: +61 3 9035 9400
+        </p>
+        <p>
+          <a href="mailto:mcd-web@unimelb.edu.au">mcd-web@unimelb.edu.au</a>
+        </p>
+        <p>
+          Wheelchair accessible
+        </p>
+      </div>
+    </aside>
+    <h2>
+      My Event's Title
+    </h2>
+    <p>
+      <em>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</em>
+    </p>
+    <p>
+      Nam vestibulum porttitor ipsum tincidunt semper. Suspendisse id euismod orci, quis egestas nulla. Donec sit amet auctor justo. Nam a turpis ac diam fringilla ullamcorper ac quis quam. Duis ultricies eget diam laoreet molestie. Donec accumsan est nibh, eu pretium ante volutpat vitae. Nam vitae arcu eget tellus sollicitudin vehicula. Ut lectus elit, semper ac feugiat sed, sagittis eget magna. In condimentum purus et libero fringilla, nec tincidunt libero suscipit. Nam fermentum velit et orci gravida, a hendrerit elit fermentum.
+    </p>
+    <p>
+      Nulla interdum magna a euismod laoreet. Pellentesque convallis posuere placerat. Nam tristique, elit quis vehicula ullamcorper, tellus lacus rutrum lacus, vel pretium lectus elit non urna. Nulla consectetur facilisis enim, in ultricies dui facilisis vel. Etiam vestibulum nec mi nec tempus. Ut luctus ex vitae imperdiet lobortis. Vestibulum placerat mi turpis, quis laoreet urna varius id. Curabitur id sagittis justo.
+    </p>
+    <div class="presenters">
+      <strong>Presenters</strong><a href="">Ms Louise Adler</a><a href="">Ms Hanifa Deen</a><a href="">Mr Mathew Kenneally</a><a href="">Beth Wilson</a><a href="">Loruem Exum Ipsum</a><a href="">Professor Doulum</a><a href="">Endus Hoopes</a><a href="">Exum Padamadahm III</a>
+    </div>
+  </div>
+</div>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;detail&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;upper&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;aside&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;when&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;time</span> <span class="na">datetime=</span><span class="s">&quot;2014-09-01&quot;</span><span class="nt">&gt;</span>Monday<span class="nt">&lt;strong</span> <span class="na">class=</span><span class="s">&quot;date&quot;</span><span class="nt">&gt;</span>12<span class="nt">&lt;/strong&gt;&lt;strong</span> <span class="na">class=</span><span class="s">&quot;month&quot;</span><span class="nt">&gt;</span>Sep<span class="nt">&lt;/strong&gt;</span>2014<span class="nt">&lt;/time&gt;&lt;time</span> <span class="na">datetime=</span><span class="s">&quot;13:00&quot;</span><span class="nt">&gt;</span>1:00 - 5:00pm<span class="nt">&lt;/time&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/aside&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">&quot;Photo of my event&quot;</span> <span class="na">src=</span><span class="s">&quot;http://placeimg.com/1000/500&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;lower&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;aside&gt;</span>
+      <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          780 Elizabeth Street<span class="nt">&lt;br</span> <span class="nt">/&gt;</span>Melbourne VIC 3000
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button-small&quot;</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Map<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;location&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;social-links&quot;</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;small icon--hide-label&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;twitter&quot;</span><span class="nt">&gt;</span>Share on Twitter<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;small icon--hide-label&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;facebook&quot;</span><span class="nt">&gt;</span>Share on Facebook<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;small icon--hide-label&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;linkedin&quot;</span><span class="nt">&gt;</span>Share on LinkedIn<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          T: +61 3 9035 9400
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;mailto:mcd-web@unimelb.edu.au&quot;</span><span class="nt">&gt;</span>mcd-web@unimelb.edu.au<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Wheelchair accessible
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/aside&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>
+      My Event&#39;s Title
+    <span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      <span class="nt">&lt;em&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<span class="nt">&lt;/em&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Nam vestibulum porttitor ipsum tincidunt semper. Suspendisse id euismod orci, quis egestas nulla. Donec sit amet auctor justo. Nam a turpis ac diam fringilla ullamcorper ac quis quam. Duis ultricies eget diam laoreet molestie. Donec accumsan est nibh, eu pretium ante volutpat vitae. Nam vitae arcu eget tellus sollicitudin vehicula. Ut lectus elit, semper ac feugiat sed, sagittis eget magna. In condimentum purus et libero fringilla, nec tincidunt libero suscipit. Nam fermentum velit et orci gravida, a hendrerit elit fermentum.
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Nulla interdum magna a euismod laoreet. Pellentesque convallis posuere placerat. Nam tristique, elit quis vehicula ullamcorper, tellus lacus rutrum lacus, vel pretium lectus elit non urna. Nulla consectetur facilisis enim, in ultricies dui facilisis vel. Etiam vestibulum nec mi nec tempus. Ut luctus ex vitae imperdiet lobortis. Vestibulum placerat mi turpis, quis laoreet urna varius id. Curabitur id sagittis justo.
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;presenters&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;strong&gt;</span>Presenters<span class="nt">&lt;/strong&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Ms Louise Adler<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Ms Hanifa Deen<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Mr Mathew Kenneally<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Beth Wilson<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Loruem Exum Ipsum<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Professor Doulum<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Endus Hoopes<span class="nt">&lt;/a&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Exum Padamadahm III<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="single-date-event-page-mixed-markup">Single date event page mixed markup</h2><div class="detail">
+  <div class="upper">
+    <aside>
+      <div class="when">
+        <time datetime="2014-09-01">Monday<strong class="date">12</strong><strong class="month">Sep</strong>2014</time>
+      </div>
+    </aside>
+    <img alt="Photo of my event" src="http://placeimg.com/1000/500" />
+  </div>
+  <div class="lower">
+    <aside>
+      <div>
+        <p>
+          780 Elizabeth Street <br />Melbourne VIC 3000 <a class="button-small" href="http://maps.unimelb.edu.au/parkville/building/220" target="_blank">Map <span class="small" data-icon="location"></span></a>
+        </p>
+      </div>
+      <div>
+        <p>
+          <em>More Information</em>
+        </p>
+        <p>
+          Donna Kevey
+        </p>
+        <p>
+          <a href="mailto:dkevey@unimelb.edu.au">dkevey@unimelb.edu.au</a>
+        </p>
+        <p>
+          <a href="tel:+61383441693">T: +61 3 8344 1693</a>
+        </p>
+      </div>
+    </aside>
+    <h1>
+      About this template and how to use it
+    </h1>
+    <p>
+      This template <strong>Event block listing (local assets)</strong> is available if you wish to create local calendar events for your site.&nbsp;
+    </p>
+    <p>
+      If you wish to promote your event to a wider audience you should post on <a href="events.unimelb.edu.au">events.unimelb.edu.au</a> and use the feed as described on the <a href="http://cms.unimelb.edu.au/controlled-environment/events">events.unimelb examples</a>.
+    </p>
+    <p>
+      This event listing is using an <a href="http://manuals.matrix.squizsuite.net/calendar/chapters/upcoming-events-list">upcoming events list </a>&nbsp;and is set to show:&nbsp;
+    </p>
+    <ul>
+      <li>
+        360 events in the future
+      </li>
+      <li>
+        Maximum of 20 events
+      </li>
+    </ul>
+    <h2>
+      Create the main events listing page
+    </h2>
+    <ol>
+      <li>
+        Add a new standard page to your site
+      </li>
+      <li>
+        From the metadata screen select the page template: Event block listing (local assets).&nbsp;
+      </li>
+      <li>
+        Fields that can be used are:&nbsp; 
+        <ul>
+          <li>
+            Header text
+          </li>
+          <li>
+            Header subline
+          </li>
+          <li>
+            Banner image
+          </li>
+          <li>
+            Introductory text
+          </li>
+        </ul>
+      </li>
+      <li>
+        Create single calendar events under this asset and they will automatically be listed on this page.
+      </li>
+    </ol>
+    <h3>
+      Adding calendar events
+    </h3>
+    <p>
+      When adding local calendar events they should be:&nbsp;
+    </p>
+    <ul class="ticked-list">
+      <li>
+        Single Calendar Events (recurring calendar events needs some further work)
+      </li>
+      <li>
+        Type 2 (don't show in menu)
+      </li>
+      <li>
+        Asset status needs to be <strong>Live </strong>to be included on the event listing page
+      </li>
+      <li>
+        Only future upcoming events show
+      </li>
+    </ul>
+    <p>
+      Optional settings:
+    </p>
+    <ul>
+      <li>
+        Thumbnail image (set on details screen)
+      </li>
+      <li>
+        Contact details (set on metadata screen)
+      </li>
+      <li>
+        Location details &nbsp;(set on metadata screen)
+      </li>
+    </ul>
+    <p>
+      <img alt="" src="http://cms.unimelb.edu.au/__data/assets/image/0010/1544977/research-three.jpg" width="450px" />
+    </p>
+    <div class="center">
+      <p>
+        <a class="button-small" href="http://cms.unimelb.edu.au/controlled-environment/melbourne-cshe/study/award-courses/graduate-certificate-in-university-teaching/Grad-Cert-University-Teaching.pdf" target="_blank">Course brochure</a>
+      </p>
+    </div>
+    <div>
+      <iframe frameborder="0" height="450" src="//maps.unimelb.edu.au/parkville/building/220?SQ_DESIGN_NAME=embed" width="100%"></iframe>
+    </div>
+  </div>
+</div>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;detail&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;upper&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;aside&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;when&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;time</span> <span class="na">datetime=</span><span class="s">&quot;2014-09-01&quot;</span><span class="nt">&gt;</span>Monday<span class="nt">&lt;strong</span> <span class="na">class=</span><span class="s">&quot;date&quot;</span><span class="nt">&gt;</span>12<span class="nt">&lt;/strong&gt;&lt;strong</span> <span class="na">class=</span><span class="s">&quot;month&quot;</span><span class="nt">&gt;</span>Sep<span class="nt">&lt;/strong&gt;</span>2014<span class="nt">&lt;/time&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/aside&gt;</span>
+    <span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">&quot;Photo of my event&quot;</span> <span class="na">src=</span><span class="s">&quot;http://placeimg.com/1000/500&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;lower&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;aside&gt;</span>
+      <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          780 Elizabeth Street <span class="nt">&lt;br</span> <span class="nt">/&gt;</span>Melbourne VIC 3000 <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button-small&quot;</span> <span class="na">href=</span><span class="s">&quot;http://maps.unimelb.edu.au/parkville/building/220&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span>Map <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;small&quot;</span> <span class="na">data-icon=</span><span class="s">&quot;location&quot;</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          <span class="nt">&lt;em&gt;</span>More Information<span class="nt">&lt;/em&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          Donna Kevey
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;mailto:dkevey@unimelb.edu.au&quot;</span><span class="nt">&gt;</span>dkevey@unimelb.edu.au<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>
+          <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;tel:+61383441693&quot;</span><span class="nt">&gt;</span>T: +61 3 8344 1693<span class="nt">&lt;/a&gt;</span>
+        <span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/aside&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>
+      About this template and how to use it
+    <span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      This template <span class="nt">&lt;strong&gt;</span>Event block listing (local assets)<span class="nt">&lt;/strong&gt;</span> is available if you wish to create local calendar events for your site.<span class="ni">&amp;nbsp;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      If you wish to promote your event to a wider audience you should post on <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;events.unimelb.edu.au&quot;</span><span class="nt">&gt;</span>events.unimelb.edu.au<span class="nt">&lt;/a&gt;</span> and use the feed as described on the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://cms.unimelb.edu.au/controlled-environment/events&quot;</span><span class="nt">&gt;</span>events.unimelb examples<span class="nt">&lt;/a&gt;</span>.
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      This event listing is using an <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://manuals.matrix.squizsuite.net/calendar/chapters/upcoming-events-list&quot;</span><span class="nt">&gt;</span>upcoming events list <span class="nt">&lt;/a&gt;</span><span class="ni">&amp;nbsp;</span>and is set to show:<span class="ni">&amp;nbsp;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        360 events in the future
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        Maximum of 20 events
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>
+      Create the main events listing page
+    <span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;ol&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        Add a new standard page to your site
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        From the metadata screen select the page template: Event block listing (local assets).<span class="ni">&amp;nbsp;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        Fields that can be used are:<span class="ni">&amp;nbsp;</span> 
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            Header text
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            Header subline
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            Banner image
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            Introductory text
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        Create single calendar events under this asset and they will automatically be listed on this page.
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ol&gt;</span>
+    <span class="nt">&lt;h3&gt;</span>
+      Adding calendar events
+    <span class="nt">&lt;/h3&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      When adding local calendar events they should be:<span class="ni">&amp;nbsp;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;ticked-list&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        Single Calendar Events (recurring calendar events needs some further work)
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        Type 2 (don&#39;t show in menu)
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        Asset status needs to be <span class="nt">&lt;strong&gt;</span>Live <span class="nt">&lt;/strong&gt;</span>to be included on the event listing page
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        Only future upcoming events show
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      Optional settings:
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        Thumbnail image (set on details screen)
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        Contact details (set on metadata screen)
+      <span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>
+        Location details <span class="ni">&amp;nbsp;</span>(set on metadata screen)
+      <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;p&gt;</span>
+      <span class="nt">&lt;img</span> <span class="na">alt=</span><span class="s">&quot;&quot;</span> <span class="na">src=</span><span class="s">&quot;http://cms.unimelb.edu.au/__data/assets/image/0010/1544977/research-three.jpg&quot;</span> <span class="na">width=</span><span class="s">&quot;450px&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button-small&quot;</span> <span class="na">href=</span><span class="s">&quot;http://cms.unimelb.edu.au/controlled-environment/melbourne-cshe/study/award-courses/graduate-certificate-in-university-teaching/Grad-Cert-University-Teaching.pdf&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span>Course brochure<span class="nt">&lt;/a&gt;</span>
+      <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div&gt;</span>
+      <span class="nt">&lt;iframe</span> <span class="na">frameborder=</span><span class="s">&quot;0&quot;</span> <span class="na">height=</span><span class="s">&quot;450&quot;</span> <span class="na">src=</span><span class="s">&quot;//maps.unimelb.edu.au/parkville/building/220?SQ_DESIGN_NAME=embed&quot;</span> <span class="na">width=</span><span class="s">&quot;100%&quot;</span><span class="nt">&gt;&lt;/iframe&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><div class="half"><section class="center"><a class="button-hero-reverse" href="/components/enquiry">Enquiry</a></section><section class="center"><a class="button-hero" href="/components/filtered-listings">Filtered Listings</a></section></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>

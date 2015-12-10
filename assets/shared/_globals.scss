@@ -127,3 +127,11 @@ $cdnurl: '//d2h9b02ioca40d.cloudfront.net/shared';
   margin: 0;
   padding: 0;
 }
+
+/* prevent wrap and add ellipsis if overflow */
+%ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
