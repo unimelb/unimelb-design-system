@@ -1,5 +1,5 @@
-### Non-square photo
-If the profile photo is not scare, use a background image:
+### Non-square photo and fallback avatar
+If the profile photo is not scare, use a **background image**. With this technique, a **fallback avatar** is shown if the profile photo fails to load.
 
 ```html
 ...
@@ -11,3 +11,10 @@ If the profile photo is not scare, use a background image:
 </div>
 ...
 ```
+
+<div class="profile-header__summary">
+  <div class="profile-header__photo"></div>
+  <h1>Chaz Batrouney</h1>
+  <p><em>Web Producer</em></p>
+  <p>Project Services</p>
+</div>

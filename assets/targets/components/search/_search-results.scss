@@ -36,6 +36,8 @@
       }
       
       &.person {
+        @extend %fallbackAvatarWrapper;
+        
         /* work-around for `with-aside` layout */
         div {
           clear: none;
@@ -48,6 +50,11 @@
           border-radius: 50%;
           width: 85px;
           height: 85px;
+      
+          /* When using the background-image technique, show a fallback avatar if the photo fails to load */
+          &:not(img) {
+            @extend %fallbackAvatar;
+          }
         }
         
         .person__info {

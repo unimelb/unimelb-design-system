@@ -13,7 +13,7 @@ section
   p
     |To be used with the
     '
-    a href="/editorial-style-guide" University style guide
+    a href="https://staff.unimelb.edu.au/marketing-communications/media-communications/editorial-style-guide" University style guide
 
   hr.spacer
 
