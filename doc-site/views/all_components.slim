@@ -1,0 +1,15 @@
+== slim :breadcrumb
+
+div role="main"
+  .headerless
+
+  h1.aligned-title Components
+
+  - @components.each do |component|
+    - component.each_value do |section|
+      - section.each do |doc|
+        == doc
+
+      hr
+
+  == slim :contrib

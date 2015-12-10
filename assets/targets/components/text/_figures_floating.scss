@@ -23,10 +23,45 @@
       @include rem(max-height, 500px);
     }
 
+    .alt {
+      @include rem(margin-bottom, 15px);
+      @include rem(padding, 15px);
+      text-align: left;
+
+      p {
+        @include rem(padding-bottom, 14px);
+        @include rem(padding-top, 14px);
+      }
+
+      .button-small {
+        width: 100%;
+      }
+
+      @include breakpoint(tablet) {
+        @include rem(max-width, 240px);
+
+        img {
+          @include rem(margin, -15px -15px 15px);
+          @include rem(max-width, 240px);
+        }
+      }
+    }
+
+    a.alt {
+      color: $black;
+      display: block;
+      text-decoration: none;
+
+      &:hover .button-small {
+        background-color: darken($highlight, 10%);
+      }
+    }
+
     @include breakpoint(tablet) {
       @include rem(margin-bottom, 30px);
       @include rem(margin-right, 30px);
       border: 0 none;
+      clear: left;
       float: left;
       max-width: 62%;
       text-align: left;
@@ -72,6 +107,7 @@
 
     @include breakpoint(tablet) {
       @include rem(margin-left, 30px);
+      clear: right;
       float: right;
       margin-right: 0;
       text-align: right;
