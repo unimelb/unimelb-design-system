@@ -42,7 +42,6 @@
     &.fixed:not(.floating) {
       @include rem(height, 40px);
       background-color: $white;
-      font-family: $ff-sans;
       position: fixed;
       width: 100%;
 
