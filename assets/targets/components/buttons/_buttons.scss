@@ -16,7 +16,7 @@
   text-decoration: none;
   text-transform: uppercase;
 
-  &:hover {
+  &:hover, &:focus {
     border-bottom-width: 1px;
     color: $white;
     margin-top: 24px;
@@ -46,7 +46,7 @@
     border-bottom-color: darken($soft, 10%);
     color: $midblue;
 
-    &:hover {
+    &:hover, &:focus {
       background-color: $gray;
       color: $darkblue;
     }
@@ -85,7 +85,7 @@
   margin: 0;
   position: relative;
 
-  &:hover {
+  &:hover, &:focus {
     background-color: darken($highlight, 10%);
   }
 
@@ -93,15 +93,15 @@
     opacity: .3;
   }
 
-  &.warning:hover {
+  &.warning:hover, &.warning:focus {
     background-color: darken($warning, 10%);
   }
 
-  &.cta:hover {
+  &.cta:hover, &.cta:focus {
     background-color: darken($cta, 10%);
   }
 
-  &.brand:hover {
+  &.brand:hover, &.brand:focus {
     background-color: darken($brand, 10%);
   }
 
@@ -109,12 +109,12 @@
     background-color: $soft;
     color: $darkblue;
 
-    &:hover {
+    &:hover, &:focus {
       background-color: darken($gray, 10%);
     }
   }
 
-  &:hover {
+  &:hover, &:focus {
     margin-top: 0;
   }
 }
@@ -155,7 +155,7 @@
   text-decoration: none;
   text-transform: uppercase;
 
-  &:hover {
+  &:hover, &:focus {
     background-color: $cyan;
     color: $white;
     border-color: transparent;
@@ -242,7 +242,7 @@
     vertical-align: middle;
   }
 
-  &:hover {
+  &:hover, &:focus {
     @include rem(margin, 10px 0);
     background-color: rgba($black, .1);
     color: $black;
@@ -294,7 +294,7 @@
     text-decoration: none;
     width: 100%;
 
-    &:hover {
+    &:hover, &:focus {
       background-color: $highlight;
       color: $white;
     }
