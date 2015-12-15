@@ -10,10 +10,6 @@ function ValidateForm(el, props) {
   this.el = el;
   this.props = props;
 
-  this.props.outer = document.body;
-  if (/(Firefox)/g.test(navigator.userAgent))
-    this.props.outer = document.querySelector('html');
-
   this.props.patterns = {
     alpha         : /[a-zA-Z]+/,
     alpha_numeric : /[a-zA-Z0-9]+/,
@@ -54,8 +50,8 @@ ValidateForm.prototype.handleSubmit = function(e) {
   // Prevent submit and snap to top for error display
   if (this.props.invalid > 0) {
     e.preventDefault();
-    e.stopPropagation();
-    this.props.outer.scrollTop = this.el.offsetTop;
+    e.stopImmediatePropagation();
+    smoothScrollTo(this.el);
   }
 };
 
