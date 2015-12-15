@@ -46,7 +46,7 @@
     padding-right: 3%;
     text-decoration: none;
 
-    &:hover {
+    &:hover, &:focus {
       background-color: transparent;
       color: $white;
       text-decoration: underline;
@@ -250,7 +250,7 @@
       text-indent: 0;
     }
 
-    &:hover {
+    &:hover, &:focus {
       color: $white;
       text-decoration: underline;
     }
