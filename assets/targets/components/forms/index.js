@@ -54,6 +54,7 @@ ValidateForm.prototype.handleSubmit = function(e) {
   // Prevent submit and snap to top for error display
   if (this.props.invalid > 0) {
     e.preventDefault();
+    e.stopPropagation();
     this.props.outer.scrollTop = this.el.offsetTop;
   }
 };
