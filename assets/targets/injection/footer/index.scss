@@ -30,7 +30,7 @@
       color: $lightblue;
       text-decoration: none;
 
-      &:hover {
+      &:hover, &:focus {
         color: $white;
       }
     }
@@ -90,7 +90,7 @@
           @include rem(padding-left, 20px);
           @include rem(padding-right, 20px);
 
-          &:hover {
+          &:hover, &:focus {
             color: $white;
             text-decoration: underline;
           }
@@ -137,7 +137,7 @@
     color: $white;
     text-decoration: none;
 
-    &:hover {
+    &:hover, &:focus {
       text-decoration: underline;
     }
   }
@@ -254,7 +254,7 @@
       overflow: hidden;
       transition: all 0.2s linear;
 
-      &:hover {
+      &:hover, &:focus {
         background-color: $highlight;
         transform: scale(1.2);
       }
@@ -331,7 +331,7 @@
         color: $lightblue;
         text-decoration: none;
 
-        &:hover {
+        &:hover, &:focus {
           color: $white;
         }
       }
@@ -440,7 +440,7 @@
         padding-left: 20px;
         padding-right: 20px;
 
-        &:hover {
+        &:hover, &:focus {
           color: $white;
           text-decoration: underline;
         }
