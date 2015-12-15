@@ -111,7 +111,7 @@ body {
       @include rem(margin-top, 10px);
     }
 
-    &:hover {
+    &:hover, &:focus {
       @include breakpoint(desktop) {
         background-color: $highlight;
         color: $white;
@@ -243,7 +243,7 @@ body {
         transition: transform 0.3s;
       }
 
-      &:hover {
+      &:hover, &:focus {
         color: $white;
 
         svg {
@@ -257,7 +257,7 @@ body {
         padding-right: 0;
       }
 
-      &:hover {
+      &:hover, &:focus {
         background-color: $highlight;
       }
     }
@@ -282,7 +282,7 @@ body {
   top: 0;
   z-index: 16;
 
-  &:hover {
+  &:hover, &:focus {
     @include rem(right, 5px);
     @include rem(width, 50px);
 
@@ -378,7 +378,7 @@ body {
       text-align: center;
       vertical-align: middle;
 
-      &:hover {
+      &:hover, &:focus {
         color: $white;
       }
     }
