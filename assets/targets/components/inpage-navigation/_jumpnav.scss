@@ -41,7 +41,7 @@
     text-decoration: none;
     white-space: normal;
 
-    &:hover {
+    &:hover, &:focus {
       text-decoration: underline;
     }
   }
