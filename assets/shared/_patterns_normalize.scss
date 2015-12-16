@@ -37,3 +37,7 @@ iframe[src^='//www.youtube.com'],
 iframe[src^='//player.vimeo.com'] {
   width: 100%;
 }
+
+[hidden] {
+  display: none;
+}
