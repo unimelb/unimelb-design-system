@@ -1,6 +1,6 @@
 (function(root) {
 
-  if (document.cookie.replace(/(?:(?:^|.*;\s*)UOMsurveyTaken\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "tru") {
+  if (document.cookie.replace(/(?:(?:^|.*;\s*)UOMsurveyTaken\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true") {
 
     var body = document.body,
         content = document.createElement('div');
