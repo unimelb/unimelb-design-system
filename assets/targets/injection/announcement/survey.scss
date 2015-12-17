@@ -8,13 +8,14 @@ $magicoffset: 117px;
   position: relative;
   transition: max-height .2s ease;
   width: 100%;
-  z-index: 100;
+  z-index: 10;
 
   @include breakpoint(desktop) {
     @include rem(margin-top, -$magicoffset);
     padding-bottom: 0;
     position: absolute;
     top: 0;
+    z-index: 100;
   }
 
   .page-announcement__message {
@@ -76,10 +77,27 @@ $magicoffset: 117px;
   }
 }
 
+// Adjustments to layout
 body.with-announcement {
   @include breakpoint(desktop) {
     @include rem(top, $magicoffset);
     position: relative;
+  }
+
+  .uomcontent {
+    @include breakpoint(desktop) {
+      #sitemap.active,
+      .sitemap-label,
+      #globalsitemap.active {
+        @include rem(top, $magicoffset);
+      }
+
+      .page-header.fixed.active + .page-inner + .modal__blanket + #sitemap.active,
+      .page-header.fixed.active + .page-inner + .modal__blanket + #sitemap.active + .sitemap-label,
+      .page-header.fixed.active + .page-inner + .modal__blanket + #sitemap + .sitemap-label + #globalsitemap.active {
+        top: 0;
+      }
+    }
   }
 }
 
@@ -89,7 +107,7 @@ body.with-announcement.jumpnav-active .uomcontent {
   }
 
   #outer.fixed.headless {
-    @include breakpoint(desktop) {
+    @include breakpoint(wide) {
       @include rem(margin-top, 240px);
     }
   }
