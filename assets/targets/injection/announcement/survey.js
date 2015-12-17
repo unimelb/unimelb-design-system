@@ -1,7 +1,6 @@
 (function(root) {
 
-  if (document.cookie.replace(/(?:(?:^|.*;\s*)UOMsurveyTaken\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true") {
-
+  if (document.cookie.replace(/(?:(?:^|.*;\s*)UOMsurveyTaken\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true" && document.countSelector('.page-announcement') === 0) {
     var body = document.body,
         content = document.createElement('div');
 
