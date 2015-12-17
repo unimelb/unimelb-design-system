@@ -49,6 +49,10 @@
     }
 
     &.icon--hide-label {
+      // Fix outline bug in Chrome
+      overflow: hidden;
+      position: relative;
+      
       & > .icon-label {
         @include screenreaders-only;
       }
