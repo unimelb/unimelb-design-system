@@ -1,70 +1,96 @@
+$legacyblue: #24507e;
+$magicoffset: 117px;
+
 #UOMannounce {
-  color: #fff;
+  color: $white;
   opacity: 1;
-  position: absolute;
-  top: 0;
-  -webkit-transition: max-height 0.2s ease;
-  transition: max-height 0.2s ease;
+  padding-bottom: 0;
+  position: relative;
+  transition: max-height .2s ease;
   width: 100%;
   z-index: 100;
 
-  .page-announcement__message:hover {
-    background-color: #24507e;
-    color: #fff;
-  }
-
-  .page-announcement__close:hover {
-    background-color: #fff;
-    color: #0076de;
+  @include breakpoint(desktop) {
+    @include rem(margin-top, -$magicoffset);
+    padding-bottom: 0;
+    position: absolute;
+    top: 0;
   }
 
   .page-announcement__message {
-    background-color: rgba(#0076de, .95);
-    color: #fff;
+    @include rem(padding, 30px 50px 30px 15px);
+    background-color: $lighterblue;
+    color: $white;
     display: block;
-    padding: 30px 50px 30px 15px;
     text-align: center;
     text-decoration: none;
     width: 100%;
-  }
 
-  .page-announcement__message h2 {
-    color: #e1eaf5;
-    font-size: 12px;
-    font-weight: normal;
-    letter-spacing: normal;
-    line-height: 24px;
-    margin: 0 auto;
-    padding-bottom: 3px;
-    padding-top: 0;
-    text-transform: uppercase;
-  }
+    &:hover {
+      background-color: $legacyblue;
+      color: $white;
+    }
 
-  .page-announcement__message p {
+    h2 {
+      @include rem(font-size, 12px);
+      @include rem(line-height, 24px);
+      @include rem(padding-bottom, 3px);
+      color: $lightestblue;
+      font-weight: $regular;
+      letter-spacing: normal;
+      margin: 0 auto;
+      padding-top: 0;
+      text-transform: uppercase;
+    }
 
-    color: #fff;
-    font-size: 18px;
-    text-decoration: underline;
+    p {
+      @include rem(font-size, 18px);
+      color: $white;
+      text-decoration: underline;
+    }
   }
 
   .page-announcement__close {
+    @include rem(border-radius, 3px);
+    @include rem(font-size, 36px);
+    @include rem(height, 40px);
+    @include rem(line-height, 20px);
+    @include rem(padding, 5px 10px 15px);
+    @include rem(right, 15px);
+    @include rem(top, 35px);
+    @include rem(width, 40px);
     background: none;
-    border: none;
-    border-radius: 3px;
-    color: #fff;
+    border: 0;
+    color: $white;
     cursor: pointer;
-    font-size: 36px;
-    font-weight: 100;
-    height: 40px;
-    line-height: 20px;
     display: block;
+    font-weight: 100;
     margin-top: 0;
-    padding: 5px 10px 15px;
     position: absolute;
-    right: 15px;
-    top: 35px;
-    -webkit-transition: background-color 0.15s, color 0.15s;
-    transition: background-color 0.15s, color 0.15s;
-    width: 40px;
+    transition: background-color .15s, color .15s;
+
+    &:hover {
+      background-color: $white;
+      color: $lighterblue;
+    }
+  }
+}
+
+body.with-announcement {
+  @include breakpoint(desktop) {
+    @include rem(top, $magicoffset);
+    position: relative;
+  }
+}
+
+body.with-announcement.jumpnav-active .uomcontent {
+  [role="main"] {
+    padding-top: 0;
+  }
+
+  #outer.fixed.headless {
+    @include breakpoint(desktop) {
+      @include rem(margin-top, 240px);
+    }
   }
 }
