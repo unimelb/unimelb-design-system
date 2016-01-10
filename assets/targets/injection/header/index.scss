@@ -22,6 +22,11 @@
   top: 0;
   width: 100%;
   z-index: 12;
+  
+  /* Work-around for conflict with other `fixed` class, which sets the font to `$ff-fixed` */
+  &.fixed {
+    font-family: $ff-sans;
+  }
 
   @include breakpoint(desktop) {
     @include rem(height, 90px);
@@ -37,7 +42,6 @@
     &.fixed:not(.floating) {
       @include rem(height, 40px);
       background-color: $white;
-      font-family: $ff-sans;
       position: fixed;
       width: 100%;
 
