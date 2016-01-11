@@ -20,7 +20,7 @@
    * @param  {Element} to
    */
   if (typeof window.smoothScrollTo === "undefined") {
-    window.smoothScrollTo = function(to) {
+    window.smoothScrollTo = function(to, cb) {
       var element = document.body,
           headerElem = document.querySelector('.page-header');
       
@@ -48,7 +48,7 @@
       // Deduct offset
       change -= offset;
       
-      var animateScroll = function() {
+      var animateScroll = function(cb) {
         curr += increment;
         element.scrollTop = Math.easeInOutQuad(curr, start, change, duration);
         if (curr < duration) {
@@ -56,11 +56,16 @@
         } else {
           // Fix scrolling inaccuracy (always 1 or 2 pixels off without it)
           element.scrollTop += to.getBoundingClientRect().top - offset;
+          
+          // Invoke callback if any
+          if (cb) {
+            cb();
+          }
         }
       };
 
       if (change !== 0) {
-        animateScroll();
+        animateScroll(cb);
       }
     };
   }
