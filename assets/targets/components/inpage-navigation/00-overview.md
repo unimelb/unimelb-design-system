@@ -53,12 +53,21 @@ A-Z indices can be done via a simple class change:
 As you can't have both navigations in one document, you find an <a href="/layouts/indexnav">example of an index-navigation</a> in the example layouts.
 
 <h2 id="jsmethods">Javascript Call</h2>
-The smooth scroll methods can be invoked in your own project, independently of inpage navigation, by calling <code>smoothScrollTo</code>, as in the following example:
+The smooth scroll method can be invoked in your own project, independently of inpage navigation, by calling <code>smoothScrollTo</code> as in the following example:
 
 ```javascript
-var el = document.querySelector('#block'); // where #block is any element with id="block"
-smoothScrollTo(el);
+var el = document.querySelector('#block'); // where #block is an element with id="block"
+window.smoothScrollTo(el);
 ```
 
-<code>smoothScrollTo</code> is declared in the window (global) scope. <a href="javascript:smoothScrollTo(document.getElementById('jsmethods'))" class="button-small">Try it out!</a>
+<a href="javascript:smoothScrollTo(document.getElementById('jsmethods'))" class="button-small">Try it out!</a>
 
+`smoothScrollTo` accepts an optional **callback** function as second argument. This callback is invoked as soon as the scrolling animation ends. It is generally a good idea to avoid performing other actions, like loading a script or manipulating the DOM, while a scrolling animation is in progress. Doing so could deteriorate the smoothness of the animation.
+
+```javascript
+window.smoothScrollTo(el, doSomething);
+
+function doSomething() {
+  // Do something as soon as the scrolling ends - e.g. give focus to the element, load more content, etc. 
+}
+```
