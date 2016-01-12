@@ -18,7 +18,7 @@ By default the generated navigation will take the form of a *table of contents* 
 <div class="jumpnav top"></div>
 ```
 
-<h2 id="index">Index Navigation</h2>
+<h2 id="index">Index navigation</h2>
 A-Z indices can be done via a simple class change:
 
 ```html
