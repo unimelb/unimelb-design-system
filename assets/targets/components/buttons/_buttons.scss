@@ -307,4 +307,21 @@
       @include rem(font-size, 16px);
     }
   }
+
+  /* Button reset, for buttons used for interactions purposes (e.g. `dropdown-nav`) */
+  .button-reset {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+  }
 }
