@@ -50,33 +50,27 @@ LocalNav.prototype.moveLocalNav = function() {
     this.props.localnav.removeClass('no-js');
     this.props.root.appendChild(this.props.localnav);
 
-    var elements = [];
-    for (var groups=this.props.localnav.querySelectorAll('.inner'), i=groups.length - 1; i >= 0; i--) {
-      elements.push(groups[i]);
-    }
+    var innerElements = this.props.localnav.querySelectorAll('.inner');
+    var innerElem, parent, back, handler;
+    
+    for (i = innerElements.length - 1; i >= 0; i--) {
+      innerElem = innerElements[i];
+      handler = toggleActive.bind(this, innerElem);
+      
+      parent = innerElem.parentNode.querySelector('a');
+      parent.addClass('parent');
+      parent.addEventListener('click', handler);
 
-    for (i=elements.length - 1; i >= 0; i--) {
-      var childgroup = elements[i], parent = childgroup.parentNode.querySelector('a');
-      childgroup.addClass('hide');
-
-      var back = document.createElement('span');
+      back = document.createElement('span');
       back.addClass('back');
       back.innerHTML = parent.textContent || parent.innerText;
-      childgroup.insertBefore(back, childgroup.firstChild);
+      back.addEventListener('click', handler);
+      innerElem.insertBefore(back, innerElem.firstChild);
+    }
 
-      back.addEventListener('click', function(e) {
-        e.preventDefault();
-        this.parentNode.toggleClass('hide');
-        this.parentNode.toggleClass('active');
-      });
-
-      parent.addClass('parent');
-      parent.addEventListener('click', function(e) {
-        e.preventDefault();
-        var div = this.parentNode.querySelector('div');
-        div.toggleClass('hide');
-        div.toggleClass('active');
-      });
+    function toggleActive(elem, evt) {
+      evt.preventDefault();
+      elem.toggleClass('active');
     }
   }
 };
