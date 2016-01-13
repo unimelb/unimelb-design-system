@@ -38,7 +38,7 @@
     right: 0;
     z-index: 15;
 
-    .sitemap-label {
+    .sitemap-trigger {
       margin-left: -100px;
 
       @include breakpoint(tablet) {
@@ -311,7 +311,6 @@ body.ie {
       top: 0;
       -ms-transform: none;
       width: 300px;
-      z-index: 100;
     }
 
     .inner {

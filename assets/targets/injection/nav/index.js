@@ -21,7 +21,7 @@ function InjectNav(props) {
     globalNav: document.querySelector('#globalsitemap'),
     menuTrigger: document.querySelector('.page-header-tools a[title="Menu"]'),
     searchTrigger: document.querySelector('.page-header-tools a[title="Search"]'),
-    sitemapTrigger: document.querySelector('.sitemap-label')
+    sitemapTrigger: document.querySelector('.sitemap-trigger')
   };
 
   // Add elements to props
@@ -154,7 +154,7 @@ InjectNav.prototype.update = function() {
   this.props.page.toggleClass('global-active', activeNav.global);
   this.props.globalNav.toggleClass('active', activeNav.global);
 
-  this.props.sitemapTrigger.toggleClass('active', !activeNav.local); // TODO should be the opposite (have `active` class when local nav is active)
+  this.props.sitemapTrigger.toggleClass('active', activeNav.local);
 
 //  this.props.localNav.toggleClass('global-active', activeNav.global); // TODO needed?
 //  this.props.header.toggleClass('fixed', either); // TODO needed if scrolling to top with `window.scrollTop(0, 0)`
@@ -171,7 +171,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
   // Create global nav trigger
   if (!this.props.sitemapTrigger) {
     this.props.sitemapTrigger = document.createElement('div');
-    this.props.sitemapTrigger.setAttribute('class', 'sitemap-label active');
+    this.props.sitemapTrigger.setAttribute('class', 'sitemap-trigger');
     this.props.sitemapTrigger.innerHTML = '      <span>University Sitemap</span>';
     this.props.root.appendChild(this.props.sitemapTrigger);
   }

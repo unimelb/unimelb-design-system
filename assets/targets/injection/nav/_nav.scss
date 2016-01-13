@@ -268,36 +268,32 @@ body {
   }
 }
 
-.uomcontent .sitemap-label {
-  @include rem(width, 45px);
-  @include transform(translate(100%, 0) translate(-45px, 0));
-  @include transition(width .3s ease, right .3s ease);
+.uomcontent .sitemap-trigger {
+  @include rem(width, 50px);
   background-color: $navy;
   box-shadow: 3px 0 6px rgba($black, .4) inset;
   cursor: pointer;
   display: block;
   height: 100%;
   position: fixed;
-  right: 0;
+  right: -5px;
   top: 0;
+  transform: translateX(100%);
+  transition: transform .3s ease;
   z-index: 16;
 
-  &:hover {
-    @include rem(right, 5px);
-    @include rem(width, 50px);
-
-    span {
-      @include transition(color .3s ease);
-      color: $white;
-    }
-  }
-
   &.active {
-    @include transform(translate(100%, 0));
-    @include transition(-moz-transform .3s ease);
-    @include transition(-ms-transform .3s ease);
-    @include transition(-webkit-transform .3s ease);
-    @include transition(transform .3s ease);
+    transform: translateX(0);
+
+    &:hover {
+      @include rem(width, 50px);
+      transform: translateX(-5px);
+
+      span {
+        @include transition(color .3s ease);
+        color: $white;
+      }
+    }
   }
 
   span {
@@ -388,7 +384,7 @@ body {
     }
   }
 
-  .uomcontent .sitemap-label {
+  .uomcontent .sitemap-trigger {
     display: none;
   }
 }
