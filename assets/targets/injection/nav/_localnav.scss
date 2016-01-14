@@ -35,6 +35,10 @@
     .sitemap-trigger {
       margin-left: -100px;
     }
+
+    &.inner-open {
+      overflow: hidden;
+    }
   }
 
   @include breakpoint(tablet) {

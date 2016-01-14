@@ -71,6 +71,8 @@ LocalNav.prototype.moveLocalNav = function() {
     function toggleActive(elem, evt) {
       evt.preventDefault();
       elem.toggleClass('active');
+      this.props.localnav.scrollTop = 0;
+      this.props.localnav.toggleClass('inner-open');
     }
   }
 };
