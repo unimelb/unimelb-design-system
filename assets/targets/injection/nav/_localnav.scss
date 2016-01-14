@@ -1,20 +1,14 @@
 @include keyframes(chevronback) {
   0% {
-    @include transform(translateX(0));
+    transform: translateX(0);
   }
   50% {
-    @include transform(translateX(-5px));
-  }
-  100% {
-    @include transform(translateX(0));
+    transform: translateX(-5px);
   }
 }
 
 .uomcontent [role="navigation"]#sitemap {
   @extend %normalise;
-  @extend %smooth-translate;
-  @include transform-origin(0% 0%);
-  @include transform-style(preserve-3d);
   background-color: $menu;
   color: $white;
   font-family: $ff-sans;
@@ -25,18 +19,18 @@
   position: fixed;
   right: -100%;
   top: 0;
+  transform: translateX(0);
+  transition: $smooth-transform;
   width: 100%;
-  z-index: 1;
+  z-index: 15;
 
   * {
     @extend %normalise;
   }
 
   &.active {
-    @include transition(right .3s ease-out);
     box-shadow: 1px 0 12px 3px rgba($black, .6);
-    right: 0;
-    z-index: 15;
+    transform: translateX(-100%);
 
     .sitemap-trigger {
       margin-left: -100px;
@@ -48,17 +42,12 @@
   }
 
   @include breakpoint(tablet) {
-    margin-right: 40px;
-    width: 300px;
-  }
-
-
-  &.global-active {
-    @include translateX(-100%);
-    display: block;
-
-    @include breakpoint(tablet) {
-      transform: translate(-100%, 0) translate(110px, 0);
+    margin-right: $width-sitemap-trigger;
+    right: $offset-localnav;
+    width: $width-localnav;
+    
+    &.active {
+      transform: translateX($offset-localnav);
     }
   }
 
@@ -119,7 +108,7 @@
     position: absolute;
     top: 0;
     transform: translateX(100%);
-    transition: transform .3s ease;
+    transition: $smooth-transform;
     width: 100%;
 
     &.active {

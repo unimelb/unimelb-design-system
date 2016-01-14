@@ -1,39 +1,38 @@
 .uomcontent [role="navigation"]#globalsitemap {
   @extend %normalise;
-  @extend %smooth-translate;
   @extend %wrapper;
-  @include rem(padding, 0 0 30px);
-  @include translateX(100%);
+  @include rem(padding, 0 3% 30px);
   background-color: $navy;
   font-family: $ff-sans;
   height: 100%;
   margin: 0;
-  max-width: 100%;
+  max-width: none;
   position: fixed;
-  right: 0;
+  right: -100%;
   top: 0;
+  transform: translateX(0);
+  transition: $smooth-transform;
   width: 100%;
-  z-index: 0;
+  z-index: 17;
+
+  &.active {
+    box-shadow: 1px 0 12px 3px rgba($black, .6);
+    overflow: auto;
+    position: fixed;
+    transform: translateX(-100%);
+    –webkit-overflow-scrolling: touch;
+  }
+  
+  @include breakpoint(tablet) {
+    @include rem(padding, 0 130px 30px 40px);
+    
+    &.active {
+      transform: translateX(-100%) translateX(90px);
+    }
+  }
 
   * {
     @extend %normalise;
-  }
-
-  &.active {
-    @include translateX(0);
-    left: 0;
-    overflow: auto;
-    padding-left: 3%;
-    padding-right: 3%;
-    position: fixed;
-    z-index: 17;
-    –webkit-overflow-scrolling: touch;
-
-    @include breakpoint(tablet) {
-      @include rem(left, 90px);
-      @include rem(padding-left, 40px);
-      @include rem(padding-right, 155px);
-    }
   }
 
   a {

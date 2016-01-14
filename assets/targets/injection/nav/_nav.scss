@@ -2,17 +2,10 @@ body {
   overflow-x: hidden;
 }
 
-.uomcontent {
-  @extend %smooth-translate;
-}
-
 .page-inner {
-  @extend %smooth-translate;
-  // @include rem(padding-top, 60px);
-  background-color: $navy;
   min-height: 100%;
   position: relative;
-  z-index: 2;
+  z-index: 10;
 
   .floating {
     margin-top: -90px;
@@ -20,51 +13,6 @@ body {
 
   @include breakpoint(desktop) {
     @include rem(padding-top, 90px);
-  }
-
-  &.active {
-    @include translateX(-100%);
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 10;
-
-    @include breakpoint(tablet) {
-      @include translateX(-340px);
-    }
-  }
-
-  &.global-active {
-    @include translateX(-100%);
-    position: fixed;
-    top: 0;
-    width: 100%;
-
-    .modal__blanket.on {
-      position: absolute;
-    }
-
-    @include breakpoint(tablet) {
-      @include transform(translate(-100%, 0) translate(90px, 0));
-    }
-  }
-
-}
-
-.page-header {
-  @extend %smooth-translate;
-
-  &.active {
-    @include breakpoint(tablet) {
-      @include translateX(-340px);
-    }
-  }
-
-  &.global-active {
-    @include breakpoint(tablet) {
-      @include transform(translate(-100%, 0) translate(90px, 0));
-    }
   }
 }
 
@@ -272,6 +220,7 @@ body {
   @include rem(width, 50px);
   background-color: $navy;
   box-shadow: 3px 0 6px rgba($black, .4) inset;
+  color: rgba($white, .5);
   cursor: pointer;
   display: block;
   height: 100%;
@@ -279,7 +228,7 @@ body {
   right: -5px;
   top: 0;
   transform: translateX(100%);
-  transition: transform .3s ease;
+  transition: color .3s ease, $smooth-transform;
   z-index: 16;
 
   &.active {
@@ -287,12 +236,8 @@ body {
 
     &:hover {
       @include rem(width, 50px);
+      color: $white;
       transform: translateX(-5px);
-
-      span {
-        @include transition(color .3s ease);
-        color: $white;
-      }
     }
   }
 
@@ -301,9 +246,6 @@ body {
     @include rem(padding-left, 44px);
     @include rem(padding-top, 190px);
     @include rem(width, 240px);
-    @include transform(rotate(90deg));
-    color: rgba($white, .5);
-    cursor: pointer;
     font-weight: $light;
     left: 0;
     letter-spacing: 1px;
@@ -313,13 +255,17 @@ body {
     position: absolute;
     text-transform: uppercase;
     top: 0;
+    transform: rotate(90deg);
     z-index: 11;
 
     &::before {
       @include rem(font-size, 24px);
-      @include transform(rotate(-90deg) translateY(-10px) translateX(-3px));
       content: '\203a';
       display: inline-block;
+      left: -10px;
+      position: relative;
+      top: 3px;
+      transform: rotate(-90deg);
     }
   }
 }
