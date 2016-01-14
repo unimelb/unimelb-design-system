@@ -136,14 +136,6 @@ body {
       content: '';
       display: block;
     }
-
-    &::after {
-      @include rem(margin, 30px auto 15px);
-      @include rem(width, 80px);
-      border-bottom: 2px solid $black;
-      content: '';
-      display: block;
-    }
   }
 
   .half {
@@ -258,7 +250,7 @@ body {
     transform: rotate(90deg);
     z-index: 11;
 
-    &::before {
+    &:before {
       @include rem(font-size, 24px);
       content: '\203a';
       display: inline-block;
@@ -272,15 +264,15 @@ body {
 
 
 .ie {
-  .page-inner {
-    &.active {
-      -ms-transform: none;
-    }
-
-    &.global-active {
-      z-index: 0;
-    }
-  }
+//  .page-inner {
+//    &.active {
+//      -ms-transform: none;
+//    }
+//
+//    &.global-active {
+//      z-index: 0;
+//    }
+//  }
 
   .uomcontent .modal__dialog {
     left: 20%;

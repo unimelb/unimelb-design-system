@@ -5,11 +5,11 @@
 
 .uomcontent {
   .modal__blanket {
+    @include opacity(.5);
     background-color: #000;
     display: none;
     height: 100%;
     left: 0;
-    opacity: .5;
     overflow: hidden;
     position: fixed;
     top: 0;

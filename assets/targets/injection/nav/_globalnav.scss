@@ -18,7 +18,6 @@
   &.active {
     box-shadow: 1px 0 12px 3px rgba($black, .6);
     overflow: auto;
-    position: fixed;
     transform: translateX(-100%);
     –webkit-overflow-scrolling: touch;
   }
@@ -37,6 +36,7 @@
 
   a {
     @include rem(padding-top, 10px);
+    color: $lightblue;
     color: rgba($white, .6);
     display: block;
     font-weight: $light;
@@ -57,6 +57,7 @@
     @include rem(padding-bottom, 10px);
     @include rem(padding-top, 30px);
     border-bottom: 1px solid $blue;
+    color: $lightblue;
     color: rgba($white, .6);
     line-height: 1.2;
     padding-right: 3%;
@@ -236,7 +237,7 @@
     text-decoration: none;
     text-transform: uppercase;
 
-    &::before {
+    &:before {
       @include rem(font-size, 24px);
       @include rem(margin-right, 8px);
       color: rgba($white, .4);
@@ -252,7 +253,7 @@
       text-decoration: underline;
     }
 
-    &:hover::before {
+    &:hover:before {
       @include animation(chevronback 1s infinite ease-in-out);
       color: $white;
       text-decoration: none;
@@ -306,23 +307,19 @@
 
 body.ie {
   .uomcontent [role="navigation"]#globalsitemap {
-    display: none;
-    z-index: 0;
-
-    &.active {
-      background: $navy;
-      display: block;
-      z-index: 100;
-    }
+//    display: none;
+//    z-index: 0;
+//
+//    &.active {
+//      right: 0;
+//      background: $navy;
+//      display: block;
+//      z-index: 100;
+//    }
 
     .logo * {
       border: 0 none;
       outline: 0;
-    }
-
-    h2,
-    a {
-      color: $lightblue;
     }
 
     form {
@@ -375,6 +372,14 @@ body.ie {
       a {
         padding-left: 0;
       }
+    }
+  }
+}
+
+body.ie8 {
+  .uomcontent [role="navigation"]#globalsitemap {
+    &.active {
+      right: 0;
     }
   }
 }
