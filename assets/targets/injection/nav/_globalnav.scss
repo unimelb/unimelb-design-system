@@ -238,15 +238,13 @@
 
     &::before {
       @include rem(font-size, 24px);
-      @include rem(height, 10px);
-      @include rem(margin-right, 5px);
+      @include rem(margin-right, 8px);
       color: rgba($white, .4);
       content: '\2039';
-      display: block;
-      float: left;
+      display: inline-block;
       font-weight: $regular;
-      line-height: .8;
-      text-indent: 0;
+      line-height: 1;
+      vertical-align: -1px;
     }
 
     &:hover {
@@ -257,6 +255,7 @@
     &:hover::before {
       @include animation(chevronback 1s infinite ease-in-out);
       color: $white;
+      text-decoration: none;
     }
   }
 
