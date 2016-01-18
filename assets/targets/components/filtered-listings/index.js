@@ -1,202 +1,159 @@
+var constants = require('./constants');
+var FilteredListingSection = require('./section');
+
 /**
- * ListFilter
- *
+ * FilteredListing
  * @param  {Element} el
  * @param  {Object} props
  */
-function ListFilter(el, props) {
-  "use strict";
-
+function FilteredListing(el, props) {
+  var i, recs, tc;
+  
   this.el = el;
-  this.props = props;
-
-  this.props.tables = document.querySelectorAll('ul.filtered-listing-grid');
-
-  this.props.curr = -1;
-  this.props.select = this.el.querySelector('select');
-  if (this.props.select) {
-    this.props.curr = this.props.select.value;
-    this.props.select.addEventListener('change', this.handleChange.bind(this));
+  this.props = props || {};
+  
+  // Parse querystring
+  this.state = this.parseQuery();
+  
+  // Initialise sections
+  this.props.sections = [];
+  recs = document.querySelectorAll('.filtered-listing-section');
+  for (i = recs.length - 1; i >= 0; i--) {
+    this.props.sections.push(new FilteredListingSection(recs[i]));
   }
-
-  this.props.categories = [];
-  for (var recs=this.el.querySelectorAll('input.checkbox'), i=recs.length - 1; i >= 0; i--)
-    if (recs[i].getAttribute('data-tag') == 'all')
-      this.props.allcategories = recs[i];
-    else
-      this.props.categories.push(recs[i]);
-
-  if (MSIE_version > 8)
-    this.setupIsotope();
-
-  this.filterQuerystring();
-  this.process();
+  
+  // Initialise section drop-down menu (restore state from querystring if available; else retrieve current state of drop-down menu)
+  this.props.sectionSelect = this.el.querySelector('select');
+  if (this.props.sectionSelect) {
+    if (this.state.section) {
+      // Section given in querystring; use it as the value of the drop-down menu
+      if (this.props.sectionSelect.querySelector('option[value="' + this.state.section + '"]')) {
+        this.props.sectionSelect.value = this.props.sectionSelect.querySelector('option[value="' + this.state.section + '"]');
+      } else {
+        // No such option in drop-down; default to `all`
+        this.state.section = this.props.sectionSelect.value = constants.ALL_SECTIONS;
+      }
+    } else {
+      // Section not given in querystring; retrieve the current state of the drop-down menu
+      this.state.section = this.props.sectionSelect.value;
+    }
+  }
+  
+  // Initialise tag checkboxes (restore state from querystring if available; else retrieve current state of checkboxes)
+  this.props.tagCheckboxes = this.el.querySelectorAll('.checkbox');
+  if (this.state.tags) {
+    // Tags given in querystring; check/uncheck the checkboxes accordingly
+    for (i = this.props.tagCheckboxes.length - 1; i >= 0; i--) {
+      tc = this.props.tagCheckboxes[i];
+      tc.checked = this.state.tags.indexOf(tc.getAttribute('data-tag').toLowerCase()) !== -1;
+    }
+  } else {
+    // Tags not given in querystring; retrieve the current state of the checkboxes
+    this.state.tags = this.retrieveTagsState();
+  }
+  
+  // Listen for change events
+  this.el.addEventListener('change', this.handleChange.bind(this));
+  
+  // Update once
+  this.update();
 }
 
-ListFilter.prototype.handleChange = function(e) {
-  this.props.curr = e.target.value;
-  this.filterCategories();
-};
-
-ListFilter.prototype.setupIsotope = function() {
-  this.props.isos = [];
-
-  var Isotope = require('isotope-layout');
-  for (var i=this.props.tables.length - 1; i >= 0; i--) {
-    this.props.isos.push(new Isotope(this.props.tables[i], {
-      itemSelector: '.item',
-      layoutMode: 'fitRows',
-      masonry: {
-        columnWidth: '.item-grid'
-      },
-      hiddenStyle: {
-        opacity: 0
-      },
-      visibleStyle: {
-        opacity: 1
-      }
-    }));
+/**
+ * Parse the querystring looking for the 'filter' and 'section' parameters:
+ * `?filter=category-a,category-b&section=all`
+ * @return {Object}
+ *         {Array<String>} filter
+ *         {String} section
+ */
+FilteredListing.prototype.parseQuery = function () {
+  var params = {};
+  
+  if (window.location.search.length === 0) {
+    return params;
   }
-};
-
-ListFilter.prototype.triggerIsotope = function() {
-  if (MSIE_version > 8)
-    for (var i=this.props.isos.length - 1; i >= 0; i--)
-      this.props.isos[i].arrange({
-        filter: '.item'
-      });
-};
-
-// Preselect via query ?filter=data-tag,other-data-tag&category=a
-ListFilter.prototype.filterQuerystring = function() {
-  var q = window.location.search.split(/\?/), q2 = '', q3 = '';
-
-  if (q.length > 1)
-    q = q[1];
-
-  if (q.length > 1)
-    q = q.split("&");
-
-  for (var i=q.length - 1; i >= 0; i--) {
-    var tmp = q[i].split("=");
-    if (tmp[0] == "filter") {
-      q2 = tmp[1].split(",");
-    }
-    if (tmp[0] == "section") {
-      q3 = tmp[1];
+  
+  var i, query = window.location.search.substr(1).split('&');
+  for (i = query.length - 1; i >= 0; i--) {
+    var param = query[i].split("=");
+    var val = decodeURIComponent(param[1]).toLowerCase();
+    switch (param[0]) {
+      case 'section':
+        params.section = val;
+        break;
+      case 'filter':
+        params.tags = val.split(',');
+        break;
     }
   }
-
-  for (recs=this.el.querySelectorAll('input.checkbox'), i=recs.length - 1; i >= 0; i--) {
-    recs[i].addEventListener('click', this.handleClick.bind(this));
-
-    // Check preselects
-    for (var j=q2.length - 1; j >= 0; j--)
-      if (q2[j] == recs[i].getAttribute('data-tag'))
-        recs[i].click();
-  }
-
-  if (q3 !== '') {
-    this.props.curr = q3;
-    this.filterCategories();
-  }
+  
+  return params;
 };
 
-ListFilter.prototype.handleClick = function(e) {
-  this.process(e.target);
+/**
+ * Retrieve the current tags based on the state of the tag checkboxes.
+ * @return {Array<String>} 
+ */
+FilteredListing.prototype.retrieveTagsState = function () {
+  var i, tc, tags = [];
+  
+  for (i = this.props.tagCheckboxes.length - 1; i >= 0; i--) {
+    tc = this.props.tagCheckboxes[i];
+    if (tc.checked) {
+      tags.push(tc.getAttribute('data-tag').toLowerCase());
+    }
+  }
+  
+  return tags;
 };
 
-ListFilter.prototype.process = function(target) {
-  var i;
-
-  if (this.props.allcategories && target && target.getAttribute('data-tag') == 'all' && target.checked) {
-    for (i=this.props.categories.length - 1; i >= 0; i--)
-      this.props.categories[i].checked = false;
-
-    this.showAllItems();
-
-  } else {
-    if (this.props.allcategories)
-      this.props.allcategories.checked = false;
-
-    var displayed_categories = [];
-    for (i=this.props.categories.length - 1; i >= 0; i--)
-      if (this.props.categories[i].checked)
-        displayed_categories.push(this.props.categories[i].getAttribute('data-tag'));
-
-    if (displayed_categories.length === 0) {
-      if (this.props.allcategories) {
-        this.props.allcategories.checked = true;
-
-      } else {
-        for (i=this.props.categories.length - 1; i >= 0; i--)
-          this.props.categories[i].checked = true;
+/**
+ * Handle change of section or tags.
+ * @param  {Event} e
+ */
+FilteredListing.prototype.handleChange = function (e) {
+  // Section drop-down menu
+  if (e.target === this.props.sectionSelect) {
+    this.state.section = e.target.value;
+    this.update();
+    return;
+  }
+  
+  // Tag checkbox
+  if (e.target.hasClass('checkbox')) {
+    // If checking `all` checkbox, update state and uncheck all other checkboxes
+    if (e.target === this.props.tagCheckboxes[0] && e.target.checked) {
+      this.state.tags = [constants.ALL_TAGS];
+      for (var i = this.props.tagCheckboxes.length - 1; i > 0; i--) { // i > 0 to skip the `all` checkbox
+        this.props.tagCheckboxes[i].checked = false;
       }
-      this.showAllItems();
-
     } else {
-      for (i=this.props.tables.length - 1; i >= 0; i--) {
-        this.filterTags(this.props.tables[i], displayed_categories);
+      // Otherwise, uncheck the `all` checkbox
+      this.props.tagCheckboxes[0].checked = false;
+      
+      // Retrieve new tags state
+      this.state.tags = this.retrieveTagsState();
+      
+      // If no tag is selected, re-check the `all` checkbox`
+      if (this.state.tags.length === 0) {
+        this.props.tagCheckboxes[0].checked = true;
+        this.state.tags.push(constants.ALL_TAGS);
       }
     }
+    
+    this.update();
+    return;
   }
-
-  this.filterCategories();
 };
 
-ListFilter.prototype.filterCategories = function() {
-  for (var i=this.props.tables.length - 1; i >= 0; i--) {
-    var category = this.props.tables[i].parentNode.parentNode;
-
-    var showcategory = false;
-    if (this.props.tables[i].countSelector('.item') > 0) {
-      // No category selector
-      if (!this.props.select)
-        showcategory = true;
-
-      // "All categories" selected
-      if (this.props.curr == '-1')
-        showcategory = true;
-
-      // Category matches
-      var recs = category.getAttribute('data-category').split('|');
-      for (var j=recs.length - 1; j >= 0; j--) {
-        // Compare lowered, URI decoded with same
-        if (decodeURIComponent(recs[j]).toLowerCase() == decodeURIComponent(this.props.curr).toLowerCase())
-          showcategory = true;
-      }
-    }
-
-    if (showcategory) {
-      category.removeClass('hide');
-    } else {
-      category.addClass('hide');
-    }
+/**
+ * Update the sections based on the current state.
+ */
+FilteredListing.prototype.update = function () {
+  for (var i = this.props.sections.length - 1; i >= 0; i--) {
+    var s = this.props.sections[i];
+    s.update(this.state.section, this.state.tags);
   }
-  this.triggerIsotope();
 };
 
-ListFilter.prototype.filterTags = function(table, tags) {
-  for (var el=table.querySelectorAll('li'), i=el.length - 1; i >= 0; i--) {
-    var showitem = false;
-    for (var j=tags.length - 1; j >= 0; j--) {
-      if (el[i].hasClass(tags[j]))
-        showitem = true;
-    }
-
-    if (showitem) {
-      el[i].addClass('item');
-    } else {
-      el[i].removeClass('item');
-    }
-  }
-  this.triggerIsotope();
-};
-
-ListFilter.prototype.showAllItems = function() {
-  for (var i=this.props.tables.length - 1; i >= 0; i--)
-    for (var recs=this.props.tables[i].querySelectorAll('li'), j=recs.length - 1; j >= 0; j--)
-      recs[j].addClass('item');
-};
-
-module.exports = ListFilter;
+module.exports = FilteredListing;

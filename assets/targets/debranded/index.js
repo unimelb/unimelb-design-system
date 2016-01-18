@@ -24,7 +24,7 @@ window.DSComponentsLoad = function() {
 
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
-    ListFilter, IconHelper, ImageGallery, imagesLoaded, slingshot, LMaps,
+    FilteredListing, IconHelper, ImageGallery, imagesLoaded, slingshot, LMaps,
     style, script, CreateNameSpace, Icons;
 
   CreateNameSpace = require('../../shared/createnamespace');
@@ -113,9 +113,9 @@ window.DSComponentsLoad = function() {
 
   recs = document.querySelectorAll('form.filtered-listing-select');
   if (recs.length > 0) {
-    ListFilter = require("../components/filtered-listings");
+    FilteredListing = require("../components/filtered-listings");
     for (i=recs.length - 1; i >= 0; i--)
-      new ListFilter(recs[i], {});
+      new FilteredListing(recs[i], {});
   }
 
   recs = document.querySelectorAll('[data-icon]');
