@@ -7,13 +7,12 @@ var FilteredListingSection = require('./section');
  * @param  {Object} props
  */
 function FilteredListing(el, props) {
-  var i, recs, tc;
+  var i, recs;
   
   this.el = el;
   this.props = props || {};
-  
-  // Parse querystring
-  this.state = this.parseQuery();
+  this.props.sectionSelect = el.querySelector('select');
+  this.props.tagCheckboxes = el.querySelectorAll('.checkbox');
   
   // Initialise sections
   this.props.sections = [];
@@ -22,38 +21,18 @@ function FilteredListing(el, props) {
     this.props.sections.push(new FilteredListingSection(recs[i]));
   }
   
-  // Initialise section drop-down menu (restore state from querystring if available; else retrieve current state of drop-down menu)
-  this.props.sectionSelect = this.el.querySelector('select');
-  if (this.props.sectionSelect) {
-    if (this.state.section) {
-      // Section given in querystring; use it as the value of the drop-down menu
-      if (this.props.sectionSelect.querySelector('option[value="' + this.state.section + '"]')) {
-        this.props.sectionSelect.value = this.props.sectionSelect.querySelector('option[value="' + this.state.section + '"]');
-      } else {
-        // No such option in drop-down; default to `all`
-        this.state.section = this.props.sectionSelect.value = constants.ALL_SECTIONS;
-      }
-    } else {
-      // Section not given in querystring; retrieve the current state of the drop-down menu
-      this.state.section = this.props.sectionSelect.value;
-    }
-  }
+  // Parse querystring and use result (i.e. `section` and `tags`) as the initial state of the filters
+  this.state = this.parseQuery();
   
-  // Initialise tag checkboxes (restore state from querystring if available; else retrieve current state of checkboxes)
-  this.props.tagCheckboxes = this.el.querySelectorAll('.checkbox');
-  if (this.state.tags) {
-    // Tags given in querystring; check/uncheck the checkboxes accordingly
-    for (i = this.props.tagCheckboxes.length - 1; i >= 0; i--) {
-      tc = this.props.tagCheckboxes[i];
-      tc.checked = this.state.tags.indexOf(tc.getAttribute('data-tag').toLowerCase()) !== -1;
-    }
-  } else {
-    // Tags not given in querystring; retrieve the current state of the checkboxes
-    this.state.tags = this.retrieveTagsState();
-  }
-  
-  // Listen for change events
-  this.el.addEventListener('change', this.handleChange.bind(this));
+  // Initialise form elements:
+  // - If initial state is provided, update the elements accordingly.
+  // - If initial state is missing, invalid or incomplete, retrieve it from the relevant elements.
+  this.initSectionSelect();
+  this.initTagCheckboxes();
+
+  // Listen for events
+  this.props.sectionSelect.addEventListener('change', this.handleSectionSelectChanged.bind(this));
+  el.addEventListener('click', this.handleTagCheckboxesClicked.bind(this));
   
   // Update once
   this.update();
@@ -91,8 +70,58 @@ FilteredListing.prototype.parseQuery = function () {
 };
 
 /**
- * Retrieve the current tags based on the state of the tag checkboxes.
- * @return {Array<String>} 
+ * Initialise section drop-down menu.
+ */
+FilteredListing.prototype.initSectionSelect = function () {
+  if (this.props.sectionSelect) {
+    // Check whether a section was specified in the querystring
+    if (this.state.section) {
+      // Section specified; check if valid option
+      if (this.props.sectionSelect.querySelector('option[value="' + this.state.section + '"]')) {
+        // Valid option; update value of drop-down menu
+        this.props.sectionSelect.value = this.state.section;
+      } else {
+        // Invalid option; set state to `all sections` and update drop-down menu
+        this.state.section = this.props.sectionSelect.value = constants.ALL_SECTIONS;
+      }
+    } else {
+      // Section not specified; retrieve current value of drop-down menu
+      this.state.section = this.props.sectionSelect.value.toLowerCase();
+    }
+  }
+};
+
+/**
+ * Initialise tag checkboxes.
+ */
+FilteredListing.prototype.initTagCheckboxes = function () {
+  var i, j, tc, tag;
+  
+  if (this.state.tags) {
+    // Tags specified in querystring; check/uncheck the checkboxes accordingly
+    for (i = this.props.tagCheckboxes.length - 1; i >= 0; i--) {
+      tc = this.props.tagCheckboxes[i];
+      tc.checked = false;
+      tag = tc.getAttribute('data-tag').toLowerCase();
+      
+      for (j = this.state.tags.length - 1; j >= 0; j--) {
+        if (this.state.tags[j] === tag) {
+          tc.checked = true;
+          break;
+        }
+      }
+    }
+  }
+  
+  // Retrieve the current state of the checkboxes
+  // This deals with cases where no tags are specified in the querystring, or some of the specified tags are invalid (if all are invalid, the `all tags` checkbox has to be checked)
+  this.state.tags = this.retrieveTagsState();
+};
+
+/**
+ * Retrieve the current tags based on the state of the checkboxes.
+ * If no tag turns out to be selected, check the `all tags` checkbox.
+ * @return {Array<String>}
  */
 FilteredListing.prototype.retrieveTagsState = function () {
   var i, tc, tags = [];
@@ -104,45 +133,45 @@ FilteredListing.prototype.retrieveTagsState = function () {
     }
   }
   
+  // If no tag is selected, re-check the `all tags` checkbox
+  if (tags.length === 0) {
+    this.props.tagCheckboxes[0].checked = true;
+    tags.push(constants.ALL_TAGS);
+  }
+  
   return tags;
 };
 
 /**
- * Handle change of section or tags.
+ * Handle `change` event on section drop-down menu.
  * @param  {Event} e
  */
-FilteredListing.prototype.handleChange = function (e) {
-  // Section drop-down menu
-  if (e.target === this.props.sectionSelect) {
-    this.state.section = e.target.value;
-    this.update();
-    return;
-  }
-  
-  // Tag checkbox
+FilteredListing.prototype.handleSectionSelectChanged = function (e) {
+  this.state.section = e.target.value.toLowerCase();
+  this.update();
+};
+
+/**
+ * Handle `click` event on tag checkboxes via event delegation.
+ * @param  {Event} e
+ */
+FilteredListing.prototype.handleTagCheckboxesClicked = function (e) {
   if (e.target.hasClass('checkbox')) {
-    // If checking `all` checkbox, update state and uncheck all other checkboxes
+    // If checking the `all tags` checkbox, update state and uncheck all other checkboxes
     if (e.target === this.props.tagCheckboxes[0] && e.target.checked) {
       this.state.tags = [constants.ALL_TAGS];
-      for (var i = this.props.tagCheckboxes.length - 1; i > 0; i--) { // i > 0 to skip the `all` checkbox
+      for (var i = this.props.tagCheckboxes.length - 1; i > 0; i--) { // i > 0 to skip the `all tags` checkbox
         this.props.tagCheckboxes[i].checked = false;
       }
     } else {
-      // Otherwise, uncheck the `all` checkbox
+      // Otherwise, uncheck the `all tags` checkbox
       this.props.tagCheckboxes[0].checked = false;
-      
+
       // Retrieve new tags state
       this.state.tags = this.retrieveTagsState();
-      
-      // If no tag is selected, re-check the `all` checkbox`
-      if (this.state.tags.length === 0) {
-        this.props.tagCheckboxes[0].checked = true;
-        this.state.tags.push(constants.ALL_TAGS);
-      }
     }
-    
+
     this.update();
-    return;
   }
 };
 

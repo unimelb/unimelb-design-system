@@ -1,4 +1,3 @@
-var Isotope = require('isotope-layout');
 var constants = require('./constants');
 
 /**
@@ -10,11 +9,12 @@ function FilteredListingSection(el, props) {
   this.el = el;
   this.props = props || {};
   
-  this.props.name = decodeURIComponent(this.el.getAttribute('data-category')).toLowerCase();
+  this.props.name = decodeURIComponent(el.getAttribute('data-category')).toLowerCase();
   this.props.grid = el.querySelector('.filtered-listing-grid');
   this.props.items = this.props.grid.querySelectorAll('li');
   
   if (MSIE_version > 8) {
+    var Isotope = require('isotope-layout');
     this.props.isotope = new Isotope(this.props.grid, {
       itemSelector: 'li',
       filter: '.item',
