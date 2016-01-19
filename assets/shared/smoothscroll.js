@@ -48,7 +48,7 @@
       // Deduct offset
       change -= offset;
       
-      var animateScroll = function(cb) {
+      var animateScroll = function() {
         curr += increment;
         element.scrollTop = Math.easeInOutQuad(curr, start, change, duration);
         if (curr < duration) {
@@ -65,7 +65,7 @@
       };
 
       if (change !== 0) {
-        animateScroll(cb);
+        animateScroll();
       }
     };
   }
