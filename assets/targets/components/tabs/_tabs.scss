@@ -122,6 +122,7 @@
     .tab-arrow {
       @include rem(font-size, 30px);
       @include rem(padding, 0 20px 5px); /* bottom padding aligns arrows with tab labels */
+      background: $darkblue;
       color: $white;
       cursor: pointer;
       display: none;
@@ -137,12 +138,12 @@
     }
     .tab-arrow--left {
       @include rem(padding-right, 10px);
-      background-image: linear-gradient(to left, transparent, rgba($darkblue, .9) 10%);
+      background: linear-gradient(to left, transparent, rgba($darkblue, .9) 10%);
       left: 0;
     }
     .tab-arrow--right {
       @include rem(padding-left, 10px);
-      background-image: linear-gradient(to right, transparent, rgba($darkblue, .9) 10%);
+      background: linear-gradient(to right, transparent, rgba($darkblue, .9) 10%);
       right: 0;
     }
 
