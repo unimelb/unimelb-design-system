@@ -8,7 +8,7 @@
     "imagesloaded": "~3.1.8",
     "isotope-layout": "~2.2.0",
     "just-debounce": "^1.0.0",
-    "perfect-scrollbar": "^0.6.7",
+    "perfect-scrollbar": "^0.6.10",
     "promise": "~7.0.3",
     "webfontloader": "~1.6.3"
   },

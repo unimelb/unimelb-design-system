@@ -114,8 +114,7 @@ Tabs.prototype.handleResize = function(smooth, e) {
         if (!this.props.isLoadingPs) {
           // Load the 'perfect-scrollbar' library then setup the overflow behaviour
           this.props.isLoadingPs = true;
-          //loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.7/js/min/perfect-scrollbar.min.js', this.setupOverflow.bind(this));
-          this.setupOverflow();
+          loadScript('https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.10/js/min/perfect-scrollbar.min.js', this.setupOverflow.bind(this));
         }
       } else {
         // Bring up the horizontal scrollbar
