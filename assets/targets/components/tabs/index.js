@@ -27,15 +27,18 @@ function Tabs(el, props) {
 
   // Event bindings
   if (this.el.hasAttribute('data-tabbed')) {
-    this.setupPanels();
+    this.setup();
     this.selectPanel();
     
-    this.handleResize(false);
-    window.addEventListener('resize', debounce(this.handleResize.bind(this, true), DEBOUNCE_DELAY));
+    this.handleResize();
+    window.addEventListener('resize', debounce(this.handleResize.bind(this), DEBOUNCE_DELAY));
   }
 }
 
-Tabs.prototype.setupPanels = function() {
+/**
+ * Set up the tab panels and event listeners.
+ */
+Tabs.prototype.setup = function() {
   var recs, i, tabs;
   // Hide all tabs by default
   for (recs=this.el.querySelectorAll('[role="tabpanel"]'), i=recs.length - 1; i >= 0; i--) {
@@ -43,15 +46,19 @@ Tabs.prototype.setupPanels = function() {
     this.props.panels.push(recs[i].id || '');
   }
 
-  // Event binding
-  for (i=this.props.tabs.length - 1; i >= 0; i--)
+  // Handle clicks on tabs
+  for (i=this.props.tabs.length - 1; i >= 0; i--) {
     this.props.tabs[i].addEventListener('click', this.handleClick.bind(this));
+  }
 
-  for (tabs=this.el.querySelectorAll('[data-tab]'), i = tabs.length - 1; i >= 0; i--)
+  // Handle internal clicks
+  for (tabs=this.el.querySelectorAll('[data-tab]'), i = tabs.length - 1; i >= 0; i--) {
     tabs[i].addEventListener('click', this.handleInternalClick.bind(this));
+  }
 };
 
-/*
+/**
+ * Select the first panel on page load.
  * There are four ways of selecting which tab to start on!
  */
 Tabs.prototype.selectPanel = function() {
@@ -93,16 +100,12 @@ Tabs.prototype.selectPanel = function() {
 
 /**
  * On page load and resize, check whether the tabs fit on one row.
- * If they don't, activate the overflow behaviour (horizontal scroll) 
+ * If they don't, activate the overflow behaviour (horizontal scroll).
+ * On fist call, load the `perfect-scrollbar` library asynchronously.
  */
-Tabs.prototype.handleResize = function(smooth, e) {
+Tabs.prototype.handleResize = function() {
   // Check whether the full-width container is narrower than the navigation element
   var isOverflowing = this.el.clientWidth <= this.props.nav.clientWidth - OVERFLOW_PRECISION;
-  
-  // Update the horizontal scrollbar, if initialised
-  if (isOverflowing && this.props.isOverflowSetup) {
-    Ps.update(this.props.inner);
-  }
   
   // Activate or deactivate the overflow behaviour when needed
   if (isOverflowing !== this.props.isOverflowing) {
@@ -118,16 +121,17 @@ Tabs.prototype.handleResize = function(smooth, e) {
         }
       } else {
         // Bring up the horizontal scrollbar
-        this.activateOverflow();
+        this.activateOverflow(true);
       }
     } else {
       // Remove the horizontal scrollbar
       this.destroyOverflow();
     }
+  } else if (isOverflowing && this.props.isOverflowSetup) {
+    // If initialised and still overflowing, only update the horizontal scrollbar and scroll to the selected tab
+    Ps.update(this.props.inner);
+    this.scrollToTab(this.el.querySelector('[data-current]'), true);
   }
-  
-  // Scroll to the selected tab
-  this.scrollToTab(this.el.querySelector('[data-current]'), smooth);
 };
 
 /**
@@ -170,7 +174,7 @@ Tabs.prototype.setupOverflow = function() {
   document.addEventListener('ps-x-reach-end', this.updateArrow.bind(this, 'right', false));
   
   // Activate the overflow behaviour
-  this.activateOverflow();
+  this.activateOverflow(false);
   
   this.props.isLoadingPs = false;
   this.props.isOverflowSetup = true;
@@ -178,13 +182,20 @@ Tabs.prototype.setupOverflow = function() {
 
 /**
  * Activate the overflow behaviour and initialise the horizontal scrollbar.
+ * @param {Boolean} smooth - whether to scroll to the selected tab smoothly
  */
-Tabs.prototype.activateOverflow = function() {
+Tabs.prototype.activateOverflow = function(smooth) {
+  // Active the overflow
   this.props.navParent.addClass('overflow');
+  
+  // Initialise the scrollbar
   Ps.initialize(this.props.inner, {
     useBothWheelAxes: true,
     wheelPropagation: true
   });
+  
+  // Scroll to the selected tab
+  this.scrollToTab(this.el.querySelector('[data-current]'), smooth);
 };
 
 /**
@@ -195,7 +206,12 @@ Tabs.prototype.destroyOverflow = function() {
   Ps.destroy(this.props.inner);
 };
 
-Tabs.prototype.updateArrow = function(arrow, enable, e) {
+/**
+ * Update the state of one of the two overflow arrows.
+ * @param {String} arrow - `left` or `right`
+ * @param {Boolen} enable - `true` to enable the arrow
+ */
+Tabs.prototype.updateArrow = function(arrow, enable) {
   var arrowElem = this.props[arrow + 'Arrow'];
   if (enable) {
     arrowElem.removeAttribute('disabled');
@@ -204,13 +220,21 @@ Tabs.prototype.updateArrow = function(arrow, enable, e) {
   }
 };
 
-Tabs.prototype.handleArrowClick = function(direction, e) {
+/**
+ * Handle clicks on the overflow arrows.
+ * @param {String} direction - `left` or `right`
+ */
+Tabs.prototype.handleArrowClick = function(direction) {
   var start = this.props.inner.scrollLeft;
   var multiplier = direction === 'left' ? -1 : 1;
   var to = start + multiplier * this.props.inner.clientWidth / 2;
   this.scrollTabs(to, true);
 };
 
+/**
+ * Handle clicks on tabs.
+ * @param {Event} e
+ */
 Tabs.prototype.handleClick = function(e) {
   var target = e.target;
 
@@ -263,8 +287,12 @@ Tabs.prototype.setLocation = function(hash) {
   }
 };
 
-// Match index - could potentially match ID instead
+/**
+ * Handle internal clicks (i.e. to navigate to another tab from within the content).
+ * @param {Event}
+ */
 Tabs.prototype.handleInternalClick = function(e) {
+  // Match index - could potentially match ID instead
   var target = e.target,
       idx = target.getAttribute('data-tab') - 1;
   this.moveindex(idx);
