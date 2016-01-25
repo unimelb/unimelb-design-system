@@ -1,5 +1,4 @@
 // Dependencies
-var Ps = require('perfect-scrollbar');
 var debounce = require('just-debounce');
 
 // Don't show sidebar until it's worth it
@@ -30,8 +29,10 @@ function Tabs(el, props) {
     this.setup();
     this.selectPanel();
     
-    this.handleResize();
-    window.addEventListener('resize', debounce(this.handleResize.bind(this), DEBOUNCE_DELAY));
+    if (window.addEventListener) { // don't setup the overflow at all in IE8
+      this.handleResize();
+      window.addEventListener('resize', debounce(this.handleResize.bind(this), DEBOUNCE_DELAY));
+    }
   }
 }
 
@@ -243,11 +244,12 @@ Tabs.prototype.handleClick = function(e) {
     target = target.parentNode.parentNode;
   }
 
-  if (target.hasClass('icon-over'))
+  if (target.hasClass('icon-over')) {
     return;
+  }
+  
   if (target.hasAttribute('href')) {
     // go to href
-
     if (target.getAttribute('href').charAt(0) == '#') {
       this.move(target, true);
       this.setLocation(target.getAttribute('href'));
