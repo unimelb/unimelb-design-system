@@ -142,7 +142,7 @@ window.UOMloadComponents = function() {
       loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
         style = document.createElement('link');
         style.rel = 'stylesheet';
-        style.href = 'http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
+        style.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
         document.body.appendChild(style);
 
         LMaps = require("./maps/lmaps");
