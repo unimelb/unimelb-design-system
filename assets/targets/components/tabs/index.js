@@ -106,7 +106,7 @@ Tabs.prototype.panelExists = function(hash) {
 };
 
 Tabs.prototype.setLocation = function(hash) {
-  if (this.panelExists(hash)) {
+  if (this.props.isNav && this.panelExists(hash)) {
     var pos = document.body.scrollTop, slug;
 
     if (hash.charAt(0) === '#') {
