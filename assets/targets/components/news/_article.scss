@@ -142,7 +142,7 @@
   article.news {
     /* cancel `.with-aside aside` styles */
     aside {
-      @include rem(padding, 5px 0 48px);
+      @include rem(padding, 15px 0 48px);
       background-color: transparent;
       background-color: initial;
       display: inline-block;
