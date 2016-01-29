@@ -1,0 +1,58 @@
+.uomcontent .dropdown-nav {
+
+  &__btn {
+    @extend %ellipsis;
+    @include rem(font-size, 18px);
+    @include rem(padding, 8px 50px 8px 10px);
+    background: $white no-repeat right 8px center url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iIzAwNzZkZSI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
+    border: 1px solid $highlight;
+    border-radius: 3px;
+    color: $highlight;
+    display: block;
+    line-height: 1.55;
+    width: 100%;
+    
+    &:hover,
+    &:focus {
+      background-color: $lightestblue;
+      text-decoration: underline;
+    }
+  }
+  
+  &__list {
+    background-color: $lightestblue;
+    border: 1px solid $highlight;
+    border-radius: 3px;
+    margin: 0;
+    padding: 0;
+    
+    & > li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  
+  &__link {
+    @include rem(padding, 8px 25px);
+    display: block;
+    text-decoration: none;
+    
+    &:hover {
+      background-color: $highlight;
+      color: $white;
+      text-decoration: underline;
+    }
+    
+    &:focus {
+      outline: 1px dashed $black;
+    }
+  }
+  
+  &[aria-expanded="true"] {
+    .dropdown-nav__btn {
+      background-color: $lightestblue;
+    }
+  }
+
+}

@@ -67,8 +67,8 @@ window.UOMbind = function(component) {
 window.UOMloadComponents = function() {
   "use strict";
 
-  var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect,
-    ImageGallery, imagesLoaded, LMaps, slingshot, style, script;
+  var recs, i, g, SidebarTabs, JumpNav, DropdownNav, CheckboxHelper, FancySelect,
+    ImageGallery, imagesLoaded, slingshot, LMaps, style, script;
 
   window.UOMbind('accordion');
   window.UOMbind('modal');
@@ -98,6 +98,13 @@ window.UOMloadComponents = function() {
   }
 
   window.UOMbind('inpage-navigation');
+  
+  recs = document.querySelectorAll('.dropdown-nav');
+  if (recs.length > 0) {
+    DropdownNav = require("./inpage-navigation/dropdown-nav");
+    for (i=recs.length - 1; i >= 0; i--)
+      new DropdownNav(recs[i], {});
+  }
 
   recs = document.querySelectorAll('input[type="radio"],input[type="checkbox"]');
   if (recs.length > 0) {
