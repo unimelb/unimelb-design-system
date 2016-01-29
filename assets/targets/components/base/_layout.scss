@@ -402,18 +402,18 @@ body {
     @include breakpoint(desktop) {
       display: table;
       width: 100%;
-    }
-
-    div {
-      @include rem(max-width, $w-lge);
-      clear: both;
-      display: table;
-      margin: 0 auto;
-      width: 100%;
 
       div {
-        @include rem(max-width, $w-sml);
-        display: block;
+        @include rem(max-width, $w-lge);
+        clear: both;
+        display: table;
+        margin: 0 auto;
+        width: 100%;
+
+        div {
+          @include rem(max-width, $w-sml);
+          display: block;
+        }
       }
     }
 
