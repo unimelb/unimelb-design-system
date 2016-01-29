@@ -5,6 +5,7 @@
     border-top: 1px solid rgba(#000000, 0.1);
     color: $midgray;
   }
+
   ul.search-pagination {
     @include padding-leader(1);
     @include padding-trailer(1);
@@ -18,7 +19,12 @@
       margin: 0;
       max-width: auto;
       padding: 0;
+      vertical-align: middle;
       width: auto;
+
+      &:nth-last-child(2) {
+        @include rem(margin-right, 10px);
+      }
     }
 
     a,

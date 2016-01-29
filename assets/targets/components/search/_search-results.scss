@@ -142,6 +142,10 @@
       &.url {
         @include adjust-font-size-to(12px);
         color: $highlight;
+        
+        & > a {
+          @extend %ellipsis;
+        }
       }
       
       &.more {
