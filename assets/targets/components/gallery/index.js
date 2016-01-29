@@ -6,7 +6,7 @@
  */
 function ImageGallery(el, props) {
   this.el = el;
-  this.props = props;
+  this.props = props || {};
 
   this.setupPhotoSwipe();
   this.setupGallery();
@@ -20,8 +20,8 @@ function ImageGallery(el, props) {
       gutter: 0
     }
   });
-
-  loadScript('https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js', this.initPhotoSwipeFromDOM.bind(this));
+  
+  this.initPhotoSwipeFromDOM();
 }
 
 /**

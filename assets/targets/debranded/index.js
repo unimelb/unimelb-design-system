@@ -127,18 +127,19 @@ window.DSComponentsLoad = function() {
 
   recs = document.querySelectorAll('ul.image-gallery');
   if (recs.length > 0) {
-    imagesLoaded = require('imagesloaded');
-    ImageGallery = require("../components/gallery");
+    loadScript('https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js', function (recs) {
+      imagesLoaded = require('imagesloaded');
+      ImageGallery = require("../components/gallery");
 
-    slingshot = function() {
-      new ImageGallery(this, {});
-    };
+      slingshot = function (g) {
+        new ImageGallery(g);
+      };
 
-    for (i=recs.length - 1; i >= 0; i--) {
-      g = recs[i];
-
-      imagesLoaded(g, slingshot.bind(g));
-    }
+      for (i=recs.length - 1; i >= 0; i--) {
+        g = recs[i];
+        imagesLoaded(g, slingshot.bind(null, g));
+      }
+    }.bind(null, recs));
   }
 
   recs = document.querySelectorAll('[data-leaflet-latlng]');
