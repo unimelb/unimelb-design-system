@@ -73,12 +73,13 @@
         &:before {
           @include rem(font-size, 18px);
           @include rem(left, 15px);
-          @include rem(line-height, 18px);
           @include rem(margin-top, -9px);
           content: "+";
-          display: block;
+          display: inline-block;
+          line-height: 1;
           position: absolute;
           text-align: left;
+          text-decoration: none;
           top: 50%;
           transition: transform 0.2s ease-in-out;
         }
@@ -89,6 +90,7 @@
 
           &:before {
             @include rem(font-size, 24px);
+            @include rem(margin-top, -12px);
           }
         }
       }
@@ -163,6 +165,21 @@
           @include rem(max-width, $w-mid);
         }
       }
+    }
+  }
+}
+
+.ie8 .uomcontent,
+.ie9 .uomcontent {
+  ul.accordion > li {
+    .accordion__title:before {
+      font-size: 18px;
+    }
+    
+    &.accordion__visible .accordion__title:before {
+      font-size: 16px;
+      content: "x";
+      transform: none;
     }
   }
 }
