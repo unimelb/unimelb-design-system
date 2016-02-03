@@ -9,6 +9,7 @@ function Tabs(el, props) {
   this.props = props;
   this.props.tabs = this.el.querySelectorAll('nav a');
   this.props.panels = [];
+  this.props.isNav = this.el.hasClass('tabbed-nav') || this.el.hasClass('tabbed-course');
 
   this.activateContainer();
 
@@ -39,40 +40,36 @@ Tabs.prototype.setupPanels = function() {
  * There are four ways of selecting which tab to start on!
  */
 Tabs.prototype.selectPanel = function() {
-  var idx = 0, max, i, search;
-
-  if (window.location.hash) {
-    for (max=this.props.tabs.length, i=0; i < max; i++)
-      if (window.location.hash == this.props.tabs[i].hash)
-        idx = i;
+  // 1. Select via JS props
+  if (this.props.preselect) {
+    this.move(this.props.preselect);
+    return;
   }
 
-  // Check for inner tabs
-  if (idx === 0 && window.location.hash) {
-    search = this.el.querySelector(window.location.hash);
-    if (search) {
-      search = findUp(search, 'tab');
-      search = this.el.querySelector('nav a[href="#' + search.id + '"]');
-      this.move(search);
+  // 2. Select via window hash (for navigational tabs only)
+  if (window.location.hash && this.props.isNav) {
+    // Find the tab that matches the hash
+    for (var i = 0, max = this.props.tabs.length; i < max; i++) {
+      var tab = this.props.tabs[i];
+      if (window.location.hash === tab.hash) {
+        // Match found; select the tab and return
+        this.move(tab);
+        return;
+      }
+    }
+    
+    // No match found; check for a matching inner tab (i.e. sidebar tabs, not in-page tabs)
+    var innerPanel = this.el.querySelector(window.location.hash + '.inner-nav-page');
+    if (innerPanel) {
+      // An inner-tab panel matches the hash; find its parent panel's tab and select it
+      var panel = findUp(innerPanel, 'tab');
+      this.move(this.el.querySelector('nav a[href="#' + panel.id + '"]'));
+      return;
     }
   }
 
-  // Preselect via js props
-  if (this.props.preselect) {
-    this.move(this.props.preselect);
-
-  // Match window hash
-  } else if (idx > 0) {
-    this.move(this.el.querySelector('[href="' + window.location.hash + '"]'));
-
-  // Default to 1st
-  } else if (this.el.countSelector('[data-current]') === 0) {
-    this.move(this.el.querySelector('nav a:first-child'));
-
-  // Selected in markup
-  } else {
-    this.move(this.el.querySelector('[data-current]'));
-  }
+  // 3. Select via `data-current` attribute, or 4. Default to first tab
+  this.move(this.el.querySelector('[data-current]') || this.el.querySelector('nav a:first-child'));
 };
 
 Tabs.prototype.handleClick = function(e) {
@@ -109,7 +106,7 @@ Tabs.prototype.panelExists = function(hash) {
 };
 
 Tabs.prototype.setLocation = function(hash) {
-  if (this.panelExists(hash)) {
+  if (this.props.isNav && this.panelExists(hash)) {
     var pos = document.body.scrollTop, slug;
 
     if (hash.charAt(0) === '#') {
