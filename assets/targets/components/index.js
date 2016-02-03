@@ -67,8 +67,8 @@ window.UOMbind = function(component) {
 window.UOMloadComponents = function() {
   "use strict";
 
-  var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect,
-    ImageGallery, imagesLoaded, LMaps, slingshot, style, script;
+  var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect, Flash,
+    ImageGallery, imagesLoaded, slingshot, LMaps, style, script;
 
   window.UOMbind('accordion');
   window.UOMbind('modal');
@@ -112,6 +112,16 @@ window.UOMloadComponents = function() {
   if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1) {
     JumpNav = require("./inpage-navigation/jumpnav");
     new JumpNav({});
+  }
+
+  recs = document.querySelector('.flash');
+  if (recs) {
+    Flash = require("./notices/flash");
+    new Flash(recs, {
+      root: document.querySelector('[role="main"]'),
+      headerless: document.querySelector('.headerless'),
+      header: document.querySelector('[role="main"] > header:first-child')
+    });
   }
 
   window.UOMbind('filtered-listings');
