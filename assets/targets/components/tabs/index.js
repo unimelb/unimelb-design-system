@@ -28,7 +28,7 @@ function Tabs(el, props) {
   // Event bindings
   if (this.el.hasAttribute('data-tabbed')) {
     this.setup();
-    this.selectPanel();
+    this.move(this.getInitialTab());
     
     if (window.addEventListener) { // don't setup the overflow at all in IE8
       this.handleResize();
@@ -60,40 +60,39 @@ Tabs.prototype.setup = function() {
 };
 
 /**
- * Select the first panel on page load.
- * There are four ways of selecting which tab to start on!
+ * Retrieve the initial tab on page load.
+ * There are four ways of determine which tab to start on!
+ * @return {Element}
  */
-Tabs.prototype.selectPanel = function() {
-  // 1. Select via JS props
+Tabs.prototype.getInitialTab = function() {
+  // 1. From JS props
   if (this.props.preselect) {
-    this.move(this.props.preselect);
-    return;
+    return this.props.preselect;
   }
 
-  // 2. Select via window hash (for navigational tabs only)
+  // 2. From window hash (for navigational tabs only)
   if (window.location.hash && this.props.isNav) {
     // Find the tab that matches the hash
     for (var i = 0, max = this.props.tabs.length; i < max; i++) {
       var tab = this.props.tabs[i];
       if (window.location.hash === tab.hash) {
-        // Match found; select the tab and return
-        this.move(tab);
-        return;
+        // Match found; return it
+        return tab;
       }
     }
     
     // No match found; check for a matching inner tab (i.e. sidebar tabs, not in-page tabs)
     var innerPanel = this.el.querySelector(window.location.hash + '.inner-nav-page');
     if (innerPanel) {
-      // An inner-tab panel matches the hash; find its parent panel's tab and select it
+      // Inner-tab panel matches hash; find its parent panel's tab and return it
       var panel = findUp(innerPanel, 'tab');
-      this.move(this.el.querySelector('nav a[href="#' + panel.id + '"]'));
-      return;
+      return this.el.querySelector('nav a[href="#' + panel.id + '"]');
     }
   }
 
-  // 3. Select via `data-current` attribute, or 4. Default to first tab
-  this.move(this.el.querySelector('[data-current]') || this.el.querySelector('nav a:first-child'));
+  // 3. From `data-current` attribute, or
+  // 4. First tab (default)
+  return this.el.querySelector('[data-current]') || this.el.querySelector('nav a:first-child');
 };
 
 /**
@@ -171,11 +170,11 @@ Tabs.prototype.setupOverflow = function() {
   document.addEventListener('ps-x-reach-start', this.updateArrow.bind(this, 'left', false));
   document.addEventListener('ps-x-reach-end', this.updateArrow.bind(this, 'right', false));
   
-  // Activate the overflow behaviour
-  this.activateOverflow(false);
-  
   this.props.isLoadingPs = false;
   this.props.isOverflowSetup = true;
+  
+  // Activate the overflow behaviour
+  this.activateOverflow(false);
 };
 
 /**
@@ -338,7 +337,7 @@ Tabs.prototype.move = function(target, smooth) {
 };
 
 Tabs.prototype.scrollToTab = function(tab, smooth) {
-  if (this.props.isOverflowing) {
+  if (this.props.isOverflowSetup && this.props.isOverflowing) {
     var to = tab.offsetLeft - this.props.inner.clientWidth / 2 + tab.clientWidth / 2;
     this.scrollTabs(to, smooth);
   }
@@ -352,6 +351,7 @@ Tabs.prototype.scrollTabs = function(to, smooth) {
     var duration = Math.abs(change / 10);
     this.animateTabsScroll(0, start, change, duration, increment);
   } else {
+    this.props.inner.scrollLeft = to;
     Ps.update(this.props.inner);
   }
 };
