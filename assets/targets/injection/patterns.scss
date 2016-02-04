@@ -2,18 +2,6 @@
 @import '../../shared/patterns_media-queries';
 @import '../../shared/patterns_accessibility';
 
-// X-axis translation
-@mixin translateX($d) {
-  -moz-transform: translate3d($d, 0, 0);
-  -ms-transform: translate3d($d, 0, 0);
-  -webkit-transform: translate3d($d, 0, 0);
-  transform: translate3d($d, 0, 0);
-  -moz-transition: -moz-transform .3s ease;
-  -ms-transition: -ms-transform .3s ease;
-  -webkit-transition: -webkit-transform .3s ease;
-  transition: transform .3s ease;
-}
-
 // Wrapper
 %wrapper {
   @include rem(max-width, 1400px);
@@ -50,13 +38,6 @@
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-%smooth-translate {
-  -moz-transition: -moz-transform .3s ease;
-  -ms-transition: -ms-transform .3s ease;
-  -webkit-transition: -webkit-transform .3s ease;
-  transition: transform .3s ease;
 }
 
 %normalise {

@@ -32,6 +32,9 @@ $light: 300;
 
 $ff-sans: Roboto, Helvetica, Arial, sans-serif;
 
+// Transitions
+$smooth-transform: transform .3s ease;
+
 html,
 body {
   height: 100%;
