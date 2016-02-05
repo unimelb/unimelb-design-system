@@ -14,13 +14,13 @@ h2.title Guidelines
 section.navigation-block-listing
   ul.narrow
     li
-      a href="/editorial-guidelines"
+      a href="https://staff.unimelb.edu.au/marketing-communications/media-communications/guidelines"
         h3 Editorial Guidelines
         p Adhering to the Marketing editorial style guide will ensure your publications are produced in a high standard, University-compliant, consistent style
-    / li
-    /   a href="/writing-for-the-web"
-    /     h3 Writing for the web
-    /     p Optimising copy for search engines and users
+    li
+      a href="https://staff.unimelb.edu.au/information-technology/using-university-systems/staff-hub-support/optimising-your-content"
+        h3 Writing for the web
+        p Optimising copy for search engines and users
     li
       a href="/using-images"
         h3 Image guidelines
