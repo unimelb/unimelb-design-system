@@ -52,7 +52,7 @@
     & > figure.full-width {
       background-color: transparent;
     }
-    
+
     .mobile-nav {
       display: none;
     }
@@ -71,7 +71,7 @@
         letter-spacing: .5px;
         text-decoration: none;
         text-transform: uppercase;
-        
+
         &:hover {
           color: $white;
         }
@@ -113,7 +113,7 @@
       @include rem(padding-bottom, 15px);
       position: relative;
     }
-    
+
     .ps-scrollbar-x-rail {
       z-index: 5;
     }
@@ -130,7 +130,7 @@
       height: 100%;
       position: absolute;
       top: 0;
-      
+
       &[disabled] {
         cursor: default;
         opacity: .5;
@@ -414,10 +414,20 @@
     & > .full-width {
       height: auto;
     }
-    
+
     nav {
+      display: block;
       white-space: normal;
-      
+
+      a {
+        // Computed from rgba
+        color: #A5B9CC;
+      }
+
+      a[data-current] {
+        color: $white;
+      }
+
       a[data-current]:after {
         border: solid transparent;
         border-top-color: $darkblue;
