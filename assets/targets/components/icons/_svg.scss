@@ -48,12 +48,6 @@
       }
     }
 
-    &.icon--hide-label {
-      & > .icon-label {
-        @include screenreaders-only;
-      }
-    }
-
     .icon-label {
       font-weight: $regular;
       margin: 0;
@@ -76,11 +70,23 @@
   }
 }
 
+:not(.ie8) {
+  .uomcontent [data-icon].icon--hide-label {
+    // Fix outline bug in Chrome
+    overflow: hidden;
+    position: relative;
+
+    & > .icon-label {
+      @include screenreaders-only;
+    }
+  }
+}
+
 .ie8 .uomcontent {
   [data-icon],
   [data-icon].fill,
   [data-icon].small,
   [data-icon].large {
-    width: auto;
+    width: auto!important;
   }
 }

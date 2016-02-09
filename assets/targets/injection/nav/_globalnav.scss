@@ -1,43 +1,42 @@
 .uomcontent [role="navigation"]#globalsitemap {
   @extend %normalise;
-  @extend %smooth-translate;
   @extend %wrapper;
-  @include rem(padding, 0 0 30px);
-  @include translateX(100%);
+  @include rem(padding, 0 3% 30px);
   background-color: $navy;
   font-family: $ff-sans;
   height: 100%;
   margin: 0;
-  max-width: 100%;
+  max-width: none;
   position: fixed;
-  right: 0;
+  right: -100%;
   top: 0;
+  transform: translateX(0);
+  transition: $smooth-transform;
   width: 100%;
-  z-index: 0;
+  z-index: 17;
+
+  &.active {
+    box-shadow: 1px 0 12px 3px rgba($black, .6);
+    overflow: auto;
+    transform: translateX(-100%);
+    –webkit-overflow-scrolling: touch;
+  }
+  
+  @include breakpoint(tablet) {
+    @include rem(padding, 0 130px 30px 40px);
+    
+    &.active {
+      transform: translateX(-100%) translateX(90px);
+    }
+  }
 
   * {
     @extend %normalise;
   }
 
-  &.active {
-    @include translateX(0);
-    left: 0;
-    overflow: auto;
-    padding-left: 3%;
-    padding-right: 3%;
-    position: fixed;
-    z-index: 17;
-    –webkit-overflow-scrolling: touch;
-
-    @include breakpoint(tablet) {
-      @include rem(left, 90px);
-      @include rem(padding-left, 40px);
-      @include rem(padding-right, 155px);
-    }
-  }
-
   a {
     @include rem(padding-top, 10px);
+    color: $lightblue;
     color: rgba($white, .6);
     display: block;
     font-weight: $light;
@@ -58,6 +57,7 @@
     @include rem(padding-bottom, 10px);
     @include rem(padding-top, 30px);
     border-bottom: 1px solid $blue;
+    color: $lightblue;
     color: rgba($white, .6);
     line-height: 1.2;
     padding-right: 3%;
@@ -237,17 +237,15 @@
     text-decoration: none;
     text-transform: uppercase;
 
-    &::before {
+    &:before {
       @include rem(font-size, 24px);
-      @include rem(height, 10px);
-      @include rem(margin-right, 5px);
+      @include rem(margin-right, 8px);
       color: rgba($white, .4);
       content: '\2039';
-      display: block;
-      float: left;
+      display: inline-block;
       font-weight: $regular;
-      line-height: .8;
-      text-indent: 0;
+      line-height: 1;
+      vertical-align: -1px;
     }
 
     &:hover {
@@ -255,9 +253,10 @@
       text-decoration: underline;
     }
 
-    &:hover::before {
+    &:hover:before {
       @include animation(chevronback 1s infinite ease-in-out);
       color: $white;
+      text-decoration: none;
     }
   }
 
@@ -308,23 +307,19 @@
 
 body.ie {
   .uomcontent [role="navigation"]#globalsitemap {
-    display: none;
-    z-index: 0;
-
-    &.active {
-      background: $navy;
-      display: block;
-      z-index: 100;
-    }
+//    display: none;
+//    z-index: 0;
+//
+//    &.active {
+//      right: 0;
+//      background: $navy;
+//      display: block;
+//      z-index: 100;
+//    }
 
     .logo * {
       border: 0 none;
       outline: 0;
-    }
-
-    h2,
-    a {
-      color: $lightblue;
     }
 
     form {
@@ -377,6 +372,14 @@ body.ie {
       a {
         padding-left: 0;
       }
+    }
+  }
+}
+
+body.ie8 {
+  .uomcontent [role="navigation"]#globalsitemap {
+    &.active {
+      right: 0;
     }
   }
 }

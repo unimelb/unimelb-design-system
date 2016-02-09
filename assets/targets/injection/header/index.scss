@@ -22,6 +22,11 @@
   top: 0;
   width: 100%;
   z-index: 12;
+  
+  /* Work-around for conflict with other `fixed` class, which sets the font to `$ff-fixed` */
+  &.fixed {
+    font-family: $ff-sans;
+  }
 
   @include breakpoint(desktop) {
     @include rem(height, 90px);
@@ -37,7 +42,6 @@
     &.fixed:not(.floating) {
       @include rem(height, 40px);
       background-color: $white;
-      font-family: $ff-sans;
       position: fixed;
       width: 100%;
 
@@ -59,7 +63,7 @@
 
         [data-icon] {
           @include rem(height, 20px);
-          @include rem(margin-bottom, 5px);
+          @include rem(margin-bottom, 4px);
           @include rem(margin-right, 5px);
           @include rem(width, 20px);
           display: inline-block;
@@ -73,6 +77,10 @@
             vertical-align: top;
           }
         }
+      }
+      
+      a > span {
+        vertical-align: baseline;
       }
 
       header {
@@ -311,7 +319,7 @@
 
   [data-icon] {
     @include rem(height, 20px);
-    @include rem(margin-bottom, 5px);
+    @include rem(margin-bottom, 4px);
     @include rem(margin-right, 5px);
     @include rem(width, 20px);
     display: inline-block;
@@ -404,7 +412,6 @@
     width: auto;
 
     &::after {
-      @include rem(margin-top, 2px);
       @include rem(padding-left, 10px);
       content: '/';
       color: $darkblue;
@@ -423,6 +430,10 @@
     height: auto;
     line-height: 1;
     padding: 0;
+  }
+  
+  a > span {
+    vertical-align: baseline;
   }
 }
 
@@ -710,7 +721,6 @@
         line-height: 56px;
 
         &:after {
-          @include rem(margin-top, 2px);
           @include rem(padding-left, 10px);
           content: '/';
           color: $darkblue;

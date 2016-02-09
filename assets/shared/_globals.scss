@@ -1,8 +1,3 @@
-@mixin translateX($d) {
-  transform: translate3d($d, 0, 0);
-  transition: transform .3s ease;
-}
-
 @mixin appearance($a) {
   -webkit-appearance: $a;
   -moz-appearance: $a;
@@ -110,13 +105,6 @@ $cdnurl: '//d2h9b02ioca40d.cloudfront.net/shared';
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-%smooth-translate {
-  -moz-transition: -moz-transform .3s ease;
-  -ms-transition: -ms-transform .3s ease;
-  -webkit-transition: -webkit-transform .3s ease;
-  transition: transform .3s ease;
 }
 
 %normalise {

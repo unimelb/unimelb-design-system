@@ -1,3 +1,11 @@
+# Opening an issue
+
+Before you open a new issue, read through or search the current issues to see if someone else has logged it already.
+
+*Please include your name and department either in the issue ticket or on your github profile.*
+
+Screenshots are helpful, as are screencasts (no flash), and please include any browser information you can provide.
+
 # How to contribute
 
 1. Add or modify the code in local dev environment

@@ -1,0 +1,87 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Checklist | Web.Unimelb</title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.8</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Checklist"><span itemprop="name">Checklist</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">Checklist</h1><section><div class="jumpnav"></div>
+
+<p>Add an optional <code>data-unlock-target</code> pointing to the ID of a link, to prevent access to that link until all items are ticked.</p></section><hr /><h2 id="basic-checklist">Basic checklist</h2><fieldset>
+  <ul class="checklist">
+    <li class="on">
+      <input checked="checked" class="checkbox" id="c-999" type="checkbox" /><label for="c-999"><span>Check the degree website.</span></label>
+    </li>
+    <li>
+      <input class="checkbox" id="c0" type="checkbox" /><label for="c0"><span>Check the entry requirements to clarify your eligibility for application, duplicate instructions after to demonstrate a multiline item: Check the entry requirements to clarify your eligibility for application</span></label>
+    </li>
+    <li>
+      <input class="checkbox" id="c1" type="checkbox" /><label for="c1"><span>Ensure you meet the University's language requirements</span></label>
+    </li>
+    <li>
+      <input class="checkbox" id="c2" type="checkbox" /><label for="c2"><span>Apply online or via the hardcopy application form</span></label>
+    </li>
+  </ul>
+</fieldset>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;fieldset&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;checklist&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;on&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;checked&quot;</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c-999&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c-999&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Check the degree website.<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c0&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c0&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Check the entry requirements to clarify your eligibility for application, duplicate instructions after to demonstrate a multiline item: Check the entry requirements to clarify your eligibility for application<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c1&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c1&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Ensure you meet the University&#39;s language requirements<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c2&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c2&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Apply online or via the hardcopy application form<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><h2 id="unlock-checklist">Unlock checklist</h2><fieldset>
+  <ul class="checklist" data-unlock-target="continue">
+    <li class="on">
+      <input checked="checked" class="checkbox" id="c1-0" type="checkbox" /><label for="c1-0"><span>This one is already ticked</span></label>
+    </li>
+    <li>
+      <input class="checkbox" id="c1-1" type="checkbox" /><label for="c1-1"><span>Please tick both these items</span></label>
+    </li>
+    <li>
+      <input class="checkbox" id="c1-2" type="checkbox" /><label for="c1-2"><span>To unlock the button below</span></label>
+    </li>
+  </ul>
+</fieldset>
+<section>
+  <p class="center">
+    <a class="button" href="javascript:alert(&#39;Success!&#39;)" id="continue">Continue</a>
+  </p>
+</section>
+    <section class="code"><ul class="accordion">
+      <li>
+        <span class="accordion__title">Sample Markup</span>
+        <div class="accordion__hidden">
+<div class="highlight"><pre><span class="nt">&lt;fieldset&gt;</span>
+  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;checklist&quot;</span> <span class="na">data-unlock-target=</span><span class="s">&quot;continue&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;on&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">checked=</span><span class="s">&quot;checked&quot;</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c1-0&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c1-0&quot;</span><span class="nt">&gt;&lt;span&gt;</span>This one is already ticked<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c1-1&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c1-1&quot;</span><span class="nt">&gt;&lt;span&gt;</span>Please tick both these items<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">id=</span><span class="s">&quot;c1-2&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="nt">/&gt;&lt;label</span> <span class="na">for=</span><span class="s">&quot;c1-2&quot;</span><span class="nt">&gt;&lt;span&gt;</span>To unlock the button below<span class="nt">&lt;/span&gt;&lt;/label&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/fieldset&gt;</span>
+<span class="nt">&lt;section&gt;</span>
+  <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;center&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;button&quot;</span> <span class="na">href=</span><span class="s">&quot;javascript:alert(&amp;#39;Success!&amp;#39;)&quot;</span> <span class="na">id=</span><span class="s">&quot;continue&quot;</span><span class="nt">&gt;</span>Continue<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+</pre></div>
+        </div>
+      </li>
+    </ul></section>
+<hr /><div class="half"><section class="center"><a class="button-hero-reverse" href="/components/buttons">Buttons</a></section><section class="center"><a class="button-hero" href="/components/enquiry">Enquiry</a></section></div></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>

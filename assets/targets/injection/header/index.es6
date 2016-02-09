@@ -25,6 +25,7 @@ function InjectHeader(props) {
   // Exclude IE8, can't polyfill window scroll event
   if (!/(MSIE 8.0)/g.test(navigator.userAgent)) {
     window.addEventListener("scroll", this.handleScroll.bind(this));
+    this.handleScroll(); // Check once on page load
   }
 }
 

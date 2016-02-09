@@ -1,8 +1,6 @@
 .uomcontent {
   [data-tabbed] {
     nav {
-      display: none;
-
       a {
         cursor: pointer;
         font-weight: $regular;
@@ -44,35 +42,50 @@
 
   .tabbed-nav {
     & > .full-width {
+      @include rem(height, 64px);
       background-color: $darkblue;
       border-bottom: 1px solid transparent;
       position: relative;
+      text-align: center;
     }
 
     & > figure.full-width {
       background-color: transparent;
     }
 
+    .mobile-nav {
+      display: none;
+    }
+
     nav {
-      @extend %wrapper;
-      padding: 0;
-      text-align: center;
+      @include rem(padding, 0 40px);
+      display: inline-block;
+      white-space: nowrap;
 
       a {
-        @include rem(padding, 20px 10px);
-        color: $white;
+        @include adjust-font-size-to(15px);
+        @include rem(line-height, 64px);
+        @include rem(padding, 0 20px);
+        color: rgba($white, .7);
         display: inline-block;
+        letter-spacing: .5px;
         text-decoration: none;
         text-transform: uppercase;
 
+        &:hover {
+          color: $white;
+        }
+
         &[data-current] {
+          color: $white;
+          font-weight: $regular;
           position: relative;
         }
 
         &[data-current]::after {
           border: solid transparent;
           border-top-color: $darkblue;
-          border-width: 10px;
+          border-width: 10px 10px 0;
           content: ' ';
           height: 0;
           left: 50%;
@@ -82,106 +95,61 @@
           position: absolute;
           top: 100%;
           width: 0;
-          z-index: 1;
+          z-index: 10;
         }
 
         @include breakpoint(desktop) {
-          @include adjust-font-size-to(18px);
-          @include rem(padding, 20px 45px);
+          @include rem(padding, 0 30px);
         }
       }
 
-      [data-icon] .icon {
-        display: none;
-      }
-
-      @include breakpoint(desktop) {
-        @include rem(padding, 0 15px);
-        margin: 0 auto;
-
-        [data-icon] .icon {
-          display: inline-block;
-        }
-
-        [data-icon] .icon-label {
-          display: none;
-        }
+      [data-icon] {
+        @extend .icon--hide-label;
       }
     }
 
-    .desktop-nav {
-      display: none;
-
-      &.active {
-        display: none;
-      }
-
-      @include breakpoint(desktop) {
-        &.active {
-          display: block;
-        }
-      }
-    }
-
-    .mobile-nav {
-      @include rem(padding, 5px 0);
-      background-color: $brand;
-      border-color: $brand;
-      display: none;
-      margin: 0 3%;
+    /* wrapper added dynamically around nav element when tabs overflow */
+    .tabbed-nav__inner {
+      @include rem(padding-bottom, 15px);
       position: relative;
-      width: 94%;
-
-      .styled-select {
-        background-color: $brand;
-        border-color: $brand;
-
-        &:hover {
-          background-color: $highlight;
-        }
-      }
-
-      select {
-        background-color: $brand;
-        border-color: $brand;
-
-        &:hover {
-          background-color: $highlight;
-        }
-      }
-
-      &.active {
-        display: block;
-      }
-
-      &::after {
-        border: solid transparent;
-        border-top-color: $brand;
-        border-width: 10px;
-        content: ' ';
-        height: 0;
-        left: 50%;
-        margin-bottom: -10px;
-        margin-left: -10px;
-        pointer-events: none;
-        position: absolute;
-        top: 100%;
-        width: 0;
-        z-index: 1;
-      }
-
-
-      @include breakpoint(desktop) {
-        display: none;
-
-        &.active {
-          display: none;
-        }
-      }
     }
 
-    select.mobile-nav:hover {
-      background-color: $highlight;
+    .ps-scrollbar-x-rail {
+      z-index: 5;
+    }
+
+    /* left/right arrows when screen size is too small to fit all the tabs */
+    .tab-arrow {
+      @include rem(font-size, 30px);
+      @include rem(padding, 0 20px 5px); /* bottom padding aligns arrows with tab labels */
+      background: $darkblue;
+      color: $white;
+      cursor: pointer;
+      display: none;
+      font-weight: $bold;
+      height: 100%;
+      position: absolute;
+      top: 0;
+
+      &[disabled] {
+        cursor: default;
+        opacity: .5;
+      }
+    }
+    .tab-arrow--left {
+      @include rem(padding-right, 10px);
+      background: linear-gradient(to left, transparent, rgba($darkblue, .9) 10%);
+      left: 0;
+    }
+    .tab-arrow--right {
+      @include rem(padding-left, 10px);
+      background: linear-gradient(to right, transparent, rgba($darkblue, .9) 10%);
+      right: 0;
+    }
+
+    /* show the arrows when the tabs overflow */
+    .overflow .tab-arrow {
+      display: inline-block;
     }
 
     [role="tabpanel"] {
@@ -272,18 +240,13 @@
       nav a[data-current]::after {
         border-top-color: $darkblue;
       }
-
-      .mobile-nav,
-      .mobile-nav select {
-        background-color: $darkblue;
-        border: 1px solid $darkblue;
-      }
     }
 
     &.thin {
       nav a {
         @include adjust-font-size-to(13px);
-        @include rem(padding, 15px);
+        @include rem(line-height, 64px);
+        @include rem(padding, 0 15px);
       }
 
       [role="tabpanel"] {
@@ -448,29 +411,38 @@
 .ie8 {
   .uomcontent .tabbed-course,
   .uomcontent .tabbed-nav {
-    nav a[data-current]:after {
-      border: solid transparent;
-      border-top-color: $darkblue;
-      border-width: 10px;
-      content: ' ';
-      height: 0;
-      left: 50%;
-      margin-bottom: -10px;
-      margin-left: -10px;
-      pointer-events: none;
-      position: absolute;
-      top: 100%;
-      width: 0;
-      z-index: 1;
+    & > .full-width {
+      height: auto;
     }
 
-    .mobile-nav,
-    .mobile-nav.active {
-      display: none;
-    }
-
-    .desktop-nav {
+    nav {
       display: block;
+      white-space: normal;
+
+      a {
+        // Computed from rgba
+        color: #A5B9CC;
+      }
+
+      a[data-current] {
+        color: $white;
+      }
+
+      a[data-current]:after {
+        border: solid transparent;
+        border-top-color: $darkblue;
+        border-width: 10px;
+        content: ' ';
+        height: 0;
+        left: 50%;
+        margin-bottom: -10px;
+        margin-left: -10px;
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        width: 0;
+        z-index: 1;
+      }
     }
   }
 

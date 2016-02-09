@@ -48,9 +48,13 @@
 
     a {
       @include rem(font-size, 11px);
+      @include rem(line-height, 46px);
       letter-spacing: 1px;
-      line-height: 1.6em;
       text-transform: uppercase;
+
+      @include breakpoint(desktop) {
+        line-height: 1.6em;
+      }
     }
   }
 
@@ -427,6 +431,10 @@
 .ie8 .uomcontent .page-footer {
   ul.quicklinks {
     border-bottom: 0;
+
+    a {
+      line-height: 1.6em;
+    }
   }
 
   ul.people-links {

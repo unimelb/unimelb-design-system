@@ -76,7 +76,8 @@
       }
 
       span,
-      p {
+      p,
+      figure {
         @include rem(margin-left, 20px);
         @include rem(padding-bottom, 10px);
         @include rem(padding-left, 20px);

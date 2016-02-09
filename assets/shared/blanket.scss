@@ -5,21 +5,19 @@
 
 .uomcontent {
   .modal__blanket {
-    @include opacity(0);
-    background: #000;
+    @include opacity(.5);
+    background-color: #000;
     display: none;
-    height: 101.5%;
+    height: 100%;
     left: 0;
-    overflow: scroll;
+    overflow: hidden;
     position: fixed;
     top: 0;
-    width: 101.5%;
-    z-index: 1;
+    width: 100%;
+    z-index: 14;
 
     &.on {
-      @include opacity(.5);
       display: block;
-      z-index: 14;
     }
   }
 }
