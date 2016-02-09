@@ -1,25 +1,20 @@
-p Add the <code>data-icon</code> attribute to any empty element and give it the value of the icon you wish to use, eg.
+p Create a <code>div</code> or <code>span</code> element and set its <code>data-icon</code> attribute to the name of the icon you wish to use. The text within the element is used as the icon's label and appears centred underneath it.
 
 ==syntax_highlight :html
   erb:
     <div data-icon="maps">Map</div>
     <span data-icon="trash">Trash</span>
 
-p This will be replaced at load time with an <code>svg</code> DOM element referencing the desired icon.
-
-p By default, the icon will inherit the <code>currentColor</code> value of its parent element, and will be constrained to 60px &times; 60px.
-
-p There are three CSS helper classes that can be used to adjust the size:
+p At load time, an <code>svg</code> element referencing the desired icon will be injected into the element (cf. <a href="custom-icon">Custom Icons</a> section for more details).
+p By default, the icon inherits the <code>currentColor</code> value of its parent element and is constrained to 60px &times; 60px. Three CSS helper classes are available to adjust the icon's size:
 
 ul
-  li.no-li
+  li
     code> small
-    | 30px &times; 30px
-  li.no-li
+    | &ndash; 30px &times; 30px
+  li
     code> large
-    | 100px &times; 100px
-  li.no-li
+    | &ndash; 100px &times; 100px
+  li
     code> fill
-    | 100% of container width and height
-
-p All text within the element will be kept as a label (try and keep it short). All labels are centred on their containing element.
+    | 100% of container width and height (cf. <a href="#fill-container">Fill container</a> section)
