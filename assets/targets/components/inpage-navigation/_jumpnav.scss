@@ -146,7 +146,7 @@ body.jumpnav-active {
     }
 
     .uomcontent [role="main"] {
-      @include single-box-shadow(6px, 0, 6px, -6px, rgba($black, 0.3), true);
+      box-shadow: inset 6px 0 6px -6px rgba($black, 0.3);
       margin-left: 300px;
       margin-top: -10px;
       padding-top: 10px;

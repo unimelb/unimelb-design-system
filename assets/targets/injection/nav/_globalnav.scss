@@ -119,11 +119,11 @@
       position: relative;
 
       input[type="search"] {
-        @include appearance(none);
         @include rem(height, 45px);
         @include rem(border-radius, 3px 0 0 3px);
         @include rem(font-size, 20px);
         @include rem(padding, 8px 10px);
+        appearance: none;
         background-color: $lightergray;
         border: 1px solid darken($lightergray, 5%);
         box-shadow: inset 0 1px 3px rgba($black, .15);
