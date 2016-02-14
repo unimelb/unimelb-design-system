@@ -1,7 +1,7 @@
 .uomcontent [role="main"] {
   header {
     .mid-align {
-      @include align-self(center);
+      align-self: center;
       padding-bottom: 0;
       position: relative;
       text-align: center;
