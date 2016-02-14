@@ -98,15 +98,14 @@
   .diamond-mask {
     @include rem(max-width, 300px);
     @include trailer(1);
-    @include transform(rotate(45deg) scale(.7));
-    // border: 1px solid $black;
+    transform: rotate(45deg) scale(.7);
     display: block;
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
 
     img {
-      @include transform(rotate(-45deg) scale(1.41));
+      transform: rotate(-45deg) scale(1.41);
       display: block;
       margin: 0;
       max-width: none;

@@ -254,7 +254,7 @@
     }
 
     &:hover:before {
-      @include animation(chevronback 1s infinite ease-in-out);
+      animation: chevronback 1s infinite ease-in-out;
       color: $white;
       text-decoration: none;
     }
