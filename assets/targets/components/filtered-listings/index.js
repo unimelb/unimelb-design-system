@@ -145,7 +145,8 @@ ListFilter.prototype.process = function(target) {
 };
 
 ListFilter.prototype.filterCategories = function() {
-  for (var i=this.props.tables.length - 1; i >= 0; i--) {
+  var i, j, recs;
+  for (i=this.props.tables.length - 1; i >= 0; i--) {
     var category = this.props.tables[i].parentNode.parentNode;
 
     var showcategory = false;
@@ -159,8 +160,8 @@ ListFilter.prototype.filterCategories = function() {
         showcategory = true;
 
       // Category matches
-      var recs = category.getAttribute('data-category').split('|');
-      for (var j=recs.length - 1; j >= 0; j--) {
+      recs = category.getAttribute('data-category').split('|');
+      for (j=recs.length - 1; j >= 0; j--) {
         // Compare lowered, URI decoded with same
         if (decodeURIComponent(recs[j]).toLowerCase() == decodeURIComponent(this.props.curr).toLowerCase())
           showcategory = true;
@@ -173,7 +174,26 @@ ListFilter.prototype.filterCategories = function() {
       category.addClass('hide');
     }
   }
+
+  var idx = this.selectedOptionIndex();
+  if (!idx) {
+    for (i=this.props.tables.length - 1; i >= 0; i--)
+      this.props.tables[i].parentNode.parentNode.removeClass('hide');
+
+  } else if (this.props.select && this.props.select.value != this.props.curr) {
+    this.props.select.options.selectedIndex = idx;
+  }
+
   this.triggerIsotope();
+};
+
+ListFilter.prototype.selectedOptionIndex = function() {
+  var idx, recs, max, i;
+  for (recs=this.props.select.querySelectorAll('option'), max=recs.length, i=0; i < max; i++)
+    if (decodeURIComponent(recs[i].value).toLowerCase() == decodeURIComponent(this.props.curr).toLowerCase())
+      idx = i;
+
+  return idx;
 };
 
 ListFilter.prototype.filterTags = function(table, tags) {
