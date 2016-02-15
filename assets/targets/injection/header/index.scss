@@ -22,7 +22,7 @@
   top: 0;
   width: 100%;
   z-index: 12;
-  
+
   /* Work-around for conflict with other `fixed` class, which sets the font to `$ff-fixed` */
   &.fixed {
     font-family: $ff-sans;
@@ -78,9 +78,13 @@
           }
         }
       }
-      
+
       a > span {
         vertical-align: baseline;
+      }
+
+      a > span[data-icon] {
+        vertical-align: middle;
       }
 
       header {
@@ -431,7 +435,7 @@
     line-height: 1;
     padding: 0;
   }
-  
+
   a > span {
     vertical-align: baseline;
   }
