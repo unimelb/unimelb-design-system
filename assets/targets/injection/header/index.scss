@@ -79,12 +79,8 @@
         }
       }
 
-      a > span {
+      a > span:not([data-icon]) {
         vertical-align: baseline;
-      }
-
-      a > span[data-icon] {
-        vertical-align: middle;
       }
 
       header {
