@@ -18,11 +18,11 @@
   background-color: $white;
   color: $black;
   font-family: $ff-sans;
-  position: static;
+  position: relative;
   top: 0;
   width: 100%;
   z-index: 12;
-  
+
   /* Work-around for conflict with other `fixed` class, which sets the font to `$ff-fixed` */
   &.fixed {
     font-family: $ff-sans;
@@ -78,7 +78,7 @@
           }
         }
       }
-      
+
       a > span {
         vertical-align: baseline;
       }
@@ -431,7 +431,7 @@
     line-height: 1;
     padding: 0;
   }
-  
+
   a > span {
     vertical-align: baseline;
   }
