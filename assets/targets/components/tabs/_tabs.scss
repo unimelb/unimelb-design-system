@@ -321,10 +321,6 @@
       @extend %clearfix;
     }
 
-    .half {
-      background-color: transparent;
-    }
-
     aside h2.subtitle {
       @include rem(padding-bottom, 5px);
     }
