@@ -233,6 +233,11 @@ Tabs.prototype.handleArrowClick = function(direction) {
  * @param {Event} e
  */
 Tabs.prototype.handleClick = function(e) {
+  // Prevent default anchor click handler from being called
+  e.stopImmediatePropagation();
+  // Default action now has to be prevented too
+  e.preventDefault();
+  
   var target = e.target;
 
   // IE8/no-svg fallback
