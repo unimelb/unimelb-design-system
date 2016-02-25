@@ -159,8 +159,8 @@ Tabs.prototype.setupOverflow = function() {
   this.props.rightArrow = rightArrow;
   
   // Append wrapper and arrows
-  this.props.navParent.appendChild(inner);
   this.props.navParent.appendChild(leftArrow);
+  this.props.navParent.appendChild(inner);
   this.props.navParent.appendChild(rightArrow);
   
   // Listen for clicks on arrows
