@@ -140,6 +140,10 @@
         cursor: default;
         opacity: .5;
       }
+      
+      &:focus {
+        outline: 1px dotted $white;
+      }
     }
     .tab-arrow--left {
       @include rem(padding-right, 10px);
