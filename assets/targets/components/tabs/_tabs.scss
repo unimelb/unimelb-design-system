@@ -118,6 +118,11 @@
       z-index: 5;
     }
 
+    /* show scrollbar when focused */
+    .ps-focus .ps-scrollbar-x-rail {
+      opacity: 1;
+    }
+
     /* left/right arrows when screen size is too small to fit all the tabs */
     .tab-arrow {
       @include rem(font-size, 30px);
