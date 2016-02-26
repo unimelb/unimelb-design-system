@@ -53,7 +53,6 @@ Tabs.prototype.setup = function() {
   for (i=this.props.tabs.length - 1; i >= 0; i--) {
     tab = this.props.tabs[i];
     tab.addEventListener('click', this.handleClick.bind(this));
-    tab.addEventListener('focus', this.scrollToTab.bind(this, tab, false));
   }
 
   // Handle internal clicks
@@ -239,7 +238,6 @@ Tabs.prototype.handleClick = function(e) {
   // Prevent default anchor click handler from being called
   e.stopImmediatePropagation();
   // Default action now has to be prevented too
-  e.preventDefault();
   
   var target = e.target;
 
@@ -255,6 +253,7 @@ Tabs.prototype.handleClick = function(e) {
   if (target.hasAttribute('href')) {
     // go to href
     if (target.getAttribute('href').charAt(0) == '#') {
+      e.preventDefault();
       this.move(target, true);
       this.setLocation(target.getAttribute('href'));
       smoothScrollTo(target);
