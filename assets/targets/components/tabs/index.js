@@ -261,7 +261,6 @@ Tabs.prototype.handleClick = function(e) {
     }
   } else {
     this.move(target, true);
-    this.setLocation(target.getAttribute('href'));
   }
 };
 
