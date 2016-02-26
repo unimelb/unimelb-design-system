@@ -138,12 +138,12 @@
     }
     .tab-arrow--left {
       @include rem(padding-right, 10px);
-      background: linear-gradient(to left, transparent, rgba($darkblue, .9) 10%);
+      background: linear-gradient(to left, rgba($darkblue, 0), rgba($darkblue, .9) 10%);
       left: 0;
     }
     .tab-arrow--right {
       @include rem(padding-left, 10px);
-      background: linear-gradient(to right, transparent, rgba($darkblue, .9) 10%);
+      background: linear-gradient(to right, rgba($darkblue, 0), rgba($darkblue, .9) 10%);
       right: 0;
     }
 
