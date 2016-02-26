@@ -256,7 +256,11 @@ Tabs.prototype.handleClick = function(e) {
       e.preventDefault();
       this.move(target, true);
       this.setLocation(target.getAttribute('href'));
-      smoothScrollTo(target);
+      
+      // If navigation tab, scroll
+      if (this.props.isNav) {
+        smoothScrollTo(target);
+      }
     }
   } else {
     this.move(target, true);
