@@ -41,7 +41,7 @@ function Tabs(el, props) {
  * Set up the tab panels and event listeners.
  */
 Tabs.prototype.setup = function() {
-  var recs, i, tabs, tab;
+  var recs, i, tabs;
   
   // Hide all tabs by default
   for (recs=this.el.querySelectorAll('[role="tabpanel"]'), i=recs.length - 1; i >= 0; i--) {
@@ -51,8 +51,7 @@ Tabs.prototype.setup = function() {
 
   // Handle clicks on tabs
   for (i=this.props.tabs.length - 1; i >= 0; i--) {
-    tab = this.props.tabs[i];
-    tab.addEventListener('click', this.handleClick.bind(this));
+    this.props.tabs[i].addEventListener('click', this.handleClick.bind(this));
   }
 
   // Handle internal clicks
