@@ -257,6 +257,7 @@ Tabs.prototype.handleClick = function(e) {
     if (target.getAttribute('href').charAt(0) == '#') {
       this.move(target, true);
       this.setLocation(target.getAttribute('href'));
+      smoothScrollTo(target);
     }
   } else {
     this.move(target, true);
