@@ -237,6 +237,7 @@ Tabs.prototype.handleClick = function(e) {
   // Prevent default anchor click handler from being called
   e.stopImmediatePropagation();
   // Default action now has to be prevented too
+  e.preventDefault();
   
   var target = e.target;
 
@@ -249,44 +250,55 @@ Tabs.prototype.handleClick = function(e) {
     return;
   }
   
-  if (target.hasAttribute('href')) {
-    // go to href
-    if (target.getAttribute('href').charAt(0) == '#') {
-      e.preventDefault();
-      this.move(target, true);
-      this.setLocation(target.getAttribute('href'));
-      
-      // If navigation tab, scroll
-      if (this.props.isNav) {
-        smoothScrollTo(target);
+  var href = target.getAttribute('href');
+  if (href.charAt(0) === '#') {
+    this.move(target, true);
+
+    // If navigation tab, scroll
+    if (this.props.isNav) {
+      smoothScrollTo(target);
+    }
+  }
+  
+  // Set page location
+  this.setLocation(href);
+};
+
+Tabs.prototype.panelExists = function(id) {
+  // Loop through panel IDs looking for a match
+  for (var i = this.props.panels.length - 1; i >= 0; i--) {
+    if (this.props.panels[i] === id) {
+      // Match found
+      return true;
+    }
+  }
+
+  // No match found
+  return false;
+};
+
+Tabs.prototype.setLocation = function(href) {
+  // Return if not navigational tabs
+  if (!this.props.isNav) {
+    return;
+  }
+  
+  if (href.charAt(0) === '#') {
+    // Hash link; get ID of target
+    var targetId = href.substr(1);
+    
+    // If a panel exists with this ID, set location
+    if (this.panelExists(targetId)) {
+      // Use History API if available to prevent unwanted jump scroll
+      if (history.pushState) {
+        history.pushState({'title': document.title, 'url': href}, document.title, href);
+      } else {
+        window.location.hash = href;
       }
     }
   } else {
-    this.move(target, true);
-  }
-};
-
-Tabs.prototype.panelExists = function(hash) {
-  var exists = false;
-
-  for (max=this.props.panels.length, i=0; i < max; i++)
-    if (hash.substr(1) === this.props.panels[i])
-      exists = true;
-
-  return exists;
-};
-
-Tabs.prototype.setLocation = function(hash) {
-  if (this.props.isNav && this.panelExists(hash)) {
-    if (hash.charAt(0) === '#') {
-      if (history.pushState) {
-        history.pushState({'title': document.title, 'url': hash}, document.title, hash);
-      } else {
-        window.location.hash = hash.substr(1);
-      }
-    } else {
-      window.location = hash;
-    }
+    // External link; set location
+    window.location = href;
   }
 };
 
