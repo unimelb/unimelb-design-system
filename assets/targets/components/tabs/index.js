@@ -278,19 +278,14 @@ Tabs.prototype.panelExists = function(hash) {
 
 Tabs.prototype.setLocation = function(hash) {
   if (this.props.isNav && this.panelExists(hash)) {
-    var pos = document.body.scrollTop, slug;
-
     if (hash.charAt(0) === '#') {
-      window.location.hash = hash.split('#')[1];
+      if (history.pushState) {
+        history.pushState({'title': document.title, 'url': hash}, document.title, hash);
+      } else {
+        window.location.hash = hash.substr(1);
+      }
     } else {
       window.location = hash;
-    }
-
-    document.body.scrollTop = pos;
-
-    if (history.pushState) {
-      slug = window.location.href;
-      history.pushState({'title': document.title, 'url': slug}, document.title, slug);
     }
   }
 };
