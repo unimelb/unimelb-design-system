@@ -42,6 +42,7 @@ function Tabs(el, props) {
  */
 Tabs.prototype.setup = function() {
   var recs, i, tabs;
+  
   // Hide all tabs by default
   for (recs=this.el.querySelectorAll('[role="tabpanel"]'), i=recs.length - 1; i >= 0; i--) {
     recs[i].style.display = 'none';
@@ -156,8 +157,8 @@ Tabs.prototype.setupOverflow = function() {
   this.props.rightArrow = rightArrow;
   
   // Append wrapper and arrows
-  this.props.navParent.appendChild(inner);
   this.props.navParent.appendChild(leftArrow);
+  this.props.navParent.appendChild(inner);
   this.props.navParent.appendChild(rightArrow);
   
   // Listen for clicks on arrows
@@ -249,44 +250,55 @@ Tabs.prototype.handleClick = function(e) {
     return;
   }
   
-  if (target.hasAttribute('href')) {
-    // go to href
-    if (target.getAttribute('href').charAt(0) == '#') {
-      this.move(target, true);
-      this.setLocation(target.getAttribute('href'));
+  var href = target.getAttribute('href');
+  if (href.charAt(0) === '#') {
+    this.move(target, true);
+
+    // If navigation tab, scroll
+    if (this.props.isNav) {
+      smoothScrollTo(target);
+    }
+  }
+  
+  // Set page location
+  this.setLocation(href);
+};
+
+Tabs.prototype.panelExists = function(id) {
+  // Loop through panel IDs looking for a match
+  for (var i = this.props.panels.length - 1; i >= 0; i--) {
+    if (this.props.panels[i] === id) {
+      // Match found
+      return true;
+    }
+  }
+
+  // No match found
+  return false;
+};
+
+Tabs.prototype.setLocation = function(href) {
+  // Return if not navigational tabs
+  if (!this.props.isNav) {
+    return;
+  }
+  
+  if (href.charAt(0) === '#') {
+    // Hash link; get ID of target
+    var targetId = href.substr(1);
+    
+    // If a panel exists with this ID, set location
+    if (this.panelExists(targetId)) {
+      // Use History API if available to prevent unwanted jump scroll
+      if (history.pushState) {
+        history.pushState({'title': document.title, 'url': href}, document.title, href);
+      } else {
+        window.location.hash = href;
+      }
     }
   } else {
-    this.move(target, true);
-    this.setLocation(target.getAttribute('href'));
-  }
-};
-
-Tabs.prototype.panelExists = function(hash) {
-  var exists = false;
-
-  for (max=this.props.panels.length, i=0; i < max; i++)
-    if (hash.substr(1) === this.props.panels[i])
-      exists = true;
-
-  return exists;
-};
-
-Tabs.prototype.setLocation = function(hash) {
-  if (this.props.isNav && this.panelExists(hash)) {
-    var pos = document.body.scrollTop, slug;
-
-    if (hash.charAt(0) === '#') {
-      window.location.hash = hash.split('#')[1];
-    } else {
-      window.location = hash;
-    }
-
-    document.body.scrollTop = pos;
-
-    if (history.pushState) {
-      slug = window.location.href;
-      history.pushState({'title': document.title, 'url': slug}, document.title, slug);
-    }
+    // External link; set location
+    window.location = href;
   }
 };
 
