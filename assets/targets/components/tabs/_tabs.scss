@@ -42,7 +42,7 @@
 
   .tabbed-nav {
     & > .full-width {
-      @include rem(height, 64px);
+      @include rem(height, $tabs-height);
       background-color: $darkblue;
       border-bottom: 1px solid transparent;
       position: relative;
@@ -64,7 +64,8 @@
 
       a {
         @include adjust-font-size-to(15px);
-        @include rem(line-height, 64px);
+        @include rem(line-height, $tabs-height - 2px); // leave 1px above and below for outline
+        @include rem(margin-top, 1px); // outline cont.
         @include rem(padding, 0 20px);
         color: rgba($white, .7);
         display: inline-block;
@@ -112,10 +113,16 @@
     .tabbed-nav__inner {
       @include rem(padding-bottom, 15px);
       position: relative;
+      z-index: 1;
     }
 
     .ps-scrollbar-x-rail {
       z-index: 5;
+    }
+
+    /* show scrollbar when focused */
+    .ps-focus .ps-scrollbar-x-rail {
+      opacity: 1;
     }
 
     /* left/right arrows when screen size is too small to fit all the tabs */
@@ -130,20 +137,25 @@
       height: 100%;
       position: absolute;
       top: 0;
+      z-index: 2;
 
       &[disabled] {
         cursor: default;
         opacity: .5;
       }
+      
+      &:focus {
+        outline: 1px dotted $white;
+      }
     }
     .tab-arrow--left {
       @include rem(padding-right, 10px);
-      background: linear-gradient(to left, transparent, rgba($darkblue, .9) 10%);
+      background: linear-gradient(to left, rgba($darkblue, 0), rgba($darkblue, .9) 10%);
       left: 0;
     }
     .tab-arrow--right {
       @include rem(padding-left, 10px);
-      background: linear-gradient(to right, transparent, rgba($darkblue, .9) 10%);
+      background: linear-gradient(to right, rgba($darkblue, 0), rgba($darkblue, .9) 10%);
       right: 0;
     }
 
@@ -245,7 +257,8 @@
     &.thin {
       nav a {
         @include adjust-font-size-to(13px);
-        @include rem(line-height, 64px);
+        @include rem(line-height, $tabs-height - 2px); // leave 1px above and below for outline
+        @include rem(margin-top, 1px); // outline cont.
         @include rem(padding, 0 15px);
       }
 
@@ -319,10 +332,6 @@
 
     [role="tabpanel"] {
       @extend %clearfix;
-    }
-
-    .half {
-      background-color: $lightgray;
     }
 
     aside h2.subtitle {
