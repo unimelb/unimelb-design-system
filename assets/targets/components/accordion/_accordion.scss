@@ -48,6 +48,14 @@
       padding: 0;
       width: 100%;
 
+      ul li {
+        list-style-type: disc;
+      }
+
+      ol li {
+        list-style-type: decimal;
+      }
+
       p {
         width: 100%;
       }
@@ -59,17 +67,17 @@
         @include rem(padding-right, 15px);
         display: block;
         position: relative;
-        
+
         &:hover {
           color: $cyan;
           text-decoration: underline;
         }
-        
+
         &:focus {
           color: $cyan;
           outline: 0;
         }
-        
+
         &:before {
           @include rem(font-size, 18px);
           @include rem(left, 15px);
@@ -114,7 +122,7 @@
             transform: rotate(45deg);
           }
         }
-        
+
         .accordion__hidden {
           display: block;
         }
@@ -175,7 +183,7 @@
     .accordion__title:before {
       font-size: 18px;
     }
-    
+
     &.accordion__visible .accordion__title:before {
       font-size: 16px;
       content: "x";
