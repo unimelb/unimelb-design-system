@@ -53,7 +53,7 @@
       & > h1,
       & > p,
       & > div {
-        @include flex-basis(100%);
+        flex-basis: 100%;
       }
 
       & > h1,

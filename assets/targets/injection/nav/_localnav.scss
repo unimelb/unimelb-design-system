@@ -1,4 +1,4 @@
-@include keyframes(chevronback) {
+@keyframes chevronback {
   0% {
     transform: translateX(0);
   }
@@ -173,7 +173,7 @@
       color: $white;
 
       &:before {
-        @include animation(chevronback 1s infinite ease-in-out);
+        animation: chevronback 1s infinite ease-in-out;
       }
     }
   }
@@ -209,7 +209,7 @@
     }
 
     &:hover:before {
-      @include animation(chevronback 1s infinite ease-in-out);
+      animation: chevronback 1s infinite ease-in-out;
     }
   }
 

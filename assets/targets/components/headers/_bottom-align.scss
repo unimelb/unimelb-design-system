@@ -4,8 +4,8 @@
 
   	.bottom-align {
       @extend %grad-bottom;
-      @include align-self(flex-end);
       @include rem(margin-bottom, -25px);
+      align-self: flex-end;
       width: 100%;
 
       p {
@@ -23,10 +23,10 @@
     }
 
     .bottom-align-flat {
-      @include align-self(flex-end);
       @include rem(margin-bottom, -25px);
       @include rem(padding-bottom, 30px);
       @include rem(padding-top, 30px);
+      align-self: flex-end;
       background-color: rgba($darkblue, .8);
       width: 100%;
 

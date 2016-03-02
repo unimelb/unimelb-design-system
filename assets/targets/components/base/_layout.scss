@@ -7,8 +7,6 @@
 }
 
 body {
-  @include establish-baseline;
-
   background-color: $navy;
   color: $black;
   font-family: $ff-sans;
