@@ -456,13 +456,18 @@
   }
 }
 
-.uomcontent .fixed + .page-inner + .modal__blanket.white {
-  margin-top: 40px;
-}
-
 .uomcontent.search-active {
   position: fixed;
   width: 100%;
+
+  @include breakpoint(desktop) {
+    position: static;
+    width: auto;
+
+    .page-header.fixed:not(.floating) header {
+      height: 90px;
+    }
+  }
 }
 
 .uomcontent .page-header-search {
@@ -585,10 +590,6 @@
       }
     }
   }
-}
-
-.uomcontent .fixed .page-header-search {
-  display: none;
 }
 
 .uomcontent .page-header-tools {
