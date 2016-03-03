@@ -445,6 +445,151 @@
   }
 }
 
+.uomcontent .modal__blanket.white {
+  background-color: $white;
+  display: block;
+  margin-top: 60px;
+  opacity: .95;
+
+  @include breakpoint(desktop) {
+    margin-top: 90px;
+  }
+}
+
+.uomcontent .fixed + .page-inner + .modal__blanket.white {
+  margin-top: 40px;
+}
+
+.uomcontent.search-active {
+  position: fixed;
+  width: 100%;
+}
+
+.uomcontent .page-header-search {
+  background: $white;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 16;
+
+  display: none;
+
+  &.active {
+    display: block;
+  }
+
+  @include breakpoint(desktop) {
+    position: relative;
+  }
+
+  form {
+    display: table;
+    height: 100%;
+    padding-left: 10px;
+    width: 100%;
+
+    fieldset {
+      display: table-cell;
+      margin-right: 10px;
+      margin-top: 5px;
+      vertical-align: top;
+
+      input[type="search"],
+      .search-button {
+        height: 40px;
+      }
+
+      label {
+        color: $navy;
+        font-size: 9px;
+        position: absolute;
+        text-transform: uppercase;
+        top: -12px;
+      }
+
+      .search-button {
+        margin-top: 0;
+      }
+    }
+
+    @include breakpoint(desktop) {
+      padding-left: 20px;
+
+      fieldset {
+        float: right;
+        margin-right: 20px;
+        margin-top: 20px;
+        min-width: 400px;
+
+        input[type="search"],
+        .search-button {
+          height: 45px;
+        }
+
+        label {
+          top: -15px;
+        }
+      }
+    }
+
+    .page-header-icon {
+      @include rem(font-size, 9px);
+      @include rem(padding, 0 10px);
+      @include rem(width, 40px);
+      border-left: 1px solid darken($lightgray, 10%);
+      cursor: pointer;
+      display: table-cell;
+      font-weight: $regular;
+      line-height: 1;
+      text-align: center;
+      text-transform: uppercase;
+      transition: background-color 0.3s, color 0.3s, transform 0.3s;
+      vertical-align: top;
+
+      color: $navy;
+
+      box-sizing: content-box;
+      /* autoprefixer: off */
+      -moz-box-sizing: content-box;
+      /* autoprefixer: on */
+
+      svg {
+        @include rem(height, 20px);
+        @include rem(margin-bottom, 4px);
+        @include rem(margin-top, 14px);
+        @include rem(width, 20px);
+        fill: currentColor;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include breakpoint(desktop) {
+          @include rem(height, 36px);
+          @include rem(margin-bottom, 4px);
+          @include rem(margin-top, 20px);
+          @include rem(width, 36px);
+        }
+      }
+
+      @include breakpoint(desktop) {
+        @include rem(font-size, 10px);
+        @include rem(padding, 0 23px);
+      }
+
+      &:hover, &:focus {
+        background-color: $darkblue;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.uomcontent .fixed .page-header-search {
+  display: none;
+}
 
 .uomcontent .page-header-tools {
   @include rem(width, 124px);

@@ -237,7 +237,29 @@ InjectHeader.prototype.renderHeaderTools = function() {
       navparent = this.props.header;
     }
     navparent.appendChild(tools);
+    this.renderSearchBox();
   }
+};
+
+InjectHeader.prototype.renderSearchBox = function() {
+  var search = document.createElement('div');
+  search.addClass('page-header-search');
+  search.innerHTML = `
+<form action="https://search.unimelb.edu.au" method="get">
+  <fieldset>
+    <div class="inline">
+      <input aria-label="Search" aria-required="true" autocomplete="off" data-error="Please enter a keyword" name="query" id="header_q" placeholder="Keywords" type="search" /><button class="search-button" type="submit"><span>GO</span><svg class="icon" role="img"><use xlink:href="#icon-search"></use></svg></button>
+    </div>
+  </fieldset>
+
+  <div class="page-header-icon"><svg class="icon" role="img"><use xlink:href="#icon-close" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg> Close</div>
+</form>
+`;
+  var navparent = this.props.header.querySelector('header');
+  if (!navparent) {
+    navparent = this.props.header;
+  }
+  navparent.appendChild(search);
 };
 
 InjectHeader.prototype.reorderStructure = function() {
