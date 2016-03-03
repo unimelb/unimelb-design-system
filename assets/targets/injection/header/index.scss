@@ -543,7 +543,6 @@
       @include rem(font-size, 9px);
       @include rem(padding, 0 10px);
       @include rem(width, 40px);
-      border-left: 1px solid darken($lightgray, 10%);
       cursor: pointer;
       display: table-cell;
       font-weight: $regular;
