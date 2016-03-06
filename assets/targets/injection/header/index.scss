@@ -457,8 +457,11 @@
 }
 
 .uomcontent.search-active {
-  position: fixed;
   width: 100%;
+
+  .page-header {
+    position: fixed;
+  }
 
   @include breakpoint(desktop) {
     position: static;
