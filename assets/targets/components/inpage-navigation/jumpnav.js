@@ -157,6 +157,10 @@ JumpNav.prototype.initCalcs = function() {
     if (this.props.root.hasClass('floating'))
       this.props.fixPoint = this.props.fixPoint + 35;
 
+    // Increase offset if announcement present
+    if (document.body.hasClass('with-announcement'))
+      this.props.fixPoint += 117;
+
     // Does the page include an inner footer
     var innerFooterHeight = document.querySelector('[role="main"] > footer:last-of-type');
     if (innerFooterHeight) {
@@ -174,6 +178,10 @@ JumpNav.prototype.initCalcs = function() {
 
     // Not really sure what this 60 represents, but it makes it Good
     this.props.stickyEnd = this.props.root.offsetTop + this.props.root.offsetHeight - this.el.offsetHeight - innerFooterHeight - 60;
+
+    // Increase offset if announcement present
+    if (document.body.hasClass('with-announcement'))
+      this.props.stickyEnd += 117;
 
     // 10px margin-top
     this.props.footerOffset = (innerFooterHeight + outerFooterHeight + 10) + 'px';

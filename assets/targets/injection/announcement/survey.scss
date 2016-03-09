@@ -1,0 +1,114 @@
+$legacyblue: #24507e;
+$magicoffset: 117px;
+
+#UOMannounce {
+  color: $white;
+  opacity: 1;
+  padding-bottom: 0;
+  position: relative;
+  transition: max-height .2s ease;
+  width: 100%;
+  z-index: 10;
+
+  @include breakpoint(desktop) {
+    @include rem(margin-top, -$magicoffset);
+    padding-bottom: 0;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+  }
+
+  .page-announcement__message {
+    @include rem(padding, 30px 50px 30px 15px);
+    background-color: $lighterblue;
+    color: $white;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover {
+      background-color: $legacyblue;
+      color: $white;
+    }
+
+    h2 {
+      @include rem(font-size, 12px);
+      @include rem(line-height, 24px);
+      @include rem(padding-bottom, 3px);
+      color: $lightestblue;
+      font-weight: $regular;
+      letter-spacing: normal;
+      margin: 0 auto;
+      padding-top: 0;
+      text-transform: uppercase;
+    }
+
+    p {
+      @include rem(font-size, 18px);
+      color: $white;
+      text-decoration: underline;
+    }
+  }
+
+  .page-announcement__close {
+    @include rem(border-radius, 3px);
+    @include rem(font-size, 36px);
+    @include rem(height, 40px);
+    @include rem(line-height, 30px);
+    @include rem(padding, 5px 10px 15px);
+    @include rem(right, 15px);
+    @include rem(top, 35px);
+    @include rem(width, 40px);
+    background: none;
+    border: 0;
+    color: $white;
+    cursor: pointer;
+    display: block;
+    font-weight: 100;
+    margin-top: 0;
+    position: absolute;
+    transition: background-color .15s, color .15s;
+
+    &:hover {
+      background-color: $white;
+      color: $lighterblue;
+    }
+  }
+}
+
+// Adjustments to layout
+body.with-announcement {
+  @include breakpoint(desktop) {
+    @include rem(top, $magicoffset);
+    position: relative;
+  }
+
+  .uomcontent {
+    @include breakpoint(desktop) {
+      #sitemap.active,
+      .sitemap-label,
+      #globalsitemap.active {
+        @include rem(top, $magicoffset);
+      }
+
+      .page-header.fixed.active + .page-inner + .modal__blanket + #sitemap.active,
+      .page-header.fixed.active + .page-inner + .modal__blanket + #sitemap.active + .sitemap-label,
+      .page-header.fixed.active + .page-inner + .modal__blanket + #sitemap + .sitemap-label + #globalsitemap.active {
+        top: 0;
+      }
+    }
+  }
+}
+
+body.with-announcement.jumpnav-active .uomcontent {
+  [role="main"] {
+    padding-top: 0;
+  }
+
+  #outer.fixed.headless {
+    @include breakpoint(wide) {
+      @include rem(margin-top, 240px);
+    }
+  }
+}

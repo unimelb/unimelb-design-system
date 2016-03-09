@@ -3,13 +3,13 @@
   .page-inner .page-announcement {
     display: none;
   }
-  
+
   .page-announcement {
     color: $white;
     position: relative;
     opacity: 1;
     transition: max-height .2s ease;
-    
+
     &--dismissed {
       max-height: 0 !important; // Override inline style
     }
@@ -26,7 +26,7 @@
         background-color: $brand;
         color: $white;
       }
-      
+
       h2 {
         @include adjust-font-size-to(13px);
         @include rem(line-height, 24px);
@@ -50,16 +50,16 @@
           content: '\2192';
           line-height: 0;
         }
-        
+
         strong {
           @include rem(margin-right, 10px);
         }
       }
-      
+
       @include breakpoint(tablet) {
         @include rem(padding, 20px 90px);
         text-align: center;
-        
+
         h2,
         p {
           margin: 0 auto;
@@ -90,18 +90,18 @@
       & > [data-icon="close"] {
         @include rem(height, 24px);
         @include rem(width, 24px);
-        
+
         .icon-label {
           @include screenreaders-only;
         }
       }
-      
+
       @include breakpoint(tablet) {
         @include rem(right, 30px);
       }
     }
   }
-  
+
 }
 
 .ie8 {

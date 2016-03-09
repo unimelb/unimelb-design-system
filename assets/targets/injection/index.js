@@ -33,6 +33,8 @@ window.UOMloadInjection = function() {
 
   Accouncement = require('./announcement/index.es6');
   new Accouncement({});
+
+  require("./announcement/survey");
 };
 
 // Execute when ready
