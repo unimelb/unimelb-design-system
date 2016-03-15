@@ -8,26 +8,19 @@ var constants = require('./constants');
 function FilteredListingSection(el, props) {
   this.el = el;
   this.props = props || {};
-  
-  this.props.name = decodeURIComponent(el.getAttribute('data-category')).toLowerCase();
+
+  this.props.name = decodeURIComponent(el.getAttribute('data-section')).toLowerCase();
   this.props.grid = el.querySelector('.filtered-listing-grid');
-  this.props.items = this.props.grid.querySelectorAll('li');
-  
+  this.props.items = this.props.grid.querySelectorAll('.filtered-listing-item');
+
   if (MSIE_version > 8) {
     var Isotope = require('isotope-layout');
     this.props.isotope = new Isotope(this.props.grid, {
-      itemSelector: 'li',
-      filter: '.item',
+      itemSelector: '.filtered-listing-item',
+      filter: '.filtered-listing-item--visible',
       layoutMode: 'fitRows',
-      masonry: {
-        columnWidth: '.item-grid'
-      },
-      hiddenStyle: {
-        opacity: 0
-      },
-      visibleStyle: {
-        opacity: 1
-      }
+      hiddenStyle: { opacity: 0 },
+      visibleStyle: { opacity: 1 }
     });
   }
 }
@@ -40,7 +33,7 @@ function FilteredListingSection(el, props) {
 FilteredListingSection.prototype.update = function (currSection, currTags) {
   var showSection = currSection === constants.ALL_SECTIONS || currSection === this.props.name;
   var isAnyItemVisible = false;
-  
+
   // Show or hide each item based on the current section and tags
   for (var i = this.props.items.length - 1; i >= 0; i--) {
     var item = this.props.items[i];
@@ -52,7 +45,7 @@ FilteredListingSection.prototype.update = function (currSection, currTags) {
       if (!showItem) {
         // The `all` tag is not selected; check if the item matches any of the filters
         for (var j = currTags.length - 1; j >= 0; j--) {
-          if (item.hasClass(currTags[j])) {
+          if (item.getAttribute('data-tag') === currTags[j]) {
             // The item matches a tag
             showItem = true;
             break;
@@ -60,18 +53,22 @@ FilteredListingSection.prototype.update = function (currSection, currTags) {
         }
       }
     }
-    
+
     // Toggle the visibility of the item
-    item.toggleClass('item', showItem);
-    
+    item.toggleClass('filtered-listing-item--visible', showItem);
+
     if (showItem) {
       isAnyItemVisible = true;
     }
   }
-  
+
   // Toggle the visibility of the section
-  this.el.toggleClass('hide', !isAnyItemVisible);
-  
+  if (isAnyItemVisible) {
+    this.el.removeAttribute('hidden');
+  } else {
+    this.el.setAttribute('hidden', 'hidden');
+  }
+
   // Re-arrange Isotope layout
   var iso = this.props.isotope;
   if (iso) {

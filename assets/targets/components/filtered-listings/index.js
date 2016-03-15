@@ -13,6 +13,7 @@ function FilteredListing(el, props) {
   this.props = props || {};
   this.props.sectionSelect = el.querySelector('select');
   this.props.tagCheckboxes = el.querySelectorAll('.checkbox');
+  this.props.colors = {}; // Tag/colour mappings (populated during `initTagCheckboxes()`)
 
   // Initialise sections
   this.props.sections = [];
@@ -30,6 +31,12 @@ function FilteredListing(el, props) {
   this.initSectionSelect();
   this.initTagCheckboxes();
 
+  // Set items' colours
+  recs = document.querySelectorAll('.filtered-listing-item');
+  for (i = recs.length - 1; i >= 0; i--) {
+    recs[i].addClass('filtered-listing-item--' + this.props.colors[recs[i].getAttribute('data-tag')]);
+  }
+
   // Listen for events
   this.props.sectionSelect.addEventListener('change', this.handleSectionSelectChanged.bind(this));
   el.addEventListener('click', this.handleTagCheckboxesClicked.bind(this));
@@ -39,10 +46,10 @@ function FilteredListing(el, props) {
 }
 
 /**
- * Parse the querystring looking for the 'filter' and 'section' parameters:
- * `?filter=category-a,category-b&section=all`
+ * Parse the querystring looking for the 'tags' and 'section' parameters:
+ * `?tags=nominavi,iudico&section=all`
  * @return {Object}
- *         {Array<String>} filter
+ *         {Array<String>} tags
  *         {String} section
  */
 FilteredListing.prototype.parseQuery = function () {
@@ -60,7 +67,7 @@ FilteredListing.prototype.parseQuery = function () {
       case 'section':
         params.section = val;
         break;
-      case 'filter':
+      case 'tags':
         params.tags = val.split(',');
         break;
     }
@@ -95,7 +102,7 @@ FilteredListing.prototype.initSectionSelect = function () {
  * Initialise tag checkboxes.
  */
 FilteredListing.prototype.initTagCheckboxes = function () {
-  var i, j, tc, tag;
+  var i, j, tc, tag, col;
 
   if (this.state.tags) {
     // Tags specified in querystring; check/uncheck the checkboxes accordingly
@@ -119,17 +126,25 @@ FilteredListing.prototype.initTagCheckboxes = function () {
 };
 
 /**
- * Retrieve the current tags based on the state of the checkboxes.
+ * Retrieve the current tags based on the state of the checkboxes, and store colour mappings.
  * If no tag turns out to be selected, check the `all tags` checkbox.
  * @return {Array<String>}
  */
 FilteredListing.prototype.retrieveTagsState = function () {
-  var i, tc, tags = [];
+  var i, tc, tag, tags = [], col;
 
   for (i = this.props.tagCheckboxes.length - 1; i >= 0; i--) {
     tc = this.props.tagCheckboxes[i];
+    tag = tc.getAttribute('data-tag').toLowerCase();
+
     if (tc.checked) {
-      tags.push(tc.getAttribute('data-tag').toLowerCase());
+      tags.push(tag);
+    }
+
+    // Save colour mapping
+    col = tc.getAttribute('data-color');
+    if (col) {
+      this.props.colors[tag] = col;
     }
   }
 

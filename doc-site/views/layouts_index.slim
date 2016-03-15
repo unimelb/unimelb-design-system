@@ -8,196 +8,202 @@ div role="main"
         form.filtered-listing-select
           fieldset.left
             legend Filter by type
-            div.all
-              input.checkbox type="checkbox" name="f[degree_type]" checked="checked" data-tag="all" id="c00"
-              label for="c00" tabindex="0"
+            div.filtered-listing-tag
+              input#c0.checkbox type="checkbox" name="f[degree_type]" data-tag="all" checked="checked"
+              label for="c0"
                 span All
-            div.category-a
-              input#c1.checkbox type="checkbox" name="f[course_type]" data-tag="category-a"
-              label for="c1" tabindex="0"
+            div.filtered-listing-tag
+              input#c1.checkbox type="checkbox" name="f[course_type]" data-tag="lists" data-color="green"
+              label for="c1"
                 span Lists
-            div.category-b
-              input#c2.checkbox type="checkbox" name="f[course_type]" data-tag="category-b"
-              label for="c2" tabindex="0"
+            div.filtered-listing-tag
+              input#c2.checkbox type="checkbox" name="f[course_type]" data-tag="single" data-color="bronze"
+              label for="c2"
                 span Single view
-            div.category-c
-              input#c3.checkbox type="checkbox" name="f[course_type]" data-tag="category-c"
-              label for="c3" tabindex="0"
+            div.filtered-listing-tag
+              input#c3.checkbox type="checkbox" name="f[course_type]" data-tag="mixed" data-color="silver"
+              label for="c3"
                 span Mixed views
-          .right
+          fieldset.right
             label for="f-select2" Filter by category
             div
-              select#f-select2.clear name="f[select2]" title="Please make a selection from the 2nd dropdown"
+              select#f-select2.clear name="f[select2]"
                 option value="-1" All categories
-                option value="Website sections" Website sections
+                option value="website-sections" Website sections
                 option value="news" News
                 option value="events" Events
                 option value="articles" Articles
-                option value="linkedlisting" Linked Listings
+                option value="linked-listing" Linked Listings
                 option value="staff" Staff
-                option value="serverpages" Server pages
+                option value="server-pages" Server pages
 
   footer.cta.center Pro tip: the pre-DOM source of any template can be viewed by adding <small>/source</small> to the end of the URL.
 
   hr.spacer
-
-  .filtered-listing-section data-category="Website sections"
+  .filtered-listing-section.clearfix data-section="website-sections"
     aside
       h2 Website sections
       p Combined Layouts across more than one page addressing common sections of a website
     .bside
       ul.filtered-listing-grid
-        li class="category-c item"
+        li.filtered-listing-item data-tag="mixed"
           a href="/layouts/homepage"
             ' Website section
             strong Homepage (dark background)
-        li class="category-c item"
+        li.filtered-listing-item data-tag="mixed"
           a href="/layouts/floating-contrast"
             ' Website section
             strong Homepage (light background)
-        li class="category-c item"
+        li.filtered-listing-item data-tag="mixed"
           a href="/layouts/about"
             ' Website section
             strong About section
-        li class="category-c item"
+        li.filtered-listing-item data-tag="mixed"
           a href="/layouts/course"
             ' Website section
             strong Course
-        li class="category-c item"
+        li.filtered-listing-item data-tag="mixed"
           a href="/layouts/search"
             ' Website section
             strong Search
-        li class="category-c item"
+        li.filtered-listing-item data-tag="mixed"
           a href="/layouts/with-login"
             ' Website section
             strong Header Login
+
   hr.spacer
-  .filtered-listing-section data-category="news"
+  .filtered-listing-section.clearfix data-section="news"
     aside
       h2 News
       p Ways to display news
     .bside
       ul.filtered-listing-grid
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a.inactive href=""
             ' News
             strong List (coming soon)
-        li class="category-b item"
+        li.filtered-listing-item data-tag="single"
           a.inactive href=""
             ' News
             strong News article
-        li class="category-b item"
+        li.filtered-listing-item data-tag="single"
           a.inactive href=""
             ' News
             strong News article with image
+
   hr.spacer
-  .filtered-listing-section data-category="events"
+  .filtered-listing-section.clearfix data-section="events"
     aside
       h2 Events
       p Ways to display events
     .bside
       ul.filtered-listing-grid
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a.inactive href=""
             ' Event
             strong List
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a.inactive href=""
             ' Event
             strong List with speakers
-        li class="category-b item"
+        li.filtered-listing-item data-tag="single"
           a href="/layouts/event"
             ' Event
             strong Detail
-        li class="category-b item"
+        li.filtered-listing-item data-tag="single"
           a.inactive href=""
             ' Event
             strong Events with image
+
   hr.spacer
-  .filtered-listing-section data-category="articles"
+  .filtered-listing-section.clearfix data-section="articles"
     aside
       h2 Articles
       p These examples can be used for blog posts, articles or general text heavy content
     .bside
       ul.filtered-listing-grid
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a.inactive href=""
             ' Article
             strong List (coming soon)
-        li class="category-b item"
+        li.filtered-listing-item data-tag="single"
           a href="/layouts/article"
             ' Article
             strong Article
+
   hr.spacer
-  .filtered-listing-section data-category="linkedlisting"
+  .filtered-listing-section.clearfix data-section="linked-listing"
     aside
       h2 Linked listings
       p Different layouts for any kind of linked listing
     .bside
       ul.filtered-listing-grid
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a.inactive href=""
             ' Listing
             strong Default
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a.inactive href=""
             ' Listing
             strong Featured
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a.inactive href=""
             ' Listing
             strong Featured (3-col)
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a.inactive href=""
             ' Listing
             strong Hero
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a.inactive href=""
             ' Listing
             strong Filtered Listing
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a.inactive href=""
             ' Listing
             strong Navigational index
-        li class="category-one item"
+        li.filtered-listing-item data-tag="lists"
           a href="/layouts/indexnav"
             ' Inpage
             strong Index navigation
+
   hr.spacer
-  .filtered-listing-section data-category="people"
+  .filtered-listing-section.clearfix data-section="people"
     aside
       h2 People
     .bside
       ul.filtered-listing-grid
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a href="/layouts/staff-list"
             ' People
             strong Staff list
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a href="/layouts/staff-list-fullwidth"
             ' People
             strong Full-width staff list
-        li class="category-a item"
+        li.filtered-listing-item data-tag="lists"
           a href="/layouts/staff-list-featured"
             ' People
             strong Featured staff list
-        li class="category-b item"
+        li.filtered-listing-item data-tag="single"
           a href="/layouts/people-profile-page"
             ' People
             strong Profile page
+
   hr.spacer
-  .filtered-listing-section data-category="serverpages"
+  .filtered-listing-section.clearfix data-section="server-pages"
     aside
       h2 Server pages
       p Server error, File not found, etc ...
     .bside
       ul.filtered-listing-grid
-        li class="category-b item"
+        li.filtered-listing-item data-tag="single"
           a href="/layouts/404"
             ' Server page
             strong 404
-        li class="category-b item"
+        li.filtered-listing-item data-tag="single"
           a href="/layouts/500"
             ' Server page
             strong 500
+
   hr.spacer
