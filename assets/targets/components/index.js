@@ -67,7 +67,7 @@ window.UOMbind = function(component) {
 window.UOMloadComponents = function() {
   "use strict";
 
-  var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect,
+  var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect, Flash,
     ImageGallery, imagesLoaded, slingshot, LMaps, style, script;
 
   window.UOMbind('accordion');
@@ -114,6 +114,16 @@ window.UOMloadComponents = function() {
     new JumpNav({});
   }
 
+  recs = document.querySelector('.flash');
+  if (recs) {
+    Flash = require("./notices/flash");
+    new Flash(recs, {
+      root: document.querySelector('[role="main"]'),
+      headerless: document.querySelector('.headerless'),
+      header: document.querySelector('[role="main"] > header:first-child')
+    });
+  }
+
   window.UOMbind('filtered-listings');
   window.UOMbind('icons');
 
@@ -123,18 +133,19 @@ window.UOMloadComponents = function() {
 
     recs = document.querySelectorAll('ul.image-gallery');
     if (recs.length > 0) {
-      imagesLoaded = require("imagesloaded");
-      ImageGallery = require("./gallery");
+      loadScript('https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js', function (recs) {
+        imagesLoaded = require("imagesloaded");
+        ImageGallery = require("./gallery");
 
-      slingshot = function() {
-        new ImageGallery(this, {});
-      };
-
-      for (i=recs.length - 1; i >= 0; i--) {
-        g = recs[i];
-
-        imagesLoaded(g, slingshot.bind(g));
-      }
+        slingshot = function (g) {
+          new ImageGallery(g);
+        };
+        
+        for (i=recs.length - 1; i >= 0; i--) {
+          g = recs[i];
+          imagesLoaded(g, slingshot.bind(null, g));
+        }
+      }.bind(null, recs));
     }
 
     recs = document.querySelectorAll('[data-leaflet-latlng]');
@@ -142,7 +153,7 @@ window.UOMloadComponents = function() {
       loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
         style = document.createElement('link');
         style.rel = 'stylesheet';
-        style.href = 'http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
+        style.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
         document.body.appendChild(style);
 
         LMaps = require("./maps/lmaps");

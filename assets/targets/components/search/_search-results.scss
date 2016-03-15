@@ -17,7 +17,7 @@
     padding-left: 0;
     padding-right: 0;
     width: 94%;
-    
+
     @include breakpoint(desktop) {
       width: 100%;
     }
@@ -34,45 +34,46 @@
       &:last-child {
         @include padding-trailer(1);
       }
-      
+
       &.person {
         @extend %fallbackAvatarWrapper;
-        
+
         /* work-around for `with-aside` layout */
         div {
           clear: none;
           width: auto;
         }
-        
+
         .person__photo {
           background-position: center;
           background-size: cover;
           border-radius: 50%;
           width: 85px;
           height: 85px;
-      
+
           /* When using the background-image technique, show a fallback avatar if the photo fails to load */
           &:not(img) {
             @extend %fallbackAvatar;
           }
         }
-        
+
         .person__info {
+          margin-left: 0;
           overflow: hidden;
         }
-        
+
         .person__contact {
           @include padding-leader(0.5);
-          
+
           a {
             white-space: nowrap;
           }
         }
-        
+
         .person__phone {
           @include adjust-font-size-to(18px);
         }
-        
+
         @include breakpoint(desktop) {
           .person__info {
             display: table;
@@ -83,17 +84,17 @@
             display: table-cell;
             vertical-align: top;
           }
-          
+
           .person__profile {
             @include rem(padding-right, 24px);
             width: 100%;
           }
-          
+
           .person__contact {
             padding-top: 0;
             text-align: right;
           }
-        
+
           .person__phone {
             @include adjust-font-size-to(20px);
             white-space: nowrap;
@@ -142,8 +143,12 @@
       &.url {
         @include adjust-font-size-to(12px);
         color: $highlight;
+
+        & > a {
+          @extend %ellipsis;
+        }
       }
-      
+
       &.more {
         @include padding-leader(0.5);
         clear: left;
@@ -155,11 +160,11 @@
           line-height: 0;
         }
       }
-      
+
       & > [data-icon="lock"] {
         @include rem(width, 20px);
         @include rem(height, 20px);
-        
+
         & > .icon-over {
           display: block;
         }

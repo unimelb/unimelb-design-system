@@ -1,12 +1,12 @@
-@include keyframes(rotateplane) {
+@keyframes rotateplane {
   0% {
-    @include transform(perspective(120px) rotateX(0deg) rotateY(0deg));
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
   }
   50% {
-    @include transform(perspective(120px) rotateX(-180deg) rotateY(0deg));
+    transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
   }
   100% {
-    @include transform(perspective(120px) rotateX(-180deg) rotateY(-180deg));
+    transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
   }
 }
 
@@ -33,9 +33,9 @@
   }
 
   .cube {
-    @include animation(rotateplane 1.2s infinite ease-in-out);
     @include rem(height, 50px);
     @include rem(width, 50px);
+    animation: rotateplane 1.2s infinite ease-in-out;
     background-color: $darkblue;
     margin: 0 auto;
   }

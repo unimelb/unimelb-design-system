@@ -41,94 +41,90 @@
     padding-right: 0;
 
     & > li {
-      @include padding-leader(0.5);
-      @include padding-trailer(0.5);
-      @include rem(padding-left, 15px);
-      @include rem(padding-right, 15px);
       border-bottom: 1px solid darken($lightgray, 5%);
       list-style-type: none;
       margin: 0;
       max-width: 2000px;
+      padding: 0;
       width: 100%;
 
-      &:before {
-        @include adjust-font-size-to(18px);
-        @include rem(font-size, 18px);
-        @include rem(height, 30px);
-        @include rem(width, 30px);
-        content: "+";
-        display: inline-block;
-        line-height: 1;
-        position: relative;
-        text-align: left;
-        transform-origin: 25% 33%;
-        transition: transform 0.2s ease-in-out;
-        vertical-align: middle;
-        z-index: 0;
+      ul li {
+        list-style-type: disc;
       }
 
-      &:hover {
-        &:before {
-          color: $cyan;
-        }
-
-        .accordion__title {
-          color: $cyan;
-        }
-      }
-
-      &:last-child {
-        @include padding-trailer(0.5);
-      }
-
-      &.accordion__visible {
-        @include padding-trailer(0);
-        @include rem(margin-top, -1px);
-        border-top: 1px solid;
-        border-color: $cyan;
-
-        &:before {
-          @include transform(rotate(45deg));
-          color: $cyan;
-          transform-origin: 25% 33%;
-        }
-
-        .accordion__title {
-          @include padding-trailer(1);
-          color: $cyan;
-        }
-
-        .accordion__hidden {
-          @include padding-leader(1);
-        }
-      }
-
-      .accordion__title {
-        @include rem(margin-left, -20px);
-        @include rem(padding-left, 25px);
-        position: relative;
-        z-index: 1;
-
-        &:focus {
-          outline: 0;
-          text-decoration: underline;
-        }
-      }
-
-      span.accordion__title {
-        display: inline;
+      ol li {
+        list-style-type: decimal;
       }
 
       p {
         width: 100%;
       }
 
-      @include breakpoint(desktop) {
-        &:before {
-          @include rem(font-size, 24px);
+      .accordion__title {
+        @include padding-leader(0.5);
+        @include padding-trailer(0.5);
+        @include rem(padding-left, 40px);
+        @include rem(padding-right, 15px);
+        display: block;
+        position: relative;
+
+        &:hover {
+          color: $cyan;
+          text-decoration: underline;
         }
-        .accordion__title {
+
+        &:focus {
+          color: $cyan;
+          outline: 0;
+        }
+
+        &:before {
+          @include rem(font-size, 18px);
+          @include rem(left, 15px);
+          @include rem(margin-top, -9px);
+          content: "+";
+          display: inline-block;
+          line-height: 1;
+          position: absolute;
+          text-align: left;
+          text-decoration: none;
+          top: 50%;
+          transition: transform 0.2s ease-in-out;
+        }
+
+        @include breakpoint(desktop) {
           @include adjust-font-size-to(22px);
+          @include rem(padding-left, 55px);
+
+          &:before {
+            @include rem(font-size, 24px);
+            @include rem(margin-top, -12px);
+          }
+        }
+      }
+
+      .accordion__hidden {
+        @include padding-leader(0.5);
+        @include rem(padding-left, 15px);
+        @include rem(padding-right, 15px);
+        display: none;
+      }
+
+      &.accordion__visible {
+        @include rem(margin-top, -1px);
+        border-top: 1px solid;
+        border-color: $cyan;
+
+        .accordion__title {
+          color: $cyan;
+
+          &:before {
+            transform: rotate(45deg);
+          }
+        }
+
+        .accordion__hidden {
+          display: block;
         }
       }
     }
@@ -177,6 +173,21 @@
           @include rem(max-width, $w-mid);
         }
       }
+    }
+  }
+}
+
+.ie8 .uomcontent,
+.ie9 .uomcontent {
+  ul.accordion > li {
+    .accordion__title:before {
+      font-size: 18px;
+    }
+
+    &.accordion__visible .accordion__title:before {
+      font-size: 16px;
+      content: "x";
+      transform: none;
     }
   }
 }

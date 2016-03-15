@@ -51,7 +51,7 @@
 }
 
 %controlhack {
-  @include appearance(none);
+  appearance: none;
   text-indent: .01px;
   text-overflow: '';
 }

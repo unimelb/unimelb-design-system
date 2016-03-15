@@ -339,14 +339,14 @@
       position: relative;
 
       @include breakpoint(desktop) {
-        @include transition(transform 0.15s);
+        transition: transform 0.15s;
       }
 
       &:hover {
         z-index: 100;
 
         @include breakpoint(desktop) {
-          @include transform(scale(1.03));
+          transform: scale(1.03);
         }
 
         p,
@@ -658,7 +658,7 @@
 
       strong,
       p {
-        @include transition(color 0.15s);
+        transition: color 0.15s;
       }
 
       figure {
@@ -670,7 +670,7 @@
         &.video-thumb,
         &.audio-thumb {
           &:after {
-            @include transition(opacity 0.2s);
+            transition: opacity 0.2s;
             background-color: rgba($black, 0.1);
             background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTAwIDEwMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2ZpbGw6bm9uZTtzdHJva2U6I0ZGRkZGRjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQo8L3N0eWxlPg0KPGNpcmNsZSBjbGFzcz0ic3QwIiBjeD0iNTAuMSIgY3k9IjUwIiByPSI0MCIvPg0KPGc+DQoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTY4LjksNTguOWMwLDAuNC0wLjMsMC44LTAuNiwxYy0wLjEsMC0wLjMsMC4xLTAuNCwwLjFjLTAuMywwLTAuNS0wLjEtMC43LTAuM0w2MC42LDUzdjIuNw0KCQljMCwyLjYtMi4xLDQuNy00LjcsNC43SDM3LjhjLTIuNiwwLTQuNy0yLjEtNC43LTQuN1Y0NC4zYzAtMi42LDIuMS00LjcsNC43LTQuN2gxOC4xYzIuNiwwLDQuNywyLjEsNC43LDQuN1Y0N2w2LjYtNi42DQoJCWMwLjItMC4yLDAuNS0wLjMsMC43LTAuM2MwLjEsMCwwLjMsMCwwLjQsMC4xYzAuNCwwLjIsMC42LDAuNSwwLjYsMVY1OC45eiIvPg0KPC9nPg0KPC9zdmc+DQo=");
             background-position: center;

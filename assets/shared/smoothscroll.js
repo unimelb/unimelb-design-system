@@ -20,7 +20,7 @@
    * @param  {Element} to
    */
   if (typeof window.smoothScrollTo === "undefined") {
-    window.smoothScrollTo = function(to) {
+    window.smoothScrollTo = function(to, cb) {
       var element = document.body,
           headerElem = document.querySelector('.page-header');
       
@@ -56,6 +56,11 @@
         } else {
           // Fix scrolling inaccuracy (always 1 or 2 pixels off without it)
           element.scrollTop += to.getBoundingClientRect().top - offset;
+          
+          // Invoke callback if any
+          if (cb) {
+            cb();
+          }
         }
       };
 

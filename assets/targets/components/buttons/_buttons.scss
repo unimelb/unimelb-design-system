@@ -227,10 +227,10 @@
 
 %iconbutton {
   @extend %flatbutton;
-  @include appearance(none);
   @include rem(font-size, 14px);
   @include rem(margin, 10px 0);
   @include rem(padding, 5px 10px 5px 20px);
+  appearance: none;
   display: inline-block;
   font-weight: $regular;
 
@@ -254,7 +254,7 @@
   @extend %raisedbutton;
   @extend %raisedbutton.cta;
   @extend %flatbutton.cta;
-  @include appearance(none);
+  appearance: none;
   width: auto;
 }
 
@@ -305,6 +305,21 @@
 
     p {
       @include rem(font-size, 16px);
+    }
+  }
+  
+  /* Chrome-less button for UI interactions */
+  .button-ui {
+    background: none transparent;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
     }
   }
 }

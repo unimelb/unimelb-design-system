@@ -8,22 +8,22 @@ var FilteredListingSection = require('./section');
  */
 function FilteredListing(el, props) {
   var i, recs;
-  
+
   this.el = el;
   this.props = props || {};
   this.props.sectionSelect = el.querySelector('select');
   this.props.tagCheckboxes = el.querySelectorAll('.checkbox');
-  
+
   // Initialise sections
   this.props.sections = [];
   recs = document.querySelectorAll('.filtered-listing-section');
   for (i = recs.length - 1; i >= 0; i--) {
     this.props.sections.push(new FilteredListingSection(recs[i]));
   }
-  
+
   // Parse querystring and use result (i.e. `section` and `tags`) as the initial state of the filters
   this.state = this.parseQuery();
-  
+
   // Initialise form elements:
   // - If initial state is provided, update the elements accordingly.
   // - If initial state is missing, invalid or incomplete, retrieve it from the relevant elements.
@@ -33,7 +33,7 @@ function FilteredListing(el, props) {
   // Listen for events
   this.props.sectionSelect.addEventListener('change', this.handleSectionSelectChanged.bind(this));
   el.addEventListener('click', this.handleTagCheckboxesClicked.bind(this));
-  
+
   // Update once
   this.update();
 }
@@ -47,11 +47,11 @@ function FilteredListing(el, props) {
  */
 FilteredListing.prototype.parseQuery = function () {
   var params = {};
-  
+
   if (window.location.search.length === 0) {
     return params;
   }
-  
+
   var i, query = window.location.search.substr(1).split('&');
   for (i = query.length - 1; i >= 0; i--) {
     var param = query[i].split("=");
@@ -65,7 +65,7 @@ FilteredListing.prototype.parseQuery = function () {
         break;
     }
   }
-  
+
   return params;
 };
 
@@ -96,14 +96,14 @@ FilteredListing.prototype.initSectionSelect = function () {
  */
 FilteredListing.prototype.initTagCheckboxes = function () {
   var i, j, tc, tag;
-  
+
   if (this.state.tags) {
     // Tags specified in querystring; check/uncheck the checkboxes accordingly
     for (i = this.props.tagCheckboxes.length - 1; i >= 0; i--) {
       tc = this.props.tagCheckboxes[i];
       tc.checked = false;
       tag = tc.getAttribute('data-tag').toLowerCase();
-      
+
       for (j = this.state.tags.length - 1; j >= 0; j--) {
         if (this.state.tags[j] === tag) {
           tc.checked = true;
@@ -112,7 +112,7 @@ FilteredListing.prototype.initTagCheckboxes = function () {
       }
     }
   }
-  
+
   // Retrieve the current state of the checkboxes
   // This deals with cases where no tags are specified in the querystring, or some of the specified tags are invalid (if all are invalid, the `all tags` checkbox has to be checked)
   this.state.tags = this.retrieveTagsState();
@@ -125,20 +125,20 @@ FilteredListing.prototype.initTagCheckboxes = function () {
  */
 FilteredListing.prototype.retrieveTagsState = function () {
   var i, tc, tags = [];
-  
+
   for (i = this.props.tagCheckboxes.length - 1; i >= 0; i--) {
     tc = this.props.tagCheckboxes[i];
     if (tc.checked) {
       tags.push(tc.getAttribute('data-tag').toLowerCase());
     }
   }
-  
+
   // If no tag is selected, re-check the `all tags` checkbox
   if (tags.length === 0) {
     this.props.tagCheckboxes[0].checked = true;
     tags.push(constants.ALL_TAGS);
   }
-  
+
   return tags;
 };
 

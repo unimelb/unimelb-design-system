@@ -2,63 +2,47 @@
 title: Inpage Navigation
 ---
 <div class="jumpnav"></div>
-The inpage Navigation provides a convenient way for the user to see all sections at a glance and jump between them. This can be useful for long, text-heavy pages.
 
-To include this feature on your page, simply add an empty div with class <code>jumpnav</code> somewhere in the page structure.
+<h2 id="overview">Overview</h2>
+The in-page navigation provides a convenient way for users to see all sections at a glance and jump between them. This can be useful for long, text-heavy pages.
+
+To include this feature on your page, simply add an empty div with class <code>jumpnav</code> somewhere in the page structure. **Every <code>h2</code> on the page with a unique ID** is then added to the in-page navigation, in order of appearance.
 
 ```html
 <div class="jumpnav"></div>
 ```
 
-By default the generated navigation will take the form of a *table of contents* at the beginning of the page on smaller screens, and a *fixed menu* on the left hand side on larger screens. If you would prefer to use the *table of contents* for all screen sizes, add the class `top` eg.
+By default the generated navigation will take the form of a *table of contents* at the beginning of the page on smaller screens, and a *fixed menu* on the left hand side on larger screens. If you would prefer to use the *table of contents* for all screen sizes, add the class `top` as in the example below. This behaviour is demonstrated on the [Buttons](/components/buttons) page to better display the wide component mid-way down the page.
 
 ```html
 <div class="jumpnav top"></div>
 ```
 
-This is demonstrated on the [buttons](/components/buttons) page, to better display the wide component mid-way down the page.
-
-Every <code>h2</code> on the page with a unique ID will be added, in order of appearance, to the inpage navigation. The heading text will be used as nav item, eg. "Testjump 1" in the example below:
-
-<h2 id="jump1">Testjump 1</h2>
-Mercedem aut nummos unde unde extricat, amaras. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Quam diu etiam furor iste tuus nos eludet? Curabitur blandit tempus ardua ridiculus sed magna. Cras mattis iudicium purus sit amet fermentum.
-Mercedem aut nummos unde unde extricat, amaras. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Quam diu etiam furor iste tuus nos eludet? Curabitur blandit tempus ardua ridiculus sed magna. Cras mattis iudicium purus sit amet fermentum.
-
-Phasellus laoreet lorem vel dolor tempus vehicula. Morbi odio eros, volutpat ut pharetra vitae, lobortis sed nibh. Nihil hic munitissimus habendi senatus locus, nihil horum? Vivamus sagittis lacus vel augue laoreet rutrum faucibus. Cum sociis natoque penatibus et magnis dis parturient.
-
-Plura mihi bona sunt, inclinet, amari petere vellent. Pellentesque habitant morbi tristique senectus et netus. Nihil hic munitissimus habendi senatus locus, nihil horum? Sed haec quis possit intrepidus aestimare tellus.
-
-Tu quoque, Brute, fili mi, nihil timor populi, nihil! Quis aute iure reprehenderit in voluptate velit esse. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quae vero auctorem tractata ab fiducia dicuntur.
-
-Phasellus laoreet lorem vel dolor tempus vehicula. Tu quoque, Brute, fili mi, nihil timor populi, nihil! Quo usque tandem abutere, Catilina, patientia nostra? Tityre, tu patulae recubans sub tegmine fagi  dolor. Inmensae subtilitatis, obscuris et malesuada fames. Morbi fringilla convallis sapien, id pulvinar odio volutpat.
-
-<h2 id="jump2">Testjump 2</h2>
-Mercedem aut nummos unde unde extricat, amaras. Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Quam diu etiam furor iste tuus nos eludet? Curabitur blandit tempus ardua ridiculus sed magna. Cras mattis iudicium purus sit amet fermentum.
-
-Cras mattis iudicium purus sit amet fermentum. Magna pars studiorum, prodita quaerimus. Tityre, tu patulae recubans sub tegmine fagi  dolor. Ab illo tempore, ab est sed immemorabili. A communi observantia non est recedendum.
-
-At nos hinc posthac, sitientis piros Afros. Quam temere in vitiis, legem sancimus haerentia. Cum sociis natoque penatibus et magnis dis parturient. Magna pars studiorum, prodita quaerimus. Idque Caesaris facere voluntate liceret: sese habere. Quam diu etiam furor iste tuus nos eludet?
-
-Plura mihi bona sunt, inclinet, amari petere vellent. Gallia est omnis divisa in partes tres, quarum. Hi omnes lingua, institutis, legibus inter se differunt. Morbi odio eros, volutpat ut pharetra vitae, lobortis sed nibh.
-
-Unam incolunt Belgae, aliam Aquitani, tertiam. Plura mihi bona sunt, inclinet, amari petere vellent. A communi observantia non est recedendum. Me non paenitet nullum festiviorem excogitasse ad hoc. Cum ceteris in veneratione tui montes, nascetur mus.
-
-<h2 id="index">Index Navigation</h2>
+<h2 id="index">Index navigation</h2>
 A-Z indices can be done via a simple class change:
 
 ```html
 <div class="indexnav"></div>
 ```
 
-As you can't have both navigations in one document, you find an <a href="/layouts/indexnav">example of an index-navigation</a> in the example layouts.
+As you can't have both navigations in one document, you'll find an <a href="/layouts/indexnav">example of an index navigation</a> in the example layouts.
 
-<h2 id="jsmethods">Javascript Call</h2>
-The smooth scroll methods can be invoked in your own project, independently of inpage navigation, by calling <code>smoothScrollTo</code>, as in the following example:
+<h2 id="smooth">Smooth scroll</h2>
+The smooth scroll function used by the in-page navigation, <code>smoothScrollTo</code>, can be invoked independently in your own project:
 
 ```javascript
-var el = document.querySelector('#block'); // where #block is any element with id="block"
-smoothScrollTo(el);
+var el = document.querySelector('#block'); // where #block is an element with id="block"
+window.smoothScrollTo(el);
 ```
 
-<code>smoothScrollTo</code> is declared in the window (global) scope. <a href="javascript:smoothScrollTo(document.getElementById('jsmethods'))" class="button-small">Try it out!</a>
+<a href="javascript:smoothScrollTo(document.getElementById('smooth'))" class="button-small">Try it out!</a>
 
+`smoothScrollTo` accepts an optional **callback** function as second argument. This callback is invoked as soon as the scrolling animation ends. It is generally a good idea to avoid performing other actions, like loading a script or manipulating the DOM, while a scrolling animation is in progress. Doing so could deteriorate the smoothness of the animation.
+
+```javascript
+window.smoothScrollTo(el, doSomething);
+
+function doSomething() {
+  // Do something as soon as the scrolling ends - e.g. give focus to the element, load more content, etc. 
+}
+```

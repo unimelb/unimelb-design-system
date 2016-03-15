@@ -431,6 +431,10 @@
 .ie8 .uomcontent .page-footer {
   ul.quicklinks {
     border-bottom: 0;
+
+    a {
+      line-height: 1.6em;
+    }
   }
 
   ul.people-links {

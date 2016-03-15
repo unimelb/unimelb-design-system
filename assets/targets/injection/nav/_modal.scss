@@ -60,10 +60,6 @@
       @extend %modal-close-icon;
     }
 
-    &::before {
-      @extend %modal-close-icon;
-    }
-
     &:hover {
       color: #444;
     }

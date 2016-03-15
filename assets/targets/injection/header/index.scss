@@ -18,11 +18,11 @@
   background-color: $white;
   color: $black;
   font-family: $ff-sans;
-  position: static;
+  position: relative;
   top: 0;
   width: 100%;
   z-index: 12;
-  
+
   /* Work-around for conflict with other `fixed` class, which sets the font to `$ff-fixed` */
   &.fixed {
     font-family: $ff-sans;
@@ -63,7 +63,7 @@
 
         [data-icon] {
           @include rem(height, 20px);
-          @include rem(margin-bottom, 5px);
+          @include rem(margin-bottom, 4px);
           @include rem(margin-right, 5px);
           @include rem(width, 20px);
           display: inline-block;
@@ -79,11 +79,15 @@
         }
       }
 
+      a > span:not([data-icon]) {
+        vertical-align: baseline;
+      }
+
       header {
         @include rem(height, 40px);
         @include rem(line-height, 40px);
-        @include single-box-shadow(0, 3px, 6px, -3px, rgba($black, .3));
         background-color: transparent;
+        box-shadow: 0 3px 6px -3px rgba($black, .3);
         width: 100%;
       }
 
@@ -121,8 +125,8 @@
 
   header {
     @include rem(height, 60px);
-    @include single-box-shadow(0, 6px, 6px, -3px, rgba($black, .3));
     background: $white;
+    box-shadow: 0 6px 6px -3px rgba($black, .3);
     display: table;
     overflow: visible;
     padding: 0;
@@ -315,7 +319,7 @@
 
   [data-icon] {
     @include rem(height, 20px);
-    @include rem(margin-bottom, 5px);
+    @include rem(margin-bottom, 4px);
     @include rem(margin-right, 5px);
     @include rem(width, 20px);
     display: inline-block;
@@ -408,7 +412,6 @@
     width: auto;
 
     &::after {
-      @include rem(margin-top, 2px);
       @include rem(padding-left, 10px);
       content: '/';
       color: $darkblue;
@@ -427,6 +430,10 @@
     height: auto;
     line-height: 1;
     padding: 0;
+  }
+
+  a > span {
+    vertical-align: baseline;
   }
 }
 
@@ -714,7 +721,6 @@
         line-height: 56px;
 
         &:after {
-          @include rem(margin-top, 2px);
           @include rem(padding-left, 10px);
           content: '/';
           color: $darkblue;

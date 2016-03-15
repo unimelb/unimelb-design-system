@@ -73,7 +73,7 @@
       @include rem(margin-top, -((10px * 2 + 24px) / 2));
       @include rem(padding, 10px);
       @include rem(right, 15px);
-      @include transition(background-color 0.15s, color 0.15s);
+      transition: background-color 0.15s, color 0.15s;
       background: none;
       border: none;
       color: $white;

@@ -49,15 +49,15 @@
     }
 
     @include breakpoint(tablet) {
-      @include column-count(2);
+      column-count: 2;
     }
 
     @include breakpoint(desktop) {
-      @include column-count(3);
+      column-count: 3;
     }
 
     @include breakpoint(wide) {
-      @include column-count(4);
+      column-count: 4;
     }
   }
 }

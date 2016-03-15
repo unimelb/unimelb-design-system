@@ -1,12 +1,15 @@
 {
   "name": "unimelb-design-system-assets",
   "description": "Asset compilation using Webpack",
-  "version": "3.7.1",
+  "version": "3.8.1",
   "repository": "marcom-unimelb/unimelb-design-system",
   "author": "University of Melbourne",
+  "license": "UNLICENSED",
   "dependencies": {
     "imagesloaded": "~3.1.8",
     "isotope-layout": "~2.2.0",
+    "just-debounce": "^1.0.0",
+    "perfect-scrollbar": "^0.6.10",
     "promise": "~7.0.3",
     "webfontloader": "~1.6.3"
   },

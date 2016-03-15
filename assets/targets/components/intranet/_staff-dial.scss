@@ -24,7 +24,7 @@
       @include rem(border-radius, 4px);
       @include rem(height, 70px);
       @include rem(padding-top, 8px);
-      @include transition(transform 0.15s);
+      transition: transform 0.15s;
       background-color: $highlight;
       color: $white;
       display: block;

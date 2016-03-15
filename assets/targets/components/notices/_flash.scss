@@ -1,0 +1,63 @@
+.uomcontent{
+  .flash {
+    @include rem(padding, 15px);
+    text-align: center;
+
+    & > p {
+      padding-bottom: 0;
+    }
+
+    @include breakpoint(desktop) {
+      text-align: left;
+    }
+  }
+
+  .flash--success {
+    @extend %notice-success;
+  }
+
+  .flash--info {
+    @extend %notice-info;
+  }
+
+  .flash--warning {
+    @extend %notice-warning;
+  }
+
+  .flash--danger {
+    @extend %notice-danger;
+  }
+
+  .flash--center {
+    text-align: center;
+  }
+
+  /* Headerless layout */
+  .headerless {
+    & + .flash {
+      /* Keep message against logo between desktop and wide */
+      @media (min-width: 769px) and (max-width: 1098px) {
+        @include rem(padding-left, 205px);
+
+        & > p {
+          max-width: none;
+        }
+      }
+    }
+    
+    /* Keep message against logo, even above `wide` */
+    & + .flash--keep-left {
+      @include breakpoint(wide) {
+        @include rem(padding-left, 205px);
+
+        & > p {
+          max-width: none;
+        }
+      }
+    }
+  }
+}
+
+.jumpnav-active .flash {
+  box-shadow: inset 6px 0 6px -6px rgba($black, 0.3);
+}

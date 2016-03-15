@@ -20,9 +20,9 @@
 
     &:first-child {
       @include rem(padding-bottom, 7px);
+      @include rem(margin-bottom, 7px);
       border-bottom: 1px solid $lightergray;
       letter-spacing: 1px;
-      margin-bottom: 0;
       text-transform: uppercase;
       width: 100%;
 
@@ -68,8 +68,29 @@ body.jumpnav-active {
   .uomcontent #outer {
     @extend %jump;
 
+    @supports (column-span: all) {
+      columns: 2;
+
+      li {
+        width: 100%;
+
+        &:first-child {
+          column-span: all;
+          display: block;
+        }
+      }
+
+      @include breakpoint(wide) {
+        columns: auto;
+      }
+    }
+
     @include breakpoint(desktop) {
       @include rem(padding-top, 80px);
+      
+      li:first-child {
+        margin-bottom: 0;
+      }
 
       a {
         border-bottom: 1px solid $lightergray;
@@ -125,7 +146,7 @@ body.jumpnav-active {
     }
 
     .uomcontent [role="main"] {
-      @include single-box-shadow(6px, 0, 6px, -6px, rgba($black, 0.3), true);
+      box-shadow: inset 6px 0 6px -6px rgba($black, 0.3);
       margin-left: 300px;
       margin-top: -10px;
       padding-top: 10px;

@@ -85,6 +85,62 @@ module DocSite
       slim :components_index
     end
 
+    def get_component(path, opts = {})
+      @documents = {}
+      raw_documents = []
+      %w(md html slim).each do |ext|
+        parent = File.join(settings.components_dir, path, "*.#{ext}")
+        raw_documents << Dir.glob(parent)
+      end
+
+      raw_documents.flatten.sort.map do |f|
+        section = File.basename(f)[0..1]
+
+        case File.extname(f)
+        when '.md' then
+          unless opts.include? :code_only
+            @settings.merge! file_settings(f)
+            render_method = !!@settings['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
+            if @documents[section]
+              @documents[section] << send(render_method, file_content(f))
+            else
+              @documents[section] = [send(render_method, file_content(f))]
+            end
+          end
+
+        when '.slim' then
+          if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
+            source = ''
+          else
+            source = render_syntax_highlight(slim file_content(f), layout: false, pretty: true)
+          end
+          output = slim file_content(f), layout: false, pretty: true
+          if @documents[section]
+            @documents[section] << [title_from_filename(f), output, source]
+          else
+            @documents[section] = [[title_from_filename(f), output, source]]
+          end
+
+        else
+          # Raw HTML
+          if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
+            source = ''
+          else
+            source = render_syntax_highlight(file_content(f))
+          end
+          output = file_content(f)
+          if @documents[section]
+            @documents[section] << [title_from_filename(f), output, source]
+          else
+            @documents[section] = [[title_from_filename(f), output, source]]
+          end
+        end
+
+      end
+
+      @documents
+    end
+
     settings.components.each do |path|
       get "/components/#{path}" do
         # Default title from dirname, override in frontmatter of first .md
@@ -98,57 +154,21 @@ module DocSite
         @next = curr == allcomps.length - 1 ? allcomps[0] : allcomps[curr + 1]
         @prev = curr == 0 ? allcomps[allcomps.length - 1] : allcomps[curr - 1]
 
-        @documents = {}
-        raw_documents = []
-        %w(md html slim).each do |ext|
-          parent = File.join(settings.components_dir, path, "*.#{ext}")
-          raw_documents << Dir.glob(parent)
-        end
-        raw_documents.flatten.sort.map do |f|
-          section = File.basename(f)[0..1]
-
-          case File.extname(f)
-          when '.md' then
-            @settings.merge! file_settings(f)
-            render_method = !!@settings['no_section_wrap'] ? :render_markdown : :render_markdown_with_section
-            if @documents[section]
-              @documents[section] << send(render_method, file_content(f))
-            else
-              @documents[section] = [send(render_method, file_content(f))]
-            end
-
-          when '.slim' then
-            if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
-              source = ''
-            else
-              source = render_syntax_highlight(slim file_content(f), layout: false, pretty: true)
-            end
-            output = slim file_content(f), layout: false, pretty: true
-            if @documents[section]
-              @documents[section] << [title_from_filename(f), output, source]
-            else
-              @documents[section] = [[title_from_filename(f), output, source]]
-            end
-
-          else
-            # Raw HTML
-            if basename_without_index_and_extension(f)[-9..-1] == 'no-source'
-              source = ''
-            else
-              source = render_syntax_highlight(file_content(f))
-            end
-            output = file_content(f)
-            if @documents[section]
-              @documents[section] << [title_from_filename(f), output, source]
-            else
-              @documents[section] = [[title_from_filename(f), output, source]]
-            end
-          end
-
-        end
+        @documents = get_component(path)
 
         slim :component
       end
+    end
+
+    get '/sink' do
+      @components = []
+      settings.components.each do |path|
+        @components << get_component(path, code_only: true)
+      end
+
+      @settings['title'] = 'Components'
+
+      slim :all_components
     end
 
     ### Layouts
