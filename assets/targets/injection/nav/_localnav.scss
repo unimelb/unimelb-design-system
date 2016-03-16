@@ -46,10 +46,10 @@
     padding-right: 0;
     right: $offset-localnav;
     width: $width-localnav;
-    
+
     &.active {
       transform: translateX($offset-localnav);
-      
+
       .sitemap-trigger {
         margin-left: 0;
       }
@@ -225,16 +225,6 @@
       z-index: 9;
     }
   }
-
-  // Local search form
-  form.search {
-    @include rem(margin, 5px 0 10px 15px);
-    @include rem(max-width, 270px);
-  }
-
-  fieldset .inline .search-button {
-    @include rem(margin-top, 5px);
-  }
 }
 
 body.ie8 {
@@ -242,16 +232,16 @@ body.ie8 {
     padding-right: 0;
     right: -$width-localnav;
     width: $width-localnav;
-    
+
     &.active,
     .inner.active {
       right: 0;
     }
-    
+
     .inner {
       padding-right: 0;
     }
-    
+
     .w {
       padding-right: 0;
       width: $width-localnav;

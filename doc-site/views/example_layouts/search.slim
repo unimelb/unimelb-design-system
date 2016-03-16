@@ -4,12 +4,14 @@ div role="main"
   header
     form.search action="http://search-au.funnelback.com/s/search.html" method="get"
       fieldset
-        .inline
-          input type="hidden" name="collection" value="unimelb-researchers"
-          input data-required="" placeholder="Search" name="query" type="search" title="Please enter a keyword" aria-label="Search" value="scince" autocomplete="off"
-          button type="submit" value="Go" class="search-button"
-            svg class="icon" role="img"
-              use xlink:href="#icon-search"
+        input type="hidden" name="collection" value="unimelb-researchers"
+        .inline.attached
+          span.fill
+            input data-required="" placeholder="Search" name="query" type="search" title="Please enter a keyword" aria-label="Search" value="scince" autocomplete="off"
+          span
+            button.inline-button type="submit"
+              span.small.icon--hide-label data-icon="search" Go
+
   .flash.flash--info.flash--center
     p <strong>Success!</strong> This is an example of a flash message.
   .with-aside

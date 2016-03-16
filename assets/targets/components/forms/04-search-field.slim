@@ -1,0 +1,14 @@
+form action="http://search-au.funnelback.com/s/search.html" method="get"
+  fieldset
+    input type="hidden" name="collection" value="unimelb-researchers"
+    .inline.attached
+      span.fill
+        input aria-required="true" placeholder="Search for experts by name or research topic" name="query" type="search" data-error="Please enter a keyword" aria-label="Search for experts by name or research topic"
+      span
+        button.inline-button type="submit"
+          span.small.icon--hide-label data-icon="search" Go
+
+    div
+      input type="checkbox" class="checkbox" name="facetScope" id="s-c1" value="f.Supervisor%20Availability%7C1=Available"
+      label for="s-c1"
+        span Show only available supervisors

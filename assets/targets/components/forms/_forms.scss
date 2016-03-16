@@ -43,7 +43,7 @@
     content: '*';
     color: $cherry;
   }
-  
+
   .form__subtext {
     @include padding-trailer(.5);
     font-size: smaller;
@@ -132,7 +132,7 @@
       position: absolute !important;
       clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
       clip: rect(1px, 1px, 1px, 1px);
-      
+
       & + label {
         @include rem(margin-top, 4px);
         @include rem(margin-bottom, -12px);
@@ -183,12 +183,12 @@
           opacity: 1;
         }
       }
-      
+
       &:focus + label span::before {
         border-color: $highlight;
       }
     }
-    
+
     input[type="checkbox"] + label {
       &::after {
         border: 3px solid $highlight;
@@ -203,7 +203,7 @@
         border-radius: 3px;
       }
     }
-    
+
     input[type="radio"] + label {
       &::after {
         background-color: $highlight;
@@ -211,7 +211,7 @@
         height: 12px;
         width: 12px;
       }
-      
+
       span::before {
         border-radius: 50%;
       }
@@ -250,8 +250,7 @@
       width: 100%;
     }
 
-    input[type="image"],
-    .search-button {
+    input[type="image"] {
       @extend %inlinebutton;
       @include rem(border-radius, 0 3px 3px 0);
       @include rem(margin, 15px 0 0);
@@ -425,7 +424,6 @@
     color: $black;
   }
 
-  .search-button span,
   label {
     display: inline;
   }
