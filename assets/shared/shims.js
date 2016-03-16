@@ -47,17 +47,9 @@ require('classlist-polyfill');
     };
   }
 
-  // jQuery-style element class helpers
-  if (!Element.prototype.hasClass) {
-    Element.prototype.hasClass = function(q) {
-      var re;
-      re = new RegExp(q);
-      return re.test(this.className);
-    };
-  }
   if (!Element.prototype.toggleClass) {
     Element.prototype.toggleClass = function(q, force) {
-      var has = typeof force !== 'boolean' ? this.hasClass(q) : !force;
+      var has = typeof force !== 'boolean' ? this.classList.contains(q) : !force;
       if (has) {
         this.classList.remove(q);
       } else {

@@ -196,7 +196,7 @@ ListFilter.prototype.filterTags = function(table, tags) {
   for (var el=table.querySelectorAll('li'), i=el.length - 1; i >= 0; i--) {
     var showitem = false;
     for (var j=tags.length - 1; j >= 0; j--) {
-      if (el[i].hasClass(tags[j]))
+      if (el[i].classList.contains(tags[j]))
         showitem = true;
     }
 

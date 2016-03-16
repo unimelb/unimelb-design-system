@@ -28,18 +28,15 @@ Checklist.prototype.handleClick = function(e) {
     if (e.target.nodeName=='SPAN')
       parent = parent.parentNode;
 
-    if (parent.hasClass('on'))
-      this.props.active--;
-    else
-      this.props.active++;
-
+    this.props.active += (parent.classList.contains('on') ? -1 : 1);
     this.toggleDisable();
   }
 };
 
 Checklist.prototype.handleTargetClick = function(e) {
-  if (e.target.hasClass('disabled'))
+  if (e.target.classList.contains('disabled')) {
     e.preventDefault();
+  }
 };
 
 Checklist.prototype.toggleDisable = function() {

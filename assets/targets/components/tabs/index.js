@@ -23,7 +23,7 @@ function Tabs(el, props) {
   this.props.isOverflowing = false;
   this.props.isOverflowSetup = false;
   this.props.isLoadingPs = false;
-  this.props.isNav = this.el.hasClass('tabbed-nav') || this.el.hasClass('tabbed-course');
+  this.props.isNav = this.el.classList.contains('tabbed-nav') || this.el.classList.contains('tabbed-course');
 
   // Event bindings
   if (this.el.hasAttribute('data-tabbed')) {
@@ -242,11 +242,11 @@ Tabs.prototype.handleClick = function(e) {
   var target = e.target;
 
   // IE8/no-svg fallback
-  if (target.hasClass('icon-label')) {
+  if (target.classList.contains('icon-label')) {
     target = target.parentNode.parentNode;
   }
 
-  if (target.hasClass('icon-over')) {
+  if (target.classList.contains('icon-over')) {
     return;
   }
 

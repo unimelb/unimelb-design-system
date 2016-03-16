@@ -52,11 +52,11 @@ InjectHeader.prototype.renderPageHeader = function() {
       this.props.header.classList.add('floating');
 
       var floating = document.querySelector('.page-inner > .floating');
-      if (floating.hasClass('reverse')) {
+      if (floating.classList.contains('reverse')) {
         this.props.header.classList.add('reverse');
       }
 
-      if (floating.hasClass('short')) {
+      if (floating.classList.contains('short')) {
         this.props.header.classList.add('short');
       }
 

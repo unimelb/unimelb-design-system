@@ -120,7 +120,7 @@ JumpNav.prototype.buildNavMenu = function() {
     } else {
       var refElem = this.props.root.findFirstElementChild();
       // If first element is `.headerless`, take the next sibling so that the jumpnav appears below the blue bar on mobile and tablet
-      if (refElem.hasClass('headerless'))
+      if (refElem.classList.contains('headerless'))
         refElem = refElem.findNextElementSibling();
       this.props.root.insertBefore(this.el, refElem);
     }
@@ -148,7 +148,7 @@ JumpNav.prototype.initCalcs = function() {
     var headerOffset =  (this.props.header ? this.props.header.offsetHeight: 0);
     this.props.fixPoint = this.props.root.offsetTop + headerOffset - 20;
 
-    if (this.props.root.hasClass('floating'))
+    if (this.props.root.classList.contains('floating'))
       this.props.fixPoint = this.props.fixPoint + 35;
 
     // Does the page include an inner footer
@@ -172,7 +172,7 @@ JumpNav.prototype.initCalcs = function() {
     // 10px margin-top
     this.props.footerOffset = (innerFooterHeight + outerFooterHeight + 10) + 'px';
 
-    if (this.el.hasClass('fixed')) {
+    if (this.el.classList.contains('fixed')) {
       this.el.style.bottom = this.props.footerOffset;
     } else {
       this.el.style.bottom = '';

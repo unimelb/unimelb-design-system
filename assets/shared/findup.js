@@ -3,7 +3,7 @@
 
   if (typeof window.findUp === "undefined") {
     window.findUp = function(el, match) {
-      if (el.hasClass(match) || el.hasAttribute(match)) {
+      if (el.classList.contains(match) || el.hasAttribute(match)) {
         return el;
       } else {
         if (el.parentNode && el.parentNode!=document) {

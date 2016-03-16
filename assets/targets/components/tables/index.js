@@ -10,7 +10,7 @@ function MobileTableHelper(el, props) {
 
   this.props.labels = this.el.querySelectorAll('thead th');
 
-  if (!this.el.parentNode.hasClass('mobile-wrap')) {
+  if (!this.el.parentNode.classList.contains('mobile-wrap')) {
     this.el.classList.add('mobile-friendly');
     this.insertLabels();
   }

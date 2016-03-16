@@ -23,7 +23,7 @@
     window.smoothScrollTo = function(to, cb) {
       var element = document.body,
           headerElem = document.querySelector('.page-header');
-      
+
       if (/(Firefox)/g.test(navigator.userAgent) || /(Trident)/g.test(navigator.userAgent)) {
         element = document.querySelector('html');
       }
@@ -35,19 +35,19 @@
           offset    = 0,
           increment = Math.abs(change / 500),
           duration  = Math.abs(change / 10);
-      
+
       // If the page contains a non-floating header AND it is fixed in the current viewport, substract the height of the fixed header (40px)
-      if (headerElem && !headerElem.hasClass('floating')) {
+      if (headerElem && !headerElem.classList.contains('floating')) {
         // Assume fixed position when unable to retrieve the computed position (e.g. in IE8)
         var headerPosition = window.getComputedStyle ? window.getComputedStyle(headerElem).getPropertyValue('position') : 'fixed';
         if (headerPosition === 'fixed' || headerPosition === 'absolute') {
           offset = 40;
         }
       }
-      
+
       // Deduct offset
       change -= offset;
-      
+
       var animateScroll = function() {
         curr += increment;
         element.scrollTop = Math.easeInOutQuad(curr, start, change, duration);
@@ -56,7 +56,7 @@
         } else {
           // Fix scrolling inaccuracy (always 1 or 2 pixels off without it)
           element.scrollTop += to.getBoundingClientRect().top - offset;
-          
+
           // Invoke callback if any
           if (cb) {
             cb();
