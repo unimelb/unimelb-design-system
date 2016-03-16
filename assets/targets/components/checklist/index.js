@@ -46,9 +46,8 @@ Checklist.prototype.toggleDisable = function() {
   if (this.props.active == this.props.items.length) {
     this.props.target.removeClass('disabled');
     this.props.target.removeAttribute('disabled');
-
   } else {
-    this.props.target.addClass('disabled');
+    this.props.target.classList.add('disabled');
     this.props.target.setAttribute('disabled', 'disabled');
   }
 };

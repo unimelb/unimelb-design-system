@@ -29,7 +29,7 @@ LocalNav.prototype.moveLocalNav = function() {
 
     var navtitle = noderoot.querySelector('h2');
     var firstli = document.createElement('li');
-    firstli.addClass('home');
+    firstli.className = 'home';
     firstli.innerHTML = `<a href="${absroot}">${(navtitle.textContent || navtitle.innerText)}</a>`;
     rootmenu.insertBefore(firstli, rootmenu.firstChild);
 
@@ -39,7 +39,7 @@ LocalNav.prototype.moveLocalNav = function() {
     // Create inner link to sitemap
     if (lastmenu == rootmenu) {
       lastmenu = document.createElement('ul');
-      lastmenu.addClass('meta');
+      lastmenu.className = 'meta';
       noderoot.appendChild(lastmenu);
     }
 
@@ -52,17 +52,17 @@ LocalNav.prototype.moveLocalNav = function() {
 
     var innerElements = this.props.localnav.querySelectorAll('.inner');
     var innerElem, parent, back, handler;
-    
+
     for (i = innerElements.length - 1; i >= 0; i--) {
       innerElem = innerElements[i];
       handler = toggleActive.bind(this, innerElem);
-      
+
       parent = innerElem.parentNode.querySelector('a');
-      parent.addClass('parent');
+      parent.classList.add('parent');
       parent.addEventListener('click', handler);
 
       back = document.createElement('span');
-      back.addClass('back');
+      back.className = 'back';
       back.innerHTML = parent.textContent || parent.innerText;
       back.addEventListener('click', handler);
       innerElem.insertBefore(back, innerElem.firstChild);

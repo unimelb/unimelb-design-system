@@ -74,7 +74,7 @@ JumpNav.prototype.trackProgress = function() {
       for (var k in this.props.items) {
         this.props.items[k].removeClass('current');
       }
-      this.props.items[pos].addClass('current');
+      this.props.items[pos].classList.add('current');
     } else {
       this.props.items[pos].removeClass('current');
     }
@@ -83,12 +83,7 @@ JumpNav.prototype.trackProgress = function() {
 
 JumpNav.prototype.buildNavMenu = function() {
   this.el = document.createElement('ul');
-
-  var className = 'jump-navigation';
-  if (document.countSelector('.indexnav') == 1) {
-    className = 'index-navigation';
-  }
-  this.el.addClass(className);
+  this.el.className = (document.countSelector('.indexnav') > 0 ? 'index-navigation' : 'jump-navigation');
   this.el.innerHTML = '<li>On this page</li>';
 
   this.props.items = {};
@@ -103,11 +98,11 @@ JumpNav.prototype.buildNavMenu = function() {
   }
 
   if (document.countSelector('.floating') > 0)
-    this.el.addClass('floating');
+    this.el.classList.add('floating');
 
   if (!this.props.header) {
-    this.el.addClass('headless');
-    this.el.addClass('fixed');
+    this.el.classList.add('headless');
+    this.el.classList.add('fixed');
   }
 
   if (this.props.root.countSelector('.tab .with-aside aside') > 0) {
@@ -134,9 +129,9 @@ JumpNav.prototype.buildNavMenu = function() {
 
   if (!this.props.topmode) {
     if (document.countSelector('.indexnav') == 1) {
-      document.body.addClass('indexnav-active');
+      document.body.classList.add('indexnav-active');
     } else {
-      document.body.addClass('jumpnav-active');
+      document.body.classList.add('jumpnav-active');
     }
 
     this.initCalcs();
@@ -192,7 +187,7 @@ JumpNav.prototype.initCalcs = function() {
 JumpNav.prototype.setFixed = function() {
   if (this.props.outer.scrollTop > this.props.fixPoint) {
     this.el.removeClass('headless');
-    this.el.addClass('fixed');
+    this.el.classList.add('fixed');
     this.el.style.bottom = this.props.footerOffset;
 
   } else {
@@ -201,14 +196,14 @@ JumpNav.prototype.setFixed = function() {
       this.el.removeClass('fixed');
 
     } else {
-      this.el.addClass('headless');
+      this.el.classList.add('headless');
     }
   }
 };
 
 JumpNav.prototype.setEndpoint = function() {
   if (this.props.outer.scrollTop > this.props.stickyEnd) {
-    this.el.addClass('endpoint');
+    this.el.classList.add('endpoint');
   } else {
     this.el.removeClass('endpoint');
   }

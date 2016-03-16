@@ -12,7 +12,7 @@ function InjectAnnouncement(props) {
   this.props.page = this.props.parent.querySelector('.page-inner');
   this.props.header = this.props.parent.querySelector('.page-header');
   this.props.announcement = this.props.page.querySelector('.page-announcement');
-  
+
   // Continue only if an announcement is present but not already injected
   if (this.props.announcement && document.countSelector('.uomcontent > .page-announcement') === 0) {
     this.checkDismissed();
@@ -25,10 +25,10 @@ function InjectAnnouncement(props) {
  */
 InjectAnnouncement.prototype.checkDismissed = function () {
   this.props.message = this.props.announcement.querySelector('.page-announcement__message');
-  
+
   // Hash the announcement before storing
   this.props.hash = hashString(this.props.message.textContent || this.props.message.innerText);
-  
+
   // Check local storage for hash
   // (Support for local storage goes as far back as IE8, so falling back to cookies would be excessive)
   this.props.wasDismissed = hasLocalStorage && localStorage.getItem(STORAGE_PREFIX + this.props.hash) === DISMISSED;
@@ -41,11 +41,11 @@ InjectAnnouncement.prototype.inject = function () {
   if (!this.props.wasDismissed) {
     // Insert announcement before header
     this.props.parent.insertBefore(this.props.announcement, this.props.header);
-    
+
     // Register handler on close button
     this.props.closeBtn = this.props.announcement.querySelector('.page-announcement__close');
     this.props.closeBtn.addEventListener('click', this.dismiss.bind(this));
-    
+
     // Register handler on announcement link
     // This does not close the announcement for performance reasons - it just marks it as dismissed in localStorage
     this.props.message.addEventListener('click', this.markDisimissed.bind(this));
@@ -57,7 +57,7 @@ InjectAnnouncement.prototype.inject = function () {
  */
 InjectAnnouncement.prototype.dismiss = function () {
   this.markDisimissed();
-  
+
   // Set the max-height to the current height of the announcement
   this.props.announcement.style['max-height'] = this.props.announcement.clientHeight + 'px';
 
@@ -71,7 +71,7 @@ InjectAnnouncement.prototype.dismiss = function () {
  */
 InjectAnnouncement.prototype.markDisimissed = function () {
   this.props.wasDismissed = true;
-  
+
   if (hasLocalStorage) {
     // Mark the announcement as dismissed in local storage
     localStorage.setItem(STORAGE_PREFIX + this.props.hash, DISMISSED);
@@ -83,8 +83,8 @@ InjectAnnouncement.prototype.markDisimissed = function () {
  */
 InjectAnnouncement.prototype.hide = function () {
   // Add class which sets max-height to 0
-  this.props.announcement.addClass('page-announcement--dismissed');
-  
+  this.props.announcement.classList.add('page-announcement--dismissed');
+
   // Hide the announcement to screen readers
   this.props.announcement.setAttribute('aria-hidden', true);
 };

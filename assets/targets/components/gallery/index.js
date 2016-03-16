@@ -20,7 +20,7 @@ function ImageGallery(el, props) {
       gutter: 0
     }
   });
-  
+
   this.initPhotoSwipeFromDOM();
 }
 
@@ -34,9 +34,9 @@ ImageGallery.prototype.setupGallery = function() {
         ratio = img.offsetWidth / img.offsetHeight,
         span = document.createElement('span');
     span.innerHTML = '<svg role="img" class="icon"><use xlink:href="#icon-zoom"></use></svg>';
-    imageLink.parentNode.addClass(ratio < 1 ? 'portrait' : ratio > 2 ? 'panorama' : 'landscape');
+    imageLink.parentNode.classList.add(ratio < 1 ? 'portrait' : ratio > 2 ? 'panorama' : 'landscape');
     imageLink.style.backgroundImage = 'url(' + img.src + ')';
-    img.addClass('hidden');
+    img.classList.add('hidden');
     imageLink.appendChild(span);
   }
 };
@@ -48,7 +48,7 @@ ImageGallery.prototype.setupPhotoSwipe = function() {
   this.props.pswp = document.querySelector('.pswp');
   if (!this.props.pswp) {
     this.props.pswpEl = document.createElement('div');
-    this.props.pswpEl.addClass('pswp');
+    this.props.pswpEl.className = 'pswp';
     this.props.pswpEl.setAttribute('tabindex', '-1');
     this.props.pswpEl.setAttribute('role', 'dialog');
     this.props.pswpEl.setAttribute('aria-hidden', 'true');

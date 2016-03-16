@@ -53,8 +53,8 @@ SidebarTabs.prototype.show = function() {
     if (i == this.props.current) {
       var target = document.querySelector(this.props.nav[i].getAttribute('href'));
       if (target) {
-        this.props.nav[i].addClass('current');
-        target.addClass('current');
+        this.props.nav[i].classList.add('current');
+        target.classList.add('current');
       }
     }
   }

@@ -171,7 +171,7 @@ ListFilter.prototype.filterCategories = function() {
     if (showcategory) {
       category.removeClass('hide');
     } else {
-      category.addClass('hide');
+      category.classList.add('hide');
     }
   }
 
@@ -205,7 +205,7 @@ ListFilter.prototype.filterTags = function(table, tags) {
     }
 
     if (showitem) {
-      el[i].addClass('item');
+      el[i].classList.add('item');
     } else {
       el[i].removeClass('item');
     }
@@ -216,7 +216,7 @@ ListFilter.prototype.filterTags = function(table, tags) {
 ListFilter.prototype.showAllItems = function() {
   for (var i=this.props.tables.length - 1; i >= 0; i--)
     for (var recs=this.props.tables[i].querySelectorAll('li'), j=recs.length - 1; j >= 0; j--)
-      recs[j].addClass('item');
+      recs[j].classList.add('item');
 };
 
 module.exports = ListFilter;

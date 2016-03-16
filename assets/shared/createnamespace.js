@@ -6,8 +6,7 @@
 function CreateNameSpace() {
   "use strict";
 
-  var bodyclass = '';
-
+  var bodyclass;
   if (/(MSIE 8.0)/g.test(navigator.userAgent))
     bodyclass = 'ie ie8';
   else if (/(MSIE 9.0)/g.test(navigator.userAgent))
@@ -17,15 +16,15 @@ function CreateNameSpace() {
   else if (/(Trident\/7.0)/g.test(navigator.userAgent))
     bodyclass = 'ie11';
 
-  if (!document.body.hasClass('ie') || (typeof bodyclass !== 'undefined')) {
-    document.body.addClass(bodyclass);
+  if (bodyclass) {
+    document.body.classList.add(bodyclass);
   }
 
   // Create page wrapper if it doesn't already exist
   var parent = document.querySelector('.uomcontent');
   if (!parent) {
     parent = document.createElement('div');
-    parent.addClass('uomcontent');
+    parent.className = 'uomcontent';
     document.body.appendChild(parent);
   }
 
@@ -34,7 +33,7 @@ function CreateNameSpace() {
   var page = document.querySelector('.page-inner');
   if (!page) {
     page = document.createElement('div');
-    page.addClass('page-inner');
+    page.className = 'page-inner';
 
     for (var nodes=document.body.childNodes, i=nodes.length - 1; i >= 0; i--) {
       if (nodes[i] && nodes[i] != parent) {

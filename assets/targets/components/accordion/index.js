@@ -58,7 +58,7 @@ Accordion.prototype.setupCloseButton = function() {
   var close = this.props.container.querySelector('.accordion__close');
   if (!close) {
     close = document.createElement('a');
-    close.addClass('accordion__close');
+    close.className = 'accordion__close';
 
     if (this.props.hidden.countSelector('.accordion__close') === 0) {
       if (this.props.hidden.nodeName == 'TR') {

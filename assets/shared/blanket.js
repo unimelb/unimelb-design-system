@@ -16,11 +16,11 @@ Blanket.prototype.initBlanket = function() {
   this.el = document.querySelector('.modal__blanket');
   if (!this.el) {
     this.el = document.createElement('div');
-    this.el.addClass('modal__blanket');
+    this.el.classList.add('modal__blanket');
 
     // White version for search with header offset
     if (this.props.inverse)
-      this.el.addClass('inverse');
+      this.el.classList.add('inverse');
 
     var CreateNameSpace = require('./createnamespace');
     new CreateNameSpace();
@@ -41,15 +41,15 @@ Blanket.prototype.initBlanket = function() {
  * Visibility helpers
  */
 Blanket.prototype.show = function() {
-  this.el.addClass('on');
+  this.el.classList.add('on');
 };
 
 Blanket.prototype.hide = function() {
-  this.el.removeClass('on');
+  this.el.classList.remove('on');
 };
 
 Blanket.prototype.toggle = function(force) {
-  this.el.toggleClass('on', force);
+  this.el.classList.toggle('on', force);
 };
 
 module.exports = Blanket;

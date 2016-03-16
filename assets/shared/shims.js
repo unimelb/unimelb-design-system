@@ -1,3 +1,5 @@
+require('classlist-polyfill');
+
 (function(root) {
 
   if (typeof document.countSelector === "undefined") {
@@ -53,18 +55,6 @@
       return re.test(this.className);
     };
   }
-  if (!Element.prototype.addClass) {
-    Element.prototype.addClass = function(q) {
-      var curr;
-      curr = this.className + " ";
-      if (this.className === null || curr === " ") {
-        curr = "";
-      }
-      if (!this.hasClass(q)) {
-        this.className = curr + q;
-      }
-    };
-  }
   if (!Element.prototype.removeClass) {
     Element.prototype.removeClass = function(q) {
       if (this.className === null || this.className === " ") {
@@ -83,7 +73,7 @@
       if (has) {
         this.removeClass(q);
       } else {
-        this.addClass(q);
+        this.classList.add(q);
       }
     };
   }
@@ -175,7 +165,7 @@
       return fBound;
     };
   }
-  
+
   // Find the first element child of an element (`Node.firstElementChild()` is not supported on IE8)
   if (!Element.prototype.findFirstElementChild) {
     Element.prototype.findFirstElementChild = function () {
@@ -190,7 +180,7 @@
       return child;
     };
   }
-  
+
   // Find the next element sibling of an element (i.e. skip white-space nodes)
   if (!Element.prototype.findNextElementSibling) {
     Element.prototype.findNextElementSibling = function () {
@@ -201,5 +191,5 @@
       return sibling;
     };
   }
-  
+
 })(this);

@@ -35,7 +35,7 @@ InjectHeader.prototype.renderPageHeader = function() {
   if (!this.props.header) {
     // Create header and move local breadcrumb
     this.props.header = document.createElement('div');
-    this.props.header.addClass('page-header');
+    this.props.header.className = 'page-header';
 
     if (document.countSelector('.page-inner > .floating') == 1) {
       // Landing page header
@@ -49,15 +49,15 @@ InjectHeader.prototype.renderPageHeader = function() {
 `;
 
       // Copy over the `floating`, `reverse` and `short` classes
-      this.props.header.addClass('floating');
+      this.props.header.classList.add('floating');
 
       var floating = document.querySelector('.page-inner > .floating');
       if (floating.hasClass('reverse')) {
-        this.props.header.addClass('reverse');
+        this.props.header.classList.add('reverse');
       }
 
       if (floating.hasClass('short')) {
-        this.props.header.addClass('short');
+        this.props.header.classList.add('short');
       }
 
       // Copy over inline background-image, if provided
@@ -114,13 +114,13 @@ InjectHeader.prototype.renderBreadcrumb = function() {
 
       // Mobile nav
       var mobile = document.createElement('div');
-      mobile.addClass('mobile-nav');
+      mobile.className = 'mobile-nav';
       mobile.setAttribute('role', 'navigation');
 
       var select = document.createElement('select');
+      select.className = 'alt';
       select.setAttribute('role', 'tablist');
       select.setAttribute('aria-label', 'Breadcrumb list');
-      select.addClass('alt');
       select.addEventListener('change', function(e) {
         if (this.value)
           if (this.value.substr(0, 1) != '#')
@@ -175,8 +175,8 @@ InjectHeader.prototype.renderBreadcrumb = function() {
 InjectHeader.prototype.renderHeaderTools = function() {
   var tools = document.querySelector('.page-header-tools');
   if (!tools) {
-    tools = document.createElement("div");
-    tools.addClass('page-header-tools');
+    tools = document.createElement('div');
+    tools.className = 'page-header-tools';
 
     var template = `
 <a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search" /></svg> Search</a><!--
@@ -188,7 +188,7 @@ InjectHeader.prototype.renderHeaderTools = function() {
       tools.innerHTML = template;
 
     } else {
-      tools.addClass('with-login');
+      tools.classList.add('with-login');
 
       var loginContent = document.querySelector('.page-local-login');
       if (loginContent) {
@@ -218,7 +218,7 @@ InjectHeader.prototype.renderHeaderTools = function() {
               trigger = tools.querySelector('[data-modal-target]');
 
           modalDialog.id = 'uom-login';
-          modalDialog.addClass('modal__dialog');
+          modalDialog.className = 'modal__dialog';
           loginContent.parentNode.removeChild(loginContent);
           modalDialog.appendChild(loginContent);
           tools.appendChild(modalDialog);
@@ -272,7 +272,7 @@ InjectHeader.prototype.handleScroll = function(e) {
   }
 
   if (outer.scrollTop > 40) {
-    this.props.header.addClass('fixed');
+    this.props.header.classList.add('fixed');
   } else {
     this.props.header.removeClass('fixed');
   }

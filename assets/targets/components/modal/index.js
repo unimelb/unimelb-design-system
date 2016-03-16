@@ -47,7 +47,7 @@ Modal.prototype.setupCloseButton = function() {
   var close = this.props.targetElement.querySelector('.modal__close');
   if (!close) {
     close = document.createElement('a');
-    close.addClass('modal__close');
+    close.className = 'modal__close';
     close.innerText = 'Close';
     this.props.targetElement.insertBefore(close, this.props.targetElement.firstChild);
 
@@ -80,7 +80,7 @@ Modal.prototype.activateDialog = function(e) {
     this.props.targetElement.style.top = (top - viewport.top) + 'px';
   }
 
-  this.props.targetElement.addClass('on');
+  this.props.targetElement.classList.add('on');
   this.props.blanketElement.show();
 };
 

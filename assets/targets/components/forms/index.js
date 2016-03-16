@@ -143,9 +143,9 @@ ValidateForm.prototype.invalid = function(field) {
 ValidateForm.prototype.setInvalid = function(field) {
   var parent = field.parentNode;
   if (field.nodeName == 'SELECT')
-    parent.parentNode.addClass('invalid');
-  parent.addClass('invalid');
-  field.addClass('invalid');
+    parent.parentNode.classList.add('invalid');
+  parent.classList.add('invalid');
+  field.classList.add('invalid');
 };
 
 ValidateForm.prototype.setValid = function(field) {
