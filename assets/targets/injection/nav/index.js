@@ -143,11 +143,11 @@ InjectNav.prototype.update = function() {
   var both = activeNav.local && activeNav.global;
 
   this.props.blanket.toggle(either);
-  this.props.globalNav.toggleClass('active', activeNav.global);
-  
+  this.props.globalNav.classList.toggle('active', activeNav.global);
+
   if (this.props.localNav) {
-    this.props.localNav.toggleClass('active', activeNav.local && !activeNav.global);
-    this.props.sitemapTrigger.toggleClass('active', activeNav.local);
+    this.props.localNav.classList.toggle('active', activeNav.local && !activeNav.global);
+    this.props.sitemapTrigger.classList.toggle('active', activeNav.local);
   }
 };
 

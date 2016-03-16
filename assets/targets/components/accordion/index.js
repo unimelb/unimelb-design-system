@@ -51,7 +51,7 @@ Accordion.prototype.handleClick = function(e) {
     }
   }
 
-  this.props.container.toggleClass('accordion__visible');
+  this.props.container.classList.toggle('accordion__visible');
 };
 
 Accordion.prototype.setupCloseButton = function() {
@@ -73,7 +73,7 @@ Accordion.prototype.setupCloseButton = function() {
 
     close.addEventListener('click', function(e){
       e.preventDefault();
-      this.props.container.toggleClass('accordion__visible');
+      this.props.container.classList.toggle('accordion__visible');
     }.bind(this));
   }
 };

@@ -47,17 +47,6 @@ require('classlist-polyfill');
     };
   }
 
-  if (!Element.prototype.toggleClass) {
-    Element.prototype.toggleClass = function(q, force) {
-      var has = typeof force !== 'boolean' ? this.classList.contains(q) : !force;
-      if (has) {
-        this.classList.remove(q);
-      } else {
-        this.classList.add(q);
-      }
-    };
-  }
-
   (function(win, doc){
     if(win.addEventListener)return;   //No need to polyfill
 
