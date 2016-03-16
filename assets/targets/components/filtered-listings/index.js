@@ -168,18 +168,14 @@ ListFilter.prototype.filterCategories = function() {
       }
     }
 
-    if (showcategory) {
-      category.removeClass('hide');
-    } else {
-      category.classList.add('hide');
-    }
+    category.classList.toggle('hide', !showcategory);
   }
 
   var idx = this.selectedOptionIndex();
   if (!idx) {
-    for (i=this.props.tables.length - 1; i >= 0; i--)
-      this.props.tables[i].parentNode.parentNode.removeClass('hide');
-
+    for (i=this.props.tables.length - 1; i >= 0; i--) {
+      this.props.tables[i].parentNode.parentNode.classList.remove('hide');
+    }
   } else if (this.props.select && this.props.select.value != this.props.curr) {
     this.props.select.options.selectedIndex = idx;
   }
@@ -204,11 +200,7 @@ ListFilter.prototype.filterTags = function(table, tags) {
         showitem = true;
     }
 
-    if (showitem) {
-      el[i].classList.add('item');
-    } else {
-      el[i].removeClass('item');
-    }
+    el[i].classList.toggle('item', showitem);
   }
   this.triggerIsotope();
 };

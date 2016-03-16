@@ -200,7 +200,7 @@ Tabs.prototype.activateOverflow = function(smooth) {
  * Deactivate the overflow behaviour and destroy the horizontal scrollbar.
  */
 Tabs.prototype.destroyOverflow = function() {
-  this.props.navParent.removeClass('overflow');
+  this.props.navParent.classList.remove('overflow');
   Ps.destroy(this.props.inner);
 };
 

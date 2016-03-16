@@ -271,11 +271,7 @@ InjectHeader.prototype.handleScroll = function(e) {
     outer = document.querySelector('html');
   }
 
-  if (outer.scrollTop > 40) {
-    this.props.header.classList.add('fixed');
-  } else {
-    this.props.header.removeClass('fixed');
-  }
+  this.props.header.classList.toggle('fixed', outer.scrollTop > 40);
 };
 
 module.exports = InjectHeader;

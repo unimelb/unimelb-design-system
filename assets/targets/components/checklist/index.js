@@ -44,7 +44,7 @@ Checklist.prototype.handleTargetClick = function(e) {
 
 Checklist.prototype.toggleDisable = function() {
   if (this.props.active == this.props.items.length) {
-    this.props.target.removeClass('disabled');
+    this.props.target.classList.remove('disabled');
     this.props.target.removeAttribute('disabled');
   } else {
     this.props.target.classList.add('disabled');

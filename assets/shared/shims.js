@@ -55,23 +55,11 @@ require('classlist-polyfill');
       return re.test(this.className);
     };
   }
-  if (!Element.prototype.removeClass) {
-    Element.prototype.removeClass = function(q) {
-      if (this.className === null || this.className === " ") {
-        this.classname = "";
-      } else {
-        this.className = this.className.replace(q, '');
-        if (this.className === " ") {
-          this.className = "";
-        }
-      }
-    };
-  }
   if (!Element.prototype.toggleClass) {
     Element.prototype.toggleClass = function(q, force) {
       var has = typeof force !== 'boolean' ? this.hasClass(q) : !force;
       if (has) {
-        this.removeClass(q);
+        this.classList.remove(q);
       } else {
         this.classList.add(q);
       }

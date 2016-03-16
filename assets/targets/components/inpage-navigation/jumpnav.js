@@ -72,11 +72,10 @@ JumpNav.prototype.trackProgress = function() {
   for (var pos in this.props.items) {
     if (this.props.outer.scrollTop + this.props.arbitraryOffset >= pos) {
       for (var k in this.props.items) {
-        this.props.items[k].removeClass('current');
+        this.props.items[k].classList.toggle('current', k === pos);
       }
-      this.props.items[pos].classList.add('current');
     } else {
-      this.props.items[pos].removeClass('current');
+      this.props.items[pos].classList.remove('current');
     }
   }
 };
@@ -186,14 +185,14 @@ JumpNav.prototype.initCalcs = function() {
 // Will now check if a header is present, otherwise leave fixed
 JumpNav.prototype.setFixed = function() {
   if (this.props.outer.scrollTop > this.props.fixPoint) {
-    this.el.removeClass('headless');
+    this.el.classList.remove('headless');
     this.el.classList.add('fixed');
     this.el.style.bottom = this.props.footerOffset;
 
   } else {
     if (this.props.header) {
       this.el.style.bottom = '';
-      this.el.removeClass('fixed');
+      this.el.classList.remove('fixed');
 
     } else {
       this.el.classList.add('headless');
@@ -202,11 +201,7 @@ JumpNav.prototype.setFixed = function() {
 };
 
 JumpNav.prototype.setEndpoint = function() {
-  if (this.props.outer.scrollTop > this.props.stickyEnd) {
-    this.el.classList.add('endpoint');
-  } else {
-    this.el.removeClass('endpoint');
-  }
+  this.el.classList.toggle('endpoint', this.props.outer.scrollTop > this.props.stickyEnd);
 };
 
 module.exports = JumpNav;

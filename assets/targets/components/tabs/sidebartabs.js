@@ -27,7 +27,7 @@ SidebarTabs.prototype.handleClick = function(e) {
 };
 
 SidebarTabs.prototype.matchEl = function(el) {
-  for (var i=this.props.nav.length - 1; i >= 0; i--) {
+  for (var i = this.props.nav.length - 1; i >= 0; i--) {
     if (this.props.nav[i] == el) {
       this.hide();
       this.props.current = i;
@@ -38,14 +38,18 @@ SidebarTabs.prototype.matchEl = function(el) {
 
 SidebarTabs.prototype.hide = function() {
   var root = document;
-  if (document.countSelector('.tab') > 1)
+  if (document.countSelector('.tab') > 1) {
     root = document.querySelector('.tab[data-current]');
+  }
 
-  for (var pages=root.querySelectorAll(this.props.selector), i=pages.length - 1; i >= 0; i--)
-    pages[i].removeClass('current');
+  var pages = root.querySelectorAll(this.props.selector);
+  for (var i = pages.length - 1; i >= 0; i--) {
+    pages[i].classList.remove('current');
+  }
 
-  for (i=this.props.nav.length - 1; i >= 0; i--)
-    this.props.nav[i].removeClass('current');
+  for (i = this.props.nav.length - 1; i >= 0; i--) {
+    this.props.nav[i].classList.remove('current');
+  }
 };
 
 SidebarTabs.prototype.show = function() {

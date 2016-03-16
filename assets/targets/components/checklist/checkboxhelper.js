@@ -17,7 +17,7 @@ CheckboxHelper.prototype.handleClick = function(e) {
   if (this.el.checked) {
     this.props.parent.classList.add('on');
   } else {
-    this.props.parent.removeClass('on');
+    this.props.parent.classList.remove('on');
   }
 };
 

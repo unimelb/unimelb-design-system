@@ -91,7 +91,7 @@ Modal.prototype.hideAllDialogs = function(e) {
   e.preventDefault();
 
   for (var recs=document.querySelectorAll('.modal__dialog'), i=recs.length - 1; i >= 0; i--) {
-    recs[i].removeClass('on');
+    recs[i].classList.remove('on');
   }
 
   this.props.blanketElement.hide();
