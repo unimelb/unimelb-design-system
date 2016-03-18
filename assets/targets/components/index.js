@@ -54,6 +54,11 @@ window.UOMbind = function(component) {
     attachment = 'table';
   }
 
+  else if (component === 'announcement') {
+    var Accouncement = require('../injection/announcement/index.es6');
+    new Accouncement({});
+  }
+
   if (attachment) {
     recs = document.querySelectorAll(attachment);
     if (recs.length > 0) {
@@ -140,7 +145,7 @@ window.UOMloadComponents = function() {
         slingshot = function (g) {
           new ImageGallery(g);
         };
-        
+
         for (i=recs.length - 1; i >= 0; i--) {
           g = recs[i];
           imagesLoaded(g, slingshot.bind(null, g));
