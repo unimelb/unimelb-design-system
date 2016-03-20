@@ -474,28 +474,28 @@
 }
 
 .uomcontent .page-header-search {
+  @include rem(height, 60px);
   background: $white;
-  height: 100%;
+  display: none;
   left: 0;
   position: absolute;
   top: 0;
   width: 100%;
   z-index: 16;
 
-  display: none;
-
   &.active {
     display: block;
   }
 
   @include breakpoint(desktop) {
+    @include rem(height, 90px);
     position: relative;
   }
 
   form {
+    @include rem(padding-left, 10px);
     display: table;
     height: 100%;
-    padding-left: 10px;
     width: 100%;
 
     fieldset {

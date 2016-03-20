@@ -153,12 +153,11 @@ InjectNav.prototype.update = function() {
 
 
 InjectNav.prototype.handleSearchTrigger = function(e) {
-  // this.openGlobalNav(e);
-  // this.props.globalNav.querySelector('input[type="search"]').focus();
   this.props.root.addClass('search-active');
 
   var s = document.querySelector('.page-header-search');
   s.addClass('active');
+  s.querySelector('input[type="search"]').focus();
   s.querySelector('div.page-header-icon').addEventListener('click', this.handleSearchClose.bind(this));
 
   this.props.blanket.el.addClass('white');

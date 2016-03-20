@@ -248,7 +248,7 @@ InjectHeader.prototype.renderSearchBox = function() {
 <form action="https://search.unimelb.edu.au" method="get">
   <fieldset>
     <div class="inline">
-      <input aria-label="Search" aria-required="true" autocomplete="off" data-error="Please enter a keyword" name="query" id="header_q" placeholder="Keywords" type="search" /><button class="search-button" type="submit"><span>GO</span><svg class="icon" role="img"><use xlink:href="#icon-search"></use></svg></button>
+      <input aria-label="Search" aria-required="true" autocomplete="off" data-error="Please enter a keyword" name="query" id="header_q" placeholder="Search the University" type="search" /><button class="search-button" type="submit"><span>GO</span><svg class="icon" role="img"><use xlink:href="#icon-search"></use></svg></button>
     </div>
   </fieldset>
 
