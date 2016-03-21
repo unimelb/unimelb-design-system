@@ -1,16 +1,18 @@
 # Typography
 
 <h2 id="css-font-stack">CSS font stack</h2>
-```css
-/* Sans $ff-sans */
+
+<pre>
+<code class="css">/* Sans $ff-sans */
 font-family: Roboto, Helvetica, Arial, sans-serif;
 
 /* Fixed $ff-fixed */
 font-family: Courier New, Courier, fixed;
 
 /* Serif $ff-serif */
-font-family: Georgia, Times New Roman, Times, serif;
-```
+font-family: Georgia, Times New Roman, Times, serif;</code>
+</pre>
+
 The only non-websafe font is Roboto, which we serve via @font-face.
 
 <h2 id="why-roboto">Why Roboto</h2>
