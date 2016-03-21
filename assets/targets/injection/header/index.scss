@@ -478,7 +478,7 @@
   background: $white;
   display: none;
   left: 0;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 16;
@@ -489,7 +489,6 @@
 
   @include breakpoint(desktop) {
     @include rem(height, 90px);
-    position: relative;
   }
 
   form {
