@@ -1,47 +1,5 @@
-== slim :breadcrumb
-
-div role="main"
-  header.short.with-filters style="background-image:url(/assets/images/bg-banner-small.jpg)"
-    p Lorem ipsum dolor sit amet, vis te saepe nominavi appetere, ceteros lucilius te usu, no nam tota partiendo
-    .bottom-align-flat
-      form.filtered-listing-select
-        fieldset.left
-          legend Filter by type:
-          .all
-            input.checkbox type="checkbox" name="f[degree_type]" checked="checked" data-tag="all" id="c00"
-            label for="c00" tabindex="0"
-              span All
-          .category-a
-            input#c1.checkbox type="checkbox" name="f[course_type]" data-tag="category-a"
-            label for="c1" tabindex="0"
-              span Nominavi appetere
-          .category-b
-            input#c2.checkbox type="checkbox" name="f[course_type]" data-tag="category-b"
-            label for="c2" tabindex="0"
-              span Iudico corrumpit
-          .category-c
-            input#c3.checkbox type="checkbox" name="f[course_type]" data-tag="category-c"
-            label for="c3" tabindex="0"
-              span Argumentum philosophia
-          .category-d
-            input#c4.checkbox type="checkbox" name="f[course_type]" data-tag="category-d"
-            label for="c4" tabindex="0"
-              span Errem qualisque
-          .category-e
-            input#c5.checkbox type="checkbox" name="f[course_type]" data-tag="category-e"
-            label for="c5" tabindex="0"
-              span Errem qualisque
-        .right
-          label for="f-select2" Filter by section:
-          div
-            select#f-select2.clear name="f[select2]"
-              option value="-1" All sections
-              option value="section1" Section heading 1
-              option value="section2" Different Section
-              option value="section3" Third Example Section
-
-  hr.spacer
-  .filtered-listing-section data-category="section1"
+hr.spacer
+.filtered-listing-section data-category="section1"
     aside
       h2 Section heading 1
       p Lorem ipsum dolor sit amet, vis te saepe nominavi appetere, ceteros lucilius te usu, no nam tota partiendo
@@ -79,11 +37,11 @@ div role="main"
           a href="#"
             ' Argumentum philosophia
             strong Inciderint consectetuer
-        li.category-e.item
+        li.category-c.item
           a href="#"
             ' Argumentum philosophia
             strong Mea sumo rebum ea
-        li.category-e.item
+        li.category-c.item
           a href="#"
             ' Argumentum philosophia
             strong Vim ut putant urbanitas
@@ -95,9 +53,16 @@ div role="main"
           a href="#"
             ' Errem qualisque
             strong Putant urbanitas
-
-  hr.spacer
-  .filtered-listing-section data-category="section2"
+        li.category-e.item
+          a href="#"
+            ' Errem qualisque
+            strong Ludus invenire pri
+        li.category-e.item
+          a href="#"
+            ' Errem qualisque
+            strong Putant urbanitas
+hr.spacer
+.filtered-listing-section data-category="section2"
     aside
       h2 Different Section
       p Ex mei noluisse percipit, ea unum ludus invenire pri. Ei duo aliquid eleifend, errem qualisque at pro. Qui et elit delicatissimi, periculis elaboraret referrentur eam id, graece tractatos ut est. Aperiri delenit sed ei, pro simul principes
@@ -106,7 +71,11 @@ div role="main"
         li.category-a.item
           a href="#"
             ' Nominavi appetere
-          strong Exerci Oportere
+            strong Dicant appellantur pro
+        li.category-a.item
+          a href="#"
+            ' Nominavi appetere
+            strong Periculis elaboraret referrentur
         li.category-b.item
           a href="#"
             ' Iudico corrumpit
@@ -119,17 +88,16 @@ div role="main"
           a href="#"
             ' Argumentum philosophia
             strong Vim ut putant urbanitas
-        li.category-c.item
-          a href="#"
-            ' Argumentum philosophia
-            strong Vim ut putant urbanitas
         li.category-d.item
           a href="#"
             ' Errem qualisque
-              strong Ludus invenire pri
-
-  hr.spacer
-  .filtered-listing-section data-category="section3"
+            strong Ludus invenire pri
+        li.category-e.item
+          a href="#"
+            ' Errem qualisque
+            strong Ludus invenire pri
+hr.spacer
+.filtered-listing-section data-category="section3"
     aside
       h2 Third Example Section
       p Ei nihil argumentum philosophia mel, commune accusata ius ex, homero scripserit an mea. Ne splendide deseruisse quo
@@ -167,10 +135,7 @@ div role="main"
           a href="#"
             ' Argumentum philosophia
             strong Vim ut putant urbanitas
-        li.category-d.item
+        li.category-e.item
           a href="#"
-            ' Errem qualisque
-            strong Putant urbanitas
-  hr.spacer
-
-  == javascript_tag 'isotope.pkgd.min'
+            ' Argumentum philosophia
+            strong Vim ut putant urbanitas

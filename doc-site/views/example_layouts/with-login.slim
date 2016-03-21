@@ -5,32 +5,31 @@
   form method="post" action="" data-validate=""
     fieldset
       div
-        label data-required="true" for="f-email"
-          ' Email:
+        label data-required="true" for="f-email" Email:
         input data-pattern="email" aria-required="true" id="f-email" name="f[email]" type="email" data-error="Please enter a valid email."
       div
-        label data-required="true" for="f-password"
-          ' Password:
+        label data-required="true" for="f-password" Password:
         input id="f-password" aria-required="true" name="f[password]" type="password" data-error="Please enter your password."
-
     footer
       input type="submit" value="Login"
 
-div role="main" class="with-login"
+.with-login role="main"
   header.image style="background-image:url(/assets/images/bg-banner-small.jpg);"
     .mid-align
       h1 About us
+
   #nav.tabbed-nav data-tabbed=""
     .full-width
-      nav.desktop-nav role="tablist"
+      nav role="tablist"
         a href="#welcome" role="tab" Welcome
         a href="#staff" role="tab" Our Staff
         a href="#contact" role="tab" Contact
+
     #welcome.tab role="tabpanel"
       section.with-figure
         h2.title Login demo page
         p This is a basic copy of the About Us template, but has a login form <a href="#{@settings[:current_url]}/source">built into the source</a>, in a class called <code>page-local-login</code>. You can mark up whatever is needed for the login form within this element. Note that the title of the login button in the header can be manipulated by using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The title will be "Login" by default, and there is a hard limit of 7 characters.
-        p <a href="/layouts/with-login-link">This layout</a> demonstrates a local login feature with link only (no modal), if you need to link away to a login page.
+        p If you need to link away to a login page, <a href="/layouts/with-login-link">this layout</a> demonstrates a local login feature with link only (no modal).
         figure.inset-right
           img src="/assets/images/about_prof_hinchcliff.jpg" alt="Professor Ken Hinchcliff"
           figcaption Professor Ken Hinchcliff
@@ -44,6 +43,7 @@ div role="main" class="with-login"
       hr.spacer
       p.center
         a.button-hero href="" Our Staff
+
     #staff.tab role="tabpanel"
       section
         ul.staff-listing-detailed
@@ -53,16 +53,14 @@ div role="main" class="with-login"
                 img src="http://placeimg.com/200/200/animals" alt=""
               strong Paul Tagell
               p Philosopher
-              p
-                em University of Melbourne
+              p: em University of Melbourne
           li
             a href=""
               .frame
                 img src="http://placeimg.com/200/200/animals?2" alt=""
               strong Neil Ang
               p Juggling Professional
-              p
-                em University of Melbourne
+              p: em University of Melbourne
         hr.spacer
         ul.staff-listing.min
           li
@@ -71,8 +69,7 @@ div role="main" class="with-login"
                 img src="http://placeimg.com/50/50/animals?2" alt=""
             .details
               a href="#" Jason Smith
-              |,
-              '
+              ' ,
               em Coffee Expert
           li
             .profile
@@ -80,17 +77,14 @@ div role="main" class="with-login"
                 img src="http://placeimg.com/50/50/animals?3" alt=""
             .details
               a href="#" Andi Weis
-              |,
-              '
+              ' ,
               em Can eat a lot
           li
             .profile
               .frame
-
             .details
               a href="#" Anne Shea
-              |,
-              '
+              ' ,
               em Chef
           li
             .profile
@@ -98,9 +92,9 @@ div role="main" class="with-login"
                 img src="http://placeimg.com/50/50/animals?5" alt=""
             .details
               a href="#" Carl Jackson
-              |,
-              '
+              ' ,
               em Crepe Expert
+
     #contact.tab role="tabpanel"
       section
         .contact-box
@@ -108,14 +102,12 @@ div role="main" class="with-login"
           dl
             dt Address
             dd
-              |Building 142, The University of Melbourne
+              | Building 142, The University of Melbourne
               br
-              |VIC 3010
+              | VIC 3010
             dt Email
-            dd
-              a href="mailto: info@unimelb.edu.au" info@unimelb.edu.au
+            dd: a href="mailto:info@unimelb.edu.au" info@unimelb.edu.au
             dt Phone
-            dd
-              a href="tel:61390355511" +61 3 9035 5511
+            dd: a href="tel:61390355511" +61 3 9035 5511
       section.fullwidth
         div.gmap__canvas data-grayscale="" data-latlng="-37.798535, 144.960605" data-pin="-37.798535, 144.960605"
