@@ -1,0 +1,18 @@
+p If the profile photo is not square, use a <strong>background image</strong>. With this technique, a <strong>fallback avatar</strong> is shown if the profile photo fails to load.
+
+pre: code.html
+  == convert_tags
+    erb:
+      <div class="profile-header__summary">
+        <div class="profile-header__photo" style="background-image: url(//findanexpert.unimelb.edu.au/pictures/thumbnail195234picturezzz);"></div>
+        <h1>Chaz Batrouney</h1>
+        <p><em>Web Producer</em></p>
+        <p>Project Services</p>
+      </div>
+
+<div class="profile-header__summary">
+  <div class="profile-header__photo" style="background-image: url(//findanexpert.unimelb.edu.au/pictures/thumbnail195234picturezzz);"></div>
+  <h1>Chaz Batrouney</h1>
+  <p><em>Web Producer</em></p>
+  <p>Project Services</p>
+</div>
