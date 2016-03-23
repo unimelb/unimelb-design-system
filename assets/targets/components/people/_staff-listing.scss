@@ -4,6 +4,7 @@
     @include leader(1);
     @include rem(max-width, $w-mid);
     @include trailer(1);
+    border: 0;
     border-collapse: collapse;
     display: table;
 
@@ -83,6 +84,7 @@
 
       td,
       th {
+        border: 0;
         display: block;
         width: 100%;
 

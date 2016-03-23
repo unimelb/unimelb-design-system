@@ -46,6 +46,16 @@
 .uomcontent [role="main"] table.mobile-friendly {
   border-collapse: collapse;
 
+  &.staff-listing {
+    border: 0;
+
+    tr td,
+    tr td:first-child,
+    tr th {
+      border: 0;
+    }
+  }
+
   tbody th {
     text-align: left;
   }
