@@ -26,6 +26,11 @@ module Helpers
   end
 
   def blank?
-      self !~ /\S/
+    self !~ /\S/
+  end
+
+  def convert_tags(block = '')
+    block = yield if block_given?
+    block.gsub('<', '&lt;').gsub('>', '&gt;')
   end
 end
