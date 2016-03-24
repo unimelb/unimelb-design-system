@@ -153,24 +153,24 @@ InjectNav.prototype.update = function() {
 
 
 InjectNav.prototype.handleSearchTrigger = function(e) {
-  this.props.root.addClass('search-active');
+  this.props.root.classList.add('search-active');
 
   var s = document.querySelector('.page-header-search');
-  s.addClass('active');
+  s.classList.add('active');
   s.querySelector('input[type="search"]').focus();
   s.querySelector('div.page-header-icon').addEventListener('click', this.handleSearchClose.bind(this));
 
-  this.props.blanket.el.addClass('white');
+  this.props.blanket.el.classList.add('white');
   this.props.blanket.el.addEventListener('click', this.handleSearchClose.bind(this));
 };
 
 InjectNav.prototype.handleSearchClose = function(e) {
-  this.props.blanket.el.removeClass('white');
+  this.props.blanket.el.classList.remove('white');
 
   var s = document.querySelector('.page-header-search');
-  s.removeClass('active');
+  s.classList.remove('active');
 
-  this.props.root.removeClass('search-active');
+  this.props.root.classList.remove('search-active');
 };
 
 InjectNav.prototype.renderGlobalSitemap = function() {

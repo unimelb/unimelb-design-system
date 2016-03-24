@@ -243,15 +243,21 @@ InjectHeader.prototype.renderHeaderTools = function() {
 
 InjectHeader.prototype.renderSearchBox = function() {
   var search = document.createElement('div');
-  search.addClass('page-header-search');
+  search.classList.add('page-header-search');
   search.innerHTML = `
-<form action="https://search.unimelb.edu.au" method="get">
+<form class="search" action="https://search.unimelb.edu.au" method="get">
   <fieldset>
-    <div class="inline">
-      <input aria-label="Search" aria-required="true" autocomplete="off" data-error="Please enter a keyword" name="query" id="header_q" placeholder="Search the University" type="search" /><button class="search-button" type="submit"><span>GO</span><svg class="icon" role="img"><use xlink:href="#icon-search"></use></svg></button>
+    <div class="inline attached">
+      <span class="fill">
+        <input aria-label="Search" aria-required="true" autocomplete="off" data-error="Please enter a keyword" name="query" id="header_q" placeholder="Search the University" type="search" />
+      </span>
+      <span>
+        <button class="inline-button" type="submit">
+          <span class="small icon--hide-label" data-icon="search">Go</span>
+        </button>
+      </span>
     </div>
   </fieldset>
-
   <div class="page-header-icon"><svg class="icon" role="img"><use xlink:href="#icon-close" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg> Close</div>
 </form>
 `;

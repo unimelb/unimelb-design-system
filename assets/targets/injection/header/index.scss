@@ -467,8 +467,21 @@
     position: static;
     width: auto;
 
-    .page-header.fixed:not(.floating) header {
-      height: 90px;
+    .page-header.fixed:not(.floating)  {
+      span {
+        height: 75px;
+        line-height: 1;
+
+        &[data-icon] {
+          height: 40px;
+          margin: 0;
+          width: 24px;
+        }
+      }
+
+      header {
+        height: 90px;
+      }
     }
   }
 }
@@ -503,41 +516,35 @@
       margin-top: 5px;
       vertical-align: top;
 
-      input[type="search"],
-      .search-button {
+      input[type="search"] {
         height: 40px;
+        margin-top: 3px;
       }
 
-      label {
-        color: $navy;
-        font-size: 9px;
-        position: absolute;
-        text-transform: uppercase;
-        top: -12px;
+      .inline-button {
+        @include rem(height, 40px);
+        @include rem(margin-top, 3px);
       }
 
-      .search-button {
-        margin-top: 0;
+      .attached span {
+        padding: 0;
+        vertical-align: middle;
+      }
+
+      .icon {
+        fill: $white;
+        vertical-align: top;
       }
     }
 
     @include breakpoint(desktop) {
+      float: right;
       padding-left: 20px;
+      width: auto;
 
       fieldset {
-        float: right;
-        margin-right: 20px;
-        margin-top: 20px;
+        margin-top: 5px;
         min-width: 400px;
-
-        input[type="search"],
-        .search-button {
-          height: 45px;
-        }
-
-        label {
-          top: -15px;
-        }
       }
     }
 
