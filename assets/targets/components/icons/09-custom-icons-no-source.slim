@@ -19,22 +19,23 @@ ol
 
 p Here is an example with the <code>security</code> <span class="small" data-icon="security"></span> icon:
 
-==syntax_highlight :html
-  erb:
-    <!-- Original SVG code -->
-    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
-      <path fill="#000000" d="M12,12H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,3.19M12,1L3,5V11C3,16.55 6.84,21.73 12,23C17.16,21.73 21,16.55 21,11V5L12,1Z" />
-    </svg>
-    
-    <!-- Modified code -->
-    <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
-      <symbol id="icon-security" viewBox="0 0 24 24">
-        <path d="M12,12H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,3.19M12,1L3,5V11C3,16.55 6.84,21.73 12,23C17.16,21.73 21,16.55 21,11V5L12,1Z" />
-      </symbol>
-    </svg>
-    
-    <!-- Example use of the icon -->
-    <span class="small" data-icon="security"></span>
+pre: code.html
+  ==convert_tags
+    erb:
+      <!-- Original SVG code -->
+      <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+        <path fill="#000000" d="M12,12H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,3.19M12,1L3,5V11C3,16.55 6.84,21.73 12,23C17.16,21.73 21,16.55 21,11V5L12,1Z" />
+      </svg>
+
+      <!-- Modified code -->
+      <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon-security" viewBox="0 0 24 24">
+          <path d="M12,12H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,3.19M12,1L3,5V11C3,16.55 6.84,21.73 12,23C17.16,21.73 21,16.55 21,11V5L12,1Z" />
+        </symbol>
+      </svg>
+
+      <!-- Example use of the icon -->
+      <span class="small" data-icon="security"></span>
 
 svg.hidden xmlns="http://www.w3.org/2000/svg"
   symbol id="icon-security" viewBox="0 0 24 24"
