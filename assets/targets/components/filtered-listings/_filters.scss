@@ -62,56 +62,51 @@
         display: block;
         padding-top: 0;
       }
-
-      div {
-        @include rem(padding-right, 45px);
-        float: left;
-      }
     }
 
     @include breakpoint(desktop) {
       float: left;
       width: 75%;
     }
+  }
 
-    input[type="checkbox"] + label,
-    input[type="checkbox"] + label span {
-      display: inline-block;
-      width: auto;
-    }
+  .filtered-listing-tag {
+    @include rem(padding-right, 45px);
+    float: left;
 
-    input[type="checkbox"] + label::after {
-      left: 3px;
-      top: 9px;
-    }
+    input[type="checkbox"] {
+      & + label {
+        @include rem(padding-left, 5px);
+        @include rem(padding-top, 5px);
+        display: inline-block;
+        width: auto;
 
-    input[type="checkbox"] + label span::before {
-      margin-left: 0;
-      top: 5px;
-    }
-
-    input[type="checkbox"] + label {
-      @include rem(padding-left, 5px);
-      @include rem(padding-top, 5px);
-
-      @include breakpoint(tablet) {
-        padding: 0;
-      }
-    }
-
-    input[type="checkbox"] + label span {
-      @include rem(padding-left, 25px);
-    }
-
-    .undergraduate,
-    .category-a {
-      input[type="checkbox"] + label {
-        span {
-          color: desaturate(lighten($green, 60%), 40%);
+        @include breakpoint(tablet) {
+          padding: 0;
         }
 
+        span {
+          @include rem(padding-left, 25px);
+          display: inline-block;
+          width: auto;
+
+          &::before {
+            background-color: currentColor;
+            margin-left: 0;
+            top: 5px;
+          }
+        }
+
+        &::after {
+          left: 3px;
+          top: 9px;
+        }
+      }
+
+      &[data-color="green"] + label {
+        color: $filtered-listing-green;
+
         span::before {
-          background-color: desaturate(lighten($green, 60%), 40%);
           border-color: darken($green, 5%);
         }
 
@@ -119,77 +114,54 @@
           border-color: $green;
         }
       }
-    }
 
-    .certificates_diplomas,
-    .n_award,
-    .category-b {
-      input[type="checkbox"] + label {
-        span {
-          color: $bronze;
-        }
+      &[data-color="bronze"] + label {
+        color: $filtered-listing-bronze;
 
         span::before {
-          background-color: $bronze;
-          border-color: darken($bronze, 20%);
+          border-color: darken($filtered-listing-bronze, 20%);
         }
 
         &::after {
-          border-color: darken($bronze, 40%);
+          border-color: darken($filtered-listing-bronze, 40%);
         }
       }
-    }
 
-    .coursework,
-    .category-c {
-      input[type="checkbox"] + label {
-        span {
-          color: $lightestblue;
-        }
+      &[data-color="silver"] + label {
+        color: $filtered-listing-silver;
 
         span::before {
-          background-color: darken($lightestblue, 5%);
-          border-color: darken($lightestblue, 10%);
+          background-color: darken($filtered-listing-silver, 5%);
+          border-color: darken($filtered-listing-silver, 10%);
         }
 
         &::after {
-          border-color: darken($lightestblue, 40%);
+          border-color: darken($filtered-listing-silver, 40%);
         }
       }
-    }
 
-    .phd,
-    .category-d {
-      input[type="checkbox"] + label {
-        span {
-          color: lighten($lightblue, 10%);
-        }
+      &[data-color="blue"] + label {
+        color: $filtered-listing-blue;
 
         span::before {
-          background-color: lighten($lightblue, 10%);
-          border-color: darken($lightblue, 10%);
+          background-color: lighten($filtered-listing-blue, 10%);
+          border-color: darken($filtered-listing-blue, 10%);
         }
 
         &::after {
-          border-color: darken($lightblue, 20%);
+          border-color: darken($filtered-listing-blue, 20%);
         }
       }
-    }
 
-    .research,
-    .category-e {
-      input[type="checkbox"] + label {
-        span {
-          color: $paleyellow;
-        }
+      &[data-color="yellow"] + label {
+        color: $filtered-listing-yellow;
 
         span::before {
-          background-color: $paleyellow;
-          border-color: darken($paleyellow, 10%);
+          border-color: darken($filtered-listing-yellow, 10%);
         }
 
         &::after {
-          border-color: darken($paleyellow, 60%);
+          border-color: darken($filtered-listing-yellow, 60%);
         }
       }
     }

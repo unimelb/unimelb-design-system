@@ -3,8 +3,7 @@
   @include rem(max-width, $w-lge);
   margin: 0 auto;
 
-  &.hide,
-  &.hide + hr.spacer {
+  &[hidden] + hr.spacer {
     display: none;
   }
 
@@ -53,22 +52,6 @@
   }
 }
 
-.item-grid {
-  width: 100%;
-
-  @include breakpoint($w-sml) {
-    width: 48%;
-  }
-
-  @include breakpoint($w-mid) {
-    width: 31.333%;
-  }
-
-  @include breakpoint(1100px) {
-    width: 24%;
-  }
-}
-
 .uomcontent .filtered-listing-grid {
   @extend %clearfix;
   left: 0;
@@ -83,7 +66,7 @@
     width: 100%;
   }
 
-  li {
+  .filtered-listing-item {
     @include adjust-font-size-to(14px);
     @include adjust-leading-to(1);
     @include rem(height, 110px);
@@ -111,31 +94,15 @@
       width: 24%;
     }
 
-    &.certificates_diplomas a,
-    &.n_award a,
-    &.category-b a {
-      background-color: $bronze;
-    }
-
-    &.coursework a,
-    &.category-c a {
-      background-color: $lightestblue;
-    }
-
-    &.phd a,
-    &.category-d a {
-      background-color: $lightblue;
-    }
-
-    &.research a,
-    &.category-e a {
-      background-color: $paleyellow;
-    }
+    &--green > a { background-color: $filtered-listing-green; }
+    &--bronze > a { background-color: $filtered-listing-bronze; }
+    &--silver > a { background-color: $filtered-listing-silver; }
+    &--blue > a { background-color: $filtered-listing-blue; }
+    &--yellow > a { background-color: $filtered-listing-yellow; }
   }
 
   a {
     @include rem(padding, 10px);
-    background-color: $palegreen;
     border: 2px solid $white;
     color: $darkgray;
     display: block;
@@ -159,6 +126,7 @@
       @include rem(max-width, 180px);
     }
   }
+
   strong {
     @include adjust-font-size-to(16px);
     display: block;
@@ -170,13 +138,13 @@
   margin: 0 auto;
   max-width: $w-sml;
 
-  li {
+  .filtered-listing-item {
     display: none;
     float: left;
     margin-right: 4%;
     width: 45%;
 
-    &.item {
+    &--visible {
       display: list-item;
     }
   }
