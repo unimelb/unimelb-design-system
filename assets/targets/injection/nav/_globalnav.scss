@@ -30,10 +30,6 @@
     }
   }
 
-  * {
-    @extend %normalise;
-  }
-
   a {
     @include rem(padding-top, 10px);
     color: $lightblue;
@@ -91,94 +87,23 @@
   }
 
   form {
-    @include rem(font-size, 16px);
-    @include rem(padding, 0 10px);
-    background-color: transparent;
-    clear: both;
-    color: $darkgray;
-    float: none;
-    line-height: 1.2;
-    margin: 0 auto;
-    max-width: 700px;
+    width: 100%;
     padding: 0 3%;
 
     @include breakpoint(desktop) {
-      @include rem(margin-top, 45px);
-      clear: none;
+      @include rem(margin-top, 30px);
+      @include rem(max-width, 700px);
       float: right;
       padding: 0;
       width: 60%;
     }
 
     fieldset {
-      @include rem(padding-right, 45px);
-      border: 0;
-      padding-bottom: 0;
-      padding-left: 0;
-      padding-top: 0;
-      position: relative;
-
       input[type="search"] {
-        @include rem(height, 45px);
-        @include rem(border-radius, 3px 0 0 3px);
-        @include rem(font-size, 20px);
-        @include rem(padding, 8px 10px);
-        appearance: none;
         background-color: $lightergray;
-        border: 1px solid darken($lightergray, 5%);
-        box-shadow: inset 0 1px 3px rgba($black, .15);
-        display: block;
-        font-family: $ff-sans;
-        font-weight: $light;
-        margin: 0;
-        max-width: 100%;
-        width: 100%;
-
-        &:hover {
-          border-color: $gray;
-        }
 
         &:focus {
           background-color: $white;
-          border-color: $borderblue;
-          border-right-color: transparent;
-          color: $black;
-          outline: 0;
-        }
-
-      }
-
-      .search-button {
-        @extend %imgreplace;
-        @include rem(border-radius, 0 3px 3px 0);
-        @include rem(height, 45px);
-        @include rem(margin, 0 0 15px);
-        @include rem(padding, 3px);
-        @include rem(width, 45px);
-        background-color: $white;
-        border: 0 none;
-        color: $darkblue;
-        cursor: pointer;
-        position: absolute;
-        right: 0;
-        // text-indent: -999em;
-        top: 0;
-        transition: color .2s, background-color .2s;
-
-        span {
-          display: none;
-        }
-
-        svg {
-          @include rem(height, 24px);
-          @include rem(width, 24px);
-          fill: currentColor;
-        }
-
-        &:hover, &:focus {
-          background-color: $highlight;
-          border-bottom-width: 0;
-          color: $white;
         }
       }
     }
@@ -289,41 +214,9 @@
 
 body.ie {
   .uomcontent [role="navigation"]#globalsitemap {
-//    display: none;
-//    z-index: 0;
-//
-//    &.active {
-//      right: 0;
-//      background: $navy;
-//      display: block;
-//      z-index: 100;
-//    }
-
     .logo * {
       border: 0 none;
       outline: 0;
-    }
-
-    form {
-      clear: none;
-      float: none;
-      margin: 30px auto;
-      padding: 0;
-      width: 600px;
-
-      fieldset .search-button {
-        border-left: 1px solid $lightergray;
-        color: $black;
-        text-indent: 0;
-
-        * {
-          display: none;
-        }
-
-        span {
-          display: block;
-        }
-      }
     }
 
     .col-3 {
@@ -368,11 +261,6 @@ body.ie8 {
 
 body.ie9 {
   .uomcontent [role="navigation"]#globalsitemap {
-    form fieldset .inline .search-button {
-      text-indent: -999em;
-      width: 40px;
-    }
-
     ul.quicklinks a {
       color: $white;
     }

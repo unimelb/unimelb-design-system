@@ -268,8 +268,7 @@
       width: 100%;
     }
 
-    input[type="image"],
-    .search-button {
+    input[type="image"] {
       @extend %inlinebutton;
       @include rem(border-radius, 0 3px 3px 0);
       @include rem(margin, 15px 0 0);
@@ -443,7 +442,6 @@
     color: $black;
   }
 
-  .search-button span,
   label {
     display: inline;
   }

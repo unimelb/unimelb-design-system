@@ -4,14 +4,14 @@ div role="main"
   header
     form.search action="http://search-au.funnelback.com/s/search.html" method="get"
       fieldset
-        .inline
-          input type="hidden" name="collection" value="unimelb-researchers"
-          input aria-required="true" placeholder="Search" name="query" type="search" data-error="Please enter a keyword" aria-label="Search" autocomplete="off"
-          button type="submit" class="search-button"
-            span Go
-            svg class="icon" role="img"
-              use xlink:href="#icon-search"
-  
+        input type="hidden" name="collection" value="unimelb-researchers"
+        .inline.attached
+          span.fill
+            input aria-required="true" placeholder="Search" name="query" type="search" data-error="Please enter a keyword" aria-label="Search" autocomplete="off"
+          span
+            button.inline-button type="submit"
+              span.small.icon--hide-label data-icon="search" Go
+
   .profile-header
     .profile-header__summary
       img.profile-header__photo src="/assets/images/chaz.jpg" alt="" width="150" height="150"
@@ -45,7 +45,7 @@ div role="main"
         li
           em> Campus:
           | Parkville
-  
+
   section
     h2 Supervisor
     ol.search-results
@@ -130,5 +130,5 @@ div role="main"
           .person__contact
             p.person__phone: a href="tel:+61383440346" +61 3 8344 0346
             p.person__email: a href="mailto:chaz-batrouney@unimelb.edu.au" chaz-batrouney@unimelb.edu.au
-    
+
     p.alert-info Incorrect or missing information? Read how you can update your details.
