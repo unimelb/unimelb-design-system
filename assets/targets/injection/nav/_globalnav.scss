@@ -21,10 +21,10 @@
     transform: translateX(-100%);
     –webkit-overflow-scrolling: touch;
   }
-  
+
   @include breakpoint(tablet) {
     @include rem(padding, 0 130px 30px 40px);
-    
+
     &.active {
       transform: translateX(-100%) translateX(90px);
     }
@@ -133,24 +133,6 @@
         margin: 0;
         max-width: 100%;
         width: 100%;
-
-        &:-moz-placeholder { // /* Mozilla Firefox 4 to 18 */
-          color: $midgray;
-          opacity: 1;
-        }
-
-        &::-moz-placeholder { // /* Mozilla Firefox 19+ */
-          color: $midgray;
-          opacity: 1;
-        }
-
-        &:-ms-input-placeholder { // /* Internet Explorer 10+ */
-          color: $midgray;
-        }
-
-        &::-webkit-input-placeholder { // /* WebKit browsers */
-          color: $midgray;
-        }
 
         &:hover {
           border-color: $gray;
