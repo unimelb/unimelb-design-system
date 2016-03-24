@@ -63,24 +63,24 @@ ValidateForm.prototype.processField = function(field) {
   if (req && req == "true") {
     if (field.tagName == 'SELECT') {
       if (field.value!="-1") {
-        this.setValid(field);
+        this.toggleValid(field, true);
       } else {
-        this.setInvalid(field);
+        this.toggleValid(field, false);
         this.props.invalid++;
       }
     } else if (field.getAttribute('type') == 'checkbox') {
       if ((MSIE_version < 9 && field.parentNode.parentNode.countSelector('.on') > 0) ||
         (this.el.countSelector('[name="' + field.getAttribute('name') + '"]:checked') > 0)) {
-        this.setValid(field);
+        this.toggleValid(field, true);
       } else {
-        this.setInvalid(field);
+        this.toggleValid(field, false);
         this.props.invalid++;
       }
     } else {
       if (field.value.length > 0) {
-        this.setValid(field);
+        this.toggleValid(field, true);
       } else {
-        this.setInvalid(field);
+        this.toggleValid(field, false);
         this.props.invalid++;
       }
     }
@@ -94,9 +94,9 @@ ValidateForm.prototype.processField = function(field) {
     }
 
     if (re.test(field.value)) {
-      this.setValid(field);
+      this.toggleValid(field, true);
     } else {
-      this.setInvalid(field);
+      this.toggleValid(field, false);
       this.props.invalid++;
     }
   }
@@ -127,32 +127,12 @@ ValidateForm.prototype.setupMessage = function(field) {
   }
 };
 
-ValidateForm.prototype.invalid = function(field) {
-  if (field.parentNode.hasClass('invalid')) {
-    // Flicker
-    window.setTimeout(function() {
-      this.setValid(field);
-      window.setTimeout(function() { this.setInvalid(field); }, 0);
-    }, 100);
-
-  } else {
-    this.setInvalid(field);
-  }
-};
-
-ValidateForm.prototype.setInvalid = function(field) {
+ValidateForm.prototype.toggleValid = function(field, isValid) {
   var parent = field.parentNode;
   if (field.nodeName == 'SELECT')
-    parent.parentNode.addClass('invalid');
-  parent.addClass('invalid');
-  field.addClass('invalid');
-};
-
-ValidateForm.prototype.setValid = function(field) {
-  if (field.nodeName == 'SELECT')
-    field.parentNode.parentNode.removeClass('invalid');
-  field.parentNode.removeClass('invalid');
-  field.removeClass('invalid');
+    parent.parentNode.classList.toggle('invalid', !isValid);
+  parent.classList.toggle('invalid', !isValid);
+  field.classList.toggle('invalid', !isValid);
 };
 
 module.exports = ValidateForm;

@@ -20,13 +20,13 @@ InpageNavigation.prototype.delegateScroll = function(e) {
     var target = e.target.getAttribute('href');
 
     if (target) {
-      if (target != "#" && target != "#sitemap") {
+      if (target != '#' && target != '#sitemap') {
         e.preventDefault();
         target = document.querySelector(target);
 
         var tabbed = findUp(e.target, 'data-tabbed');
-        if (tabbed && e.target.parentNode.parentNode.hasClass("jump-navigation") === false) {
-          if (tabbed.countSelector('.tab#' + target.id + '') === 1)
+        if (tabbed && !e.target.parentNode.parentNode.classList.contains('jump-navigation')) {
+          if (tabbed.countSelector('.tab#' + target.id) === 1)
             target = tabbed;
         }
 

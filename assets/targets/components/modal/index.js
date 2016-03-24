@@ -47,7 +47,7 @@ Modal.prototype.setupCloseButton = function() {
   var close = this.props.targetElement.querySelector('.modal__close');
   if (!close) {
     close = document.createElement('a');
-    close.addClass('modal__close');
+    close.className = 'modal__close';
     close.innerText = 'Close';
     this.props.targetElement.insertBefore(close, this.props.targetElement.firstChild);
 
@@ -80,7 +80,7 @@ Modal.prototype.activateDialog = function(e) {
     this.props.targetElement.style.top = (top - viewport.top) + 'px';
   }
 
-  this.props.targetElement.addClass('on');
+  this.props.targetElement.classList.add('on');
   this.props.blanketElement.show();
 };
 
@@ -91,7 +91,7 @@ Modal.prototype.hideAllDialogs = function(e) {
   e.preventDefault();
 
   for (var recs=document.querySelectorAll('.modal__dialog'), i=recs.length - 1; i >= 0; i--) {
-    recs[i].removeClass('on');
+    recs[i].classList.remove('on');
   }
 
   this.props.blanketElement.hide();

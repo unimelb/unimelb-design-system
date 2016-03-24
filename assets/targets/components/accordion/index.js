@@ -46,19 +46,19 @@ Accordion.prototype.handleClick = function(e) {
   if (container && container.getAttribute('data-single-focus') === '') {
     for (var recs=container.querySelectorAll('.accordion__visible'), i=recs.length - 1; i >= 0; i--) {
       if (recs[i] !== this.props.container) {
-        recs[i].removeClass('accordion__visible');
+        recs[i].classList.remove('accordion__visible');
       }
     }
   }
 
-  this.props.container.toggleClass('accordion__visible');
+  this.props.container.classList.toggle('accordion__visible');
 };
 
 Accordion.prototype.setupCloseButton = function() {
   var close = this.props.container.querySelector('.accordion__close');
   if (!close) {
     close = document.createElement('a');
-    close.addClass('accordion__close');
+    close.className = 'accordion__close';
 
     if (this.props.hidden.countSelector('.accordion__close') === 0) {
       if (this.props.hidden.nodeName == 'TR') {
@@ -73,7 +73,7 @@ Accordion.prototype.setupCloseButton = function() {
 
     close.addEventListener('click', function(e){
       e.preventDefault();
-      this.props.container.toggleClass('accordion__visible');
+      this.props.container.classList.toggle('accordion__visible');
     }.bind(this));
   }
 };

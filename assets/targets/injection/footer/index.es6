@@ -17,7 +17,7 @@ function InjectFooter(props) {
 
 InjectFooter.prototype.renderFooter = function() {
   this.el = document.createElement('div');
-  this.el.addClass('page-footer');
+  this.el.className = 'page-footer';
   this.el.innerHTML = `
 <footer>
   <a class="unimelb-lge" href="https://unimelb.edu.au">

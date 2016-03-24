@@ -72,23 +72,17 @@ JumpNav.prototype.trackProgress = function() {
   for (var pos in this.props.items) {
     if (this.props.outer.scrollTop + this.props.arbitraryOffset >= pos) {
       for (var k in this.props.items) {
-        this.props.items[k].removeClass('current');
+        this.props.items[k].classList.toggle('current', k === pos);
       }
-      this.props.items[pos].addClass('current');
     } else {
-      this.props.items[pos].removeClass('current');
+      this.props.items[pos].classList.remove('current');
     }
   }
 };
 
 JumpNav.prototype.buildNavMenu = function() {
   this.el = document.createElement('ul');
-
-  var className = 'jump-navigation';
-  if (document.countSelector('.indexnav') == 1) {
-    className = 'index-navigation';
-  }
-  this.el.addClass(className);
+  this.el.className = (document.countSelector('.indexnav') > 0 ? 'index-navigation' : 'jump-navigation');
   this.el.innerHTML = '<li>On this page</li>';
 
   this.props.items = {};
@@ -103,11 +97,11 @@ JumpNav.prototype.buildNavMenu = function() {
   }
 
   if (document.countSelector('.floating') > 0)
-    this.el.addClass('floating');
+    this.el.classList.add('floating');
 
   if (!this.props.header) {
-    this.el.addClass('headless');
-    this.el.addClass('fixed');
+    this.el.classList.add('headless');
+    this.el.classList.add('fixed');
   }
 
   if (this.props.root.countSelector('.tab .with-aside aside') > 0) {
@@ -126,7 +120,7 @@ JumpNav.prototype.buildNavMenu = function() {
     } else {
       var refElem = this.props.root.findFirstElementChild();
       // If first element is `.headerless`, take the next sibling so that the jumpnav appears below the blue bar on mobile and tablet
-      if (refElem.hasClass('headerless'))
+      if (refElem.classList.contains('headerless'))
         refElem = refElem.findNextElementSibling();
       this.props.root.insertBefore(this.el, refElem);
     }
@@ -134,9 +128,9 @@ JumpNav.prototype.buildNavMenu = function() {
 
   if (!this.props.topmode) {
     if (document.countSelector('.indexnav') == 1) {
-      document.body.addClass('indexnav-active');
+      document.body.classList.add('indexnav-active');
     } else {
-      document.body.addClass('jumpnav-active');
+      document.body.classList.add('jumpnav-active');
     }
 
     this.initCalcs();
@@ -154,7 +148,7 @@ JumpNav.prototype.initCalcs = function() {
     var headerOffset =  (this.props.header ? this.props.header.offsetHeight: 0);
     this.props.fixPoint = this.props.root.offsetTop + headerOffset - 20;
 
-    if (this.props.root.hasClass('floating'))
+    if (this.props.root.classList.contains('floating'))
       this.props.fixPoint = this.props.fixPoint + 35;
 
     // Does the page include an inner footer
@@ -178,7 +172,7 @@ JumpNav.prototype.initCalcs = function() {
     // 10px margin-top
     this.props.footerOffset = (innerFooterHeight + outerFooterHeight + 10) + 'px';
 
-    if (this.el.hasClass('fixed')) {
+    if (this.el.classList.contains('fixed')) {
       this.el.style.bottom = this.props.footerOffset;
     } else {
       this.el.style.bottom = '';
@@ -191,27 +185,23 @@ JumpNav.prototype.initCalcs = function() {
 // Will now check if a header is present, otherwise leave fixed
 JumpNav.prototype.setFixed = function() {
   if (this.props.outer.scrollTop > this.props.fixPoint) {
-    this.el.removeClass('headless');
-    this.el.addClass('fixed');
+    this.el.classList.remove('headless');
+    this.el.classList.add('fixed');
     this.el.style.bottom = this.props.footerOffset;
 
   } else {
     if (this.props.header) {
       this.el.style.bottom = '';
-      this.el.removeClass('fixed');
+      this.el.classList.remove('fixed');
 
     } else {
-      this.el.addClass('headless');
+      this.el.classList.add('headless');
     }
   }
 };
 
 JumpNav.prototype.setEndpoint = function() {
-  if (this.props.outer.scrollTop > this.props.stickyEnd) {
-    this.el.addClass('endpoint');
-  } else {
-    this.el.removeClass('endpoint');
-  }
+  this.el.classList.toggle('endpoint', this.props.outer.scrollTop > this.props.stickyEnd);
 };
 
 module.exports = JumpNav;

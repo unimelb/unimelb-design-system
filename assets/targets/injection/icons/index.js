@@ -14,8 +14,8 @@ function Icons() {
         page = document.querySelector('.uomcontent');
 
     el = document.createElement('div');
-    el.addClass('hidden');
     el.id = 'iconset';
+    el.className = 'hidden';
     el.innerHTML = new Set().render();
 
     page.appendChild(el);

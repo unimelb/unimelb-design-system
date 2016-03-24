@@ -143,34 +143,34 @@ InjectNav.prototype.update = function() {
   var both = activeNav.local && activeNav.global;
 
   this.props.blanket.toggle(either);
-  this.props.globalNav.toggleClass('active', activeNav.global);
+  this.props.globalNav.classList.toggle('active', activeNav.global);
 
   if (this.props.localNav) {
-    this.props.localNav.toggleClass('active', activeNav.local && !activeNav.global);
-    this.props.sitemapTrigger.toggleClass('active', activeNav.local);
+    this.props.localNav.classList.toggle('active', activeNav.local && !activeNav.global);
+    this.props.sitemapTrigger.classList.toggle('active', activeNav.local);
   }
 };
 
 
 InjectNav.prototype.handleSearchTrigger = function(e) {
-  this.props.root.addClass('search-active');
+  this.props.root.classList.add('search-active');
 
   var s = document.querySelector('.page-header-search');
-  s.addClass('active');
+  s.classList.add('active');
   s.querySelector('input[type="search"]').focus();
   s.querySelector('div.page-header-icon').addEventListener('click', this.handleSearchClose.bind(this));
 
-  this.props.blanket.el.addClass('white');
+  this.props.blanket.el.classList.add('white');
   this.props.blanket.el.addEventListener('click', this.handleSearchClose.bind(this));
 };
 
 InjectNav.prototype.handleSearchClose = function(e) {
-  this.props.blanket.el.removeClass('white');
+  this.props.blanket.el.classList.remove('white');
 
   var s = document.querySelector('.page-header-search');
-  s.removeClass('active');
+  s.classList.remove('active');
 
-  this.props.root.removeClass('search-active');
+  this.props.root.classList.remove('search-active');
 };
 
 InjectNav.prototype.renderGlobalSitemap = function() {

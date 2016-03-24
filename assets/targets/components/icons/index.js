@@ -44,7 +44,7 @@ IconHelper.prototype.saveChildren = function() {
 
 IconHelper.prototype.restoreChildren = function() {
   var label = document.createElement('div');
-  label.addClass('icon-label');
+  label.className = 'icon-label';
   for (var recs=this.props.inner, i=recs.length - 1; i >= 0; i--)
     label.appendChild(recs[i]);
 
