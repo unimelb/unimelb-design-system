@@ -1,6 +1,7 @@
 // Deps
 require("../../shared/shims");
 require("./gtm");
+require("./tealium");
 
 window.UOMloadInjection = function() {
   "use strict";
