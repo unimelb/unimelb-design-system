@@ -1,0 +1,116 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Getting Started | Web.Unimelb</title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><script src="/assets/injection.js"></script><link rel="stylesheet" href="/assets/injection.css"><link rel="stylesheet" href="/assets/components.css"><link rel="stylesheet" href="/assets/docs.css"><link rel="stylesheet" href="/assets/stylesheets/syntax.css"><script src="/assets/components.js"></script></head><body><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb v3.9</span></a><meta content="1" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Getting Started"><span itemprop="name">Getting Started</span></a><meta content="2" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><div class="jumpnav"></div><h1 class="aligned-title">Design System Usage Instructions</h1><section class="lead left"><p>Creating a new site using the Design System requires setting up a basic page markup and then using either the <a href="/layouts">example layouts</a> or <a href="/components">components</a> to place component inside the <code>div role="main"</code>.</p></section><p>Demonstration examples of this code can be found for many different page types in our <a href="/layouts">example layouts directory</a> similar to these:</p><hr /><section><h2 class="subtitle" id="document-structure">Document structure</h2><p>To use the design system, add the following three resource includes into the <code>head</code> section of your page:</p></section><div class="highlight"><pre><span class="c">&lt;!--[if lt IE 9]&gt;&lt;script src=&quot;//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;&lt;![endif]--&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//d2h9b02ioca40d.cloudfront.net/v3.9/uom.css&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//d2h9b02ioca40d.cloudfront.net/v3.9/uom.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div><section><p>The first provides a universal <abbr title="Reproduce modern functionality in older browser">polyfill</abbr> for styling on HTML5 semantic elements such as <code>header</code>, <code>nav</code> and <code>section</code> We use these elements as selectors in the design system stylesheet.</p><p>At a bare minimum, you should include the following markup in your page:</p></section><div class="highlight"><pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;IE=edge&quot;</span> <span class="na">http-equiv=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;title&gt;</span> (any page title) <span class="nt">&lt;/title&gt;</span>
+
+  <span class="c">&lt;!--[if lt IE 9]&gt;&lt;script src=&quot;//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js&quot;&gt;&lt;/script&gt;&lt;![endif]--&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href=</span><span class="s">&quot;//d2h9b02ioca40d.cloudfront.net/v3.9/uom.css&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;//d2h9b02ioca40d.cloudfront.net/v3.9/uom.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;uomcontent&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-inner&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+
+        (your website markup goes here)
+
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div><hr /><section><h2 id="local-nav">Local nav</h2><p>To integrate a local nav into your site, include the following structure after the <code>div role="main"</code>.</p><p>For nested navigation, use a <code>div class="inner"</code> as demonstrated below.</p></section><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;no-js&quot;</span> <span class="na">id=</span><span class="s">&quot;sitemap&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h2&gt;</span>Section title<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;ul&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/another&quot;</span><span class="nt">&gt;</span>Link to another page<span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/sub-section&quot;</span><span class="nt">&gt;</span>Sub-section<span class="nt">&lt;/a&gt;</span>
+
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;inner&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/sub-section/a-page&quot;</span><span class="nt">&gt;</span>A page in the sub-section<span class="nt">&lt;/a&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/sub-section/another&quot;</span><span class="nt">&gt;</span>Another page<span class="nt">&lt;/a&gt;</span>
+
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;inner&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;ul&gt;</span>
+                <span class="nt">&lt;li&gt;</span>
+                  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/sub-section/another/another&quot;</span><span class="nt">&gt;</span>3rd level<span class="nt">&lt;/a&gt;</span>
+                <span class="nt">&lt;/li&gt;</span>
+              <span class="nt">&lt;/ul&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+
+          <span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;/last-one&quot;</span><span class="nt">&gt;</span>Last one<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div><section><p>In situations where the site does not sit at the root of its domain (ie. within a subdirectory), the site root can be set to any arbitrary value by adding a <code>data-absolute-root</code> attribute to the local nav div. This value will be inserted before any nav links, so make sure you use relative links, eg.</p></section><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;no-js&quot;</span> <span class="na">id=</span><span class="s">&quot;sitemap&quot;</span> <span class="na">role=</span><span class="s">&quot;navigation&quot;</span> <span class="na">data-absolute-root=</span><span class="s">&quot;/sitehome&quot;</span><span class="nt">&gt;</span>
+...
+<span class="nt">&lt;/div&gt;</span>
+</pre></div><section><p>This is part of a much larger discussion, but please be aware that the local navigation only displays <strong>end pages</strong> in the structure, so in the example listed above there is no direct link to <code>/sub-section</code> or <code>/sub-section/another</code>. This is intentional, and in most circumstances this type of page ("landing" page) should only contain a basic list of links to its children, eg. <a href="/components">the index of components on this site</a>.</p></section><hr /><section><h2 id="breadcrumbs">Breadcrumbs</h2><p>We use <a href="http://schema.org/itemListElement">schema.org microdata for breadcrumbs</a> to enhance machine understanding. To use the breadcrumb navigation on your site, include the following markup structure before the <code>div role="main"</code>:</p></section><div class="highlight"><pre><span class="nt">&lt;ol</span> <span class="na">class=</span><span class="s">&quot;page-local-history&quot;</span> <span class="na">itemscope=</span><span class="s">&quot;&quot;</span> <span class="na">itemtype=</span><span class="s">&quot;http://schema.org/BreadcrumbList&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;root&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;itemListElement&quot;</span> <span class="na">itemscope=</span><span class="s">&quot;&quot;</span> <span class="na">itemtype=</span><span class="s">&quot;http://schema.org/ListItem&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span> <span class="na">title=</span><span class="s">&quot;Website Home&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;item&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">itemprop=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Website Home<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;1&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;position&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">itemprop=</span><span class="s">&quot;itemListElement&quot;</span> <span class="na">itemscope=</span><span class="s">&quot;&quot;</span> <span class="na">itemtype=</span><span class="s">&quot;http://schema.org/ListItem&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;/layouts&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;item&quot;</span> <span class="na">title=</span><span class="s">&quot;Layouts&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">itemprop=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Layouts<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;2&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;position&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;last&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;itemListElement&quot;</span> <span class="na">itemscope=</span><span class="s">&quot;&quot;</span> <span class="na">itemtype=</span><span class="s">&quot;http://schema.org/ListItem&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;item&quot;</span> <span class="na">title=</span><span class="s">&quot;Source&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">itemprop=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Source<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">content=</span><span class="s">&quot;3&quot;</span> <span class="na">itemprop=</span><span class="s">&quot;position&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ol&gt;</span>
+</pre></div><section><p>Please note this replaces the previous markup used in v1.0 and earlier.</p><p>Each <code>meta itemprop="position"</code> should be numbered consecutively, and remember to duplicate the link text in the parent link <code>title</code>.</p><p>The mobile breadcrumb selector is generated from the above markup (you can try it <a href="#top">on this page</a> at less than 768px width).</p></section><hr /><section><h2 id="homepage">Homepage alternate</h2><p>Include a <code>div class="floating"</code> *before* the <code>div role="main"</code> (and note that this page layout cannot include a breadcrumb as well)</p><p>Additionally, a header element must be included within the <code>div role="main"</code>. Inline styles have been added to the header in the example below to illustrate how it should be styled in your local styles - the css provided in the full design system already has this defined.</p></section><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;floating&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header</span> <span class="na">style=</span><span class="s">&quot;background-image:url(//d2h9b02ioca40d.cloudfront.net/templates/0.1/components/globals/bg-banner-2edd2279a97e316344e7831983ef6868.jpg);background-size:cover;min-height:300px&quot;</span><span class="nt">&gt;&lt;/header&gt;</span>
+
+  (your website markup goes here)
+
+<span class="nt">&lt;/div&gt;</span>
+</pre></div><section><p>Occasionally, a site will need to co-brand the logo space - this can be done by adding a special link inside the <code>div class="floating"</code> as shown in the example below:</p></section><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;floating&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;page-header-home&quot;</span> <span class="na">href=</span><span class="s">&quot;/&quot;</span><span class="nt">&gt;</span>Faculty of Veterinary and Agricultural Sciences<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div><section><p><img src="/assets/images/fvas-header.jpg" alt=""></p></section><hr /><section><h2 id="login">Login section</h2><h3>Login modal dialog (popup box)</h3><p>To include a login section in the page header, add a code block as with the breadcrumbs above, but this time include a <code>div class="page-local-login"</code> before the <code>div role="main"</code>. Everything inside this div will be moved to a modal window, so you can use the login markup you require:</p></section><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-local-login&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>
+    Login
+  <span class="nt">&lt;/h1&gt;</span>
+  <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">data-validate=</span><span class="s">&quot;&quot;</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;fieldset&gt;</span>
+      <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">data-required=</span><span class="s">&quot;true&quot;</span> <span class="na">for=</span><span class="s">&quot;f-email&quot;</span><span class="nt">&gt;</span>Email: <span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please enter a valid email.&quot;</span> <span class="na">data-pattern=</span><span class="s">&quot;email&quot;</span> <span class="na">id=</span><span class="s">&quot;f-email&quot;</span> <span class="na">name=</span><span class="s">&quot;f[email]&quot;</span> <span class="na">type=</span><span class="s">&quot;email&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div&gt;</span>
+        <span class="nt">&lt;label</span> <span class="na">data-required=</span><span class="s">&quot;true&quot;</span> <span class="na">for=</span><span class="s">&quot;f-password&quot;</span><span class="nt">&gt;</span>Password: <span class="nt">&lt;/label&gt;&lt;input</span> <span class="na">aria-required=</span><span class="s">&quot;true&quot;</span> <span class="na">data-error=</span><span class="s">&quot;Please enter your password.&quot;</span> <span class="na">id=</span><span class="s">&quot;f-password&quot;</span> <span class="na">name=</span><span class="s">&quot;f[password]&quot;</span> <span class="na">type=</span><span class="s">&quot;password&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/fieldset&gt;</span>
+    <span class="nt">&lt;footer&gt;</span>
+      <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Login&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/footer&gt;</span>
+  <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div><section><p>You will also need to add a class <code>with-login</code> to the main section below it:</p></section><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">&quot;main&quot;</span> <span class="na">class=</span><span class="s">&quot;with-login&quot;</span><span class="nt">&gt;</span>
+  ...
+</pre></div><section><p>An example of this can be seen on <a href="/layouts/with-login">this example layout</a>. Note that the title of the login button in the header can be manipulated by using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The title will be "Login" by default, and there is a hard limit of 7 characters to protect the header design.</p><h3>Login link</h3><p>If your login requires a direct link to a known page instead, you can leave the <code>div class="page-local-login"</code> empty and add a <code>data-href</code> attribute with the link location. This method is demonstrated on <a href="/layouts/with-login-link">this example layout</a> instead.</p></section><div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;page-local-login&quot;</span> <span class="na">data-href=</span><span class="s">&quot;/login&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</pre></div><footer></footer></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
