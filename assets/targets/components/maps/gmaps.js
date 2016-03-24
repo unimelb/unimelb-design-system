@@ -16,11 +16,10 @@ function GMaps(el, props) {
   if (this.el.hasAttribute('data-latlng')) {
     // ES6 ;_; [this.props.lat, this.props.lng] = this.el.getAttribute('data-latlng').split(',');
     var ll = this.el.getAttribute('data-latlng').split(',');
-    this.props.lat = ll[0];
-    this.props.lng = ll[1];
+    this.props.latlng = new google.maps.LatLng(ll[0], ll[1]);
 
     this.props.options = {
-      center:      new google.maps.LatLng(this.props.lat, this.props.lng),
+      center:      this.props.latlng,
       zoom:        this.props.zoom,
       scrollwheel: false,
       mapTypeId:   google.maps.MapTypeId.ROADMAP
@@ -35,7 +34,8 @@ function GMaps(el, props) {
 GMaps.prototype.draw = function() {
   this.el.style.width = this.props.width + 'px';
   this.el.style.height = this.props.height + 'px';
-  this.props.map = new google.maps.Map(this.el, this.props.options);
+
+  this.maps = new google.maps.Map(this.el, this.props.options);
 
   if (this.props.pins) {
     this.markers();
@@ -81,8 +81,8 @@ GMaps.prototype.stylemap = function() {
     ]
   }];
   var styledMap = new google.maps.StyledMapType(styleOptions, { name: 'Styled Map' });
-  this.props.map.mapTypes.set('map_style', styledMap);
-  this.props.map.setMapTypeId('map_style');
+  this.maps.mapTypes.set('map_style', styledMap);
+  this.maps.setMapTypeId('map_style');
 };
 
 module.exports = GMaps;

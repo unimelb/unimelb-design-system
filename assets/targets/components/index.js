@@ -73,7 +73,7 @@ window.UOMloadComponents = function() {
   "use strict";
 
   var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect, Flash,
-    ImageGallery, imagesLoaded, slingshot, LMaps, style, script;
+    ImageGallery, imagesLoaded, slingshot, style, script;
 
   window.UOMbind('accordion');
   window.UOMbind('modal');
@@ -155,26 +155,31 @@ window.UOMloadComponents = function() {
 
     recs = document.querySelectorAll('[data-leaflet-latlng]');
     if (recs.length > 0) {
-      loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
-        style = document.createElement('link');
-        style.rel = 'stylesheet';
-        style.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
-        document.body.appendChild(style);
-
-        LMaps = require("./maps/lmaps");
-        for (i=recs.length - 1; i >= 0; i--) {
-          new LMaps(recs[i], {});
-        }
-      });
+      if (typeof(L) === 'undefined') {
+        loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
+          style = document.createElement('link');
+          style.rel = 'stylesheet';
+          style.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
+          document.body.appendChild(style);
+          window.bound_lmaps = [];
+          lmaps_loaded_go(recs);
+        });
+      } else {
+        lmaps_loaded_go(recs);
+      }
     }
   }
 
   // GMaps will load via callback
   if (document.countSelector('[data-latlng],[data-address]') > 0) {
-    script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://maps.googleapis.com/maps/api/js?callback=maps_loaded_go";
-    document.body.appendChild(script);
+    if (typeof(google) === 'undefined') {
+      script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://maps.googleapis.com/maps/api/js?callback=maps_loaded_go";
+      document.body.appendChild(script);
+    } else {
+      maps_loaded_go();
+    }
   }
 };
 
@@ -182,7 +187,14 @@ window.UOMloadComponents = function() {
 window.maps_loaded_go = function() {
   var GMaps = require("./maps/gmaps");
   for (var recs = document.querySelectorAll('[data-latlng],[data-address]'), i=recs.length - 1; i >= 0; i--)
-    new GMaps(recs[i], {});
+    new GMaps(recs[i], {counter: i});
+};
+
+// LMaps callback
+window.lmaps_loaded_go = function(recs) {
+  var LMaps = require("./maps/lmaps");
+  for (var i=recs.length - 1; i >= 0; i--)
+    new LMaps(recs[i], {counter: i});
 };
 
 // Execute when ready
