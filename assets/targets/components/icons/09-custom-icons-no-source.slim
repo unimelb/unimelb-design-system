@@ -1,0 +1,41 @@
+p Icons contribute significantly to the weight of the design system, and therefore of every website that uses it. This is the reason why the number of <a href="#icon-list">icons available</a> is relatively small, and why we chose to add icons for a very limited number of social networks and services only (e.g. Facebook, LinkedIn, etc.)
+
+p With this in mind, if you still believe that an icon is worth adding to the design system, <a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">let us know</a>. For consistency reasons, we will only consider icons taken from this <a href="https://materialdesignicons.com/">community-contributed set of Material Design icons</a>.
+
+p If you <em>absolutely</em> need an icon, and none of the ones included in the design system suits your needs, follow the steps below:
+ol
+  li Pick an icon from the <a href="https://materialdesignicons.com/">Material Design set</a>.
+  li In the icon's lightbox, select <em>View SVG</em> and copy the code in the first text area.
+  li
+    | Paste the code on your page (anywhere inside the <code>body</code> element), and change it as follows:
+    ul
+      li Remove the <code>style</code> attribute from the <code>svg</code> tag.
+      li Add the following attributes to the <code>svg</code> tag: <code>class="hidden" xmlns="http://www.w3.org/2000/svg"</code>.
+      li Wrap the whole content of the <code>svg</code> element with a <code>symbol</code> element.
+      li Move the <code>viewBox</code> attribute from the <code>svg</code> element to the <code>symbol</code> element.
+      li Give the <code>symbol</code> element an ID of the form <code>icon-*name*</code>, where <code>*name*</code> is the name of the icon (ensure that it doesn't conflict with any other icon in the design system).
+      li For each <code>path</code> element, remove the <code>fill</code> attribute unless its value is <code>none</code>.
+  li Use the icon like you normally would (cf. <a href="#usage">Usage</a> section).
+
+p Here is an example with the <code>security</code> <span class="small" data-icon="security"></span> icon:
+
+==syntax_highlight :html
+  erb:
+    <!-- Original SVG code -->
+    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+      <path fill="#000000" d="M12,12H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,3.19M12,1L3,5V11C3,16.55 6.84,21.73 12,23C17.16,21.73 21,16.55 21,11V5L12,1Z" />
+    </svg>
+    
+    <!-- Modified code -->
+    <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-security" viewBox="0 0 24 24">
+        <path d="M12,12H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,3.19M12,1L3,5V11C3,16.55 6.84,21.73 12,23C17.16,21.73 21,16.55 21,11V5L12,1Z" />
+      </symbol>
+    </svg>
+    
+    <!-- Example use of the icon -->
+    <span class="small" data-icon="security"></span>
+
+svg.hidden xmlns="http://www.w3.org/2000/svg"
+  symbol id="icon-security" viewBox="0 0 24 24"
+    path d="M12,12H19C18.47,16.11 15.72,19.78 12,20.92V12H5V6.3L12,3.19M12,1L3,5V11C3,16.55 6.84,21.73 12,23C17.16,21.73 21,16.55 21,11V5L12,1Z"/
