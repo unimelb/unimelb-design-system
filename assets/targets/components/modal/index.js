@@ -8,7 +8,7 @@ function Modal(el, props) {
   this.el = el;
   this.props = props;
 
-  this.props.offset = el.getAttribute('data-modal-offset');
+  this.props.offset = el.hasAttribute('data-modal-offset');
 
   var CreateNameSpace = require('../../../shared/createnamespace');
   new CreateNameSpace();
