@@ -450,6 +450,7 @@
   display: block;
   margin-top: 60px;
   opacity: .95;
+  z-index: 100;
 
   @include breakpoint(desktop) {
     margin-top: 90px;
