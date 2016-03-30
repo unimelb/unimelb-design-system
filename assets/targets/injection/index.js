@@ -3,6 +3,20 @@ require("../../shared/shims");
 require("./gtm");
 require("./tealium");
 
+window.UOMbindIcons = function() {
+  "use strict";
+
+  var recs, i, Base;
+
+  recs = document.querySelectorAll('[data-icon]');
+  if (recs.length > 0) {
+    Base = require('./icons/iconhelper.js');
+
+    for (i=recs.length - 1; i >= 0; i--)
+      new Base(recs[i], {});
+  }
+};
+
 window.UOMloadInjection = function() {
   "use strict";
 
@@ -31,6 +45,8 @@ window.UOMloadInjection = function() {
 
   Icons = require('./icons');
   new Icons();
+
+  window.UOMbindIcons();
 
   Accouncement = require('./announcement/index.es6');
   new Accouncement({});
