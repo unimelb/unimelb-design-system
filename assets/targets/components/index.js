@@ -62,7 +62,13 @@ window.UOMbind = function(component) {
   if (attachment) {
     recs = document.querySelectorAll(attachment);
     if (recs.length > 0) {
-      Base = require("./" + component + '/index.js');
+
+      // Very specific override due to iconhelper move
+      if (component === 'icons')
+        Base = require('../injection/icons/iconhelper.js');
+      else
+        Base = require("./" + component + '/index.js');
+
       for (i=recs.length - 1; i >= 0; i--)
         new Base(recs[i], {});
     }

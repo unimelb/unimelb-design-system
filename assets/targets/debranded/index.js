@@ -120,7 +120,7 @@ window.DSComponentsLoad = function() {
 
   recs = document.querySelectorAll('[data-icon]');
   if (recs.length > 0) {
-    IconHelper = require("../components/icons");
+    IconHelper = require("../injection/icons/iconhelper");
     for (i=recs.length - 1; i >= 0; i--)
       new IconHelper(recs[i], {});
   }

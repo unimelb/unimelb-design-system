@@ -6,6 +6,69 @@
   vertical-align: middle;
 }
 
+%control {
+  @include rem(border-radius, 3px);
+  @include rem(margin-top, 5px);
+  @include rem(padding, 8px 10px);
+  font-family: $ff-sans;
+  font-weight: $light;
+
+  &.invalid {
+    background-color: $white;
+    border-color: lighten($cherry, 25%);
+    color: lighten($cherry, 25%);
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(width, 400px);
+  }
+}
+
+%textcontrol {
+  @extend %control;
+  @include rem(font-size, 20px);
+  background-color: $lightgray;
+  border: 1px solid darken($lightergray, 5%);
+  box-shadow: inset 0 1px 3px rgba($black, .15);
+
+  &:hover {
+    border-color: $gray;
+  }
+
+  &:focus {
+    background-color: $white;
+    border-color: $borderblue;
+    color: $black;
+    outline: 0;
+
+    &.invalid {
+      color: $black;
+    }
+  }
+}
+
+%inlinebutton {
+  @include rem(border-radius, 3px);
+  @include rem(font-size, 13px);
+  @include rem(height, 45px);
+  @include rem(padding, 0 15px);
+  background-color: $highlight;
+  border: 0 none;
+  color: $white;
+  cursor: pointer;
+  letter-spacing: 1px;
+  position: relative;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: darken($highlight, 10%);
+  }
+
+  &:active {
+    opacity: .3;
+  }
+}
+
 // .uomcontent .page-header.fixed:not(.floating) + .page-inner {
 //   @include rem(margin-top, 40px);
 //   transition: 0s .2s margin-top;
@@ -474,7 +537,7 @@
         line-height: 1;
 
         &[data-icon] {
-          height: 40px;
+          height: 24px;
           margin: 0;
           width: 24px;
         }
@@ -518,19 +581,76 @@
       vertical-align: top;
 
       input[type="search"] {
-        height: 40px;
-        margin-top: 3px;
-      }
-
-      .inline-button {
+        @extend %textcontrol;
+        @include rem(border-radius, 3px 0 0 3px);
         @include rem(height, 40px);
         @include rem(margin-top, 3px);
+        appearance: none;
+        border-right: 0;
+        display: block;
+        width: 100%;
       }
 
-      .attached span {
-        padding: 0;
-        vertical-align: middle;
+// dupe
+      .inline {
+        display: table;
+        position: relative;
+        width: 100%;
+
+        input[type="image"] {
+          @extend %inlinebutton;
+          @include rem(border-radius, 0 3px 3px 0);
+          @include rem(margin, 15px 0 0);
+          @include rem(width, 45px);
+          padding: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+
+          span {
+            display: none;
+          }
+
+          svg {
+            @include rem(height, 24px);
+            @include rem(width, 24px);
+            background-color: transparent;
+            cursor: pointer;
+            fill: currentColor;
+            max-height: 100%;
+          }
+        }
+
+        .inline-button {
+          @extend %inlinebutton;
+          @include rem(border-radius, 0 3px 3px 0);
+          @include rem(font-size, 13px);
+          @include rem(height, 40px);
+          @include rem(margin, 3px 0 0);
+          @include rem(padding, 0 15px);
+          letter-spacing: 1px;
+
+          span.small {
+            padding: 0;
+
+            svg {
+              @include rem(height, 24px);
+              @include rem(width, 24px);
+            }
+          }
+        }
+
+        & > span {
+          display: table-cell;
+          padding: 0;
+          vertical-align: middle;
+
+          &.fill {
+            width: 100%;
+          }
+        }
       }
+// dupe
 
       .icon {
         fill: $white;
