@@ -55,7 +55,7 @@ FilteredListingSection.prototype.update = function (currSection, currTags) {
     }
 
     // Toggle the visibility of the item
-    item.toggleClass('filtered-listing-item--visible', showItem);
+    item.classList.toggle('filtered-listing-item--visible', showItem);
 
     if (showItem) {
       isAnyItemVisible = true;

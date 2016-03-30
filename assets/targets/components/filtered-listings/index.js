@@ -34,7 +34,7 @@ function FilteredListing(el, props) {
   // Set items' colours
   recs = document.querySelectorAll('.filtered-listing-item');
   for (i = recs.length - 1; i >= 0; i--) {
-    recs[i].addClass('filtered-listing-item--' + this.props.colors[recs[i].getAttribute('data-tag')]);
+    recs[i].classList.add('filtered-listing-item--' + this.props.colors[recs[i].getAttribute('data-tag')]);
   }
 
   // Listen for events
@@ -171,7 +171,7 @@ FilteredListing.prototype.handleSectionSelectChanged = function (e) {
  * @param  {Event} e
  */
 FilteredListing.prototype.handleTagCheckboxesClicked = function (e) {
-  if (e.target.hasClass('checkbox')) {
+  if (e.target.classList.has('checkbox')) {
     // If checking the `all tags` checkbox, update state and uncheck all other checkboxes
     if (e.target === this.props.tagCheckboxes[0] && e.target.checked) {
       this.state.tags = [constants.ALL_TAGS];
