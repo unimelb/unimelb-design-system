@@ -73,11 +73,12 @@ Modal.prototype.activateDialog = function(e) {
 
   if (this.props.offset) {
     this.props.targetElement.style.top = (this.el.offsetTop - 160) + 'px';
-
   } else {
     var viewport = document.body.getBoundingClientRect();
-    var top = parseInt( (window.height() - this.props.targetElement.offsetHeight) / 2 );
-    this.props.targetElement.style.top = (top - viewport.top) + 'px';
+    var top = parseInt((window.height() - this.props.targetElement.offsetHeight) / 2, 10);
+
+    // Postion the modal, making sure it never goes past the top of the viewport
+    this.props.targetElement.style.top = (Math.max(top, 40) - viewport.top) + 'px';
   }
 
   this.props.targetElement.classList.add('on');
