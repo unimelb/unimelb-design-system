@@ -45,7 +45,8 @@ window.UOMbind = function(component) {
     attachment = 'form.filtered-listing-select';
 
   } else if (component === 'icons') {
-    attachment = '[data-icon]';
+    window.UOMbindIcons();
+    attachment = false;
 
   } else if (component === 'forms') {
     attachment = 'form[data-validate]';
@@ -63,11 +64,7 @@ window.UOMbind = function(component) {
     recs = document.querySelectorAll(attachment);
     if (recs.length > 0) {
 
-      // Very specific override due to iconhelper move
-      if (component === 'icons')
-        Base = require('../injection/icons/iconhelper.js');
-      else
-        Base = require("./" + component + '/index.js');
+      Base = require("./" + component + '/index.js');
 
       for (i=recs.length - 1; i >= 0; i--)
         new Base(recs[i], {});
