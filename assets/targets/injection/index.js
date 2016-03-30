@@ -3,6 +3,10 @@ require("../../shared/shims");
 require("./gtm");
 require("./tealium");
 
+// Simple sniff
+if (typeof window.MSIE_version === "undefined")
+  window.MSIE_version = /MSIE\s(\d{1,2})/g.exec(navigator.userAgent) === null ? 100 : /MSIE\s(\d{1,2})/g.exec(navigator.userAgent)[1];
+
 window.UOMbindIcons = function() {
   "use strict";
 
