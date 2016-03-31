@@ -37,7 +37,7 @@ window.UOMloadInjection = function() {
     'defaultlink': 'https://www.unimelb.edu.au'
   });
 
-  Nav = require('./nav');
+  Nav = require('./nav/index.es6');
   new Nav({
     'assethost': assethostHeader,
   });

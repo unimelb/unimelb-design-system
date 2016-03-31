@@ -47,7 +47,7 @@ InjectFooter.prototype.renderFooter = function() {
       <a href="http://www.unimelb.edu.au/contact/"><svg role="img" class="icon"><use xlink:href="#icon-phone" /></svg> Contact us</a>
     </li>
     <li>
-      <a href="http://maps.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-location" /></svg> Maps</a>
+      <a href="https://maps.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-location" /></svg> Maps</a>
     </li>
     <li>
       <a href="http://www.campaign.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-campaign" /></svg> Support the Campaign</a>
