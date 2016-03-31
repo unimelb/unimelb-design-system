@@ -107,6 +107,73 @@
         }
       }
     }
+
+// dupe
+    .inline {
+      display: table;
+      position: relative;
+      width: 100%;
+
+      input[type="text"],
+      input[type="search"] {
+        border-radius: 3px 0 0 3px;
+      }
+
+      input[type="image"] {
+        @extend %inlinebutton;
+        @include rem(border-radius, 0 3px 3px 0);
+        @include rem(margin, 15px 0 0);
+        @include rem(width, 45px);
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        span {
+          display: none;
+        }
+
+        svg {
+          @include rem(height, 24px);
+          @include rem(width, 24px);
+          background-color: transparent;
+          cursor: pointer;
+          fill: currentColor;
+          max-height: 100%;
+        }
+      }
+
+      .inline-button {
+        @extend %inlinebutton;
+        @include rem(border-radius, 0 3px 3px 0);
+        @include rem(font-size, 13px);
+        @include rem(height, 45px);
+        @include rem(margin, 5px 0 0);
+        @include rem(padding, 0 15px);
+        letter-spacing: 1px;
+
+        span.small {
+          padding: 0;
+
+          svg {
+            @include rem(height, 24px);
+            @include rem(width, 24px);
+          }
+        }
+      }
+
+      & > span {
+        display: table-cell;
+        padding: 0;
+        vertical-align: middle;
+
+        &.fill {
+          width: 100%;
+        }
+      }
+    }
+// dupe
+
   }
 
   .logo {
