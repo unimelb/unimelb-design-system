@@ -17,7 +17,7 @@ function CreateNameSpace() {
     bodyclass = 'ie11';
 
   if (bodyclass) {
-    document.body.classList.add(bodyclass);
+    document.body.classList.add.apply(document.body.classList, bodyclass.split(' '));
   }
 
   // Create page wrapper if it doesn't already exist
