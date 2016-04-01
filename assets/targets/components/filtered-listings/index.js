@@ -171,7 +171,7 @@ FilteredListing.prototype.handleSectionSelectChanged = function (e) {
  * @param  {Event} e
  */
 FilteredListing.prototype.handleTagCheckboxesClicked = function (e) {
-  if (e.target.classList.has('checkbox')) {
+  if (e.target.classList.contains('checkbox')) {
     // If checking the `all tags` checkbox, update state and uncheck all other checkboxes
     if (e.target === this.props.tagCheckboxes[0] && e.target.checked) {
       this.state.tags = [constants.ALL_TAGS];
