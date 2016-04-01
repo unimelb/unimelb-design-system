@@ -1027,6 +1027,24 @@
       }
     }
   }
+
+  .uomcontent .page-header-search {
+    &.active {
+      height: 101.5%;
+    }
+
+    [data-icon] .icon-label {
+      color: $white;
+      line-height: 1;
+    }
+
+    form .page-header-icon {
+      display: block;
+      height: 40px;
+      line-height: 40px;
+      margin: 3px;
+    }
+  }
 }
 
 .ie9 {
