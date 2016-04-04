@@ -528,7 +528,7 @@
 
 .uomcontent .modal__blanket.white {
   @include rem(margin-top, 60px);
-  animation: fadeIn .3s backwards;
+  animation: fadeIn .2s backwards;
   background-color: $white;
   display: block;
   opacity: .95;
@@ -570,7 +570,7 @@
 
 .uomcontent .page-header-search {
   @include rem(height, 60px);
-  animation: fadeIn .3s backwards;
+  animation: fadeIn .2s backwards;
   background: $white;
   display: none;
   left: 0;
@@ -589,7 +589,7 @@
 
   form {
     @include rem(padding-left, 10px);
-    animation: slideFromTop .3s backwards;
+    animation: slideFromTop .2s backwards;
     display: table;
     height: 100%;
     width: 100%;
@@ -605,7 +605,7 @@
         @include rem(border-radius, 3px 0 0 3px);
         @include rem(height, 40px);
         @include rem(margin-top, 3px);
-        animation: fadeIn .3s backwards, slideFromRight .3s .15s backwards;
+        animation: fadeIn .2s backwards, slideFromRight .2s .1s backwards;
         appearance: none;
         border-right: 0;
         display: block;
