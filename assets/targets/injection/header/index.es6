@@ -243,7 +243,7 @@ InjectHeader.prototype.renderHeaderTools = function() {
 
 InjectHeader.prototype.renderSearchBox = function() {
   var search = document.createElement('div');
-  search.classList.add('page-header-search');
+  search.className = 'page-header-search';
   search.innerHTML = `
 <form class="search" action="https://search.unimelb.edu.au" method="get">
   <fieldset>
