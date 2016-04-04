@@ -69,6 +69,24 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-100%);
+  }
+}
+
 // .uomcontent .page-header.fixed:not(.floating) + .page-inner {
 //   @include rem(margin-top, 40px);
 //   transition: 0s .2s margin-top;
@@ -213,10 +231,6 @@
     &:hover, &:focus {
       color: $midblue;
       text-decoration: underline;
-
-      .icon {
-        fill: $midblue;
-      }
     }
 
     &.page-header-logo {
@@ -510,6 +524,7 @@
 
 .uomcontent .modal__blanket.white {
   @include rem(margin-top, 60px);
+  animation: fadeIn .2s backwards;
   background-color: $white;
   display: block;
   opacity: .95;
@@ -522,10 +537,6 @@
 
 .uomcontent.search-active {
   width: 100%;
-
-  .page-header {
-    position: fixed;
-  }
 
   @include breakpoint(desktop) {
     position: static;
@@ -544,8 +555,10 @@
         }
       }
 
-      header {
+      .page-header-icon {
         @include rem(height, 90px);
+        line-height: 1;
+        vertical-align: top;
       }
     }
   }
@@ -553,6 +566,7 @@
 
 .uomcontent .page-header-search {
   @include rem(height, 60px);
+  animation: fadeIn .2s backwards;
   background: $white;
   display: none;
   left: 0;
@@ -571,6 +585,7 @@
 
   form {
     @include rem(padding-left, 10px);
+    animation: slideFromTop .2s backwards;
     display: table;
     height: 100%;
     width: 100%;
@@ -586,6 +601,7 @@
         @include rem(border-radius, 3px 0 0 3px);
         @include rem(height, 40px);
         @include rem(margin-top, 3px);
+        animation: fadeIn .2s backwards, slideFromRight .2s .1s backwards;
         appearance: none;
         border-right: 0;
         display: block;
@@ -648,6 +664,7 @@
           vertical-align: middle;
 
           &.fill {
+            overflow: hidden;
             width: 100%;
           }
         }

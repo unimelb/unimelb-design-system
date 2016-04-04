@@ -158,7 +158,7 @@ InjectNav.prototype.handleSearchTrigger = function(e) {
 
   var s = document.querySelector('.page-header-search');
   s.classList.add('active');
-  s.querySelector('div.page-header-icon').addEventListener('click', this.handleSearchClose.bind(this));
+  s.querySelector('.page-header-icon').addEventListener('click', this.handleSearchClose.bind(this));
 
   this.props.blanket.el.classList.add('white');
   this.props.blanket.el.addEventListener('click', this.handleSearchClose.bind(this));
@@ -168,6 +168,7 @@ InjectNav.prototype.handleSearchTrigger = function(e) {
 };
 
 InjectNav.prototype.handleSearchClose = function(e) {
+  e.preventDefault();
   this.props.blanket.el.classList.remove('white');
 
   var s = document.querySelector('.page-header-search');
