@@ -75,9 +75,15 @@
   }
 }
 
-@keyframes slideToLeft {
+@keyframes slideFromRight {
   from {
     transform: translateX(100%);
+  }
+}
+
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-100%);
   }
 }
 
@@ -536,10 +542,6 @@
 .uomcontent.search-active {
   width: 100%;
 
-  .page-header {
-    position: fixed;
-  }
-
   @include breakpoint(desktop) {
     position: static;
     width: auto;
@@ -557,8 +559,10 @@
         }
       }
 
-      header {
+      .page-header-icon {
         @include rem(height, 90px);
+        line-height: 1;
+        vertical-align: top;
       }
     }
   }
@@ -585,6 +589,7 @@
 
   form {
     @include rem(padding-left, 10px);
+    animation: slideFromTop .3s backwards;
     display: table;
     height: 100%;
     width: 100%;
@@ -600,7 +605,7 @@
         @include rem(border-radius, 3px 0 0 3px);
         @include rem(height, 40px);
         @include rem(margin-top, 3px);
-        animation: fadeIn .3s backwards, slideToLeft .3s backwards;
+        animation: fadeIn .3s backwards, slideFromRight .3s .15s backwards;
         appearance: none;
         border-right: 0;
         display: block;
@@ -610,6 +615,7 @@
 // dupe
       .inline {
         display: table;
+        overflow: hidden;
         position: relative;
         width: 100%;
 
