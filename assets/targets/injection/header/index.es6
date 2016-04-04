@@ -258,7 +258,7 @@ InjectHeader.prototype.renderSearchBox = function() {
       </span>
     </div>
   </fieldset>
-  <div class="page-header-icon"><svg class="icon" role="img"><use xlink:href="#icon-close" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg> Close</div>
+  <a class="page-header-icon" href="#"><svg class="icon" role="img"><use xlink:href="#icon-close" xmlns:xlink="http://www.w3.org/1999/xlink"></use></svg> Close</a>
 </form>
 `;
   var navparent = this.props.header.querySelector('header');
