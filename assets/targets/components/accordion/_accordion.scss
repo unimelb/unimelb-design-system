@@ -54,6 +54,14 @@
 
       ol li {
         list-style-type: decimal;
+
+        ol li {
+          list-style-type: lower-alpha;
+
+          ol li {
+            list-style-type: lower-roman;
+          }
+        }
       }
 
       p {
