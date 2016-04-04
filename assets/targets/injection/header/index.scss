@@ -231,10 +231,6 @@
     &:hover, &:focus {
       color: $midblue;
       text-decoration: underline;
-
-      .icon {
-        fill: $midblue;
-      }
     }
 
     &.page-header-logo {
@@ -615,7 +611,6 @@
 // dupe
       .inline {
         display: table;
-        overflow: hidden;
         position: relative;
         width: 100%;
 
@@ -669,6 +664,7 @@
           vertical-align: middle;
 
           &.fill {
+            overflow: hidden;
             width: 100%;
           }
         }
