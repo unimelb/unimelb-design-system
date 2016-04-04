@@ -69,6 +69,18 @@
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes slideToLeft {
+  from {
+    transform: translateX(100%);
+  }
+}
+
 // .uomcontent .page-header.fixed:not(.floating) + .page-inner {
 //   @include rem(margin-top, 40px);
 //   transition: 0s .2s margin-top;
@@ -509,6 +521,7 @@
 }
 
 .uomcontent .modal__blanket.white {
+  animation: fadeIn .3s backwards;
   background-color: $white;
   display: block;
   margin-top: 60px;
@@ -552,6 +565,7 @@
 
 .uomcontent .page-header-search {
   @include rem(height, 60px);
+  animation: fadeIn .3s backwards;
   background: $white;
   display: none;
   left: 0;
@@ -585,6 +599,7 @@
         @include rem(border-radius, 3px 0 0 3px);
         @include rem(height, 40px);
         @include rem(margin-top, 3px);
+        animation: fadeIn .3s backwards, slideToLeft .3s backwards;
         appearance: none;
         border-right: 0;
         display: block;
