@@ -72,12 +72,12 @@ InjectNav.prototype.setupEventBindings = function() {
     this.props.sitemapTrigger.addEventListener('click', this.openGlobalNav.bind(this));
 
     this.props.localSitemapTrigger = this.props.localNav.querySelector('.sitemap-link');
-    if (this.props.localSitemapTrigger)
+    if (this.props.localSitemapTrigger) {
       this.props.localSitemapTrigger.addEventListener('click', this.openGlobalNav.bind(this));
+    }
 
-  } else {
-    if (this.props.menuTrigger)
-      this.props.menuTrigger.addEventListener('click', this.openGlobalNav.bind(this));
+  } else if (this.props.menuTrigger) {
+    this.props.menuTrigger.addEventListener('click', this.openGlobalNav.bind(this));
   }
 
   this.props.globalNav.querySelector('.close-button').addEventListener('click', this.closeGlobalNav.bind(this));
@@ -87,7 +87,7 @@ InjectNav.prototype.setupEventBindings = function() {
     this.props.searchTrigger.addEventListener('click', this.handleSearchTrigger.bind(this));
   }
 
-  // Restore nav states when use goes back/forward
+  // Restore nav states when user navigates back/forward
   if (this.props.supportsHistory) {
     window.addEventListener('popstate', function(e) {
       var newState = e.state && e.state[HISTORY_KEY] ? e.state[HISTORY_KEY] : null;
@@ -153,15 +153,18 @@ InjectNav.prototype.update = function() {
 
 
 InjectNav.prototype.handleSearchTrigger = function(e) {
+  e.preventDefault();
   this.props.root.classList.add('search-active');
 
   var s = document.querySelector('.page-header-search');
   s.classList.add('active');
-  s.querySelector('input[type="search"]').focus();
   s.querySelector('div.page-header-icon').addEventListener('click', this.handleSearchClose.bind(this));
 
   this.props.blanket.el.classList.add('white');
   this.props.blanket.el.addEventListener('click', this.handleSearchClose.bind(this));
+
+  var searchField = s.querySelector('input[type="search"]');
+  searchField.focus();
 };
 
 InjectNav.prototype.handleSearchClose = function(e) {
@@ -178,7 +181,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
   if (this.props.localNav && !this.props.sitemapTrigger) {
     this.props.sitemapTrigger = document.createElement('div');
     this.props.sitemapTrigger.setAttribute('class', 'sitemap-trigger');
-    this.props.sitemapTrigger.innerHTML = '      <span>University Sitemap</span>';
+    this.props.sitemapTrigger.innerHTML = '<span>University Sitemap</span>';
     this.props.root.appendChild(this.props.sitemapTrigger);
   }
 
