@@ -8,14 +8,6 @@ function IconHelper(el, props) {
   this.el = el;
   this.props = props;
 
-  /*
-   * Check that UOMbind exists and that the icon hasn't been bound already.
-   *
-   * In v4.0, this IconHelper class was moved to the injection. As a result, in versions prior to 4.0, the helper gets called twice for each icon.
-   * This is fine as long as the helper checks the `data-bound` attribute to ensure the same icon doesn't get initialised twice.
-   * Unfortunately, this attribute was only added in v3.6 with `UOMbind`; hence the need to check that it exists.
-   * Without it, icons would get initialised twice in v3.5.2 and below.
-   */
   if (window.UOMbind && !this.el.hasAttribute('data-bound')) {
     if (MSIE_version > 8) {
       this.props.ref = this.el.getAttribute('data-icon');
