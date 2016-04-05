@@ -53,10 +53,6 @@
       margin: 0;
       text-align: center;
       white-space: nowrap;
-
-      .icon {
-        display: none; // Fix bug with v4.0 injection + v < 3.6 components
-      }
     }
 
     .icon-over {
