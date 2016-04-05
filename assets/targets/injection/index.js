@@ -18,7 +18,7 @@ window.UOMbindIcons = function() {
    * Unfortunately, this attribute was added only in v3.6 with `UOMbind`; hence the need to check that `UOMbind` exists.
    * Without it, icons would get initialised twice in v3.5.2 and below.
    */
-  if (!UOMbind) { return; }
+  if (!window.UOMbind) { return; }
 
   var recs, i, IconHelper;
 

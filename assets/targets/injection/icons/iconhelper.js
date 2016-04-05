@@ -8,7 +8,7 @@ function IconHelper(el, props) {
   this.el = el;
   this.props = props;
 
-  if (window.UOMbind && !this.el.hasAttribute('data-bound')) {
+  if (!this.el.hasAttribute('data-bound')) {
     if (MSIE_version > 8) {
       this.props.ref = this.el.getAttribute('data-icon');
       if (this.props.ref.substr(0,5) != '#icon-') {
