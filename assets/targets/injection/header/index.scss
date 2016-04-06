@@ -611,6 +611,7 @@
 // dupe
       .inline {
         display: table;
+        overflow: hidden;
         position: relative;
         width: 100%;
 
@@ -664,7 +665,6 @@
           vertical-align: middle;
 
           &.fill {
-            overflow: hidden;
             width: 100%;
           }
         }
