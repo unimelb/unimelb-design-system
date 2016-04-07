@@ -21,7 +21,8 @@
   overflow: hidden;
 
   @include breakpoint(desktop) {
-    @include rem(padding-left, 15px);
+    padding-left: 0;
+    padding-right: 0;
   }
 
   strong {
@@ -57,16 +58,17 @@
       legend,
       label {
         @include rem(font-size, 15px);
-        @include rem(padding-bottom, 15px);
+        @include rem(padding, 0 0 15px);
         color: $white;
         display: block;
-        padding-top: 0;
       }
     }
 
     @include breakpoint(desktop) {
+      @include rem(padding-left, 30px);
+      @include rem(padding-right, 30px);
       float: left;
-      width: 75%;
+      width: 66.66%;
     }
   }
 
@@ -168,10 +170,11 @@
   }
 
   .right {
-    @include rem(padding-top, 15px);
+    @include rem(padding-top, 30px);
+    margin: 0;
 
-    div {
-      float: none;
+    & > div {
+      @include rem(padding-top, 3px);
 
       select {
         width: 100%;
@@ -185,15 +188,18 @@
 
     label {
       @include rem(font-size, 15px);
+      @include rem(line-height, 30px);
       @include rem(padding-bottom, 15px);
       display: block;
+      width: 100%;
     }
 
     @include breakpoint(desktop) {
+      @include rem(padding-right, 30px);
       float: right;
       margin: 0;
       padding-top: 0;
-      width: 25%;
+      width: 33.33%;
     }
   }
 }
