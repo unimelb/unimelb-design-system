@@ -260,7 +260,7 @@
       @include breakpoint(wide) {
         & > li {
           @include rem(padding-left, 110px);
-          
+
           > * {
             margin-left: 0;
           }
@@ -387,6 +387,23 @@
 
   .no-padding {
     padding-bottom: 0;
+  }
+
+  /**
+   * Box
+   * Give a container full control over its inner top and bottom spacing
+   * by removing its first child's top spacing and its last child's bottom spacing.
+   */
+  .box {
+    & > *:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
   }
 
   .grey {
