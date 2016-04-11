@@ -1,0 +1,3258 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="robots" content="NONE,NOARCHIVE" />
+  <title>TypeError at &#x2F;layouts&#x2F;search&#x2F;</title>
+  <style type="text/css">
+    html * { padding:0; margin:0; }
+    body * { padding:10px 20px; }
+    body * * { padding:0; }
+    body { font:small sans-serif; }
+    body>div { border-bottom:1px solid #ddd; }
+    h1 { font-weight:normal; }
+    h2 { margin-bottom:.8em; }
+    h2 span { font-size:80%; color:#666; font-weight:normal; }
+    h3 { margin:1em 0 .5em 0; }
+    h4 { margin:0 0 .5em 0; font-weight: normal; }
+    table {
+        border:1px solid #ccc; border-collapse: collapse; background:white; }
+    tbody td, tbody th { vertical-align:top; padding:2px 3px; }
+    thead th {
+        padding:1px 6px 1px 3px; background:#fefefe; text-align:left;
+        font-weight:normal; font-size:11px; border:1px solid #ddd; }
+    tbody th { text-align:right; color:#666; padding-right:.5em; }
+    table.vars { margin:5px 0 2px 40px; }
+    table.vars td, table.req td { font-family:monospace; }
+    table td.code { width:100%;}
+    table td.code div { overflow:hidden; }
+    table.source th { color:#666; }
+    table.source td {
+        font-family:monospace; white-space:pre; border-bottom:1px solid #eee; }
+    ul.traceback { list-style-type:none; }
+    ul.traceback li.frame { margin-bottom:1em; }
+    div.context { margin: 10px 0; }
+    div.context ol {
+        padding-left:30px; margin:0 10px; list-style-position: inside; }
+    div.context ol li {
+        font-family:monospace; white-space:pre; color:#666; cursor:pointer; }
+    div.context ol.context-line li { color:black; background-color:#ccc; }
+    div.context ol.context-line li span { float: right; }
+    div.commands { margin-left: 40px; }
+    div.commands a { color:black; text-decoration:none; }
+    #summary { background: #ffc; }
+    #summary h2 { font-weight: normal; color: #666; }
+    #summary ul#quicklinks { list-style-type: none; margin-bottom: 2em; }
+    #summary ul#quicklinks li { float: left; padding: 0 1em; }
+    #summary ul#quicklinks>li+li { border-left: 1px #666 solid; }
+    #explanation { background:#eee; }
+    #template, #template-not-exist { background:#f6f6f6; }
+    #template-not-exist ul { margin: 0 0 0 20px; }
+    #traceback { background:#eee; }
+    #requestinfo { background:#f6f6f6; padding-left:120px; }
+    #summary table { border:none; background:transparent; }
+    #requestinfo h2, #requestinfo h3 { position:relative; margin-left:-100px; }
+    #requestinfo h3 { margin-bottom:-1em; }
+    .error { background: #ffc; }
+    .specific { color:#cc3300; font-weight:bold; }
+  </style>
+  <script type="text/javascript">
+  //<!--
+    function getElementsByClassName(oElm, strTagName, strClassName){
+        // Written by Jonathan Snook, http://www.snook.ca/jon;
+        // Add-ons by Robert Nyman, http://www.robertnyman.com
+        var arrElements = (strTagName == "*" && document.all)? document.all :
+        oElm.getElementsByTagName(strTagName);
+        var arrReturnElements = new Array();
+        strClassName = strClassName.replace(/\-/g, "\\-");
+        var oRegExp = new RegExp("(^|\\s)" + strClassName + "(\\s|$$)");
+        var oElement;
+        for(var i=0; i<arrElements.length; i++){
+            oElement = arrElements[i];
+            if(oRegExp.test(oElement.className)){
+                arrReturnElements.push(oElement);
+            }
+        }
+        return (arrReturnElements)
+    }
+    function hideAll(elems) {
+      for (var e = 0; e < elems.length; e++) {
+        elems[e].style.display = 'none';
+      }
+    }
+    window.onload = function() {
+      hideAll(getElementsByClassName(document, 'table', 'vars'));
+      hideAll(getElementsByClassName(document, 'ol', 'pre-context'));
+      hideAll(getElementsByClassName(document, 'ol', 'post-context'));
+    }
+    function toggle() {
+      for (var i = 0; i < arguments.length; i++) {
+        var e = document.getElementById(arguments[i]);
+        if (e) {
+          e.style.display = e.style.display == 'none' ? 'block' : 'none';
+        }
+      }
+      return false;
+    }
+    function varToggle(link, id) {
+      toggle('v' + id);
+      var s = link.getElementsByTagName('span')[0];
+      var uarr = String.fromCharCode(0x25b6);
+      var darr = String.fromCharCode(0x25bc);
+      s.innerHTML = s.innerHTML == uarr ? darr : uarr;
+      return false;
+    }
+    //-->
+  </script>
+</head>
+<body>
+
+<div id="summary">
+  <h1>TypeError at &#x2F;layouts&#x2F;search&#x2F;</h1>
+  <h2>can&#x27;t dup Symbol</h2>
+  <table><tr>
+    <th>Ruby</th>
+    <td>
+
+      <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;temple-0.6.10&#x2F;lib&#x2F;temple&#x2F;filters&#x2F;encoding.rb</code>: in <code>dup</code>, line 12
+
+    </td>
+  </tr><tr>
+    <th>Web</th>
+    <td><code>GET 128.250.155.100&#x2F;layouts&#x2F;search&#x2F;</code></td>
+  </tr></table>
+
+  <h3>Jump to:</h3>
+  <ul id="quicklinks">
+    <li><a href="#get-info">GET</a></li>
+    <li><a href="#post-info">POST</a></li>
+    <li><a href="#cookie-info">Cookies</a></li>
+    <li><a href="#env-info">ENV</a></li>
+  </ul>
+</div>
+
+<div id="traceback">
+  <h2>Traceback <span>(innermost first)</span></h2>
+  <ul class="traceback">
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;temple-0.6.10&#x2F;lib&#x2F;temple&#x2F;filters&#x2F;encoding.rb</code>: in <code>dup</code>
+
+          
+          <div class="context" id="c70206711272700">
+              
+              <ol start="5" class="pre-context" id="pre70206711272700">
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">    # @api public
+</li>
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">    class Encoding &lt; Parser
+</li>
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">      define_options :encoding =&gt; &#x27;utf-8&#x27;
+</li>
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">
+</li>
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">      def call(s)
+</li>
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">        if options[:encoding] &amp;&amp; s.respond_to?(:encoding)
+</li>
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">          old_enc = s.encoding
+</li>
+                
+              </ol>
+              
+
+            <ol start="12" class="context-line">
+              <li onclick="toggle('pre70206711272700', 'post70206711272700')">          s = s.dup if s.frozen?<span>...</span></li></ol>
+
+              
+              <ol start='13' class="post-context" id="post70206711272700">
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">          s.force_encoding(options[:encoding])
+</li>
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">          # Fall back to old encoding if new encoding is invalid
+</li>
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">          unless s.valid_encoding?
+</li>
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">            s.force_encoding(old_enc)
+</li>
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">            s.force_encoding(::Encoding::BINARY) unless s.valid_encoding?
+</li>
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">          end
+</li>
+                
+                <li onclick="toggle('pre70206711272700', 'post70206711272700')">        end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;temple-0.6.10&#x2F;lib&#x2F;temple&#x2F;filters&#x2F;encoding.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70206711268460">
+              
+              <ol start="5" class="pre-context" id="pre70206711268460">
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">    # @api public
+</li>
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">    class Encoding &lt; Parser
+</li>
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">      define_options :encoding =&gt; &#x27;utf-8&#x27;
+</li>
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">
+</li>
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">      def call(s)
+</li>
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">        if options[:encoding] &amp;&amp; s.respond_to?(:encoding)
+</li>
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">          old_enc = s.encoding
+</li>
+                
+              </ol>
+              
+
+            <ol start="12" class="context-line">
+              <li onclick="toggle('pre70206711268460', 'post70206711268460')">          s = s.dup if s.frozen?<span>...</span></li></ol>
+
+              
+              <ol start='13' class="post-context" id="post70206711268460">
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">          s.force_encoding(options[:encoding])
+</li>
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">          # Fall back to old encoding if new encoding is invalid
+</li>
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">          unless s.valid_encoding?
+</li>
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">            s.force_encoding(old_enc)
+</li>
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">            s.force_encoding(::Encoding::BINARY) unless s.valid_encoding?
+</li>
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">          end
+</li>
+                
+                <li onclick="toggle('pre70206711268460', 'post70206711268460')">        end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;temple-0.6.10&#x2F;lib&#x2F;temple&#x2F;engine.rb</code>: in <code>block in call</code>
+
+          
+          <div class="context" id="c70206711305240">
+              
+              <ol start="43" class="pre-context" id="pre70206711305240">
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">
+</li>
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">    def initialize(opts = {})
+</li>
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">      super
+</li>
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">      @chain = self.class.chain.dup
+</li>
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">    end
+</li>
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">
+</li>
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">    def call(input)
+</li>
+                
+              </ol>
+              
+
+            <ol start="50" class="context-line">
+              <li onclick="toggle('pre70206711305240', 'post70206711305240')">      call_chain.inject(input) {|m, e| e.call(m) }<span>...</span></li></ol>
+
+              
+              <ol start='51' class="post-context" id="post70206711305240">
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">    end
+</li>
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">
+</li>
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">    protected
+</li>
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">
+</li>
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">    def chain_modified!
+</li>
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">      @call_chain = nil
+</li>
+                
+                <li onclick="toggle('pre70206711305240', 'post70206711305240')">    end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;temple-0.6.10&#x2F;lib&#x2F;temple&#x2F;engine.rb</code>: in <code>each</code>
+
+          
+          <div class="context" id="c70206711300300">
+              
+              <ol start="43" class="pre-context" id="pre70206711300300">
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">
+</li>
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">    def initialize(opts = {})
+</li>
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">      super
+</li>
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">      @chain = self.class.chain.dup
+</li>
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">    end
+</li>
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">
+</li>
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">    def call(input)
+</li>
+                
+              </ol>
+              
+
+            <ol start="50" class="context-line">
+              <li onclick="toggle('pre70206711300300', 'post70206711300300')">      call_chain.inject(input) {|m, e| e.call(m) }<span>...</span></li></ol>
+
+              
+              <ol start='51' class="post-context" id="post70206711300300">
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">    end
+</li>
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">
+</li>
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">    protected
+</li>
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">
+</li>
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">    def chain_modified!
+</li>
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">      @call_chain = nil
+</li>
+                
+                <li onclick="toggle('pre70206711300300', 'post70206711300300')">    end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;temple-0.6.10&#x2F;lib&#x2F;temple&#x2F;engine.rb</code>: in <code>inject</code>
+
+          
+          <div class="context" id="c70206703242540">
+              
+              <ol start="43" class="pre-context" id="pre70206703242540">
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">
+</li>
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">    def initialize(opts = {})
+</li>
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">      super
+</li>
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">      @chain = self.class.chain.dup
+</li>
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">
+</li>
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">    def call(input)
+</li>
+                
+              </ol>
+              
+
+            <ol start="50" class="context-line">
+              <li onclick="toggle('pre70206703242540', 'post70206703242540')">      call_chain.inject(input) {|m, e| e.call(m) }<span>...</span></li></ol>
+
+              
+              <ol start='51' class="post-context" id="post70206703242540">
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">
+</li>
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">    protected
+</li>
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">
+</li>
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">    def chain_modified!
+</li>
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">      @call_chain = nil
+</li>
+                
+                <li onclick="toggle('pre70206703242540', 'post70206703242540')">    end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;temple-0.6.10&#x2F;lib&#x2F;temple&#x2F;engine.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70206701861360">
+              
+              <ol start="43" class="pre-context" id="pre70206701861360">
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">
+</li>
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">    def initialize(opts = {})
+</li>
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">      super
+</li>
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">      @chain = self.class.chain.dup
+</li>
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">    end
+</li>
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">
+</li>
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">    def call(input)
+</li>
+                
+              </ol>
+              
+
+            <ol start="50" class="context-line">
+              <li onclick="toggle('pre70206701861360', 'post70206701861360')">      call_chain.inject(input) {|m, e| e.call(m) }<span>...</span></li></ol>
+
+              
+              <ol start='51' class="post-context" id="post70206701861360">
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">    end
+</li>
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">
+</li>
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">    protected
+</li>
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">
+</li>
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">    def chain_modified!
+</li>
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">      @call_chain = nil
+</li>
+                
+                <li onclick="toggle('pre70206701861360', 'post70206701861360')">    end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;temple-0.6.10&#x2F;lib&#x2F;temple&#x2F;mixins&#x2F;template.rb</code>: in <code>compile</code>
+
+          
+          <div class="context" id="c70206701856300">
+              
+              <ol start="3" class="pre-context" id="pre70206701856300">
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">    # @api private
+</li>
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">    module Template
+</li>
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">      include DefaultOptions
+</li>
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">
+</li>
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">      def compile(code, options)
+</li>
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">        engine = options.delete(:engine)
+</li>
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">        raise &#x27;No engine configured&#x27; unless engine
+</li>
+                
+              </ol>
+              
+
+            <ol start="10" class="context-line">
+              <li onclick="toggle('pre70206701856300', 'post70206701856300')">        engine.new(options).call(code)<span>...</span></li></ol>
+
+              
+              <ol start='11' class="post-context" id="post70206701856300">
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">      end
+</li>
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">
+</li>
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">      def register_as(*names)
+</li>
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">        raise NotImplementedError
+</li>
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">      end
+</li>
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">
+</li>
+                
+                <li onclick="toggle('pre70206701856300', 'post70206701856300')">      def create(engine, options)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;temple-0.6.10&#x2F;lib&#x2F;temple&#x2F;templates&#x2F;tilt.rb</code>: in <code>prepare</code>
+
+          
+          <div class="context" id="c70206703309540">
+              
+              <ol start="23" class="pre-context" id="pre70206703309540">
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">      def prepare
+</li>
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">        opts = {}.update(self.class.default_options).update(options).update(:file =&gt; eval_file)
+</li>
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">        opts.delete(:mime_type)
+</li>
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">        if opts.include?(:outvar)
+</li>
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">          opts[:buffer] = opts.delete(:outvar)
+</li>
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">          opts[:save_buffer] = true
+</li>
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">        end
+</li>
+                
+              </ol>
+              
+
+            <ol start="30" class="context-line">
+              <li onclick="toggle('pre70206703309540', 'post70206703309540')">        @src = self.class.compile(data, opts)<span>...</span></li></ol>
+
+              
+              <ol start='31' class="post-context" id="post70206703309540">
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">      end
+</li>
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">
+</li>
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">      # A string containing the (Ruby) source code for the template.
+</li>
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">      #
+</li>
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">      # @param [Hash]   locals Local variables
+</li>
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">      # @return [String] Compiled template ruby code
+</li>
+                
+                <li onclick="toggle('pre70206703309540', 'post70206703309540')">      def precompiled_template(locals = {})
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;tilt-1.4.1&#x2F;lib&#x2F;tilt&#x2F;template.rb</code>: in <code>initialize</code>
+
+          
+          <div class="context" id="c70206710881220">
+              
+              <ol start="72" class="pre-context" id="pre70206710881220">
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">        @data.force_encoding(default_encoding) if default_encoding
+</li>
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">
+</li>
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">        if !@data.valid_encoding?
+</li>
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">          raise Encoding::InvalidByteSequenceError, &quot;#{eval_file} is not valid #{@data.encoding}&quot;
+</li>
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">        end
+</li>
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">      end
+</li>
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="79" class="context-line">
+              <li onclick="toggle('pre70206710881220', 'post70206710881220')">      prepare<span>...</span></li></ol>
+
+              
+              <ol start='80' class="post-context" id="post70206710881220">
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">    end
+</li>
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">
+</li>
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">    # The encoding of the source data. Defaults to the
+</li>
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">    # default_encoding-option if present. You may override this method
+</li>
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">    # in your template class if you have a better hint of the data&#x27;s
+</li>
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">    # encoding.
+</li>
+                
+                <li onclick="toggle('pre70206710881220', 'post70206710881220')">    def default_encoding
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;rep&#x2F;design-system-composer&#x2F;roda-render_component.rb</code>: in <code>new</code>
+
+          
+          <div class="context" id="c70206703683980">
+              
+              <ol start="36" class="pre-context" id="pre70206703683980">
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">      end
+</li>
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">
+</li>
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">    private
+</li>
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">
+</li>
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">    # Render block through tilt template
+</li>
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">    def slim(content, scope = self)
+</li>
+                
+              </ol>
+              
+
+            <ol start="43" class="context-line">
+              <li onclick="toggle('pre70206703683980', 'post70206703683980')">      Slim::Template.new(pretty: true) { content }.render(scope)<span>...</span></li></ol>
+
+              
+              <ol start='44' class="post-context" id="post70206703683980">
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">
+</li>
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">    # Render block through tilt template
+</li>
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">    def markdown(content)
+</li>
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">      Tilt::RedcarpetTemplate.new { content }.render
+</li>
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703683980', 'post70206703683980')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;rep&#x2F;design-system-composer&#x2F;roda-render_component.rb</code>: in <code>slim</code>
+
+          
+          <div class="context" id="c70206710859600">
+              
+              <ol start="36" class="pre-context" id="pre70206710859600">
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">      end
+</li>
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">    end
+</li>
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">
+</li>
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">    private
+</li>
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">
+</li>
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">    # Render block through tilt template
+</li>
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">    def slim(content, scope = self)
+</li>
+                
+              </ol>
+              
+
+            <ol start="43" class="context-line">
+              <li onclick="toggle('pre70206710859600', 'post70206710859600')">      Slim::Template.new(pretty: true) { content }.render(scope)<span>...</span></li></ol>
+
+              
+              <ol start='44' class="post-context" id="post70206710859600">
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">    end
+</li>
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">
+</li>
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">    # Render block through tilt template
+</li>
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">    def markdown(content)
+</li>
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">      Tilt::RedcarpetTemplate.new { content }.render
+</li>
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">    end
+</li>
+                
+                <li onclick="toggle('pre70206710859600', 'post70206710859600')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;rep&#x2F;design-system-composer&#x2F;views&#x2F;templates&#x2F;search.slim</code>: in <code>block in singleton class</code>
+
+          
+          <div class="context" id="c70206703846540">
+              
+              <ol start="1" class="pre-context" id="pre70206703846540">
+                
+              </ol>
+              
+
+            <ol start="1" class="context-line">
+              <li onclick="toggle('pre70206703846540', 'post70206703846540')">== slim :breadcrumb<span>...</span></li></ol>
+
+              
+              <ol start='2' class="post-context" id="post70206703846540">
+                
+                <li onclick="toggle('pre70206703846540', 'post70206703846540')">
+</li>
+                
+                <li onclick="toggle('pre70206703846540', 'post70206703846540')">div role=&quot;main&quot;
+</li>
+                
+                <li onclick="toggle('pre70206703846540', 'post70206703846540')">  header
+</li>
+                
+                <li onclick="toggle('pre70206703846540', 'post70206703846540')">    form.search action=&quot;http:&#x2F;&#x2F;search-au.funnelback.com&#x2F;s&#x2F;search.html&quot; method=&quot;get&quot;
+</li>
+                
+                <li onclick="toggle('pre70206703846540', 'post70206703846540')">      fieldset
+</li>
+                
+                <li onclick="toggle('pre70206703846540', 'post70206703846540')">        .inline
+</li>
+                
+                <li onclick="toggle('pre70206703846540', 'post70206703846540')">          input type=&quot;hidden&quot; name=&quot;collection&quot; value=&quot;unimelb-researchers&quot;
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;tilt-1.4.1&#x2F;lib&#x2F;tilt&#x2F;template.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70206702623880">
+              
+              <ol start="163" class="pre-context" id="pre70206702623880">
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">    # evaluation is guaranteed to be performed in the scope object with the
+</li>
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">    # locals specified and with support for yielding to the block.
+</li>
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">    #
+</li>
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">    # This method is only used by source generating templates. Subclasses that
+</li>
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">    # override render() may not support all features.
+</li>
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">    def evaluate(scope, locals, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">      method = compiled_method(locals.keys)
+</li>
+                
+              </ol>
+              
+
+            <ol start="170" class="context-line">
+              <li onclick="toggle('pre70206702623880', 'post70206702623880')">      method.bind(scope).call(locals, &amp;block)<span>...</span></li></ol>
+
+              
+              <ol start='171' class="post-context" id="post70206702623880">
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">    end
+</li>
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">
+</li>
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">    # Generates all template source by combining the preamble, template, and
+</li>
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">    # postamble and returns a two-tuple of the form: [source, offset], where
+</li>
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">    # source is the string containing (Ruby) source code for the template and
+</li>
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">    # offset is the integer line offset where line reporting should begin.
+</li>
+                
+                <li onclick="toggle('pre70206702623880', 'post70206702623880')">    #
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;tilt-1.4.1&#x2F;lib&#x2F;tilt&#x2F;template.rb</code>: in <code>evaluate</code>
+
+          
+          <div class="context" id="c70206711290120">
+              
+              <ol start="163" class="pre-context" id="pre70206711290120">
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">    # evaluation is guaranteed to be performed in the scope object with the
+</li>
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">    # locals specified and with support for yielding to the block.
+</li>
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">    #
+</li>
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">    # This method is only used by source generating templates. Subclasses that
+</li>
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">    # override render() may not support all features.
+</li>
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">    def evaluate(scope, locals, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">      method = compiled_method(locals.keys)
+</li>
+                
+              </ol>
+              
+
+            <ol start="170" class="context-line">
+              <li onclick="toggle('pre70206711290120', 'post70206711290120')">      method.bind(scope).call(locals, &amp;block)<span>...</span></li></ol>
+
+              
+              <ol start='171' class="post-context" id="post70206711290120">
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">    end
+</li>
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">
+</li>
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">    # Generates all template source by combining the preamble, template, and
+</li>
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">    # postamble and returns a two-tuple of the form: [source, offset], where
+</li>
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">    # source is the string containing (Ruby) source code for the template and
+</li>
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">    # offset is the integer line offset where line reporting should begin.
+</li>
+                
+                <li onclick="toggle('pre70206711290120', 'post70206711290120')">    #
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;tilt-1.4.1&#x2F;lib&#x2F;tilt&#x2F;template.rb</code>: in <code>render</code>
+
+          
+          <div class="context" id="c70206703605160">
+              
+              <ol start="96" class="pre-context" id="pre70206703605160">
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">      data
+</li>
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">
+</li>
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">    # Render the template in the given scope with the locals specified. If a
+</li>
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">    # block is given, it is typically available within the template via
+</li>
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">    # +yield+.
+</li>
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">    def render(scope=Object.new, locals={}, &amp;block)
+</li>
+                
+              </ol>
+              
+
+            <ol start="103" class="context-line">
+              <li onclick="toggle('pre70206703605160', 'post70206703605160')">      evaluate scope, locals || {}, &amp;block<span>...</span></li></ol>
+
+              
+              <ol start='104' class="post-context" id="post70206703605160">
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">
+</li>
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">    # The basename of the template file.
+</li>
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">    def basename(suffix=&#x27;&#x27;)
+</li>
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">      File.basename(file, suffix) if file
+</li>
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703605160', 'post70206703605160')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;roda-2.11.0&#x2F;lib&#x2F;roda&#x2F;plugins&#x2F;render.rb</code>: in <code>render</code>
+
+          
+          <div class="context" id="c70206703866440">
+              
+              <ol start="213" class="pre-context" id="pre70206703866440">
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">      end
+</li>
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">
+</li>
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">      module InstanceMethods
+</li>
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">        # Render the given template. See Render for details.
+</li>
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">        def render(template, opts = OPTS, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">          opts = parse_template_opts(template, opts)
+</li>
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">          merge_render_locals(opts)
+</li>
+                
+              </ol>
+              
+
+            <ol start="220" class="context-line">
+              <li onclick="toggle('pre70206703866440', 'post70206703866440')">          retrieve_template(opts).render((opts[:scope]||self), (opts[:locals]||OPTS), &amp;block)<span>...</span></li></ol>
+
+              
+              <ol start='221' class="post-context" id="post70206703866440">
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">        end
+</li>
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">
+</li>
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">        # Return the render options for the instance&#x27;s class. While this
+</li>
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">        # is not currently frozen, it may be frozen in a future version,
+</li>
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">        # so you should not attempt to modify it.
+</li>
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">        def render_opts
+</li>
+                
+                <li onclick="toggle('pre70206703866440', 'post70206703866440')">          self.class.render_opts
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;roda-2.11.0&#x2F;lib&#x2F;roda&#x2F;plugins&#x2F;render.rb</code>: in <code>view</code>
+
+          
+          <div class="context" id="c70206702486960">
+              
+              <ol start="228" class="pre-context" id="pre70206702486960">
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">        end
+</li>
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">
+</li>
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">        # Render the given template.  If there is a default layout
+</li>
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">        # for the class, take the result of the template rendering
+</li>
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">        # and render it inside the layout.  See Render for details.
+</li>
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">        def view(template, opts=OPTS)
+</li>
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">          opts = parse_template_opts(template, opts)
+</li>
+                
+              </ol>
+              
+
+            <ol start="235" class="context-line">
+              <li onclick="toggle('pre70206702486960', 'post70206702486960')">          content = opts[:content] || render_template(opts)<span>...</span></li></ol>
+
+              
+              <ol start='236' class="post-context" id="post70206702486960">
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">
+</li>
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">          if layout_opts  = view_layout_opts(opts)
+</li>
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">            content = render_template(layout_opts){content}
+</li>
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">          end
+</li>
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">
+</li>
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">          content
+</li>
+                
+                <li onclick="toggle('pre70206702486960', 'post70206702486960')">        end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;rep&#x2F;design-system-composer&#x2F;app.rb</code>: in <code>block (3 levels) in &lt;class:App&gt;</code>
+
+          
+          <div class="context" id="c70206703016520">
+              
+              <ol start="65" class="pre-context" id="pre70206703016520">
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">            @file = path
+</li>
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">            @source = convert_tags(slim(file_content(f)))
+</li>
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">            opts[:pagetitle] = &quot;Source for #{@file}&quot;
+</li>
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">            view(&#x27;templates&#x2F;source&#x27;)
+</li>
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">          end
+</li>
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">
+</li>
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">          opts[:pagetitle] = File.basename(path).capitalize
+</li>
+                
+              </ol>
+              
+
+            <ol start="72" class="context-line">
+              <li onclick="toggle('pre70206703016520', 'post70206703016520')">          view(&#x27;templates&#x2F;&#x27; + path)<span>...</span></li></ol>
+
+              
+              <ol start='73' class="post-context" id="post70206703016520">
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">        end
+</li>
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">      end
+</li>
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">
+</li>
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">      r.is do
+</li>
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">        opts[:pagetitle] = &#x27;Layouts&#x27;
+</li>
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">        view(&#x27;templates&#x2F;index&#x27;)
+</li>
+                
+                <li onclick="toggle('pre70206703016520', 'post70206703016520')">      end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;roda-2.11.0&#x2F;lib&#x2F;roda.rb</code>: in <code>if_match</code>
+
+          
+          <div class="context" id="c70206703010660">
+              
+              <ol start="757" class="pre-context" id="pre70206703010660">
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">        def if_match(args)
+</li>
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">          path = @remaining_path
+</li>
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">          # For every block, we make sure to reset captures so that
+</li>
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">          # nesting matchers won&#x27;t mess with each other&#x27;s captures.
+</li>
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">          @captures.clear
+</li>
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">
+</li>
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">          return unless match_all(args)
+</li>
+                
+              </ol>
+              
+
+            <ol start="764" class="context-line">
+              <li onclick="toggle('pre70206703010660', 'post70206703010660')">          block_result(yield(*captures))<span>...</span></li></ol>
+
+              
+              <ol start='765' class="post-context" id="post70206703010660">
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">          throw :halt, response.finish
+</li>
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">        ensure
+</li>
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">          @remaining_path = path
+</li>
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">        end
+</li>
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">        
+</li>
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">        # Attempt to match the argument to the given request, handling
+</li>
+                
+                <li onclick="toggle('pre70206703010660', 'post70206703010660')">        # common ruby types.
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;roda-2.11.0&#x2F;lib&#x2F;roda.rb</code>: in <code>on</code>
+
+          
+          <div class="context" id="c70206702717600">
+              
+              <ol start="480" class="pre-context" id="pre70206702717600">
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">        #       # handle &#x2F;foo&#x2F;bar request
+</li>
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">        #     end
+</li>
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">        #   end
+</li>
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">        def on(*args, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">          if args.empty?
+</li>
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">            always(&amp;block)
+</li>
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">          else
+</li>
+                
+              </ol>
+              
+
+            <ol start="487" class="context-line">
+              <li onclick="toggle('pre70206702717600', 'post70206702717600')">            if_match(args, &amp;block)<span>...</span></li></ol>
+
+              
+              <ol start='488' class="post-context" id="post70206702717600">
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">          end
+</li>
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">        end
+</li>
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">
+</li>
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">        # The already matched part of the path, including the original SCRIPT_NAME.
+</li>
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">        def matched_path
+</li>
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">          e = @env
+</li>
+                
+                <li onclick="toggle('pre70206702717600', 'post70206702717600')">          e[SCRIPT_NAME] + e[PATH_INFO].chomp(@remaining_path)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;rep&#x2F;design-system-composer&#x2F;app.rb</code>: in <code>block (2 levels) in &lt;class:App&gt;</code>
+
+          
+          <div class="context" id="c70206702456760">
+              
+              <ol start="52" class="pre-context" id="pre70206702456760">
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">        opts[:pagetitle] = &#x27;Components&#x27;
+</li>
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">        view(&#x27;components&#x2F;index&#x27;)
+</li>
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">      end
+</li>
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">    end
+</li>
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">
+</li>
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">    # Complete layout, with source variant and index
+</li>
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">    r.on &#x27;layouts&#x27; do
+</li>
+                
+              </ol>
+              
+
+            <ol start="59" class="context-line">
+              <li onclick="toggle('pre70206702456760', 'post70206702456760')">      r.on :path do |path|<span>...</span></li></ol>
+
+              
+              <ol start='60' class="post-context" id="post70206702456760">
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">        f = File.join(opts[:root], &#x27;views&#x27;, &#x27;templates&#x27;, path + &#x27;.slim&#x27;)
+</li>
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">        if File.exist? f
+</li>
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">          @layout = true
+</li>
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">
+</li>
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">          r.on &#x27;source&#x27; do
+</li>
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">            @file = path
+</li>
+                
+                <li onclick="toggle('pre70206702456760', 'post70206702456760')">            @source = convert_tags(slim(file_content(f)))
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;roda-2.11.0&#x2F;lib&#x2F;roda.rb</code>: in <code>if_match</code>
+
+          
+          <div class="context" id="c70206703834840">
+              
+              <ol start="757" class="pre-context" id="pre70206703834840">
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">        def if_match(args)
+</li>
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">          path = @remaining_path
+</li>
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">          # For every block, we make sure to reset captures so that
+</li>
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">          # nesting matchers won&#x27;t mess with each other&#x27;s captures.
+</li>
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">          @captures.clear
+</li>
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">
+</li>
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">          return unless match_all(args)
+</li>
+                
+              </ol>
+              
+
+            <ol start="764" class="context-line">
+              <li onclick="toggle('pre70206703834840', 'post70206703834840')">          block_result(yield(*captures))<span>...</span></li></ol>
+
+              
+              <ol start='765' class="post-context" id="post70206703834840">
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">          throw :halt, response.finish
+</li>
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">        ensure
+</li>
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">          @remaining_path = path
+</li>
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">        end
+</li>
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">        
+</li>
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">        # Attempt to match the argument to the given request, handling
+</li>
+                
+                <li onclick="toggle('pre70206703834840', 'post70206703834840')">        # common ruby types.
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;roda-2.11.0&#x2F;lib&#x2F;roda.rb</code>: in <code>on</code>
+
+          
+          <div class="context" id="c70206711618000">
+              
+              <ol start="480" class="pre-context" id="pre70206711618000">
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">        #       # handle &#x2F;foo&#x2F;bar request
+</li>
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">        #     end
+</li>
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">        #   end
+</li>
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">        def on(*args, &amp;block)
+</li>
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">          if args.empty?
+</li>
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">            always(&amp;block)
+</li>
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">          else
+</li>
+                
+              </ol>
+              
+
+            <ol start="487" class="context-line">
+              <li onclick="toggle('pre70206711618000', 'post70206711618000')">            if_match(args, &amp;block)<span>...</span></li></ol>
+
+              
+              <ol start='488' class="post-context" id="post70206711618000">
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">          end
+</li>
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">        end
+</li>
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">
+</li>
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">        # The already matched part of the path, including the original SCRIPT_NAME.
+</li>
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">        def matched_path
+</li>
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">          e = @env
+</li>
+                
+                <li onclick="toggle('pre70206711618000', 'post70206711618000')">          e[SCRIPT_NAME] + e[PATH_INFO].chomp(@remaining_path)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;rep&#x2F;design-system-composer&#x2F;app.rb</code>: in <code>block in &lt;class:App&gt;</code>
+
+          
+          <div class="context" id="c70206702706600">
+              
+              <ol start="51" class="pre-context" id="pre70206702706600">
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">      r.root do
+</li>
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">        opts[:pagetitle] = &#x27;Components&#x27;
+</li>
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">        view(&#x27;components&#x2F;index&#x27;)
+</li>
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">      end
+</li>
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">    end
+</li>
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">
+</li>
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">    # Complete layout, with source variant and index
+</li>
+                
+              </ol>
+              
+
+            <ol start="58" class="context-line">
+              <li onclick="toggle('pre70206702706600', 'post70206702706600')">    r.on &#x27;layouts&#x27; do<span>...</span></li></ol>
+
+              
+              <ol start='59' class="post-context" id="post70206702706600">
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">      r.on :path do |path|
+</li>
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">        f = File.join(opts[:root], &#x27;views&#x27;, &#x27;templates&#x27;, path + &#x27;.slim&#x27;)
+</li>
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">        if File.exist? f
+</li>
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">          @layout = true
+</li>
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">
+</li>
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">          r.on &#x27;source&#x27; do
+</li>
+                
+                <li onclick="toggle('pre70206702706600', 'post70206702706600')">            @file = path
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;roda-2.11.0&#x2F;lib&#x2F;roda.rb</code>: in <code>instance_exec</code>
+
+          
+          <div class="context" id="c70206702700640">
+              
+              <ol start="236" class="pre-context" id="pre70206702700640">
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">        # instance_exec the route block in the scope of the
+</li>
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">        # receiver, with the related request.  Catch :halt so that
+</li>
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">        # the route block can throw :halt at any point with the
+</li>
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">        # rack response to use.
+</li>
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">        def call(&amp;block)
+</li>
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">          catch(:halt) do
+</li>
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">            r = @_request
+</li>
+                
+              </ol>
+              
+
+            <ol start="243" class="context-line">
+              <li onclick="toggle('pre70206702700640', 'post70206702700640')">            r.block_result(instance_exec(r, &amp;block))<span>...</span></li></ol>
+
+              
+              <ol start='244' class="post-context" id="post70206702700640">
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">            @_response.finish
+</li>
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">          end
+</li>
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">        end
+</li>
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">
+</li>
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">        # The environment hash for the current request. Example:
+</li>
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">        #
+</li>
+                
+                <li onclick="toggle('pre70206702700640', 'post70206702700640')">        #   env[&#x27;REQUEST_METHOD&#x27;] # =&gt; &#x27;GET&#x27;
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;roda-2.11.0&#x2F;lib&#x2F;roda.rb</code>: in <code>block in call</code>
+
+          
+          <div class="context" id="c70206703390660">
+              
+              <ol start="236" class="pre-context" id="pre70206703390660">
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">        # instance_exec the route block in the scope of the
+</li>
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">        # receiver, with the related request.  Catch :halt so that
+</li>
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">        # the route block can throw :halt at any point with the
+</li>
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">        # rack response to use.
+</li>
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">        def call(&amp;block)
+</li>
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">          catch(:halt) do
+</li>
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">            r = @_request
+</li>
+                
+              </ol>
+              
+
+            <ol start="243" class="context-line">
+              <li onclick="toggle('pre70206703390660', 'post70206703390660')">            r.block_result(instance_exec(r, &amp;block))<span>...</span></li></ol>
+
+              
+              <ol start='244' class="post-context" id="post70206703390660">
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">            @_response.finish
+</li>
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">          end
+</li>
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">        end
+</li>
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">
+</li>
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">        # The environment hash for the current request. Example:
+</li>
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">        #
+</li>
+                
+                <li onclick="toggle('pre70206703390660', 'post70206703390660')">        #   env[&#x27;REQUEST_METHOD&#x27;] # =&gt; &#x27;GET&#x27;
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;roda-2.11.0&#x2F;lib&#x2F;roda.rb</code>: in <code>catch</code>
+
+          
+          <div class="context" id="c70206703407720">
+              
+              <ol start="234" class="pre-context" id="pre70206703407720">
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">        end
+</li>
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">
+</li>
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">        # instance_exec the route block in the scope of the
+</li>
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">        # receiver, with the related request.  Catch :halt so that
+</li>
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">        # the route block can throw :halt at any point with the
+</li>
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">        # rack response to use.
+</li>
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">        def call(&amp;block)
+</li>
+                
+              </ol>
+              
+
+            <ol start="241" class="context-line">
+              <li onclick="toggle('pre70206703407720', 'post70206703407720')">          catch(:halt) do<span>...</span></li></ol>
+
+              
+              <ol start='242' class="post-context" id="post70206703407720">
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">            r = @_request
+</li>
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">            r.block_result(instance_exec(r, &amp;block))
+</li>
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">            @_response.finish
+</li>
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">          end
+</li>
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">        end
+</li>
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">
+</li>
+                
+                <li onclick="toggle('pre70206703407720', 'post70206703407720')">        # The environment hash for the current request. Example:
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;roda-2.11.0&#x2F;lib&#x2F;roda.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70206710797960">
+              
+              <ol start="234" class="pre-context" id="pre70206710797960">
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">        end
+</li>
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">
+</li>
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">        # instance_exec the route block in the scope of the
+</li>
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">        # receiver, with the related request.  Catch :halt so that
+</li>
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">        # the route block can throw :halt at any point with the
+</li>
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">        # rack response to use.
+</li>
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">        def call(&amp;block)
+</li>
+                
+              </ol>
+              
+
+            <ol start="241" class="context-line">
+              <li onclick="toggle('pre70206710797960', 'post70206710797960')">          catch(:halt) do<span>...</span></li></ol>
+
+              
+              <ol start='242' class="post-context" id="post70206710797960">
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">            r = @_request
+</li>
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">            r.block_result(instance_exec(r, &amp;block))
+</li>
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">            @_response.finish
+</li>
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">          end
+</li>
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">        end
+</li>
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">
+</li>
+                
+                <li onclick="toggle('pre70206710797960', 'post70206710797960')">        # The environment hash for the current request. Example:
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;roda-2.11.0&#x2F;lib&#x2F;roda.rb</code>: in <code>block in build_rack_app</code>
+
+          
+          <div class="context" id="c70206702639060">
+              
+              <ol start="208" class="pre-context" id="pre70206702639060">
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">        private
+</li>
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">
+</li>
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">        # Build the rack app to use
+</li>
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">        def build_rack_app
+</li>
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">          if block = @route_block
+</li>
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">            builder = Rack::Builder.new
+</li>
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">            @middleware.each{|a, b| builder.use(*a, &amp;b)}
+</li>
+                
+              </ol>
+              
+
+            <ol start="215" class="context-line">
+              <li onclick="toggle('pre70206702639060', 'post70206702639060')">            builder.run lambda{|env| new(env).call(&amp;block)}<span>...</span></li></ol>
+
+              
+              <ol start='216' class="post-context" id="post70206702639060">
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">            @app = builder.to_app
+</li>
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">          end
+</li>
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">        end
+</li>
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">      end
+</li>
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">
+</li>
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">      # Instance methods for the Roda class.
+</li>
+                
+                <li onclick="toggle('pre70206702639060', 'post70206702639060')">      #
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;rack-1.6.4&#x2F;lib&#x2F;rack&#x2F;static.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70206703557700">
+              
+              <ol start="117" class="pre-context" id="pre70206703557700">
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">        headers = response[1]
+</li>
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">        applicable_rules(path).each do |rule, new_headers|
+</li>
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">          new_headers.each { |field, content| headers[field] = content }
+</li>
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">        end
+</li>
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">
+</li>
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">        response
+</li>
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">      else
+</li>
+                
+              </ol>
+              
+
+            <ol start="124" class="context-line">
+              <li onclick="toggle('pre70206703557700', 'post70206703557700')">        @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='125' class="post-context" id="post70206703557700">
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">      end
+</li>
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">
+</li>
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">    # Convert HTTP header rules to HTTP headers
+</li>
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">    def applicable_rules(path)
+</li>
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">      @header_rules.find_all do |rule, new_headers|
+</li>
+                
+                <li onclick="toggle('pre70206703557700', 'post70206703557700')">        case rule
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;rack-1.6.4&#x2F;lib&#x2F;rack&#x2F;session&#x2F;abstract&#x2F;id.rb</code>: in <code>context</code>
+
+          
+          <div class="context" id="c70206703551520">
+              
+              <ol start="218" class="pre-context" id="pre70206703551520">
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">
+</li>
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">        def call(env)
+</li>
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">          context(env)
+</li>
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">        end
+</li>
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">
+</li>
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">        def context(env, app=@app)
+</li>
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">          prepare_session(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="225" class="context-line">
+              <li onclick="toggle('pre70206703551520', 'post70206703551520')">          status, headers, body = app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='226' class="post-context" id="post70206703551520">
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">          commit_session(env, status, headers, body)
+</li>
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">        end
+</li>
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">
+</li>
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">        private
+</li>
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">
+</li>
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">        def initialize_sid
+</li>
+                
+                <li onclick="toggle('pre70206703551520', 'post70206703551520')">          @sidbits = @default_options[:sidbits]
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;rack-1.6.4&#x2F;lib&#x2F;rack&#x2F;session&#x2F;abstract&#x2F;id.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70206710814560">
+              
+              <ol start="213" class="pre-context" id="pre70206710814560">
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">          @default_options = self.class::DEFAULT_OPTIONS.merge(options)
+</li>
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">          @key = @default_options.delete(:key)
+</li>
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">          @cookie_only = @default_options.delete(:cookie_only)
+</li>
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">          initialize_sid
+</li>
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">        end
+</li>
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">
+</li>
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">        def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="220" class="context-line">
+              <li onclick="toggle('pre70206710814560', 'post70206710814560')">          context(env)<span>...</span></li></ol>
+
+              
+              <ol start='221' class="post-context" id="post70206710814560">
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">        end
+</li>
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">
+</li>
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">        def context(env, app=@app)
+</li>
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">          prepare_session(env)
+</li>
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">          status, headers, body = app.call(env)
+</li>
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">          commit_session(env, status, headers, body)
+</li>
+                
+                <li onclick="toggle('pre70206710814560', 'post70206710814560')">        end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;rack-1.6.4&#x2F;lib&#x2F;rack&#x2F;tempfile_reaper.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70206701824760">
+              
+              <ol start="8" class="pre-context" id="pre70206701824760">
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">  class TempfileReaper
+</li>
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">    def initialize(app)
+</li>
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">    end
+</li>
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">
+</li>
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">      env[&#x27;rack.tempfiles&#x27;] ||= []
+</li>
+                
+              </ol>
+              
+
+            <ol start="15" class="context-line">
+              <li onclick="toggle('pre70206701824760', 'post70206701824760')">      status, headers, body = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='16' class="post-context" id="post70206701824760">
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">      body_proxy = BodyProxy.new(body) do
+</li>
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">        env[&#x27;rack.tempfiles&#x27;].each { |f| f.close! } unless env[&#x27;rack.tempfiles&#x27;].nil?
+</li>
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">      end
+</li>
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">      [status, headers, body_proxy]
+</li>
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">    end
+</li>
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">  end
+</li>
+                
+                <li onclick="toggle('pre70206701824760', 'post70206701824760')">end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;rack-1.6.4&#x2F;lib&#x2F;rack&#x2F;lint.rb</code>: in <code>_call</code>
+
+          
+          <div class="context" id="c70206702394540">
+              
+              <ol start="42" class="pre-context" id="pre70206702394540">
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">      assert(&quot;No env given&quot;) { env }
+</li>
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">      check_env env
+</li>
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">
+</li>
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">      env[&#x27;rack.input&#x27;] = InputWrapper.new(env[&#x27;rack.input&#x27;])
+</li>
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">      env[&#x27;rack.errors&#x27;] = ErrorWrapper.new(env[&#x27;rack.errors&#x27;])
+</li>
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">
+</li>
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">      ## and returns an Array of exactly three values:
+</li>
+                
+              </ol>
+              
+
+            <ol start="49" class="context-line">
+              <li onclick="toggle('pre70206702394540', 'post70206702394540')">      status, headers, @body = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='50' class="post-context" id="post70206702394540">
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">      ## The *status*,
+</li>
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">      check_status status
+</li>
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">      ## the *headers*,
+</li>
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">      check_headers headers
+</li>
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">
+</li>
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">      check_hijack_response headers, env
+</li>
+                
+                <li onclick="toggle('pre70206702394540', 'post70206702394540')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;rack-1.6.4&#x2F;lib&#x2F;rack&#x2F;lint.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70206703784820">
+              
+              <ol start="30" class="pre-context" id="pre70206703784820">
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">    ## after to catch all mistakes.
+</li>
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">
+</li>
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">    ## = Rack applications
+</li>
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">
+</li>
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">    ## A Rack application is a Ruby object (not a class) that
+</li>
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">    ## responds to +call+.
+</li>
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">    def call(env=nil)
+</li>
+                
+              </ol>
+              
+
+            <ol start="37" class="context-line">
+              <li onclick="toggle('pre70206703784820', 'post70206703784820')">      dup._call(env)<span>...</span></li></ol>
+
+              
+              <ol start='38' class="post-context" id="post70206703784820">
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">
+</li>
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">    def _call(env)
+</li>
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">      ## It takes exactly one argument, the *environment*
+</li>
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">      assert(&quot;No env given&quot;) { env }
+</li>
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">      check_env env
+</li>
+                
+                <li onclick="toggle('pre70206703784820', 'post70206703784820')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;rack-1.6.4&#x2F;lib&#x2F;rack&#x2F;showexceptions.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70206703764840">
+              
+              <ol start="17" class="pre-context" id="pre70206703764840">
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">
+</li>
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">    def initialize(app)
+</li>
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">      @template = ERB.new(TEMPLATE)
+</li>
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">
+</li>
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="24" class="context-line">
+              <li onclick="toggle('pre70206703764840', 'post70206703764840')">      @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='25' class="post-context" id="post70206703764840">
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">    rescue StandardError, LoadError, SyntaxError =&gt; e
+</li>
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">      exception_string = dump_exception(e)
+</li>
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">
+</li>
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">      env[&quot;rack.errors&quot;].puts(exception_string)
+</li>
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">      env[&quot;rack.errors&quot;].flush
+</li>
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">
+</li>
+                
+                <li onclick="toggle('pre70206703764840', 'post70206703764840')">      if accepts_html?(env)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;rack-1.6.4&#x2F;lib&#x2F;rack&#x2F;commonlogger.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70206703376340">
+              
+              <ol start="26" class="pre-context" id="pre70206703376340">
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">    def initialize(app, logger=nil)
+</li>
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">      @logger = logger
+</li>
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">
+</li>
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">    def call(env)
+</li>
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">      began_at = Time.now
+</li>
+                
+              </ol>
+              
+
+            <ol start="33" class="context-line">
+              <li onclick="toggle('pre70206703376340', 'post70206703376340')">      status, header, body = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='34' class="post-context" id="post70206703376340">
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">      header = Utils::HeaderHash.new(header)
+</li>
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">      body = BodyProxy.new(body) { log(env, status, header, began_at) }
+</li>
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">      [status, header, body]
+</li>
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">
+</li>
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">    private
+</li>
+                
+                <li onclick="toggle('pre70206703376340', 'post70206703376340')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;rack-1.6.4&#x2F;lib&#x2F;rack&#x2F;chunked.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70206703371700">
+              
+              <ol start="47" class="pre-context" id="pre70206703371700">
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">        false
+</li>
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">      else
+</li>
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">        true
+</li>
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">      end
+</li>
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">    end
+</li>
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">
+</li>
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="54" class="context-line">
+              <li onclick="toggle('pre70206703371700', 'post70206703371700')">      status, headers, body = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='55' class="post-context" id="post70206703371700">
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">      headers = HeaderHash.new(headers)
+</li>
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">
+</li>
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">      if ! chunkable_version?(env[&#x27;HTTP_VERSION&#x27;]) ||
+</li>
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">         STATUS_WITH_NO_ENTITY_BODY.include?(status) ||
+</li>
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">         headers[CONTENT_LENGTH] ||
+</li>
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">         headers[&#x27;Transfer-Encoding&#x27;]
+</li>
+                
+                <li onclick="toggle('pre70206703371700', 'post70206703371700')">        [status, headers, body]
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;rack-1.6.4&#x2F;lib&#x2F;rack&#x2F;content_length.rb</code>: in <code>call</code>
+
+          
+          <div class="context" id="c70206711501580">
+              
+              <ol start="8" class="pre-context" id="pre70206711501580">
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">    include Rack::Utils
+</li>
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">
+</li>
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">    def initialize(app)
+</li>
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">      @app = app
+</li>
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">    end
+</li>
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">
+</li>
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">    def call(env)
+</li>
+                
+              </ol>
+              
+
+            <ol start="15" class="context-line">
+              <li onclick="toggle('pre70206711501580', 'post70206711501580')">      status, headers, body = @app.call(env)<span>...</span></li></ol>
+
+              
+              <ol start='16' class="post-context" id="post70206711501580">
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">      headers = HeaderHash.new(headers)
+</li>
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">
+</li>
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">      if !STATUS_WITH_NO_ENTITY_BODY.include?(status.to_i) &amp;&amp;
+</li>
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">         !headers[CONTENT_LENGTH] &amp;&amp;
+</li>
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">         !headers[&#x27;Transfer-Encoding&#x27;] &amp;&amp;
+</li>
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">         body.respond_to?(:to_ary)
+</li>
+                
+                <li onclick="toggle('pre70206711501580', 'post70206711501580')">
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;unicorn-5.0.1&#x2F;lib&#x2F;unicorn&#x2F;http_server.rb</code>: in <code>process_client</code>
+
+          
+          <div class="context" id="c70206711497660">
+              
+              <ol start="555" class="pre-context" id="pre70206711497660">
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">                 &quot;HTTP&#x2F;1.1 100 Continue\r\n\r\n&quot;.freeze)
+</li>
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">    env.delete(&#x27;HTTP_EXPECT&#x27;.freeze)
+</li>
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">  end
+</li>
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">
+</li>
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">  # once a client is accepted, it is processed in its entirety here
+</li>
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">  # in 3 easy steps: read request, call app, write app response
+</li>
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">  def process_client(client)
+</li>
+                
+              </ol>
+              
+
+            <ol start="562" class="context-line">
+              <li onclick="toggle('pre70206711497660', 'post70206711497660')">    status, headers, body = @app.call(env = @request.read(client))<span>...</span></li></ol>
+
+              
+              <ol start='563' class="post-context" id="post70206711497660">
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">
+</li>
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">    begin
+</li>
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">      return if @request.hijacked?
+</li>
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">
+</li>
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">      if 100 == status.to_i
+</li>
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">        e100_response_write(client, env)
+</li>
+                
+                <li onclick="toggle('pre70206711497660', 'post70206711497660')">        status, headers, body = @app.call(env)
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;unicorn-5.0.1&#x2F;lib&#x2F;unicorn&#x2F;http_server.rb</code>: in <code>worker_loop</code>
+
+          
+          <div class="context" id="c70206682700380">
+              
+              <ol start="651" class="pre-context" id="pre70206682700380">
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">      nr = 0
+</li>
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">      worker.tick = time_now.to_i
+</li>
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">      tmp = ready.dup
+</li>
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">      while sock = tmp.shift
+</li>
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">        # Unicorn::Worker#kgio_tryaccept is not like accept(2) at all,
+</li>
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">        # but that will return false
+</li>
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">        if client = sock.kgio_tryaccept
+</li>
+                
+              </ol>
+              
+
+            <ol start="658" class="context-line">
+              <li onclick="toggle('pre70206682700380', 'post70206682700380')">          process_client(client)<span>...</span></li></ol>
+
+              
+              <ol start='659' class="post-context" id="post70206682700380">
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">          nr += 1
+</li>
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">          worker.tick = time_now.to_i
+</li>
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">        end
+</li>
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">        break if nr &lt; 0
+</li>
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">      end
+</li>
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">
+</li>
+                
+                <li onclick="toggle('pre70206682700380', 'post70206682700380')">      # make the following bet: if we accepted clients this round,
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;unicorn-5.0.1&#x2F;lib&#x2F;unicorn&#x2F;http_server.rb</code>: in <code>spawn_missing_workers</code>
+
+          
+          <div class="context" id="c70206701564620">
+              
+              <ol start="501" class="pre-context" id="pre70206701564620">
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">      worker = Unicorn::Worker.new(worker_nr)
+</li>
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">      before_fork.call(self, worker)
+</li>
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">      if pid = fork
+</li>
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">        @workers[pid] = worker
+</li>
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">        worker.atfork_parent
+</li>
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">      else
+</li>
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">        after_fork_internal
+</li>
+                
+              </ol>
+              
+
+            <ol start="508" class="context-line">
+              <li onclick="toggle('pre70206701564620', 'post70206701564620')">        worker_loop(worker)<span>...</span></li></ol>
+
+              
+              <ol start='509' class="post-context" id="post70206701564620">
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">        exit
+</li>
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">      end
+</li>
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">    end
+</li>
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">    rescue =&gt; e
+</li>
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">      @logger.error(e) rescue nil
+</li>
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">      exit!
+</li>
+                
+                <li onclick="toggle('pre70206701564620', 'post70206701564620')">  end
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;unicorn-5.0.1&#x2F;lib&#x2F;unicorn&#x2F;http_server.rb</code>: in <code>start</code>
+
+          
+          <div class="context" id="c70206682503500">
+              
+              <ol start="125" class="pre-context" id="pre70206682503500">
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">    # This unfortunately has the side effect of clobbering valid PID if
+</li>
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">    # we upgrade and the upgrade breaks during preload_app==true &amp;&amp; build_app!
+</li>
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">    self.pid = config[:pid]
+</li>
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">
+</li>
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">    build_app! if preload_app
+</li>
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">    bind_new_listeners!
+</li>
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">
+</li>
+                
+              </ol>
+              
+
+            <ol start="132" class="context-line">
+              <li onclick="toggle('pre70206682503500', 'post70206682503500')">    spawn_missing_workers<span>...</span></li></ol>
+
+              
+              <ol start='133' class="post-context" id="post70206682503500">
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">    self
+</li>
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">  end
+</li>
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">
+</li>
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">  # replaces current listener set with +listeners+.  This will
+</li>
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">  # close the socket if it will not exist in the new listener set
+</li>
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">  def listeners=(listeners)
+</li>
+                
+                <li onclick="toggle('pre70206682503500', 'post70206682503500')">    cur_names, dead_names = [], []
+</li>
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;unicorn-5.0.1&#x2F;bin&#x2F;unicorn</code>: in <code>&lt;top (required)&gt;</code>
+
+          
+          <div class="context" id="c70206682371460">
+              
+              <ol start="119" class="pre-context" id="pre70206682371460">
+                
+                <li onclick="toggle('pre70206682371460', 'post70206682371460')">    :unicorn_options =&gt; options,
+</li>
+                
+                <li onclick="toggle('pre70206682371460', 'post70206682371460')">    :app =&gt; app,
+</li>
+                
+                <li onclick="toggle('pre70206682371460', 'post70206682371460')">    :daemonize =&gt; rackup_opts[:daemonize],
+</li>
+                
+                <li onclick="toggle('pre70206682371460', 'post70206682371460')">  })
+</li>
+                
+                <li onclick="toggle('pre70206682371460', 'post70206682371460')">end
+</li>
+                
+                <li onclick="toggle('pre70206682371460', 'post70206682371460')">
+</li>
+                
+                <li onclick="toggle('pre70206682371460', 'post70206682371460')">Unicorn::Launcher.daemonize!(options) if rackup_opts[:daemonize]
+</li>
+                
+              </ol>
+              
+
+            <ol start="126" class="context-line">
+              <li onclick="toggle('pre70206682371460', 'post70206682371460')">Unicorn::HttpServer.new(app, options).start.join<span>...</span></li></ol>
+
+              
+              <ol start='127' class="post-context" id="post70206682371460">
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;bin&#x2F;unicorn</code>: in <code>load</code>
+
+          
+          <div class="context" id="c70206682337140">
+              
+              <ol start="16" class="pre-context" id="pre70206682337140">
+                
+                <li onclick="toggle('pre70206682337140', 'post70206682337140')">  if str =~ &#x2F;\A_(.*)_\z&#x2F; and Gem::Version.correct?($1) then
+</li>
+                
+                <li onclick="toggle('pre70206682337140', 'post70206682337140')">    version = $1
+</li>
+                
+                <li onclick="toggle('pre70206682337140', 'post70206682337140')">    ARGV.shift
+</li>
+                
+                <li onclick="toggle('pre70206682337140', 'post70206682337140')">  end
+</li>
+                
+                <li onclick="toggle('pre70206682337140', 'post70206682337140')">end
+</li>
+                
+                <li onclick="toggle('pre70206682337140', 'post70206682337140')">
+</li>
+                
+                <li onclick="toggle('pre70206682337140', 'post70206682337140')">gem &#x27;unicorn&#x27;, version
+</li>
+                
+              </ol>
+              
+
+            <ol start="23" class="context-line">
+              <li onclick="toggle('pre70206682337140', 'post70206682337140')">load Gem.bin_path(&#x27;unicorn&#x27;, &#x27;unicorn&#x27;, version)<span>...</span></li></ol>
+
+              
+              <ol start='24' class="post-context" id="post70206682337140">
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+      <li class="frame">
+        <code>&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;bin&#x2F;unicorn</code>: in <code>&lt;main&gt;</code>
+
+          
+          <div class="context" id="c70206682254800">
+              
+              <ol start="16" class="pre-context" id="pre70206682254800">
+                
+                <li onclick="toggle('pre70206682254800', 'post70206682254800')">  if str =~ &#x2F;\A_(.*)_\z&#x2F; and Gem::Version.correct?($1) then
+</li>
+                
+                <li onclick="toggle('pre70206682254800', 'post70206682254800')">    version = $1
+</li>
+                
+                <li onclick="toggle('pre70206682254800', 'post70206682254800')">    ARGV.shift
+</li>
+                
+                <li onclick="toggle('pre70206682254800', 'post70206682254800')">  end
+</li>
+                
+                <li onclick="toggle('pre70206682254800', 'post70206682254800')">end
+</li>
+                
+                <li onclick="toggle('pre70206682254800', 'post70206682254800')">
+</li>
+                
+                <li onclick="toggle('pre70206682254800', 'post70206682254800')">gem &#x27;unicorn&#x27;, version
+</li>
+                
+              </ol>
+              
+
+            <ol start="23" class="context-line">
+              <li onclick="toggle('pre70206682254800', 'post70206682254800')">load Gem.bin_path(&#x27;unicorn&#x27;, &#x27;unicorn&#x27;, version)<span>...</span></li></ol>
+
+              
+              <ol start='24' class="post-context" id="post70206682254800">
+                
+              </ol>
+              
+          </div>
+          
+      </li>
+
+  </ul>
+</div>
+
+<div id="requestinfo">
+  <h2>Request information</h2>
+
+  <h3 id="get-info">GET</h3>
+  
+    <p>No GET data.</p>
+  
+
+  <h3 id="post-info">POST</h3>
+  
+    <p>No POST data.</p>
+  
+
+
+  <h3 id="cookie-info">COOKIES</h3>
+  
+    <p>No cookie data.</p>
+  
+
+  <h3 id="env-info">Rack ENV</h3>
+    <table class="req">
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+          
+          <tr>
+            <td>HTTP_ACCEPT</td>
+            <td class="code"><div>*&#x2F;*</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_ACCEPT_ENCODING</td>
+            <td class="code"><div>gzip;q=1.0,deflate;q=0.6,identity;q=0.3</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_CONNECTION</td>
+            <td class="code"><div>close</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_HOST</td>
+            <td class="code"><div>128.250.155.100:7000</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_USER_AGENT</td>
+            <td class="code"><div>Faraday v0.9.2</div></td>
+          </tr>
+          
+          <tr>
+            <td>HTTP_VERSION</td>
+            <td class="code"><div>HTTP&#x2F;1.1</div></td>
+          </tr>
+          
+          <tr>
+            <td>PATH_INFO</td>
+            <td class="code"><div>&#x2F;layouts&#x2F;search&#x2F;</div></td>
+          </tr>
+          
+          <tr>
+            <td>QUERY_STRING</td>
+            <td class="code"><div></div></td>
+          </tr>
+          
+          <tr>
+            <td>REMOTE_ADDR</td>
+            <td class="code"><div>128.250.155.100</div></td>
+          </tr>
+          
+          <tr>
+            <td>REQUEST_METHOD</td>
+            <td class="code"><div>GET</div></td>
+          </tr>
+          
+          <tr>
+            <td>REQUEST_PATH</td>
+            <td class="code"><div>&#x2F;layouts&#x2F;search&#x2F;</div></td>
+          </tr>
+          
+          <tr>
+            <td>REQUEST_URI</td>
+            <td class="code"><div>&#x2F;layouts&#x2F;search&#x2F;</div></td>
+          </tr>
+          
+          <tr>
+            <td>SCRIPT_NAME</td>
+            <td class="code"><div></div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_NAME</td>
+            <td class="code"><div>128.250.155.100</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_PORT</td>
+            <td class="code"><div>7000</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_PROTOCOL</td>
+            <td class="code"><div>HTTP&#x2F;1.1</div></td>
+          </tr>
+          
+          <tr>
+            <td>SERVER_SOFTWARE</td>
+            <td class="code"><div>Unicorn 5.0.1</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.errors</td>
+            <td class="code"><div>#&lt;Rack::Lint::ErrorWrapper:0x007fb48890a2d8 @error=#&lt;IO:&lt;STDERR&gt;&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.hijack</td>
+            <td class="code"><div>#&lt;Proc:0x007fb48890ad28@&#x2F;Users&#x2F;jason&#x2F;.gem&#x2F;ruby&#x2F;2.3.0&#x2F;gems&#x2F;rack-1.6.4&#x2F;lib&#x2F;rack&#x2F;lint.rb:525&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.hijack?</td>
+            <td class="code"><div>true</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.input</td>
+            <td class="code"><div>#&lt;Rack::Lint::InputWrapper:0x007fb48890a300 @input=#&lt;StringIO:0x007fb489022d90&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.logger</td>
+            <td class="code"><div>#&lt;Logger:0x007fb4889028d0 @progname=nil, @level=0, @default_formatter=#&lt;Logger::Formatter:0x007fb488993d58 @datetime_format=nil&gt;, @formatter=nil, @logdev=#&lt;Logger::LogDevice:0x007fb488993bf0 @shift_size=nil, @shift_age=nil, @filename=nil, @dev=#&lt;IO:&lt;STDERR&gt;&gt;, @mon_owner=nil, @mon_count=0, @mon_mutex=#&lt;Thread::Mutex:0x007fb488993b50&gt;&gt;&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.multiprocess</td>
+            <td class="code"><div>true</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.multithread</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.cookie_hash</td>
+            <td class="code"><div>{}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.query_hash</td>
+            <td class="code"><div>{}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.request.query_string</td>
+            <td class="code"><div></div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.run_once</td>
+            <td class="code"><div>false</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.session</td>
+            <td class="code"><div>#&lt;Rack::Session::Abstract::SessionHash:0x3fda4448507c not yet loaded&gt;</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.session.options</td>
+            <td class="code"><div>{:path=&gt;&quot;&#x2F;&quot;, :domain=&gt;nil, :expire_after=&gt;nil, :secure=&gt;false, :httponly=&gt;true, :defer=&gt;false, :renew=&gt;false, :sidbits=&gt;128, :secure_random=&gt;SecureRandom, :secret=&gt;&quot;AsRP76XrEe2jJ3Xi4Js0oAsRP76XrEe2jJ3Xi4Js0oAsRP76XrEe2jJ3Xi4Js0oAsRP76XrEe2jJ3Xi4Js0oAsRP76XrEe2jJ3Xi4Js0o&quot;, :coder=&gt;#&lt;Rack::Session::Cookie::Base64::Marshal:0x007fb48c0186a8&gt;}</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.tempfiles</td>
+            <td class="code"><div>[]</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.url_scheme</td>
+            <td class="code"><div>http</div></td>
+          </tr>
+          
+          <tr>
+            <td>rack.version</td>
+            <td class="code"><div>[1, 2]</div></td>
+          </tr>
+          
+          <tr>
+            <td>unicorn.socket</td>
+            <td class="code"><div>#&lt;Kgio::Socket:fd 7&gt;</div></td>
+          </tr>
+          
+      </tbody>
+    </table>
+
+</div>
+
+<div id="explanation">
+  <p>
+    You're seeing this error because you use <code>Rack::ShowExceptions</code>.
+  </p>
+</div>
+
+</body>
+</html>

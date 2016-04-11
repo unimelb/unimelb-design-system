@@ -1,0 +1,630 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>People | Web.Unimelb </title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><link href="//d2h9b02ioca40d.cloudfront.net/v4.1/uom.css" rel="stylesheet" /><script src="//d2h9b02ioca40d.cloudfront.net/v4.1/uom.js"></script><link href="/assets/lib/docs.css" rel="stylesheet" /><link href="/assets/lib/highlight.css" rel="stylesheet" /><script src="/assets/lib/highlight.pack.js"></script><link href="/assets/lib/ace.extra.css" rel="stylesheet" /><link href="/assets/lib/verselect.css" rel="stylesheet" /><script src="/assets/lib/verselect.js"></script></head><body data-version="v4.1"><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="People"><span itemprop="name">People</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">People</h1><div class="jumpnav"></div>
+
+<p>There are four different ways of showing people in lists:
+- <code>.staff-listing</code> – default listing of academics and staff
+- <code>.staff-listing min</code> – narrow listing of academics and staff
+- <code>.staff-listing-detailed</code> – detailed list view of academics and staff
+- or as <a href="/components/search">search results</a>.</p>
+<hr /><h2 id="staff-listing">Staff listing</h2><div id="r1"><table class="staff-listing">
+  <tr>
+    <td class="two-thirds">
+      <a href="#">Paul Tagell</a>, <em>Philosopher</em>
+    </td>
+    <td class="third">
+      <em>University of Melbourne</em>
+    </td>
+  </tr>
+  <tr>
+    <td class="two-thirds">
+      <a href="#">Neil Ang</a>, <em>Juggling Professional</em>
+    </td>
+    <td class="third">
+      <em>University of Melbourne</em>
+    </td>
+  </tr>
+  <tr>
+    <td class="two-thirds">
+      <a href="#">Jason Smith</a>, <em>Coffee Expert</em>
+    </td>
+    <td class="third">
+      <em>University of Melbourne</em>
+    </td>
+  </tr>
+  <tr>
+    <td class="two-thirds">
+      <a href="#">Andi Weis</a>, <em>Can eat a lot</em>
+    </td>
+    <td class="third">
+      <em>University of Melbourne</em>
+    </td>
+  </tr>
+  <tr>
+    <td class="two-thirds">
+      <a href="#">Anne Shea</a>, <em>Chef</em>
+    </td>
+    <td class="third">
+      <em>University of Melbourne</em>
+    </td>
+  </tr>
+  <tr>
+    <td class="two-thirds">
+      <a href="#">Carl Jackson</a>, <em>Crepe Expert</em>
+    </td>
+    <td class="third">
+      <em>University of Melbourne</em>
+    </td>
+  </tr>
+</table></div>
+    <section class="code">
+      <pre class="html" id="s1">
+&lt;table class="staff-listing"&gt;
+  &lt;tr&gt;
+    &lt;td class="two-thirds"&gt;
+      &lt;a href="#"&gt;Paul Tagell&lt;/a&gt;, &lt;em&gt;Philosopher&lt;/em&gt;
+    &lt;/td&gt;
+    &lt;td class="third"&gt;
+      &lt;em&gt;University of Melbourne&lt;/em&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="two-thirds"&gt;
+      &lt;a href="#"&gt;Neil Ang&lt;/a&gt;, &lt;em&gt;Juggling Professional&lt;/em&gt;
+    &lt;/td&gt;
+    &lt;td class="third"&gt;
+      &lt;em&gt;University of Melbourne&lt;/em&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="two-thirds"&gt;
+      &lt;a href="#"&gt;Jason Smith&lt;/a&gt;, &lt;em&gt;Coffee Expert&lt;/em&gt;
+    &lt;/td&gt;
+    &lt;td class="third"&gt;
+      &lt;em&gt;University of Melbourne&lt;/em&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="two-thirds"&gt;
+      &lt;a href="#"&gt;Andi Weis&lt;/a&gt;, &lt;em&gt;Can eat a lot&lt;/em&gt;
+    &lt;/td&gt;
+    &lt;td class="third"&gt;
+      &lt;em&gt;University of Melbourne&lt;/em&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="two-thirds"&gt;
+      &lt;a href="#"&gt;Anne Shea&lt;/a&gt;, &lt;em&gt;Chef&lt;/em&gt;
+    &lt;/td&gt;
+    &lt;td class="third"&gt;
+      &lt;em&gt;University of Melbourne&lt;/em&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class="two-thirds"&gt;
+      &lt;a href="#"&gt;Carl Jackson&lt;/a&gt;, &lt;em&gt;Crepe Expert&lt;/em&gt;
+    &lt;/td&gt;
+    &lt;td class="third"&gt;
+      &lt;em&gt;University of Melbourne&lt;/em&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+      </pre>
+    </section>
+<hr /><h2 id="staff-listing-min">Staff listing min</h2><div id="r2"><ul class="staff-listing min">
+  <li>
+    <div class="profile">
+      <div class="frame">
+        <img alt="Paul Tagell" src="http://placeimg.com/50/50/animals" />
+      </div>
+    </div>
+    <div class="details">
+      <a href="#">Paul Tagell</a>, <em>Philosopher</em>
+    </div>
+  </li>
+  <li>
+    <div class="profile">
+      <div class="frame">
+        <img alt="Neil Ang" src="http://placeimg.com/50/50/animals?1" />
+      </div>
+    </div>
+    <div class="details">
+      <a href="#">Neil Ang</a>, <em>Juggling Professional</em>
+    </div>
+  </li>
+  <li>
+    <div class="profile">
+      <div class="frame">
+        <img alt="Jason Smith" src="http://placeimg.com/50/50/animals?2" />
+      </div>
+    </div>
+    <div class="details">
+      <a href="#">Jason Smith</a>, <em>Coffee Expert</em>
+    </div>
+  </li>
+  <li>
+    <div class="profile">
+      <div class="frame">
+        <img alt="Andi Weis" src="http://placeimg.com/50/50/animals?3" />
+      </div>
+    </div>
+    <div class="details">
+      <a href="#">Andi Weis</a>, <em>Can eat a lot</em>
+    </div>
+  </li>
+  <li>
+    <div class="profile">
+      <div class="frame"></div>
+    </div>
+    <div class="details">
+      <a href="#">Anne Shea</a>, <em>Chef</em>
+    </div>
+  </li>
+  <li>
+    <div class="profile">
+      <div class="frame">
+        <img alt="Carl Jackson" src="http://placeimg.com/50/50/animals?5" />
+      </div>
+    </div>
+    <div class="details">
+      <a href="#">Carl Jackson</a>, <em>Crepe Expert</em>
+    </div>
+  </li>
+</ul></div>
+    <section class="code">
+      <pre class="html" id="s2">
+&lt;ul class="staff-listing min"&gt;
+  &lt;li&gt;
+    &lt;div class="profile"&gt;
+      &lt;div class="frame"&gt;
+        &lt;img alt="Paul Tagell" src="http://placeimg.com/50/50/animals" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="details"&gt;
+      &lt;a href="#"&gt;Paul Tagell&lt;/a&gt;, &lt;em&gt;Philosopher&lt;/em&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;div class="profile"&gt;
+      &lt;div class="frame"&gt;
+        &lt;img alt="Neil Ang" src="http://placeimg.com/50/50/animals?1" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="details"&gt;
+      &lt;a href="#"&gt;Neil Ang&lt;/a&gt;, &lt;em&gt;Juggling Professional&lt;/em&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;div class="profile"&gt;
+      &lt;div class="frame"&gt;
+        &lt;img alt="Jason Smith" src="http://placeimg.com/50/50/animals?2" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="details"&gt;
+      &lt;a href="#"&gt;Jason Smith&lt;/a&gt;, &lt;em&gt;Coffee Expert&lt;/em&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;div class="profile"&gt;
+      &lt;div class="frame"&gt;
+        &lt;img alt="Andi Weis" src="http://placeimg.com/50/50/animals?3" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="details"&gt;
+      &lt;a href="#"&gt;Andi Weis&lt;/a&gt;, &lt;em&gt;Can eat a lot&lt;/em&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;div class="profile"&gt;
+      &lt;div class="frame"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="details"&gt;
+      &lt;a href="#"&gt;Anne Shea&lt;/a&gt;, &lt;em&gt;Chef&lt;/em&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;div class="profile"&gt;
+      &lt;div class="frame"&gt;
+        &lt;img alt="Carl Jackson" src="http://placeimg.com/50/50/animals?5" /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="details"&gt;
+      &lt;a href="#"&gt;Carl Jackson&lt;/a&gt;, &lt;em&gt;Crepe Expert&lt;/em&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+    </section>
+<hr /><h2 id="staff-listing-detailed">Staff listing detailed</h2><div id="r3"><ul class="staff-listing-detailed">
+  <li>
+    <a href="">
+      <div class="frame">
+        <img alt="" src="http://placeimg.com/200/200/animals" />
+      </div>
+      <strong>Paul Tagell</strong>
+      <p>
+        Philosopher
+      </p>
+      <p>
+        <em>University of Melbourne</em>
+      </p>
+    </a>
+  </li>
+  <li>
+    <a href="">
+      <div class="frame">
+        <img alt="" src="http://placeimg.com/200/200/animals?2" />
+      </div>
+      <strong>Neil Ang</strong>
+      <p>
+        Juggling Professional
+      </p>
+      <p>
+        <em>University of Melbourne</em>
+      </p>
+    </a>
+  </li>
+  <li>
+    <a href="">
+      <div class="frame">
+        <img alt="" src="http://placeimg.com/200/200/animals?3" />
+      </div>
+      <strong>Jason Smith</strong>
+      <p>
+        Coffee Expert
+      </p>
+      <p>
+        <em>University of Melbourne</em>
+      </p>
+    </a>
+  </li>
+</ul></div>
+    <section class="code">
+      <pre class="html" id="s3">
+&lt;ul class="staff-listing-detailed"&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;
+      &lt;div class="frame"&gt;
+        &lt;img alt="" src="http://placeimg.com/200/200/animals" /&gt;
+      &lt;/div&gt;
+      &lt;strong&gt;Paul Tagell&lt;/strong&gt;
+      &lt;p&gt;
+        Philosopher
+      &lt;/p&gt;
+      &lt;p&gt;
+        &lt;em&gt;University of Melbourne&lt;/em&gt;
+      &lt;/p&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;
+      &lt;div class="frame"&gt;
+        &lt;img alt="" src="http://placeimg.com/200/200/animals?2" /&gt;
+      &lt;/div&gt;
+      &lt;strong&gt;Neil Ang&lt;/strong&gt;
+      &lt;p&gt;
+        Juggling Professional
+      &lt;/p&gt;
+      &lt;p&gt;
+        &lt;em&gt;University of Melbourne&lt;/em&gt;
+      &lt;/p&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;
+      &lt;div class="frame"&gt;
+        &lt;img alt="" src="http://placeimg.com/200/200/animals?3" /&gt;
+      &lt;/div&gt;
+      &lt;strong&gt;Jason Smith&lt;/strong&gt;
+      &lt;p&gt;
+        Coffee Expert
+      &lt;/p&gt;
+      &lt;p&gt;
+        &lt;em&gt;University of Melbourne&lt;/em&gt;
+      &lt;/p&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+    </section>
+<hr /><h2 id="staff-listing-detailed-diamond">Staff listing detailed diamond</h2><div id="r4"><ul class="staff-listing-detailed">
+  <li>
+    <a href="">
+      <div class="diamond-mask">
+        <img alt="" src="http://placeimg.com/300/300/animals" />
+      </div>
+      <strong>Paul Tagell</strong>
+      <p>
+        Philosopher
+      </p>
+      <p>
+        <em>University of Melbourne</em>
+      </p>
+    </a>
+  </li>
+  <li>
+    <a href="">
+      <div class="diamond-mask">
+        <img alt="" src="http://placeimg.com/300/300/animals?2" />
+      </div>
+      <strong>Neil Ang</strong>
+      <p>
+        Juggling Professional
+      </p>
+      <p>
+        <em>University of Melbourne</em>
+      </p>
+    </a>
+  </li>
+  <li>
+    <a href="">
+      <div class="diamond-mask">
+        <img alt="" src="http://placeimg.com/300/300/animals?3" />
+      </div>
+      <strong>Jason Smith</strong>
+      <p>
+        Coffee Expert
+      </p>
+      <p>
+        <em>University of Melbourne</em>
+      </p>
+    </a>
+  </li>
+</ul></div>
+    <section class="code">
+      <pre class="html" id="s4">
+&lt;ul class="staff-listing-detailed"&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;
+      &lt;div class="diamond-mask"&gt;
+        &lt;img alt="" src="http://placeimg.com/300/300/animals" /&gt;
+      &lt;/div&gt;
+      &lt;strong&gt;Paul Tagell&lt;/strong&gt;
+      &lt;p&gt;
+        Philosopher
+      &lt;/p&gt;
+      &lt;p&gt;
+        &lt;em&gt;University of Melbourne&lt;/em&gt;
+      &lt;/p&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;
+      &lt;div class="diamond-mask"&gt;
+        &lt;img alt="" src="http://placeimg.com/300/300/animals?2" /&gt;
+      &lt;/div&gt;
+      &lt;strong&gt;Neil Ang&lt;/strong&gt;
+      &lt;p&gt;
+        Juggling Professional
+      &lt;/p&gt;
+      &lt;p&gt;
+        &lt;em&gt;University of Melbourne&lt;/em&gt;
+      &lt;/p&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;
+      &lt;div class="diamond-mask"&gt;
+        &lt;img alt="" src="http://placeimg.com/300/300/animals?3" /&gt;
+      &lt;/div&gt;
+      &lt;strong&gt;Jason Smith&lt;/strong&gt;
+      &lt;p&gt;
+        Coffee Expert
+      &lt;/p&gt;
+      &lt;p&gt;
+        &lt;em&gt;University of Melbourne&lt;/em&gt;
+      &lt;/p&gt;
+    &lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+    </section>
+<hr /><h2 id="profile-header-min">Profile header min</h2><div id="r5"><header style="background-image: url(http://placeimg.com/1000/800/any);">
+  <ul class="staff-listing-detailed">
+    <li>
+      <div class="frame">
+        <img src="http://placeimg.com/200/200/people" />
+      </div>
+      <strong>Person Name</strong>
+      <p>
+        Short blurb about this person. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+      </p>
+      <p class="links">
+        <a href="http://twitter.com">Twitter</a> &middot; <a href="http://www.findanexpert.unimelb.edu.au/display/person443785#tab-overview">Find an Expert</a>
+      </p>
+    </li>
+  </ul>
+</header></div>
+    <section class="code">
+      <pre class="html" id="s5">
+&lt;header style="background-image: url(http://placeimg.com/1000/800/any);"&gt;
+  &lt;ul class="staff-listing-detailed"&gt;
+    &lt;li&gt;
+      &lt;div class="frame"&gt;
+        &lt;img src="http://placeimg.com/200/200/people" /&gt;
+      &lt;/div&gt;
+      &lt;strong&gt;Person Name&lt;/strong&gt;
+      &lt;p&gt;
+        Short blurb about this person. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae.
+      &lt;/p&gt;
+      &lt;p class="links"&gt;
+        &lt;a href="http://twitter.com"&gt;Twitter&lt;/a&gt; &middot; &lt;a href="http://www.findanexpert.unimelb.edu.au/display/person443785#tab-overview"&gt;Find an Expert&lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/header&gt;
+      </pre>
+    </section>
+<hr /><h2 id="profile-header">Profile header</h2><div id="r6"><header class="profile-header">
+  <div class="profile-header__summary">
+    <img alt="" class="profile-header__photo" height="150" src="/assets/example/chaz.jpg" width="150" />
+    <h1>
+      Chaz Batrouney
+    </h1>
+    <p>
+      <em>Web Producer</em>
+    </p>
+    <p>
+      Project Services
+    </p>
+  </div>
+  <div class="profile-header__info">
+    <ul class="profile-header__contact">
+      <li>
+        <span class="icon--hide-label" data-icon="phone">Phone number</span> <a href="tel:+61383440346">+61 3 8344 0346</a>
+      </li>
+      <li>
+        <span class="icon--hide-label" data-icon="smartphone">Mobile number</span> <a href="tel:+61408179965">+61 4 0817 9965</a>
+      </li>
+      <li>
+        <span class="icon--hide-label" data-icon="mail">Email</span> <a href="mailto:chaz.batrouney@unimelb.edu.au">chaz.batrouney@unimelb.edu.au</a>
+      </li>
+      <li>
+        <span data-icon="profile"></span> <a href="http://www.findanexpert.unimelb.edu.au/display/person443785#tab-overview">Find an Expert profile</a>
+      </li>
+    </ul>
+    <ul class="profile-header__location">
+      <li>
+        <em>Room:</em> G16
+      </li>
+      <li>
+        <em>Floor:</em> GR
+      </li>
+      <li>
+        <em>Building:</em> <a href="http://www.google.com.au/maps?hl=en&amp;q=-37.79772,144.96075">33 Lincoln Square Sth</a>
+      </li>
+      <li>
+        <em>Campus:</em> Parkville
+      </li>
+    </ul>
+  </div>
+</header></div>
+    <section class="code">
+      <pre class="html" id="s6">
+&lt;header class="profile-header"&gt;
+  &lt;div class="profile-header__summary"&gt;
+    &lt;img alt="" class="profile-header__photo" height="150" src="/assets/example/chaz.jpg" width="150" /&gt;
+    &lt;h1&gt;
+      Chaz Batrouney
+    &lt;/h1&gt;
+    &lt;p&gt;
+      &lt;em&gt;Web Producer&lt;/em&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+      Project Services
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div class="profile-header__info"&gt;
+    &lt;ul class="profile-header__contact"&gt;
+      &lt;li&gt;
+        &lt;span class="icon--hide-label" data-icon="phone"&gt;Phone number&lt;/span&gt; &lt;a href="tel:+61383440346"&gt;+61 3 8344 0346&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;span class="icon--hide-label" data-icon="smartphone"&gt;Mobile number&lt;/span&gt; &lt;a href="tel:+61408179965"&gt;+61 4 0817 9965&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;span class="icon--hide-label" data-icon="mail"&gt;Email&lt;/span&gt; &lt;a href="mailto:chaz.batrouney@unimelb.edu.au"&gt;chaz.batrouney@unimelb.edu.au&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;span data-icon="profile"&gt;&lt;/span&gt; &lt;a href="http://www.findanexpert.unimelb.edu.au/display/person443785#tab-overview"&gt;Find an Expert profile&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul class="profile-header__location"&gt;
+      &lt;li&gt;
+        &lt;em&gt;Room:&lt;/em&gt; G16
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;em&gt;Floor:&lt;/em&gt; GR
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;em&gt;Building:&lt;/em&gt; &lt;a href="http://www.google.com.au/maps?hl=en&amp;q=-37.79772,144.96075"&gt;33 Lincoln Square Sth&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;em&gt;Campus:&lt;/em&gt; Parkville
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+      </pre>
+    </section>
+<hr /><h2 id="profile-header-with-non-square-photo">Profile header with non square photo</h2><div><p>
+  If the profile photo is not square, use a <strong>background image</strong>. With this technique, a <strong>fallback avatar</strong> is shown if the profile photo fails to load.
+</p>
+<pre><code class="html">&lt;div class="profile-header__summary"&gt;
+  &lt;div class="profile-header__photo" style="background-image: url(//findanexpert.unimelb.edu.au/pictures/thumbnail195234picturezzz);"&gt;&lt;/div&gt;
+  &lt;h1&gt;Chaz Batrouney&lt;/h1&gt;
+  &lt;p&gt;&lt;em&gt;Web Producer&lt;/em&gt;&lt;/p&gt;
+  &lt;p&gt;Project Services&lt;/p&gt;
+&lt;/div&gt;</code></pre><div class="profile-header__summary"><div class="profile-header__photo" style="background-image: url(//findanexpert.unimelb.edu.au/pictures/thumbnail195234picturezzz);"></div><h1>Chaz Batrouney</h1><p><em>Web Producer</em></p><p>Project Services</p></div></div><hr />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+      <script>
+        var e1 = ace.edit("s1");
+        e1.setTheme("ace/theme/github");
+        e1.session.setMode("ace/mode/html");
+        e1.getSession().setTabSize(2);
+        e1.getSession().setUseSoftTabs(true);
+        e1.getSession().on("change", function(e){
+          document.getElementById("r1").innerHTML = e1.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e2 = ace.edit("s2");
+        e2.setTheme("ace/theme/github");
+        e2.session.setMode("ace/mode/html");
+        e2.getSession().setTabSize(2);
+        e2.getSession().setUseSoftTabs(true);
+        e2.getSession().on("change", function(e){
+          document.getElementById("r2").innerHTML = e2.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e3 = ace.edit("s3");
+        e3.setTheme("ace/theme/github");
+        e3.session.setMode("ace/mode/html");
+        e3.getSession().setTabSize(2);
+        e3.getSession().setUseSoftTabs(true);
+        e3.getSession().on("change", function(e){
+          document.getElementById("r3").innerHTML = e3.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e4 = ace.edit("s4");
+        e4.setTheme("ace/theme/github");
+        e4.session.setMode("ace/mode/html");
+        e4.getSession().setTabSize(2);
+        e4.getSession().setUseSoftTabs(true);
+        e4.getSession().on("change", function(e){
+          document.getElementById("r4").innerHTML = e4.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e5 = ace.edit("s5");
+        e5.setTheme("ace/theme/github");
+        e5.session.setMode("ace/mode/html");
+        e5.getSession().setTabSize(2);
+        e5.getSession().setUseSoftTabs(true);
+        e5.getSession().on("change", function(e){
+          document.getElementById("r5").innerHTML = e5.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e6 = ace.edit("s6");
+        e6.setTheme("ace/theme/github");
+        e6.session.setMode("ace/mode/html");
+        e6.getSession().setTabSize(2);
+        e6.getSession().setUseSoftTabs(true);
+        e6.getSession().on("change", function(e){
+          document.getElementById("r6").innerHTML = e6.getValue();
+          UOMloadComponents();
+        });
+      </script>
+<hr /></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>

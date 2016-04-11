@@ -1,0 +1,135 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Notices | Web.Unimelb </title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><link href="//d2h9b02ioca40d.cloudfront.net/v4.1/uom.css" rel="stylesheet" /><script src="//d2h9b02ioca40d.cloudfront.net/v4.1/uom.js"></script><link href="/assets/lib/docs.css" rel="stylesheet" /><link href="/assets/lib/highlight.css" rel="stylesheet" /><script src="/assets/lib/highlight.pack.js"></script><link href="/assets/lib/ace.extra.css" rel="stylesheet" /><link href="/assets/lib/verselect.css" rel="stylesheet" /><script src="/assets/lib/verselect.js"></script></head><body data-version="v4.1"><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Notices"><span itemprop="name">Notices</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">Notices</h1><div class="jumpnav"></div>
+
+<h2>Overview</h2>
+
+<p>Notices are a great way to provide contextual feedback alerts for typical user actions. There are four alert types to choose from depending on the level of importance:</p>
+
+<ul>
+<li><code>alert-success</code></li>
+<li><code>alert-info</code></li>
+<li><code>alert-warning</code></li>
+<li><code>alert-danger</code></li>
+</ul>
+
+<p>Notices may contains links, as shown in the third example below.</p>
+<hr /><h2 id="examples">Examples</h2><div id="r1"><p class="alert-success">
+  <strong>Well done!</strong> You successfully read this important alert message.
+</p>
+<p class="alert-info">
+  <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+</p>
+<p class="alert-warning">
+  <strong>Warning!</strong> Better check yourself, <a href="#">you&rsquo;re not looking too good</a>.
+</p>
+<p class="alert-danger">
+  <strong>Danger!</strong> Change a few things up and try submitting again.
+</p></div>
+    <section class="code">
+      <pre class="html" id="s1">
+&lt;p class="alert-success"&gt;
+  &lt;strong&gt;Well done!&lt;/strong&gt; You successfully read this important alert message.
+&lt;/p&gt;
+&lt;p class="alert-info"&gt;
+  &lt;strong&gt;Heads up!&lt;/strong&gt; This alert needs your attention, but it's not super important.
+&lt;/p&gt;
+&lt;p class="alert-warning"&gt;
+  &lt;strong&gt;Warning!&lt;/strong&gt; Better check yourself, &lt;a href="#"&gt;you&rsquo;re not looking too good&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p class="alert-danger"&gt;
+  &lt;strong&gt;Danger!&lt;/strong&gt; Change a few things up and try submitting again.
+&lt;/p&gt;
+      </pre>
+    </section>
+<hr /><h2 id="flash-messages">Flash messages</h2><div id="r2"><p>
+  Flash messages are notices that are placed at the top of the page, just below the header. They span the whole width of the page (except when an in-page navigation is used) and are useful, for instance, for displaying the result of a form submission (when Ajax is not available). Like notices, flash messages come in four variants, but their markup is slightly different (see example below):
+</p>
+<ul>
+  <li>
+    <code>flash--success</code>
+  </li>
+  <li>
+    <code>flash--info</code>
+  </li>
+  <li>
+    <code>flash--warning</code>
+  </li>
+  <li>
+    <code>flash--danger</code>
+  </li>
+</ul>
+<p>On some layouts, the alignment of the flash message's content on wide screen is not optimal. Two classes are available to deal with this situation: <code>flash--center</code> to centre the content, and <code>flash--keep-left</code> to keep the content against the logo on a <code>headerless</code> page.
+</p>
+<p>You can place the code of the flash message anywhere inside <code>&lt;div role="main"&gt;</code>. It is moved automatically to the right location when the page loads. If multiple messages are found, only <strong>the first one</strong> is moved. This page demonstrates the use of an <em>informative</em> flash message, as well as the behaviour of the <code>flash--center</code> class:
+</p>
+<div class="flash flash--info">
+  <p>
+    <strong>Success!</strong> This is an example of a flash message.
+  </p>
+</div>
+<div class="flash flash--info flash--center">
+  <p>
+    <strong>Success!</strong> This is an example of a centred flash message.
+  </p>
+</div></div>
+    <section class="code">
+      <pre class="html" id="s2">
+&lt;p&gt;
+  Flash messages are notices that are placed at the top of the page, just below the header. They span the whole width of the page (except when an in-page navigation is used) and are useful, for instance, for displaying the result of a form submission (when Ajax is not available). Like notices, flash messages come in four variants, but their markup is slightly different (see example below):
+&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;code&gt;flash--success&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;code&gt;flash--info&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;code&gt;flash--warning&lt;/code&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;code&gt;flash--danger&lt;/code&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On some layouts, the alignment of the flash message's content on wide screen is not optimal. Two classes are available to deal with this situation: &lt;code&gt;flash--center&lt;/code&gt; to centre the content, and &lt;code&gt;flash--keep-left&lt;/code&gt; to keep the content against the logo on a &lt;code&gt;headerless&lt;/code&gt; page.
+&lt;/p&gt;
+&lt;p&gt;You can place the code of the flash message anywhere inside &lt;code&gt;&lt;div role="main"&gt;&lt;/code&gt;. It is moved automatically to the right location when the page loads. If multiple messages are found, only &lt;strong&gt;the first one&lt;/strong&gt; is moved. This page demonstrates the use of an &lt;em&gt;informative&lt;/em&gt; flash message, as well as the behaviour of the &lt;code&gt;flash--center&lt;/code&gt; class:
+&lt;/p&gt;
+&lt;div class="flash flash--info"&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Success!&lt;/strong&gt; This is an example of a flash message.
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="flash flash--info flash--center"&gt;
+  &lt;p&gt;
+    &lt;strong&gt;Success!&lt;/strong&gt; This is an example of a centred flash message.
+  &lt;/p&gt;
+&lt;/div&gt;
+      </pre>
+    </section>
+<hr />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+      <script>
+        var e1 = ace.edit("s1");
+        e1.setTheme("ace/theme/github");
+        e1.session.setMode("ace/mode/html");
+        e1.getSession().setTabSize(2);
+        e1.getSession().setUseSoftTabs(true);
+        e1.getSession().on("change", function(e){
+          document.getElementById("r1").innerHTML = e1.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e2 = ace.edit("s2");
+        e2.setTheme("ace/theme/github");
+        e2.session.setMode("ace/mode/html");
+        e2.getSession().setTabSize(2);
+        e2.getSession().setUseSoftTabs(true);
+        e2.getSession().on("change", function(e){
+          document.getElementById("r2").innerHTML = e2.getValue();
+          UOMloadComponents();
+        });
+      </script>
+<hr /></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>

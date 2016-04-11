@@ -1,0 +1,416 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Filtered-listings | Web.Unimelb </title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><link href="//d2h9b02ioca40d.cloudfront.net/v4.1/uom.css" rel="stylesheet" /><script src="//d2h9b02ioca40d.cloudfront.net/v4.1/uom.js"></script><link href="/assets/lib/docs.css" rel="stylesheet" /><link href="/assets/lib/highlight.css" rel="stylesheet" /><script src="/assets/lib/highlight.pack.js"></script><link href="/assets/lib/ace.extra.css" rel="stylesheet" /><link href="/assets/lib/verselect.css" rel="stylesheet" /><script src="/assets/lib/verselect.js"></script></head><body data-version="v4.1"><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Filtered Listings"><span itemprop="name">Filtered Listings</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">Filtered-listings</h1><div class="jumpnav"></div>
+
+<p>This component provides a way to list and filter items. Two levels of categorisation are available: <strong>sections</strong> and <strong>tags</strong>. Every item must belong to exactly one section and one tag, and it is up to you to choose unique names for your sections and tags.</p>
+
+<p class="alert-info">When <strong>naming sections and tags</strong>, we recommend that you use only <strong>lower-case letters</strong>, <strong>dashes</strong> and <strong>underscores</strong>. This will lead to more readable URLs if you end up using the <a href="#pre-select-filters">pre-selection feature</a> (e.g. <code>/page?section=example-section</code> instead of <code>/page?section=Example%20section</code>).</p>
+<hr /><h2 id="pre-select-filters">Pre-select filters</h2>
+
+<p>The <strong>tags</strong> filter can be pre-selected on page load by adding <code>?tags=&lt;tag-list&gt;</code> to the end of the URL, where <code>&lt;tag-list&gt;</code> is a coma-separated list of tags &mdash; e.g. <code><a href="?tags=nominavi,ludico">?tags=nominavi,ludico</a></code>.</p>
+
+<p>The <strong>section</strong> filter can be pre-selected with <code>?section=&lt;section-name&gt;</code> &mdash; e.g. <code><a href="?section=section-3">?section=section-3</a></code>.</p>
+
+<p>You may of course use both parameters together: <code><a href="?tags=nominavi&section=section-3">?tags=nominavi&amp;section=section-3</a></code>.</p>
+
+<p class="alert-warning">Don't forget to encode any <a href="https://en.wikipedia.org/wiki/Percent-encoding#Types_of_URI_characters">reserved URI character</a> (e.g. replace <code>&amp;</code> with <code>%26</code>) &mdash; or better, <a href="https://en.wikipedia.org/wiki/Semantic_URL#Slug">slugify the name of your sections and tags</a>.</p>
+<hr /><h2 id="colour">Colours</h2>
+
+<p class="alert-info"><strong>Note:</strong> starting from v4, the colours are no longer bound to the tags, and the colour classes have been removed (<code>category[a-e]</code>, <code>undergraduate</code>, etc.)</p>
+
+<p>To <strong>associate a colour with a tag</strong>, use the <code>data-color</code> attribute on the tag&#39;s <strong>checkbox</strong> in the filters container. On page load, the colour will be automatically applied to every item with that tag.</p>
+
+<p><strong>Five colours</strong> are available: <code>green</code>, <code>bronze</code>, <code>silver</code>, <code>blue</code> and <code>yellow</code>. For design purposes, we recommend that you order your tags inside the filters container so that the sequence of colours matches the list above.</p>
+<hr /><h2 id="filters">Filters</h2><div id="r1"><div class="filtered-listing-wrapper">
+  <form class="filtered-listing-select">
+    <fieldset class="left">
+      <legend>Filter by type</legend>
+      <div class="filtered-listing-tag">
+        <input checked="checked" class="checkbox" data-tag="all" id="c0" name="f[degree_type]" type="checkbox" /><label for="c0"><span>All</span></label>
+      </div>
+      <div class="filtered-listing-tag">
+        <input class="checkbox" data-color="green" data-tag="nominavi" id="c1" name="f[course_type]" type="checkbox" /><label for="c1"><span>Nominavi appetere</span></label>
+      </div>
+      <div class="filtered-listing-tag">
+        <input class="checkbox" data-color="bronze" data-tag="iudico" id="c2" name="f[course_type]" type="checkbox" /><label for="c2"><span>Iudico corrumpit</span></label>
+      </div>
+      <div class="filtered-listing-tag">
+        <input class="checkbox" data-color="silver" data-tag="argumentum" id="c3" name="f[course_type]" type="checkbox" /><label for="c3"><span>Argumentum philosophia</span></label>
+      </div>
+      <div class="filtered-listing-tag">
+        <input class="checkbox" data-color="blue" data-tag="errem" id="c4" name="f[course_type]" type="checkbox" /><label for="c4"><span>Errem qualisque</span></label>
+      </div>
+      <div class="filtered-listing-tag">
+        <input class="checkbox" data-color="yellow" data-tag="audiam" id="c5" name="f[course_type]" type="checkbox" /><label for="c5"><span>Audiam delectus</span></label>
+      </div>
+    </fieldset>
+    <fieldset class="right">
+      <label for="f-select2">Filter by section</label>
+      <div>
+        <select class="clear" id="f-select2" name="f[select2]">
+          <option value="-1">
+            All sections
+          </option>
+          <option value="section-1">
+            Section heading 1
+          </option>
+          <option value="section-2">
+            Different Section
+          </option>
+          <option value="section-3">
+            Third Example Section
+          </option>
+        </select>
+      </div>
+    </fieldset>
+  </form>
+</div></div>
+    <section class="code">
+      <pre class="html" id="s1">
+&lt;div class="filtered-listing-wrapper"&gt;
+  &lt;form class="filtered-listing-select"&gt;
+    &lt;fieldset class="left"&gt;
+      &lt;legend&gt;Filter by type&lt;/legend&gt;
+      &lt;div class="filtered-listing-tag"&gt;
+        &lt;input checked="checked" class="checkbox" data-tag="all" id="c0" name="f[degree_type]" type="checkbox" /&gt;&lt;label for="c0"&gt;&lt;span&gt;All&lt;/span&gt;&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class="filtered-listing-tag"&gt;
+        &lt;input class="checkbox" data-color="green" data-tag="nominavi" id="c1" name="f[course_type]" type="checkbox" /&gt;&lt;label for="c1"&gt;&lt;span&gt;Nominavi appetere&lt;/span&gt;&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class="filtered-listing-tag"&gt;
+        &lt;input class="checkbox" data-color="bronze" data-tag="iudico" id="c2" name="f[course_type]" type="checkbox" /&gt;&lt;label for="c2"&gt;&lt;span&gt;Iudico corrumpit&lt;/span&gt;&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class="filtered-listing-tag"&gt;
+        &lt;input class="checkbox" data-color="silver" data-tag="argumentum" id="c3" name="f[course_type]" type="checkbox" /&gt;&lt;label for="c3"&gt;&lt;span&gt;Argumentum philosophia&lt;/span&gt;&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class="filtered-listing-tag"&gt;
+        &lt;input class="checkbox" data-color="blue" data-tag="errem" id="c4" name="f[course_type]" type="checkbox" /&gt;&lt;label for="c4"&gt;&lt;span&gt;Errem qualisque&lt;/span&gt;&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;div class="filtered-listing-tag"&gt;
+        &lt;input class="checkbox" data-color="yellow" data-tag="audiam" id="c5" name="f[course_type]" type="checkbox" /&gt;&lt;label for="c5"&gt;&lt;span&gt;Audiam delectus&lt;/span&gt;&lt;/label&gt;
+      &lt;/div&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset class="right"&gt;
+      &lt;label for="f-select2"&gt;Filter by section&lt;/label&gt;
+      &lt;div&gt;
+        &lt;select class="clear" id="f-select2" name="f[select2]"&gt;
+          &lt;option value="-1"&gt;
+            All sections
+          &lt;/option&gt;
+          &lt;option value="section-1"&gt;
+            Section heading 1
+          &lt;/option&gt;
+          &lt;option value="section-2"&gt;
+            Different Section
+          &lt;/option&gt;
+          &lt;option value="section-3"&gt;
+            Third Example Section
+          &lt;/option&gt;
+        &lt;/select&gt;
+      &lt;/div&gt;
+    &lt;/fieldset&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+      </pre>
+    </section>
+<hr /><h2 id="listing">Listing</h2><div id="r2"><hr class="spacer" />
+<div class="filtered-listing-section clearfix" data-section="section-1">
+  <aside>
+    <h2>
+      Section heading 1
+    </h2>
+    <p>
+      Lorem ipsum dolor sit amet, vis te saepe nominavi appetere, ceteros lucilius te usu, no nam tota partiendo
+    </p>
+  </aside>
+  <div class="bside">
+    <ul class="filtered-listing-grid">
+      <li class="filtered-listing-item" data-tag="nominavi">
+        <a href="#">Nominavi appetere <strong>Exerci Oportere</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="nominavi">
+        <a href="#">Nominavi appetere <strong>Consulatu repudiandae</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="nominavi">
+        <a href="#">Nominavi appetere <strong>Dicant appellantur pro</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="nominavi">
+        <a href="#">Nominavi appetere <strong>Periculis elaboraret referrentur</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="iudico">
+        <a href="#">Iudico corrumpit <strong>Sed animal intellegebat no. Ius</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="iudico">
+        <a href="#">Iudico corrumpit <strong>Eum atqui vidisse legimus ex tempor</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="argumentum">
+        <a href="#">Argumentum philosophia <strong>Audiam delectus consequuntur</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="argumentum">
+        <a href="#">Argumentum philosophia <strong>Inciderint consectetuer</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="argumentum">
+        <a href="#">Argumentum philosophia <strong>Mea sumo rebum ea</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="argumentum">
+        <a href="#">Argumentum philosophia <strong>Vim ut putant urbanitas</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="errem">
+        <a href="#">Errem qualisque <strong>Ludus invenire pri</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="errem">
+        <a href="#">Errem qualisque <strong>Putant urbanitas</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="audiam">
+        <a href="#">Errem qualisque <strong>Ludus invenire pri</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="audiam">
+        <a href="#">Errem qualisque <strong>Putant urbanitas</strong></a>
+      </li>
+    </ul>
+  </div>
+</div>
+<hr class="spacer" />
+<div class="filtered-listing-section clearfix" data-section="section-2">
+  <aside>
+    <h2>
+      Different Section
+    </h2>
+    <p>
+      Ex mei noluisse percipit, ea unum ludus invenire pri. Ei duo aliquid eleifend, errem qualisque at pro. Qui et elit delicatissimi, periculis elaboraret referrentur eam id, graece tractatos ut est. Aperiri delenit sed ei, pro simul principes
+    </p>
+  </aside>
+  <div class="bside">
+    <ul class="filtered-listing-grid">
+      <li class="filtered-listing-item" data-tag="nominavi">
+        <a href="#">Nominavi appetere <strong>Dicant appellantur pro</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="nominavi">
+        <a href="#">Nominavi appetere <strong>Periculis elaboraret referrentur</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="iudico">
+        <a href="#">Iudico corrumpit <strong>Eum atqui vidisse legimus ex tempor</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="argumentum">
+        <a href="#">Argumentum philosophia <strong>Mea sumo rebum ea</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="argumentum">
+        <a href="#">Argumentum philosophia <strong>Vim ut putant urbanitas</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="errem">
+        <a href="#">Errem qualisque <strong>Ludus invenire pri</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="audiam">
+        <a href="#">Errem qualisque <strong>Ludus invenire pri</strong></a>
+      </li>
+    </ul>
+  </div>
+</div>
+<hr class="spacer" />
+<div class="filtered-listing-section clearfix" data-section="section-3">
+  <aside>
+    <h2>
+      Third Example Section
+    </h2>
+    <p>
+      Ei nihil argumentum philosophia mel, commune accusata ius ex, homero scripserit an mea. Ne splendide deseruisse quo
+    </p>
+  </aside>
+  <div class="bside">
+    <ul class="filtered-listing-grid">
+      <li class="filtered-listing-item" data-tag="nominavi">
+        <a href="#">Nominavi appetere <strong>Exerci Oportere</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="nominavi">
+        <a href="#">Nominavi appetere <strong>Consulatu repudiandae</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="nominavi">
+        <a href="#">Nominavi appetere <strong>Periculis elaboraret referrentur</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="iudico">
+        <a href="#">Iudico corrumpit <strong>Eum atqui vidisse legimus ex tempor</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="argumentum">
+        <a href="#">Argumentum philosophia <strong>Audiam delectus consequuntur</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="argumentum">
+        <a href="#">Argumentum philosophia <strong>Inciderint consectetuer</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="argumentum">
+        <a href="#">Argumentum philosophia <strong>Mea sumo rebum ea</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="argumentum">
+        <a href="#">Argumentum philosophia <strong>Vim ut putant urbanitas</strong></a>
+      </li>
+      <li class="filtered-listing-item" data-tag="audiam">
+        <a href="#">Argumentum philosophia <strong>Vim ut putant urbanitas</strong></a>
+      </li>
+    </ul>
+  </div>
+</div>
+<hr class="spacer" /></div>
+    <section class="code">
+      <pre class="html" id="s2">
+&lt;hr class="spacer" /&gt;
+&lt;div class="filtered-listing-section clearfix" data-section="section-1"&gt;
+  &lt;aside&gt;
+    &lt;h2&gt;
+      Section heading 1
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Lorem ipsum dolor sit amet, vis te saepe nominavi appetere, ceteros lucilius te usu, no nam tota partiendo
+    &lt;/p&gt;
+  &lt;/aside&gt;
+  &lt;div class="bside"&gt;
+    &lt;ul class="filtered-listing-grid"&gt;
+      &lt;li class="filtered-listing-item" data-tag="nominavi"&gt;
+        &lt;a href="#"&gt;Nominavi appetere &lt;strong&gt;Exerci Oportere&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="nominavi"&gt;
+        &lt;a href="#"&gt;Nominavi appetere &lt;strong&gt;Consulatu repudiandae&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="nominavi"&gt;
+        &lt;a href="#"&gt;Nominavi appetere &lt;strong&gt;Dicant appellantur pro&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="nominavi"&gt;
+        &lt;a href="#"&gt;Nominavi appetere &lt;strong&gt;Periculis elaboraret referrentur&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="iudico"&gt;
+        &lt;a href="#"&gt;Iudico corrumpit &lt;strong&gt;Sed animal intellegebat no. Ius&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="iudico"&gt;
+        &lt;a href="#"&gt;Iudico corrumpit &lt;strong&gt;Eum atqui vidisse legimus ex tempor&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="argumentum"&gt;
+        &lt;a href="#"&gt;Argumentum philosophia &lt;strong&gt;Audiam delectus consequuntur&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="argumentum"&gt;
+        &lt;a href="#"&gt;Argumentum philosophia &lt;strong&gt;Inciderint consectetuer&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="argumentum"&gt;
+        &lt;a href="#"&gt;Argumentum philosophia &lt;strong&gt;Mea sumo rebum ea&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="argumentum"&gt;
+        &lt;a href="#"&gt;Argumentum philosophia &lt;strong&gt;Vim ut putant urbanitas&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="errem"&gt;
+        &lt;a href="#"&gt;Errem qualisque &lt;strong&gt;Ludus invenire pri&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="errem"&gt;
+        &lt;a href="#"&gt;Errem qualisque &lt;strong&gt;Putant urbanitas&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="audiam"&gt;
+        &lt;a href="#"&gt;Errem qualisque &lt;strong&gt;Ludus invenire pri&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="audiam"&gt;
+        &lt;a href="#"&gt;Errem qualisque &lt;strong&gt;Putant urbanitas&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr class="spacer" /&gt;
+&lt;div class="filtered-listing-section clearfix" data-section="section-2"&gt;
+  &lt;aside&gt;
+    &lt;h2&gt;
+      Different Section
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Ex mei noluisse percipit, ea unum ludus invenire pri. Ei duo aliquid eleifend, errem qualisque at pro. Qui et elit delicatissimi, periculis elaboraret referrentur eam id, graece tractatos ut est. Aperiri delenit sed ei, pro simul principes
+    &lt;/p&gt;
+  &lt;/aside&gt;
+  &lt;div class="bside"&gt;
+    &lt;ul class="filtered-listing-grid"&gt;
+      &lt;li class="filtered-listing-item" data-tag="nominavi"&gt;
+        &lt;a href="#"&gt;Nominavi appetere &lt;strong&gt;Dicant appellantur pro&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="nominavi"&gt;
+        &lt;a href="#"&gt;Nominavi appetere &lt;strong&gt;Periculis elaboraret referrentur&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="iudico"&gt;
+        &lt;a href="#"&gt;Iudico corrumpit &lt;strong&gt;Eum atqui vidisse legimus ex tempor&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="argumentum"&gt;
+        &lt;a href="#"&gt;Argumentum philosophia &lt;strong&gt;Mea sumo rebum ea&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="argumentum"&gt;
+        &lt;a href="#"&gt;Argumentum philosophia &lt;strong&gt;Vim ut putant urbanitas&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="errem"&gt;
+        &lt;a href="#"&gt;Errem qualisque &lt;strong&gt;Ludus invenire pri&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="audiam"&gt;
+        &lt;a href="#"&gt;Errem qualisque &lt;strong&gt;Ludus invenire pri&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr class="spacer" /&gt;
+&lt;div class="filtered-listing-section clearfix" data-section="section-3"&gt;
+  &lt;aside&gt;
+    &lt;h2&gt;
+      Third Example Section
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Ei nihil argumentum philosophia mel, commune accusata ius ex, homero scripserit an mea. Ne splendide deseruisse quo
+    &lt;/p&gt;
+  &lt;/aside&gt;
+  &lt;div class="bside"&gt;
+    &lt;ul class="filtered-listing-grid"&gt;
+      &lt;li class="filtered-listing-item" data-tag="nominavi"&gt;
+        &lt;a href="#"&gt;Nominavi appetere &lt;strong&gt;Exerci Oportere&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="nominavi"&gt;
+        &lt;a href="#"&gt;Nominavi appetere &lt;strong&gt;Consulatu repudiandae&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="nominavi"&gt;
+        &lt;a href="#"&gt;Nominavi appetere &lt;strong&gt;Periculis elaboraret referrentur&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="iudico"&gt;
+        &lt;a href="#"&gt;Iudico corrumpit &lt;strong&gt;Eum atqui vidisse legimus ex tempor&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="argumentum"&gt;
+        &lt;a href="#"&gt;Argumentum philosophia &lt;strong&gt;Audiam delectus consequuntur&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="argumentum"&gt;
+        &lt;a href="#"&gt;Argumentum philosophia &lt;strong&gt;Inciderint consectetuer&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="argumentum"&gt;
+        &lt;a href="#"&gt;Argumentum philosophia &lt;strong&gt;Mea sumo rebum ea&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="argumentum"&gt;
+        &lt;a href="#"&gt;Argumentum philosophia &lt;strong&gt;Vim ut putant urbanitas&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="filtered-listing-item" data-tag="audiam"&gt;
+        &lt;a href="#"&gt;Argumentum philosophia &lt;strong&gt;Vim ut putant urbanitas&lt;/strong&gt;&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;hr class="spacer" /&gt;
+      </pre>
+    </section>
+<hr />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+      <script>
+        var e1 = ace.edit("s1");
+        e1.setTheme("ace/theme/github");
+        e1.session.setMode("ace/mode/html");
+        e1.getSession().setTabSize(2);
+        e1.getSession().setUseSoftTabs(true);
+        e1.getSession().on("change", function(e){
+          document.getElementById("r1").innerHTML = e1.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e2 = ace.edit("s2");
+        e2.setTheme("ace/theme/github");
+        e2.session.setMode("ace/mode/html");
+        e2.getSession().setTabSize(2);
+        e2.getSession().setUseSoftTabs(true);
+        e2.getSession().on("change", function(e){
+          document.getElementById("r2").innerHTML = e2.getValue();
+          UOMloadComponents();
+        });
+      </script>
+<hr /></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
