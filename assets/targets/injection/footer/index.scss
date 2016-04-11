@@ -301,11 +301,38 @@
   }
 }
 
-  .uomcontent .unimelb-lge {
-    .noie {
-      display: none;
+.uomcontent .unimelb-lge {
+  .noie {
+    display: none;
+  }
+}
+
+$w-lge: 1400px;
+$ff-serif: Georgia, 'Times New Roman', Times, serif;
+
+.uomcontent .page-footer footer {
+
+  .ind-ack {
+    @include rem(font-size, 18px);
+    @include rem(max-width, $w-lge);
+    @include rem(padding, 50px 0 80px);
+    border-bottom: 1px solid $blue;
+    clear: both;
+    color: $lightblue;
+    font-family: $ff-serif;
+    font-style: italic;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    text-align: center;
+
+    a {
+      @include rem(font-size, 16px);
+      color: $lightblue;
+      font-style: normal;
     }
   }
+}
 
 .ie8 {
   .uomcontent .page-footer {
