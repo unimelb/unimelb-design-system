@@ -66,6 +66,8 @@
 
       if (change !== 0) {
         animateScroll();
+      } else if (cb) {
+        cb();
       }
     };
   }
