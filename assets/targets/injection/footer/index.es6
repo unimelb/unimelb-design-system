@@ -56,6 +56,7 @@ InjectFooter.prototype.renderFooter = function() {
       <a href="http://about.unimelb.edu.au/careers"><svg role="img" class="icon"><use xlink:href="#icon-jobs" /></svg> Jobs</a>
     </li>
   </ul>
+  <div class="ind-ack">We acknowledge and pay respect to the Traditional Owners of the lands upon which our campuses are situated.</div>
   <ul class="page-footer-section nav">
     <li>
       <a href="http://safety.unimelb.edu.au/about/contacts/emergency.html">Emergency Information</a>
