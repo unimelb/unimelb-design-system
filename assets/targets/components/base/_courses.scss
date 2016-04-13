@@ -198,14 +198,12 @@
   padding-top: 0;
 }
 
-.uomcontent .pricing,
-.uomcontent .with-aside aside .pricing {
-  h2{
-    @include padding-leader(1);
+.uomcontent .pricing {
+  h2 {
     padding-bottom: 0;
   }
 
-  h3{
+  h3 {
     @include adjust-font-size-to(26px);
     @include padding-leader(0);
     @include padding-trailer(1);
