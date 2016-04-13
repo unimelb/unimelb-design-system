@@ -401,7 +401,7 @@ body {
 
       &__main,
       &__aside {
-        @include rem(padding, 80px 16px);
+        @include rem(padding, 72px 16px);
         display: table-cell;
         vertical-align: top;
       }
@@ -414,7 +414,7 @@ body {
     @include breakpoint(wide) {
       &__main,
       &__aside {
-        @include rem(padding, 80px 32px);
+        @include rem(padding, 72px 32px);
       }
     }
   }

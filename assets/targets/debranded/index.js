@@ -61,17 +61,17 @@ window.DSComponentsLoad = function() {
       new Tabs(recs[i], {});
   }
 
-  recs = document.querySelectorAll('.sidebar-tab-nav');
+  recs = document.querySelectorAll('.sidebar-tabs');
   if (recs.length > 0) {
-    SidebarTabs = require("../components/tabs/sidebartabs");
+    SidebarTabs = require("../components/tabs/sidebar-tabs");
     for (i=recs.length - 1; i >= 0; i--)
-      new SidebarTabs(recs[i], {'selector': '.sidebar-tab'});
+      new SidebarTabs(recs[i]);
   }
 
   // Should combine with above
   recs = document.querySelectorAll('.inner-nav-tab');
   if (recs.length > 0) {
-    SidebarTabs = require("../components/tabs/sidebartabs");
+    SidebarTabs = require("../components/tabs/sidebar-tabs");
     for (i=recs.length - 1; i >= 0; i--)
       new SidebarTabs(recs[i], {'selector': '.inner-nav-page'});
   }

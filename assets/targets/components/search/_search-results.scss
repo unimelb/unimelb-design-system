@@ -1,6 +1,5 @@
 .uomcontent {
   p.search-spelling {
-    @include trailer(1);
     border-bottom: 1px solid rgba(#000000, 0.1);
 
     strong {
@@ -11,6 +10,7 @@
   h2.search-title {
     @include adjust-font-size-to(12px);
     color: $midgray;
+    padding-bottom: 0;
   }
 
   ol.search-results {
@@ -24,8 +24,8 @@
 
     & > li {
       @extend %clearfix;
+      @include padding-leader(1);
       @include padding-trailer(1);
-      @include trailer(1);
       border-bottom: 1px solid rgba(#000000, 0.1);
       list-style-type: none;
       margin-left: 0;
