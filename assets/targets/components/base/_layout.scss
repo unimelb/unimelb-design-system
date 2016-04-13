@@ -387,11 +387,11 @@ body {
 
   .layout-sidebar {
     &__main,
-    &__aside {
+    &__side {
       @include rem(padding, 32px 16px);
     }
 
-    &__aside {
+    &__side {
       background-color: $paleblue;
     }
 
@@ -400,20 +400,20 @@ body {
       width: 100%;
 
       &__main,
-      &__aside {
+      &__side {
         @include rem(padding, 72px 16px);
         display: table-cell;
         vertical-align: top;
       }
 
-      &__aside {
+      &__side {
         width: 25%;
       }
     }
 
     @include breakpoint(wide) {
       &__main,
-      &__aside {
+      &__side {
         @include rem(padding, 72px 32px);
       }
     }
@@ -645,9 +645,5 @@ body {
     margin: 0 1%;
     text-align: center;
     width: 18%;
-  }
-
-  .with-aside .bside {
-    max-width: 100%;
   }
 }

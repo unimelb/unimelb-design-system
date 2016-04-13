@@ -97,14 +97,6 @@ window.UOMloadComponents = function() {
       new SidebarTabs(recs[i]);
   }
 
-  // Should combine with above
-  recs = document.querySelectorAll('.inner-nav-tab');
-  if (recs.length > 0) {
-    SidebarTabs = require("./tabs/sidebar-tabs");
-    for (i=recs.length - 1; i >= 0; i--)
-      new SidebarTabs(recs[i], {'selector': '.inner-nav-page'});
-  }
-
   window.UOMbind('inpage-navigation');
 
   recs = document.querySelectorAll('input[type="radio"],input[type="checkbox"]');

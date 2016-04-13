@@ -194,51 +194,6 @@
   }
 }
 
-.uomcontent ul.degree-plan-nav {
-  display: block;
-  line-height: 1.4;
-  padding: 0;
-
-  @include breakpoint(desktop) {
-    @include rem(margin, 0 -30px 0 -15px);
-  }
-
-  li {
-    list-style-type: none;
-    margin-left: 0;
-    padding-bottom: 0;
-  }
-
-  a {
-    @include rem(padding, 10px 30px 10px 15px);
-    border-left: 5px solid transparent;
-    display: block;
-    text-decoration: none;
-  }
-
-  a.current,
-  a:hover.current {
-    background-color: $white;
-    border-left-color: $highlight;
-  }
-}
-
-.uomcontent .degree-plan-section {
-  position: relative;
-}
-
-.uomcontent .with-aside div.degree-plan {
-  display: none;
-
-  &.current {
-    display: block;
-
-    h2 {
-      padding-top: 0;
-    }
-  }
-}
-
 .uomcontent #overview h2 {
   padding-top: 0;
 }

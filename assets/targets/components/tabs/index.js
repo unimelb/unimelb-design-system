@@ -44,7 +44,7 @@ Tabs.prototype.setup = function() {
   var recs, i, tabs;
 
   // Hide all tabs by default
-  for (recs=this.el.querySelectorAll('[role="tabpanel"]'), i=recs.length - 1; i >= 0; i--) {
+  for (recs=this.el.querySelectorAll('.tab'), i=recs.length - 1; i >= 0; i--) {
     recs[i].style.display = 'none';
     this.props.panels.push(recs[i].id || '');
   }
@@ -83,7 +83,7 @@ Tabs.prototype.getInitialTab = function() {
     }
 
     // No match found; check for a matching inner tab (i.e. sidebar tabs, not in-page tabs)
-    var innerPanel = this.el.querySelector(window.location.hash + '.inner-nav-page');
+    var innerPanel = this.el.querySelector(window.location.hash + '.sidebar-tabs__panel');
     if (innerPanel) {
       // Inner-tab panel matches hash; find its parent panel's tab and return it
       var panel = findUp(innerPanel, 'tab');
@@ -337,13 +337,13 @@ Tabs.prototype.move = function(target, smooth) {
   this.scrollToTab(target, smooth);
 
   if (this.props.panels.length === 1) {
-    current = this.el.querySelector('[role="tabpanel"]');
+    current = this.el.querySelector('.tab');
     this.showPanel(current);
 
   } else {
     current = this.el.querySelector(target.getAttribute('href'));
 
-    for (panels=this.el.querySelectorAll('[role="tabpanel"]'), max=panels.length, i=0; i < max; i++) {
+    for (panels=this.el.querySelectorAll('.tab'), max=panels.length, i=0; i < max; i++) {
       if (target.getAttribute('href') === '#'+panels[i].id) {
         this.showPanel(panels[i]);
       } else {
@@ -392,7 +392,7 @@ Tabs.prototype.moveindex = function(index) {
 
   this.movetab(index);
 
-  for (panels=this.el.querySelectorAll('[role="tabpanel"]'), max=panels.length, i=0; i < max; i++) {
+  for (panels=this.el.querySelectorAll('.tab'), max=panels.length, i=0; i < max; i++) {
     if (index === i) {
       this.showPanel(panels[i]);
     } else {

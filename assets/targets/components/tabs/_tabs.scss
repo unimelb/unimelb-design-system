@@ -26,7 +26,7 @@
       }
     }
 
-    [role="tabpanel"] {
+    .tab {
       margin: 0;
       padding: 0;
 
@@ -164,7 +164,7 @@
       display: inline-block;
     }
 
-    [role="tabpanel"] {
+    .tab {
       @include rem(margin-top, -70px);
       @include rem(padding-top, 70px);
       margin-left: auto;
@@ -197,7 +197,7 @@
         background-color: transparent;
       }
 
-      [role="tabpanel"] {
+      .tab {
         @include rem(margin-top, -76px);
         @include rem(padding-top, 76px);
       }
@@ -231,7 +231,7 @@
         background-color: transparent;
       }
 
-      [role="tabpanel"] {
+      .tab {
         @include rem(margin-top, -76px);
         @include rem(padding-top, 76px);
       }
@@ -262,7 +262,7 @@
         @include rem(padding, 0 15px);
       }
 
-      [role="tabpanel"] {
+      .tab {
         @include rem(margin-top, -55px);
         @include rem(padding-top, 55px);
         background-color: transparent;
@@ -310,7 +310,7 @@
       }
     }
 
-    [role="tabpanel"] {
+    .tab {
       @include padding-leader(1);
       @include padding-trailer(0);
       @include rem(padding-left, 25px);
@@ -330,20 +330,12 @@
     @extend .tabbed-nav;
     @extend .thin;
 
-    [role="tabpanel"] {
+    .tab {
       @extend %clearfix;
     }
 
     aside h2.subtitle {
       @include rem(padding-bottom, 5px);
-    }
-
-    .degree-plan {
-      display: none;
-
-      &.current {
-        display: block;
-      }
     }
 
     .mobile-wrap {
@@ -363,14 +355,12 @@
 
   /* List of tabs in sidebar */
   &__list {
-    @include rem(margin-top, 24px 0);
     display: block;
     line-height: 1.4;
     padding: 0;
 
     @include breakpoint(desktop) {
       @include rem(margin-right, -16px);
-      @include rem(padding-top, 24px);
     }
 
     @include breakpoint(wide) {
@@ -383,9 +373,30 @@
       margin: 0;
       padding: 0;
     }
+  }
 
-    /* When parent sidebar is on the right-hand side, move tabs against the left edge */
-    &--alt {
+  /* Tab links in sidebar (ul > li > a) */
+  &__tab {
+    @include rem(padding, 12px 16px);
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 0 0 5px;
+    display: block;
+    text-decoration: none;
+
+    &[aria-selected="true"] {
+      background-color: $white;
+      border-color: $highlight;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  /* Tabs are on the right-hand side of the viewport; move them against the left edge of the sidebar  */
+  &--right {
+    .sidebar-tabs__list {
       @include breakpoint(desktop) {
         @include rem(margin-left, -16px);
         margin-right: 0;
@@ -396,32 +407,10 @@
         @include rem(margin-right, -16px);
       }
     }
-  }
 
-  /* Tab links in sidebar (ul > li > a) */
-  &__tab {
-    @include rem(padding, 12px 16px);
-    border-left: 5px solid transparent;
-    display: block;
-    text-decoration: none;
-
-    &[aria-selected="true"] {
-      background-color: $white;
-      border-left-color: $highlight;
-    }
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  /* Switch border when tabs are against the left edge of the sidebar  */
-  &--right .sidebar-tabs__tab {
-    border-left: 0;
-    border-right: 5px solid transparent;
-
-    &[aria-selected="true"] {
-      border-right-color: $highlight;
+    .sidebar-tabs__tab {
+      border-left-width: 0;
+      border-right-width: 5px;
     }
   }
 }
