@@ -44,9 +44,11 @@ Tabs.prototype.setup = function() {
   var recs, i, tabs;
 
   // Hide all tabs by default
-  for (recs=this.el.querySelectorAll('.tab'), i=recs.length - 1; i >= 0; i--) {
-    recs[i].style.display = 'none';
-    this.props.panels.push(recs[i].id || '');
+  for (i = 0, recs = this.el.querySelectorAll('[role="tabpanel"]'); i < recs.length; i++) {
+    if (recs[i].parentElement === this.el) { // exclude panels of any nested tabs component
+      recs[i].style.display = 'none';
+      this.props.panels.push(recs[i]);
+    }
   }
 
   // Handle clicks on tabs
@@ -267,7 +269,7 @@ Tabs.prototype.handleClick = function(e) {
 Tabs.prototype.panelExists = function(id) {
   // Loop through panel IDs looking for a match
   for (var i = this.props.panels.length - 1; i >= 0; i--) {
-    if (this.props.panels[i] === id) {
+    if (this.props.panels[i].id === id) {
       // Match found
       return true;
     }
@@ -308,8 +310,9 @@ Tabs.prototype.setLocation = function(href) {
  */
 Tabs.prototype.handleInternalClick = function(e) {
   // Match index - could potentially match ID instead
-  var target = e.target,
-      idx = target.getAttribute('data-tab') - 1;
+  var target = e.target;
+  var idx = target.getAttribute('data-tab') - 1;
+
   this.moveindex(idx);
   this.setLocation(this.props.tabs[idx].hash);
 };
@@ -331,23 +334,17 @@ Tabs.prototype.getIndex = function(target) {
  * Match target
  */
 Tabs.prototype.move = function(target, smooth) {
-  var current, panels, max, i;
-
   this.movetab(this.getIndex(target));
   this.scrollToTab(target, smooth);
 
   if (this.props.panels.length === 1) {
-    current = this.el.querySelector('.tab');
-    this.showPanel(current);
-
+    this.showPanel(this.props.panels[0]);
   } else {
-    current = this.el.querySelector(target.getAttribute('href'));
-
-    for (panels=this.el.querySelectorAll('.tab'), max=panels.length, i=0; i < max; i++) {
-      if (target.getAttribute('href') === '#'+panels[i].id) {
-        this.showPanel(panels[i]);
+    for (var i = 0, max = this.props.panels.length; i < max; i++) {
+      if (target.getAttribute('href') === '#' + this.props.panels[i].id) {
+        this.showPanel(this.props.panels[i]);
       } else {
-        this.hidePanel(panels[i]);
+        this.hidePanel(this.props.panels[i]);
       }
     }
   }
@@ -388,23 +385,19 @@ Tabs.prototype.animateTabsScroll = function(curr, start, change, duration, incre
 };
 
 Tabs.prototype.moveindex = function(index) {
-  var panels, max, i;
-
   this.movetab(index);
 
-  for (panels=this.el.querySelectorAll('.tab'), max=panels.length, i=0; i < max; i++) {
+  for (var i = 0, max = this.props.panels.length; i < max; i++) {
     if (index === i) {
-      this.showPanel(panels[i]);
+      this.showPanel(this.props.panels[i]);
     } else {
-      this.hidePanel(panels[i]);
+      this.hidePanel(this.props.panels[i]);
     }
   }
 };
 
 Tabs.prototype.movetab = function(index) {
-  var max, i, opts, panels, current;
-
-  for (max=this.props.tabs.length, i=0; i < max; i++) {
+  for (var i = 0, max = this.props.tabs.length; i < max; i++) {
     if (i === index) {
       this.props.tabs[i].setAttribute('data-current', '');
     } else {
