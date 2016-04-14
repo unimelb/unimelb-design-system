@@ -1,0 +1,21 @@
+p <strong>Sidebar tabs</strong> are another form of navigational tabs for use in combination with the <strong>sidebar layout</strong>. For practical examples, have a look at the <a href="/layouts/search">search layout</a> (<a href="/layouts/search/source">view source</a>) and the <a href="/layouts/course">course layout</a> (<a href="/layouts/course/source">view source</a>. If the sidebar is on the right-hand side of the page, use class <code>sidebar-tabs--right</code> to bring the tabs against the left edge of the sidebar.
+
+.layout-sidebar.sidebar-tabs
+  aside.layout-sidebar__side.box
+    h2.subtitle Example
+    p No modus albucius vis, ad duis fabellas per. Et vim viris habemus referrentur, in mei liber scaevola. Ponderum referrentur consectetuer sea eu, illud temporibus vim ei.
+    ul.sidebar-tabs__list
+      li: a.sidebar-tabs__tab role="tab" aria-controls="side-1" aria-selected="true" href="#side-1" Tab 1
+      li: a.sidebar-tabs__tab role="tab" aria-controls="side-2" href="#side-2" Tab 2
+      li: a.sidebar-tabs__tab role="tab" aria-controls="side-3" href="#side-3" Tab 3
+
+  .layout-sidebar__main.sidebar-tabs__panels.box tab-index="-1"
+    #side-1.sidebar-tabs__panel.box role="tabpanel"
+      h2 Tab 1
+      p Et vim viris habemus referrentur, in mei liber scaevola. Ponderum referrentur consectetuer sea eu, illud temporibus vim ei. Cu has assum consectetuer, omittam scriptorem est te. At mel verear verterem reformidans, ei sonet quodsi eripuit mei, per utinam vituperata an.
+    #side-2.sidebar-tabs__panel.box role="tabpanel" hidden=true
+      h2 Tab 2
+      p Vel veniam tempor definiebas at. No modus albucius vis, ad duis fabellas per. Et vim viris habemus referrentur, in mei liber scaevola. Ponderum referrentur consectetuer sea eu, illud temporibus vim ei. Cu has assum consectetuer, omittam scriptorem est te. At mel verear verterem reformidans, ei sonet quodsi eripuit mei, per utinam vituperata an.
+    #side-3.sidebar-tabs__panel.box role="tabpanel" hidden=true
+      h2 Tab 3
+      p Ponderum referrentur consectetuer sea eu, illud temporibus vim ei. Cu has assum consectetuer, omittam scriptorem est te. At mel verear verterem reformidans, ei sonet quodsi eripuit mei, per utinam vituperata an.

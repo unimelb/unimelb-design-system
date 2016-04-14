@@ -67,7 +67,7 @@ div role="main"
             li: a.sidebar-tabs__tab role="tab" aria-controls="doctor-of-veterinary-medicine-4-years" aria-selected="true" href="#doctor-of-veterinary-medicine-4-years" Doctor of Veterinary Medicine  (4 years)
             li: a.sidebar-tabs__tab role="tab" aria-controls="doctor-of-veterinary-medicine-accelerated-pathway-3-years" href="#doctor-of-veterinary-medicine-accelerated-pathway-3-years" Doctor of Veterinary Medicine  - Accelerated Pathway (3 years)
 
-        .layout-sidebar__main.box.sidebar-tabs__panels tab-index="-1"
+        .layout-sidebar__main.sidebar-tabs__panels.box tab-index="-1"
           #doctor-of-veterinary-medicine-4-years.mobile-wrap.sidebar-tabs__panel.box role="tabpanel"
             h2 Doctor of Veterinary Medicine (4 years)
             table.course-progression
@@ -519,18 +519,18 @@ div role="main"
     #course-structure-2.tab role="tabpanel"
       .layout-sidebar.sidebar-tabs
         aside.layout-sidebar__side.box
-          h2.subtitle Second inner tab test
+          h2.subtitle Second sidebar tabs test
           p The Doctor of Veterinary Medicine is&nbsp; four years full-time, and is delivered at the Parkville campus (Years One and Two) and at the Werribee campus (Years Three and Four).
           ul.sidebar-tabs__list
-            li: a.sidebar-tabs__tab role="tab" aria-controls="inner-2" aria-selected="true" href="#inner-2" Inner 2
-            li: a.sidebar-tabs__tab role="tab" aria-controls="inner-3" href="#inner-3" Inner 3
+            li: a.sidebar-tabs__tab role="tab" aria-controls="side-1" aria-selected="true" href="#side-1" Tab 1
+            li: a.sidebar-tabs__tab role="tab" aria-controls="side-2" href="#side-2" Tab 2
 
-        .layout-sidebar__main.box.sidebar-tabs__panels tab-index="-1"
-          #inner-2.mobile-wrap.sidebar-tabs__panel.box role="tabpanel"
-            h2 Inner 2
+        .layout-sidebar__main.sidebar-tabs__panels.box tab-index="-1"
+          #side-1.sidebar-tabs__panel.box role="tabpanel"
+            h2 Tab 1
             p Lorem ipsum
-          #inner-3.mobile-wrap.sidebar-tabs__panel.box role="tabpanel"
-            h2 Inner 3!
+          #side-2.sidebar-tabs__panel.box role="tabpanel" hidden=true
+            h2 Tab 2
             p Lorem ipsum
           section
             p.center
