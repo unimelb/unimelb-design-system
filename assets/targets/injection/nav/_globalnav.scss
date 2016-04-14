@@ -1,7 +1,7 @@
 .uomcontent [role="navigation"]#globalsitemap {
   @extend %normalise;
   @extend %wrapper;
-  @include rem(padding, 0 3% 30px);
+  @include rem(padding, 0 3%);
   background-color: $navy;
   font-family: $ff-sans;
   height: 100%;
@@ -31,27 +31,31 @@
   }
 
   a {
-    @include rem(padding-top, 10px);
+    @include rem(padding-top, 4px);
+    @include rem(padding-bottom, 4px);
     color: $lightblue;
     color: rgba($white, .6);
     display: block;
     font-weight: $light;
-    padding-bottom: 0;
     padding-left: 0;
     padding-right: 3%;
     text-decoration: none;
 
-    &:hover {
-      background-color: transparent;
+    &:hover,
+    &:focus {
       color: $white;
+    }
+
+    &:hover {
       text-decoration: underline;
     }
   }
 
   h2 {
     @include rem(font-size, 20px);
-    @include rem(padding-bottom, 10px);
-    @include rem(padding-top, 30px);
+    @include rem(margin-bottom, 8px);
+    @include rem(padding-bottom, 6px);
+    @include rem(padding-top, 24px);
     border-bottom: 1px solid $blue;
     color: $lightblue;
     color: rgba($white, .6);
@@ -202,12 +206,12 @@
 
   a.close-button {
     @include rem(font-size, 14px);
+    @include rem(padding-left, 4px);
     @include rem(padding-top, 16px);
     @include rem(height, 60px);
     border-bottom: 1px solid $blue;
     color: rgba($white, .4);
     display: block;
-    padding-left: 0;
     text-decoration: none;
     text-transform: uppercase;
 
@@ -222,12 +226,17 @@
       vertical-align: -1px;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $white;
+    }
+
+    &:hover {
       text-decoration: underline;
     }
 
-    &:hover:before {
+    &:hover:before,
+    &:focus:before {
       animation: chevronback 1s infinite ease-in-out;
       color: $white;
       text-decoration: none;
@@ -236,15 +245,18 @@
 
   .col-3 {
     padding-left: 3%;
+
+    &:last-child {
+      @include rem(padding-bottom, 32px);
+    }
   }
 
   @include breakpoint(desktop) {
     .col-3 {
+      @include rem(padding-top, 48px);
       clear: both;
-      padding-top: 30px;
 
       div {
-        @include rem(padding-bottom, 30px);
         float: left;
         width: 30%;
 

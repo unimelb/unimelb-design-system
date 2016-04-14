@@ -214,7 +214,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
     </div>
   </fieldset>
 </form>
-<ul class="quicklinks">
+<ul class="quicklinks clearfix">
   <li><a href="http://about.unimelb.edu.au/governance-and-leadership/faculties"><svg role="img" class="icon"><use xlink:href="#icon-faculty" /></svg> Faculties and Graduate Schools</a></li>
   <li><a href="http://students.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-student" /></svg> Current Students</a></li>
   <li><a href="http://library.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-library" /></svg> Library</a></li>
@@ -223,7 +223,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
   <li><a href="http://www.campaign.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-campaign" /></svg> Support the Campaign</a></li>
 </ul>
 <div>
-  <div class="col-3">
+  <div class="col-3 clearfix">
     <div>
       <h2><a href="http://coursesearch.unimelb.edu.au/">Study at Melbourne</a></h2>
       <ul>
@@ -262,7 +262,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
       </ul>
     </div>
   </div>
-  <div class="col-3">
+  <div class="col-3 clearfix">
     <div>
       <h2><a href="http://unimelb.edu.au/engage/">Engagement</a></h2>
       <ul>

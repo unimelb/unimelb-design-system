@@ -39,7 +39,7 @@
   }
 
   .modal__close {
-    color: #aaa;
+    color: $midgray;
     cursor: pointer;
     font-size: 11px;
     font-weight: 400;
@@ -60,7 +60,7 @@
 
     &:hover,
     &:focus {
-      color: #444;
+      color: $darkgray;
     }
   }
 }
