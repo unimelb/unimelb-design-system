@@ -58,7 +58,8 @@
       @extend %modal-close-icon;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: #444;
     }
   }
