@@ -31,8 +31,8 @@
   }
 
   a {
-    @include rem(padding-top, 4px);
-    @include rem(padding-bottom, 4px);
+    @include rem(padding-top, 8px);
+    @include rem(padding-bottom, 8px);
     color: $lightblue;
     color: rgba($white, .6);
     display: block;
@@ -48,6 +48,11 @@
 
     &:hover {
       text-decoration: underline;
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(padding-top, 4px);
+      @include rem(padding-bottom, 4px);
     }
   }
 
