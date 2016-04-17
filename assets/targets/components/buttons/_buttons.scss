@@ -12,11 +12,14 @@
   font-weight: $bold;
   letter-spacing: 2px;
   margin: 20px 0;
+  outline-color: #000;
+  outline-offset: 1px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 
-  &:hover {
+  &:hover,
+  &:focus {
     border-bottom-width: 1px;
     color: $white;
     margin-top: 24px;
@@ -85,7 +88,8 @@
   margin: 0;
   position: relative;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: darken($highlight, 10%);
   }
 
@@ -93,15 +97,18 @@
     opacity: .3;
   }
 
-  &.warning:hover {
+  &.warning:hover,
+  &.warning:focus {
     background-color: darken($warning, 10%);
   }
 
-  &.cta:hover {
+  &.cta:hover,
+  &.cta:focus {
     background-color: darken($cta, 10%);
   }
 
-  &.brand:hover {
+  &.brand:hover,
+  &.brand:focus {
     background-color: darken($brand, 10%);
   }
 
@@ -109,18 +116,19 @@
     background-color: $soft;
     color: $darkblue;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: darken($gray, 10%);
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     margin-top: 0;
   }
 }
 
 %arrow-right {
-
   &::after {
     @include rem(font-size, 20px);
     @include rem(padding-left, 5px);
@@ -150,17 +158,19 @@
   display: inline-block;
   font-style: normal;
   font-weight: $bold;
+  outline-color: #000;
+  outline-offset: 1px;
   position: relative;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $cyan;
     color: $white;
     border-color: transparent;
   }
-
 
   &:active {
     opacity: .3;
@@ -286,6 +296,7 @@
     @extend %outlinearrow;
     border-color: $white;
     color: $white;
+    outline-color: currentColor;
   }
 
   .button-fill {
@@ -307,7 +318,7 @@
       @include rem(font-size, 16px);
     }
   }
-  
+
   /* Chrome-less button for UI interactions */
   .button-ui {
     background: none transparent;
@@ -316,7 +327,7 @@
     font: inherit;
     margin: 0;
     padding: 0;
-    
+
     &::-moz-focus-inner {
       border: 0;
       padding: 0;
