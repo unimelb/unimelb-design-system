@@ -18,6 +18,19 @@
   text-decoration: none;
   text-transform: uppercase;
 
+  &[disabled] {
+    cursor: not-allowed;
+    opacity: 0.3;
+    pointer-events: none;
+
+    &:hover,
+    &:focus {
+      border-bottom-width: 5px;
+      margin-top: 20px;
+      outline: 0;
+    }
+  }
+
   &:hover,
   &:focus {
     border-bottom-width: 1px;
@@ -49,7 +62,8 @@
     border-bottom-color: darken($soft, 10%);
     color: $midblue;
 
-    &:hover {
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
       background-color: $gray;
       color: $darkblue;
     }
@@ -88,8 +102,8 @@
   margin: 0;
   position: relative;
 
-  &:hover,
-  &:focus {
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
     background-color: darken($highlight, 10%);
   }
 
@@ -97,18 +111,18 @@
     opacity: .3;
   }
 
-  &.warning:hover,
-  &.warning:focus {
+  &.warning:not([disabled]):hover,
+  &.warning:not([disabled]):focus {
     background-color: darken($warning, 10%);
   }
 
-  &.cta:hover,
-  &.cta:focus {
+  &.cta:not([disabled]):hover,
+  &.cta:not([disabled]):focus {
     background-color: darken($cta, 10%);
   }
 
-  &.brand:hover,
-  &.brand:focus {
+  &.brand:not([disabled]):hover,
+  &.brand:not([disabled]):focus {
     background-color: darken($brand, 10%);
   }
 
@@ -116,14 +130,16 @@
     background-color: $soft;
     color: $darkblue;
 
-    &:hover,
-    &:focus {
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
       background-color: darken($gray, 10%);
     }
   }
 
   &:hover,
-  &:focus {
+  &:focus,
+  &[disabled]:hover,
+  &[disabled]:focus {
     margin-top: 0;
   }
 }
