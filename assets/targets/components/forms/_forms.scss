@@ -12,7 +12,8 @@
   position: relative;
   text-transform: uppercase;
 
-  &:hover {
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
     background-color: darken($highlight, 10%);
   }
 

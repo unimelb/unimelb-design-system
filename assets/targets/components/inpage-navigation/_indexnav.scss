@@ -27,6 +27,11 @@
     color: $white;
     display: block;
     text-align: center;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   @include breakpoint(desktop) {

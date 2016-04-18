@@ -74,6 +74,11 @@
         text-transform: uppercase;
 
         &:hover {
+          text-decoration: underline;
+        }
+
+        &:hover,
+        &:focus {
           color: $white;
         }
 
@@ -143,7 +148,7 @@
         cursor: default;
         opacity: .5;
       }
-      
+
       &:focus {
         outline: 1px dotted $white;
       }

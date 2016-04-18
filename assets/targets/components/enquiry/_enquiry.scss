@@ -65,7 +65,7 @@
         @include padding-leader(1);
         max-width: 100%;
       }
-      
+
       /* Hide the main legend only if present */
       & > .fields > fieldset {
         legend {
@@ -96,18 +96,22 @@
         }
       }
     }
-    
+
     &--dark {
       background-color: $blue;
       color: $white;
       box-shadow: none;
-      
+
+      .enquiry__cta a {
+        outline-color: currentColor;
+      }
+
       .enquiry__subline {
         color: inherit;
 
         a {
           color: inherit;
-          
+
           &:hover {
             text-decoration: none;
           }
