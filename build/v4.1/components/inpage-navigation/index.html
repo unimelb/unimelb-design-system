@@ -6,44 +6,28 @@
 
 <p>To include this feature on your page, simply add an empty div with class <code>jumpnav</code> somewhere in the page structure. <strong>Every <code>h2</code> on the page with a unique ID</strong> is then added to the in-page navigation, in order of appearance.</p>
 
-<p><code>html
-&lt;div class=&quot;jumpnav&quot;&gt;&lt;/div&gt;
-</code></p>
+<pre><code class="html">&lt;div class="jumpnav"&gt;&lt;/div&gt;</code></pre>
 
 <p>By default the generated navigation will take the form of a <em>table of contents</em> at the beginning of the page on smaller screens, and a <em>fixed menu</em> on the left hand side on larger screens. If you would prefer to use the <em>table of contents</em> for all screen sizes, add the class <code>top</code> as in the example below. This behaviour is demonstrated on the <a href="/components/buttons">Buttons</a> page to better display the wide component mid-way down the page.</p>
 
-<p><code>html
-&lt;div class=&quot;jumpnav top&quot;&gt;&lt;/div&gt;
-</code></p>
+<pre><code class="html">&lt;div class="jumpnav top"&gt;&lt;/div&gt;</code></pre>
+<hr /><h2 id="index-navigation">Index navigation</h2><div><p>
+  A-Z indices can be done via a simple class change:
+</p>
+<pre><code class="html">&lt;div class="indexnav"&gt;&lt;/div&gt;</code></pre>
+<p>
+  As you can't have both navigations in one document, you'll find an <a href="/layouts/indexnav">example of an index navigation</a> in the example layouts.
+</p></div><hr /><h2 id="smooth-scroll">Smooth scroll</h2><div><p>The smooth scroll function used by the in-page navigation, <code>smoothScrollTo</code>, can be invoked independently in your own project:
+</p>
+<pre><code class="javascript">var el = document.querySelector('#block'); // where #block is an element with id="block"
+window.smoothScrollTo(el);</code></pre>
+<p>
+  <a href="javascript:smoothScrollTo(document.getElementById('overview'))" class="button-small">Try it out!</a>
+</p>
+<p><code>smoothScrollTo</code> accepts an optional <strong>callback</strong> function as second argument. This callback is invoked as soon as the scrolling animation ends. It is generally a good idea to avoid performing other actions, like loading a script or manipulating the DOM, while a scrolling animation is in progress. Doing so could deteriorate the smoothness of the animation.
+</p>
+<pre><code class="javascript">window.smoothScrollTo(el, doSomething);
 
-<h2 id="index">Index navigation</h2>
-
-<p>A-Z indices can be done via a simple class change:</p>
-
-<p><code>html
-&lt;div class=&quot;indexnav&quot;&gt;&lt;/div&gt;
-</code></p>
-
-<p>As you can&#39;t have both navigations in one document, you&#39;ll find an <a href="/layouts/indexnav">example of an index navigation</a> in the example layouts.</p>
-
-<h2 id="smooth">Smooth scroll</h2>
-
-<p>The smooth scroll function used by the in-page navigation, <code>smoothScrollTo</code>, can be invoked independently in your own project:</p>
-
-<p><code>javascript
-var el = document.querySelector(&#39;#block&#39;); // where #block is an element with id=&quot;block&quot;
-window.smoothScrollTo(el);
-</code></p>
-
-<p><a href="javascript:smoothScrollTo(document.getElementById('smooth'))" class="button-small">Try it out!</a></p>
-
-<p><code>smoothScrollTo</code> accepts an optional <strong>callback</strong> function as second argument. This callback is invoked as soon as the scrolling animation ends. It is generally a good idea to avoid performing other actions, like loading a script or manipulating the DOM, while a scrolling animation is in progress. Doing so could deteriorate the smoothness of the animation.</p>
-
-<p>```javascript
-window.smoothScrollTo(el, doSomething);</p>
-
-<p>function doSomething() {
-  // Do something as soon as the scrolling ends - e.g. give focus to the element, load more content, etc. 
-}
-```</p>
-<hr /></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
+function doSomething() {
+  // Do something as soon as the scrolling ends - e.g. give focus to the element, load more content, etc.
+}</code></pre></div><hr /></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
