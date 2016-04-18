@@ -64,12 +64,12 @@
 
       a {
         @include adjust-font-size-to(15px);
-        @include rem(line-height, $tabs-height - 2px); // leave 1px above and below for outline
-        @include rem(margin-top, 1px); // outline cont.
+        @include rem(line-height, $tabs-height);
         @include rem(padding, 0 20px);
         color: rgba($white, .7);
         display: inline-block;
         letter-spacing: .5px;
+        outline-offset: -1px;
         text-decoration: none;
         text-transform: uppercase;
 
