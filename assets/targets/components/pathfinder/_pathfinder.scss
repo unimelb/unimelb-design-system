@@ -14,6 +14,7 @@
         background-color: rgba($white, .9);
         border-bottom: 3px solid $highlight;
         color: $black;
+        outline-color: $white;
 
         &:hover, &:focus {
           background-color: $white;
@@ -49,6 +50,7 @@
         background-color: rgba($white, .9);
         border-bottom: 0 none;
         color: $black;
+        outline-color: $white;
 
         &:hover, &:focus {
           background-color: $white;
@@ -101,6 +103,7 @@
         border: 0 none;
         color: $black;
         min-height: 0;
+        outline-color: $white;
         padding-bottom: 0;
         padding-left: 0;
         padding-right: 0;
@@ -256,9 +259,10 @@
         }
       }
 
-      &.disabled {
+      &[disabled] {
         cursor: not-allowed;
         opacity: .5;
+        pointer-events: none;
 
         &:hover {
           transform: scale(1);
