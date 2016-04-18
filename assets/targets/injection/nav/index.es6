@@ -29,13 +29,13 @@ function InjectNav(props) {
 
   // Set up a blanket object
   this.props.blanket = new Blanket({
-    'root': this.props.root
+    root: this.props.root
   });
 
   // Set up local nav
   if (this.props.localNav) {
     new LocalNav({
-      root:     this.props.root,
+      root: this.props.root,
       localnav: this.props.localNav
     });
   }
@@ -58,12 +58,11 @@ InjectNav.prototype.setupEventBindings = function() {
   if (this.props.localNav && this.props.menuTrigger) {
     this.props.menuTrigger.addEventListener('click', this.openLocalNav.bind(this));
 
-    // TODO is there ever more than one close button?
-    for (var triggers=this.props.localNav.querySelectorAll('h2:first-child'), i=triggers.length - 1; i >= 0; i--) {
-      triggers[i].addEventListener('click', this.closeLocalNav.bind(this));
-    }
+    // Local nav close button
+    this.props.localNav.querySelector('.localnav__close').addEventListener('click', this.closeLocalNav.bind(this));
 
-    for (triggers=this.props.localNav.querySelectorAll('a'), i=triggers.length - 1; i >= 0; i--) {
+    // Close local nav when selecting internal links (except close button)
+    for (var triggers = this.props.localNav.querySelectorAll('a'), i=triggers.length - 1; i > 0; i--) {
       if (triggers[i].getAttribute('href').indexOf('#') != -1) {
         triggers[i].addEventListener('click', this.closeLocalNav.bind(this));
       }
