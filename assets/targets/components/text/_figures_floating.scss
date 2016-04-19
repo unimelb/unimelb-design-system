@@ -99,6 +99,7 @@
 
 
 body.jumpnav-active .uomcontent {
+  blockquote,
   .inset-left {
     @include breakpoint(wide) {
       margin-left: 0;
@@ -113,6 +114,7 @@ body.jumpnav-active .uomcontent {
     }
   }
 
+  blockquote.right,
   .inset-right {
     @include breakpoint(wide) {
       @include rem(margin-left, 30px);
