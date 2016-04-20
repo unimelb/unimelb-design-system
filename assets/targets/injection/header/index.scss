@@ -536,10 +536,15 @@
 }
 
 .uomcontent.search-active {
+  position: relative;
   width: 100%;
+  z-index: 101;
+
+  .page-header-tools {
+    display: none;
+  }
 
   @include breakpoint(desktop) {
-    position: static;
     width: auto;
 
     .page-header,
@@ -567,7 +572,7 @@
 .uomcontent .page-header-search {
   @include rem(height, 60px);
   animation: fadeIn .2s backwards;
-  background: $white;
+  background: rgba($white, .95);
   display: none;
   left: 0;
   position: fixed;
