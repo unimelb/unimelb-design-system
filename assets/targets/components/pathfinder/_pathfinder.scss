@@ -413,6 +413,19 @@
         }
       }
     }
+
+    &.soft {
+      @include breakpoint(desktop) {
+        li {
+          @include rem(padding-left, 1px);
+          text-align: left;
+
+          &:nth-child(2n+1) {
+            text-align: right;
+          }
+        }
+      }
+    }
   }
 
   .lead + .pathfinder-2,
