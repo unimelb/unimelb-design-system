@@ -1,0 +1,608 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Pathfinder | Web.Unimelb </title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><link href="//d2h9b02ioca40d.cloudfront.net/v4.1.1/uom.css" rel="stylesheet" /><script src="//d2h9b02ioca40d.cloudfront.net/v4.1.1/uom.js"></script><link href="/assets/lib/docs.css" rel="stylesheet" /><link href="/assets/lib/highlight.css" rel="stylesheet" /><script src="/assets/lib/highlight.pack.js"></script><link href="/assets/lib/ace.extra.css" rel="stylesheet" /><link href="/assets/lib/verselect.css" rel="stylesheet" /><script src="/assets/lib/verselect.js"></script></head><body data-version="v4.1.1"><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Pathfinder"><span itemprop="name">Pathfinder</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">Pathfinder</h1><p>The pathfinder is used to funnel the user to a certain area and can have up to four boxes. If you would like one particular box to stand out above the rest, a class of <code>prominent</code> can be added.</p>
+
+<h2>Reference articles</h2>
+
+<ul>
+<li><a href="/using-the-pathfinder-component-effectively">Using the pathfinder component effectively</a></li>
+</ul>
+<hr /><h2 id="two-boxes">Two boxes</h2><div id="r1"><ul class="pathfinder-2">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong>
+      <p>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a class="disabled" href=""><strong><span>Ex debet appellantur eam</span></strong>
+      <p>
+        Cu&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+</ul></div>
+    <section class="code">
+      <pre class="html" id="s1">
+&lt;ul class="pathfinder-2"&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Prima vitae&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a class="disabled" href=""&gt;&lt;strong&gt;&lt;span&gt;Ex debet appellantur eam&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Cu&hellip;
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+    </section>
+<h2 id="two-boxes-soft">Two boxes soft</h2><div id="r2"><ul class="pathfinder-2 soft">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong>
+      <p>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a class="disabled" href=""><strong><span>Ex debet appellantur eam</span></strong>
+      <p>
+        Cu&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+</ul></div>
+    <section class="code">
+      <pre class="html" id="s2">
+&lt;ul class="pathfinder-2 soft"&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Prima vitae&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a class="disabled" href=""&gt;&lt;strong&gt;&lt;span&gt;Ex debet appellantur eam&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Cu&hellip;
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+    </section>
+<hr /><h2 id="three-boxes">Three boxes</h2><div id="r3"><ul class="pathfinder-3">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong>
+      <p>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Ex debet appellantur eam</span></strong>
+      <p>
+        Cu&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Qui ut mucius fuisset</span></strong>
+      <p>
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+</ul></div>
+    <section class="code">
+      <pre class="html" id="s3">
+&lt;ul class="pathfinder-3"&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Prima vitae&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Ex debet appellantur eam&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Cu&hellip;
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Qui ut mucius fuisset&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+    </section>
+<hr /><h2 id="four-boxes">Four boxes</h2><div id="r4"><ul class="pathfinder-4">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong>
+      <p>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Ex debet appellantur eam</span></strong>
+      <p>
+        Cu&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Qui ut mucius fuisset</span></strong>
+      <p>
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Ea copiosae philosophia vim</span></strong>
+      <p>
+        Eripuit postulant honestatis eu has, vel an enim duis. Ei labore adolescens eum. Vidisse adolescens ei sit, eu feugiat adipisci qui
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+</ul></div>
+    <section class="code">
+      <pre class="html" id="s4">
+&lt;ul class="pathfinder-4"&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Prima vitae&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Ex debet appellantur eam&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Cu&hellip;
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Qui ut mucius fuisset&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Ea copiosae philosophia vim&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Eripuit postulant honestatis eu has, vel an enim duis. Ei labore adolescens eum. Vidisse adolescens ei sit, eu feugiat adipisci qui
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+    </section>
+<hr /><h2 id="featured-boxes">Featured boxes</h2><div id="r5"><ul class="pathfinder-4">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong>
+      <p>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a class="featured" href=""><strong><span>Ex debet appellantur eam</span></strong>
+      <p>
+        Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo, nisl vide mei ei. Ea copiosae philosophia vim. Ex vel civibus inimicus consulatu, ad cetero ceteros rationibus&hellip;
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Qui ut mucius fuisset</span></strong>
+      <p>
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Ea copiosae philosophia vim</span></strong>
+      <p>
+        Eripuit postulant honestatis eu has, vel an enim duis. Ei labore adolescens eum. Vidisse adolescens ei sit, eu feugiat adipisci qui
+      </p>
+      <span class="button-small brand">Call to action</span></a>
+  </li>
+</ul></div>
+    <section class="code">
+      <pre class="html" id="s5">
+&lt;ul class="pathfinder-4"&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Prima vitae&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a class="featured" href=""&gt;&lt;strong&gt;&lt;span&gt;Ex debet appellantur eam&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo, nisl vide mei ei. Ea copiosae philosophia vim. Ex vel civibus inimicus consulatu, ad cetero ceteros rationibus&hellip;
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Qui ut mucius fuisset&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Ea copiosae philosophia vim&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Eripuit postulant honestatis eu has, vel an enim duis. Ei labore adolescens eum. Vidisse adolescens ei sit, eu feugiat adipisci qui
+      &lt;/p&gt;
+      &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+    </section>
+<p>Featured Boxes should never sit on the outside</p>
+<hr /><h2 id="xhtml-compliant-markup">Xhtml compliant markup</h2><div id="r6"><ul class="pathfinder-3">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong><span class="text">Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;</span><span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Ex debet appellantur eam</span></strong><span class="text">Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo, nisl vide mei ei. Ea copiosae philosophia vim. Ex vel civibus inimicus consulatu, ad cetero ceteros rationibus&hellip;</span><span class="button-small brand">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Qui ut mucius fuisset</span></strong><span class="text">Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis</span><span class="button-small brand">Call to action</span></a>
+  </li>
+</ul></div>
+    <section class="code">
+      <pre class="html" id="s6">
+&lt;ul class="pathfinder-3"&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Prima vitae&lt;/span&gt;&lt;/strong&gt;&lt;span class="text"&gt;Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;&lt;/span&gt;&lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Ex debet appellantur eam&lt;/span&gt;&lt;/strong&gt;&lt;span class="text"&gt;Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo, nisl vide mei ei. Ea copiosae philosophia vim. Ex vel civibus inimicus consulatu, ad cetero ceteros rationibus&hellip;&lt;/span&gt;&lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Qui ut mucius fuisset&lt;/span&gt;&lt;/strong&gt;&lt;span class="text"&gt;Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis&lt;/span&gt;&lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+    </section>
+<p>Use the alternate markup <code>span class=&quot;text&quot;</code> rather than <code>p</code> in systems where XHTML rules are enforced (eg. Wordpress), to prevent code cleaners from rearranging the markup.</p>
+<hr /><h2 id="background-image">Background image</h2><div id="r7"><section class="fullwidth short fixed-background" style="background-image:url(&#39;/assets/example/alan_gilbert.jpg&#39;);">
+  <h1 class="title">
+    Title
+  </h1>
+  <ul class="pathfinder-3 white">
+    <li>
+      <a href=""><strong><span>Ex debet appellantur eam</span></strong>
+        <p>
+          Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo, nisl vide mei ei. Ea copiosae philosophia vim. Ex vel civibus inimicus consulatu, ad cetero ceteros rationibus&hellip;
+        </p>
+        <span class="button-small brand">Call to action</span></a>
+    </li>
+    <li>
+      <a href=""><strong><span>Qui ut mucius fuisset</span></strong>
+        <p>
+          Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+        </p>
+        <span class="button-small brand">Call to action</span></a>
+    </li>
+    <li>
+      <a href=""><strong><span>Ea copiosae philosophia vim</span></strong>
+        <p>
+          Eripuit postulant honestatis eu has, vel an enim duis. Ei labore adolescens eum. Vidisse adolescens ei sit, eu feugiat adipisci qui
+        </p>
+        <span class="button-small brand">Call to action</span></a>
+    </li>
+  </ul>
+</section></div>
+    <section class="code">
+      <pre class="html" id="s7">
+&lt;section class="fullwidth short fixed-background" style="background-image:url(&#39;/assets/example/alan_gilbert.jpg&#39;);"&gt;
+  &lt;h1 class="title"&gt;
+    Title
+  &lt;/h1&gt;
+  &lt;ul class="pathfinder-3 white"&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Ex debet appellantur eam&lt;/span&gt;&lt;/strong&gt;
+        &lt;p&gt;
+          Cu idque nulla eos, modus sensibus constituam et quo. Ne mel duis simul, quo ad euismod partiendo, nisl vide mei ei. Ea copiosae philosophia vim. Ex vel civibus inimicus consulatu, ad cetero ceteros rationibus&hellip;
+        &lt;/p&gt;
+        &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Qui ut mucius fuisset&lt;/span&gt;&lt;/strong&gt;
+        &lt;p&gt;
+          Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+        &lt;/p&gt;
+        &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Ea copiosae philosophia vim&lt;/span&gt;&lt;/strong&gt;
+        &lt;p&gt;
+          Eripuit postulant honestatis eu has, vel an enim duis. Ei labore adolescens eum. Vidisse adolescens ei sit, eu feugiat adipisci qui
+        &lt;/p&gt;
+        &lt;span class="button-small brand"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+      </pre>
+    </section>
+<hr /><h2 id="soft">Soft</h2><div id="r8"><ul class="pathfinder-3 soft">
+  <li>
+    <a href=""><strong><span>Prima vitae</span></strong>
+      <p>
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      </p>
+      <span class="button-small">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Ex debet appellantur eam</span></strong>
+      <p>
+        Cu abitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne
+      </p>
+      <span class="button-small">Call to action</span></a>
+  </li>
+  <li>
+    <a href=""><strong><span>Qui ut mucius fuisset</span></strong>
+      <p>
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      </p>
+      <span class="button-small">Call to action</span></a>
+  </li>
+</ul></div>
+    <section class="code">
+      <pre class="html" id="s8">
+&lt;ul class="pathfinder-3 soft"&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Prima vitae&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+      &lt;/p&gt;
+      &lt;span class="button-small"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Ex debet appellantur eam&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Cu abitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne
+      &lt;/p&gt;
+      &lt;span class="button-small"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Qui ut mucius fuisset&lt;/span&gt;&lt;/strong&gt;
+      &lt;p&gt;
+        Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+      &lt;/p&gt;
+      &lt;span class="button-small"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+    </section>
+<hr /><h2 id="soft-background-image">Soft background image</h2><div id="r9"><section class="fullwidth short fixed-background" style="background-image:url(&#39;/assets/example/alan_gilbert.jpg&#39;);">
+  <h1 class="title">
+    Title
+  </h1>
+  <ul class="pathfinder-3 soft">
+    <li>
+      <a href=""><strong><span>Prima vitae</span></strong>
+        <p>
+          Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+        </p>
+        <span class="button-small">Call to action</span></a>
+    </li>
+    <li>
+      <a href=""><strong><span>Ex debet appellantur eam</span></strong>
+        <p>
+          Cu abitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne
+        </p>
+        <span class="button-small">Call to action</span></a>
+    </li>
+    <li>
+      <a href=""><strong><span>Qui ut mucius fuisset</span></strong>
+        <p>
+          Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+        </p>
+        <span class="button-small">Call to action</span></a>
+    </li>
+  </ul>
+</section></div>
+    <section class="code">
+      <pre class="html" id="s9">
+&lt;section class="fullwidth short fixed-background" style="background-image:url(&#39;/assets/example/alan_gilbert.jpg&#39;);"&gt;
+  &lt;h1 class="title"&gt;
+    Title
+  &lt;/h1&gt;
+  &lt;ul class="pathfinder-3 soft"&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Prima vitae&lt;/span&gt;&lt;/strong&gt;
+        &lt;p&gt;
+          Prima vitae labitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne nam. Vix eu omnium recteque consectetue&hellip;
+        &lt;/p&gt;
+        &lt;span class="button-small"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Ex debet appellantur eam&lt;/span&gt;&lt;/strong&gt;
+        &lt;p&gt;
+          Cu abitur ut eam, at omnes facilis constituam quo. Commune gloriatur ne
+        &lt;/p&gt;
+        &lt;span class="button-small"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Qui ut mucius fuisset&lt;/span&gt;&lt;/strong&gt;
+        &lt;p&gt;
+          Apeirian nominati partiendo vel at, qui cu saperet imperdiet necessitatibus. Cu nam integre copiosae lobortis
+        &lt;/p&gt;
+        &lt;span class="button-small"&gt;Call to action&lt;/span&gt;&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+      </pre>
+    </section>
+<hr /><h2 id="buttons">Buttons</h2><div id="r10"><section class="fullwidth short fixed-background" style="background-image:url(&#39;/assets/example/alan_gilbert.jpg&#39;);">
+  <ul class="pathfinder-3 buttons">
+    <li>
+      <a href=""><strong><span>Prima vitae</span></strong></a>
+    </li>
+    <li>
+      <a href=""><strong><span>Ex debet</span></strong></a>
+    </li>
+    <li>
+      <a href=""><strong><span>Mucius fuisset</span></strong></a>
+    </li>
+  </ul>
+</section></div>
+    <section class="code">
+      <pre class="html" id="s10">
+&lt;section class="fullwidth short fixed-background" style="background-image:url(&#39;/assets/example/alan_gilbert.jpg&#39;);"&gt;
+  &lt;ul class="pathfinder-3 buttons"&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Prima vitae&lt;/span&gt;&lt;/strong&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Ex debet&lt;/span&gt;&lt;/strong&gt;&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href=""&gt;&lt;strong&gt;&lt;span&gt;Mucius fuisset&lt;/span&gt;&lt;/strong&gt;&lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/section&gt;
+      </pre>
+    </section>
+<hr />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+      <script>
+        var e1 = ace.edit("s1");
+        e1.setTheme("ace/theme/github");
+        e1.session.setMode("ace/mode/html");
+        e1.getSession().setTabSize(2);
+        e1.getSession().setUseSoftTabs(true);
+        e1.getSession().on("change", function(e){
+          document.getElementById("r1").innerHTML = e1.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e2 = ace.edit("s2");
+        e2.setTheme("ace/theme/github");
+        e2.session.setMode("ace/mode/html");
+        e2.getSession().setTabSize(2);
+        e2.getSession().setUseSoftTabs(true);
+        e2.getSession().on("change", function(e){
+          document.getElementById("r2").innerHTML = e2.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e3 = ace.edit("s3");
+        e3.setTheme("ace/theme/github");
+        e3.session.setMode("ace/mode/html");
+        e3.getSession().setTabSize(2);
+        e3.getSession().setUseSoftTabs(true);
+        e3.getSession().on("change", function(e){
+          document.getElementById("r3").innerHTML = e3.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e4 = ace.edit("s4");
+        e4.setTheme("ace/theme/github");
+        e4.session.setMode("ace/mode/html");
+        e4.getSession().setTabSize(2);
+        e4.getSession().setUseSoftTabs(true);
+        e4.getSession().on("change", function(e){
+          document.getElementById("r4").innerHTML = e4.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e5 = ace.edit("s5");
+        e5.setTheme("ace/theme/github");
+        e5.session.setMode("ace/mode/html");
+        e5.getSession().setTabSize(2);
+        e5.getSession().setUseSoftTabs(true);
+        e5.getSession().on("change", function(e){
+          document.getElementById("r5").innerHTML = e5.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e6 = ace.edit("s6");
+        e6.setTheme("ace/theme/github");
+        e6.session.setMode("ace/mode/html");
+        e6.getSession().setTabSize(2);
+        e6.getSession().setUseSoftTabs(true);
+        e6.getSession().on("change", function(e){
+          document.getElementById("r6").innerHTML = e6.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e7 = ace.edit("s7");
+        e7.setTheme("ace/theme/github");
+        e7.session.setMode("ace/mode/html");
+        e7.getSession().setTabSize(2);
+        e7.getSession().setUseSoftTabs(true);
+        e7.getSession().on("change", function(e){
+          document.getElementById("r7").innerHTML = e7.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e8 = ace.edit("s8");
+        e8.setTheme("ace/theme/github");
+        e8.session.setMode("ace/mode/html");
+        e8.getSession().setTabSize(2);
+        e8.getSession().setUseSoftTabs(true);
+        e8.getSession().on("change", function(e){
+          document.getElementById("r8").innerHTML = e8.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e9 = ace.edit("s9");
+        e9.setTheme("ace/theme/github");
+        e9.session.setMode("ace/mode/html");
+        e9.getSession().setTabSize(2);
+        e9.getSession().setUseSoftTabs(true);
+        e9.getSession().on("change", function(e){
+          document.getElementById("r9").innerHTML = e9.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e10 = ace.edit("s10");
+        e10.setTheme("ace/theme/github");
+        e10.session.setMode("ace/mode/html");
+        e10.getSession().setTabSize(2);
+        e10.getSession().setUseSoftTabs(true);
+        e10.getSession().on("change", function(e){
+          document.getElementById("r10").innerHTML = e10.getValue();
+          UOMloadComponents();
+        });
+      </script>
+<hr /></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>

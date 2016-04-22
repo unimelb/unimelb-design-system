@@ -348,6 +348,28 @@ Tabs.prototype.move = function(target, smooth) {
       }
     }
   }
+
+  this.redraw();
+};
+
+// Trigger a resize event to activate 3rd party code
+Tabs.prototype.redraw = function() {
+  var e;
+  if (document.createEvent) {
+    e = document.createEvent("HTMLEvents");
+    e.initEvent("resize", true, true);
+  } else {
+    e = document.createEventObject();
+    e.eventType = "resize";
+  }
+
+  e.eventName = "resize";
+
+  if (document.createEvent) {
+    window.dispatchEvent(e);
+  } else {
+    window.fireEvent("on" + e.eventType, e);
+  }
 };
 
 Tabs.prototype.scrollToTab = function(tab, smooth) {
