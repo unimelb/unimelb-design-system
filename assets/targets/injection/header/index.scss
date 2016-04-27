@@ -697,6 +697,8 @@
       @include rem(font-size, 9px);
       @include rem(padding, 0 10px);
       @include rem(width, 40px);
+      box-sizing: content-box;
+      color: $navy;
       cursor: pointer;
       display: table-cell;
       font-weight: $regular;
@@ -705,13 +707,6 @@
       text-transform: uppercase;
       transition: background-color 0.3s, color 0.3s, transform 0.3s;
       vertical-align: top;
-
-      color: $navy;
-
-      box-sizing: content-box;
-      /* autoprefixer: off */
-      -moz-box-sizing: content-box;
-      /* autoprefixer: on */
 
       svg {
         @include rem(height, 20px);
@@ -774,16 +769,12 @@
     @include rem(padding, 0 10px);
     @include rem(width, 40px);
     border-left: 1px solid darken($lightgray, 10%);
+    box-sizing: content-box;
     font-weight: $regular;
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
-
-    box-sizing: content-box;
-    /* autoprefixer: off */
-    -moz-box-sizing: content-box;
-    /* autoprefixer: on */
 
     svg {
       @include rem(height, 20px);

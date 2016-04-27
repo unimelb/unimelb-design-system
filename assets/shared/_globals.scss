@@ -108,9 +108,6 @@ $cdnurl: '//d2h9b02ioca40d.cloudfront.net/shared';
 }
 
 %normalise {
-  -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
