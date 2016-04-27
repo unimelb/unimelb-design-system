@@ -292,9 +292,6 @@
     .event .crop-height::before {
       @include rem(height, 50px);
       @include rem(margin-top, -20px);
-      background: -moz-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
-      background: -ms-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
-      background: -webkit-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
       background: linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
       content: ' ';
       display: block;
@@ -306,9 +303,6 @@
       @include rem(height, 80px);
       @include rem(margin-bottom, 9px);
       @include rem(margin-top, -91px);
-      background: -moz-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
-      background: -ms-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
-      background: -webkit-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
       background: linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
       content: ' ';
       display: block;
