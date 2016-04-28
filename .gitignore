@@ -1,6 +1,4 @@
-doc-site/tmp/*
-assets/build
-deploy/
+build/
 .bundle/*
 .DS_Store
 tmp/*
