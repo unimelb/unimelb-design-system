@@ -21,7 +21,7 @@ This is the development mode, where a webpack dev server with *hot module replac
 
     foreman start -f Procfile.hot
 
-Two servers run in parallel (node.js/webpack, and rack) and the entry point is available through a proxy at [http://localhost:7001/](http://localhost:7001/).
+Three servers run in parallel (node.js, webpack, and rack) and the entry point is available through a proxy at [http://localhost:7001/](http://localhost:7001/).
 
 ### "Cold"
 
