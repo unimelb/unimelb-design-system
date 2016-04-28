@@ -1,0 +1,10 @@
+== render(:_breadcrumb)
+
+div role="main"
+  .headerless
+  h1.aligned-title
+    ' Pre-rendered source of
+    em==layout_title(@file)
+
+  .fullwidth.short
+    pre: code class="html"== @source

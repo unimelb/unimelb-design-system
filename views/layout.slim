@@ -1,0 +1,38 @@
+doctype html
+html.no-js lang="en"
+  head
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    title
+      == opts[:pagetitle] ? opts[:pagetitle] + ' | ' : ''
+      ' Web.Unimelb
+    link rel="apple-touch-icon-precomposed" href="/favicon-152.png"
+
+    /[if lt IE 9]
+      script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
+
+    - if ENV['MODE'] == 'prod'
+      link rel="stylesheet" href="//d2h9b02ioca40d.cloudfront.net/#{ENV['VERSION']}/uom.css"
+      script src="//d2h9b02ioca40d.cloudfront.net/#{ENV['VERSION']}/uom.js"
+    - else
+      script src="/assets/injection.js"
+      link rel="stylesheet" href="/assets/injection.css"
+      script src="/assets/components.js"
+      link rel="stylesheet" href="/assets/components.css"
+      script src="http://#{ENV['WEB_SERVER_HOST']}:#{ENV['WEBPACK_SERVER_PORT']}/webpack-dev-server.js"
+
+    link rel="stylesheet" href="/assets/lib/docs.css"
+    link rel="stylesheet" href="/assets/lib/highlight.css"
+    script src="/assets/lib/highlight.pack.js"
+
+    link rel="stylesheet" href="/assets/lib/ace.extra.css"
+
+    link rel="stylesheet" href="/assets/lib/verselect.css"
+    script src="/assets/lib/verselect.js"
+
+  body data-version=(ENV['VERSION'])
+    .uomcontent
+      .page-inner
+        == yield
+        == render(:_nav)
