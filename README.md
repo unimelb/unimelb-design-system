@@ -7,7 +7,7 @@ The contents of this repository have been produced by The University of Melbourn
 
 ## Three run modes!
 
-To make a copy and run the system locally, you will need to
+To make a copy and run the system locally, you will need to:
 
     git clone git@github.com:marcom-unimelb/unimelb-design-system.git
     cd unimelb-design-system
@@ -17,34 +17,32 @@ To make a copy and run the system locally, you will need to
 
 ### "Hot"
 
-This is the development mode, where a webpack dev server with *hot module replacement* runs in parallel to the app server. Working on bug fixes and new features is done with this mode. Start this server with
+This is the development mode, where a webpack dev server with *hot module replacement* runs in parallel to the app server. This mode is for working on bug fixes and new features. Start the servers with:
 
     foreman start -f Procfile.hot
 
-Three servers will run in parallel (node.js, webpack and rack) and the entry point is available through a proxy at [http://localhost:7001/](http://localhost:7001/)
+Two servers run in parallel (node.js/webpack, and rack) and the entry point is available through a proxy at [http://localhost:7001/](http://localhost:7001/).
 
 ### "Cold"
 
-This mode is similar to development, it uses the same app server, but insteads uses the deployed CDN-hosted system assets rather than a local asset server. This mode is used for exporting a versioned static site to use in production.
+This mode uses the same app server as the *hot* mode, but uses the deployed CDN-hosted system assets rather than a local asset server. This mode is for exporting a versioned static site to use in production.
 
     foreman start -f Procfile.cold
 
-Only the app server is running in this mode, your entry point is [http://localhost:7000/](http://localhost:7000/)
+Only the app server runs in this mode, and the entry point is [http://localhost:7000/](http://localhost:7000/).
 
 ### Production
 
-This is what runs on [https://web.unimelb.edu.au](https://web.unimelb.edu.au) - the statically exported cold mode from above, saved by version to this repo under `/cold`. We were going to use this host multiple versions of the documentation (one for each deployed release of the system), but ran into a problem with maximum  heroku slug size and have only hosted v1.0 and the current version since then.
+This is what runs on [https://web.unimelb.edu.au](https://web.unimelb.edu.au) - the statically exported cold mode from above, saved by version to this repo in the `/cold` directory. We were going to use this to host multiple versions of the documentation (one for each deployed release of the system), but ran into a problem with maximum heroku slug size and have only hosted v1.0 and the current version since then.
 
     foreman start
 
-A basic rack server is running in this mode, as it does in prod on heroku. The entry point is [http://localhost:7000/](http://localhost:7000/)
+A basic rack server runs in this mode, as it does in production on heroku. The entry point is [http://localhost:7000/](http://localhost:7000/). Ideally the site will be migrated directly to S3 in the near future!
 
-Ideally the site will be migrated directly to S3 in the near future!
+## Building the assets
 
-## Deploying asset package
-
-A precompiled package of all target builds can be created by running
+A precompiled package of all target builds can be created by running:
 
     rake assets:build
 
-The compiled output can be found under /build
+The compiled output can be found in the `/build` directory.
