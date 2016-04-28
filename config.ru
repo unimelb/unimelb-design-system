@@ -5,7 +5,7 @@ if ENV['RACK_ENV'] == 'production'
 
   use Rack::Static,
       urls:  ['/assets/'],
-      root:  'build/' + ENV['VERSION']
+      root:  'cold/' + ENV['VERSION']
 
   run lambda { |env|
     req = Rack::Request.new(env)
@@ -17,10 +17,11 @@ if ENV['RACK_ENV'] == 'production'
       if req.path.start_with?('/releases')
         ver.shift(2) # drop releases prefix
 
-        page = File.join('build', ver.join('/'))
+        page = File.join('cold', ver.join('/'))
+        puts ENV['VERSION'].inspect
 
       else
-        page = File.join('build', ENV['VERSION'], req.path)
+        page = File.join('cold', ENV['VERSION'], req.path)
       end
 
       if File.directory?(page)
@@ -57,7 +58,7 @@ if ENV['RACK_ENV'] == 'production'
             'Content-Type'  => 'text/html',
             'Cache-Control' => 'public, max-age=86400'
           },
-          File.open(File.join('build', ENV['VERSION'], 'layouts', '404', 'index.html'), File::RDONLY)
+          File.open(File.join('cold', ENV['VERSION'], 'layouts', '404', 'index.html'), File::RDONLY)
         ]
       end
 
@@ -80,9 +81,8 @@ else
 
   Bundler.require(:default, :development)
 
-  require_relative './doc-site/app/app'
+  Dotenv.load
 
-  ENV['ASSET_ENV'] = 'development'
-
-  run DocSite::App
+  require File.expand_path('../app', __FILE__)
+  run App.app
 end

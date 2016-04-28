@@ -1,0 +1,55 @@
+#version-toolbar {
+  height: 20px;
+  line-height: 1;
+  position: relative;
+  z-index: 100;
+}
+
+#version-toolbar ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+#version-toolbar li {
+  color: #a77;
+  display: inline;
+  font-size: 14px;
+  list-style-type: none;
+  padding: 0 5px;
+}
+
+#version-toolbar a {
+  text-decoration: none;
+}
+
+#version-toolbar a:hover {
+  background-color: #fff;
+  text-decoration: underline;
+}
+
+#version-toolbar .supported a {
+  color: #7a7;
+}
+
+#version-toolbar .selected a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 769px) {
+  #version-toolbar {
+    height: 30px;
+    line-height: 30px;
+    margin-left: 205px;
+    position: absolute;
+    top: 0;
+  }
+
+  #version-toolbar li {
+    font-size: 11px;
+  }
+
+  #version-toolbar a:hover {
+    background-color: rgba(0, 0, 0, .1);
+  }
+}

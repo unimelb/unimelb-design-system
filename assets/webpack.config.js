@@ -11,7 +11,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 // Configuration
 var TARGETS = path.join(__dirname, "targets");
-var BUILD   = path.join(__dirname, "build");
+var BUILD   = path.join(__dirname, "..", "build");
 
 // Plugins
 var plugins = [
