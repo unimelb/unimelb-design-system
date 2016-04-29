@@ -60,8 +60,6 @@
 }
 
 .uomcontent .news-index {
-  max-width: none !important;
-
   article {
     @extend %clearfix;
     @include padding-leader(2);
@@ -259,6 +257,11 @@
     }
   }
 }
+
+.uomcontent [role="main"] section .news-index {
+  max-width: none;
+}
+
 
 .ie8 .uomcontent {
   .news-hero {
