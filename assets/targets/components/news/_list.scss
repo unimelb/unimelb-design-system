@@ -60,6 +60,8 @@
 }
 
 .uomcontent .news-index {
+  max-width: none !important;
+
   article {
     @extend %clearfix;
     @include padding-leader(2);
