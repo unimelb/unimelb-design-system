@@ -1,5 +1,6 @@
 .uomcontent [role="main"] {
-  .video {
+  // Default 16:9
+  %video {
     height: 0;
     margin-left: auto;
     max-width: 1099px;
@@ -66,19 +67,18 @@
     }
   }
 
-  .video-4-3 {
-    @extend .video;
-    padding-bottom: 75%;
+  .video {
+    @extend %video;
+  }
 
-    @include breakpoint(desktop) {
-      padding-bottom: 33%;
-    }
+  // 21:9
+  .video-21-9 {
+    @extend %video;
+    padding-bottom: 42.5%;
 
-    [data-ytid] {
-      @include breakpoint(desktop) {
-        margin: 0 28%;
-        width: 44%;
-      }
+    @include breakpoint(wide) {
+      max-width: 100%;
+      padding-bottom: 29.75%;
     }
   }
 
