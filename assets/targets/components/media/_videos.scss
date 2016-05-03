@@ -1,6 +1,6 @@
 .uomcontent [role="main"] {
   // Default 16:9
-  %video {
+  .video {
     height: 0;
     margin-left: auto;
     max-width: 1099px;
@@ -67,12 +67,8 @@
     }
   }
 
-  .video {
-    @extend %video;
-  }
-
   // 21:9
-  .video-21-9 {
+  .video.video--21-9 {
     @extend %video;
     padding-bottom: 42.5%;
 
