@@ -1,0 +1,68 @@
+.floating
+
+div role="main"
+  .contrast-helper style="background-image:url(/assets/woods.jpg)"
+    header.banner
+      .mid-align
+        h1.highlight Web.unimelb
+        p Everything you need to make a great website @unimelb
+        p
+          a.button-hero-inverse href="#intro" Get started
+
+  section#intro
+    h2.title A digital design system for The University of Melbourne.
+    p This site explains how we plan, design and build web sites and web applications consistently across the unimelb domain in the pursuit of improved usability and to a strong digital brand.
+
+    p Use this site to learn how to write effective content, design your site or develop using the university templates. If you can't find what you are looking for, <a href="https://staff.unimelb.edu.au/services/it-support/web-help#/">log a support ticket</a> (staff login required) or <a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">create an issue on GitHub!</a>
+
+  hr.spacer
+  section
+    h1.highlight==opts[:version]
+    p.center
+      a.button-hero href="/getting-started" Set up a new site with #{opts[:version]}
+
+  section.alt
+    .half
+      section.center
+        svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 317" height="285"
+            image xlink:href="/assets/home_content_creators.svg" width="100%" height="100%" src="/assets/home_content_creators.png"
+      section
+        h1 For content creators
+        p Learn how to fill your website with fantastic text, imagery and video
+        p
+          a.button-hero href="/content-creators" Content principles
+
+  section
+    .half
+      section
+        h1 For designers
+        p Learn how to use the design system to assemble websites that meet objectives without re-inventing the wheel.
+        p
+          a.button-hero href="/designers" Design principles
+      section.center
+        svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 317" height="285"
+          image xlink:href="/assets/home_designers.svg" width="100%" height="100%" src="/assets/home_designers.png"
+
+  section.alt
+    .half
+      section.center
+        svg preserveAspectRatio="xMinYMin meet" viewBox="0 0 500 317" height="285"
+          image xlink:href="/assets/home_developers.svg" width="100%" height="100%" src="/assets/home_developers.png"
+      section
+        h1 For developers
+        p Learn about the units of page style and functionality you can assemble into unique page templates.
+        p
+          a.button-hero href="/components" Components
+
+    section.navigation-text-listing
+      == render(:_component_list)
+
+  hr
+
+  section
+    h1 Example Layouts
+    p Example layouts to get you started building the most commonly used page types across the unimelb domain.
+    p
+      a.button-hero href="/layouts" View example layouts
+
+  footer

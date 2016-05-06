@@ -1,6 +1,7 @@
 .uomcontent .detail {
   @extend %wrapper;
   @include padding-leader(1);
+  @include padding-trailer(2);
 
   aside {
     @include padding-leader(2);
@@ -135,7 +136,7 @@
         @include rem(margin-left, -300px);
       }
     }
-    
+
     img {
       display: block;
     }
@@ -175,9 +176,22 @@
       aside {
         @include rem(margin-left, -300px);
 
+        div {
+          padding-left: 0;
+
+          p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+
         .button-small {
           @include rem(margin-top, 5px);
         }
+      }
+
+      footer {
+        padding-bottom: 0;
       }
     }
 

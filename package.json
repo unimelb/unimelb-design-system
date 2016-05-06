@@ -1,7 +1,7 @@
 {
   "name": "unimelb-design-system-assets",
   "description": "Asset compilation using Webpack",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "repository": "marcom-unimelb/unimelb-design-system",
   "author": "University of Melbourne",
   "license": "UNLICENSED",
@@ -18,10 +18,8 @@
     "node": "~4.2.1"
   },
   "scripts": {
-    "clean": "rm -rf ./assets/build/*",
-    "start": "DEVELOPMENT=true node ./assets/server.js",
-    "build": "node_modules/.bin/webpack --config ./assets/webpack.config.js -p",
-    "build-production": "npm run clean && npm run build"
+    "clean": "rm -rf ./build/*",
+    "build": "node_modules/.bin/webpack --config ./assets/webpack.config.js -p"
   },
   "devDependencies": {
     "autoprefixer-loader": "~2.0.0",
