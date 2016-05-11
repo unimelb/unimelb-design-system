@@ -48,21 +48,7 @@
       padding: 0;
       width: 100%;
 
-      ul li {
-        list-style-type: disc;
-      }
-
-      ol li {
-        list-style-type: decimal;
-
-        ol li {
-          list-style-type: lower-alpha;
-
-          ol li {
-            list-style-type: lower-roman;
-          }
-        }
-      }
+      @include inner-list-reset;
 
       p {
         width: 100%;
