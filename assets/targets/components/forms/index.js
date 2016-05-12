@@ -68,7 +68,7 @@ ValidateForm.prototype.processField = function(field) {
         this.toggleValid(field, false);
         this.props.invalid++;
       }
-    } else if (field.getAttribute('type') == 'checkbox') {
+    } else if (field.getAttribute('type') == 'checkbox' || field.getAttribute('type') == 'radio') {
       if ((MSIE_version < 9 && field.parentNode.parentNode.countSelector('.on') > 0) ||
         (this.el.countSelector('[name="' + field.getAttribute('name') + '"]:checked') > 0)) {
         this.toggleValid(field, true);
@@ -109,8 +109,8 @@ ValidateForm.prototype.setupMessage = function(field) {
   if (field.nodeName == 'SELECT')
     parent = parent.parentNode;
 
-  // Do a crazy search if field is a checkbox
-  if (field.getAttribute('type') == 'checkbox') {
+  // Do a crazy search if field is checkbox/radio
+  if (field.getAttribute('type') == 'checkbox' || field.getAttribute('type') == 'radio') {
     var nameval = '[name="' + field.getAttribute('name') + '"]';
     parent = this.el.querySelectorAll(nameval);
     parent = parent[parent.length-1].parentNode;
