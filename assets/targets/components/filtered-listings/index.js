@@ -37,10 +37,6 @@ function FilteredListing(el, props) {
     recs[i].classList.add('filtered-listing-item--' + this.props.colors[recs[i].getAttribute('data-tag')]);
   }
 
-  // Listen for events
-  this.props.sectionSelect.addEventListener('change', this.handleSectionSelectChanged.bind(this));
-  el.addEventListener('click', this.handleTagCheckboxesClicked.bind(this));
-
   // Update once
   this.update();
 }
@@ -80,21 +76,28 @@ FilteredListing.prototype.parseQuery = function () {
  * Initialise section drop-down menu.
  */
 FilteredListing.prototype.initSectionSelect = function () {
-  if (this.props.sectionSelect) {
-    // Check whether a section was specified in the querystring
-    if (this.state.section) {
-      // Section specified; check if valid option
-      if (this.props.sectionSelect.querySelector('option[value="' + this.state.section + '"]')) {
-        // Valid option; update value of drop-down menu
-        this.props.sectionSelect.value = this.state.section;
-      } else {
-        // Invalid option; set state to `all sections` and update drop-down menu
-        this.state.section = this.props.sectionSelect.value = constants.ALL_SECTIONS;
-      }
+  // No drop-down menu; default to `all sections`
+  if (!this.props.sectionSelect) {
+    this.state.section = constants.ALL_SECTIONS;
+    return;
+  }
+
+  // Listen for changes
+  this.props.sectionSelect.addEventListener('change', this.handleSectionSelectChanged.bind(this));
+
+  // Check whether a section was specified in the querystring
+  if (this.state.section) {
+    // Section specified; check if valid option
+    if (this.props.sectionSelect.querySelector('option[value="' + this.state.section + '"]')) {
+      // Valid option; update value of drop-down menu
+      this.props.sectionSelect.value = this.state.section;
     } else {
-      // Section not specified; retrieve current value of drop-down menu
-      this.state.section = this.props.sectionSelect.value.toLowerCase();
+      // Invalid option; set state to `all sections` and update drop-down menu
+      this.state.section = this.props.sectionSelect.value = constants.ALL_SECTIONS;
     }
+  } else {
+    // Section not specified; retrieve current value of drop-down menu
+    this.state.section = this.props.sectionSelect.value.toLowerCase();
   }
 };
 
@@ -104,8 +107,17 @@ FilteredListing.prototype.initSectionSelect = function () {
 FilteredListing.prototype.initTagCheckboxes = function () {
   var i, j, tc, tag, col;
 
+  // No checkboxes; default to `all tags`
+  if (this.props.tagCheckboxes.length === 0) {
+    this.state.tags = [constants.ALL_TAGS];
+    return;
+  }
+
+  // Listen for clicks
+  this.el.addEventListener('click', this.handleTagCheckboxesClicked.bind(this));
+
+  // If tags specified in querystring, check/uncheck checkboxes accordingly
   if (this.state.tags) {
-    // Tags specified in querystring; check/uncheck the checkboxes accordingly
     for (i = this.props.tagCheckboxes.length - 1; i >= 0; i--) {
       tc = this.props.tagCheckboxes[i];
       tc.checked = false;
