@@ -8,6 +8,43 @@
   }
 }
 
+@mixin inner-list-reset {
+  padding-bottom: 1em;
+  padding-top: .5em;
+
+  ul li {
+    list-style-type: disc;
+
+    ol,
+    ul {
+      padding-bottom: 0;
+      padding-top: .5em;
+    }
+  }
+
+  ol li {
+    list-style-type: decimal;
+
+    ol,
+    ul {
+      padding-bottom: 0;
+      padding-top: .5em;
+    }
+
+    ol li {
+      list-style-type: lower-alpha;
+
+      ol li {
+        list-style-type: lower-roman;
+      }
+    }
+
+    ul li {
+      list-style-type: disc;
+    }
+  }
+}
+
 %ticks {
   @include rem(padding-left, 30px);
 
@@ -141,8 +178,6 @@
 
   ol,
   ul {
-    @include leader(0);
-    @include padding-trailer(1);
     @include rem(max-width, $w-sml);
     @include rem(padding-left, 15px);
     @include rem(padding-right, 15px);
@@ -181,6 +216,8 @@
         margin-left: 0;
       }
     }
+
+    @include inner-list-reset;
   }
 
   ol {
@@ -260,7 +297,7 @@
       @include breakpoint(wide) {
         & > li {
           @include rem(padding-left, 110px);
-          
+
           > * {
             margin-left: 0;
           }
