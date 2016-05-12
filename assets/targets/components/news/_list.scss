@@ -258,6 +258,11 @@
   }
 }
 
+.uomcontent [role="main"] section .news-index {
+  max-width: none;
+}
+
+
 .ie8 .uomcontent {
   .news-hero {
     max-width: $w-mid;
