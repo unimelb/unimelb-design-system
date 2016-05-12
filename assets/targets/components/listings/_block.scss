@@ -292,9 +292,6 @@
     .event .crop-height::before {
       @include rem(height, 50px);
       @include rem(margin-top, -20px);
-      background: -moz-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
-      background: -ms-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
-      background: -webkit-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
       background: linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
       content: ' ';
       display: block;
@@ -306,9 +303,6 @@
       @include rem(height, 80px);
       @include rem(margin-bottom, 9px);
       @include rem(margin-top, -91px);
-      background: -moz-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
-      background: -ms-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
-      background: -webkit-linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
       background: linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
       content: ' ';
       display: block;
@@ -416,12 +410,11 @@
 
             span {
               background-color: $white;
+              box-decoration-break: clone;
               box-shadow: 10px 0 0 $white, -10px 0 0 $white;
               color: $highlight;
               font-weight: $bold;
               line-height: 1.2;
-
-              box-decoration-break: clone;
             }
 
             @include breakpoint(tablet) {
@@ -462,15 +455,13 @@
         strong {
           @include adjust-font-size-to(40px);
           background-color: $cyan;
+          box-decoration-break: clone;
           box-shadow: 10px 0 0 $cyan, -10px 0 0 $cyan;
           color: $white;
           display: inline;
           font-weight: $bold;
           line-height: 1.3;
           padding: 0;
-
-          -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
         }
       }
 

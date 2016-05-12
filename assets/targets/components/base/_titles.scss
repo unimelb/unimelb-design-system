@@ -75,14 +75,11 @@
 .uomcontent [role="main"] {
   h1.highlight {
     @include adjust-font-size-to(75px);
-    background: -webkit-linear-gradient($navy, $highlight);
     color: $highlight;
     font-weight: $thin;
     letter-spacing: -5px;
     text-align: center;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: hue 80s infinite linear;
+    animation: hue 80s infinite linear;
 
     @include breakpoint(desktop) {
       @include adjust-font-size-to(160px);
@@ -96,10 +93,7 @@
   header.banner h1.highlight,
   & > header.banner:first-child h1.highlight {
     @include adjust-font-size-to(60px);
-    background: -webkit-linear-gradient($highlight, lighten($highlight, 25%));
-    -webkit-background-clip: text;
     text-align: center;
-    -webkit-text-fill-color: transparent;
 
     @include breakpoint(desktop) {
       @include adjust-font-size-to(100px);
