@@ -58,7 +58,9 @@ FilteredListing.prototype.parseQuery = function () {
   var i, query = window.location.search.substr(1).split('&');
   for (i = query.length - 1; i >= 0; i--) {
     var param = query[i].split("=");
-    var val = decodeURIComponent(param[1]);
+
+    // Match any case on a given querystring
+    var val = decodeURIComponent(param[1]).toLowerCase();
     switch (param[0]) {
       case 'section':
         params.section = val;
