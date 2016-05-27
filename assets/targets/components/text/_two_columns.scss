@@ -23,6 +23,11 @@
       width: 100%;
     }
 
+    // Override for specific behaviour
+    .staff-listing-detailed img {
+      padding: 0;
+    }
+
     svg {
       @include rem(margin-left, 15px);
       @include rem(margin-right, 15px);

@@ -343,6 +343,11 @@ Tabs.prototype.move = function(target, smooth) {
     for (var i = 0, max = this.props.panels.length; i < max; i++) {
       if (target.getAttribute('href') === '#' + this.props.panels[i].id) {
         this.showPanel(this.props.panels[i]);
+
+        // Scroll viewport to tab top on FF
+        if (i > 0 && (/(Firefox)/g.test(navigator.userAgent) || /(Trident)/g.test(navigator.userAgent))) {
+          document.querySelector('html').scrollTop = panels[i].offsetTop - 8;
+        }
       } else {
         this.hidePanel(this.props.panels[i]);
       }

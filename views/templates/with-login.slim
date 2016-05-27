@@ -1,0 +1,121 @@
+== render(:_breadcrumb)
+
+.page-local-login data-title="Eyes up"
+  h1 Login
+  form method="post" action="" data-validate=""
+    fieldset
+      div
+        label data-required="true" for="f-email"
+          ' Email:
+        input data-pattern="email" aria-required="true" id="f-email" name="f[email]" type="email" data-error="Please enter a valid email."
+      div
+        label data-required="true" for="f-password"
+          ' Password:
+        input id="f-password" aria-required="true" name="f[password]" type="password" data-error="Please enter your password."
+
+    footer
+      input type="submit" value="Login"
+
+div role="main" class="with-login"
+  header.image style="background-image:url(/assets/example/bg-banner-small.jpg);"
+    .mid-align
+      h1 About us
+  #nav.tabbed-nav data-tabbed=""
+    .full-width
+      nav.desktop-nav role="tablist"
+        a href="#welcome" role="tab" Welcome
+        a href="#staff" role="tab" Our Staff
+        a href="#contact" role="tab" Contact
+    #welcome.tab role="tabpanel"
+      section.with-figure
+        h2.title Login demo page
+        p This is a basic copy of the About Us template, but has a login form <a href="/layouts/with-login/source">built into the source</a>, in a class called <code>page-local-login</code>. You can mark up whatever is needed for the login form within this element. Note that the title of the login button in the header can be manipulated by using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The title will be "Login" by default, and there is a hard limit of 7 characters.
+        p <a href="/layouts/with-login-link">This layout</a> demonstrates a local login feature with link only (no modal), if you need to link away to a login page.
+        figure.inset-right
+          img src="/assets/example/about_prof_hinchcliff.jpg" alt="Professor Ken Hinchcliff"
+          figcaption Professor Ken Hinchcliff
+        p The Faculty of Veterinary and Agricultural Sciences means improved cohesion across our courses and a strengthening of our research capabilities. The new Faculty also encourages collaboration between our enthusiastic, passionate and like-minded academics across two complimentary disciplines. Our students experience cross-disciplinary teaching by specialised veterinary, animal production, crop and food science experts addressing complex environmental, economic and social issues.
+        p When you study veterinary or agricultural science at the University of Melbourne, you do so not only at Australia’s highest ranked university but also within a Faculty that ranks with the best in the world.
+        p Our courses are delivered from three campuses: Parkville (our main campus on the City fringe), Werribee (the site of our world-class Veterinary Hospital) and Dookie – a state-of-the-art broad-acre farm renowned for its teaching, research and technology development. Exciting new opportunities are being explored at the Dookie Campus across its teaching and research programs, helped by a $5 million investment by the University, government, industry and the community.
+        p The University continues to expand the number of places in the Bachelor or Agriculture course, to meet growing industry and student demand.
+        p Building on the success of the Pre-Vet Club, we are also excited to launch our Pre-Ag Club. This Club is for students in Years 9 to 12 and provides the opportunity for students to engage with the University and understand more about agricultural science and the wide-range of careers available, thanks to the agricultural boom in Australia.
+        p I encourage you to explore our website and review the range of exciting and diverse courses on offer. There has never been a better time to join the Faculty.
+        p: strong Professor Ken Hinchcliff
+      hr.spacer
+      p.center
+        a.button-hero href="" Our Staff
+    #staff.tab role="tabpanel"
+      section
+        ul.staff-listing-detailed
+          li
+            a href=""
+              .frame
+                img src="http://placeimg.com/200/200/animals" alt=""
+              strong Paul Tagell
+              p Philosopher
+              p
+                em University of Melbourne
+          li
+            a href=""
+              .frame
+                img src="http://placeimg.com/200/200/animals?2" alt=""
+              strong Neil Ang
+              p Juggling Professional
+              p
+                em University of Melbourne
+        hr.spacer
+        ul.staff-listing.min
+          li
+            .profile
+              .frame
+                img src="http://placeimg.com/50/50/animals?2" alt=""
+            .details
+              a href="#" Jason Smith
+              |,
+              '
+              em Coffee Expert
+          li
+            .profile
+              .frame
+                img src="http://placeimg.com/50/50/animals?3" alt=""
+            .details
+              a href="#" Andi Weis
+              |,
+              '
+              em Can eat a lot
+          li
+            .profile
+              .frame
+
+            .details
+              a href="#" Anne Shea
+              |,
+              '
+              em Chef
+          li
+            .profile
+              .frame
+                img src="http://placeimg.com/50/50/animals?5" alt=""
+            .details
+              a href="#" Carl Jackson
+              |,
+              '
+              em Crepe Expert
+    #contact.tab role="tabpanel"
+      section
+        .contact-box
+          h1 Parkville Campus
+          dl
+            dt Address
+            dd
+              |Building 142, The University of Melbourne
+              br
+              |VIC 3010
+            dt Email
+            dd
+              a href="mailto: info@unimelb.edu.au" info@unimelb.edu.au
+            dt Phone
+            dd
+              a href="tel:61390355511" +61 3 9035 5511
+      section.fullwidth
+        div.gmap__canvas data-grayscale="" data-latlng="-37.798535, 144.960605" data-pin="-37.798535, 144.960605"

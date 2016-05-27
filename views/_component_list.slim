@@ -1,0 +1,5 @@
+ul
+  - opts[:components].sort.each do |path|
+    li
+      a href=(component_path(path))
+        = component_title(path)

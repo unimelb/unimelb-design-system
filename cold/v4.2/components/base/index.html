@@ -1,0 +1,973 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Base | Web.Unimelb </title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><link href="/favicon.ico" rel="icon" type="image/x-icon" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><link href="//d2h9b02ioca40d.cloudfront.net/v4.2/uom.css" rel="stylesheet" /><script src="//d2h9b02ioca40d.cloudfront.net/v4.2/uom.js"></script><link href="/assets/lib/docs.css" rel="stylesheet" /><link href="/assets/lib/highlight.css" rel="stylesheet" /><script src="/assets/lib/highlight.pack.js"></script><link href="/assets/lib/ace.extra.css" rel="stylesheet" /><link href="/assets/lib/verselect.css" rel="stylesheet" /><script src="/assets/lib/verselect.js"></script></head><body data-version="v4.2"><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Base"><span itemprop="name">Base</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">Base</h1><div class="jumpnav"></div>
+
+<p>This component is the foundation of the whole UoM Design System and includes typography, layouts, colours, buttons and patterns.</p>
+<hr /><h1>Typography</h1>
+
+<h2 id="css-font-stack">CSS font stack</h2>
+
+<pre>
+<code class="css">/* Sans $ff-sans */
+font-family: Roboto, Helvetica, Arial, sans-serif;
+
+/* Fixed $ff-fixed */
+font-family: Courier New, Courier, fixed;
+
+/* Serif $ff-serif */
+font-family: Georgia, Times New Roman, Times, serif;</code>
+</pre>
+
+<p>The only non-websafe font is Roboto, which we serve via @font-face.</p>
+
+<h2 id="why-roboto">Why Roboto</h2>
+
+<p>All print products of the University use Linotype Univers as default font. Due to a few issues with that particular font on the web (licensing, loading, etc...) we had to find a similar font that works better in the digital space.</p>
+
+<p>Google&#39;s Roboto is not only created specifically for screens, it is also very similar to Linotype Univers. Furthermore it is also pre installed on most Android phones which eases the initial load in mobile networks significantly.</p>
+<hr /><h2 id="typography-guidelines">Typography guidelines</h2><div><div class="hold">
+  <aside>
+    <dl>
+      <dt>
+        Large headlines
+      </dt>
+      <dd>
+        Only used on the hero. The background image must ensure readibility of the headline.
+      </dd>
+    </dl>
+  </aside>
+  <dl class="bside">
+    <dt class="sans thin">
+      Roboto Thin
+    </dt>
+    <dd class="sans thin">
+      <span>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</span><span>a b c d e f g h i j k l m n o p q r s t u v w x y z</span><span>1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( )</span>
+    </dd>
+  </dl>
+  <aside>
+    <dl>
+      <dt>
+        Body text
+      </dt>
+      <dd>
+        Used for standard copy text.
+      </dd>
+    </dl>
+  </aside>
+  <dl class="bside">
+    <dt class="sans light">
+      Roboto Light
+    </dt>
+    <dd class="sans light">
+      <span>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</span><span>a b c d e f g h i j k l m n o p q r s t u v w x y z</span><span>1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( )</span>
+    </dd>
+  </dl>
+  <aside>
+    <dl>
+      <dt>
+        Special highlighting
+      </dt>
+      <dd>
+        Image captions, quoting etc.
+      </dd>
+    </dl>
+  </aside>
+  <dl class="bside">
+    <dt class="sans light">
+      <em>Roboto Light Italic</em>
+    </dt>
+    <dd class="sans light">
+      <em><span>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</span><span>a b c d e f g h i j k l m n o p q r s t u v w x y z</span><span>1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( )</span></em>
+    </dd>
+  </dl>
+  <aside>
+    <dl>
+      <dt>
+        General headlines
+      </dt>
+      <dd>
+        Font used for all standard headlines within a text.
+      </dd>
+    </dl>
+  </aside>
+  <dl class="bside">
+    <dt class="sans regular">
+      Roboto Regular
+    </dt>
+    <dd class="sans regular">
+      <span>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</span><span>a b c d e f g h i j k l m n o p q r s t u v w x y z</span><span>1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( )</span>
+    </dd>
+  </dl>
+  <aside>
+    <dl>
+      <dt>
+        Article headlines
+      </dt>
+      <dd>
+        Only used as the headline for a single article.
+      </dd>
+    </dl>
+  </aside>
+  <dl class="bside">
+    <dt class="sans bold">
+      Roboto Bold
+    </dt>
+    <dd class="sans bold">
+      <span>A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</span><span>a b c d e f g h i j k l m n o p q r s t u v w x y z</span><span>1 2 3 4 5 6 7 8 9 0 ! @ # $ % ^ & * ( )</span>
+    </dd>
+  </dl>
+</div></div><hr /><h2 id="ordered-list-standard">Ordered list standard</h2><div id="r1"><ol>
+  <li>
+    Ordered list items
+  </li>
+  <li>
+    Ordered list items
+  </li>
+  <li>
+    Ordered list items
+  </li>
+</ol></div>
+    <section class="code">
+      <pre class="html" id="s1">
+&lt;ol&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+&lt;/ol&gt;
+      </pre>
+    </section>
+<h2 id="ordered-list-lowercase-alpha">Ordered list lowercase alpha</h2><div id="r2"><ol type="a">
+  <li>
+    Ordered list items
+  </li>
+  <li>
+    Ordered list items
+  </li>
+  <li>
+    Ordered list items
+  </li>
+</ol></div>
+    <section class="code">
+      <pre class="html" id="s2">
+&lt;ol type="a"&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+&lt;/ol&gt;
+      </pre>
+    </section>
+<h2 id="ordered-list-uppercase-alpha">Ordered list uppercase alpha</h2><div id="r3"><ol type="A">
+  <li>
+    Ordered list items
+  </li>
+  <li>
+    Ordered list items
+  </li>
+  <li>
+    Ordered list items
+  </li>
+</ol></div>
+    <section class="code">
+      <pre class="html" id="s3">
+&lt;ol type="A"&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+&lt;/ol&gt;
+      </pre>
+    </section>
+<h2 id="ordered-list-lowercase-roman-numerals">Ordered list lowercase roman numerals</h2><div id="r4"><ol type="i">
+  <li>
+    Ordered list items
+  </li>
+  <li>
+    Ordered list items
+  </li>
+  <li>
+    Ordered list items
+  </li>
+</ol></div>
+    <section class="code">
+      <pre class="html" id="s4">
+&lt;ol type="i"&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+&lt;/ol&gt;
+      </pre>
+    </section>
+<h2 id="ordered-list-uppercase-roman-numerals">Ordered list uppercase roman numerals</h2><div id="r5"><ol type="I">
+  <li>
+    Ordered list items
+  </li>
+  <li>
+    Ordered list items
+  </li>
+  <li>
+    Ordered list items
+  </li>
+</ol></div>
+    <section class="code">
+      <pre class="html" id="s5">
+&lt;ol type="I"&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ordered list items
+  &lt;/li&gt;
+&lt;/ol&gt;
+      </pre>
+    </section>
+<h2 id="ordered-list-steps">Ordered list steps</h2><div id="r6"><ol class="steps">
+  <li>
+    <h2>
+      Headline
+    </h2>
+    <p>
+      Petierunt uti sibi concilium totius Galliae in diem certam indicere.
+    </p>
+  </li>
+  <li>
+    <h2>
+      Headline
+    </h2>
+    <p>
+      Cum ceteris in veneratione <strong>tui montes</strong>, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    </p>
+  </li>
+  <li>
+    <h2>
+      Headline
+    </h2>
+    <p>
+      Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere.
+    </p>
+  </li>
+  <li>
+    <h2>
+      Headline
+    </h2>
+    <p>
+      Fabio vel iudice vincam, sunt in culpa qui officia. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    </p>
+  </li>
+  <li>
+    <h2>
+      Headline
+    </h2>
+    <p>
+      Petierunt uti sibi concilium totius Galliae in diem certam indicere. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    </p>
+    <ul>
+      <li>
+        Item
+      </li>
+      <li>
+        Item
+      </li>
+    </ul>
+    <ul class="ticked-list">
+      <li>
+        Item
+      </li>
+      <li>
+        Item
+      </li>
+    </ul>
+    <ol>
+      <li>
+        Item
+      </li>
+      <li>
+        Item
+      </li>
+    </ol>
+  </li>
+  <li>
+    <h2>
+      Headline
+    </h2>
+    <p>
+      Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus. Cum ceteris in veneratione tui montes, nascetur mus.
+    </p>
+  </li>
+  <li>
+    <h2>
+      Headline
+    </h2>
+    <p>
+      Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    </p>
+  </li>
+  <li>
+    <h2>
+      Headline
+    </h2>
+    <p>
+      Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    </p>
+  </li>
+  <li>
+    <h2>
+      Headline
+    </h2>
+    <p>
+      Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    </p>
+  </li>
+  <li>
+    <h2>
+      Headline
+    </h2>
+    <p>
+      Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus. Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia.
+    </p>
+  </li>
+  <li>
+    <h2>
+      Headline
+    </h2>
+    <p>
+      Cum ceteris in veneratione <a href="#">tui montes</a>, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    </p>
+  </li>
+  <li>
+    <h2>
+      Headline
+    </h2>
+    <p>
+      Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    </p>
+  </li>
+</ol></div>
+    <section class="code">
+      <pre class="html" id="s6">
+&lt;ol class="steps"&gt;
+  &lt;li&gt;
+    &lt;h2&gt;
+      Headline
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Petierunt uti sibi concilium totius Galliae in diem certam indicere.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2&gt;
+      Headline
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Cum ceteris in veneratione &lt;strong&gt;tui montes&lt;/strong&gt;, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2&gt;
+      Headline
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2&gt;
+      Headline
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Fabio vel iudice vincam, sunt in culpa qui officia. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2&gt;
+      Headline
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Petierunt uti sibi concilium totius Galliae in diem certam indicere. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    &lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        Item
+      &lt;/li&gt;
+      &lt;li&gt;
+        Item
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ul class="ticked-list"&gt;
+      &lt;li&gt;
+        Item
+      &lt;/li&gt;
+      &lt;li&gt;
+        Item
+      &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;ol&gt;
+      &lt;li&gt;
+        Item
+      &lt;/li&gt;
+      &lt;li&gt;
+        Item
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2&gt;
+      Headline
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus. Cum ceteris in veneratione tui montes, nascetur mus.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2&gt;
+      Headline
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2&gt;
+      Headline
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2&gt;
+      Headline
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2&gt;
+      Headline
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus. Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2&gt;
+      Headline
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Cum ceteris in veneratione &lt;a href="#"&gt;tui montes&lt;/a&gt;, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    &lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h2&gt;
+      Headline
+    &lt;/h2&gt;
+    &lt;p&gt;
+      Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Cum ceteris in veneratione tui montes, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+    &lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+      </pre>
+    </section>
+<hr /><h2 id="default-bullet-points">Default bullet points</h2><div id="r7"><ul>
+  <li>
+    Unordered list items
+  </li>
+  <li>
+    Unordered list items
+  </li>
+  <li>
+    Unordered list items
+  </li>
+</ul></div>
+    <section class="code">
+      <pre class="html" id="s7">
+&lt;ul&gt;
+  &lt;li&gt;
+    Unordered list items
+  &lt;/li&gt;
+  &lt;li&gt;
+    Unordered list items
+  &lt;/li&gt;
+  &lt;li&gt;
+    Unordered list items
+  &lt;/li&gt;
+&lt;/ul&gt;
+      </pre>
+    </section>
+<h2 id="complex-lists">Complex lists</h2><div id="r8"><ul>
+  <li>
+    Qui impetus tibique
+  </li>
+  <li>
+    Unordered list, inner 
+    <ul>
+      <li>
+        Qui impetus tibique
+      </li>
+      <li>
+        maluisset ne, omnes
+      </li>
+      <li>
+        persequeris in vis.
+      </li>
+    </ul>
+  </li>
+  <li>
+    persequeris in vis.
+  </li>
+  <li>
+    Ordered list, inner 
+    <ol>
+      <li>
+        Qui impetus tibique
+      </li>
+      <li>
+        persequeris in vis.
+      </li>
+    </ol>
+  </li>
+</ul>
+<ol>
+  <li>
+    Qui impetus tibique
+  </li>
+  <li>
+    Ordered list, inner 
+    <ol>
+      <li>
+        Qui impetus tibique
+      </li>
+      <li>
+        Ordered list, inner-inner 
+        <ol>
+          <li>
+            Qui impetus tibique
+          </li>
+          <li>
+            maluisset ne, omnes
+          </li>
+          <li>
+            persequeris in vis.
+          </li>
+        </ol>
+      </li>
+      <li>
+        persequeris in vis.
+      </li>
+    </ol>
+  </li>
+  <li>
+    persequeris in vis.
+  </li>
+  <li>
+    Unordered list, inner 
+    <ul>
+      <li>
+        Qui impetus tibique
+      </li>
+      <li>
+        maluisset ne, omnes
+      </li>
+      <li>
+        persequeris in vis.
+      </li>
+    </ul>
+  </li>
+</ol></div>
+    <section class="code">
+      <pre class="html" id="s8">
+&lt;ul&gt;
+  &lt;li&gt;
+    Qui impetus tibique
+  &lt;/li&gt;
+  &lt;li&gt;
+    Unordered list, inner 
+    &lt;ul&gt;
+      &lt;li&gt;
+        Qui impetus tibique
+      &lt;/li&gt;
+      &lt;li&gt;
+        maluisset ne, omnes
+      &lt;/li&gt;
+      &lt;li&gt;
+        persequeris in vis.
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    persequeris in vis.
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ordered list, inner 
+    &lt;ol&gt;
+      &lt;li&gt;
+        Qui impetus tibique
+      &lt;/li&gt;
+      &lt;li&gt;
+        persequeris in vis.
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    Qui impetus tibique
+  &lt;/li&gt;
+  &lt;li&gt;
+    Ordered list, inner 
+    &lt;ol&gt;
+      &lt;li&gt;
+        Qui impetus tibique
+      &lt;/li&gt;
+      &lt;li&gt;
+        Ordered list, inner-inner 
+        &lt;ol&gt;
+          &lt;li&gt;
+            Qui impetus tibique
+          &lt;/li&gt;
+          &lt;li&gt;
+            maluisset ne, omnes
+          &lt;/li&gt;
+          &lt;li&gt;
+            persequeris in vis.
+          &lt;/li&gt;
+        &lt;/ol&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        persequeris in vis.
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    persequeris in vis.
+  &lt;/li&gt;
+  &lt;li&gt;
+    Unordered list, inner 
+    &lt;ul&gt;
+      &lt;li&gt;
+        Qui impetus tibique
+      &lt;/li&gt;
+      &lt;li&gt;
+        maluisset ne, omnes
+      &lt;/li&gt;
+      &lt;li&gt;
+        persequeris in vis.
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+      </pre>
+    </section>
+<h2 id="ticked-list">Ticked list</h2><div id="r9"><ul class="ticked-list">
+  <li>
+    Item
+  </li>
+  <li>
+    Another item 
+    <ul>
+      <li>
+        A nested list
+      </li>
+      <li>
+        reverts to the standard bullet style
+      </li>
+    </ul>
+  </li>
+  <li class="no-li">
+    This one is not ticked at all, via assigned class
+  </li>
+</ul>
+<div class="ticked-list">
+  <ul>
+    <li>
+      Can also be set at the parent level
+    </li>
+    <li>
+      For easier use with a CMS
+    </li>
+  </ul>
+</div></div>
+    <section class="code">
+      <pre class="html" id="s9">
+&lt;ul class="ticked-list"&gt;
+  &lt;li&gt;
+    Item
+  &lt;/li&gt;
+  &lt;li&gt;
+    Another item 
+    &lt;ul&gt;
+      &lt;li&gt;
+        A nested list
+      &lt;/li&gt;
+      &lt;li&gt;
+        reverts to the standard bullet style
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li class="no-li"&gt;
+    This one is not ticked at all, via assigned class
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="ticked-list"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      Can also be set at the parent level
+    &lt;/li&gt;
+    &lt;li&gt;
+      For easier use with a CMS
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+      </pre>
+    </section>
+<h2 id="typography-styles">Typography styles</h2><div><h2 id="simple-typographic-styles">
+  Simple typographic styles
+</h2>
+<p>
+  Below are some basic typographic styles with their associated renderings
+</p>
+<pre><code class="html">&lt;h1&gt;Heading 1&lt;/h1&gt;
+&lt;h2&gt;Heading 2&lt;/h2&gt;
+&lt;h3&gt;Heading 3&lt;/h3&gt;
+&lt;h4&gt;Heading 4&lt;/h4&gt;
+&lt;h5&gt;Heading 5&lt;/h5&gt;
+&lt;h6&gt;Heading 6&lt;/h6&gt;
+&lt;p&gt;A paragraph of text&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bold &lt;/strong&gt;, &lt;em&gt;italic&lt;/em&gt;and &lt;u&gt;underlined&lt;/u&gt; text&lt;/p&gt;</code></pre>
+<h1>
+  Heading 1
+</h1>
+<h2>
+  Heading 2
+</h2>
+<h3>
+  Heading 3
+</h3>
+<h4>
+  Heading 4
+</h4>
+<h5>
+  Heading 5
+</h5>
+<h6>
+  Heading 6
+</h6>
+<p>
+  A paragraph of text
+</p>
+<p>
+  <strong>Bold </strong>, <em>italic</em> and <u>underlined</u> text
+</p></div><hr /><h1>Colours</h1>
+
+<p>The colours used on our website go a long way towards ensuring a consistent user experience and compatibility with the University of Melbourne brand. In many ways University Blue is as much a part of the university brand as the crest itself.</p>
+
+<p>In general, you should not need to customise the colours on your website and should use the default colour scheme provided. This page exists primarily as a reference for people looking to <a href="#">contribute additional components to the templates</a>.</p>
+
+<h2>How to use colours</h2>
+
+<p>You do not need to do anything to make use of the colours referenced here.</p>
+
+<p>On the web, colour choices are vital in ensuring the utility and accessibility of our websites as they impact contrast. Colours are also used to denote various types of functionality, so you will find these colours used throughout various template components (a good example is <a href="buttons">buttons</a>. For example, green is frequently used to denote a primary action that you would like someone to take.</p>
+
+<h2>Things to avoid</h2>
+
+<p>You should avoid:</p>
+
+<ul>
+<li>Changing the colour of components either locally or globally (eg. making the logo red, or the body text green). Doing this damages our user-experience, brand consistency and could have an adverse impact on accessibility.</li>
+<li>Add colours to the palette. If you feel that a colour should be added to the palette, please request it using the <a href="#">contribution process</a>.</li>
+</ul>
+<h2 id="colour-palette">Colour palette</h2><div><div class="eg-palette">
+  <div>
+    <span class="circle black"></span><strong>#000000</strong>
+  </div>
+  <div>
+    <span class="circle darkgray"></span><strong>#333333</strong>
+  </div>
+  <div>
+    <span class="circle midgray"></span><strong>#666666</strong>
+  </div>
+  <div>
+    <span class="circle gray"></span><strong>#ADB8C1</strong>
+  </div>
+  <div>
+    <span class="circle lightergray"></span><strong>#E0E0E0</strong>
+  </div>
+  <div>
+    <span class="circle paleblue"></span><strong>#F2F5F8</strong>
+  </div>
+  <div>
+    <span class="circle lightgray"></span><strong>#F6F6F6</strong>
+  </div>
+  <div>
+    <span class="circle white"></span><strong>#FFFFFF</strong>
+  </div>
+  <div>
+    <span class="circle navy"></span><strong>#0C304A</strong>
+  </div>
+  <div>
+    <span class="circle blue"></span><strong>#304E64</strong>
+  </div>
+  <div>
+    <span class="circle darkblue"></span><strong>#004576</strong>
+  </div>
+  <div>
+    <span class="circle midblue"></span><strong>#366996</strong>
+  </div>
+  <div>
+    <span class="circle lightblue"></span><strong>#82A1BD</strong>
+  </div>
+  <div>
+    <span class="circle lighterblue"></span><strong>#359AEC</strong>
+  </div>
+  <div>
+    <span class="circle lightestblue"></span><strong>#E1EAF5</strong>
+  </div>
+  <div>
+    <span class="circle paleyellow"></span><strong>#FFFBCC</strong>
+  </div>
+  <div>
+    <span class="circle cyan"></span><strong>#0084EE</strong>
+  </div>
+  <div>
+    <span class="circle green"></span><strong>#3FC76E</strong>
+  </div>
+  <div>
+    <span class="circle cherry"></span><strong>#DF0620</strong>
+  </div>
+  <br class="clear" />
+</div></div><hr />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+      <script>
+        var e1 = ace.edit("s1");
+        e1.setTheme("ace/theme/github");
+        e1.session.setMode("ace/mode/html");
+        e1.getSession().setTabSize(2);
+        e1.getSession().setUseSoftTabs(true);
+        e1.getSession().on("change", function(e){
+          document.getElementById("r1").innerHTML = e1.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e2 = ace.edit("s2");
+        e2.setTheme("ace/theme/github");
+        e2.session.setMode("ace/mode/html");
+        e2.getSession().setTabSize(2);
+        e2.getSession().setUseSoftTabs(true);
+        e2.getSession().on("change", function(e){
+          document.getElementById("r2").innerHTML = e2.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e3 = ace.edit("s3");
+        e3.setTheme("ace/theme/github");
+        e3.session.setMode("ace/mode/html");
+        e3.getSession().setTabSize(2);
+        e3.getSession().setUseSoftTabs(true);
+        e3.getSession().on("change", function(e){
+          document.getElementById("r3").innerHTML = e3.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e4 = ace.edit("s4");
+        e4.setTheme("ace/theme/github");
+        e4.session.setMode("ace/mode/html");
+        e4.getSession().setTabSize(2);
+        e4.getSession().setUseSoftTabs(true);
+        e4.getSession().on("change", function(e){
+          document.getElementById("r4").innerHTML = e4.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e5 = ace.edit("s5");
+        e5.setTheme("ace/theme/github");
+        e5.session.setMode("ace/mode/html");
+        e5.getSession().setTabSize(2);
+        e5.getSession().setUseSoftTabs(true);
+        e5.getSession().on("change", function(e){
+          document.getElementById("r5").innerHTML = e5.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e6 = ace.edit("s6");
+        e6.setTheme("ace/theme/github");
+        e6.session.setMode("ace/mode/html");
+        e6.getSession().setTabSize(2);
+        e6.getSession().setUseSoftTabs(true);
+        e6.getSession().on("change", function(e){
+          document.getElementById("r6").innerHTML = e6.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e7 = ace.edit("s7");
+        e7.setTheme("ace/theme/github");
+        e7.session.setMode("ace/mode/html");
+        e7.getSession().setTabSize(2);
+        e7.getSession().setUseSoftTabs(true);
+        e7.getSession().on("change", function(e){
+          document.getElementById("r7").innerHTML = e7.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e8 = ace.edit("s8");
+        e8.setTheme("ace/theme/github");
+        e8.session.setMode("ace/mode/html");
+        e8.getSession().setTabSize(2);
+        e8.getSession().setUseSoftTabs(true);
+        e8.getSession().on("change", function(e){
+          document.getElementById("r8").innerHTML = e8.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e9 = ace.edit("s9");
+        e9.setTheme("ace/theme/github");
+        e9.session.setMode("ace/mode/html");
+        e9.getSession().setTabSize(2);
+        e9.getSession().setUseSoftTabs(true);
+        e9.getSession().on("change", function(e){
+          document.getElementById("r9").innerHTML = e9.getValue();
+          UOMloadComponents();
+        });
+      </script>
+<hr /></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>

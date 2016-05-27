@@ -34,6 +34,7 @@
       left: 0;
       margin: 0 auto;
       max-width: 900px;
+      width: 100%; // fixes centring on IE
       right: 0;
     }
   }

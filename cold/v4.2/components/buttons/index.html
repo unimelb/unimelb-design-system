@@ -1,0 +1,162 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Buttons | Web.Unimelb </title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><link href="/favicon.ico" rel="icon" type="image/x-icon" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><link href="//d2h9b02ioca40d.cloudfront.net/v4.2/uom.css" rel="stylesheet" /><script src="//d2h9b02ioca40d.cloudfront.net/v4.2/uom.js"></script><link href="/assets/lib/docs.css" rel="stylesheet" /><link href="/assets/lib/highlight.css" rel="stylesheet" /><script src="/assets/lib/highlight.pack.js"></script><link href="/assets/lib/ace.extra.css" rel="stylesheet" /><link href="/assets/lib/verselect.css" rel="stylesheet" /><script src="/assets/lib/verselect.js"></script></head><body data-version="v4.2"><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Buttons"><span itemprop="name">Buttons</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">Buttons</h1><div class="jumpnav top"></div>
+
+<h2>Overview</h2>
+
+<p>Buttons are a highly visual way to encourage a user to complete an action. The templates provide buttons pre-styled in several different colours and formats so that there is always a standard button you can use for your site.</p>
+
+<p>To use buttons well, you must consider that people associate specific colours with specific actions. For example, while the default button colour is light blue (to differentiate it from the branding colours on the page and make it stand out), if you are asking a user to complete something where they should be especially cautious -- like deleting an account -- using a red button might be more appropriate. Similarly, the soft button is designed for situations where you might need a less obtrusive button. Green is often used to submit a form.</p>
+
+<h2>When you should use buttons</h2>
+
+<p>Buttons are especially useful where:</p>
+
+<ul>
+<li>Pressing a button is required to complete a process. E.g. Submit a form or proceed to the next step</li>
+<li>You have one highly significant item you want to encourage users to click on a page (not multiple).</li>
+</ul>
+
+<h3>Recommended button use by colour</h3>
+
+<h4>Light blue - highlight</h4>
+
+<ul>
+<li>A simple call to action on a page where there is only one call to action (if there are multiple, a <a href="/components/listings">list pattern</a> should be used).</li>
+</ul>
+
+<h4>Green - call to action</h4>
+
+<ul>
+<li>Complete a form or process</li>
+</ul>
+
+<h4>Red - warning</h4>
+
+<ul>
+<li>Delete, remove, cancel -- situations where you want the user to consider before they press a button</li>
+</ul>
+
+<h4>Light Gray - Soft</h4>
+
+<ul>
+<li>Non-obtrusive interaction - eg. load more content to the page, pagination.</li>
+</ul>
+
+<h4>Hero - transparent and inverse</h4>
+
+<ul>
+<li>Designed for use on-top of images or dark background where the standard buttons may not be suitable for contrast reasons.</li>
+</ul>
+
+<h2>When you should avoid buttons</h2>
+
+<p>Buttons should not be used:</p>
+
+<ul>
+<li>To replace simple text links in a paragraph, or where there are many calls to action on a page...they only work when used sparingly.</li>
+<li>Where there are several items close together that need to be clicked on - eg. a list of forms. In this situation, a listing component should be used.</li>
+</ul>
+
+<p>As a wide range of buttons is already provided, glossy, &quot;Web 2.0&quot; type buttons, or buttons made out of images should not be used.</p>
+
+<h2>References</h2>
+
+<p><a href="http://patternry.com/p=primary-secondary-actions/">Patternry - button explanation</a></p>
+<hr /><h2 id="default-buttons">Default buttons</h2><div><div class="fifth clearfix">
+  <div class="col">
+    <a class="button" href="#default-buttons">Call to action</a>
+  </div>
+  <div class="col">
+    <a class="button brand">Brand</a>
+  </div>
+  <div class="col">
+    <a class="button cta">Complete</a>
+  </div>
+  <div class="col">
+    <a class="button warning">Warning</a>
+  </div>
+  <div class="col">
+    <a class="button soft">Soft</a>
+  </div>
+</div>
+<div class="fifth clearfix">
+  <div class="col">
+    <a class="button-small">Call to action</a>
+  </div>
+  <div class="col">
+    <a class="button-small brand">Brand</a>
+  </div>
+  <div class="col">
+    <a class="button-small cta">Complete</a>
+  </div>
+  <div class="col">
+    <a class="button-small warning">Warning</a>
+  </div>
+  <div class="col">
+    <a class="button-small soft">Soft</a>
+  </div>
+</div>
+<div class="fifth clearfix">
+  <div class="col">
+    <a class="button-small with-arrow">Call to action</a>
+  </div>
+  <div class="col">
+    <a class="button-small with-arrow brand">Brand</a>
+  </div>
+  <div class="col">
+    <a class="button-small with-arrow cta">Complete</a>
+  </div>
+  <div class="col">
+    <a class="button-small with-arrow warning">Warning</a>
+  </div>
+  <div class="col">
+    <a class="button-small with-arrow soft">Soft</a>
+  </div>
+</div>
+<pre><code class="html">&lt;a class="button"&gt;Call to action&lt;/a&gt;
+&lt;a class="button brand"&gt;Brand&lt;/a&gt;
+&lt;a class="button cta"&gt;Complete&lt;/a&gt;
+&lt;a class="button warning"&gt;Warning&lt;/a&gt;
+&lt;a class="button soft"&gt;Soft&lt;/a&gt;
+
+&lt;a class="button-small"&gt;Call to action&lt;/a&gt;
+&lt;a class="button-small brand"&gt;Brand&lt;/a&gt;
+&lt;a class="button-small cta"&gt;Complete&lt;/a&gt;
+&lt;a class="button-small warning"&gt;Warning&lt;/a&gt;
+&lt;a class="button-small soft"&gt;Soft&lt;/a&gt;
+
+&lt;a class="button-small with-arrow"&gt;Call to action&lt;/a&gt;
+&lt;a class="button-small with-arrow brand"&gt;Brand&lt;/a&gt;
+&lt;a class="button-small with-arrow cta"&gt;Complete&lt;/a&gt;
+&lt;a class="button-small with-arrow warning"&gt;Warning&lt;/a&gt;
+&lt;a class="button-small with-arrow soft"&gt;Soft&lt;/a&gt;</code></pre></div><p>Form inputs with type <code>submit</code> and <code>button</code> have a default style of <code>button cta</code>.</p>
+<hr /><h2 id="hero">Hero</h2><div id="r1"><div style="background:url(/assets/example/repeating-lt.png) center repeat; text-align:center; padding:30px">
+  <a class="button-hero">Hero Button</a>
+</div>
+<div style="background:url(/assets/example/repeating-dk.png) center repeat; text-align:center; padding:30px">
+  <a class="button-hero-inverse">Inverse Button</a>
+</div></div>
+    <section class="code">
+      <pre class="html" id="s1">
+&lt;div style="background:url(/assets/example/repeating-lt.png) center repeat; text-align:center; padding:30px"&gt;
+  &lt;a class="button-hero"&gt;Hero Button&lt;/a&gt;
+&lt;/div&gt;
+&lt;div style="background:url(/assets/example/repeating-dk.png) center repeat; text-align:center; padding:30px"&gt;
+  &lt;a class="button-hero-inverse"&gt;Inverse Button&lt;/a&gt;
+&lt;/div&gt;
+      </pre>
+    </section>
+<hr />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+      <script>
+        var e1 = ace.edit("s1");
+        e1.setTheme("ace/theme/github");
+        e1.session.setMode("ace/mode/html");
+        e1.getSession().setTabSize(2);
+        e1.getSession().setUseSoftTabs(true);
+        e1.getSession().on("change", function(e){
+          document.getElementById("r1").innerHTML = e1.getValue();
+          UOMloadComponents();
+        });
+      </script>
+<hr /></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
