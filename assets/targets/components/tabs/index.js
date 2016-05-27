@@ -24,11 +24,17 @@ function Tabs(el, props) {
   this.props.isOverflowSetup = false;
   this.props.isLoadingPs = false;
   this.props.isNav = this.el.classList.contains('tabbed-nav') || this.el.classList.contains('tabbed-course');
+  this.props.matchFoundForHash = false;
 
   // Event bindings
   if (this.el.hasAttribute('data-tabbed')) {
     this.setup();
     this.move(this.getInitialTab());
+
+    // If hash matches a tab, scroll to the tabs
+    if (this.props.matchFoundForHash) {
+      this.scrollToTabs();
+    }
 
     if (window.addEventListener) { // don't setup the overflow at all in IE8
       this.handleResize();
@@ -80,6 +86,7 @@ Tabs.prototype.getInitialTab = function() {
       var tab = this.props.tabs[i];
       if (window.location.hash === tab.hash) {
         // Match found; return it
+        this.props.matchFoundForHash = true;
         return tab;
       }
     }
@@ -343,11 +350,6 @@ Tabs.prototype.move = function(target, smooth) {
     for (var i = 0, max = this.props.panels.length; i < max; i++) {
       if (target.getAttribute('href') === '#' + this.props.panels[i].id) {
         this.showPanel(this.props.panels[i]);
-
-        // Scroll viewport to tab top on FF
-        if (i > 0 && (/(Firefox)/g.test(navigator.userAgent) || /(Trident)/g.test(navigator.userAgent))) {
-          document.querySelector('html').scrollTop = panels[i].offsetTop - 8;
-        }
       } else {
         this.hidePanel(this.props.panels[i]);
       }
@@ -441,6 +443,23 @@ Tabs.prototype.showPanel = function(panel) {
 Tabs.prototype.hidePanel = function(panel) {
   panel.removeAttribute('data-current');
   panel.style.display = 'none';
+};
+
+Tabs.prototype.scrollToTabs = function() {
+  setTimeout(function () {
+    window.scroll(0, 0); // prevent scroll jump due to URL hash
+
+    // Compute offset (same as in smoothScrollTo function)
+    var offset = this.el.getBoundingClientRect().top;
+    var headerElem = document.querySelector('.page-header');
+    if (headerElem && !headerElem.classList.contains('floating')) {
+      var headerPosition = window.getComputedStyle ? window.getComputedStyle(headerElem).getPropertyValue('position') : 'fixed';
+      offset -= ((headerPosition === 'fixed' || headerPosition === 'absolute') ? 40 : 0);
+    }
+
+    // Perform scroll
+    window.scroll(0, offset);
+  }.bind(this));
 };
 
 module.exports = Tabs;
