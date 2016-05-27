@@ -108,8 +108,9 @@
         padding-left: 0;
         padding-right: 0;
 
-        &:hover, &:focus {
-            background-color: $white;
+        &:hover,
+        &:focus {
+          background-color: $white;
         }
 
         strong {
@@ -118,11 +119,9 @@
           border-bottom: 0 none;
           color: $black;
 
-
           & > span {
             @include rem(padding, 0px 10px);
             transform: translateY(-50%);
-            -webkit-transform: translateY(-50%);
 
             span {
               @include trailer(0.5);
@@ -138,7 +137,6 @@
               content: '\2192';
               display: inline-block;
               line-height: 0;
-              // vertical-align: middle;
             }
           }
         }
@@ -179,8 +177,6 @@
       display: block;
       padding-top: 0;
       text-align: center;
-      // -webkit-transform: translate3d(0, 0, 0);
-      // -webkit-transform-style: preserve-3d;
       -webkit-font-smoothing: subpixel-antialiased;
     }
 
@@ -500,9 +496,8 @@
 
 .ie9 {
   .uomcontent .pathfinder .button-small {
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
     left: 50%;
+    transform: translateX(-50%);
     width: auto;
   }
 }

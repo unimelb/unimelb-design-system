@@ -1,0 +1,20 @@
+== render(:_breadcrumb)
+
+div role="main"
+  .headerless
+
+  h1.aligned-title= @title
+
+  - @documents.each_value do |section|
+    - section.each do |doc|
+      == doc
+
+    hr
+
+  / .half
+  /   section.center
+  /     a.button-hero-reverse href=('/components/'+@prev)
+  /       =component_title(@prev)
+  /   section.center
+  /     a.button-hero href=('/components/'+@next)
+  /       =component_title(@next)

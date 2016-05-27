@@ -346,6 +346,11 @@ Tabs.prototype.move = function(target, smooth) {
     for (panels=this.el.querySelectorAll('[role="tabpanel"]'), max=panels.length, i=0; i < max; i++) {
       if (target.getAttribute('href') === '#'+panels[i].id) {
         this.showPanel(panels[i]);
+
+        // Scroll viewport to tab top on FF
+        if (i > 0 && (/(Firefox)/g.test(navigator.userAgent) || /(Trident)/g.test(navigator.userAgent))) {
+          document.querySelector('html').scrollTop = panels[i].offsetTop - 8;
+        }
       } else {
         this.hidePanel(panels[i]);
       }

@@ -35,7 +35,7 @@ GMaps.prototype.draw = function() {
   this.el.style.width = this.props.width + 'px';
   this.el.style.height = this.props.height + 'px';
 
-  this.maps = new google.maps.Map(this.el, this.props.options);
+  this.map = new google.maps.Map(this.el, this.props.options);
 
   if (this.props.pins) {
     this.markers();
@@ -68,7 +68,7 @@ GMaps.prototype.markers = function() {
   for (var i = pins.length - 1; i >= 0; i--) {
     var ll = pins[i].split(',');
     new google.maps.Marker({
-      map:      this.props.map,
+      map:      this.map,
       position: new google.maps.LatLng(ll[0], ll[1])
     });
   }
@@ -81,8 +81,8 @@ GMaps.prototype.stylemap = function() {
     ]
   }];
   var styledMap = new google.maps.StyledMapType(styleOptions, { name: 'Styled Map' });
-  this.maps.mapTypes.set('map_style', styledMap);
-  this.maps.setMapTypeId('map_style');
+  this.map.mapTypes.set('map_style', styledMap);
+  this.map.setMapTypeId('map_style');
 };
 
 module.exports = GMaps;

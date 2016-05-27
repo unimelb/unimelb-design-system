@@ -1,0 +1,144 @@
+== render(:_breadcrumb)
+
+div role="main"
+  header.banner style="background-image:url(/assets/example/course_banner.jpg);"
+    .bottom-align-flat
+      form action="" class="course-select" data-view-visitor-select-form="" method="get"
+        div.left
+          h2 Doctor of Veterinary Medicine
+          p 4 years full-time, Parkville — Domestic and International students. CRICOS code: 071999D
+        div.right
+          div
+            label for="residency" You told us you’re
+            select.clear name="residency" id="residency"
+              option value="domestic" a domestic student
+              option selected="selected" value="international" an international student
+
+  #nav.tabbed-course data-tabbed=""
+    .full-width
+      nav role="tablist"
+        ul
+          li: a role="tab" href="/layouts/course/#overview" Overview
+          li: a role="tab" href="/layouts/course/#course-structure" Course Structure
+          li: a role="tab" href="/layouts/course/#course-structure-2" Course Structure 2
+          li: a role="tab" data-current="" href="#requirements" Entry Requirements
+          li: a role="tab" href="/layouts/course/#fees" Fees &amp; Scholarships
+          li: a role="tab" href="/layouts/course/#apply" Apply now
+
+    #requirements.tab data-current="" role="tabpanel"
+      .with-aside.left
+        div
+          aside
+            h2.subtitle 400 point program
+            p 4 years full-time / part-time unavailable
+          .bside
+            section
+              h2 Entry Requirements for applicants who are completing, or have completed, tertiary studies overseas
+              p The DVM is a graduate course.&nbsp; To be eligible for selection, applicants to the DVM must have completed an undergraduate science or agriculture degree including at least one semester in biology (cellular/general) and in biochemistry.
+              p International applicants who are eligible for selection will be made an offer into the DVM where they have obtained results across science/agriculture subjects at any one of the following thresholds:
+              ul
+                li a 3.2 GPA or higher (4 point scale)
+                li a 4.0 GPA or higher (5 point scale)
+                li a 5.6 GPA or higher (7 point scale)
+                li an average of 75% or higher (where marks on a university transcript are returned as % marks)
+                li first class honours (Applicants from the United Kingdom)
+              p Applications are also welcome from international applicants with a GPA between 3.0 and 3.2 (4 point scale) or equivalent.&nbsp; Selection of these applicants into the DVM will be on a competitive basis with applicants ranked based on academic merit and an assessment of a submitted personal statement (i.e. an applicant’s description of their interest in veterinary science and related experiences with animals).
+              p
+                br All applicants must also satisfy the following english language requirements:
+              table
+                tbody
+                  tr
+                    td IELTS* (academic English Only)
+                    td 7.0 (written 7.0 with no band less than 6.0)
+                  tr
+                    td TOEFL (paper-based test)*
+                    td 600 + TWE 5.0
+                  tr
+                    td TOEFL (internet-based test)*
+                    td 94 + Writing 27; Speaking 18; Reading 13; Listening 13
+                  tr
+                    td Pearson Test of English (Academic)
+                    td 65 &amp; written communicative skill of 65 and no other communicative skill below 50
+                  tr
+                    td Cambridge English: Advanced/Certificate of Advanced English (CAE)
+                    td 67 + no less than Good in Writing and Borderline in each other skill.
+              h2 DVM Admissions Policy
+              p The Admissions policy of the Faculty for selecting students into the Doctor of Veterinary Medicine includes the following goals:
+              ul
+                li The development and implementation of selection procedures that identify students who are likely to succeed in the profession, and
+                li Ensuring selection policies and procedures provide equity of access and opportunity for all students irrespective of previous educational opportunities and life situation and consistent with capacity to complete a program in veterinary science.
+              p
+                | The
+                '
+                strong Resolution on Selection
+                '
+                | for the Doctor of Veterinary Medicine is a resolution of the Academic Board that specifies the minimum entry requirements for the course and defines selection instruments to be used by the Selection Committee to determine which of the applicants eligible for selection will be selected.&nbsp; This resolution is described on the
+                '
+                a href="http://about.unimelb.edu.au/academicboard/resolutions" target="_blank"  Academic Board website
+              p
+                | In addition to the Resolution on Selection, the Faculty has also approved
+                a href="http://www.vet.unimelb.edu.au/docs/SelectionGuidelinesDVM.pdf" target="_blank"  Selection Guidelines
+                | that outline the specific criteria used in selection deliberations.
+              p These Selection Guidelines represent the standard pathways into the DVM.&nbsp; Applicants with non-standard backgrounds would have these considered by the Selection Committee on a case-by-case basis.
+              h2#anchored Appealing a Selection Decision
+              p
+                | Applicants who have queries regarding selection decisions regarding the DVM should
+                a href="https://enquiry.app.unimelb.edu.au/?FormType=GradDefault&amp;cc=VETSCI-ALL&amp;fn=VETSCI" target="_blank"  contact us
+                | in the first instance. Faculty selection staff can provide feedback to applicants regarding the selection process and their applications.
+              p
+                | If, after consulting a faculty selection officer, an applicant still has concerns regarding a selection decision they may submit a formal appeal.&nbsp; The process is outlined on the
+                '
+                a href="http://futurestudents.unimelb.edu.au/admissions/entry-requirements/selection-appeals" target="_blank"  Future Students website
+        div style="clear:both"
+          aside
+          .bside
+            section
+              p.center
+                a.button-hero href="course#fees" data-tab="5"  Next : Fees &amp; scholarships
+
+      .enquiry style="clear:both; width:100%"
+        .enquiry__cta.accordion__title
+          ' Have a question?
+          a.button-small href="enquiry-form" Enquire now
+        .enquiry__form.accordion__hidden
+          form#enquiry-form data-validate=""
+            .fields
+              .errors.copy style='display: none;'
+              fieldset.enquiry-form__details
+                div
+                  div
+                    label.enquiry-form__label for="f_given" data-required="true" Given name
+                    input#f_given.input-medium type="text" placeholder="Given name" name="first_name" aria-required="true"
+                  div
+                    label.enquiry-form__label for="f_family" data-required="true" Family name
+                    input#f_family.input-medium type="text" placeholder="Family name" name="last_name" aria-required="true"
+                  div
+                    label.enquiry-form__label for="f_email" data-required="true" Email
+                    input#f_email.input-medium type="email" placeholder="your@email.com" name="email_address" aria-required="true"
+                  div
+                    label.enquiry-form__label for="f_phone" data-required="true" Phone
+                    input#f_phone.input-medium type="text" placeholder="04..." name="phone" aria-required="true"
+                  div
+                    label.enquiry-form__label for="f_message" data-required="true" Message
+                    textarea#f_message name="enquiry" placeholder="Your enquiry" aria-required="true"
+                  .inline
+                    input type="checkbox" name="opt_in_faculty" id="faculty_newsletter" value=""
+                    label for="faculty_newsletter"
+                      span Subscribe to stay up to date with the latest news, events and information
+
+                  div
+                    input.enquiry-form__submit-button type='submit' value='Send your question'
+                  hr.spacer
+                  p.form__subtext
+                    ' The information on this form is being collected by the University of Melbourne for further communication regarding various courses, programs and events at the University in which you have expressed interest. Information collected will only be used by authorised staff for the purpose for which it was collected and will be protected against unauthorized access and use. You can access any personal information the University holds about you. Contact the
+                    a> href="http://www.unimelb.edu.au/unisec/privacy/contact.html" Privacy Officer
+                    ' to find out more. The
+                    a> href="http://www.unimelb.edu.au/disclaimer/privacy.html" University’s Privacy Policy
+                    | is available online.
+        .enquiry__subline
+          .first
+            ' or call
+            a href="tel:136352" 13 MELB (13 6352)
+          .secondary
+            ' International:
+            a href="tel:0061390355511" +61 3 9035 5511
