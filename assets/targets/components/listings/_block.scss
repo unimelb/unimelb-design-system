@@ -1,5 +1,5 @@
 .uomcontent .block-listing {
-  @extend %clearfix;
+  @include clearfix;
   @include rem(margin-bottom, 30px);
   @include rem(margin-top, 30px);
   background-color: transparent;

@@ -313,7 +313,7 @@
 
 .ie .uomcontent [role="main"] {
    form.course-select {
-    @extend %clearfix;
+    @include clearfix;
 
     .left {
       float: left;

@@ -8,7 +8,7 @@
 
 .uomcontent {
   .listing {
-    @extend %clearfix;
+    @include clearfix;
     @include padding-trailer(2);
     @include rem(padding-left, 15px);
     @include rem(padding-right, 15px);

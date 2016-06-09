@@ -9,7 +9,7 @@
   }
 }
 
-%control {
+@mixin control {
   @include rem(border-radius, 3px);
   @include rem(margin-top, 5px);
   @include rem(padding, 8px 10px);
@@ -27,8 +27,8 @@
   }
 }
 
-%textcontrol {
-  @extend %control;
+@mixin textcontrol {
+  @include control;
   @include rem(font-size, 20px);
   background-color: $lightgray;
   border: 1px solid darken($lightergray, 5%);
@@ -50,7 +50,7 @@
   }
 }
 
-%controlhack {
+@mixin controlhack {
   appearance: none;
   text-indent: .01px;
   text-overflow: '';

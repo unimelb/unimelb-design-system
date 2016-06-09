@@ -69,7 +69,6 @@
 
   // 21:9
   .video.video--21-9 {
-    @extend %video;
     padding-bottom: 42.5%;
 
     @include breakpoint(wide) {

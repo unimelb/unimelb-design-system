@@ -143,7 +143,7 @@
         cursor: default;
         opacity: .5;
       }
-      
+
       &:focus {
         outline: 1px dotted $white;
       }
@@ -276,7 +276,7 @@
   }
 
   [data-tabbed].tabbed {
-    @extend %clearfix;
+    @include clearfix;
     @include trailer(2);
     width: 100%;
 
@@ -331,7 +331,7 @@
     @extend .thin;
 
     [role="tabpanel"] {
-      @extend %clearfix;
+      @include clearfix;
     }
 
     aside h2.subtitle {

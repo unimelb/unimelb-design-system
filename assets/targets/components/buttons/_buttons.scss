@@ -1,4 +1,4 @@
-%raisedbutton {
+@mixin raisedbutton {
   @include rem(border-radius, 5px);
   @include rem(font-size, 13px);
   @include rem(padding, 15px 20px);
@@ -76,8 +76,8 @@
   }
 }
 
-%flatbutton {
-  @extend %raisedbutton;
+@mixin flatbutton {
+  @include raisedbutton;
   @include rem(border-radius, 2px);
   @include rem(font-size, 12px);
   @include rem(padding, 10px 15px);
@@ -119,8 +119,7 @@
   }
 }
 
-%arrow-right {
-
+@mixin arrow-right {
   &::after {
     @include rem(font-size, 20px);
     @include rem(padding-left, 5px);
@@ -136,7 +135,7 @@
   }
 }
 
-%outlinebutton {
+@mixin outlinebutton {
   @include rem(border-radius, 5px);
   @include rem(border-width, 2px);
   @include rem(font-size, 13px);
@@ -173,7 +172,7 @@
   }
 }
 
-%outlinearrow {
+@mixin outlinearrow {
   &::after {
     @include rem(font-size, 15px);
     @include rem(padding-left, 10px);
@@ -199,7 +198,7 @@
   }
 }
 
-%outlinearrow-reverse {
+@mixin outlinearrow-reverse {
   &::before {
     @include rem(font-size, 15px);
     @include rem(padding-right, 10px);
@@ -225,8 +224,8 @@
   }
 }
 
-%iconbutton {
-  @extend %flatbutton;
+@mixin iconbutton {
+  @include flatbutton;
   @include rem(font-size, 14px);
   @include rem(margin, 10px 0);
   @include rem(padding, 5px 10px 5px 20px);
@@ -251,39 +250,39 @@
 
 .uomcontent input[type="submit"],
 .uomcontent input[type="button"] {
-  @extend %raisedbutton;
-  @extend %raisedbutton.cta;
-  @extend %flatbutton.cta;
+  @include raisedbutton;
+  // @include raisedbutton.cta;
+  // @include flatbutton.cta;
   appearance: none;
   width: auto;
 }
 
 .uomcontent {
   .button {
-    @extend %raisedbutton;
+    @include raisedbutton;
   }
 
   .button-small {
-    @extend %flatbutton;
+    @include flatbutton;
   }
 
   .with-arrow {
-    @extend %arrow-right;
+    @include arrow-right;
   }
 
   .button-hero {
-    @extend %outlinebutton;
-    @extend %outlinearrow;
+    @include outlinebutton;
+    @include outlinearrow;
   }
 
   .button-hero-reverse {
-    @extend %outlinebutton;
-    @extend %outlinearrow-reverse;
+    @include outlinebutton;
+    @include outlinearrow-reverse;
   }
 
   .button-hero-inverse {
-    @extend %outlinebutton;
-    @extend %outlinearrow;
+    @include outlinebutton;
+    @include outlinearrow;
     border-color: $white;
     color: $white;
   }
@@ -307,8 +306,8 @@
       @include rem(font-size, 16px);
     }
   }
-  
-  /* Chrome-less button for UI interactions */
+
+  // Chrome-less button for UI interactions
   .button-ui {
     background: none transparent;
     border: 0;
@@ -316,7 +315,7 @@
     font: inherit;
     margin: 0;
     padding: 0;
-    
+
     &::-moz-focus-inner {
       border: 0;
       padding: 0;

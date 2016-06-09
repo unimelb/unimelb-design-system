@@ -3,7 +3,7 @@
   & > header:first-child {
 
   	.bottom-align {
-      @extend %grad-bottom;
+      @include grad-bottom;
       @include rem(margin-bottom, -25px);
       align-self: flex-end;
       width: 100%;
@@ -18,7 +18,7 @@
     }
 
     .bottom-align-inverted {
-      @extend %grad-top;
+      @include grad-top;
       color: $black;
     }
 

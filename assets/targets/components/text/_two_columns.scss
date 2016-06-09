@@ -1,6 +1,6 @@
 .uomcontent [role="main"] {
 	.half {
-    @extend %wrapper;
+    @include wrapper;
     @include rem(padding-bottom, 30px);
     @include rem(padding-top, 30px);
     max-width: 100%;

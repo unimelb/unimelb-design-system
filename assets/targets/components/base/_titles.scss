@@ -1,4 +1,4 @@
-%aligned-title {
+@mixin aligned-title {
   @include rem(font-size, 28px);
   @include rem(padding-top, 48px);
   @include rem(padding-bottom, 36px);
@@ -60,7 +60,7 @@
   }
 
   h1.aligned-title {
-    @extend %aligned-title;
+    @include aligned-title;
   }
 
   h1.aligned-title + section {

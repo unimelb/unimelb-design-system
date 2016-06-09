@@ -1,5 +1,5 @@
 .uomcontent .detail {
-  @extend %wrapper;
+  @include wrapper;
   @include padding-leader(1);
   @include padding-trailer(2);
 
@@ -196,7 +196,7 @@
     }
 
     .presenters {
-      @extend %presenters;
+      @include presenters;
 
       @include breakpoint(desktop) {
         // @include rem(margin-left, 300px);

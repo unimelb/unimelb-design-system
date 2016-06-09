@@ -40,7 +40,7 @@
   }
 }
 
-%ticks {
+@mixin ticks {
   @include rem(padding-left, 30px);
 
   @include breakpoint(desktop) {
@@ -129,7 +129,7 @@
   p,
   li,
   table {
-    @extend %wrapper;
+    @include wrapper;
     @include rem(max-width, $w-sml);
     font-weight: $light;
     padding: 0;
@@ -324,12 +324,12 @@
   	}
 
     &.ticked-list {
-      @extend %ticks;
+      @include ticks;
     }
   }
 
   .ticked-list ul {
-    @extend %ticks;
+    @include ticks;
   }
 
   dl {

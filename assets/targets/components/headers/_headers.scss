@@ -1,4 +1,4 @@
-%bannerbox {
+@mixin bannerbox {
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -46,7 +46,7 @@
     }
 
     &.image {
-      @extend %bannerbox;
+      @include bannerbox;
       @include rem(min-height, 300px);
       height: auto;
 
@@ -71,7 +71,7 @@
     }
 
     &.banner {
-      @extend %bannerbox;
+      @include bannerbox;
       @include rem(min-height, 300px);
       height: auto;
 
