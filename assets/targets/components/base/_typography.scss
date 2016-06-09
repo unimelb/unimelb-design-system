@@ -258,10 +258,17 @@
       }
 
       h2 {
-        @extend h1;
+        @include adjust-font-size-to(26px);
         @include padding-leader(1);
+        @include padding-trailer(1);
+        font-weight: $light;
         text-transform: none;
+
+        @include breakpoint(desktop) {
+          @include adjust-font-size-to(33px);
+        }
       }
+
       ul {
         @include rem(padding-left, 20px);
         @include rem(padding-right, 20px);
