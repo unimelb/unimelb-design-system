@@ -6,136 +6,140 @@
   transform: translateY(-50%);
 }
 
-.uomcontent {
-  .listing {
-    @include clearfix;
-    @include padding-trailer(2);
-    @include rem(padding-left, 15px);
-    @include rem(padding-right, 15px);
+@mixin listing {
+  @include clearfix;
+  @include padding-trailer(2);
+  @include rem(padding-left, 15px);
+  @include rem(padding-right, 15px);
+  margin: 0 auto;
+  max-width: $w-lge;
+
+  box-sizing: content-box;
+
+  li {
+    @include padding-leader(0.5);
+    @include padding-trailer(0.5);
+    border-top: 1px solid darken($lightgray, 5%);
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-left: auto;
+    overflow: hidden;
+    padding-bottom: 0;
+
+    &:first-child {
+      border-top: 0 none;
+    }
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+
+  figure {
+    @include trailer(0.5);
+    @include rem(margin-right, 15px);
+    @include rem(max-height, 100px);
+    @include rem(max-width, 100px);
+    float: left;
+    margin-left: 0;
+    margin-top: 0;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  img {
+    display: block;
+    float: none;
     margin: 0 auto;
-    max-width: $w-lge;
+    max-width: 100%;
+  }
 
-    box-sizing: content-box;
+  strong {
+    @include adjust-font-size-to(16px);
+    @include adjust-leading-to(1);
+    color: $darkblue;
+    display: block;
+    font-weight: $regular;
+  }
 
-    li {
-      @include padding-leader(0.5);
-      @include padding-trailer(0.5);
-      border-top: 1px solid darken($lightgray, 5%);
-      list-style-type: none;
-      margin-bottom: 0;
-      margin-left: auto;
-      overflow: hidden;
-      padding-bottom: 0;
+  p {
+    @include adjust-font-size-to(13px);
+    @include rem(margin-left, 115px);
+    color: $midgray;
+    padding: 0;
+    width: auto;
+  }
 
-      &:first-child {
-        border-top: 0 none;
-      }
-    }
-
-    a {
-      display: block;
-      text-decoration: none;
-    }
-
-    figure {
-      @include trailer(0.5);
-      @include rem(margin-right, 15px);
-      @include rem(max-height, 100px);
-      @include rem(max-width, 100px);
-      float: left;
-      margin-left: 0;
-      margin-top: 0;
-      overflow: hidden;
-      text-align: center;
-    }
-
+  @include breakpoint(0) {
     img {
-      display: block;
-      float: none;
       margin: 0 auto;
+      max-height: 100%;
+      max-width: 200%;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    img {
+      margin-left: 0;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    @include padding-leader(2);
+    img {
       max-width: 100%;
     }
 
-    strong {
-      @include adjust-font-size-to(16px);
-      @include adjust-leading-to(1);
-      color: $darkblue;
-      display: block;
-      font-weight: $regular;
-    }
-
     p {
-      @include adjust-font-size-to(13px);
-      @include rem(margin-left, 115px);
-      color: $midgray;
-      padding: 0;
-      width: auto;
+      margin-left: 0;
     }
 
-    @include breakpoint(0) {
-      img {
-        margin: 0 auto;
-        max-height: 100%;
-        max-width: 200%;
-      }
+    li {
+      @include padding-trailer(1);
+      border: 0;
+      display: inline-block;
+      vertical-align: top;
+      width: 49%;
     }
 
-    @include breakpoint(tablet) {
-      img {
-        margin-left: 0;
-      }
+    li:nth-child(4n+1) {
+      clear: left;
     }
 
-    @include breakpoint(tablet) {
-      @include padding-leader(2);
-      img {
-        max-width: 100%;
-      }
-
-      p {
-        margin-left: 0;
-      }
-
-      li {
-        @include padding-trailer(1);
-        border: 0;
-        display: inline-block;
-        vertical-align: top;
-        width: 49%;
-      }
-
-      li:nth-child(4n+1) {
-        clear: left;
-      }
-
-      a {
-        @include rem(padding, 0 10px);
-      }
-
-      figure {
-        @include rem(max-height, 220px);
-        float: none;
-        height: auto;
-        margin-right: 0;
-        max-width: 100%;
-      }
-
-      strong,
-      p {
-        text-align: left;
-      }
+    a {
+      @include rem(padding, 0 10px);
     }
 
-    @include breakpoint(desktop) {
-      li {
-        width: 32%;
-      }
+    figure {
+      @include rem(max-height, 220px);
+      float: none;
+      height: auto;
+      margin-right: 0;
+      max-width: 100%;
     }
-    @include breakpoint(wide) {
-      li {
-        width: 24.7%;
-      }
+
+    strong,
+    p {
+      text-align: left;
     }
+  }
+
+  @include breakpoint(desktop) {
+    li {
+      width: 32%;
+    }
+  }
+  @include breakpoint(wide) {
+    li {
+      width: 24.7%;
+    }
+  }
+}
+
+.uomcontent {
+  .listing {
+    @include listing;
   }
 
   .noborder {
