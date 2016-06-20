@@ -265,7 +265,7 @@
 }
 
 .uomcontent [role="main"] form.course-select {
-  @extend .filtered-listing-select;
+  @include filtered-listing-select;
   box-shadow: none;
 
   .left,

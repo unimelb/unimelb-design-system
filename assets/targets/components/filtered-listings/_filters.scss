@@ -13,7 +13,7 @@
   padding-top: 0;
 }
 
-.uomcontent form.filtered-listing-select {
+@mixin filtered-listing-select {
   @include rem(max-width, $w-lge);
   background-color: transparent;
   color: $white;
@@ -202,6 +202,10 @@
       width: 33.33%;
     }
   }
+}
+
+.uomcontent form.filtered-listing-select {
+  @include filtered-listing-select;
 }
 
 .ie8 .uomcontent form.filtered-listing-select {
