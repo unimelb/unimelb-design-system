@@ -133,6 +133,10 @@
     @include rem(max-width, $w-sml);
     font-weight: $light;
     padding: 0;
+
+    @include breakpoint(tablet) {
+      @include rem(max-width, $w-sml);
+    }
   }
 
   h1 {
