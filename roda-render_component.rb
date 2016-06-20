@@ -1,4 +1,4 @@
-# Deal with component
+# rubocop:disable Style/FileName
 module RodaRenderComponent
   #
   module InstanceMethods
@@ -52,7 +52,7 @@ module RodaRenderComponent
     # Render slim
     def build_slim(f, opts)
       params = ''
-      source = basename_without_index_and_extension(f)[-9..-1] == 'no-source' || (opts.include? :code_only)
+      source = basename_without_index_and_extension(f)[-9..-1] == 'no-source' || (opts.include? :code_only) # rubocop:disable Style/LineLength
       if source
         source = nil
       else
@@ -67,7 +67,7 @@ module RodaRenderComponent
 
     def build_html(f, opts)
       params = ''
-      source = basename_without_index_and_extension(f)[-9..-1] == 'no-source' || (opts.include? :code_only)
+      source = basename_without_index_and_extension(f)[-9..-1] == 'no-source' || (opts.include? :code_only) # rubocop:disable Style/LineLength
       if source
         source = nil
       else
@@ -97,6 +97,7 @@ module RodaRenderComponent
     end
 
     def trigger_source_editable
+      # rubocop:disable Style/LineLength
       buf = '
       <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
 '

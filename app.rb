@@ -37,6 +37,7 @@ class App < Roda
         @component = true
         @components = []
         opts[:components].each do |path|
+          # rubocop:disable Style/LineLength
           @components << get_component(path, components: opts[:components_path], code_only: true)
         end
         opts[:pagetitle] = 'All Components'

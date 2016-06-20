@@ -58,7 +58,7 @@ if ENV['RACK_ENV'] == 'production'
             'Content-Type'  => 'text/html',
             'Cache-Control' => 'public, max-age=86400'
           },
-          File.open(File.join('cold', ENV['VERSION'], 'layouts', '404', 'index.html'), File::RDONLY)
+          File.open(File.join('cold', ENV['VERSION'], 'layouts', '404', 'index.html'), File::RDONLY) # rubocop:disable Style/LineLength
         ]
       end
 
