@@ -1,4 +1,4 @@
-.uomcontent .detail {
+@mixin detail {
   @include wrapper;
   @include padding-leader(1);
   @include padding-trailer(2);
@@ -269,5 +269,8 @@
       @include padding-trailer(1);
     }
   }
+}
 
+.uomcontent .detail {
+  @include detail;
 }
