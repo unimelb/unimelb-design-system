@@ -5,7 +5,7 @@ require File.join(File.dirname(__FILE__), 'roda-render_component')
 Roda.plugin RodaRenderComponent
 
 #
-class App < Roda
+class App < Roda # rubocop:disable Metrics/ClassLength
   use Rack::Session::Cookie, secret: ENV['SECRET']
   opts[:root] = File.join(File.dirname(__FILE__))
 
@@ -37,6 +37,7 @@ class App < Roda
         @component = true
         @components = []
         opts[:components].each do |path|
+          # rubocop:disable Style/LineLength
           @components << get_component(path, components: opts[:components_path], code_only: true)
         end
         opts[:pagetitle] = 'All Components'
