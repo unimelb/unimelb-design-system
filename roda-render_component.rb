@@ -1,4 +1,4 @@
-# rubocop:disable Style/FileName
+# rubocop:disable Style/FileName, Metrics/ModuleLength
 module RodaRenderComponent
   #
   module InstanceMethods
@@ -50,9 +50,9 @@ module RodaRenderComponent
     end
 
     # Render slim
-    def build_slim(f, opts)
+    def build_slim(f, opts) # rubocop:disable Metrics/AbcSize
       params = ''
-      source = basename_without_index_and_extension(f)[-9..-1] == 'no-source' || (opts.include? :code_only) # rubocop:disable Style/LineLength
+      source = basename_without_index_and_extension(f)[-9..-1] == 'no-source' || (opts.include? :code_only) # rubocop:disable Metrics/LineLength
       if source
         source = nil
       else
@@ -65,9 +65,9 @@ module RodaRenderComponent
       [title_from_filename(f), output, source]
     end
 
-    def build_html(f, opts)
+    def build_html(f, opts) # rubocop:disable Metrics/AbcSize
       params = ''
-      source = basename_without_index_and_extension(f)[-9..-1] == 'no-source' || (opts.include? :code_only) # rubocop:disable Style/LineLength
+      source = basename_without_index_and_extension(f)[-9..-1] == 'no-source' || (opts.include? :code_only) # rubocop:disable Metrics/LineLength
       if source
         source = nil
       else
@@ -96,8 +96,8 @@ module RodaRenderComponent
 '
     end
 
-    def trigger_source_editable
-      # rubocop:disable Style/LineLength
+    def trigger_source_editable # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/LineLength
+      # rubocop:disable Metrics/LineLength
       buf = '
       <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
 '

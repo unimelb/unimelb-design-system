@@ -5,7 +5,7 @@ require File.join(File.dirname(__FILE__), 'roda-render_component')
 Roda.plugin RodaRenderComponent
 
 #
-class App < Roda
+class App < Roda # rubocop:disable Metrics/ClassLength
   use Rack::Session::Cookie, secret: ENV['SECRET']
   opts[:root] = File.join(File.dirname(__FILE__))
 

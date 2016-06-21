@@ -37,11 +37,9 @@ if ENV['RACK_ENV'] == 'production'
 
       elsif File.exist?(page)
         # Normal request
-        if req.path.end_with?('svg')
-          type = 'image/svg+xml'
-        else
-          type = ''
-        end
+        type = ''
+        # rubocop:disable Metrics/BlockNesting
+        type = 'image/svg+xml' if req.path.end_with?('svg')
         [
           200,
           {
