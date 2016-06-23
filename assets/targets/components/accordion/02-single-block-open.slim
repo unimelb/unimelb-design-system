@@ -14,7 +14,7 @@ ul.accordion data-single-focus=""
           ul
             li Qui impetus tibique
             li maluisset ne, omnes
-            li persequeris in vis.
+            li.no-li No bullet point, overriden
         li persequeris in vis.
         li
           ' Ordered list, inner
@@ -30,8 +30,14 @@ ul.accordion data-single-focus=""
             li
               ' Ordered list, inner-inner
               ol
-                li Qui impetus tibique
+                li.no-li No bullet point, overriden
                 li maluisset ne, omnes
+                li persequeris in vis.
+            li
+              ' Ticked list, inner-inner
+              ul.ticked-list
+                li Qui impetus tibique
+                li.no-li No bullet point, overriden
                 li persequeris in vis.
             li persequeris in vis.
         li persequeris in vis.
@@ -41,6 +47,13 @@ ul.accordion data-single-focus=""
             li Qui impetus tibique
             li maluisset ne, omnes
             li persequeris in vis.
+        li
+          ' Ticked list, inner
+          ul.ticked-list
+            li Qui impetus tibique
+            li maluisset ne, omnes
+            li persequeris in vis.
+
   li.accordion__visible
     span.accordion__title Qui impetus tibique maluisset ne, omnes
     .accordion__hidden
