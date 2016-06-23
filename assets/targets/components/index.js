@@ -4,6 +4,8 @@ require("../../shared/smoothscroll");
 require("../../shared/findup");
 require("../../shared/loadscript");
 
+window.cssesc = require("cssesc");
+
 // Also need one to find non-text nodes in a list of children
 
 // Simple sniff
