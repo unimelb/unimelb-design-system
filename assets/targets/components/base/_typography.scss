@@ -38,6 +38,11 @@
       list-style-type: disc;
     }
   }
+
+  .ticked-list li,
+  .no-li {
+    list-style-type: none;
+  }
 }
 
 %ticks {
