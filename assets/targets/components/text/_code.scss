@@ -46,6 +46,13 @@
   }
 }
 
+#top.uomcontent [role="main"] pre.flex {
+  @include rem(padding-left, 30px);
+  @include rem(padding-right, 30px);
+  height: auto;
+  padding-top: 0;
+}
+
 .ie8 .uomcontent .code {
   max-width: $w-sml;
 }
