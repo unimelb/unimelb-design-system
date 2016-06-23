@@ -309,6 +309,15 @@
 
       &.fill {
         width: 100%;
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="password"],
+      input[type="search"],
+      input[type="url"] {
+        width: 100%;
+        }
       }
     }
   }
