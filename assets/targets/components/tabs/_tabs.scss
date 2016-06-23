@@ -109,7 +109,7 @@
       }
     }
 
-    /* wrapper added dynamically around nav element when tabs overflow */
+    // wrapper added dynamically around nav element when tabs overflow
     .tabbed-nav__inner {
       @include rem(padding-bottom, 15px);
       position: relative;
@@ -120,15 +120,15 @@
       z-index: 5;
     }
 
-    /* show scrollbar when focused */
+    // show scrollbar when focused
     .ps-focus .ps-scrollbar-x-rail {
       opacity: 1;
     }
 
-    /* left/right arrows when screen size is too small to fit all the tabs */
+    // left/right arrows when screen size is too small to fit all the tabs
     .tab-arrow {
       @include rem(font-size, 30px);
-      @include rem(padding, 0 20px 5px); /* bottom padding aligns arrows with tab labels */
+      @include rem(padding, 0 20px 5px); // bottom padding aligns arrows with tab labels
       background: $darkblue;
       color: $white;
       cursor: pointer;
@@ -143,7 +143,7 @@
         cursor: default;
         opacity: .5;
       }
-      
+
       &:focus {
         outline: 1px dotted $white;
       }
@@ -159,7 +159,7 @@
       right: 0;
     }
 
-    /* show the arrows when the tabs overflow */
+    // show the arrows when the tabs overflow
     .overflow .tab-arrow {
       display: inline-block;
     }
