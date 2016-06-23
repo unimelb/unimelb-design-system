@@ -3,13 +3,13 @@
 @import '../../shared/patterns_accessibility';
 
 // Wrapper
-%wrapper {
+@mixin wrapper {
   @include rem(max-width, 1400px);
   @include rem(padding, 15px);
   margin: 0 auto;
 }
 
-%clearfix {
+@mixin clearfix {
   zoom: 1;
 
   &:before,
@@ -33,14 +33,14 @@
   }
 }
 
-%imgreplace {
+@mixin imgreplace {
   background-color: transparent;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-%normalise {
+@mixin normalise {
   box-sizing: border-box;
   margin: 0;
   padding: 0;

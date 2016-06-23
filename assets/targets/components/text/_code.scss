@@ -1,4 +1,4 @@
-%code {
+@mixin code {
   @include adjust-font-size-to(16px);
   background-color: darken($lightgray, 2%);
   border-color: darken($lightgray, 7%);
@@ -9,13 +9,13 @@
 
 .uomcontent {
   code {
-    @extend %code;
+    @include code;
     @include rem(border-bottom-width, 2px);
     color: $midgray;
   }
 
   pre {
-    @extend %code;
+    @include code;
     @include adjust-font-size-to(13px);
     @include horizontal-borders(1px);
     @include leader(0);

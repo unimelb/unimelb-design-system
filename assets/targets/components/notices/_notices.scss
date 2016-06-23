@@ -10,18 +10,18 @@
   }
 
   .alert-success {
-    @extend %notice-success;
+    @include notice-success;
   }
 
   .alert-info {
-    @extend %notice-info;
+    @include notice-info;
   }
 
   .alert-warning {
-    @extend %notice-warning;
+    @include notice-warning;
   }
 
   .alert-danger {
-    @extend %notice-danger;
+    @include notice-danger;
   }
 }

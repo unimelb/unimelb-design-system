@@ -1,12 +1,11 @@
-/**
- * Fallback avatar for a person's photo, for use in people components including people search results.
- */
+// Fallback avatar for a person's photo, for use in people components including people search results.
+
 $fallback__assets-path: 'https://d2h9b02ioca40d.cloudfront.net/shared/assets/' !default;
 
-%fallbackAvatar {
+@mixin fallbackAvatar {
   position: relative;
 
-  /* Fallback avatar for when the photo fails to load */
+  // Fallback avatar for when the photo fails to load
   &::before {
     background: url($fallback__assets-path + 'avatar-lt.png') no-repeat center / cover transparent;
     border-radius: 50%;
@@ -16,15 +15,14 @@ $fallback__assets-path: 'https://d2h9b02ioca40d.cloudfront.net/shared/assets/' !
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: -1; /* position the fallback below the photo so it is hidden when the photo exists */
+    z-index: -1; // position the fallback below the photo so it is hidden when the photo exists
   }
 }
 
-/**
- * The photo's wrapper must extend this placeholder to allow for the fallback avator
- * to appear underneath the photo when the latter loads successfully.
- */
-%fallbackAvatarWrapper {
+// The photo's wrapper must extend this placeholder to allow for the fallback avator
+// to appear underneath the photo when the latter loads successfully.
+
+@mixin fallbackAvatarWrapper {
   position: relative;
   z-index: 1;
 }

@@ -1,4 +1,4 @@
-%quote-style {
+@mixin quote-style {
   @include rem(font-size, 100px);
   @include rem(margin-left, -50px);
   @include rem(margin-right, 10px);
@@ -29,15 +29,15 @@
 
     &::after,
     &::before {
-      @extend %quote-style;
+      @include quote-style;
     }
 
     &:before {
-      @extend %quote-style;
+      @include quote-style;
     }
 
     &:after {
-      @extend %quote-style;
+      @include quote-style;
       content: close-quote;
       margin-left: 0;
       margin-right: 0;

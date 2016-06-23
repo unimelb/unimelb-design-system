@@ -2,7 +2,7 @@
   article {
     header,
     header:first-child {
-      @extend .banner;
+      @include banner;
       position: relative;
 
       h1,

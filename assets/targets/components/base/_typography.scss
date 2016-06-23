@@ -45,7 +45,7 @@
   }
 }
 
-%ticks {
+@mixin ticks {
   @include rem(padding-left, 30px);
 
   @include breakpoint(desktop) {
@@ -134,10 +134,14 @@
   p,
   li,
   table {
-    @extend %wrapper;
+    @include wrapper;
     @include rem(max-width, $w-sml);
     font-weight: $light;
     padding: 0;
+
+    @include breakpoint(tablet) {
+      @include rem(max-width, $w-sml);
+    }
   }
 
   h1 {
@@ -299,10 +303,17 @@
       }
 
       h2 {
-        @extend h1;
+        @include adjust-font-size-to(26px);
         @include padding-leader(1);
+        @include padding-trailer(1);
+        font-weight: $light;
         text-transform: none;
+
+        @include breakpoint(desktop) {
+          @include adjust-font-size-to(33px);
+        }
       }
+
       ul {
         @include rem(padding-left, 20px);
         @include rem(padding-right, 20px);
@@ -365,12 +376,12 @@
   	}
 
     &.ticked-list {
-      @extend %ticks;
+      @include ticks;
     }
   }
 
   .ticked-list ul {
-    @extend %ticks;
+    @include ticks;
   }
 
   dl {
