@@ -1,4 +1,4 @@
-# Custom helpers
+# rubocop:disable Style/FileName
 module RodaHelpers
   #
   module InstanceMethods

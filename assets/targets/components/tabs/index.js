@@ -83,7 +83,7 @@ Tabs.prototype.getInitialTab = function() {
     }
 
     // No match found; check for a matching inner tab (i.e. sidebar tabs, not in-page tabs)
-    var innerPanel = this.el.querySelector(window.location.hash + '.inner-nav-page');
+    var innerPanel = this.el.querySelector(cssesc(window.location.hash.substr(1), { 'isIdentifier': true }) + '.inner-nav-page');
     if (innerPanel) {
       // Inner-tab panel matches hash; find its parent panel's tab and return it
       var panel = findUp(innerPanel, 'tab');
@@ -333,7 +333,7 @@ Tabs.prototype.getIndex = function(target) {
 Tabs.prototype.move = function(target, smooth) {
   var current, panels, max, i;
 
-  this.movetab(this.getIndex(target));
+  this.movetabpanel(this.getIndex(target));
   this.scrollToTab(target, smooth);
 
   if (this.props.panels.length === 1) {
@@ -341,7 +341,7 @@ Tabs.prototype.move = function(target, smooth) {
     this.showPanel(current);
 
   } else {
-    current = this.el.querySelector(target.getAttribute('href'));
+    current = this.el.querySelector(cssesc(target.getAttribute('href').substr(1), { 'isIdentifier': true }));
 
     for (panels=this.el.querySelectorAll('[role="tabpanel"]'), max=panels.length, i=0; i < max; i++) {
       if (target.getAttribute('href') === '#'+panels[i].id) {
@@ -417,7 +417,7 @@ Tabs.prototype.animateTabsScroll = function(curr, start, change, duration, incre
 Tabs.prototype.moveindex = function(index) {
   var panels, max, i;
 
-  this.movetab(index);
+  this.movetabpanel(index);
 
   for (panels=this.el.querySelectorAll('[role="tabpanel"]'), max=panels.length, i=0; i < max; i++) {
     if (index === i) {
@@ -428,7 +428,7 @@ Tabs.prototype.moveindex = function(index) {
   }
 };
 
-Tabs.prototype.movetab = function(index) {
+Tabs.prototype.movetabpanel = function(index) {
   var max, i, opts, panels, current;
 
   for (max=this.props.tabs.length, i=0; i < max; i++) {

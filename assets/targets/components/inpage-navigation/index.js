@@ -22,7 +22,7 @@ InpageNavigation.prototype.delegateScroll = function(e) {
     if (target) {
       if (target != '#' && target != '#sitemap') {
         e.preventDefault();
-        target = document.querySelector(target);
+        target = document.querySelector('#' + cssesc(target.substr(1), { 'isIdentifier': true }));
 
         var tabbed = findUp(e.target, 'data-tabbed');
         if (tabbed && !e.target.parentNode.parentNode.classList.contains('jump-navigation')) {
