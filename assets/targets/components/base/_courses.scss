@@ -275,6 +275,12 @@
     @include rem(padding-top, 15px);
   }
 
+  .left p {
+    @include rem(font-size, 13px);
+    margin: 0;
+    padding: 0;
+  }
+
   @include breakpoint(desktop) {
     @include rem(padding-left, 15px);
     @include rem(padding-right, 15px);
