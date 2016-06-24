@@ -264,8 +264,10 @@
   }
 }
 
-.uomcontent [role="main"] form.course-select {
+.uomcontent [role="main"] .course-select {
   @include filtered-listing-select;
+  @include rem(padding-left, 15px);
+  @include rem(padding-right, 15px);
   box-shadow: none;
 
   .left,
@@ -274,6 +276,8 @@
   }
 
   @include breakpoint(desktop) {
+    @include rem(padding-left, 15px);
+    @include rem(padding-right, 15px);
     display: table;
     width: 100%;
 
@@ -312,7 +316,7 @@
 }
 
 .ie .uomcontent [role="main"] {
-   form.course-select {
+   .course-select {
     @include clearfix;
 
     .left {
