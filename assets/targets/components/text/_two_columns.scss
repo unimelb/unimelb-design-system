@@ -1,4 +1,4 @@
-.uomcontent [role="main"] {
+.uomcontent {
 	.half {
     @include wrapper;
     @include rem(padding-bottom, 30px);
@@ -70,7 +70,7 @@
   }
 }
 
-.ie8 .uomcontent [role="main"] .half {
+.ie8 .uomcontent .half {
   display: table;
   max-width: $w-lge;
 
