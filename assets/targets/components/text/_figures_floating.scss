@@ -113,7 +113,6 @@
   }
 }
 
-
 body.jumpnav-active .uomcontent {
   .inset-left {
     @include breakpoint(wide) {
@@ -142,5 +141,15 @@ body.jumpnav-active .uomcontent {
       @include rem(margin-right, -180px);
       max-width: 80%;
     }
+  }
+}
+
+body .uomcontent .modal__dialog {
+  .inset-left {
+    margin-left: 0;
+  }
+
+  .inset-right {
+    margin-right: 0;
   }
 }
