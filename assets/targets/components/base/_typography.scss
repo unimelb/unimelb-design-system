@@ -370,6 +370,51 @@
     }
   }
 
+  // Nested aggregation
+  .nested ol {
+    counter-reset: section;
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+      list-style-type: none;
+      margin-left: 0;
+    }
+
+    li::before {
+      counter-increment: section;
+      content: counters(section,".") ". ";
+      padding-right: .4em;
+    }
+
+    ol {
+      padding: 1em 0 0;
+
+      li::before {
+        content: counters(section,".") " ";
+      }
+
+      &[type="a"],
+      &[type="i"] {
+        @include rem(padding-left, 42px);
+        @include rem(padding-top, 12px);
+
+        li::before {
+          display: none;
+        }
+      }
+
+      &[type="a"] li {
+        list-style-type: lower-latin;
+      }
+
+      &[type="i"] li {
+        list-style-type: lower-roman;
+      }
+
+    }
+  }
+
   ul {
   	li {
   		list-style-type: disc;
