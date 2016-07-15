@@ -2,17 +2,27 @@ table.zebra(data-sortable)
   thead
     tr
       th(scope="col") Preference
+      th(scope="col") Reverse
       th(scope="col") Offer made
+      th.right(scope="col") Retail Price
   tbody
     tr
       td 1
+      td 4
       td Yes
-    tr.highlight
+      td.right $29.99
+    tr
       td 2
+      td 3
       td No
+      td.right $9.99
     tr
       td 3
+      td 2
       td Yes
+      td.right $39.99
     tr
       td 4
-      td.highlight Yes
+      td 11
+      td Yes
+      td.right $109.99
