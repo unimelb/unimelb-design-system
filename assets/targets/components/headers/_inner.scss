@@ -1,7 +1,7 @@
 .uomcontent {
   header {
     .inner {
-      @extend %clearfix;
+      @include clearfix;
       @include rem(max-width, $w-lge);
       margin: 0 auto;
       width: 94%;

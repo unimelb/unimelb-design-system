@@ -8,7 +8,7 @@
 }
 
 .uomcontent [role="navigation"]#sitemap {
-  @extend %normalise;
+  @include normalise;
   background-color: $menu;
   color: $white;
   font-family: $ff-sans;
@@ -25,7 +25,7 @@
   z-index: 15;
 
   * {
-    @extend %normalise;
+    @include normalise;
   }
 
   &.active {
@@ -57,7 +57,7 @@
   }
 
   &.no-js {
-    @extend %wrapper;
+    @include wrapper;
     background-color: $navy;
     box-shadow: 0 0 0;
     display: block;

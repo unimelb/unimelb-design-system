@@ -1,6 +1,6 @@
 .uomcontent article.news {
-  @extend .detail;
-  @extend %clearfix;
+  @include detail;
+  @include clearfix;
   @include rem(max-width, $w-lge);
   @include padding-leader(2);
 
@@ -35,16 +35,16 @@
       list-style-type: none;
       padding: 0;
     }
-    
+
     /* sidebar headings */
     .news__meta-title {
       font-weight: $regular;
       font-style: italic;
     }
-    
+
     /* sidebar links that must not wrap (email, phone, url, etc.) */
     .news__nowrap {
-      @extend %ellipsis;
+      @include ellipsis;
     }
   }
 
@@ -148,7 +148,7 @@
       display: inline-block;
       max-width: none;
     }
-    
+
     .article {
       max-width: none;
     }
@@ -165,7 +165,7 @@
 
       aside {
         width: 100%;
-        
+
         div {
           text-align: center;
         }
@@ -184,7 +184,7 @@
       aside {
         @include rem(padding, 5px 30px 0);
         width: 24%;
-        
+
         div {
           text-align: right;
         }

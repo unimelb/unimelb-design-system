@@ -1,92 +1,108 @@
-.uomcontent {
-  .inset-left {
-    @include rem(margin-top, 6px);
-    float: none;
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 100%;
-    padding: 0;
+@mixin inset {
+  @include rem(margin-top, 6px);
+  float: none;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding: 0;
+  text-align: center;
+
+  figcaption {
+    @include rem(font-size, 14px);
+    @include rem(padding-bottom, 15px);
+    color: $midblue;
+    font-style: italic;
+    line-height: 1.2;
     text-align: center;
+  }
+
+  img,
+  svg {
+    @include rem(max-height, 500px);
+  }
+
+  @include breakpoint(tablet) {
+    @include rem(margin-bottom, 30px);
+    border: 0 none;
+    max-width: 62%;
 
     figcaption {
-      @include rem(font-size, 14px);
-      @include rem(padding-bottom, 15px);
-      color: $midblue;
-      font-style: italic;
-      line-height: 1.2;
-      text-align: center;
-    }
+      @include rem(margin-top, 15px);
+      @include rem(padding-top, 15px);
+      padding-bottom: 0;
+      position: relative;
 
-    img,
-    svg {
-      @include rem(max-height, 500px);
+      &:before {
+        @include rem(width, 40px);
+        border-bottom: 2px solid $midblue;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+      }
+
+      &::before {
+        @include rem(width, 40px);
+        border-bottom: 2px solid $midblue;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+      }
     }
+  }
+
+  @include breakpoint(wide) {
+    @include rem(margin-bottom, 20px);
+    max-width: 80%;
+  }
+}
+
+.uomcontent {
+  .inset-left {
+    @include inset;
 
     @include breakpoint(tablet) {
-      @include rem(margin-bottom, 30px);
       @include rem(margin-right, 30px);
-      border: 0 none;
       float: left;
-      max-width: 62%;
       text-align: left;
 
       figcaption {
-        @include rem(margin-top, 15px);
-        @include rem(padding-top, 15px);
-        padding-bottom: 0;
-        position: relative;
         text-align: left;
 
         &:before {
-          @include rem(width, 40px);
-          border-bottom: 2px solid $midblue;
-          content: '';
-          display: block;
-          left: 2px;
-          position: absolute;
-          top: 0;
+          left: 0;
         }
 
         &::before {
-          @include rem(width, 40px);
-          border-bottom: 2px solid $midblue;
-          content: '';
-          display: block;
-          left: 2px;
-          position: absolute;
-          top: 0;
+          left: 0;
         }
       }
     }
 
     @include breakpoint(wide) {
-      @include rem(margin-bottom, 20px);
       @include rem(margin-left, -180px);
-      max-width: 80%;
     }
   }
 
   .inset-right {
-    @extend .inset-left;
+    @include inset;
 
     @include breakpoint(tablet) {
       @include rem(margin-left, 30px);
       float: right;
-      margin-right: 0;
       text-align: right;
 
       figcaption {
         text-align: right;
 
         &:before {
-          left: auto;
-          right: -2px;
+          right: 0;
         }
 
         &::before {
-          left: auto;
-          right: -2px;
+          right: 0;
         }
       }
     }
@@ -96,7 +112,6 @@
     }
   }
 }
-
 
 body.jumpnav-active .uomcontent {
   .inset-left {
@@ -126,5 +141,15 @@ body.jumpnav-active .uomcontent {
       @include rem(margin-right, -180px);
       max-width: 80%;
     }
+  }
+}
+
+body .uomcontent .modal__dialog {
+  .inset-left {
+    margin-left: 0;
+  }
+
+  .inset-right {
+    margin-right: 0;
   }
 }

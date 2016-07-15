@@ -1,5 +1,5 @@
 .uomcontent .hero-listing {
-  @extend .feature-listing;
+  @include feature-listing;
   padding-left: 3%;
   padding-right: 3%;
   width: 94%;
@@ -31,7 +31,6 @@
 
   .inner {
     background-color: rgba($black, .6);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
     margin: 0;
     max-width: 100%;
     padding: 3%;
@@ -88,4 +87,8 @@ body.jumpnav-active .uomcontent .hero-listing {
   li {
     width: 100%;
   }
+}
+
+.ie .uomcontent .hero-listing .inner {
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
 }

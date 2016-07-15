@@ -8,7 +8,7 @@
       margin: 0 auto;
 
       h1 {
-        @extend .title;
+        @include title;
         @include adjust-font-size-to(15px);
         @include padding-leader(1);
         @include trailer(1);

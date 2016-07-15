@@ -1,76 +1,79 @@
-.uomcontent [role="main"] {
-	.half {
-    @extend %wrapper;
+@mixin half {
+  @include wrapper;
+  @include rem(padding-bottom, 30px);
+  @include rem(padding-top, 30px);
+  max-width: 100%;
+
+  h1 {
+    margin-left: 0;
+  }
+
+  em {
+    @include rem(font-size, 13px);
     @include rem(padding-bottom, 30px);
-    @include rem(padding-top, 30px);
-    max-width: 100%;
+    display: block;
+  }
+
+  img {
+    @include rem(margin-top, 30px);
+    @include rem(padding-left, 15px);
+    @include rem(padding-right, 15px);
+    max-width: 95%;
+    width: 100%;
+  }
+
+  // Override for specific behaviour
+  .staff-listing-detailed img {
+    padding: 0;
+  }
+
+  svg {
+    @include rem(margin-left, 15px);
+    @include rem(margin-right, 15px);
+  }
+
+  & > section {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+
+    &.tight {
+      padding: 0;
+    }
 
     h1 {
-      margin-left: 0;
-    }
-
-    em {
-      @include rem(font-size, 13px);
-      @include rem(padding-bottom, 30px);
-      display: block;
-    }
-
-    img {
-      @include rem(margin-top, 30px);
-      @include rem(padding-left, 15px);
-      @include rem(padding-right, 15px);
-      max-width: 95%;
       width: 100%;
     }
 
-    // Override for specific behaviour
-    .staff-listing-detailed img {
-      padding: 0;
-    }
-
-    svg {
-      @include rem(margin-left, 15px);
-      @include rem(margin-right, 15px);
-    }
-
-    & > section {
-      margin: 0;
-      padding: 0;
+    p {
+      max-width: 100%;
       width: 100%;
-
-      &.tight {
-        padding: 0;
-      }
-
-      h1 {
-        width: 100%;
-      }
-
-      p {
-        max-width: 100%;
-        width: 100%;
-      }
-
-      @include breakpoint(desktop) {
-        @include rem(padding, 30px 15px);
-        display: table-cell;
-        vertical-align: top;
-        width: 50%;
-
-        h2 {
-          margin-left: 0;
-        }
-      }
     }
 
     @include breakpoint(desktop) {
-      @include rem(max-width, $w-lge);
-      display: table;
+      @include rem(padding, 30px 15px);
+      display: table-cell;
+      vertical-align: top;
+      width: 50%;
+
+      h2 {
+        margin-left: 0;
+      }
     }
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(max-width, $w-lge);
+    display: table;
   }
 }
 
-.ie8 .uomcontent [role="main"] .half {
+.uomcontent .half,
+.uomcontent [role="main"] .half {
+  @include half;
+}
+
+.ie8 .uomcontent .half {
   display: table;
   max-width: $w-lge;
 
