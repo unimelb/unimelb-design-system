@@ -101,7 +101,3 @@ SortableTable.prototype.selectHeading = function(th) {
 };
 
 module.exports = SortableTable;
-
-//     for(var i=0, len=store.length; i<len; i++){
-//         tbl.appendChild(store[i][1]);
-//     }
