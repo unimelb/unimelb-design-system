@@ -11,6 +11,7 @@ function SortableTable(el, props) {
 
   this.setupData();
   this.props.selected = 0;
+  this.props.sortAs = '';
   this.setupHeadings();
 
   // Default, sort by first column
@@ -46,7 +47,14 @@ SortableTable.prototype.handleColClick = function(e) {
 
 SortableTable.prototype.sortByCol = function(th) {
   this.selectHeading(th);
+
+  if (th.hasAttribute('data-sort-as'))
+    this.props.sortAs = th.getAttribute('data-sort-as');
+
   this.store.sort(this.compare.bind(this));
+
+  this.props.sortAs = ''; // Clear override
+
   this.rewriteStore();
 };
 
@@ -55,16 +63,23 @@ SortableTable.prototype.compare = function(a, b) {
   atxt = a[this.props.selected].textContent.trim();
   btxt = b[this.props.selected].textContent.trim();
 
-  // Check for currency symbol, then drop and treat as number compare
-  if (['$', '¥', '£', '€'].some(function(el){return el === atxt.trim().charAt(0);})) {
-    atxt = parseFloat(atxt.substr(1));
-    btxt = parseFloat(btxt.substr(1));
-  }
+  // Check for override
+  if (this.props.sortAs != 'text') {
 
-  // If probably a number, explicitly convert to number before sort
-  if (atxt % 1 === 0 || parseFloat(atxt) === atxt) {
-    atxt = parseFloat(atxt);
-    btxt = parseFloat(btxt);
+    // Check for currency symbol, then drop and treat as number compare
+    if (['$', '¥', '£', '€'].some(function(el){return el === atxt.charAt(0);})) {
+      atxt = parseFloat(atxt.substr(1));
+      btxt = parseFloat(btxt.substr(1));
+    } else if (['$', '¥', '£', '€'].some(function(el){return el === atxt.charAt(atxt.length-1);})) {
+      atxt = parseFloat(atxt.substr(0, atxt.length-1));
+      btxt = parseFloat(btxt.substr(0, btxt.length-1));
+    }
+
+    // If probably a number, explicitly convert to number before sort
+    if (atxt % 1 === 0 || parseFloat(atxt) === atxt) {
+      atxt = parseFloat(atxt);
+      btxt = parseFloat(btxt);
+    }
   }
 
   if (atxt < btxt)
