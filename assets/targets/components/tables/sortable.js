@@ -10,7 +10,12 @@ function SortableTable(el, props) {
   this.props.tbody = this.el.querySelector('tbody');
 
   this.setupData();
+  this.props.selected = 0;
   this.setupHeadings();
+
+  // Default, sort by first column
+  this.sortByCol(this.props.cols[this.props.selected]);
+
   this.el.setAttribute('data-bound', true);
 }
 
@@ -32,33 +37,34 @@ SortableTable.prototype.setupHeadings = function() {
 
   // Bind click events
   for (var i=this.props.cols.length - 1; i >= 0; i--)
-    this.props.cols[i].addEventListener('click', this.sortByCol.bind(this));
-
-  // Select first column
-  this.props.selected = this.props.cols[0].innerText;
+    this.props.cols[i].addEventListener('click', this.handleColClick.bind(this));
 };
 
-SortableTable.prototype.sortByCol = function(e) {
-  this.selectHeading(e.target);
+SortableTable.prototype.handleColClick = function(e) {
+  this.sortByCol(e.target);
+};
+
+SortableTable.prototype.sortByCol = function(th) {
+  this.selectHeading(th);
   this.store.sort(this.compare.bind(this));
   this.rewriteStore();
 };
 
 SortableTable.prototype.compare = function(a, b) {
-  atxt = a[this.props.selected].textContent;
-  btxt = b[this.props.selected].textContent;
+  // Get text value of selected column, trim white space
+  atxt = a[this.props.selected].textContent.trim();
+  btxt = b[this.props.selected].textContent.trim();
 
-  if (atxt.trim().charAt(0) == '$') {
-    // Check for $ symbol, then drop and treat as number compare
+  // Check for currency symbol, then drop and treat as number compare
+  if (['$', '¥', '£', '€'].some(function(el){return el === atxt.trim().charAt(0);})) {
+    atxt = parseFloat(atxt.substr(1));
+    btxt = parseFloat(btxt.substr(1));
+  }
 
-    atxt = parseFloat(atxt.trim().substr(1));
-    btxt = parseFloat(btxt.trim().substr(1));
-
-  } else if (typeof atxt == 'number') {
-    // Explicitly convert to number
-
-    atxt = parseFloat(atxt.trim());
-    btxt = parseFloat(btxt.trim());
+  // If probably a number, explicitly convert to number before sort
+  if (atxt % 1 === 0 || parseFloat(atxt) === atxt) {
+    atxt = parseFloat(atxt);
+    btxt = parseFloat(btxt);
   }
 
   if (atxt < btxt)
@@ -67,19 +73,6 @@ SortableTable.prototype.compare = function(a, b) {
     return this.props.direction * 1;
   else
     return 0;
-};
-
-SortableTable.prototype.rewriteStore = function() {
-  this.props.tbody.innerHTML = '';
-
-  for (var rows=this.store.length - 1, i=rows; i >= 0; i--) {
-    var row = document.createElement('tr');
-    for (var cols=this.store[i].length - 1, j=cols; j >= 0; j--)
-      row.appendChild(this.store[rows-i][cols-j]);
-
-    this.props.tbody.appendChild(row);
-  }
-  window.UOMbind('tables');
 };
 
 SortableTable.prototype.selectHeading = function(th) {
@@ -91,13 +84,28 @@ SortableTable.prototype.selectHeading = function(th) {
     this.props.cols[i].classList.remove('asc');
     this.props.cols[i].classList.remove('desc');
 
-    if (this.props.cols[i].textContent == th.textContent ||
-        this.props.cols[i].innerText == th.innerText)
+    if (this.props.cols[i].textContent == th.textContent)
       this.props.selected = i;
   }
 
   th.classList.add(ord);
   this.props.direction = ord == 'asc' ? 1 : -1;
+};
+
+SortableTable.prototype.rewriteStore = function() {
+  // Clear table data
+  this.props.tbody.innerHTML = '';
+
+  for (var rows=this.store.length - 1, i=rows; i >= 0; i--) {
+    var row = document.createElement('tr');
+    for (var cols=this.store[i].length - 1, j=cols; j >= 0; j--)
+      row.appendChild(this.store[rows-i][cols-j]);
+
+    this.props.tbody.appendChild(row);
+  }
+
+  // Rebind mobile labels
+  window.UOMbind('tables');
 };
 
 module.exports = SortableTable;
