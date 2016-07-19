@@ -32,13 +32,35 @@ SortableTable.prototype.setupData = function() {
   }
 };
 
+SortableTable.prototype.selectWithKeyboard = function(e) {
+  // Use window.event if available
+  if (typeof e === 'undefined' && window.event) {
+    e = window.event;
+  }
+
+  // Trigger click on ENTER (13)
+  if (e.keyCode == 13) {
+    document.activeElement.click();
+  }
+};
+
 SortableTable.prototype.setupHeadings = function() {
   var thead = this.el.querySelector('thead');
   this.props.cols = thead.querySelectorAll('th');
 
   // Bind click events
-  for (var i=this.props.cols.length - 1; i >= 0; i--)
+  for (var i=this.props.cols.length - 1; i >= 0; i--) {
     this.props.cols[i].addEventListener('click', this.handleColClick.bind(this));
+
+    if (!this.props.cols[i].hasAttribute('tabindex'))
+      this.props.cols[i].setAttribute('tabindex', 1);
+
+    if ('onkeydown' in window.window)
+      window.addEventListener('keydown', this.selectWithKeyboard);
+
+    if (window.attachEvent) // IE 10 down
+      window.attachEvent('KeyboardEvent', this.selectWithKeyboard);
+  }
 };
 
 SortableTable.prototype.handleColClick = function(e) {
