@@ -63,6 +63,15 @@
     th {
       cursor: pointer;
     }
+
+    th.right:last-child {
+      @include rem(padding-left, 20px);
+    }
+    th.right.asc:last-child,
+    th.right.desc:last-child {
+      @include rem(padding-left, 10px);
+      @include rem(padding-right, 20px);
+    }
   }
 
   .right {

@@ -53,7 +53,7 @@ SortableTable.prototype.setupHeadings = function() {
     this.props.cols[i].addEventListener('click', this.handleColClick.bind(this));
 
     if (!this.props.cols[i].hasAttribute('tabindex'))
-      this.props.cols[i].setAttribute('tabindex', 1);
+      this.props.cols[i].setAttribute('tabindex', 0);
 
     if ('onkeydown' in window.window)
       window.addEventListener('keydown', this.selectWithKeyboard);
