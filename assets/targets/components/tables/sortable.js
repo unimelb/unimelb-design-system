@@ -130,10 +130,13 @@ SortableTable.prototype.selectHeading = function(th) {
 };
 
 SortableTable.prototype.rewriteStore = function() {
-  // Clear table data
-  this.props.tbody.innerHTML = '';
+  var rows;
 
-  for (var rows=this.store.length - 1, i=rows; i >= 0; i--) {
+  // Clean up old rows
+  for (rows=this.props.tbody.querySelectorAll('tr'), i=rows.length - 1; i >= 0; i--)
+    this.props.tbody.removeChild(rows[i]);
+
+  for (rows=this.store.length - 1, i=rows; i >= 0; i--) {
     var row = document.createElement('tr');
     for (var cols=this.store[i].length - 1, j=cols; j >= 0; j--)
       row.appendChild(this.store[rows-i][cols-j]);
