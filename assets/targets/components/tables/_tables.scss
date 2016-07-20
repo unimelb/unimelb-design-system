@@ -47,6 +47,42 @@
 .uomcontent [role="main"] table.mobile-friendly {
   border-collapse: collapse;
 
+  th.asc::after {
+    @include rem(padding-left, 3px);
+    content: '\25B2';
+    position: absolute;
+  }
+
+  th.desc::after {
+    @include rem(padding-left, 3px);
+    content: '\25BC';
+    position: absolute;
+  }
+
+  &[data-sortable] {
+    th {
+      cursor: pointer;
+    }
+
+    th.right:last-child {
+      @include rem(padding-left, 20px);
+    }
+    th.right.asc:last-child,
+    th.right.desc:last-child {
+      @include rem(padding-left, 10px);
+      @include rem(padding-right, 20px);
+    }
+  }
+
+  .right {
+    text-align: right;
+  }
+
+  .highlight,
+  &.zebra tr:nth-child(odd) .highlight {
+    background-color: darken($paleblue, 5%);
+  }
+
   &.staff-listing {
     border: 0;
 

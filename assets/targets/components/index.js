@@ -55,9 +55,18 @@ window.UOMbind = function(component) {
 
   } else if (component === 'tables') {
     attachment = 'table';
-  }
 
-  else if (component === 'announcement') {
+  // Non-index file
+  } else if (component === 'sortable-table') {
+    recs = document.querySelectorAll('table[data-sortable]');
+    if (recs.length > 0) {
+      Base = require('./tables/sortable.js');
+      for (i=recs.length - 1; i >= 0; i--)
+        new Base(recs[i], {});
+    }
+
+  // Different setup proc
+  } else if (component === 'announcement') {
     var Accouncement = require('../injection/announcement/index.es6');
     new Accouncement({});
   }
@@ -136,6 +145,8 @@ window.UOMloadComponents = function() {
 
   window.UOMbind('filtered-listings');
   window.UOMbind('icons');
+
+  window.UOMbind('sortable-table');
 
   // IE9+
   if (MSIE_version > 8) {
