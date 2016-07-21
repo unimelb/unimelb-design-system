@@ -1,0 +1,114 @@
+@import '../../shared/globals';
+@import '../../shared/patterns_rem';
+
+@keyframes appear-bottom {
+  from { transform: translateY(100%); }
+}
+
+.uom-prompt {
+  animation: appear-bottom .5s backwards;
+  background-color: $lighterblue;
+  color: #fff;
+  bottom: 0;
+  color: #fff;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  left: 0;
+  line-height: 1.5;
+  padding: 16px;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  z-index: 1000;
+
+  &[hidden] {
+    display: none;
+  }
+
+  button {
+    background: none transparent;
+    border: 0;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    margin: 0;
+    outline-offset: 1px;
+    padding: 0;
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+
+    &:-moz-focusring {
+      outline: 1px dotted currentColor;
+    }
+  }
+
+  &__dismiss {
+    border: 0;
+    border-radius: 4px;
+    background: none;
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 0;
+    transition: color .15s, background-color .15s;
+
+    & > svg {
+      display: block;
+      fill: currentColor;
+      margin: 8px;
+    }
+
+    &:hover {
+      color: $lighterblue;
+      background-color: #fff;
+    }
+  }
+
+  &__content {
+    p {
+      font-size: 18px;
+      margin: 0 0 16px;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0 16px;
+      padding: 0;
+      vertical-align: top;
+
+      & > a,
+      & > button {
+        border: 2px solid #fff;
+        border-radius: 4px;
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        letter-spacing: .5px;
+        min-width: 160px;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: color .15s, background-color .15s;
+
+        &:hover {
+          color: $lighterblue;
+          background-color: #fff;
+        }
+      }
+
+      & > a {
+        color: inherit;
+        outline-offset: 1px;
+      }
+    }
+  }
+}
