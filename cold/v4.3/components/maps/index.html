@@ -1,0 +1,183 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Maps | Web.Unimelb </title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><link href="/favicon.ico" rel="icon" type="image/x-icon" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><link href="//d2h9b02ioca40d.cloudfront.net/v4.3/uom.css" rel="stylesheet" /><script src="//d2h9b02ioca40d.cloudfront.net/v4.3/uom.js"></script><link href="/assets/lib/docs.css" rel="stylesheet" /><link href="/assets/lib/highlight.css" rel="stylesheet" /><script src="/assets/lib/highlight.pack.js"></script><link href="/assets/lib/ace.extra.css" rel="stylesheet" /><link href="/assets/lib/verselect.css" rel="stylesheet" /><script src="/assets/lib/verselect.js"></script></head><body data-version="v4.3"><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Maps"><span itemprop="name">Maps</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">Maps</h1><div class="jumpnav"></div>
+
+<h2 id="simplegmap">Simple Google maps</h2>
+
+<p>Adding a map to a page is a great way to describe a location in addition to a text-based description. This component uses the Google Maps API to embed a functional google map into one of your pages easily.</p>
+
+<p>To use the Maps component, you will need to know the latitude and longitude of the location you are looking to map. These can be found easily using <a href="http://maps.google.com">Google Maps</a> (the latitude and longitude can be found in the url) or a service like <a href="http://itouchmap.com/latlong.html">itouchmap.com</a>.</p>
+
+<p>This implementation is for basic mapping only, anything complex or requiring some level of interaction should work directly on the <a href="https://developers.google.com/maps/">Google Maps API</a> in a custom JS script.</p>
+
+<h2>New! Open Street Maps</h2>
+
+<p>We also provide <a href="#openstreetmap">an alternative</a> for use with the community-curated Open Street Maps data, using the open source Leaflet.js.</p>
+
+<h2>New! Geocoding</h2>
+
+<p>There is now <a href="#geocode">a method</a> for generating a map directly from an address searched against Google Maps, rather than lat lng coordinates.</p>
+<hr /><h2 id="basic-example">Basic example</h2><div id="r1"><section>
+  <div class="map-canvas" data-latlng="-37.798535, 144.960605"></div>
+</section></div>
+    <section class="code">
+      <pre class="html" id="s1">
+&lt;section&gt;
+  &lt;div class="map-canvas" data-latlng="-37.798535, 144.960605"&gt;&lt;/div&gt;
+&lt;/section&gt;
+      </pre>
+    </section>
+<hr /><h2 id="height-width-and-zoom">Height width and zoom</h2><div id="r2"><section>
+  <div class="map-canvas" data-height="400" data-latlng="-37.798535, 144.960605" data-width="600" data-zoom="17"></div>
+</section></div>
+    <section class="code">
+      <pre class="html" id="s2">
+&lt;section&gt;
+  &lt;div class="map-canvas" data-height="400" data-latlng="-37.798535, 144.960605" data-width="600" data-zoom="17"&gt;&lt;/div&gt;
+&lt;/section&gt;
+      </pre>
+    </section>
+<hr /><h2 id="grayscale">Grayscale</h2><div id="r3"><section>
+  <div class="map-canvas" data-grayscale="" data-latlng="-37.798535, 144.960605"></div>
+</section></div>
+    <section class="code">
+      <pre class="html" id="s3">
+&lt;section&gt;
+  &lt;div class="map-canvas" data-grayscale="" data-latlng="-37.798535, 144.960605"&gt;&lt;/div&gt;
+&lt;/section&gt;
+      </pre>
+    </section>
+<hr /><h2 id="pins">Pins</h2><div id="r4"><p>You can add multiple pins to the map by separating their coordinates with pipes (<code>|</code>) inside the <code>data-pin</code> attribute.
+</p>
+<section>
+  <div class="map-canvas" data-latlng="-37.798535, 144.960605" data-pin="-37.798535, 144.960605|-37.798048, 144.960946"></div>
+</section></div>
+    <section class="code">
+      <pre class="html" id="s4">
+&lt;p&gt;You can add multiple pins to the map by separating their coordinates with pipes (&lt;code&gt;|&lt;/code&gt;) inside the &lt;code&gt;data-pin&lt;/code&gt; attribute.
+&lt;/p&gt;
+&lt;section&gt;
+  &lt;div class="map-canvas" data-latlng="-37.798535, 144.960605" data-pin="-37.798535, 144.960605|-37.798048, 144.960946"&gt;&lt;/div&gt;
+&lt;/section&gt;
+      </pre>
+    </section>
+<hr /><h2 id="geocode">Geocode</h2><div id="r5"><section>
+  <div class="map-canvas" data-address="780 Elizabeth St, Parkville"></div>
+</section></div>
+    <section class="code">
+      <pre class="html" id="s5">
+&lt;section&gt;
+  &lt;div class="map-canvas" data-address="780 Elizabeth St, Parkville"&gt;&lt;/div&gt;
+&lt;/section&gt;
+      </pre>
+    </section>
+<hr /><h2 id="all-options">All options</h2><div id="r6"><section>
+  <div class="map-canvas" data-address="780 Elizabeth St, Parkville" data-grayscale="" data-height="400" data-pin="-37.798535, 144.960605" data-width="600" data-zoom="17"></div>
+</section></div>
+    <section class="code">
+      <pre class="html" id="s6">
+&lt;section&gt;
+  &lt;div class="map-canvas" data-address="780 Elizabeth St, Parkville" data-grayscale="" data-height="400" data-pin="-37.798535, 144.960605" data-width="600" data-zoom="17"&gt;&lt;/div&gt;
+&lt;/section&gt;
+      </pre>
+    </section>
+<hr /><h2 id="openstreetmap">Openstreetmap</h2><div id="r7"><section>
+  <div class="map-canvas" data-leaflet-latlng="-37.798535, 144.960605" data-pin="-37.798535, 144.960605|-37.798048, 144.960946" data-zoom="17"></div>
+</section></div>
+    <section class="code">
+      <pre class="html" id="s7">
+&lt;section&gt;
+  &lt;div class="map-canvas" data-leaflet-latlng="-37.798535, 144.960605" data-pin="-37.798535, 144.960605|-37.798048, 144.960946" data-zoom="17"&gt;&lt;/div&gt;
+&lt;/section&gt;
+      </pre>
+    </section>
+<p>The above component provides a simple alternative to google maps, using Leaflet.js with Open Street Map data.</p>
+
+<p>To use this provider instead, use the attr <code>data-leaflet-latlng</code> instead of <code>data-latlng</code> used in the google examples.</p>
+
+<p>Differences to the gmap: height and width are not needed (this map will expand to fill its container), and there is no grayscale option at the moment. <code>data-pin</code> and <code>data-zoom</code> will work as expected.</p>
+<hr />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+      <script>
+        var e1 = ace.edit("s1");
+        e1.setTheme("ace/theme/github");
+        e1.session.setMode("ace/mode/html");
+        e1.getSession().setTabSize(2);
+        e1.getSession().setUseSoftTabs(true);
+        e1.getSession().on("change", function(e){
+          document.getElementById("r1").innerHTML = e1.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e2 = ace.edit("s2");
+        e2.setTheme("ace/theme/github");
+        e2.session.setMode("ace/mode/html");
+        e2.getSession().setTabSize(2);
+        e2.getSession().setUseSoftTabs(true);
+        e2.getSession().on("change", function(e){
+          document.getElementById("r2").innerHTML = e2.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e3 = ace.edit("s3");
+        e3.setTheme("ace/theme/github");
+        e3.session.setMode("ace/mode/html");
+        e3.getSession().setTabSize(2);
+        e3.getSession().setUseSoftTabs(true);
+        e3.getSession().on("change", function(e){
+          document.getElementById("r3").innerHTML = e3.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e4 = ace.edit("s4");
+        e4.setTheme("ace/theme/github");
+        e4.session.setMode("ace/mode/html");
+        e4.getSession().setTabSize(2);
+        e4.getSession().setUseSoftTabs(true);
+        e4.getSession().on("change", function(e){
+          document.getElementById("r4").innerHTML = e4.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e5 = ace.edit("s5");
+        e5.setTheme("ace/theme/github");
+        e5.session.setMode("ace/mode/html");
+        e5.getSession().setTabSize(2);
+        e5.getSession().setUseSoftTabs(true);
+        e5.getSession().on("change", function(e){
+          document.getElementById("r5").innerHTML = e5.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e6 = ace.edit("s6");
+        e6.setTheme("ace/theme/github");
+        e6.session.setMode("ace/mode/html");
+        e6.getSession().setTabSize(2);
+        e6.getSession().setUseSoftTabs(true);
+        e6.getSession().on("change", function(e){
+          document.getElementById("r6").innerHTML = e6.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e7 = ace.edit("s7");
+        e7.setTheme("ace/theme/github");
+        e7.session.setMode("ace/mode/html");
+        e7.getSession().setTabSize(2);
+        e7.getSession().setUseSoftTabs(true);
+        e7.getSession().on("change", function(e){
+          document.getElementById("r7").innerHTML = e7.getValue();
+          UOMloadComponents();
+        });
+      </script>
+<hr /></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>

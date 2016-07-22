@@ -1,0 +1,219 @@
+<!DOCTYPE html><html class="no-js" lang="en"><head><meta charset="utf-8" /><meta content="width=device-width, initial-scale=1.0" name="viewport" /><meta content="IE=edge" http-equiv="X-UA-Compatible" /><title>Modal | Web.Unimelb </title><link href="/favicon-152.png" rel="apple-touch-icon-precomposed" /><link href="/favicon.ico" rel="icon" type="image/x-icon" /><!--[if lt IE 9]><script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]--><link href="//d2h9b02ioca40d.cloudfront.net/v4.3/uom.css" rel="stylesheet" /><script src="//d2h9b02ioca40d.cloudfront.net/v4.3/uom.js"></script><link href="/assets/lib/docs.css" rel="stylesheet" /><link href="/assets/lib/highlight.css" rel="stylesheet" /><script src="/assets/lib/highlight.pack.js"></script><link href="/assets/lib/ace.extra.css" rel="stylesheet" /><link href="/assets/lib/verselect.css" rel="stylesheet" /><script src="/assets/lib/verselect.js"></script></head><body data-version="v4.3"><div class="uomcontent"><div class="page-inner"><ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList"><li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Web.Unimelb</span></a><meta content="1" itemprop="position" /></li><li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/components" itemprop="item" title="Components"><span itemprop="name">Components</span></a><meta content="2" itemprop="position" /></li><li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="" itemprop="item" title="Modal"><span itemprop="name">Modal</span></a><meta content="3" itemprop="position" /></li></ol><div role="main"><div class="headerless"></div><h1 class="aligned-title">Modal</h1><div class="jumpnav"></div>
+
+<h2>Overview</h2>
+
+<p>A simple two&ndash;part modal component, with a triggering link and a modal container. Features:</p>
+
+<ul>
+<li>Will scroll and resize (mobile safe)</li>
+<li>May contain any amount and type of content</li>
+<li>Close button inserted automatically</li>
+<li>Clicking on the blanket (overlay) closes the modal</li>
+<li>Multiple modals allowed on the same page</li>
+</ul>
+
+<h2>Positioning</h2>
+
+<p>By default, the modal dialog is positioned at the center of the viewport. You may force the modal to appear 160px above the link by adding attribute <code>data-modal-offset</code> to the triggering link.</p>
+
+<h2>Options</h2>
+
+<ul class="nobullet">
+  <li><code>data-modal-target</code> &ndash; ID of modal to trigger <small>required</small></li>
+  <li><code>data-modal-offset</code> &ndash; Forces the modal dialog to appear 160px above the triggering link (no value needed) <small>optional</small></li>
+</ul>
+<hr /><h2 id="default-modal">Default modal</h2><div id="r1"><p>
+  <a class="button" data-modal-target="test-modal" href="#">Test the modal</a>
+</p>
+<div class="modal__dialog" id="test-modal">
+  <h1>
+    Here it is
+  </h1>
+  <p>
+    The modal box, you can put whatever you want in it.
+  </p>
+</div>
+<p>
+  Or a <a data-modal-target="test-modal" href="#">normal text link</a>
+</p></div>
+    <section class="code">
+      <pre class="html" id="s1">
+&lt;p&gt;
+  &lt;a class="button" data-modal-target="test-modal" href="#"&gt;Test the modal&lt;/a&gt;
+&lt;/p&gt;
+&lt;div class="modal__dialog" id="test-modal"&gt;
+  &lt;h1&gt;
+    Here it is
+  &lt;/h1&gt;
+  &lt;p&gt;
+    The modal box, you can put whatever you want in it.
+  &lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;
+  Or a &lt;a data-modal-target="test-modal" href="#"&gt;normal text link&lt;/a&gt;
+&lt;/p&gt;
+      </pre>
+    </section>
+<hr /><h2 id="offset-positioning">Offset positioning</h2><div id="r2"><p>
+  <a class="button" data-modal-offset="" data-modal-target="test-modal2" href="#">Open a different modal</a>
+</p>
+<div class="modal__dialog" id="test-modal2">
+  <h1>
+    Here is another modal
+  </h1>
+  <p>
+    You can also click outside the modal to close it
+  </p>
+  <p>
+    <img alt="" src="http://placeimg.com/400/300/arch" />
+  </p>
+</div></div>
+    <section class="code">
+      <pre class="html" id="s2">
+&lt;p&gt;
+  &lt;a class="button" data-modal-offset="" data-modal-target="test-modal2" href="#"&gt;Open a different modal&lt;/a&gt;
+&lt;/p&gt;
+&lt;div class="modal__dialog" id="test-modal2"&gt;
+  &lt;h1&gt;
+    Here is another modal
+  &lt;/h1&gt;
+  &lt;p&gt;
+    You can also click outside the modal to close it
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;img alt="" src="http://placeimg.com/400/300/arch" /&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+      </pre>
+    </section>
+<hr /><h2 id="inset-within-modal">Inset within modal</h2><div id="r3"><table class="zebra">
+  <thead>
+    <tr>
+      <th width="40%">
+        Academic
+      </th>
+      <th width="60%">
+        Research Group
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <a data-modal-target="floating-test-modal" href="#">Associate Professor Jane Academic</a>
+      </td>
+      <td>
+        Rockets
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div class="modal__dialog" id="floating-test-modal">
+  <section class="with-figure">
+    <figure class="inset-right" role="group">
+      <img alt="Associate Professor Jane Academic" src="//placeimg.com/200/200/people" width="200" />
+    </figure>
+    <h1>
+      Associate Professor Jane Academic
+    </h1>
+    <h2>
+      Associate Professor &amp; Reader
+    </h2>
+    <p>
+      <br /><strong>Email</strong><br /><a href="mailto:null">not-a-real-person@unimelb.edu.au</a><br /><strong>Location</strong><br />Room 267, Chemistry Building, Parkville Campus<br /><strong>Address</strong><br />School of Chemistry, The University of Melbourne, Victoria, 3010, Australia<br /><strong>Phone</strong><br />+61 3 9999 0000
+    </p>
+  </section>
+  <p>
+    <a class="button-small cta" href="http://www.unimelb.edu.au/" target="_blank" title="Academic Research Group">Research Group</a>
+  </p>
+  <p>
+    <a class="button-small brand" href="http://www.findanexpert.unimelb.edu.au" target="_blank">Find An Expert</a>
+  </p>
+</div></div>
+    <section class="code">
+      <pre class="html" id="s3">
+&lt;table class="zebra"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th width="40%"&gt;
+        Academic
+      &lt;/th&gt;
+      &lt;th width="60%"&gt;
+        Research Group
+      &lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;
+        &lt;a data-modal-target="floating-test-modal" href="#"&gt;Associate Professor Jane Academic&lt;/a&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+        Rockets
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;div class="modal__dialog" id="floating-test-modal"&gt;
+  &lt;section class="with-figure"&gt;
+    &lt;figure class="inset-right" role="group"&gt;
+      &lt;img alt="Associate Professor Jane Academic" src="//placeimg.com/200/200/people" width="200" /&gt;
+    &lt;/figure&gt;
+    &lt;h1&gt;
+      Associate Professor Jane Academic
+    &lt;/h1&gt;
+    &lt;h2&gt;
+      Associate Professor &amp; Reader
+    &lt;/h2&gt;
+    &lt;p&gt;
+      &lt;br /&gt;&lt;strong&gt;Email&lt;/strong&gt;&lt;br /&gt;&lt;a href="mailto:null"&gt;not-a-real-person@unimelb.edu.au&lt;/a&gt;&lt;br /&gt;&lt;strong&gt;Location&lt;/strong&gt;&lt;br /&gt;Room 267, Chemistry Building, Parkville Campus&lt;br /&gt;&lt;strong&gt;Address&lt;/strong&gt;&lt;br /&gt;School of Chemistry, The University of Melbourne, Victoria, 3010, Australia&lt;br /&gt;&lt;strong&gt;Phone&lt;/strong&gt;&lt;br /&gt;+61 3 9999 0000
+    &lt;/p&gt;
+  &lt;/section&gt;
+  &lt;p&gt;
+    &lt;a class="button-small cta" href="http://www.unimelb.edu.au/" target="_blank" title="Academic Research Group"&gt;Research Group&lt;/a&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;a class="button-small brand" href="http://www.findanexpert.unimelb.edu.au" target="_blank"&gt;Find An Expert&lt;/a&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+      </pre>
+    </section>
+<hr />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+
+      <script>
+        var e1 = ace.edit("s1");
+        e1.setTheme("ace/theme/github");
+        e1.session.setMode("ace/mode/html");
+        e1.getSession().setTabSize(2);
+        e1.getSession().setUseSoftTabs(true);
+        e1.getSession().on("change", function(e){
+          document.getElementById("r1").innerHTML = e1.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e2 = ace.edit("s2");
+        e2.setTheme("ace/theme/github");
+        e2.session.setMode("ace/mode/html");
+        e2.getSession().setTabSize(2);
+        e2.getSession().setUseSoftTabs(true);
+        e2.getSession().on("change", function(e){
+          document.getElementById("r2").innerHTML = e2.getValue();
+          UOMloadComponents();
+        });
+      </script>
+
+      <script>
+        var e3 = ace.edit("s3");
+        e3.setTheme("ace/theme/github");
+        e3.session.setMode("ace/mode/html");
+        e3.getSession().setTabSize(2);
+        e3.getSession().setUseSoftTabs(true);
+        e3.getSession().on("change", function(e){
+          document.getElementById("r3").innerHTML = e3.getValue();
+          UOMloadComponents();
+        });
+      </script>
+<hr /></div><div class="no-js" id="sitemap" role="navigation"><h2>Web.Unimelb</h2><ul><li><a href="/content-creators">For Content Creators</a></li><li><a href="/designers">For Designers</a></li><li><a href="/getting-started">Getting started</a></li><li><a href="/layouts">Page Templates</a></li><li><a href="/components">Component reference</a></li></ul><ul class="meta"><li><a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">Report an Issue</a></li></ul></div></div></div></body></html>
