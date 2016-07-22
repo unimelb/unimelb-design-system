@@ -4,7 +4,7 @@ const STORAGE_KEY = 'uomPromptRetry';
 
 function renderPrompt(root, content, opts) {
   // Don't render the prompt if localStorage is not supported
-  if (!window.localStorage) {
+  if (!window.localStorage || !document.querySelectorAll) {
     return;
   }
 
@@ -35,7 +35,7 @@ function renderPrompt(root, content, opts) {
   }, opts.delay);
 
   // Hide prompt when any dismiss button is pressed
-  const btns = [].slice.call(document.getElementsByTagName('button'));
+  const btns = [].slice.call(document.querySelectorAll('button, li a'));
   const handler = createHandler(prompt, btns);
   for (let btn of btns) {
     btn.addEventListener('click', handler);
