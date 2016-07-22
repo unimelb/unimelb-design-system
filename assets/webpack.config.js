@@ -15,6 +15,12 @@ var BUILD   = path.join(__dirname, "..", "build");
 
 // Plugins
 var plugins = [
+  new webpack.DefinePlugin({
+    'process.env': {
+      CDNURL: JSON.stringify(process.env.CDNURL),
+      GMAPSJSAPIKEY: JSON.stringify(process.env.GMAPSJSAPIKEY)
+    }
+  }),
   new ExtractTextPlugin("[name].css", {
     allChunks: true
   })

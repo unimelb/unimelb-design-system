@@ -87,7 +87,7 @@ window.UOMloadComponents = function() {
   "use strict";
 
   var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect, Flash,
-    ImageGallery, imagesLoaded, slingshot, style, script;
+    ImageGallery, imagesLoaded, slingshot, style, script, keyscript;
 
   window.UOMbind('accordion');
   window.UOMbind('modal');
@@ -191,7 +191,7 @@ window.UOMloadComponents = function() {
     if (typeof(google) === 'undefined') {
       script = document.createElement("script");
       script.type = "text/javascript";
-      script.src = "https://maps.googleapis.com/maps/api/js?callback=maps_loaded_go";
+      script.src = "https://maps.googleapis.com/maps/api/js?key=" + process.env.GMAPSJSAPIKEY + "&callback=maps_loaded_go";
       document.body.appendChild(script);
     } else {
       maps_loaded_go();
@@ -201,7 +201,7 @@ window.UOMloadComponents = function() {
 
 // GMaps callback
 window.maps_loaded_go = function() {
-  var GMaps = require("./maps/gmaps");
+  var GMaps = require("./maps/gmaps.es6");
   for (var recs = document.querySelectorAll('[data-latlng],[data-address]'), i=recs.length - 1; i >= 0; i--)
     new GMaps(recs[i], {counter: i});
 };
