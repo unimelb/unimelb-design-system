@@ -13,22 +13,19 @@ function GMaps(el, props) {
   this.props.zoom = parseInt(this.el.getAttribute('data-zoom')) || 17;
   this.props.pins = this.el.getAttribute('data-pin');
 
-  if (this.el.hasAttribute('data-latlng')) {
-    // ES6 ;_; [this.props.lat, this.props.lng] = this.el.getAttribute('data-latlng').split(',');
-    var ll = this.el.getAttribute('data-latlng').split(',');
-    this.props.latlng = new google.maps.LatLng(ll[0], ll[1]);
+  if (this.el.hasAttribute('data-address'))
+    this.geolookup();
 
+  else if (this.el.hasAttribute('data-latlng')) {
+    var [lat, lng] = this.el.getAttribute('data-latlng').split(',');
     this.props.options = {
-      center:      this.props.latlng,
+      center:      new google.maps.LatLng(lat, lng),
       zoom:        this.props.zoom,
       scrollwheel: false,
       mapTypeId:   google.maps.MapTypeId.ROADMAP
     };
     this.draw();
   }
-
-  if (this.el.hasAttribute('data-address'))
-    this.geolookup();
 }
 
 GMaps.prototype.draw = function() {
