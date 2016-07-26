@@ -371,10 +371,20 @@
   }
 
   // Nested aggregation
-  .nested ol {
+  ol.nested {
     counter-reset: section;
     list-style-type: none;
-    padding-left: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 94%;
+
+    ol {
+      counter-reset: section;
+      list-style-type: none;
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+    }
 
     li {
       list-style-type: none;
@@ -412,6 +422,40 @@
         list-style-type: lower-roman;
       }
 
+    }
+  }
+
+  ol.brackets {
+    counter-reset: list1;
+
+    li {
+      list-style: none;
+      position: relative;
+    }
+
+    &[type="a"] {
+      counter-reset: lista;
+
+      li::before {
+        content: '(' counter(lista, lower-alpha) ') ';
+        counter-increment: lista;
+      }
+    }
+
+    &[type="i"] {
+      counter-reset: listi;
+
+      li::before {
+        content: '(' counter(listi, lower-roman) ') ';
+        counter-increment: listi;
+      }
+    }
+
+    li::before {
+      content: '(' counter(list1, decimal) ') ';
+      counter-increment: list1;
+      left: -1.6em;
+      position: absolute;
     }
   }
 
