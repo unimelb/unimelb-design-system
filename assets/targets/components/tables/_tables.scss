@@ -47,16 +47,39 @@
 .uomcontent [role="main"] table.mobile-friendly {
   border-collapse: collapse;
 
-  th.asc::after {
+  th .sortable {
     @include rem(padding-left, 3px);
+    display: inline-block;
+    font-size: .6em;
+    position: relative;
+    visibility: visible;
+
+    &::before {
+      content: '\25B2';
+      margin-top: -1.7em;
+      position: absolute;
+    }
+
+    &::after {
+      content: '\25BC';
+      margin-top: -.8em;
+      position: absolute;
+    }
+  }
+
+  th.asc::after {
     content: '\25B2';
     position: absolute;
   }
 
   th.desc::after {
-    @include rem(padding-left, 3px);
     content: '\25BC';
     position: absolute;
+  }
+
+  th.asc .sortable,
+  th.desc .sortable {
+    visibility: hidden;
   }
 
   &[data-sortable] {
