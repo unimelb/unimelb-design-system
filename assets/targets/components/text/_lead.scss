@@ -80,6 +80,7 @@
   }
 
   &.left {
+    @include rem(max-width, $w-sml);
     padding-top: 0;
 
     & + p {
