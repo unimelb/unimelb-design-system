@@ -55,6 +55,10 @@ SortableTable.prototype.setupHeadings = function() {
     if (!this.props.cols[i].hasAttribute('tabindex'))
       this.props.cols[i].setAttribute('tabindex', 0);
 
+    var place = document.createElement('span');
+    place.classList.add('sortable');
+    this.props.cols[i].appendChild(place);
+
     if ('onkeydown' in window.window)
       window.addEventListener('keydown', this.selectWithKeyboard);
 
@@ -64,7 +68,13 @@ SortableTable.prototype.setupHeadings = function() {
 };
 
 SortableTable.prototype.handleColClick = function(e) {
-  this.sortByCol(e.target);
+  var col = e.target;
+
+  // Check for indicator span
+  if (col.classList.contains('sortable'))
+    col = col.parentNode;
+
+  this.sortByCol(col);
 };
 
 SortableTable.prototype.sortByCol = function(th) {
