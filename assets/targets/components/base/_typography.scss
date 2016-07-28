@@ -223,108 +223,50 @@
     }
 
     @include inner-list-reset;
+
+    // Remove bottom padding for inner lists
+    ol,
+    ul {
+      padding-bottom: 0;
+    }
   }
 
   ol {
     @include rem(padding-left, 30px);
 
-    &[type="\a"] li {
+    &[type="a"] li {
       list-style-type: lower-alpha;
 
-      ol[type="\A"] li {
-        list-style-type: upper-alpha;
-      }
-
       ol[type="1"] li {
         list-style-type: decimal;
       }
 
-      ol[type="\i"] li {
+      ol[type="i"] li {
         list-style-type: lower-roman;
-      }
-
-      ol[type="\I"] li {
-        list-style-type: upper-roman;
       }
     }
 
-    &[type="\A"] li {
-      list-style-type: upper-alpha;
-
-      ol[type="\a"] li {
-        list-style-type: lower-alpha;
-      }
-
-      ol[type="1"] li {
-        list-style-type: decimal;
-      }
-
-      ol[type="\i"] li {
-        list-style-type: lower-roman;
-      }
-
-      ol[type="\I"] li {
-        list-style-type: upper-roman;
-      }
-    }
-
-    &[type="\i"] li {
+    &[type="i"] li {
       list-style-type: lower-roman;
 
-      ol[type="\a"] li {
+      ol[type="a"] li {
         list-style-type: lower-alpha;
-      }
-
-      ol[type="\A"] li {
-        list-style-type: upper-alpha;
       }
 
       ol[type="1"] li {
         list-style-type: decimal;
-      }
-
-      ol[type="\I"] li {
-        list-style-type: upper-roman;
-      }
-    }
-
-    &[type="\I"] li {
-      list-style-type: upper-roman;
-
-      ol[type="\a"] li {
-        list-style-type: lower-alpha;
-      }
-
-      ol[type="\A"] li {
-        list-style-type: upper-alpha;
-      }
-
-      ol[type="1"] li {
-        list-style-type: decimal;
-      }
-
-      ol[type="\i"] li {
-        list-style-type: lower-roman;
       }
     }
 
     &[type="1"] li {
       list-style-type: decimal;
 
-      ol[type="\a"] li {
+      ol[type="a"] li {
         list-style-type: lower-alpha;
       }
 
-      ol[type="\A"] li {
-        list-style-type: upper-alpha;
-      }
-
-      ol[type="\i"] li {
+      ol[type="i"] li {
         list-style-type: lower-roman;
-      }
-
-      ol[type="\I"] li {
-        list-style-type: upper-roman;
       }
     }
 
