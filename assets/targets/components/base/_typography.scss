@@ -223,6 +223,12 @@
     }
 
     @include inner-list-reset;
+
+    // Remove bottom padding for inner lists
+    ol,
+    ul {
+      padding-bottom: 0;
+    }
   }
 
   ol {
@@ -231,7 +237,7 @@
     &[type="a"] li {
       list-style-type: lower-alpha;
 
-      ol[type="d"] li {
+      ol[type="1"] li {
         list-style-type: decimal;
       }
 
@@ -247,12 +253,12 @@
         list-style-type: lower-alpha;
       }
 
-      ol[type="d"] li {
+      ol[type="1"] li {
         list-style-type: decimal;
       }
     }
 
-    &[type="d"] li {
+    &[type="1"] li {
       list-style-type: decimal;
 
       ol[type="a"] li {
@@ -402,6 +408,8 @@
     }
 
     ol {
+      counter-reset: section;
+      list-style-type: none;
       padding: 1em 0 0;
 
       li::before {
