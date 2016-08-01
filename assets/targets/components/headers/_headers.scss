@@ -1,8 +1,41 @@
-%bannerbox {
+@mixin bannerbox {
   align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+@mixin banner {
+  @include bannerbox;
+  @include rem(min-height, 300px);
+  height: auto;
+
+  @include breakpoint(height-smallest) {
+    @include rem(min-height, 520px);
+  }
+
+  @include breakpoint(height-small) {
+    @include rem(min-height, 620px);
+  }
+
+  @include breakpoint(height-medium) {
+    @include rem(min-height, 720px);
+  }
+
+  @include breakpoint(height-big) {
+    @include rem(min-height, 800px);
+  }
+
+  @include breakpoint(desktop) {
+    h1 {
+      @include adjust-font-size-to(50px);
+    }
+  }
+  @include breakpoint(wide) {
+    h1 {
+      @include adjust-font-size-to(60px);
+    }
+  }
 }
 
 .uomcontent [role="main"] {
@@ -46,7 +79,7 @@
     }
 
     &.image {
-      @extend %bannerbox;
+      @include bannerbox;
       @include rem(min-height, 300px);
       height: auto;
 
@@ -71,36 +104,7 @@
     }
 
     &.banner {
-      @extend %bannerbox;
-      @include rem(min-height, 300px);
-      height: auto;
-
-      @include breakpoint(height-smallest) {
-        @include rem(min-height, 520px);
-      }
-
-      @include breakpoint(height-small) {
-        @include rem(min-height, 620px);
-      }
-
-      @include breakpoint(height-medium) {
-        @include rem(min-height, 720px);
-      }
-
-      @include breakpoint(height-big) {
-        @include rem(min-height, 800px);
-      }
-
-      @include breakpoint(desktop) {
-        h1 {
-          @include adjust-font-size-to(50px);
-        }
-      }
-      @include breakpoint(wide) {
-        h1 {
-          @include adjust-font-size-to(60px);
-        }
-      }
+      @include banner;
     }
 
     &.with-box {

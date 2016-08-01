@@ -1,7 +1,7 @@
 // Micro clearfix
 // http://nicolasgallagher.com/micro-clearfix-hack/
 
-%clearfix {
+@mixin clearfix {
   zoom: 1;
 
   &:before,

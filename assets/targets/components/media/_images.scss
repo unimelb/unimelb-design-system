@@ -96,7 +96,7 @@
 
     section {
       @include rem(padding-top, 200px);
-      @extend %grad-bottom;
+      @include grad-bottom;
       bottom: 0;
       margin: 0;
       max-width: 100%;

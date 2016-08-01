@@ -24,8 +24,16 @@
   }
 
   .loading-blue {
-    @extend .loading;
+    @include padding-leader(3);
+    @include padding-trailer(3);
     background-color: $darkblue;
+    width: 100%;
+
+    span {
+      display: block;
+      height: 0;
+      text-indent: -999em;
+    }
 
     .cube {
       background-color: $white;

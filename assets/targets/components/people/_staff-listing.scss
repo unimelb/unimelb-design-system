@@ -1,6 +1,6 @@
 .uomcontent {
   .staff-listing {
-    @extend %wrapper;
+    @include wrapper;
     @include leader(1);
     @include rem(max-width, $w-mid);
     @include trailer(1);

@@ -84,7 +84,12 @@ var devServer = new WebpackDevServer(webpack(webpackConfig), {
   noInfo: false,
   publicPath: "/assets/",
   historyApiFallback: true,
-  stats: { colors: true }
+  stats: {
+    colors: true,
+    version: false,
+    chunks: false,
+    children: false
+  }
 });
 
 // Needs to be on 8080 as the websocket expects that

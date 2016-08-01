@@ -35,9 +35,7 @@ window.UOMloadInjection = function() {
   "use strict";
 
   var assethostFooter, assethostHeader, Header, Nav, Footer, Icons, Accouncement;
-
-  assethostHeader = assethostFooter = '//d2h9b02ioca40d.cloudfront.net/shared/assets';
-  // assethostHeader = assethostFooter = 'http://localhost:5001/assets';
+  assethostHeader = assethostFooter = process.env.CDNURL;
   // assethostHeader += '/injection/header';
   // assethostFooter += '/injection/footer';
 

@@ -3,7 +3,7 @@
   opacity: $v;
 }
 
-%modal-close-icon {
+@mixin modal-close-icon {
   content: '\2573';
   display: block;
   font-size: 14px;
@@ -57,7 +57,7 @@
     width: 30px;
 
     &:before {
-      @extend %modal-close-icon;
+      @include modal-close-icon;
     }
 
     &:hover,

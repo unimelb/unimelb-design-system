@@ -1,4 +1,4 @@
-%presenters {
+@mixin presenters {
   margin: 0 3%;
   width: 94%;
 
@@ -289,7 +289,7 @@
   }
 
   .presenters {
-    @extend %presenters;
+    @include presenters;
   }
 }
 

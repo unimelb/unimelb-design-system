@@ -1,76 +1,58 @@
-.uomcontent [role="main"] {
-  .pathfinder-3 {
-    @extend .feature-listing-3;
-    @include leader(2);
-    @include trailer(2);
-    background-color: transparent;
-    border: 0 none;
-    padding: 0 3%;
-    width: 94%;
+@mixin pathfinder-3 {
+  @include feature-listing-3;
+  @include leader(2);
+  @include trailer(2);
+  background-color: transparent;
+  border: 0 none;
+  padding: 0 3%;
+  width: 94%;
 
-    &.white {
-      a {
+  &.white {
+    a {
+      background-color: $white;
+      background-color: rgba($white, .9);
+      border-bottom: 3px solid $highlight;
+      color: $black;
+      outline-color: $white;
+
+      &:hover, &:focus {
         background-color: $white;
-        background-color: rgba($white, .9);
-        border-bottom: 3px solid $highlight;
-        color: $black;
-        outline-color: $white;
+      }
 
-        &:hover, &:focus {
-          background-color: $white;
-        }
+      &.featured {
+        color: $white;
 
-        &.featured {
+        p,
+        span.text,
+        strong {
+          border-color: $white;
           color: $white;
-
-          p,
-          span.text,
-          strong {
-            border-color: $white;
-            color: $white;
-          }
-        }
-
-        .button-small {
-          background-color: $highlight;
         }
       }
 
-      p,
-      span.text,
-      strong {
-        border-color: $black;
-        color: $black;
+      .button-small {
+        background-color: $highlight;
       }
     }
 
-    &.soft {
-      a {
+    p,
+    span.text,
+    strong {
+      border-color: $black;
+      color: $black;
+    }
+  }
+
+  &.soft {
+    a {
+      background-color: $white;
+      background-color: rgba($white, .9);
+      border-bottom: 0 none;
+      color: $black;
+      outline-color: $white;
+
+      &:hover, &:focus {
         background-color: $white;
-        background-color: rgba($white, .9);
-        border-bottom: 0 none;
-        color: $black;
-        outline-color: $white;
-
-        &:hover, &:focus {
-          background-color: $white;
-
-          .button-small {
-            background-color: transparent;
-            color: $black;
-          }
-        }
-
-        &.featured {
-          color: $white;
-
-          p,
-          span.text,
-          strong {
-            border-color: $white;
-            color: $white;
-          }
-        }
 
         .button-small {
           background-color: transparent;
@@ -78,307 +60,334 @@
         }
       }
 
-      p,
-      span.text,
-      strong {
-        border-color: $black;
-        color: $black;
-      }
+      &.featured {
+        color: $white;
 
-      @include breakpoint(desktop) {
-        li {
-          border-left: 1px solid $lightergray;
-
-          &:first-child {
-            border-left: none;
-          }
-        }
-      }
-    }
-
-    &.buttons {
-      a {
-        background-color: $white;
-        background-color: rgba($white, 0.9);
-        border: 0 none;
-        color: $black;
-        min-height: 0;
-        outline-color: $white;
-        padding-bottom: 0;
-        padding-left: 0;
-        padding-right: 0;
-
-        &:hover,
-        &:focus {
-          background-color: $white;
-        }
-
+        p,
+        span.text,
         strong {
-          @include rem(height, 100px);
-          @include rem(min-width, 250px);
-          border-bottom: 0 none;
-          color: $black;
-
-          & > span {
-            @include rem(padding, 0px 10px);
-            transform: translateY(-50%);
-
-            span {
-              @include trailer(0.5);
-              display: inline-block;
-              position: static;
-              transform: translateY(0);
-            }
-
-            &:after {
-              @include rem(font-size, 20px);
-              @include rem(margin-top, -5px);
-              @include rem(padding-left, 5px);
-              content: '\2192';
-              display: inline-block;
-              line-height: 0;
-            }
-          }
-        }
-
-        p {
-          @include padding-trailer(2);
-          color: $black;
+          border-color: $white;
+          color: $white;
         }
       }
-    }
 
-    &.buttons.noarrow a {
-      strong > span:after {
-        display: none;
+      .button-small {
+        background-color: transparent;
+        color: $black;
       }
-    }
-
-    li {
-      @include leader(1);
-      @include trailer(1);
-      margin-left: 0;
-      margin-right: 0;
-      overflow: visible;
-      padding: 0;
-      width: 100%;
-      max-width: 100%;
     }
 
     p,
-    span.text {
-      @include leader(1);
-      @include padding-trailer(1);
-      @include rem(font-size, 13px);
-      @include rem(min-width, 165px);
-      @include rem(padding-left, 20px);
-      @include rem(padding-right, 20px);
-      background-color: transparent;
-      display: block;
-      padding-top: 0;
-      text-align: center;
-      -webkit-font-smoothing: subpixel-antialiased;
-    }
-
+    span.text,
     strong {
-      @include adjust-font-size-to(15px);
-      @include padding-leader(2);
-      @include padding-trailer(2);
-      @include rem(letter-spacing, 1px);
-      background-color: transparent;
-      border-bottom: 1px solid $white;
-      color: $white;
-      font-weight: $bold;
-      position: relative;
-      text-align: center;
-      text-transform: uppercase;
-
-      span {
-        // box-orient: vertical;
-        left: 0;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
-      }
+      border-color: $black;
+      color: $black;
     }
 
-    a {
-      @include padding-trailer(2);
-      @include rem(max-width, 350px);
-      background-color: $brand;
-      border-bottom: 3px solid darken($brand, 50%);
-      margin: 0 auto;
-      position: relative;
-      transition: all 150ms ease-out;
+    @include breakpoint(desktop) {
+      li {
+        border-left: 1px solid $lightergray;
 
-      strong,
-      p,
-      span.text {
-        color: $white;
+        &:first-child {
+          border-left: none;
+        }
       }
+    }
+  }
+
+  &.buttons {
+    a {
+      background-color: $white;
+      background-color: rgba($white, 0.9);
+      border: 0 none;
+      color: $black;
+      min-height: 0;
+      padding-bottom: 0;
+      padding-left: 0;
+      padding-right: 0;
+
+      &:hover,
+      &:focus {
+        background-color: $white;
+      }
+
+      strong {
+        @include rem(height, 100px);
+        @include rem(min-width, 250px);
+        border-bottom: 0 none;
+        color: $black;
+        outline-color: $white;
+
+        & > span {
+          @include rem(padding, 0px 10px);
+          transform: translateY(-50%);
+
+          span {
+            @include trailer(0.5);
+            display: inline-block;
+            position: static;
+            transform: translateY(0);
+          }
+
+          &:after {
+            @include rem(font-size, 20px);
+            @include rem(margin-top, -5px);
+            @include rem(padding-left, 5px);
+            content: '\2192';
+            display: inline-block;
+            line-height: 0;
+          }
+        }
+      }
+
+      p {
+        @include padding-trailer(2);
+        color: $black;
+      }
+    }
+  }
+
+  &.buttons.noarrow a {
+    strong > span:after {
+      display: none;
+    }
+  }
+
+  li {
+    @include leader(1);
+    @include trailer(1);
+    margin-left: 0;
+    margin-right: 0;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  p,
+  span.text {
+    @include leader(1);
+    @include padding-trailer(1);
+    @include rem(font-size, 13px);
+    @include rem(min-width, 165px);
+    @include rem(padding-left, 20px);
+    @include rem(padding-right, 20px);
+    background-color: transparent;
+    display: block;
+    padding-top: 0;
+    text-align: center;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  strong {
+    @include adjust-font-size-to(15px);
+    @include padding-leader(2);
+    @include padding-trailer(2);
+    @include rem(letter-spacing, 1px);
+    background-color: transparent;
+    border-bottom: 1px solid $white;
+    color: $white;
+    font-weight: $bold;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+
+    span {
+      // box-orient: vertical;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+    }
+  }
+
+  a {
+    @include padding-trailer(2);
+    @include rem(max-width, 350px);
+    background-color: $brand;
+    border-bottom: 3px solid darken($brand, 50%);
+    margin: 0 auto;
+    position: relative;
+    transition: all 150ms ease-out;
+
+    strong,
+    p,
+    span.text {
+      color: $white;
+    }
+
+    .button-small {
+      @include rem(font-size, 12px);
+      @include rem(padding, 10px 15px);
+      background-color: darken($brand, 5%);
+    }
+
+    &:hover, &:focus {
+      background-color: lighten($brand, 3%);
+      box-shadow: 0 0 10px rgba($black, 0.5);
+      transform: scale(1.06);
+      transition-timing-function: ease-in;
+      z-index: 2;
 
       .button-small {
         background-color: darken($brand, 5%);
       }
+    }
 
-      &:hover, &:focus {
-        background-color: lighten($brand, 3%);
+    &.featured {
+      @include rem(margin-bottom, -15px);
+      background-color: darken($highlight, 5%);
+      color: $black;
+
+      transform: scale(1.06);
+      z-index: 1;
+
+      &:hover,
+      &:focus {
+        background-color: lighten($highlight, 2%);
         box-shadow: 0 0 10px rgba($black, 0.5);
-        transform: scale(1.06);
-        transition-timing-function: ease-in;
-        z-index: 2;
-
-        .button-small {
-          background-color: darken($brand, 5%);
-        }
-      }
-
-      &.featured {
-        @include rem(margin-bottom, -15px);
-        background-color: darken($highlight, 5%);
-        color: $black;
-
-        transform: scale(1.06);
+        transform: scale(1.07);
         z-index: 1;
-
-        &:hover,
-        &:focus {
-          background-color: lighten($highlight, 2%);
-          box-shadow: 0 0 10px rgba($black, 0.5);
-          transform: scale(1.07);
-          z-index: 1;
-        }
-
-        .button-small {
-          background-color: darken($highlight, 15%);
-        }
-      }
-
-      &[disabled] {
-        cursor: not-allowed;
-        opacity: .5;
-        pointer-events: none;
-
-        &:hover {
-          transform: scale(1);
-
-          .button-small {
-            cursor: not-allowed;
-          }
-        }
-      }
-    }
-
-    span {
-      background-color: transparent;
-    }
-
-    @include breakpoint(desktop) {
-      @include padding-leader(2);
-      @include padding-trailer(2);
-      display: table;
-      float: none;
-      height: 100%;
-      margin: 0 auto;
-      max-width: $w-lge;
-      table-layout: fixed;
-
-      // override clearfix
-      &::before,
-      &::after {
-        display: none;
-      }
-
-      li {
-        background-color: transparent;
-        display: table-cell;
-        float: none;
-        height: 100%;
-        margin: 0;
-        padding-left: 0.5%;
-        padding-right: 0.5%;
-        vertical-align: top;
-        width: auto;
-      }
-
-      p,
-      span.text {
-        @include padding-leader(1);
-        @include padding-trailer(5);
-        @include rem(max-width, 350px);
-        margin: 0 auto;
-        padding-left: 0;
-        padding-right: 0;
-        text-align: left;
-      }
-
-      strong {
-        @include rem(height, 120px);
-        @include rem(max-width, 350px);
-        margin: 0 auto;
-        padding: 0;
-      }
-
-      a {
-        @include rem(max-width, 350px);
-        @include rem(min-height, 400px);
-        @include rem(padding, 0 35px);
-        height: 100%;
-        margin: 0 auto;
-        position: relative;
       }
 
       .button-small {
-        @include rem(bottom, 30px);
-        box-align: horizontal;
-        display: inline-block;
-        left: 50%;
-        position: absolute;
-        transform: translateX(-50%);
+        background-color: darken($highlight, 15%);
       }
     }
+
+    &.disabled {
+      cursor: not-allowed;
+      opacity: .5;
+
+      &:hover {
+        transform: scale(1);
+
+        .button-small {
+          cursor: not-allowed;
+        }
+      }
+    }
+  }
+
+  span {
+    background-color: transparent;
+  }
+
+  @include breakpoint(desktop) {
+    @include padding-leader(2);
+    @include padding-trailer(2);
+    display: table;
+    float: none;
+    height: 100%;
+    margin: 0 auto;
+    max-width: $w-lge;
+    table-layout: fixed;
+
+    // override clearfix
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    li {
+      background-color: transparent;
+      display: table-cell;
+      float: none;
+      height: 100%;
+      margin: 0;
+      padding-left: 0.5%;
+      padding-right: 0.5%;
+      vertical-align: top;
+      width: auto;
+    }
+
+    p,
+    span.text {
+      @include padding-leader(1);
+      @include padding-trailer(5);
+      @include rem(max-width, 350px);
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+      text-align: left;
+    }
+
+    strong {
+      @include rem(height, 120px);
+      @include rem(max-width, 350px);
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    a {
+      @include rem(max-width, 350px);
+      @include rem(min-height, 400px);
+      @include rem(padding, 0 35px);
+      height: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .button-small {
+      @include rem(bottom, 30px);
+      box-align: horizontal;
+      display: inline-block;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@mixin pathfinder-2 {
+  @include pathfinder-3;
+
+  @include breakpoint(desktop) {
+    li {
+      @include rem(padding-left, 1px);
+      padding-right: 0;
+      text-align: left;
+
+      &:first-child {
+        padding-left: 0;
+        text-align: right;
+      }
+    }
+
+    a {
+      display: inline-block;
+      margin: 0;
+    }
+
+    p {
+      @include rem(min-width, 280px);
+    }
+  }
+
+  &.soft {
+    @include breakpoint(desktop) {
+      max-width: 1100px;
+
+      li {
+        padding: 0;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.uomcontent [role="main"] {
+  .pathfinder-3 {
+    @include pathfinder-3;
   }
 
   .pathfinder-2 {
-    @extend .pathfinder-3;
-
-    @include breakpoint(desktop) {
-      li {
-        @include rem(padding-left, 1px);
-        padding-right: 0;
-        text-align: left;
-
-        &:first-child {
-          padding-left: 0;
-          text-align: right;
-        }
-      }
-
-      a {
-        display: inline-block;
-        margin: 0;
-      }
-
-      p {
-        @include rem(min-width, 280px);
-      }
-    }
-
-    &.soft {
-      @include breakpoint(desktop) {
-        max-width: 1100px;
-
-        li {
-          padding: 0;
-          text-align: center;
-        }
-      }
-    }
+    @include pathfinder-2;
   }
 
   .pathfinder-4 {
-    @extend .pathfinder-2;
+    @include pathfinder-2;
 
     @include breakpoint(desktop) {
       li {

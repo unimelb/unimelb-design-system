@@ -1,4 +1,4 @@
-%headerblock {
+@mixin headerblock {
   @include rem(font-size, 15px);
   color: $darkblue;
   display: inline-block;
@@ -6,7 +6,7 @@
   vertical-align: middle;
 }
 
-%control {
+@mixin control {
   @include rem(border-radius, 3px);
   @include rem(margin-top, 5px);
   @include rem(padding, 8px 10px);
@@ -24,8 +24,8 @@
   }
 }
 
-%textcontrol {
-  @extend %control;
+@mixin textcontrol {
+  @include control;
   @include rem(font-size, 20px);
   background-color: $lightgray;
   border: 1px solid darken($lightergray, 5%);
@@ -47,7 +47,7 @@
   }
 }
 
-%inlinebutton {
+@mixin inlinebutton {
   @include rem(border-radius, 3px);
   @include rem(font-size, 13px);
   @include rem(height, 45px);
@@ -93,7 +93,7 @@
 // }
 
 .uomcontent .page-header {
-  @extend %normalise;
+  @include normalise;
   @include rem(font-size, 20px);
   @include rem(height, 60px);
   background-color: $white;
@@ -104,7 +104,7 @@
   width: 100%;
   z-index: 12;
 
-  /* Work-around for conflict with other `fixed` class, which sets the font to `$ff-fixed` */
+  // Work-around for conflict with other `fixed` class, which sets the font to `$ff-fixed`
   &.fixed {
     font-family: $ff-sans;
   }
@@ -115,7 +115,7 @@
   }
 
   * {
-    @extend %normalise;
+    @include normalise;
     font-family: $ff-sans;
   }
 
@@ -222,7 +222,7 @@
   }
 
   a {
-    @extend %headerblock;
+    @include headerblock;
     @include rem(height, 60px);
     @include rem(line-height, 60px);
     font-weight: $light;
@@ -306,7 +306,7 @@
   }
 
   span {
-    @extend %headerblock;
+    @include headerblock;
     @include rem(font-size, 13px);
     @include rem(height, 40px);
     @include rem(line-height, 40px);
@@ -477,7 +477,7 @@
 }
 
 .uomcontent .page-local-history {
-  @extend %wrapper;
+  @include wrapper;
   color: $white;
 
   a {
@@ -610,7 +610,7 @@
       vertical-align: top;
 
       input[type="search"] {
-        @extend %textcontrol;
+        @include textcontrol;
         @include rem(border-radius, 3px 0 0 3px);
         @include rem(height, 40px);
         @include rem(margin-top, 3px);
@@ -629,7 +629,7 @@
         width: 100%;
 
         input[type="image"] {
-          @extend %inlinebutton;
+          @include inlinebutton;
           @include rem(border-radius, 0 3px 3px 0);
           @include rem(margin, 15px 0 0);
           @include rem(width, 45px);
@@ -653,7 +653,7 @@
         }
 
         .inline-button {
-          @extend %inlinebutton;
+          @include inlinebutton;
           @include rem(border-radius, 0 3px 3px 0);
           @include rem(font-size, 13px);
           @include rem(height, 40px);

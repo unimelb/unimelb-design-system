@@ -1,5 +1,5 @@
 .uomcontent .page-footer {
-  @extend %normalise;
+  @include normalise;
   @include rem(font-size, 20px);
   background-color: $navy;
   clear: left;
@@ -7,11 +7,11 @@
   font-family: $ff-sans;
 
   * {
-    @extend %normalise;
+    @include normalise;
   }
 
   footer {
-    @extend %wrapper;
+    @include wrapper;
     @include rem(padding, 15px);
     @include rem(padding-bottom, 60px);
     margin-left: auto;
@@ -249,7 +249,7 @@
     }
 
     a {
-      @extend %imgreplace;
+      @include imgreplace;
       @include rem(height, 36px);
       @include rem(padding-bottom, 16px);
       @include rem(width, 36px);

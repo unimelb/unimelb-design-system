@@ -20,8 +20,9 @@ body {
   background-color: $white;
 }
 
-%quicklinks {
-  @include rem(padding, 16px 0);
+@mixin quicklinks {
+  @include rem(margin, 30px 0);
+  @include rem(padding, 15px 0);
   clear: both;
   margin: 0;
   max-width: 100%;
@@ -73,7 +74,7 @@ body {
   }
 
   .icon {
-    @extend %imgreplace;
+    @include imgreplace;
     @include rem(height, 24px);
     @include rem(margin-right, 10px);
     @include rem(width, 24px);
@@ -111,15 +112,15 @@ body {
 }
 
 .uomcontent ul.quicklinks {
-  @extend %quicklinks;
+  @include quicklinks;
 }
 
 .uomcontent .page-login {
-  @extend %normalise;
+  @include normalise;
   font-family: $ff-sans;
 
   * {
-    @extend %normalise;
+    @include normalise;
   }
 
   h2.title {
@@ -142,7 +143,7 @@ body {
   }
 
   .half {
-    @extend %clearfix;
+    @include clearfix;
     margin: 0 auto;
     max-width: 100%;
 

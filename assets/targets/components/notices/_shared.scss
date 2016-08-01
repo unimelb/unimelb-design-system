@@ -1,4 +1,4 @@
-%notice-success {
+@mixin notice-success {
   background-color: $palegreen;
   color: darken($palegreen, 65%);
 
@@ -7,7 +7,7 @@
   }
 }
 
-%notice-info {
+@mixin notice-info {
   background-color: $lightestblue;
   color: darken($lightestblue, 65%);
 
@@ -16,7 +16,7 @@
   }
 }
 
-%notice-warning {
+@mixin notice-warning {
   background-color: $paleyellow;
   color: darken($paleyellow, 65%);
 
@@ -25,7 +25,7 @@
   }
 }
 
-%notice-danger {
+@mixin notice-danger {
   background-color: $salmon;
   color: lighten($salmon, 35%);
 

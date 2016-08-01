@@ -26,6 +26,7 @@ body {
 @import '../../shared/globals';
 @import '../../shared/typography_fonts';
 
+@import './filtered-listings/index';
 @import './base/index';
 @import './text/index';
 @import './buttons/index';
@@ -40,7 +41,6 @@ body {
 @import './inpage-navigation/index';
 @import './accordion/index';
 @import './events/index';
-@import './filtered-listings/index';
 @import './maps/index';
 @import './modal/index';
 @import './news/index';

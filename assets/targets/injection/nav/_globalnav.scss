@@ -1,7 +1,7 @@
 .uomcontent [role="navigation"]#globalsitemap {
-  @extend %normalise;
-  @extend %wrapper;
-  @include rem(padding, 0 3%);
+  @include normalise;
+  @include wrapper;
+  @include rem(padding, 0 3% 30px);
   background-color: $navy;
   font-family: $ff-sans;
   height: 100%;
@@ -91,7 +91,7 @@
   }
 
   ul.quicklinks {
-    @extend %quicklinks;
+    @include quicklinks;
     padding: 0;
   }
 
@@ -129,7 +129,7 @@
       }
 
       input[type="image"] {
-        @extend %inlinebutton;
+        @include inlinebutton;
         @include rem(border-radius, 0 3px 3px 0);
         @include rem(margin, 15px 0 0);
         @include rem(width, 45px);
@@ -153,7 +153,7 @@
       }
 
       .inline-button {
-        @extend %inlinebutton;
+        @include inlinebutton;
         @include rem(border-radius, 0 3px 3px 0);
         @include rem(font-size, 13px);
         @include rem(height, 45px);
@@ -186,7 +186,7 @@
   }
 
   .logo {
-    @extend %imgreplace;
+    @include imgreplace;
     @include rem(height, 140px);
     @include rem(margin-top, 15px);
     @include rem(width, 140px);
