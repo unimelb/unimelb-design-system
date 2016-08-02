@@ -10,8 +10,9 @@
 
   h2.search-title {
     @include adjust-font-size-to(12px);
+    @include rem(padding-bottom, 16px);
     color: $midgray;
-    padding-bottom: 0;
+    padding-top: 0;
   }
 
   ol.search-results {
