@@ -56,13 +56,9 @@
       @include modal-close-icon;
     }
 
-    &::before {
-      @include modal-close-icon;
-    }
-
     &:hover,
     &:focus {
-      color: $darkgray;
+      color: $black;
     }
   }
 }

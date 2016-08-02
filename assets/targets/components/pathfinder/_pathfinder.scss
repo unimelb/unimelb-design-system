@@ -255,12 +255,6 @@
         background-color: darken($highlight, 15%);
       }
     }
-
-    &.disabled {
-      cursor: not-allowed;
-      opacity: .5;
-      pointer-events: none;
-    }
   }
 
   span {

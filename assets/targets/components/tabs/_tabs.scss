@@ -271,6 +271,11 @@
       text-decoration: none;
 
       &:hover {
+        text-decoration: underline;
+      }
+
+      &:hover,
+      &:focus {
         color: $cyan;
       }
 
