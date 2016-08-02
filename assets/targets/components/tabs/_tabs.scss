@@ -129,6 +129,7 @@
   }
 
   & > [role="tabpanel"] {
+    @include clearfix;
     @include rem(margin-top, -70px);
     @include rem(padding-top, 70px);
     margin-left: auto;
@@ -312,12 +313,8 @@
       }
     }
 
-    & > [role="tabpanel"] {
-      @include clearfix;
-
-      &[data-current] {
-        display: block;
-      }
+    & > [role="tabpanel"][data-current] {
+      display: block;
     }
   }
 
