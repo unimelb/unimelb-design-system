@@ -1,4 +1,5 @@
-p To disable a button, use attribute <code>disabled</code>. If the button is an anchor, like in the examples below, add <code>tabindex="-1"</code> to ensure that it cannot be focused with the keyboard (for accessibility purposes).
-p: a.button href="#default-buttons" disabled=true tabindex="-1" Call to action
-p: a.button-small href="#default-buttons" disabled=true tabindex="-1" Call to action
-p: a.button-small.with-arrow href="#default-buttons" disabled=true tabindex="-1" Call to action
+p.alert-warning <strong>Note:</strong> Disabled buttons are <strong>not currently accessible</strong> because of their colour contrast. Use sparingly and make sure that the context in which the button is used conveys the purpose of the button.
+
+p To disable a button implemented with an anchor element, use class <code>disabled</code> and attributes <code>aria-disabled="true"</code> and <code>tabindex="-1"</code>. To disable a button implemented with a <code>button</code> or <code>input</code> element, simply use the <code>disabled</code> attribute.
+p: a.button-small.with-arrow.disabled href="#default-buttons" aria-disabled=true tabindex="-1" Disabled anchor button
+p: button.button-small.with-arrow href="#default-buttons" disabled=true Normal disabled button

@@ -18,17 +18,10 @@
   text-decoration: none;
   text-transform: uppercase;
 
-  &[disabled] {
-    cursor: not-allowed;
-    opacity: 0.3;
+  &[disabled],
+  &.disabled {
+    opacity: 0.5;
     pointer-events: none;
-
-    &:hover,
-    &:focus {
-      border-bottom-width: 5px;
-      margin-top: 20px;
-      outline: 0;
-    }
   }
 
   &:hover,
