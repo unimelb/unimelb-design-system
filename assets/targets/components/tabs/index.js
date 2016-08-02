@@ -92,7 +92,7 @@ Tabs.prototype.getInitialTab = function() {
     }
 
     // No match found; check for a matching inner tab (i.e. sidebar tabs, not in-page tabs)
-    var innerPanel = this.el.querySelector(window.location.hash + '.sidebar-tabs__panel');
+    var innerPanel = this.el.querySelector('#' + cssesc(window.location.hash.substr(1), { 'isIdentifier': true }) + '.sidebar-tabs__panel');
     if (innerPanel) {
       // Inner-tab panel matches hash; find its parent panel's tab and return it
       var panel = findUp(innerPanel, 'tab');

@@ -8,12 +8,12 @@
   background-color: transparent;
 }
 
-.uomcontent header .filtered-listing-wrapper{
+.uomcontent header .filtered-listing-wrapper {
   padding-bottom: 0;
   padding-top: 0;
 }
 
-.uomcontent form.filtered-listing-select {
+@mixin filtered-listing-select {
   @include rem(max-width, $w-lge);
   background-color: transparent;
   color: $white;
@@ -204,7 +204,11 @@
   }
 }
 
-.ie8 .uomcontent form.filtered-listing-select {
+.uomcontent .filtered-listing-select {
+  @include filtered-listing-select;
+}
+
+.ie8 .uomcontent .filtered-listing-select {
   legend {
     color: $white;
   }

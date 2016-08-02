@@ -50,6 +50,39 @@
 
       @include inner-list-reset;
 
+      // Ridiculous override
+      ol.steps {
+        @include inner-list-reset;
+
+        ol,
+        ul {
+          @include rem(padding-left, 35px);
+          @include rem(padding-right, 35px);
+        }
+
+        li {
+          margin: 0;
+
+          @include breakpoint(desktop) {
+            @include rem(padding-left, 110px);
+
+            li {
+              padding-left: 0;
+            }
+          }
+        }
+
+        p {
+          padding-left: 3%;
+          padding-right: 3%;
+
+          @include breakpoint(desktop) {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
+
       p {
         width: 100%;
       }

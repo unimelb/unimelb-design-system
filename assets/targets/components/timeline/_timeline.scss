@@ -1,6 +1,6 @@
 .uomcontent {
   .timeline {
-    @extend %clearfix;
+    @include clearfix;
     @include rem(max-width, $w-mid);
     font-size: 1em;
     color: $midgray;

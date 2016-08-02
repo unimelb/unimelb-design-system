@@ -1,4 +1,4 @@
-%aligned-title {
+@mixin aligned-title {
   @include rem(font-size, 28px);
   @include rem(padding-top, 48px);
   @include rem(padding-bottom, 36px);
@@ -26,41 +26,49 @@
   }
 }
 
+@mixin subtitle {
+  @include adjust-font-size-to(15px);
+  @include rem(letter-spacing, 2px);
+  font-weight: $bold;
+  text-transform: uppercase;
+}
+
+@mixin title {
+  @include subtitle;
+  text-align: center;
+
+  &:after {
+    @include margin-leader(1);
+    @include rem(width, 80px);
+    border-bottom: 2px solid $black;
+    content: '';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &::after {
+    @include margin-leader(1);
+    @include rem(width, 80px);
+    border-bottom: 2px solid $black;
+    content: '';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .uomcontent {
   .subtitle {
-    @include adjust-font-size-to(15px);
-    @include rem(letter-spacing, 2px);
-    font-weight: $bold;
-    text-transform: uppercase;
+    @include subtitle;
   }
 
   .title {
-    @extend .subtitle;
-    text-align: center;
-
-    &:after {
-      @include margin-leader(1);
-      @include rem(width, 80px);
-      border-bottom: 2px solid $black;
-      content: '';
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    &::after {
-      @include margin-leader(1);
-      @include rem(width, 80px);
-      border-bottom: 2px solid $black;
-      content: '';
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    @include title;
   }
 
   h1.aligned-title {
-    @extend %aligned-title;
+    @include aligned-title;
   }
 
   h1.aligned-title + section {

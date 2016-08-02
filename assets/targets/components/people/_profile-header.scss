@@ -12,7 +12,7 @@
     }
 
     &__summary {
-      @extend %fallbackAvatarWrapper;
+      @include fallbackAvatarWrapper;
       text-align: center;
 
       h1 {
@@ -44,10 +44,10 @@
       height: 150px;
       margin: 0 auto;
       width: 150px;
-      
+
       /* When using the background-image technique, show a fallback avatar if the photo fails to load */
       &:not(img) {
-        @extend %fallbackAvatar;
+        @include fallbackAvatar;
       }
     }
 
@@ -99,7 +99,7 @@
     @include breakpoint(tablet) {
 
       &__info {
-        @extend %clearfix;
+        @include clearfix;
       }
 
       &__location,

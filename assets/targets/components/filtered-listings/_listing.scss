@@ -53,7 +53,7 @@
 }
 
 .uomcontent .filtered-listing-grid {
-  @extend %clearfix;
+  @include clearfix;
   left: 0;
   margin: 0 3%;
   max-width: 100%;

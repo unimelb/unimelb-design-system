@@ -32,6 +32,7 @@ $bold: 700;
 }
 
 @import '../components/modal/index';
+@import '../../shared/patterns_fallback_avatar';
 @import '../components/search/index';
 
 @import '../components/filtered-listings/index';

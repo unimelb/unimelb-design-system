@@ -1,6 +1,6 @@
 .uomcontent article.news {
-  @extend .detail;
-  @extend %clearfix;
+  @include detail;
+  @include clearfix;
   @include rem(max-width, $w-lge);
   @include padding-leader(2);
 
@@ -44,7 +44,7 @@
 
     /* sidebar links that must not wrap (email, phone, url, etc.) */
     .news__nowrap {
-      @extend %ellipsis;
+      @include ellipsis;
     }
   }
 

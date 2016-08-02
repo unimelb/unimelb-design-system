@@ -6,17 +6,7 @@
   @include rem(padding-right, 25px);
   margin: 0 auto;
 
-    // &.title {
-    //   @extend %listing-title;
-    //   max-width: 100%;
-
-    //   @include breakpoint(tablet) {
-    //     @include rem(padding-left, 20px);
-    //   }
-    // }
-
   h1.aligned-title {
-    @extend %listing-title;
     @include rem(padding-bottom, 48px);
     margin-left: 0;
     max-width: 100%;
@@ -207,8 +197,8 @@
   }
 }
 
-%navigation-block-listing-fallback {
-  @extend %clearfix;
+@mixin navigation-block-listing-fallback {
+  @include clearfix;
   margin: 0 auto;
 
   ul li {
@@ -232,5 +222,5 @@
 
 .ie8 .uomcontent [role="main"] .navigation-block-listing,
 .ie9 .uomcontent [role="main"] .navigation-block-listing {
-  @extend %navigation-block-listing-fallback;
+  @include navigation-block-listing-fallback;
 }

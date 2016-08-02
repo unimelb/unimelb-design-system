@@ -1,4 +1,4 @@
-%tilt {
+@mixin tilt {
   @include rem(height, 100px);
   content: "";
   width: 100%;
@@ -17,7 +17,7 @@ body {
 }
 
 .clearfix {
-  @extend %clearfix;
+  @include clearfix;
 }
 
 .spacer {
@@ -486,7 +486,7 @@ body {
 
     &:before,
     &::before {
-      @extend %tilt;
+      @include tilt;
       @include rem(margin-top, -100px);
       background-color: $white;
       transform: skewY(-2deg);
@@ -503,7 +503,7 @@ body {
 
     &:after,
     &::after {
-      @extend %tilt;
+      @include tilt;
       background-color: $white;
       transform: skewY(2deg);
     }

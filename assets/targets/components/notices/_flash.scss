@@ -13,29 +13,29 @@
   }
 
   .flash--success {
-    @extend %notice-success;
+    @include notice-success;
   }
 
   .flash--info {
-    @extend %notice-info;
+    @include notice-info;
   }
 
   .flash--warning {
-    @extend %notice-warning;
+    @include notice-warning;
   }
 
   .flash--danger {
-    @extend %notice-danger;
+    @include notice-danger;
   }
 
   .flash--center {
     text-align: center;
   }
 
-  /* Headerless layout */
+  // Headerless layout
   .headerless {
     & + .flash {
-      /* Keep message against logo between desktop and wide */
+      // Keep message against logo between desktop and wide
       @media (min-width: 769px) and (max-width: 1098px) {
         @include rem(padding-left, 205px);
 
@@ -45,7 +45,7 @@
       }
     }
 
-    /* Keep message against logo, even above `wide` */
+    // Keep message against logo, even above `wide`
     & + .flash--keep-left {
       @include breakpoint(wide) {
         @include rem(padding-left, 205px);

@@ -1,6 +1,7 @@
 .uomcontent {
   p.search-spelling {
-    border-bottom: 1px solid rgba(#000000, 0.1);
+    @include trailer(1);
+    border-bottom: 1px solid rgba($black, .1);
 
     strong {
       font-style: italic;
@@ -23,10 +24,10 @@
     }
 
     & > li {
-      @extend %clearfix;
-      @include padding-leader(1);
+      @include clearfix;
       @include padding-trailer(1);
-      border-bottom: 1px solid rgba(#000000, 0.1);
+      @include trailer(1);
+      border-bottom: 1px solid rgba($black, .1);
       list-style-type: none;
       margin-left: 0;
       width: auto;
@@ -36,7 +37,7 @@
       }
 
       &.person {
-        @extend %fallbackAvatarWrapper;
+        @include fallbackAvatarWrapper;
 
         .person__photo {
           background-position: center;
@@ -45,9 +46,9 @@
           width: 85px;
           height: 85px;
 
-          /* When using the background-image technique, show a fallback avatar if the photo fails to load */
+          // When using the background-image technique, show a fallback avatar if the photo fails to load
           &:not(img) {
-            @extend %fallbackAvatar;
+            @include fallbackAvatar;
           }
         }
 
@@ -139,7 +140,7 @@
         color: $highlight;
 
         & > a {
-          @extend %ellipsis;
+          @include ellipsis;
         }
       }
 
