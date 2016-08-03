@@ -294,12 +294,7 @@ InjectHeader.prototype.reorderStructure = function() {
 };
 
 InjectHeader.prototype.handleScroll = function(e) {
-  var outer = document.body;
-  if (/(Firefox)/g.test(navigator.userAgent) || /(Trident)/g.test(navigator.userAgent)) {
-    outer = document.querySelector('html');
-  }
-
-  this.props.header.classList.toggle('fixed', outer.scrollTop > 40);
+  this.props.header.classList.toggle('fixed', (window.scrollY || window.pageYOffset) > 40);
 };
 
 module.exports = InjectHeader;
