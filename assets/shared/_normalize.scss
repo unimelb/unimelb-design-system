@@ -41,3 +41,9 @@ iframe[src^='//player.vimeo.com'] {
 [tabindex="-1"] {
   outline-width: 0;
 }
+
+// Force FOUC on webfontloader inactive and loading states
+.wf-inactive *,
+.wf-loading * {
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+}

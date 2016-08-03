@@ -1,12 +1,6 @@
 // Global variables and mixins
 @import '../../shared/globals';
 
-// Force FOUC on webfontloader inactive and loading states
-.wf-inactive *,
-.wf-loading * {
-  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-}
-
 // Normalisation styles
 @import '../../shared/normalize';
 
