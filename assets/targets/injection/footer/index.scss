@@ -73,7 +73,7 @@
       width: 100%;
 
       a {
-        @include adjust-font-size-to(10px);
+        @include adjust-font-size-to(12px);
         @include rem(padding, 20px 0px);
         color: $white;
         display: block;
