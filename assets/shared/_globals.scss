@@ -1,51 +1,13 @@
-$black:         #000 !default;
-$darkgray:      #333;
-$midgray:       #666;
-$gray:          #adb8c1;
-$lightgray:     #f6f6f6;
-$lightergray:   #e0e0e0;
-$white:         #fff !default;
+// Variables
+@import 'vars';
 
-$navy:          #0c304a;
-$blue:          #304e64;
-$menu:          #036;
-$darkblue:      #004576;
-$borderblue:    #7399b7;
-$midblue:       #366996;
-$lightblue:     #82a1bd;
-$lighterblue:   #0076de;
-$paleblue:      #f2f5f8;
-$lightestblue:  #e1eaf5;
-
-$paleyellow:    #fffbcc;
-$palegreen:     #d2f1cf;
-$salmon:        #ea4f62;
-$bronze:        #e5e1dc;
-
-//$cyan:          #0084ee;
-$cyan:          $lighterblue;
-//$green:         #3fc76e;
-$green:         #008a00;
-$cherry:        #df0620;
-
-// Vars
-$warning:       $cherry;
-$cta:           $green;
-$highlight:     $lighterblue;
-$brand:         $darkblue;
-$base:          $darkgray;
-$soft:          $lightergray;
-
-// Layout widths
-$w-sml:         700px;
-$w-mid:         900px;
-$w-lge:         1400px;
-
-// Vertical Rhythm Vars
-$base-font-size: 16px;
-$base-line-height: 24px;
-$rhythm-unit: 'rem';
-$round-to-nearest-half-line: true;
+// Mixins
+@import 'vendor/compass';
+@import 'patterns_accessibility';
+@import 'patterns_clearfix';
+@import 'patterns_fallback_avatar';
+@import 'patterns_media-queries';
+@import 'patterns_rem';
 
 @mixin wrapper {
   margin: 0 auto;
@@ -75,8 +37,6 @@ $round-to-nearest-half-line: true;
   background: linear-gradient(to left, rgba($cyan, 0) 66%, rgba($cyan, .9) 100%); // /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=1); // /* IE6-9 */
 }
-
-$cdnurl: '//d2h9b02ioca40d.cloudfront.net/shared';
 
 @mixin imgreplace {
   background-color: transparent;
