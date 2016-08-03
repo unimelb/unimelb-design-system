@@ -1,6 +1,13 @@
 // Global variables and mixins
 @import '../../shared/globals';
 
+// Custom wrapper mixin
+@mixin wrapper {
+  @include rem(max-width, 1400px);
+  @include rem(padding, 15px);
+  margin: 0 auto;
+}
+
 // Normalisation styles
 @import '../../shared/normalize';
 
