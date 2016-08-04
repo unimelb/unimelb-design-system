@@ -28,12 +28,6 @@ Blanket.prototype.initBlanket = function() {
     this.props.root = document.querySelector('.uomcontent');
     this.props.root.appendChild(this.el);
   }
-
-  // Correct IE8 out-of-order bug
-  if (!this.el.parentNode.classList.contains('uomcontent')) {
-    this.el.parentNode.removeChild(this.el);
-    this.props.root.appendChild(this.el);
-  }
 };
 
 
