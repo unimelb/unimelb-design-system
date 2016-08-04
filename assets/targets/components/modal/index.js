@@ -1,6 +1,7 @@
+var Blanket = require('../../../shared/blanket');
+
 /**
  * Modal
- *
  * @param  {Element} el
  * @param  {Object} props
  */
@@ -21,10 +22,7 @@ function Modal(el, props) {
   if (this.props.targetElement) {
 
     // Setup a blanket object
-    Blanket = require('../../../shared/blanket');
-    this.props.blanketElement = new Blanket({
-      'root': this.props.root
-    });
+    this.props.blanket = new Blanket();
 
     // this.initTarget();
     this.setupCloseButton();
@@ -37,7 +35,7 @@ function Modal(el, props) {
       }
 
       // Attach closing event to blanket
-      this.props.blanketElement.el.addEventListener('click', this.hideAllDialogs.bind(this));
+      this.props.blanket.el.addEventListener('click', this.hideAllDialogs.bind(this));
       this.el.setAttribute('data-bound', true);
     }
   }
@@ -82,7 +80,7 @@ Modal.prototype.activateDialog = function(e) {
   }
 
   this.props.targetElement.classList.add('on');
-  this.props.blanketElement.show();
+  this.props.blanket.show();
 };
 
 /**
@@ -95,7 +93,7 @@ Modal.prototype.hideAllDialogs = function(e) {
     recs[i].classList.remove('on');
   }
 
-  this.props.blanketElement.hide();
+  this.props.blanket.hide();
 };
 
 module.exports = Modal;
