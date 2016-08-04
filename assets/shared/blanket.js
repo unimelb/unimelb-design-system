@@ -1,35 +1,21 @@
 /**
  * Blanket
- *
- * @returns dom element
  */
-function Blanket(props) {
-  this.props = props;
-
-  this.initBlanket();
-}
-
-/**
- * Set up page covering "blanket" to prevent accidental interactions
- */
-Blanket.prototype.initBlanket = function() {
+function Blanket() {
   this.el = document.querySelector('.modal__blanket');
+
+  // Don't re-initialise blanket if it already exists
   if (!this.el) {
     this.el = document.createElement('div');
-    this.el.classList.add('modal__blanket');
-
-    // White version for search with header offset
-    if (this.props.inverse)
-      this.el.classList.add('inverse');
+    this.el.className = 'modal__blanket';
 
     var CreateNameSpace = require('./createnamespace');
     new CreateNameSpace();
 
-    this.props.root = document.querySelector('.uomcontent');
-    this.props.root.appendChild(this.el);
+    // Add the blanket to the DOM
+    document.querySelector('.uomcontent').appendChild(this.el);
   }
-};
-
+}
 
 /**
  * Visibility helpers
