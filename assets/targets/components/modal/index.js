@@ -24,7 +24,7 @@ function Modal(el, props) {
     // Event bindings
     if (!this.el.hasAttribute('data-bound')) {
       // Bind open trigger
-      this.el.addEventListener('click', this.activateDialog.bind(this));
+      this.el.addEventListener('click', this.show.bind(this));
 
       // Bind close triggers
       var recs = this.props.target.querySelectorAll('.modal__close');
@@ -44,12 +44,12 @@ function Modal(el, props) {
 /**
  * Create and add close button to modal if one doesn't already exist.
  */
-Modal.prototype.setupCloseButton = function() {
+Modal.prototype.setupCloseButton = function () {
   var close = this.props.target.querySelector('.modal__close');
 
   if (!close) {
-    close = document.createElement('a');
-    close.className = 'modal__close';
+    close = document.createElement('button');
+    close.className = 'modal__close button-ui';
     close.innerHTML = 'Close';
 
     this.props.target.insertBefore(close, this.props.target.firstChild);
@@ -59,7 +59,7 @@ Modal.prototype.setupCloseButton = function() {
 /**
  * Activate blanket, modal dialog
  */
-Modal.prototype.activateDialog = function(e) {
+Modal.prototype.show = function (e) {
   e.preventDefault();
 
   // Move modal dialog to document root (default higher z-index)
@@ -82,9 +82,7 @@ Modal.prototype.activateDialog = function(e) {
 /**
  * Hide modal and blanket.
  */
-Modal.prototype.dismiss = function(e) {
-  e.preventDefault();
-
+Modal.prototype.dismiss = function () {
   this.props.target.classList.remove('on');
   this.props.blanket.hide();
 };
