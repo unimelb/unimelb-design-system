@@ -54,20 +54,13 @@ Modal.prototype.setupCloseButton = function() {
 };
 
 /**
- * Move modal dialogs back to document root (default higher z-index)
- */
-Modal.prototype.initTarget = function() {
-  this.props.target.parentNode.removeChild(this.props.target);
-  this.props.root.appendChild(this.props.target);
-};
-
-/**
  * Activate blanket, modal dialog
  */
 Modal.prototype.activateDialog = function(e) {
   e.preventDefault();
 
-  this.initTarget();
+  // Move modal dialog to document root (default higher z-index)
+  this.props.root.appendChild(this.props.target);
 
   if (this.props.offset) {
     this.props.target.style.top = (this.el.offsetTop - 160) + 'px';
