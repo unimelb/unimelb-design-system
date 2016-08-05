@@ -2,54 +2,54 @@ var Blanket = require('../../../shared/blanket');
 
 /**
  * Modal
- * @param  {Element} el
- * @param  {Object} props
+ * @param {Element} el
+ * @param {Object} props
  */
 function Modal(el, props) {
   this.el = el;
   this.props = props;
-
-  this.props.offset = el.hasAttribute('data-modal-offset');
+  this.props.target = document.getElementById(el.getAttribute('data-modal-target'));
 
   var CreateNameSpace = require('../../../shared/createnamespace');
   new CreateNameSpace();
 
-  this.props.root = document.querySelector('.uomcontent');
-
-  this.props.targetElement = document.getElementById(this.el.getAttribute('data-modal-target'));
-
-  // Only bind if modal has a target
-  if (this.props.targetElement) {
-
-    // Setup a blanket object
+  // Bind only if modal has target
+  if (this.props.target) {
+    this.props.root = document.querySelector('.uomcontent');
+    this.props.offset = el.hasAttribute('data-modal-offset');
     this.props.blanket = new Blanket();
 
-    // this.initTarget();
     this.setupCloseButton();
 
     // Event bindings
     if (!this.el.hasAttribute('data-bound')) {
+      // Bind open trigger
       this.el.addEventListener('click', this.activateDialog.bind(this));
-      for (var recs=this.props.targetElement.querySelectorAll('.modal__close'), i=recs.length - 1; i >= 0; i--) {
+
+      // Bind close triggers
+      var recs = this.props.target.querySelectorAll('.modal__close');
+      for (var i = recs.length - 1; i >= 0; i--) {
         recs[i].addEventListener('click', this.hideAllDialogs.bind(this));
       }
 
       // Attach closing event to blanket
       this.props.blanket.el.addEventListener('click', this.hideAllDialogs.bind(this));
+
+      // Mark modal as bound
       this.el.setAttribute('data-bound', true);
     }
   }
 }
 
 Modal.prototype.setupCloseButton = function() {
-  var close = this.props.targetElement.querySelector('.modal__close');
+  var close = this.props.target.querySelector('.modal__close');
+
   if (!close) {
     close = document.createElement('a');
     close.className = 'modal__close';
-    close.innerText = 'Close';
-    this.props.targetElement.insertBefore(close, this.props.targetElement.firstChild);
+    close.innerHTML = 'Close';
 
-    close.addEventListener('click', this.hideAllDialogs.bind(this));
+    this.props.target.insertBefore(close, this.props.target.firstChild);
   }
 };
 
@@ -57,8 +57,8 @@ Modal.prototype.setupCloseButton = function() {
  * Move modal dialogs back to document root (default higher z-index)
  */
 Modal.prototype.initTarget = function() {
-  this.props.targetElement.parentNode.removeChild(this.props.targetElement);
-  this.props.root.appendChild(this.props.targetElement);
+  this.props.target.parentNode.removeChild(this.props.target);
+  this.props.root.appendChild(this.props.target);
 };
 
 /**
@@ -70,16 +70,16 @@ Modal.prototype.activateDialog = function(e) {
   this.initTarget();
 
   if (this.props.offset) {
-    this.props.targetElement.style.top = (this.el.offsetTop - 160) + 'px';
+    this.props.target.style.top = (this.el.offsetTop - 160) + 'px';
   } else {
     var viewport = document.body.getBoundingClientRect();
-    var top = parseInt((window.height() - this.props.targetElement.offsetHeight) / 2, 10);
+    var top = parseInt((window.height() - this.props.target.offsetHeight) / 2, 10);
 
     // Postion the modal, making sure it never goes past the top of the viewport
-    this.props.targetElement.style.top = (Math.max(top, 40) - viewport.top) + 'px';
+    this.props.target.style.top = (Math.max(top, 40) - viewport.top) + 'px';
   }
 
-  this.props.targetElement.classList.add('on');
+  this.props.target.classList.add('on');
   this.props.blanket.show();
 };
 
