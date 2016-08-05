@@ -29,11 +29,11 @@ function Modal(el, props) {
       // Bind close triggers
       var recs = this.props.target.querySelectorAll('.modal__close');
       for (var i = recs.length - 1; i >= 0; i--) {
-        recs[i].addEventListener('click', this.hideAllDialogs.bind(this));
+        recs[i].addEventListener('click', this.dismiss.bind(this));
       }
 
       // Attach closing event to blanket
-      this.props.blanket.el.addEventListener('click', this.hideAllDialogs.bind(this));
+      this.props.blanket.el.addEventListener('click', this.dismiss.bind(this));
 
       // Mark modal as bound
       this.el.setAttribute('data-bound', true);
@@ -41,6 +41,9 @@ function Modal(el, props) {
   }
 }
 
+/**
+ * Create and add close button to modal if one doesn't already exist.
+ */
 Modal.prototype.setupCloseButton = function() {
   var close = this.props.target.querySelector('.modal__close');
 
@@ -77,15 +80,12 @@ Modal.prototype.activateDialog = function(e) {
 };
 
 /**
- * Deactivate blanket, hide ~all~ modal dialogs
+ * Hide modal and blanket.
  */
-Modal.prototype.hideAllDialogs = function(e) {
+Modal.prototype.dismiss = function(e) {
   e.preventDefault();
 
-  for (var recs=document.querySelectorAll('.modal__dialog'), i=recs.length - 1; i >= 0; i--) {
-    recs[i].classList.remove('on');
-  }
-
+  this.props.target.classList.remove('on');
   this.props.blanket.hide();
 };
 
