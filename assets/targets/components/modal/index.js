@@ -32,9 +32,6 @@ function Modal(el, props) {
         recs[i].addEventListener('click', this.dismiss.bind(this));
       }
 
-      // Attach closing event to blanket
-      this.props.blanket.el.addEventListener('click', this.dismiss.bind(this));
-
       // Mark modal as bound
       this.el.setAttribute('data-bound', true);
     }
@@ -65,18 +62,24 @@ Modal.prototype.show = function (e) {
   // Move modal dialog to document root (default higher z-index)
   this.props.root.appendChild(this.props.target);
 
+  // Position modal either near the trigger or in the middle of the viewport
   if (this.props.offset) {
     this.props.target.style.top = (this.el.offsetTop - 160) + 'px';
   } else {
     var viewport = document.body.getBoundingClientRect();
     var top = parseInt((window.height() - this.props.target.offsetHeight) / 2, 10);
 
-    // Postion the modal, making sure it never goes past the top of the viewport
+    // Make sure modal never goes past the top of the viewport
     this.props.target.style.top = (Math.max(top, 40) - viewport.top) + 'px';
   }
 
+  // Show modal
   this.props.target.classList.add('on');
-  this.props.blanket.show();
+
+  // Show blanket, passing a dismiss handler to be registered dynamically
+  this.props.blanket.show({
+    onClick: this.dismiss.bind(this)
+  });
 };
 
 /**
