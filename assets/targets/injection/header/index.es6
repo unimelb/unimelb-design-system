@@ -172,73 +172,46 @@ InjectHeader.prototype.renderBreadcrumb = function() {
   }
 };
 
-InjectHeader.prototype.renderHeaderTools = function() {
-  var tools = document.querySelector('.page-header-tools');
-  if (!tools) {
-    tools = document.createElement('div');
-    tools.className = 'page-header-tools';
+/**
+ * Render page header tools (search, login and menu links)
+ */
+InjectHeader.prototype.renderHeaderTools = function () {
+  let tools = document.querySelector('.page-header-tools');
+  if (tools) return;
 
-    var template = `
-<a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search" /></svg> Search</a><!--
---><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu" /></svg> Menu</a>
-`;
+  tools = document.createElement('div');
+  tools.className = 'page-header-tools';
 
-    // Need to use innerHTML for <svg><use>
-    if (document.countSelector('[role="main"].with-login') === 0) {
-      tools.innerHTML = template;
+  // Prepare tools links
+  let links = [
+    '<a class="page-header-icon" href="#sitemap" title="Search"><svg role="img" focusable="false"><use xlink:href="#icon-search" /></svg> Search</a>',
+    '<a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img" focusable="false"><use xlink:href="#icon-menu" /></svg> Menu</a>'
+  ];
 
-    } else {
-      tools.classList.add('with-login');
+  // Look for local login setup
+  const loginContent = document.querySelector('.page-local-login');
+  if (loginContent && loginContent.hasAttribute('data-href')) {
+    // Parse custom login link text or default to "Login"
+    const customText = loginContent.getAttribute('data-title');
+    const text = customText && customText.length < 8 ? customText : 'Login';
 
-      var loginContent = document.querySelector('.page-local-login');
-      if (loginContent) {
-        // Title override for logout
-        var title = 'Login';
-        if (loginContent.hasAttribute('data-title') && loginContent.getAttribute('data-title').length < 8) {
-          title = loginContent.getAttribute('data-title');
-        }
+    // Add custom class to tools
+    tools.classList.add('with-login');
 
-        // Link only
-        if (loginContent.hasAttribute('data-href')) {
-          var link = loginContent.getAttribute('data-href');
-          tools.innerHTML = `
-<a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--
---><a class="page-header-icon" href="${link}" title="${title}" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-profile" /></svg> ${title}</a><!--
---><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>
-`;
-        // Modal content
-        } else {
-          tools.innerHTML = `
-<a class="page-header-icon" href="#sitemap" title="Search"><svg role="img"><use xlink:href="#icon-search"/></svg> Search</a><!--
---><a class="page-header-icon" href="#login" title="${title}" data-modal-target="uom-login"><svg role="img"><use xlink:href="#icon-profile" /></svg> ${title}</a><!--
---><a class="page-header-icon" href="#sitemap" title="Menu"><svg role="img"><use xlink:href="#icon-menu"/></svg> Menu</a>
-`;
-          var Modal = require('../../components/modal'),
-              modalDialog = document.createElement('div'),
-              trigger = tools.querySelector('[data-modal-target]');
-
-          modalDialog.id = 'uom-login';
-          modalDialog.className = 'modal__dialog';
-          loginContent.parentNode.removeChild(loginContent);
-          modalDialog.appendChild(loginContent);
-          tools.appendChild(modalDialog);
-
-          new Modal(trigger, {});
-        }
-
-      } else {
-        // Fallback to default
-        tools.innerHTML = template;
-      }
-    }
-
-    var navparent = this.props.header.querySelector('header');
-    if (!navparent) {
-      navparent = this.props.header;
-    }
-    navparent.appendChild(tools);
-    this.renderSearchBox();
+    // Insert login link in between search and menu links
+    const href = loginContent.getAttribute('data-href');
+    links.splice(1, 0, `<a class="page-header-icon page-header-icon--login" href="${href}" title="${text}"><svg role="img" focusable="false"><use xlink:href="#icon-profile" /></svg> ${text}</a>`);
   }
+
+  // Add links to tools
+  tools.innerHTML = links.join('');
+
+  // Add tools to page header
+  const parent = this.props.header.querySelector('header') || this.props.header;
+  parent.appendChild(tools);
+
+  // Render the search box
+  this.renderSearchBox();
 };
 
 InjectHeader.prototype.renderSearchBox = function() {

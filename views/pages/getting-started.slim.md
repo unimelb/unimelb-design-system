@@ -183,53 +183,15 @@ section
 hr
 
 section
-  h2#login Login section
+  h2#login Login link
+  p To show a login link in the header between the <em>Search</em> and <em>Menu</em> buttons, add the following snippet before <code>div role="main</code>, as demonstrated in <a href="/layouts/with-login">this example layout</a>:
 
-  h3 Login modal dialog (popup box)
+  pre: code.html
+    ==convert_tags
+      erb:
+        <div class="page-local-login" data-href="/login"></div>
 
-  p To include a login section in the page header, add a code block as with the breadcrumbs above, but this time include a <code>div class="page-local-login"</code> before the <code>div role="main"</code>. Everything inside this div will be moved to a modal window, so you can use the login markup you require:
+  p Don't forget to specify the correct login URL in the <code>data-href</code> attribute. The text of the link can be manipulated using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The text will be "Login" by default, and there is a hard limit of 7 characters to protect the header design.
 
-pre: code.html
-  ==convert_tags
-    erb:
-      <div class="page-local-login">
-        <h1>
-          Login
-        </h1>
-        <form action="" data-validate="" method="post">
-          <fieldset>
-            <div>
-              <label data-required="true" for="f-email">Email: </label><input aria-required="true" data-error="Please enter a valid email." data-pattern="email" id="f-email" name="f[email]" type="email" />
-            </div>
-            <div>
-              <label data-required="true" for="f-password">Password: </label><input aria-required="true" data-error="Please enter your password." id="f-password" name="f[password]" type="password" />
-            </div>
-          </fieldset>
-          <footer>
-            <input type="submit" value="Login" />
-          </footer>
-        </form>
-      </div>
-
-section
-  p You will also need to add a class <code>with-login</code> to the main section below it:
-
-pre: code.html
-  ==convert_tags
-    erb:
-      <div role="main" class="with-login">
-        ...
-
-section
-  p An example of this can be seen on <a href="/layouts/with-login">this example layout</a>. Note that the title of the login button in the header can be manipulated by using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The title will be "Login" by default, and there is a hard limit of 7 characters to protect the header design.
-
-  h3 Login link
-
-  p If your login requires a direct link to a known page instead, you can leave the <code>div class="page-local-login"</code> empty and add a <code>data-href</code> attribute with the link location. This method is demonstrated on <a href="/layouts/with-login-link">this example layout</a> instead.
-
-pre: code.html
-  ==convert_tags
-    erb:
-      <div class="page-local-login" data-href="/login"></div>
-
-footer
+  p.alert-info <strong>Note:</strong> Up to v4.4 of the design system, it was a requirement to add class <code>with-login</code> to <code>div role="main</code>. This is no longer the case.
+  p.alert-warning <strong>Beware:</strong> The login modal feature present in v4.4 and below is no longer supported. The login button may only link to an external URL.
