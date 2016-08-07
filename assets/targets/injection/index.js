@@ -34,6 +34,10 @@ window.UOMbindIcons = function() {
 window.UOMloadInjection = function() {
   "use strict";
 
+  // Toggle JS classes on document root
+  document.documentElement.classList.remove('no-js');
+  document.documentElement.classList.add('js');
+
   var assethostFooter, assethostHeader, Header, Nav, Footer, Icons, Accouncement;
   assethostHeader = assethostFooter = process.env.CDNURL;
   // assethostHeader += '/injection/header';
