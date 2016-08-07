@@ -7,6 +7,10 @@ require("./tealium");
 if (typeof window.MSIE_version === "undefined")
   window.MSIE_version = /MSIE\s(\d{1,2})/g.exec(navigator.userAgent) === null ? 100 : /MSIE\s(\d{1,2})/g.exec(navigator.userAgent)[1];
 
+// Toggle JS classes on document root
+document.documentElement.classList.remove('no-js');
+document.documentElement.classList.add('js');
+
 window.UOMbindIcons = function() {
   "use strict";
 
@@ -33,10 +37,6 @@ window.UOMbindIcons = function() {
 
 window.UOMloadInjection = function() {
   "use strict";
-
-  // Toggle JS classes on document root
-  document.documentElement.classList.remove('no-js');
-  document.documentElement.classList.add('js');
 
   var assethostFooter, assethostHeader, Header, Nav, Footer, Icons, Accouncement;
   assethostHeader = assethostFooter = process.env.CDNURL;
