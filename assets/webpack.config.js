@@ -92,7 +92,7 @@ module.exports = {
   },
   postcss: [
     autoprefixer({
-      browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']
+      browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'ie >= 9']
     })
   ]
 };
