@@ -249,7 +249,7 @@ InjectHeader.prototype.renderSearchBox = function() {
   <fieldset>
     <div class="inline attached">
       <span class="fill">
-        <input aria-label="Search the University" aria-required="true" autocomplete="off" data-error="Please enter a keyword" name="q" id="header_q" placeholder="Search the University" type="search" />
+        <input id="header_q" name="q" type="search" placeholder="Search the University" aria-label="Search the University" />
       </span>
       <span>
         <button class="inline-button" type="submit">

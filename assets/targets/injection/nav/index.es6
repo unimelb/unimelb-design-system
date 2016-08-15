@@ -203,8 +203,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
   <fieldset>
     <div class="inline attached">
       <span class="fill">
-        <input data-required placeholder="Search the University" name="q" type="search" title="Please enter a keyword"
-          aria-label="Search the University" />
+        <input name="q" type="search" placeholder="Search the University" aria-label="Search the University" />
       </span>
       <span>
         <button type="submit" class="inline-button">
