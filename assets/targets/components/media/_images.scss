@@ -2,6 +2,21 @@
   img {
     border: 0;
     max-width: 100%;
+
+    &.desaturate {
+      filter: grayscale(100%);
+      transition: .4s ease;
+    }
+
+    &.semi-desaturate {
+      filter: grayscale(70%);
+      transition: .4s ease;
+    }
+  }
+
+  a:hover img.desaturate,
+  a:hover img.semi-desaturate {
+    filter: grayscale(0%);
   }
 
   figure.full-width {
