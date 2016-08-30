@@ -555,8 +555,10 @@
     color: $cyan;
     text-decoration: underline;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: darken($cyan, 15%);
+      text-decoration: none;
     }
 
     &:active {

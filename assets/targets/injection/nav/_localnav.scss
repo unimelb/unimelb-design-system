@@ -98,9 +98,14 @@
         color: #8ca2b8;
         color: rgba($white, .7);
 
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: transparent;
           color: $white;
+        }
+
+        &:hover {
+          text-decoration: underline;
         }
       }
     }
@@ -145,20 +150,20 @@
     margin-left: 0;
     padding: 0;
     width: auto;
+
+    &:first-child {
+      border-top: 0;
+    }
   }
 
-  h2 {
+  .localnav__close {
     @include rem(font-size, 12px);
-    @include rem(letter-spacing, 1px);
-    @include rem(padding, 20px);
     background-color: darken($menu, 3%);
     color: $lightblue;
     color: rgba($white, .6);
-    cursor: pointer;
-    display: block;
     font-weight: 400;
-    text-decoration: none;
-    width: auto;
+    line-height: 1.96;
+    text-transform: uppercase;
 
     &:before {
       @include rem(font-size, 20px);
@@ -169,7 +174,8 @@
       padding-right: 10px;
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: $white;
 
       &:before {
@@ -185,9 +191,11 @@
     @include rem(padding, 20px);
     color: $white;
     display: block;
+    outline-offset: -1px;
     text-decoration: none;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: darken($menu, 3%);
       color: $white;
     }

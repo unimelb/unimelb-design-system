@@ -102,6 +102,10 @@
       color: $white;
       box-shadow: none;
 
+      .enquiry__cta a {
+        outline-color: currentColor;
+      }
+
       .enquiry__subline {
         color: inherit;
 

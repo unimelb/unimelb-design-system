@@ -44,7 +44,7 @@ function JumpNav(props) {
         window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
 
       // Initial calc
-      this.trackProgress();
+      this.handleScroll();
     }
 
     this.el.setAttribute('data-bound', true);
