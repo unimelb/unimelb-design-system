@@ -7,12 +7,6 @@ function JumpNav(props) {
   this.el = document.querySelector('.jump-navigation');
   this.props = props;
 
-  if (/(Firefox)/g.test(navigator.userAgent) || /(Trident)/g.test(navigator.userAgent)) {
-    this.props.outer = document.querySelector('html');
-  } else {
-    this.props.outer = document.body;
-  }
-
   // Arbitrary delay to allow calculation of CSS block hiding
   var offsets = {
     'root':            document.querySelector('div[role="main"]'),
@@ -54,29 +48,39 @@ function JumpNav(props) {
 JumpNav.prototype.handleResize = function() {
   this.initCalcs();
 
-  this.trackProgress();
-  this.setEndpoint();
-  this.setFixed();
+  var scrollY = window.scrollY || window.pageYOffset;
+  this.trackProgress(scrollY);
+  this.setEndpoint(scrollY);
+  this.setFixed(scrollY);
 };
 
 JumpNav.prototype.handleScroll = function() {
-  this.trackProgress();
-  this.setEndpoint();
-  this.setFixed();
+  var scrollY = window.scrollY || window.pageYOffset;
+  this.trackProgress(scrollY);
+  this.setEndpoint(scrollY);
+  this.setFixed(scrollY);
 };
 
 /*
  * Progress
  */
-JumpNav.prototype.trackProgress = function() {
+JumpNav.prototype.trackProgress = function(scrollY) {
+  var top = scrollY + this.props.arbitraryOffset;
+
+  var lastMatch;
   for (var pos in this.props.items) {
-    if (this.props.outer.scrollTop + this.props.arbitraryOffset >= pos) {
-      for (var k in this.props.items) {
-        this.props.items[k].classList.toggle('current', k === pos);
-      }
-    } else {
-      this.props.items[pos].classList.remove('current');
+    // Remove `current` class from all items
+    this.props.items[pos].classList.remove('current');
+
+    // Save last match
+    if (top >= pos) {
+      lastMatch = pos;
     }
+  }
+
+  // Set `current` class on last match
+  if (lastMatch) {
+    this.props.items[lastMatch].classList.add('current');
   }
 };
 
@@ -182,9 +186,13 @@ JumpNav.prototype.initCalcs = function() {
   }
 };
 
+JumpNav.prototype.setEndpoint = function(scrollY) {
+  this.el.classList.toggle('endpoint', scrollY > this.props.stickyEnd);
+};
+
 // Will now check if a header is present, otherwise leave fixed
-JumpNav.prototype.setFixed = function() {
-  if (this.props.outer.scrollTop > this.props.fixPoint) {
+JumpNav.prototype.setFixed = function(scrollY) {
+  if (scrollY > this.props.fixPoint) {
     this.el.classList.remove('headless');
     this.el.classList.add('fixed');
     this.el.style.bottom = this.props.footerOffset;
@@ -198,10 +206,6 @@ JumpNav.prototype.setFixed = function() {
       this.el.classList.add('headless');
     }
   }
-};
-
-JumpNav.prototype.setEndpoint = function() {
-  this.el.classList.toggle('endpoint', this.props.outer.scrollTop > this.props.stickyEnd);
 };
 
 module.exports = JumpNav;
