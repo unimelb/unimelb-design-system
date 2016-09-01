@@ -804,7 +804,7 @@
       outline: none;
     }
 
-    &[data-modal-target="uom-login"] {
+    &--login {
       display: none;
 
       @include breakpoint(tablet) {
