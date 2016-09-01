@@ -1,0 +1,63 @@
+// Colours
+$black:         #000 !default;
+$darkgray:      #333;
+$midgray:       #666;
+$gray:          #adb8c1;
+$lightgray:     #f6f6f6;
+$lightergray:   #e0e0e0;
+$white:         #fff !default;
+
+$navy:          #0c304a;
+$blue:          #304e64;
+$menu:          #036;
+$darkblue:      #004576;
+$borderblue:    #7399b7;
+$midblue:       #366996;
+$lightblue:     #82a1bd;
+$lighterblue:   #0076de;
+$paleblue:      #f2f5f8;
+$lightestblue:  #e1eaf5;
+
+$paleyellow:    #fffbcc;
+$palegreen:     #d2f1cf;
+$salmon:        #ea4f62;
+$bronze:        #e5e1dc;
+
+$cyan:          $lighterblue;
+$green:         #008a00;
+$cherry:        #df0620;
+
+$warning:       $cherry;
+$cta:           $green;
+$highlight:     $lighterblue;
+$brand:         $darkblue;
+$base:          $darkgray;
+$soft:          $lightergray;
+
+// Layout widths
+$w-sml: 700px;
+$w-mid: 900px;
+$w-lge: 1400px;
+
+// Vertical Rhythm Vars
+$base-font-size: 16px;
+$base-line-height: 24px;
+$rhythm-unit: 'rem';
+$round-to-nearest-half-line: true;
+
+// Font stacks
+$ff-sans: Roboto, Helvetica, Arial, sans-serif;
+$ff-fixed: 'Courier New', Courier, fixed;
+$ff-serif: Georgia, 'Times New Roman', Times, serif;
+
+// Font weights
+$thin: 100;
+$light: 300;
+$regular: 400;
+$bold: 700;
+
+// Transitions
+$smooth-transform: transform .3s ease;
+
+// CDN URL
+$cdnurl: 'https://d2h9b02ioca40d.cloudfront.net/shared';
