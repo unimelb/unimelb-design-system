@@ -64,8 +64,11 @@ window.DSComponentsLoad = function() {
   recs = document.querySelectorAll('.sidebar-tabs');
   if (recs.length > 0) {
     SidebarTabs = require("../components/tabs/sidebar-tabs");
-    for (i=recs.length - 1; i >= 0; i--)
-      new SidebarTabs(recs[i]);
+    for (i=recs.length - 1; i >= 0; i--) {
+      new SidebarTabs(recs[i], {
+        scrollTarget: document.querySelector('.tabbed-nav[data-tabbed], .tabbed-course[data-tabbed]')
+      });
+    }
   }
 
   recs = document.querySelectorAll('a[href^="#"]');

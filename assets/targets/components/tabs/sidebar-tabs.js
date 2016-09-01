@@ -2,6 +2,7 @@
  * Sidebar Tabs
  * @param  {Element} el
  * @param  {Object} props
+ *         {Element} scrollTarget (optional) - element to which to scroll when switching tabs
  */
 function SidebarTabs(el, props) {
   this.el = el;
@@ -11,9 +12,15 @@ function SidebarTabs(el, props) {
   this.props.tabs = el.querySelectorAll('.sidebar-tabs__tab');
   this.props.panels = el.querySelectorAll('.sidebar-tabs__panel');
   this.props.panelsContainer = el.querySelector('.sidebar-tabs__panels');
+  this.props.scrollTarget = this.props.scrollTarget || this.props.panelsContainer;
 
   var hash = window.location.hash;
   var matchFoundForHash = false;
+
+  // Ensure scroll target can receive focus
+  if (!this.props.scrollTarget.hasAttribute('tabindex')) {
+    this.props.scrollTarget.setAttribute('tabindex', '-1');
+  }
 
   // Register event handlers on tabs and find initial tab based on location hash, if present
   for (var i = 0, len = this.props.tabs.length; i < len; i++) {
@@ -39,7 +46,7 @@ function SidebarTabs(el, props) {
   if (matchFoundForHash) {
     setTimeout(function () {
       window.scroll(0, 0); // prevent scroll jump due to URL hash
-      this.scrollToPanelsContainer();
+      this.scroll();
     }.bind(this));
   }
 }
@@ -57,7 +64,7 @@ SidebarTabs.prototype.handleTabClicked = function (tab, evt) {
 
   // Select the tab, show its panel, then scroll to the panels container
   this.selectTab(tab, true);
-  setTimeout(this.scrollToPanelsContainer.bind(this));
+  setTimeout(this.scroll.bind(this));
 
   // If selected tab has changed, update the page's location
   if (prevIndex !== this.props.currentIndex) {
@@ -108,10 +115,11 @@ SidebarTabs.prototype.selectTab = function (tab) {
 };
 
 /**
- * Scroll and give focus to panels container.
+ * Scroll to target element passed in props (or the panels' container by default).
+ * When scroll has finished, give focus to the panels' container for accessibility.
  */
-SidebarTabs.prototype.scrollToPanelsContainer = function () {
-  smoothScrollTo(this.props.panelsContainer, function () {
+SidebarTabs.prototype.scroll = function () {
+  smoothScrollTo(this.props.scrollTarget, function () {
     var scrollPosition = window.scrollY || window.pageYOffset; // save scroll position to work around focus jump
     this.props.panelsContainer.focus(); // focus
     window.scroll(0, scrollPosition); // restore scroll position
