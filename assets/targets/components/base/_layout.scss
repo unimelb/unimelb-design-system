@@ -47,7 +47,7 @@ body {
     @include padding-trailer(2);
   }
 
-  aside {
+  .aside {
     @include adjust-font-size-to(14px);
     color: $darkgray;
     float: right;
@@ -242,7 +242,7 @@ body {
     font-weight: $light;
   }
 
-  aside {
+  .aside {
     clear: both;
     float: left;
     width: 100%;
@@ -272,7 +272,7 @@ body {
     @include rem(max-width, $w-mid);
     margin: 0 auto;
 
-    aside {
+    .aside {
       @include rem(padding-bottom, 15px);
       @include rem(padding-top, 5px);
       vertical-align: top;

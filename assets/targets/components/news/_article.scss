@@ -23,7 +23,7 @@
     @include rem(padding-bottom, 15px);
   }
 
-  aside {
+  .aside {
     @include rem(padding-top, 15px);
 
     div {
@@ -111,7 +111,7 @@
         @include rem(margin-left, 20px);
       }
     }
-    aside {
+    .aside {
       display: inline-block;
       float: none;
       width: 29%;
@@ -122,7 +122,7 @@
     .article {
       width: 75%;
     }
-    aside {
+    .aside {
       width: 24%;
     }
 

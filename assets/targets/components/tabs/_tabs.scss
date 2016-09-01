@@ -343,7 +343,7 @@
   .tabbed-course {
     @include tabbed-nav;
 
-    aside h2.subtitle {
+    .aside h2.subtitle {
       @include rem(padding-bottom, 5px);
     }
 
