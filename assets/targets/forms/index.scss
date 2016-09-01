@@ -1,41 +1,26 @@
-@import '../../shared/vendor/compass';
-
-@import '../../shared/patterns_normalize';
-@import '../../shared/patterns_accessibility';
-@import '../../shared/patterns_clearfix';
-@import '../../shared/patterns_rem';
-@import '../../shared/patterns_media-queries';
+// Global variables and mixins
 @import '../../shared/globals';
 
+// Normalisation styles
+@import '../../shared/normalize';
+
+// Override default sans-serif font stack
 $ff-sans: Helvetica, Arial, sans-serif;
-$ff-fixed: 'Courier New', Courier, fixed;
-$ff-serif: Georgia, 'Times New Roman', Times, serif;
 
-$thin: 100;
-$light: 300;
-$regular: 400;
-$bold: 700;
-
+// Import specificcomponents
 @import '../components/base/typography';
 @import '../components/text/index';
 @import '../components/buttons/index';
 @import '../components/forms/index';
-
 @import '../components/accordion/index';
+@import '../components/modal/index';
+@import '../components/search/index';
+@import '../components/filtered-listings/index';
 
-.hidden {
-  display: none;
-}
+// Print
+@import '../components/print';
 
+// Custom overrides
 .uomcontent [role="main"] form {
   color: $midgray;
 }
-
-@import '../components/modal/index';
-@import '../../shared/patterns_fallback_avatar';
-@import '../components/search/index';
-
-@import '../components/filtered-listings/index';
-
-///* Print */
-@import '../components/print';

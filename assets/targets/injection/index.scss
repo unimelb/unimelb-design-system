@@ -1,55 +1,19 @@
-@import '../../shared/vendor/compass';
+// Global variables and mixins
+@import '../../shared/globals';
 
-// Global
-$black:        #000 !default;
-$darkgray:     #333;
-$midgray:      #666;
-$gray:         #adb8c1;
-$lightgray:    #f6f6f6;
-$lightergray:  #e0e0e0;
-$white:        #fff !default;
-
-$navy:         #0c304a;
-$blue:         #304e64;
-$darkblue:     #004576;
-$borderblue:   #7399b7;
-$midblue:      #366996;
-$lightblue:    #82a1bd;
-$lighterblue:  #0076de;
-$paleblue:     #f2f5f8;
-$lightestblue: #e1eaf5;
-
-$cherry:       #df0620;
-$brand:        $darkblue;
-$highlight:    $lighterblue;
-$menu:         #036;
-
-// Rem
-$baseline-px:  16px;
-
-$regular: 400;
-$light: 300;
-
-$ff-sans: Roboto, Helvetica, Arial, sans-serif;
-
-// Transitions
-$smooth-transform: transform .3s ease;
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+// Custom wrapper mixin
+@mixin wrapper {
+  @include rem(max-width, 1400px);
+  @include rem(padding, 15px);
+  margin: 0 auto;
 }
 
-@import 'patterns';
+// Normalisation styles
+@import '../../shared/normalize';
 
+// Injection components
 @import 'header/index';
 @import 'footer/index';
 @import 'announcement/index';
 @import 'nav/index';
 @import 'icons/svg';
-
-.hidden {
-  display: none;
-}

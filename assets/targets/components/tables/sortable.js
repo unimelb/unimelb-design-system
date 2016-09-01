@@ -14,9 +14,6 @@ function SortableTable(el, props) {
   this.props.sortAs = '';
   this.setupHeadings();
 
-  // Default, sort by first column
-  this.sortByCol(this.props.cols[this.props.selected]);
-
   this.el.setAttribute('data-bound', true);
 }
 
@@ -65,6 +62,19 @@ SortableTable.prototype.setupHeadings = function() {
     if (window.attachEvent) // IE 10 down
       window.attachEvent('KeyboardEvent', this.selectWithKeyboard);
   }
+
+  // Default, sort by first column
+  var col = this.props.cols[this.props.selected];
+
+  // Filter order since it gets flipped during the sort
+  if (col.classList.contains('desc')) {
+    col.classList.remove('desc');
+    col.classList.add('asc');
+  } else {
+    col.classList.remove('asc');
+    col.classList.add('desc');
+  }
+  this.sortByCol(col);
 };
 
 SortableTable.prototype.handleColClick = function(e) {

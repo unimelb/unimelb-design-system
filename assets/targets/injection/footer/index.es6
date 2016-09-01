@@ -36,7 +36,7 @@ InjectFooter.prototype.renderFooter = function() {
       <a href="http://alumni.unimelb.edu.au/">Alumni</a>
     </li>
   </ul>
-  <ul class="quicklinks">
+  <ul class="quicklinks clearfix">
     <li>
       <a href="http://about.unimelb.edu.au/governance-and-leadership/faculties"><svg role="img" class="icon"><use xlink:href="#icon-faculty" /></svg> Faculties and Graduate Schools</a>
     </li>

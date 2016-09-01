@@ -1,12 +1,9 @@
-// REM mixin
-$baseline-px: 16px;
-
 @function strip-units($number) {
   @return $number / ($number * 0 + 1);
 }
 
 @mixin rem($property, $px-values) {
-  $baseline-rem: $baseline-px / 1rem;
+  $baseline-rem: $base-font-size / 1rem;
 
   // Single value, provide px fallback on vertical rhythm mixins
   @if type-of($px-values) == 'number' {

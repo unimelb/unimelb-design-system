@@ -34,7 +34,7 @@ pre: code.html
   ==convert_tags
     erb:
       <!DOCTYPE html>
-      <html lang="en">
+      <html lang="en" class="no-js">
       <head>
         <meta charset="utf-8" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />

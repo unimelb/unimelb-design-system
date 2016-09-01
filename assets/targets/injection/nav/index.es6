@@ -29,13 +29,13 @@ function InjectNav(props) {
 
   // Set up a blanket object
   this.props.blanket = new Blanket({
-    'root': this.props.root
+    root: this.props.root
   });
 
   // Set up local nav
   if (this.props.localNav) {
     new LocalNav({
-      root:     this.props.root,
+      root: this.props.root,
       localnav: this.props.localNav
     });
   }
@@ -58,12 +58,11 @@ InjectNav.prototype.setupEventBindings = function() {
   if (this.props.localNav && this.props.menuTrigger) {
     this.props.menuTrigger.addEventListener('click', this.openLocalNav.bind(this));
 
-    // TODO is there ever more than one close button?
-    for (var triggers=this.props.localNav.querySelectorAll('h2:first-child'), i=triggers.length - 1; i >= 0; i--) {
-      triggers[i].addEventListener('click', this.closeLocalNav.bind(this));
-    }
+    // Local nav close button
+    this.props.localNav.querySelector('.localnav__close').addEventListener('click', this.closeLocalNav.bind(this));
 
-    for (triggers=this.props.localNav.querySelectorAll('a'), i=triggers.length - 1; i >= 0; i--) {
+    // Close local nav when selecting internal links (except close button)
+    for (var triggers = this.props.localNav.querySelectorAll('a'), i=triggers.length - 1; i > 0; i--) {
       if (triggers[i].getAttribute('href').indexOf('#') != -1) {
         triggers[i].addEventListener('click', this.closeLocalNav.bind(this));
       }
@@ -203,8 +202,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
   <fieldset>
     <div class="inline attached">
       <span class="fill">
-        <input data-required placeholder="Search" name="q" type="search" title="Please enter a keyword"
-          aria-label="Search the University" />
+        <input name="q" type="search" placeholder="Search the University" aria-label="Search the University" />
       </span>
       <span>
         <button type="submit" class="inline-button">
@@ -214,7 +212,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
     </div>
   </fieldset>
 </form>
-<ul class="quicklinks">
+<ul class="quicklinks clearfix">
   <li><a href="http://about.unimelb.edu.au/governance-and-leadership/faculties"><svg role="img" class="icon"><use xlink:href="#icon-faculty" /></svg> Faculties and Graduate Schools</a></li>
   <li><a href="http://students.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-student" /></svg> Current Students</a></li>
   <li><a href="http://library.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-library" /></svg> Library</a></li>
@@ -223,7 +221,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
   <li><a href="http://www.campaign.unimelb.edu.au/"><svg role="img" class="icon"><use xlink:href="#icon-campaign" /></svg> Support the Campaign</a></li>
 </ul>
 <div>
-  <div class="col-3">
+  <div class="col-3 clearfix">
     <div>
       <h2><a href="http://coursesearch.unimelb.edu.au/">Study at Melbourne</a></h2>
       <ul>
@@ -262,7 +260,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
       </ul>
     </div>
   </div>
-  <div class="col-3">
+  <div class="col-3 clearfix">
     <div>
       <h2><a href="http://unimelb.edu.au/engage/">Engagement</a></h2>
       <ul>
