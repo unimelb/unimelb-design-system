@@ -1,4 +1,4 @@
-p Flash messages are notices that are placed at the top of the page, just below the header. They span the whole width of the page (except when an in-page navigation is used) and are useful, for instance, for displaying the result of a form submission (when Ajax is not available). Like notices, flash messages come in four variants, but their markup is slightly different (see example below):
+p Flash messages are notices that are placed at the top of the page, just below the header. They span the whole width of the page (except when the in-page navigation is used) and are useful, for instance, for displaying the result of a form submission (when Ajax is not available). Like notices, flash messages come in four variants, but their markup is slightly different (see example below):
 
 ul
   li: code
@@ -12,7 +12,7 @@ ul
 
 p On some layouts, the alignment of the flash message's content on wide screen is not optimal. Two classes are available to deal with this situation: <code>flash--center</code> to centre the content, and <code>flash--keep-left</code> to keep the content against the logo on a <code>headerless</code> page.
 
-p You can place the code of the flash message anywhere inside <code>&lt;div role="main"&gt;</code>. It is moved automatically to the right location when the page loads. If multiple messages are found, only <strong>the first one</strong> is moved. This page demonstrates the use of an <em>informative</em> flash message, as well as the behaviour of the <code>flash--center</code> class:
+p The code of the flash message must be placed inside <code>&lt;div role="main"&gt;</code> and come anywhere <em>after</em> the <code>header</code> or <code>&lt;div class="headerless"&gt;&lt;/div&gt;</code> element. If the message meets these conditions but is located further down the page, it is moved to the right location automatically. If multiple messages are found, only <strong>the first one</strong> is moved. The current page demonstrates the use of an <em>informative</em> flash message, as well as the behaviour of the <code>flash--center</code> class:
 
 .flash.flash--info
   p <strong>Success!</strong> This is an example of a flash message.

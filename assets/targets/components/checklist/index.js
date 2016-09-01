@@ -34,18 +34,18 @@ Checklist.prototype.handleClick = function(e) {
 };
 
 Checklist.prototype.handleTargetClick = function(e) {
-  if (e.target.classList.contains('disabled')) {
+  if (e.target.getAttribute('disabled') !== null) {
     e.preventDefault();
   }
 };
 
 Checklist.prototype.toggleDisable = function() {
   if (this.props.active == this.props.items.length) {
-    this.props.target.classList.remove('disabled');
     this.props.target.removeAttribute('disabled');
+    this.props.target.removeAttribute('tabindex');
   } else {
-    this.props.target.classList.add('disabled');
     this.props.target.setAttribute('disabled', 'disabled');
+    this.props.target.setAttribute('tabindex', '-1');
   }
 };
 

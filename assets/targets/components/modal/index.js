@@ -47,6 +47,7 @@ Modal.prototype.setupCloseButton = function() {
   var close = this.props.targetElement.querySelector('.modal__close');
   if (!close) {
     close = document.createElement('a');
+    close.href = '#';
     close.className = 'modal__close';
     close.innerText = 'Close';
     this.props.targetElement.insertBefore(close, this.props.targetElement.firstChild);

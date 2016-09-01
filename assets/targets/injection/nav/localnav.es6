@@ -27,14 +27,20 @@ LocalNav.prototype.moveLocalNav = function() {
     }
     var absroot = (this.props.localnav.getAttribute('data-absolute-root') || '/');
 
+    // Retrieve nav title and remove from DOM
     var navtitle = noderoot.querySelector('h2');
+    noderoot.removeChild(navtitle);
+
+    // Make nav title a list item instead
     var firstli = document.createElement('li');
     firstli.className = 'home';
     firstli.innerHTML = `<a href="${absroot}">${(navtitle.textContent || navtitle.innerText)}</a>`;
     rootmenu.insertBefore(firstli, rootmenu.firstChild);
 
-    navtitle.textContent = 'Close';
-    navtitle.innerText = 'Close';
+    // Create and insert close button
+    var closeli = document.createElement('li');
+    closeli.innerHTML = '<a href="#" class="localnav__close">Close</a>';
+    rootmenu.insertBefore(closeli, firstli);
 
     // Create inner link to sitemap
     if (lastmenu == rootmenu) {

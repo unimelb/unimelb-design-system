@@ -12,11 +12,20 @@
   font-weight: $bold;
   letter-spacing: 2px;
   margin: 20px 0;
+  outline-color: #000;
+  outline-offset: 1px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 
-  &:hover {
+  &[disabled],
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:focus {
     border-bottom-width: 1px;
     color: $white;
     margin-top: 24px;
@@ -46,7 +55,8 @@
     border-bottom-color: darken($soft, 10%);
     color: $midblue;
 
-    &:hover {
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
       background-color: $gray;
       color: $darkblue;
     }
@@ -85,7 +95,8 @@
   margin: 0;
   position: relative;
 
-  &:hover {
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
     background-color: darken($highlight, 10%);
   }
 
@@ -93,15 +104,18 @@
     opacity: .3;
   }
 
-  &.warning:hover {
+  &.warning:not([disabled]):hover,
+  &.warning:not([disabled]):focus {
     background-color: darken($warning, 10%);
   }
 
-  &.cta:hover {
+  &.cta:not([disabled]):hover,
+  &.cta:not([disabled]):focus {
     background-color: darken($cta, 10%);
   }
 
-  &.brand:hover {
+  &.brand:not([disabled]):hover,
+  &.brand:not([disabled]):focus {
     background-color: darken($brand, 10%);
   }
 
@@ -109,12 +123,16 @@
     background-color: $soft;
     color: $darkblue;
 
-    &:hover {
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
       background-color: darken($gray, 10%);
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &[disabled]:hover,
+  &[disabled]:focus {
     margin-top: 0;
   }
 
@@ -154,17 +172,19 @@
   display: inline-block;
   font-style: normal;
   font-weight: $bold;
+  outline-color: #000;
+  outline-offset: 1px;
   position: relative;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: $cyan;
     color: $white;
     border-color: transparent;
   }
-
 
   &:active {
     opacity: .3;
@@ -290,6 +310,7 @@
     @include outlinearrow;
     border-color: $white;
     color: $white;
+    outline-color: currentColor;
   }
 
   .button-fill {

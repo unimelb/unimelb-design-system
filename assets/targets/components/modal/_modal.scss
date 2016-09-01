@@ -41,7 +41,7 @@
 
   .modal__close {
     background-color: #fff;
-    color: #aaa;
+    color: $midgray;
     cursor: pointer;
     font-size: 11px;
     font-weight: 400;
@@ -57,12 +57,9 @@
       @include modal-close-icon;
     }
 
-    &::before {
-      @include modal-close-icon;
-    }
-
-    &:hover {
-      color: #444;
+    &:hover,
+    &:focus {
+      color: $black;
     }
   }
 }
