@@ -145,7 +145,8 @@ $white: #ffffff;
       .styled-select svg.icon,
       ul.jump-navigation,
       ul.accordion > li:before,
-      [data-tabbed].tabbed nav {
+      [data-tabbed].tabbed nav,
+      .sidebar-tabs__list {
         display: none;
       }
 
@@ -238,7 +239,7 @@ $white: #ffffff;
       }
 
       .alt,
-      .with-aside aside,
+      .layout-sidebar__side,
       .tabbed-course .half,
       .contact-box {
         background: $white;
@@ -310,22 +311,7 @@ $white: #ffffff;
         white-space: pre-wrap;
       }
 
-      .with-aside {
-        aside {
-          padding-bottom: 0;
-
-          h2:first-child {
-            margin-left: 0;
-            padding-bottom: 0;
-          }
-        }
-
-        .bside {
-          padding-top: 0;
-        }
-      }
-
-      .filtered-listing-section aside {
+      .filtered-listing-section .aside {
         margin: 0;
         padding-bottom: 0;
         width: 100%;
@@ -357,12 +343,6 @@ $white: #ffffff;
       }
 
       // Opinion follows
-      [data-tabbed] [role="tabpanel"] {
-        display: block !important;
-        margin: 0;
-        padding: 0;
-      }
-
       .accordion__hidden {
         margin-top: 15px;
         max-height: 100%;

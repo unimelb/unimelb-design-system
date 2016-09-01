@@ -7,7 +7,7 @@
     display: none;
   }
 
-  aside {
+  .aside {
     @include padding-trailer(2);
     float: none;
     margin: 0 3%;

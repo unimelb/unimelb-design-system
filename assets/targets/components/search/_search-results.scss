@@ -10,7 +10,9 @@
 
   h2.search-title {
     @include adjust-font-size-to(12px);
+    @include rem(padding-bottom, 16px);
     color: $midgray;
+    padding-top: 0;
   }
 
   ol.search-results {
@@ -37,12 +39,6 @@
 
       &.person {
         @include fallbackAvatarWrapper;
-
-        // work-around for `with-aside` layout
-        div {
-          clear: none;
-          width: auto;
-        }
 
         .person__photo {
           background-position: center;

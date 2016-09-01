@@ -101,19 +101,14 @@ window.UOMloadComponents = function() {
 
   window.UOMbind('tabs');
 
-  recs = document.querySelectorAll('.sidebar-tab-nav');
+  recs = document.querySelectorAll('.sidebar-tabs');
   if (recs.length > 0) {
-    SidebarTabs = require("./tabs/sidebartabs");
-    for (i=recs.length - 1; i >= 0; i--)
-      new SidebarTabs(recs[i], {'selector': '.sidebar-tab'});
-  }
-
-  // Should combine with above
-  recs = document.querySelectorAll('.inner-nav-tab');
-  if (recs.length > 0) {
-    SidebarTabs = require("./tabs/sidebartabs");
-    for (i=recs.length - 1; i >= 0; i--)
-      new SidebarTabs(recs[i], {'selector': '.inner-nav-page'});
+    SidebarTabs = require("./tabs/sidebar-tabs");
+    for (i=recs.length - 1; i >= 0; i--) {
+      new SidebarTabs(recs[i], {
+        scrollTarget: document.querySelector('.tabbed-nav[data-tabbed], .tabbed-course[data-tabbed]')
+      });
+    }
   }
 
   window.UOMbind('inpage-navigation');

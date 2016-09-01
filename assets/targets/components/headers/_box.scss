@@ -2,7 +2,7 @@
   header {
     .box {
       @include rem(max-width, $w-sml);
-      @include rem(padding, 30px);
+      @include rem(padding, 56px 30px);
       background: rgba($white, .8);
       color: $black;
       margin: 0 auto;
@@ -10,7 +10,6 @@
       h1 {
         @include title;
         @include adjust-font-size-to(15px);
-        @include padding-leader(1);
         @include trailer(1);
         font-weight: $bold;
         text-align: center;
@@ -19,7 +18,6 @@
       p {
         @include adjust-font-size-to(16px);
         @include padding-leader(0);
-        @include padding-trailer(1);
         font-weight: $light;
       }
 

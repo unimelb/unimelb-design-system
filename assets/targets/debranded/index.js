@@ -61,19 +61,14 @@ window.DSComponentsLoad = function() {
       new Tabs(recs[i], {});
   }
 
-  recs = document.querySelectorAll('.sidebar-tab-nav');
+  recs = document.querySelectorAll('.sidebar-tabs');
   if (recs.length > 0) {
-    SidebarTabs = require("../components/tabs/sidebartabs");
-    for (i=recs.length - 1; i >= 0; i--)
-      new SidebarTabs(recs[i], {'selector': '.sidebar-tab'});
-  }
-
-  // Should combine with above
-  recs = document.querySelectorAll('.inner-nav-tab');
-  if (recs.length > 0) {
-    SidebarTabs = require("../components/tabs/sidebartabs");
-    for (i=recs.length - 1; i >= 0; i--)
-      new SidebarTabs(recs[i], {'selector': '.inner-nav-page'});
+    SidebarTabs = require("../components/tabs/sidebar-tabs");
+    for (i=recs.length - 1; i >= 0; i--) {
+      new SidebarTabs(recs[i], {
+        scrollTarget: document.querySelector('.tabbed-nav[data-tabbed], .tabbed-course[data-tabbed]')
+      });
+    }
   }
 
   recs = document.querySelectorAll('a[href^="#"]');

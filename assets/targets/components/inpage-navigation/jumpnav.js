@@ -108,29 +108,22 @@ JumpNav.prototype.buildNavMenu = function() {
     this.el.classList.add('fixed');
   }
 
-  if (this.props.root.countSelector('.tab .with-aside aside') > 0) {
-    this.props.root.querySelector('.tab .with-aside aside').appendChild(this.el);
+  // Insert after heading
+  if (this.props.header) {
+    this.props.root.insertBefore(this.el, this.props.header.nextSibling);
 
+  // Insert into top of role=main
   } else {
-
-    if (!this.props.topmode)
-      this.el.id = 'outer';
-
-    // Insert after heading
-    if (this.props.header) {
-      this.props.root.insertBefore(this.el, this.props.header.nextSibling);
-
-    // Insert into top of role=main
-    } else {
-      var refElem = this.props.root.findFirstElementChild();
-      // If first element is `.headerless`, take the next sibling so that the jumpnav appears below the blue bar on mobile and tablet
-      if (refElem.classList.contains('headerless'))
-        refElem = refElem.findNextElementSibling();
-      this.props.root.insertBefore(this.el, refElem);
-    }
+    var refElem = this.props.root.findFirstElementChild();
+    // If first element is `.headerless`, take the next sibling so that the jumpnav appears below the blue bar on mobile and tablet
+    if (refElem.classList.contains('headerless'))
+      refElem = refElem.findNextElementSibling();
+    this.props.root.insertBefore(this.el, refElem);
   }
 
   if (!this.props.topmode) {
+    this.el.id = 'outer';
+
     if (document.countSelector('.indexnav') == 1) {
       document.body.classList.add('indexnav-active');
     } else {
