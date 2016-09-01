@@ -27,6 +27,14 @@
       }
     }
 
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     a,
     span {
       @include rem(border-radius, 2px);

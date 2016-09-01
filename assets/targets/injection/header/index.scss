@@ -228,8 +228,12 @@
     font-weight: $light;
     text-decoration: none;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       color: $midblue;
+    }
+
+    &:hover {
       text-decoration: underline;
     }
 
@@ -459,6 +463,10 @@
 
       &:active {
         color: $black;
+      }
+
+      span {
+        color: inherit;
       }
     }
   }
@@ -731,7 +739,8 @@
         @include rem(padding, 0 23px);
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         background-color: $darkblue;
         color: $white;
         text-decoration: none;
@@ -787,13 +796,15 @@
       margin-right: auto;
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background-color: $darkblue;
       color: $white;
       text-decoration: none;
+      outline: none;
     }
 
-    &[data-modal-target="uom-login"] {
+    &--login {
       display: none;
 
       @include breakpoint(tablet) {

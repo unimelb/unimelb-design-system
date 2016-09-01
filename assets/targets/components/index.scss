@@ -1,31 +1,7 @@
-@import '../../shared/vendor/compass';
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-// Force FOUC on webfontloader inactive and loading states
-.wf-inactive *,
-.wf-loading * {
-  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-}
-
-.hidden {
-  display: none;
-}
-
-@import '../../shared/patterns_normalize';
-@import '../../shared/patterns_accessibility';
-@import '../../shared/patterns_fallback_avatar';
-@import '../../shared/patterns_clearfix';
-@import '../../shared/patterns_rem';
-@import '../../shared/patterns_media-queries';
+// Global variables and mixins
 @import '../../shared/globals';
-@import '../../shared/typography_fonts';
 
+// Components
 @import './filtered-listings/index';
 @import './base/index';
 @import './text/index';

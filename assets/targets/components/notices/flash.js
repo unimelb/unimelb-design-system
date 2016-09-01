@@ -9,8 +9,8 @@
 function Flash(el, props) {
   this.el = el;
   this.props = props;
-  
-  var baseElem =  this.props.headerless || this.props.header || null;
+
+  var baseElem = this.props.headerless || this.props.header || null;
   this.props.root.insertBefore(this.el, baseElem ? baseElem.nextSibling : this.props.root.firstChild);
 }
 
