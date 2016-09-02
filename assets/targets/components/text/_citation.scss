@@ -2,17 +2,20 @@
   .citation-list {
     padding-left: 0;
     padding-right: 0;
-    
+
     & > .citation {
       list-style: none;
-      margin-left: 0;
-      
+
+      @include breakpoint(desktop) {
+        margin-left: 0;
+      }
+
       &:last-child {
         @include rem(padding-bottom, 15px);
       }
     }
   }
-  
+
   .citation {
     @include adjust-font-size-to(15px);
     @include rem(padding, 15px);
@@ -25,7 +28,7 @@
 
   .alt .citation {
     background-color: $white;
-    
+
     &:last-child {
       @include rem(margin-bottom, 4px);
     }

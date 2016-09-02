@@ -144,6 +144,34 @@ body.jumpnav-active .uomcontent {
   }
 }
 
+body.jumpnav-active .uomcontent {
+  .blockquote-modern.left,
+  .blockquote-modern.right {
+    @include breakpoint(wide) {
+      margin-left: 0;
+      padding: 0;
+    }
+
+    @include breakpoint(1400px) {
+      @include rem(margin-bottom, 20px);
+      @include rem(margin-left, -180px);
+    }
+  }
+
+  .blockquote-modern.right {
+    @include breakpoint(wide) {
+      @include rem(margin-left, 30px);
+      margin-right: 0;
+      padding: 0;
+    }
+
+    @include breakpoint(1400px) {
+      @include rem(margin-bottom, 20px);
+      @include rem(margin-right, -180px);
+    }
+  }
+}
+
 body .uomcontent .modal__dialog {
   .inset-left {
     margin-left: 0;
