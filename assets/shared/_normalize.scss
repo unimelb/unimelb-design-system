@@ -1,0 +1,49 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.5789;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+iframe[src^='//www.youtube.com'],
+iframe[src^='//player.vimeo.com'] {
+  width: 100%;
+}
+
+// Hide elements with `hidden` attribute or class
+.hidden,
+[hidden] {
+  display: none;
+}
+
+/* Hide outline on elements focused programmatically */
+[tabindex="-1"] {
+  outline-width: 0;
+}
+
+// Force FOUC on webfontloader inactive and loading states
+.wf-inactive *,
+.wf-loading * {
+  font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+}

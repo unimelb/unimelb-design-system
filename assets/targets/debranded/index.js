@@ -61,19 +61,14 @@ window.DSComponentsLoad = function() {
       new Tabs(recs[i], {});
   }
 
-  recs = document.querySelectorAll('.sidebar-tab-nav');
+  recs = document.querySelectorAll('.sidebar-tabs');
   if (recs.length > 0) {
-    SidebarTabs = require("../components/tabs/sidebartabs");
-    for (i=recs.length - 1; i >= 0; i--)
-      new SidebarTabs(recs[i], {'selector': '.sidebar-tab'});
-  }
-
-  // Should combine with above
-  recs = document.querySelectorAll('.inner-nav-tab');
-  if (recs.length > 0) {
-    SidebarTabs = require("../components/tabs/sidebartabs");
-    for (i=recs.length - 1; i >= 0; i--)
-      new SidebarTabs(recs[i], {'selector': '.inner-nav-page'});
+    SidebarTabs = require("../components/tabs/sidebar-tabs");
+    for (i=recs.length - 1; i >= 0; i--) {
+      new SidebarTabs(recs[i], {
+        scrollTarget: document.querySelector('.tabbed-nav[data-tabbed], .tabbed-course[data-tabbed]')
+      });
+    }
   }
 
   recs = document.querySelectorAll('a[href^="#"]');
@@ -144,7 +139,7 @@ window.DSComponentsLoad = function() {
 
   recs = document.querySelectorAll('[data-leaflet-latlng]');
   if (recs.length > 0) {
-    loadScript('//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
       style = document.createElement('link');
       style.rel = 'stylesheet';
       style.href = '//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
@@ -161,14 +156,14 @@ window.DSComponentsLoad = function() {
   if (document.countSelector('[data-latlng],[data-address]') > 0) {
     script = document.createElement("script");
     script.type = "text/javascript";
-    script.src = "//maps.googleapis.com/maps/api/js?callback=maps_loaded_go";
+    script.src = "https://maps.googleapis.com/maps/api/js?key=#{process.env.GMAPSJSAPIKEY}&callback=maps_loaded_go";
     document.body.appendChild(script);
   }
 };
 
 // GMaps callback
 window.maps_loaded_go = function() {
-  var GMaps = require("../components/maps/gmaps");
+  var GMaps = require("../components/maps/gmaps.es6");
   for (var recs = document.querySelectorAll('[data-latlng],[data-address]'), i=recs.length - 1; i >= 0; i--)
     new GMaps(recs[i], {});
 };

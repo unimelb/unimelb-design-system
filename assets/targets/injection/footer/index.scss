@@ -1,5 +1,5 @@
 .uomcontent .page-footer {
-  @extend %normalise;
+  @include normalise;
   @include rem(font-size, 20px);
   background-color: $navy;
   clear: left;
@@ -7,11 +7,11 @@
   font-family: $ff-sans;
 
   * {
-    @extend %normalise;
+    @include normalise;
   }
 
   footer {
-    @extend %wrapper;
+    @include wrapper;
     @include rem(padding, 15px);
     @include rem(padding-bottom, 60px);
     margin-left: auto;
@@ -27,10 +27,10 @@
     text-align: center;
 
     a {
-      color: $lightblue;
-      text-decoration: none;
+      color: inherit;
 
-      &:hover {
+      &:hover,
+      &:focus {
         color: $white;
       }
     }
@@ -41,9 +41,6 @@
   }
 
   ul.quicklinks {
-    @include rem(margin-bottom, 25px);
-    border-bottom: 0 none;
-    margin-top: 0;
     padding: 0;
 
     a {
@@ -53,6 +50,7 @@
       text-transform: uppercase;
 
       @include breakpoint(desktop) {
+        @include rem(min-height, 113px);
         line-height: 1.6em;
       }
     }
@@ -60,10 +58,10 @@
 
   ul.people-links {
     @include rem(max-width, 1400px);
-    @include rem(padding, 0px 15px);
     border-bottom: 1px solid $blue;
     border-top: 1px solid $blue;
     margin: 0 auto;
+    padding: 0;
     text-align: left;
     width: 100%;
 
@@ -74,12 +72,16 @@
 
       a {
         @include adjust-font-size-to(10px);
-        @include rem(padding, 20px 0px);
+        @include rem(padding, 20px 15px);
         color: $white;
         display: block;
         letter-spacing: 2px;
         text-decoration: none;
         text-transform: uppercase;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
 
@@ -89,16 +91,6 @@
 
       li {
         width: auto;
-
-        a {
-          @include rem(padding-left, 20px);
-          @include rem(padding-right, 20px);
-
-          &:hover {
-            color: $white;
-            text-decoration: underline;
-          }
-        }
       }
     }
   }
@@ -107,6 +99,7 @@
 .uomcontent .unimelb-lge {
   @include rem(margin, 30px auto);
   @include rem(width, 270px);
+  outline-color: $white;
   display: block;
 
   svg,
@@ -149,11 +142,13 @@
   &.nav {
     @include rem(padding-bottom, 12px);
     @include rem(padding-top, 8px);
+    color: $lightblue;
     height: auto;
 
     li {
       @include rem(padding-bottom, 10px);
       @include rem(padding-top, 10px);
+      color: inherit;
       line-height: 1.1;
       margin-left: 0;
       margin-right: 6%;
@@ -179,14 +174,19 @@
 
     a {
       @include rem(font-size, 14px);
-      color: $lightblue;
+      color: inherit;
+
+      &:hover,
+      &:focus {
+        color: $white;
+      }
     }
 
     @include breakpoint(desktop) {
       @include rem(margin-bottom, 10px);
       @include rem(margin-top, 20px);
       border: 0 none;
-      width: 80%;
+      width: 70%;
 
       li {
         @include rem(padding-right, 30px);
@@ -215,12 +215,12 @@
 
   &.social {
     @include rem(margin-bottom, 20px);
-    @include rem(padding-top, 20px);
+    @include rem(padding-top, 16px);
     height: auto;
     padding-bottom: 0;
 
     li {
-      @include rem(margin-bottom, 15px);
+      @include rem(margin-bottom, 16px);
       line-height: 1;
       text-align: center;
       width: 20%;
@@ -249,16 +249,17 @@
     }
 
     a {
-      @extend %imgreplace;
+      @include imgreplace;
       @include rem(height, 36px);
-      @include rem(padding-bottom, 15px);
+      @include rem(padding-bottom, 16px);
       @include rem(width, 36px);
       display: inline-block;
       text-decoration: none;
       overflow: hidden;
       transition: all 0.2s linear;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: $highlight;
         transform: scale(1.2);
       }
@@ -271,16 +272,16 @@
 
     @include breakpoint(desktop) {
       @include rem(margin-bottom, 60px);
-      @include rem(margin-top, 25px);
-      @include rem(padding-right, 15px);
+      @include rem(margin-top, 20px);
+      @include rem(padding-right, 16px);
       border: 0 none;
       clear: none;
       float: right;
       text-align: right;
-      width: 20%;
+      width: 30%;
 
       li {
-        @include rem(margin-left, 25px);
+        @include rem(margin-left, 24px);
         display: inline;
         float: none;
         width: auto;
@@ -315,7 +316,7 @@ $ff-serif: Georgia, 'Times New Roman', Times, serif;
   .ind-ack {
     @include rem(font-size, 18px);
     @include rem(max-width, $w-lge);
-    @include rem(padding, 50px 0 80px);
+    @include rem(padding, 32px 0);
     border-bottom: 1px solid $blue;
     clear: both;
     color: $lightblue;
@@ -360,7 +361,6 @@ $ff-serif: Georgia, 'Times New Roman', Times, serif;
 
       a {
         color: $lightblue;
-        text-decoration: none;
 
         &:hover {
           color: $white;
@@ -457,8 +457,6 @@ $ff-serif: Georgia, 'Times New Roman', Times, serif;
 
 .ie8 .uomcontent .page-footer {
   ul.quicklinks {
-    border-bottom: 0;
-
     a {
       line-height: 1.6em;
     }
@@ -474,11 +472,6 @@ $ff-serif: Georgia, 'Times New Roman', Times, serif;
       a {
         padding-left: 20px;
         padding-right: 20px;
-
-        &:hover {
-          color: $white;
-          text-decoration: underline;
-        }
       }
     }
   }

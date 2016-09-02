@@ -1,4 +1,4 @@
-%jump {
+@mixin jump {
   color: $gray;
   list-style-position: inside;
   margin: 0 auto;
@@ -52,7 +52,7 @@
 }
 
 .uomcontent [role="main"] .jump-navigation {
-  @extend %jump;
+  @include jump;
   @include rem(padding-top, 35px);
 
   @include breakpoint(desktop) {
@@ -66,7 +66,7 @@
 
 body.jumpnav-active {
   .uomcontent #outer {
-    @extend %jump;
+    @include jump;
 
     @supports (column-span: all) {
       columns: 2;
@@ -167,11 +167,6 @@ body.jumpnav-active {
       > header.banner:first-of-type,
       > header.image:first-of-type {
         padding-left: 0;
-      }
-
-      .with-aside {
-        margin-left: 5px;
-        margin-top: -100px;
       }
 
       .jumpnav {

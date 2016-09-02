@@ -1,4 +1,4 @@
-%presenters {
+@mixin presenters {
   margin: 0 3%;
   width: 94%;
 
@@ -51,6 +51,7 @@
 
   a {
     color: $black;
+    display: block;
     text-decoration: none;
 
     &:hover {
@@ -288,7 +289,7 @@
   }
 
   .presenters {
-    @extend %presenters;
+    @include presenters;
   }
 }
 

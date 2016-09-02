@@ -1,4 +1,4 @@
-%aligned-title {
+@mixin aligned-title {
   @include rem(font-size, 28px);
   @include rem(padding-top, 48px);
   @include rem(padding-bottom, 36px);
@@ -26,41 +26,49 @@
   }
 }
 
+@mixin subtitle {
+  @include adjust-font-size-to(15px);
+  @include rem(letter-spacing, 2px);
+  font-weight: $bold;
+  text-transform: uppercase;
+}
+
+@mixin title {
+  @include subtitle;
+  text-align: center;
+
+  &:after {
+    @include margin-leader(1);
+    @include rem(width, 80px);
+    border-bottom: 2px solid $black;
+    content: '';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &::after {
+    @include margin-leader(1);
+    @include rem(width, 80px);
+    border-bottom: 2px solid $black;
+    content: '';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .uomcontent {
   .subtitle {
-    @include adjust-font-size-to(15px);
-    @include rem(letter-spacing, 2px);
-    font-weight: $bold;
-    text-transform: uppercase;
+    @include subtitle;
   }
 
   .title {
-    @extend .subtitle;
-    text-align: center;
-
-    &:after {
-      @include margin-leader(1);
-      @include rem(width, 80px);
-      border-bottom: 2px solid $black;
-      content: '';
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    &::after {
-      @include margin-leader(1);
-      @include rem(width, 80px);
-      border-bottom: 2px solid $black;
-      content: '';
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
+    @include title;
   }
 
   h1.aligned-title {
-    @extend %aligned-title;
+    @include aligned-title;
   }
 
   h1.aligned-title + section {
@@ -75,14 +83,11 @@
 .uomcontent [role="main"] {
   h1.highlight {
     @include adjust-font-size-to(75px);
-    background: -webkit-linear-gradient($navy, $highlight);
     color: $highlight;
     font-weight: $thin;
     letter-spacing: -5px;
     text-align: center;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-animation: hue 80s infinite linear;
+    animation: hue 80s infinite linear;
 
     @include breakpoint(desktop) {
       @include adjust-font-size-to(160px);
@@ -96,10 +101,7 @@
   header.banner h1.highlight,
   & > header.banner:first-child h1.highlight {
     @include adjust-font-size-to(60px);
-    background: -webkit-linear-gradient($highlight, lighten($highlight, 25%));
-    -webkit-background-clip: text;
     text-align: center;
-    -webkit-text-fill-color: transparent;
 
     @include breakpoint(desktop) {
       @include adjust-font-size-to(100px);

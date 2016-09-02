@@ -1,4 +1,4 @@
-%tilt {
+@mixin tilt {
   @include rem(height, 100px);
   content: "";
   width: 100%;
@@ -17,7 +17,7 @@ body {
 }
 
 .clearfix {
-  @extend %clearfix;
+  @include clearfix;
 }
 
 .spacer {
@@ -47,10 +47,15 @@ body {
     @include padding-trailer(2);
   }
 
-  aside {
+  .aside {
     @include adjust-font-size-to(14px);
     color: $darkgray;
     float: right;
+
+    // Override
+    &.layout-sidebar__side {
+      float: none;
+    }
 
     section {
       margin-left: 0;
@@ -237,7 +242,7 @@ body {
     font-weight: $light;
   }
 
-  aside {
+  .aside {
     clear: both;
     float: left;
     width: 100%;
@@ -267,7 +272,7 @@ body {
     @include rem(max-width, $w-mid);
     margin: 0 auto;
 
-    aside {
+    .aside {
       @include rem(padding-bottom, 15px);
       @include rem(padding-top, 5px);
       vertical-align: top;
@@ -385,101 +390,40 @@ body {
     margin: 0 auto;
   }
 
-  .with-aside {
-    @extend %clearfix;
-    background-color: $paleblue;
-    // r-bg-b
-    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAD6AAAAABCAIAAABFFcb3AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MjNFNkRERDdGOEVGMTFFM0EwQThBMjNGMTQ3OTQ5MzkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MjNFNkRERDZGOEVGMTFFM0EwQThBMjNGMTQ3OTQ5MzkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NzI4NEIyRkVERDBDMTFFM0IyOEY4MDc0NEQ1ODBDOUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NzI4NEIyRkZERDBDMTFFM0IyOEY4MDc0NEQ1ODBDOUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4DBbEGAAAAMElEQVR42uzQsQkAMAwDsPT/cwOFTu4RXqUTdJIMAAAAAADQ2fskAAAAAABA6QswAAhNBeHHgVZaAAAAAElFTkSuQmCC');
-    background-position: 59% 0;
+  .layout-sidebar {
+    &__main,
+    &__side {
+      @include rem(padding, 32px 16px);
+    }
 
-    &.left {
-      // bg-b
-      background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAC7gAAAABCAIAAADBtXRpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDIxIDc5LjE1NDkxMSwgMjAxMy8xMC8yOS0xMTo0NzoxNiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NzlCNjZBNkFGOEQ0MTFFM0EwQThBMjNGMTQ3OTQ5MzkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NzlCNjZBNjlGOEQ0MTFFM0EwQThBMjNGMTQ3OTQ5MzkiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NzI4NEIyRkVERDBDMTFFM0IyOEY4MDc0NEQ1ODBDOUIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NzI4NEIyRkZERDBDMTFFM0IyOEY4MDc0NEQ1ODBDOUIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4PeCQAAAAAMUlEQVR42uzQsQkAIAwAsDoVCv3/T0Ho6BEuDskJWftMAAAAf+tKCQAAAAAA8OgKMAD4VgL/lPaYtgAAAABJRU5ErkJggg==');
+    &__side {
+      @include rem(font-size, 14px);
+      background-color: $paleblue;
+      color: $darkgray;
+      line-height: 1.68;
     }
 
     @include breakpoint(desktop) {
       display: table;
       width: 100%;
 
-      div {
-        @include rem(max-width, $w-lge);
-        clear: both;
-        display: table;
-        margin: 0 auto;
-        width: 100%;
-
-        div {
-          @include rem(max-width, $w-sml);
-          display: block;
-        }
-      }
-    }
-
-    aside {
-      @include rem(padding, 30px 15px);
-      background-color: $paleblue;
-      clear: none;
-      vertical-align: top;
-      width: 100%;
-
-      & > h2:first-child {
-        padding-top: 0;
-      }
-
-      & > p:first-child {
-        @include padding-leader(0);
-      }
-
-      @include breakpoint(desktop) {
-        @include rem(padding, 75px 30px);
+      &__main,
+      &__side {
+        @include rem(padding, 72px 16px);
         display: table-cell;
-        max-width: 25%;
-        position: relative;
+        vertical-align: top;
+      }
+
+      &__side {
         width: 25%;
       }
     }
 
-    .bside {
-      @include rem(padding, 30px 15px);
-      @include rem(max-width, 1099px);
-      background-color: $white;
-      clear: both;
-      width: 100%;
-
-      & > .aligned-title:first-child {
-        padding-top: 0;
+    @include breakpoint(wide) {
+      &__main,
+      &__side {
+        @include rem(padding, 72px 32px);
       }
-
-      & > section:first-child {
-        padding-top: 0;
-
-        & > h2:first-child {
-          padding-top: 0;
-        }
-      }
-
-      @include breakpoint(desktop) {
-        @include rem(padding, 75px 30px);
-        clear: none;
-        display: table-cell;
-        width: 75%;
-      }
-    }
-
-    &.clear {
-      background-color: $white;
-
-      aside {
-        background-color: $white;
-      }
-
-      hr {
-        @include rem(margin-top, 50px);
-      }
-    }
-
-    &:first-child {
-      padding-top: 0;
     }
   }
 
@@ -542,7 +486,7 @@ body {
 
     &:before,
     &::before {
-      @extend %tilt;
+      @include tilt;
       @include rem(margin-top, -100px);
       background-color: $white;
       transform: skewY(-2deg);
@@ -559,7 +503,7 @@ body {
 
     &:after,
     &::after {
-      @extend %tilt;
+      @include tilt;
       background-color: $white;
       transform: skewY(2deg);
     }
@@ -709,9 +653,5 @@ body {
     margin: 0 1%;
     text-align: center;
     width: 18%;
-  }
-
-  .with-aside .bside {
-    max-width: 100%;
   }
 }

@@ -18,7 +18,7 @@
     }
 
     .enquiry__cta {
-      @extend %wrapper;
+      @include wrapper;
       @include adjust-font-size-to(20px);
       @include rem(line-height, 50px);
       @include padding-trailer(1);
@@ -37,7 +37,7 @@
     }
 
     .enquiry__subline {
-      @extend %wrapper;
+      @include wrapper;
       @include adjust-font-size-to(16px);
       @include padding-leader(.5);
       @include rem(max-width, $w-sml);
@@ -65,7 +65,7 @@
         @include padding-leader(1);
         max-width: 100%;
       }
-      
+
       /* Hide the main legend only if present */
       & > .fields > fieldset {
         legend {
@@ -96,18 +96,22 @@
         }
       }
     }
-    
+
     &--dark {
       background-color: $blue;
       color: $white;
       box-shadow: none;
-      
+
+      .enquiry__cta a {
+        outline-color: currentColor;
+      }
+
       .enquiry__subline {
         color: inherit;
 
         a {
           color: inherit;
-          
+
           &:hover {
             text-decoration: none;
           }

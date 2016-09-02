@@ -20,10 +20,11 @@ body {
   background-color: $white;
 }
 
-%quicklinks {
+@mixin quicklinks {
   @include rem(margin, 30px 0);
   @include rem(padding, 15px 0);
   clear: both;
+  margin: 0;
   max-width: 100%;
   width: 100%;
 
@@ -43,7 +44,6 @@ body {
   a {
     @include rem(border-radius, 3px);
     @include rem(font-size, 14px);
-    @include rem(margin-top, 10px);
     @include rem(padding, 15px);
     color: $white;
     display: block;
@@ -60,9 +60,13 @@ body {
     }
 
     &:hover {
-      @include breakpoint(desktop) {
+      text-decoration: underline;
+    }
+
+    @include breakpoint(desktop) {
+      &:hover,
+      &:focus {
         background-color: $highlight;
-        color: $white;
         text-decoration: none;
         transform: scale(1.2);
       }
@@ -70,7 +74,7 @@ body {
   }
 
   .icon {
-    @extend %imgreplace;
+    @include imgreplace;
     @include rem(height, 24px);
     @include rem(margin-right, 10px);
     @include rem(width, 24px);
@@ -88,7 +92,6 @@ body {
   @include breakpoint(desktop) {
     border-bottom: 1px solid $blue;
     border-top: 1px solid $blue;
-    float: left;
 
     li {
       float: left;
@@ -96,8 +99,9 @@ body {
     }
 
     a {
-      @include rem(min-height, 90px);
-      @include rem(margin-bottom, 15px);
+      @include rem(min-height, 106px);
+      @include rem(margin-top, 10px);
+      @include rem(margin-bottom, 10px);
       display: block;
       margin-left: 15%;
       margin-right: 15%;
@@ -108,15 +112,15 @@ body {
 }
 
 .uomcontent ul.quicklinks {
-  @extend %quicklinks;
+  @include quicklinks;
 }
 
 .uomcontent .page-login {
-  @extend %normalise;
+  @include normalise;
   font-family: $ff-sans;
 
   * {
-    @extend %normalise;
+    @include normalise;
   }
 
   h2.title {
@@ -139,7 +143,7 @@ body {
   }
 
   .half {
-    @extend %clearfix;
+    @include clearfix;
     margin: 0 auto;
     max-width: 100%;
 

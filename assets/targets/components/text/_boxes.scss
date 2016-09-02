@@ -1,4 +1,4 @@
-%boxes {
+@mixin boxes {
   @include padding-leader(1);
   @include padding-trailer(0);
   @include trailer(2);
@@ -51,11 +51,11 @@
 
 .uomcontent [role="main"] {
   .contact-box {
-    @extend %boxes;
+    @include boxes;
   }
 
   .highlight-box {
-    @extend %boxes;
+    @include boxes;
 
     dd {
       @include adjust-font-size-to(40px);
@@ -64,7 +64,7 @@
   }
 
   .emergency-box {
-    @extend %boxes;
+    @include boxes;
     color: $cherry;
 
     dd {

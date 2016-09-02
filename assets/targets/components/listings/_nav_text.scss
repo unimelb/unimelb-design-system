@@ -20,7 +20,6 @@
     @include padding-trailer(0);
 
     &.aligned-title {
-      @extend %listing-title;
       @include padding-leader(2);
       @include rem(padding-bottom, 48px);
       max-width: 100%;
@@ -62,7 +61,7 @@
   }
 }
 
-%navigation-text-listing-fallback {
+@mixin navigation-text-listing-fallback {
   margin: 0 auto;
 
   h1,
@@ -80,5 +79,5 @@
 
 .ie8 .uomcontent [role="main"] .navigation-text-listing,
 .ie9 .uomcontent [role="main"] .navigation-text-listing {
-  @extend %navigation-text-listing-fallback;
+  @include navigation-text-listing-fallback;
 }

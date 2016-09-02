@@ -1,6 +1,6 @@
 .uomcontent article.news {
-  @extend .detail;
-  @extend %clearfix;
+  @include detail;
+  @include clearfix;
   @include rem(max-width, $w-lge);
   @include padding-leader(2);
 
@@ -23,7 +23,7 @@
     @include rem(padding-bottom, 15px);
   }
 
-  aside {
+  .aside {
     @include rem(padding-top, 15px);
 
     div {
@@ -35,16 +35,16 @@
       list-style-type: none;
       padding: 0;
     }
-    
+
     /* sidebar headings */
     .news__meta-title {
       font-weight: $regular;
       font-style: italic;
     }
-    
+
     /* sidebar links that must not wrap (email, phone, url, etc.) */
     .news__nowrap {
-      @extend %ellipsis;
+      @include ellipsis;
     }
   }
 
@@ -111,7 +111,7 @@
         @include rem(margin-left, 20px);
       }
     }
-    aside {
+    .aside {
       display: inline-block;
       float: none;
       width: 29%;
@@ -122,7 +122,7 @@
     .article {
       width: 75%;
     }
-    aside {
+    .aside {
       width: 24%;
     }
 
@@ -132,62 +132,6 @@
       iframe {
         margin: 0;
         width: 100%;
-      }
-    }
-  }
-}
-
-/* Work around limitations of `with-aside` layout */
-.uomcontent .with-aside {
-  article.news {
-    /* cancel `.with-aside aside` styles */
-    aside {
-      @include rem(padding, 15px 0 48px);
-      background-color: transparent;
-      background-color: initial;
-      display: inline-block;
-      max-width: none;
-    }
-    
-    .article {
-      max-width: none;
-    }
-
-    /* `with-aside` sidebar comes up next to the content at a narrower breakpoint than `jumpnav` */
-    @include breakpoint(desktop) {
-      padding-left: 0;
-      padding-right: 0;
-
-      .article {
-        float: none;
-        width: 100%;
-      }
-
-      aside {
-        width: 100%;
-        
-        div {
-          text-align: center;
-        }
-      }
-    }
-
-    @include breakpoint(wide) {
-      padding-left: 3%;
-      padding-right: 3%;
-
-      .article {
-        float: right;
-        width: 75%;
-      }
-
-      aside {
-        @include rem(padding, 5px 30px 0);
-        width: 24%;
-        
-        div {
-          text-align: right;
-        }
       }
     }
   }

@@ -1,9 +1,9 @@
-.uomcontent .detail {
-  @extend %wrapper;
+@mixin detail {
+  @include wrapper;
   @include padding-leader(1);
   @include padding-trailer(2);
 
-  aside {
+  .aside {
     @include padding-leader(2);
     @include padding-trailer(2);
     @include rem(padding-left, 30px);
@@ -129,7 +129,7 @@
       @include rem(margin-left, 300px);
     }
 
-    aside {
+    .aside {
       padding-top: 0;
 
       @include breakpoint(desktop) {
@@ -173,7 +173,7 @@
     @include breakpoint(desktop) {
       @include rem(margin-left, 300px);
 
-      aside {
+      .aside {
         @include rem(margin-left, -300px);
 
         div {
@@ -182,6 +182,10 @@
           p {
             overflow: hidden;
             text-overflow: ellipsis;
+          }
+
+          a {
+            white-space: nowrap;
           }
         }
 
@@ -196,7 +200,7 @@
     }
 
     .presenters {
-      @extend %presenters;
+      @include presenters;
 
       @include breakpoint(desktop) {
         // @include rem(margin-left, 300px);
@@ -220,7 +224,7 @@
       }
     }
 
-    aside {
+    .aside {
       padding-top: 0;
 
       [data-icon] .icon-over {
@@ -231,7 +235,7 @@
       }
     }
 
-    aside p {
+    .aside p {
       margin-left: auto;
     }
 
@@ -269,5 +273,8 @@
       @include padding-trailer(1);
     }
   }
+}
 
+.uomcontent .detail {
+  @include detail;
 }

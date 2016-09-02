@@ -1,53 +1,54 @@
 /**
  * Blanket
- *
- * @returns dom element
  */
-function Blanket(props) {
-  this.props = props;
-
-  this.initBlanket();
-}
-
-/**
- * Set up page covering "blanket" to prevent accidental interactions
- */
-Blanket.prototype.initBlanket = function() {
+function Blanket() {
   this.el = document.querySelector('.modal__blanket');
+  this.props = {};
+
+  // Don't re-initialise blanket if it already exists
   if (!this.el) {
     this.el = document.createElement('div');
-    this.el.classList.add('modal__blanket');
-
-    // White version for search with header offset
-    if (this.props.inverse)
-      this.el.classList.add('inverse');
+    this.el.className = 'modal__blanket';
 
     var CreateNameSpace = require('./createnamespace');
     new CreateNameSpace();
 
-    this.props.root = document.querySelector('.uomcontent');
-    this.props.root.appendChild(this.el);
+    // Add the blanket to the DOM
+    document.querySelector('.uomcontent').appendChild(this.el);
   }
-
-  // Correct IE8 out-of-order bug
-  if (!this.el.parentNode.classList.contains('uomcontent')) {
-    this.el.parentNode.removeChild(this.el);
-    this.props.root.appendChild(this.el);
-  }
-};
-
+}
 
 /**
- * Visibility helpers
+ * Show blanket.
+ * @param {Object} opts (optional)
+ *        {Function} onClick - click handler to register
  */
-Blanket.prototype.show = function() {
+Blanket.prototype.show = function(opts) {
   this.el.classList.add('on');
+
+  // If a click handler is provided, register it
+  if (opts.onClick) {
+    this.props.onClick = opts.onClick;
+    this.el.addEventListener('click', opts.onClick);
+  }
 };
 
+/**
+ * Hide blanket and clean up.
+ */
 Blanket.prototype.hide = function() {
   this.el.classList.remove('on');
+
+  // If a click handler was provided when the modal was shown, remove it
+  if (this.props.onClick) {
+    this.el.removeEventListener('click', this.props.onClick);
+    this.props.onClick = null;
+  }
 };
 
+/**
+ * Toggle blanket.
+ */
 Blanket.prototype.toggle = function(force) {
   this.el.classList.toggle('on', force);
 };

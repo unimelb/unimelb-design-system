@@ -9,18 +9,74 @@ ul.accordion data-single-focus=""
       p Qui impetus tibique maluisset ne, omnes persequeris in vis. Ei his sonet suscipit oportere, harum debitis consequuntur ei vix. Cu semper omnium scaevola eum, mei an ferri honestatis referrentur. Eu vim invidunt dissentiet, ne ludus repudiare necessitatibus vim. Enim errem conceptam mel ex, epicuri scaevola complectitur nam ne.
       ul
         li Qui impetus tibique
-        li maluisset ne, omnes
+        li
+          ' Unordered list, inner
+          ul
+            li Qui impetus tibique
+            li maluisset ne, omnes
+            li.no-li No bullet point, overriden
         li persequeris in vis.
+        li
+          ' Ordered list, inner
+          ol
+            li Qui impetus tibique
+            li persequeris in vis.
       ol
         li Qui impetus tibique
-        li maluisset ne, omnes
+        li
+          ' Ordered list, inner
+          ol
+            li Qui impetus tibique
+            li
+              ' Ordered list, inner-inner
+              ol
+                li.no-li No bullet point, overriden
+                li maluisset ne, omnes
+                li persequeris in vis.
+            li
+              ' Ticked list, inner-inner
+              ul.ticked-list
+                li Qui impetus tibique
+                li.no-li No bullet point, overriden
+                li persequeris in vis.
+            li persequeris in vis.
         li persequeris in vis.
-  li
-    span.accordion__title Mea in soleat altera
-    .accordion__hidden
-      p Ferri dictas abhorreant eos cu, id doming impetus oporteat vis. Id sea fuisset accusam, no vim graece audiam. Ex causae vocent viderer qui. Ei per semper principes. Epicuri sententiae usu at. Te commodo suscipit definitiones est.
-      p Per te sale ocurreret sententiae, no eam omnesque argumentum. Mea in soleat altera. Has ad agam fugit. Sumo civibus ius an, no mel vidit feugait. Et lorem decore deterruisset vix, quidam molestiae et vim, eos atomorum persecuti at. Te pro aliquip recusabo senserit, duo utinam hendrerit voluptatibus in, pro stet saperet noluisse id.
-  li
+        li
+          ' Unordered list, inner
+          ul
+            li Qui impetus tibique
+            li maluisset ne, omnes
+            li persequeris in vis.
+        li
+          ' Ticked list, inner
+          ul.ticked-list
+            li Qui impetus tibique
+            li maluisset ne, omnes
+            li persequeris in vis.
+
+  li.accordion__visible
     span.accordion__title Qui impetus tibique maluisset ne, omnes
     .accordion__hidden
       p Ex causae vocent viderer qui. Ei per semper principes. Epicuri sententiae usu at. Te commodo suscipit definitiones est.
+  li
+    span.accordion__title Mea in soleat altera
+    .accordion__hidden
+      ol class="steps"
+        li
+          h2 Headline
+          p Petierunt uti sibi concilium totius Galliae in diem certam indicere.
+        li
+          h2 Headline
+          p Cum ceteris in veneratione <strong>tui montes</strong>, nascetur mus. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Quisque ut dolor gravida, placerat libero vel, euismod. Fabio vel iudice vincam, sunt in culpa qui officia. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+        li
+          h2 Headline
+          p Petierunt uti sibi concilium totius Galliae in diem certam indicere. Nihilne te nocturnum praesidium Palati, nihil urbis vigiliae. Sed haec quis possit intrepidus aestimare tellus.
+          ul
+            li Item
+            li Item
+          ul.ticked-list
+            li Item
+            li Item
+          ol
+            li Item
+            li Item

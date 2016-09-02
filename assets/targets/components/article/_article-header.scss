@@ -2,7 +2,7 @@
   article {
     header,
     header:first-child {
-      @extend .banner;
+      @include banner;
       position: relative;
 
       h1,
@@ -68,14 +68,6 @@
 
       & + section.with-figure > figure.full-width {
         @include rem(margin-top, -25px);
-      }
-    }
-
-    .with-aside article header.noimg,
-    .with-aside article header.noimg:first-child {
-      h1 {
-        @include padding-leader(0);
-        @include padding-trailer(0);
       }
     }
   }

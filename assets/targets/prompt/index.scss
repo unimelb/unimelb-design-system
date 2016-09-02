@@ -1,0 +1,123 @@
+@import '../../shared/globals';
+
+@keyframes appear-bottom {
+  from { transform: translateY(100%); }
+}
+
+.uom-prompt {
+  @include rem(padding, 16px 56px 8px);
+  animation: appear-bottom .5s backwards;
+  background-color: $lighterblue;
+  bottom: 0;
+  color: #fff;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  left: 0;
+  line-height: 1.5;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  z-index: 1000;
+
+  &[hidden] {
+    display: none;
+  }
+
+  button {
+    background: none transparent;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+    line-height: inherit;
+    margin: 0;
+    outline-offset: 1px;
+    padding: 0;
+
+    &::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+    }
+
+    &:-moz-focusring {
+      outline: 1px dotted currentColor;
+    }
+  }
+
+  &__dismiss {
+    @include rem(right, 8px);
+    @include rem(top, 8px);
+    background: none;
+    border: 0;
+    border-radius: 4px;
+    display: block;
+    padding: 0;
+    position: absolute;
+    transition: color .15s, background-color .15s;
+
+    & > svg {
+      @include rem(margin, 8px);
+      display: block;
+      fill: currentColor;
+      margin: 8px;
+    }
+
+    &:hover {
+      background-color: #fff;
+      color: $lighterblue;
+    }
+  }
+
+  &__content {
+    p {
+      @include rem(font-size, 18px);
+      @include rem(margin, 0 0 16px);
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      @include rem(margin, 0 8px);
+      display: inline-block;
+      padding: 0;
+      vertical-align: top;
+
+      & > a,
+      & > button {
+        @include rem(font-size, 14px);
+        @include rem(margin-bottom, 8px);
+        @include rem(min-width, 96px);
+        @include rem(padding, 8px 16px);
+        border: 2px solid #fff;
+        border-radius: 4px;
+        box-sizing: border-box;
+        display: block;
+        font-weight: bold;
+        letter-spacing: .5px;
+        text-decoration: none;
+        transition: color .15s, background-color .15s;
+
+        &:hover {
+          background-color: #fff;
+          color: $lighterblue;
+        }
+
+        @include breakpoint(desktop) {
+          @include rem(min-width, 160px);
+        }
+      }
+
+      & > a {
+        color: inherit;
+        outline-offset: 1px;
+      }
+
+      @include breakpoint(tablet) {
+        @include rem(margin, 0 16px);
+      }
+    }
+  }
+}

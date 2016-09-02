@@ -1,4 +1,4 @@
-%inlinebutton {
+@mixin inlinebutton {
   @include rem(border-radius, 3px);
   @include rem(font-size, 13px);
   @include rem(height, 45px);
@@ -12,7 +12,8 @@
   position: relative;
   text-transform: uppercase;
 
-  &:hover {
+  &:not([disabled]):hover,
+  &:not([disabled]):focus {
     background-color: darken($highlight, 10%);
   }
 
@@ -110,7 +111,7 @@
   input[type="password"],
   input[type="search"],
   input[type="url"] {
-    @extend %textcontrol;
+    @include textcontrol;
     width: 100%;
 
     &:-moz-placeholder { // /* Mozilla Firefox 4 to 18 */
@@ -133,7 +134,7 @@
   }
 
   textarea {
-    @extend %textcontrol;
+    @include textcontrol;
     height: 200px;
     width: 100%;
   }
@@ -261,7 +262,7 @@
     input[type="password"],
     input[type="search"],
     input[type="url"] {
-      @extend %textcontrol;
+      @include textcontrol;
       @include rem(height, 45px);
       appearance: none;
       display: block;
@@ -269,7 +270,7 @@
     }
 
     input[type="image"] {
-      @extend %inlinebutton;
+      @include inlinebutton;
       @include rem(border-radius, 0 3px 3px 0);
       @include rem(margin, 15px 0 0);
       @include rem(width, 45px);
@@ -293,7 +294,7 @@
     }
 
     .inline-button {
-      @extend %inlinebutton;
+      @include inlinebutton;
       @include rem(margin, 5px 0 0);
     }
   }
@@ -309,6 +310,15 @@
 
       &.fill {
         width: 100%;
+
+      input[type="text"],
+      input[type="email"],
+      input[type="number"],
+      input[type="password"],
+      input[type="search"],
+      input[type="url"] {
+        width: 100%;
+        }
       }
     }
   }

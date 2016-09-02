@@ -3,7 +3,7 @@
   opacity: $v;
 }
 
-%modal-close-icon {
+@mixin modal-close-icon {
   content: '\2573';
   display: block;
   font-size: 14px;
@@ -39,12 +39,13 @@
       left: 0;
       margin: 0 auto;
       max-width: 900px;
+      width: 100%; // fixes centring on IE
       right: 0;
     }
   }
 
   .modal__close {
-    color: #aaa;
+    color: $midgray;
     cursor: pointer;
     font-size: 11px;
     font-weight: 400;
@@ -56,11 +57,12 @@
     width: 30px;
 
     &:before {
-      @extend %modal-close-icon;
+      @include modal-close-icon;
     }
 
-    &:hover {
-      color: #444;
+    &:hover,
+    &:focus {
+      color: $darkgray;
     }
   }
 }

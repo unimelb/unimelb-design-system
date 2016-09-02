@@ -5,20 +5,20 @@
 
 <h3>Example 1a - How to do it</h3>
 
-```html
-<label for="firstname">First name:</label> 
-<input type="text" id="firstname" name="fname" />
-```
+<pre class="html flex"><code>
+&lt;label for="firstname"&gt;First name:&lt;/label&gt;
+&lt;input type="text" id="firstname" name="fname" /&gt;
+</code></pre>
 
 <h3>Example 1b - How not to do it</h3>
 
-```html
+<pre class="html flex"><code>
 First name:
-<input type="text" name="fname" />
-```
+&lt;input type="text" name="fname" /&gt;
+</code></pre>
 
 <h3>Example 1c - How not to do it</h3>
 
-```html
-<input type="text" name="fname" placeholder="First name" />
-```
+<pre class="html flex"><code>
+&lt;input type="text" name="fname" placeholder="First name" /&gt;
+</code></pre>

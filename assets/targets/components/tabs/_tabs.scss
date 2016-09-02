@@ -1,3 +1,302 @@
+@mixin tabbed-nav {
+  & > .full-width {
+    @include rem(height, $tabs-height);
+    background-color: $darkblue;
+    border-bottom: 1px solid transparent;
+    position: relative;
+    text-align: center;
+  }
+
+  & > figure.full-width {
+    background-color: transparent;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
+
+  nav {
+    @include rem(padding, 0 40px);
+    display: inline-block;
+    white-space: nowrap;
+
+    a {
+      @include adjust-font-size-to(15px);
+      @include rem(line-height, $tabs-height);
+      @include rem(padding, 0 20px);
+      color: rgba($white, .7);
+      display: inline-block;
+      letter-spacing: .5px;
+      outline-offset: -1px;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:hover,
+      &:focus {
+        color: $white;
+      }
+
+      &[data-current] {
+        color: $white;
+        font-weight: $regular;
+        position: relative;
+      }
+
+      &[data-current]::after {
+        border: solid transparent;
+        border-top-color: $darkblue;
+        border-width: 10px 10px 0;
+        content: ' ';
+        height: 0;
+        left: 50%;
+        margin-bottom: -10px;
+        margin-left: -10px;
+        pointer-events: none;
+        position: absolute;
+        top: 100%;
+        width: 0;
+        z-index: 10;
+      }
+
+      @include breakpoint(desktop) {
+        @include rem(padding, 0 30px);
+      }
+    }
+
+    [data-icon] {
+      // Fix outline bug in Chrome
+      overflow: hidden;
+      position: relative;
+
+      & > .icon-label {
+        @include screenreaders-only;
+      }
+    }
+  }
+
+  // wrapper added dynamically around nav element when tabs overflow
+  .tabbed-nav__inner {
+    @include rem(padding-bottom, 15px);
+    position: relative;
+    z-index: 1;
+  }
+
+  .ps-scrollbar-x-rail {
+    z-index: 5;
+  }
+
+  // show scrollbar when focused
+  .ps-focus .ps-scrollbar-x-rail {
+    opacity: 1;
+  }
+
+  // left/right arrows when screen size is too small to fit all the tabs
+  .tab-arrow {
+    @include rem(font-size, 30px);
+    @include rem(padding, 0 20px 5px); // bottom padding aligns arrows with tab labels
+    background: $darkblue;
+    color: $white;
+    cursor: pointer;
+    display: none;
+    font-weight: $bold;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+
+    &[disabled] {
+      cursor: default;
+      opacity: .5;
+    }
+
+    &:focus {
+      outline: 1px dotted $white;
+    }
+  }
+
+  .tab-arrow--left {
+    @include rem(padding-right, 10px);
+    background: linear-gradient(to left, rgba($darkblue, 0), rgba($darkblue, .9) 10%);
+    left: 0;
+  }
+
+  .tab-arrow--right {
+    @include rem(padding-left, 10px);
+    background: linear-gradient(to right, rgba($darkblue, 0), rgba($darkblue, .9) 10%);
+    right: 0;
+  }
+
+  // show the arrows when the tabs overflow
+  .overflow .tab-arrow {
+    display: inline-block;
+  }
+
+  & > [role="tabpanel"] {
+    @include clearfix;
+    @include rem(margin-top, -70px);
+    @include rem(padding-top, 70px);
+    margin-left: auto;
+    max-width: 100%;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+
+    section.lead {
+      background: transparent;
+      color: $black;
+      filter: none;
+      font-weight: $light;
+      margin: 0 auto;
+      max-width: $w-mid;
+      position: static;
+
+      p {
+        color: $black;
+      }
+    }
+  }
+
+  &.black {
+    .full-width {
+      background-color: $black;
+    }
+
+    figure.full-width {
+      background-color: transparent;
+    }
+
+    & > [role="tabpanel"] {
+      @include rem(margin-top, -76px);
+      @include rem(padding-top, 76px);
+    }
+
+    nav a {
+      color: $white;
+
+      &[data-current] {
+        color: $white;
+        font-weight: $regular;
+
+        &:after {
+          border-top-color: $black;
+        }
+      }
+    }
+
+    .mobile-nav,
+    .mobile-nav select {
+      background-color: $black;
+      border: 1px solid $black;
+    }
+  }
+
+  &.navy {
+    .full-width {
+      background-color: $darkblue;
+    }
+
+    figure.full-width {
+      background-color: transparent;
+    }
+
+    & > [role="tabpanel"] {
+      @include rem(margin-top, -76px);
+      @include rem(padding-top, 76px);
+    }
+
+    nav a {
+      color: $gray;
+
+      &[data-current] {
+        color: $white;
+        font-weight: $regular;
+
+        &:after {
+          border-top-color: $darkblue;
+        }
+      }
+    }
+  }
+
+  &.thin {
+    nav a {
+      @include adjust-font-size-to(13px);
+      @include rem(line-height, $tabs-height - 2px); // leave 1px above and below for outline
+      @include rem(margin-top, 1px); // outline cont.
+      @include rem(padding, 0 15px);
+    }
+
+    & > [role="tabpanel"] {
+      @include rem(margin-top, -55px);
+      @include rem(padding-top, 55px);
+      background-color: transparent;
+
+      @include breakpoint(desktop) {
+        @include rem(margin-top, -95px);
+        @include rem(padding-top, 95px);
+      }
+    }
+  }
+}
+
+[data-tabbed].tabbed {
+  @include clearfix;
+  @include trailer(2);
+  width: 100%;
+
+  nav {
+    border-bottom: 1px solid $lightergray;
+
+    @include breakpoint(tablet) {
+      text-align: left;
+    }
+
+    a {
+      @include padding-trailer(0.5);
+      @include rem(padding-left, 25px);
+      @include rem(padding-right, 25px);
+      background-color: inherit;
+      color: $midgray;
+      cursor: pointer;
+      display: inline-block;
+      font-weight: $light;
+      margin-bottom: -1px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:hover,
+      &:focus {
+        color: $cyan;
+      }
+
+      &[data-current] {
+        border-bottom: 2px solid $cyan;
+        color: $cyan;
+      }
+    }
+  }
+
+  & > [role="tabpanel"] {
+    @include padding-leader(1);
+    @include padding-trailer(0);
+    @include rem(padding-left, 25px);
+    @include rem(padding-right, 25px);
+    border-bottom: 1px solid $lightergray;
+    margin: 0;
+
+    p {
+      width: 100%;
+    }
+  }
+}
+
 .uomcontent {
   [data-tabbed] {
     nav {
@@ -26,13 +325,8 @@
       }
     }
 
-    [role="tabpanel"] {
-      margin: 0;
-      padding: 0;
-
-      &[data-current] {
-        display: block;
-      }
+    & > [role="tabpanel"][data-current] {
+      display: block;
     }
   }
 
@@ -41,309 +335,16 @@
   }
 
   .tabbed-nav {
-    & > .full-width {
-      @include rem(height, $tabs-height);
-      background-color: $darkblue;
-      border-bottom: 1px solid transparent;
-      position: relative;
-      text-align: center;
-    }
-
-    & > figure.full-width {
-      background-color: transparent;
-    }
-
-    .mobile-nav {
-      display: none;
-    }
-
-    nav {
-      @include rem(padding, 0 40px);
-      display: inline-block;
-      white-space: nowrap;
-
-      a {
-        @include adjust-font-size-to(15px);
-        @include rem(line-height, $tabs-height - 2px); // leave 1px above and below for outline
-        @include rem(margin-top, 1px); // outline cont.
-        @include rem(padding, 0 20px);
-        color: rgba($white, .7);
-        display: inline-block;
-        letter-spacing: .5px;
-        text-decoration: none;
-        text-transform: uppercase;
-
-        &:hover {
-          color: $white;
-        }
-
-        &[data-current] {
-          color: $white;
-          font-weight: $regular;
-          position: relative;
-        }
-
-        &[data-current]::after {
-          border: solid transparent;
-          border-top-color: $darkblue;
-          border-width: 10px 10px 0;
-          content: ' ';
-          height: 0;
-          left: 50%;
-          margin-bottom: -10px;
-          margin-left: -10px;
-          pointer-events: none;
-          position: absolute;
-          top: 100%;
-          width: 0;
-          z-index: 10;
-        }
-
-        @include breakpoint(desktop) {
-          @include rem(padding, 0 30px);
-        }
-      }
-
-      [data-icon] {
-        @extend .icon--hide-label;
-      }
-    }
-
-    /* wrapper added dynamically around nav element when tabs overflow */
-    .tabbed-nav__inner {
-      @include rem(padding-bottom, 15px);
-      position: relative;
-      z-index: 1;
-    }
-
-    .ps-scrollbar-x-rail {
-      z-index: 5;
-    }
-
-    /* show scrollbar when focused */
-    .ps-focus .ps-scrollbar-x-rail {
-      opacity: 1;
-    }
-
-    /* left/right arrows when screen size is too small to fit all the tabs */
-    .tab-arrow {
-      @include rem(font-size, 30px);
-      @include rem(padding, 0 20px 5px); /* bottom padding aligns arrows with tab labels */
-      background: $darkblue;
-      color: $white;
-      cursor: pointer;
-      display: none;
-      font-weight: $bold;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      z-index: 2;
-
-      &[disabled] {
-        cursor: default;
-        opacity: .5;
-      }
-      
-      &:focus {
-        outline: 1px dotted $white;
-      }
-    }
-    .tab-arrow--left {
-      @include rem(padding-right, 10px);
-      background: linear-gradient(to left, rgba($darkblue, 0), rgba($darkblue, .9) 10%);
-      left: 0;
-    }
-    .tab-arrow--right {
-      @include rem(padding-left, 10px);
-      background: linear-gradient(to right, rgba($darkblue, 0), rgba($darkblue, .9) 10%);
-      right: 0;
-    }
-
-    /* show the arrows when the tabs overflow */
-    .overflow .tab-arrow {
-      display: inline-block;
-    }
-
-    [role="tabpanel"] {
-      @include rem(margin-top, -70px);
-      @include rem(padding-top, 70px);
-      margin-left: auto;
-      max-width: 100%;
-      padding-bottom: 0;
-      padding-left: 0;
-      padding-right: 0;
-
-      section.lead {
-        background: transparent;
-        color: $black;
-        filter: none;
-        font-weight: $light;
-        margin: 0 auto;
-        max-width: $w-mid;
-        position: static;
-
-        p {
-          color: $black;
-        }
-      }
-    }
-
-    &.black {
-      .full-width {
-        background-color: $black;
-      }
-
-      figure.full-width {
-        background-color: transparent;
-      }
-
-      [role="tabpanel"] {
-        @include rem(margin-top, -76px);
-        @include rem(padding-top, 76px);
-      }
-
-      nav a {
-        color: $white;
-
-        &[data-current] {
-          color: $white;
-          font-weight: $regular;
-        }
-      }
-
-      nav a[data-current]::after {
-        border-top-color: $black;
-      }
-
-      .mobile-nav,
-      .mobile-nav select {
-        background-color: $black;
-        border: 1px solid $black;
-      }
-    }
-
-    &.navy {
-      .full-width {
-        background-color: $darkblue;
-      }
-
-      figure.full-width {
-        background-color: transparent;
-      }
-
-      [role="tabpanel"] {
-        @include rem(margin-top, -76px);
-        @include rem(padding-top, 76px);
-      }
-
-      nav a {
-        color: $gray;
-
-        &[data-current] {
-          color: $white;
-          font-weight: $regular;
-        }
-      }
-
-      nav a[data-current]:after {
-        border-top-color: $darkblue;
-      }
-
-      nav a[data-current]::after {
-        border-top-color: $darkblue;
-      }
-    }
-
-    &.thin {
-      nav a {
-        @include adjust-font-size-to(13px);
-        @include rem(line-height, $tabs-height - 2px); // leave 1px above and below for outline
-        @include rem(margin-top, 1px); // outline cont.
-        @include rem(padding, 0 15px);
-      }
-
-      [role="tabpanel"] {
-        @include rem(margin-top, -55px);
-        @include rem(padding-top, 55px);
-        background-color: transparent;
-
-        @include breakpoint(desktop) {
-          @include rem(margin-top, -95px);
-          @include rem(padding-top, 95px);
-        }
-      }
-    }
-  }
-
-  [data-tabbed].tabbed {
-    @extend %clearfix;
-    @include trailer(2);
-    width: 100%;
-
-    nav {
-      border-bottom: 1px solid $lightergray;
-
-      @include breakpoint(tablet) {
-        text-align: left;
-      }
-
-      a {
-        @include padding-trailer(0.5);
-        @include rem(padding-left, 25px);
-        @include rem(padding-right, 25px);
-        background-color: inherit;
-        color: $midgray;
-        cursor: pointer;
-        display: inline-block;
-        font-weight: $light;
-        margin-bottom: -1px;
-        text-decoration: none;
-
-        &:hover {
-          color: $cyan;
-        }
-
-        &[data-current] {
-          border-bottom: 2px solid $cyan;
-          color: $cyan;
-        }
-      }
-    }
-
-    [role="tabpanel"] {
-      @include padding-leader(1);
-      @include padding-trailer(0);
-      @include rem(padding-left, 25px);
-      @include rem(padding-right, 25px);
-      border-bottom: 1px solid $lightergray;
-      margin: 0;
-
-      p {
-        width: 100%;
-      }
-    }
+    @include tabbed-nav;
   }
 }
 
 .uomcontent [role="main"] {
   .tabbed-course {
-    @extend .tabbed-nav;
-    @extend .thin;
+    @include tabbed-nav;
 
-    [role="tabpanel"] {
-      @extend %clearfix;
-    }
-
-    aside h2.subtitle {
+    .aside h2.subtitle {
       @include rem(padding-bottom, 5px);
-    }
-
-    .degree-plan {
-      display: none;
-
-      &.current {
-        display: block;
-      }
     }
 
     .mobile-wrap {
@@ -352,67 +353,73 @@
   }
 }
 
-.uomcontent {
-  .with-aside {
-    ul.sidebar-tab-nav {
-      display: block;
-      line-height: 1.4;
+/**
+ * Sidebar tabs
+ */
+.uomcontent .sidebar-tabs {
+  /* Panels container (must be focusable - i.e. have `tabindex="-1"`) */
+  &__panels {
+    outline: 0;
+  }
+
+  /* List of tabs in sidebar */
+  &__list {
+    display: block;
+    line-height: 1.4;
+    padding: 0;
+
+    @include breakpoint(desktop) {
+      @include rem(margin-right, -16px);
+    }
+
+    @include breakpoint(wide) {
+      @include rem(margin-left, -16px);
+      @include rem(margin-right, -32px);
+    }
+
+    & > li {
+      list-style-type: none;
+      margin: 0;
       padding: 0;
-
-      @include breakpoint(desktop) {
-        @include rem(margin, 0 -30px 0 -15px);
-      }
-
-      li {
-        list-style-type: none;
-        margin-left: 0;
-        padding-bottom: 0;
-      }
-
-      a {
-        @include rem(padding, 10px 30px 10px 15px);
-        border-left: 5px solid transparent;
-        display: block;
-        text-decoration: none;
-      }
-
-      a.current,
-      a:hover.current {
-        background-color: $white;
-        border-left-color: $highlight;
-      }
-    }
-
-    .bside + aside ul.sidebar-tab-nav {
-      @include breakpoint(desktop) {
-        @include rem(margin, 0 -15px 0 -30px);
-      }
-
-      a {
-        border-left: 0;
-        border-right: 5px solid transparent;
-      }
-
-      a.current,
-      a:hover.current {
-        border-right-color: $highlight;
-      }
     }
   }
 
-  .sidebar-tab-section {
-    position: relative;
+  /* Tab links in sidebar (ul > li > a) */
+  &__tab {
+    @include rem(padding, 12px 16px);
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0 0 0 5px;
+    display: block;
+    text-decoration: none;
+
+    &[aria-selected="true"] {
+      background-color: $white;
+      border-color: $highlight;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
-  .with-aside div.sidebar-tab {
-    display: none !important;
-
-    &.current {
-      display: block !important;
-
-      h2 {
-        padding-top: 0;
+  /* Tabs are on the right-hand side of the viewport; move them against the left edge of the sidebar  */
+  &--right {
+    .sidebar-tabs__list {
+      @include breakpoint(desktop) {
+        @include rem(margin-left, -16px);
+        margin-right: 0;
       }
+
+      @include breakpoint(wide) {
+        @include rem(margin-left, -32px);
+        @include rem(margin-right, -16px);
+      }
+    }
+
+    .sidebar-tabs__tab {
+      border-left-width: 0;
+      border-right-width: 5px;
     }
   }
 }

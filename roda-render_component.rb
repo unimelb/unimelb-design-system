@@ -1,4 +1,4 @@
-# Deal with component
+# rubocop:disable Style/FileName, Metrics/ModuleLength
 module RodaRenderComponent
   #
   module InstanceMethods
@@ -12,27 +12,28 @@ module RodaRenderComponent
         raw_documents << Dir.glob(parent)
       end
 
-      raw_documents.flatten.sort.map { |f| get_section(f) }
+      raw_documents.flatten.sort.map { |f| get_section(f, opts) }
 
       @documents['_append'] = [trigger_source_editable] if @code_i > 0
 
       @documents
     end
 
-    def get_section(f)
+    def get_section(f, opts)
       section = File.basename(f)[0..1]
       @documents[section] = [] unless @documents[section]
-      @documents[section] << process_section(f)
+      @documents[section] << process_section(f, opts)
     end
 
-    def process_section(f)
+    def process_section(f, opts)
+      puts opts.include? :code_only
       case File.extname(f)
       when '.md' then
         build_markdown(f) unless opts.include? :code_only
       when '.slim' then
-        build_slim(f)
+        build_slim(f, opts)
       else
-        build_html(f)
+        build_html(f, opts)
       end
     end
 
@@ -49,9 +50,9 @@ module RodaRenderComponent
     end
 
     # Render slim
-    def build_slim(f)
-      source = basename_without_index_and_extension(f)[-9..-1] == 'no-source'
+    def build_slim(f, opts) # rubocop:disable Metrics/AbcSize
       params = ''
+      source = basename_without_index_and_extension(f)[-9..-1] == 'no-source' || (opts.include? :code_only) # rubocop:disable Metrics/LineLength
       if source
         source = nil
       else
@@ -64,9 +65,9 @@ module RodaRenderComponent
       [title_from_filename(f), output, source]
     end
 
-    def build_html(f)
-      source = basename_without_index_and_extension(f)[-9..-1] == 'no-source'
+    def build_html(f, opts) # rubocop:disable Metrics/AbcSize
       params = ''
+      source = basename_without_index_and_extension(f)[-9..-1] == 'no-source' || (opts.include? :code_only) # rubocop:disable Metrics/LineLength
       if source
         source = nil
       else
@@ -95,7 +96,8 @@ module RodaRenderComponent
 '
     end
 
-    def trigger_source_editable
+    def trigger_source_editable # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/LineLength
+      # rubocop:disable Metrics/LineLength
       buf = '
       <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
 '

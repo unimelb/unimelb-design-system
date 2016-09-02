@@ -1,7 +1,7 @@
 .uomcontent {
   p.search-spelling {
     @include trailer(1);
-    border-bottom: 1px solid rgba(#000000, 0.1);
+    border-bottom: 1px solid rgba($black, .1);
 
     strong {
       font-style: italic;
@@ -10,7 +10,9 @@
 
   h2.search-title {
     @include adjust-font-size-to(12px);
+    @include rem(padding-bottom, 16px);
     color: $midgray;
+    padding-top: 0;
   }
 
   ol.search-results {
@@ -23,10 +25,10 @@
     }
 
     & > li {
-      @extend %clearfix;
+      @include clearfix;
       @include padding-trailer(1);
       @include trailer(1);
-      border-bottom: 1px solid rgba(#000000, 0.1);
+      border-bottom: 1px solid rgba($black, .1);
       list-style-type: none;
       margin-left: 0;
       width: auto;
@@ -36,13 +38,7 @@
       }
 
       &.person {
-        @extend %fallbackAvatarWrapper;
-
-        /* work-around for `with-aside` layout */
-        div {
-          clear: none;
-          width: auto;
-        }
+        @include fallbackAvatarWrapper;
 
         .person__photo {
           background-position: center;
@@ -51,15 +47,14 @@
           width: 85px;
           height: 85px;
 
-          /* When using the background-image technique, show a fallback avatar if the photo fails to load */
+          // When using the background-image technique, show a fallback avatar if the photo fails to load
           &:not(img) {
-            @extend %fallbackAvatar;
+            @include fallbackAvatar;
           }
         }
 
         .person__info {
           margin-left: 0;
-          overflow: hidden;
         }
 
         .person__contact {
@@ -145,7 +140,7 @@
         color: $highlight;
 
         & > a {
-          @extend %ellipsis;
+          @include ellipsis;
         }
       }
 

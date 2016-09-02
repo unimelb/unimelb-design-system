@@ -1,22 +1,8 @@
 == render(:_breadcrumb)
 
-.page-local-login data-title="Eyes up"
-  h1 Login
-  form method="post" action="" data-validate=""
-    fieldset
-      div
-        label data-required="true" for="f-email"
-          ' Email:
-        input data-pattern="email" aria-required="true" id="f-email" name="f[email]" type="email" data-error="Please enter a valid email."
-      div
-        label data-required="true" for="f-password"
-          ' Password:
-        input id="f-password" aria-required="true" name="f[password]" type="password" data-error="Please enter your password."
+.page-local-login data-title="Eyes up" data-href="/login"
 
-    footer
-      input type="submit" value="Login"
-
-div role="main" class="with-login"
+div role="main"
   header.image style="background-image:url(/assets/example/bg-banner-small.jpg);"
     .mid-align
       h1 About us
@@ -29,8 +15,7 @@ div role="main" class="with-login"
     #welcome.tab role="tabpanel"
       section.with-figure
         h2.title Login demo page
-        p This is a basic copy of the About Us template, but has a login form <a href="/layouts/with-login/source">built into the source</a>, in a class called <code>page-local-login</code>. You can mark up whatever is needed for the login form within this element. Note that the title of the login button in the header can be manipulated by using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The title will be "Login" by default, and there is a hard limit of 7 characters.
-        p <a href="/layouts/with-login-link">This layout</a> demonstrates a local login feature with link only (no modal), if you need to link away to a login page.
+        p This is a copy of the About Us template that demonstrates the <strong>login link</strong> feature in the header.
         figure.inset-right
           img src="/assets/example/about_prof_hinchcliff.jpg" alt="Professor Ken Hinchcliff"
           figcaption Professor Ken Hinchcliff

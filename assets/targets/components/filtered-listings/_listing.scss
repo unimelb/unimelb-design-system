@@ -7,7 +7,7 @@
     display: none;
   }
 
-  aside {
+  .aside {
     @include padding-trailer(2);
     float: none;
     margin: 0 3%;
@@ -53,7 +53,7 @@
 }
 
 .uomcontent .filtered-listing-grid {
-  @extend %clearfix;
+  @include clearfix;
   left: 0;
   margin: 0 3%;
   max-width: 100%;
@@ -81,6 +81,8 @@
     @include breakpoint($w-sml) {
       float: left;
       margin: 0;
+      padding-bottom: 4px;
+      padding-right: 4px;
       width: 48%;
     }
 
@@ -103,7 +105,6 @@
 
   a {
     @include rem(padding, 10px);
-    border: 2px solid $white;
     color: $darkgray;
     display: block;
     font-weight: $light;

@@ -1,14 +1,52 @@
-@-webkit-keyframes hue {
-  from {
-    -webkit-filter: hue-rotate(0deg);
+@keyframes hue {
+  from { filter: hue-rotate(0deg); }
+  to { filter: hue-rotate(-360deg); }
+}
+
+@mixin inner-list-reset {
+  padding-bottom: 1em;
+  padding-top: .5em;
+
+  ul li {
+    list-style-type: disc;
+
+    ol,
+    ul {
+      padding-bottom: 0;
+      padding-top: .5em;
+    }
   }
 
-  to {
-    -webkit-filter: hue-rotate(-360deg);
+  ol li {
+    list-style-type: decimal;
+
+    ol,
+    ul {
+      padding-bottom: 0;
+      padding-top: .5em;
+    }
+
+    ol li {
+      list-style-type: lower-alpha;
+
+      ol li {
+        list-style-type: lower-roman;
+      }
+    }
+
+    ul li {
+      list-style-type: disc;
+    }
+  }
+
+  .ticked-list li,
+  .no-li,
+  ol.steps li {
+    list-style-type: none;
   }
 }
 
-%ticks {
+@mixin ticks {
   @include rem(padding-left, 30px);
 
   @include breakpoint(desktop) {
@@ -21,15 +59,15 @@
 
     &::before {
       @include rem(height, 5px);
+      @include rem(left, 6px);
       @include rem(margin-left, -30px);
-      @include rem(top, 8px);
+      @include rem(top, 6px);
       @include rem(width, 10px);
       background: transparent;
       border: 3px solid $green;
       border-right: 0 none;
       border-top: 0 none;
       content: '';
-      left: 0;
       position: absolute;
       transform: rotate(-45deg);
     }
@@ -97,10 +135,14 @@
   p,
   li,
   table {
-    @extend %wrapper;
+    @include wrapper;
     @include rem(max-width, $w-sml);
     font-weight: $light;
     padding: 0;
+
+    @include breakpoint(tablet) {
+      @include rem(max-width, $w-sml);
+    }
   }
 
   h1 {
@@ -141,8 +183,6 @@
 
   ol,
   ul {
-    @include leader(0);
-    @include padding-trailer(1);
     @include rem(max-width, $w-sml);
     @include rem(padding-left, 15px);
     @include rem(padding-right, 15px);
@@ -181,10 +221,54 @@
         margin-left: 0;
       }
     }
+
+    @include inner-list-reset;
+
+    // Remove bottom padding for inner lists
+    ol,
+    ul {
+      padding-bottom: 0;
+    }
   }
 
   ol {
     @include rem(padding-left, 30px);
+
+    &[type="a"] li {
+      list-style-type: lower-alpha;
+
+      ol[type="1"] li {
+        list-style-type: decimal;
+      }
+
+      ol[type="i"] li {
+        list-style-type: lower-roman;
+      }
+    }
+
+    &[type="i"] li {
+      list-style-type: lower-roman;
+
+      ol[type="a"] li {
+        list-style-type: lower-alpha;
+      }
+
+      ol[type="1"] li {
+        list-style-type: decimal;
+      }
+    }
+
+    &[type="1"] li {
+      list-style-type: decimal;
+
+      ol[type="a"] li {
+        list-style-type: lower-alpha;
+      }
+
+      ol[type="i"] li {
+        list-style-type: lower-roman;
+      }
+    }
 
     &.steps {
       @include rem(max-width, $w-mid);
@@ -226,13 +310,23 @@
       }
 
       h2 {
-        @extend h1;
+        @include adjust-font-size-to(26px);
         @include padding-leader(1);
+        @include padding-trailer(1);
+        font-weight: $light;
         text-transform: none;
+
+        @include breakpoint(desktop) {
+          @include adjust-font-size-to(33px);
+        }
       }
+
+      ol,
       ul {
         @include rem(padding-left, 20px);
         @include rem(padding-right, 20px);
+        padding-bottom: 0;
+        padding-top: .5em;
       }
 
       @include breakpoint(desktop) {
@@ -260,7 +354,7 @@
       @include breakpoint(wide) {
         & > li {
           @include rem(padding-left, 110px);
-          
+
           > * {
             margin-left: 0;
           }
@@ -286,18 +380,109 @@
     }
   }
 
+  // Nested aggregation
+  ol.nested {
+    counter-reset: section;
+    list-style-type: none;
+    padding-left: 3%;
+    padding-right: 3%;
+    width: 94%;
+
+    ol {
+      counter-reset: section;
+      list-style-type: none;
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+    }
+
+    li {
+      list-style-type: none;
+      margin-left: 0;
+    }
+
+    li::before {
+      counter-increment: section;
+      content: counters(section,".") ". ";
+      padding-right: .4em;
+    }
+
+    ol {
+      counter-reset: section;
+      list-style-type: none;
+      padding: 1em 0 0;
+
+      li::before {
+        content: counters(section,".") " ";
+      }
+
+      &[type="a"],
+      &[type="i"] {
+        @include rem(padding-left, 42px);
+        @include rem(padding-top, 12px);
+
+        li::before {
+          display: none;
+        }
+      }
+
+      &[type="a"] li {
+        list-style-type: lower-latin;
+      }
+
+      &[type="i"] li {
+        list-style-type: lower-roman;
+      }
+
+    }
+  }
+
+  ol.brackets {
+    counter-reset: list1;
+
+    li {
+      list-style: none;
+      position: relative;
+    }
+
+    &[type="a"] {
+      counter-reset: lista;
+
+      li::before {
+        content: '(' counter(lista, lower-alpha) ') ';
+        counter-increment: lista;
+      }
+    }
+
+    &[type="i"] {
+      counter-reset: listi;
+
+      li::before {
+        content: '(' counter(listi, lower-roman) ') ';
+        counter-increment: listi;
+      }
+    }
+
+    li::before {
+      content: '(' counter(list1, decimal) ') ';
+      counter-increment: list1;
+      left: -1.6em;
+      position: absolute;
+    }
+  }
+
   ul {
   	li {
   		list-style-type: disc;
   	}
 
     &.ticked-list {
-      @extend %ticks;
+      @include ticks;
     }
   }
 
   .ticked-list ul {
-    @extend %ticks;
+    @include ticks;
   }
 
   dl {
@@ -370,8 +555,10 @@
     color: $cyan;
     text-decoration: underline;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: darken($cyan, 15%);
+      text-decoration: none;
     }
 
     &:active {
@@ -387,6 +574,23 @@
 
   .no-padding {
     padding-bottom: 0;
+  }
+
+  /**
+   * Box
+   * Give a container full control over its inner top and bottom spacing
+   * by removing its first child's top spacing and its last child's bottom spacing.
+   */
+  .box {
+    & > *:first-child {
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
   }
 
   .grey {

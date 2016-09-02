@@ -5,6 +5,7 @@ var WEBPACK_URL = "http://"+process.env.WEB_SERVER_HOST+":"+process.env.WEBPACK_
 var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
 
 // Webpack plugins
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
@@ -15,6 +16,12 @@ var BUILD   = path.join(__dirname, "..", "build");
 
 // Plugins
 var plugins = [
+  new webpack.DefinePlugin({
+    'process.env': {
+      CDNURL: JSON.stringify(process.env.CDNURL),
+      GMAPSJSAPIKEY: JSON.stringify(process.env.GMAPSJSAPIKEY)
+    }
+  }),
   new ExtractTextPlugin("[name].css", {
     allChunks: true
   })
@@ -67,11 +74,11 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader?-minimize!autoprefixer-loader!sass-loader")
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader?-minimize!postcss-loader!sass-loader")
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader?-minimize!autoprefixer-loader")
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader?-minimize!postcss-loader")
       },
       {
         test: /(isotope-layout|imagesloaded)/,
@@ -82,7 +89,12 @@ module.exports = {
   jshint: {
     eqnull: true,
     failOnHint: false
-  }
+  },
+  postcss: [
+    autoprefixer({
+      browsers: ['> 1% in AU', 'last 2 versions', 'Firefox ESR', 'ie >= 9']
+    })
+  ]
 };
 
 function isDirectory(dir) {

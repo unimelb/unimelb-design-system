@@ -2,6 +2,8 @@
   a class="page-header-home" href="/layouts/intranet"
     h1 Staff Hub
 
+.page-local-login data-href="/login"
+
 .page-announcement
   a.page-announcement__message href="/layouts/no-header"
     h2 Daily announcement
@@ -11,7 +13,7 @@
   button.page-announcement__close type="button"
     span.small data-icon="close" Dismiss
 
-div.with-login role="main"
+div role="main"
   div.tabbed-nav data-tabbed="" id="nav" role="tabs"
     .full-width
       nav.desktop-nav
@@ -116,31 +118,18 @@ div.with-login role="main"
             a href="#"
               h3 Marketing & Communications
               p Advancement, communications, marketing, media, industry and community engagement
-              
+
     .tab id="news-events" role="tabpanel"
       section
         h1 News and events
     .tab id="structure-governance" role="tabpanel"
       section
         h1 Structure and governance
-        
+
     .tab id="intranets" role="tabpanel"
       section
         h1 Local intranets
 
-    div.page-local-login
-      h1 Login
-      form action="" data-validate="" method="post"
-        fieldset
-          div
-            label data-required="true" for="f-email" Email:
-            input aria-required="true" data-error="Please enter a valid email." data-pattern="email" id="f-email" name="f[email]" type="email"
-          div
-            label data-required="true" for="f-password" Password:
-            input aria-required="true" data-error="Please enter your password." id="f-password" name="f[password]" type="password"
-        footer
-          input type="submit" value="Login"
-          
   .enquiry.enquiry--dark
     .enquiry__cta.accordion__title
       ' Questions or feedback?
@@ -168,8 +157,8 @@ div.with-login role="main"
                 textarea#f_message name="enquiry" placeholder="Your enquiry" aria-required="true"
               div
                 label.enquiry-form__label data-required="true" for="f_phone" Issue or suggestion
-                select aria-label="This label is hidden from view but not from screen readers" aria-required="true" name="f[select]" 
-                  option value="-1" 
+                select aria-label="This label is hidden from view but not from screen readers" aria-required="true" name="f[select]"
+                  option value="-1"
                     | Please select
                   optgroup
                     option
@@ -182,7 +171,7 @@ div.with-login role="main"
                       | Blocker to task completion
                     option
                       | Suggestion for improvement
-                  
+
               div
                 label.enquiry-form__label data-required="true" for="f_message" Message
                 textarea#f_message aria-required="true" name="enquiry" placeholder="Please describe the fault, issue or suggestion"
@@ -192,21 +181,21 @@ div.with-login role="main"
                   legend Make a selection (implicitly required):
                   .inline
                     input#radio-1-1 checked="" data-error="Please make a selection" name="f[radio]" type="radio" value="1" /
-                    label for="radio-1-1" 
+                    label for="radio-1-1"
                       span 1 – Incorrect information – Highest priority – wrong date or contact
                   .inline
                     input#radio-1-2 data-error="Please make a selection" name="f[radio]" type="radio" value="2" /
-                    label for="radio-1-2" 
+                    label for="radio-1-2"
                       span 2 – Can’t complete a task – Relatively high priority – missing form
                   .inline
                     input#radio-1-3 data-error="Please make a selection" name="f[radio]" type="radio" value="3" /
-                    label for="radio-1-3" 
+                    label for="radio-1-3"
                       span 3 – Minor technical/editorial issue – e.g. a broken link or grammar correction
                   .inline
                     input#radio-1-4 data-error="Please make a selection" name="f[radio]" type="radio" value="4" /
-                    label for="radio-1-4" 
+                    label for="radio-1-4"
                       span 4 – Nice to have – suggestion
-                  
+
               div
                 input.enquiry-form__submit-button type='submit' value='Send your question'
               hr.spacer
