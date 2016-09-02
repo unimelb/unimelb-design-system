@@ -113,24 +113,6 @@
   input[type="url"] {
     @include textcontrol;
     width: 100%;
-
-    &:-moz-placeholder { // /* Mozilla Firefox 4 to 18 */
-      color: $midgray;
-      opacity: 1;
-    }
-
-    &::-moz-placeholder { // /* Mozilla Firefox 19+ */
-      color: $midgray;
-      opacity: 1;
-    }
-
-    &:-ms-input-placeholder { // /* Internet Explorer 10+ */
-      color: $midgray;
-    }
-
-    &::-webkit-input-placeholder { // /* WebKit browsers */
-      color: $midgray;
-    }
   }
 
   textarea {

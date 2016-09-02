@@ -13,12 +13,12 @@ form method="post" action="" data-validate=""
     div
       label for="f-id"
         ' Product Code (regex pattern matching):
-      input data-pattern="[0-9][A-Z]{3}" maxlength="4" id="f-id" name="f[p_id]" type="text" data-error="Single digit followed by three uppercase letters."
+      input data-pattern="[0-9][A-Z]{3}" maxlength="4" id="f-id" name="f[p_id]" type="text" placeholder="3ABC" data-error="Single digit followed by three uppercase letters."
 
     div
       label for="f-message"
         ' Message:
-      textarea aria-required="true" id="f-message" name="f[message]" data-error="Please enter a message."
+      textarea aria-required="true" placeholder="Please enter a message" id="f-message" name="f[message]" data-error="Please enter a message."
 
   footer
     input type="submit"
