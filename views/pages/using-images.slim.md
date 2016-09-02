@@ -258,9 +258,11 @@ article
 
     h2 #6 If you can't find an image, don't use one
     p That is by far the most important rule. Remember the first paragraph of this article?
-    blockquote Images can be a great way of helping readers understand what you are trying to communicate
+    blockquote
+      .blockquote__text Images can be a great way of helping readers understand what you are trying to communicate
     p And do you remember the third sentence as well?
-    blockquote The wrong image, however, can confuse, misguide, annoy or even repel. You may never get the chance to correct the negative impact of the wrong image.
+    blockquote
+      .blockquote__text The wrong image, however, can confuse, misguide, annoy or even repel. You may never get the chance to correct the negative impact of the wrong image.
     p This is really important to keep in mind at all times. No image is sometimes better than some random image that does not help your message at all. Not have an image will definitely help your page load faster.
 
 

@@ -114,7 +114,6 @@
 }
 
 body.jumpnav-active .uomcontent {
-  blockquote,
   .inset-left {
     @include breakpoint(wide) {
       margin-left: 0;
@@ -129,7 +128,6 @@ body.jumpnav-active .uomcontent {
     }
   }
 
-  blockquote.right,
   .inset-right {
     @include breakpoint(wide) {
       @include rem(margin-left, 30px);
@@ -142,6 +140,34 @@ body.jumpnav-active .uomcontent {
       @include rem(margin-bottom, 20px);
       @include rem(margin-right, -180px);
       max-width: 80%;
+    }
+  }
+}
+
+body.jumpnav-active .uomcontent {
+  blockquote.left,
+  blockquote.right {
+    @include breakpoint(wide) {
+      margin-left: 0;
+      padding: 0;
+    }
+
+    @include breakpoint(1400px) {
+      @include rem(margin-bottom, 20px);
+      @include rem(margin-left, -180px);
+    }
+  }
+
+  blockquote.right {
+    @include breakpoint(wide) {
+      @include rem(margin-left, 30px);
+      margin-right: 0;
+      padding: 0;
+    }
+
+    @include breakpoint(1400px) {
+      @include rem(margin-bottom, 20px);
+      @include rem(margin-right, -180px);
     }
   }
 }

@@ -1,5 +1,4 @@
 .uomcontent blockquote {
-  @include rem(margin-bottom, 30px);
   @include rem(margin-top, 5px);
   border: 0 none;
   float: none;
@@ -10,66 +9,73 @@
   text-align: left;
   width: 94%;
 
-  p {
+  .blockquote__text {
     @include rem(font-size, 32px);
     @include rem(margin-bottom, 30px);
-    @include rem(padding-bottom, 30px);
-    border-bottom: 4px solid $lighterblue;
     color: $lighterblue;
     display: block;
-    font-family: "Arial Black", $ff-sans;
+    font-family: $ff-sans;
     font-style: normal;
-    font-weight: $bold;
-    letter-spacing: -1px;
-    line-height: 1.15;
+    font-weight: 700;
+    line-height: 1.2;
     text-transform: uppercase;
     width: 100%;
   }
 
-  cite {
+  .blockquote__citation {
     @include rem(font-size, 20px);
+    @include rem(margin-top, 15px);
+    @include rem(padding-top, 15px);
+    border-top: 4px solid $lighterblue;
     color: $lighterblue;
+    display: block;
     font-weight: $thin;
   }
 
   @include breakpoint(tablet) {
-    @include rem(padding-right, 15px);
-    @include rem(margin-right, 30px);
-    float: left;
-    max-width: 62%;
-    width: auto;
-
-    p {
-      @include rem(margin, 0 15px 30px);
-      max-width: 25rem;
-      letter-spacing: -1px;
-    }
-
-    cite {
-      @include rem(margin-left, 15px);
-    }
+    clear: both;
   }
 
   @include breakpoint(desktop) {
-    padding-right: 0;
-
-    p {
-      @include rem(font-size, 34px);
-      margin-left: 0;
-    }
-
-    cite {
-      margin-left: 0;
-    }
+    width: 100%;
   }
 
-  @include breakpoint(wide) {
-    @include rem(margin-left, -180px);
-    max-width: 80%;
+  &.left,
+  &.right {
+    @include breakpoint(tablet) {
+      padding-right: 0;
+
+      .blockquote__text {
+        @include rem(font-size, 34px);
+        margin-left: 0;
+      }
+
+      .blockquote__citation {
+        margin-left: 0;
+      }
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(padding-right, 15px);
+      @include rem(margin-right, 30px);
+      float: left;
+      max-width: 62%;
+      width: auto;
+
+      .blockquote__text {
+        @include rem(margin, 0 15px 0 0);
+        @include rem(max-width, 400px);
+      }
+    }
+
+    @include breakpoint(wide) {
+      @include rem(margin-left, -180px);
+      max-width: 60%;
+    }
   }
 
   &.right {
-    @include breakpoint(tablet) {
+    @include breakpoint(desktop) {
       @include rem(margin-left, 30px);
       float: right;
       margin-right: 0;
