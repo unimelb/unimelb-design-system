@@ -145,8 +145,8 @@ body.jumpnav-active .uomcontent {
 }
 
 body.jumpnav-active .uomcontent {
-  blockquote.left,
-  blockquote.right {
+  .blockquote-modern.left,
+  .blockquote-modern.right {
     @include breakpoint(wide) {
       margin-left: 0;
       padding: 0;
@@ -158,7 +158,7 @@ body.jumpnav-active .uomcontent {
     }
   }
 
-  blockquote.right {
+  .blockquote-modern.right {
     @include breakpoint(wide) {
       @include rem(margin-left, 30px);
       margin-right: 0;
