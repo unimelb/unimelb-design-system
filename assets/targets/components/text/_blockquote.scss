@@ -1,5 +1,90 @@
-.uomcontent [role="main"] blockquote {
-  margin-top: 0;
+@mixin blockquote-modern {
+  &:not(.blockquote-classic) {
+    @include rem(font-size, 28px);
+    @include rem(margin-bottom, 30px);
+    @include rem(padding-bottom, 30px);
+    color: $lighterblue;
+    display: block;
+    font-family: "Arial Black", $ff-sans;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 auto;
+    padding-right: .3em;
+    position: relative;
+    width: 94%;
+
+    &::after {
+      content: close-quote;
+    }
+
+    &::before {
+      content: open-quote;
+    }
+
+    & > * {
+      display: inline;
+    }
+
+    cite {
+      @include rem(font-size, 20px);
+      @include rem(margin-top, 15px);
+      @include rem(padding-bottom, 15px);
+      @include rem(padding-top, 15px);
+      border-top: 4px solid $lighterblue;
+      color: $lighterblue;
+      display: block;
+      float: right;
+      font-family: $ff-sans;
+      font-style: normal;
+      font-weight: $light;
+      width: 100%;
+    }
+
+
+    @include breakpoint(tablet) {
+      clear: both;
+    }
+
+    @include breakpoint(desktop) {
+      margin: 0;
+      width: 100%;
+    }
+
+    &.left,
+    &.right {
+      @include breakpoint(tablet) {
+        @include rem(font-size, 32px);
+      }
+
+      @include breakpoint(desktop) {
+        @include rem(padding-right, 15px);
+        @include rem(margin, 0 15px 0 0);
+        @include rem(max-width, 400px);
+        float: left;
+        max-width: 62%;
+        width: auto;
+      }
+
+      @include breakpoint(wide) {
+        @include rem(margin-left, -180px);
+        max-width: 60%;
+      }
+    }
+
+    &.right {
+      @include breakpoint(desktop) {
+        @include rem(margin-left, 30px);
+        float: right;
+        margin-right: 0;
+      }
+
+      @include breakpoint(wide) {
+        @include rem(margin-right, -180px);
+        margin-left: 0;
+      }
+    }
+  }
 }
 
 @mixin quote-style {
@@ -12,169 +97,83 @@
   vertical-align: -.333em;
 }
 
-.uomcontent .blockquote-classic {
-  @include adjust-font-size-to(19px);
-  @include adjust-leading-to(1);
-  @include padding-leader(1);
-  @include padding-trailer(2);
-  @include rem(max-width, $w-mid);
-  @include rem(padding-left, 15px);
-  @include rem(padding-right, 15px);
-  color: $darkblue;
-  font-family: $ff-serif;
-  font-style: italic;
-  font-weight: $regular;
-  margin-bottom: 0;
-  margin-left: 10%;
-  margin-right: 0;
-  quotes: '\201C''\201D';
-  text-align: left;
+.uomcontent [role="main"] blockquote {
+  @include blockquote-modern;
+  margin-top: 0;
 
-  &::after,
-  &::before {
-    @include quote-style;
-  }
-
-  &:before {
-    @include quote-style;
-  }
-
-  &:after {
-    @include quote-style;
-    content: close-quote;
-    margin-left: 0;
+  &.blockquote-classic {
+    @include adjust-font-size-to(19px);
+    @include adjust-leading-to(1);
+    @include padding-leader(1);
+    @include padding-trailer(2);
+    @include rem(max-width, $w-mid);
+    @include rem(padding-left, 15px);
+    @include rem(padding-right, 15px);
+    color: $darkblue;
+    font-family: $ff-serif;
+    font-style: italic;
+    font-weight: $regular;
+    margin-bottom: 0;
+    margin-left: 10%;
     margin-right: 0;
-    vertical-align: -.667em;
-  }
-
-  &::after {
-    content: close-quote;
-    margin-left: 0;
-    margin-right: 0;
-    vertical-align: -.667em;
-  }
-
-  cite {
-    @include adjust-font-size-to(12px);
-    color: lighten($midgray, 20%);
-    float: left;
-    font-family: $ff-sans;
-    font-style: normal;
-    font-weight: $light;
+    quotes: '\201C''\201D';
     text-align: left;
-    width: 100%;
 
+    &::after,
     &::before {
-      @include rem(padding-right, 5px);
-      content: '\2014';
-    }
-  }
-
-  p {
-    @include adjust-font-size-to(24px);
-    display: inline;
-    margin: 0;
-    padding: 0;
-  }
-
-  @include breakpoint(tablet) {
-    @include adjust-font-size-to(24px);
-  }
-
-  @include breakpoint(wide) {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.uomcontent .blockquote-modern {
-  @include rem(margin-bottom, 30px);
-  @include rem(margin-top, 5px);
-  border: 0 none;
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  padding: 0;
-  text-align: left;
-  width: 94%;
-
-  .blockquote__text {
-    @include rem(font-size, 28px);
-    @include rem(margin-bottom, 30px);
-    color: $lighterblue;
-    display: block;
-    font-family: "Arial Black", $ff-sans;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-    width: 100%;
-  }
-
-  .blockquote__citation {
-    @include rem(font-size, 20px);
-    @include rem(margin-top, 15px);
-    @include rem(padding-bottom, 30px);
-    @include rem(padding-top, 15px);
-    border-top: 4px solid $lighterblue;
-    color: $lighterblue;
-    display: block;
-    font-weight: $thin;
-  }
-
-
-  @include breakpoint(tablet) {
-    clear: both;
-  }
-
-  @include breakpoint(desktop) {
-    width: 100%;
-  }
-
-  &.left,
-  &.right {
-    @include breakpoint(tablet) {
-      padding-right: 0;
-
-      .blockquote__text {
-        @include rem(font-size, 32px);
-        margin-left: 0;
-      }
-
-      .blockquote__citation {
-        margin-left: 0;
-      }
+      @include quote-style;
     }
 
-    @include breakpoint(desktop) {
-      @include rem(padding-right, 15px);
-      @include rem(margin-right, 30px);
-      float: left;
-      max-width: 62%;
-      width: auto;
-
-      .blockquote__text {
-        @include rem(margin, 0 15px 0 0);
-        @include rem(max-width, 400px);
-      }
+    &:before {
+      @include quote-style;
     }
 
-    @include breakpoint(wide) {
-      @include rem(margin-left, -180px);
-      max-width: 60%;
-    }
-  }
-
-  &.right {
-    @include breakpoint(desktop) {
-      @include rem(margin-left, 30px);
-      float: right;
-      margin-right: 0;
-    }
-
-    @include breakpoint(wide) {
-      @include rem(margin-right, -180px);
+    &:after {
+      @include quote-style;
+      content: close-quote;
       margin-left: 0;
+      margin-right: 0;
+      vertical-align: -.667em;
+    }
+
+    &::after {
+      content: close-quote;
+      margin-left: 0;
+      margin-right: 0;
+      vertical-align: -.667em;
+    }
+
+    cite {
+      @include adjust-font-size-to(12px);
+      border: 0;
+      color: lighten($midgray, 20%);
+      float: left;
+      font-family: $ff-sans;
+      font-style: normal;
+      font-weight: $light;
+      text-align: left;
+      width: 100%;
+
+      &::before {
+        @include rem(padding-right, 5px);
+        content: '\2014';
+      }
+    }
+
+    p {
+      @include adjust-font-size-to(24px);
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+
+    @include breakpoint(tablet) {
+      @include adjust-font-size-to(24px);
+    }
+
+    @include breakpoint(wide) {
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 }
