@@ -145,11 +145,10 @@ body.jumpnav-active .uomcontent {
 }
 
 body.jumpnav-active .uomcontent {
-  blockquote.left,
-  blockquote.right {
+  blockquote:not(.blockquote-classic).left,
+  blockquote:not(.blockquote-classic).right {
     @include breakpoint(wide) {
       margin-left: 0;
-      padding: 0;
     }
 
     @include breakpoint(1400px) {
@@ -158,11 +157,10 @@ body.jumpnav-active .uomcontent {
     }
   }
 
-  blockquote.right {
+  blockquote:not(.blockquote-classic).right {
     @include breakpoint(wide) {
       @include rem(margin-left, 30px);
       margin-right: 0;
-      padding: 0;
     }
 
     @include breakpoint(1400px) {
