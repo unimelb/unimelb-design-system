@@ -1,4 +1,97 @@
+@mixin blockquote-modern {
+  @include rem(margin-bottom, 30px);
+  @include rem(margin-top, 5px);
+  border: 0 none;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  padding: 0;
+  text-align: left;
+  width: 94%;
+
+  .blockquote__text {
+    @include rem(font-size, 28px);
+    @include rem(margin-bottom, 30px);
+    color: $lighterblue;
+    display: block;
+    font-family: "Arial Black", $ff-sans;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+    width: 100%;
+  }
+
+  .blockquote__citation {
+    @include rem(font-size, 20px);
+    @include rem(margin-top, 15px);
+    @include rem(padding-top, 15px);
+    border-top: 4px solid $lighterblue;
+    color: $lighterblue;
+    display: block;
+    font-weight: $thin;
+  }
+
+
+  @include breakpoint(tablet) {
+    clear: both;
+  }
+
+  @include breakpoint(desktop) {
+    width: 100%;
+  }
+
+  &.left,
+  &.right {
+    @include breakpoint(tablet) {
+      padding-right: 0;
+
+      .blockquote__text {
+        @include rem(font-size, 32px);
+        margin-left: 0;
+      }
+
+      .blockquote__citation {
+        margin-left: 0;
+        padding-bottom: 0;
+      }
+    }
+
+    @include breakpoint(desktop) {
+      @include rem(padding-right, 15px);
+      @include rem(margin-right, 30px);
+      float: left;
+      max-width: 62%;
+      width: auto;
+
+      .blockquote__text {
+        @include rem(margin, 0 15px 0 0);
+        @include rem(max-width, 400px);
+      }
+    }
+
+    @include breakpoint(wide) {
+      @include rem(margin-left, -180px);
+      max-width: 60%;
+    }
+  }
+
+  &.right {
+    @include breakpoint(desktop) {
+      @include rem(margin-left, 30px);
+      float: right;
+      margin-right: 0;
+    }
+
+    @include breakpoint(wide) {
+      @include rem(margin-right, -180px);
+      margin-left: 0;
+    }
+  }
+}
+
 .uomcontent [role="main"] blockquote {
+  @include blockquote-modern;
   margin-top: 0;
 }
 
@@ -84,97 +177,5 @@
   @include breakpoint(wide) {
     margin-left: auto;
     margin-right: auto;
-  }
-}
-
-.uomcontent .blockquote-modern {
-  @include rem(margin-bottom, 30px);
-  @include rem(margin-top, 5px);
-  border: 0 none;
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  padding: 0;
-  text-align: left;
-  width: 94%;
-
-  .blockquote__text {
-    @include rem(font-size, 28px);
-    @include rem(margin-bottom, 30px);
-    color: $lighterblue;
-    display: block;
-    font-family: "Arial Black", $ff-sans;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 1.2;
-    width: 100%;
-  }
-
-  .blockquote__citation {
-    @include rem(font-size, 20px);
-    @include rem(margin-top, 15px);
-    @include rem(padding-bottom, 30px);
-    @include rem(padding-top, 15px);
-    border-top: 4px solid $lighterblue;
-    color: $lighterblue;
-    display: block;
-    font-weight: $thin;
-  }
-
-
-  @include breakpoint(tablet) {
-    clear: both;
-  }
-
-  @include breakpoint(desktop) {
-    width: 100%;
-  }
-
-  &.left,
-  &.right {
-    @include breakpoint(tablet) {
-      padding-right: 0;
-
-      .blockquote__text {
-        @include rem(font-size, 32px);
-        margin-left: 0;
-      }
-
-      .blockquote__citation {
-        margin-left: 0;
-      }
-    }
-
-    @include breakpoint(desktop) {
-      @include rem(padding-right, 15px);
-      @include rem(margin-right, 30px);
-      float: left;
-      max-width: 62%;
-      width: auto;
-
-      .blockquote__text {
-        @include rem(margin, 0 15px 0 0);
-        @include rem(max-width, 400px);
-      }
-    }
-
-    @include breakpoint(wide) {
-      @include rem(margin-left, -180px);
-      max-width: 60%;
-    }
-  }
-
-  &.right {
-    @include breakpoint(desktop) {
-      @include rem(margin-left, 30px);
-      float: right;
-      margin-right: 0;
-    }
-
-    @include breakpoint(wide) {
-      @include rem(margin-right, -180px);
-      margin-left: 0;
-    }
   }
 }
