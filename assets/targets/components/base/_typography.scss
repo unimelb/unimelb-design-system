@@ -4,15 +4,13 @@
 }
 
 @mixin inner-list-reset {
-  padding-bottom: 1em;
-  padding-top: .5em;
+  @include rem(padding-bottom, 30px);
 
   ul li {
     list-style-type: disc;
 
     ol,
     ul {
-      padding-bottom: 0;
       padding-top: .5em;
     }
   }
@@ -197,10 +195,6 @@
       color: $black;
       display: list-item;
 
-      &:last-child {
-        padding-bottom: 0;
-      }
-
       &.no-li {
         list-style-type: none;
 
@@ -208,6 +202,10 @@
         &::before {
           display: none;
         }
+      }
+
+      &:last-child {
+        padding-bottom: 0;
       }
     }
 
@@ -325,7 +323,6 @@
       ul {
         @include rem(padding-left, 20px);
         @include rem(padding-right, 20px);
-        padding-bottom: 0;
         padding-top: .5em;
       }
 
@@ -424,6 +421,10 @@
         li::before {
           display: none;
         }
+      }
+
+      li:last-child {
+        padding-bottom: 0;
       }
 
       &[type="a"] li {
