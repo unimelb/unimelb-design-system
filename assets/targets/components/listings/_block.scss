@@ -321,187 +321,226 @@
     .mid-unit {
       height: 90px;
     }
- }
+  }
 
   .news a:hover {
     color: inherit;
   }
 
-  &.narrow {
-    li {
-      background-color: $white;
-      position: relative;
+  li {
+    background-color: $white;
+    position: relative;
+
+    @include breakpoint(desktop) {
+      transition: transform 0.15s;
+    }
+
+    &:hover {
+      z-index: 100;
 
       @include breakpoint(desktop) {
-        transition: transform 0.15s;
+        transform: scale(1.03);
       }
 
-      &:hover {
-        z-index: 100;
+      p,
+      strong {
+        color: $highlight;
+      }
+    }
 
-        @include breakpoint(desktop) {
-          transform: scale(1.03);
+    &.double {
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      p,
+      strong {
+        color: $white;
+      }
+    }
+
+    &.newshero {
+      @include rem(min-height, 300px);
+
+      a {
+        @include rem(min-height, 300px);
+        background-color: transparent;
+
+        @include breakpoint(600px) {
+          @include rem(min-height, 440px);
         }
+      }
+
+      strong {
+        @include adjust-font-size-to(22px);
+        @include rem(padding, 10px);
+        background-color: rgba($highlight, .8);
+        bottom: 0;
+        font-weight: $regular;
+        margin: 0;
+        position: absolute;
+
+        em {
+          @include adjust-font-size-to(17px);
+          font-weight: $thin;
+        }
+
+        @include breakpoint(tablet) {
+          @include rem(padding, 10px 25px);
+          width: 100%;
+        }
+
+        @include breakpoint(wide) {
+          @include adjust-font-size-to(26px);
+          @include rem(padding, 20px 25px);
+        }
+      }
+
+      &.special {
+        border-bottom-color: $highlight;
+
+        strong {
+          @include rem(padding-bottom, 20px);
+          @include rem(padding-left, 30px);
+          background-color: transparent;
+
+          em {
+            font-weight: $bold;
+          }
+
+          span {
+            background-color: $white;
+            box-decoration-break: clone;
+            box-shadow: 10px 0 0 $white, -10px 0 0 $white;
+            color: $highlight;
+            font-weight: $bold;
+            line-height: 1.2;
+          }
+
+          @include breakpoint(tablet) {
+            @include rem(font-size, 40px);
+
+            span {
+              line-height: 1.1;
+            }
+          }
+        }
+      }
+    }
+
+    &.column {
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      a {
+        @include rem(padding-left, 25px);
+        @include rem(padding-right, 25px);
+      }
+
+      span {
+        @include adjust-font-size-to(20px);
+        @include padding-leader(4);
+        display: block;
+        font-style: normal;
+        font-weight: regular;
+
+        svg {
+          @include rem(height, 50px);
+          @include rem(margin-bottom, -7px);
+          @include rem(margin-left, -10px);
+          fill: $cyan;
+        }
+      }
+
+      strong {
+        @include adjust-font-size-to(40px);
+        background-color: $cyan;
+        box-decoration-break: clone;
+        box-shadow: 10px 0 0 $cyan, -10px 0 0 $cyan;
+        color: $white;
+        display: inline;
+        font-weight: $bold;
+        line-height: 1.3;
+        padding: 0;
+      }
+    }
+
+    &.twitter {
+      $twitter-brand: #55acee;
+      border-bottom-color: $twitter-brand;
+
+      &:hover {
+        transform: none;
 
         p,
         strong {
+          color: currentColor;
+        }
+      }
+
+      a {
+        color: $twitter-brand;
+
+        &:hover {
           color: $highlight;
         }
       }
 
-      &.double {
-        background-repeat: no-repeat;
-        background-size: cover;
+      svg {
+        fill: $twitter-brand;
+      }
 
-        p,
-        strong {
-          color: $white;
+      em {
+        float: right;
+      }
+
+      strong {
+        @include adjust-font-size-to(20px);
+
+        @include breakpoint(desktop) {
+          @include adjust-font-size-to(24px);
+          font-weight: $light;
+          word-wrap: break-word;
         }
       }
 
-      &.newshero {
-        @include rem(min-height, 300px);
-
-        a {
-          @include rem(min-height, 300px);
-          background-color: transparent;
-
-          @include breakpoint(600px) {
-            @include rem(min-height, 440px);
-          }
-        }
-
-        strong {
-          @include adjust-font-size-to(22px);
-          @include rem(padding, 10px);
-          background-color: rgba($highlight, .8);
-          bottom: 0;
-          font-weight: $regular;
-          margin: 0;
-          position: absolute;
-
-          em {
-            @include adjust-font-size-to(17px);
-            font-weight: $thin;
-          }
-
-          @include breakpoint(tablet) {
-            @include rem(padding, 10px 25px);
-            width: 100%;
-          }
-
-          @include breakpoint(wide) {
-            @include adjust-font-size-to(26px);
-            @include rem(padding, 20px 25px);
-          }
-        }
-
-        &.special {
-          border-bottom-color: $highlight;
-
-          strong {
-            @include rem(padding-bottom, 20px);
-            @include rem(padding-left, 30px);
-            background-color: transparent;
-
-            em {
-              font-weight: $bold;
-            }
-
-            span {
-              background-color: $white;
-              box-decoration-break: clone;
-              box-shadow: 10px 0 0 $white, -10px 0 0 $white;
-              color: $highlight;
-              font-weight: $bold;
-              line-height: 1.2;
-            }
-
-            @include breakpoint(tablet) {
-              @include rem(font-size, 40px);
-
-              span {
-                line-height: 1.1;
-              }
-            }
-          }
+      @include breakpoint(0) {
+        // Hide label for modern browsers
+        .icon-label {
+          height: 0;
+          text-indent: -999em;
         }
       }
+    }
 
-      &.column {
-        background-repeat: no-repeat;
-        background-size: cover;
+    &.instagram {
+      @include rem(min-height, 350px);
+      background-position: center;
+      background-size: cover;
+      border-bottom-color: $navy;
+      border-bottom-width: 5px;
+      border-left: 0;
+      border-right: 0;
+      border-top: 0;
 
-        a {
-          @include rem(padding-left, 25px);
-          @include rem(padding-right, 25px);
-        }
-
-        span {
-          @include adjust-font-size-to(20px);
-          @include padding-leader(4);
-          display: block;
-          font-style: normal;
-          font-weight: regular;
-
-          svg {
-            @include rem(height, 50px);
-            @include rem(margin-bottom, -7px);
-            @include rem(margin-left, -10px);
-            fill: $cyan;
-          }
-        }
-
-        strong {
-          @include adjust-font-size-to(40px);
-          background-color: $cyan;
-          box-decoration-break: clone;
-          box-shadow: 10px 0 0 $cyan, -10px 0 0 $cyan;
-          color: $white;
-          display: inline;
-          font-weight: $bold;
-          line-height: 1.3;
-          padding: 0;
-        }
+      a {
+        background-color: transparent;
       }
 
-      &.twitter {
-        $twitter-brand: #55acee;
-        border-bottom-color: $twitter-brand;
-
-        &:hover {
-          transform: none;
-
-          p,
-          strong {
-            color: currentColor;
-          }
-        }
-
-        a {
-          color: $twitter-brand;
-
-          &:hover {
-            color: $highlight;
-          }
-        }
-
-        svg {
-          fill: $twitter-brand;
-        }
+      .meta {
+        @include rem(padding, 12px 20px);
+        background-color: rgba($brand, 0.8);
+        border: none;
+        bottom: 0;
+        color: $white;
+        left: 0;
+        margin: 0;
+        padding-bottom: 0;
+        position: absolute;
+        width: 100%;
 
         em {
+          @include rem(padding-bottom, 10px);
           float: right;
-        }
-
-        strong {
-          @include adjust-font-size-to(20px);
-
-          @include breakpoint(desktop) {
-            @include adjust-font-size-to(24px);
-            font-weight: $light;
-            word-wrap: break-word;
-          }
         }
 
         @include breakpoint(0) {
@@ -512,37 +551,50 @@
           }
         }
       }
+    }
 
-      &.instagram {
-        @include rem(min-height, 350px);
-        background-position: center;
-        background-size: cover;
-        border-bottom-color: $navy;
-        border-bottom-width: 5px;
-        border-left: 0;
-        border-right: 0;
-        border-top: 0;
+    &.more {
+      border-bottom-color: $highlight;
 
-        a {
-          background-color: transparent;
-        }
+      &:hover {
+        transform: none;
+      }
 
-        .meta {
-          @include rem(padding, 12px 20px);
-          background-color: rgba($brand, 0.8);
-          border: none;
-          bottom: 0;
+      a {
+        @include rem(padding, 10px 0px);
+        border: 0;
+        border-bottom: 1px solid $lightergray;
+        color: $highlight;
+        display: block;
+        height: 100%;
+        position: relative;
+        text-align: center;
+        vertical-align: middle;
+        width: 100%;
+
+        &:hover {
+          background-color: $highlight;
           color: $white;
-          left: 0;
-          margin: 0;
-          padding-bottom: 0;
-          position: absolute;
-          width: 100%;
+        }
+      }
 
-          em {
-            @include rem(padding-bottom, 10px);
-            float: right;
-          }
+      strong {
+        @include adjust-font-size-to(13px);
+        @include rem(letter-spacing, 1px);
+        @include rem(padding, 15px 0px);
+        color: currentColor;
+        display: inline-block;
+        font-weight: $bold;
+        line-height: 1;
+        margin-bottom: 0;
+        text-align: center;
+        text-transform: uppercase;
+        vertical-align: middle;
+        white-space: nowrap;
+
+        span.small {
+          @include rem(margin-right, 5px);
+          margin-top: 0;
 
           @include breakpoint(0) {
             // Hide label for modern browsers
@@ -552,167 +604,113 @@
             }
           }
         }
+
+        svg {
+          fill: currentColor;
+        }
+
+
+        &:after,
+        &::after {
+          @include rem(font-size, 10px);
+          @include rem(margin-top, -10px);
+          @include rem(padding-left, 10px);
+          content: '\2192';
+          display: inline-block;
+          line-height: 1;
+
+          @include breakpoint(height-small) {
+            @include rem(font-size, 18px);
+            @include rem(padding-left, 10px);
+          }
+        }
+
+        @include breakpoint(height-small) {
+          @include adjust-font-size-to(15px);
+        }
       }
 
-      &.more {
-        border-bottom-color: $highlight;
-
-        &:hover {
-          transform: none;
+      @include breakpoint(600px) {
+        .block-container {
+          @include rem(height, 440px); // IE flexbox implementation bug
+          align-items: flex-start;
+          display: flex;
+          flex-direction: column;
         }
 
         a {
-          @include rem(padding, 10px 0px);
-          border: 0;
-          border-bottom: 1px solid $lightergray;
-          color: $highlight;
+          align-items: center;
+          display: flex;
+          flex: 1 0 0;
+          justify-content: center;
+        }
+      }
+    }
+
+    strong,
+    p {
+      transition: color 0.15s;
+    }
+
+    figure {
+      line-height: 0;
+      margin: 0;
+      padding: 0;
+      position: relative;
+
+      &.video-thumb,
+      &.audio-thumb {
+        &:after {
+          transition: opacity 0.2s;
+          background-color: rgba($black, 0.1);
+          background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTAwIDEwMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2ZpbGw6bm9uZTtzdHJva2U6I0ZGRkZGRjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQo8L3N0eWxlPg0KPGNpcmNsZSBjbGFzcz0ic3QwIiBjeD0iNTAuMSIgY3k9IjUwIiByPSI0MCIvPg0KPGc+DQoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTY4LjksNTguOWMwLDAuNC0wLjMsMC44LTAuNiwxYy0wLjEsMC0wLjMsMC4xLTAuNCwwLjFjLTAuMywwLTAuNS0wLjEtMC43LTAuM0w2MC42LDUzdjIuNw0KCQljMCwyLjYtMi4xLDQuNy00LjcsNC43SDM3LjhjLTIuNiwwLTQuNy0yLjEtNC43LTQuN1Y0NC4zYzAtMi42LDIuMS00LjcsNC43LTQuN2gxOC4xYzIuNiwwLDQuNywyLjEsNC43LDQuN1Y0N2w2LjYtNi42DQoJCWMwLjItMC4yLDAuNS0wLjMsMC43LTAuM2MwLjEsMCwwLjMsMCwwLjQsMC4xYzAuNCwwLjIsMC42LDAuNSwwLjYsMVY1OC45eiIvPg0KPC9nPg0KPC9zdmc+DQo=");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 35%;
+          content: '';
           display: block;
           height: 100%;
-          position: relative;
-          text-align: center;
-          vertical-align: middle;
-          width: 100%;
-
-          &:hover {
-            background-color: $highlight;
-            color: $white;
-          }
-        }
-
-        strong {
-          @include adjust-font-size-to(13px);
-          @include rem(letter-spacing, 1px);
-          @include rem(padding, 15px 0px);
-          color: currentColor;
-          display: inline-block;
-          font-weight: $bold;
-          line-height: 1;
-          margin-bottom: 0;
-          text-align: center;
-          text-transform: uppercase;
-          vertical-align: middle;
-          white-space: nowrap;
-
-          span.small {
-            @include rem(margin-right, 5px);
-            margin-top: 0;
-
-            @include breakpoint(0) {
-              // Hide label for modern browsers
-              .icon-label {
-                height: 0;
-                text-indent: -999em;
-              }
-            }
-          }
-
-          svg {
-            fill: currentColor;
-          }
-
-
-          &:after,
-          &::after {
-            @include rem(font-size, 10px);
-            @include rem(margin-top, -10px);
-            @include rem(padding-left, 10px);
-            content: '\2192';
-            display: inline-block;
-            line-height: 1;
-
-            @include breakpoint(height-small) {
-              @include rem(font-size, 18px);
-              @include rem(padding-left, 10px);
-            }
-          }
-
-          @include breakpoint(height-small) {
-            @include adjust-font-size-to(15px);
-          }
-        }
-
-        @include breakpoint(600px) {
-          .block-container {
-            @include rem(height, 440px); // IE flexbox implementation bug
-            align-items: flex-start;
-            display: flex;
-            flex-direction: column;
-          }
-
-          a {
-            align-items: center;
-            display: flex;
-            flex: 1 0 0;
-            justify-content: center;
-          }
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
         }
       }
 
-      strong,
-      p {
-        transition: color 0.15s;
-      }
-
-      figure {
-        line-height: 0;
-        margin: 0;
-        padding: 0;
-        position: relative;
-
-        &.video-thumb,
-        &.audio-thumb {
-          &:after {
-            transition: opacity 0.2s;
-            background-color: rgba($black, 0.1);
-            background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTAwIDEwMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2ZpbGw6bm9uZTtzdHJva2U6I0ZGRkZGRjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQo8L3N0eWxlPg0KPGNpcmNsZSBjbGFzcz0ic3QwIiBjeD0iNTAuMSIgY3k9IjUwIiByPSI0MCIvPg0KPGc+DQoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTY4LjksNTguOWMwLDAuNC0wLjMsMC44LTAuNiwxYy0wLjEsMC0wLjMsMC4xLTAuNCwwLjFjLTAuMywwLTAuNS0wLjEtMC43LTAuM0w2MC42LDUzdjIuNw0KCQljMCwyLjYtMi4xLDQuNy00LjcsNC43SDM3LjhjLTIuNiwwLTQuNy0yLjEtNC43LTQuN1Y0NC4zYzAtMi42LDIuMS00LjcsNC43LTQuN2gxOC4xYzIuNiwwLDQuNywyLjEsNC43LDQuN1Y0N2w2LjYtNi42DQoJCWMwLjItMC4yLDAuNS0wLjMsMC43LTAuM2MwLjEsMCwwLjMsMCwwLjQsMC4xYzAuNCwwLjIsMC42LDAuNSwwLjYsMVY1OC45eiIvPg0KPC9nPg0KPC9zdmc+DQo=");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: 35%;
-            content: '';
-            display: block;
-            height: 100%;
-            left: 0;
-            position: absolute;
-            right: 0;
-            top: 0;
-          }
-        }
-
-        &.audio-thumb:after {
-          background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTAwIDEwMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2ZpbGw6bm9uZTtzdHJva2U6I0ZGRkZGRjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQoJLnN0MXtmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjUwLjEiIGN5PSI1MCIgcj0iNDAiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00OS4xLDYwLjZjMCwwLjctMC42LDEuMy0xLjMsMS4zYy0wLjMsMC0wLjctMC4xLTAuOS0wLjRsLTYuOC02LjhoLTUuM2MtMC43LDAtMS4zLTAuNi0xLjMtMS4zdi03LjgNCgljMC0wLjcsMC42LTEuMywxLjMtMS4zaDUuM2w2LjgtNi44YzAuMi0wLjIsMC42LTAuNCwwLjktMC40YzAuNywwLDEuMywwLjYsMS4zLDEuM1Y2MC42eiIvPg0KPHBhdGggY2xhc3M9InN0MSIgZD0iTTU2LjEsNDkuNmMwLTEuOC0xLjEtMy41LTIuNy00LjFjLTAuMSwwLTAuMSwwLTAuMiwwYy0wLjMsMC0wLjUsMC4yLTAuNSwwLjVjMCwwLjIsMC4xLDAuMywwLjYsMC43DQoJYzAuNywwLjQsMS43LDEuMSwxLjcsMi45YzAsMS44LTEsMi40LTEuNywyLjljLTAuNSwwLjMtMC42LDAuNC0wLjYsMC43YzAsMC4zLDAuMiwwLjUsMC41LDAuNWMwLjEsMCwwLjIsMCwwLjIsMA0KCUM1NSw1Myw1Ni4xLDUxLjMsNTYuMSw0OS42eiIvPg0KPHBhdGggY2xhc3M9InN0MSIgZD0iTTYxLjMsNDkuNmMwLTMuOC0yLjMtNy40LTUuOC04LjljLTAuMSwwLTAuMiwwLTAuMiwwYy0wLjMsMC0wLjUsMC4zLTAuNSwwLjVjMCwwLjEsMCwwLjMsMC40LDAuNWwwLjIsMC4xDQoJYzAuNSwwLjIsMSwwLjUsMS40LDAuOWMyLjIsMS42LDMuNSw0LjIsMy41LDYuOWMwLDIuNy0xLjMsNS4zLTMuNSw2LjljLTAuNSwwLjMtMSwwLjYtMS40LDAuOEw1NSw1Ny40Yy0wLjQsMC4yLTAuNCwwLjQtMC40LDAuNQ0KCWMwLDAuMywwLjMsMC41LDAuNiwwLjVjMCwwLDAuMSwwLDAuMi0wLjFDNTguOSw1Nyw2MS4zLDUzLjQsNjEuMyw0OS42eiIvPg0KPHBhdGggY2xhc3M9InN0MSIgZD0iTTU3LjUsNjMuMmM1LjQtMi4zLDguOS03LjcsOC45LTEzLjZjMC01LjktMy41LTExLjMtOS0xMy42Yy0wLjEsMC0wLjIsMC0wLjIsMGMtMC4zLDAtMC41LDAuMy0wLjUsMC41DQoJYzAsMC4yLDAsMC4zLDAuNCwwLjVjMC4xLDAuMSwwLjMsMC4xLDAuNCwwLjJjMC4yLDAuMSwwLjMsMC4xLDAuNSwwLjJjMC43LDAuMywxLjIsMC43LDEuOCwxLjFjMy41LDIuNiw1LjYsNi43LDUuNiwxMS4xDQoJcy0yLjEsOC41LTUuNiwxMS4xYy0wLjUsMC40LTEuMSwwLjctMS44LDEuMWMtMC4yLDAuMS0wLjMsMC4yLTAuNSwwLjJjLTAuMSwwLjEtMC4zLDAuMS0wLjQsMC4yYy0wLjQsMC4yLTAuNCwwLjQtMC40LDAuNQ0KCUM1Ni43LDYzLjEsNTcuMSw2My4zLDU3LjUsNjMuMnoiLz4NCjwvc3ZnPg0K");
-        }
+      &.audio-thumb:after {
+        background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMTAwIDEwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgMTAwIDEwMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2ZpbGw6bm9uZTtzdHJva2U6I0ZGRkZGRjtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQoJLnN0MXtmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxjaXJjbGUgY2xhc3M9InN0MCIgY3g9IjUwLjEiIGN5PSI1MCIgcj0iNDAiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik00OS4xLDYwLjZjMCwwLjctMC42LDEuMy0xLjMsMS4zYy0wLjMsMC0wLjctMC4xLTAuOS0wLjRsLTYuOC02LjhoLTUuM2MtMC43LDAtMS4zLTAuNi0xLjMtMS4zdi03LjgNCgljMC0wLjcsMC42LTEuMywxLjMtMS4zaDUuM2w2LjgtNi44YzAuMi0wLjIsMC42LTAuNCwwLjktMC40YzAuNywwLDEuMywwLjYsMS4zLDEuM1Y2MC42eiIvPg0KPHBhdGggY2xhc3M9InN0MSIgZD0iTTU2LjEsNDkuNmMwLTEuOC0xLjEtMy41LTIuNy00LjFjLTAuMSwwLTAuMSwwLTAuMiwwYy0wLjMsMC0wLjUsMC4yLTAuNSwwLjVjMCwwLjIsMC4xLDAuMywwLjYsMC43DQoJYzAuNywwLjQsMS43LDEuMSwxLjcsMi45YzAsMS44LTEsMi40LTEuNywyLjljLTAuNSwwLjMtMC42LDAuNC0wLjYsMC43YzAsMC4zLDAuMiwwLjUsMC41LDAuNWMwLjEsMCwwLjIsMCwwLjIsMA0KCUM1NSw1Myw1Ni4xLDUxLjMsNTYuMSw0OS42eiIvPg0KPHBhdGggY2xhc3M9InN0MSIgZD0iTTYxLjMsNDkuNmMwLTMuOC0yLjMtNy40LTUuOC04LjljLTAuMSwwLTAuMiwwLTAuMiwwYy0wLjMsMC0wLjUsMC4zLTAuNSwwLjVjMCwwLjEsMCwwLjMsMC40LDAuNWwwLjIsMC4xDQoJYzAuNSwwLjIsMSwwLjUsMS40LDAuOWMyLjIsMS42LDMuNSw0LjIsMy41LDYuOWMwLDIuNy0xLjMsNS4zLTMuNSw2LjljLTAuNSwwLjMtMSwwLjYtMS40LDAuOEw1NSw1Ny40Yy0wLjQsMC4yLTAuNCwwLjQtMC40LDAuNQ0KCWMwLDAuMywwLjMsMC41LDAuNiwwLjVjMCwwLDAuMSwwLDAuMi0wLjFDNTguOSw1Nyw2MS4zLDUzLjQsNjEuMyw0OS42eiIvPg0KPHBhdGggY2xhc3M9InN0MSIgZD0iTTU3LjUsNjMuMmM1LjQtMi4zLDguOS03LjcsOC45LTEzLjZjMC01LjktMy41LTExLjMtOS0xMy42Yy0wLjEsMC0wLjIsMC0wLjIsMGMtMC4zLDAtMC41LDAuMy0wLjUsMC41DQoJYzAsMC4yLDAsMC4zLDAuNCwwLjVjMC4xLDAuMSwwLjMsMC4xLDAuNCwwLjJjMC4yLDAuMSwwLjMsMC4xLDAuNSwwLjJjMC43LDAuMywxLjIsMC43LDEuOCwxLjFjMy41LDIuNiw1LjYsNi43LDUuNiwxMS4xDQoJcy0yLjEsOC41LTUuNiwxMS4xYy0wLjUsMC40LTEuMSwwLjctMS44LDEuMWMtMC4yLDAuMS0wLjMsMC4yLTAuNSwwLjJjLTAuMSwwLjEtMC4zLDAuMS0wLjQsMC4yYy0wLjQsMC4yLTAuNCwwLjQtMC40LDAuNQ0KCUM1Ni43LDYzLjEsNTcuMSw2My4zLDU3LjUsNjMuMnoiLz4NCjwvc3ZnPg0K");
       }
     }
+  }
 
-    @include breakpoint(600px) {
-      li {
-        max-width: 100%;
-        width: 49%;
-      }
-
-      .double {
-        width: 99%;
-      }
+  @include breakpoint(600px) {
+    li {
+      max-width: 100%;
+      width: 49%;
     }
 
-    @include breakpoint(950px) {
-      li {
-        width: 32%;
-      }
+    .double {
+      width: 99%;
+    }
+  }
 
-      .double {
-        width: 65%;
-      }
+  @include breakpoint(950px) {
+    li {
+      width: 32%;
     }
 
-    @include breakpoint(1280px) {
-      li {
-        width: 24%;
-      }
+    .double {
+      width: 65%;
+    }
+  }
 
-      .double {
-        width: 49%;
-      }
+  @include breakpoint(1280px) {
+    li {
+      width: 24%;
+    }
+
+    .double {
+      width: 49%;
     }
   }
 }
