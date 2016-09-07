@@ -1,0 +1,35 @@
+form.unstyled-controls method="post" action="" data-validate=""
+  fieldset
+    div
+      legend
+        'class="unstyled-controls" on form
+
+    div
+      .inline
+        input type="checkbox" id="c2-1" class="checkbox" aria-required="true" name="f2[approve]" data-error="Please select an option"
+        label for="c2-1"
+          span Option 1
+      .inline
+        input checked="" aria-required="true" name="f2[radio]" type="radio" id="radio-2-1" value="yes" data-error="Please make a selection"
+        label for="radio-2-1"
+          span Yes
+      .inline
+        input aria-required="true" name="f2[radio]" type="radio" id="radio-2-2" value="no" data-error="Please make a selection"
+        label for="radio-2-2"
+          span No
+
+form.alt method="post" action="" data-validate=""
+  fieldset
+    div
+      legend
+        'class="unstyled" on first control
+
+    div
+      .inline
+        input.unstyled type="checkbox" id="c3-1" class="checkbox" aria-required="true" name="f2[approve]" data-error="Please select an option"
+        label for="c3-1"
+          span Option 1
+      .inline
+        input type="checkbox" id="c3-2" class="checkbox" aria-required="true" name="f2[approve]" data-error="Please select an option"
+        label for="c3-2"
+          span Option 2
