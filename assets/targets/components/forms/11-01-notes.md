@@ -1,3 +1,3 @@
 <section>
-  <p class="alert-info"><strong>Note:</strong> Unstyled <em>radio</em> and <em>checkbox</em> controls are now available by adding <strong>class="unstyled-controls"</strong> to the form.</p>
+  <p class="alert-info"><strong>Note:</strong> Unstyled <code>radio</code> and <code>checkbox</code> controls are now available by adding <code>class="unstyled-controls"</code> to the form (1st example below), or <code>class="unstyled"</code> selectively on each <code>input</code> (2nd example below). The unstyled class is only available for <strong>radio</strong> and <strong>checkbox</strong> controls!</p>
 </section>

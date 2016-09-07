@@ -1,35 +1,14 @@
 form.unstyled-controls method="post" action="" data-validate=""
   fieldset
     div
-      label for="f2-name"
-        ' Name (required):
-      input aria-required="true" id="f2-name" name="f[name]" type="text" data-error="Please enter your name."
+      legend
+        'class="unstyled-controls" on form
 
     div
-      label for="f2-email"
-        ' Email (pattern matching):
-      input data-pattern="email" id="f2-email" name="f[email]" type="email" data-error="Please enter a valid email."
-
-    div
-      label for="f2-id"
-        ' Product Code (regex pattern matching):
-      input data-pattern="[0-9][A-Z]{3}" maxlength="4" id="f2-id" name="f[p_id]" type="text" placeholder="3ABC" data-error="Single digit followed by three uppercase letters."
-
-  fieldset
-    div
-      legend Select preferred option (required):
       .inline
         input type="checkbox" id="c2-1" class="checkbox" aria-required="true" name="f2[approve]" data-error="Please select an option"
         label for="c2-1"
           span Option 1
-      .inline
-        input type="checkbox" id="c2-2" class="checkbox" aria-required="true" name="f2[approve]" data-error="Please select an option"
-        label for="c2-2"
-          span Option 2
-
-  fieldset
-    div
-      legend Make a selection (implicitly required):
       .inline
         input checked="" aria-required="true" name="f2[radio]" type="radio" id="radio-2-1" value="yes" data-error="Please make a selection"
         label for="radio-2-1"
@@ -39,10 +18,18 @@ form.unstyled-controls method="post" action="" data-validate=""
         label for="radio-2-2"
           span No
 
+form.alt method="post" action="" data-validate=""
+  fieldset
     div
-      label for="f2-message"
-        ' Message:
-      textarea aria-required="true" placeholder="Please enter a message" id="f2-message" name="f[message]" data-error="Please enter a message."
+      legend
+        'class="unstyled" on first control
 
-  footer
-    input type="submit"
+    div
+      .inline
+        input.unstyled type="checkbox" id="c3-1" class="checkbox" aria-required="true" name="f2[approve]" data-error="Please select an option"
+        label for="c3-1"
+          span Option 1
+      .inline
+        input type="checkbox" id="c3-2" class="checkbox" aria-required="true" name="f2[approve]" data-error="Please select an option"
+        label for="c3-2"
+          span Option 2
