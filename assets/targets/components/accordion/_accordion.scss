@@ -45,12 +45,23 @@
       list-style-type: none;
       margin: 0;
       max-width: 2000px;
-      padding: 0;
       width: 100%;
 
       @include inner-list-reset;
 
-      // Ridiculous override
+      padding: 0;
+
+      // Ridiculous overrides
+      ol,
+      ul {
+        @include rem(padding-bottom, 30px);
+
+        ol,
+        ul {
+          padding-bottom: 0;
+        }
+      }
+
       ol.steps {
         @include inner-list-reset;
 
