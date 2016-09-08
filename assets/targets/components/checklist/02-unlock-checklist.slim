@@ -1,18 +1,19 @@
-fieldset
-  ul.checklist data-unlock-target="continue"
-    li.on
-      input.checkbox id="c1-0" type="checkbox" checked="checked"
-      label for="c1-0"
-        span This one is already ticked
-    li
-      input.checkbox id="c1-1" type="checkbox"
-      label for="c1-1"
-        span Please tick both these items
-    li
-      input.checkbox id="c1-2" type="checkbox"
-      label for="c1-2"
-        span To unlock the button below
+form
+  fieldset
+    ul.checklist data-unlock-target="continue"
+      li.on
+        input.checkbox id="c1-0" type="checkbox" checked="checked"
+        label for="c1-0"
+          span This one is already ticked
+      li
+        input.checkbox id="c1-1" type="checkbox"
+        label for="c1-1"
+          span Please tick both these items
+      li
+        input.checkbox id="c1-2" type="checkbox"
+        label for="c1-2"
+          span To unlock the button below
 
-section
-  p.center
-    a.button#continue href="javascript:alert('Success!')" Continue
+  section
+    p.center
+      a.button#continue href="javascript:alert('Success!')" Continue
