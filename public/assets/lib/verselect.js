@@ -3,11 +3,11 @@
     "use strict";
 
     var versions = [
-      'v4.4'
+      'v5.0', 'v4.4'
     ];
 
     var supported = [
-      'v4.4'
+      'v5.0', 'v4.4'
     ];
 
     var toolbar = document.querySelector('#version-toolbar');
@@ -32,7 +32,10 @@
           li.innerHTML = v;
         } else {
           li.classList.add('supported');
-          li.innerHTML = '<a href="'+window.location.pathname+'">'+v+'</a>';
+          var p = window.location.pathname;
+          if (v != current)
+            p = '/' + v + p;
+          li.innerHTML = '<a href="' + p + '">' + v + '</a>';
         }
 
         nav.appendChild(li);
