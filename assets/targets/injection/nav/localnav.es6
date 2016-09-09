@@ -29,7 +29,7 @@ LocalNav.prototype.moveLocalNav = function() {
 
     // Retrieve nav title and remove from DOM
     var navtitle = noderoot.querySelector('h2');
-    noderoot.removeChild(navtitle);
+    nodetitle.parentNode.removeChild(navtitle); // Remove from parent if out of order
 
     // Make nav title a list item instead
     var firstli = document.createElement('li');
