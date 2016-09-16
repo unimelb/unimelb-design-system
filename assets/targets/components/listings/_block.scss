@@ -124,6 +124,7 @@
   .double {
     .block-container {
       background-color: rgba($black, .6);
+      background-size: cover;
       color: $white;
 
       &:hover .button-hero-inverse {
