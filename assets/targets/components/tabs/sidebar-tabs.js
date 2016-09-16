@@ -12,7 +12,10 @@ function SidebarTabs(el, props) {
   this.props.tabs = el.querySelectorAll('.sidebar-tabs__tab');
   this.props.panels = el.querySelectorAll('.sidebar-tabs__panel');
   this.props.panelsContainer = el.querySelector('.sidebar-tabs__panels');
+
   this.props.scrollTarget = this.props.scrollTarget || this.props.panelsContainer;
+  if (this.el.hasAttribute('data-scroll-target'))
+    this.props.scrollTarget = document.querySelector(this.el.getAttribute('data-scroll-target'));
 
   var hash = window.location.hash;
   var matchFoundForHash = false;
@@ -62,9 +65,10 @@ SidebarTabs.prototype.handleTabClicked = function (tab, evt) {
 
   var prevIndex = this.props.currentIndex;
 
-  // Select the tab, show its panel, then scroll to the panels container
+  // Select the tab, show its panel, then scroll to the panels container unless data-no-scroll is set
   this.selectTab(tab, true);
-  setTimeout(this.scroll.bind(this));
+  if (!tab.hasAttribute('data-no-scroll'))
+    setTimeout(this.scroll.bind(this));
 
   // If selected tab has changed, update the page's location
   if (prevIndex !== this.props.currentIndex) {

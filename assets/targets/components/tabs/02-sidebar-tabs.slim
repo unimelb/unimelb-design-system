@@ -1,6 +1,17 @@
 p <strong>Sidebar tabs</strong> are another form of navigational tabs for use with the <strong>sidebar layout</strong>. For practical examples, have a look at the <a href="/layouts/search">search layout</a> (<a href="/layouts/search/source">view source</a>) and <a href="/layouts/course">course layout</a> (<a href="/layouts/course/source">view source</a>).
+
 p If the sidebar is on the right-hand side of the page, use class <code>sidebar-tabs--right</code> to bring the tabs against the left edge of the sidebar.
-p.alert-info <strong>Note:</strong> The sidebar layout should only ever be used as the <strong>main layout</strong> of a page, and not in the middle of a page like below.
+
+p.alert-info <strong>Note:</strong> By default, sidebar tabs are designed to scroll the page position up to a full width navigation component (above). If one does not exist on the page, it will scroll to itself. You can set a different scroll target by using a <code>data-scroll-target</code> attribute on the <code>sidebar-tabs</code> container. eg.
+
+erb:
+  <pre>
+    &lt;div class="sidebar-tabs" data-scroll-target=".some-class"&gt;
+      ...
+    &lt;/div&gt;
+  </pre>
+
+p.alert-warning <strong>Warning:</strong> The sidebar layout should only be used as the <strong>main layout</strong>, and not in the middle of a page as in the example below.
 
 .layout-sidebar.sidebar-tabs
   .aside.layout-sidebar__side.box
