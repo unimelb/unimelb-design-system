@@ -29,11 +29,12 @@
 
 #version-toolbar .supported a {
   color: #7a7;
+  text-decoration: underline;
 }
 
 #version-toolbar .selected a {
   font-weight: bold;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 @media screen and (min-width: 769px) {
