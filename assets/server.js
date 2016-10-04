@@ -1,4 +1,5 @@
-require('dotenv').load("../");
+require('dotenv').config();
+
 var WEB_SERVER_HOST   = process.env.WEB_SERVER_HOST     || 'localhost';
 var ASSET_SERVER_PORT = process.env.ASSETS_SERVER_PORT  || 7001;
 var WEBPACK_PORT      = process.env.WEBPACK_SERVER_PORT || 7002;

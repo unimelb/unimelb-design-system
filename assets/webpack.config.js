@@ -1,94 +1,63 @@
-require('dotenv').load("../");
-var ASSETS_URL = "http://"+process.env.WEB_SERVER_HOST+":"+process.env.ASSET_SERVER_PORT;
-var WEBPACK_URL = "http://"+process.env.WEB_SERVER_HOST+":"+process.env.WEBPACK_SERVER_PORT;
+// require('dotenv').load("../");
+require('dotenv').config();
 
 var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
-
-// Webpack plugins
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ASSETS_URL = 'http://'+process.env.WEB_SERVER_HOST+':'+process.env.ASSET_SERVER_PORT;
+var WEBPACK_URL = 'http://'+process.env.WEB_SERVER_HOST+':'+process.env.WEBPACK_SERVER_PORT;
 
 // Configuration
-var TARGETS = path.join(__dirname, "targets");
-var BUILD   = path.join(__dirname, "..", "build");
+var TARGETS = path.join(__dirname, 'targets');
+var BUILD   = path.join(__dirname, '..', 'build');
 
-// Plugins
-var plugins = [
-  new webpack.DefinePlugin({
-    'process.env': {
-      CDNURL: JSON.stringify(process.env.CDNURL),
-      GMAPSJSAPIKEY: JSON.stringify(process.env.GMAPSJSAPIKEY)
-    }
-  }),
-  new ExtractTextPlugin("[name].css", {
-    allChunks: true
-  })
-];
-if (process.env.DEVELOPMENT === "true") {
-  plugins.push(new webpack.HotModuleReplacementPlugin());
-  plugins.push(new webpack.NoErrorsPlugin());
-} else {
-  plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
-}
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var isDev = process.env.NODE_ENV !== 'production';
 
-// Configure webpack output
-var output = {
-  path: BUILD,
-  // Template based on keys in entry above
-  // Generate hashed names for production
-  filename: "[name].js"
-};
-
-if (process.env.DEVELOPMENT === "true") {
-  output.publicPath = ASSETS_URL + "/assets/";
-}
-
-module.exports = {
+var config = {
   context: TARGETS,
   entry: fs.readdirSync(TARGETS).reduce(createEntries, {}),
-  output: output,
-  plugins: plugins,
+  output: {
+    path: BUILD,
+    filename: '[name].js'
+  },
+  plugins: [
+    new ExtractTextPlugin('[name].css', { allChunks: true }),
+    new webpack.EnvironmentPlugin(['NODE_ENV', 'CDNURL', 'GMAPSJSAPIKEY'])
+  ],
   module: {
-    preLoaders: [
-      {
-        test: /\.js$/, // include .js files
-        exclude: /node_modules|vendor/, // exclude any and all files in the node_modules folder
-        loader: "jshint-loader"
-      }
-    ],
     loaders: [
       {
         test: /\.(jpe?g|png|gif|svg|woff|ttf|otf|eot|ico)/,
-        loader: "file-loader?name=[path][name].[ext]"
+        loader: 'file-loader?name=[path][name].[ext]'
       },
       {
-        test: /\.es6?$/,
-        exclude: /(node_modules)/,
-        loader: 'babel'
+        test: /\.es6/,
+        loader: 'babel-loader'
       },
       {
         test: /\.html$/,
         loader: 'html-loader'
       },
       {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
+      {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader?-minimize!postcss-loader!sass-loader")
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?-autoprefixer&minimize!postcss-loader!sass-loader')
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader?-minimize!postcss-loader")
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?-autoprefixer&minimize!postcss-loader')
       },
       {
         test: /(isotope-layout|imagesloaded)/,
         loader: 'imports?define=>false&this=>window'
       }
     ]
-  },
-  jshint: {
-    eqnull: true,
-    failOnHint: false
   },
   postcss: [
     autoprefixer({
@@ -107,8 +76,8 @@ function isFile(file) {
 
 function createEntries(entries, dir) {
   if (isDirectory(path.join(TARGETS, dir))) {
-    var target = (process.env.DEVELOPMENT === "true") ? ['webpack-dev-server/client?' + WEBPACK_URL, 'webpack/hot/dev-server'] : [];
-    var file = path.join(TARGETS, dir, "target.js");
+    var target = (isDev) ? ['webpack-dev-server/client?' + WEBPACK_URL, 'webpack/hot/dev-server'] : [];
+    var file = path.join(TARGETS, dir, 'target.js');
     try {
       isFile(file);
     } catch (e) {
@@ -119,3 +88,18 @@ function createEntries(entries, dir) {
   }
   return entries;
 }
+
+// Environment-specific configuration
+if (isDev) {
+  config.devtool = 'source-map';
+  config.output.publicPath = ASSETS_URL + '/assets/';
+  config.plugins.push(new webpack.HotModuleReplacementPlugin());
+  config.plugins.push(new webpack.NoErrorsPlugin());
+
+} else {
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
+  config.plugins.push(new webpack.optimize.OccurrenceOrderPlugin());
+}
+
+// Export configuration
+module.exports = config;
