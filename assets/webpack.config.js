@@ -1,4 +1,3 @@
-// require('dotenv').load("../");
 require('dotenv').config();
 
 var fs = require('fs');
@@ -34,7 +33,8 @@ var config = {
         loader: 'file-loader?name=[path][name].[ext]'
       },
       {
-        test: /\.es6/,
+        test: /\.es6?$/,
+        exclude: /(node_modules)/,
         loader: 'babel-loader'
       },
       {

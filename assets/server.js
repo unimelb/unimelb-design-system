@@ -71,9 +71,8 @@ app.get("*", function(req, res, next) {
 });
 
 // Boot the server
-var port = ASSET_SERVER_PORT;
 var server = http.Server(app);
-server.listen(port, function() {
+server.listen(ASSET_SERVER_PORT, function() {
   console.log("Listening at http://" + WEB_SERVER_HOST + ":" + ASSET_SERVER_PORT + "/");
 });
 
