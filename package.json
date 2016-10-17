@@ -20,7 +20,7 @@
   },
   "scripts": {
     "clean": "rm -rf ./build/*",
-    "build": "node_modules/.bin/webpack --config ./assets/webpack.config.js -p"
+    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./assets/webpack.config.js -p"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
