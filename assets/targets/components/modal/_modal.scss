@@ -25,9 +25,18 @@
       max-width: 100%;
     }
 
+    // Hide accidental peek from 3rd party embeds at page load
+    iframe {
+      display: none;
+    }
+
     &.on {
       visibility: visible;
       z-index: 14;
+
+      iframe {
+        display: block;
+      }
     }
 
     @media screen and (min-width: 1100px) {
