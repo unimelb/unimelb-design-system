@@ -10,6 +10,7 @@
     font-weight: 700;
     line-height: 1.2;
     margin: 0 auto;
+    max-width: $w-sml;
     padding-right: .3em;
     position: relative;
     width: 94%;
@@ -47,7 +48,6 @@
     }
 
     @include breakpoint(desktop) {
-      margin: 0;
       width: 100%;
     }
 

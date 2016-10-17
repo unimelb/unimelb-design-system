@@ -8,8 +8,8 @@ header.image style="background-image:url(/assets/images/desktop.jpg)"
     p 8 steps to design a new website for the University
 section.alt
   blockquote
-    .blockquote__text Every superfluous page we create is one more dead end for an angry, frustrated, confused user
-    .blockquote__citation
+    ' Every superfluous page we create is one more dead end for an angry, frustrated, confused user
+    cite
       |Tom Loosemore (@tomskitomski)
       '
       a href="https://twitter.com/tomskitomski/status/111007350210576384" September 6, 2011

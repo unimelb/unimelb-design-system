@@ -467,8 +467,10 @@
     li::before {
       content: '(' counter(list1, decimal) ') ';
       counter-increment: list1;
-      left: -1.6em;
+      left: -3.4em;
       position: absolute;
+      text-align: right;
+      width: 3em;
     }
   }
 

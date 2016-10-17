@@ -18,7 +18,6 @@ if ENV['RACK_ENV'] == 'production'
         ver.shift(2) # drop releases prefix
 
         page = File.join('cold', ver.join('/'))
-        puts ENV['VERSION'].inspect
 
       else
         page = File.join('cold', ENV['VERSION'], req.path)
