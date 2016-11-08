@@ -296,8 +296,12 @@
   }
 }
 
-body.ie {
+body.ie9 {
   .uomcontent [role="navigation"]#globalsitemap {
+    ul.quicklinks a {
+      color: $white;
+    }
+
     .logo * {
       border: 0 none;
       outline: 0;
@@ -331,14 +335,6 @@ body.ie {
       a {
         padding-left: 0;
       }
-    }
-  }
-}
-
-body.ie9 {
-  .uomcontent [role="navigation"]#globalsitemap {
-    ul.quicklinks a {
-      color: $white;
     }
   }
 }

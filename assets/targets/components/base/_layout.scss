@@ -559,7 +559,7 @@ body {
   }
 }
 
-.ie {
+.ie9 {
   .uomcontent .fullwidth {
     p,
     p.black {
@@ -571,18 +571,12 @@ body {
 
   .uomcontent ul.ticked-list li:before {
     color: #3fc76e;
-    content: '\221a';
+    content: '';
     font-size: 16px;
     font-weight: 600;
     left: 0;
     margin-left: -22px;
     position: absolute;
-  }
-}
-
-.ie9 {
-  .uomcontent ul.ticked-list li:before {
-    content: '';
   }
 }
 

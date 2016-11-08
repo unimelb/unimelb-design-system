@@ -242,11 +242,6 @@
   }
 }
 
-.ie .uomcontent [role="main"] .contrast-helper header {
-  background-color: transparent;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7f000000', endColorstr='#7f000000', GradientType=1); // /* IE6-9 */
-}
-
 .ie9 {
   .uomcontent {
     header,
@@ -259,8 +254,14 @@
         padding-bottom: 200px;
       }
     }
+
     header.image, header.banner {
       display: table;
+    }
+
+    [role="main"] .contrast-helper header {
+      background-color: transparent;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7f000000', endColorstr='#7f000000', GradientType=1);
     }
   }
 }

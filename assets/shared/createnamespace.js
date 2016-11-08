@@ -7,9 +7,7 @@ function CreateNameSpace() {
   "use strict";
 
   var bodyclass;
-  if (/(MSIE 8.0)/g.test(navigator.userAgent))
-    bodyclass = 'ie ie8';
-  else if (/(MSIE 9.0)/g.test(navigator.userAgent))
+  if (/(MSIE 9.0)/g.test(navigator.userAgent))
     bodyclass = 'ie ie9';
   else if (/(MSIE 10.0)/g.test(navigator.userAgent))
     bodyclass = 'ie10';
