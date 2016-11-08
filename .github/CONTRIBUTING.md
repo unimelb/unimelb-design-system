@@ -9,7 +9,7 @@ Screenshots are helpful, as are screencasts (no flash), and please include any b
 # How to contribute
 
 1. Add or modify the code in local dev environment
-2. Test across supported platforms and devices (IE8+, chrome/safari/opera, FF 31.5 ESR+, iphone 4, iphone 6, ipad 2, ipad air 2, nexus 4, galaxy s2)
+2. Test across supported platforms and devices (IE9+, chrome/safari/opera, FF 31.5 ESR+, iphone 4, iphone 6, ipad 2, ipad air 2, nexus 4, galaxy s2)
 3. Commit changes as a pull request against the repo on github
 
 # What happens next
