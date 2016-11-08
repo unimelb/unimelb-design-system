@@ -421,13 +421,3 @@
     @include padding-leader(0);
   }
 }
-
-.ie8 .uomcontent fieldset {
-  legend {
-    color: $black;
-  }
-
-  label {
-    display: inline;
-  }
-}

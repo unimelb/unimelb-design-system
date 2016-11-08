@@ -283,39 +283,3 @@ body {
     width: 120%;
   }
 }
-
-.ie8 {
-  .uomcontent [role="navigation"]#globalsitemap ul.quicklinks,
-  .uomcontent ul.quicklinks {
-    border-bottom: 1px solid $blue;
-    border-top: 1px solid $blue;
-    padding-bottom: 10px;
-    float: left;
-
-    li {
-      clear: none;
-      float: left;
-      line-height: 1;
-      width: 16.667%;
-    }
-
-    a {
-      color: $white;
-      display: block;
-      text-align: center;
-      vertical-align: middle;
-
-      &:hover {
-        color: $white;
-      }
-    }
-
-    .icon {
-      display: none;
-    }
-  }
-
-  .uomcontent .sitemap-trigger {
-    display: none;
-  }
-}

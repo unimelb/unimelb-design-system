@@ -234,25 +234,3 @@
     }
   }
 }
-
-body.ie8 {
-  .uomcontent [role="navigation"]#sitemap {
-    padding-right: 0;
-    right: -$width-localnav;
-    width: $width-localnav;
-
-    &.active,
-    .inner.active {
-      right: 0;
-    }
-
-    .inner {
-      padding-right: 0;
-    }
-
-    .w {
-      padding-right: 0;
-      width: $width-localnav;
-    }
-  }
-}

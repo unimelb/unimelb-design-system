@@ -72,19 +72,3 @@
 .uomcontent [role="main"] .half {
   @include half;
 }
-
-.ie8 .uomcontent .half {
-  display: table;
-  max-width: $w-lge;
-
-  section {
-    display: table-cell;
-    padding: 30px 15px;
-    vertical-align: top;
-    width: 50%;
-
-    h2 {
-      margin-left: 0;
-    }
-  }
-}

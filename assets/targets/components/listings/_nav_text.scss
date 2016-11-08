@@ -77,7 +77,6 @@
   }
 }
 
-.ie8 .uomcontent [role="main"] .navigation-text-listing,
 .ie9 .uomcontent [role="main"] .navigation-text-listing {
   @include navigation-text-listing-fallback;
 }

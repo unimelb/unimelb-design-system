@@ -723,13 +723,3 @@
     border-color: $highlight;
   }
 }
-
-.ie8 .uomcontent [role="main"] {
-  .block-listing.narrow li.more a:hover {
-    strong,
-    em {
-      background-color: $highlight;
-      color: $white;
-    }
-  }
-}

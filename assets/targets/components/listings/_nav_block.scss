@@ -220,7 +220,6 @@
   }
 }
 
-.ie8 .uomcontent [role="main"] .navigation-block-listing,
 .ie9 .uomcontent [role="main"] .navigation-block-listing {
   @include navigation-block-listing-fallback;
 }
