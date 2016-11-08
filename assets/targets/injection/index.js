@@ -68,11 +68,6 @@ window.UOMloadInjection = function() {
   new Accouncement({});
 };
 
-// Execute when ready
-if (window.attachEvent) {
-  window.attachEvent('onload', window.UOMloadInjection);
-} else {
-  document.addEventListener('DOMContentLoaded', window.UOMloadInjection, false);
-  document.addEventListener('page:load', window.UOMloadInjection, false);
-  document.addEventListener('page:restore', window.UOMloadInjection, false);
-}
+document.addEventListener('DOMContentLoaded', window.UOMloadInjection, false);
+document.addEventListener('page:load', window.UOMloadInjection, false);
+document.addEventListener('page:restore', window.UOMloadInjection, false);

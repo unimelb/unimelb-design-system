@@ -53,10 +53,6 @@ window.UOMFormLoadComponents = function() {
   new Icons();
 };
 
-if (window.attachEvent) {
-  window.attachEvent('onload', window.UOMFormLoadComponents);
-} else {
-  document.addEventListener('DOMContentLoaded', window.UOMFormLoadComponents, false);
-  document.addEventListener('page:load', window.UOMFormLoadComponents, false);
-  document.addEventListener('page:restore', window.UOMFormLoadComponents, false);
-}
+document.addEventListener('DOMContentLoaded', window.UOMFormLoadComponents, false);
+document.addEventListener('page:load', window.UOMFormLoadComponents, false);
+document.addEventListener('page:restore', window.UOMFormLoadComponents, false);

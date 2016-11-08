@@ -208,11 +208,6 @@ window.lmaps_loaded_go = function(recs) {
     new LMaps(recs[i], {counter: i});
 };
 
-// Execute when ready
-if (window.attachEvent) {
-  window.attachEvent('onload', window.UOMloadComponents);
-} else {
-  document.addEventListener('DOMContentLoaded', window.UOMloadComponents, false);
-  document.addEventListener('page:load', window.UOMloadComponents, false);
-  document.addEventListener('page:restore', window.UOMloadComponents, false);
-}
+document.addEventListener('DOMContentLoaded', window.UOMloadComponents, false);
+document.addEventListener('page:load', window.UOMloadComponents, false);
+document.addEventListener('page:restore', window.UOMloadComponents, false);

@@ -46,11 +46,7 @@
     }
   };
 
-  if (window.attachEvent) {
-    window.attachEvent('onload', window.buildVersionToolbar);
-  } else {
-    document.addEventListener('DOMContentLoaded', window.buildVersionToolbar, false);
-    document.addEventListener('page:load', window.buildVersionToolbar, false);
-    document.addEventListener('page:restore', window.buildVersionToolbar, false);
-  }
+  document.addEventListener('DOMContentLoaded', window.buildVersionToolbar, false);
+  document.addEventListener('page:load', window.buildVersionToolbar, false);
+  document.addEventListener('page:restore', window.buildVersionToolbar, false);
 })(this);

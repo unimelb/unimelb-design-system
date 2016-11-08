@@ -168,11 +168,6 @@ window.maps_loaded_go = function() {
     new GMaps(recs[i], {});
 };
 
-// Execute when ready
-if (window.attachEvent) {
-  window.attachEvent('onload', window.DSComponentsLoad);
-} else {
-  document.addEventListener('DOMContentLoaded', window.DSComponentsLoad, false);
-  document.addEventListener('page:load', window.DSComponentsLoad, false);
-  document.addEventListener('page:restore', window.DSComponentsLoad, false);
-}
+document.addEventListener('DOMContentLoaded', window.DSComponentsLoad, false);
+document.addEventListener('page:load', window.DSComponentsLoad, false);
+document.addEventListener('page:restore', window.DSComponentsLoad, false);
