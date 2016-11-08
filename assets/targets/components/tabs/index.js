@@ -36,10 +36,8 @@ function Tabs(el, props) {
       this.scrollToTabs();
     }
 
-    if (window.addEventListener) { // don't setup the overflow at all in IE8
-      this.handleResize();
-      window.addEventListener('resize', debounce(this.handleResize.bind(this), DEBOUNCE_DELAY));
-    }
+    this.handleResize();
+    window.addEventListener('resize', debounce(this.handleResize.bind(this), DEBOUNCE_DELAY));
   }
 }
 
