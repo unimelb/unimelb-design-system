@@ -117,7 +117,7 @@ JumpNav.prototype.buildNavMenu = function() {
     var refElem = this.props.root.findFirstElementChild();
     // If first element is `.headerless`, take the next sibling so that the jumpnav appears below the blue bar on mobile and tablet
     if (refElem.classList.contains('headerless'))
-      refElem = refElem.findNextElementSibling();
+      refElem = refElem.nextElementSibling;
     this.props.root.insertBefore(this.el, refElem);
   }
 

@@ -45,15 +45,4 @@ require('classlist-polyfill');
     };
   }
 
-  // Find the next element sibling of an element (i.e. skip white-space nodes)
-  if (!Element.prototype.findNextElementSibling) {
-    Element.prototype.findNextElementSibling = function () {
-      var sibling = this.nextSibling;
-      while (sibling && sibling.nodeType !== 1) {
-        sibling = sibling.nextSibling;
-      }
-      return sibling;
-    };
-  }
-
 })(this);
