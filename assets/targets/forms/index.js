@@ -4,10 +4,6 @@ require("../../shared/smoothscroll");
 require("../../shared/findup");
 require("../../shared/loadscript");
 
-// Simple sniff
-if (typeof window.MSIE_version === "undefined")
-  window.MSIE_version = /MSIE\s(\d{1,2})/g.exec(navigator.userAgent) === null ? 100 : /MSIE\s(\d{1,2})/g.exec(navigator.userAgent)[1];
-
 window.UOMFormLoadComponents = function() {
   "use strict";
 

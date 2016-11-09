@@ -13,16 +13,14 @@ function FilteredListingSection(el, props) {
   this.props.grid = el.querySelector('.filtered-listing-grid');
   this.props.items = this.props.grid.querySelectorAll('.filtered-listing-item');
 
-  if (MSIE_version > 8) {
-    var Isotope = require('isotope-layout');
-    this.props.isotope = new Isotope(this.props.grid, {
-      itemSelector: '.filtered-listing-item',
-      filter: '.filtered-listing-item--visible',
-      layoutMode: 'fitRows',
-      hiddenStyle: { opacity: 0 },
-      visibleStyle: { opacity: 1 }
-    });
-  }
+  var Isotope = require('isotope-layout');
+  this.props.isotope = new Isotope(this.props.grid, {
+    itemSelector: '.filtered-listing-item',
+    filter: '.filtered-listing-item--visible',
+    layoutMode: 'fitRows',
+    hiddenStyle: { opacity: 0 },
+    visibleStyle: { opacity: 1 }
+  });
 }
 
 /**

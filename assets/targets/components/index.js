@@ -6,12 +6,6 @@ require("../../shared/loadscript");
 
 window.cssesc = require("cssesc");
 
-// Also need one to find non-text nodes in a list of children
-
-// Simple sniff
-if (typeof window.MSIE_version === "undefined")
-  window.MSIE_version = /MSIE\s(\d{1,2})/g.exec(navigator.userAgent) === null ? 100 : /MSIE\s(\d{1,2})/g.exec(navigator.userAgent)[1];
-
 // Async load fonts from google
 var WebFont = require("webfontloader");
 WebFont.load({
@@ -140,44 +134,39 @@ window.UOMloadComponents = function() {
 
   window.UOMbind('filtered-listings');
   window.UOMbind('icons');
-
   window.UOMbind('sortable-table');
+  window.UOMbind('tables');
 
-  // IE9+
-  if (MSIE_version > 8) {
-    window.UOMbind('tables');
+  recs = document.querySelectorAll('ul.image-gallery');
+  if (recs.length > 0) {
+    loadScript('https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js', function (recs) {
+      imagesLoaded = require("imagesloaded");
+      ImageGallery = require("./gallery");
 
-    recs = document.querySelectorAll('ul.image-gallery');
-    if (recs.length > 0) {
-      loadScript('https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js', function (recs) {
-        imagesLoaded = require("imagesloaded");
-        ImageGallery = require("./gallery");
+      slingshot = function (g) {
+        new ImageGallery(g);
+      };
 
-        slingshot = function (g) {
-          new ImageGallery(g);
-        };
-
-        for (i=recs.length - 1; i >= 0; i--) {
-          g = recs[i];
-          imagesLoaded(g, slingshot.bind(null, g));
-        }
-      }.bind(null, recs));
-    }
-
-    recs = document.querySelectorAll('[data-leaflet-latlng]');
-    if (recs.length > 0) {
-      if (typeof(L) === 'undefined') {
-        loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
-          style = document.createElement('link');
-          style.rel = 'stylesheet';
-          style.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
-          document.body.appendChild(style);
-          window.bound_lmaps = [];
-          lmaps_loaded_go(recs);
-        });
-      } else {
-        lmaps_loaded_go(recs);
+      for (i=recs.length - 1; i >= 0; i--) {
+        g = recs[i];
+        imagesLoaded(g, slingshot.bind(null, g));
       }
+    }.bind(null, recs));
+  }
+
+  recs = document.querySelectorAll('[data-leaflet-latlng]');
+  if (recs.length > 0) {
+    if (typeof(L) === 'undefined') {
+      loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
+        style = document.createElement('link');
+        style.rel = 'stylesheet';
+        style.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
+        document.body.appendChild(style);
+        window.bound_lmaps = [];
+        lmaps_loaded_go(recs);
+      });
+    } else {
+      lmaps_loaded_go(recs);
     }
   }
 
