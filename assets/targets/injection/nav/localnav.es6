@@ -53,7 +53,6 @@ LocalNav.prototype.moveLocalNav = function() {
     lastli.innerHTML = '<a class="sitemap-link" href="https://unimelb.edu.au/sitemap">Browse University</a>';
     lastmenu.appendChild(lastli);
 
-    this.props.localnav.classList.remove('no-js');
     this.props.root.appendChild(this.props.localnav);
 
     var innerElements = this.props.localnav.querySelectorAll('.inner');
