@@ -67,7 +67,7 @@ Modal.prototype.show = function (e) {
     this.props.target.style.top = (this.el.offsetTop - 160) + 'px';
   } else {
     var viewport = document.body.getBoundingClientRect();
-    var top = parseInt((window.height() - this.props.target.offsetHeight) / 2, 10);
+    var top = parseInt((window.innerHeight - this.props.target.offsetHeight) / 2, 10);
 
     // Make sure modal never goes past the top of the viewport
     this.props.target.style.top = (Math.max(top, 40) - viewport.top) + 'px';

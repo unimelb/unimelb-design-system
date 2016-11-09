@@ -30,23 +30,6 @@ require('classlist-polyfill');
     };
   }
 
-  // Window height helper
-  if (typeof window.height === "undefined") {
-    window.height = function() {
-      var h;
-      if (window.innerHeight) {
-        h = window.innerHeight;
-      } else if (document.compatMode === 'CSS1Compat' && document.documentElement && document.documentElement.offsetHeight) {
-        h = document.documentElement.offsetHeight;
-      } else if (document.body && document.body.offsetHeight) {
-        h = document.body.offsetHeight;
-      } else {
-        h = 0;
-      }
-      return h;
-    };
-  }
-
   // Find the first element child of an element (`Node.firstElementChild()` is not supported on IE8)
   if (!Element.prototype.findFirstElementChild) {
     Element.prototype.findFirstElementChild = function () {
