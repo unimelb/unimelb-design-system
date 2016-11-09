@@ -10,7 +10,7 @@ function JumpNav(props) {
   // Arbitrary delay to allow calculation of CSS block hiding
   var offsets = {
     'root':            document.querySelector('div[role="main"]'),
-    'topmode':         (document.countSelector('.jumpnav.top') === 1),
+    'topmode':         (document.querySelectorAll('.jumpnav.top').length === 1),
     'arbitraryOffset': 60  // scroll clearance
   };
 
@@ -86,7 +86,7 @@ JumpNav.prototype.trackProgress = function(scrollY) {
 
 JumpNav.prototype.buildNavMenu = function() {
   this.el = document.createElement('ul');
-  this.el.className = (document.countSelector('.indexnav') > 0 ? 'index-navigation' : 'jump-navigation');
+  this.el.className = document.querySelector('.indexnav') ? 'index-navigation' : 'jump-navigation';
   this.el.innerHTML = '<li>On this page</li>';
 
   this.props.items = {};
@@ -100,7 +100,7 @@ JumpNav.prototype.buildNavMenu = function() {
     this.el.appendChild(li);
   }
 
-  if (document.countSelector('.floating') > 0)
+  if (document.querySelector('.floating'))
     this.el.classList.add('floating');
 
   if (!this.props.header) {
@@ -124,7 +124,7 @@ JumpNav.prototype.buildNavMenu = function() {
   if (!this.props.topmode) {
     this.el.id = 'outer';
 
-    if (document.countSelector('.indexnav') == 1) {
+    if (document.querySelectorAll('.indexnav').length === 1) {
       document.body.classList.add('indexnav-active');
     } else {
       document.body.classList.add('jumpnav-active');

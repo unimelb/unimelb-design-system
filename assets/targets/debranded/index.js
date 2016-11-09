@@ -78,7 +78,7 @@ window.DSComponentsLoad = function() {
       new InpageNavigation(recs[i], {});
   }
 
-  if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1) {
+  if (document.querySelector('h2[id]') && document.querySelectorAll('.jumpnav, .indexnav').length === 1) {
     JumpNav = require("../components/inpage-navigation/jumpnav");
     new JumpNav({});
   }
@@ -153,7 +153,7 @@ window.DSComponentsLoad = function() {
   }
 
   // GMaps will load via callback
-  if (document.countSelector('[data-latlng],[data-address]') > 0) {
+  if (document.querySelector('[data-latlng], [data-address]')) {
     script = document.createElement("script");
     script.type = "text/javascript";
     script.src = "https://maps.googleapis.com/maps/api/js?key=#{process.env.GMAPSJSAPIKEY}&callback=maps_loaded_go";

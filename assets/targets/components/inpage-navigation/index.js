@@ -26,12 +26,12 @@ InpageNavigation.prototype.delegateScroll = function(e) {
 
         var tabbed = findUp(e.target, 'data-tabbed');
         if (tabbed && !e.target.parentNode.parentNode.classList.contains('jump-navigation')) {
-          if (tabbed.countSelector('.tab#' + target.id) === 1)
+          if (tabbed.querySelectorAll('.tab#' + target.id).length === 1)
             target = tabbed;
         }
 
         // If link is not a tab, or a full width tab
-        if ((target && !tabbed) || (tabbed && tabbed.countSelector('.full-width nav') > 0)) {
+        if ((target && !tabbed) || (tabbed && tabbed.querySelector('.full-width nav'))) {
           smoothScrollTo(target);
         }
       }

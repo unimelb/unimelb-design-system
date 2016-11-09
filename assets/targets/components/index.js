@@ -123,7 +123,7 @@ window.UOMloadComponents = function() {
   window.UOMbind('checklist');
   window.UOMbind('forms');
 
-  if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1) {
+  if (document.querySelector('h2[id]') && document.querySelectorAll('.jumpnav, .indexnav').length === 1) {
     JumpNav = require("./inpage-navigation/jumpnav");
     new JumpNav({});
   }
@@ -182,7 +182,7 @@ window.UOMloadComponents = function() {
   }
 
   // GMaps will load via callback
-  if (document.countSelector('[data-latlng],[data-address]') > 0) {
+  if (document.querySelector('[data-latlng], [data-address]')) {
     if (typeof(google) === 'undefined') {
       script = document.createElement("script");
       script.type = "text/javascript";

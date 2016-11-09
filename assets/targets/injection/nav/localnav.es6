@@ -10,7 +10,7 @@ function LocalNav(props) {
 
 LocalNav.prototype.moveLocalNav = function() {
   // Move local nav outside page container
-  if (this.props.localnav.countSelector('a.sitemap-link') === 0) {
+  if (!this.props.localnav.querySelector('a.sitemap-link')) {
     var rootmenu, lastmenu, noderoot;
 
     // Check for deprecated markup

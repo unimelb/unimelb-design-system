@@ -14,7 +14,7 @@ function Checklist(el, props) {
   this.props.target.addEventListener('click', this.handleTargetClick.bind(this));
 
   this.props.items = this.el.querySelectorAll('li');
-  this.props.active = this.el.countSelector('.on');
+  this.props.active = this.el.querySelectorAll('.on').length;
 
   this.toggleDisable();
 

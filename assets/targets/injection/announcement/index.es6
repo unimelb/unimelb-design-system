@@ -14,7 +14,7 @@ function InjectAnnouncement(props) {
   this.props.announcement = this.props.page.querySelector('.page-announcement');
 
   // Continue only if an announcement is present but not already injected
-  if (this.props.announcement && document.countSelector('.uomcontent > .page-announcement') === 0) {
+  if (this.props.announcement && !document.querySelector('.uomcontent > .page-announcement')) {
     this.checkDismissed();
     this.inject();
   }
