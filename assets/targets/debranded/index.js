@@ -1,5 +1,5 @@
 // Deps
-require("../../shared/shims");
+require('classlist-polyfill');
 require("../../shared/smoothscroll");
 require("../../shared/findup");
 require("../../shared/loadscript");
