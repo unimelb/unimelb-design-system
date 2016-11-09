@@ -27,7 +27,7 @@ InjectAnnouncement.prototype.checkDismissed = function () {
   this.props.message = this.props.announcement.querySelector('.page-announcement__message');
 
   // Hash the announcement before storing
-  this.props.hash = hashString(this.props.message.textContent || this.props.message.innerText);
+  this.props.hash = hashString(this.props.message.textContent);
 
   // Check local storage for hash
   // (Support for local storage goes as far back as IE8, so falling back to cookies would be excessive)

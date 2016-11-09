@@ -34,7 +34,7 @@ LocalNav.prototype.moveLocalNav = function() {
     // Make nav title a list item instead
     var firstli = document.createElement('li');
     firstli.className = 'home';
-    firstli.innerHTML = `<a href="${absroot}">${(navtitle.textContent || navtitle.innerText)}</a>`;
+    firstli.innerHTML = `<a href="${absroot}">${(navtitle.textContent)}</a>`;
     rootmenu.insertBefore(firstli, rootmenu.firstChild);
 
     // Create and insert close button
@@ -69,7 +69,7 @@ LocalNav.prototype.moveLocalNav = function() {
 
       back = document.createElement('span');
       back.className = 'back';
-      back.innerHTML = parent.textContent || parent.innerText;
+      back.innerHTML = parent.textContent;
       back.addEventListener('click', handler);
       innerElem.insertBefore(back, innerElem.firstChild);
     }

@@ -88,7 +88,7 @@ JumpNav.prototype.buildNavMenu = function() {
     var at = recs[i].offsetTop;
     this.props.items[at] = document.createElement('a');
     this.props.items[at].href = '#' + recs[i].id;
-    this.props.items[at].appendChild(document.createTextNode(recs[i].textContent || recs[i].innerText));
+    this.props.items[at].appendChild(document.createTextNode(recs[i].textContent));
     var li = document.createElement('li');
     li.appendChild(this.props.items[at]);
     this.el.appendChild(li);
