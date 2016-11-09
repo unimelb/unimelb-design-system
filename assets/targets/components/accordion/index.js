@@ -56,7 +56,7 @@ Accordion.prototype.setupCloseButton = function() {
 
     if (this.props.hidden.countSelector('.accordion__close') === 0) {
       if (this.props.hidden.nodeName == 'TR') {
-          var firstElem = this.props.hidden.findFirstElementChild();
+          var firstElem = this.props.hidden.firstElementChild;
           if (firstElem) {
             firstElem.appendChild(close);
           }

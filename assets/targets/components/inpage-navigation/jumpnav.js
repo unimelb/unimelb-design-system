@@ -18,7 +18,7 @@ function JumpNav(props) {
   for (var prop in offsets) { this.props[prop] = offsets[prop]; }
 
   // Does layout contain a header at the top
-  var firstElem = this.props.root.findFirstElementChild();
+  var firstElem = this.props.root.firstElementChild;
   if (firstElem && firstElem.nodeName === 'HEADER')
     this.props.header = firstElem;
 
@@ -114,7 +114,7 @@ JumpNav.prototype.buildNavMenu = function() {
 
   // Insert into top of role=main
   } else {
-    var refElem = this.props.root.findFirstElementChild();
+    var refElem = this.props.root.firstElementChild;
     // If first element is `.headerless`, take the next sibling so that the jumpnav appears below the blue bar on mobile and tablet
     if (refElem.classList.contains('headerless'))
       refElem = refElem.nextElementSibling;

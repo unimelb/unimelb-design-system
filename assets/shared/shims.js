@@ -30,19 +30,4 @@ require('classlist-polyfill');
     };
   }
 
-  // Find the first element child of an element (`Node.firstElementChild()` is not supported on IE8)
-  if (!Element.prototype.findFirstElementChild) {
-    Element.prototype.findFirstElementChild = function () {
-      if ('firstElementChild' in this) {
-        return this.firstElementChild;
-      }
-
-      var child = this.firstChild;
-      while (child && child.nodeType !== 1) {
-        child = child.nextSibling;
-      }
-      return child;
-    };
-  }
-
 })(this);
