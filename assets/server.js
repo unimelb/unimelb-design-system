@@ -19,6 +19,7 @@ var BUILD   = path.join(__dirname, "build");
 
 // Webpack middleware
 var webpackMiddleware = webpackDevMiddleware(webpack(webpackConfig), {
+  lazy: false, // runs webpack in watch mode, with caching for incremental builds
   noInfo: true,
   publicPath: "/assets/"
 });
