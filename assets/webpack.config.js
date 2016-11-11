@@ -25,7 +25,6 @@ var config = {
     filename: '[name].js'
   },
   plugins: [
-    new ExtractTextPlugin('[name].css', { allChunks: true }),
     new webpack.EnvironmentPlugin(['NODE_ENV', 'CDNURL', 'GMAPSJSAPIKEY'])
   ],
   module: {
@@ -48,14 +47,6 @@ var config = {
         loader: 'json-loader'
       },
       {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?-autoprefixer&minimize!postcss-loader!sass-loader')
-      },
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?-autoprefixer&minimize!postcss-loader')
-      },
-      {
         test: /(isotope-layout|imagesloaded)/,
         loader: 'imports?define=>false&this=>window'
       }
@@ -68,6 +59,64 @@ var config = {
   ]
 };
 
+// Development configuration
+if (isDev) {
+  config.output.publicPath = ASSET_SERVER_URL + 'assets/';
+  config.devtool = 'source-map';
+
+  config.plugins.push(
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
+  );
+
+  config.module.loaders.push(
+    {
+      test: /\.scss$/,
+      loader: 'style-loader!css-loader?-autoprefixer!postcss-loader!sass-loader'
+    },
+    {
+      test: /\.css$/,
+      loader: 'style-loader!css-loader?-autoprefixer!postcss-loader'
+    }
+  );
+
+// Production configuration
+} else {
+  config.plugins.push(
+    new ExtractTextPlugin('[name].css', { allChunks: true }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
+  );
+
+  config.module.loaders.push(
+    {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract(
+        'style-loader',
+        'css-loader?-autoprefixer&minimize!postcss-loader!sass-loader'
+      )
+    },
+    {
+      test: /\.css$/,
+      loader: ExtractTextPlugin.extract(
+        'style-loader',
+        'css-loader?-autoprefixer&minimize!postcss-loader'
+      )
+    }
+  );
+}
+
+// Export configuration
+module.exports = config;
+
+
+/**
+ * Add an entry for the given directory.
+ * @param {Object} entries - the entries so far (reduce)
+ * @param {String} dir - the name of the directory to process
+ * @return {Object} - the `entries` object that includes the new entry
+ */
 function addEntry(entries, dir) {
   var dirPath = path.join(TARGETS, dir);
 
@@ -80,12 +129,17 @@ function addEntry(entries, dir) {
 
     // Add the entry
     entries[dir] = targets;
-    console.log(targets);
   }
 
   return entries;
 }
 
+/**
+ * Add a target to a given array.
+ * @param {Array} targets
+ * @param {String} dirPath
+ * @param {String} file - the file to add as target
+ */
 function addTarget(targets, dirPath, file) {
   var filePath = path.join(dirPath, file);
 
@@ -100,17 +154,3 @@ function addTarget(targets, dirPath, file) {
   // If file exists, add it as a target
   targets.push(filePath);
 }
-
-// Environment-specific configuration
-if (isDev) {
-  config.devtool = 'source-map';
-  config.output.publicPath = ASSET_SERVER_URL + 'assets/';
-  config.plugins.push(new webpack.HotModuleReplacementPlugin());
-  //config.plugins.push(new webpack.NoErrorsPlugin());
-} else {
-  config.plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
-  config.plugins.push(new webpack.optimize.OccurrenceOrderPlugin());
-}
-
-// Export configuration
-module.exports = config;
