@@ -19,7 +19,7 @@ var isDev = process.env.NODE_ENV !== 'production';
 // Webpack config
 var config = {
   context: TARGETS,
-  entry: fs.readdirSync(TARGETS).reduce(createEntries, {}),
+  entry: fs.readdirSync(TARGETS).reduce(addEntry, {}),
   output: {
     path: BUILD,
     filename: '[name].js'
@@ -68,27 +68,37 @@ var config = {
   ]
 };
 
-function isDirectory(dir) {
-  return fs.lstatSync(dir).isDirectory();
-}
+function addEntry(entries, dir) {
+  var dirPath = path.join(TARGETS, dir);
 
-function isFile(file) {
-  return fs.lstatSync(file).isFile();
-}
+  // Add entries for directories only
+  if (fs.lstatSync(dirPath).isDirectory()) {
+    // Build the entry's targets array
+    var targets = (isDev) ? ['webpack-dev-server/client?' + ASSET_SERVER_URL, 'webpack/hot/dev-server'] : [];
+    addTarget(targets, dirPath, 'target.js');
+    addTarget(targets, dirPath, 'index.scss');
 
-function createEntries(entries, dir) {
-  if (isDirectory(path.join(TARGETS, dir))) {
-    var target = (isDev) ? ['webpack-dev-server/client?' + ASSET_SERVER_URL, 'webpack/hot/dev-server'] : [];
-    var file = path.join(TARGETS, dir, 'target.js');
-    try {
-      isFile(file);
-    } catch (e) {
-      return;
-    }
-    target.push(file);
-    entries[dir] = target;
+    // Add the entry
+    entries[dir] = targets;
+    console.log(targets);
   }
+
   return entries;
+}
+
+function addTarget(targets, dirPath, file) {
+  var filePath = path.join(dirPath, file);
+
+  try {
+    // Check that the file exists
+    fs.lstatSync(filePath).isFile();
+  } catch (e) {
+    // If file doesn't exist, skip it
+    return;
+  }
+
+  // If file exists, add it as a target
+  targets.push(filePath);
 }
 
 // Environment-specific configuration
