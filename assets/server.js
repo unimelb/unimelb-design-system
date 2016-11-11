@@ -1,10 +1,5 @@
 require('dotenv').config();
 
-var WEB_SERVER_HOST   = process.env.WEB_SERVER_HOST     || 'localhost';
-var ASSET_SERVER_PORT = process.env.ASSETS_SERVER_PORT  || 7001;
-var WEBPACK_PORT      = process.env.WEBPACK_SERVER_PORT || 7002;
-var PROXY_URL         = ('http://' + WEB_SERVER_HOST + ':' + process.env.WEB_SERVER_PORT) || "http://localhost:7000";
-
 var http = require("http");
 var path = require('path');
 var express = require("express");
@@ -14,34 +9,34 @@ var webpackDevMiddleware = require("webpack-dev-middleware");
 var WebpackDevServer = require("webpack-dev-server");
 var webpackConfig = require("./webpack.config.js");
 
-// Configuration
-var BUILD   = path.join(__dirname, "build");
+var WEB_SERVER_HOST = process.env.WEB_SERVER_HOST || 'localhost';
+var WEB_SERVER_PORT = process.env.WEB_SERVER_PORT || 7000;
+var ASSET_SERVER_PORT = process.env.ASSETS_SERVER_PORT || 7001;
+var WEBPACK_SERVER_PORT = process.env.WEBPACK_SERVER_PORT || 7002;
 
-// Webpack middleware
-var webpackMiddleware = webpackDevMiddleware(webpack(webpackConfig), {
-  lazy: false, // runs webpack in watch mode, with caching for incremental builds
-  noInfo: true,
-  publicPath: "/assets/"
-});
 
-// Calling app proxy
+// Rails app proxy
 var proxy = httpProxy.createProxyServer();
-var proxyTarget = PROXY_URL;
-
-// Listen for the `error` event on `proxy`.
+var proxyTarget = 'http://' + WEB_SERVER_HOST + ':' + WEB_SERVER_PORT;
 proxy.on('error', function (err, req, res) {
-  res.writeHead(500, {
-    'Content-Type': 'text/plain'
-  });
-  res.end('Tried to proxy to '+proxyTarget+req.url+" and failed.");
+  res.writeHead(500, { 'Content-Type': 'text/plain' });
+  res.end('Tried to proxy to ' + proxyTarget + req.url + " and failed.");
 });
 
 
-// Express app
+/**
+ * Express server
+ * - serve compiled assets from ouput folder with the help of webpack-dev-middleware
+ * - proxy requests for other assets to Rails app
+ */
 var app = express();
 
-// Tell Express to use the webpackMiddleware
-app.use(webpackMiddleware);
+// Set up and use webpack-dev-middleware
+app.use(webpackDevMiddleware(webpack(webpackConfig), {
+  publicPath: webpackConfig.output.publicPath,
+  lazy: false, // run webpack in watch mode for fast incremental builds
+  noInfo: true
+}));
 
 // Set CORS headers
 app.use(function(req, res, next) {
@@ -50,40 +45,30 @@ app.use(function(req, res, next) {
   next();
 });
 
-// Check each request and proxies misses through to Calling app
+// Listen for every asset request and proxy misses through to Rails app
 app.get("*", function(req, res, next) {
-  console.log(BUILD + req.url);
-
-
-  // Check if a file exists in the webpack bundle
   try {
-    // Throws if path doesn't exist
-    webpackMiddleware.fileSystem.readFileSync(BUILD + req.url);
-
+    // Check if a file exists in the webpack bundle (throws if path doesn't exist)
+    webpackMiddleware.fileSystem.readFileSync(path.join(webpackConfig.output.path, req.url));
   } catch (e) {
-    console.log("Proxying to " + proxyTarget + req.url);
-
-    // Proxy through to Calling app if doesn't exist
-    proxy.web(req, res, {
-      target: proxyTarget
-    });
-    return;
+    // console.log("Proxying to " + proxyTarget + req.url);
+    proxy.web(req, res, { target: proxyTarget });
   }
 });
 
-// Boot the server
-var server = http.Server(app);
-server.listen(ASSET_SERVER_PORT, function() {
-  console.log("Listening at http://" + WEB_SERVER_HOST + ":" + ASSET_SERVER_PORT + "/");
+// Start server
+app.listen(ASSET_SERVER_PORT, function() {
+  console.log('=> Express proxy server listening at http://' + WEB_SERVER_HOST + ':' + ASSET_SERVER_PORT);
 });
 
-// User the webpack-dev-server specifically for hot-loading
+
+/**
+ * Webpack dev server
+ * - for hot module replacement
+ */
 var devServer = new WebpackDevServer(webpack(webpackConfig), {
-  contentBase: BUILD,
+  publicPath: webpackConfig.output.publicPath,
   hot: true,
-  quiet: false,
-  noInfo: false,
-  publicPath: "/assets/",
   historyApiFallback: true,
   stats: {
     colors: true,
@@ -93,5 +78,8 @@ var devServer = new WebpackDevServer(webpack(webpackConfig), {
   }
 });
 
-// Needs to be on 8080 as the websocket expects that
-devServer.listen(WEBPACK_PORT, WEB_SERVER_HOST, function() {});
+// Start server
+devServer.listen(WEBPACK_SERVER_PORT, WEB_SERVER_HOST, function (err) {
+  if (err) console.error(err);
+  console.log('=> 🔥  Webpack development server listening at http://' + WEB_SERVER_HOST + ':' + WEBPACK_SERVER_PORT);
+});
