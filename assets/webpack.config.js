@@ -7,11 +7,8 @@ var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var WEB_SERVER_HOST = process.env.WEB_SERVER_HOST || 'localhost';
-var ASSET_SERVER_PORT = process.env.ASSETS_SERVER_PORT || 7001;
-var WEBPACK_SERVER_PORT = process.env.WEBPACK_SERVER_PORT || 7002;
-
-var ASSETS_URL = 'http://' + WEB_SERVER_HOST + ':' + ASSET_SERVER_PORT;
-var WEBPACK_URL = 'http://' + WEB_SERVER_HOST + ':' + WEBPACK_SERVER_PORT;
+var ASSET_SERVER_PORT = process.env.ASSET_SERVER_PORT || 7001;
+var ASSET_SERVER_URL = 'http://' + WEB_SERVER_HOST + ':' + ASSET_SERVER_PORT + '/';
 
 var TARGETS = path.join(__dirname, 'targets');
 var BUILD = path.join(__dirname, '..', 'build');
@@ -81,7 +78,7 @@ function isFile(file) {
 
 function createEntries(entries, dir) {
   if (isDirectory(path.join(TARGETS, dir))) {
-    var target = (isDev) ? ['webpack-dev-server/client?' + WEBPACK_URL, 'webpack/hot/dev-server'] : [];
+    var target = (isDev) ? ['webpack-dev-server/client?' + ASSET_SERVER_URL, 'webpack/hot/dev-server'] : [];
     var file = path.join(TARGETS, dir, 'target.js');
     try {
       isFile(file);
@@ -96,10 +93,10 @@ function createEntries(entries, dir) {
 
 // Environment-specific configuration
 if (isDev) {
-  config.devtool = 'cheap-module-eval-source-map';
-  config.output.publicPath = ASSETS_URL + '/assets/';
+  config.devtool = 'source-map';
+  config.output.publicPath = ASSET_SERVER_URL + 'assets/';
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
-  config.plugins.push(new webpack.NoErrorsPlugin());
+  //config.plugins.push(new webpack.NoErrorsPlugin());
 } else {
   config.plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
   config.plugins.push(new webpack.optimize.OccurrenceOrderPlugin());
