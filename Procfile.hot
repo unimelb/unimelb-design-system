@@ -1,2 +1,2 @@
 web: rackup -p $PORT
-assets: DEVELOPMENT=true node ./assets/dev-server.js
+assets: DEVELOPMENT=true npm start

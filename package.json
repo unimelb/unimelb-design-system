@@ -19,8 +19,9 @@
     "npm": "3.10.3"
   },
   "scripts": {
-    "clean": "rm -rf ./build/*",
-    "build": "NODE_ENV=production webpack --config assets/webpack.config.js"
+    "clean": "rm -Rf build/*",
+    "build": "NODE_ENV=production webpack --config assets/webpack.config.js",
+    "start": "node assets/dev-server.js"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
