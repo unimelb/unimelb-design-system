@@ -5,16 +5,21 @@ var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var ASSETS_URL = 'http://'+process.env.WEB_SERVER_HOST+':'+process.env.ASSET_SERVER_PORT;
-var WEBPACK_URL = 'http://'+process.env.WEB_SERVER_HOST+':'+process.env.WEBPACK_SERVER_PORT;
 
-// Configuration
+var WEB_SERVER_HOST = process.env.WEB_SERVER_HOST || 'localhost';
+var ASSET_SERVER_PORT = process.env.ASSETS_SERVER_PORT || 7001;
+var WEBPACK_SERVER_PORT = process.env.WEBPACK_SERVER_PORT || 7002;
+
+var ASSETS_URL = 'http://' + WEB_SERVER_HOST + ':' + ASSET_SERVER_PORT;
+var WEBPACK_URL = 'http://' + WEB_SERVER_HOST + ':' + WEBPACK_SERVER_PORT;
+
 var TARGETS = path.join(__dirname, 'targets');
-var BUILD   = path.join(__dirname, '..', 'build');
+var BUILD = path.join(__dirname, '..', 'build');
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var isDev = process.env.NODE_ENV !== 'production';
 
+// Webpack config
 var config = {
   context: TARGETS,
   entry: fs.readdirSync(TARGETS).reduce(createEntries, {}),
@@ -91,11 +96,10 @@ function createEntries(entries, dir) {
 
 // Environment-specific configuration
 if (isDev) {
-  config.devtool = 'source-map';
+  config.devtool = 'cheap-module-eval-source-map';
   config.output.publicPath = ASSETS_URL + '/assets/';
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
   config.plugins.push(new webpack.NoErrorsPlugin());
-
 } else {
   config.plugins.push(new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }));
   config.plugins.push(new webpack.optimize.OccurrenceOrderPlugin());
