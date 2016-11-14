@@ -62,7 +62,7 @@ var config = {
 // Development configuration
 if (isDev) {
   config.output.publicPath = ASSET_SERVER_URL + 'assets/';
-  config.devtool = 'source-map';
+  config.devtool = 'eval-cheap-module-source-map';
 
   config.plugins.push(
     new webpack.HotModuleReplacementPlugin(),
@@ -72,11 +72,11 @@ if (isDev) {
   config.module.loaders.push(
     {
       test: /\.scss$/,
-      loader: 'style-loader!css-loader?-autoprefixer!postcss-loader!sass-loader'
+      loader: 'style-loader!css-loader?-autoprefixer&sourceMap!postcss-loader!sass-loader'
     },
     {
       test: /\.css$/,
-      loader: 'style-loader!css-loader?-autoprefixer!postcss-loader'
+      loader: 'style-loader!css-loader?-autoprefixer&sourceMap!postcss-loader'
     }
   );
 
