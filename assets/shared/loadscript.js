@@ -1,18 +1,30 @@
-(function(root) {
-  "use strict";
+/**
+ * Load one or more externally-hosted scripts.
+ * @param {String|Array} url - the URL of the script, or an array of URLs
+ */
+function loadScript(url) {
+  // Prepare array of script URLs to load
+  var urls = Array.isArray(url) ? url : [url];
 
-  // Load external js via promise
-  if (typeof window.loadScript === "undefined") {
-    window.loadScript = function(url, callback) {
-      var Promise = require('promise');
-      new Promise(function(resolve, reject) {
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.src = url;
-        document.body.appendChild(script);
-        script.addEventListener('load', resolve);
-      }).done(callback);
-    };
-  }
+  // For each URL, create a promise that injects a script tag into the DOM and resolves when the script has loaded
+  var promises = urls.map(function () {
+    return new Promise(function (resolve, reject) {
+      // Create script element
+      var script = document.createElement('script');
+      script.src = url;
 
-})(this);
+      // Resolve or reject
+      script.addEventListener('load', resolve);
+      script.addEventListener('error', reject);
+
+      // Inject script
+      document.body.appendChild(script);
+    });
+  });
+
+  // Return a promise that resolves when all of the scripts have loaded
+  return Promise.all(promises);
+}
+
+// Export function
+module.exports = loadScript;
