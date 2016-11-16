@@ -173,13 +173,10 @@ window.UOMloadComponents = function() {
     }
   }
 
-  // GMaps will load via callback
   if (document.querySelector('[data-latlng], [data-address]')) {
     if (typeof(google) === 'undefined') {
-      script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src = "https://maps.googleapis.com/maps/api/js?key=" + process.env.GMAPSJSAPIKEY + "&callback=maps_loaded_go";
-      document.body.appendChild(script);
+      // GMaps loads via global callback
+      window.loadScript('https://maps.googleapis.com/maps/api/js?key=' + process.env.GMAPSJSAPIKEY + '&callback=maps_loaded_go');
     } else {
       maps_loaded_go();
     }

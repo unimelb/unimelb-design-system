@@ -151,12 +151,13 @@ window.DSComponentsLoad = function() {
     }
   }
 
-  // GMaps will load via callback
   if (document.querySelector('[data-latlng], [data-address]')) {
-    script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://maps.googleapis.com/maps/api/js?key=#{process.env.GMAPSJSAPIKEY}&callback=maps_loaded_go";
-    document.body.appendChild(script);
+    if (typeof(google) === 'undefined') {
+      // GMaps loads via global callback
+      window.loadScript('https://maps.googleapis.com/maps/api/js?key=' + process.env.GMAPSJSAPIKEY + '&callback=maps_loaded_go');
+    } else {
+      maps_loaded_go();
+    }
   }
 };
 
@@ -164,7 +165,7 @@ window.DSComponentsLoad = function() {
 window.maps_loaded_go = function() {
   var GMaps = require("../components/maps/gmaps.es6");
   for (var recs = document.querySelectorAll('[data-latlng],[data-address]'), i=recs.length - 1; i >= 0; i--)
-    new GMaps(recs[i], {});
+    new GMaps(recs[i], {counter: i});
 };
 
 // LMaps callback
