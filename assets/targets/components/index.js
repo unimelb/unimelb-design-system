@@ -4,9 +4,9 @@ require('es6-promise').polyfill();
 
 require("../../shared/smoothscroll");
 require("../../shared/findup");
-require("../../shared/loadscript");
 
 window.cssesc = require("cssesc");
+window.loadScript = require('../../shared/loadscript');
 
 // Async load fonts from google
 var WebFont = require("webfontloader");
@@ -159,14 +159,15 @@ window.UOMloadComponents = function() {
   recs = document.querySelectorAll('[data-leaflet-latlng]');
   if (recs.length > 0) {
     if (typeof(L) === 'undefined') {
-      loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
-        style = document.createElement('link');
-        style.rel = 'stylesheet';
-        style.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
-        document.body.appendChild(style);
-        window.bound_lmaps = [];
-        lmaps_loaded_go(recs);
-      });
+      window.loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js')
+        .then(function() {
+          style = document.createElement('link');
+          style.rel = 'stylesheet';
+          style.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
+          document.head.appendChild(style);
+          window.bound_lmaps = [];
+          lmaps_loaded_go(recs);
+        });
     } else {
       lmaps_loaded_go(recs);
     }

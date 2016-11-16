@@ -4,7 +4,8 @@ require('es6-promise').polyfill();
 
 require("../../shared/smoothscroll");
 require("../../shared/findup");
-require("../../shared/loadscript");
+
+window.loadScript = require('../../shared/loadscript');
 
 // Async load fonts from google
 var WebFont = require("webfontloader");
@@ -135,17 +136,19 @@ window.DSComponentsLoad = function() {
 
   recs = document.querySelectorAll('[data-leaflet-latlng]');
   if (recs.length > 0) {
-    loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
-      style = document.createElement('link');
-      style.rel = 'stylesheet';
-      style.href = '//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
-      document.body.appendChild(style);
-
-      LMaps = require("../components/maps/lmaps");
-      for (i=recs.length - 1; i >= 0; i--) {
-        new LMaps(recs[i], {});
-      }
-    });
+    if (typeof(L) === 'undefined') {
+      window.loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js')
+        .then(function() {
+          style = document.createElement('link');
+          style.rel = 'stylesheet';
+          style.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
+          document.head.appendChild(style);
+          window.bound_lmaps = [];
+          lmaps_loaded_go(recs);
+        });
+    } else {
+      lmaps_loaded_go(recs);
+    }
   }
 
   // GMaps will load via callback
@@ -162,6 +165,13 @@ window.maps_loaded_go = function() {
   var GMaps = require("../components/maps/gmaps.es6");
   for (var recs = document.querySelectorAll('[data-latlng],[data-address]'), i=recs.length - 1; i >= 0; i--)
     new GMaps(recs[i], {});
+};
+
+// LMaps callback
+window.lmaps_loaded_go = function(recs) {
+  var LMaps = require("../components/maps/lmaps");
+  for (var i=recs.length - 1; i >= 0; i--)
+    new LMaps(recs[i], {counter: i});
 };
 
 document.addEventListener('DOMContentLoaded', window.DSComponentsLoad, false);
