@@ -141,19 +141,23 @@ window.UOMloadComponents = function() {
 
   recs = document.querySelectorAll('ul.image-gallery');
   if (recs.length > 0) {
-    loadScript('https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js', function (recs) {
-      imagesLoaded = require("imagesloaded");
-      ImageGallery = require("./gallery");
+    window.loadScript([
+      'https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js',
+      'https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js'
+    ])
+      .then(function (recs) {
+        imagesLoaded = require("imagesloaded");
+        ImageGallery = require("./gallery");
 
-      slingshot = function (g) {
-        new ImageGallery(g);
-      };
+        slingshot = function (g) {
+          new ImageGallery(g);
+        };
 
-      for (i=recs.length - 1; i >= 0; i--) {
-        g = recs[i];
-        imagesLoaded(g, slingshot.bind(null, g));
-      }
-    }.bind(null, recs));
+        for (i=recs.length - 1; i >= 0; i--) {
+          g = recs[i];
+          imagesLoaded(g, slingshot.bind(null, g));
+        }
+      }.bind(null, recs));
   }
 
   recs = document.querySelectorAll('[data-leaflet-latlng]');

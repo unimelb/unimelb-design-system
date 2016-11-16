@@ -11,8 +11,7 @@ function ImageGallery(el, props) {
   this.setupPhotoSwipe();
   this.setupGallery();
 
-  var Isotope = require('isotope-layout');
-  new Isotope(this.el, {
+  new window.Isotope(this.el, {
     itemSelector: '.item',
     layoutMode: 'masonry',
     masonry: {

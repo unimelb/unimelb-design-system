@@ -7,7 +7,7 @@ function loadScript(url) {
   var urls = Array.isArray(url) ? url : [url];
 
   // For each URL, create a promise that injects a script tag into the DOM and resolves when the script has loaded
-  var promises = urls.map(function () {
+  var promises = urls.map(function (url) {
     return new Promise(function (resolve, reject) {
       // Create script element
       var script = document.createElement('script');
