@@ -105,9 +105,12 @@ window.DSComponentsLoad = function() {
 
   recs = document.querySelectorAll('form.filtered-listing-select');
   if (recs.length > 0) {
-    FilteredListing = require("../components/filtered-listings");
-    for (i=recs.length - 1; i >= 0; i--)
-      new FilteredListing(recs[i], {});
+    window.loadScript('https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js')
+      .then(function (recs) {
+        FilteredListing = require("../components/filtered-listings");
+        for (i=recs.length - 1; i >= 0; i--)
+          new FilteredListing(recs[i], {});
+      }.bind(null, recs));
   }
 
   recs = document.querySelectorAll('[data-icon]');

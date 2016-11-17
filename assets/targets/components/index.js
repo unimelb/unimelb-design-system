@@ -39,9 +39,6 @@ window.UOMbind = function(component) {
   } else if (component === 'checklist') {
     attachment = 'ul.checklist[data-unlock-target]';
 
-  } else if (component === 'filtered-listings') {
-    attachment = 'form.filtered-listing-select';
-
   } else if (component === 'icons') {
     window.UOMbindIcons();
     attachment = false;
@@ -82,7 +79,7 @@ window.UOMbind = function(component) {
 window.UOMloadComponents = function() {
   "use strict";
 
-  var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect, Flash,
+  var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect, Flash, FilteredListing,
     ImageGallery, imagesLoaded, slingshot, style, script, keyscript;
 
   window.UOMbind('accordion');
@@ -134,7 +131,16 @@ window.UOMloadComponents = function() {
     });
   }
 
-  window.UOMbind('filtered-listings');
+  recs = document.querySelectorAll('form.filtered-listing-select');
+  if (recs.length > 0) {
+    window.loadScript('https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js')
+      .then(function (recs) {
+        FilteredListing = require("./filtered-listings");
+        for (i=recs.length - 1; i >= 0; i--)
+          new FilteredListing(recs[i], {});
+      }.bind(null, recs));
+  }
+
   window.UOMbind('icons');
   window.UOMbind('sortable-table');
   window.UOMbind('tables');

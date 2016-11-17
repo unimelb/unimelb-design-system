@@ -52,10 +52,6 @@ var config = {
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader?-autoprefixer&minimize!postcss-loader')
-      },
-      {
-        test: /(isotope-layout|imagesloaded)/,
-        loader: 'imports?define=>false&this=>window'
       }
     ]
   },

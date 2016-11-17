@@ -9,7 +9,6 @@
     "classlist-polyfill": "^1.0.2",
     "es6-promise": "^4.0.5",
     "imagesloaded": "~4.1.1",
-    "isotope-layout": "~3.0.1",
     "just-debounce": "^1.0.0",
     "perfect-scrollbar": "^0.6.10",
     "webfontloader": "~1.6.3"

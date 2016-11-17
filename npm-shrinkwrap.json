@@ -980,11 +980,6 @@
       "resolved": "https://registry.npmjs.org/depd/-/depd-1.1.0.tgz",
       "dev": true
     },
-    "desandro-matches-selector": {
-      "version": "2.0.1",
-      "from": "desandro-matches-selector@>=2.0.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/desandro-matches-selector/-/desandro-matches-selector-2.0.1.tgz"
-    },
     "destroy": {
       "version": "1.0.4",
       "from": "destroy@>=1.0.4 <1.1.0",
@@ -1182,6 +1177,12 @@
       "from": "ev-emitter@>=1.0.0 <1.1.0",
       "resolved": "https://registry.npmjs.org/ev-emitter/-/ev-emitter-1.0.3.tgz"
     },
+    "eventemitter3": {
+      "version": "1.2.0",
+      "from": "eventemitter3@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/eventemitter3/-/eventemitter3-1.2.0.tgz",
+      "dev": true
+    },
     "events": {
       "version": "1.1.1",
       "from": "events@>=1.0.0 <2.0.0",
@@ -1283,11 +1284,6 @@
       "from": "find-up@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/find-up/-/find-up-1.1.2.tgz",
       "dev": true
-    },
-    "fizzy-ui-utils": {
-      "version": "2.0.3",
-      "from": "fizzy-ui-utils@>=2.0.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/fizzy-ui-utils/-/fizzy-ui-utils-2.0.3.tgz"
     },
     "flatten": {
       "version": "1.0.2",
@@ -2185,11 +2181,6 @@
       "resolved": "https://registry.npmjs.org/get-caller-file/-/get-caller-file-1.0.2.tgz",
       "dev": true
     },
-    "get-size": {
-      "version": "2.0.2",
-      "from": "get-size@>=2.0.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/get-size/-/get-size-2.0.2.tgz"
-    },
     "get-stdin": {
       "version": "4.0.1",
       "from": "get-stdin@>=4.0.1 <5.0.0",
@@ -2395,6 +2386,12 @@
           "dev": true
         }
       }
+    },
+    "http-proxy": {
+      "version": "1.15.2",
+      "from": "http-proxy@>=1.15.1 <1.16.0",
+      "resolved": "https://registry.npmjs.org/http-proxy/-/http-proxy-1.15.2.tgz",
+      "dev": true
     },
     "http-proxy-middleware": {
       "version": "0.17.2",
@@ -2699,11 +2696,6 @@
       "resolved": "https://registry.npmjs.org/isobject/-/isobject-2.1.0.tgz",
       "dev": true
     },
-    "isotope-layout": {
-      "version": "3.0.1",
-      "from": "isotope-layout@3.0.1",
-      "resolved": "https://registry.npmjs.org/isotope-layout/-/isotope-layout-3.0.1.tgz"
-    },
     "isstream": {
       "version": "0.1.2",
       "from": "isstream@>=0.1.2 <0.2.0",
@@ -2976,11 +2968,6 @@
       "from": "map-obj@>=1.0.1 <2.0.0",
       "resolved": "https://registry.npmjs.org/map-obj/-/map-obj-1.0.1.tgz",
       "dev": true
-    },
-    "masonry-layout": {
-      "version": "4.1.1",
-      "from": "masonry-layout@>=4.0.0 <5.0.0",
-      "resolved": "https://registry.npmjs.org/masonry-layout/-/masonry-layout-4.1.1.tgz"
     },
     "math-expression-evaluator": {
       "version": "1.2.14",
@@ -3323,11 +3310,6 @@
       "from": "osenv@>=0.0.0 <1.0.0",
       "resolved": "https://registry.npmjs.org/osenv/-/osenv-0.1.3.tgz",
       "dev": true
-    },
-    "outlayer": {
-      "version": "2.1.0",
-      "from": "outlayer@>=2.1.0 <3.0.0",
-      "resolved": "https://registry.npmjs.org/outlayer/-/outlayer-2.1.0.tgz"
     },
     "pako": {
       "version": "0.2.9",
@@ -3910,6 +3892,12 @@
       "version": "1.0.1",
       "from": "require-main-filename@>=1.0.1 <2.0.0",
       "resolved": "https://registry.npmjs.org/require-main-filename/-/require-main-filename-1.0.1.tgz",
+      "dev": true
+    },
+    "requires-port": {
+      "version": "1.0.0",
+      "from": "requires-port@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/requires-port/-/requires-port-1.0.0.tgz",
       "dev": true
     },
     "right-align": {
