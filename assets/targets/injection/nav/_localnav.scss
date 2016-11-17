@@ -56,15 +56,6 @@
     }
   }
 
-  &.no-js {
-    @include wrapper;
-    background-color: $navy;
-    box-shadow: 0 0 0;
-    display: block;
-    position: static;
-    width: auto;
-  }
-
   .w {
     @include rem(padding-right, $width-sitemap-trigger);
     height: 100%;
@@ -233,4 +224,13 @@
       z-index: 9;
     }
   }
+}
+
+.no-js .uomcontent [role="navigation"]#sitemap {
+  @include wrapper;
+  background-color: $navy;
+  box-shadow: 0 0 0;
+  display: block;
+  position: static;
+  width: auto;
 }

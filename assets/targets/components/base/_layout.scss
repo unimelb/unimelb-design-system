@@ -581,8 +581,7 @@ body {
 }
 
 // Uninjected styles
-.uomcontent .page-local-history,
-.uomcontent [role="navigation"].no-js {
+.uomcontent .page-local-history {
   @include rem(padding, 15px 30px);
   color: $midblue;
   display: block;
