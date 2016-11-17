@@ -19,8 +19,10 @@
     "npm": "3.10.8"
   },
   "scripts": {
-    "clean": "rm -rf ./build/*",
-    "build": "NODE_ENV=production node_modules/.bin/webpack --config ./assets/webpack.config.js -p"
+    "clean": "rm -Rf build/*",
+    "build": "NODE_ENV=production webpack --config assets/webpack.config.js",
+    "dev": "node assets/dev-server.js",
+    "start": "bundle exec foreman start -f Procfile.hot"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
@@ -30,11 +32,9 @@
     "css-loader": "~0.25.0",
     "cssesc": "~0.1.0",
     "dotenv": "~2.0.0",
-    "express": "~4.14.0",
     "extract-text-webpack-plugin": "~1.0.1",
     "file-loader": "~0.9.0",
     "html-loader": "~0.4.4",
-    "http-proxy": "~1.15.1",
     "imports-loader": "~0.6.3",
     "jshint": "~2.9.3",
     "jshint-loader": "~0.8.3",
@@ -43,7 +43,6 @@
     "sass-loader": "~4.0.2",
     "style-loader": "~0.13.1",
     "webpack": "^1.13.2",
-    "webpack-dev-middleware": "~1.8.3",
     "webpack-dev-server": "~1.16.1"
   },
   "cacheDirectories": [
