@@ -15,8 +15,8 @@
     "webfontloader": "~1.6.3"
   },
   "engines": {
-    "node": "6.5.0",
-    "npm": "3.10.3"
+    "node": "6.9.1",
+    "npm": "3.10.8"
   },
   "scripts": {
     "clean": "rm -Rf build/*",
