@@ -21,7 +21,8 @@
     "clean": "rm -Rf build/*",
     "build": "NODE_ENV=production webpack --config assets/webpack.config.js",
     "dev": "node assets/dev-server.js",
-    "start": "bundle exec foreman start -f Procfile.hot"
+    "start": "bundle exec foreman start -f Procfile.hot",
+    "shrink": "rm -f npm-shrinkwrap.json && npm prune && npm i && npm shrinkwrap --dev"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
