@@ -21,7 +21,11 @@ This is the development mode, where a webpack dev server with *hot module replac
 
     foreman start -f Procfile.hot
 
-Three servers run in parallel (node.js, webpack, and rack) and the entry point is available through a proxy at [http://localhost:7001/](http://localhost:7001/).
+Alternatively, you may run:
+
+    npm start
+
+Two servers run in parallel (rack and webpack) and the entry point is available through a proxy at [http://localhost:7001/](http://localhost:7001/).
 
 ### "Cold"
 
@@ -41,8 +45,12 @@ A basic rack server runs in this mode, as it does in production on heroku. The e
 
 ## Building the assets
 
-A precompiled package of all target builds can be created by running:
+A precompiled, production package of every target builds can be created by running:
 
     rake assets:build
+
+This is equivalent to running:
+
+    npm run clean && npm run build
 
 The compiled output can be found in the `/build` directory.
