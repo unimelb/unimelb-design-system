@@ -276,9 +276,6 @@
 .uomcontent input[type="submit"],
 .uomcontent input[type="button"] {
   @include raisedbutton;
-  // @include raisedbutton.cta;
-  // @include flatbutton.cta;
-  appearance: none;
   width: auto;
 }
 
@@ -341,10 +338,5 @@
     font: inherit;
     margin: 0;
     padding: 0;
-
-    &::-moz-focus-inner {
-      border: 0;
-      padding: 0;
-    }
   }
 }
