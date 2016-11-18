@@ -39,6 +39,10 @@ window.UOMbind = function(component) {
   } else if (component === 'filtered-listings') {
     attachment = 'form.filtered-listing-select';
 
+  } else if (component === 'icons') {
+    window.UOMbindIcons();
+    attachment = false;
+
   } else if (component === 'forms') {
     attachment = 'form[data-validate]';
 
@@ -128,6 +132,7 @@ window.UOMloadComponents = function() {
   }
 
   window.UOMbind('filtered-listings');
+  window.UOMbind('icons');
   window.UOMbind('sortable-table');
   window.UOMbind('tables');
 
