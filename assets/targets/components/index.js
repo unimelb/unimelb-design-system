@@ -1,7 +1,5 @@
 // Deps
-require('classlist-polyfill');
 require('es6-promise').polyfill();
-
 require("../../shared/smoothscroll");
 require("../../shared/findup");
 
