@@ -1,6 +1,7 @@
 /**
  * Load one or more externally-hosted scripts.
  * @param {String|Array} url - the URL of the script, or an array of URLs
+ * @return {Promise} - promise that resolves when all scripts have loaded
  */
 function loadScript(url) {
   // Prepare array of script URLs to load

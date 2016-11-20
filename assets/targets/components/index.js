@@ -5,6 +5,7 @@ require("../../shared/findup");
 
 window.cssesc = require("cssesc");
 window.loadScript = require('../../shared/loadscript');
+window.loadStylesheet = require('../../shared/loadstylesheet');
 
 // Async load fonts from google
 var WebFont = require("webfontloader");
@@ -167,12 +168,9 @@ window.UOMloadComponents = function() {
   recs = document.querySelectorAll('[data-leaflet-latlng]');
   if (recs.length > 0) {
     if (typeof(L) === 'undefined') {
+      window.loadStylesheet('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css');
       window.loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js')
         .then(function() {
-          style = document.createElement('link');
-          style.rel = 'stylesheet';
-          style.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
-          document.head.appendChild(style);
           window.bound_lmaps = [];
           lmaps_loaded_go(recs);
         });
