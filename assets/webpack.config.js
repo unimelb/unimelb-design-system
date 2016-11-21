@@ -72,7 +72,7 @@ if (isDev) {
   config.module.loaders.push(
     {
       test: /\.scss$/,
-      loader: 'style-loader!css-loader?-autoprefixer&sourceMap!postcss-loader!sass-loader'
+      loader: 'style-loader!css-loader?-autoprefixer&sourceMap!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
     },
     {
       test: /\.css$/,
@@ -96,7 +96,7 @@ if (isDev) {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract(
         'style-loader',
-        'css-loader?-autoprefixer&minimize!postcss-loader!sass-loader'
+        'css-loader?-autoprefixer&minimize!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
       )
     },
     {
