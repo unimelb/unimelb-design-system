@@ -9,7 +9,7 @@ var HISTORY_KEY = 'uom_injection';
  * @param  {Object} props
  */
 function InjectNav(props) {
-  this.props = props;
+  this.props = props || {};
   this.props.supportsHistory = (window.history && 'pushState' in window.history);
 
   // Retrieve elements
@@ -194,7 +194,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
 <a class="close-button" href="#">Close</a>
 <a href="https://www.unimelb.edu.au" class="logo">
   <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
-    <image xlink:href="${this.props.assethost}/logo.svg" src="${this.props.assethost}/logo.png"
+    <image xlink:href="${require('../header/logo.svg')}" src="${require('../header/logo.png')}"
       alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
   </svg>
 </a>
