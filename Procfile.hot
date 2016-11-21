@@ -1,2 +1,2 @@
-web: rackup -p $PORT
+web: rackup -o $WEB_SERVER_HOST -p $WEB_SERVER_PORT
 assets: npm run dev
