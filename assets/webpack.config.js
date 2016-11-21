@@ -82,6 +82,8 @@ if (isDev) {
 
 // Production configuration
 } else {
+  config.output.publicPath = process.env.CDNURL + '/shared/assets/';
+
   config.plugins.push(
     new ExtractTextPlugin('[name].css', { allChunks: true }),
     new webpack.optimize.DedupePlugin(),
