@@ -116,7 +116,7 @@ window.DSComponentsLoad = function() {
 
   recs = document.querySelectorAll('ul.image-gallery');
   if (recs.length > 0) {
-    loadScript('https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js', function (recs) {
+    loadScript(process.env.CDNURL + '/shared/photoswipe.pkgd.min.js', function (recs) {
       imagesLoaded = require('imagesloaded');
       ImageGallery = require("../components/gallery");
 
