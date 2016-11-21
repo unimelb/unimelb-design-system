@@ -9,8 +9,8 @@ div role="main"
     p Reference the prompt's stylesheet in the <code>head</code> of your page, and the prompt's script before the closing <code>body</code> tag (don't forget the ID on the <code>script</code> tag):
     pre
       |
-        &lt;link rel="stylesheet" href="https://d2h9b02ioca40d.cloudfront.net/beta/prompt.css" /&gt;
-        &lt;script id="uom-prompt-script" src="https://d2h9b02ioca40d.cloudfront.net/beta/prompt.js"&gt;&lt;/script&gt;
+        &lt;link rel="stylesheet" href="#{ENV['CDNURL']}/beta/prompt.css" /&gt;
+        &lt;script id="uom-prompt-script" src="#{ENV['CDNURL']}/beta/prompt.js"&gt;&lt;/script&gt;
 
     p Below the prompt's script, add the content you wish the prompt to have, wrapped inside a <code>script</code> tag of type <code>text/template</code> (don't forget the ID on the <code>script</code> tag):
     pre
@@ -31,7 +31,7 @@ div role="main"
     p By default, the prompt will be shown after a delay of 3000ms and at most once per browser/domain combination. You may change these settings via the following <code>data</code> attributes:
     pre
       |
-        &lt;script id="uom-prompt-script" src="https://d2h9b02ioca40d.cloudfront.net/beta/prompt.js" data-delay="2000" data-retry="3"&gt;&lt;/script&gt;
+        &lt;script id="uom-prompt-script" src="#{ENV['CDNURL']}/beta/prompt.js" data-delay="2000" data-retry="3"&gt;&lt;/script&gt;
 
 / Demo code
 link rel="stylesheet" href="/assets/prompt.css"

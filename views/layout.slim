@@ -15,8 +15,8 @@ html.no-js lang="en"
       script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
 
     - if ENV['MODE'] == 'prod'
-      link rel="stylesheet" href="//d2h9b02ioca40d.cloudfront.net/#{ENV['VERSION']}/uom.css"
-      script src="//d2h9b02ioca40d.cloudfront.net/#{ENV['VERSION']}/uom.js"
+      link rel="stylesheet" href="#{ENV['CDNURL']}/#{ENV['VERSION']}/uom.css"
+      script src="#{ENV['CDNURL']}/#{ENV['VERSION']}/uom.js"
     - else
       script src="/assets/injection.js"
       script src="/assets/components.js"
