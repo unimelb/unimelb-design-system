@@ -442,7 +442,7 @@
         @include padding-leader(4);
         display: block;
         font-style: normal;
-        font-weight: regular;
+        font-weight: normal;
 
         svg {
           @include rem(height, 50px);
