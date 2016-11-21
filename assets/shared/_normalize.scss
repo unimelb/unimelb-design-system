@@ -29,6 +29,17 @@ li {
   box-sizing: border-box;
 }
 
+// Override normalize.css behaviour
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 iframe[src^='//www.youtube.com'],
 iframe[src^='//player.vimeo.com'] {
   width: 100%;
