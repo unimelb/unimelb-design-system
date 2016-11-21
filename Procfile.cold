@@ -1,1 +1,1 @@
-web: RACK_ENV=dev MODE=prod rackup -p $PORT
+web: RACK_ENV=dev MODE=prod rackup -o $WEB_SERVER_HOST -p $WEB_SERVER_PORT
