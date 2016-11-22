@@ -82,7 +82,7 @@ if (isDev) {
 
 // Production configuration
 } else {
-  config.output.publicPath = process.env.CDNURL + '/shared/assets/';
+  config.output.publicPath = process.env.CDNURL + '/' + process.env.VERSION + '/';
 
   config.plugins.push(
     new ExtractTextPlugin('[name].css', { allChunks: true }),
