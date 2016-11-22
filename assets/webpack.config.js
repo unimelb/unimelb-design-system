@@ -72,11 +72,11 @@ if (isDev) {
   config.module.loaders.push(
     {
       test: /\.scss$/,
-      loader: 'style-loader!css-loader?-autoprefixer&sourceMap!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
+      loader: 'style-loader!css-loader?-autoprefixer&-minimize&sourceMap&importLoaders=3!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
     },
     {
       test: /\.css$/,
-      loader: 'style-loader!css-loader?-autoprefixer&sourceMap!postcss-loader'
+      loader: 'style-loader!css-loader?-autoprefixer&-minimize&sourceMap&importLoaders=1!postcss-loader'
     }
   );
 
