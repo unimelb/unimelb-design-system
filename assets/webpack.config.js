@@ -31,7 +31,7 @@ var config = {
     loaders: [
       {
         test: /\.(jpe?g|png|gif|svg|woff|ttf|otf|eot|ico)/,
-        loader: 'file-loader?name=[path][name].[ext]'
+        loader: 'file-loader?name=assets/[name]-[sha1:hash:5].[ext]'
       },
       {
         test: /\.es6?$/,
