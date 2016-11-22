@@ -20,7 +20,7 @@
     "npm": "3.10.8"
   },
   "scripts": {
-    "clean": "rm -Rf build/*",
+    "prebuild": "rm -Rf build/*",
     "build": "NODE_ENV=production webpack --config assets/webpack.config.js",
     "dev": "node assets/dev-server.js",
     "start": "bundle exec foreman start -f Procfile.hot"

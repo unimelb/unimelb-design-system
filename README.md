@@ -51,6 +51,6 @@ A precompiled, production package of every target builds can be created by runni
 
 This is equivalent to running:
 
-    npm run clean && npm run build
+    npm run build
 
 The compiled output can be found in the `/build` directory.
