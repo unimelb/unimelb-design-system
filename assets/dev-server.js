@@ -18,7 +18,7 @@ var devServer = new WebpackDevServer(webpack(config), {
   hot: true,
   historyApiFallback: true,
   proxy: {
-    '*': 'http://' + WEB_SERVER_HOST + ':' + WEB_SERVER_PORT
+    '**': 'http://' + WEB_SERVER_HOST + ':' + WEB_SERVER_PORT
   },
   stats: {
     colors: true,

@@ -61,7 +61,7 @@ var config = {
 
 // Development configuration
 if (isDev) {
-  config.output.publicPath = ASSET_SERVER_URL + 'assets/';
+  config.output.publicPath = ASSET_SERVER_URL;
   config.devtool = 'eval-cheap-module-source-map';
 
   config.plugins.push(
