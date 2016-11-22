@@ -3490,6 +3490,11 @@
       "from": "perfect-scrollbar@>=0.6.10 <0.7.0",
       "resolved": "https://registry.npmjs.org/perfect-scrollbar/-/perfect-scrollbar-0.6.14.tgz"
     },
+    "photoswipe": {
+      "version": "4.1.1",
+      "from": "photoswipe@latest",
+      "resolved": "https://registry.npmjs.org/photoswipe/-/photoswipe-4.1.1.tgz"
+    },
     "pify": {
       "version": "2.3.0",
       "from": "pify@>=2.0.0 <3.0.0",
