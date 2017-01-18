@@ -2,11 +2,6 @@
   background-color: $palegreen;
   color: darken($palegreen, 65%);
 
-  p,
-  li {
-    color: darken($palegreen, 65%);
-  }
-
   a {
     color: darken($palegreen, 65%);
   }
@@ -15,11 +10,6 @@
 @mixin notice-info {
   background-color: $lightestblue;
   color: darken($lightestblue, 65%);
-
-  p,
-  li {
-    color: darken($lightestblue, 65%);
-  }
 
   a {
     color: darken($lightestblue, 65%);
@@ -30,11 +20,6 @@
   background-color: $paleyellow;
   color: darken($paleyellow, 65%);
 
-  p,
-  li {
-    color: darken($paleyellow, 65%);
-  }
-
   a {
     color: darken($palegreen, 65%);
   }
@@ -43,11 +28,6 @@
 @mixin notice-danger {
   background-color: $salmon;
   color: lighten($salmon, 35%);
-
-  p,
-  li {
-    color: lighten($salmon, 35%);
-  }
 
   a {
     color: lighten($salmon, 65%);
