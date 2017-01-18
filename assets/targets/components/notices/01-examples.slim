@@ -1,17 +1,21 @@
 p.alert-success
   strong> Well done!
   | You successfully read this important alert message.
-  
+
 p.alert-info
   strong> Heads up!
   | This alert needs your attention, but it's not super important.
-  
+
 p.alert-warning
   strong> Warning!
   ' Better check yourself,
   a href="#" you&rsquo;re not looking too good
   | .
-  
-p.alert-danger
-  strong> Danger!
-  | Change a few things up and try submitting again.
+
+.alert-danger
+  p
+    strong> Danger!
+    | Change a few things up and try submitting again.
+  ol
+    li Alerts are modelled on application "flash" or "toast" messages, so should only be used for a quick, focused notification
+    li You're pulling the user's attention to the message, so you don't want to abuse this by making them read too much
