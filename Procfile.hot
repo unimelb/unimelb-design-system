@@ -1,2 +1,2 @@
-web: bundle exec thin start -p $PORT
+web: RACK_ENV=dev rackup -p $PORT
 assets: npm run dev

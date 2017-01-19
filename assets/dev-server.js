@@ -28,8 +28,8 @@ var devServer = new WebpackDevServer(webpack(config), {
   }
 });
 
-// Start server
-devServer.listen(ASSET_SERVER_PORT, WEB_SERVER_HOST, function(err) {
+// Bind server to all incoming requests on port (0.0.0.0)
+devServer.listen(ASSET_SERVER_PORT, '0.0.0.0', function(err) {
   if (err) console.error(err);
   console.log('=> 🔥  Webpack development server listening at http://' + WEB_SERVER_HOST + ':' + ASSET_SERVER_PORT);
 });
