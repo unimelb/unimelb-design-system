@@ -263,15 +263,27 @@
     }
 
     h2 {
+      @include rem(font-size, 40px);
+      margin: 0;
       max-width: 2000px;
       padding: 0;
       text-align: left;
+      text-transform: uppercase;
     }
 
     p {
       color: rgba($white, .8);
     }
   }
+}
+
+.uomcontent [role="main"] header:first-child.banner .course-select h1 {
+  @include rem(font-size, 40px);
+  margin: 0;
+  max-width: 2000px;
+  padding: 0;
+  text-align: left;
+  text-transform: uppercase;
 }
 
 .ie .uomcontent [role="main"] {
