@@ -6,7 +6,9 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var WEB_SERVER_HOST = process.env.WEB_SERVER_HOST;
+var ip = require("ip");
+var WEB_SERVER_HOST = ip.address();
+
 var ASSET_SERVER_PORT = process.env.ASSET_SERVER_PORT;
 var ASSET_SERVER_URL = 'http://' + WEB_SERVER_HOST + ':' + ASSET_SERVER_PORT + '/';
 
