@@ -32,7 +32,7 @@
   .accordion__noanim {
     .accordion__hidden,
     .accordion__visible .accordion__hidden {
-      transition: 0 none;
+      transition: none;
     }
   }
 

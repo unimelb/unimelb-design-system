@@ -5,12 +5,11 @@
  */
 function InjectFooter(props) {
   this.el = document.querySelector('.page-footer');
+  this.props = props || {};
 
   // Only add if the footer is not already present
   if (!this.el) {
-    this.props = props;
     this.props.page = document.querySelector('.page-inner');
-
     this.renderFooter();
   }
 }
@@ -22,7 +21,7 @@ InjectFooter.prototype.renderFooter = function() {
 <footer>
   <a class="unimelb-lge" href="https://unimelb.edu.au">
     <svg width="300" height="100" viewBox="0 0 300 100" aria-labelledby="aria-uom-title" role="img">
-      <image xlink:href="${this.props.assethost}/lockup.svg" src="${this.props.assethost}/lockup.png" alt="The University of Melbourne Logo" width="300" height="100" preserveAspectRatio="xMaxYMin meet"/>
+      <image xlink:href="${require('./lockup.svg')}" src="${require('./lockup.png')}" alt="The University of Melbourne Logo" width="300" height="100" preserveAspectRatio="xMaxYMin meet"/>
     </svg>
   </a>
   <ul class="people-links">

@@ -34,26 +34,18 @@ window.UOMbindIcons = function() {
 window.UOMloadInjection = function() {
   "use strict";
 
-  var assethostFooter, assethostHeader, Header, Nav, Footer, Icons, Accouncement;
-  assethostHeader = assethostFooter = process.env.CDNURL;
-  // assethostHeader += '/injection/header';
-  // assethostFooter += '/injection/footer';
+  var Header, Nav, Footer, Icons, Accouncement;
 
   Header = require('./header/index.es6');
   new Header({
-    'assethost':   assethostHeader,
     'defaultlink': 'https://www.unimelb.edu.au'
   });
 
   Nav = require('./nav/index.es6');
-  new Nav({
-    'assethost': assethostHeader,
-  });
+  new Nav();
 
   Footer = require('./footer/index.es6');
-  new Footer({
-    'assethost': assethostFooter
-  });
+  new Footer();
 
   Icons = require('./icons');
   new Icons();

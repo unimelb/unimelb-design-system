@@ -917,7 +917,6 @@
 
   &.short {
     @include rem(padding, 15px);
-    background-image: url(/assets/headers/header_light.jpg);
     background-position: center center;
     background-size: cover;
     height: auto;

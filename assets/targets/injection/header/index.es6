@@ -4,7 +4,7 @@
  * @param  {Object} props
  */
 function InjectHeader(props) {
-  this.props = props;
+  this.props = props || {};
 
   var CreateNameSpace = require('../../../shared/createnamespace');
   new CreateNameSpace();
@@ -40,7 +40,7 @@ InjectHeader.prototype.renderPageHeader = function() {
 <a class="page-header-logo" href="${this.props.defaultlink}">
   <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
     <title id="aria-uom-title">The University of Melbourne Logo</title>
-    <image xlink:href="${this.props.assethost}/logo.svg" src="${this.props.assethost}/logo.png" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
+    <image xlink:href="${require('./logo.svg')}" src="${require('./logo.png')}" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
   </svg>
 </a>
 `;
@@ -83,7 +83,7 @@ InjectHeader.prototype.renderPageHeader = function() {
   <a class="page-header-logo" href="${this.props.defaultlink}">
     <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
       <title id="aria-uom-title">The University of Melbourne Logo</title>
-      <image xlink:href="${this.props.assethost}/logo.svg" src="${this.props.assethost}/logo.png" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
+      <image xlink:href="${require('./logo.svg')}" src="${require('./logo.png')}" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
     </svg>
   </a>
   <div class="page-header-navigation">

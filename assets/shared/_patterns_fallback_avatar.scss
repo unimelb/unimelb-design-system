@@ -1,13 +1,12 @@
-// Fallback avatar for a person's photo, for use in people components including people search results.
-
-$fallback__assets-path: 'https://d2h9b02ioca40d.cloudfront.net/shared/assets/' !default;
-
+/**
+ * Fallback avatar (used in People and Seach components)
+ */
 @mixin fallbackAvatar {
   position: relative;
 
   // Fallback avatar for when the photo fails to load
   &::before {
-    background: url($fallback__assets-path + 'avatar-lt.png') no-repeat center / cover transparent;
+    background: url(../targets/components/people/avatar-lt.png) no-repeat center / cover transparent;
     border-radius: 50%;
     content: "";
     height: 100%;
@@ -21,7 +20,6 @@ $fallback__assets-path: 'https://d2h9b02ioca40d.cloudfront.net/shared/assets/' !
 
 // The photo's wrapper must extend this placeholder to allow for the fallback avator
 // to appear underneath the photo when the latter loads successfully.
-
 @mixin fallbackAvatarWrapper {
   position: relative;
   z-index: 1;

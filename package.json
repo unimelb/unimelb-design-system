@@ -12,6 +12,8 @@
     "just-debounce": "^1.0.0",
     "normalize.css": "^5.0.0",
     "perfect-scrollbar": "^0.6.10",
+    "photoswipe": "^4.1.1",
+    "promise": "~7.1.1",
     "webfontloader": "~1.6.3"
   },
   "engines": {
@@ -19,7 +21,7 @@
     "npm": "3.10.8"
   },
   "scripts": {
-    "clean": "rm -Rf build/*",
+    "prebuild": "rm -Rf build/*",
     "build": "NODE_ENV=production webpack --config assets/webpack.config.js",
     "dev": "node assets/dev-server.js",
     "shrink": "rm -f npm-shrinkwrap.json && npm prune && npm i && npm shrinkwrap --dev",
@@ -37,10 +39,12 @@
     "file-loader": "~0.9.0",
     "html-loader": "~0.4.4",
     "imports-loader": "~0.6.3",
+    "ip": "~1.1.4",
     "jshint": "~2.9.3",
     "jshint-loader": "~0.8.3",
     "node-sass": "~3.10.1",
     "postcss-loader": "^0.13.0",
+    "resolve-url-loader": "^1.6.0",
     "sass-loader": "~4.0.2",
     "style-loader": "~0.13.1",
     "webpack": "^1.13.2",

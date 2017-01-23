@@ -6,7 +6,9 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var WEB_SERVER_HOST = process.env.WEB_SERVER_HOST;
+var ip = require("ip");
+var WEB_SERVER_HOST = ip.address();
+
 var ASSET_SERVER_PORT = process.env.ASSET_SERVER_PORT;
 var ASSET_SERVER_URL = 'http://' + WEB_SERVER_HOST + ':' + ASSET_SERVER_PORT + '/';
 
@@ -31,7 +33,7 @@ var config = {
     loaders: [
       {
         test: /\.(jpe?g|png|gif|svg|woff|ttf|otf|eot|ico)/,
-        loader: 'file-loader?name=[path][name].[ext]'
+        loader: 'file-loader?name=assets/[name]-[sha1:hash:5].[ext]'
       },
       {
         test: /\.es6?$/,
@@ -57,7 +59,7 @@ var config = {
 
 // Development configuration
 if (isDev) {
-  config.output.publicPath = ASSET_SERVER_URL + 'assets/';
+  config.output.publicPath = ASSET_SERVER_URL;
   config.devtool = 'eval-cheap-module-source-map';
 
   config.plugins.push(
@@ -68,16 +70,18 @@ if (isDev) {
   config.module.loaders.push(
     {
       test: /\.scss$/,
-      loader: 'style-loader!css-loader?-autoprefixer&sourceMap!postcss-loader!sass-loader'
+      loader: 'style-loader!css-loader?-autoprefixer&-minimize&sourceMap&importLoaders=3!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
     },
     {
       test: /\.css$/,
-      loader: 'style-loader!css-loader?-autoprefixer&sourceMap!postcss-loader'
+      loader: 'style-loader!css-loader?-autoprefixer&-minimize&sourceMap&importLoaders=1!postcss-loader'
     }
   );
 
 // Production configuration
 } else {
+  config.output.publicPath = process.env.CDNURL + '/' + process.env.VERSION + '/';
+
   config.plugins.push(
     new ExtractTextPlugin('[name].css', { allChunks: true }),
     new webpack.optimize.DedupePlugin(),
@@ -90,7 +94,7 @@ if (isDev) {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract(
         'style-loader',
-        'css-loader?-autoprefixer&minimize!postcss-loader!sass-loader'
+        'css-loader?-autoprefixer&minimize!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
       )
     },
     {

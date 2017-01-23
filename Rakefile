@@ -2,7 +2,6 @@
 namespace :assets do
   desc 'Build the public assets with node'
   task :build do
-    system 'npm run clean'
     system 'npm run build'
   end
 end

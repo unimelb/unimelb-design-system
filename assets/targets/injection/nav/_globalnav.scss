@@ -19,7 +19,7 @@
     box-shadow: 1px 0 12px 3px rgba($black, .6);
     overflow: auto;
     transform: translateX(-100%);
-    –webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
   }
 
   @include breakpoint(tablet) {
