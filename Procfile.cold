@@ -1,1 +1,0 @@
-web: RACK_ENV=dev MODE=prod rackup -p $PORT

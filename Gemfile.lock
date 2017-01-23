@@ -1,13 +1,13 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    daemons (1.2.3)
-    dotenv (2.1.1)
-    eventmachine (1.0.9.1)
+    daemons (1.2.4)
+    dotenv (2.1.2)
+    eventmachine (1.2.1)
     foreman (0.82.0)
       thor (~> 0.19.1)
     front_matter_parser (0.0.4)
-    rack (1.6.4)
+    rack (1.6.5)
     redcarpet (3.3.4)
     roda (2.18.0)
       rack
@@ -19,7 +19,7 @@ GEM
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
       rack (~> 1.0)
-    thor (0.19.1)
+    thor (0.19.4)
     tilt (2.0.5)
 
 PLATFORMS
@@ -29,14 +29,14 @@ DEPENDENCIES
   dotenv (~> 2.1.0)
   foreman (~> 0.82.0)
   front_matter_parser (~> 0.0.2)
-  rack (~> 1.6.4)
+  rack (~> 1.6.5)
   redcarpet (~> 3.3.4)
   roda (~> 2.18.0)
   slim (~> 3.0.7)
   thin (~> 1.6.4)
 
 RUBY VERSION
-   ruby 2.3.1p112
+   ruby 2.3.3p222
 
 BUNDLED WITH
-   1.12.5
+   1.13.6

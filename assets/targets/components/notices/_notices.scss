@@ -1,27 +1,35 @@
 .uomcontent [role="main"] {
-  .alert-success,
-  .alert-info,
-  .alert-warning,
-  .alert-danger {
+  .notice {
     @include rem(margin-bottom, 15px);
     @include rem(padding, 15px);
     border: 1px solid rgba(0, 0, 0, 0.05);
     border: 1px solid transparent;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $w-sml;
+    width: 100%;
+
+    p,
+    ul,
+    ol,
+    li {
+      color: inherit;
+    }
   }
 
-  .alert-success {
+  .notice--success {
     @include notice-success;
   }
 
-  .alert-info {
+  .notice--info {
     @include notice-info;
   }
 
-  .alert-warning {
+  .notice--warning {
     @include notice-warning;
   }
 
-  .alert-danger {
+  .notice--danger {
     @include notice-danger;
   }
 }
