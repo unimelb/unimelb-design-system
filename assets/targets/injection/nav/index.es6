@@ -270,6 +270,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
         <li><a href="http://businessconnect.unimelb.edu.au/">Business &amp; Industry</a></li>
         <li><a href="http://engagement.unimelb.edu.au/#cultural">Arts &amp; Culture</a></li>
         <li><a href="http://www.sport.unimelb.edu.au/facilities/index.html">Sports Facilities</a></li>
+        <li><a href="https://shop.unimelb.edu.au/">Shop</a></li>
       </ul>
     </div>
 

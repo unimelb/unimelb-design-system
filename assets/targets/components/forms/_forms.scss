@@ -259,6 +259,7 @@
 
   input[type="checkbox"],
   input[type="radio"] {
+    @include rem(margin-right, 8px);
     display: inline;
   }
 }

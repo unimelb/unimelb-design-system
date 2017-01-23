@@ -1,17 +1,21 @@
-p.alert-success
+p.notice.notice--success
   strong> Well done!
-  | You successfully read this important alert message.
-  
-p.alert-info
+  | You successfully read this important notice.
+
+p.notice.notice--info
   strong> Heads up!
-  | This alert needs your attention, but it's not super important.
-  
-p.alert-warning
+  | This notice needs your attention, but it's not super important.
+
+p.notice.notice--warning
   strong> Warning!
   ' Better check yourself,
   a href="#" you&rsquo;re not looking too good
   | .
-  
-p.alert-danger
-  strong> Danger!
-  | Change a few things up and try submitting again.
+
+.notice.notice--danger
+  p
+    strong> Danger!
+    | Change a few things up and try submitting again.
+  ol
+    li Notices are modelled on application &ldquo;flash&rdquo; or &ldquo;toast&rdquo; messages, so should only be used for a quick, focused alert
+    li You&rsquo;re pulling the user&rsquo;s attention to this message, so don&rsquo;t abuse it by making them read too much!

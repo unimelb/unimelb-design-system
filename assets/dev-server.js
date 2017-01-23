@@ -4,9 +4,9 @@ var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config.js');
 
-var WEB_SERVER_HOST = process.env.WEB_SERVER_HOST || 'localhost';
-var WEB_SERVER_PORT = process.env.WEB_SERVER_PORT || 7000;
-var ASSET_SERVER_PORT = process.env.ASSET_SERVER_PORT || 7001;
+var WEB_SERVER_HOST = process.env.WEB_SERVER_HOST;
+var WEB_SERVER_PORT = process.env.WEB_SERVER_PORT;
+var ASSET_SERVER_PORT = process.env.ASSET_SERVER_PORT;
 
 /**
  * Webpack dev server
@@ -18,7 +18,10 @@ var devServer = new WebpackDevServer(webpack(config), {
   hot: true,
   historyApiFallback: true,
   proxy: {
-    '**': 'http://' + WEB_SERVER_HOST + ':' + WEB_SERVER_PORT
+    '**': {
+      target: 'http://' + WEB_SERVER_HOST + ':' + WEB_SERVER_PORT,
+      secure: false
+    }
   },
   stats: {
     colors: true,
@@ -28,8 +31,8 @@ var devServer = new WebpackDevServer(webpack(config), {
   }
 });
 
-// Start server
-devServer.listen(ASSET_SERVER_PORT, WEB_SERVER_HOST, function (err) {
+// Bind server to all incoming requests on port (0.0.0.0)
+devServer.listen(ASSET_SERVER_PORT, '0.0.0.0', function(err) {
   if (err) console.error(err);
   console.log('=> 🔥  Webpack development server listening at http://' + WEB_SERVER_HOST + ':' + ASSET_SERVER_PORT);
 });

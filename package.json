@@ -7,9 +7,10 @@
   "license": "UNLICENSED",
   "dependencies": {
     "classlist-polyfill": "^1.0.2",
+    "es6-promise": "^4.0.5",
     "imagesloaded": "~4.1.1",
-    "isotope-layout": "~3.0.1",
     "just-debounce": "^1.0.0",
+    "normalize.css": "^5.0.0",
     "perfect-scrollbar": "^0.6.10",
     "photoswipe": "^4.1.1",
     "promise": "~7.1.1",
@@ -23,7 +24,8 @@
     "prebuild": "rm -Rf build/*",
     "build": "NODE_ENV=production webpack --config assets/webpack.config.js",
     "dev": "node assets/dev-server.js",
-    "start": "bundle exec foreman start -f Procfile.hot"
+    "shrink": "rm -f npm-shrinkwrap.json && npm prune && npm i && npm shrinkwrap --dev",
+    "start": "bundle exec foreman start"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.1",
