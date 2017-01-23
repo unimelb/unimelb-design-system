@@ -1,8 +1,11 @@
 // Deps
 require('classlist-polyfill');
+require('es6-promise').polyfill();
+
 require("../../shared/smoothscroll");
 require("../../shared/findup");
-require("../../shared/loadscript");
+
+window.loadScript = require('../../shared/loadscript');
 
 // Async load fonts from google
 var WebFont = require("webfontloader");
@@ -102,9 +105,12 @@ window.DSComponentsLoad = function() {
 
   recs = document.querySelectorAll('form.filtered-listing-select');
   if (recs.length > 0) {
-    FilteredListing = require("../components/filtered-listings");
-    for (i=recs.length - 1; i >= 0; i--)
-      new FilteredListing(recs[i], {});
+    window.loadScript('https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js')
+      .then(function (recs) {
+        FilteredListing = require("../components/filtered-listings");
+        for (i=recs.length - 1; i >= 0; i--)
+          new FilteredListing(recs[i], {});
+      }.bind(null, recs));
   }
 
   recs = document.querySelectorAll('[data-icon]');
@@ -116,42 +122,49 @@ window.DSComponentsLoad = function() {
 
   recs = document.querySelectorAll('ul.image-gallery');
   if (recs.length > 0) {
-    loadScript('https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js', function (recs) {
-      imagesLoaded = require('imagesloaded');
-      ImageGallery = require("../components/gallery");
+    window.loadScript([
+      'https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js',
+      'https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js'
+    ])
+      .then(function (recs) {
+        imagesLoaded = require('imagesloaded');
+        ImageGallery = require("../components/gallery");
 
-      slingshot = function (g) {
-        new ImageGallery(g);
-      };
+        slingshot = function (g) {
+          new ImageGallery(g);
+        };
 
-      for (i=recs.length - 1; i >= 0; i--) {
-        g = recs[i];
-        imagesLoaded(g, slingshot.bind(null, g));
-      }
-    }.bind(null, recs));
+        for (i=recs.length - 1; i >= 0; i--) {
+          g = recs[i];
+          imagesLoaded(g, slingshot.bind(null, g));
+        }
+      }.bind(null, recs));
   }
 
   recs = document.querySelectorAll('[data-leaflet-latlng]');
   if (recs.length > 0) {
-    loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
-      style = document.createElement('link');
-      style.rel = 'stylesheet';
-      style.href = '//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css';
-      document.body.appendChild(style);
-
-      LMaps = require("../components/maps/lmaps");
-      for (i=recs.length - 1; i >= 0; i--) {
-        new LMaps(recs[i], {});
-      }
-    });
+    if (typeof(L) === 'undefined') {
+      window.loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js')
+        .then(function() {
+          style = document.createElement('link');
+          style.rel = 'stylesheet';
+          style.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
+          document.head.appendChild(style);
+          window.bound_lmaps = [];
+          lmaps_loaded_go(recs);
+        });
+    } else {
+      lmaps_loaded_go(recs);
+    }
   }
 
-  // GMaps will load via callback
   if (document.querySelector('[data-latlng], [data-address]')) {
-    script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://maps.googleapis.com/maps/api/js?key=#{process.env.GMAPSJSAPIKEY}&callback=maps_loaded_go";
-    document.body.appendChild(script);
+    if (typeof(google) === 'undefined') {
+      // GMaps loads via global callback
+      window.loadScript('https://maps.googleapis.com/maps/api/js?key=' + process.env.GMAPSJSAPIKEY + '&callback=maps_loaded_go');
+    } else {
+      maps_loaded_go();
+    }
   }
 };
 
@@ -159,7 +172,14 @@ window.DSComponentsLoad = function() {
 window.maps_loaded_go = function() {
   var GMaps = require("../components/maps/gmaps.es6");
   for (var recs = document.querySelectorAll('[data-latlng],[data-address]'), i=recs.length - 1; i >= 0; i--)
-    new GMaps(recs[i], {});
+    new GMaps(recs[i], {counter: i});
+};
+
+// LMaps callback
+window.lmaps_loaded_go = function(recs) {
+  var LMaps = require("../components/maps/lmaps");
+  for (var i=recs.length - 1; i >= 0; i--)
+    new LMaps(recs[i], {counter: i});
 };
 
 document.addEventListener('DOMContentLoaded', window.DSComponentsLoad, false);

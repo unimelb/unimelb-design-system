@@ -1,8 +1,9 @@
 // Deps
 require('classlist-polyfill');
+require('es6-promise').polyfill();
+
 require("../../shared/smoothscroll");
 require("../../shared/findup");
-require("../../shared/loadscript");
 
 window.UOMFormLoadComponents = function() {
   "use strict";
