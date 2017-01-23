@@ -45,10 +45,6 @@ var config = {
       {
         test: /\.json$/,
         loader: 'json-loader'
-      },
-      {
-        test: /(isotope-layout|imagesloaded)/,
-        loader: 'imports?define=>false&this=>window'
       }
     ]
   },

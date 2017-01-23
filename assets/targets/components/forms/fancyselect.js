@@ -1,6 +1,3 @@
-// Deps
-require("../../../shared/shims");
-
 /**
  * FancySelect
  *

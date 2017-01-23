@@ -67,7 +67,7 @@ section
 pre: code.html
   ==convert_tags
     erb:
-      <div class="no-js" id="sitemap" role="navigation">
+      <div id="sitemap" role="navigation">
         <h2>Section title</h2>
         <ul>
           <li>
@@ -103,7 +103,7 @@ section
 pre: code.html
   ==convert_tags
     erb:
-      <div class="no-js" id="sitemap" role="navigation" data-absolute-root="/sitehome">
+      <div id="sitemap" role="navigation" data-absolute-root="/sitehome">
       ...
       </div>
 

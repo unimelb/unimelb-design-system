@@ -20,7 +20,7 @@ MobileTableHelper.prototype.insertLabels = function() {
   for (var rows=this.el.querySelectorAll('tr:not(.header)'), i=rows.length - 1; i >= 0; i--)
     for (var cells=rows[i].querySelectorAll('td'), j=cells.length - 1; j >= 0; j--)
       if (this.props.labels[j])
-        cells[j].setAttribute('data-label', (this.props.labels[j].textContent || this.props.labels[j].innerText));
+        cells[j].setAttribute('data-label', (this.props.labels[j].textContent));
 };
 
 module.exports = MobileTableHelper;

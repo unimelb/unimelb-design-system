@@ -56,11 +56,7 @@ SortableTable.prototype.setupHeadings = function() {
     place.classList.add('sortable');
     this.props.cols[i].appendChild(place);
 
-    if ('onkeydown' in window.window)
-      window.addEventListener('keydown', this.selectWithKeyboard);
-
-    if (window.attachEvent) // IE 10 down
-      window.attachEvent('KeyboardEvent', this.selectWithKeyboard);
+    window.addEventListener('keydown', this.selectWithKeyboard);
   }
 
   // Default, sort by first column

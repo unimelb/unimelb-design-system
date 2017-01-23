@@ -1,14 +1,17 @@
-html,
-body {
+@import "~normalize.css";
+
+html {
   height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 body {
   font-size: 1em;
   line-height: 1.5789;
   text-rendering: optimizeLegibility;
+
+  /* height of content or viewport, whichever is taller */
+  /* `height: 100%;` causes Friefox to only print the first page https://github.com/marcom-unimelb/unimelb-design-system/issues/750 */
+  min-height: 100%;
 }
 
 h1,
@@ -26,14 +29,24 @@ li {
   box-sizing: border-box;
 }
 
+// Override normalize.css behaviour
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 iframe[src^='//www.youtube.com'],
 iframe[src^='//player.vimeo.com'] {
   width: 100%;
 }
 
-// Hide elements with `hidden` attribute or class
-.hidden,
-[hidden] {
+// Hide elements (prefer `hidden` attribute)
+.hidden {
   display: none;
 }
 

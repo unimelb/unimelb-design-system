@@ -54,7 +54,7 @@
 	}
 }
 
-.ie {
+.ie9 {
   .uomcontent header {
     position: relative;
 
@@ -64,24 +64,6 @@
       bottom: 0;
       margin-bottom: 0;
       position: absolute;
-    }
-
-    .bottom-align-flat {
-      // background-image: url("#{asset_path('components/base/assets/000o80.png')}");
-    }
-  }
-}
-
-.ie9 {
-  .uomcontent header {
-    .bottom-align,
-    .bottom-align-inverted,
-    .bottom-align-flat {
-      margin-bottom: 0;
-      position: absolute;
-    }
-    .bottom-align-flat {
-      background-image: none;
     }
   }
 }

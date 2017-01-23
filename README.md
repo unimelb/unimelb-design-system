@@ -36,3 +36,7 @@ This is equivalent to running:
     npm run clean && npm run build
 
 The compiled output can be found in the `/build` directory.
+
+### Shrinkwrap
+
+To update `npm-shrinkwrap.json` after adding, removing or updating dependencies, run `npm run shrink`.

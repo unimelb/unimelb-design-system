@@ -286,7 +286,7 @@
   text-transform: uppercase;
 }
 
-.ie .uomcontent [role="main"] {
+.ie9 .uomcontent [role="main"] {
    .course-select {
     @include clearfix;
 

@@ -69,8 +69,7 @@ ValidateForm.prototype.processField = function(field) {
         this.props.invalid++;
       }
     } else if (field.getAttribute('type') == 'checkbox' || field.getAttribute('type') == 'radio') {
-      if ((MSIE_version < 9 && field.parentNode.parentNode.countSelector('.on') > 0) ||
-        (this.el.countSelector('[name="' + field.getAttribute('name') + '"]:checked') > 0)) {
+      if (this.el.querySelector('[name="' + field.getAttribute('name') + '"]:checked')) {
         this.toggleValid(field, true);
       } else {
         this.toggleValid(field, false);
@@ -116,7 +115,7 @@ ValidateForm.prototype.setupMessage = function(field) {
     parent = parent[parent.length-1].parentNode;
   }
 
-  if (parent.countSelector('small') === 0) {
+  if (!parent.querySelector('small')) {
     var error = document.createElement('small');
     if (field.hasAttribute('data-error')) {
       error.appendChild(document.createTextNode(field.getAttribute('data-error')));

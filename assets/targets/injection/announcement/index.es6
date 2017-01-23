@@ -14,7 +14,7 @@ function InjectAnnouncement(props) {
   this.props.announcement = this.props.page.querySelector('.page-announcement');
 
   // Continue only if an announcement is present but not already injected
-  if (this.props.announcement && document.countSelector('.uomcontent > .page-announcement') === 0) {
+  if (this.props.announcement && !document.querySelector('.uomcontent > .page-announcement')) {
     this.checkDismissed();
     this.inject();
   }
@@ -27,7 +27,7 @@ InjectAnnouncement.prototype.checkDismissed = function () {
   this.props.message = this.props.announcement.querySelector('.page-announcement__message');
 
   // Hash the announcement before storing
-  this.props.hash = hashString(this.props.message.textContent || this.props.message.innerText);
+  this.props.hash = hashString(this.props.message.textContent);
 
   // Check local storage for hash
   // (Support for local storage goes as far back as IE8, so falling back to cookies would be excessive)

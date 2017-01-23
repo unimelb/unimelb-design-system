@@ -260,24 +260,3 @@
 .uomcontent [role="main"] section .news-index {
   max-width: none;
 }
-
-
-.ie8 .uomcontent {
-  .news-hero {
-    max-width: $w-mid;
-  }
-
-  .news-index article {
-    img:first-child {
-      max-height: 150px;
-    }
-  }
-
-  [data-tabbed].tabbed nav {
-    text-align: left;
-  }
-
-  [data-tabbed].tabbed .news-index.tab article h1 {
-    width: 100%;
-  }
-}

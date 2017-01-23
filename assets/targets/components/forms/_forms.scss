@@ -259,6 +259,7 @@
 
   input[type="checkbox"],
   input[type="radio"] {
+    @include rem(margin-right, 8px);
     display: inline;
   }
 }
@@ -419,15 +420,5 @@
 
   @include breakpoint(desktop) {
     @include padding-leader(0);
-  }
-}
-
-.ie8 .uomcontent fieldset {
-  legend {
-    color: $black;
-  }
-
-  label {
-    display: inline;
   }
 }

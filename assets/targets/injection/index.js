@@ -1,11 +1,7 @@
 // Deps
-require("../../shared/shims");
+require('classlist-polyfill');
 require("./gtm");
 require("./tealium");
-
-// Simple sniff
-if (typeof window.MSIE_version === "undefined")
-  window.MSIE_version = /MSIE\s(\d{1,2})/g.exec(navigator.userAgent) === null ? 100 : /MSIE\s(\d{1,2})/g.exec(navigator.userAgent)[1];
 
 // Toggle JS classes on document root
 document.documentElement.classList.remove('no-js');
@@ -68,11 +64,6 @@ window.UOMloadInjection = function() {
   new Accouncement({});
 };
 
-// Execute when ready
-if (window.attachEvent) {
-  window.attachEvent('onload', window.UOMloadInjection);
-} else {
-  document.addEventListener('DOMContentLoaded', window.UOMloadInjection, false);
-  document.addEventListener('page:load', window.UOMloadInjection, false);
-  document.addEventListener('page:restore', window.UOMloadInjection, false);
-}
+document.addEventListener('DOMContentLoaded', window.UOMloadInjection, false);
+document.addEventListener('page:load', window.UOMloadInjection, false);
+document.addEventListener('page:restore', window.UOMloadInjection, false);

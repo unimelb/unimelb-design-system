@@ -1,16 +1,11 @@
 // Deps
-require("../../shared/shims");
+require('es6-promise').polyfill();
 require("../../shared/smoothscroll");
 require("../../shared/findup");
-require("../../shared/loadscript");
 
 window.cssesc = require("cssesc");
-
-// Also need one to find non-text nodes in a list of children
-
-// Simple sniff
-if (typeof window.MSIE_version === "undefined")
-  window.MSIE_version = /MSIE\s(\d{1,2})/g.exec(navigator.userAgent) === null ? 100 : /MSIE\s(\d{1,2})/g.exec(navigator.userAgent)[1];
+window.loadScript = require('../../shared/loadscript');
+window.loadStylesheet = require('../../shared/loadstylesheet');
 
 // Async load fonts from google
 var WebFont = require("webfontloader");
@@ -42,9 +37,6 @@ window.UOMbind = function(component) {
 
   } else if (component === 'checklist') {
     attachment = 'ul.checklist[data-unlock-target]';
-
-  } else if (component === 'filtered-listings') {
-    attachment = 'form.filtered-listing-select';
 
   } else if (component === 'icons') {
     window.UOMbindIcons();
@@ -86,7 +78,7 @@ window.UOMbind = function(component) {
 window.UOMloadComponents = function() {
   "use strict";
 
-  var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect, Flash,
+  var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect, Flash, FilteredListing,
     ImageGallery, imagesLoaded, slingshot, style, script, keyscript;
 
   window.UOMbind('accordion');
@@ -123,7 +115,7 @@ window.UOMloadComponents = function() {
   window.UOMbind('checklist');
   window.UOMbind('forms');
 
-  if (document.countSelector('h2[id]') > 0 && document.countSelector('.jumpnav, .indexnav') == 1) {
+  if (document.querySelector('h2[id]') && document.querySelectorAll('.jumpnav, .indexnav').length === 1) {
     JumpNav = require("./inpage-navigation/jumpnav");
     new JumpNav({});
   }
@@ -138,56 +130,52 @@ window.UOMloadComponents = function() {
     });
   }
 
-  window.UOMbind('filtered-listings');
-  window.UOMbind('icons');
-
-  window.UOMbind('sortable-table');
-
-  // IE9+
-  if (MSIE_version > 8) {
-    window.UOMbind('tables');
-
-    recs = document.querySelectorAll('ul.image-gallery');
-    if (recs.length > 0) {
-      loadScript('https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js', function (recs) {
-        imagesLoaded = require("imagesloaded");
-        ImageGallery = require("./gallery");
-
-        slingshot = function (g) {
-          new ImageGallery(g);
-        };
-
-        for (i=recs.length - 1; i >= 0; i--) {
-          g = recs[i];
-          imagesLoaded(g, slingshot.bind(null, g));
-        }
+  recs = document.querySelectorAll('form.filtered-listing-select');
+  if (recs.length > 0) {
+    window.loadScript('https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js')
+      .then(function (recs) {
+        FilteredListing = require("./filtered-listings");
+        for (i=recs.length - 1; i >= 0; i--)
+          new FilteredListing(recs[i], {});
       }.bind(null, recs));
-    }
+  }
 
-    recs = document.querySelectorAll('[data-leaflet-latlng]');
-    if (recs.length > 0) {
-      if (typeof(L) === 'undefined') {
-        loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js', function() {
-          style = document.createElement('link');
-          style.rel = 'stylesheet';
-          style.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css';
-          document.body.appendChild(style);
+  window.UOMbind('icons');
+  window.UOMbind('sortable-table');
+  window.UOMbind('tables');
+
+  recs = document.querySelectorAll('ul.image-gallery');
+  if (recs.length > 0) {
+    window.loadScript([
+      'https://unpkg.com/photoswipe@4.1.1/dist/photoswipe.min.js',
+      'https://unpkg.com/photoswipe@4.1.1/dist/photoswipe-ui-default.min.js',
+      'https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js'
+    ])
+      .then(function (recs) {
+        ImageGallery = require("./gallery");
+        for (i=recs.length - 1; i >= 0; i--)
+          new ImageGallery(recs[i], {});
+      }.bind(null, recs));
+  }
+
+  recs = document.querySelectorAll('[data-leaflet-latlng]');
+  if (recs.length > 0) {
+    if (typeof(L) === 'undefined') {
+      window.loadStylesheet('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css');
+      window.loadScript('https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js')
+        .then(function() {
           window.bound_lmaps = [];
           lmaps_loaded_go(recs);
         });
-      } else {
-        lmaps_loaded_go(recs);
-      }
+    } else {
+      lmaps_loaded_go(recs);
     }
   }
 
-  // GMaps will load via callback
-  if (document.countSelector('[data-latlng],[data-address]') > 0) {
+  if (document.querySelector('[data-latlng], [data-address]')) {
     if (typeof(google) === 'undefined') {
-      script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src = "https://maps.googleapis.com/maps/api/js?key=" + process.env.GMAPSJSAPIKEY + "&callback=maps_loaded_go";
-      document.body.appendChild(script);
+      // GMaps loads via global callback
+      window.loadScript('https://maps.googleapis.com/maps/api/js?key=' + process.env.GMAPSJSAPIKEY + '&callback=maps_loaded_go');
     } else {
       maps_loaded_go();
     }
@@ -208,11 +196,6 @@ window.lmaps_loaded_go = function(recs) {
     new LMaps(recs[i], {counter: i});
 };
 
-// Execute when ready
-if (window.attachEvent) {
-  window.attachEvent('onload', window.UOMloadComponents);
-} else {
-  document.addEventListener('DOMContentLoaded', window.UOMloadComponents, false);
-  document.addEventListener('page:load', window.UOMloadComponents, false);
-  document.addEventListener('page:restore', window.UOMloadComponents, false);
-}
+document.addEventListener('DOMContentLoaded', window.UOMloadComponents, false);
+document.addEventListener('page:load', window.UOMloadComponents, false);
+document.addEventListener('page:restore', window.UOMloadComponents, false);

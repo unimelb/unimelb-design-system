@@ -10,7 +10,7 @@ function LocalNav(props) {
 
 LocalNav.prototype.moveLocalNav = function() {
   // Move local nav outside page container
-  if (this.props.localnav.countSelector('a.sitemap-link') === 0) {
+  if (!this.props.localnav.querySelector('a.sitemap-link')) {
     var rootmenu, lastmenu, noderoot;
 
     // Check for deprecated markup
@@ -34,7 +34,7 @@ LocalNav.prototype.moveLocalNav = function() {
     // Make nav title a list item instead
     var firstli = document.createElement('li');
     firstli.className = 'home';
-    firstli.innerHTML = `<a href="${absroot}">${(navtitle.textContent || navtitle.innerText)}</a>`;
+    firstli.innerHTML = `<a href="${absroot}">${(navtitle.textContent)}</a>`;
     rootmenu.insertBefore(firstli, rootmenu.firstChild);
 
     // Create and insert close button
@@ -53,7 +53,6 @@ LocalNav.prototype.moveLocalNav = function() {
     lastli.innerHTML = '<a class="sitemap-link" href="https://unimelb.edu.au/sitemap">Browse University</a>';
     lastmenu.appendChild(lastli);
 
-    this.props.localnav.classList.remove('no-js');
     this.props.root.appendChild(this.props.localnav);
 
     var innerElements = this.props.localnav.querySelectorAll('.inner');
@@ -69,7 +68,7 @@ LocalNav.prototype.moveLocalNav = function() {
 
       back = document.createElement('span');
       back.className = 'back';
-      back.innerHTML = parent.textContent || parent.innerText;
+      back.innerHTML = parent.textContent;
       back.addEventListener('click', handler);
       innerElem.insertBefore(back, innerElem.firstChild);
     }

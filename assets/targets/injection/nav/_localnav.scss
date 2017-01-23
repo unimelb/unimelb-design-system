@@ -56,15 +56,6 @@
     }
   }
 
-  &.no-js {
-    @include wrapper;
-    background-color: $navy;
-    box-shadow: 0 0 0;
-    display: block;
-    position: static;
-    width: auto;
-  }
-
   .w {
     @include rem(padding-right, $width-sitemap-trigger);
     height: 100%;
@@ -235,24 +226,11 @@
   }
 }
 
-body.ie8 {
-  .uomcontent [role="navigation"]#sitemap {
-    padding-right: 0;
-    right: -$width-localnav;
-    width: $width-localnav;
-
-    &.active,
-    .inner.active {
-      right: 0;
-    }
-
-    .inner {
-      padding-right: 0;
-    }
-
-    .w {
-      padding-right: 0;
-      width: $width-localnav;
-    }
-  }
+.no-js .uomcontent [role="navigation"]#sitemap {
+  @include wrapper;
+  background-color: $navy;
+  box-shadow: 0 0 0;
+  display: block;
+  position: static;
+  width: auto;
 }

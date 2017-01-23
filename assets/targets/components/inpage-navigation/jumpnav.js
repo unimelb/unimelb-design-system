@@ -10,7 +10,7 @@ function JumpNav(props) {
   // Arbitrary delay to allow calculation of CSS block hiding
   var offsets = {
     'root':            document.querySelector('div[role="main"]'),
-    'topmode':         (document.countSelector('.jumpnav.top') === 1),
+    'topmode':         (document.querySelectorAll('.jumpnav.top').length === 1),
     'arbitraryOffset': 60  // scroll clearance
   };
 
@@ -18,7 +18,7 @@ function JumpNav(props) {
   for (var prop in offsets) { this.props[prop] = offsets[prop]; }
 
   // Does layout contain a header at the top
-  var firstElem = this.props.root.findFirstElementChild();
+  var firstElem = this.props.root.firstElementChild;
   if (firstElem && firstElem.nodeName === 'HEADER')
     this.props.header = firstElem;
 
@@ -26,21 +26,15 @@ function JumpNav(props) {
   if (!this.el || !this.el.hasAttribute('data-bound')) {
     this.buildNavMenu();
 
-    if (MSIE_version > 8) {
-      // Calculations for transition points, delay after page render
-      setTimeout(this.initCalcs.bind(this), 1000);
+    // Calculations for transition points, delay after page render
+    setTimeout(this.initCalcs.bind(this), 1000);
 
-      // Event binding
-      if ('onscroll' in window.window)
-        window.addEventListener('scroll', this.handleScroll.bind(this));
+    // Event binding
+    window.addEventListener('scroll', this.handleScroll.bind(this));
+    window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
 
-      if ('onresize' in window.window)
-        window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
-
-      // Initial calc
-      this.handleScroll();
-    }
-
+    // Initial calc
+    this.handleScroll();
     this.el.setAttribute('data-bound', true);
   }
 }
@@ -86,7 +80,7 @@ JumpNav.prototype.trackProgress = function(scrollY) {
 
 JumpNav.prototype.buildNavMenu = function() {
   this.el = document.createElement('ul');
-  this.el.className = (document.countSelector('.indexnav') > 0 ? 'index-navigation' : 'jump-navigation');
+  this.el.className = document.querySelector('.indexnav') ? 'index-navigation' : 'jump-navigation';
   this.el.innerHTML = '<li>On this page</li>';
 
   this.props.items = {};
@@ -94,13 +88,13 @@ JumpNav.prototype.buildNavMenu = function() {
     var at = recs[i].offsetTop;
     this.props.items[at] = document.createElement('a');
     this.props.items[at].href = '#' + recs[i].id;
-    this.props.items[at].appendChild(document.createTextNode(recs[i].textContent || recs[i].innerText));
+    this.props.items[at].appendChild(document.createTextNode(recs[i].textContent));
     var li = document.createElement('li');
     li.appendChild(this.props.items[at]);
     this.el.appendChild(li);
   }
 
-  if (document.countSelector('.floating') > 0)
+  if (document.querySelector('.floating'))
     this.el.classList.add('floating');
 
   if (!this.props.header) {
@@ -114,17 +108,17 @@ JumpNav.prototype.buildNavMenu = function() {
 
   // Insert into top of role=main
   } else {
-    var refElem = this.props.root.findFirstElementChild();
+    var refElem = this.props.root.firstElementChild;
     // If first element is `.headerless`, take the next sibling so that the jumpnav appears below the blue bar on mobile and tablet
     if (refElem.classList.contains('headerless'))
-      refElem = refElem.findNextElementSibling();
+      refElem = refElem.nextElementSibling;
     this.props.root.insertBefore(this.el, refElem);
   }
 
   if (!this.props.topmode) {
     this.el.id = 'outer';
 
-    if (document.countSelector('.indexnav') == 1) {
+    if (document.querySelectorAll('.indexnav').length === 1) {
       document.body.classList.add('indexnav-active');
     } else {
       document.body.classList.add('jumpnav-active');
@@ -141,42 +135,40 @@ JumpNav.prototype.buildNavMenu = function() {
 };
 
 JumpNav.prototype.initCalcs = function() {
-  if (MSIE_version > 8) {
-    var headerOffset =  (this.props.header ? this.props.header.offsetHeight: 0);
-    this.props.fixPoint = this.props.root.offsetTop + headerOffset - 20;
+  var headerOffset =  (this.props.header ? this.props.header.offsetHeight: 0);
+  this.props.fixPoint = this.props.root.offsetTop + headerOffset - 20;
 
-    if (this.props.root.classList.contains('floating'))
-      this.props.fixPoint = this.props.fixPoint + 35;
+  if (this.props.root.classList.contains('floating'))
+    this.props.fixPoint = this.props.fixPoint + 35;
 
-    // Does the page include an inner footer
-    var innerFooterHeight = document.querySelector('[role="main"] > footer:last-of-type');
-    if (innerFooterHeight) {
-      innerFooterHeight = innerFooterHeight.offsetHeight;
-    } else {
-      innerFooterHeight = 0;
-    }
-
-    var outerFooterHeight = document.querySelector('.page-footer');
-    if (outerFooterHeight) {
-      outerFooterHeight = outerFooterHeight.offsetHeight;
-    } else {
-      outerFooterHeight = 0;
-    }
-
-    // Not really sure what this 60 represents, but it makes it Good
-    this.props.stickyEnd = this.props.root.offsetTop + this.props.root.offsetHeight - this.el.offsetHeight - innerFooterHeight - 60;
-
-    // 10px margin-top
-    this.props.footerOffset = (innerFooterHeight + outerFooterHeight + 10) + 'px';
-
-    if (this.el.classList.contains('fixed')) {
-      this.el.style.bottom = this.props.footerOffset;
-    } else {
-      this.el.style.bottom = '';
-    }
-
-    this.setEndpoint();
+  // Does the page include an inner footer
+  var innerFooterHeight = document.querySelector('[role="main"] > footer:last-of-type');
+  if (innerFooterHeight) {
+    innerFooterHeight = innerFooterHeight.offsetHeight;
+  } else {
+    innerFooterHeight = 0;
   }
+
+  var outerFooterHeight = document.querySelector('.page-footer');
+  if (outerFooterHeight) {
+    outerFooterHeight = outerFooterHeight.offsetHeight;
+  } else {
+    outerFooterHeight = 0;
+  }
+
+  // Not really sure what this 60 represents, but it makes it Good
+  this.props.stickyEnd = this.props.root.offsetTop + this.props.root.offsetHeight - this.el.offsetHeight - innerFooterHeight - 60;
+
+  // 10px margin-top
+  this.props.footerOffset = (innerFooterHeight + outerFooterHeight + 10) + 'px';
+
+  if (this.el.classList.contains('fixed')) {
+    this.el.style.bottom = this.props.footerOffset;
+  } else {
+    this.el.style.bottom = '';
+  }
+
+  this.setEndpoint();
 };
 
 JumpNav.prototype.setEndpoint = function(scrollY) {

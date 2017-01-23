@@ -21,7 +21,7 @@
 
       // If the page contains a non-floating header AND it is fixed in the current viewport, substract the height of the fixed header (40px)
       if (headerElem && !headerElem.classList.contains('floating')) {
-        // Assume fixed position when unable to retrieve the computed position (e.g. in IE8)
+        // Assume fixed position when unable to retrieve the computed position
         var headerPosition = window.getComputedStyle ? window.getComputedStyle(headerElem).getPropertyValue('position') : 'fixed';
         if (headerPosition === 'fixed' || headerPosition === 'absolute') {
           offset = 40;

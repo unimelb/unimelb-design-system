@@ -13,7 +13,7 @@ function InjectHeader(props) {
   this.props.page = document.querySelector('.page-inner');
 
   // Only add if the header is not already present
-  if (document.countSelector('.page-header-tools') === 0) {
+  if (!document.querySelector('.page-header-tools')) {
     this.renderPageHeader();
     this.renderBreadcrumb();
     this.renderHeaderTools();
@@ -22,11 +22,8 @@ function InjectHeader(props) {
     this.props.header = document.querySelector('.page-header');
   }
 
-  // Exclude IE8, can't polyfill window scroll event
-  if (!/(MSIE 8.0)/g.test(navigator.userAgent)) {
-    window.addEventListener("scroll", this.handleScroll.bind(this));
-    this.handleScroll(); // Check once on page load
-  }
+  window.addEventListener("scroll", this.handleScroll.bind(this));
+  this.handleScroll(); // Check once on page load
 }
 
 InjectHeader.prototype.renderPageHeader = function() {
@@ -37,7 +34,7 @@ InjectHeader.prototype.renderPageHeader = function() {
     this.props.header = document.createElement('div');
     this.props.header.className = 'page-header';
 
-    if (document.countSelector('.page-inner > .floating') == 1) {
+    if (document.querySelectorAll('.page-inner > .floating').length === 1) {
       // Landing page header
       this.props.header.innerHTML = `
 <a class="page-header-logo" href="${this.props.defaultlink}">
@@ -74,7 +71,7 @@ InjectHeader.prototype.renderPageHeader = function() {
     } else {
 
       this.props.rootlink = '';
-      if (document.countSelector('.page-local-history .root') === 0) {
+      if (!document.querySelector('.page-local-history .root')) {
         this.props.rootlink = `
 <a href="https://unimelb.edu.au/" title="The University of Melbourne"><span data-icon="home"></span>The University of Melbourne</a>
 `;
@@ -127,11 +124,11 @@ InjectHeader.prototype.renderBreadcrumb = function() {
             window.location = this.value;
       });
 
-      var max = this.props.local.countSelector('a') - 1;
+      var max = this.props.local.querySelectorAll('a').length - 1;
 
       // Backwards compat
       var selector = 'span[itemprop="name"]';
-      if (this.props.local.countSelector(selector) === 0)
+      if (!this.props.local.querySelector(selector))
         selector = 'a';
 
       for (var nodes=this.props.local.querySelectorAll(selector), i=nodes.length - 1; i >= 0; i--) {

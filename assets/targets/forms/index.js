@@ -1,12 +1,9 @@
 // Deps
-require("../../shared/shims");
+require('classlist-polyfill');
+require('es6-promise').polyfill();
+
 require("../../shared/smoothscroll");
 require("../../shared/findup");
-require("../../shared/loadscript");
-
-// Simple sniff
-if (typeof window.MSIE_version === "undefined")
-  window.MSIE_version = /MSIE\s(\d{1,2})/g.exec(navigator.userAgent) === null ? 100 : /MSIE\s(\d{1,2})/g.exec(navigator.userAgent)[1];
 
 window.UOMFormLoadComponents = function() {
   "use strict";
@@ -53,10 +50,6 @@ window.UOMFormLoadComponents = function() {
   new Icons();
 };
 
-if (window.attachEvent) {
-  window.attachEvent('onload', window.UOMFormLoadComponents);
-} else {
-  document.addEventListener('DOMContentLoaded', window.UOMFormLoadComponents, false);
-  document.addEventListener('page:load', window.UOMFormLoadComponents, false);
-  document.addEventListener('page:restore', window.UOMFormLoadComponents, false);
-}
+document.addEventListener('DOMContentLoaded', window.UOMFormLoadComponents, false);
+document.addEventListener('page:load', window.UOMFormLoadComponents, false);
+document.addEventListener('page:restore', window.UOMFormLoadComponents, false);
