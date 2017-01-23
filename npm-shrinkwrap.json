@@ -590,7 +590,7 @@
     },
     "camel-case": {
       "version": "3.0.0",
-      "from": "camel-case@>=3.0.0 <4.0.0",
+      "from": "camel-case@>=3.0.0 <3.1.0",
       "resolved": "https://registry.npmjs.org/camel-case/-/camel-case-3.0.0.tgz",
       "dev": true
     },
@@ -3184,6 +3184,11 @@
       "resolved": "https://registry.npmjs.org/normalize-url/-/normalize-url-1.8.0.tgz",
       "dev": true
     },
+    "normalize.css": {
+      "version": "5.0.0",
+      "from": "normalize.css@latest",
+      "resolved": "https://registry.npmjs.org/normalize.css/-/normalize.css-5.0.0.tgz"
+    },
     "npmlog": {
       "version": "4.0.1",
       "from": "npmlog@>=4.0.0 <5.0.0",
@@ -3315,7 +3320,7 @@
     },
     "param-case": {
       "version": "2.1.0",
-      "from": "param-case@>=2.1.0 <3.0.0",
+      "from": "param-case@>=2.1.0 <2.2.0",
       "resolved": "https://registry.npmjs.org/param-case/-/param-case-2.1.0.tgz",
       "dev": true
     },

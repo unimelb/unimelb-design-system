@@ -59,11 +59,6 @@ $pswp__include-minimal-style: true !default;
     outline: none;
     opacity: 0.9;
   }
-
-  &::-moz-focus-inner {
-    padding: 0;
-    border: 0
-  }
 }
 
 /* pswp__ui--over-close class it added when mouse is over element that should close gallery */

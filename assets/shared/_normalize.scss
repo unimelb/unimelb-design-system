@@ -1,8 +1,4 @@
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
+@import "~normalize.css";
 
 html {
   height: 100%;
@@ -33,14 +29,24 @@ li {
   box-sizing: border-box;
 }
 
+// Override normalize.css behaviour
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 iframe[src^='//www.youtube.com'],
 iframe[src^='//player.vimeo.com'] {
   width: 100%;
 }
 
-// Hide elements with `hidden` attribute or class
-.hidden,
-[hidden] {
+// Hide elements (prefer `hidden` attribute)
+.hidden {
   display: none;
 }
 
