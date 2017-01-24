@@ -78,6 +78,10 @@
     figure.full-width {
       @include rem(max-width, 700px);
     }
+
+    blockquote {
+      width: 100%;
+    }
   }
 
   .video {
@@ -110,7 +114,12 @@
       ol {
         @include rem(margin-left, 20px);
       }
+
+      blockquote {
+        margin: 0;
+      }
     }
+
     .aside {
       display: inline-block;
       float: none;
