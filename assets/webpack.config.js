@@ -6,6 +6,7 @@ var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+// use external interface to build asset require() calls
 var ip = require("ip");
 var WEB_SERVER_HOST = ip.address();
 
