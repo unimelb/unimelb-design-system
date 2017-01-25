@@ -23,7 +23,7 @@ function Tabs(el, props) {
   this.props.isOverflowing = false;
   this.props.isOverflowSetup = false;
   this.props.isLoadingPs = false;
-  this.props.isNav = this.el.classList.contains('tabbed-nav') || this.el.classList.contains('tabbed-course');
+  this.props.isNav = this.el.classList.contains('tabbed-nav');
   this.props.matchFoundForHash = false;
 
   // Event bindings
