@@ -1,8 +1,5 @@
 .uomcontent .hero-listing {
   @include feature-listing;
-  padding-left: 3%;
-  padding-right: 3%;
-  width: 94%;
 
   li {
     max-width: 100%;
@@ -35,7 +32,7 @@
     max-width: 100%;
     padding: 3%;
     @include rem(padding-bottom, 15px);
-    @include rem(padding-top, 60px);
+    @include rem(padding-top, 15px);
 
     @include breakpoint(0) {
       filter: none;
@@ -43,9 +40,10 @@
 
     strong {
       @include adjust-font-size-to(40px);
-      @include padding-leader(1);
       color: $white;
       line-height: 1.1;
+      padding-bottom: .1em;
+      padding-top: 0;
     }
 
     p {
@@ -72,7 +70,6 @@
 
       p {
         @include padding-trailer(1);
-        text-align: center;
       }
     }
   }

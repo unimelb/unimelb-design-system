@@ -9,10 +9,10 @@
 @mixin listing {
   @include clearfix;
   @include padding-trailer(2);
-  @include rem(padding-left, 15px);
-  @include rem(padding-right, 15px);
   margin: 0 auto;
   max-width: $w-lge;
+  padding-left: 0;
+  padding-right: 0;
 
   box-sizing: content-box;
 
@@ -24,7 +24,6 @@
     margin-bottom: 0;
     margin-left: auto;
     overflow: hidden;
-    padding-bottom: 0;
 
     &:first-child {
       border-top: 0 none;
@@ -37,14 +36,10 @@
   }
 
   figure {
-    @include trailer(0.5);
-    @include rem(margin-right, 15px);
-    @include rem(max-height, 100px);
-    @include rem(max-width, 100px);
-    float: left;
+    @include rem(margin-bottom, 15px);
     margin-left: 0;
+    margin-right: 0;
     margin-top: 0;
-    overflow: hidden;
     text-align: center;
   }
 
@@ -65,18 +60,10 @@
 
   p {
     @include adjust-font-size-to(13px);
-    @include rem(margin-left, 115px);
+    // @include rem(margin-left, 115px);
     color: $midgray;
     padding: 0;
     width: auto;
-  }
-
-  @include breakpoint(0) {
-    img {
-      margin: 0 auto;
-      max-height: 100%;
-      max-width: 200%;
-    }
   }
 
   @include breakpoint(tablet) {
@@ -100,7 +87,7 @@
       border: 0;
       display: inline-block;
       vertical-align: top;
-      width: 49%;
+      width: 49.5%;
     }
 
     li:nth-child(4n+1) {
@@ -111,14 +98,6 @@
       @include rem(padding, 0 10px);
     }
 
-    figure {
-      @include rem(max-height, 220px);
-      float: none;
-      height: auto;
-      margin-right: 0;
-      max-width: 100%;
-    }
-
     strong,
     p {
       text-align: left;
@@ -127,7 +106,7 @@
 
   @include breakpoint(desktop) {
     li {
-      width: 32%;
+      width: 32.9%;
     }
   }
   @include breakpoint(wide) {
@@ -155,7 +134,7 @@
 body.jumpnav-active .uomcontent .listing {
   @include breakpoint(wide) {
     li {
-      width: 32%;
+      width: 32.9%;
     }
   }
 
@@ -172,7 +151,7 @@ body.jumpnav-active .uomcontent [role="main"] .pathfinder-4 {
       display: inline-block;
       height: auto;
       margin-bottom: 1px;
-      width: 49%;
+      width: 49.5%;
 
       &:nth-child(2n+1) {
         padding-left: 0;

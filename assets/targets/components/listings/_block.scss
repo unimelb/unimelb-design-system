@@ -26,7 +26,7 @@
 
   p {
     @include rem(font-size, 13px);
-    @include rem(padding, 15px 25px 0);
+    @include rem(padding, 15px 15px 0);
     background-color: transparent;
     color: inherit;
     line-height: 1.5;
@@ -36,7 +36,7 @@
 
   strong {
     @include rem(font-size, 20px);
-    @include rem(padding, 15px 25px 0);
+    @include rem(padding, 15px 15px 0);
     background-color: transparent;
     color: inherit;
     display: block;
@@ -72,7 +72,7 @@
 
   .when {
     @include rem(font-size, 18px);
-    @include rem(padding, 10px 25px 0);
+    @include rem(padding, 10px 15px 0);
     color: $salmon;
     font-weight: $regular;
     line-height: 1.4;
@@ -261,9 +261,11 @@
       }
     }
 
-    @include breakpoint(desktop) {
+    @include breakpoint(tablet) {
+      bottom: 0;
       height: 180px;
       overflow: hidden;
+      position: absolute;
 
       img {
       }
@@ -289,11 +291,11 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @include breakpoint(tablet) {
     .event .crop-height::before {
       @include rem(height, 50px);
       @include rem(margin-top, -20px);
-      background: linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(to top, rgba(255, 255, 255, 1) 15%, rgba(255, 255, 255, 0) 100%);
       content: ' ';
       display: block;
       position: relative;
@@ -304,15 +306,17 @@
       @include rem(height, 80px);
       @include rem(margin-bottom, 9px);
       @include rem(margin-top, -91px);
-      background: linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(to top, rgba(255, 255, 255, 1) 15%, rgba(255, 255, 255, 0) 100%);
       content: ' ';
       display: block;
       width: 100%;
     }
 
     .top-unit {
-      @include rem(max-height, 395px);
+      @include rem(height, 395px);
+      @include rem(padding-top, 15px);
       overflow: hidden;
+      position: relative;
     }
 
     .double .top-unit {
@@ -372,11 +376,12 @@
       }
 
       strong {
-        @include adjust-font-size-to(22px);
+        @include adjust-font-size-to(28px);
         @include rem(padding, 10px);
         background-color: rgba($highlight, .8);
         bottom: 0;
         font-weight: $regular;
+        line-height: 1.6;
         margin: 0;
         position: absolute;
 
@@ -723,3 +728,35 @@
     border-color: $highlight;
   }
 }
+
+
+.uomcontent#top .block-listing .meta {
+  background: rgba(255, 255, 255, .9);
+  border-top: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.uomcontent#top .block-listing .meta .meta-right {
+  padding: 5px 10px;
+}
+
+.uomcontent#top [role=main] .block-listing .news .meta:before {
+  background: linear-gradient(0deg, hsla(0, 0%, 100%, .9) 33%, hsla(0, 0%, 100%, 0));
+  height: 60px;
+  margin-top: -60px;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .uomcontent#top .block-listing .block-container {
+    height: 440px;
+    overflow: hidden;
+  }
+}
+
+.uomcontent article.news>figure {
+  text-align: center;
+}
+
