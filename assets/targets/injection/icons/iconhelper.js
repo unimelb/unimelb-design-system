@@ -19,7 +19,7 @@ function IconHelper(el, props) {
 
   // Inject the icon's SVG markup (without losing the label and any other pre-existing children)
   this.saveChildren();
-  this.el.innerHTML = '<svg class="icon" role="img"><use xlink:href="' + this.props.ref + '"></use></svg>';
+  this.el.innerHTML = '<svg class="icon" role="img" focusable="false"><use xlink:href="' + this.props.ref + '"></use></svg>';
   this.restoreChildren();
 }
 
