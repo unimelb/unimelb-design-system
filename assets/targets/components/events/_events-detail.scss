@@ -226,13 +226,6 @@
 
     .aside {
       padding-top: 0;
-
-      [data-icon] .icon-over {
-        @include rem(height, 20px);
-        @include rem(margin-left, -20px);
-        @include rem(margin-top, -20px);
-        @include rem(width, 20px);
-      }
     }
 
     .aside p {

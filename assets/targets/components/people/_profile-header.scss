@@ -81,8 +81,7 @@
     &__contact {
       @include rem(margin-bottom, 24px);
 
-      [data-icon],
-      [data-icon] > .icon-over {
+      [data-icon] {
         @include rem(height, 20px);
         @include rem(margin-top, 4px);
         @include rem(width, 20px);

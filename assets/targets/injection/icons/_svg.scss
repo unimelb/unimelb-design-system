@@ -19,23 +19,11 @@
     &.small {
       @include rem(height, 24px);
       @include rem(width, 24px);
-
-      .icon-over {
-        @include rem(height, 24px);
-        @include rem(margin-left, -24px);
-        @include rem(width, 24px);
-      }
     }
 
     &.large {
       @include rem(height, 100px);
       @include rem(width, 100px);
-
-      .icon-over {
-        @include rem(height, 100px);
-        @include rem(margin-left, -100px);
-        @include rem(width, 100px);
-      }
     }
 
     &.fill {
@@ -63,15 +51,6 @@
       margin: 0;
       text-align: center;
       white-space: nowrap;
-    }
-
-    .icon-over {
-      @include rem(height, 60px);
-      @include rem(margin-left, -60px);
-      @include rem(width, 60px);
-      display: inline-block;
-      position: relative;
-      z-index: 1;
     }
   }
 

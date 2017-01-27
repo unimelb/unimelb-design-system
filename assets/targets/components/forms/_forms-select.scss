@@ -114,17 +114,6 @@
     position: absolute;
   }
 
-  .icon-over {
-    @include rem(height, 30px);
-    @include rem(top, 5px);
-    @include rem(right, 7px);
-    @include rem(width, 30px);
-    cursor: pointer;
-    display: block;
-    position: absolute;
-    z-index: 1;
-  }
-
   &:hover select {
     background-color: $brand;
     border-color: $brand;
