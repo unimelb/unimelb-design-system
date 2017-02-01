@@ -13,6 +13,7 @@ function Accordion(el, props) {
 
   this.setupCloseButton();
   this.el.setAttribute('tabindex', '0');
+  this.props.hidden.setAttribute('tabindex', '-1'); // make panel focusable
 
   // Event bindings
   if (!this.el.hasAttribute('data-bound')) {
@@ -46,6 +47,15 @@ Accordion.prototype.handleClick = function(e) {
   }
 
   this.props.container.classList.toggle('accordion__visible');
+
+  // Manage focus smartly to avoid having to remove the outline with CSS
+  if (this.props.container.classList.contains('accordion__visible')) {
+    // Focus panel on open
+    this.props.hidden.focus();
+  } else {
+    // Blur target on close
+    this.el.blur();
+  }
 };
 
 Accordion.prototype.setupCloseButton = function() {

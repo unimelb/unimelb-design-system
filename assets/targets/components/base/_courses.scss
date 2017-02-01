@@ -50,11 +50,6 @@
     &:hover {
       text-decoration: underline;
     }
-
-    &:hover,
-    &:focus {
-      color: darken($cyan, 15%);
-    }
   }
 
   .accordion__close {
