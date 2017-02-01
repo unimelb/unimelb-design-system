@@ -176,7 +176,7 @@ InjectHeader.prototype.renderHeaderTools = function () {
   let tools = document.querySelector('.page-header-tools');
   if (tools) return;
 
-  tools = document.createElement('div');
+  tools = document.createElement('nav');
   tools.className = 'page-header-tools';
 
   // Prepare tools links
