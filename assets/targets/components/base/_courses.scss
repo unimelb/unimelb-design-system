@@ -28,7 +28,6 @@
   }
 
   td {
-    @include rem(font-size, 14px);
     @include rem(padding-bottom, 10px);
     @include rem(padding-top, 10px);
     border-bottom: 1px solid $lightergray;
@@ -47,9 +46,13 @@
 
   .accordion__title {
     color: $cyan;
-    text-decoration: underline;
 
     &:hover {
+      text-decoration: underline;
+    }
+
+    &:hover,
+    &:focus {
       color: darken($cyan, 15%);
     }
   }
@@ -181,6 +184,10 @@
     h2 {
       margin: 0;
     }
+  }
+
+  tbody.accordion__visible tr.accordion__title {
+    font-weight: bold;
   }
 
   tbody.accordion__visible tr.accordion__hidden {
