@@ -92,8 +92,8 @@ ImageGallery.prototype.initPhotoSwipeFromDOM = function() {
 
       if (figureEl.children.length > 1) {
         // <figcaption> content
-        item.title = figureEl.children[1].innerHTML;
-        item.msrc = figureEl.children[0].getAttribute('src');
+        item.title = figureEl.querySelector('figcaption').innerHTML;
+        item.msrc = figureEl.querySelector('img').getAttribute('src');
       }
 
       item.el = liEl; // save link to element for getThumbBoundsFn
