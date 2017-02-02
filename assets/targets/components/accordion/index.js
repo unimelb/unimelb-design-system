@@ -63,7 +63,11 @@ Accordion.prototype.handleClick = function(e) {
     }
   }
 
-  if (container && container.hasAttribute('data-single-focus')) {
+  var isSingleFocus = container.hasAttribute('data-single-focus');
+  if (isSingleFocus) {
+    // Save the distance of the accordion trigger from the top of the viewport
+    var offset = this.el.getBoundingClientRect().top;
+
     for (var recs=container.querySelectorAll('.accordion__visible'), i=recs.length - 1; i >= 0; i--) {
       if (recs[i] !== this.props.container) {
         recs[i].classList.remove('accordion__visible');
@@ -71,9 +75,37 @@ Accordion.prototype.handleClick = function(e) {
     }
   }
 
+  // Toggle panel visibility
   this.props.container.classList.toggle('accordion__visible');
 
-  // Manage focus smartly to avoid having to remove the outline with CSS
+  // Deal with focus and scrolling issues
+  if (isSingleFocus) {
+    // If accordion is single-focus, wait for layout to update then restore scroll position
+    setTimeout(this.restoreScrollPosition.bind(this, offset));
+  } else {
+    // Otherwise, skip straight to managing focus
+    this.manageFocus();
+  }
+};
+
+/**
+ * Restore scroll position if needed.
+ * https://github.com/unimelb/unimelb-design-system/issues/533
+ * @param {Number} oldOffset - the offset before toggling
+ */
+Accordion.prototype.restoreScrollPosition = function (oldOffset) {
+  // If the element has shifted out of view, bring it back to the same position
+  var newOffset = this.el.getBoundingClientRect().top;
+  if (newOffset < 0) window.scrollBy(0, newOffset - oldOffset);
+
+  // Since setting focus can affect scrolling, it must be done after restoring the scroll position
+  this.manageFocus();
+};
+
+/**
+ * Manage focus smartly to avoid having to remove the outline with CSS.
+ */
+Accordion.prototype.manageFocus = function () {
   if (this.props.container.classList.contains('accordion__visible')) {
     // Focus panel on open
     this.props.hidden.focus();
