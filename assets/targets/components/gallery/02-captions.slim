@@ -1,0 +1,24 @@
+p You may, and should provide a caption for every image with the <code>figcaption</code> element.
+ul
+  li By default, the caption is shown only in the viewer (cf. first image below).
+  li To show it in the gallery as well, use class <code>image-gallery__caption</code> (cf. second image).
+  li If you need to show a different caption in the gallery than in the viewer, leave the <code>figcaption</code> as is and add a paragraph before it with class <code>image-gallery__caption</code> (cf. third image).
+p.notice.notice--info <strong>Note:</strong> Captions in the gallery should be <strong>concise</strong> and <strong>consistent</strong>&mdash;either provide one for every image, or don't provide any at all.
+
+ul.image-gallery
+  li.item
+    a href="/assets/gallery/10.jpg" data-size="1500x1000"
+      figure
+        img src="/assets/gallery/thumbs/10.jpg" alt=""
+        figcaption No caption in gallery, only in viewer.
+  li.item
+    a href="/assets/gallery/19.jpg" data-size="1000x1500"
+      figure
+        img src="/assets/gallery/thumbs/19.jpg" alt=""
+        figcaption.image-gallery__caption Same caption in gallery as in viewer
+  li.item
+    a href="/assets/gallery/9.jpg" data-size="1500x1000"
+      figure
+        img src="/assets/gallery/thumbs/9.jpg" alt=""
+        p.image-gallery__caption Short caption in gallery
+        figcaption Longer caption in viewer.
