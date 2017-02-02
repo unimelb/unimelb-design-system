@@ -48,7 +48,7 @@ ImageGallery.prototype.setupGallery = function() {
         img = imageLink.querySelector('img'),
         ratio = img.offsetWidth / img.offsetHeight,
         span = document.createElement('span');
-    span.innerHTML = '<svg role="img" class="icon"><use xlink:href="#icon-zoom"></use></svg>';
+    span.innerHTML = '<svg role="img" class="icon"><use xlink:href="#icon-zoom-in"></use></svg>';
     imageLink.parentNode.classList.add(ratio < 1 ? 'portrait' : ratio > 2 ? 'panorama' : 'landscape');
     imageLink.style.backgroundImage = 'url(' + img.src + ')';
     img.classList.add('hidden');
