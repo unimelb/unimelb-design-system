@@ -195,16 +195,20 @@ ImageGallery.prototype.initPhotoSwipeFromDOM = function() {
     // define options (if needed)
     options = {
       index: index,
+      showHideOpacity: true,
 
       // define gallery index (for URL)
       galleryUID: galleryElement.getAttribute('data-pswp-uid'),
 
+      // define boundaries of thumbnail for animation
       getThumbBoundsFn: function(index) {
-        // See Options -> getThumbBoundsFn section of documentation for more info
-        var thumbnail = items[index].el.getElementsByTagName('a')[0], // find thumbnail
-          pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-          rect = thumbnail.getBoundingClientRect();
-        return {x:rect.left, y:rect.top + pageYScroll + 20, w:rect.width};
+        var thumbnail = items[index].el.querySelector('a');
+        var rect = thumbnail.getBoundingClientRect();
+        return {
+          x: rect.left,
+          y: rect.top + window.pageYOffset,
+          w: rect.width
+        };
       }
     };
 
