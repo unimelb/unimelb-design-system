@@ -15,17 +15,9 @@
     padding-top: 0;
     position: relative;
 
-    &.portrait {
-      width: 50%;
-    }
-
-    &.landscape {
-      width: 100%;
-    }
-
-    &.panorama {
-      width: 100%;
-    }
+    &.portrait { width: 50%; }
+    &.landscape { width: 100%; }
+    &.panorama { width: 100%; }
 
     a {
       background-position: center;
@@ -111,25 +103,43 @@
     @include breakpoint(desktop) {
       padding-bottom: 17%;
 
-      &.landscape {
-        width: 25%;
-      }
-
-      &.portrait {
-        width: 12.5%;
-      }
-
-      &.square {
-
-      }
-
-      &.panorama {
-        width: 50%;
-      }
+      &.landscape { width: 25%; }
+      &.portrait { width: 12.5%; }
+      &.panorama { width: 50%; }
     }
   }
 
   img {
     width: 100%;
+  }
+
+  /* variant with medium max-width */
+  &--medium {
+    @include rem(max-width, $w-mid);
+
+    li {
+      @include breakpoint(desktop) {
+        padding-bottom: 22.66%;
+
+        &.landscape { width: 33.33%; }
+        &.portrait { width: 16.665%; }
+        &.panorama { width: 66.66%; }
+      }
+    }
+  }
+
+  /* variant with small max-width */
+  &--small {
+    @include rem(max-width, $w-sml);
+
+    li {
+      @include breakpoint(desktop) {
+        padding-bottom: 34%;
+
+        &.landscape { width: 50%; }
+        &.portrait { width: 25%; }
+        &.panorama { width: 75%; }
+      }
+    }
   }
 }
