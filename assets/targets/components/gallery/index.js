@@ -26,7 +26,7 @@ function ImageGallery(el, props) {
 /**
  * Set up PhotoSwipe markup
  */
-ImageGallery.prototype.setupPhotoSwipe = function() {
+ImageGallery.prototype.setupPhotoSwipe = function () {
   this.props.pswp = document.querySelector('.pswp');
   if (!this.props.pswp) {
     this.props.pswpEl = document.createElement('div');
@@ -35,31 +35,34 @@ ImageGallery.prototype.setupPhotoSwipe = function() {
     this.props.pswpEl.setAttribute('role', 'dialog');
     this.props.pswpEl.setAttribute('aria-hidden', 'true');
     this.props.pswpEl.innerHTML = '<div class="pswp__bg"></div><div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div><div class="pswp__item"></div><div class="pswp__item"></div></div><div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div><button class="pswp__button pswp__button--close" title="Close (Esc)"></button><button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button><button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button><div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div><div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div><button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button><button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button><div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div>';
-    document.querySelector('div.uomcontent').appendChild(this.props.pswpEl);
+    document.querySelector('.uomcontent').appendChild(this.props.pswpEl);
   }
 };
 
 /**
- * Add zoom icon, define aspect
+ * Add zoom icon and define aspect
  */
-ImageGallery.prototype.setupGallery = function() {
-  for (var imageLinks = this.el.querySelectorAll('li a'), i=imageLinks.length - 1; i >= 0; i--) {
-    var imageLink = imageLinks[i],
-        img = imageLink.querySelector('img'),
-        ratio = img.offsetWidth / img.offsetHeight,
-        span = document.createElement('span');
-    span.innerHTML = '<svg role="img" class="icon"><use xlink:href="#icon-zoom-in"></use></svg>';
-    imageLink.parentNode.classList.add(ratio < 1 ? 'portrait' : ratio > 2 ? 'panorama' : 'landscape');
-    imageLink.style.backgroundImage = 'url(' + img.src + ')';
-    img.classList.add('hidden');
-    imageLink.appendChild(span);
+ImageGallery.prototype.setupGallery = function () {
+  var items = this.el.querySelectorAll('li');
+  for (var i = items.length - 1; i >= 0; i--) {
+    var item = items[i];
+
+    var link = item.querySelector('a');
+    var img = item.querySelector('img');
+    var ratio = img.offsetWidth / img.offsetHeight;
+
+    item.classList.add(ratio < 1 ? 'portrait' : (ratio > 2 ? 'panorama' : 'landscape'));
+    link.style.backgroundImage = 'url(' + img.src + ')';
+    img.classList.add('hide');
+
+    var icon = document.createElement('span');
+    icon.className = 'image-gallery__icon';
+    icon.innerHTML = '<svg role="img" class="icon"><use xlink:href="#icon-zoom-in"></use></svg>';
+    link.appendChild(icon);
   }
 };
 
 ImageGallery.prototype.initPhotoSwipeFromDOM = function() {
-  // var PhotoSwipe = require('photoswipe');
-  // var PhotoSwipeUI_Default = require('photoswipe/dist/photoswipe-ui-default'); // missing assets?
-
   var gallerySelector = this.el;
 
   var parseThumbnailElements = function(el) {
