@@ -154,7 +154,7 @@ window.UOMloadComponents = function() {
       .then(function (recs) {
         ImageGallery = require("./gallery");
         for (i=recs.length - 1; i >= 0; i--)
-          new ImageGallery(recs[i], {});
+          new ImageGallery(recs[i], { index: i });
       }.bind(null, recs));
   }
 

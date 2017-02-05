@@ -1,6 +1,5 @@
 /**
- * ImageGallery
- *
+ * Image gallery
  * @param  {Element} el
  * @param  {Object} props
  */
@@ -8,12 +7,78 @@ function ImageGallery(el, props) {
   this.el = el;
   this.props = props || {};
 
+  this.props.items = el.querySelectorAll('li');
+  this.props.slides = [];
+
+  this.props.pswpDefaults = {
+    showHideOpacity: true,
+    // define gallery index (for URL)
+    galleryUID: this.props.index || 0,
+    // define boundaries of thumbnail for animation
+    getThumbBoundsFn: this.getThumbBoundsFn.bind(this)
+  };
+
   this.setupGallery();
   this.initIsotope();
 
   this.setupPhotoSwipe();
   this.initPhotoSwipe();
 }
+
+/**
+ * Add hover zoom icon and aspect ratio class to each item,
+ * and prepare PhotoSwipe slides.
+ */
+ImageGallery.prototype.setupGallery = function () {
+  for (var i = 0, len = this.props.items.length; i < len; i++) {
+    var item = this.props.items[i];
+
+    // Hide thumbnail to show link background instead (see below)
+    // Use `opacity: 0;` to avoid triggering a reflow when opening the viewer
+    var img = item.querySelector('img');
+    img.classList.add('hide');
+
+    // Set thumbnail as background image of link for cover effect
+    var link = item.querySelector('a');
+    link.style.backgroundImage = 'url(' + img.src + ')';
+    link.addEventListener('click', this.onThumbnailClick.bind(this, i));
+
+    // Add zoom-in icon shown on hover
+    var icon = document.createElement('span');
+    icon.className = 'image-gallery__icon';
+    icon.innerHTML = '<svg role="img" class="icon"><use xlink:href="#icon-zoom-in"></use></svg>';
+    link.appendChild(icon);
+
+    // Compute thumbnail ratio and add corresponding class
+    var ratio = img.offsetWidth / img.offsetHeight;
+    item.classList.add(ratio < 1 ? 'portrait' : (ratio > 2 ? 'panorama' : 'landscape'));
+
+    // Create PhotoSwipe slide
+    var size = link.getAttribute('data-size').split('x');
+    this.props.slides.push({
+      el: link,
+      src: link.getAttribute('href'),
+      w: parseInt(size[0], 10),
+      h: parseInt(size[1], 10),
+      title: item.querySelector('figcaption').innerHTML,
+      msrc: img.src
+    });
+  }
+};
+
+/**
+ * Initialise masonry layout.
+ */
+ImageGallery.prototype.initIsotope = function () {
+  this.props.isotope = new window.Isotope(this.el, {
+    itemSelector: '.item',
+    layoutMode: 'masonry',
+    masonry: {
+      columnWidth: 1,
+      gutter: 0
+    }
+  });
+};
 
 /**
  * Set up PhotoSwipe markup.
@@ -33,45 +98,6 @@ ImageGallery.prototype.setupPhotoSwipe = function () {
 
   document.querySelector('.uomcontent').appendChild(pswp);
   this.props.pswp = pswp;
-};
-
-/**
- * Add hover zoom icon and aspect ratio class to each item.
- */
-ImageGallery.prototype.setupGallery = function () {
-  var items = this.el.querySelectorAll('li');
-  for (var i = items.length - 1; i >= 0; i--) {
-    var item = items[i];
-
-    var link = item.querySelector('a');
-    var img = item.querySelector('img');
-    var ratio = img.offsetWidth / img.offsetHeight;
-
-    item.classList.add(ratio < 1 ? 'portrait' : (ratio > 2 ? 'panorama' : 'landscape'));
-    link.style.backgroundImage = 'url(' + img.src + ')';
-    link.setAttribute('data-pswp-uid', i + 1);
-    link.addEventListener('click', this.onThumbnailClick.bind(this, i));
-    img.classList.add('hide');
-
-    var icon = document.createElement('span');
-    icon.className = 'image-gallery__icon';
-    icon.innerHTML = '<svg role="img" class="icon"><use xlink:href="#icon-zoom-in"></use></svg>';
-    link.appendChild(icon);
-  }
-};
-
-/**
- * Initialise masonry layout.
- */
-ImageGallery.prototype.initIsotope = function () {
-  this.props.isotope = new window.Isotope(this.el, {
-    itemSelector: '.item',
-    layoutMode: 'masonry',
-    masonry: {
-      columnWidth: 1,
-      gutter: 0
-    }
-  });
 };
 
 /**
@@ -113,85 +139,33 @@ ImageGallery.prototype.initPhotoSwipe = function() {
 
   var hashData = photoswipeParseHash();
   if (hashData.pid > 0 && hashData.gid > 0) {
-    this.openPhotoSwipe(hashData.pid - 1, galleryElements[hashData.gid - 1], true);
+    this.openPhotoSwipe(hashData.pid - 1, true);
   }
 };
 
 ImageGallery.prototype.onThumbnailClick = function (index, evt) {
   evt.preventDefault();
-  console.log(this);
-  this.openPhotoSwipe(index, this.el);
+  this.openPhotoSwipe(index);
 };
 
-ImageGallery.prototype.openPhotoSwipe = function (index, galleryElement, disableAnimation) {
-  var items = this.parseThumbnailElements(galleryElement);
+ImageGallery.prototype.openPhotoSwipe = function (slideIndex, disableAnimation) {
+  var options = Object.assign({}, this.props.pswpDefaults, {
+    index: slideIndex,
+    showAnimationDuration: disableAnimation ? 0 : 333
+  });
 
-  var options = {
-    index: index,
-    showHideOpacity: true,
+  var gallery = new PhotoSwipe(this.props.pswp, window.PhotoSwipeUI_Default, this.props.slides, options);
+  gallery.init();
+};
 
-    // define gallery index (for URL)
-    galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-
-    // define boundaries of thumbnail for animation
-    getThumbBoundsFn: function(index) {
-      var thumbnail = items[index].el.querySelector('a');
-      var rect = thumbnail.getBoundingClientRect();
-      return {
-        x: rect.left,
-        y: rect.top + window.pageYOffset,
-        w: rect.width
-      };
-    }
+ImageGallery.prototype.getThumbBoundsFn = function (index) {
+  var thumbnail = this.props.slides[index].el;
+  var rect = thumbnail.getBoundingClientRect();
+  return {
+    x: rect.left,
+    y: rect.top + window.pageYOffset,
+    w: rect.width
   };
-
-  if (disableAnimation) {
-    options.showAnimationDuration = 0;
-  }
-
-  this.props.gallery = new PhotoSwipe(this.props.pswp, window.PhotoSwipeUI_Default, items, options);
-  this.props.gallery.init();
-};
-
-ImageGallery.prototype.parseThumbnailElements = function (el) {
-  var thumbElements = el.childNodes,
-    numNodes = thumbElements.length,
-    items = [],
-    figureEl,
-    linkEl,
-    liEl,
-    size,
-    item;
-
-  for (var i = 0; i < numNodes; i++) {
-    liEl = thumbElements[i];
-    if (liEl.nodeType !== 1) {
-      continue;
-    }
-
-    linkEl = liEl.children[0]; // <a> element
-    figureEl = linkEl.children[0];
-
-    size = linkEl.getAttribute('data-size').split('x');
-
-    // create slide object
-    item = {
-      src: linkEl.getAttribute('href'),
-      w: parseInt(size[0], 10),
-      h: parseInt(size[1], 10)
-    };
-
-    if (figureEl.children.length > 1) {
-      // <figcaption> content
-      item.title = figureEl.querySelector('figcaption').innerHTML;
-      item.msrc = figureEl.querySelector('img').getAttribute('src');
-    }
-
-    item.el = liEl; // save link to element for getThumbBoundsFn
-    items.push(item);
-  }
-
-  return items;
 };
 
 module.exports = ImageGallery;
