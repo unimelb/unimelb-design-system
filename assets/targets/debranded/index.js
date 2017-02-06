@@ -21,7 +21,7 @@ window.DSComponentsLoad = function() {
 
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
-    FilteredListing, IconHelper, ImageGallery, imagesLoaded, slingshot, LMaps,
+    FilteredListing, IconHelper, ImageGallery, slingshot, LMaps,
     style, script, CreateNameSpace, Icons;
 
   CreateNameSpace = require('../../shared/createnamespace');

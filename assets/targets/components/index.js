@@ -79,7 +79,7 @@ window.UOMloadComponents = function() {
   "use strict";
 
   var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect, Flash, FilteredListing,
-    ImageGallery, imagesLoaded, slingshot, style, script, keyscript;
+    ImageGallery, slingshot, style, script, keyscript;
 
   window.UOMbind('accordion');
   window.UOMbind('modal');
