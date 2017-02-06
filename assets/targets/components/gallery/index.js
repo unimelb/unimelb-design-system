@@ -22,7 +22,7 @@ function ImageGallery(el, props) {
   this.initIsotope();
 
   this.setupPhotoSwipe();
-  this.initPhotoSwipe();
+  this.restoreFromHash();
 }
 
 /**
@@ -81,7 +81,7 @@ ImageGallery.prototype.initIsotope = function () {
 };
 
 /**
- * Set up PhotoSwipe markup.
+ * Set up PhotoSwipe viewer markup.
  */
 ImageGallery.prototype.setupPhotoSwipe = function () {
   // Check if PhotoSwipe viewer has already been set up by another gallery
@@ -101,53 +101,38 @@ ImageGallery.prototype.setupPhotoSwipe = function () {
 };
 
 /**
- * Initialise PhotoSwipe.
+ * If URL has PhotoSwipe hash, re-open viewer to specified slide.
  */
-ImageGallery.prototype.initPhotoSwipe = function() {
-  var photoswipeParseHash = function() {
-    var hash = window.location.hash.substring(1),
-    params = {};
+ImageGallery.prototype.restoreFromHash = function () {
+  // Parse hash
+  var matches = /^#&gid=(\d+)&pid=(\d+)$/.exec(window.location.hash);
 
-    if (hash.length < 5) {
-      return params;
-    }
+  // Return if not a PhotoSwipe hash
+  if (!matches || matches.length !== 3) return;
 
-    var vars = hash.split('&');
-    for (var i = 0; i < vars.length; i++) {
-      if (!vars[i]) {
-        continue;
-      }
-      var pair = vars[i].split('=');
-      if (pair.length < 2) {
-        continue;
-      }
-      params[pair[0]] = pair[1];
-    }
+  // Return if GID doesn't refer to this gallery instance
+  if (parseInt(matches[1], 10) !== this.props.pswpDefaults.galleryUID) return;
 
-    if (params.gid) {
-      params.gid = parseInt(params.gid, 10);
-    }
-
-    if (!params.hasOwnProperty('pid')) {
-      return params;
-    }
-    params.pid = parseInt(params.pid, 10);
-    return params;
-  };
-
-  var galleryElements = this.el.querySelectorAll('a');
-
-  var hashData = photoswipeParseHash();
-  if (hashData.pid > 0 && hashData.gid > 0) {
-    this.openPhotoSwipe(hashData.pid - 1, true);
-  }
+  // Open viewer to specified slide
+  var index = parseInt(matches[2], 10);
+  this.openPhotoSwipe(index - 1, true);
 };
 
+/**
+ * Open viewer when a thumbnail is clicked.
+ * @param {Number} index - the slide index to open
+ * @param {Event} evt
+ */
 ImageGallery.prototype.onThumbnailClick = function (index, evt) {
   evt.preventDefault();
   this.openPhotoSwipe(index);
 };
 
+/**
+ * Initialise and open PhotoSwipe viewer at the given slide.
+ * @param {Number} slideIndex
+ * @param {Boolean} disableAnimation - set to `true` when restoring from UL hash
+ */
 ImageGallery.prototype.openPhotoSwipe = function (slideIndex, disableAnimation) {
   var options = Object.assign({}, this.props.pswpDefaults, {
     index: slideIndex,
@@ -158,6 +143,11 @@ ImageGallery.prototype.openPhotoSwipe = function (slideIndex, disableAnimation) 
   gallery.init();
 };
 
+/**
+ * Compute a thumbnail's bounds.
+ * Called by PhotoSwipe for animation purposes when opening the viewer.
+ * @param {Number} index - the slide index
+ */
 ImageGallery.prototype.getThumbBoundsFn = function (index) {
   var thumbnail = this.props.slides[index].el;
   var rect = thumbnail.getBoundingClientRect();
