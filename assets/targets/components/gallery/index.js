@@ -7,16 +7,9 @@ function ImageGallery(el, props) {
   this.el = el;
   this.props = props || {};
 
+  this.props.gid = this.props.index || 0
   this.props.items = el.querySelectorAll('li');
   this.props.slides = [];
-
-  this.props.pswpDefaults = {
-    showHideOpacity: true,
-    // define gallery index (for URL)
-    galleryUID: this.props.index || 0,
-    // define boundaries of thumbnail for animation
-    getThumbBoundsFn: this.getThumbBoundsFn.bind(this)
-  };
 
   this.setupGallery();
   this.initIsotope();
@@ -111,7 +104,7 @@ ImageGallery.prototype.restoreFromHash = function () {
   if (!matches || matches.length !== 3) return;
 
   // Return if GID doesn't refer to this gallery instance
-  if (parseInt(matches[1], 10) !== this.props.pswpDefaults.galleryUID) return;
+  if (parseInt(matches[1], 10) !== this.props.gid) return;
 
   // Open viewer to specified slide
   var index = parseInt(matches[2], 10);
@@ -134,10 +127,13 @@ ImageGallery.prototype.onThumbnailClick = function (index, evt) {
  * @param {Boolean} disableAnimation - set to `true` when restoring from UL hash
  */
 ImageGallery.prototype.openPhotoSwipe = function (slideIndex, disableAnimation) {
-  var options = Object.assign({}, this.props.pswpDefaults, {
+  var options = {
+    galleryUID: this.props.gid,
+    getThumbBoundsFn: this.getThumbBoundsFn.bind(this),
     index: slideIndex,
-    showAnimationDuration: disableAnimation ? 0 : 333
-  });
+    showAnimationDuration: disableAnimation ? 0 : 333,
+    showHideOpacity: true
+  };
 
   var gallery = new PhotoSwipe(this.props.pswp, window.PhotoSwipeUI_Default, this.props.slides, options);
   gallery.init();
