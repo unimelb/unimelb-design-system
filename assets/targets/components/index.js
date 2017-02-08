@@ -79,7 +79,7 @@ window.UOMloadComponents = function() {
   "use strict";
 
   var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect, Flash, FilteredListing,
-    ImageGallery, imagesLoaded, slingshot, style, script, keyscript;
+    ImageGallery, slingshot, style, script, keyscript;
 
   window.UOMbind('accordion');
   window.UOMbind('modal');
@@ -154,7 +154,7 @@ window.UOMloadComponents = function() {
       .then(function (recs) {
         ImageGallery = require("./gallery");
         for (i=recs.length - 1; i >= 0; i--)
-          new ImageGallery(recs[i], {});
+          new ImageGallery(recs[i], { index: i });
       }.bind(null, recs));
   }
 

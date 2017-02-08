@@ -17,16 +17,6 @@
       "from": "es6-promise@>=4.0.5 <5.0.0",
       "resolved": "https://registry.npmjs.org/es6-promise/-/es6-promise-4.0.5.tgz"
     },
-    "ev-emitter": {
-      "version": "1.0.3",
-      "from": "ev-emitter@>=1.0.0 <1.1.0",
-      "resolved": "https://registry.npmjs.org/ev-emitter/-/ev-emitter-1.0.3.tgz"
-    },
-    "imagesloaded": {
-      "version": "4.1.1",
-      "from": "imagesloaded@>=4.1.1 <4.2.0",
-      "resolved": "https://registry.npmjs.org/imagesloaded/-/imagesloaded-4.1.1.tgz"
-    },
     "just-debounce": {
       "version": "1.0.0",
       "from": "just-debounce@>=1.0.0 <2.0.0",
