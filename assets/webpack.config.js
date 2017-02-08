@@ -125,7 +125,8 @@ function addEntry(entries, dir) {
   if (fs.lstatSync(dirPath).isDirectory()) {
     // Build the entry's targets array
     var targets = (isDev) ? ['webpack-dev-server/client?' + ASSET_SERVER_URL, 'webpack/hot/dev-server'] : [];
-    addTarget(targets, dirPath, 'target.js');
+    addTarget(targets, dirPath, 'index.js');
+    addTarget(targets, dirPath, 'index.es6');
     addTarget(targets, dirPath, 'index.scss');
 
     // Add the entry
