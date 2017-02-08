@@ -98,8 +98,7 @@ $white: #ffffff;
     }
 
     [role="main"] {
-      .tabbed-nav,
-      .tabbed-course {
+      .tabbed-nav {
         .desktop-nav,
         .mobile-nav {
           display: none;
@@ -240,7 +239,6 @@ $white: #ffffff;
 
       .alt,
       .layout-sidebar__side,
-      .tabbed-course .half,
       .contact-box {
         background: $white;
       }
@@ -278,10 +276,6 @@ $white: #ffffff;
         p {
           text-align: left;
         }
-      }
-
-      .tabbed-course > .full-width {
-        border: 0 none;
       }
 
       header .bottom-align-flat {
