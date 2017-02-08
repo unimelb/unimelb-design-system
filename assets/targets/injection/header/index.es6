@@ -86,9 +86,9 @@ InjectHeader.prototype.renderPageHeader = function() {
       <image xlink:href="${require('./logo.svg')}" src="${require('./logo.png')}" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
     </svg>
   </a>
-  <div class="page-header-navigation">
+  <nav class="page-header-navigation" aria-label="breadcrumbs">
     ${this.props.rootlink}
-  </div>
+  </nav>
 </header>
 `;
     }
@@ -176,7 +176,7 @@ InjectHeader.prototype.renderHeaderTools = function () {
   let tools = document.querySelector('.page-header-tools');
   if (tools) return;
 
-  tools = document.createElement('div');
+  tools = document.createElement('nav');
   tools.className = 'page-header-tools';
 
   // Prepare tools links
