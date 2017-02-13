@@ -1,0 +1,25 @@
+.logo-listing {
+  @include rem(max-width, $w-mid);
+  margin: 0 auto;
+  text-align: center;
+
+  &__item {
+    @include rem(padding, 10px);
+    color: rgba($black, .8);
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  figcaption {
+    font-size: .8em;
+  }
+
+  figure {
+    margin: 0;
+    text-decoration: inherit;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}
