@@ -48,6 +48,8 @@ SortableTable.prototype.setupHeadings = function() {
   // Bind click events
   for (var i=this.props.cols.length - 1; i >= 0; i--) {
     this.props.cols[i].addEventListener('click', this.handleColClick.bind(this));
+    if (this.props.cols[i].hasAttribute('data-sort-initial'))
+      this.sortByCol(this.props.cols[i]);
 
     if (!this.props.cols[i].hasAttribute('tabindex'))
       this.props.cols[i].setAttribute('tabindex', 0);
@@ -58,19 +60,6 @@ SortableTable.prototype.setupHeadings = function() {
 
     window.addEventListener('keydown', this.selectWithKeyboard);
   }
-
-  // Default, sort by first column
-  var col = this.props.cols[this.props.selected];
-
-  // Filter order since it gets flipped during the sort
-  if (col.classList.contains('desc')) {
-    col.classList.remove('desc');
-    col.classList.add('asc');
-  } else {
-    col.classList.remove('asc');
-    col.classList.add('desc');
-  }
-  this.sortByCol(col);
 };
 
 SortableTable.prototype.handleColClick = function(e) {
@@ -101,31 +90,23 @@ SortableTable.prototype.compare = function(a, b) {
   atxt = a[this.props.selected].textContent.trim();
   btxt = b[this.props.selected].textContent.trim();
 
-  // Check for override
-  if (this.props.sortAs != 'text') {
+  if (this.props.sortAs == 'text') {
+    // Specific sort by text
+    if (atxt < btxt)
+      return this.props.direction * -1;
+    else if (atxt > btxt)
+      return this.props.direction * 1;
+    else
+      return 0;
 
-    // Check for currency symbol, then drop and treat as number compare
-    if (['$', '¥', '£', '€'].some(function(el){return el === atxt.charAt(0);})) {
-      atxt = parseFloat(atxt.substr(1));
-      btxt = parseFloat(btxt.substr(1));
-    } else if (['$', '¥', '£', '€'].some(function(el){return el === atxt.charAt(atxt.length-1);})) {
-      atxt = parseFloat(atxt.substr(0, atxt.length-1));
-      btxt = parseFloat(btxt.substr(0, btxt.length-1));
-    }
-
-    // If probably a number, explicitly convert to number before sort
-    if (atxt % 1 === 0 || parseFloat(atxt) === atxt) {
-      atxt = parseFloat(atxt);
-      btxt = parseFloat(btxt);
+  } else {
+    // Natural sort
+    if (this.props.direction > 0) {
+      return atxt.localeCompare(btxt, undefined, {numeric: true, sensitivity: 'base'});
+    } else {
+      return btxt.localeCompare(atxt, undefined, {numeric: true, sensitivity: 'base'});
     }
   }
-
-  if (atxt < btxt)
-    return this.props.direction * -1;
-  else if (atxt > btxt)
-    return this.props.direction * 1;
-  else
-    return 0;
 };
 
 SortableTable.prototype.selectHeading = function(th) {

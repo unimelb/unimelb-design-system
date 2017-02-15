@@ -1,7 +1,7 @@
 {
   "name": "unimelb-design-system-assets",
   "description": "Asset compilation using Webpack",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "repository": "marcom-unimelb/unimelb-design-system",
   "author": "University of Melbourne",
   "license": "UNLICENSED",
@@ -41,6 +41,7 @@
     "ip": "~1.1.4",
     "jshint": "~2.9.3",
     "jshint-loader": "~0.8.3",
+    "locale-compare-polyfill": "~0.0.2",
     "node-sass": "~3.10.1",
     "postcss-loader": "^0.13.0",
     "resolve-url-loader": "^1.6.0",
