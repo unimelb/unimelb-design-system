@@ -46,8 +46,9 @@ iframe[src^='//player.vimeo.com'] {
 }
 
 // Hide elements (prefer `hidden` attribute)
-.hidden {
-  display: none;
+.hidden,
+[hidden] {
+  display: none !important; /* force */
 }
 
 /* Hide outline on elements focused programmatically */

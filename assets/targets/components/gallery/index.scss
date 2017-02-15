@@ -6,3 +6,8 @@
 .pswp img {
   max-width: none;
 }
+
+.pswp__caption__center {
+  @include rem(max-width, $w-sml);
+  text-align: center;
+}

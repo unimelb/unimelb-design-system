@@ -21,7 +21,7 @@ window.DSComponentsLoad = function() {
 
   var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
-    FilteredListing, IconHelper, ImageGallery, imagesLoaded, slingshot, LMaps,
+    FilteredListing, IconHelper, ImageGallery, slingshot, LMaps,
     style, script, CreateNameSpace, Icons;
 
   CreateNameSpace = require('../../shared/createnamespace');
@@ -63,7 +63,7 @@ window.DSComponentsLoad = function() {
     SidebarTabs = require("../components/tabs/sidebar-tabs");
     for (i=recs.length - 1; i >= 0; i--) {
       new SidebarTabs(recs[i], {
-        scrollTarget: document.querySelector('.tabbed-nav[data-tabbed], .tabbed-course[data-tabbed]')
+        scrollTarget: document.querySelector('.tabbed-nav[data-tabbed]')
       });
     }
   }
@@ -123,21 +123,14 @@ window.DSComponentsLoad = function() {
   recs = document.querySelectorAll('ul.image-gallery');
   if (recs.length > 0) {
     window.loadScript([
-      'https://d2h9b02ioca40d.cloudfront.net/shared/photoswipe.pkgd.min.js',
+      'https://unpkg.com/photoswipe@4.1.1/dist/photoswipe.min.js',
+      'https://unpkg.com/photoswipe@4.1.1/dist/photoswipe-ui-default.min.js',
       'https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js'
     ])
       .then(function (recs) {
-        imagesLoaded = require('imagesloaded');
         ImageGallery = require("../components/gallery");
-
-        slingshot = function (g) {
-          new ImageGallery(g);
-        };
-
-        for (i=recs.length - 1; i >= 0; i--) {
-          g = recs[i];
-          imagesLoaded(g, slingshot.bind(null, g));
-        }
+        for (i=recs.length - 1; i >= 0; i--)
+          new ImageGallery(recs[i], { index: i });
       }.bind(null, recs));
   }
 
