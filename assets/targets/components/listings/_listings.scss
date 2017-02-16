@@ -67,7 +67,7 @@
     width: auto;
   }
 
-  &.crop-height figure {
+  &.listing__crop-height figure {
     @include rem(height, 200px);
 
     img {

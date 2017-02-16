@@ -30,7 +30,7 @@
     text-align: left;
   }
 
-  &.crop-height figure {
+  &.listing__crop-height figure {
     @include rem(height, 340px);
 
     img {
@@ -82,7 +82,7 @@
     text-align: left;
   }
 
-  &.crop-height figure {
+  &.listing__crop-height figure {
     @include rem(height, 280px);
 
     img {
