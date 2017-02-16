@@ -26,17 +26,21 @@
 
   p {
     @include rem(font-size, 13px);
-    @include rem(padding, 15px 25px 0);
+    @include rem(padding, 15px 15px 0);
     background-color: transparent;
     color: inherit;
     line-height: 1.5;
     margin: 0;
     text-align: left;
+
+    &:last-of-type {
+      @include rem(padding-bottom, 15px);
+    }
   }
 
   strong {
     @include rem(font-size, 20px);
-    @include rem(padding, 15px 25px 0);
+    @include rem(padding, 15px 15px 0);
     background-color: transparent;
     color: inherit;
     display: block;
@@ -52,12 +56,12 @@
   }
 
   .meta {
+    @include clearfix;
     @include rem(font-size, 12px);
-    @include rem(margin, 15px);
-    @include rem(padding, 10px 10px 20px);
-    background-color: inherit;
-    border-top: 1px solid $black;
+    @include rem(padding, 5px 15px);
+    background-color: rgba($white, .9);
     color: inherit;
+    width: 100%;
 
     .meta-left {
       float: left;
@@ -72,7 +76,7 @@
 
   .when {
     @include rem(font-size, 18px);
-    @include rem(padding, 10px 25px 0);
+    @include rem(padding, 10px 15px 0);
     color: $salmon;
     font-weight: $regular;
     line-height: 1.4;
@@ -88,6 +92,7 @@
   }
 
   .range {
+    @include rem(margin-bottom, 13px);
     line-height: 2.8;
     margin-bottom: 0;
 
@@ -97,7 +102,7 @@
 
       &:first-child::after {
         @include rem(width, 30px);
-        border-bottom: 3px solid $salmon;
+        border-bottom: 3px solid $highlight;
         content: '';
         display: block;
       }
@@ -119,6 +124,11 @@
 
   .block-container {
     display: block;
+
+    @include breakpoint(tablet) {
+      height: 440px;
+      overflow: hidden;
+    }
   }
 
   .double {
@@ -164,9 +174,7 @@
     .meta {
       bottom: 0;
       left: 0;
-      padding-bottom: 0;
       position: absolute;
-      width: 94%;
     }
 
     .range time {
@@ -200,10 +208,6 @@
   @include breakpoint(wide) {
     li {
       width: 24%;
-    }
-
-    .meta {
-      width: 92%;
     }
 
     .when {
@@ -246,6 +250,8 @@
 
 .uomcontent [role="main"] .block-listing {
   .crop-height {
+    margin-top: 1em;
+
     img {
       display: block;
       height: auto;
@@ -261,9 +267,11 @@
       }
     }
 
-    @include breakpoint(desktop) {
-      height: 180px;
+    @include breakpoint(tablet) {
+      bottom: 0;
+      height: 210px;
       overflow: hidden;
+      position: absolute;
 
       img {
       }
@@ -282,18 +290,23 @@
     .when {
       color: $highlight;
     }
+  }
 
-    .meta {
-      border-top: 0 none;
-      margin-top: 0;
+  .exhibition {
+    background-color: $white;
+    border-bottom: 4px solid $yellow;
+    color: $black;
+
+    .when {
+      color: $highlight;
     }
   }
 
-  @include breakpoint(desktop) {
-    .event .crop-height::before {
+  @include breakpoint(tablet) {
+    .crop-height::before {
       @include rem(height, 50px);
       @include rem(margin-top, -20px);
-      background: linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+      background: linear-gradient(to top, rgba($white, 1) 10%, rgba($white, 0) 100%);
       content: ' ';
       display: block;
       position: relative;
@@ -301,18 +314,21 @@
     }
 
     .news .meta::before {
-      @include rem(height, 80px);
-      @include rem(margin-bottom, 9px);
-      @include rem(margin-top, -91px);
-      background: linear-gradient(to top, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 100%);
+      @include rem(height, 60px);
+      @include rem(margin-left, -15px);
+      @include rem(margin-right, -15px);
+      @include rem(margin-top, -60px);
+      background: linear-gradient(to top, rgba($white, .9) 33%, rgba($white, 0) 100%);
       content: ' ';
       display: block;
-      width: 100%;
+      width: auto;
     }
 
     .top-unit {
-      @include rem(max-height, 395px);
+      @include rem(height, 410px);
+      @include rem(padding-top, 15px);
       overflow: hidden;
+      position: relative;
     }
 
     .double .top-unit {
@@ -333,19 +349,29 @@
     position: relative;
 
     @include breakpoint(desktop) {
-      transition: transform 0.15s;
+      transition: transform .15s;
     }
 
     &:hover {
       z-index: 100;
 
       @include breakpoint(desktop) {
-        transform: scale(1.03);
+        transform: scale(1.02);
       }
 
       p,
       strong {
         color: $highlight;
+        transition: color .15s;
+      }
+    }
+
+    &.no-anim:hover {
+      transform: none;
+
+      p,
+      strong {
+        color: inherit;
       }
     }
 
@@ -372,11 +398,12 @@
       }
 
       strong {
-        @include adjust-font-size-to(22px);
+        @include adjust-font-size-to(28px);
         @include rem(padding, 10px);
         background-color: rgba($highlight, .8);
         bottom: 0;
         font-weight: $regular;
+        line-height: 1.1;
         margin: 0;
         position: absolute;
 
@@ -409,6 +436,7 @@
           }
 
           span {
+            @include rem(padding-bottom, 5px);
             background-color: $white;
             box-decoration-break: clone;
             box-shadow: 10px 0 0 $white, -10px 0 0 $white;
@@ -517,11 +545,15 @@
       @include rem(min-height, 350px);
       background-position: center;
       background-size: cover;
-      border-bottom-color: $navy;
+      border-bottom-color: rgba($brand, 0.8);
       border-bottom-width: 5px;
       border-left: 0;
       border-right: 0;
       border-top: 0;
+
+      &:hover {
+        transform: none;
+      }
 
       a {
         background-color: transparent;
@@ -713,13 +745,5 @@
     .double {
       width: 49%;
     }
-  }
-}
-
-.uomcontent [role="main"] .block-listing .when.range {
-  @include rem(margin-bottom, 13px);
-
-  time:first-child::after {
-    border-color: $highlight;
   }
 }

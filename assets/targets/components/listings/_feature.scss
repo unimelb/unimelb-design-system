@@ -2,6 +2,7 @@
   @include listing;
 
   li {
+    @include padding-trailer(1);
     border-top: 0 none;
     text-align: center;
   }
@@ -25,9 +26,17 @@
   }
 
   p {
-    @include padding-trailer(1);
     margin-left: 0;
     text-align: left;
+  }
+
+  &.listing__crop-height figure {
+    @include rem(height, 340px);
+
+    img {
+      @include rem(min-height, 340px);
+      max-width: none;
+    }
   }
 
   @include breakpoint(tablet) {
@@ -38,7 +47,7 @@
 
   @include breakpoint(desktop) {
     li {
-      width: 49%;
+      width: 49.7%;
     }
 
     li:nth-child(4n+1) {
@@ -73,9 +82,17 @@
     text-align: left;
   }
 
+  &.listing__crop-height figure {
+    @include rem(height, 280px);
+
+    img {
+      @include rem(min-height, 280px);
+    }
+  }
+
   @include breakpoint(desktop) {
     li {
-      width: 32.5%;
+      width: 32.9%;
     }
 
     li:nth-child(2n+1) {

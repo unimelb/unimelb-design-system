@@ -26,6 +26,11 @@
     display: block;
   }
 
+  figure {
+    margin: 0;
+    overflow: hidden;
+  }
+
   & > ul > li {
     & > a,
     & > .with-dropdown > a {
