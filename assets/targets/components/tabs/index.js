@@ -45,24 +45,27 @@ function Tabs(el, props) {
  * Set up the tab panels and event listeners.
  */
 Tabs.prototype.setup = function() {
-  var recs, i, tabs;
+  var i, tab;
 
-  // Hide all tabs by default
-  for (i = 0, recs = this.el.querySelectorAll('[role="tabpanel"]'); i < recs.length; i++) {
-    if (recs[i].parentElement === this.el) { // exclude panels of any nested tabs component
-      recs[i].style.display = 'none';
-      this.props.panels.push(recs[i]);
+  // Hide all panels by default
+  var panels = this.el.querySelectorAll('[role="tabpanel"]');
+  for (i = panels.length - 1; i >= 0; i--) {
+    if (panels[i].parentElement === this.el) { // exclude panels of any nested tabs component
+      panels[i].style.display = 'none';
+      this.props.panels.push(panels[i]);
     }
   }
 
   // Handle clicks on tabs
-  for (i=this.props.tabs.length - 1; i >= 0; i--) {
-    this.props.tabs[i].addEventListener('click', this.handleClick.bind(this));
+  for (i = this.props.tabs.length - 1; i >= 0; i--) {
+    tab = this.props.tabs[i];
+    tab.addEventListener('click', this.handleClick.bind(this, tab));
   }
 
-  // Handle internal clicks
-  for (tabs=this.el.querySelectorAll('[data-tab]'), i = tabs.length - 1; i >= 0; i--) {
-    tabs[i].addEventListener('click', this.handleInternalClick.bind(this));
+  // Handle clicks on internal tab links
+  var tabLinks = this.el.querySelectorAll('[data-tab]');
+  for (i = tabLinks.length - 1; i >= 0; i--) {
+    tabLinks[i].addEventListener('click', this.handleInternalClick.bind(this, tabLinks[i]));
   }
 };
 
@@ -239,32 +242,22 @@ Tabs.prototype.handleArrowClick = function(direction) {
 
 /**
  * Handle clicks on tabs.
+ * @param {Element} tab
  * @param {Event} e
  */
-Tabs.prototype.handleClick = function(e) {
-  // Prevent default anchor click handler from being called
+Tabs.prototype.handleClick = function(tab, e) {
+  // Prevent any other click handlers from being called (i.e. the default anchor click handler for smooth scrolling)
   e.stopImmediatePropagation();
-  // Default action now has to be prevented too
+  // Default action now has to be prevented too (was handled by default anchor click handler)
   e.preventDefault();
 
-  var target = e.target;
-
-  // IE8/no-svg fallback
-  if (target.classList.contains('icon-label')) {
-    target = target.parentNode.parentNode;
-  }
-
-  if (target.classList.contains('icon-over')) {
-    return;
-  }
-
-  var href = target.getAttribute('href');
+  var href = tab.getAttribute('href');
   if (href.charAt(0) === '#') {
-    this.move(target, true);
+    this.move(tab, true);
 
     // If navigation tab, scroll
     if (this.props.isNav) {
-      smoothScrollTo(target);
+      smoothScrollTo(tab);
     }
   }
 
@@ -311,16 +304,26 @@ Tabs.prototype.setLocation = function(href) {
 };
 
 /**
- * Handle internal clicks (i.e. to navigate to another tab from within the content).
+ * Handle clicks on internal tab links (i.e. to navigate to another tab from within the content).
+ * @param {Element} link
  * @param {Event}
  */
-Tabs.prototype.handleInternalClick = function(e) {
-  // Match index - could potentially match ID instead
-  var target = e.target;
-  var idx = target.getAttribute('data-tab') - 1;
+Tabs.prototype.handleInternalClick = function(link, e) {
+  // Prevent any other click handlers from being called (i.e. the default anchor click handler for smooth scrolling)
+  e.stopImmediatePropagation();
+  // Default action now has to be prevented too (was handled by default anchor click handler)
+  e.preventDefault();
 
-  this.moveindex(idx);
-  this.setLocation(this.props.tabs[idx].hash);
+  // Parse index of tab to navigate to
+  var index = parseInt(link.getAttribute('data-tab'), 10) - 1;
+
+  this.moveindex(index);
+  this.setLocation(this.props.tabs[index].hash);
+
+  // If navigation tab, scroll
+  if (this.props.isNav) {
+    smoothScrollTo(this.props.tabs[index]);
+  }
 };
 
 /**

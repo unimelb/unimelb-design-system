@@ -159,10 +159,6 @@
       & > [data-icon="lock"] {
         @include rem(width, 20px);
         @include rem(height, 20px);
-
-        & > .icon-over {
-          display: block;
-        }
       }
     }
   }

@@ -150,13 +150,6 @@
           display: inline-block;
           line-height: 1;
           padding: 0;
-
-          span.icon-over {
-            @include rem(height, 20px);
-            @include rem(margin-left, -20px);
-            @include rem(width, 20px);
-            vertical-align: top;
-          }
         }
       }
 
@@ -406,13 +399,6 @@
     display: inline-block;
     line-height: 1;
     padding: 0;
-
-    span.icon-over {
-      @include rem(height, 20px);
-      @include rem(margin-left, -20px);
-      @include rem(width, 20px);
-      vertical-align: top;
-    }
   }
 
   @include breakpoint(desktop) {
