@@ -8,55 +8,22 @@ function Accordion(el, props) {
   this.el = el;
   this.props = props;
 
+  // Don't initialise twice
+  if (this.el.hasAttribute('data-bound')) return;
+  this.el.setAttribute('data-bound', 'true');
+
   this.props.container = this.el.parentNode;
   this.props.hidden = this.props.container.querySelector('.accordion__hidden');
 
-  this.setupCloseButton();
   this.el.setAttribute('tabindex', '0');
   this.props.hidden.setAttribute('tabindex', '-1'); // make panel focusable
 
-  // Event bindings
-  if (!this.el.hasAttribute('data-bound')) {
-    this.el.addEventListener('click', this.handleClick.bind(this));
-    window.addEventListener('keydown', this.clickWithEnter.bind(this));
+  this.setupCloseButton();
+  this.el.addEventListener('click', this.handleClick.bind(this));
 
-    this.el.setAttribute('data-bound', true);
-  }
+  // HACK: IE9 doesn't fire click event when pressing Enter
+  window.addEventListener('keydown', this.clickWithEnter.bind(this));
 }
-
-Accordion.prototype.handleClick = function(e) {
-  e.preventDefault();
-
-  // Determine overall container to check for single focus
-  var container = this.props.container.parentNode;
-
-  // Reasonable expectations, if the trigger is wrapped
-  if (container.nodeName == 'TR' || container.parentNode.nodeName == 'TR') {
-    while (container.nodeName != 'TABLE') {
-      if (container.parentNode)
-        container = container.parentNode;
-    }
-  }
-
-  if (container && container.getAttribute('data-single-focus') === '') {
-    for (var recs=container.querySelectorAll('.accordion__visible'), i=recs.length - 1; i >= 0; i--) {
-      if (recs[i] !== this.props.container) {
-        recs[i].classList.remove('accordion__visible');
-      }
-    }
-  }
-
-  this.props.container.classList.toggle('accordion__visible');
-
-  // Manage focus smartly to avoid having to remove the outline with CSS
-  if (this.props.container.classList.contains('accordion__visible')) {
-    // Focus panel on open
-    this.props.hidden.focus();
-  } else {
-    // Blur target on close
-    this.el.blur();
-  }
-};
 
 Accordion.prototype.setupCloseButton = function() {
   var close = this.props.container.querySelector('.accordion__close');
@@ -82,6 +49,73 @@ Accordion.prototype.setupCloseButton = function() {
   }
 };
 
+Accordion.prototype.handleClick = function(e) {
+  e.preventDefault();
+
+  // Determine overall container to check for single focus
+  var container = this.props.container.parentNode;
+
+  // Reasonable expectations, if the trigger is wrapped
+  if (container.nodeName == 'TR' || container.parentNode.nodeName == 'TR') {
+    while (container.nodeName != 'TABLE') {
+      if (container.parentNode)
+        container = container.parentNode;
+    }
+  }
+
+  var isSingleFocus = container.hasAttribute('data-single-focus');
+  if (isSingleFocus) {
+    // Save the distance of the accordion trigger from the top of the viewport
+    var offset = this.el.getBoundingClientRect().top;
+
+    for (var recs=container.querySelectorAll('.accordion__visible'), i=recs.length - 1; i >= 0; i--) {
+      if (recs[i] !== this.props.container) {
+        recs[i].classList.remove('accordion__visible');
+      }
+    }
+  }
+
+  // Toggle panel visibility
+  this.props.container.classList.toggle('accordion__visible');
+
+  // Deal with focus and scrolling issues
+  if (isSingleFocus) {
+    // If accordion is single-focus, wait for layout to update then restore scroll position
+    setTimeout(this.restoreScrollPosition.bind(this, offset));
+  } else {
+    // Otherwise, skip straight to managing focus
+    this.manageFocus();
+  }
+};
+
+/**
+ * Restore scroll position if needed.
+ * https://github.com/unimelb/unimelb-design-system/issues/533
+ * @param {Number} oldOffset - the offset before toggling
+ */
+Accordion.prototype.restoreScrollPosition = function (oldOffset) {
+  // If the element has shifted out of view, bring it back to the same position
+  var newOffset = this.el.getBoundingClientRect().top;
+  if (newOffset < 0) window.scrollBy(0, newOffset - oldOffset);
+
+  // Since setting focus can affect scrolling, it must be done after restoring the scroll position
+  this.manageFocus();
+};
+
+/**
+ * Manage focus smartly to avoid having to remove the outline with CSS.
+ */
+Accordion.prototype.manageFocus = function () {
+  if (this.props.container.classList.contains('accordion__visible')) {
+    // Focus panel on open
+    this.props.hidden.focus();
+  } else {
+    // Blur target on close
+    this.el.blur();
+  }
+};
+
+// HACK: IE9 doesn't fire click event when pressing Enter
 Accordion.prototype.clickWithEnter = function(e) {
   var elem = document.activeElement;
   if (elem == this.el) {
