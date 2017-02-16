@@ -7,8 +7,6 @@
   width: 100%;
 
   th {
-    @include subtitle;
-    @include rem(font-size, 14px);
     @include rem(padding, 30px 0 10px);
     border-bottom: 1px solid $lightergray;
     border-left: 0 none;
@@ -16,7 +14,6 @@
     border-top: 0 none;
     padding-left: 0;
     padding-right: 3%;
-
     text-align: left;
 
     @include breakpoint(tablet) {
@@ -25,8 +22,12 @@
     }
   }
 
-  td {
+  thead th {
+    @include subtitle;
     @include rem(font-size, 14px);
+  }
+
+  td {
     @include rem(padding-bottom, 10px);
     @include rem(padding-top, 10px);
     border-bottom: 1px solid $lightergray;
@@ -45,10 +46,9 @@
 
   .accordion__title {
     color: $cyan;
-    text-decoration: underline;
 
     &:hover {
-      color: darken($cyan, 15%);
+      text-decoration: underline;
     }
   }
 
@@ -179,6 +179,10 @@
     h2 {
       margin: 0;
     }
+  }
+
+  tbody.accordion__visible tr.accordion__title {
+    font-weight: bold;
   }
 
   tbody.accordion__visible tr.accordion__hidden {
