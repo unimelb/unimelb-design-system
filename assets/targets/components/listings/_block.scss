@@ -32,6 +32,10 @@
     line-height: 1.5;
     margin: 0;
     text-align: left;
+
+    &:last-of-type {
+      @include rem(padding-bottom, 15px);
+    }
   }
 
   strong {
@@ -52,6 +56,7 @@
   }
 
   .meta {
+    @include clearfix;
     @include rem(font-size, 12px);
     @include rem(padding, 5px 15px);
     background-color: rgba($white, .9);
@@ -245,6 +250,8 @@
 
 .uomcontent [role="main"] .block-listing {
   .crop-height {
+    margin-top: 1em;
+
     img {
       display: block;
       height: auto;
@@ -262,7 +269,7 @@
 
     @include breakpoint(tablet) {
       bottom: 0;
-      height: 180px;
+      height: 210px;
       overflow: hidden;
       position: absolute;
 
@@ -318,7 +325,7 @@
     }
 
     .top-unit {
-      @include rem(height, 395px);
+      @include rem(height, 410px);
       @include rem(padding-top, 15px);
       overflow: hidden;
       position: relative;
@@ -396,7 +403,7 @@
         background-color: rgba($highlight, .8);
         bottom: 0;
         font-weight: $regular;
-        line-height: 1.6;
+        line-height: 1.1;
         margin: 0;
         position: absolute;
 
@@ -429,6 +436,7 @@
           }
 
           span {
+            @include rem(padding-bottom, 5px);
             background-color: $white;
             box-decoration-break: clone;
             box-shadow: 10px 0 0 $white, -10px 0 0 $white;

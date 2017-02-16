@@ -17,8 +17,8 @@
   box-sizing: content-box;
 
   li {
-    @include padding-leader(0.5);
-    @include padding-trailer(0.5);
+    @include padding-leader(.5);
+    @include padding-trailer(.5);
     border-top: 1px solid darken($lightgray, 5%);
     list-style-type: none;
     margin-bottom: 0;
@@ -40,6 +40,7 @@
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
+    overflow: hidden;
     text-align: center;
   }
 
@@ -66,15 +67,18 @@
     width: auto;
   }
 
-  @include breakpoint(tablet) {
+  &.crop-height figure {
+    @include rem(height, 200px);
+
     img {
-      margin-left: 0;
+      @include rem(min-height, 200px);
     }
   }
 
   @include breakpoint(tablet) {
     @include padding-leader(2);
     img {
+      margin-left: 0;
       max-width: 100%;
     }
 
