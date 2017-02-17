@@ -5,8 +5,16 @@
 .uomcontent [role="main"] pre.html {
   border: 0;
   border-radius: 0;
+  display: none;
   height: 400px;
 }
+
+@media screen and (min-width: 768px) {
+  .uomcontent [role="main"] pre.html {
+    display: block;
+  }
+}
+
 
 .uomcontent [role="main"] pre.html div {
   max-width: none;

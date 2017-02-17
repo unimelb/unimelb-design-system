@@ -93,3 +93,98 @@
   .circle.cherry {
     background-color: #df0620; }
 
+.uomcontent [role="main"] header .mid-align h1.white {
+  color: rgba(255, 255, 255, .4);
+  font-size: 60px;
+  font-size: 3.75rem;
+  font-weight: 100;
+  letter-spacing: -5px;
+  line-height: 108px;
+  line-height: 6.75rem;
+
+  -webkit-animation-name: shimmer;
+  -moz-animation-name: shimmer;
+  animation-name: shimmer;
+
+  -webkit-animation-delay: 2s;
+  -moz-animation-delay: 2s;
+  animation-delay: 2s;
+
+  -webkit-animation-duration: 8s;
+  -moz-animation-duration: 8s;
+  animation-duration: 8s;
+
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+
+  background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+  background: gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
+
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+
+  background-position: -125px 0;
+  background-repeat: no-repeat;
+
+  -webkit-background-size: 125px 100%;
+  -moz-background-size: 125px 100%;
+  background-size: 125px 100%;
+
+  display: inline;
+  transform-style: preserve-3d;
+}
+@-moz-keyframes shimmer {
+  0%   { background-position: -125px 0; }
+  20%  { background-position: 500px 0; }
+  100% { background-position: 500px 0; }
+}
+@-webkit-keyframes shimmer {
+  0%   { background-position: -125px 0; }
+  20%  { background-position: 500px 0; }
+  100% { background-position: 500px 0; }
+}
+@-o-keyframes shimmer {
+  0%   { background-position: -125px 0; }
+  20%  { background-position: 500px 0; }
+  100% { background-position: 500px 0; }
+}
+@keyframes shimmer {
+  0%   { background-position: -125px 0; }
+  20%  { background-position: 500px 0; }
+  100% { background-position: 500px 0; }
+}
+
+@media screen and (min-width: 480px) {
+  .uomcontent [role="main"] header .mid-align h1.white {
+    font-size: 100px;
+    font-size: 6.25rem;
+  }
+}
+
+.uomcontent h1.complimentary {
+  background-attachment: fixed;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: url(/assets/versions/v6.0.jpg);
+
+  color: rgba(0,0,0,0);
+  font-size: 120px;
+  font-size: 7.5rem;
+  font-weight: 600;
+  letter-spacing: -5px;
+  line-height: 108px;
+  line-height: 6.75rem;
+  text-align: center;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, .3);
+  transform-style: preserve-3d;
+}
+
+.ie9 .uomcontent h1.complimentary,
+.ie10 .uomcontent h1.complimentary,
+.ie11 .uomcontent h1.complimentary {
+  background-image: none;
+  color: #000;
+}

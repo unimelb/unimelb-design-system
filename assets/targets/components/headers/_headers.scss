@@ -231,6 +231,13 @@
   }
 }
 
+.uomcontent [role="main"] .fixed-bg {
+  background-attachment: fixed;
+  background-color: $black;
+  background-position: top center;
+  background-size: inherit;
+}
+
 .uomcontent .floating + [role="main"] {
   header,
   & > header:first-child {

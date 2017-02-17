@@ -28,6 +28,14 @@
     &:first-child {
       border-top: 0 none;
     }
+
+    &.alt {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 3%;
+      padding-right: 3%;
+      width: 100%;
+    }
   }
 
   a {
@@ -47,7 +55,7 @@
   img {
     display: block;
     float: none;
-    margin: 0 auto;
+    margin: 0 auto 0 0;
     max-width: 100%;
   }
 
@@ -61,7 +69,6 @@
 
   p {
     @include adjust-font-size-to(13px);
-    // @include rem(margin-left, 115px);
     color: $midgray;
     padding: 0;
     width: auto;
@@ -72,13 +79,13 @@
 
     img {
       @include rem(min-height, 200px);
+      max-width: none;
     }
   }
 
   @include breakpoint(tablet) {
     @include padding-leader(2);
     img {
-      margin-left: 0;
       max-width: 100%;
     }
 
@@ -92,6 +99,12 @@
       display: inline-block;
       vertical-align: top;
       width: 49.5%;
+
+      &.alt {
+        padding-left: 0;
+        padding-right: 0;
+        width: 49.5%;
+      }
     }
 
     li:nth-child(4n+1) {
@@ -109,12 +122,14 @@
   }
 
   @include breakpoint(desktop) {
-    li {
+    li,
+    li.alt {
       width: 32.9%;
     }
   }
   @include breakpoint(wide) {
-    li {
+    li,
+    li.alt {
       width: 24.7%;
     }
   }

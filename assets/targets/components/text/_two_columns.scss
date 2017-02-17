@@ -21,11 +21,6 @@
     padding: 0;
   }
 
-  svg {
-    @include rem(margin-left, 15px);
-    @include rem(margin-right, 15px);
-  }
-
   & > section {
     margin: 0;
     padding: 0;
@@ -59,6 +54,11 @@
   @include breakpoint(desktop) {
     @include rem(max-width, $w-lge);
     display: table;
+
+    svg {
+      @include rem(margin-left, 15px);
+      @include rem(margin-right, 15px);
+    }
   }
 }
 
