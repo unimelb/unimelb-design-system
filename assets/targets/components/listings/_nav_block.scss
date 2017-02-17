@@ -2,9 +2,9 @@
   @include padding-leader(3);
   @include padding-trailer(3);
   @include rem(max-width, 1400px);
-  @include rem(padding-left, 25px);
-  @include rem(padding-right, 25px);
   margin: 0 auto;
+  padding-left: 3%;
+  padding-right: 3%;
 
   h1.aligned-title {
     @include rem(padding-bottom, 48px);
