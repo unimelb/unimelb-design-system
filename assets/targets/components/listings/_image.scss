@@ -5,25 +5,20 @@
   padding: 0 1rem 2.25rem;
 
   &__item {
-    border-bottom: 1px solid $lightergray;
     color: inherit;
     display: block;
     list-style-type: none;
-    margin: 0 0 .75rem;
+    margin: 0 0 1rem;
     max-width: none;
     padding: 0;
     width: auto;
-
-    &:last-child {
-      border-bottom: none;
-    }
   }
 
   &__link {
     color: inherit;
     display: block;
     outline-offset: 1px;
-    padding-bottom: .75rem;
+    padding-bottom: .5rem;
     text-decoration: inherit;
 
     &:hover,
@@ -40,7 +35,7 @@
     background-position: center;
     background-size: cover;
     margin-bottom: .75rem;
-    padding-top: 61.8%; /* golden ratio */
+    padding-top: 62.5%; /* 16/10 */
   }
 
   &__heading,
@@ -71,14 +66,16 @@
     padding: 0 .5rem 1.75rem;
 
     .image-listing__item {
-      border-bottom: none;
-      float: left;
-      margin-bottom: 1.25rem;
-      padding: 0 .5rem;
-      width: 50%;
+      margin-bottom: 1.5rem;
+    }
 
-      &:nth-child(2n+1) {
-        clear: left;
+    &--four {
+      .image-listing__item {
+        float: left;
+        padding: 0 .5rem;
+        width: 50%;
+
+        &:nth-child(2n+1) { clear: left; }
       }
     }
   }
@@ -86,21 +83,37 @@
   @include breakpoint(desktop) {
     padding: 0 .625rem;
 
-    .image-listing__item {
-      padding: 0 .625rem;
-      width: 33.33%;
+    &--two,
+    &--three {
+      .image-listing__item {
+        float: left;
+        padding: 0 .5rem;
+        width: 50%;
 
-      &:nth-child(2n+1) { clear: none; }
-      &:nth-child(3n+1) { clear: left; }
+        &:nth-child(2n+1) { clear: left; }
+      }
+    }
+
+    &--three,
+    &--four {
+      .image-listing__item {
+        padding: 0 .625rem;
+        width: 33.33%;
+
+        &:nth-child(2n+1) { clear: none; }
+        &:nth-child(3n+1) { clear: left; }
+      }
     }
   }
 
   @include breakpoint(wide) {
-    .image-listing__item {
-      width: 25%;
+    &--four {
+      .image-listing__item {
+        width: 25%;
 
-      &:nth-child(3n+1) { clear: none; }
-      &:nth-child(4n+1) { clear: left; }
+        &:nth-child(3n+1) { clear: none; }
+        &:nth-child(4n+1) { clear: left; }
+      }
     }
   }
 }
