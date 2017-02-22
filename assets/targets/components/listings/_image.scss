@@ -1,0 +1,106 @@
+.uomcontent .image-listing {
+  @include rem(max-width, $w-lge);
+  color: $midgray;
+  line-height: 1.625;
+  padding: 0 1rem 2.25rem;
+
+  &__item {
+    border-bottom: 1px solid $lightergray;
+    color: inherit;
+    display: block;
+    list-style-type: none;
+    margin: 0 0 .75rem;
+    max-width: none;
+    padding: 0;
+    width: auto;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__link {
+    color: inherit;
+    display: block;
+    outline-offset: 1px;
+    padding-bottom: .75rem;
+    text-decoration: inherit;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+    }
+
+    &:hover .image-listing__heading {
+      text-decoration: underline;
+    }
+  }
+
+  &__img {
+    background-position: center;
+    background-size: cover;
+    margin-bottom: .75rem;
+    padding-top: 61.8%; /* golden ratio */
+  }
+
+  &__heading,
+  &__excerpt {
+    margin: 0;
+    max-width: none;
+    width: auto;
+  }
+
+  /* includes overrides for h2, h3 and h4 */
+  &__heading {
+    color: $darkblue;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: inherit;
+    line-height: 1.75;
+    padding: 0;
+    text-transform: none;
+  }
+
+  &__excerpt {
+    font-size: 85%;
+    padding-bottom: 0;
+  }
+
+  @include breakpoint(tablet) {
+    @include clearfix;
+    padding: 0 .5rem 1.75rem;
+
+    .image-listing__item {
+      border-bottom: none;
+      float: left;
+      margin-bottom: 1.25rem;
+      padding: 0 .5rem;
+      width: 50%;
+
+      &:nth-child(2n+1) {
+        clear: left;
+      }
+    }
+  }
+
+  @include breakpoint(desktop) {
+    padding: 0 .625rem;
+
+    .image-listing__item {
+      padding: 0 .625rem;
+      width: 33.33%;
+
+      &:nth-child(2n+1) { clear: none; }
+      &:nth-child(3n+1) { clear: left; }
+    }
+  }
+
+  @include breakpoint(wide) {
+    .image-listing__item {
+      width: 25%;
+
+      &:nth-child(3n+1) { clear: none; }
+      &:nth-child(4n+1) { clear: left; }
+    }
+  }
+}
