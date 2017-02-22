@@ -1,8 +1,8 @@
 .uomcontent .image-listing {
   @include rem(max-width, $w-lge);
   color: $midgray;
-  line-height: 1.625;
-  padding: 0 1rem 2.25rem;
+  line-height: 1.6;
+  padding: 0 1rem 2rem;
 
   &__item {
     color: inherit;
@@ -51,7 +51,8 @@
     font-size: 1em;
     font-weight: 400;
     letter-spacing: inherit;
-    line-height: 1.75;
+    line-height: 1.4;
+    margin-bottom: .125rem;
     padding: 0;
     text-transform: none;
   }
@@ -61,15 +62,25 @@
     padding-bottom: 0;
   }
 
+  &--two,
+  &--three {
+    .image-listing__heading {
+      font-size: 1.25em;
+    }
+  }
+
   @include breakpoint(tablet) {
     @include clearfix;
-    padding: 0 .5rem 1.75rem;
+    padding-bottom: 1.5rem;
 
     .image-listing__item {
       margin-bottom: 1.5rem;
     }
 
     &--four {
+      padding-left: .5rem;
+      padding-right: .5rem;
+
       .image-listing__item {
         float: left;
         padding: 0 .5rem;
@@ -81,13 +92,16 @@
   }
 
   @include breakpoint(desktop) {
-    padding: 0 .625rem;
+    padding: 0 .625rem 1.5rem;
+
+    .image-listing__item {
+      padding: 0 .625rem;
+    }
 
     &--two,
     &--three {
       .image-listing__item {
         float: left;
-        padding: 0 .5rem;
         width: 50%;
 
         &:nth-child(2n+1) { clear: left; }
@@ -97,7 +111,6 @@
     &--three,
     &--four {
       .image-listing__item {
-        padding: 0 .625rem;
         width: 33.33%;
 
         &:nth-child(2n+1) { clear: none; }
