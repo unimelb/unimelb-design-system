@@ -83,7 +83,7 @@
   }
 
   &[data-sortable] {
-    th {
+    th:not([data-sort-skip]) {
       cursor: pointer;
     }
 

@@ -47,18 +47,20 @@ SortableTable.prototype.setupHeadings = function() {
 
   // Bind click events
   for (var i=this.props.cols.length - 1; i >= 0; i--) {
-    this.props.cols[i].addEventListener('click', this.handleColClick.bind(this));
-    if (this.props.cols[i].hasAttribute('data-sort-initial'))
-      this.sortByCol(this.props.cols[i]);
+    if (!this.props.cols[i].hasAttribute('data-sort-skip')) {
+      if (!this.props.cols[i].hasAttribute('tabindex'))
+        this.props.cols[i].setAttribute('tabindex', 0);
 
-    if (!this.props.cols[i].hasAttribute('tabindex'))
-      this.props.cols[i].setAttribute('tabindex', 0);
+      var place = document.createElement('span');
+      place.classList.add('sortable');
+      this.props.cols[i].appendChild(place);
 
-    var place = document.createElement('span');
-    place.classList.add('sortable');
-    this.props.cols[i].appendChild(place);
+      window.addEventListener('keydown', this.selectWithKeyboard);
 
-    window.addEventListener('keydown', this.selectWithKeyboard);
+      this.props.cols[i].addEventListener('click', this.handleColClick.bind(this));
+      if (this.props.cols[i].hasAttribute('data-sort-initial'))
+        this.sortByCol(this.props.cols[i]);
+    }
   }
 };
 
