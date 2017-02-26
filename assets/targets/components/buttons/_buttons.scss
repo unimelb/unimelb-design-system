@@ -152,6 +152,22 @@
   }
 }
 
+@mixin arrow-left {
+  &::before {
+    @include rem(font-size, 20px);
+    @include rem(padding-right, 5px);
+    content: '\2190';
+    line-height: 0;
+  }
+
+  &:before {
+    @include rem(font-size, 20px);
+    @include rem(padding-right, 5px);
+    content: '\2190';
+    line-height: 0;
+  }
+}
+
 @mixin outlinebutton {
   @include rem(border-radius, 5px);
   @include rem(border-width, 2px);
@@ -284,6 +300,10 @@
 
   .with-arrow {
     @include arrow-right;
+  }
+
+  .with-arrow-left {
+    @include arrow-left;
   }
 
   .button-hero {
