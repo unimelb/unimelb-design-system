@@ -1,24 +1,24 @@
 .uomcontent .simple-listing {
   @include rem(max-width, $w-lge);
+  @include rem(padding, 0 16px 32px);
   color: $midgray;
   line-height: 1.6;
-  padding: 0 1rem 2rem;
 
   &__item {
+    @include rem(margin, 0 0 16px);
     color: inherit;
     display: block;
     list-style-type: none;
-    margin: 0 0 1rem;
     max-width: none;
     padding: 0;
     width: auto;
   }
 
   &__link {
+    @include rem(padding-bottom, 8px);
     color: inherit;
     display: block;
     outline-offset: 1px;
-    padding-bottom: .5rem;
     text-decoration: inherit;
 
     &:hover,
@@ -32,9 +32,9 @@
   }
 
   &__img {
+    @include rem(margin-bottom, 12px);
     background-position: center;
     background-size: cover;
-    margin-bottom: .75rem;
     padding-top: 62.5%; /* 16/10 */
   }
 
@@ -47,12 +47,12 @@
 
   /* includes overrides for h2, h3 and h4 */
   &__heading {
+    @include rem(margin-bottom, 2px);
     color: $darkblue;
     font-size: 1em;
     font-weight: 400;
     letter-spacing: inherit;
     line-height: 1.4;
-    margin-bottom: .125rem;
     padding: 0;
     text-transform: none;
   }
@@ -79,14 +79,14 @@
   &--text {
     .simple-listing { /* for nesting purposes */
       &__link {
-        padding-top: .25rem;
+        @include rem(padding-top, 4px);
       }
 
       /* underline headings */
       &__heading {
+        @include rem(margin-bottom, 8px);
         color: $lighterblue;
         font-size: 1.25em;
-        margin-bottom: .5rem;
         text-decoration: underline;
       }
 
@@ -100,19 +100,19 @@
 
   @include breakpoint(tablet) {
     @include clearfix;
-    padding-bottom: 1.5rem;
+    @include rem(padding-bottom, 24px);
 
     .simple-listing__item {
-      margin-bottom: 1.5rem;
+      @include rem(margin-bottom, 24px);
     }
 
     &--four {
-      padding-left: .5rem;
-      padding-right: .5rem;
+      @include rem(padding-left, 8px);
+      @include rem(padding-right, 8px);
 
       .simple-listing__item {
+        @include rem(padding, 0 8px);
         float: left;
-        padding: 0 .5rem;
         width: 50%;
 
         &:nth-child(2n+1) { clear: left; }
@@ -121,10 +121,10 @@
   }
 
   @include breakpoint(desktop) {
-    padding: 0 .625rem 1.5rem;
+    @include rem(padding, 0 10px 24px);
 
     .simple-listing__item {
-      padding: 0 .625rem;
+      @include rem(padding, 0 10px);
     }
 
     &--two,
