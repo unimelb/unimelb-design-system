@@ -1,0 +1,75 @@
+ul
+  li Three variants are available to control the layout: <code>simple-listing--four</code>, <code>simple-listing--three</code>, <code>simple-listing--two</code>. <strong>You must always specify a variant</strong>.
+  li Provide images via inline styles with <code>background-image: url(...);</code>. The ideal dimensions depend on the variant used (cf. examples below). All images should have a ratio of 16/10 (62.5%) or they will be cropped.
+  li The heading elements inside the items can be marked with <code>h2</code>, <code>h3</code> or <code>h4</code> depending on the context in which the listing is used. The examples below demonstrate all three cases for testing purposes. If adapting the heading level to the context is too complex, a good default is generally <code>h3</code>.
+
+ul.simple-listing.simple-listing--four
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/435/272/animals);"
+      h3.simple-listing__heading Cras pretium et elit
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/435/272/arch);"
+      h3.simple-listing__heading Consectetur adipisicing elit
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, esse amet. Deleniti dicta dignissimos saepe dolore, incidunt deserunt totam id earum.
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/435/272/nature);"
+      h3.simple-listing__heading Pretium bibendum
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, esse amet.
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/435/272/people);"
+      h3.simple-listing__heading Cras pretium et elit
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet.
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/435/696/people);"
+      h3.simple-listing__heading Portrait image
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, esse amet. Deleniti dicta dignissimos saepe dolore.
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/435/272/any/sepia);"
+      h2.simple-listing__heading Level-2 heading
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, esse amet.
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/435/272/any/grayscale);"
+      h4.simple-listing__heading Level-4 heading
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, esse amet. Deleniti dicta dignissimos.
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/435/272/tech);"
+      h3.simple-listing__heading Heading that is very, very long and takes at least two lines
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet, consectetur adipisicing sit amet.
+
+ul.simple-listing.simple-listing--three
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/736/460/animals);"
+      h3.simple-listing__heading Cras pretium et elit
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/736/460/arch);"
+      h3.simple-listing__heading Consectetur adipisicing elit cras pretium et pretium bibendum
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, esse amet deleniti dicta dignissimos.
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/736/460/nature);"
+      h3.simple-listing__heading Pretium bibendum
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, esse amet. Deleniti dicta dignissimos saepe dolore, incidunt deserunt totam id earum.
+
+ul.simple-listing.simple-listing--two
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/736/460/any/sepia);"
+      h3.simple-listing__heading Cras pretium et elit
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+  li.simple-listing__item
+    a.simple-listing__link href=""
+      .simple-listing__img style="background-image: url(http://placeimg.com/736/460/any/grayscale);"
+      h3.simple-listing__heading Consectetur adipisicing elit cras
+      p.simple-listing__excerpt Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, esse amet. Deleniti dicta dignissimos saepe dolore, incidunt deserunt totam id earum.

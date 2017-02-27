@@ -1,0 +1,178 @@
+.uomcontent .simple-listing {
+  @include rem(max-width, $w-lge);
+  @include rem(padding, 0 16px 32px);
+  color: $midgray;
+  line-height: 1.6;
+
+  &__item {
+    @include rem(margin, 0 0 16px);
+    color: inherit;
+    display: block;
+    list-style-type: none;
+    max-width: none;
+    padding: 0;
+    width: auto;
+  }
+
+  &__link {
+    @include rem(padding-bottom, 8px);
+    color: inherit;
+    display: block;
+    outline-offset: 1px;
+    text-decoration: inherit;
+
+    &:hover,
+    &:focus {
+      color: inherit;
+    }
+
+    &:hover .simple-listing__heading {
+      text-decoration: underline;
+    }
+  }
+
+  &__img {
+    @include rem(margin-bottom, 12px);
+    background-position: center;
+    background-size: cover;
+    padding-top: 62.5%; /* 16/10 */
+  }
+
+  &__heading,
+  &__excerpt {
+    margin: 0;
+    max-width: none;
+    width: auto;
+  }
+
+  /* includes overrides for h2, h3 and h4 */
+  &__heading {
+    @include rem(margin-bottom, 2px);
+    color: $darkblue;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: inherit;
+    line-height: 1.4;
+    padding: 0;
+    text-transform: none;
+  }
+
+  &__excerpt {
+    font-size: .85em;
+    padding-bottom: 0;
+  }
+
+  &--one {
+    .simple-listing__excerpt {
+      font-size: 1em;
+    }
+  }
+
+  &--two,
+  &--three {
+    .simple-listing__heading {
+      font-size: 1.25em;
+    }
+  }
+
+  /* text listing variant */
+  &--text {
+    .simple-listing { /* for nesting purposes */
+      &__link {
+        @include rem(padding-top, 4px);
+      }
+
+      /* underline headings */
+      &__heading {
+        @include rem(margin-bottom, 8px);
+        color: $lighterblue;
+        font-size: 1.25em;
+        text-decoration: underline;
+      }
+
+      &__link:hover {
+        .simple-listing__heading {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(tablet) {
+    @include clearfix;
+    @include rem(padding-bottom, 24px);
+
+    .simple-listing__item {
+      @include rem(margin-bottom, 24px);
+    }
+
+    &--four {
+      @include rem(padding-left, 8px);
+      @include rem(padding-right, 8px);
+
+      .simple-listing__item {
+        @include rem(padding, 0 8px);
+        float: left;
+        width: 50%;
+
+        &:nth-child(2n+1) { clear: left; }
+      }
+    }
+  }
+
+  @include breakpoint(desktop) {
+    @include rem(padding, 0 10px 24px);
+
+    .simple-listing__item {
+      @include rem(padding, 0 10px);
+    }
+
+    &--two,
+    &--three {
+      .simple-listing__item {
+        float: left;
+        width: 50%;
+
+        &:nth-child(2n+1) { clear: left; }
+      }
+    }
+
+    &--three,
+    &--four {
+      .simple-listing__item {
+        width: 33.33%;
+
+        &:nth-child(2n+1) { clear: none; }
+        &:nth-child(3n+1) { clear: left; }
+      }
+    }
+
+    &--text {
+      &:not(.simple-listing--four) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      /* reduce max-width of 2 and 3-column text-only listings (making sure to compensate for the items' padding) */
+      &.simple-listing--one,
+      &.simple-listing--two {
+        @include rem(max-width, 720px); /* 700px + 0.625rem * 2 */
+      }
+
+      &.simple-listing--three {
+        @include rem(max-width, 920px); /* 900px + 0.625rem * 2 */
+      }
+    }
+  }
+
+  @include breakpoint(wide) {
+    &--four {
+      .simple-listing__item {
+        width: 25%;
+
+        &:nth-child(3n+1) { clear: none; }
+        &:nth-child(4n+1) { clear: left; }
+      }
+    }
+  }
+}

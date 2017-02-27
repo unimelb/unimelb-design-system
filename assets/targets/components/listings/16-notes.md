@@ -1,1 +1,0 @@
-In this case the whole block should be linked rather than the single h3
