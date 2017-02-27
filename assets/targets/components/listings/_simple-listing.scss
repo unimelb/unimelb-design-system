@@ -58,14 +58,43 @@
   }
 
   &__excerpt {
-    font-size: 85%;
+    font-size: .85em;
     padding-bottom: 0;
+  }
+
+  &--one {
+    .simple-listing__excerpt {
+      font-size: 1em;
+    }
   }
 
   &--two,
   &--three {
     .simple-listing__heading {
       font-size: 1.25em;
+    }
+  }
+
+  /* text listing variant */
+  &--text {
+    .simple-listing { /* for nesting purposes */
+      &__link {
+        padding-top: .25rem;
+      }
+
+      /* underline headings */
+      &__heading {
+        color: $lighterblue;
+        font-size: 1.25em;
+        margin-bottom: .5rem;
+        text-decoration: underline;
+      }
+
+      &__link:hover {
+        .simple-listing__heading {
+          text-decoration: none;
+        }
+      }
     }
   }
 
@@ -115,6 +144,23 @@
 
         &:nth-child(2n+1) { clear: none; }
         &:nth-child(3n+1) { clear: left; }
+      }
+    }
+
+    &--text {
+      &:not(.simple-listing--four) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      /* reduce max-width of 2 and 3-column text-only listings (making sure to compensate for the items' padding) */
+      &.simple-listing--one,
+      &.simple-listing--two {
+        @include rem(max-width, 720px); /* 700px + 0.625rem * 2 */
+      }
+
+      &.simple-listing--three {
+        @include rem(max-width, 920px); /* 900px + 0.625rem * 2 */
       }
     }
   }
