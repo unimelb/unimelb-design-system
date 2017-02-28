@@ -6,7 +6,7 @@
   "author": "University of Melbourne",
   "license": "UNLICENSED",
   "dependencies": {
-    "classlist-polyfill": "^1.0.2",
+    "classlist-polyfill": "unimelb/classlist-polyfill#1.1.20170228",
     "es6-promise": "^4.0.5",
     "just-debounce": "^1.0.0",
     "normalize.css": "^5.0.0",

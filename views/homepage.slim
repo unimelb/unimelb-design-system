@@ -1,10 +1,10 @@
 .floating
 
 div role="main"
-  .contrast-helper style="background-image:url(/assets/versions/#{opts[:version]}.jpg);background-position:bottom center"
+  .contrast-helper.fixed-bg style="background-image:url(/assets/versions/#{opts[:version]}.jpg)"
     header.banner
       .mid-align
-        h1.highlight Web.unimelb
+        h1.white Web.unimelb
         p Everything you need to make a great website @unimelb
         p
           a.button-hero-inverse href="#intro" Get started
@@ -17,7 +17,7 @@ div role="main"
 
   hr.spacer
   section
-    h1.highlight==opts[:version]
+    h1.complimentary==opts[:version]
     p.center
       a.button-hero href="/getting-started" Set up a new site with #{opts[:version]}
 
@@ -66,3 +66,9 @@ div role="main"
       a.button-hero href="/layouts" View example layouts
 
   footer
+    javascript:
+      if (navigator.userAgent.match(/MSIE 10/i) || navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/12\./))
+          document.querySelector('body').addEventListener('mousewheel', function(e) {
+            e.preventDefault();
+            window.scrollTo(0, window.pageYOffset - event.wheelDelta);
+          });
