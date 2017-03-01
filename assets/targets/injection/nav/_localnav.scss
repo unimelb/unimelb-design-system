@@ -157,6 +157,10 @@
         animation: chevronback 1s infinite ease-in-out;
       }
     }
+
+    &--back {
+      background-color: $menu;
+    }
   }
 
   a,
@@ -173,26 +177,6 @@
     &:focus {
       background-color: darken($menu, 3%);
       color: $white;
-    }
-  }
-
-  .back {
-    background-color: $menu;
-    color: $lightblue;
-    color: rgba($white, .6);
-    cursor: pointer;
-
-    &:before {
-      @include rem(font-size, 24px);
-      content: '\2039';
-      float: left;
-      font-weight: $regular;
-      line-height: .85;
-      padding-right: 10px;
-    }
-
-    &:hover:before {
-      animation: chevronback 1s infinite ease-in-out;
     }
   }
 

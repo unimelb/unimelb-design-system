@@ -40,9 +40,9 @@ LocalNav.prototype.initLocalNav = function () {
 
   // Inject close button
   var closeBtn = document.createElement('button');
-  closeBtn.setAttribute('type', 'button');
   closeBtn.className = 'localnav__close button-ui';
   closeBtn.textContent = 'Close';
+  closeBtn.setAttribute('type', 'button');
   this.el.insertBefore(closeBtn, rootMenu);
 
   // Move local nav to root container
@@ -96,11 +96,12 @@ LocalNav.prototype.initNestedMenu = function (item) {
   trigger.addEventListener('click', this.toggleNestedMenu.bind(this, nestedMenu, true));
 
   // Inject button to close nested menu
-  var back = document.createElement('span');
-  back.className = 'back';
-  back.textContent = trigger.textContent;
-  back.addEventListener('click', this.toggleNestedMenu.bind(this, nestedMenu, false));
-  nestedMenu.insertBefore(back, nestedList);
+  var backBtn = document.createElement('button');
+  backBtn.className = 'localnav__close localnav__close--back button-ui';
+  backBtn.textContent = trigger.textContent;
+  backBtn.setAttribute('type', 'button');
+  backBtn.addEventListener('click', this.toggleNestedMenu.bind(this, nestedMenu, false));
+  nestedMenu.insertBefore(backBtn, nestedList);
 };
 
 /**
