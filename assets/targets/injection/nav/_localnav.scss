@@ -196,9 +196,7 @@
     }
   }
 
-  .parent {
-    cursor: pointer;
-
+  .localnav__nested-trigger {
     &:after {
       @include rem(font-size, 24px);
       content: '\203a';

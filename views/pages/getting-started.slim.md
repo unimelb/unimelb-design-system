@@ -62,7 +62,7 @@ section
 
   p To integrate a local nav into your site, include the following structure after the <code>div role="main"</code>.
 
-  p For nested navigation, use a <code>div class="inner"</code> as demonstrated below.
+  p For nested navigation, use a <code>div class="inner"</code> as demonstrated below. You can have multiple levels of nesting, but this is not recommended. If your system doesn't allow you to add <code>inner</code> containers, you may omit them and just use nested lists.
 
 pre: code.html
   ==convert_tags

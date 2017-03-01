@@ -7,6 +7,7 @@
 function LocalNav(el, props) {
   this.el = el;
   this.props = props;
+  this.props.rootMenu = this.el.querySelector('ul'); // first `ul`
 
   // Don't initialise local nav twice
   if (this.el.hasAttribute('data-bound')) return;
@@ -14,14 +15,17 @@ function LocalNav(el, props) {
 
   this.initLocalNav();
   this.initMetaMenu();
-  this.initNestedMenus();
+
+  // Loop through all list items (including nested items) looking for nested menus
+  var items = [].slice.call(this.props.rootMenu.querySelectorAll('li'));
+  items.forEach(this.initNestedMenu.bind(this));
 }
 
 /**
  * Initialise local nav and move it to the root container of the page.
  */
 LocalNav.prototype.initLocalNav = function () {
-  var rootMenu = this.el.querySelector('ul'); // first `ul`
+  var rootMenu = this.props.rootMenu;
   var absRootPath = this.el.getAttribute('data-absolute-root') || '/';
 
   // Retrieve nav title and remove it from the DOM
@@ -67,26 +71,36 @@ LocalNav.prototype.initMetaMenu = function () {
 };
 
 /**
- * Initialise nested menus.
+ * Initialise the first nested menu inside a list item, if one exists.
+ * @param {Element} item
  */
-LocalNav.prototype.initNestedMenus = function () {
-  var nestedMenus = this.el.querySelectorAll('.inner');
-  var menu, trigger, back;
+LocalNav.prototype.initNestedMenu = function (item) {
+  // Look for first `inner` container and nested list
+  var nestedMenu = item.querySelector('.inner');
+  var nestedList = item.querySelector('ul');
+  if (!nestedList) return; // no nested menu found
 
-  for (i = nestedMenus.length - 1; i >= 0; i--) {
-    menu = nestedMenus[i];
-
-    trigger = menu.parentNode.querySelector('a');
-    trigger.classList.add('parent');
-
-    back = document.createElement('span');
-    back.className = 'back';
-    back.innerHTML = trigger.textContent;
-    menu.insertBefore(back, menu.firstChild);
-
-    trigger.addEventListener('click', this.toggleNestedMenu.bind(this, menu, true));
-    back.addEventListener('click', this.toggleNestedMenu.bind(this, menu, false));
+  // If `inner` container is omitted, inject it
+  // Second condition is for when `inner` is omitted at current nesting level, but provided at deeper level
+  if (!nestedMenu || nestedList.parentElement !== nestedMenu) {
+    // Wrap list with `inner` container
+    nestedMenu = document.createElement('div');
+    nestedMenu.className = 'inner';
+    nestedMenu.appendChild(nestedList);
+    item.appendChild(nestedMenu);
   }
+
+  // Look for the item's link and use it as the trigger for opening the nested menu
+  var trigger = item.querySelector('a');
+  trigger.classList.add('localnav__nested-trigger');
+  trigger.addEventListener('click', this.toggleNestedMenu.bind(this, nestedMenu, true));
+
+  // Inject button to close nested menu
+  var back = document.createElement('span');
+  back.className = 'back';
+  back.textContent = trigger.textContent;
+  back.addEventListener('click', this.toggleNestedMenu.bind(this, nestedMenu, false));
+  nestedMenu.insertBefore(back, nestedList);
 };
 
 /**
