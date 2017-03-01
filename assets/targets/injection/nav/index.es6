@@ -28,16 +28,11 @@ function InjectNav(props) {
   for (var prop in elements) { this.props[prop] = elements[prop]; }
 
   // Set up a blanket object
-  this.props.blanket = new Blanket({
-    root: this.props.root
-  });
+  this.props.blanket = new Blanket({ root: this.props.root });
 
   // Set up local nav
   if (this.props.localNav) {
-    new LocalNav({
-      root: this.props.root,
-      localnav: this.props.localNav
-    });
+    new LocalNav(this.props.localNav, { root: this.props.root });
   }
 
   // Inialise nav state, render global sitemap and bind events
