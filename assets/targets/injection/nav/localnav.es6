@@ -2,98 +2,100 @@
  * Local navigation
  * @param  {Element} el
  * @param  {Object} props
+ *         {Element} root - the root element of the page with class `uomcontent`
  */
 function LocalNav(el, props) {
   this.el = el;
+
+  // Don't initialise local nav twice
+  if (this.el.hasAttribute('data-bound')) return;
+  this.el.setAttribute('data-bound', true);
+
   this.props = props;
+  this.props.rootMenu = this.el.querySelector('h2 + ul');
+  this.props.metaMenu = this.el.querySelector('ul.meta');
+  this.props.absRootPath = this.el.getAttribute('data-absolute-root') || '/';
 
   this.moveLocalNav();
-  this.initNestedLists();
+  this.initMetaMenu();
+  this.initNestedMenus();
 }
 
 LocalNav.prototype.moveLocalNav = function () {
-  if (this.el.querySelector('a.sitemap-link')) return;
-
-  // Move local nav outside page container
-  var rootmenu, lastmenu, noderoot;
-
-  // Check for deprecated markup
-  noderoot = this.el.querySelector('.w');
-  if (!noderoot)
-    noderoot = this.el;
-
-  for (var recs=noderoot.childNodes, max=recs.length, i=0; i < max; i++) {
-    if (recs[i].nodeType == 1 && recs[i].nodeName == 'UL') {
-      lastmenu = recs[i];
-      if (rootmenu === undefined)
-        rootmenu = recs[i];
-    }
-  }
-  var absroot = (this.el.getAttribute('data-absolute-root') || '/');
-
   // Retrieve nav title and remove from DOM
-  var navtitle = noderoot.querySelector('h2');
-  navtitle.parentNode.removeChild(navtitle); // Remove from parent if out of order
+  var navtitle = this.el.querySelector('h2');
+  navtitle.parentNode.removeChild(navtitle);
 
   // Make nav title a list item instead
   var firstli = document.createElement('li');
   firstli.className = 'home';
-  firstli.innerHTML = `<a href="${absroot}">${(navtitle.textContent)}</a>`;
-  rootmenu.insertBefore(firstli, rootmenu.firstChild);
+  firstli.innerHTML = `<a href="${this.props.absRootPath}">${(navtitle.textContent)}</a>`;
+  this.props.rootMenu.insertBefore(firstli, this.props.rootMenu.firstChild);
 
   // Create and insert close button
   var closeli = document.createElement('li');
   closeli.innerHTML = '<a href="#" class="localnav__close">Close</a>';
-  rootmenu.insertBefore(closeli, firstli);
+  this.props.rootMenu.insertBefore(closeli, firstli);
 
-  // Create inner link to sitemap
-  if (lastmenu == rootmenu) {
-    lastmenu = document.createElement('ul');
-    lastmenu.className = 'meta';
-    noderoot.appendChild(lastmenu);
-  }
-
-  var lastli = document.createElement('li');
-  lastli.innerHTML = '<a class="sitemap-link" href="https://unimelb.edu.au/sitemap">Browse University</a>';
-  lastmenu.appendChild(lastli);
-
+  // Move local nav outside page container
   this.props.root.appendChild(this.el);
 };
 
 /**
- * Initialise nested lists.
+ * Initialise meta menu.
  */
-LocalNav.prototype.initNestedLists = function () {
-  var nestedLists = this.el.querySelectorAll('.inner');
-  var list, link, back;
+LocalNav.prototype.initMetaMenu = function () {
+  var metaMenu = this.props.metaMenu;
 
-  for (i = nestedLists.length - 1; i >= 0; i--) {
-    list = nestedLists[i];
+  // Create meta menu if it doesn't exist
+  if (!metaMenu) {
+    metaMenu = this.props.metaMenu = document.createElement('ul');
+    metaMenu.className = 'meta';
+    this.el.appendChild(metaMenu);
+  }
 
-    link = list.parentNode.querySelector('a');
-    link.classList.add('parent');
-
-    back = document.createElement('span');
-    back.className = 'back';
-    back.innerHTML = link.textContent;
-    list.insertBefore(back, list.firstChild);
-
-    link.addEventListener('click', this.toggleNestedList.bind(this, list, true));
-    back.addEventListener('click', this.toggleNestedList.bind(this, list, false));
+  // Inject link to sitemap if it doesn't exist
+  if (!metaMenu.querySelector('a.sitemap-link')) {
+    var sitemapItem = document.createElement('li');
+    sitemapItem.innerHTML = '<a class="sitemap-link" href="https://unimelb.edu.au/sitemap">Browse University</a>';
+    metaMenu.appendChild(sitemapItem);
   }
 };
 
 /**
- * Open/close a nested navigation list.
- * @param  {Element} list
+ * Initialise nested menus.
+ */
+LocalNav.prototype.initNestedMenus = function () {
+  var nestedMenus = this.el.querySelectorAll('.inner');
+  var menu, trigger, back;
+
+  for (i = nestedMenus.length - 1; i >= 0; i--) {
+    menu = nestedMenus[i];
+
+    trigger = menu.parentNode.querySelector('a');
+    trigger.classList.add('parent');
+
+    back = document.createElement('span');
+    back.className = 'back';
+    back.innerHTML = trigger.textContent;
+    menu.insertBefore(back, menu.firstChild);
+
+    trigger.addEventListener('click', this.toggleNestedMenu.bind(this, menu, true));
+    back.addEventListener('click', this.toggleNestedMenu.bind(this, menu, false));
+  }
+};
+
+/**
+ * Open/close a nested navigation menu.
+ * @param  {Element} menu
  * @param  {Boolean} open
  * @param  {Event} evt
  */
-LocalNav.prototype.toggleNestedList = function (list, open, evt) {
+LocalNav.prototype.toggleNestedMenu = function (menu, open, evt) {
   evt.preventDefault();
-  list.classList.toggle('active', open);
   this.el.scrollTop = 0;
   this.el.classList.toggle('inner-open');
+  menu.classList.toggle('active', open);
 };
 
 module.exports = LocalNav;
