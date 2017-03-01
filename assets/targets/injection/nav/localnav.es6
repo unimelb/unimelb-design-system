@@ -6,38 +6,42 @@
  */
 function LocalNav(el, props) {
   this.el = el;
+  this.props = props;
 
   // Don't initialise local nav twice
   if (this.el.hasAttribute('data-bound')) return;
   this.el.setAttribute('data-bound', true);
 
-  this.props = props;
-  this.props.rootMenu = this.el.querySelector('h2 + ul');
-  this.props.metaMenu = this.el.querySelector('ul.meta');
-  this.props.absRootPath = this.el.getAttribute('data-absolute-root') || '/';
-
-  this.moveLocalNav();
+  this.initLocalNav();
   this.initMetaMenu();
   this.initNestedMenus();
 }
 
-LocalNav.prototype.moveLocalNav = function () {
-  // Retrieve nav title and remove from DOM
-  var navtitle = this.el.querySelector('h2');
-  navtitle.parentNode.removeChild(navtitle);
+/**
+ * Initialise local nav and move it to the root container of the page.
+ */
+LocalNav.prototype.initLocalNav = function () {
+  var rootMenu = this.el.querySelector('ul'); // first `ul`
+  var absRootPath = this.el.getAttribute('data-absolute-root') || '/';
 
-  // Make nav title a list item instead
-  var firstli = document.createElement('li');
-  firstli.className = 'home';
-  firstli.innerHTML = `<a href="${this.props.absRootPath}">${(navtitle.textContent)}</a>`;
-  this.props.rootMenu.insertBefore(firstli, this.props.rootMenu.firstChild);
+  // Retrieve nav title and remove it from the DOM
+  var title = this.el.querySelector('h2');
+  title.parentNode.removeChild(title);
 
-  // Create and insert close button
-  var closeli = document.createElement('li');
-  closeli.innerHTML = '<a href="#" class="localnav__close">Close</a>';
-  this.props.rootMenu.insertBefore(closeli, firstli);
+  // Inject item with link to homepage
+  var homeItem = document.createElement('li');
+  homeItem.className = 'home';
+  homeItem.innerHTML = `<a href="${absRootPath}">${(title.textContent)}</a>`;
+  rootMenu.insertBefore(homeItem, rootMenu.firstChild);
 
-  // Move local nav outside page container
+  // Inject close button
+  var closeBtn = document.createElement('button');
+  closeBtn.setAttribute('type', 'button');
+  closeBtn.className = 'localnav__close button-ui';
+  closeBtn.textContent = 'Close';
+  this.el.insertBefore(closeBtn, rootMenu);
+
+  // Move local nav to root container
   this.props.root.appendChild(this.el);
 };
 
@@ -45,16 +49,16 @@ LocalNav.prototype.moveLocalNav = function () {
  * Initialise meta menu.
  */
 LocalNav.prototype.initMetaMenu = function () {
-  var metaMenu = this.props.metaMenu;
+  var metaMenu = this.el.querySelector('ul.meta');
 
-  // Create meta menu if it doesn't exist
+  // Create meta menu if it doesn't already exist
   if (!metaMenu) {
-    metaMenu = this.props.metaMenu = document.createElement('ul');
+    metaMenu = document.createElement('ul');
     metaMenu.className = 'meta';
     this.el.appendChild(metaMenu);
   }
 
-  // Inject link to sitemap if it doesn't exist
+  // Inject list item with link to sitemap if it doesn't already exist
   if (!metaMenu.querySelector('a.sitemap-link')) {
     var sitemapItem = document.createElement('li');
     sitemapItem.innerHTML = '<a class="sitemap-link" href="https://unimelb.edu.au/sitemap">Browse University</a>';

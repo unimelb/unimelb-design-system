@@ -1,10 +1,6 @@
 @keyframes chevronback {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-5px);
-  }
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-5px); }
 }
 
 .uomcontent [role="navigation"]#sitemap {
@@ -55,19 +51,6 @@
       }
     }
   }
-
-  .w {
-    @include rem(padding-right, $width-sitemap-trigger);
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    @include breakpoint(tablet) {
-      @include rem(width, $width-localnav);
-      padding-right: 0;
-    }
-  }
-
 
   ul {
     margin: 0;
@@ -141,28 +124,29 @@
     margin-left: 0;
     padding: 0;
     width: auto;
-
-    &:first-child {
-      border-top: 0;
-    }
   }
 
   .localnav__close {
     @include rem(font-size, 12px);
+    @include rem(padding, 20px);
     background-color: darken($menu, 3%);
     color: $lightblue;
     color: rgba($white, .6);
-    font-weight: 400;
+    display: block;
+    font-weight: normal;
     line-height: 1.96;
+    letter-spacing: .07em;
+    text-align: left;
     text-transform: uppercase;
+    width: 100%;
 
     &:before {
       @include rem(font-size, 20px);
+      @include rem(padding-right, 10px);
       content: '\2039';
       float: left;
-      font-weight: $regular;
+      font-weight: normal;
       line-height: 1;
-      padding-right: 10px;
     }
 
     &:hover,
