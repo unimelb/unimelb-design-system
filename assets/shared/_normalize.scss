@@ -40,6 +40,10 @@ textarea {
   line-height: inherit;
 }
 
+button:not([disabled]) {
+  cursor: pointer;
+}
+
 iframe[src^='//www.youtube.com'],
 iframe[src^='//player.vimeo.com'] {
   width: 100%;
