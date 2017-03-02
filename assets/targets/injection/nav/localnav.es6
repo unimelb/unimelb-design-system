@@ -47,7 +47,7 @@ LocalNav.prototype.initLocalNav = function () {
 
   // Inject close button
   var closeBtn = document.createElement('button');
-  closeBtn.className = 'localnav__close-btn button-ui';
+  closeBtn.className = 'localnav__back-btn button-ui';
   closeBtn.textContent = 'Close';
   closeBtn.setAttribute('type', 'button');
   closeBtn.addEventListener('click', this.props.closeLocalNav);
