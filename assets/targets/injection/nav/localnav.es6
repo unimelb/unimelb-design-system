@@ -3,6 +3,8 @@
  * @param  {Element} el
  * @param  {Object} props
  *         {Element} root - the root element of the page with class `uomcontent`
+ *         {Function} closeLocalNav
+ *         {Function} openGlobalNav
  */
 function LocalNav(el, props) {
   this.el = el;
@@ -17,6 +19,7 @@ function LocalNav(el, props) {
 
   this.initLocalNav();
   this.initMetaMenu();
+  this.initInternalLinks();
 
   // Loop through all list items (including nested items) to initialise nested panels
   var items = [].slice.call(this.props.rootList.querySelectorAll('li'));
@@ -47,6 +50,7 @@ LocalNav.prototype.initLocalNav = function () {
   closeBtn.className = 'localnav__close-btn button-ui';
   closeBtn.textContent = 'Close';
   closeBtn.setAttribute('type', 'button');
+  closeBtn.addEventListener('click', this.props.closeLocalNav);
   this.el.insertBefore(closeBtn, this.props.rootList);
 
   // Move local nav to root container
@@ -57,7 +61,7 @@ LocalNav.prototype.initLocalNav = function () {
  * Initialise meta menu.
  */
 LocalNav.prototype.initMetaMenu = function () {
-  var metaMenu = this.el.querySelector('ul.meta');
+  var metaMenu = this.el.querySelector('.meta');
 
   // Create meta menu if it doesn't already exist
   if (!metaMenu) {
@@ -69,12 +73,24 @@ LocalNav.prototype.initMetaMenu = function () {
   // Add custom class to meta menu
   metaMenu.classList.add('localnav__meta');
 
-  // Inject list item with link to sitemap if it doesn't already exist
-  if (!metaMenu.querySelector('a.sitemap-link')) {
-    var sitemapItem = document.createElement('li');
-    sitemapItem.innerHTML = '<a class="sitemap-link" href="https://unimelb.edu.au/sitemap">Browse University</a>';
-    metaMenu.appendChild(sitemapItem);
-  }
+  // Inject list item with link to sitemap
+  var sitemapItem = document.createElement('li');
+  sitemapItem.innerHTML = '<a href="https://unimelb.edu.au/sitemap">Browse University</a>';
+  metaMenu.appendChild(sitemapItem);
+
+  // Open global nav when newly created sitemap link is clicked
+  var sitemapLink = sitemapItem.querySelector('a');
+  sitemapLink.addEventListener('click', this.props.openGlobalNav);
+};
+
+/**
+ * Close local nav when an internal link is clicked.
+ */
+LocalNav.prototype.initInternalLinks = function () {
+  var internalLinks = [].slice.call(this.el.querySelectorAll('a[href^="#"]'));
+  internalLinks.forEach(function (link) {
+    link.addEventListener('click', this.props.closeLocalNav);
+  }, this);
 };
 
 /**
