@@ -36,13 +36,14 @@ function InjectNav(props) {
   }
 
   // Inialise nav state, render global sitemap and bind events
-  this.setActiveNav();
+  this.setActiveNav(this.props.supportsHistory ? window.history.state : null);
   this.renderGlobalSitemap();
   this.setupEventBindings();
+  this.update();
 }
 
 InjectNav.prototype.setActiveNav = function(state) {
-  this.props.activeNav = (state ? state : {
+  this.props.activeNav = (state && state[HISTORY_KEY] ? state[HISTORY_KEY] : {
     local: false,
     global: false
   });
@@ -84,8 +85,7 @@ InjectNav.prototype.setupEventBindings = function() {
   // Restore nav states when user navigates back/forward
   if (this.props.supportsHistory) {
     window.addEventListener('popstate', function(e) {
-      var newState = e.state && e.state[HISTORY_KEY] ? e.state[HISTORY_KEY] : null;
-      this.setActiveNav(newState);
+      this.setActiveNav(e.state);
       this.update();
     }.bind(this));
   }
