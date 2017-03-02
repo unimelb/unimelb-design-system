@@ -343,14 +343,4 @@
       @include rem(font-size, 16px);
     }
   }
-
-  // Chrome-less button for UI interactions
-  .button-ui {
-    background: none transparent;
-    border: 0;
-    color: inherit;
-    font: inherit;
-    margin: 0;
-    padding: 0;
-  }
 }

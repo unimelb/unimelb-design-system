@@ -65,3 +65,13 @@ iframe[src^='//player.vimeo.com'] {
 .wf-loading * {
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 }
+
+// Chrome-less button for UI interactions
+.button-ui {
+  background: none transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}

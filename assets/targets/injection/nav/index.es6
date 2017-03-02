@@ -54,7 +54,7 @@ InjectNav.prototype.setupEventBindings = function() {
     this.props.menuTrigger.addEventListener('click', this.openLocalNav.bind(this));
 
     // Local nav close button
-    this.props.localNav.querySelector('.localnav__close').addEventListener('click', this.closeLocalNav.bind(this));
+    this.props.localNav.querySelector('.localnav__close-btn').addEventListener('click', this.closeLocalNav.bind(this));
 
     // Close local nav when selecting internal links (except close button)
     for (var triggers = this.props.localNav.querySelectorAll('a'), i=triggers.length - 1; i > 0; i--) {
