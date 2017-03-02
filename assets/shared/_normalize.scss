@@ -29,6 +29,12 @@ li {
   box-sizing: border-box;
 }
 
+// Override `bolder` from normalize.css, as Roboto's default font-weight is 300, and 400 isn't bold-enough
+b,
+strong {
+  font-weight: bold;
+}
+
 // Override normalize.css behaviour
 button,
 input,
