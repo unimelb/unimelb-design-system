@@ -10,7 +10,7 @@ function LocalNav(el, props) {
   this.el = el;
   this.props = props;
 
-  this.el.removeAttribute('no-js'); // HACK class is deprecated and needs to be removed from v5.0- markup
+  this.el.classList.remove('no-js'); // HACK class is deprecated and needs to be removed from v5.0- markup
   this.state = { open: [this.el] }; // store nested panels that are currently open (include root)
   this.props.rootList = this.el.querySelector('ul'); // first `ul`
 
