@@ -162,4 +162,32 @@
       }
     }
   }
+
+  /* Definition list for meta information (e.g. year/type for handbook results) */
+  .search-results__meta {
+    @include rem(font-size, 14px);
+    @include rem(margin, -4px 0 2px);
+    padding: 0;
+
+    & > dt,
+    & > dd {
+      display: inline-block;
+      float: none;
+    }
+
+    & > dt {
+      color: $midgrayer;
+      clear: none;
+      width: auto;
+    }
+
+    & > dd {
+      margin-left: 0;
+    }
+
+    /* space out consecutive items */
+    & > dd + dt {
+      margin-left: 1rem;
+    }
+  }
 }
