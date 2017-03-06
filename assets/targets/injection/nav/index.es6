@@ -28,57 +28,33 @@ function InjectNav(props) {
   for (var prop in elements) { this.props[prop] = elements[prop]; }
 
   // Set up a blanket object
-  this.props.blanket = new Blanket({
-    root: this.props.root
-  });
+  this.props.blanket = new Blanket({ root: this.props.root });
 
   // Set up local nav
   if (this.props.localNav) {
-    new LocalNav({
+    this.props.localNavInstance = new LocalNav(this.props.localNav, {
       root: this.props.root,
-      localnav: this.props.localNav
+      closeLocalNav: this.closeLocalNav.bind(this),
+      openGlobalNav: this.openGlobalNav.bind(this)
     });
   }
 
   // Inialise nav state, render global sitemap and bind events
-  this.setActiveNav();
+  this.setActiveNav(this.props.supportsHistory ? window.history.state : null);
   this.renderGlobalSitemap();
   this.setupEventBindings();
+  this.update();
 }
 
 InjectNav.prototype.setActiveNav = function(state) {
-  this.props.activeNav = (state ? state : {
+  this.props.activeNav = (state && state[HISTORY_KEY] ? state[HISTORY_KEY] : {
     local: false,
     global: false
   });
 };
 
 InjectNav.prototype.setupEventBindings = function() {
-  // Local nav is defined
-  if (this.props.localNav && this.props.menuTrigger) {
-    this.props.menuTrigger.addEventListener('click', this.openLocalNav.bind(this));
-
-    // Local nav close button
-    this.props.localNav.querySelector('.localnav__close').addEventListener('click', this.closeLocalNav.bind(this));
-
-    // Close local nav when selecting internal links (except close button)
-    for (var triggers = this.props.localNav.querySelectorAll('a'), i=triggers.length - 1; i > 0; i--) {
-      if (triggers[i].getAttribute('href').indexOf('#') != -1) {
-        triggers[i].addEventListener('click', this.closeLocalNav.bind(this));
-      }
-    }
-
-    this.props.sitemapTrigger.addEventListener('click', this.openGlobalNav.bind(this));
-
-    this.props.localSitemapTrigger = this.props.localNav.querySelector('.sitemap-link');
-    if (this.props.localSitemapTrigger) {
-      this.props.localSitemapTrigger.addEventListener('click', this.openGlobalNav.bind(this));
-    }
-
-  } else if (this.props.menuTrigger) {
-    this.props.menuTrigger.addEventListener('click', this.openGlobalNav.bind(this));
-  }
-
+  this.props.sitemapTrigger.addEventListener('click', this.openGlobalNav.bind(this));
   this.props.globalNav.querySelector('.close-button').addEventListener('click', this.closeGlobalNav.bind(this));
   this.props.blanket.el.addEventListener('click', this.closeBothNavs.bind(this));
 
@@ -86,11 +62,15 @@ InjectNav.prototype.setupEventBindings = function() {
     this.props.searchTrigger.addEventListener('click', this.handleSearchTrigger.bind(this));
   }
 
+  if (this.props.menuTrigger) {
+    var menuHandler = this.props.localNavInstance ? this.openLocalNav : this.openGlobalNav;
+    this.props.menuTrigger.addEventListener('click', menuHandler.bind(this));
+  }
+
   // Restore nav states when user navigates back/forward
   if (this.props.supportsHistory) {
     window.addEventListener('popstate', function(e) {
-      var newState = e.state && e.state[HISTORY_KEY] ? e.state[HISTORY_KEY] : null;
-      this.setActiveNav(newState);
+      this.setActiveNav(e.state);
       this.update();
     }.bind(this));
   }

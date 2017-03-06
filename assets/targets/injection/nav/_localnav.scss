@@ -1,236 +1,186 @@
-@keyframes chevronback {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-5px);
-  }
-}
-
-.uomcontent [role="navigation"]#sitemap {
-  @include normalise;
-  background-color: $menu;
-  color: $white;
+/**
+ * Local navigation
+ */
+.uomcontent .localnav {
   font-family: $ff-sans;
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding-right: $width-sitemap-trigger;
+  color: #fff;
   position: fixed;
-  right: -100%;
-  top: 0;
-  transform: translateX(0);
-  transition: $smooth-transform;
-  width: 100%;
   z-index: 15;
 
-  * {
-    @include normalise;
-  }
-
-  &.active {
-    box-shadow: 1px 0 12px 3px rgba($black, .6);
-    transform: translateX(-100%);
-
-    .sitemap-trigger {
-      margin-left: -100px;
-    }
-
-    &.inner-open {
-      overflow: hidden;
-    }
-  }
-
-  @include breakpoint(tablet) {
-    margin-right: $width-sitemap-trigger;
-    padding-right: 0;
-    right: $offset-localnav;
-    width: $width-localnav;
-
-    &.active {
-      transform: translateX($offset-localnav);
-
-      .sitemap-trigger {
-        margin-left: 0;
-      }
-    }
-  }
-
-  .w {
+  &__panel {
     @include rem(padding-right, $width-sitemap-trigger);
+    background-color: $menu;
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-
-    @include breakpoint(tablet) {
-      @include rem(width, $width-localnav);
-      padding-right: 0;
-    }
-  }
-
-
-  ul {
-    margin: 0;
-    padding: 0;
-
-    &.meta {
-      @include rem(padding, 20px 0);
-      border-top: 1px solid darken($borderblue, 30%);
-      border-top: 1px solid rgba($white, .1);
-
-      li {
-        border-top: none;
-      }
-
-      a {
-        @include rem(font-size, 13px);
-        @include rem(line-height, 24px);
-        @include rem(padding, 2px 20px);
-        color: #8ca2b8;
-        color: rgba($white, .7);
-
-        &:hover,
-        &:focus {
-          background-color: transparent;
-          color: $white;
-        }
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-
-  .inner {
-    background-color: $navy;
-    height: 100%;
-    overflow-x: hidden;
-    overflow-y: auto;
-    padding-right: $width-sitemap-trigger;
-    position: absolute;
     right: -100%;
     top: 0;
     transform: translateX(0);
     transition: $smooth-transform;
     width: 100%;
 
-    &.active {
+    &--nested {
+      position: absolute;
+    }
+
+    /* hide sidebar of parent panels */
+    &--nested-open {
+      overflow: hidden;
+    }
+
+    /* show panel */
+    &--open {
       transform: translateX(-100%);
     }
-
-    li {
-      background-color: $navy;
-    }
-
-    @include breakpoint(tablet) {
-      padding-right: 0;
-    }
   }
 
-  img {
-    display: none;
-    margin: 0 25%;
-    max-width: 50%;
-  }
-
-  li {
-    border-top: 1px solid darken($borderblue, 30%);
-    border-top: 1px solid rgba($white, .1);
-    list-style-type: none;
-    margin-left: 0;
-    padding: 0;
-    width: auto;
-
-    &:first-child {
-      border-top: 0;
-    }
-  }
-
-  .localnav__close {
+  /* close and back buttons */
+  &__back-btn {
     @include rem(font-size, 12px);
+    @include rem(padding, 20px);
     background-color: darken($menu, 3%);
-    color: $lightblue;
-    color: rgba($white, .6);
-    font-weight: 400;
+    color: rgba(255, 255, 255, .7);
+    display: block;
+    font-weight: normal;
     line-height: 1.96;
+    letter-spacing: .07em;
+    text-align: left;
     text-transform: uppercase;
+    width: 100%;
 
-    &:before {
+    &::before {
       @include rem(font-size, 20px);
+      @include rem(padding-right, 10px);
       content: '\2039';
       float: left;
-      font-weight: $regular;
+      font-weight: normal;
       line-height: 1;
-      padding-right: 10px;
     }
 
     &:hover,
     &:focus {
-      color: $white;
+      color: inherit;
 
-      &:before {
-        animation: chevronback 1s infinite ease-in-out;
+      &::before {
+        animation: chevron-left 1s infinite ease-in-out;
       }
     }
-  }
 
-  a,
-  span {
-    @include rem(font-size, 14px);
-    @include rem(letter-spacing, 1px);
-    @include rem(padding, 20px);
-    color: $white;
-    display: block;
-    outline-offset: -1px;
-    text-decoration: none;
-
-    &:hover,
-    &:focus {
-      background-color: darken($menu, 3%);
-      color: $white;
+    &:hover {
+      text-decoration: underline;
     }
   }
 
-  .back {
-    background-color: $menu;
-    color: $lightblue;
-    color: rgba($white, .6);
-    cursor: pointer;
-
-    &:before {
-      @include rem(font-size, 24px);
-      content: '\2039';
-      float: left;
-      font-weight: $regular;
-      line-height: .85;
-      padding-right: 10px;
-    }
-
-    &:hover:before {
-      animation: chevronback 1s infinite ease-in-out;
-    }
-  }
-
-  .parent {
-    cursor: pointer;
-
-    &:after {
+  /* add chevron to nested panel triggers */
+  &__nested-trigger {
+    &::after {
       @include rem(font-size, 24px);
       content: '\203a';
       float: right;
-      font-weight: $regular;
+      font-weight: 400;
       line-height: .85;
       z-index: 9;
     }
   }
+
+  /* overrides for all lists */
+  &__list,
+  &__meta {
+    color: inherit;
+    margin: 0;
+    max-width: none;
+
+    & > li {
+      color: inherit;
+      display: block;
+      list-style-type: none;
+      margin: 0;
+      max-width: none;
+      padding: 0;
+      width: auto;
+    }
+
+    a {
+      @include rem(letter-spacing, 1px);
+      color: inherit;
+      display: block;
+      outline-offset: -1px;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  /* root and nested nav lists */
+  &__list {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    padding: 0;
+
+    & > li {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    a {
+      @include rem(font-size, 14px);
+      @include rem(padding, 20px);
+
+      &:hover,
+      &:focus {
+        background-color: darken($menu, 3%);
+        color: #fff;
+      }
+    }
+  }
+
+  /* meta menu */
+  &__meta {
+    @include rem(padding, 20px 0);
+    color: rgba(255, 255, 255, .7);
+
+    a {
+      @include rem(font-size, 13px);
+      @include rem(padding, 4px 20px);
+    }
+  }
+
+  /* show local nav */
+  &.active {
+    transform: translateX(-100%);
+  }
+
+  @include breakpoint(tablet) {
+    /* switch to fixed width */
+    @include rem(right, $offset-localnav);
+    @include rem(width, $width-localnav);
+
+    /* now that width is fixed, switch to margin so that sitemap link doesn't hide panel scrollbars */
+    @include rem(margin-right, $width-sitemap-trigger);
+    &__panel { padding-right: 0; }
+
+    &.active {
+      box-shadow: 1px 0 12px 3px rgba(0, 0, 0, .6);
+      transform: translateX($offset-localnav);
+    }
+  }
+
+  .no-js & {
+    @include wrapper;
+    background-color: $navy;
+    box-shadow: 0 0 0;
+    display: block;
+    position: static;
+    width: auto;
+  }
 }
 
-.no-js .uomcontent [role="navigation"]#sitemap {
-  @include wrapper;
-  background-color: $navy;
-  box-shadow: 0 0 0;
-  display: block;
-  position: static;
-  width: auto;
+@keyframes chevron-left {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-5px); }
 }

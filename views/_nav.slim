@@ -4,8 +4,42 @@
     ul
       - opts[:navigation].each do |nav_item|
         li
-          a href=(nav_item[:href])
-            == nav_item[:title]
+          a href=(nav_item[:href]) == nav_item[:title]
+
+      / Nested menus for testing purposes (de-indent to enable)
+        li
+          a href="" Nested inner L1
+          .inner
+            ul
+              li: a href="#intro" Internal link
+              li: a href="" Bar
+              li
+                a href="" Nested inner L2
+                .inner
+                  ul
+                    li: a href="" Foo
+                    li: a href="" Bar
+              li
+                a href="" Nested list L2
+                ul
+                  li: a href="" Foo
+                  li: a href="" Bar
+        li
+          a href="" Nested list L1
+          ul
+            li: a href="" Foo
+            li: a href="" Bar
+            li
+              a href="" Nested list L2
+              ul
+                li: a href="" Foo
+                li: a href="" Bar
+            li
+              a href="" Nested inner L2
+              .inner
+                ul
+                  li: a href="" Foo
+                  li: a href="" Bar
 
     ul.meta
-      li: a href="https://github.com/marcom-unimelb/unimelb-design-system/issues" Report an Issue
+      li: a href="https://github.com/marcom-unimelb/unimelb-design-system/issues" Report an issue

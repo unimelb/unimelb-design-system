@@ -198,7 +198,6 @@
       @include rem(padding, 0 20px 5px); // bottom padding aligns arrows with tab labels
       background: $darkblue;
       color: $white;
-      cursor: pointer;
       display: none;
       font-weight: $bold;
       height: 100%;
@@ -207,7 +206,6 @@
       z-index: 2;
 
       &[disabled] {
-        cursor: default;
         opacity: .5;
       }
 

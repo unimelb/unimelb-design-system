@@ -46,6 +46,10 @@ textarea {
   line-height: inherit;
 }
 
+button:not([disabled]) {
+  cursor: pointer;
+}
+
 iframe[src^='//www.youtube.com'],
 iframe[src^='//player.vimeo.com'] {
   width: 100%;
@@ -66,4 +70,14 @@ iframe[src^='//player.vimeo.com'] {
 .wf-inactive *,
 .wf-loading * {
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
+}
+
+// Chrome-less button for UI interactions
+.button-ui {
+  background: none transparent;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 0;
 }
