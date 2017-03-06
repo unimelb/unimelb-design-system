@@ -35,7 +35,8 @@
   }
 
   /* close and back buttons */
-  &__back-btn {
+  /* HACK increase specificity to override `.button-ui`, which was part of the Buttons component until v6.0 */
+  &__back-btn.localnav__back-btn {
     @include rem(font-size, 12px);
     @include rem(padding, 20px);
     background-color: darken($menu, 3%);
