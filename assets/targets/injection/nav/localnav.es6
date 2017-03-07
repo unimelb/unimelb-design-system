@@ -52,7 +52,12 @@ LocalNav.prototype.initLocalNav = function () {
   closeBtn.textContent = 'Close';
   closeBtn.setAttribute('type', 'button');
   closeBtn.addEventListener('click', this.props.closeLocalNav);
-  this.el.insertBefore(closeBtn, this.props.rootList);
+
+  // Check for deprecated markup (div class="w" inner wrapper)
+  var deprecatedMarkup = this.el.querySelector('.w'),
+      node = (deprecatedMarkup ? deprecatedMarkup : this.props.rootList);
+
+  this.el.insertBefore(closeBtn, node);
 
   // Move local nav to root container
   this.props.root.appendChild(this.el);
