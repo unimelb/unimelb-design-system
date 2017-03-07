@@ -17,7 +17,7 @@ To make a copy and run the system locally, you will need to:
 
 This is the development mode, where a webpack dev server with *hot module replacement* runs in parallel to the app server. This mode is for working on bug fixes and new features. Start the servers with:
 
-    foreman start -f Procfile.hot
+    foreman start
 
 Alternatively, you may run:
 
