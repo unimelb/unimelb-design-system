@@ -54,7 +54,10 @@ InjectNav.prototype.setActiveNav = function(state) {
 };
 
 InjectNav.prototype.setupEventBindings = function() {
-  this.props.sitemapTrigger.addEventListener('click', this.openGlobalNav.bind(this));
+  // Only bind event if sitemap trigger exists (ie. has localnav)
+  if (this.props.sitemapTrigger)
+    this.props.sitemapTrigger.addEventListener('click', this.openGlobalNav.bind(this));
+
   this.props.globalNav.querySelector('.close-button').addEventListener('click', this.closeGlobalNav.bind(this));
   this.props.blanket.el.addEventListener('click', this.closeBothNavs.bind(this));
 
