@@ -67,6 +67,7 @@
     @include rem(padding, 4px 16px);
     background-color: rgba($white, .9);
     color: inherit;
+    position: relative;
     width: 100%;
 
     .meta-left {
@@ -82,7 +83,7 @@
 
   .when {
     @include rem(font-size, 18px);
-    @include rem(margin-bottom, 14px);
+    @include rem(margin-bottom, 16px);
     @include rem(padding, 16px 16px 0);
     color: $highlight;
     font-weight: $regular;
@@ -100,8 +101,8 @@
 
   .range {
     @include rem(padding-top, 4px);
+    @include rem(margin-bottom, 4px);
     line-height: 2.8;
-    margin-bottom: 0;
 
     time {
       @include rem(font-size, 18px);
@@ -116,23 +117,26 @@
     }
   }
 
-  .event {
+  .event,
+  .exhibition {
     background-color: $black;
     color: $white;
 
     strong {
-      @include rem(margin-bottom, 32px);
+      @include rem(margin-bottom, 24px);
+      padding-top: 0;
     }
 
     .meta {
-      border-top: 0 none;
+      border-top: none;
     }
   }
 
   .block-container {
     display: block;
+    overflow: hidden;
 
-    @include breakpoint(tablet) {
+    @include breakpoint(600px) {
       height: 440px;
       overflow: hidden;
     }
@@ -140,6 +144,7 @@
 
   .double {
     .block-container {
+      @include rem(padding, 32px 0 12px);
       background-color: rgba($black, .6);
       background-size: cover;
       color: $white;
@@ -158,7 +163,7 @@
     }
 
     .button-hero-inverse {
-      @include rem(margin-left, 24px);
+      @include rem(margin-left, 16px);
     }
   }
 
@@ -189,15 +194,12 @@
       display: block;
     }
 
-    .event,
-    .exhibition {
-      strong {
-        padding-top: 0;
-      }
-    }
-
     .double {
       width: 49%;
+
+      .block-container {
+        padding: 0;
+      }
 
       strong {
         @include rem(padding, 64px 32px 32px);
@@ -264,56 +266,48 @@
   }
 
   .crop-height {
+    @include rem(max-height, 190px);
     overflow: hidden;
 
     img {
       width: 100%;
     }
-
-    @include breakpoint(tablet) {
-      max-height: 190px;
-    }
-  }
-
-  li {
-    border-bottom: 4px solid $cta;
-  }
-
-  .event {
-    border-bottom-color: $highlight;
-  }
-
-  .exhibition {
-    border-bottom-color: $yellow;
   }
 
   .event,
   .exhibition {
-    .block-listing__img,
+    .crop-height,
+    .block-listing__img {
+      @include rem(margin-bottom, -28px);
+    }
+
     .crop-height {
-      @include breakpoint(tablet) {
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        width: 100%;
-      }
+      @include rem(max-height, 240px);
     }
   }
 
-  @include breakpoint(tablet) {
+  li { border-bottom: 4px solid $cta; }
+  .event { border-bottom-color: $highlight; }
+  .exhibition { border-bottom-color: $yellow; }
+
+  @include breakpoint(600px) {
     .event,
     .exhibition {
+      .block-listing__img,
       .crop-height {
-        max-height: 240px;
-      }
-
-      .block-listing__img::before,
-      .crop-height::before {
-        @include rem(height, 50px);
-        background: linear-gradient(to top, rgba($white, 1) 10%, rgba($white, 0) 100%);
-        content: '';
-        display: block;
+        bottom: 0;
+        left: 0;
+        margin-bottom: 0;
+        position: absolute;
         width: 100%;
+
+        &::before {
+          @include rem(height, 50px);
+          background: linear-gradient(to top, rgba($white, 1) 10%, rgba($white, 0) 100%);
+          content: '';
+          display: block;
+          width: 100%;
+        }
       }
 
       .block-listing__img::before {
@@ -386,6 +380,7 @@
     }
 
     &.double {
+      background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
 
@@ -422,7 +417,7 @@
           font-weight: $thin;
         }
 
-        @include breakpoint(tablet) {
+        @include breakpoint(600px) {
           @include rem(padding, 10px 24px);
           width: 100%;
         }
@@ -455,7 +450,7 @@
             line-height: 1.2;
           }
 
-          @include breakpoint(tablet) {
+          @include breakpoint(600px) {
             @include rem(font-size, 40px);
 
             span {
