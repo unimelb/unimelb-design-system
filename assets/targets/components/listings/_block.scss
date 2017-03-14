@@ -160,8 +160,8 @@
     @include rem(max-width, $w-lge);
     li {
       margin-bottom: 1%;
-      margin-left: 0;
-      margin-right: 1%;
+      margin-left: .5%;
+      margin-right: .5%;
       margin-top: 0;
       width: 49%;
     }
@@ -182,8 +182,11 @@
       display: block;
     }
 
-    .event strong {
-      padding-top: 0;
+    .event,
+    .exhibition {
+      strong {
+        padding-top: 0;
+      }
     }
 
     .double {
