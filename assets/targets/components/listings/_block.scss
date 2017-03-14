@@ -1,16 +1,16 @@
 .uomcontent .block-listing {
   @include clearfix;
-  @include rem(margin-bottom, 30px);
-  @include rem(margin-top, 30px);
+  @include rem(margin-bottom, 32px);
+  @include rem(margin-top, 32px);
   background-color: transparent;
-  border: 0 none;
+  border: none;
   margin-left: auto;
   margin-right: auto;
   padding: 0 3%;
   width: 100%;
 
   li {
-    @include rem(margin-bottom, 15px);
+    @include rem(margin-bottom, 16px);
     background-color: transparent;
     border: 1px solid rgba($black, .15);
     box-shadow: 0 0 9px -3px rgba($black, .3);
@@ -26,7 +26,7 @@
 
   p {
     @include rem(font-size, 13px);
-    @include rem(padding, 15px 15px 0);
+    @include rem(padding, 16px 16px 0);
     background-color: transparent;
     color: inherit;
     line-height: 1.5;
@@ -34,13 +34,13 @@
     text-align: left;
 
     &:last-of-type {
-      @include rem(padding-bottom, 15px);
+      @include rem(padding-bottom, 16px);
     }
   }
 
   strong {
     @include rem(font-size, 20px);
-    @include rem(padding, 15px 15px 0);
+    @include rem(padding, 16px 16px 0);
     background-color: transparent;
     color: inherit;
     display: block;
@@ -58,7 +58,7 @@
   .meta {
     @include clearfix;
     @include rem(font-size, 12px);
-    @include rem(padding, 5px 15px);
+    @include rem(padding, 4px 16px);
     background-color: rgba($white, .9);
     color: inherit;
     width: 100%;
@@ -76,7 +76,8 @@
 
   .when {
     @include rem(font-size, 18px);
-    @include rem(padding, 10px 15px 0);
+    @include rem(margin-bottom, 14px);
+    @include rem(padding, 16px 16px 0);
     color: $salmon;
     font-weight: $regular;
     line-height: 1.4;
@@ -92,7 +93,7 @@
   }
 
   .range {
-    @include rem(margin-bottom, 13px);
+    @include rem(padding-top, 4px);
     line-height: 2.8;
     margin-bottom: 0;
 
@@ -101,7 +102,7 @@
       font-weight: $regular;
 
       &:first-child::after {
-        @include rem(width, 30px);
+        @include rem(width, 32px);
         border-bottom: 3px solid $highlight;
         content: '';
         display: block;
@@ -114,7 +115,7 @@
     color: $white;
 
     strong {
-      @include rem(margin-bottom, 30px);
+      @include rem(margin-bottom, 32px);
     }
 
     .meta {
@@ -151,7 +152,7 @@
     }
 
     .button-hero-inverse {
-      @include rem(margin-left, 25px);
+      @include rem(margin-left, 24px);
     }
   }
 
@@ -189,18 +190,18 @@
       width: 49%;
 
       strong {
-        @include rem(padding, 60px 30px 30px);
+        @include rem(padding, 64px 32px 32px);
         line-height: 1;
       }
 
       p {
-        @include rem(padding, 0 30px 15px);
+        @include rem(padding, 0 32px 16px);
         @include rem(font-size, 20px);
         line-height: 1.4;
       }
 
       .button-hero-inverse {
-        @include rem(margin-left, 30px);
+        @include rem(margin-left, 32px);
       }
     }
   }
@@ -210,26 +211,22 @@
       width: 24%;
     }
 
-    .when {
-      @include rem(margin-bottom, 30px);
-    }
-
     .double {
       width: 49%;
 
       strong {
         @include rem(font-size, 54px);
-        @include rem(padding, 60px 60px 30px);
+        @include rem(padding, 64px 64px 32px);
         line-height: 1.1;
       }
 
       p {
-        @include rem(padding, 0 60px 30px);
+        @include rem(padding, 0 64px 32px);
         line-height: 1.3;
       }
 
       .button-hero-inverse {
-        @include rem(margin-left, 60px);
+        @include rem(margin-left, 64px);
       }
     }
   }
@@ -315,8 +312,8 @@
 
     .news .meta::before {
       @include rem(height, 60px);
-      @include rem(margin-left, -15px);
-      @include rem(margin-right, -15px);
+      @include rem(margin-left, -16px);
+      @include rem(margin-right, -16px);
       @include rem(margin-top, -60px);
       background: linear-gradient(to top, rgba($white, .9) 33%, rgba($white, 0) 100%);
       content: ' ';
@@ -326,7 +323,7 @@
 
     .top-unit {
       @include rem(height, 410px);
-      @include rem(padding-top, 15px);
+      @include rem(padding-top, 16px);
       overflow: hidden;
       position: relative;
     }
@@ -413,13 +410,13 @@
         }
 
         @include breakpoint(tablet) {
-          @include rem(padding, 10px 25px);
+          @include rem(padding, 10px 24px);
           width: 100%;
         }
 
         @include breakpoint(wide) {
           @include adjust-font-size-to(26px);
-          @include rem(padding, 20px 25px);
+          @include rem(padding, 20px 24px);
         }
       }
 
@@ -427,8 +424,8 @@
         border-bottom-color: $highlight;
 
         strong {
-          @include rem(padding-bottom, 20px);
-          @include rem(padding-left, 30px);
+          @include rem(padding-bottom, 26px);
+          @include rem(padding-left, 26px);
           background-color: transparent;
 
           em {
@@ -436,7 +433,7 @@
           }
 
           span {
-            @include rem(padding-bottom, 5px);
+            @include rem(padding-bottom, 4px);
             background-color: $white;
             box-decoration-break: clone;
             box-shadow: 10px 0 0 $white, -10px 0 0 $white;
@@ -461,8 +458,8 @@
       background-size: cover;
 
       a {
-        @include rem(padding-left, 25px);
-        @include rem(padding-right, 25px);
+        @include rem(padding-left, 24px);
+        @include rem(padding-right, 24px);
       }
 
       span {
@@ -551,28 +548,23 @@
       border-right: 0;
       border-top: 0;
 
-      &:hover {
-        transform: none;
-      }
-
       a {
         background-color: transparent;
       }
 
       .meta {
-        @include rem(padding, 12px 20px);
+        @include rem(padding, 12px 20px 0);
         background-color: rgba($brand, 0.8);
         border: none;
         bottom: 0;
         color: $white;
         left: 0;
         margin: 0;
-        padding-bottom: 0;
         position: absolute;
         width: 100%;
 
         em {
-          @include rem(padding-bottom, 10px);
+          @include rem(padding-bottom, 8px);
           float: right;
         }
 
@@ -594,7 +586,7 @@
       }
 
       a {
-        @include rem(padding, 10px 0px);
+        @include rem(padding, 10px 0);
         border: 0;
         border-bottom: 1px solid $lightergray;
         color: $highlight;
@@ -607,6 +599,7 @@
 
         &:hover {
           background-color: $highlight;
+          border-bottom-color: transparent;
           color: $white;
         }
       }
@@ -614,7 +607,7 @@
       strong {
         @include adjust-font-size-to(13px);
         @include rem(letter-spacing, 1px);
-        @include rem(padding, 15px 0px);
+        @include rem(padding, 16px 0);
         color: currentColor;
         display: inline-block;
         font-weight: $bold;
@@ -626,7 +619,7 @@
         white-space: nowrap;
 
         span.small {
-          @include rem(margin-right, 5px);
+          @include rem(margin-right, 4px);
           margin-top: 0;
 
           @include breakpoint(0) {
