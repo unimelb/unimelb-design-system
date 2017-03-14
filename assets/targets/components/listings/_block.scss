@@ -327,7 +327,7 @@
       @include rem(height, 60px);
       @include rem(margin-left, -16px);
       @include rem(margin-right, -16px);
-      @include rem(margin-top, -60px);
+      @include rem(margin-top, -64px); /* account for padding-top of 4px on `meta` */
       background: linear-gradient(to top, rgba($white, .9) 33%, rgba($white, 0) 100%);
       content: '';
       display: block;
