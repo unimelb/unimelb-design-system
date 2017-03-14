@@ -55,6 +55,12 @@
     text-decoration: none;
   }
 
+  img {
+    display: block;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+  }
+
   .meta {
     @include clearfix;
     @include rem(font-size, 12px);
@@ -78,7 +84,7 @@
     @include rem(font-size, 18px);
     @include rem(margin-bottom, 14px);
     @include rem(padding, 16px 16px 0);
-    color: $salmon;
+    color: $highlight;
     font-weight: $regular;
     line-height: 1.4;
     text-align: left;
@@ -158,6 +164,7 @@
 
   @include breakpoint(600px) {
     @include rem(max-width, $w-lge);
+
     li {
       margin-bottom: 1%;
       margin-left: .5%;
@@ -249,32 +256,22 @@
 }
 
 .uomcontent [role="main"] .block-listing {
+  .block-listing__img {
+    background-color: #fff;
+    background-position: center;
+    background-size: cover;
+    padding-top: 56.25%;
+  }
+
   .crop-height {
-    margin-top: 1em;
+    overflow: hidden;
 
     img {
-      display: block;
-      height: auto;
-      -ms-interpolation-mode: bicubic;
       width: 100%;
     }
 
-    @include breakpoint(wide) {
-      img {
-        max-height: 100%;
-        max-width: none;
-        width: auto;
-      }
-    }
-
     @include breakpoint(tablet) {
-      bottom: 0;
-      height: 210px;
-      overflow: hidden;
-      position: absolute;
-
-      img {
-      }
+      max-height: 190px;
     }
   }
 
@@ -283,34 +280,47 @@
   }
 
   .event {
-    background-color: $white;
-    border-bottom: 4px solid $highlight;
-    color: $black;
-
-    .when {
-      color: $highlight;
-    }
+    border-bottom-color: $highlight;
   }
 
   .exhibition {
-    background-color: $white;
-    border-bottom: 4px solid $yellow;
-    color: $black;
+    border-bottom-color: $yellow;
+  }
 
-    .when {
-      color: $highlight;
+  .event,
+  .exhibition {
+    .block-listing__img,
+    .crop-height {
+      @include breakpoint(tablet) {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
     }
   }
 
   @include breakpoint(tablet) {
-    .crop-height::before {
-      @include rem(height, 50px);
-      @include rem(margin-top, -20px);
-      background: linear-gradient(to top, rgba($white, 1) 10%, rgba($white, 0) 100%);
-      content: ' ';
-      display: block;
-      position: relative;
-      width: 100%;
+    .event,
+    .exhibition {
+      .crop-height {
+        max-height: 240px;
+      }
+
+      .block-listing__img::before,
+      .crop-height::before {
+        @include rem(height, 50px);
+        background: linear-gradient(to top, rgba($white, 1) 10%, rgba($white, 0) 100%);
+        content: '';
+        display: block;
+        width: 100%;
+      }
+
+      .block-listing__img::before {
+        @include rem(top, -50px);
+        left: 0;
+        position: absolute;
+      }
     }
 
     .news .meta::before {
@@ -319,7 +329,7 @@
       @include rem(margin-right, -16px);
       @include rem(margin-top, -60px);
       background: linear-gradient(to top, rgba($white, .9) 33%, rgba($white, 0) 100%);
-      content: ' ';
+      content: '';
       display: block;
       width: auto;
     }
@@ -336,7 +346,7 @@
     }
 
     .mid-unit {
-      height: 90px;
+      @include rem(max-height, 90px);
     }
   }
 

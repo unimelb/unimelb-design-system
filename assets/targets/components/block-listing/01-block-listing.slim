@@ -1,4 +1,4 @@
-p Use this tile-based listing to share news, events and social media posts from Instagram and Twitter.
+p Inside the basic <em>news</em>, <em>event</em>, and <em>exhibition</em> tiles, images should be provided as background images on an empty element with class <code>block-listing__img</code>, and have a ratio of 16/9 (56.25%). If you don't have a choice but to use <code>img</code> tags, make sure to wrap them inside containers with class <code>crop-height</code> in order to approximate the background-image behaviour.
 
 ul.block-listing
   li.event.double.newshero.special style="background-image: url(http://placeimg.com/740/320/any?5);"
@@ -14,9 +14,8 @@ ul.block-listing
         time datetime="2014-03-18" 18 March
         time datetime="2014-05-04" 4 May 2014
       .mid-unit
-        strong Sed natum conceptam porro iuvaret sensibus quo ad constituam in 2014
-      .crop-height
-        img alt="" src="http://placeimg.com/740/320/animals"
+        strong Sed natum conceptam porro iuvaret sensibus quo ad constituam in mnesarchum. Sed porro iuvaret in, per eu natum conceptam.
+      .block-listing__img style="background-image: url(http://placeimg.com/740/620/animals);"
       .meta
         em.meta-right Event
   li.instagram style="background-image: url(http://placeimg.com/400/600/any?5);"
@@ -28,8 +27,7 @@ ul.block-listing
           |@unimelb
   li.news
     a.block-container href=""
-      .crop-height
-        img alt="" src="http://placeimg.com/640/320/any?1"
+      .block-listing__img style="background-image: url(http://placeimg.com/740/620/any?1);"
       strong International law. Is it myth or reality?
       p The fate of boat people in the Indian Ocean and the Mediterranean proves attitudes are hardening.
       .meta
@@ -43,7 +41,7 @@ ul.block-listing
           a href="#" @unimelb
   li.news
     a.block-container href=""
-      img alt="" src="http://placeimg.com/740/320/any?3"
+      .block-listing__img style="background-image: url(http://placeimg.com/740/320/any?3);"
       strong Multi-party Government the way of future
       p It used to be a once-in-a-lifetime moment, but it’s set to become the norm as voters hedge their bets.
       .meta
@@ -55,9 +53,9 @@ ul.block-listing
         time datetime="2014-05-28"  28 May 2014
         | 5:00 pm - 1:00 am
       .mid-unit
-        strong Dunc audiam aliquam eu sed
+        strong This tile uses an <code>img</code> tag inside a <code>crop-height</code> container instead of a background image.
       .crop-height
-        img alt="" src="http://placeimg.com/640/320/nature"
+        img alt="" src="http://placeimg.com/674/380/nature"
       .meta
         em.meta-right Exhibition
   li.news.no-anim
