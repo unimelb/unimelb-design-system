@@ -58,7 +58,7 @@ LocalNav.prototype.initLocalNav = function () {
   closeBtn.textContent = 'Close';
   closeBtn.setAttribute('type', 'button');
   closeBtn.addEventListener('click', this.props.closeLocalNav);
-  // HACK root list is wrapped in `.w` element in old markup, so can't use `this.el.insertBefore()`
+  // Don't use `this.el.insertBefore()` in case the root list is wrapped in an extra container
   this.props.rootList.parentNode.insertBefore(closeBtn, this.props.rootList);
 
   // Move local nav to root container
