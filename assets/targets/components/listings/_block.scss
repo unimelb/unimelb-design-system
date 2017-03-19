@@ -1,16 +1,16 @@
 .uomcontent .block-listing {
   @include clearfix;
-  @include rem(margin-bottom, 30px);
-  @include rem(margin-top, 30px);
+  @include rem(margin-bottom, 32px);
+  @include rem(margin-top, 32px);
   background-color: transparent;
-  border: 0 none;
+  border: none;
   margin-left: auto;
   margin-right: auto;
   padding: 0 3%;
   width: 100%;
 
   li {
-    @include rem(margin-bottom, 15px);
+    @include rem(margin-bottom, 16px);
     background-color: transparent;
     border: 1px solid rgba($black, .15);
     box-shadow: 0 0 9px -3px rgba($black, .3);
@@ -26,7 +26,7 @@
 
   p {
     @include rem(font-size, 13px);
-    @include rem(padding, 15px 15px 0);
+    @include rem(padding, 16px 16px 0);
     background-color: transparent;
     color: inherit;
     line-height: 1.5;
@@ -34,13 +34,13 @@
     text-align: left;
 
     &:last-of-type {
-      @include rem(padding-bottom, 15px);
+      @include rem(padding-bottom, 16px);
     }
   }
 
   strong {
     @include rem(font-size, 20px);
-    @include rem(padding, 15px 15px 0);
+    @include rem(padding, 16px 16px 0);
     background-color: transparent;
     color: inherit;
     display: block;
@@ -55,12 +55,19 @@
     text-decoration: none;
   }
 
+  img {
+    display: block;
+    height: auto;
+    -ms-interpolation-mode: bicubic;
+  }
+
   .meta {
     @include clearfix;
     @include rem(font-size, 12px);
-    @include rem(padding, 5px 15px);
+    @include rem(padding, 4px 16px);
     background-color: rgba($white, .9);
     color: inherit;
+    position: relative;
     width: 100%;
 
     .meta-left {
@@ -76,8 +83,9 @@
 
   .when {
     @include rem(font-size, 18px);
-    @include rem(padding, 10px 15px 0);
-    color: $salmon;
+    @include rem(margin-bottom, 16px);
+    @include rem(padding, 16px 16px 0);
+    color: $highlight;
     font-weight: $regular;
     line-height: 1.4;
     text-align: left;
@@ -92,16 +100,16 @@
   }
 
   .range {
-    @include rem(margin-bottom, 13px);
+    @include rem(padding-top, 4px);
+    @include rem(margin-bottom, 4px);
     line-height: 2.8;
-    margin-bottom: 0;
 
     time {
       @include rem(font-size, 18px);
       font-weight: $regular;
 
       &:first-child::after {
-        @include rem(width, 30px);
+        @include rem(width, 32px);
         border-bottom: 3px solid $highlight;
         content: '';
         display: block;
@@ -109,23 +117,26 @@
     }
   }
 
-  .event {
+  .event,
+  .exhibition {
     background-color: $black;
     color: $white;
 
     strong {
-      @include rem(margin-bottom, 30px);
+      @include rem(margin-bottom, 24px);
+      padding-top: 0;
     }
 
     .meta {
-      border-top: 0 none;
+      border-top: none;
     }
   }
 
   .block-container {
     display: block;
+    overflow: hidden;
 
-    @include breakpoint(tablet) {
+    @include breakpoint(600px) {
       height: 440px;
       overflow: hidden;
     }
@@ -133,6 +144,7 @@
 
   .double {
     .block-container {
+      @include rem(padding, 32px 0 12px);
       background-color: rgba($black, .6);
       background-size: cover;
       color: $white;
@@ -151,16 +163,17 @@
     }
 
     .button-hero-inverse {
-      @include rem(margin-left, 25px);
+      @include rem(margin-left, 16px);
     }
   }
 
   @include breakpoint(600px) {
     @include rem(max-width, $w-lge);
+
     li {
       margin-bottom: 1%;
-      margin-left: 0;
-      margin-right: 1%;
+      margin-left: .5%;
+      margin-right: .5%;
       margin-top: 0;
       width: 49%;
     }
@@ -181,26 +194,26 @@
       display: block;
     }
 
-    .event strong {
-      padding-top: 0;
-    }
-
     .double {
       width: 49%;
 
+      .block-container {
+        padding: 0;
+      }
+
       strong {
-        @include rem(padding, 60px 30px 30px);
+        @include rem(padding, 64px 32px 32px);
         line-height: 1;
       }
 
       p {
-        @include rem(padding, 0 30px 15px);
+        @include rem(padding, 0 32px 16px);
         @include rem(font-size, 20px);
         line-height: 1.4;
       }
 
       .button-hero-inverse {
-        @include rem(margin-left, 30px);
+        @include rem(margin-left, 32px);
       }
     }
   }
@@ -210,26 +223,22 @@
       width: 24%;
     }
 
-    .when {
-      @include rem(margin-bottom, 30px);
-    }
-
     .double {
       width: 49%;
 
       strong {
         @include rem(font-size, 54px);
-        @include rem(padding, 60px 60px 30px);
+        @include rem(padding, 64px 64px 32px);
         line-height: 1.1;
       }
 
       p {
-        @include rem(padding, 0 60px 30px);
+        @include rem(padding, 0 64px 32px);
         line-height: 1.3;
       }
 
       .button-hero-inverse {
-        @include rem(margin-left, 60px);
+        @include rem(margin-left, 64px);
       }
     }
   }
@@ -249,84 +258,79 @@
 }
 
 .uomcontent [role="main"] .block-listing {
+  .block-listing__img {
+    background-color: #fff;
+    background-position: center;
+    background-size: cover;
+    padding-top: 56.25%;
+  }
+
   .crop-height {
-    margin-top: 1em;
+    @include rem(max-height, 190px);
+    overflow: hidden;
 
     img {
-      display: block;
-      height: auto;
-      -ms-interpolation-mode: bicubic;
       width: 100%;
     }
-
-    @include breakpoint(wide) {
-      img {
-        max-height: 100%;
-        max-width: none;
-        width: auto;
-      }
-    }
-
-    @include breakpoint(tablet) {
-      bottom: 0;
-      height: 210px;
-      overflow: hidden;
-      position: absolute;
-
-      img {
-      }
-    }
   }
 
-  li {
-    border-bottom: 4px solid $cta;
-  }
-
-  .event {
-    background-color: $white;
-    border-bottom: 4px solid $highlight;
-    color: $black;
-
-    .when {
-      color: $highlight;
-    }
-  }
-
+  .event,
   .exhibition {
-    background-color: $white;
-    border-bottom: 4px solid $yellow;
-    color: $black;
+    .crop-height,
+    .block-listing__img {
+      @include rem(margin-bottom, -28px);
+    }
 
-    .when {
-      color: $highlight;
+    .crop-height {
+      @include rem(max-height, 240px);
     }
   }
 
-  @include breakpoint(tablet) {
-    .crop-height::before {
-      @include rem(height, 50px);
-      @include rem(margin-top, -20px);
-      background: linear-gradient(to top, rgba($white, 1) 10%, rgba($white, 0) 100%);
-      content: ' ';
-      display: block;
-      position: relative;
-      width: 100%;
+  li { border-bottom: 4px solid $cta; }
+  .event { border-bottom-color: $highlight; }
+  .exhibition { border-bottom-color: $yellow; }
+
+  @include breakpoint(600px) {
+    .event,
+    .exhibition {
+      .block-listing__img,
+      .crop-height {
+        bottom: 0;
+        left: 0;
+        margin-bottom: 0;
+        position: absolute;
+        width: 100%;
+
+        &::before {
+          @include rem(height, 50px);
+          background: linear-gradient(to top, rgba($white, 1) 10%, rgba($white, 0) 100%);
+          content: '';
+          display: block;
+          width: 100%;
+        }
+      }
+
+      .block-listing__img::before {
+        @include rem(top, -50px);
+        left: 0;
+        position: absolute;
+      }
     }
 
     .news .meta::before {
       @include rem(height, 60px);
-      @include rem(margin-left, -15px);
-      @include rem(margin-right, -15px);
-      @include rem(margin-top, -60px);
+      @include rem(margin-left, -16px);
+      @include rem(margin-right, -16px);
+      @include rem(margin-top, -64px); /* account for padding-top of 4px on `meta` */
       background: linear-gradient(to top, rgba($white, .9) 33%, rgba($white, 0) 100%);
-      content: ' ';
+      content: '';
       display: block;
       width: auto;
     }
 
     .top-unit {
       @include rem(height, 410px);
-      @include rem(padding-top, 15px);
+      @include rem(padding-top, 16px);
       overflow: hidden;
       position: relative;
     }
@@ -336,7 +340,7 @@
     }
 
     .mid-unit {
-      height: 90px;
+      @include rem(max-height, 90px);
     }
   }
 
@@ -376,6 +380,7 @@
     }
 
     &.double {
+      background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
 
@@ -412,14 +417,14 @@
           font-weight: $thin;
         }
 
-        @include breakpoint(tablet) {
-          @include rem(padding, 10px 25px);
+        @include breakpoint(600px) {
+          @include rem(padding, 10px 24px);
           width: 100%;
         }
 
         @include breakpoint(wide) {
           @include adjust-font-size-to(26px);
-          @include rem(padding, 20px 25px);
+          @include rem(padding, 20px 24px);
         }
       }
 
@@ -427,8 +432,8 @@
         border-bottom-color: $highlight;
 
         strong {
-          @include rem(padding-bottom, 20px);
-          @include rem(padding-left, 30px);
+          @include rem(padding-bottom, 26px);
+          @include rem(padding-left, 26px);
           background-color: transparent;
 
           em {
@@ -436,7 +441,7 @@
           }
 
           span {
-            @include rem(padding-bottom, 5px);
+            @include rem(padding-bottom, 4px);
             background-color: $white;
             box-decoration-break: clone;
             box-shadow: 10px 0 0 $white, -10px 0 0 $white;
@@ -445,7 +450,7 @@
             line-height: 1.2;
           }
 
-          @include breakpoint(tablet) {
+          @include breakpoint(600px) {
             @include rem(font-size, 40px);
 
             span {
@@ -461,8 +466,8 @@
       background-size: cover;
 
       a {
-        @include rem(padding-left, 25px);
-        @include rem(padding-right, 25px);
+        @include rem(padding-left, 24px);
+        @include rem(padding-right, 24px);
       }
 
       span {
@@ -551,28 +556,23 @@
       border-right: 0;
       border-top: 0;
 
-      &:hover {
-        transform: none;
-      }
-
       a {
         background-color: transparent;
       }
 
       .meta {
-        @include rem(padding, 12px 20px);
+        @include rem(padding, 12px 20px 0);
         background-color: rgba($brand, 0.8);
         border: none;
         bottom: 0;
         color: $white;
         left: 0;
         margin: 0;
-        padding-bottom: 0;
         position: absolute;
         width: 100%;
 
         em {
-          @include rem(padding-bottom, 10px);
+          @include rem(padding-bottom, 8px);
           float: right;
         }
 
@@ -594,12 +594,11 @@
       }
 
       a {
-        @include rem(padding, 10px 0px);
+        @include rem(padding, 10px 0);
         border: 0;
         border-bottom: 1px solid $lightergray;
         color: $highlight;
         display: block;
-        height: 100%;
         position: relative;
         text-align: center;
         vertical-align: middle;
@@ -607,6 +606,7 @@
 
         &:hover {
           background-color: $highlight;
+          border-bottom-color: transparent;
           color: $white;
         }
       }
@@ -614,7 +614,7 @@
       strong {
         @include adjust-font-size-to(13px);
         @include rem(letter-spacing, 1px);
-        @include rem(padding, 15px 0px);
+        @include rem(padding, 16px 0);
         color: currentColor;
         display: inline-block;
         font-weight: $bold;
@@ -626,7 +626,7 @@
         white-space: nowrap;
 
         span.small {
-          @include rem(margin-right, 5px);
+          @include rem(margin-right, 4px);
           margin-top: 0;
 
           @include breakpoint(0) {
@@ -665,17 +665,21 @@
 
       @include breakpoint(600px) {
         .block-container {
-          @include rem(height, 440px); // IE flexbox implementation bug
-          align-items: flex-start;
-          display: flex;
-          flex-direction: column;
+          @include rem(height, 440px);
         }
 
-        a {
-          align-items: center;
-          display: flex;
-          flex: 1 0 0;
-          justify-content: center;
+        @supports (display: flex) {
+          .block-container {
+            display: flex;
+            flex-direction: column;
+          }
+
+          a {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            justify-content: center;
+          }
         }
       }
     }
