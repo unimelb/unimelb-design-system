@@ -665,7 +665,7 @@
 
       @include breakpoint(600px) {
         .block-container {
-          @include rem(height, 440px); // IE flexbox implementation bug
+          @include rem(height, 440px);
         }
 
         @supports (display: flex) {
