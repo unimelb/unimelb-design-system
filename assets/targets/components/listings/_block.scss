@@ -599,7 +599,6 @@
         border-bottom: 1px solid $lightergray;
         color: $highlight;
         display: block;
-        height: 100%;
         position: relative;
         text-align: center;
         vertical-align: middle;
@@ -667,16 +666,20 @@
       @include breakpoint(600px) {
         .block-container {
           @include rem(height, 440px); // IE flexbox implementation bug
-          align-items: flex-start;
-          display: flex;
-          flex-direction: column;
         }
 
-        a {
-          align-items: center;
-          display: flex;
-          flex: 1 0 0;
-          justify-content: center;
+        @supports (display: flex) {
+          .block-container {
+            display: flex;
+            flex-direction: column;
+          }
+
+          a {
+            align-items: center;
+            display: flex;
+            flex: 1;
+            justify-content: center;
+          }
         }
       }
     }
