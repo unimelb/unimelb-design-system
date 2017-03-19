@@ -12,7 +12,6 @@ function LocalNav(el, props) {
 
   this.el.classList.remove('no-js'); // HACK class is deprecated and needs to be removed from v5.0- markup
   this.state = { open: [this.el] }; // store nested panels that are currently open (include root)
-  this.props.rootList = this.el.querySelector('ul'); // first `ul`
 
   // Don't initialise local nav twice
   if (this.el.hasAttribute('data-bound')) return;
@@ -31,6 +30,13 @@ function LocalNav(el, props) {
  * Initialise local nav and move it to the root container of the page.
  */
 LocalNav.prototype.initLocalNav = function () {
+  // Retrieve root list (create it if it doesn't exist)
+  this.props.rootList = this.el.querySelector('ul'); // first `ul`
+  if (!this.props.rootList) {
+    this.props.rootList = document.createElement('ul');
+    this.el.appendChild(this.props.rootList);
+  }
+
   // Add custom classes to root element and list
   this.el.classList.add('localnav', 'localnav__panel');
   this.props.rootList.classList.add('localnav__list');
@@ -52,12 +58,8 @@ LocalNav.prototype.initLocalNav = function () {
   closeBtn.textContent = 'Close';
   closeBtn.setAttribute('type', 'button');
   closeBtn.addEventListener('click', this.props.closeLocalNav);
-
-  // Check for deprecated markup (div class="w" inner wrapper)
-  var deprecatedMarkup = this.el.querySelector('.w'),
-      node = (deprecatedMarkup ? deprecatedMarkup : this.props.rootList);
-
-  this.el.insertBefore(closeBtn, node);
+  // Don't use `this.el.insertBefore()` in case the root list is wrapped in an extra container
+  this.props.rootList.parentNode.insertBefore(closeBtn, this.props.rootList);
 
   // Move local nav to root container
   this.props.root.appendChild(this.el);
