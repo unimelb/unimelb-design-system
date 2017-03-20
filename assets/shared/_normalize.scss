@@ -35,6 +35,13 @@ strong {
   font-weight: bold;
 }
 
+// Revert to dotted bottom border for abbreviations
+// https://github.com/necolas/normalize.css/pull/468#issuecomment-174107494
+abbr[title] {
+  border-bottom: 1px dotted;
+  text-decoration: none;
+}
+
 // Override normalize.css behaviour
 button,
 input,
