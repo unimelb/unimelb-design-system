@@ -1,17 +1,22 @@
 .uomcontent [role="main"] {
   .notice {
+    @include wrapper;
     @include rem(margin-bottom, 15px);
+    @include rem(max-width, $w-sml);
     @include rem(padding, 15px);
     display: block; /* allow inline elements (e.g. `span`) */
     margin-left: auto;
     margin-right: auto;
-    max-width: $w-sml;
 
     p,
     ul,
     ol,
     li {
       color: inherit;
+    }
+
+    @include breakpoint(tablet) {
+      @include rem(max-width, $w-sml);
     }
   }
 
