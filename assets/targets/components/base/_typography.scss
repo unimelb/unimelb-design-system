@@ -328,8 +328,8 @@
 
       @include breakpoint(desktop) {
         & > li {
-          * {
-            max-width: 650px;
+          & > * {
+            max-width: 650px !important;
           }
 
           &::before {
@@ -352,8 +352,8 @@
         & > li {
           @include rem(padding-left, 110px);
 
-          > * {
-            margin-left: 0;
+          & > * {
+            margin-left: 0 !important;
           }
 
           li > * {
@@ -368,10 +368,8 @@
       }
 
       @include breakpoint(1400px) {
-        & > li {
-          * {
-            max-width: 700px;
-          }
+        & > li > * {
+          max-width: 700px !important;
         }
       }
     }
