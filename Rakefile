@@ -3,6 +3,8 @@ namespace :assets do
   desc 'Build the public assets with node'
   task :build do
     system 'npm run build'
+    system 'cat build/injection.css build/components.css > build/uom.css'
+    system 'cat build/injection.js build/components.js > build/uom.js'
   end
 end
 
