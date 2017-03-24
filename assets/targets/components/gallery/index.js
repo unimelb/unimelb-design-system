@@ -42,17 +42,21 @@ ImageGallery.prototype.setupGallery = function () {
     icon.innerHTML = '<svg role="img" class="icon"><use xlink:href="#icon-zoom-in"></use></svg>';
     link.appendChild(icon);
 
-    // Compute thumbnail ratio and add corresponding class
-    var ratio = img.offsetWidth / img.offsetHeight;
+    // Retrieve image dimensions from `data-size` attribute
+    var size = link.getAttribute('data-size').split('x');
+    var w = parseInt(size[0], 10);
+    var h = parseInt(size[1], 10);
+
+    // Compute image ratio and add corresponding class
+    var ratio = w / h;
     item.classList.add(ratio < 1 ? 'portrait' : (ratio > 2 ? 'panorama' : 'landscape'));
 
     // Create PhotoSwipe slide
-    var size = link.getAttribute('data-size').split('x');
     this.props.slides.push({
       el: link,
       src: link.getAttribute('href'),
-      w: parseInt(size[0], 10),
-      h: parseInt(size[1], 10),
+      w: w,
+      h: h,
       title: item.querySelector('figcaption').innerHTML,
       msrc: img.src
     });
