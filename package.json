@@ -5,16 +5,6 @@
   "repository": "marcom-unimelb/unimelb-design-system",
   "author": "University of Melbourne",
   "license": "UNLICENSED",
-  "dependencies": {
-    "classlist-polyfill": "unimelb/classlist-polyfill#1.1.20170228",
-    "es6-promise": "^4.0.5",
-    "just-debounce": "^1.0.0",
-    "normalize.css": "^5.0.0",
-    "perfect-scrollbar": "^0.6.10",
-    "photoswipe": "^4.1.1",
-    "promise": "~7.1.1",
-    "webfontloader": "~1.6.3"
-  },
   "engines": {
     "node": "6.9.3",
     "npm": "3.10.10"
@@ -26,8 +16,17 @@
     "shrink": "rm -f npm-shrinkwrap.json && npm prune && npm i && npm shrinkwrap --dev",
     "start": "bundle exec foreman start"
   },
+  "dependencies": {
+    "classlist-polyfill": "unimelb/classlist-polyfill#1.1.20170228",
+    "es6-promise": "^4.0.5",
+    "just-debounce": "^1.0.0",
+    "normalize.css": "^5.0.0",
+    "perfect-scrollbar": "^0.6.10",
+    "photoswipe": "^4.1.1",
+    "promise": "~7.1.1",
+    "webfontloader": "~1.6.3"
+  },
   "devDependencies": {
-    "autoprefixer": "^6.4.1",
     "babel-core": "~6.17.0",
     "babel-loader": "~6.2.5",
     "babel-preset-es2015": "~6.16.0",
@@ -43,6 +42,7 @@
     "jshint-loader": "~0.8.3",
     "locale-compare-polyfill": "~0.0.2",
     "node-sass": "~3.10.1",
+    "postcss-cssnext": "^2.10.0",
     "postcss-loader": "^0.13.0",
     "resolve-url-loader": "^1.6.0",
     "sass-loader": "~4.0.2",

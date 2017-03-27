@@ -3,7 +3,6 @@ require('dotenv').config();
 var fs = require('fs');
 var path = require('path');
 var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // use external interface to build asset require() calls
@@ -33,7 +32,7 @@ var config = {
   module: {
     loaders: [
       {
-        test: /\.(jpe?g|png|gif|svg|woff|ttf|otf|eot|ico)/,
+        test: /\.(jpe?g|png|gif|svg|woff|ttf|otf|eot|ico)$/,
         loader: 'file-loader?name=assets/[name]-[sha1:hash:5].[ext]'
       },
       {
@@ -52,8 +51,16 @@ var config = {
     ]
   },
   postcss: [
-    autoprefixer({
-      browsers: ['> 1% in AU', 'last 2 versions', 'Firefox ESR', 'ie >= 9', 'iOS >= 8.4', 'Safari >= 8', 'Android >= 4.4']
+    require('postcss-cssnext')({
+      browsers: [
+        '> 1% in AU',
+        'last 2 versions',
+        'Firefox ESR',
+        'ie >= 9',
+        'iOS >= 8.4',
+        'Safari >= 8',
+        'Android >= 4.4'
+      ]
     })
   ]
 };
