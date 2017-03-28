@@ -1,14 +1,14 @@
 .uomcontent {
   p.search-result-numbers {
     @include adjust-font-size-to(14px);
-    @include padding-leader(1);
+    padding-top: 1.5rem;
     border-top: 1px solid rgba(#000000, 0.1);
     color: $midgray;
   }
 
   ul.search-pagination {
-    @include padding-leader(1);
-    @include padding-trailer(1);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     padding-left: 0;
     padding-right: 0;
     text-align: left;

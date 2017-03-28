@@ -25,7 +25,7 @@
       }
 
       .bottom-align {
-        @include padding-trailer(2);
+        padding-bottom: 3rem;
         position: relative;
       }
     }
@@ -46,8 +46,8 @@
       }
 
       h1 {
-        @include padding-leader(2);
-        @include padding-trailer(1);
+        padding-top: 3rem;
+        padding-bottom: 1.5rem;
         max-width: $w-sml;
       }
 
@@ -55,7 +55,7 @@
         max-width: $w-sml;
 
         &.author {
-          @include padding-trailer(2);
+          padding-bottom: 3rem;
           max-width: $w-sml;
           border-bottom: 1px solid $lightergray;
 

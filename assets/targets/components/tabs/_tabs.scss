@@ -3,7 +3,7 @@
  */
 [data-tabbed].tabbed {
   @include clearfix;
-  @include trailer(2);
+  margin-bottom: 3rem;
   width: 100%;
 
   nav {
@@ -14,7 +14,7 @@
     }
 
     a {
-      @include padding-trailer(0.5);
+      padding-bottom: .75rem;
       padding-left: 1.5625rem;
       padding-right: 1.5625rem;
       background-color: inherit;
@@ -42,8 +42,8 @@
   }
 
   & > [role="tabpanel"] {
-    @include padding-leader(1);
-    @include padding-trailer(0);
+    padding-top: 1.5rem;
+    padding-bottom: 0;
     padding-left: 1.5625rem;
     padding-right: 1.5625rem;
     border-bottom: 1px solid $lightergray;

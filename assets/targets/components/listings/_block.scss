@@ -472,7 +472,7 @@
 
       span {
         @include adjust-font-size-to(20px);
-        @include padding-leader(4);
+        padding-top: 6rem;
         display: block;
         font-style: normal;
         font-weight: normal;

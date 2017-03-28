@@ -1,8 +1,8 @@
 .uomcontent [role="main"] {
   .lead {
     @include adjust-font-size-to(19px);
-    @include padding-leader(3);
-    @include padding-trailer(3);
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
     max-width: $w-mid;
     background: transparent;
     color: $black;
@@ -15,11 +15,11 @@
     text-align: center;
 
     & + p {
-      @include leader(0);
-      @include padding-leader(0);
+      margin-top: 0;
+      padding-top: 0;
 
       &::before {
-        @include padding-trailer(2);
+        padding-bottom: 3rem;
         margin-top: 1.875rem;
         width: 5rem;
         border-top: 2px solid $darkblue;
@@ -31,15 +31,15 @@
     }
 
     & + section {
-      @include padding-leader(0);
+      padding-top: 0;
     }
 
     h2 {
-      @include padding-leader(0);
+      padding-top: 0;
     }
 
     p {
-      @include padding-trailer(0);
+      padding-bottom: 0;
       max-width: $w-mid;
       color: $black;
       font-style: italic;
@@ -51,8 +51,8 @@
 
     &.left {
       @include wrapper;
-      @include padding-leader(2);
-      @include padding-trailer(2);
+      padding-top: 3rem;
+      padding-bottom: 3rem;
       max-width: $w-sml;
       padding-left: 0;
       padding-right: 0;
@@ -65,14 +65,14 @@
   }
 
   section > .lead {
-    @include padding-leader(1);
-    @include padding-trailer(1);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 }
 
 .uomcontent h1.aligned-title + .lead {
   & + p {
-    @include padding-leader(1);
+    padding-top: 1.5rem;
 
     &:before {
       display: none;
@@ -104,17 +104,17 @@
 
   // Compensate for padding-bottom of jump-nav on mobile
   .jump-navigation + .lead {
-    @include padding-leader(2);
+    padding-top: 3rem;
 
     @include breakpoint(wide) {
-      @include padding-leader(3);
+      padding-top: 4.5rem;
     }
 
     &.left {
-      @include padding-leader(1);
+      padding-top: 1.5rem;
 
       @include breakpoint(wide) {
-        @include padding-leader(2);
+        padding-top: 3rem;
       }
     }
   }

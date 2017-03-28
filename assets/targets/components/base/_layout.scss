@@ -44,7 +44,7 @@ body {
   }
 
   article {
-    @include padding-trailer(2);
+    padding-bottom: 3rem;
   }
 
   .aside {
@@ -73,8 +73,8 @@ body {
   }
 
   section {
-    @include padding-leader(2);
-    @include padding-trailer(2);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 
     div {
       max-width: $w-sml;
@@ -155,8 +155,8 @@ body {
   }
 
   footer {
-    @include padding-leader(2);
-    @include padding-trailer(2);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     clear: both;
 
     a.social {

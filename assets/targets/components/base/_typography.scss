@@ -76,8 +76,8 @@
 
 
     ul {
-      @include padding-leader(.5);
-      @include padding-trailer(0);
+      padding-top: .75rem;
+      padding-bottom: 0;
     }
 
     li {
@@ -145,7 +145,7 @@
 
   h1 {
     @include adjust-font-size-to(26px);
-    @include padding-trailer(1);
+    padding-bottom: 1.5rem;
     font-weight: $light;
 
     @include breakpoint(desktop) {
@@ -156,8 +156,8 @@
   h2 {
     @include adjust-font-size-to(15px);
     letter-spacing: .0625rem;
-    @include padding-leader(1);
-    @include padding-trailer(1);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     clear: left;
     font-weight: $bold;
     text-transform: uppercase;
@@ -176,7 +176,7 @@
   p,
   li {
     letter-spacing: .0125rem;
-    @include padding-trailer(1);
+    padding-bottom: 1.5rem;
   }
 
   ol,
@@ -189,7 +189,7 @@
     margin: 0 auto;
 
     li {
-      @include padding-trailer(0.5);
+      padding-bottom: .75rem;
       margin-left: .9375rem;
       max-width: $w-sml;
       color: $black;
@@ -303,14 +303,14 @@
         }
 
         & > p:first-child {
-          @include padding-leader(1);
+          padding-top: 1.5rem;
         }
       }
 
       h2 {
         @include adjust-font-size-to(26px);
-        @include padding-leader(1);
-        @include padding-trailer(1);
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
         font-weight: $light;
         text-transform: none;
 
@@ -488,8 +488,8 @@
 
   dl {
     @include adjust-font-size-to(12px);
-    @include padding-leader(1);
-    @include padding-trailer(1);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     padding-left: .9375rem;
     padding-right: .9375rem;
     dt {
@@ -547,8 +547,8 @@
     margin: 0;
 
     &.spacer {
-      @include leader(1);
-      @include trailer(1);
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -601,8 +601,8 @@
 
   .main-title {
     @include adjust-font-size-to(36px);
-    @include padding-leader(1);
-    @include padding-trailer(1);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     font-family: $ff-serif;
     font-weight: $regular;
     line-height: 1.2;

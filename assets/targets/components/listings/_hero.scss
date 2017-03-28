@@ -7,7 +7,7 @@
   }
 
   h2 {
-    @include trailer(1);
+    margin-bottom: 1.5rem;
     background-size: cover;
     max-width: 100%;
     padding: 0;
@@ -65,11 +65,11 @@
       padding: 10% 10%;
 
       strong {
-        @include padding-leader(0.5);
+        padding-top: .75rem;
       }
 
       p {
-        @include padding-trailer(1);
+        padding-bottom: 1.5rem;
       }
     }
   }

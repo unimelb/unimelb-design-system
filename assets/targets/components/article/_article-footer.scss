@@ -3,7 +3,7 @@
     padding-top: 0;
 
     .staff-listing-detailed {
-      @include padding-trailer(2);
+      padding-bottom: 3rem;
       margin: 0 auto;
       max-width: $w-sml;
 
@@ -19,8 +19,8 @@
     }
 
     .republish-wrapper {
-      @include padding-leader(0.5);
-      @include padding-trailer(0.5);
+      padding-top: .75rem;
+      padding-bottom: .75rem;
       max-width: $w-sml;
       border-bottom: 1px solid $lightergray;
       border-top: 1px solid $lightergray;
@@ -91,7 +91,7 @@
 
     .categories {
       @include adjust-font-size-to(17px);
-      @include padding-leader(1);
+      padding-top: 1.5rem;
       text-align: left;
 
       a {

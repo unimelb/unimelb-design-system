@@ -1,7 +1,7 @@
 @mixin pathfinder-3 {
   @include feature-listing-3;
-  @include leader(2);
-  @include trailer(2);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   background-color: transparent;
   border: 0 none;
   padding: 0 3%;
@@ -123,7 +123,7 @@
           transform: translateY(-50%);
 
           span {
-            @include trailer(0.5);
+            margin-bottom: .75rem;
             display: inline-block;
             position: static;
             transform: translateY(0);
@@ -141,7 +141,7 @@
       }
 
       p {
-        @include padding-trailer(2);
+        padding-bottom: 3rem;
         color: $black;
       }
     }
@@ -154,8 +154,8 @@
   }
 
   li {
-    @include leader(1);
-    @include trailer(1);
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     margin-left: 0;
     margin-right: 0;
     overflow: visible;
@@ -166,8 +166,8 @@
 
   p,
   span.text {
-    @include leader(1);
-    @include padding-trailer(1);
+    margin-top: 1.5rem;
+    padding-bottom: 1.5rem;
     font-size: .8125rem;
     min-width: 10.3125rem;
     padding-left: 1.25rem;
@@ -181,8 +181,8 @@
 
   strong {
     @include adjust-font-size-to(15px);
-    @include padding-leader(2);
-    @include padding-trailer(2);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     letter-spacing: .0625rem;
     background-color: transparent;
     border-bottom: 1px solid $white;
@@ -203,7 +203,7 @@
   }
 
   a {
-    @include padding-trailer(2);
+    padding-bottom: 3rem;
     max-width: 21.875rem;
     background-color: $brand;
     border-bottom: 3px solid darken($brand, 50%);
@@ -262,8 +262,8 @@
   }
 
   @include breakpoint(desktop) {
-    @include padding-leader(2);
-    @include padding-trailer(2);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     display: table;
     float: none;
     height: 100%;
@@ -291,8 +291,8 @@
 
     p,
     span.text {
-      @include padding-leader(1);
-      @include padding-trailer(5);
+      padding-top: 1.5rem;
+      padding-bottom: 7.5rem;
       max-width: 21.875rem;
       margin: 0 auto;
       padding-left: 0;
@@ -427,7 +427,7 @@
   .lead + .pathfinder-2,
   .lead + .pathfinder-3,
   .lead + .pathfinder-4 {
-    @include leader(0);
+    margin-top: 0;
     padding-top: 0;
   }
 

@@ -10,9 +10,9 @@
 }
 
 .uomcontent [role="main"] table.mobile-friendly {
-  @include leader(1);
+  margin-top: 1.5rem;
   max-width: 37.5rem;
-  @include trailer(1);
+  margin-bottom: 1.5rem;
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;

@@ -9,7 +9,7 @@
     position: relative;
 
     @include breakpoint(wide) {
-      @include trailer(2);
+      margin-bottom: 3rem;
       max-width: 100%;
       padding-bottom: 39.45%;
     }

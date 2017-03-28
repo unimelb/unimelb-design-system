@@ -29,12 +29,12 @@
 
     p {
       @include adjust-font-size-to(15px);
-      @include padding-trailer(0);
+      padding-bottom: 0;
     }
 
     .frame {
       max-width: 12.5rem;
-      @include trailer(1);
+      margin-bottom: 1.5rem;
       background-color: $lightestblue;
       border-radius: 50%;
       line-height: 0;
@@ -71,7 +71,7 @@
 
     strong {
       @include adjust-font-size-to(20px);
-      @include padding-leader(1);
+      padding-top: 1.5rem;
       display: block;
       color: $white;
       text-decoration: none;
@@ -79,8 +79,8 @@
 
     p {
       @include adjust-font-size-to(16px);
-      @include padding-leader(1);
-      @include padding-trailer(0.5);
+      padding-top: 1.5rem;
+      padding-bottom: .75rem;
       max-width: 31.25rem;
       color: $white;
       font-style: italic;
@@ -95,7 +95,7 @@
       }
 
       &.links {
-        @include padding-leader(0.5);
+        padding-top: .75rem;
         border-top: 1px solid rgba($white, 0.2);
       }
     }
@@ -103,7 +103,7 @@
 
   .diamond-mask {
     max-width: 18.75rem;
-    @include trailer(1);
+    margin-bottom: 1.5rem;
     transform: rotate(45deg) scale(.7);
     display: block;
     margin-left: auto;

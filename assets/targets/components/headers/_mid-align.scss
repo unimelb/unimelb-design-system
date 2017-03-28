@@ -13,7 +13,7 @@
       }
 
       p {
-        @include padding-trailer(0);
+        padding-bottom: 0;
         text-align: center;
       }
     }

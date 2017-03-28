@@ -1,6 +1,6 @@
 .uomcontent {
   p.search-spelling {
-    @include trailer(1);
+    margin-bottom: 1.5rem;
     border-bottom: 1px solid rgba($black, .1);
 
     strong {
@@ -26,15 +26,15 @@
 
     & > li {
       @include clearfix;
-      @include padding-trailer(1);
-      @include trailer(1);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
       border-bottom: 1px solid rgba($black, .1);
       list-style-type: none;
       margin-left: 0;
       width: auto;
 
       &:last-child {
-        @include padding-trailer(1);
+        padding-bottom: 1.5rem;
       }
 
       &.person {
@@ -58,7 +58,7 @@
         }
 
         .person__contact {
-          @include padding-leader(0.5);
+          padding-top: .75rem;
 
           a {
             white-space: nowrap;
@@ -95,7 +95,7 @@
             white-space: nowrap;
 
             & + .person__email {
-              @include padding-leader(0.5);
+              padding-top: .75rem;
             }
           }
         }
@@ -120,14 +120,14 @@
 
     h3 {
       @include adjust-font-size-to(20px);
-      @include padding-trailer(0.5);
+      padding-bottom: .75rem;
       font-weight: $regular;
       width: auto;
     }
 
     p {
       @include adjust-font-size-to(15px);
-      @include padding-trailer(0);
+      padding-bottom: 0;
       color: $black;
       width: auto;
 
@@ -145,7 +145,7 @@
       }
 
       &.more {
-        @include padding-leader(0.5);
+        padding-top: .75rem;
         clear: left;
 
         & > a::after {

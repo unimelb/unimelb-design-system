@@ -1,7 +1,7 @@
 @mixin boxes {
-  @include padding-leader(1);
-  @include padding-trailer(0);
-  @include trailer(2);
+  padding-top: 1.5rem;
+  padding-bottom: 0;
+  margin-bottom: 3rem;
   max-width: $w-sml;
   padding-left: 1.5625rem;
   padding-right: 1.5625rem;
@@ -34,7 +34,7 @@
 
   dd {
     @include adjust-font-size-to(20px);
-    @include trailer(1);
+    margin-bottom: 1.5rem;
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;

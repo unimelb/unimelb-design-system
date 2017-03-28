@@ -1,11 +1,11 @@
 .uomcontent .news-hero {
-  @include padding-trailer(2);
+  padding-bottom: 3rem;
   max-width: $w-lge;
   margin: 0 auto;
   text-align: right;
 
   a {
-    @include padding-leader(6);
+    padding-top: 9rem;
     max-width: 71.875rem;
     background-position: center;
     background-repeat: no-repeat;
@@ -25,8 +25,8 @@
   }
 
   .inner {
-    @include padding-leader(1);
-    @include padding-trailer(1);
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
 
@@ -54,7 +54,7 @@
     padding-right: 1.25rem;
 
     a {
-      @include padding-leader(14);
+      padding-top: 21rem;
     }
   }
 }
@@ -62,8 +62,8 @@
 .uomcontent .news-index {
   article {
     @include clearfix;
-    @include padding-leader(2);
-    @include padding-trailer(2);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     max-width: $w-mid;
     border-bottom: 1px solid $lightergray;
     margin: 0 auto;
@@ -148,14 +148,14 @@
 
   &.dense {
     article {
-      @include padding-leader(1);
-      @include padding-trailer(1);
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
       max-width: $w-sml;
     }
 
     h1 {
       @include adjust-font-size-to(20px);
-      @include padding-trailer(0.5);
+      padding-bottom: .75rem;
       font-weight: $regular;
     }
 
@@ -192,14 +192,14 @@
 
 .uomcontent [data-tabbed].tabbed {
   .news-tabs {
-    @include padding-leader(2);
+    padding-top: 3rem;
     max-width: 56.25rem;
     margin-left: auto;
     margin-right: auto;
   }
 
   .news-index.tab {
-    @include padding-leader(1);
+    padding-top: 1.5rem;
     border-bottom: 0;
     padding-left: 3%;
     padding-right: 3%;

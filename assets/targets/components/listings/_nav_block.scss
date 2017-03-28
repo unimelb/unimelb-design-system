@@ -1,6 +1,6 @@
 .uomcontent .navigation-block-listing {
-  @include padding-leader(3);
-  @include padding-trailer(3);
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
   max-width: 87.5rem;
   margin: 0 auto;
   padding-left: 3%;
@@ -22,7 +22,7 @@
   }
 
   a {
-    @include padding-trailer(0.5);
+    padding-bottom: .75rem;
     display: block;
   }
 
@@ -44,17 +44,17 @@
 
   h3 {
     @include adjust-font-size-to(20px);
-    @include padding-trailer(0.5);
+    padding-bottom: .75rem;
     font-weight: $regular;
 
     a {
-      @include padding-trailer(0);
+      padding-bottom: 0;
     }
   }
 
   p {
     @include adjust-font-size-to(14px);
-    @include padding-trailer(2);
+    padding-bottom: 3rem;
     border: 0;
     color: $midgray;
     width: 100%;
@@ -71,7 +71,7 @@
       padding: 0;
 
       ul {
-        @include padding-trailer(2);
+        padding-bottom: 3rem;
       }
     }
 
@@ -118,11 +118,11 @@
 
   ul.wide,
   ul.narrow {
-    @include padding-leader(1);
+    padding-top: 1.5rem;
 
     li {
-      @include padding-trailer(1);
-      @include trailer(1);
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.5rem;
     }
 
     a {
@@ -130,7 +130,7 @@
     }
 
     p {
-      @include padding-trailer(0);
+      padding-bottom: 0;
     }
 
     @include breakpoint(desktop) {
@@ -185,7 +185,7 @@
       }
 
       p {
-        @include padding-trailer(1);
+        padding-bottom: 1.5rem;
       }
 
       li {

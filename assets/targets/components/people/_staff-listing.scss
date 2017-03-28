@@ -1,9 +1,9 @@
 .uomcontent {
   .staff-listing {
     @include wrapper;
-    @include leader(1);
+    margin-top: 1.5rem;
     max-width: $w-mid;
-    @include trailer(1);
+    margin-bottom: 1.5rem;
     border: 0;
     border-collapse: collapse;
     display: table;

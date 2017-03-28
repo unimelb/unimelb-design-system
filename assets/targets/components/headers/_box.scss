@@ -10,14 +10,14 @@
       h1 {
         @include title;
         @include adjust-font-size-to(15px);
-        @include trailer(1);
+        margin-bottom: 1.5rem;
         font-weight: $bold;
         text-align: center;
       }
 
       p {
         @include adjust-font-size-to(16px);
-        @include padding-leader(0);
+        padding-top: 0;
         font-weight: $light;
       }
 

@@ -99,8 +99,8 @@
       }
 
       .accordion__title {
-        @include padding-leader(0.5);
-        @include padding-trailer(0.5);
+        padding-top: .75rem;
+        padding-bottom: .75rem;
         padding-left: 2.5rem;
         padding-right: .9375rem;
         display: block;
@@ -141,7 +141,7 @@
       }
 
       .accordion__hidden {
-        @include padding-leader(0.5);
+        padding-top: .75rem;
         padding-left: .9375rem;
         padding-right: .9375rem;
         display: none;

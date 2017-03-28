@@ -1,7 +1,7 @@
 .uomcontent [role="main"] {
   .enquiry {
-    @include padding-leader(2);
-    @include padding-trailer(2);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     background-color: $paleblue;
     box-shadow: 0 -1px 9px rgba($lightblue, 0.3) inset;
 
@@ -21,7 +21,7 @@
       @include wrapper;
       @include adjust-font-size-to(20px);
       line-height: 3.125rem;
-      @include padding-trailer(1);
+      padding-bottom: 1.5rem;
       max-width: $w-sml;
       text-align: center;
 
@@ -39,7 +39,7 @@
     .enquiry__subline {
       @include wrapper;
       @include adjust-font-size-to(16px);
-      @include padding-leader(.5);
+      padding-top: .75rem;
       max-width: $w-sml;
       border-top: 1px solid rgba($lightblue, 0.3);
       color: $midblue;
@@ -62,7 +62,7 @@
 
     .enquiry__form {
       form {
-        @include padding-leader(1);
+        padding-top: 1.5rem;
         max-width: 100%;
       }
 

@@ -104,8 +104,8 @@
   &.blockquote-classic {
     @include adjust-font-size-to(19px);
     @include adjust-leading-to(1);
-    @include padding-leader(1);
-    @include padding-trailer(2);
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
     max-width: $w-mid;
     padding-left: .9375rem;
     padding-right: .9375rem;

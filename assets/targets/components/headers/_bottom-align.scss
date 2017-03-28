@@ -9,7 +9,7 @@
       width: 100%;
 
       p {
-        @include padding-trailer(1);
+        padding-bottom: 1.5rem;
       }
 
       @include breakpoint(desktop) {

@@ -46,7 +46,7 @@
   }
 
   .form__subtext {
-    @include padding-trailer(.5);
+    padding-bottom: .75rem;
     font-size: smaller;
   }
 }
@@ -369,9 +369,9 @@
 }
 
 .uomcontent .newsletter-box {
-  @include leader(1);
-  @include padding-leader(1);
-  @include padding-trailer(1);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   max-width: $w-mid;
   background-color: transparent;
   border-top: 1px solid rgba($white, 0.2);
@@ -381,7 +381,7 @@
 
   p {
     @include adjust-font-size-to(20px);
-    @include padding-trailer(1);
+    padding-bottom: 1.5rem;
     font-weight: $thin;
   }
 
@@ -419,6 +419,6 @@
   }
 
   @include breakpoint(desktop) {
-    @include padding-leader(0);
+    padding-top: 0;
   }
 }

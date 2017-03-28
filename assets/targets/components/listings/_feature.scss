@@ -2,7 +2,7 @@
   @include listing;
 
   li {
-    @include padding-trailer(1);
+    padding-bottom: 1.5rem;
     border-top: 0 none;
     text-align: center;
   }
@@ -60,7 +60,7 @@
 
     strong {
       @include adjust-font-size-to(20px);
-      @include padding-trailer(0.5);
+      padding-bottom: .75rem;
     }
 
     p {

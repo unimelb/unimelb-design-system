@@ -1,11 +1,11 @@
 @mixin detail {
   @include wrapper;
-  @include padding-leader(1);
-  @include padding-trailer(2);
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
 
   .aside {
-    @include padding-leader(2);
-    @include padding-trailer(2);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     padding-left: 1.875rem;
     padding-right: 1.875rem;
     display: block;
@@ -35,9 +35,9 @@
           text-align: right;
 
           &:first-child {
-            @include padding-trailer(1);
+            padding-bottom: 1.5rem;
             margin-top: -.5rem;
-            @include trailer(1);
+            margin-bottom: 1.5rem;
             position: relative;
           }
 
@@ -92,8 +92,8 @@
     }
 
     div {
-      @include padding-leader(1);
-      @include padding-trailer(1);
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
       border-top: 1px solid darken($lightgray, 10%);
       text-align: center;
 
@@ -235,7 +235,7 @@
     h1,
     h2 {
       @include adjust-font-size-to(24px);
-      @include padding-trailer(1);
+      padding-bottom: 1.5rem;
       clear: none;
       font-weight: $light;
       letter-spacing: 0;
@@ -249,7 +249,7 @@
 
       @include breakpoint(desktop) {
         @include adjust-font-size-to(30px);
-        @include padding-leader(1);
+        padding-top: 1.5rem;
       }
     }
 
@@ -263,7 +263,7 @@
     }
 
     h3 {
-      @include padding-trailer(1);
+      padding-bottom: 1.5rem;
     }
   }
 }
