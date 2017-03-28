@@ -321,7 +321,7 @@
     &.thin {
       nav a {
         @include adjust-font-size-to(13px);
-        line-height: calc($tabs-height - .125rem); // leave 1px above and below for outline
+        line-height: calc(4rem - .125rem); // $tabs-height minus 1px above and below for outline
         margin-top: .0625rem; // outline cont.
         padding: 0 .9375rem;
       }
