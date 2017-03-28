@@ -11,16 +11,16 @@
       }
 
       &:last-child {
-        @include rem(padding-bottom, 15px);
+        padding-bottom: .9375rem;
       }
     }
   }
 
   .citation {
     @include adjust-font-size-to(15px);
-    @include rem(padding, 15px);
-    @include rem(margin-top, 4px);
-    @include rem(margin-bottom, 12px);
+    padding: .9375rem;
+    margin-top: .25rem;
+    margin-bottom: .75rem;
     background-color: $paleblue;
     border: 1px solid darken($paleblue, 7%);
     font-family: $ff-fixed;
@@ -30,7 +30,7 @@
     background-color: $white;
 
     &:last-child {
-      @include rem(margin-bottom, 4px);
+      margin-bottom: .25rem;
     }
   }
 }

@@ -5,7 +5,7 @@
 }
 
 .uom-prompt {
-  @include rem(padding, 16px 56px 8px);
+  padding: 1rem 3.5rem .5rem;
   animation: appear-bottom .5s backwards;
   background-color: $lighterblue;
   bottom: 0;
@@ -44,8 +44,8 @@
   }
 
   &__dismiss {
-    @include rem(right, 8px);
-    @include rem(top, 8px);
+    right: .5rem;
+    top: .5rem;
     background: none;
     border: 0;
     border-radius: 4px;
@@ -55,7 +55,7 @@
     transition: color .15s, background-color .15s;
 
     & > svg {
-      @include rem(margin, 8px);
+      margin: .5rem;
       display: block;
       fill: currentColor;
       margin: 8px;
@@ -69,8 +69,8 @@
 
   &__content {
     p {
-      @include rem(font-size, 18px);
-      @include rem(margin, 0 0 16px);
+      font-size: 1.125rem;
+      margin: 0 0 1rem;
     }
 
     ul {
@@ -80,17 +80,17 @@
     }
 
     li {
-      @include rem(margin, 0 8px);
+      margin: 0 .5rem;
       display: inline-block;
       padding: 0;
       vertical-align: top;
 
       & > a,
       & > button {
-        @include rem(font-size, 14px);
-        @include rem(margin-bottom, 8px);
-        @include rem(min-width, 96px);
-        @include rem(padding, 8px 16px);
+        font-size: .875rem;
+        margin-bottom: .5rem;
+        min-width: 6rem;
+        padding: .5rem 1rem;
         border: 2px solid #fff;
         border-radius: 4px;
         box-sizing: border-box;
@@ -106,7 +106,7 @@
         }
 
         @include breakpoint(desktop) {
-          @include rem(min-width, 160px);
+          min-width: 10rem;
         }
       }
 
@@ -116,7 +116,7 @@
       }
 
       @include breakpoint(tablet) {
-        @include rem(margin, 0 16px);
+        margin: 0 1rem;
       }
     }
   }

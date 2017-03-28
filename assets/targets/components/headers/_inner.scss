@@ -2,19 +2,19 @@
   header {
     .inner {
       @include clearfix;
-      @include rem(max-width, $w-lge);
+      max-width: $w-lge;
       margin: 0 auto;
       width: 94%;
 
       h1 {
-        @include rem(letter-spacing, 2px);
+        letter-spacing: .125rem;
         font-weight: $bold;
         text-transform: uppercase;
       }
 
       p {
-        @include rem(font-size, 18px);
-        @include rem(padding, 10px 0 20px);
+        font-size: 1.125rem;
+        padding: .625rem 0 1.25rem;
         line-height: 1.2;
         text-align: center;
       }
@@ -23,13 +23,13 @@
         text-align: center;
 
         small {
-          @include rem(padding-bottom, 10px);
+          padding-bottom: .625rem;
           display: block;
           font-weight: $light;
           line-height: 1.2;
 
           @include breakpoint(desktop) {
-            @include rem(margin-top, -15px);
+            margin-top: -.9375rem;
           }
         }
       }
@@ -40,20 +40,20 @@
           width: 75%;
 
           h1 {
-            @include rem(font-size, 28px);
+            font-size: 1.75rem;
             max-width: 100%;
             text-align: left;
           }
 
           p {
-            @include rem(font-size, 16px);
+            font-size: 1rem;
             max-width: 100%;
             text-align: left;
           }
         }
 
         .right {
-          @include rem(padding-top, 15px);
+          padding-top: .9375rem;
           float: right;
           overflow: hidden;
           text-align: right;

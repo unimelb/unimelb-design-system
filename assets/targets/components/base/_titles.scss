@@ -1,8 +1,8 @@
 @mixin aligned-title {
-  @include rem(font-size, 28px);
-  @include rem(padding-top, 48px);
-  @include rem(padding-bottom, 36px);
-  @include rem(padding-right, 20px);
+  font-size: 1.75rem;
+  padding-top: 3rem;
+  padding-bottom: 2.25rem;
+  padding-right: 1.25rem;
   font-weight: $light;
   letter-spacing: 0;
   margin: 0 auto;
@@ -12,13 +12,13 @@
   width: 94%;
 
   @include breakpoint(wide) {
-    @include rem(padding-top, 80px);
+    padding-top: 5rem;
     width: 100%;
   }
 
   &:after {
-    @include rem(margin-top, 36px);
-    @include rem(width, 50px);
+    margin-top: 2.25rem;
+    width: 3.125rem;
     border-bottom: 2px solid $black;
     content: '';
     display: block;
@@ -28,7 +28,7 @@
 
 @mixin subtitle {
   @include adjust-font-size-to(15px);
-  @include rem(letter-spacing, 2px);
+  letter-spacing: .125rem;
   font-weight: $bold;
   text-transform: uppercase;
 }
@@ -39,7 +39,7 @@
 
   &:after {
     @include margin-leader(1);
-    @include rem(width, 80px);
+    width: 5rem;
     border-bottom: 2px solid $black;
     content: '';
     display: block;
@@ -49,7 +49,7 @@
 
   &::after {
     @include margin-leader(1);
-    @include rem(width, 80px);
+    width: 5rem;
     border-bottom: 2px solid $black;
     content: '';
     display: block;

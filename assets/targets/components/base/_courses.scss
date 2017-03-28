@@ -1,13 +1,13 @@
 .uomcontent [role="main"] table.course-progression {
-  @include rem(margin-bottom, 30px);
-  @include rem(max-width, 700px);
+  margin-bottom: 1.875rem;
+  max-width: $w-sml;
   border: 0 none;
   border-collapse: collapse;
   overflow: visible;
   width: 100%;
 
   th {
-    @include rem(padding, 30px 0 10px);
+    padding: 1.875rem 0 .625rem;
     border-bottom: 1px solid $lightergray;
     border-left: 0 none;
     border-right: 0 none;
@@ -24,12 +24,12 @@
 
   thead th {
     @include subtitle;
-    @include rem(font-size, 14px);
+    font-size: .875rem;
   }
 
   td {
-    @include rem(padding-bottom, 10px);
-    @include rem(padding-top, 10px);
+    padding-bottom: .625rem;
+    padding-top: .625rem;
     border-bottom: 1px solid $lightergray;
     border-left: 0 none;
     border-right: 0 none;
@@ -53,8 +53,8 @@
   }
 
   .accordion__close {
-    @include rem(height, 50px);
-    @include rem(width, 50px);
+    height: 3.125rem;
+    width: 3.125rem;
     color: $white;
     cursor: pointer;
     display: block;
@@ -64,7 +64,7 @@
     top: 0;
 
     &::after {
-      @include rem(font-size, 60px);
+      font-size: 3.75rem;
       content: '\00d7';
       font-weight: $thin;
       line-height: 1;
@@ -78,15 +78,15 @@
     }
 
     td.unit-description {
-      @include rem(padding, 15px 0);
+      padding: .9375rem 0;
       background-color: $navy;
       color: $white;
       position: relative;
       text-align: left;
 
       @include breakpoint(tablet) {
-        @include rem(padding-left, 15px);
-        @include rem(padding-right, 15px);
+        padding-left: .9375rem;
+        padding-right: .9375rem;
       }
 
       &::before {
@@ -106,38 +106,38 @@
 
       h2 {
         @include subtitle;
-        @include rem(padding-right, 60px);
+        padding-right: 3.75rem;
         padding-left: 3%;
 
         @include breakpoint(tablet) {
-          @include rem(padding-left, 15px);
+          padding-left: .9375rem;
         }
       }
 
       p {
-        @include rem(font-size, 16px);
+        font-size: 1rem;
         padding-left: 3%;
         padding-right: 3%;
 
         @include breakpoint(tablet) {
-          @include rem(padding-left, 15px);
-          @include rem(padding-right, 15px);
+          padding-left: .9375rem;
+          padding-right: .9375rem;
         }
       }
 
       hr {
-        @include rem(margin, 15px);
+        margin: .9375rem;
         border-color: rgba($white, .2);
         margin-left: 3%;
         margin-right: 3%;
 
         @include breakpoint(tablet) {
-          @include rem(margin, 15px);
+          margin: .9375rem;
         }
       }
 
       .col1_3 {
-        @include rem(padding, 15px);
+        padding: .9375rem;
         clear: none;
 
         @include breakpoint(tablet) {
@@ -223,24 +223,24 @@
 
 .uomcontent [role="main"] .course-select {
   @include filtered-listing-select;
-  @include rem(padding-left, 15px);
-  @include rem(padding-right, 15px);
+  padding-left: .9375rem;
+  padding-right: .9375rem;
   box-shadow: none;
 
   .left,
   .right {
-    @include rem(padding-top, 15px);
+    padding-top: .9375rem;
   }
 
   .left p {
-    @include rem(font-size, 13px);
+    font-size: .8125rem;
     margin: 0;
     padding: 0;
   }
 
   @include breakpoint(desktop) {
-    @include rem(padding-left, 15px);
-    @include rem(padding-right, 15px);
+    padding-left: .9375rem;
+    padding-right: .9375rem;
     display: table;
     width: 100%;
 
@@ -257,7 +257,7 @@
       width: 25%;
 
       span {
-        @include rem(font-size, 14px);
+        font-size: .875rem;
         color: rgba($white, .8);
       }
 
@@ -267,7 +267,7 @@
     }
 
     h2 {
-      @include rem(font-size, 40px);
+      font-size: 2.5rem;
       margin: 0;
       max-width: 2000px;
       padding: 0;
@@ -282,7 +282,7 @@
 }
 
 .uomcontent [role="main"] header:first-child.banner .course-select h1 {
-  @include rem(font-size, 40px);
+  font-size: 2.5rem;
   margin: 0;
   max-width: 2000px;
   padding: 0;

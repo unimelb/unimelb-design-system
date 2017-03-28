@@ -1,6 +1,6 @@
 .uomcontent .page-footer {
   @include normalise;
-  @include rem(font-size, 20px);
+  font-size: 1.25rem;
   background-color: $navy;
   clear: left;
   color: $white;
@@ -12,15 +12,15 @@
 
   footer {
     @include wrapper;
-    @include rem(padding, 15px);
-    @include rem(padding-bottom, 60px);
+    padding: .9375rem;
+    padding-bottom: 3.75rem;
     margin-left: auto;
     margin-right: auto;
   }
 
   small {
-    @include rem(font-size, 12px);
-    @include rem(line-height, 20px);
+    font-size: .75rem;
+    line-height: 1.25rem;
     clear: left;
     color: $lightblue;
     display: block;
@@ -44,20 +44,20 @@
     padding: 0;
 
     a {
-      @include rem(font-size, 11px);
-      @include rem(line-height, 46px);
+      font-size: .6875rem;
+      line-height: 2.875rem;
       letter-spacing: 1px;
       text-transform: uppercase;
 
       @include breakpoint(desktop) {
-        @include rem(min-height, 113px);
+        min-height: 7.0625rem;
         line-height: 1.6em;
       }
     }
   }
 
   ul.people-links {
-    @include rem(max-width, 1400px);
+    max-width: 87.5rem;
     border-bottom: 1px solid $blue;
     border-top: 1px solid $blue;
     margin: 0 auto;
@@ -72,7 +72,7 @@
 
       a {
         @include adjust-font-size-to(10px);
-        @include rem(padding, 20px 15px);
+        padding: 1.25rem .9375rem;
         color: $white;
         display: block;
         letter-spacing: 2px;
@@ -97,8 +97,8 @@
 }
 
 .uomcontent .unimelb-lge {
-  @include rem(margin, 30px auto);
-  @include rem(width, 270px);
+  margin: 1.875rem auto;
+  width: 16.875rem;
   outline-color: $white;
   display: block;
 
@@ -111,8 +111,8 @@
 }
 
 .uomcontent .page-footer-section {
-  @include rem(height, 50px);
-  @include rem(line-height, 50px);
+  height: 3.125rem;
+  line-height: 3.125rem;
   border-bottom: 1px solid $blue;
   clear: both;
   float: left;
@@ -130,7 +130,7 @@
   }
 
   a {
-    @include rem(font-size, 15px);
+    font-size: .9375rem;
     color: $white;
     text-decoration: none;
 
@@ -140,14 +140,14 @@
   }
 
   &.nav {
-    @include rem(padding-bottom, 12px);
-    @include rem(padding-top, 8px);
+    padding-bottom: .75rem;
+    padding-top: .5rem;
     color: $lightblue;
     height: auto;
 
     li {
-      @include rem(padding-bottom, 10px);
-      @include rem(padding-top, 10px);
+      padding-bottom: .625rem;
+      padding-top: .625rem;
       color: inherit;
       line-height: 1.1;
       margin-left: 0;
@@ -173,7 +173,7 @@
     }
 
     a {
-      @include rem(font-size, 14px);
+      font-size: .875rem;
       color: inherit;
 
       &:hover,
@@ -183,13 +183,13 @@
     }
 
     @include breakpoint(desktop) {
-      @include rem(margin-bottom, 10px);
-      @include rem(margin-top, 20px);
+      margin-bottom: .625rem;
+      margin-top: 1.25rem;
       border: 0 none;
       width: 70%;
 
       li {
-        @include rem(padding-right, 30px);
+        padding-right: 1.875rem;
         clear: none;
         display: inline;
         float: none;
@@ -208,33 +208,33 @@
       }
 
       a {
-        @include rem(font-size, 15px);
+        font-size: .9375rem;
       }
     }
   }
 
   &.social {
-    @include rem(margin-bottom, 20px);
-    @include rem(padding-top, 16px);
+    margin-bottom: 1.25rem;
+    padding-top: 1rem;
     height: auto;
     padding-bottom: 0;
 
     li {
-      @include rem(margin-bottom, 16px);
+      margin-bottom: 1rem;
       line-height: 1;
       text-align: center;
       width: 20%;
 
       a {
-        @include rem(border-radius, 3px);
-        @include rem(padding-top, 6px);
+        border-radius: 3px;
+        padding-top: .375rem;
         color: $white;
         vertical-align: top;
 
         svg {
-          @include rem(height, 24px);
-          @include rem(margin-bottom, 5px);
-          @include rem(width, 24px);
+          height: 1.5rem;
+          margin-bottom: .3125rem;
+          width: 1.5rem;
           fill: currentColor;
         }
       }
@@ -250,9 +250,9 @@
 
     a {
       @include imgreplace;
-      @include rem(height, 36px);
-      @include rem(padding-bottom, 16px);
-      @include rem(width, 36px);
+      height: 2.25rem;
+      padding-bottom: 1rem;
+      width: 2.25rem;
       display: inline-block;
       text-decoration: none;
       overflow: hidden;
@@ -266,14 +266,14 @@
     }
 
     img {
-      @include rem(max-width, 24px);
-      @include rem(max-width, 24px);
+      max-width: 1.5rem;
+      max-width: 1.5rem;
     }
 
     @include breakpoint(desktop) {
-      @include rem(margin-bottom, 60px);
-      @include rem(margin-top, 20px);
-      @include rem(padding-right, 16px);
+      margin-bottom: 3.75rem;
+      margin-top: 1.25rem;
+      padding-right: 1rem;
       border: 0 none;
       clear: none;
       float: right;
@@ -281,7 +281,7 @@
       width: 30%;
 
       li {
-        @include rem(margin-left, 24px);
+        margin-left: 1.5rem;
         display: inline;
         float: none;
         width: auto;
@@ -308,15 +308,12 @@
   }
 }
 
-$w-lge: 1400px;
-$ff-serif: Georgia, 'Times New Roman', Times, serif;
-
 .uomcontent .page-footer footer {
 
   .ind-ack {
-    @include rem(font-size, 18px);
-    @include rem(max-width, $w-lge);
-    @include rem(padding, 32px 0);
+    font-size: 1.125rem;
+    max-width: $w-lge;
+    padding: 2rem 0;
     border-bottom: 1px solid $blue;
     clear: both;
     color: $lightblue;
@@ -328,7 +325,7 @@ $ff-serif: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
 
     a {
-      @include rem(font-size, 16px);
+      font-size: 1rem;
       color: $lightblue;
       font-style: normal;
     }

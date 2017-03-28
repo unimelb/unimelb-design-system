@@ -11,7 +11,7 @@
 
 .uomcontent [role="main"] table.mobile-friendly {
   @include leader(1);
-  @include rem(max-width, 600px);
+  max-width: 37.5rem;
   @include trailer(1);
   margin-left: auto;
   margin-right: auto;
@@ -33,7 +33,7 @@
       width: auto;
 
       &::before {
-        @include rem(font-size, 14px);
+        font-size: .875rem;
         color: $midgray;
         content: attr(data-label);
         display: block;
@@ -48,7 +48,7 @@
   border-collapse: collapse;
 
   th .sortable {
-    @include rem(padding-left, 3px);
+    padding-left: .1875rem;
     display: inline-block;
     font-size: .6em;
     position: relative;
@@ -88,12 +88,12 @@
     }
 
     th.right:last-child {
-      @include rem(padding-left, 20px);
+      padding-left: 1.25rem;
     }
     th.right.asc:last-child,
     th.right.desc:last-child {
-      @include rem(padding-left, 10px);
-      @include rem(padding-right, 20px);
+      padding-left: .625rem;
+      padding-right: 1.25rem;
     }
   }
 
@@ -127,7 +127,7 @@
 
       th,
       th:first-child {
-        @include rem(padding, 20px 10px 10px 10px);
+        padding: 1.25rem .625rem .625rem .625rem;
         background-color: transparent;
         border-top: 0;
         text-align: left;
@@ -135,14 +135,14 @@
     }
 
     th {
-      @include rem(padding, 10px);
+      padding: .625rem;
       border: 1px solid $lightergray;
       text-align: left;
       vertical-align: top;
     }
 
     td {
-      @include rem(padding, 10px);
+      padding: .625rem;
       border: 1px solid $lightergray;
       text-align: left;
       vertical-align: top;
@@ -176,7 +176,7 @@
   }
 
   @include breakpoint(desktop) {
-    @include rem(max-width, $w-mid);
+    max-width: $w-mid;
     border: 1px solid $lightergray;
     overflow: visible;
 
@@ -184,8 +184,8 @@
       display: table-header-group;
 
       th {
-        @include rem(font-size, 14px);
-        @include rem(padding, 10px);
+        font-size: .875rem;
+        padding: .625rem;
         border: 1px solid $lightergray;
         border-bottom-width: 2px;
         text-align: left;
@@ -197,7 +197,7 @@
       &.header {
         th,
         th:first-child {
-          @include rem(padding, 10px);
+          padding: .625rem;
           background-color: $paleblue;
           border: 1px solid $lightergray;
           text-align: left;
@@ -205,13 +205,13 @@
       }
 
       td {
-        @include rem(font-size, 16px);
-        @include rem(padding, 10px);
+        font-size: 1rem;
+        padding: .625rem;
         border: 1px solid $lightergray;
         display: table-cell;
 
         &:first-child {
-          @include rem(padding-bottom, 10px);
+          padding-bottom: .625rem;
         }
 
         &:empty {
@@ -225,7 +225,7 @@
     }
 
     &.wide {
-      @include rem(max-width, $w-lge);
+      max-width: $w-lge;
       table-layout: fixed;
     }
   }

@@ -1,10 +1,10 @@
 .logo-listing {
-  @include rem(max-width, $w-mid);
+  max-width: $w-mid;
   margin: 0 auto;
   text-align: center;
 
   &__item {
-    @include rem(padding, 10px);
+    padding: .625rem;
     color: rgba($black, .8);
     display: inline-block;
     vertical-align: middle;

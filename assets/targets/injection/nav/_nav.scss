@@ -12,7 +12,7 @@ body {
   }
 
   @include breakpoint(desktop) {
-    @include rem(padding-top, 90px);
+    padding-top: 5.625rem;
   }
 }
 
@@ -21,15 +21,15 @@ body {
 }
 
 @mixin quicklinks {
-  @include rem(margin, 30px 0);
-  @include rem(padding, 15px 0);
+  margin: 1.875rem 0;
+  padding: .9375rem 0;
   clear: both;
   margin: 0;
   max-width: 100%;
   width: 100%;
 
   li {
-    @include rem(line-height, 40px);
+    line-height: 2.5rem;
     clear: both;
     list-style-type: none;
     margin-left: 0;
@@ -42,9 +42,9 @@ body {
   }
 
   a {
-    @include rem(border-radius, 3px);
-    @include rem(font-size, 14px);
-    @include rem(padding, 15px);
+    border-radius: 3px;
+    font-size: .875rem;
+    padding: .9375rem;
     color: $white;
     display: block;
     margin-bottom: 0;
@@ -55,8 +55,8 @@ body {
 
     svg {
       fill: currentColor;
-      @include rem(margin-bottom, 14px);
-      @include rem(margin-top, 10px);
+      margin-bottom: .875rem;
+      margin-top: .625rem;
     }
 
     &:hover {
@@ -75,9 +75,9 @@ body {
 
   .icon {
     @include imgreplace;
-    @include rem(height, 24px);
-    @include rem(margin-right, 10px);
-    @include rem(width, 24px);
+    height: 1.5rem;
+    margin-right: .625rem;
+    width: 1.5rem;
     display: block;
     float: left;
 
@@ -99,9 +99,9 @@ body {
     }
 
     a {
-      @include rem(min-height, 106px);
-      @include rem(margin-top, 10px);
-      @include rem(margin-bottom, 10px);
+      min-height: 6.625rem;
+      margin-top: .625rem;
+      margin-bottom: .625rem;
       display: block;
       margin-left: 15%;
       margin-right: 15%;
@@ -116,7 +116,7 @@ body {
 }
 
 .uomcontent .sitemap-trigger {
-  @include rem(width, 50px);
+  width: 3.125rem;
   background-color: $navy;
   box-shadow: 3px 0 6px rgba($black, .4) inset;
   color: rgba($white, .5);
@@ -134,17 +134,17 @@ body {
     transform: translateX(0);
 
     &:hover {
-      @include rem(width, 50px);
+      width: 3.125rem;
       color: $white;
       transform: translateX(-5px);
     }
   }
 
   span {
-    @include rem(font-size, 15px);
-    @include rem(padding-left, 44px);
-    @include rem(padding-top, 190px);
-    @include rem(width, 240px);
+    font-size: .9375rem;
+    padding-left: 2.75rem;
+    padding-top: 11.875rem;
+    width: 15rem;
     font-weight: $light;
     left: 0;
     letter-spacing: 1px;
@@ -158,7 +158,7 @@ body {
     z-index: 11;
 
     &:before {
-      @include rem(font-size, 24px);
+      font-size: 1.5rem;
       content: '\203a';
       display: inline-block;
       left: -10px;

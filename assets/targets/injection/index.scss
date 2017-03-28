@@ -3,8 +3,8 @@
 
 // Custom wrapper mixin
 @mixin wrapper {
-  @include rem(max-width, 1400px);
-  @include rem(padding, 15px);
+  max-width: 87.5rem;
+  padding: .9375rem;
   margin: 0 auto;
 }
 

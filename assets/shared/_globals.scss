@@ -15,7 +15,7 @@
   width: 94%;
 
   @include breakpoint(tablet) {
-    @include rem(max-width, $w-lge);
+    max-width: $w-lge;
   }
 
   @include breakpoint(desktop) {

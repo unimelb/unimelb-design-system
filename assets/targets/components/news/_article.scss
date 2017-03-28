@@ -1,7 +1,7 @@
 .uomcontent article.news {
   @include detail;
   @include clearfix;
-  @include rem(max-width, $w-lge);
+  max-width: $w-lge;
   @include padding-leader(2);
 
   margin-left: 0;
@@ -21,11 +21,11 @@
 
   h1 {
     @include padding-leader(0);
-    @include rem(padding-bottom, 15px);
+    padding-bottom: .9375rem;
   }
 
   .aside {
-    @include rem(padding-top, 15px);
+    padding-top: .9375rem;
 
     div {
       padding-left: 0;
@@ -50,7 +50,7 @@
   }
 
   .article {
-    @include rem(padding-top, 5px);
+    padding-top: .3125rem;
     max-width: 100%;
 
     h1,
@@ -77,7 +77,7 @@
     }
 
     figure.full-width {
-      @include rem(max-width, 700px);
+      max-width: $w-sml;
     }
 
     blockquote {
@@ -113,7 +113,7 @@
 
       ul,
       ol {
-        @include rem(margin-left, 20px);
+        margin-left: 1.25rem;
       }
 
       blockquote {

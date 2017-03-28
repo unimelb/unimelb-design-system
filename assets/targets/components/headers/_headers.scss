@@ -7,23 +7,23 @@
 
 @mixin banner {
   @include bannerbox;
-  @include rem(min-height, 300px);
+  min-height: 18.75rem;
   height: auto;
 
   @include breakpoint(height-smallest) {
-    @include rem(min-height, 520px);
+    min-height: 32.5rem;
   }
 
   @include breakpoint(height-small) {
-    @include rem(min-height, 620px);
+    min-height: 38.75rem;
   }
 
   @include breakpoint(height-medium) {
-    @include rem(min-height, 720px);
+    min-height: 45rem;
   }
 
   @include breakpoint(height-big) {
-    @include rem(min-height, 800px);
+    min-height: 50rem;
   }
 
   @include breakpoint(desktop) {
@@ -80,7 +80,7 @@
 
     &.image {
       @include bannerbox;
-      @include rem(min-height, 300px);
+      min-height: 18.75rem;
       height: auto;
 
       & > h1,
@@ -92,9 +92,9 @@
       & > h1,
       & > p {
         @include padding-trailer(2);
-        @include rem(max-width, $w-mid);
-        @include rem(padding-left, 20px);
-        @include rem(padding-right, 20px);
+        max-width: $w-mid;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
         text-align: center;
       }
 
@@ -112,15 +112,15 @@
       padding: 0;
 
       @include breakpoint(tablet) {
-        @include rem(padding-bottom, 30px);
-        @include rem(padding-top, 30px);
+        padding-bottom: 1.875rem;
+        padding-top: 1.875rem;
       }
     }
 
     h1 {
       @include adjust-font-size-to(33px);
       @include padding-trailer(0);
-      @include rem(max-width, $w-sml);
+      max-width: $w-sml;
       font-weight: $thin;
       margin: 0 auto;
       text-align: left;
@@ -139,7 +139,7 @@
     }
 
     p {
-      @include rem(max-width, $w-sml);
+      max-width: $w-sml;
       font-weight: $thin;
       margin: 0 auto;
 
@@ -157,13 +157,13 @@
       @include adjust-font-size-to(16px);
       // @include padding-leader(1);
       // @include trailer(-1);
-      @include rem(max-width, 350px);
+      max-width: 21.875rem;
       font-style: italic;
 
       &:before {
         @include leader(0);
         @include trailer(1);
-        @include rem(width, 80px);
+        width: 5rem;
         border-top: 5px solid currentColor;
         content: '';
         display: block;
@@ -241,10 +241,10 @@
 .uomcontent .floating + [role="main"] {
   header,
   & > header:first-child {
-    @include rem(padding-top, 120px);
+    padding-top: 7.5rem;
 
     @include breakpoint(desktop) {
-      @include rem(padding-top, 180px);
+      padding-top: 11.25rem;
     }
   }
 }
@@ -258,7 +258,7 @@
       width: 100%;
 
       &.image > p {
-        padding-bottom: 200px;
+        padding-bottom: 12.5rem;
       }
     }
 
@@ -278,7 +278,7 @@
   header,
   & > header:first-child {
     &.image {
-      @include rem(height, 300px);
+      height: 18.75rem;
 
       &.with-filters {
         height: auto;
@@ -286,22 +286,22 @@
     }
 
     &.banner {
-      @include rem(height, 300px);
+      height: 18.75rem;
 
       @include breakpoint(height-smallest) {
-        @include rem(height, 520px);
+        height: 32.5rem;
       }
 
       @include breakpoint(height-small) {
-        @include rem(height, 620px);
+        height: 38.75rem;
       }
 
       @include breakpoint(height-medium) {
-        @include rem(height, 720px);
+        height: 45rem;
       }
 
       @include breakpoint(height-big) {
-        @include rem(height, 800px);
+        height: 50rem;
       }
     }
   }

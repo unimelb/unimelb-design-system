@@ -4,15 +4,15 @@
 
     .staff-listing-detailed {
       @include padding-trailer(2);
-      @include rem(margin, 0 auto);
-      @include rem(max-width, $w-sml);
+      margin: 0 auto;
+      max-width: $w-sml;
 
       li {
-        @include rem(width, 220px);
+        width: 13.75rem;
       }
 
       .frame {
-        @include rem(max-width, 100px);
+        max-width: 6.25rem;
         margin-left: auto;
         margin-right: auto;
       }
@@ -21,7 +21,7 @@
     .republish-wrapper {
       @include padding-leader(0.5);
       @include padding-trailer(0.5);
-      @include rem(max-width, $w-sml);
+      max-width: $w-sml;
       border-bottom: 1px solid $lightergray;
       border-top: 1px solid $lightergray;
       margin: 0 auto;
@@ -34,9 +34,9 @@
     }
 
     .share {
-      @include rem(margin, 0 auto);
-      @include rem(max-width, $w-sml);
-      @include rem(padding-top, 5px);
+      margin: 0 auto;
+      max-width: $w-sml;
+      padding-top: .3125rem;
       display: table;
       float: left;
       padding-bottom: 0;
@@ -51,16 +51,16 @@
 
       li {
         @include adjust-font-size-to(14px);
-        @include rem(margin, 0 10px 0 0);
+        margin: 0 .625rem 0 0;
         display: inline-block;
         list-style-type: none;
         padding: 0;
         width: auto;
 
         a {
-          @include rem(border-radius, 3px);
-          @include rem(height, 30px);
-          @include rem(width, 30px);
+          border-radius: 3px;
+          height: 1.875rem;
+          width: 1.875rem;
           background-color: #4099FF;
           color: $white;
           display: block;
@@ -68,8 +68,8 @@
           vertical-align: top;
 
           svg {
-            @include rem(height, 30px);
-            @include rem(width, 30px);
+            height: 1.875rem;
+            width: 1.875rem;
             fill: currentColor;
           }
         }

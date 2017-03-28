@@ -1,7 +1,7 @@
 @mixin half {
   @include wrapper;
-  @include rem(padding-bottom, 30px);
-  @include rem(padding-top, 30px);
+  padding-bottom: 1.875rem;
+  padding-top: 1.875rem;
   max-width: 100%;
 
   h1 {
@@ -9,9 +9,9 @@
   }
 
   img {
-    @include rem(margin-top, 30px);
-    @include rem(padding-left, 15px);
-    @include rem(padding-right, 15px);
+    margin-top: 1.875rem;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
     max-width: 95%;
     width: 100%;
   }
@@ -40,7 +40,7 @@
     }
 
     @include breakpoint(desktop) {
-      @include rem(padding, 30px 15px);
+      padding: 1.875rem .9375rem;
       display: table-cell;
       vertical-align: top;
       width: 50%;
@@ -52,12 +52,12 @@
   }
 
   @include breakpoint(desktop) {
-    @include rem(max-width, $w-lge);
+    max-width: $w-lge;
     display: table;
 
     svg {
-      @include rem(margin-left, 15px);
-      @include rem(margin-right, 15px);
+      margin-left: .9375rem;
+      margin-right: .9375rem;
     }
   }
 }

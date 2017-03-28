@@ -1,8 +1,8 @@
 .uomcontent [role="main"] {
   header {
     .box {
-      @include rem(max-width, $w-sml);
-      @include rem(padding, 56px 30px);
+      max-width: $w-sml;
+      padding: 3.5rem 1.875rem;
       background: rgba($white, .8);
       color: $black;
       margin: 0 auto;
@@ -22,9 +22,9 @@
       }
 
       @include breakpoint(tablet) {
-        @include rem(margin, 30px auto);
-        @include rem(padding-left, 60px);
-        @include rem(padding-right, 60px);
+        margin: 1.875rem auto;
+        padding-left: 3.75rem;
+        padding-right: 3.75rem;
       }
     }
   }

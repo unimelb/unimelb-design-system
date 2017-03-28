@@ -1,11 +1,11 @@
 .uomcontent .simple-listing {
-  @include rem(max-width, $w-lge);
-  @include rem(padding, 0 16px 32px);
+  max-width: $w-lge;
+  padding: 0 1rem 2rem;
   color: $midgray;
   line-height: 1.6;
 
   &__item {
-    @include rem(margin, 0 0 16px);
+    margin: 0 0 1rem;
     color: inherit;
     display: block;
     list-style-type: none;
@@ -15,7 +15,7 @@
   }
 
   &__link {
-    @include rem(padding-bottom, 8px);
+    padding-bottom: .5rem;
     color: inherit;
     display: block;
     outline-offset: 1px;
@@ -32,7 +32,7 @@
   }
 
   &__img {
-    @include rem(margin-bottom, 12px);
+    margin-bottom: .75rem;
     background-position: center;
     background-size: cover;
     padding-top: 62.5%; /* 16/10 */
@@ -47,7 +47,7 @@
 
   /* includes overrides for h2, h3 and h4 */
   &__heading {
-    @include rem(margin-bottom, 2px);
+    margin-bottom: .125rem;
     color: $darkblue;
     font-size: 1em;
     font-weight: 400;
@@ -79,12 +79,12 @@
   &--text {
     .simple-listing { /* for nesting purposes */
       &__link {
-        @include rem(padding-top, 4px);
+        padding-top: .25rem;
       }
 
       /* underline headings */
       &__heading {
-        @include rem(margin-bottom, 8px);
+        margin-bottom: .5rem;
         color: $lighterblue;
         font-size: 1.25em;
         text-decoration: underline;
@@ -100,18 +100,18 @@
 
   @include breakpoint(tablet) {
     @include clearfix;
-    @include rem(padding-bottom, 24px);
+    padding-bottom: 1.5rem;
 
     .simple-listing__item {
-      @include rem(margin-bottom, 24px);
+      margin-bottom: 1.5rem;
     }
 
     &--four {
-      @include rem(padding-left, 8px);
-      @include rem(padding-right, 8px);
+      padding-left: .5rem;
+      padding-right: .5rem;
 
       .simple-listing__item {
-        @include rem(padding, 0 8px);
+        padding: 0 .5rem;
         float: left;
         width: 50%;
 
@@ -121,10 +121,10 @@
   }
 
   @include breakpoint(desktop) {
-    @include rem(padding, 0 10px 24px);
+    padding: 0 .625rem 1.5rem;
 
     .simple-listing__item {
-      @include rem(padding, 0 10px);
+      padding: 0 .625rem;
     }
 
     &--two,
@@ -156,11 +156,11 @@
       /* reduce max-width of 2 and 3-column text-only listings (making sure to compensate for the items' padding) */
       &.simple-listing--one,
       &.simple-listing--two {
-        @include rem(max-width, 720px); /* 700px + 0.625rem * 2 */
+        max-width: 45rem; /* 700px + 0.625rem * 2 */
       }
 
       &.simple-listing--three {
-        @include rem(max-width, 920px); /* 900px + 0.625rem * 2 */
+        max-width: 57.5rem; /* 900px + 0.625rem * 2 */
       }
     }
   }

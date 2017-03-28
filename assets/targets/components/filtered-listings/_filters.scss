@@ -14,7 +14,7 @@
 }
 
 @mixin filtered-listing-select {
-  @include rem(max-width, $w-lge);
+  max-width: $w-lge;
   background-color: transparent;
   color: $white;
   margin: 0 auto;
@@ -26,14 +26,14 @@
   }
 
   strong {
-    @include rem(font-size, 15px);
-    @include rem(padding-bottom, 5px);
+    font-size: .9375rem;
+    padding-bottom: .3125rem;
     display: block;
     font-weight: $light;
   }
 
   h2 {
-    @include rem(font-size, 30px);
+    font-size: 1.875rem;
     font-weight: $thin;
     line-height: 1.2;
     margin-left: 0;
@@ -43,7 +43,7 @@
   }
 
   p {
-    @include rem(font-size, 13px);
+    font-size: .8125rem;
     font-weight: $light;
     margin-left: 0;
     padding: 0;
@@ -52,34 +52,34 @@
 
   .left {
     @include breakpoint(tablet) {
-      @include rem(line-height, 30px);
+      line-height: 1.875rem;
       margin: 0;
 
       legend,
       label {
-        @include rem(font-size, 15px);
-        @include rem(padding, 0 0 15px);
+        font-size: .9375rem;
+        padding: 0 0 .9375rem;
         color: $white;
         display: block;
       }
     }
 
     @include breakpoint(desktop) {
-      @include rem(padding-left, 30px);
-      @include rem(padding-right, 30px);
+      padding-left: 1.875rem;
+      padding-right: 1.875rem;
       float: left;
       width: 66.66%;
     }
   }
 
   .filtered-listing-tag {
-    @include rem(padding-right, 45px);
+    padding-right: 2.8125rem;
     float: left;
 
     input[type="checkbox"] {
       & + label {
-        @include rem(padding-left, 5px);
-        @include rem(padding-top, 5px);
+        padding-left: .3125rem;
+        padding-top: .3125rem;
         display: inline-block;
         width: auto;
 
@@ -88,7 +88,7 @@
         }
 
         span {
-          @include rem(padding-left, 25px);
+          padding-left: 1.5625rem;
           display: inline-block;
           width: auto;
 
@@ -170,11 +170,11 @@
   }
 
   .right {
-    @include rem(padding-top, 30px);
+    padding-top: 1.875rem;
     margin: 0;
 
     & > div {
-      @include rem(padding-top, 3px);
+      padding-top: .1875rem;
 
       select {
         width: 100%;
@@ -187,15 +187,15 @@
     }
 
     label {
-      @include rem(font-size, 15px);
-      @include rem(line-height, 30px);
-      @include rem(padding-bottom, 15px);
+      font-size: .9375rem;
+      line-height: 1.875rem;
+      padding-bottom: .9375rem;
       display: block;
       width: 100%;
     }
 
     @include breakpoint(desktop) {
-      @include rem(padding-right, 30px);
+      padding-right: 1.875rem;
       float: right;
       margin: 0;
       padding-top: 0;

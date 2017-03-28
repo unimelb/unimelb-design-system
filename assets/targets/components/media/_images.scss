@@ -39,7 +39,7 @@
   }
 
   .fullwidth {
-    @include rem(height, 500px);
+    height: 31.25rem;
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
@@ -93,14 +93,14 @@
 
       p {
         @include padding-leader(0);
-        @include rem(max-width, 450px);
+        max-width: 28.125rem;
         font-weight: $bold;
         margin-left: auto;
         margin-right: auto;
 
         @include breakpoint(desktop) {
           @include adjust-font-size-to(56px);
-          @include rem(max-width, $w-sml);
+          max-width: $w-sml;
           padding-left: 0;
           padding-right: 0;
           text-align: left;
@@ -109,7 +109,7 @@
     }
 
     section {
-      @include rem(padding-top, 200px);
+      padding-top: 12.5rem;
       @include grad-bottom;
       bottom: 0;
       margin: 0;
@@ -123,7 +123,7 @@
     p {
       @include adjust-font-size-to(19px);
       @include padding-leader(2);
-      @include rem(margin, 0 15px);
+      margin: 0 .9375rem;
       color: $white;
       font-weight: $light;
       max-width: 100%;
@@ -137,9 +137,9 @@
       }
 
       @include breakpoint(desktop) {
-        @include rem(max-width, $w-mid);
-        @include rem(padding-left, 20px);
-        @include rem(padding-right, 20px);
+        max-width: $w-mid;
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
         margin: 0 auto;
 
         &.black {
@@ -150,7 +150,7 @@
 
     h2 {
       @include adjust-font-size-to(20px);
-      @include rem(letter-spacing, 5px);
+      letter-spacing: .3125rem;
       color: $white;
 
       &.title:after,
@@ -171,19 +171,19 @@
     }
 
     @include breakpoint(height-small) {
-      @include rem(height, 650px);
+      height: 40.625rem;
       p {
         @include adjust-font-size-to(22px);
       }
     }
 
     @include breakpoint(height-medium) {
-      @include rem(height, 850px);
-      @include rem(padding-bottom, 30px);
+      height: 53.125rem;
+      padding-bottom: 1.875rem;
     }
 
     @include breakpoint(height-big) {
-      @include rem(height, 1000px);
+      height: 62.5rem;
     }
   }
 }

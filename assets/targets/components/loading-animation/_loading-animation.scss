@@ -41,8 +41,8 @@
   }
 
   .cube {
-    @include rem(height, 50px);
-    @include rem(width, 50px);
+    height: 3.125rem;
+    width: 3.125rem;
     animation: rotateplane 1.2s infinite ease-in-out;
     background-color: $darkblue;
     margin: 0 auto;

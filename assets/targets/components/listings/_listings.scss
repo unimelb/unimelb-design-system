@@ -44,7 +44,7 @@
   }
 
   figure {
-    @include rem(margin-bottom, 15px);
+    margin-bottom: .9375rem;
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
@@ -75,10 +75,10 @@
   }
 
   &.listing--crop-height figure {
-    @include rem(height, 200px);
+    height: 12.5rem;
 
     img {
-      @include rem(min-height, 200px);
+      min-height: 12.5rem;
       max-width: none;
     }
   }
@@ -112,7 +112,7 @@
     }
 
     a {
-      @include rem(padding, 0 10px);
+      padding: 0 .625rem;
     }
 
     strong,

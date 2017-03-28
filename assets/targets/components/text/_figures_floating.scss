@@ -1,5 +1,5 @@
 @mixin inset {
-  @include rem(margin-top, 6px);
+  margin-top: .375rem;
   float: none;
   margin-bottom: 0;
   margin-left: auto;
@@ -9,8 +9,8 @@
   text-align: center;
 
   figcaption {
-    @include rem(font-size, 14px);
-    @include rem(padding-bottom, 15px);
+    font-size: .875rem;
+    padding-bottom: .9375rem;
     color: $midblue;
     font-style: italic;
     line-height: 1.2;
@@ -19,22 +19,22 @@
 
   img,
   svg {
-    @include rem(max-height, 500px);
+    max-height: 31.25rem;
   }
 
   @include breakpoint(tablet) {
-    @include rem(margin-bottom, 30px);
+    margin-bottom: 1.875rem;
     border: 0 none;
     max-width: 62%;
 
     figcaption {
-      @include rem(margin-top, 15px);
-      @include rem(padding-top, 15px);
+      margin-top: .9375rem;
+      padding-top: .9375rem;
       padding-bottom: 0;
       position: relative;
 
       &:before {
-        @include rem(width, 40px);
+        width: 2.5rem;
         border-bottom: 2px solid $midblue;
         content: '';
         display: block;
@@ -43,7 +43,7 @@
       }
 
       &::before {
-        @include rem(width, 40px);
+        width: 2.5rem;
         border-bottom: 2px solid $midblue;
         content: '';
         display: block;
@@ -54,7 +54,7 @@
   }
 
   @include breakpoint(wide) {
-    @include rem(margin-bottom, 20px);
+    margin-bottom: 1.25rem;
     max-width: 80%;
   }
 }
@@ -64,7 +64,7 @@
     @include inset;
 
     @include breakpoint(tablet) {
-      @include rem(margin-right, 30px);
+      margin-right: 1.875rem;
       float: left;
       text-align: left;
 
@@ -82,7 +82,7 @@
     }
 
     @include breakpoint(wide) {
-      @include rem(margin-left, -180px);
+      margin-left: -11.25rem;
     }
   }
 
@@ -90,7 +90,7 @@
     @include inset;
 
     @include breakpoint(tablet) {
-      @include rem(margin-left, 30px);
+      margin-left: 1.875rem;
       float: right;
       text-align: right;
 
@@ -108,7 +108,7 @@
     }
 
     @include breakpoint(wide) {
-      @include rem(margin-right, -180px);
+      margin-right: -11.25rem;
     }
   }
 }
@@ -122,23 +122,23 @@ body.jumpnav-active .uomcontent {
     }
 
     @include breakpoint(1400px) {
-      @include rem(margin-bottom, 20px);
-      @include rem(margin-left, -180px);
+      margin-bottom: 1.25rem;
+      margin-left: -11.25rem;
       max-width: 80%;
     }
   }
 
   .inset-right {
     @include breakpoint(wide) {
-      @include rem(margin-left, 30px);
+      margin-left: 1.875rem;
       margin-right: 0;
       max-width: 100%;
       padding: 0;
     }
 
     @include breakpoint(1400px) {
-      @include rem(margin-bottom, 20px);
-      @include rem(margin-right, -180px);
+      margin-bottom: 1.25rem;
+      margin-right: -11.25rem;
       max-width: 80%;
     }
   }
@@ -152,20 +152,20 @@ body.jumpnav-active .uomcontent {
     }
 
     @include breakpoint(1400px) {
-      @include rem(margin-bottom, 20px);
-      @include rem(margin-left, -180px);
+      margin-bottom: 1.25rem;
+      margin-left: -11.25rem;
     }
   }
 
   blockquote:not(.blockquote-classic).right {
     @include breakpoint(wide) {
-      @include rem(margin-left, 30px);
+      margin-left: 1.875rem;
       margin-right: 0;
     }
 
     @include breakpoint(1400px) {
-      @include rem(margin-bottom, 20px);
-      @include rem(margin-right, -180px);
+      margin-bottom: 1.25rem;
+      margin-right: -11.25rem;
     }
   }
 }

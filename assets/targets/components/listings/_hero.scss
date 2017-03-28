@@ -22,7 +22,7 @@
   }
 
   figure {
-    @include rem(max-height, 500px);
+    max-height: 31.25rem;
     margin: 0;
   }
 
@@ -31,8 +31,8 @@
     margin: 0;
     max-width: 100%;
     padding: 3%;
-    @include rem(padding-bottom, 15px);
-    @include rem(padding-top, 15px);
+    padding-bottom: .9375rem;
+    padding-top: .9375rem;
 
     @include breakpoint(0) {
       filter: none;

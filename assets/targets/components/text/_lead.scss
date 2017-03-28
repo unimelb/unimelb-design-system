@@ -3,7 +3,7 @@
     @include adjust-font-size-to(19px);
     @include padding-leader(3);
     @include padding-trailer(3);
-    @include rem(max-width, $w-mid);
+    max-width: $w-mid;
     background: transparent;
     color: $black;
     filter: none;
@@ -20,8 +20,8 @@
 
       &::before {
         @include padding-trailer(2);
-        @include rem(margin-top, 30px);
-        @include rem(width, 80px);
+        margin-top: 1.875rem;
+        width: 5rem;
         border-top: 2px solid $darkblue;
         content: '';
         display: block;
@@ -40,7 +40,7 @@
 
     p {
       @include padding-trailer(0);
-      @include rem(max-width, $w-mid);
+      max-width: $w-mid;
       color: $black;
       font-style: italic;
     }
@@ -53,7 +53,7 @@
       @include wrapper;
       @include padding-leader(2);
       @include padding-trailer(2);
-      @include rem(max-width, $w-sml);
+      max-width: $w-sml;
       padding-left: 0;
       padding-right: 0;
       text-align: left;
@@ -80,7 +80,7 @@
   }
 
   &.left {
-    @include rem(max-width, $w-sml);
+    max-width: $w-sml;
     padding-top: 0;
 
     & + p {
@@ -95,7 +95,7 @@
     padding: 0;
 
     @include breakpoint(wide) {
-      @include rem(max-width, $w-sml);
+      max-width: $w-sml;
       padding-left: 0;
       padding-right: 0;
       text-align: left;

@@ -1,7 +1,7 @@
 .uomcontent .block-listing {
   @include clearfix;
-  @include rem(margin-bottom, 32px);
-  @include rem(margin-top, 32px);
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   background-color: transparent;
   border: none;
   margin-left: auto;
@@ -10,7 +10,7 @@
   width: 100%;
 
   li {
-    @include rem(margin-bottom, 16px);
+    margin-bottom: 1rem;
     background-color: transparent;
     border: 1px solid rgba($black, .15);
     box-shadow: 0 0 9px -3px rgba($black, .3);
@@ -25,8 +25,8 @@
   }
 
   p {
-    @include rem(font-size, 13px);
-    @include rem(padding, 16px 16px 0);
+    font-size: .8125rem;
+    padding: 1rem 1rem 0;
     background-color: transparent;
     color: inherit;
     line-height: 1.5;
@@ -34,13 +34,13 @@
     text-align: left;
 
     &:last-of-type {
-      @include rem(padding-bottom, 16px);
+      padding-bottom: 1rem;
     }
   }
 
   strong {
-    @include rem(font-size, 20px);
-    @include rem(padding, 16px 16px 0);
+    font-size: 1.25rem;
+    padding: 1rem 1rem 0;
     background-color: transparent;
     color: inherit;
     display: block;
@@ -63,8 +63,8 @@
 
   .meta {
     @include clearfix;
-    @include rem(font-size, 12px);
-    @include rem(padding, 4px 16px);
+    font-size: .75rem;
+    padding: .25rem 1rem;
     background-color: rgba($white, .9);
     color: inherit;
     position: relative;
@@ -82,16 +82,16 @@
   }
 
   .when {
-    @include rem(font-size, 18px);
-    @include rem(margin-bottom, 16px);
-    @include rem(padding, 16px 16px 0);
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    padding: 1rem 1rem 0;
     color: $highlight;
     font-weight: $regular;
     line-height: 1.4;
     text-align: left;
 
     time {
-      @include rem(font-size, 26px);
+      font-size: 1.625rem;
       display: block;
       font-weight: $bold;
       padding-bottom: 0;
@@ -100,16 +100,16 @@
   }
 
   .range {
-    @include rem(padding-top, 4px);
-    @include rem(margin-bottom, 4px);
+    padding-top: .25rem;
+    margin-bottom: .25rem;
     line-height: 2.8;
 
     time {
-      @include rem(font-size, 18px);
+      font-size: 1.125rem;
       font-weight: $regular;
 
       &:first-child::after {
-        @include rem(width, 32px);
+        width: 2rem;
         border-bottom: 3px solid $highlight;
         content: '';
         display: block;
@@ -123,7 +123,7 @@
     color: $white;
 
     strong {
-      @include rem(margin-bottom, 24px);
+      margin-bottom: 1.5rem;
       padding-top: 0;
     }
 
@@ -144,7 +144,7 @@
 
   .double {
     .block-container {
-      @include rem(padding, 32px 0 12px);
+      padding: 2rem 0 .75rem;
       background-color: rgba($black, .6);
       background-size: cover;
       color: $white;
@@ -156,19 +156,19 @@
     }
 
     strong {
-      @include rem(font-size, 40px);
+      font-size: 2.5rem;
       font-weight: $thin;
       line-height: 1.1;
       margin-bottom: 0;
     }
 
     .button-hero-inverse {
-      @include rem(margin-left, 16px);
+      margin-left: 1rem;
     }
   }
 
   @include breakpoint(600px) {
-    @include rem(max-width, $w-lge);
+    max-width: $w-lge;
 
     li {
       margin-bottom: 1%;
@@ -179,7 +179,7 @@
     }
 
     .block-container {
-      @include rem(min-height, 440px);
+      min-height: 27.5rem;
       display: block;
       position: relative;
     }
@@ -202,18 +202,18 @@
       }
 
       strong {
-        @include rem(padding, 64px 32px 32px);
+        padding: 4rem 2rem 2rem;
         line-height: 1;
       }
 
       p {
-        @include rem(padding, 0 32px 16px);
-        @include rem(font-size, 20px);
+        padding: 0 2rem 1rem;
+        font-size: 1.25rem;
         line-height: 1.4;
       }
 
       .button-hero-inverse {
-        @include rem(margin-left, 32px);
+        margin-left: 2rem;
       }
     }
   }
@@ -227,23 +227,23 @@
       width: 49%;
 
       strong {
-        @include rem(font-size, 54px);
-        @include rem(padding, 64px 64px 32px);
+        font-size: 3.375rem;
+        padding: 4rem 4rem 2rem;
         line-height: 1.1;
       }
 
       p {
-        @include rem(padding, 0 64px 32px);
+        padding: 0 4rem 2rem;
         line-height: 1.3;
       }
 
       .button-hero-inverse {
-        @include rem(margin-left, 64px);
+        margin-left: 4rem;
       }
     }
   }
 
-  @include breakpoint($w-lge) {
+  @include breakpoint(87.5em) {
     max-width: 1414px;
     padding: 0;
 
@@ -266,7 +266,7 @@
   }
 
   .crop-height {
-    @include rem(max-height, 190px);
+    max-height: 11.875rem;
     overflow: hidden;
 
     img {
@@ -278,11 +278,11 @@
   .exhibition {
     .crop-height,
     .block-listing__img {
-      @include rem(margin-bottom, -28px);
+      margin-bottom: -1.75rem;
     }
 
     .crop-height {
-      @include rem(max-height, 240px);
+      max-height: 15rem;
     }
   }
 
@@ -302,7 +302,7 @@
         width: 100%;
 
         &::before {
-          @include rem(height, 50px);
+          height: 3.125rem;
           background: linear-gradient(to top, rgba($white, 1) 10%, rgba($white, 0) 100%);
           content: '';
           display: block;
@@ -311,17 +311,17 @@
       }
 
       .block-listing__img::before {
-        @include rem(top, -50px);
+        top: -3.125rem;
         left: 0;
         position: absolute;
       }
     }
 
     .news .meta::before {
-      @include rem(height, 60px);
-      @include rem(margin-left, -16px);
-      @include rem(margin-right, -16px);
-      @include rem(margin-top, -64px); /* account for padding-top of 4px on `meta` */
+      height: 3.75rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+      margin-top: -4rem; /* account for padding-top of 4px on `meta` */
       background: linear-gradient(to top, rgba($white, .9) 33%, rgba($white, 0) 100%);
       content: '';
       display: block;
@@ -329,18 +329,18 @@
     }
 
     .top-unit {
-      @include rem(height, 410px);
-      @include rem(padding-top, 16px);
+      height: 25.625rem;
+      padding-top: 1rem;
       overflow: hidden;
       position: relative;
     }
 
     .double .top-unit {
-      @include rem(max-height, 430px);
+      max-height: 26.875rem;
     }
 
     .mid-unit {
-      @include rem(max-height, 90px);
+      max-height: 5.625rem;
     }
   }
 
@@ -391,20 +391,20 @@
     }
 
     &.newshero {
-      @include rem(min-height, 300px);
+      min-height: 18.75rem;
 
       a {
-        @include rem(min-height, 300px);
+        min-height: 18.75rem;
         background-color: transparent;
 
         @include breakpoint(600px) {
-          @include rem(min-height, 440px);
+          min-height: 27.5rem;
         }
       }
 
       strong {
         @include adjust-font-size-to(28px);
-        @include rem(padding, 10px);
+        padding: .625rem;
         background-color: rgba($highlight, .8);
         bottom: 0;
         font-weight: $regular;
@@ -418,13 +418,13 @@
         }
 
         @include breakpoint(600px) {
-          @include rem(padding, 10px 24px);
+          padding: .625rem 1.5rem;
           width: 100%;
         }
 
         @include breakpoint(wide) {
           @include adjust-font-size-to(26px);
-          @include rem(padding, 20px 24px);
+          padding: 1.25rem 1.5rem;
         }
       }
 
@@ -432,8 +432,8 @@
         border-bottom-color: $highlight;
 
         strong {
-          @include rem(padding-bottom, 26px);
-          @include rem(padding-left, 26px);
+          padding-bottom: 1.625rem;
+          padding-left: 1.625rem;
           background-color: transparent;
 
           em {
@@ -441,7 +441,7 @@
           }
 
           span {
-            @include rem(padding-bottom, 4px);
+            padding-bottom: .25rem;
             background-color: $white;
             box-decoration-break: clone;
             box-shadow: 10px 0 0 $white, -10px 0 0 $white;
@@ -451,7 +451,7 @@
           }
 
           @include breakpoint(600px) {
-            @include rem(font-size, 40px);
+            font-size: 2.5rem;
 
             span {
               line-height: 1.1;
@@ -466,8 +466,8 @@
       background-size: cover;
 
       a {
-        @include rem(padding-left, 24px);
-        @include rem(padding-right, 24px);
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
       }
 
       span {
@@ -478,9 +478,9 @@
         font-weight: normal;
 
         svg {
-          @include rem(height, 50px);
-          @include rem(margin-bottom, -7px);
-          @include rem(margin-left, -10px);
+          height: 3.125rem;
+          margin-bottom: -.4375rem;
+          margin-left: -.625rem;
           fill: $cyan;
         }
       }
@@ -547,7 +547,7 @@
     }
 
     &.instagram {
-      @include rem(min-height, 350px);
+      min-height: 21.875rem;
       background-position: center;
       background-size: cover;
       border-bottom-color: rgba($brand, 0.8);
@@ -561,7 +561,7 @@
       }
 
       .meta {
-        @include rem(padding, 12px 20px 0);
+        padding: .75rem 1.25rem 0;
         background-color: rgba($brand, 0.8);
         border: none;
         bottom: 0;
@@ -572,7 +572,7 @@
         width: 100%;
 
         em {
-          @include rem(padding-bottom, 8px);
+          padding-bottom: .5rem;
           float: right;
         }
 
@@ -594,7 +594,7 @@
       }
 
       a {
-        @include rem(padding, 10px 0);
+        padding: .625rem 0;
         border: 0;
         border-bottom: 1px solid $lightergray;
         color: $highlight;
@@ -613,8 +613,8 @@
 
       strong {
         @include adjust-font-size-to(13px);
-        @include rem(letter-spacing, 1px);
-        @include rem(padding, 16px 0);
+        letter-spacing: .0625rem;
+        padding: 1rem 0;
         color: currentColor;
         display: inline-block;
         font-weight: $bold;
@@ -626,7 +626,7 @@
         white-space: nowrap;
 
         span.small {
-          @include rem(margin-right, 4px);
+          margin-right: .25rem;
           margin-top: 0;
 
           @include breakpoint(0) {
@@ -645,16 +645,16 @@
 
         &:after,
         &::after {
-          @include rem(font-size, 10px);
-          @include rem(margin-top, -10px);
-          @include rem(padding-left, 10px);
+          font-size: .625rem;
+          margin-top: -.625rem;
+          padding-left: .625rem;
           content: '\2192';
           display: inline-block;
           line-height: 1;
 
           @include breakpoint(height-small) {
-            @include rem(font-size, 18px);
-            @include rem(padding-left, 10px);
+            font-size: 1.125rem;
+            padding-left: .625rem;
           }
         }
 
@@ -665,7 +665,7 @@
 
       @include breakpoint(600px) {
         .block-container {
-          @include rem(height, 440px);
+          height: 27.5rem;
         }
 
         @supports (display: flex) {

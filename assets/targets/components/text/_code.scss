@@ -10,7 +10,7 @@
 .uomcontent {
   code {
     @include code;
-    @include rem(border-bottom-width, 2px);
+    border-bottom-width: 2px;
     color: $midgray;
   }
 
@@ -22,10 +22,10 @@
     @include padding-leader(1);
     @include padding-trailer(1);
     @include trailer(1);
-    @include rem(border-bottom-width, 1px);
-    @include rem(border-top-width, 1px);
-    @include rem(padding-left, 15px);
-    @include rem(padding-right, 15px);
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
     overflow: auto;
 
     code {
@@ -33,9 +33,9 @@
     }
 
     @include breakpoint(700px) {
-      @include rem(border-radius, 3px);
-      @include rem(border-left-width, 1px);
-      @include rem(border-right-width, 1px);
+      border-radius: 3px;
+      border-left-width: 1px;
+      border-right-width: 1px;
     }
 
     @include breakpoint(desktop) {
@@ -47,8 +47,8 @@
 }
 
 #top.uomcontent [role="main"] pre.flex {
-  @include rem(padding-left, 30px);
-  @include rem(padding-right, 30px);
+  padding-left: 1.875rem;
+  padding-right: 1.875rem;
   height: auto;
   padding-top: 0;
 }

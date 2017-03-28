@@ -1,5 +1,5 @@
 @mixin tilt {
-  @include rem(height, 100px);
+  height: 6.25rem;
   content: "";
   width: 100%;
   position: absolute;
@@ -21,7 +21,7 @@ body {
 }
 
 .spacer {
-  @include rem(padding, 0 15px);
+  padding: 0 .9375rem;
 }
 
 
@@ -40,7 +40,7 @@ body {
   }
 
   & > *:first-child {
-    @include rem(padding-top, 100px);
+    padding-top: 6.25rem;
   }
 
   article {
@@ -63,7 +63,7 @@ body {
   }
 
   fieldset {
-    @include rem(max-width, $w-sml);
+    max-width: $w-sml;
     margin: 0 auto;
     min-width: 0;
   }
@@ -77,7 +77,7 @@ body {
     @include padding-trailer(2);
 
     div {
-      @include rem(max-width, $w-sml);
+      max-width: $w-sml;
       margin: 0 auto;
 
       &.youtube5placeholder {
@@ -144,9 +144,9 @@ body {
     }
 
     & + .video {
-      @include rem(margin-top, -30px);
-      @include rem(max-width, $w-lge);
-      @include breakpoint($w-lge) {
+      margin-top: -1.875rem;
+      max-width: $w-lge;
+      @include breakpoint(87.5em) {
         margin-left: auto;
         margin-right: auto;
         padding-bottom: 550px;
@@ -160,9 +160,9 @@ body {
     clear: both;
 
     a.social {
-      @include rem(border-radius, 3px);
-      @include rem(font-size, 14px);
-      @include rem(margin, 0 15px);
+      border-radius: 3px;
+      font-size: .875rem;
+      margin: 0 .9375rem;
       background-color: transparent;
       color: $white;
       display: inline-block;
@@ -170,14 +170,14 @@ body {
       vertical-align: top;
 
       [data-icon] {
-        @include rem(padding, 10px);
+        padding: .625rem;
         height: auto;
         width: auto;
       }
 
       .icon {
-        @include rem(height, 24px);
-        @include rem(width, 24px);
+        height: 1.5rem;
+        width: 1.5rem;
       }
 
       &:hover {
@@ -188,7 +188,7 @@ body {
     }
 
     &.alt {
-      @include rem(padding, 30px 0);
+      padding: 1.875rem 0;
       background-color: $paleblue;
       box-shadow: 0 6px 6px 4px rgba($black, .3);
       color: $black;
@@ -223,8 +223,8 @@ body {
       }
 
       ul {
-        @include rem(padding-left, 20px);
-        @include rem(max-width, $w-sml);
+        padding-left: 1.25rem;
+        max-width: $w-sml;
         margin: 0 auto;
         padding-top: 0;
       }
@@ -241,8 +241,8 @@ body {
     width: 100%;
 
     dt {
-      @include rem(letter-spacing, 1px);
-      @include rem(padding-bottom, 5px);
+      letter-spacing: .0625rem;
+      padding-bottom: .3125rem;
       font-weight: $bold;
       margin-left: 0;
       text-transform: uppercase;
@@ -262,12 +262,12 @@ body {
   }
 
   .hold {
-    @include rem(max-width, $w-mid);
+    max-width: $w-mid;
     margin: 0 auto;
 
     .aside {
-      @include rem(padding-bottom, 15px);
-      @include rem(padding-top, 5px);
+      padding-bottom: .9375rem;
+      padding-top: .3125rem;
       vertical-align: top;
 
       dt {
@@ -282,12 +282,12 @@ body {
 
     .bside {
       @include breakpoint(desktop) {
-        @include rem(padding-bottom, 20px);
-        @include rem(padding-top, 20px);
+        padding-bottom: 1.25rem;
+        padding-top: 1.25rem;
       }
 
       dd {
-        @include rem(padding-bottom, 10px);
+        padding-bottom: .625rem;
       }
     }
   }
@@ -336,8 +336,8 @@ body {
   }
 
   .fifth {
-    @include rem(margin-bottom, 15px);
-    @include rem(max-width, $w-sml);
+    margin-bottom: .9375rem;
+    max-width: $w-sml;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
@@ -345,8 +345,8 @@ body {
 
 
     @include breakpoint(wide) {
-      @include rem(margin-bottom, 15px);
-      @include rem(max-width, $w-lge);
+      margin-bottom: .9375rem;
+      max-width: $w-lge;
       width: 100%;
 
       .col {
@@ -361,7 +361,7 @@ body {
 
   .quarter {
     li {
-      @include rem(padding-bottom, 20px);
+      padding-bottom: 1.25rem;
       line-height: 1;
       margin-left: 9%;
       margin-right: 9%;
@@ -379,7 +379,7 @@ body {
   }
 
   .with-figure {
-    @include rem(max-width, $w-sml);
+    max-width: $w-sml;
     margin: 0 auto;
   }
 
@@ -390,18 +390,18 @@ body {
 
     &__main,
     &__side {
-      @include rem(padding, 32px 16px);
+      padding: 2rem 1rem;
     }
 
     &__side {
-      @include rem(font-size, 14px);
+      font-size: .875rem;
       background-color: $paleblue;
       color: $darkgray;
       line-height: 1.68;
     }
 
     &__main__inner {
-      @include rem(max-width, 1100px);
+      max-width: 68.75rem;
       margin-left: 0;
       margin-right: auto;
     }
@@ -424,7 +424,7 @@ body {
 
       &__main,
       &__side {
-        @include rem(padding, 72px 16px);
+        padding: 4.5rem 1rem;
         display: table-cell;
         vertical-align: top;
       }
@@ -433,7 +433,7 @@ body {
         width: 33%;
 
         &__inner {
-          @include rem(max-width, 340px);
+          max-width: 21.25rem;
           margin-left: auto;
           margin-right: 0;
         }
@@ -443,7 +443,7 @@ body {
     @include breakpoint(wide) {
       &__main,
       &__side {
-        @include rem(padding, 72px 32px);
+        padding: 4.5rem 2rem;
       }
     }
   }
@@ -459,7 +459,7 @@ body {
 
   .margin-rule {
     .floating {
-      @include rem(padding, 15px 15px 30px);
+      padding: .9375rem .9375rem 1.875rem;
       background-color: $lightgray;
 
       h2,
@@ -469,17 +469,17 @@ body {
     }
 
     @include breakpoint(desktop) {
-      @include rem(width, 1099px);
+      width: 68.6875rem;
       margin: 0 auto;
 
       section {
-        @include rem(margin, 30px 0 30px 300px);
+        margin: 1.875rem 0 1.875rem 18.75rem;
         padding-bottom: 0;
         padding-top: 0;
 
         &.ruled {
-          @include rem(margin-bottom, 60px);
-          @include rem(margin-top, 60px);
+          margin-bottom: 3.75rem;
+          margin-top: 3.75rem;
           border-left: 1px solid $black;
           float: left;
           margin-left: 0;
@@ -487,28 +487,28 @@ body {
       }
 
       .floating {
-        @include rem(padding-right, 20px);
-        @include rem(padding-top, 50px);
-        @include rem(width, 280px);
+        padding-right: 1.25rem;
+        padding-top: 3.125rem;
+        width: 17.5rem;
         background-color: transparent;
         float: left;
         text-align: right;
 
         h2 {
-          @include rem(font-size, 26px);
-          @include rem(padding-bottom, 15px);
+          font-size: 1.625rem;
+          padding-bottom: .9375rem;
         }
       }
     }
   }
 
   .tilt-before {
-    @include rem(padding-top, 50px);
+    padding-top: 3.125rem;
 
     &:before,
     &::before {
       @include tilt;
-      @include rem(margin-top, -100px);
+      margin-top: -6.25rem;
       background-color: $white;
       transform: skewY(-2deg);
     }
@@ -520,7 +520,7 @@ body {
   }
 
   .tilt-after {
-    @include rem(padding-bottom, 50px);
+    padding-bottom: 3.125rem;
 
     &:after,
     &::after {
@@ -535,12 +535,12 @@ body {
     }
 
     & + * {
-      @include rem(padding-top, 100px);
+      padding-top: 6.25rem;
     }
   }
 
   .with-tilt-sibling {
-    @include rem(padding-bottom, 100px);
+    padding-bottom: 6.25rem;
   }
 
   .center {
@@ -575,7 +575,7 @@ body {
 
 // Uninjected styles
 .uomcontent .page-local-history {
-  @include rem(padding, 15px 30px);
+  padding: .9375rem 1.875rem;
   color: $midblue;
   display: block;
 
@@ -589,21 +589,21 @@ body {
 }
 
 .uomcontent footer.cta {
-  @include rem(padding-top, 30px);
+  padding-top: 1.875rem;
   background-color: $blue;
   color: $white;
 
   .overview {
-    @include rem(padding, 30px 0 0);
+    padding: 1.875rem 0 0;
   }
 
   .button-hero-inverse {
-    @include rem(margin-left, 30px);
-    @include rem(padding-bottom, 10px);
-    @include rem(padding-top, 10px);
+    margin-left: 1.875rem;
+    padding-bottom: .625rem;
+    padding-top: .625rem;
 
     &::after {
-      @include rem(top, -4px);
+      top: -.25rem;
     }
   }
 
@@ -613,11 +613,11 @@ body {
   }
 
   ul {
-    @include rem (max-width, $w-lge);
+    max-width: $w-lge;
     margin: 0 auto;
 
     li {
-      @include rem(padding, 15px);
+      padding: .9375rem;
       list-style-type: none;
     }
 
@@ -626,17 +626,17 @@ body {
     }
 
     img {
-      @include rem(margin-right, 10px);
-      @include rem(max-width, 24px);
+      margin-right: .625rem;
+      max-width: 1.5rem;
       vertical-align: middle;
     }
 
     @include breakpoint(desktop) {
-      @include rem(padding, 0 0 30px);
+      padding: 0 0 1.875rem;
       text-align: center;
 
       li {
-        @include rem(padding, 30px);
+        padding: 1.875rem;
         display: inline-block;
         float: none;
         width: auto;
@@ -645,7 +645,7 @@ body {
 
     &.site-links {
       @include breakpoint(desktop) {
-        @include rem(padding-top, 30px);
+        padding-top: 1.875rem;
       }
     }
   }

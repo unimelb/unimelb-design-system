@@ -2,7 +2,7 @@
   .staff-listing {
     @include wrapper;
     @include leader(1);
-    @include rem(max-width, $w-mid);
+    max-width: $w-mid;
     @include trailer(1);
     border: 0;
     border-collapse: collapse;
@@ -30,16 +30,16 @@
         vertical-align: top;
 
         .frame {
-          @include rem(height, 50px);
-          @include rem(width, 50px);
+          height: 3.125rem;
+          width: 3.125rem;
           background-color: $lightestblue;
           border-radius: 50%;
         }
       }
 
       .details {
-        @include rem(padding-left, 25px);
-        @include rem(width, 570px);
+        padding-left: 1.5625rem;
+        width: 35.625rem;
         display: table-cell;
         line-height: 1.4;
         vertical-align: middle;
@@ -57,7 +57,7 @@
       }
     }
 
-    @include breakpoint($w-lge+30px) {
+    @include breakpoint(89.375em) {
       margin-left: auto;
       margin-right: auto;
     }
@@ -68,12 +68,12 @@
     }
 
     li {
-      @include rem(padding, 10px 0);
+      padding: .625rem 0;
       list-style-type: none;
     }
 
     tr {
-      @include rem(padding, 10px 0);
+      padding: .625rem 0;
       border-bottom: 1px solid $lightergray;
       display: block;
 
@@ -89,7 +89,7 @@
         width: 100%;
 
         @include breakpoint(tablet) {
-          @include rem(padding, 10px 0);
+          padding: .625rem 0;
           border-bottom: 1px solid $lightergray;
           display: table-cell;
           width: auto;

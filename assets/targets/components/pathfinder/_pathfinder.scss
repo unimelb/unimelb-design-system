@@ -113,13 +113,13 @@
       }
 
       strong {
-        @include rem(height, 100px);
-        @include rem(min-width, 250px);
+        height: 6.25rem;
+        min-width: 15.625rem;
         border-bottom: 0 none;
         color: $black;
 
         & > span {
-          @include rem(padding, 0px 10px);
+          padding: 0 .625rem;
           transform: translateY(-50%);
 
           span {
@@ -130,9 +130,9 @@
           }
 
           &:after {
-            @include rem(font-size, 20px);
-            @include rem(margin-top, -5px);
-            @include rem(padding-left, 5px);
+            font-size: 1.25rem;
+            margin-top: -.3125rem;
+            padding-left: .3125rem;
             content: '\2192';
             display: inline-block;
             line-height: 0;
@@ -168,10 +168,10 @@
   span.text {
     @include leader(1);
     @include padding-trailer(1);
-    @include rem(font-size, 13px);
-    @include rem(min-width, 165px);
-    @include rem(padding-left, 20px);
-    @include rem(padding-right, 20px);
+    font-size: .8125rem;
+    min-width: 10.3125rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     background-color: transparent;
     display: block;
     padding-top: 0;
@@ -183,7 +183,7 @@
     @include adjust-font-size-to(15px);
     @include padding-leader(2);
     @include padding-trailer(2);
-    @include rem(letter-spacing, 1px);
+    letter-spacing: .0625rem;
     background-color: transparent;
     border-bottom: 1px solid $white;
     color: $white;
@@ -204,7 +204,7 @@
 
   a {
     @include padding-trailer(2);
-    @include rem(max-width, 350px);
+    max-width: 21.875rem;
     background-color: $brand;
     border-bottom: 3px solid darken($brand, 50%);
     margin: 0 auto;
@@ -218,8 +218,8 @@
     }
 
     .button-small {
-      @include rem(font-size, 12px);
-      @include rem(padding, 10px 15px);
+      font-size: .75rem;
+      padding: .625rem .9375rem;
       background-color: darken($brand, 5%);
     }
 
@@ -236,7 +236,7 @@
     }
 
     &.featured {
-      @include rem(margin-bottom, -15px);
+      margin-bottom: -.9375rem;
       background-color: darken($highlight, 5%);
       color: $black;
 
@@ -293,7 +293,7 @@
     span.text {
       @include padding-leader(1);
       @include padding-trailer(5);
-      @include rem(max-width, 350px);
+      max-width: 21.875rem;
       margin: 0 auto;
       padding-left: 0;
       padding-right: 0;
@@ -301,23 +301,23 @@
     }
 
     strong {
-      @include rem(height, 120px);
-      @include rem(max-width, 350px);
+      height: 7.5rem;
+      max-width: 21.875rem;
       margin: 0 auto;
       padding: 0;
     }
 
     a {
-      @include rem(max-width, 350px);
-      @include rem(min-height, 400px);
-      @include rem(padding, 0 35px);
+      max-width: 21.875rem;
+      min-height: 25rem;
+      padding: 0 2.1875rem;
       height: 100%;
       margin: 0 auto;
       position: relative;
     }
 
     .button-small {
-      @include rem(bottom, 30px);
+      bottom: 1.875rem;
       box-align: horizontal;
       display: inline-block;
       left: 50%;
@@ -332,7 +332,7 @@
 
   @include breakpoint(desktop) {
     li {
-      @include rem(padding-left, 1px);
+      padding-left: .0625rem;
       padding-right: 0;
       text-align: left;
 
@@ -348,7 +348,7 @@
     }
 
     p {
-      @include rem(min-width, 280px);
+      min-width: 17.5rem;
     }
   }
 
@@ -378,7 +378,7 @@
 
     @include breakpoint(desktop) {
       li {
-        @include rem(margin-bottom, 1px);
+        margin-bottom: .0625rem;
         display: inline-block;
         height: auto;
         width: 49%;
@@ -405,7 +405,7 @@
         }
 
         &:nth-child(2n+1) {
-          @include rem(padding-left, 1px);
+          padding-left: .0625rem;
         }
       }
     }
@@ -413,7 +413,7 @@
     &.soft {
       @include breakpoint(desktop) {
         li {
-          @include rem(padding-left, 1px);
+          padding-left: .0625rem;
           text-align: left;
 
           &:nth-child(2n+1) {

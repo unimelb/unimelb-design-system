@@ -1,12 +1,12 @@
 .uomcontent {
   .staff-listing-detailed {
-    @include rem(max-width, $w-lge);
+    max-width: $w-lge;
     padding: 0;
     text-align: center;
 
     li {
-      @include rem(padding, 48px 16px);
-      @include rem(width, 300px);
+      padding: 3rem 1rem;
+      width: 18.75rem;
       display: inline-block;
       list-style-type: none;
       margin: 0;
@@ -33,7 +33,7 @@
     }
 
     .frame {
-      @include rem(max-width, 200px);
+      max-width: 12.5rem;
       @include trailer(1);
       background-color: $lightestblue;
       border-radius: 50%;
@@ -50,7 +50,7 @@
 
     &--diamond {
       li {
-        @include rem(width, 400px);
+        width: 25rem;
       }
     }
   }
@@ -81,13 +81,13 @@
       @include adjust-font-size-to(16px);
       @include padding-leader(1);
       @include padding-trailer(0.5);
-      @include rem(max-width, 500px);
+      max-width: 31.25rem;
       color: $white;
       font-style: italic;
 
       a {
         @include adjust-font-size-to(15px);
-        @include rem(padding, 0px 10px);
+        padding: 0 .625rem;
         color: $white;
         font-style: normal;
         font-weight: $regular;
@@ -102,7 +102,7 @@
   }
 
   .diamond-mask {
-    @include rem(max-width, 300px);
+    max-width: 18.75rem;
     @include trailer(1);
     transform: rotate(45deg) scale(.7);
     display: block;

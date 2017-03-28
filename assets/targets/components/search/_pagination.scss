@@ -23,7 +23,7 @@
       width: auto;
 
       &:nth-last-child(2) {
-        @include rem(margin-right, 10px);
+        margin-right: .625rem;
       }
     }
 
@@ -37,13 +37,13 @@
 
     a,
     span {
-      @include rem(border-radius, 2px);
-      @include rem(font-size, 16px);
-      @include rem(padding, 5px 15px);
+      border-radius: 2px;
+      font-size: 1rem;
+      padding: .3125rem .9375rem;
       display: block;
 
       &.button-small {
-        @include rem(font-size, 12px);
+        font-size: .75rem;
       }
     }
 

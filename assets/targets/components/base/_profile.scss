@@ -2,10 +2,10 @@
   background-color: $lightestblue;
 
   header {
-    @include rem(min-height, 400px);
+    min-height: 25rem;
 
     .bottom-align {
-      @include rem(padding-top, 50px);
+      padding-top: 3.125rem;
       bottom: 0;
       padding-bottom: 0;
       position: absolute;
@@ -19,8 +19,8 @@
       margin-bottom: 0;
 
       &::after {
-        @include rem(margin-top, 15px);
-        @include rem(max-width, 700px);
+        margin-top: .9375rem;
+        max-width: $w-sml;
         border-bottom: 2px solid $white;
         content: '';
         display: block;
@@ -28,11 +28,11 @@
       }
 
       @include breakpoint(tablet) {
-        @include rem(margin-bottom, 15px);
+        margin-bottom: .9375rem;
 
         &::after {
-          @include rem(margin-top, 31px);
-          @include rem(max-width, 700px);
+          margin-top: 1.9375rem;
+          max-width: $w-sml;
           border-bottom: 2px solid $white;
           content: '';
           display: block;
@@ -42,12 +42,12 @@
     }
 
     p {
-      @include rem(font-size, 19px);
+      font-size: 1.1875rem;
       font-style: italic;
       padding: 0;
 
       @include breakpoint(tablet) {
-        @include rem(font-size, 21px);
+        font-size: 1.3125rem;
       }
     }
 
@@ -66,24 +66,24 @@
       }
 
       & + .video {
-        @include rem(margin-top, 31px);
+        margin-top: 1.9375rem;
       }
     }
 
   }
 
   h1 {
-    @include rem(margin-bottom, 35px);
+    margin-bottom: 2.1875rem;
     border-bottom: 2px solid $navy;
     color: $navy;
 
     @include breakpoint(tablet) {
-      @include rem(margin-bottom, 25px);
+      margin-bottom: 1.5625rem;
     }
 
     @include breakpoint(wide) {
-      @include rem(font-size, 50px);
-      @include rem(margin-bottom, 31px);
+      font-size: 3.125rem;
+      margin-bottom: 1.9375rem;
     }
   }
 }

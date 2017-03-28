@@ -1,9 +1,9 @@
 .uomcontent [role="main"] {
   .notice {
     @include wrapper;
-    @include rem(margin-bottom, 15px);
-    @include rem(max-width, $w-sml);
-    @include rem(padding, 15px);
+    margin-bottom: .9375rem;
+    max-width: $w-sml;
+    padding: .9375rem;
     display: block; /* allow inline elements (e.g. `span`) */
     margin-left: auto;
     margin-right: auto;
@@ -16,7 +16,7 @@
     }
 
     @include breakpoint(tablet) {
-      @include rem(max-width, $w-sml);
+      max-width: $w-sml;
     }
   }
 

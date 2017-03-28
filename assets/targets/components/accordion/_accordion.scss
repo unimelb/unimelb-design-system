@@ -18,7 +18,7 @@
   }
 
   .accordion__visible .accordion__hidden {
-    @include rem(max-height, 50000px);
+    max-height: 3125rem;
   }
 
   .accordion__visible tr.accordion__hidden {
@@ -54,7 +54,7 @@
       // Ridiculous overrides
       ol,
       ul {
-        @include rem(padding-bottom, 30px);
+        padding-bottom: 1.875rem;
 
         ol,
         ul {
@@ -67,15 +67,15 @@
 
         ol,
         ul {
-          @include rem(padding-left, 35px);
-          @include rem(padding-right, 35px);
+          padding-left: 2.1875rem;
+          padding-right: 2.1875rem;
         }
 
         li {
           margin: 0;
 
           @include breakpoint(desktop) {
-            @include rem(padding-left, 110px);
+            padding-left: 6.875rem;
 
             li {
               padding-left: 0;
@@ -101,8 +101,8 @@
       .accordion__title {
         @include padding-leader(0.5);
         @include padding-trailer(0.5);
-        @include rem(padding-left, 40px);
-        @include rem(padding-right, 15px);
+        padding-left: 2.5rem;
+        padding-right: .9375rem;
         display: block;
         position: relative;
 
@@ -116,9 +116,9 @@
         }
 
         &:before {
-          @include rem(font-size, 18px);
-          @include rem(left, 15px);
-          @include rem(margin-top, -9px);
+          font-size: 1.125rem;
+          left: .9375rem;
+          margin-top: -.5625rem;
           content: "+";
           display: inline-block;
           line-height: 1;
@@ -131,24 +131,24 @@
 
         @include breakpoint(desktop) {
           @include adjust-font-size-to(22px);
-          @include rem(padding-left, 55px);
+          padding-left: 3.4375rem;
 
           &:before {
-            @include rem(font-size, 24px);
-            @include rem(margin-top, -12px);
+            font-size: 1.5rem;
+            margin-top: -.75rem;
           }
         }
       }
 
       .accordion__hidden {
         @include padding-leader(0.5);
-        @include rem(padding-left, 15px);
-        @include rem(padding-right, 15px);
+        padding-left: .9375rem;
+        padding-right: .9375rem;
         display: none;
       }
 
       &.accordion__visible {
-        @include rem(margin-top, -1px);
+        margin-top: -1px;
         border-top: 1px solid;
         border-color: $cyan;
 
@@ -178,15 +178,15 @@
   }
 
   .code {
-    @include rem(max-width, $w-mid);
+    max-width: $w-mid;
     clear: both;
     margin: 0 auto;
 
     ul.accordion {
-      @include rem(max-width, $w-mid);
+      max-width: $w-mid;
 
       li {
-        @include rem(max-width, $w-mid);
+        max-width: $w-mid;
 
         &:before,
         .accordion__title {
@@ -194,11 +194,11 @@
         }
 
         .accordion__hidden {
-          @include rem(max-width, $w-mid);
+          max-width: $w-mid;
         }
 
         &.accordion__visible .accordion__hidden {
-          @include rem(max-height, 10000px);
+          max-height: 625rem;
         }
 
         &.accordion__visible:before,
@@ -207,7 +207,7 @@
         }
 
         div.highlight {
-          @include rem(max-width, $w-mid);
+          max-width: $w-mid;
         }
       }
     }

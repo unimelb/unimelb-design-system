@@ -1,6 +1,6 @@
 .uomcontent .filtered-listing-section {
   @include padding-trailer(0);
-  @include rem(max-width, $w-lge);
+  max-width: $w-lge;
   margin: 0 auto;
 
   &[hidden] + hr.spacer {
@@ -32,7 +32,7 @@
     }
 
     @include breakpoint(desktop) {
-      @include rem(padding-left, 15px);
+      padding-left: .9375rem;
       float: left;
       margin: 0;
       max-width: 30%;
@@ -45,7 +45,7 @@
 
   .bside {
     @include breakpoint(desktop) {
-      @include rem(padding, 10px 0 10px 30px);
+      padding: .625rem 0 .625rem 1.875rem;
       float: right;
       width: 70%;
     }
@@ -69,8 +69,8 @@
   .filtered-listing-item {
     @include adjust-font-size-to(14px);
     @include adjust-leading-to(1);
-    @include rem(height, 110px);
-    @include rem(margin, 2px 2px 4px 2px);
+    height: 6.875rem;
+    margin: .125rem .125rem .25rem .125rem;
     list-style-type: none;
     opacity: 1;
     padding: 0;
@@ -78,7 +78,7 @@
     transition-duration: 0.4s;
     transition-property: opacity;
 
-    @include breakpoint($w-sml) {
+    @include breakpoint(43.75em) {
       float: left;
       margin: 0;
       padding-bottom: 4px;
@@ -86,12 +86,12 @@
       width: 48%;
     }
 
-    @include breakpoint($w-mid) {
+    @include breakpoint(56.25em) {
       margin: 0;
       width: 31.333%;
     }
 
-    @include breakpoint(1100px) {
+    @include breakpoint(68.75em) {
       margin: 0;
       width: 24%;
     }
@@ -104,7 +104,7 @@
   }
 
   a {
-    @include rem(padding, 10px);
+    padding: .625rem;
     color: $darkgray;
     display: block;
     font-weight: $light;
@@ -124,7 +124,7 @@
     }
 
     @include breakpoint(desktop) {
-      @include rem(max-width, 180px);
+      max-width: 11.25rem;
     }
   }
 

@@ -1,13 +1,13 @@
 .uomcontent [role="main"] {
 
   .profile-header {
-    @include rem(padding, 48px 16px);
+    padding: 3rem 1rem;
     background-color: $paleblue;
     color: inherit;
 
     &__summary,
     &__info {
-      @include rem(max-width, $w-sml);
+      max-width: $w-sml;
       margin: 0 auto;
     }
 
@@ -17,8 +17,8 @@
 
       h1 {
         @include adjust-font-size-to(25px);
-        @include rem(margin-bottom, 8px);
-        @include rem(margin-top, 24px);
+        margin-bottom: .5rem;
+        margin-top: 1.5rem;
         font-weight: $regular;
         padding-bottom: 0;
         text-align: inherit;
@@ -52,7 +52,7 @@
     }
 
     &__info {
-      @include rem(padding-top, 24px);
+      padding-top: 1.5rem;
       border-top: 1px solid $lightestblue;
 
       a {
@@ -79,12 +79,12 @@
     }
 
     &__contact {
-      @include rem(margin-bottom, 24px);
+      margin-bottom: 1.5rem;
 
       [data-icon] {
-        @include rem(height, 20px);
-        @include rem(margin-top, 4px);
-        @include rem(width, 20px);
+        height: 1.25rem;
+        margin-top: .25rem;
+        width: 1.25rem;
         vertical-align: top;
       }
     }
