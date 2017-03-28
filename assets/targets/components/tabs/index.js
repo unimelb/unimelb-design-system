@@ -45,11 +45,11 @@ function Tabs(el, props) {
  * Set up the tab panels and event listeners.
  */
 Tabs.prototype.setup = function() {
-  var i, tab;
+  var i, len, tab;
 
   // Hide all panels by default
   var panels = this.el.querySelectorAll('[role="tabpanel"]');
-  for (i = panels.length - 1; i >= 0; i--) {
+  for (i = 0, len = panels.length; i < len; i++) {
     if (panels[i].parentElement === this.el) { // exclude panels of any nested tabs component
       panels[i].style.display = 'none';
       this.props.panels.push(panels[i]);
