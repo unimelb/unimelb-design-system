@@ -157,7 +157,7 @@ body {
     transform: rotate(90deg);
     z-index: 11;
 
-    &:before {
+    &::before {
       font-size: 1.5rem;
       content: '\203a';
       display: inline-block;

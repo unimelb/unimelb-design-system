@@ -39,7 +39,7 @@
     padding: 0;
   }
 
-  [data-required=true]:after {
+  [data-required=true]::after {
     padding-left: .3125rem;
     content: '*';
     color: $cherry;

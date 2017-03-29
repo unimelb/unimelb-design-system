@@ -277,7 +277,7 @@
           color: $white;
           font-weight: $regular;
 
-          &:after {
+          &::after {
             border-top-color: $black;
           }
         }
@@ -311,7 +311,7 @@
           color: $white;
           font-weight: $regular;
 
-          &:after {
+          &::after {
             border-top-color: $darkblue;
           }
         }

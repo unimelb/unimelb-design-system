@@ -76,7 +76,7 @@
   & + p {
     padding-top: 1.5rem;
 
-    &:before {
+    &::before {
       display: none;
     }
   }

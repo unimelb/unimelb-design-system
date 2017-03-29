@@ -561,7 +561,7 @@ body {
     }
   }
 
-  .uomcontent ul.ticked-list li:before {
+  .uomcontent ul.ticked-list li::before {
     color: #3fc76e;
     content: '';
     font-size: 16px;

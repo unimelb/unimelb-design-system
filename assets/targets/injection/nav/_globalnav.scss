@@ -220,7 +220,7 @@
     text-decoration: none;
     text-transform: uppercase;
 
-    &:before {
+    &::before {
       font-size: 1.5rem;
       margin-right: .5rem;
       color: rgba($white, .4);
@@ -240,8 +240,8 @@
       text-decoration: underline;
     }
 
-    &:hover:before,
-    &:focus:before {
+    &:hover::before,
+    &:focus::before {
       animation: chevronback 1s infinite ease-in-out;
       color: $white;
       text-decoration: none;

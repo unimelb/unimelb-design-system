@@ -45,7 +45,7 @@
         margin: 0;
         padding: 0;
 
-        &.with-arrow:after {
+        &.with-arrow::after {
           font-size: 1.25rem;
           padding-left: .625rem;
           content: '\2192';

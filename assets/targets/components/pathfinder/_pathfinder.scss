@@ -129,7 +129,7 @@
             transform: translateY(0);
           }
 
-          &:after {
+          &::after {
             font-size: 1.25rem;
             margin-top: -.3125rem;
             padding-left: .3125rem;
@@ -148,7 +148,7 @@
   }
 
   &.buttons.noarrow a {
-    strong > span:after {
+    strong > span::after {
       display: none;
     }
   }

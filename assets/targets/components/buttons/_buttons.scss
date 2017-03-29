@@ -205,34 +205,10 @@
       padding-left: .9375rem;
     }
   }
-
-  &:after {
-    font-size: .9375rem;
-    padding-left: .625rem;
-    content: '\2192';
-    line-height: 0;
-
-    @include breakpoint(height-small) {
-      font-size: 1.625rem;
-      padding-left: .9375rem;
-    }
-  }
 }
 
 @mixin outlinearrow-reverse {
   &::before {
-    font-size: .9375rem;
-    padding-right: .625rem;
-    content: '\2190';
-    line-height: 0;
-
-    @include breakpoint(height-small) {
-      font-size: 1.625rem;
-      padding-right: .9375rem;
-    }
-  }
-
-  &:before {
     font-size: .9375rem;
     padding-right: .625rem;
     content: '\2190';

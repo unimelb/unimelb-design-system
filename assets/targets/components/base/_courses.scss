@@ -346,14 +346,14 @@
       padding-right: 0;
     }
 
-    .accordion__close:after {
+    .accordion__close::after {
       content: '\00d7';
       font-size: 60px;
       font-weight: 100;
       line-height: 1;
     }
 
-    tr td.unit-description:before {
+    tr td.unit-description::before {
       border: solid transparent;
       border-bottom-color: $navy;
       border-width: 10px;

@@ -16,7 +16,7 @@
     width: 100%;
   }
 
-  &:after {
+  &::after {
     margin-top: 2.25rem;
     width: 3.125rem;
     border-bottom: 2px solid $black;

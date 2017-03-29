@@ -60,7 +60,7 @@
           max-width: $w-sml;
           border-bottom: 1px solid $lightergray;
 
-          &:before {
+          &::before {
             border-color: $black;
             margin-left: 0;
           }

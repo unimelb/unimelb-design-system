@@ -143,7 +143,7 @@ $white: #ffffff;
       hr,
       .styled-select svg.icon,
       ul.jump-navigation,
-      ul.accordion > li:before,
+      ul.accordion > li::before,
       [data-tabbed].tabbed nav,
       .sidebar-tabs__list {
         display: none;
@@ -184,7 +184,7 @@ $white: #ffffff;
         text-transform: none;
       }
 
-      a[href^="http"]:after {
+      a[href^="http"]::after {
         content: " (" attr(href) ") ";
         color: $gray;
         display: inline-block;
