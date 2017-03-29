@@ -145,7 +145,7 @@
   ul.wide {
     li.with-dropdown {
       .styled-select {
-        @include margin-leader(1);
+        margin-top: 1.5rem;
         margin-left: 0;
         margin-right: 0;
       }

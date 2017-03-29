@@ -104,7 +104,6 @@
   &.blockquote-classic {
     font-size: 1.1875rem;
     line-height: 1.5rem;
-    @include adjust-leading-to(1);
     padding-top: 1.5rem;
     padding-bottom: 3rem;
     max-width: $w-mid;

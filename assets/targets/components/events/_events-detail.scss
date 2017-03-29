@@ -258,7 +258,6 @@
     h2 {
       font-size: 1.25rem;
       line-height: 1.5rem;
-      @include adjust-leading-to(1);
 
       @include breakpoint(desktop) {
         font-size: 1.5rem;

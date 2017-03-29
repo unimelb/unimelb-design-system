@@ -62,7 +62,6 @@
   strong {
     font-size: 1rem;
     line-height: 1.5rem;
-    @include adjust-leading-to(1);
     color: $darkblue;
     display: block;
     font-weight: $regular;

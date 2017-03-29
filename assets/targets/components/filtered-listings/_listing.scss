@@ -70,7 +70,6 @@
   .filtered-listing-item {
     font-size: .875rem;
     line-height: 1.5rem;
-    @include adjust-leading-to(1);
     height: 6.875rem;
     margin: .125rem .125rem .25rem .125rem;
     list-style-type: none;
