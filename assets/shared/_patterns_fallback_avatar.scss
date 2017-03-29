@@ -6,7 +6,7 @@
 
   // Fallback avatar for when the photo fails to load
   &::before {
-    background: url(../targets/components/people/avatar-lt.png) no-repeat center / cover transparent;
+    background: url(../components/people/avatar-lt.png) no-repeat center / cover transparent;
     border-radius: 50%;
     content: "";
     height: 100%;

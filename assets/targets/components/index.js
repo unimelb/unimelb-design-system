@@ -52,7 +52,7 @@ window.UOMbind = function(component) {
   } else if (component === 'sortable-table') {
     recs = document.querySelectorAll('table[data-sortable]');
     if (recs.length > 0) {
-      Base = require('./tables/sortable.js');
+      Base = require('../../components/tables/sortable.js');
       for (i=recs.length - 1; i >= 0; i--)
         new Base(recs[i], {});
     }
@@ -67,7 +67,7 @@ window.UOMbind = function(component) {
     recs = document.querySelectorAll(attachment);
     if (recs.length > 0) {
 
-      Base = require("./" + component + '/index.js');
+      Base = require("../../components/" + component + '/index.js');
 
       for (i=recs.length - 1; i >= 0; i--)
         new Base(recs[i], {});
@@ -86,7 +86,7 @@ window.UOMloadComponents = function() {
 
   recs = document.querySelectorAll('select');
   if (recs.length > 0) {
-    FancySelect = require("./forms/fancyselect");
+    FancySelect = require("../../components/forms/fancyselect");
     for (i=recs.length - 1; i >= 0; i--)
       new FancySelect(recs[i], {});
   }
@@ -95,7 +95,7 @@ window.UOMloadComponents = function() {
 
   recs = document.querySelectorAll('.sidebar-tabs');
   if (recs.length > 0) {
-    SidebarTabs = require("./tabs/sidebar-tabs");
+    SidebarTabs = require("../../components/tabs/sidebar-tabs");
     for (i=recs.length - 1; i >= 0; i--) {
       new SidebarTabs(recs[i], {
         scrollTarget: document.querySelector('.tabbed-nav[data-tabbed]')
@@ -107,7 +107,7 @@ window.UOMloadComponents = function() {
 
   recs = document.querySelectorAll('input[type="radio"],input[type="checkbox"]');
   if (recs.length > 0) {
-    CheckboxHelper = require("./checklist/checkboxhelper");
+    CheckboxHelper = require("../../components/checklist/checkboxhelper");
     for (i=recs.length - 1; i >= 0; i--)
       new CheckboxHelper(recs[i], {});
   }
@@ -116,13 +116,13 @@ window.UOMloadComponents = function() {
   window.UOMbind('forms');
 
   if (document.querySelector('h2[id]') && document.querySelectorAll('.jumpnav, .indexnav').length === 1) {
-    JumpNav = require("./inpage-navigation/jumpnav");
+    JumpNav = require("../../components/inpage-navigation/jumpnav");
     new JumpNav({});
   }
 
   recs = document.querySelector('.flash');
   if (recs) {
-    Flash = require("./notices/flash");
+    Flash = require("../../components/notices/flash");
     new Flash(recs, {
       root: document.querySelector('[role="main"]'),
       headerless: document.querySelector('.headerless'),
@@ -134,7 +134,7 @@ window.UOMloadComponents = function() {
   if (recs.length > 0) {
     window.loadScript('https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js')
       .then(function (recs) {
-        FilteredListing = require("./filtered-listings");
+        FilteredListing = require("../../components/filtered-listings");
         for (i=recs.length - 1; i >= 0; i--)
           new FilteredListing(recs[i], {});
       }.bind(null, recs));
@@ -152,7 +152,7 @@ window.UOMloadComponents = function() {
       'https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js'
     ])
       .then(function (recs) {
-        ImageGallery = require("./gallery");
+        ImageGallery = require("../../components/gallery");
         for (i=recs.length - 1; i >= 0; i--)
           new ImageGallery(recs[i], { index: i });
       }.bind(null, recs));
@@ -184,14 +184,14 @@ window.UOMloadComponents = function() {
 
 // GMaps callback
 window.maps_loaded_go = function() {
-  var GMaps = require("./maps/gmaps.es6");
+  var GMaps = require("../../components/maps/gmaps.es6");
   for (var recs = document.querySelectorAll('[data-latlng],[data-address]'), i=recs.length - 1; i >= 0; i--)
     new GMaps(recs[i], {counter: i});
 };
 
 // LMaps callback
 window.lmaps_loaded_go = function(recs) {
-  var LMaps = require("./maps/lmaps");
+  var LMaps = require("../../components/maps/lmaps");
   for (var i=recs.length - 1; i >= 0; i--)
     new LMaps(recs[i], {counter: i});
 };

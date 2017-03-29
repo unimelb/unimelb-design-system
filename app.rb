@@ -16,7 +16,7 @@ class App < Roda # rubocop:disable Metrics/ClassLength
   opts[:cdnurl] = ENV['CDNURL']
 
   opts[:components_path] = File.join(
-    opts[:root], 'assets', 'targets', 'components'
+    opts[:root], 'assets', 'components'
   )
   opts[:components] = Dir.entries(opts[:components_path])
   opts[:components] = opts[:components].select { |f| f =~ /^[^\.|\_]*[^\.]$/ }

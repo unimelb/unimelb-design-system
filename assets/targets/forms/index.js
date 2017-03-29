@@ -13,35 +13,35 @@ window.UOMFormLoadComponents = function() {
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
-    Accordion = require("../components/accordion");
+    Accordion = require("../../components/accordion");
     for (i=recs.length - 1; i >= 0; i--)
       new Accordion(recs[i], {});
   }
 
   recs = document.querySelectorAll('[data-modal-target]');
   if (recs.length > 0) {
-    Modal = require("../components/modal");
+    Modal = require("../../components/modal");
     for (i=recs.length - 1; i >= 0; i--)
       new Modal(recs[i], {});
   }
 
   recs = document.querySelectorAll('a[href^="#"]');
   if (recs.length > 0) {
-    InpageNavigation = require("../components/inpage-navigation");
+    InpageNavigation = require("../../components/inpage-navigation");
     for (i=recs.length - 1; i >= 0; i--)
       new InpageNavigation(recs[i], {});
   }
 
   recs = document.querySelectorAll('select');
   if (recs.length > 0) {
-    FancySelect = require("../components/forms/fancyselect");
+    FancySelect = require("../../components/forms/fancyselect");
     for (i=recs.length - 1; i >= 0; i--)
       new FancySelect(recs[i], {});
   }
 
   recs = document.querySelectorAll('form[data-validate]');
   if (recs.length > 0) {
-    ValidateForm = require("../components/forms");
+    ValidateForm = require("../../components/forms");
     for (i=recs.length - 1; i >= 0; i--)
       new ValidateForm(recs[i], {});
   }
