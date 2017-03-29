@@ -124,18 +124,6 @@
       @include quote-style;
     }
 
-    &:before {
-      @include quote-style;
-    }
-
-    &:after {
-      @include quote-style;
-      content: close-quote;
-      margin-left: 0;
-      margin-right: 0;
-      vertical-align: -.667em;
-    }
-
     &::after {
       content: close-quote;
       margin-left: 0;

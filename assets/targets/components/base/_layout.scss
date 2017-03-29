@@ -508,7 +508,6 @@ body {
   .tilt-before {
     padding-top: 3.125rem;
 
-    &:before,
     &::before {
       @include tilt;
       margin-top: -6.25rem;
@@ -516,7 +515,6 @@ body {
       transform: skewY(-2deg);
     }
 
-    &.alt:before,
     &.alt::before {
       background-color: $paleblue;
     }
@@ -525,14 +523,12 @@ body {
   .tilt-after {
     padding-bottom: 3.125rem;
 
-    &:after,
     &::after {
       @include tilt;
       background-color: $white;
       transform: skewY(2deg);
     }
 
-    &.alt:after,
     &.alt::after {
       background-color: $paleblue;
     }

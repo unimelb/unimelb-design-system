@@ -33,15 +33,6 @@
       padding-bottom: 0;
       position: relative;
 
-      &:before {
-        width: 2.5rem;
-        border-bottom: 2px solid $midblue;
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-      }
-
       &::before {
         width: 2.5rem;
         border-bottom: 2px solid $midblue;
@@ -71,10 +62,6 @@
       figcaption {
         text-align: left;
 
-        &:before {
-          left: 0;
-        }
-
         &::before {
           left: 0;
         }
@@ -96,10 +83,6 @@
 
       figcaption {
         text-align: right;
-
-        &:before {
-          right: 0;
-        }
 
         &::before {
           right: 0;

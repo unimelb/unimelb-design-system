@@ -202,7 +202,6 @@
       &.no-li {
         list-style-type: none;
 
-        &:before,
         &::before {
           display: none;
         }
@@ -615,7 +614,6 @@
     font-weight: $regular;
     line-height: 1.2;
 
-    &:after,
     &::after {
       margin-top: .9375rem;
       max-width: $w-sml;

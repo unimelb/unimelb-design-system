@@ -38,16 +38,6 @@
   @include subtitle;
   text-align: center;
 
-  &:after {
-    margin-top: 1.5rem;
-    width: 5rem;
-    border-bottom: 2px solid $black;
-    content: '';
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   &::after {
     margin-top: 1.5rem;
     width: 5rem;
