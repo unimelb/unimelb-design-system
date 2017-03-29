@@ -70,7 +70,8 @@
     }
 
     h2 {
-      @include adjust-font-size-to(24px);
+      font-size: 1.5rem;
+      line-height: 2.25rem;
       font-weight: $light;
       padding-top: 0;
       text-transform: none;

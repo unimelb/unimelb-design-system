@@ -180,7 +180,8 @@
   }
 
   strong {
-    @include adjust-font-size-to(15px);
+    font-size: .9375rem;
+    line-height: 1.5rem;
     padding-top: 3rem;
     padding-bottom: 3rem;
     letter-spacing: .0625rem;

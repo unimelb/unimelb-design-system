@@ -1,5 +1,6 @@
 @mixin code {
-  @include adjust-font-size-to(16px);
+  font-size: 1rem;
+  line-height: 1.5rem;
   background-color: darken($lightgray, 2%);
   border-color: darken($lightgray, 7%);
   border-style: solid;
@@ -16,7 +17,8 @@
 
   pre {
     @include code;
-    @include adjust-font-size-to(13px);
+    font-size: .8125rem;
+    line-height: 1.5rem;
     @include horizontal-borders(1px);
     margin-top: 0;
     padding-top: 1.5rem;

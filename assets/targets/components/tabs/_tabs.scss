@@ -119,7 +119,7 @@
       white-space: nowrap;
 
       a {
-        @include adjust-font-size-to(15px);
+        font-size: .9375rem;
         line-height: $tabs-height;
         padding: 0 1.25rem;
         color: rgba($white, .7);
@@ -320,7 +320,8 @@
 
     &.thin {
       nav a {
-        @include adjust-font-size-to(13px);
+        font-size: .8125rem;
+        line-height: 1.5rem;
         line-height: calc(4rem - .125rem); // $tabs-height minus 1px above and below for outline
         margin-top: .0625rem; // outline cont.
         padding: 0 .9375rem;

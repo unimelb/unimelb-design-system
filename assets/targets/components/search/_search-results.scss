@@ -9,7 +9,8 @@
   }
 
   h2.search-title {
-    @include adjust-font-size-to(12px);
+    font-size: .75rem;
+    line-height: 1.5rem;
     padding-bottom: 1rem;
     color: $midgray;
     padding-top: 0;
@@ -66,7 +67,8 @@
         }
 
         .person__phone {
-          @include adjust-font-size-to(18px);
+          font-size: 1.125rem;
+          line-height: 1.5rem;
         }
 
         @include breakpoint(desktop) {
@@ -91,7 +93,8 @@
           }
 
           .person__phone {
-            @include adjust-font-size-to(20px);
+            font-size: 1.25rem;
+            line-height: 1.5rem;
             white-space: nowrap;
 
             & + .person__email {
@@ -119,24 +122,28 @@
     }
 
     h3 {
-      @include adjust-font-size-to(20px);
+      font-size: 1.25rem;
+      line-height: 1.5rem;
       padding-bottom: .75rem;
       font-weight: $regular;
       width: auto;
     }
 
     p {
-      @include adjust-font-size-to(15px);
+      font-size: .9375rem;
+      line-height: 1.5rem;
       padding-bottom: 0;
       color: $black;
       width: auto;
 
       @include breakpoint(desktop) {
-        @include adjust-font-size-to(16px);
+        font-size: 1rem;
+        line-height: 1.5rem;
       }
 
       &.url {
-        @include adjust-font-size-to(12px);
+        font-size: .75rem;
+        line-height: 1.5rem;
         color: $highlight;
 
         & > a {

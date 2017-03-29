@@ -9,14 +9,16 @@
 
       h1 {
         @include title;
-        @include adjust-font-size-to(15px);
+        font-size: .9375rem;
+        line-height: 1.5rem;
         margin-bottom: 1.5rem;
         font-weight: $bold;
         text-align: center;
       }
 
       p {
-        @include adjust-font-size-to(16px);
+        font-size: 1rem;
+        line-height: 1.5rem;
         padding-top: 0;
         font-weight: $light;
       }

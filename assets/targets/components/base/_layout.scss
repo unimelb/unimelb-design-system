@@ -48,7 +48,8 @@ body {
   }
 
   .aside {
-    @include adjust-font-size-to(14px);
+    font-size: .875rem;
+    line-height: 1.5rem;
     color: $darkgray;
     float: right;
 
@@ -119,7 +120,8 @@ body {
       padding-top: 0;
 
       h2 {
-        @include adjust-font-size-to(13px);
+        font-size: .8125rem;
+        line-height: 1.5rem;
         font-weight: $bold;
         letter-spacing: 3px;
         text-transform: uppercase;
@@ -134,7 +136,8 @@ body {
 
       p,
       li {
-        @include adjust-font-size-to(16px);
+        font-size: 1rem;
+        line-height: 1.5rem;
       }
 
       li {

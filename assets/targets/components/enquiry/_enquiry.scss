@@ -19,7 +19,7 @@
 
     .enquiry__cta {
       @include wrapper;
-      @include adjust-font-size-to(20px);
+      font-size: 1.25rem;
       line-height: 3.125rem;
       padding-bottom: 1.5rem;
       max-width: $w-sml;
@@ -32,13 +32,15 @@
       }
 
       @include breakpoint(desktop) {
-        @include adjust-font-size-to(22px);
+        font-size: 1.375rem;
+        line-height: 2.25rem;
       }
     }
 
     .enquiry__subline {
       @include wrapper;
-      @include adjust-font-size-to(16px);
+      font-size: 1rem;
+      line-height: 1.5rem;
       padding-top: .75rem;
       max-width: $w-sml;
       border-top: 1px solid rgba($lightblue, 0.3);

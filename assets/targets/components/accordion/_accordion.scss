@@ -130,7 +130,8 @@
         }
 
         @include breakpoint(desktop) {
-          @include adjust-font-size-to(22px);
+          font-size: 1.375rem;
+          line-height: 2.25rem;
           padding-left: 3.4375rem;
 
           &:before {

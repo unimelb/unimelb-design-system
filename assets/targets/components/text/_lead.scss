@@ -1,6 +1,7 @@
 .uomcontent [role="main"] {
   .lead {
-    @include adjust-font-size-to(19px);
+    font-size: 1.1875rem;
+    line-height: 1.5rem;
     padding-top: 4.5rem;
     padding-bottom: 4.5rem;
     max-width: $w-mid;
@@ -46,7 +47,8 @@
     }
 
     @include breakpoint(desktop) {
-      @include adjust-font-size-to(22px);
+      font-size: 1.375rem;
+      line-height: 2.25rem;
     }
 
     &.left {

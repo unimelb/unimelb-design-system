@@ -39,7 +39,7 @@
     }
 
     strong {
-      @include adjust-font-size-to(40px);
+      font-size: 2.5rem;
       color: $white;
       line-height: 1.1;
       padding-bottom: .1em;
@@ -47,7 +47,8 @@
     }
 
     p {
-      @include adjust-font-size-to(18px);
+      font-size: 1.125rem;
+      line-height: 1.5rem;
       color: $white;
       font-weight: $thin;
       max-width: 100%;

@@ -20,7 +20,8 @@
     }
 
     a {
-      @include adjust-font-size-to(13px);
+      font-size: .8125rem;
+      line-height: 1.5rem;
       border-radius: 4px;
       height: 4.375rem;
       padding-top: .5rem;

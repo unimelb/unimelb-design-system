@@ -28,12 +28,14 @@
 
   @include breakpoint(desktop) {
     h1 {
-      @include adjust-font-size-to(50px);
+      font-size: 3.125rem;
+      line-height: 3.75rem;
     }
   }
   @include breakpoint(wide) {
     h1 {
-      @include adjust-font-size-to(60px);
+      font-size: 3.75rem;
+      line-height: 4.5rem;
     }
   }
 }
@@ -118,7 +120,8 @@
     }
 
     h1 {
-      @include adjust-font-size-to(33px);
+      font-size: 2.0625rem;
+      line-height: 3rem;
       padding-bottom: 0;
       max-width: $w-sml;
       font-weight: $thin;
@@ -130,11 +133,13 @@
       }
 
       @include breakpoint(desktop) {
-        @include adjust-font-size-to(45px);
+        font-size: 2.8125rem;
+        line-height: 3.75rem;
       }
 
       @include breakpoint(wide) {
-        @include adjust-font-size-to(55px);
+        font-size: 3.4375rem;
+        line-height: 3.75rem;
       }
     }
 
@@ -144,17 +149,20 @@
       margin: 0 auto;
 
       @include breakpoint(desktop) {
-        @include adjust-font-size-to(20px);
+        font-size: 1.25rem;
+        line-height: 1.5rem;
         padding-top: 1.5rem;
       }
 
       @include breakpoint(wide) {
-        @include adjust-font-size-to(24px);
+        font-size: 1.5rem;
+        line-height: 2.25rem;
       }
     }
 
     p.author {
-      @include adjust-font-size-to(16px);
+      font-size: 1rem;
+      line-height: 1.5rem;
       max-width: 21.875rem;
       font-style: italic;
 
@@ -170,7 +178,8 @@
       }
 
       em {
-        @include adjust-font-size-to(18px);
+        font-size: 1.125rem;
+        line-height: 1.5rem;
         font-style: normal;
         font-weight: $bold;
       }

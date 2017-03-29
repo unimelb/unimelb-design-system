@@ -28,7 +28,8 @@
     }
 
     p {
-      @include adjust-font-size-to(15px);
+      font-size: .9375rem;
+      line-height: 1.5rem;
       padding-bottom: 0;
     }
 
@@ -70,7 +71,8 @@
     }
 
     strong {
-      @include adjust-font-size-to(20px);
+      font-size: 1.25rem;
+      line-height: 1.5rem;
       padding-top: 1.5rem;
       display: block;
       color: $white;
@@ -78,7 +80,8 @@
     }
 
     p {
-      @include adjust-font-size-to(16px);
+      font-size: 1rem;
+      line-height: 1.5rem;
       padding-top: 1.5rem;
       padding-bottom: .75rem;
       max-width: 31.25rem;
@@ -86,7 +89,8 @@
       font-style: italic;
 
       a {
-        @include adjust-font-size-to(15px);
+        font-size: .9375rem;
+        line-height: 1.5rem;
         padding: 0 .625rem;
         color: $white;
         font-style: normal;

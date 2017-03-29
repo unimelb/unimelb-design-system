@@ -80,7 +80,7 @@
         vertical-align: baseline;
 
         @include breakpoint(desktop) {
-          @include adjust-font-size-to(36px);
+          font-size: 2.25rem;
           display: block;
           font-weight: $bold;
         }
@@ -234,7 +234,8 @@
 
     h1,
     h2 {
-      @include adjust-font-size-to(24px);
+      font-size: 1.5rem;
+      line-height: 2.25rem;
       padding-bottom: 1.5rem;
       clear: none;
       font-weight: $light;
@@ -248,17 +249,20 @@
       }
 
       @include breakpoint(desktop) {
-        @include adjust-font-size-to(30px);
+        font-size: 1.875rem;
+        line-height: 2.25rem;
         padding-top: 1.5rem;
       }
     }
 
     h2 {
-      @include adjust-font-size-to(20px);
+      font-size: 1.25rem;
+      line-height: 1.5rem;
       @include adjust-leading-to(1);
 
       @include breakpoint(desktop) {
-        @include adjust-font-size-to(24px);
+        font-size: 1.5rem;
+        line-height: 2.25rem;
       }
     }
 

@@ -65,7 +65,8 @@
       height: 3.75rem;
     }
     a {
-      @include adjust-font-size-to(18px);
+      font-size: 1.125rem;
+      line-height: 1.5rem;
       height: 3.75rem;
       line-height: 2.8125rem;
       font-weight: $bold;

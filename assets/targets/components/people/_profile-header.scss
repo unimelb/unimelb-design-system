@@ -16,7 +16,8 @@
       text-align: center;
 
       h1 {
-        @include adjust-font-size-to(25px);
+        font-size: 1.5625rem;
+        line-height: 2.25rem;
         margin-bottom: .5rem;
         margin-top: 1.5rem;
         font-weight: $regular;
@@ -29,7 +30,8 @@
       }
 
       p {
-        @include adjust-font-size-to(18px);
+        font-size: 1.125rem;
+        line-height: 1.5rem;
         font-weight: $light;
         padding-top: 0;
       }

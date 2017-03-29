@@ -43,7 +43,8 @@
   }
 
   h3 {
-    @include adjust-font-size-to(20px);
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     padding-bottom: .75rem;
     font-weight: $regular;
 
@@ -53,7 +54,8 @@
   }
 
   p {
-    @include adjust-font-size-to(14px);
+    font-size: .875rem;
+    line-height: 1.5rem;
     padding-bottom: 3rem;
     border: 0;
     color: $midgray;

@@ -228,7 +228,7 @@
     }
 
     .tag {
-      @include adjust-font-size-to(11px);
+      font-size: .6875rem;
       border-radius: 3px;
       line-height: 1.125rem;
       margin-right: .625rem;

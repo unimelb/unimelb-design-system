@@ -102,7 +102,8 @@
   margin-top: 0;
 
   &.blockquote-classic {
-    @include adjust-font-size-to(19px);
+    font-size: 1.1875rem;
+    line-height: 1.5rem;
     @include adjust-leading-to(1);
     padding-top: 1.5rem;
     padding-bottom: 3rem;
@@ -144,7 +145,8 @@
     }
 
     cite {
-      @include adjust-font-size-to(12px);
+      font-size: .75rem;
+      line-height: 1.5rem;
       border: 0;
       color: lighten($midgray, 20%);
       float: left;
@@ -161,14 +163,16 @@
     }
 
     p {
-      @include adjust-font-size-to(24px);
+      font-size: 1.5rem;
+      line-height: 2.25rem;
       display: inline;
       margin: 0;
       padding: 0;
     }
 
     @include breakpoint(tablet) {
-      @include adjust-font-size-to(24px);
+      font-size: 1.5rem;
+      line-height: 2.25rem;
     }
 
     @include breakpoint(wide) {

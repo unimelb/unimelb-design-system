@@ -94,7 +94,8 @@
   }
 
   h1 {
-    @include adjust-font-size-to(22px);
+    font-size: 1.375rem;
+    line-height: 2.25rem;
     max-width: $w-mid;
     padding-bottom: .9375rem;
   }
@@ -104,7 +105,8 @@
     padding-bottom: 0;
 
     &.topic {
-      @include adjust-font-size-to(14px);
+      font-size: .875rem;
+      line-height: 1.5rem;
       color: $midgray;
     }
   }
@@ -135,7 +137,8 @@
     }
 
     h1 {
-      @include adjust-font-size-to(26px);
+      font-size: 1.625rem;
+      line-height: 2.25rem;
     }
 
     @include breakpoint(925px) {
@@ -154,23 +157,27 @@
     }
 
     h1 {
-      @include adjust-font-size-to(20px);
+      font-size: 1.25rem;
+      line-height: 1.5rem;
       padding-bottom: .75rem;
       font-weight: $regular;
     }
 
     p {
-      @include adjust-font-size-to(14px);
+      font-size: .875rem;
+      line-height: 1.5rem;
 
       &.date {
-        @include adjust-font-size-to(13px);
+        font-size: .8125rem;
+        line-height: 1.5rem;
         font-style: italic;
       }
     }
 
     @include breakpoint(desktop) {
       h1 {
-        @include adjust-font-size-to(20px);
+        font-size: 1.25rem;
+        line-height: 1.5rem;
       }
 
       article img {

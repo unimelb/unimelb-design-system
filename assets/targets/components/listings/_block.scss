@@ -403,7 +403,7 @@
       }
 
       strong {
-        @include adjust-font-size-to(28px);
+        font-size: 1.75rem;
         padding: .625rem;
         background-color: rgba($highlight, .8);
         bottom: 0;
@@ -413,7 +413,8 @@
         position: absolute;
 
         em {
-          @include adjust-font-size-to(17px);
+          font-size: 1.0625rem;
+          line-height: 1.5rem;
           font-weight: $thin;
         }
 
@@ -423,7 +424,8 @@
         }
 
         @include breakpoint(wide) {
-          @include adjust-font-size-to(26px);
+          font-size: 1.625rem;
+          line-height: 2.25rem;
           padding: 1.25rem 1.5rem;
         }
       }
@@ -471,7 +473,8 @@
       }
 
       span {
-        @include adjust-font-size-to(20px);
+        font-size: 1.25rem;
+        line-height: 1.5rem;
         padding-top: 6rem;
         display: block;
         font-style: normal;
@@ -486,7 +489,7 @@
       }
 
       strong {
-        @include adjust-font-size-to(40px);
+        font-size: 2.5rem;
         background-color: $cyan;
         box-decoration-break: clone;
         box-shadow: 10px 0 0 $cyan, -10px 0 0 $cyan;
@@ -528,10 +531,12 @@
       }
 
       strong {
-        @include adjust-font-size-to(20px);
+        font-size: 1.25rem;
+        line-height: 1.5rem;
 
         @include breakpoint(desktop) {
-          @include adjust-font-size-to(24px);
+          font-size: 1.5rem;
+          line-height: 2.25rem;
           font-weight: $light;
           word-wrap: break-word;
         }
@@ -612,7 +617,8 @@
       }
 
       strong {
-        @include adjust-font-size-to(13px);
+        font-size: .8125rem;
+        line-height: 1.5rem;
         letter-spacing: .0625rem;
         padding: 1rem 0;
         color: currentColor;
@@ -659,7 +665,8 @@
         }
 
         @include breakpoint(height-small) {
-          @include adjust-font-size-to(15px);
+          font-size: .9375rem;
+          line-height: 1.5rem;
         }
       }
 

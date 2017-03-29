@@ -17,7 +17,8 @@
   }
 
   .citation {
-    @include adjust-font-size-to(15px);
+    font-size: .9375rem;
+    line-height: 1.5rem;
     padding: .9375rem;
     margin-top: .25rem;
     margin-bottom: .75rem;

@@ -1,6 +1,7 @@
 .uomcontent [role="main"] {
   .credit {
-    @include adjust-font-size-to(14px);
+    font-size: .875rem;
+    line-height: 1.5rem;
     font-style: italic;
   }
 }

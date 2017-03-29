@@ -380,7 +380,8 @@
   margin-right: auto;
 
   p {
-    @include adjust-font-size-to(20px);
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     padding-bottom: 1.5rem;
     font-weight: $thin;
   }

@@ -20,7 +20,8 @@
   }
 
   strong {
-    @include adjust-font-size-to(20px);
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     @include adjust-leading-to(1);
     text-align: left;
   }
@@ -59,11 +60,9 @@
     }
 
     strong {
-      @include adjust-font-size-to(20px);
+      font-size: 1.25rem;
+      line-height: 1.5rem;
       padding-bottom: .75rem;
-    }
-
-    p {
     }
   }
 }

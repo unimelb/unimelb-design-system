@@ -144,17 +144,20 @@
   }
 
   h1 {
-    @include adjust-font-size-to(26px);
+    font-size: 1.625rem;
+    line-height: 2.25rem;
     padding-bottom: 1.5rem;
     font-weight: $light;
 
     @include breakpoint(desktop) {
-      @include adjust-font-size-to(33px);
+      font-size: 2.0625rem;
+      line-height: 3rem;
     }
   }
 
   h2 {
-    @include adjust-font-size-to(15px);
+    font-size: .9375rem;
+    line-height: 1.5rem;
     letter-spacing: .0625rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -164,7 +167,8 @@
   }
 
   h3 {
-    @include adjust-font-size-to(16px);
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: $bold;
 
     &.subtitle {
@@ -308,14 +312,16 @@
       }
 
       h2 {
-        @include adjust-font-size-to(26px);
+        font-size: 1.625rem;
+        line-height: 2.25rem;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
         font-weight: $light;
         text-transform: none;
 
         @include breakpoint(desktop) {
-          @include adjust-font-size-to(33px);
+          font-size: 2.0625rem;
+          line-height: 3rem;
         }
       }
 
@@ -487,7 +493,8 @@
   }
 
   dl {
-    @include adjust-font-size-to(12px);
+    font-size: .75rem;
+    line-height: 1.5rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     padding-left: .9375rem;
@@ -595,12 +602,13 @@
   }
 
   .grey {
-    @include adjust-font-size-to(16px);
+    font-size: 1rem;
+    line-height: 1.5rem;
     color: $midgray;
   }
 
   .main-title {
-    @include adjust-font-size-to(36px);
+    font-size: 2.25rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     font-family: $ff-serif;
@@ -630,7 +638,8 @@
   }
 
   .small {
-    @include adjust-font-size-to(12px);
+    font-size: .75rem;
+    line-height: 1.5rem;
   }
 
   .line {

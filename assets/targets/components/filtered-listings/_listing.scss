@@ -19,7 +19,8 @@
     }
 
     h2 {
-      @include adjust-font-size-to(22px);
+      font-size: 1.375rem;
+      line-height: 2.25rem;
       padding-top: 0;
       font-weight: $light;
       letter-spacing: 0;
@@ -67,7 +68,8 @@
   }
 
   .filtered-listing-item {
-    @include adjust-font-size-to(14px);
+    font-size: .875rem;
+    line-height: 1.5rem;
     @include adjust-leading-to(1);
     height: 6.875rem;
     margin: .125rem .125rem .25rem .125rem;
@@ -129,7 +131,8 @@
   }
 
   strong {
-    @include adjust-font-size-to(16px);
+    font-size: 1rem;
+    line-height: 1.5rem;
     display: block;
     line-height: 1.2;
   }
