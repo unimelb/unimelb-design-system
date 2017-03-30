@@ -8,10 +8,6 @@ function Accordion(el, props) {
   this.el = el;
   this.props = props;
 
-  // Don't initialise twice
-  if (this.el.hasAttribute('data-bound')) return;
-  this.el.setAttribute('data-bound', 'true');
-
   this.props.container = this.el.parentNode;
   this.props.hidden = this.props.container.querySelector('.accordion__hidden');
 
@@ -24,6 +20,10 @@ function Accordion(el, props) {
   // HACK: IE9 doesn't fire click event when pressing Enter
   window.addEventListener('keydown', this.clickWithEnter.bind(this));
 }
+
+// Component name and selector for registration
+Accordion.name = 'Accordion';
+Accordion.selector = '.accordion__title';
 
 Accordion.prototype.setupCloseButton = function() {
   var close = this.props.container.querySelector('.accordion__close');
