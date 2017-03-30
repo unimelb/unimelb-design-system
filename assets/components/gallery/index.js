@@ -18,6 +18,16 @@ function ImageGallery(el, props) {
   this.restoreFromHash();
 }
 
+ImageGallery.name = 'ImageGallery';
+ImageGallery.selector = 'ul.image-gallery';
+ImageGallery.dependencies = {
+  scripts: [
+    'https://unpkg.com/photoswipe@4.1.1/dist/photoswipe.min.js',
+    'https://unpkg.com/photoswipe@4.1.1/dist/photoswipe-ui-default.min.js',
+    'https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js'
+  ]
+};
+
 /**
  * Add hover zoom icon and aspect ratio class to each item,
  * and prepare PhotoSwipe slides.

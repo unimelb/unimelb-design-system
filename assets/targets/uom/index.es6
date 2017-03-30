@@ -5,12 +5,19 @@ import {
   registerComponents
 } from '../../shared/component-manager.es6';
 
-import * as utils from '../../shared/utils.es6';
+import * as utils from '../../utils/index.es6';
+import cssesc from 'cssesc';
 
 import Accordion from '../../components/accordion';
 import Checklist from '../../components/checklist';
 import CheckboxHelper from '../../components/checklist/checkboxhelper';
 import FilteredListing from '../../components/filtered-listings';
+import FancySelect from '../../components/forms/fancyselect';
+import ImageGallery from '../../components/gallery';
+import InpageNavigation from '../../components/inpage-navigation';
+import Modal from '../../components/modal';
+import Tabs from '../../components/tabs';
+import ValidateForm from '../../components/forms';
 
 // Polyfills
 require('es6-promise').polyfill();
@@ -24,8 +31,11 @@ window.uom = {
   initAllComponents,
   registerComponents,
 
-  // utilities
-  utils
+  // utilities and third-party dependencies
+  utils,
+  vendor: {
+    cssesc
+  }
 };
 
 // Register the design system's components
@@ -33,7 +43,13 @@ window.uom.registerComponents([
   Accordion,
   Checklist,
   CheckboxHelper,
-  FilteredListing
+  FilteredListing,
+  FancySelect,
+  ImageGallery,
+  InpageNavigation,
+  Modal,
+  Tabs,
+  ValidateForm
 ]);
 
 // Toggle JS classes on document root

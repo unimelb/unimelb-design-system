@@ -13,10 +13,6 @@ function FancySelect(el, props) {
   this.props = props;
   this.props.parent = this.el.parentNode;
 
-  // Don't initialise twice (and allow users to disable the FancySelect behaviour)
-  if (this.el.hasAttribute('data-bound')) return;
-  this.el.setAttribute('data-bound', true);
-
   // Only fancify if it hasn't already been done
   if (!this.props.parent.classList.contains('styled-select')) {
     this.buildWrapper();
@@ -26,6 +22,9 @@ function FancySelect(el, props) {
     this.makeNav();
   }
 }
+
+FancySelect.name = 'FancySelect';
+FancySelect.selector = 'select';
 
 FancySelect.prototype.buildWrapper = function () {
   var wrapper = document.createElement('div');

@@ -1,5 +1,7 @@
 // Dependencies
+var cssesc = require('cssesc');
 var debounce = require('just-debounce');
+var utils = require('../../utils/index.es6');
 
 // Don't show sidebar until it's worth it
 var OVERFLOW_PRECISION = 10;
@@ -40,6 +42,9 @@ function Tabs(el, props) {
     window.addEventListener('resize', debounce(this.handleResize.bind(this), DEBOUNCE_DELAY));
   }
 }
+
+Tabs.name = 'Tabs';
+Tabs.selector = '[data-tabbed]';
 
 /**
  * Set up the tab panels and event listeners.
@@ -96,7 +101,7 @@ Tabs.prototype.getInitialTab = function() {
     var innerPanel = this.el.querySelector('#' + cssesc(window.location.hash.substr(1), { 'isIdentifier': true }) + '.sidebar-tabs__panel');
     if (innerPanel) {
       // Inner-tab panel matches hash; find its parent panel's tab and return it
-      var panel = findUp(innerPanel, 'tab');
+      var panel = utils.findUp(innerPanel, 'tab');
       return this.el.querySelector('nav a[href="#' + panel.id + '"]');
     }
   }
@@ -246,9 +251,6 @@ Tabs.prototype.handleArrowClick = function(direction) {
  * @param {Event} e
  */
 Tabs.prototype.handleClick = function(tab, e) {
-  // Prevent any other click handlers from being called (i.e. the default anchor click handler for smooth scrolling)
-  e.stopImmediatePropagation();
-  // Default action now has to be prevented too (was handled by default anchor click handler)
   e.preventDefault();
 
   var href = tab.getAttribute('href');
@@ -257,7 +259,7 @@ Tabs.prototype.handleClick = function(tab, e) {
 
     // If navigation tab, scroll
     if (this.props.isNav) {
-      smoothScrollTo(tab);
+      utils.smoothScrollTo(tab);
     }
   }
 
@@ -309,9 +311,6 @@ Tabs.prototype.setLocation = function(href) {
  * @param {Event}
  */
 Tabs.prototype.handleInternalClick = function(link, e) {
-  // Prevent any other click handlers from being called (i.e. the default anchor click handler for smooth scrolling)
-  e.stopImmediatePropagation();
-  // Default action now has to be prevented too (was handled by default anchor click handler)
   e.preventDefault();
 
   // Parse index of tab to navigate to
@@ -322,7 +321,7 @@ Tabs.prototype.handleInternalClick = function(link, e) {
 
   // If navigation tab, scroll
   if (this.props.isNav) {
-    smoothScrollTo(this.props.tabs[index]);
+    utils.smoothScrollTo(this.props.tabs[index]);
   }
 };
 

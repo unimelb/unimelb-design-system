@@ -1,3 +1,5 @@
+var utils = require('../../utils/index.es6');
+
 /**
  * ValidateForm
  *
@@ -41,6 +43,9 @@ function ValidateForm(el, props) {
   this.el.addEventListener('submit', this.handleSubmit.bind(this));
 }
 
+ValidateForm.name = 'ValidateForm';
+ValidateForm.selector = 'form[data-validate]';
+
 ValidateForm.prototype.handleSubmit = function(e) {
   this.props.invalid = 0;
 
@@ -51,7 +56,7 @@ ValidateForm.prototype.handleSubmit = function(e) {
   if (this.props.invalid > 0) {
     e.preventDefault();
     e.stopImmediatePropagation();
-    smoothScrollTo(this.el);
+    utils.smoothScrollTo(this.el);
   }
 };
 

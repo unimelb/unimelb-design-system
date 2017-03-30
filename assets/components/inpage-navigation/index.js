@@ -1,41 +1,38 @@
+var cssesc = require('cssesc');
+var utils = require('../../utils/index.es6');
+
 /**
- * InpageNavigation
- *
+ * In-page Navigation
  * @param  {Element} el
  * @param  {Object} props
  */
 function InpageNavigation(el, props) {
   this.el = el;
   this.props = props;
-
-  // Event bindings, exclude noscroll and modal and rebind
-  if (!this.el.hasAttribute('data-bound') && !this.el.getAttribute('data-no-scroll') && !this.el.getAttribute('data-modal-target')) {
-    this.el.addEventListener('click', this.delegateScroll.bind(this));
-    this.el.setAttribute('data-bound', true);
-  }
+  this.el.addEventListener('click', this.delegateScroll.bind(this));
 }
 
-InpageNavigation.prototype.delegateScroll = function(e) {
-  if (e.target.nodeName === 'A') {
-    var target = e.target.getAttribute('href');
+InpageNavigation.name = 'InpageNavigation';
+InpageNavigation.selector = [
+  'a[href^="#"]',
+  ':not([href="#"])', // no target
+  ':not([href="#sitemap"])', // global nav
+  ':not([data-no-scroll])', // opt-out attribute
+  ':not([data-modal-target])', // modal triggers
+  ':not([role="tab"])' // tabs
+].join('');
 
-    if (target) {
-      if (target != '#' && target != '#sitemap') {
-        e.preventDefault();
-        target = document.querySelector('#' + cssesc(target.substr(1), { 'isIdentifier': true }));
+InpageNavigation.prototype.delegateScroll = function (evt) {
+  evt.preventDefault();
 
-        var tabbed = findUp(e.target, 'data-tabbed');
-        if (tabbed && !e.target.parentNode.parentNode.classList.contains('jump-navigation')) {
-          if (tabbed.querySelectorAll('.tab#' + target.id).length === 1)
-            target = tabbed;
-        }
+  // Find target
+  var selector = evt.currentTarget.getAttribute('href');
+  var id = cssesc(selector.substr(1), { 'isIdentifier': true });
+  var target = document.querySelector('#' + id);
 
-        // If link is not a tab, or a full width tab
-        if ((target && !tabbed) || (tabbed && tabbed.querySelector('.full-width nav'))) {
-          smoothScrollTo(target);
-        }
-      }
-    }
+  // Smooth-scroll to target
+  if (target) {
+    utils.smoothScrollTo(target);
   }
 };
 

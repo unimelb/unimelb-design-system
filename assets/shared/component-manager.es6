@@ -1,4 +1,4 @@
-import { loadStylesheet, loadScript } from './utils.es6';
+import { loadStylesheet, loadScript } from '../utils/index.es6';
 
 /**
  * Registered components by name.
@@ -48,9 +48,9 @@ export function initComponent(name, context = document) {
 }
 
 /**
- *
- * @param Component
- * @param matches
+ * Initialise a component's matches.
+ * @param {constructor} Component
+ * @param {array} matches
  */
 function initMatches(Component, matches) {
   // Initialise each match and return the instances

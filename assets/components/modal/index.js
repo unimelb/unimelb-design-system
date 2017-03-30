@@ -14,29 +14,26 @@ function Modal(el, props) {
   new CreateNameSpace();
 
   // Bind only if modal has target
-  if (this.props.target) {
-    this.props.root = document.querySelector('.uomcontent');
-    this.props.offset = el.hasAttribute('data-modal-offset');
-    this.props.blanket = new Blanket();
+  if (!this.props.target) return;
 
-    this.setupCloseButton();
+  this.props.root = document.querySelector('.uomcontent');
+  this.props.offset = el.hasAttribute('data-modal-offset');
+  this.props.blanket = new Blanket();
 
-    // Event bindings
-    if (!this.el.hasAttribute('data-bound')) {
-      // Bind open trigger
-      this.el.addEventListener('click', this.show.bind(this));
+  this.setupCloseButton();
 
-      // Bind close triggers
-      var recs = this.props.target.querySelectorAll('.modal__close');
-      for (var i = recs.length - 1; i >= 0; i--) {
-        recs[i].addEventListener('click', this.dismiss.bind(this));
-      }
+  // Bind open trigger
+  this.el.addEventListener('click', this.show.bind(this));
 
-      // Mark modal as bound
-      this.el.setAttribute('data-bound', true);
-    }
+  // Bind close triggers
+  var recs = this.props.target.querySelectorAll('.modal__close');
+  for (var i = recs.length - 1; i >= 0; i--) {
+    recs[i].addEventListener('click', this.dismiss.bind(this));
   }
 }
+
+Modal.name = 'Modal';
+Modal.selector = '[data-modal-target]';
 
 /**
  * Create and add close button to modal if one doesn't already exist.
