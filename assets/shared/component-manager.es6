@@ -1,3 +1,5 @@
+import { loadStylesheet, loadScript } from './utils.es6';
+
 /**
  * Registered components by name.
  * @type {Object}
@@ -24,8 +26,35 @@ export function initComponent(name, context = document) {
   const selector = `${Component.selector}:not([data-bound])`;
   const matches = Array.from(context.querySelectorAll(selector));
 
+  // Return if no matches are found
+  if (matches.length === 0) return;
+
+  // Retrieve the component's third-party dependencies
+  const deps = Component.dependencies;
+
+  // Load any stylesheet dependencies in the background
+  if (deps && deps.stylesheets) {
+    loadStylesheet(deps.stylesheets);
+  }
+
+  // Load any scripts dependencies and initialise matches once all scripts have finished loading
+  if (deps && deps.scripts) {
+    loadScript(deps.scripts).then(initMatches.bind(null, Component, matches));
+    return;
+  }
+
+  // No script dependencies; initialise matches right away
+  initMatches(Component, matches);
+}
+
+/**
+ *
+ * @param Component
+ * @param matches
+ */
+function initMatches(Component, matches) {
   // Initialise each match and return the instances
-  return matches.map(function (el) {
+  return matches.map(el => {
     el.setAttribute('data-bound', 'true');
     return new Component(el, {});
   });
@@ -36,7 +65,7 @@ export function initComponent(name, context = document) {
  * @return {object<array<any>>} - the components' new instances
  */
 export function initAllComponents() {
-  return Object.keys(components).reduce(function (instances, name) {
+  return Object.keys(components).reduce((instances, name) => {
     instances[name] = initComponent(name);
     return instances;
   }, {});
@@ -51,7 +80,7 @@ export function registerComponents(comps) {
   comps = Array.isArray(comps) ? comps : [comps];
 
   // Register every component
-  comps.forEach(function (Component) {
+  comps.forEach(Component => {
     // Log error if component doesn't have a name
     if (!Component.name || !Component.selector) {
       console.error('Component must have a name and a selector', Component);

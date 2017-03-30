@@ -23,10 +23,7 @@ window.UOMbind = function(component) {
 
   var recs, i, attachment, Base;
 
-  if (component === 'accordion') {
-    attachment = '.accordion__title';
-
-  } else if (component === 'modal') {
+  if (component === 'modal') {
     attachment = '[data-modal-target]';
 
   } else if (component === 'tabs') {
@@ -34,9 +31,6 @@ window.UOMbind = function(component) {
 
   } else if (component === 'inpage-navigation') {
     attachment = 'a[href^="#"]';
-
-  } else if (component === 'checklist') {
-    attachment = 'ul.checklist[data-unlock-target]';
 
   } else if (component === 'icons') {
     window.UOMbindIcons();
@@ -78,10 +72,9 @@ window.UOMbind = function(component) {
 window.UOMloadComponents = function() {
   "use strict";
 
-  var recs, i, g, SidebarTabs, JumpNav, CheckboxHelper, FancySelect, Flash, FilteredListing,
+  var recs, i, g, SidebarTabs, JumpNav, FancySelect, Flash,
     ImageGallery, slingshot, style, script, keyscript;
 
-  window.UOMbind('accordion');
   window.UOMbind('modal');
 
   recs = document.querySelectorAll('select');
@@ -104,15 +97,6 @@ window.UOMloadComponents = function() {
   }
 
   window.UOMbind('inpage-navigation');
-
-  recs = document.querySelectorAll('input[type="radio"],input[type="checkbox"]');
-  if (recs.length > 0) {
-    CheckboxHelper = require("../../components/checklist/checkboxhelper");
-    for (i=recs.length - 1; i >= 0; i--)
-      new CheckboxHelper(recs[i], {});
-  }
-
-  window.UOMbind('checklist');
   window.UOMbind('forms');
 
   if (document.querySelector('h2[id]') && document.querySelectorAll('.jumpnav, .indexnav').length === 1) {
@@ -128,16 +112,6 @@ window.UOMloadComponents = function() {
       headerless: document.querySelector('.headerless'),
       header: document.querySelector('[role="main"] > header:first-child')
     });
-  }
-
-  recs = document.querySelectorAll('form.filtered-listing-select');
-  if (recs.length > 0) {
-    window.loadScript('https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js')
-      .then(function (recs) {
-        FilteredListing = require("../../components/filtered-listings");
-        for (i=recs.length - 1; i >= 0; i--)
-          new FilteredListing(recs[i], {});
-      }.bind(null, recs));
   }
 
   window.UOMbind('icons');

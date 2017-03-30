@@ -1,4 +1,3 @@
-// Core dependencies
 import {
   components,
   initComponent,
@@ -6,9 +5,12 @@ import {
   registerComponents
 } from '../../shared/component-manager.es6';
 
-// Components
-import accordion from '../../components/accordion';
-import checklist from '../../components/checklist';
+import * as utils from '../../shared/utils.es6';
+
+import Accordion from '../../components/accordion';
+import Checklist from '../../components/checklist';
+import CheckboxHelper from '../../components/checklist/checkboxhelper';
+import FilteredListing from '../../components/filtered-listings';
 
 // Polyfills
 require('es6-promise').polyfill();
@@ -20,13 +22,18 @@ window.uom = {
   components,
   initComponent,
   initAllComponents,
-  registerComponents
+  registerComponents,
+
+  // utilities
+  utils
 };
 
 // Register the design system's components
 window.uom.registerComponents([
-  accordion,
-  checklist
+  Accordion,
+  Checklist,
+  CheckboxHelper,
+  FilteredListing
 ]);
 
 // Toggle JS classes on document root

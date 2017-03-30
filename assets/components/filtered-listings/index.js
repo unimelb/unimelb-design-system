@@ -41,6 +41,12 @@ function FilteredListing(el, props) {
   this.update();
 }
 
+FilteredListing.name = 'FilteredListing';
+FilteredListing.selector = 'form.filtered-listing-select';
+FilteredListing.dependencies = {
+  scripts: ['https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js']
+};
+
 /**
  * Parse the querystring looking for the 'tags' and 'section' parameters:
  * `?tags=nominavi,iudico&section=all`
