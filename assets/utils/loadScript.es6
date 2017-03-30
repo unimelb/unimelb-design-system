@@ -1,26 +1,9 @@
 /**
- * Load one or more externally-hosted stylesheets.
- * @param {string|array} url - the URL of the script, or an array of URLs
- */
-export function loadStylesheet(url) {
-  // Prepare array of stylesheet URLs to load
-  const urls = Array.isArray(url) ? url : [url];
-
-  // For each URL, inject a stylesheet tag into the head
-  urls.forEach(url => {
-    var style = document.createElement('link');
-    style.rel = 'stylesheet';
-    style.href = url;
-    document.head.appendChild(style);
-  });
-}
-
-/**
  * Load one or more externally-hosted scripts.
  * @param {string|array} url - the URL of the script, or an array of URLs
  * @return {Promise} - promise that resolves when all scripts have loaded
  */
-export function loadScript(url) {
+export default function loadScript(url) {
   // Prepare array of script URLs to load
   const urls = Array.isArray(url) ? url : [url];
 
