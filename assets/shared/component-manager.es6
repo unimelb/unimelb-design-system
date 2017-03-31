@@ -12,7 +12,6 @@ export const components = {};
  * Note that when a `context` is provided, only its children are searched.
  * @param {string} name - the component's name
  * @param {element} context (optional) - restrict the search in the DOM (defaults to `document`)
- * @return {array<any>} - the new instances of the component
  */
 export function initComponent(name, context = document) {
   // Retrieve registered component
@@ -22,11 +21,8 @@ export function initComponent(name, context = document) {
     return;
   }
 
-  // Retrieve matches, making sure to exclude the ones that are already bound
-  const selector = `${Component.selector}:not([data-bound])`;
-  const matches = Array.from(context.querySelectorAll(selector));
-
-  // Return if no matches are found
+  // Find matches and return if none are found
+  const matches = findMatches(context, Component.selector, Component.firstOnly);
   if (matches.length === 0) return;
 
   // Retrieve the component's third-party dependencies
@@ -48,33 +44,48 @@ export function initComponent(name, context = document) {
 }
 
 /**
- * Initialise a component's matched element.
- * If the element has attribute `data-props` with a JSON string as value, the string is parsed and the
- * resulting object is passed to the component's constructor. Only JSON objects (`{...}`) are allowed.
+ * Find a component's matches.
+ * @param {element} context
+ * @param {string} rawSelector
+ * @param {boolean} firstOnly
+ * @return {array<element>} - the matched elements
+ */
+function findMatches(context, rawSelector, firstOnly) {
+  // Build selector, making sure to exclude elements that are already bound
+  const selector = `${rawSelector}:not([data-bound])`;
+
+  // Retrieve the component's matches, optionally looking only for the first one
+  if (firstOnly) return [context.querySelector(selector)];
+  return Array.from(context.querySelectorAll(selector))
+}
+
+/**
+ * Initialise a component's matched elements.
+ * If an element has attribute `data-props`, the attribute's value is parsed to JSON and the resulting
+ * object is passed to the component's constructor. Only JSON object strings are allowed: `"{...}"`.
  * @param {constructor} Component
  * @param {array} matches
  */
 function initMatches(Component, matches) {
-  // Initialise each match and return the instances
-  return matches.map(el => {
+  matches.forEach(el => {
     // Retrieve and parse props (only allow JSON object)
     const rawProps = el.getAttribute('data-props');
     const props = /^{/.test(rawProps) ? JSON.parse(rawProps) : {};
 
+    // Create new instance
+    new Component(el, props);
+
+    // Mark element as bound
     el.setAttribute('data-bound', 'true');
-    return new Component(el, props);
   });
 }
 
 /**
  * Initialise all registered components.
- * @return {object<array<any>>} - the components' new instances
+ * @param {element} context (optional) - restrict the search in the DOM (defaults to `document`)
  */
 export function initAllComponents() {
-  return Object.keys(components).reduce((instances, name) => {
-    instances[name] = initComponent(name);
-    return instances;
-  }, {});
+  Object.keys(components).forEach((name) => initComponent(name));
 }
 
 /**

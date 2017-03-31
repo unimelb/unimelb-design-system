@@ -13,6 +13,7 @@ import Checklist from '../../components/checklist';
 import CheckboxHelper from '../../components/checklist/checkboxhelper';
 import FilteredListing from '../../components/filtered-listings';
 import FancySelect from '../../components/forms/fancyselect';
+import Flash from '../../components/notices/flash';
 import ImageGallery from '../../components/gallery';
 import InpageNavigation from '../../components/inpage-navigation';
 import Modal from '../../components/modal';
@@ -46,6 +47,7 @@ window.uom.registerComponents([
   CheckboxHelper,
   FilteredListing,
   FancySelect,
+  Flash,
   ImageGallery,
   InpageNavigation,
   Modal,
