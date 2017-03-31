@@ -15,7 +15,8 @@ import FilteredListing from '../../components/filtered-listings';
 import FancySelect from '../../components/forms/fancyselect';
 import Flash from '../../components/notices/flash';
 import ImageGallery from '../../components/gallery';
-import InpageNavigation from '../../components/inpage-navigation';
+import InPageNavigation from '../../components/inpage-navigation';
+import JumpNav from '../../components/inpage-navigation/jumpnav';
 import Modal from '../../components/modal';
 import SidebarTabs from '../../components/tabs/sidebar-tabs';
 import Tabs from '../../components/tabs';
@@ -49,7 +50,8 @@ window.uom.registerComponents([
   FancySelect,
   Flash,
   ImageGallery,
-  InpageNavigation,
+  InPageNavigation,
+  JumpNav,
   Modal,
   SidebarTabs,
   Tabs,

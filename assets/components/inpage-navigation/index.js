@@ -6,14 +6,14 @@ var utils = require('../../utils/index.es6');
  * @param  {Element} el
  * @param  {Object} props
  */
-function InpageNavigation(el, props) {
+function InPageNavigation(el, props) {
   this.el = el;
   this.props = props;
   this.el.addEventListener('click', this.delegateScroll.bind(this));
 }
 
-InpageNavigation.name = 'InpageNavigation';
-InpageNavigation.selector = [
+InPageNavigation.name = 'InPageNavigation';
+InPageNavigation.selector = [
   'a[href^="#"]',
   ':not([href="#"])', // no target
   ':not([href="#sitemap"])', // global nav
@@ -22,7 +22,7 @@ InpageNavigation.selector = [
   ':not([role="tab"])' // tabs
 ].join('');
 
-InpageNavigation.prototype.delegateScroll = function (evt) {
+InPageNavigation.prototype.delegateScroll = function (evt) {
   evt.preventDefault();
 
   // Find target
@@ -36,4 +36,4 @@ InpageNavigation.prototype.delegateScroll = function (evt) {
   }
 };
 
-module.exports = InpageNavigation;
+module.exports = InPageNavigation;

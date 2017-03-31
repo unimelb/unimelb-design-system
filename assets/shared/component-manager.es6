@@ -7,6 +7,35 @@ import { loadStylesheet, loadScript } from '../utils/index.es6';
 export const components = {};
 
 /**
+ * Register one or more components.
+ * @param {array|constructor} components - an array of components, or a single component's constructor
+ */
+export function registerComponents(comps) {
+  // Allow passing a single component
+  comps = Array.isArray(comps) ? comps : [comps];
+
+  // Register every component
+  comps.forEach(Component => {
+    // Log error if component doesn't have a name
+    if (!Component.name || !Component.selector) {
+      console.error('Component must have a name and a selector', Component);
+      return;
+    }
+
+    // Register component by name
+    components[Component.name] = Component;
+  });
+}
+
+/**
+ * Initialise all registered components.
+ * @param {element} context (optional) - restrict the search in the DOM (defaults to `document`)
+ */
+export function initAllComponents() {
+  Object.keys(components).forEach((name) => initComponent(name));
+}
+
+/**
  * Initialise a registered component.
  * Create a new instance of the component for each of its selector's matches in the DOM.
  * Note that when a `context` is provided, only its children are searched.
@@ -54,8 +83,13 @@ function findMatches(context, rawSelector, firstOnly) {
   // Build selector, making sure to exclude elements that are already bound
   const selector = `${rawSelector}:not([data-bound])`;
 
-  // Retrieve the component's matches, optionally looking only for the first one
-  if (firstOnly) return [context.querySelector(selector)];
+  // Optionally, look only for the first match
+  if (firstOnly) {
+    const match = context.querySelector(selector);
+    return match ? [match] : [];
+  }
+
+  // Look for all matches
   return Array.from(context.querySelectorAll(selector))
 }
 
@@ -77,34 +111,5 @@ function initMatches(Component, matches) {
 
     // Mark element as bound
     el.setAttribute('data-bound', 'true');
-  });
-}
-
-/**
- * Initialise all registered components.
- * @param {element} context (optional) - restrict the search in the DOM (defaults to `document`)
- */
-export function initAllComponents() {
-  Object.keys(components).forEach((name) => initComponent(name));
-}
-
-/**
- * Register one or more components.
- * @param {array|constructor} components - an array of components, or a single component's constructor
- */
-export function registerComponents(comps) {
-  // Allow passing a single component
-  comps = Array.isArray(comps) ? comps : [comps];
-
-  // Register every component
-  comps.forEach(Component => {
-    // Log error if component doesn't have a name
-    if (!Component.name || !Component.selector) {
-      console.error('Component must have a name and a selector', Component);
-      return;
-    }
-
-    // Register component by name
-    components[Component.name] = Component;
   });
 }

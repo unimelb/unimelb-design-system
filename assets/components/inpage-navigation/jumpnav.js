@@ -1,21 +1,18 @@
+var componentManager = require('../../shared/component-manager.es6');
+
 /**
- * JumpNav
- *
+ * Jump navigation
  * @param  {Object} props
  */
-function JumpNav(props) {
-  this.el = document.querySelector('.jump-navigation');
+function JumpNav(el, props) {
   this.props = props;
+  this.props.root = document.querySelector('[role="main"]');
+  this.props.headings = this.props.root.querySelectorAll('h2[id]');
+  this.props.topmode = el.classList.contains('top');
+  this.props.arbitraryOffset = 60; // scroll clearance
 
-  // Arbitrary delay to allow calculation of CSS block hiding
-  var offsets = {
-    'root':            document.querySelector('div[role="main"]'),
-    'topmode':         (document.querySelectorAll('.jumpnav.top').length === 1),
-    'arbitraryOffset': 60  // scroll clearance
-  };
-
-  // Add to props
-  for (var prop in offsets) { this.props[prop] = offsets[prop]; }
+  // Return early if page has no identified headings
+  if (this.props.headings.length === 0) return;
 
   // Does layout contain a header at the top
   var firstElem = this.props.root.firstElementChild;
@@ -23,21 +20,21 @@ function JumpNav(props) {
     this.props.header = firstElem;
 
   // Build nav menu
-  if (!this.el || !this.el.hasAttribute('data-bound')) {
-    this.buildNavMenu();
+  this.buildNavMenu();
 
-    // Calculations for transition points, delay after page render
-    setTimeout(this.initCalcs.bind(this), 1000);
+  // Calculations for transition points, delay after page render
+  setTimeout(this.initCalcs.bind(this), 1000);
 
-    // Event binding
-    window.addEventListener('scroll', this.handleScroll.bind(this));
-    window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
+  // Event binding
+  window.addEventListener('scroll', this.handleScroll.bind(this));
+  window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
 
-    // Initial calc
-    this.handleScroll();
-    this.el.setAttribute('data-bound', true);
-  }
+  // Initial calc
+  this.handleScroll();
 }
+
+JumpNav.name = 'JumpNav';
+JumpNav.selector = '.jumpnav, .indexnav';
 
 JumpNav.prototype.handleResize = function() {
   this.initCalcs();
@@ -84,7 +81,9 @@ JumpNav.prototype.buildNavMenu = function() {
   this.el.innerHTML = '<li>On this page</li>';
 
   this.props.items = {};
-  for (var recs=this.props.root.querySelectorAll('h2[id]'), i=0, max=recs.length; i < max; i++) {
+  var recs = this.props.headings;
+
+  for (var i = 0, max = recs.length; i < max; i++) {
     var at = recs[i].offsetTop;
     this.props.items[at] = document.createElement('a');
     this.props.items[at].href = '#' + recs[i].id;
@@ -128,10 +127,7 @@ JumpNav.prototype.buildNavMenu = function() {
   }
 
   // Rebind smooth scrolling to new links
-  var InpageNavigation = require("../inpage-navigation");
-  for (recs=document.querySelectorAll('a[href^="#"]'), i=recs.length - 1; i >= 0; i--) {
-    new InpageNavigation(recs[i], {});
-  }
+  componentManager.initComponent('InPageNavigation', this.el);
 };
 
 JumpNav.prototype.initCalcs = function() {
