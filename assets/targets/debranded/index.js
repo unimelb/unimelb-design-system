@@ -19,7 +19,7 @@ WebFont.load({
 window.DSComponentsLoad = function() {
   "use strict";
 
-  var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InpageNavigation,
+  var recs, i, g, Accordion, Modal, Tabs, SidebarTabs, InPageNavigation,
     JumpNav, CheckboxHelper, UnlockChecklist, FancySelect, ValidateForm,
     FilteredListing, IconHelper, ImageGallery, slingshot, LMaps,
     style, script, CreateNameSpace, Icons;
@@ -70,9 +70,9 @@ window.DSComponentsLoad = function() {
 
   recs = document.querySelectorAll('a[href^="#"]');
   if (recs.length > 0) {
-    InpageNavigation = require("../../components/inpage-navigation");
+    InPageNavigation = require("../../components/inpage-navigation");
     for (i=recs.length - 1; i >= 0; i--)
-      new InpageNavigation(recs[i], {});
+      new InPageNavigation(recs[i], {});
   }
 
   if (document.querySelector('h2[id]') && document.querySelectorAll('.jumpnav, .indexnav').length === 1) {
@@ -115,7 +115,7 @@ window.DSComponentsLoad = function() {
 
   recs = document.querySelectorAll('[data-icon]');
   if (recs.length > 0) {
-    IconHelper = require("../injection/icons/iconhelper");
+    IconHelper = require("../../components/icons");
     for (i=recs.length - 1; i >= 0; i--)
       new IconHelper(recs[i], {});
   }

@@ -9,7 +9,7 @@ window.UOMFormLoadComponents = function() {
   "use strict";
 
   // components
-  var recs, i, Accordion, Modal, InpageNavigation, FancySelect, ValidateForm, Icons;
+  var recs, i, Accordion, Modal, InPageNavigation, FancySelect, ValidateForm, Icons;
 
   recs = document.querySelectorAll('.accordion__title');
   if (recs.length > 0) {
@@ -27,9 +27,9 @@ window.UOMFormLoadComponents = function() {
 
   recs = document.querySelectorAll('a[href^="#"]');
   if (recs.length > 0) {
-    InpageNavigation = require("../../components/inpage-navigation");
+    InPageNavigation = require("../../components/inpage-navigation");
     for (i=recs.length - 1; i >= 0; i--)
-      new InpageNavigation(recs[i], {});
+      new InPageNavigation(recs[i], {});
   }
 
   recs = document.querySelectorAll('select');
