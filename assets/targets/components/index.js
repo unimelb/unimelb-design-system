@@ -12,9 +12,8 @@ window.UOMbind = function(component) {
 
   var recs, i, attachment, Base;
 
-  if (component === 'icons') {
-    window.UOMbindIcons();
-    attachment = false;
+  if (component === 'forms') {
+    attachment = 'form[data-validate]';
 
   } else if (component === 'tables') {
     attachment = 'table';
