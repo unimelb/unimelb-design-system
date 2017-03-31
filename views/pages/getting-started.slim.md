@@ -193,5 +193,5 @@ section
 
   p Don't forget to specify the correct login URL in the <code>data-href</code> attribute. The text of the link can be manipulated using the <code>data-title</code> attribute on this element, if for example you want to change the title to "Logout" when a user is logged in. The text will be "Login" by default, and there is a hard limit of 7 characters to protect the header design.
 
-  p.alert-info <strong>Note:</strong> Up to v4.4 of the design system, it was a requirement to add class <code>with-login</code> to <code>div role="main</code>. This is no longer the case.
-  p.alert-warning <strong>Beware:</strong> The login modal feature present in v4.4 and below is no longer supported. The login button may only link to an external URL.
+  p.notice.notice--info <strong>Note:</strong> Up to v4.4 of the design system, it was a requirement to add class <code>with-login</code> to <code>div role="main</code>. This is no longer the case.
+  p.notice.notice--warning <strong>Beware:</strong> The login modal feature present in v4.4 and below is no longer supported. The login button may only link to an external URL.
