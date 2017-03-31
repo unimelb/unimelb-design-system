@@ -48,15 +48,21 @@ export function initComponent(name, context = document) {
 }
 
 /**
- * Initialise a component's matches.
+ * Initialise a component's matched element.
+ * If the element has attribute `data-props` with a JSON string as value, the string is parsed and the
+ * resulting object is passed to the component's constructor. Only JSON objects (`{...}`) are allowed.
  * @param {constructor} Component
  * @param {array} matches
  */
 function initMatches(Component, matches) {
   // Initialise each match and return the instances
   return matches.map(el => {
+    // Retrieve and parse props (only allow JSON object)
+    const rawProps = el.getAttribute('data-props');
+    const props = /^{/.test(rawProps) ? JSON.parse(rawProps) : {};
+
     el.setAttribute('data-bound', 'true');
-    return new Component(el, {});
+    return new Component(el, props);
   });
 }
 
