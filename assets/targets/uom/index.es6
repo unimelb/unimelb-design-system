@@ -16,6 +16,7 @@ import FancySelect from '../../components/forms/fancyselect';
 import ImageGallery from '../../components/gallery';
 import InpageNavigation from '../../components/inpage-navigation';
 import Modal from '../../components/modal';
+import SidebarTabs from '../../components/tabs/sidebar-tabs';
 import Tabs from '../../components/tabs';
 import ValidateForm from '../../components/forms';
 
@@ -48,6 +49,7 @@ window.uom.registerComponents([
   ImageGallery,
   InpageNavigation,
   Modal,
+  SidebarTabs,
   Tabs,
   ValidateForm
 ]);

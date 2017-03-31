@@ -1,3 +1,5 @@
+var utils = require('../../utils/index.es6');
+
 /**
  * Sidebar Tabs
  * @param  {Element} el
@@ -12,10 +14,7 @@ function SidebarTabs(el, props) {
   this.props.tabs = el.querySelectorAll('.sidebar-tabs__tab');
   this.props.panels = el.querySelectorAll('.sidebar-tabs__panel');
   this.props.panelsContainer = el.querySelector('.sidebar-tabs__panels');
-
-  this.props.scrollTarget = this.props.scrollTarget || this.props.panelsContainer;
-  if (this.el.hasAttribute('data-scroll-target'))
-    this.props.scrollTarget = document.querySelector(this.el.getAttribute('data-scroll-target'));
+  this.props.scrollTarget = this.determineScrollTarget();
 
   var hash = window.location.hash;
   var matchFoundForHash = false;
@@ -54,15 +53,33 @@ function SidebarTabs(el, props) {
   }
 }
 
+SidebarTabs.name = 'SidebarTabs';
+SidebarTabs.selector = '.sidebar-tabs';
+
+/**
+ * Determine to which element to smooth-scroll after selecting a tab.
+ * Resolves to, in order:
+ * 1. the element refered to in the optional `data-scroll-target` attribute
+ * 2. the root of any full-width tabs component on the page
+ * 3. the panels container of the sidebar tab component itself
+ */
+SidebarTabs.prototype.determineScrollTarget = function () {
+  // Use `data-scroll-target` attribute if provided
+  if (this.el.hasAttribute('data-scroll-target')) {
+    return document.querySelector(this.el.getAttribute('data-scroll-target'));
+  }
+
+  // Otherwise, look for full-width tabs or default to panels containerr
+  return document.querySelector('.tabbed-nav[data-tabbed]') || this.props.panelsContainer;
+};
+
 /**
  * A tab has been clicked.
  * @param {Element} tab
  * @param {MouseEvent} evt
  */
 SidebarTabs.prototype.handleTabClicked = function (tab, evt) {
-  evt.stopImmediatePropagation();
   evt.preventDefault();
-
   var prevIndex = this.props.currentIndex;
 
   // Select the tab, show its panel, then scroll to the panels container unless data-no-scroll is set
@@ -123,7 +140,7 @@ SidebarTabs.prototype.selectTab = function (tab) {
  * When scroll has finished, give focus to the panels' container for accessibility.
  */
 SidebarTabs.prototype.scroll = function () {
-  smoothScrollTo(this.props.scrollTarget, function () {
+  utils.smoothScrollTo(this.props.scrollTarget, function () {
     var scrollPosition = window.scrollY || window.pageYOffset; // save scroll position to work around focus jump
     this.props.panelsContainer.focus(); // focus
     window.scroll(0, scrollPosition); // restore scroll position
