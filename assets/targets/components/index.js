@@ -26,11 +26,6 @@ window.UOMbind = function(component) {
       for (i=recs.length - 1; i >= 0; i--)
         new Base(recs[i], {});
     }
-
-  // Different setup proc
-  } else if (component === 'announcement') {
-    var Accouncement = require('../injection/announcement/index.es6');
-    new Accouncement({});
   }
 
   if (attachment) {

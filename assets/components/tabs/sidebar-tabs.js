@@ -53,7 +53,7 @@ function SidebarTabs(el, props) {
   }
 }
 
-SidebarTabs.name = 'SidebarTabs';
+SidebarTabs.label = 'SidebarTabs';
 SidebarTabs.selector = '.sidebar-tabs';
 
 /**

@@ -22,7 +22,7 @@ function Checklist(el, props) {
     this.props.items[i].addEventListener('click', this.handleClick.bind(this));
 }
 
-Checklist.name = 'Checklist';
+Checklist.label = 'Checklist';
 Checklist.selector = 'ul.checklist[data-unlock-target]';
 
 Checklist.prototype.handleClick = function(e) {

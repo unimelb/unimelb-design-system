@@ -43,7 +43,7 @@ function Tabs(el, props) {
   }
 }
 
-Tabs.name = 'Tabs';
+Tabs.label = 'Tabs';
 Tabs.selector = '[data-tabbed]';
 
 /**

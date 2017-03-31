@@ -23,7 +23,7 @@ function FancySelect(el, props) {
   }
 }
 
-FancySelect.name = 'FancySelect';
+FancySelect.label = 'FancySelect';
 FancySelect.selector = 'select';
 
 FancySelect.prototype.buildWrapper = function () {

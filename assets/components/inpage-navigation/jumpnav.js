@@ -33,7 +33,7 @@ function JumpNav(el, props) {
   this.handleScroll();
 }
 
-JumpNav.name = 'JumpNav';
+JumpNav.label = 'JumpNav';
 JumpNav.selector = '.jumpnav, .indexnav';
 
 JumpNav.prototype.handleResize = function() {

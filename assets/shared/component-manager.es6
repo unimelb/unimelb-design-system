@@ -1,7 +1,7 @@
 import { loadStylesheet, loadScript } from '../utils/index.es6';
 
 /**
- * Registered components by name.
+ * Registered components by label.
  * @type {Object}
  */
 export const components = {};
@@ -16,14 +16,14 @@ export function registerComponents(comps) {
 
   // Register every component
   comps.forEach(Component => {
-    // Log error if component doesn't have a name
-    if (!Component.name || !Component.selector) {
-      console.error('Component must have a name and a selector', Component);
+    // Log error if component doesn't have a label
+    if (!Component.label || !Component.selector) {
+      console.error('Component must have a label and a selector', Component);
       return;
     }
 
-    // Register component by name
-    components[Component.name] = Component;
+    // Register component by label
+    components[Component.label] = Component;
   });
 }
 
@@ -32,21 +32,21 @@ export function registerComponents(comps) {
  * @param {element} context (optional) - restrict the search in the DOM (defaults to `document`)
  */
 export function initAllComponents() {
-  Object.keys(components).forEach((name) => initComponent(name));
+  Object.keys(components).forEach((label) => initComponent(label));
 }
 
 /**
  * Initialise a registered component.
  * Create a new instance of the component for each of its selector's matches in the DOM.
  * Note that when a `context` is provided, only its children are searched.
- * @param {string} name - the component's name
+ * @param {string} label - the component's label
  * @param {element} context (optional) - restrict the search in the DOM (defaults to `document`)
  */
-export function initComponent(name, context = document) {
+export function initComponent(label, context = document) {
   // Retrieve registered component
-  const Component = components[name];
+  const Component = components[label];
   if (!Component) {
-    console.warn(`Component "${name}" is not registered`);
+    console.warn(`Component "${label}" is not registered`);
     return;
   }
 

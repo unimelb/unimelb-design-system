@@ -12,7 +12,7 @@ function InPageNavigation(el, props) {
   this.el.addEventListener('click', this.delegateScroll.bind(this));
 }
 
-InPageNavigation.name = 'InPageNavigation';
+InPageNavigation.label = 'InPageNavigation';
 InPageNavigation.selector = [
   'a[href^="#"]',
   ':not([href="#"])', // no target

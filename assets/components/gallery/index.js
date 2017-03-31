@@ -18,7 +18,7 @@ function ImageGallery(el, props) {
   this.restoreFromHash();
 }
 
-ImageGallery.name = 'ImageGallery';
+ImageGallery.label = 'ImageGallery';
 ImageGallery.selector = 'ul.image-gallery';
 ImageGallery.dependencies = {
   scripts: [

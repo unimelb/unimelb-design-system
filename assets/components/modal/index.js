@@ -32,7 +32,7 @@ function Modal(el, props) {
   }
 }
 
-Modal.name = 'Modal';
+Modal.label = 'Modal';
 Modal.selector = '[data-modal-target]';
 
 /**

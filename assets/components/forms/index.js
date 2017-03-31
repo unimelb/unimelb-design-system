@@ -43,7 +43,7 @@ function ValidateForm(el, props) {
   this.el.addEventListener('submit', this.handleSubmit.bind(this));
 }
 
-ValidateForm.name = 'ValidateForm';
+ValidateForm.label = 'ValidateForm';
 ValidateForm.selector = 'form[data-validate]';
 
 ValidateForm.prototype.handleSubmit = function(e) {

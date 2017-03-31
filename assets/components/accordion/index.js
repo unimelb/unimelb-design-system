@@ -22,7 +22,7 @@ function Accordion(el, props) {
 }
 
 // Component name and selector for registration
-Accordion.name = 'Accordion';
+Accordion.label = 'Accordion';
 Accordion.selector = '.accordion__title';
 
 Accordion.prototype.setupCloseButton = function() {

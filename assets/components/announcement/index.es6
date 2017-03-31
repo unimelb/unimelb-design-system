@@ -1,6 +1,6 @@
 
-var hashString = require('../../../shared/vendor/hash-string');
-var hasLocalStorage = require('../../../shared/has-local-storage')();
+var hashString = require('../../shared/vendor/hash-string');
+var hasLocalStorage = require('../../shared/has-local-storage')();
 
 var STORAGE_PREFIX = 'uom-announcement-';
 var DISMISSED = 'dismissed';
@@ -17,7 +17,7 @@ function Announcement(el, props) {
   this.inject();
 }
 
-Announcement.name = 'Announcement';
+Announcement.label = 'Announcement';
 Announcement.selector = '.page-announcement';
 
 /**

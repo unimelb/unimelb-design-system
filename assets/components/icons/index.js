@@ -19,7 +19,7 @@ function IconHelper(el, props) {
   this.restoreChildren();
 }
 
-IconHelper.name = 'IconHelper';
+IconHelper.label = 'IconHelper';
 IconHelper.selector = '[data-icon]';
 
 IconHelper.prototype.saveChildren = function() {

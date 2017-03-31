@@ -13,7 +13,7 @@ function CheckboxHelper(el, props) {
   this.props.parent.addEventListener('click', this.handleClick.bind(this));
 }
 
-CheckboxHelper.name = 'CheckboxHelper';
+CheckboxHelper.label = 'CheckboxHelper';
 CheckboxHelper.selector = 'input[type="radio"],input[type="checkbox"]';
 
 CheckboxHelper.prototype.handleClick = function(e) {

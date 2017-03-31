@@ -15,7 +15,7 @@ function Flash(el, props) {
   main.insertBefore(this.el, baseElem ? baseElem.nextSibling : main.firstChild);
 }
 
-Flash.name = 'Flash';
+Flash.label = 'Flash';
 Flash.selector = '.flash';
 Flash.firstOnly = true;
 

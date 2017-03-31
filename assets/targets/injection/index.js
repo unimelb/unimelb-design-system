@@ -18,9 +18,6 @@ window.UOMloadInjection = function() {
 
   Icons = require('./icons');
   new Icons();
-
-  Accouncement = require('./announcement/index.es6');
-  new Accouncement({});
 };
 
 document.addEventListener('DOMContentLoaded', window.UOMloadInjection, false);
