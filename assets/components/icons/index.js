@@ -7,10 +7,6 @@ function IconHelper(el, props) {
   this.el = el;
   this.props = props;
 
-  // Don't initialise the same icon twice
-  if (this.el.hasAttribute('data-bound')) return;
-  this.el.setAttribute('data-bound', true);
-
   // Allow providing icon target with or without the `#icon-` prefix
   this.props.ref = this.el.getAttribute('data-icon');
   if (!/^#icon-/.test(this.props.ref)) {
@@ -22,6 +18,9 @@ function IconHelper(el, props) {
   this.el.innerHTML = '<svg class="icon" role="img" focusable="false"><use xlink:href="' + this.props.ref + '"></use></svg>';
   this.restoreChildren();
 }
+
+IconHelper.name = 'IconHelper';
+IconHelper.selector = '[data-icon]';
 
 IconHelper.prototype.saveChildren = function() {
   this.props.children = [];
