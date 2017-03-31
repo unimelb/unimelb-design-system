@@ -9,6 +9,7 @@ import * as utils from '../../utils/index.es6';
 import cssesc from 'cssesc';
 
 import Accordion from '../../components/accordion';
+import Announcement from '../../components/announcement/index.es6';
 import Checklist from '../../components/checklist';
 import CheckboxHelper from '../../components/checklist/checkboxhelper';
 import FilteredListing from '../../components/filtered-listings';
@@ -45,6 +46,7 @@ window.uom = {
 // Register the design system's components
 window.uom.registerComponents([
   Accordion,
+  Announcement,
   Checklist,
   CheckboxHelper,
   FilteredListing,
