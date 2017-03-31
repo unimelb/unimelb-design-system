@@ -4,7 +4,7 @@
 }
 
 @mixin inner-list-reset {
-  @include rem(padding-bottom, 30px);
+  padding-bottom: 1.875rem;
 
   ul li {
     list-style-type: disc;
@@ -45,10 +45,10 @@
 }
 
 @mixin ticks {
-  @include rem(padding-left, 30px);
+  padding-left: 1.875rem;
 
   @include breakpoint(desktop) {
-    @include rem(padding-left, 20px);
+    padding-left: 1.25rem;
   }
 
   li {
@@ -56,11 +56,11 @@
     position: relative;
 
     &::before {
-      @include rem(height, 5px);
-      @include rem(left, 6px);
-      @include rem(margin-left, -30px);
-      @include rem(top, 6px);
-      @include rem(width, 10px);
+      height: .3125rem;
+      left: .375rem;
+      margin-left: -1.875rem;
+      top: .375rem;
+      width: .625rem;
       background: transparent;
       border: 3px solid $green;
       border-right: 0 none;
@@ -76,8 +76,8 @@
 
 
     ul {
-      @include padding-leader(.5);
-      @include padding-trailer(0);
+      padding-top: .75rem;
+      padding-bottom: 0;
     }
 
     li {
@@ -134,37 +134,41 @@
   li,
   table {
     @include wrapper;
-    @include rem(max-width, $w-sml);
+    max-width: $w-sml;
     font-weight: $light;
     padding: 0;
 
     @include breakpoint(tablet) {
-      @include rem(max-width, $w-sml);
+      max-width: $w-sml;
     }
   }
 
   h1 {
-    @include adjust-font-size-to(26px);
-    @include padding-trailer(1);
+    font-size: 1.625rem;
+    line-height: 2.25rem;
+    padding-bottom: 1.5rem;
     font-weight: $light;
 
     @include breakpoint(desktop) {
-      @include adjust-font-size-to(33px);
+      font-size: 2.0625rem;
+      line-height: 3rem;
     }
   }
 
   h2 {
-    @include adjust-font-size-to(15px);
-    @include rem(letter-spacing, 1px);
-    @include padding-leader(1);
-    @include padding-trailer(1);
+    font-size: .9375rem;
+    line-height: 1.5rem;
+    letter-spacing: .0625rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     clear: left;
     font-weight: $bold;
     text-transform: uppercase;
   }
 
   h3 {
-    @include adjust-font-size-to(16px);
+    font-size: 1rem;
+    line-height: 1.5rem;
     font-weight: $bold;
 
     &.subtitle {
@@ -175,30 +179,29 @@
 
   p,
   li {
-    @include rem(letter-spacing, .2px);
-    @include padding-trailer(1);
+    letter-spacing: .0125rem;
+    padding-bottom: 1.5rem;
   }
 
   ol,
   ul {
-    @include rem(max-width, $w-sml);
-    @include rem(padding-left, 15px);
-    @include rem(padding-right, 15px);
+    max-width: $w-sml;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
     color: $darkgray;
     list-style-position: outside;
     margin: 0 auto;
 
     li {
-      @include padding-trailer(0.5);
-      @include rem(margin-left, 15px);
-      @include rem(max-width, $w-sml);
+      padding-bottom: .75rem;
+      margin-left: .9375rem;
+      max-width: $w-sml;
       color: $black;
       display: list-item;
 
       &.no-li {
         list-style-type: none;
 
-        &:before,
         &::before {
           display: none;
         }
@@ -230,7 +233,7 @@
   }
 
   ol {
-    @include rem(padding-left, 30px);
+    padding-left: 1.875rem;
 
     &[type="a"] li {
       list-style-type: lower-alpha;
@@ -269,14 +272,14 @@
     }
 
     &.steps {
-      @include rem(max-width, $w-mid);
+      max-width: $w-mid;
       counter-reset: steps;
       padding-left: 0;
       padding-right: 0;
 
       & > li {
-        @include rem(max-width, $w-mid);
-        @include rem(padding-left, 70px);
+        max-width: $w-mid;
+        padding-left: 4.375rem;
         border-top: 1px solid rgba(#000000, 0.1);
         counter-increment: steps;
         list-style-type: none;
@@ -287,10 +290,10 @@
         }
 
         &::before {
-          @include rem(font-size, 50px);
-          @include rem(letter-spacing, -5px);
-          @include rem(padding-top, 20px);
-          @include rem(width, 60px);
+          font-size: 3.125rem;
+          letter-spacing: -.3125rem;
+          padding-top: 1.25rem;
+          width: 3.75rem;
           color: $black;
           content: counter(steps);
           display: block;
@@ -303,26 +306,28 @@
         }
 
         & > p:first-child {
-          @include padding-leader(1);
+          padding-top: 1.5rem;
         }
       }
 
       h2 {
-        @include adjust-font-size-to(26px);
-        @include padding-leader(1);
-        @include padding-trailer(1);
+        font-size: 1.625rem;
+        line-height: 2.25rem;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
         font-weight: $light;
         text-transform: none;
 
         @include breakpoint(desktop) {
-          @include adjust-font-size-to(33px);
+          font-size: 2.0625rem;
+          line-height: 3rem;
         }
       }
 
       ol,
       ul {
-        @include rem(padding-left, 20px);
-        @include rem(padding-right, 20px);
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
         padding-top: .5em;
       }
 
@@ -333,9 +338,9 @@
           }
 
           &::before {
-            @include rem(font-size, 68px);
-            @include rem(left, 10px);
-            @include rem(letter-spacing, -7px);
+            font-size: 4.25rem;
+            left: .625rem;
+            letter-spacing: -.4375rem;
             line-height: 1.05;
           }
         }
@@ -350,7 +355,7 @@
 
       @include breakpoint(wide) {
         & > li {
-          @include rem(padding-left, 110px);
+          padding-left: 6.875rem;
 
           & > * {
             margin-left: 0 !important;
@@ -361,8 +366,8 @@
           }
 
           &::before {
-            @include rem(font-size, 80px);
-            @include rem(letter-spacing, -11px);
+            font-size: 5rem;
+            letter-spacing: -.6875rem;
           }
         }
       }
@@ -413,8 +418,8 @@
 
       &[type="a"],
       &[type="i"] {
-        @include rem(padding-left, 42px);
-        @include rem(padding-top, 12px);
+        padding-left: 2.625rem;
+        padding-top: .75rem;
 
         li::before {
           display: none;
@@ -487,13 +492,14 @@
   }
 
   dl {
-    @include adjust-font-size-to(12px);
-    @include padding-leader(1);
-    @include padding-trailer(1);
-    @include rem(padding-left,15px);
-    @include rem(padding-right,15px);
+    font-size: .75rem;
+    line-height: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
     dt {
-      @include rem(width, 120px);
+      width: 7.5rem;
       clear: left;
       float: left;
     }
@@ -503,7 +509,7 @@
     }
 
     &.bside {
-      @include rem(font-size, 15px);
+      font-size: .9375rem;
       dt {
         line-height: 1.2;
         margin: 0;
@@ -517,13 +523,13 @@
       }
 
       span {
-        @include rem(font-size, 28px);
+        font-size: 1.75rem;
         letter-spacing: -.125em;
         line-height: 1;
       }
 
       @include breakpoint(desktop) {
-        @include rem(padding, 10px 30px);
+        padding: .625rem 1.875rem;
         display: inline-block;
         width: 75%;
 
@@ -547,8 +553,8 @@
     margin: 0;
 
     &.spacer {
-      @include leader(1);
-      @include trailer(1);
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
     }
   }
 
@@ -568,7 +574,7 @@
   }
 
   .center {
-    @include rem(padding, 0 0 60px);
+    padding: 0 0 3.75rem;
     margin: 0 auto;
     text-align: center;
   }
@@ -595,22 +601,22 @@
   }
 
   .grey {
-    @include adjust-font-size-to(16px);
+    font-size: 1rem;
+    line-height: 1.5rem;
     color: $midgray;
   }
 
   .main-title {
-    @include adjust-font-size-to(36px);
-    @include padding-leader(1);
-    @include padding-trailer(1);
+    font-size: 2.25rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
     font-family: $ff-serif;
     font-weight: $regular;
     line-height: 1.2;
 
-    &:after,
     &::after {
-      @include rem(margin-top, 15px);
-      @include rem(max-width, 700px);
+      margin-top: .9375rem;
+      max-width: $w-sml;
       border-bottom: 2px solid $midgray;
       content: '';
       display: block;
@@ -618,19 +624,20 @@
     }
 
     @include breakpoint(desktop) {
-      @include rem(font-size, 47.1px);
-      @include rem(padding-bottom, 24px);
-      @include rem(padding-top, 30px);
+      font-size: 2.94375rem;
+      padding-bottom: 1.5rem;
+      padding-top: 1.875rem;
       line-height: 1.26;
     }
 
     &+ h2 {
-      @include rem(padding-top, 3px);
+      padding-top: .1875rem;
     }
   }
 
   .small {
-    @include adjust-font-size-to(12px);
+    font-size: .75rem;
+    line-height: 1.5rem;
   }
 
   .line {

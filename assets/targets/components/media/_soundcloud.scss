@@ -1,7 +1,7 @@
 .uomcontent [role="main"] {
   .soundcloud-cover {
-    @include rem(max-width, 200px);
-    @include rem(padding-bottom, 200px);
+    max-width: 12.5rem;
+    padding-bottom: 12.5rem;
     height: 0;
     margin-left: auto;
     margin-right: auto;
@@ -9,23 +9,23 @@
     position: relative;
 
     @include breakpoint(height-smallest) {
-      @include rem(max-width, 350px);
-      @include rem(padding-bottom, 350px);
+      max-width: 21.875rem;
+      padding-bottom: 21.875rem;
     }
 
     @include breakpoint(height-small) {
-      @include rem(max-width, 400px);
-      @include rem(padding-bottom, 400px);
+      max-width: 25rem;
+      padding-bottom: 25rem;
     }
 
     @include breakpoint(height-medium) {
-      @include rem(max-width, 500px);
-      @include rem(padding-bottom, 500px);
+      max-width: 31.25rem;
+      padding-bottom: 31.25rem;
     }
 
     @include breakpoint(height-big) {
-      @include rem(max-width, 600px);
-      @include rem(padding-bottom, 600px);
+      max-width: 37.5rem;
+      padding-bottom: 37.5rem;
     }
 
     iframe {

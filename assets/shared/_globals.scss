@@ -2,7 +2,6 @@
 @import 'vars';
 
 // Mixins
-@import 'vendor/compass';
 @import 'patterns_accessibility';
 @import 'patterns_clearfix';
 @import 'patterns_fallback_avatar';
@@ -15,7 +14,7 @@
   width: 94%;
 
   @include breakpoint(tablet) {
-    @include rem(max-width, $w-lge);
+    max-width: $w-lge;
   }
 
   @include breakpoint(desktop) {

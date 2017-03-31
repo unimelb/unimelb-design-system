@@ -1,7 +1,7 @@
 @mixin raisedbutton {
-  @include rem(border-radius, 5px);
-  @include rem(font-size, 13px);
-  @include rem(padding, 15px 20px);
+  border-radius: 5px;
+  font-size: .8125rem;
+  padding: .9375rem 1.25rem;
   background-color: $highlight;
   border: 0;
   border-bottom: 5px solid darken($highlight, 10%);
@@ -64,27 +64,27 @@
   }
 
   [data-icon] {
-    @include rem(margin-left, 2px);
-    @include rem(padding-bottom, 3px);
-    @include rem(padding-top, 1px);
+    margin-left: .125rem;
+    padding-bottom: .1875rem;
+    padding-top: .0625rem;
 
     &.small {
-      @include rem(height, 20px);
-      @include rem(width, 20px);
+      height: 1.25rem;
+      width: 1.25rem;
     }
   }
 
   @include breakpoint(height-small) {
-    @include rem(font-size, 15px);
-    @include rem(padding, 17px 40px);
+    font-size: .9375rem;
+    padding: 1.0625rem 2.5rem;
   }
 }
 
 @mixin flatbutton {
   @include raisedbutton;
-  @include rem(border-radius, 2px);
-  @include rem(font-size, 12px);
-  @include rem(padding, 10px 15px);
+  border-radius: 2px;
+  font-size: .75rem;
+  padding: .625rem .9375rem;
   border-bottom: 0;
   margin: 0;
   position: relative;
@@ -131,22 +131,15 @@
   }
 
   @include breakpoint(height-small) {
-    @include rem(font-size, 12px);
-    @include rem(padding, 10px 15px);
+    font-size: .75rem;
+    padding: .625rem .9375rem;
   }
 }
 
 @mixin arrow-right {
   &::after {
-    @include rem(font-size, 20px);
-    @include rem(padding-left, 5px);
-    content: '\2192';
-    line-height: 0;
-  }
-
-  &:after {
-    @include rem(font-size, 20px);
-    @include rem(padding-left, 5px);
+    font-size: 1.25rem;
+    padding-left: .3125rem;
     content: '\2192';
     line-height: 0;
   }
@@ -154,27 +147,20 @@
 
 @mixin arrow-left {
   &::before {
-    @include rem(font-size, 20px);
-    @include rem(padding-right, 5px);
-    content: '\2190';
-    line-height: 0;
-  }
-
-  &:before {
-    @include rem(font-size, 20px);
-    @include rem(padding-right, 5px);
+    font-size: 1.25rem;
+    padding-right: .3125rem;
     content: '\2190';
     line-height: 0;
   }
 }
 
 @mixin outlinebutton {
-  @include rem(border-radius, 5px);
-  @include rem(border-width, 2px);
-  @include rem(font-size, 13px);
-  @include rem(letter-spacing, 1px);
-  @include rem(margin, 20px 0);
-  @include rem(padding, 10px);
+  border-radius: 5px;
+  border-width: 2px;
+  font-size: .8125rem;
+  letter-spacing: .0625rem;
+  margin: 1.25rem 0;
+  padding: .625rem;
   border-color: $black;
   border-style: solid;
   color: $black;
@@ -201,83 +187,59 @@
   }
 
   @include breakpoint(height-small) {
-    @include rem(font-size, 15px);
-    @include rem(margin, 20px 0);
-    @include rem(padding, 20px);
+    font-size: .9375rem;
+    margin: 1.25rem 0;
+    padding: 1.25rem;
   }
 }
 
 @mixin outlinearrow {
   &::after {
-    @include rem(font-size, 15px);
-    @include rem(padding-left, 10px);
+    font-size: .9375rem;
+    padding-left: .625rem;
     content: '\2192';
     line-height: 0;
 
     @include breakpoint(height-small) {
-      @include rem(font-size, 26px);
-      @include rem(padding-left, 15px);
-    }
-  }
-
-  &:after {
-    @include rem(font-size, 15px);
-    @include rem(padding-left, 10px);
-    content: '\2192';
-    line-height: 0;
-
-    @include breakpoint(height-small) {
-      @include rem(font-size, 26px);
-      @include rem(padding-left, 15px);
+      font-size: 1.625rem;
+      padding-left: .9375rem;
     }
   }
 }
 
 @mixin outlinearrow-reverse {
   &::before {
-    @include rem(font-size, 15px);
-    @include rem(padding-right, 10px);
+    font-size: .9375rem;
+    padding-right: .625rem;
     content: '\2190';
     line-height: 0;
 
     @include breakpoint(height-small) {
-      @include rem(font-size, 26px);
-      @include rem(padding-right, 15px);
-    }
-  }
-
-  &:before {
-    @include rem(font-size, 15px);
-    @include rem(padding-right, 10px);
-    content: '\2190';
-    line-height: 0;
-
-    @include breakpoint(height-small) {
-      @include rem(font-size, 26px);
-      @include rem(padding-right, 15px);
+      font-size: 1.625rem;
+      padding-right: .9375rem;
     }
   }
 }
 
 @mixin iconbutton {
   @include flatbutton;
-  @include rem(font-size, 14px);
-  @include rem(margin, 10px 0);
-  @include rem(padding, 5px 10px 5px 20px);
+  font-size: .875rem;
+  margin: .625rem 0;
+  padding: .3125rem .625rem .3125rem 1.25rem;
   appearance: none;
   display: inline-block;
   font-weight: $regular;
 
   svg.icon {
-    @include rem(height, 16px);
-    @include rem(margin, 0 5px);
-    @include rem(width, 16px);
+    height: 1rem;
+    margin: 0 .3125rem;
+    width: 1rem;
     fill: currentcolor;
     vertical-align: middle;
   }
 
   &:hover {
-    @include rem(margin, 10px 0);
+    margin: .625rem 0;
     background-color: rgba($black, .1);
     color: $black;
   }
@@ -336,11 +298,11 @@
     }
 
     h2 {
-      @include rem(font-size, 24px);
+      font-size: 1.5rem;
     }
 
     p {
-      @include rem(font-size, 16px);
+      font-size: 1rem;
     }
   }
 }

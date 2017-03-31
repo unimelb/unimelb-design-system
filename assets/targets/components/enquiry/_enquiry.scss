@@ -1,14 +1,14 @@
 .uomcontent [role="main"] {
   .enquiry {
-    @include padding-leader(2);
-    @include padding-trailer(2);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     background-color: $paleblue;
     box-shadow: 0 -1px 9px rgba($lightblue, 0.3) inset;
 
     .errors {
-      @include rem(font-size, 22px);
-      @include rem(max-width, 700px);
-      @include rem(padding-top, 30px);
+      font-size: 1.375rem;
+      max-width: $w-sml;
+      padding-top: 1.875rem;
       background-color: #fad8dc;
       margin: 0 auto;
 
@@ -19,28 +19,30 @@
 
     .enquiry__cta {
       @include wrapper;
-      @include adjust-font-size-to(20px);
-      @include rem(line-height, 50px);
-      @include padding-trailer(1);
-      @include rem(max-width, $w-sml);
+      font-size: 1.25rem;
+      line-height: 3.125rem;
+      padding-bottom: 1.5rem;
+      max-width: $w-sml;
       text-align: center;
 
       a {
-        @include rem(line-height, 30px);
-        @include rem(margin-left, 10px);
+        line-height: 1.875rem;
+        margin-left: .625rem;
         vertical-align: middle;
       }
 
       @include breakpoint(desktop) {
-        @include adjust-font-size-to(22px);
+        font-size: 1.375rem;
+        line-height: 2.25rem;
       }
     }
 
     .enquiry__subline {
       @include wrapper;
-      @include adjust-font-size-to(16px);
-      @include padding-leader(.5);
-      @include rem(max-width, $w-sml);
+      font-size: 1rem;
+      line-height: 1.5rem;
+      padding-top: .75rem;
+      max-width: $w-sml;
       border-top: 1px solid rgba($lightblue, 0.3);
       color: $midblue;
       text-align: center;
@@ -51,18 +53,18 @@
         }
 
         .secondary {
-          @include rem(margin-left, 20px);
+          margin-left: 1.25rem;
         }
       }
     }
 
     .enquiry-form__thanks {
-      @include rem(font-size, 22px);
+      font-size: 1.375rem;
     }
 
     .enquiry__form {
       form {
-        @include padding-leader(1);
+        padding-top: 1.5rem;
         max-width: 100%;
       }
 
@@ -75,7 +77,7 @@
 
       fieldset {
         div {
-          @include rem(max-width, 600px);
+          max-width: 37.5rem;
           margin-left: auto;
           margin-right: auto;
         }
@@ -125,7 +127,7 @@
       }
 
       .accordion__hidden {
-        @include rem(max-height, 2000px);
+        max-height: 125rem;
 
         &.enquiry__form fieldset::before {
           display: block;

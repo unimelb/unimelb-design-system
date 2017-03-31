@@ -2,13 +2,13 @@
   @include listing;
 
   li {
-    @include padding-trailer(1);
+    padding-bottom: 1.5rem;
     border-top: 0 none;
     text-align: center;
   }
 
   figure {
-    @include rem(max-height, 350px);
+    max-height: 21.875rem;
     float: none;
     margin-right: 0;
     max-width: 100%;
@@ -20,8 +20,8 @@
   }
 
   strong {
-    @include adjust-font-size-to(20px);
-    @include adjust-leading-to(1);
+    font-size: 1.25rem;
+    line-height: 1.5rem;
     text-align: left;
   }
 
@@ -31,10 +31,10 @@
   }
 
   &.listing--crop-height figure {
-    @include rem(height, 340px);
+    height: 21.25rem;
 
     img {
-      @include rem(min-height, 340px);
+      min-height: 21.25rem;
       max-width: none;
     }
   }
@@ -59,11 +59,9 @@
     }
 
     strong {
-      @include adjust-font-size-to(20px);
-      @include padding-trailer(0.5);
-    }
-
-    p {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      padding-bottom: .75rem;
     }
   }
 }
@@ -83,10 +81,10 @@
   }
 
   &.listing--crop-height figure {
-    @include rem(height, 280px);
+    height: 17.5rem;
 
     img {
-      @include rem(min-height, 280px);
+      min-height: 17.5rem;
     }
   }
 

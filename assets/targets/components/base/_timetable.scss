@@ -13,7 +13,7 @@
   }
 
   .bside {
-    @include rem(padding, 0 15px);
+    padding: 0 .9375rem;
     padding-left: 3%;
 
     h1 {
@@ -21,7 +21,7 @@
     }
 
     @include breakpoint(desktop) {
-      @include rem(padding-right, 60px);
+      padding-right: 3.75rem;
       display: table-cell;
       float: none;
       height: 100%;
@@ -75,7 +75,7 @@
   }
 
   .time {
-    @include rem(min-width, 65px);
+    min-width: 4.0625rem;
     color: $black;
     display: inline-block;
     font-style: italic;
@@ -87,7 +87,7 @@
   }
 
   h1 {
-    @include rem(padding-top, 60px);
+    padding-top: 3.75rem;
     margin-left: 0;
     max-width: 100%;
   }
@@ -97,14 +97,14 @@
   }
 
   table {
-    @include rem(margin-bottom, 60px);
+    margin-bottom: 3.75rem;
     border-bottom: 1px solid $lightergray;
     border-collapse: collapse;
     max-width: 100%;
     width: 100%;
 
     @include breakpoint(desktop) {
-      @include rem(margin-top, 60px);
+      margin-top: 3.75rem;
       border-bottom: 0 none;
     }
 
@@ -113,8 +113,8 @@
     }
 
     .accordion__close {
-      @include rem(height, 50px);
-      @include rem(width, 50px);
+      height: 3.125rem;
+      width: 3.125rem;
       color: $white;
       cursor: pointer;
       display: block;
@@ -124,7 +124,7 @@
       top: 0;
 
       &::after {
-        @include rem(font-size, 60px);
+        font-size: 3.75rem;
         content: '\00d7';
         font-weight: $thin;
         line-height: 1;
@@ -147,8 +147,8 @@
 
       th {
         @include subtitle;
-        @include rem(font-size, 14px);
-        @include rem(padding, 30px 0 10px);
+        font-size: .875rem;
+        padding: 1.875rem 0 .625rem;
         border-top: 1px solid $lightergray;
         clear: both;
         display: block;
@@ -158,7 +158,7 @@
         vertical-align: top;
 
         @include breakpoint(desktop) {
-          @include rem(padding, 10px 10px 10px 0);
+          padding: .625rem .625rem .625rem 0;
           border-bottom: 1px solid $lightergray;
           border-right: 1px solid $lightergray;
           border-top: 0 none;
@@ -168,8 +168,8 @@
       }
 
       td {
-        @include rem(font-size, 14px);
-        @include rem(padding-top, 5px);
+        font-size: .875rem;
+        padding-top: .3125rem;
         border-right: 1px solid $lightergray;
         display: block;
         float: left;
@@ -181,7 +181,7 @@
         vertical-align: top;
 
         @include breakpoint(desktop) {
-          @include rem(padding, 10px);
+          padding: .625rem;
           border-bottom: 1px solid $lightergray;
           border-right: 0 none;
           display: table-cell;
@@ -196,8 +196,8 @@
       }
 
       td.informative {
-        @include rem(padding-bottom, 10px);
-        @include rem(padding-right, 10px);
+        padding-bottom: .625rem;
+        padding-right: .625rem;
         display: block;
         max-width: 100%;
         white-space: normal;
@@ -225,9 +225,9 @@
         }
 
         a {
-          @include rem(font-size, 24px);
-          @include rem(padding, 5px);
-          @include rem(width, 20px);
+          font-size: 1.5rem;
+          padding: .3125rem;
+          width: 1.25rem;
           display: block;
           font-weight: $bold;
           line-height: 1;

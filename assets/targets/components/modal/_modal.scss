@@ -61,7 +61,7 @@
     text-transform: uppercase;
     width: 50px;
 
-    &:before {
+    &::before {
       @include modal-close-icon;
     }
 

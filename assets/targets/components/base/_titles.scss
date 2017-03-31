@@ -1,8 +1,8 @@
 @mixin aligned-title {
-  @include rem(font-size, 28px);
-  @include rem(padding-top, 48px);
-  @include rem(padding-bottom, 36px);
-  @include rem(padding-right, 20px);
+  font-size: 1.75rem;
+  padding-top: 3rem;
+  padding-bottom: 2.25rem;
+  padding-right: 1.25rem;
   font-weight: $light;
   letter-spacing: 0;
   margin: 0 auto;
@@ -12,13 +12,13 @@
   width: 94%;
 
   @include breakpoint(wide) {
-    @include rem(padding-top, 80px);
+    padding-top: 5rem;
     width: 100%;
   }
 
-  &:after {
-    @include rem(margin-top, 36px);
-    @include rem(width, 50px);
+  &::after {
+    margin-top: 2.25rem;
+    width: 3.125rem;
     border-bottom: 2px solid $black;
     content: '';
     display: block;
@@ -27,8 +27,9 @@
 }
 
 @mixin subtitle {
-  @include adjust-font-size-to(15px);
-  @include rem(letter-spacing, 2px);
+  font-size: .9375rem;
+  line-height: 1.5rem;
+  letter-spacing: .125rem;
   font-weight: $bold;
   text-transform: uppercase;
 }
@@ -37,19 +38,9 @@
   @include subtitle;
   text-align: center;
 
-  &:after {
-    @include margin-leader(1);
-    @include rem(width, 80px);
-    border-bottom: 2px solid $black;
-    content: '';
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
   &::after {
-    @include margin-leader(1);
-    @include rem(width, 80px);
+    margin-top: 1.5rem;
+    width: 5rem;
     border-bottom: 2px solid $black;
     content: '';
     display: block;
@@ -76,13 +67,15 @@
   }
 
   .feature {
-    @include adjust-font-size-to(20px);
+    font-size: 1.25rem;
+    line-height: 1.5rem;
   }
 }
 
 .uomcontent [role="main"] {
   h1.highlight {
-    @include adjust-font-size-to(75px);
+    font-size: 4.6875rem;
+    line-height: 5.25rem;
     color: $highlight;
     font-weight: $thin;
     letter-spacing: -5px;
@@ -90,7 +83,8 @@
     animation: hue 80s infinite linear;
 
     @include breakpoint(desktop) {
-      @include adjust-font-size-to(160px);
+      font-size: 10rem;
+      line-height: 10.5rem;
     }
   }
 
@@ -100,11 +94,13 @@
   & > header.image:first-child h1.highlight,
   header.banner h1.highlight,
   & > header.banner:first-child h1.highlight {
-    @include adjust-font-size-to(60px);
+    font-size: 3.75rem;
+    line-height: 4.5rem;
     text-align: center;
 
     @include breakpoint(desktop) {
-      @include adjust-font-size-to(100px);
+      font-size: 6.25rem;
+      line-height: 6.75rem;
       text-align: center;
     }
 

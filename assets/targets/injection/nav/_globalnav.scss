@@ -1,7 +1,7 @@
 .uomcontent [role="navigation"]#globalsitemap {
   @include normalise;
   @include wrapper;
-  @include rem(padding, 0 3% 30px);
+  padding: 0 3% 1.875rem;
   background-color: $navy;
   font-family: $ff-sans;
   height: 100%;
@@ -23,7 +23,7 @@
   }
 
   @include breakpoint(tablet) {
-    @include rem(padding, 0 130px 30px 40px);
+    padding: 0 8.125rem 1.875rem 2.5rem;
 
     &.active {
       transform: translateX(-100%) translateX(90px);
@@ -31,8 +31,8 @@
   }
 
   a {
-    @include rem(padding-top, 8px);
-    @include rem(padding-bottom, 8px);
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     color: $lightblue;
     color: rgba($white, .6);
     display: block;
@@ -51,16 +51,16 @@
     }
 
     @include breakpoint(desktop) {
-      @include rem(padding-top, 4px);
-      @include rem(padding-bottom, 4px);
+      padding-top: .25rem;
+      padding-bottom: .25rem;
     }
   }
 
   h2 {
-    @include rem(font-size, 20px);
-    @include rem(margin-bottom, 8px);
-    @include rem(padding-bottom, 6px);
-    @include rem(padding-top, 24px);
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+    padding-bottom: .375rem;
+    padding-top: 1.5rem;
     border-bottom: 1px solid $blue;
     color: $lightblue;
     color: rgba($white, .6);
@@ -73,7 +73,7 @@
   }
 
   li {
-    @include rem(font-size, 14px);
+    font-size: .875rem;
     color: #B9C2CA;
     color: rgba($white, .6);
     line-height: 1.4;
@@ -83,7 +83,7 @@
   }
 
   ul {
-    @include rem(padding-left, 20px);
+    padding-left: 1.25rem;
     margin: 0;
     padding-bottom: 0;
     padding-right: 0;
@@ -100,8 +100,8 @@
     padding: 0 3%;
 
     @include breakpoint(desktop) {
-      @include rem(margin-top, 30px);
-      @include rem(max-width, 700px);
+      margin-top: 1.875rem;
+      max-width: $w-sml;
       float: right;
       padding: 0;
       width: 60%;
@@ -130,9 +130,9 @@
 
       input[type="image"] {
         @include inlinebutton;
-        @include rem(border-radius, 0 3px 3px 0);
-        @include rem(margin, 15px 0 0);
-        @include rem(width, 45px);
+        border-radius: 0 3px 3px 0;
+        margin: .9375rem 0 0;
+        width: 2.8125rem;
         padding: 0;
         position: absolute;
         right: 0;
@@ -143,8 +143,8 @@
         }
 
         svg {
-          @include rem(height, 24px);
-          @include rem(width, 24px);
+          height: 1.5rem;
+          width: 1.5rem;
           background-color: transparent;
           cursor: pointer;
           fill: currentColor;
@@ -154,19 +154,19 @@
 
       .inline-button {
         @include inlinebutton;
-        @include rem(border-radius, 0 3px 3px 0);
-        @include rem(font-size, 13px);
-        @include rem(height, 45px);
-        @include rem(margin, 5px 0 0);
-        @include rem(padding, 0 15px);
+        border-radius: 0 3px 3px 0;
+        font-size: .8125rem;
+        height: 2.8125rem;
+        margin: .3125rem 0 0;
+        padding: 0 .9375rem;
         letter-spacing: 1px;
 
         span.small {
           padding: 0;
 
           svg {
-            @include rem(height, 24px);
-            @include rem(width, 24px);
+            height: 1.5rem;
+            width: 1.5rem;
           }
         }
       }
@@ -187,9 +187,9 @@
 
   .logo {
     @include imgreplace;
-    @include rem(height, 140px);
-    @include rem(margin-top, 15px);
-    @include rem(width, 140px);
+    height: 8.75rem;
+    margin-top: .9375rem;
+    width: 8.75rem;
     border: 0 none;
     clear: none;
     margin-left: auto;
@@ -210,19 +210,19 @@
   }
 
   a.close-button {
-    @include rem(font-size, 14px);
-    @include rem(padding-left, 4px);
-    @include rem(padding-top, 16px);
-    @include rem(height, 60px);
+    font-size: .875rem;
+    padding-left: .25rem;
+    padding-top: 1rem;
+    height: 3.75rem;
     border-bottom: 1px solid $blue;
     color: rgba($white, .4);
     display: block;
     text-decoration: none;
     text-transform: uppercase;
 
-    &:before {
-      @include rem(font-size, 24px);
-      @include rem(margin-right, 8px);
+    &::before {
+      font-size: 1.5rem;
+      margin-right: .5rem;
       color: rgba($white, .4);
       content: '\2039';
       display: inline-block;
@@ -240,8 +240,8 @@
       text-decoration: underline;
     }
 
-    &:hover:before,
-    &:focus:before {
+    &:hover::before,
+    &:focus::before {
       animation: chevronback 1s infinite ease-in-out;
       color: $white;
       text-decoration: none;
@@ -252,13 +252,13 @@
     padding-left: 3%;
 
     &:last-child {
-      @include rem(padding-bottom, 32px);
+      padding-bottom: 2rem;
     }
   }
 
   @include breakpoint(desktop) {
     .col-3 {
-      @include rem(padding-top, 48px);
+      padding-top: 3rem;
       clear: both;
 
       div {
@@ -275,7 +275,7 @@
       }
 
       h2 {
-        @include rem(letter-spacing, 2px);
+        letter-spacing: .125rem;
         border-top: 0 none;
         font-size: .9375rem;
         font-weight: $regular;

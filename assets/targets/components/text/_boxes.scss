@@ -1,17 +1,18 @@
 @mixin boxes {
-  @include padding-leader(1);
-  @include padding-trailer(0);
-  @include trailer(2);
-  @include rem(max-width, $w-sml);
-  @include rem(padding-left, 25px);
-  @include rem(padding-right, 25px);
+  padding-top: 1.5rem;
+  padding-bottom: 0;
+  margin-bottom: 3rem;
+  max-width: $w-sml;
+  padding-left: 1.5625rem;
+  padding-right: 1.5625rem;
   background-color: lighten($highlight, 54);
   margin: 0 auto;
 
   h1 {
-    @include adjust-font-size-to(15px);
-    @include rem(letter-spacing, 2px);
-    @include rem(padding, 0px 0 15px 0);
+    font-size: .9375rem;
+    line-height: 1.5rem;
+    letter-spacing: .125rem;
+    padding: 0 0 .9375rem 0;
     font-weight: $bold;
     margin: 0;
     text-transform: uppercase;
@@ -24,7 +25,8 @@
   }
 
   dt {
-    @include adjust-font-size-to(15px);
+    font-size: .9375rem;
+    line-height: 1.5rem;
     color: $black;
     display: block;
     float: none;
@@ -33,11 +35,12 @@
   }
 
   dd {
-    @include adjust-font-size-to(20px);
-    @include trailer(1);
-    @include rem(margin-left, 0px);
-    @include rem(margin-right, 0px);
-    @include rem(margin-top, 0px);
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
     display: block;
     float: none;
     font-weight: $regular;
@@ -58,7 +61,8 @@
     @include boxes;
 
     dd {
-      @include adjust-font-size-to(40px);
+      font-size: 2.5rem;
+      line-height: 3rem;
       font-weight: $bold;
     }
   }
@@ -68,7 +72,8 @@
     color: $cherry;
 
     dd {
-      @include adjust-font-size-to(24px);
+      font-size: 1.5rem;
+      line-height: 2.25rem;
       font-weight: $bold;
     }
 

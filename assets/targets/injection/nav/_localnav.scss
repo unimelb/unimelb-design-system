@@ -8,7 +8,7 @@
   z-index: 15;
 
   &__panel {
-    @include rem(padding-right, $width-sitemap-trigger);
+    padding-right: $width-sitemap-trigger;
     background-color: $menu;
     height: 100%;
     overflow-x: hidden;
@@ -37,8 +37,8 @@
   /* close and back buttons */
   /* HACK increase specificity to override `.button-ui`, which was part of the Buttons component until v6.0 */
   &__back-btn.localnav__back-btn {
-    @include rem(font-size, 12px);
-    @include rem(padding, 20px);
+    font-size: .75rem;
+    padding: 1.25rem;
     background-color: darken($menu, 3%);
     color: rgba(255, 255, 255, .7);
     display: block;
@@ -50,8 +50,8 @@
     width: 100%;
 
     &::before {
-      @include rem(font-size, 20px);
-      @include rem(padding-right, 10px);
+      font-size: 1.25rem;
+      padding-right: .625rem;
       content: '\2039';
       float: left;
       font-weight: normal;
@@ -75,7 +75,7 @@
   /* add chevron to nested panel triggers */
   &__nested-trigger {
     &::after {
-      @include rem(font-size, 24px);
+      font-size: 1.5rem;
       content: '\203a';
       float: right;
       font-weight: 400;
@@ -102,7 +102,7 @@
     }
 
     a {
-      @include rem(letter-spacing, 1px);
+      letter-spacing: .0625rem;
       color: inherit;
       display: block;
       outline-offset: -1px;
@@ -129,8 +129,8 @@
     }
 
     a {
-      @include rem(font-size, 14px);
-      @include rem(padding, 20px);
+      font-size: .875rem;
+      padding: 1.25rem;
 
       &:hover,
       &:focus {
@@ -142,12 +142,12 @@
 
   /* meta menu */
   &__meta {
-    @include rem(padding, 20px 0);
+    padding: 1.25rem 0;
     color: rgba(255, 255, 255, .7);
 
     a {
-      @include rem(font-size, 13px);
-      @include rem(padding, 4px 20px);
+      font-size: .8125rem;
+      padding: .25rem 1.25rem;
     }
   }
 
@@ -158,11 +158,11 @@
 
   @include breakpoint(tablet) {
     /* switch to fixed width */
-    @include rem(right, $offset-localnav);
-    @include rem(width, $width-localnav);
+    right: $offset-localnav;
+    width: $width-localnav;
 
     /* now that width is fixed, switch to margin so that sitemap link doesn't hide panel scrollbars */
-    @include rem(margin-right, $width-sitemap-trigger);
+    margin-right: $width-sitemap-trigger;
     &__panel { padding-right: 0; }
 
     &.active {

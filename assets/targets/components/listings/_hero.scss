@@ -7,7 +7,7 @@
   }
 
   h2 {
-    @include trailer(1);
+    margin-bottom: 1.5rem;
     background-size: cover;
     max-width: 100%;
     padding: 0;
@@ -22,7 +22,7 @@
   }
 
   figure {
-    @include rem(max-height, 500px);
+    max-height: 31.25rem;
     margin: 0;
   }
 
@@ -31,15 +31,15 @@
     margin: 0;
     max-width: 100%;
     padding: 3%;
-    @include rem(padding-bottom, 15px);
-    @include rem(padding-top, 15px);
+    padding-bottom: .9375rem;
+    padding-top: .9375rem;
 
     @include breakpoint(0) {
       filter: none;
     }
 
     strong {
-      @include adjust-font-size-to(40px);
+      font-size: 2.5rem;
       color: $white;
       line-height: 1.1;
       padding-bottom: .1em;
@@ -47,7 +47,8 @@
     }
 
     p {
-      @include adjust-font-size-to(18px);
+      font-size: 1.125rem;
+      line-height: 1.5rem;
       color: $white;
       font-weight: $thin;
       max-width: 100%;
@@ -65,11 +66,11 @@
       padding: 10% 10%;
 
       strong {
-        @include padding-leader(0.5);
+        padding-top: .75rem;
       }
 
       p {
-        @include padding-trailer(1);
+        padding-bottom: 1.5rem;
       }
     }
   }

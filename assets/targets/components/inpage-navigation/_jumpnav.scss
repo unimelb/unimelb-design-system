@@ -19,8 +19,8 @@
     width: 50%;
 
     &:first-child {
-      @include rem(padding-bottom, 7px);
-      @include rem(margin-bottom, 7px);
+      padding-bottom: .4375rem;
+      margin-bottom: .4375rem;
       border-bottom: 1px solid $lightergray;
       letter-spacing: 1px;
       text-transform: uppercase;
@@ -34,8 +34,8 @@
   }
 
   a {
-    @include rem(padding-bottom, 7px);
-    @include rem(padding-top, 7px);
+    padding-bottom: .4375rem;
+    padding-top: .4375rem;
     display: block;
     font-weight: $light;
     text-decoration: none;
@@ -53,14 +53,14 @@
 
 .uomcontent [role="main"] .jump-navigation {
   @include jump;
-  @include rem(padding-top, 35px);
+  padding-top: 2.1875rem;
 
   @include breakpoint(desktop) {
-    @include rem(padding-top, 80px);
+    padding-top: 5rem;
   }
 
   @include breakpoint(wide) {
-    @include rem(padding-top, 35px);
+    padding-top: 2.1875rem;
   }
 }
 
@@ -86,7 +86,7 @@ body.jumpnav-active {
     }
 
     @include breakpoint(desktop) {
-      @include rem(padding-top, 80px);
+      padding-top: 5rem;
 
       li:first-child {
         margin-bottom: 0;

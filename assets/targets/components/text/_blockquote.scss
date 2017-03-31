@@ -1,8 +1,8 @@
 @mixin blockquote-modern {
   &:not(.blockquote-classic) {
-    @include rem(font-size, 28px);
-    @include rem(margin-bottom, 30px);
-    @include rem(padding-bottom, 30px);
+    font-size: 1.75rem;
+    margin-bottom: 1.875rem;
+    padding-bottom: 1.875rem;
     color: $lighterblue;
     display: block;
     font-family: "Arial Black", $ff-sans;
@@ -28,10 +28,10 @@
     }
 
     cite {
-      @include rem(font-size, 20px);
-      @include rem(margin-top, 15px);
-      @include rem(padding-bottom, 15px);
-      @include rem(padding-top, 15px);
+      font-size: 1.25rem;
+      margin-top: .9375rem;
+      padding-bottom: .9375rem;
+      padding-top: .9375rem;
       border-top: 4px solid $lighterblue;
       color: $lighterblue;
       display: block;
@@ -54,33 +54,33 @@
     &.left,
     &.right {
       @include breakpoint(tablet) {
-        @include rem(font-size, 32px);
+        font-size: 2rem;
       }
 
       @include breakpoint(desktop) {
-        @include rem(padding-right, 15px);
-        @include rem(margin, 0 15px 0 0);
-        @include rem(max-width, 400px);
+        padding-right: .9375rem;
+        margin: 0 .9375rem 0 0;
+        max-width: 25rem;
         float: left;
         max-width: 62%;
         width: auto;
       }
 
       @include breakpoint(wide) {
-        @include rem(margin-left, -180px);
+        margin-left: -11.25rem;
         max-width: 60%;
       }
     }
 
     &.right {
       @include breakpoint(desktop) {
-        @include rem(margin-left, 30px);
+        margin-left: 1.875rem;
         float: right;
         margin-right: 0;
       }
 
       @include breakpoint(wide) {
-        @include rem(margin-right, -180px);
+        margin-right: -11.25rem;
         margin-left: 0;
       }
     }
@@ -88,9 +88,9 @@
 }
 
 @mixin quote-style {
-  @include rem(font-size, 100px);
-  @include rem(margin-left, -50px);
-  @include rem(margin-right, 10px);
+  font-size: 6.25rem;
+  margin-left: -3.125rem;
+  margin-right: .625rem;
   color: darken($lightgray, 10%);
   content: open-quote;
   line-height: .1em;
@@ -102,13 +102,13 @@
   margin-top: 0;
 
   &.blockquote-classic {
-    @include adjust-font-size-to(19px);
-    @include adjust-leading-to(1);
-    @include padding-leader(1);
-    @include padding-trailer(2);
-    @include rem(max-width, $w-mid);
-    @include rem(padding-left, 15px);
-    @include rem(padding-right, 15px);
+    font-size: 1.1875rem;
+    line-height: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 3rem;
+    max-width: $w-mid;
+    padding-left: .9375rem;
+    padding-right: .9375rem;
     color: $darkblue;
     font-family: $ff-serif;
     font-style: italic;
@@ -124,18 +124,6 @@
       @include quote-style;
     }
 
-    &:before {
-      @include quote-style;
-    }
-
-    &:after {
-      @include quote-style;
-      content: close-quote;
-      margin-left: 0;
-      margin-right: 0;
-      vertical-align: -.667em;
-    }
-
     &::after {
       content: close-quote;
       margin-left: 0;
@@ -144,7 +132,8 @@
     }
 
     cite {
-      @include adjust-font-size-to(12px);
+      font-size: .75rem;
+      line-height: 1.5rem;
       border: 0;
       color: lighten($midgray, 20%);
       float: left;
@@ -155,20 +144,22 @@
       width: 100%;
 
       &::before {
-        @include rem(padding-right, 5px);
+        padding-right: .3125rem;
         content: '\2014';
       }
     }
 
     p {
-      @include adjust-font-size-to(24px);
+      font-size: 1.5rem;
+      line-height: 2.25rem;
       display: inline;
       margin: 0;
       padding: 0;
     }
 
     @include breakpoint(tablet) {
-      @include adjust-font-size-to(24px);
+      font-size: 1.5rem;
+      line-height: 2.25rem;
     }
 
     @include breakpoint(wide) {

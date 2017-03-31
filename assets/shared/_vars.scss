@@ -37,15 +37,9 @@ $base:          $darkgray;
 $soft:          $lightergray;
 
 // Layout widths
-$w-sml: 700px;
-$w-mid: 900px;
-$w-lge: 1400px;
-
-// Vertical Rhythm Vars
-$base-font-size: 16px;
-$base-line-height: 24px;
-$rhythm-unit: 'rem';
-$round-to-nearest-half-line: true;
+$w-sml: 43.75rem;
+$w-mid: 56.25rem;
+$w-lge: 87.5rem;
 
 // Font stacks
 $ff-sans: Roboto, Helvetica, Arial, sans-serif;

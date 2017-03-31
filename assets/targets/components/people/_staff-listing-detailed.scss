@@ -1,12 +1,12 @@
 .uomcontent {
   .staff-listing-detailed {
-    @include rem(max-width, $w-lge);
+    max-width: $w-lge;
     padding: 0;
     text-align: center;
 
     li {
-      @include rem(padding, 48px 16px);
-      @include rem(width, 300px);
+      padding: 3rem 1rem;
+      width: 18.75rem;
       display: inline-block;
       list-style-type: none;
       margin: 0;
@@ -28,13 +28,14 @@
     }
 
     p {
-      @include adjust-font-size-to(15px);
-      @include padding-trailer(0);
+      font-size: .9375rem;
+      line-height: 1.5rem;
+      padding-bottom: 0;
     }
 
     .frame {
-      @include rem(max-width, 200px);
-      @include trailer(1);
+      max-width: 12.5rem;
+      margin-bottom: 1.5rem;
       background-color: $lightestblue;
       border-radius: 50%;
       line-height: 0;
@@ -50,7 +51,7 @@
 
     &--diamond {
       li {
-        @include rem(width, 400px);
+        width: 25rem;
       }
     }
   }
@@ -70,24 +71,27 @@
     }
 
     strong {
-      @include adjust-font-size-to(20px);
-      @include padding-leader(1);
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      padding-top: 1.5rem;
       display: block;
       color: $white;
       text-decoration: none;
     }
 
     p {
-      @include adjust-font-size-to(16px);
-      @include padding-leader(1);
-      @include padding-trailer(0.5);
-      @include rem(max-width, 500px);
+      font-size: 1rem;
+      line-height: 1.5rem;
+      padding-top: 1.5rem;
+      padding-bottom: .75rem;
+      max-width: 31.25rem;
       color: $white;
       font-style: italic;
 
       a {
-        @include adjust-font-size-to(15px);
-        @include rem(padding, 0px 10px);
+        font-size: .9375rem;
+        line-height: 1.5rem;
+        padding: 0 .625rem;
         color: $white;
         font-style: normal;
         font-weight: $regular;
@@ -95,15 +99,15 @@
       }
 
       &.links {
-        @include padding-leader(0.5);
+        padding-top: .75rem;
         border-top: 1px solid rgba($white, 0.2);
       }
     }
   }
 
   .diamond-mask {
-    @include rem(max-width, 300px);
-    @include trailer(1);
+    max-width: 18.75rem;
+    margin-bottom: 1.5rem;
     transform: rotate(45deg) scale(.7);
     display: block;
     margin-left: auto;

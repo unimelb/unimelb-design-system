@@ -1,8 +1,8 @@
 .uomcontent {
   .search-autocomplete {
-    @include rem(border-radius, 0 0 3px 3px);
-    @include rem(margin-top, -10px);
-    @include rem(max-width, $w-lge);
+    border-radius: 0 0 3px 3px;
+    margin-top: -.625rem;
+    max-width: $w-lge;
     background-color: $white;
     border: 1px solid $lightergray;
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
@@ -21,9 +21,9 @@
 
     li,
     li:last-child {
-      @include padding-leader(0.5);
-      @include padding-trailer(0.5);
-      @include rem(padding-left, 15px);
+      padding-top: .75rem;
+      padding-bottom: .75rem;
+      padding-left: .9375rem;
       list-style-type: none;
       margin: 0;
 

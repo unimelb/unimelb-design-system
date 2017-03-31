@@ -1,6 +1,6 @@
 .uomcontent{
   .flash {
-    @include rem(padding, 15px);
+    padding: .9375rem;
     text-align: center;
 
     & > p {
@@ -37,7 +37,7 @@
     & + .flash {
       // Keep message against logo between desktop and wide
       @media (min-width: 769px) and (max-width: 1098px) {
-        @include rem(padding-left, 205px);
+        padding-left: 12.8125rem;
 
         & > p {
           max-width: none;
@@ -48,7 +48,7 @@
     // Keep message against logo, even above `wide`
     & + .flash--keep-left {
       @include breakpoint(wide) {
-        @include rem(padding-left, 205px);
+        padding-left: 12.8125rem;
 
         & > p {
           max-width: none;

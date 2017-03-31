@@ -3,7 +3,7 @@
  */
 [data-tabbed].tabbed {
   @include clearfix;
-  @include trailer(2);
+  margin-bottom: 3rem;
   width: 100%;
 
   nav {
@@ -14,9 +14,9 @@
     }
 
     a {
-      @include padding-trailer(0.5);
-      @include rem(padding-left, 25px);
-      @include rem(padding-right, 25px);
+      padding-bottom: .75rem;
+      padding-left: 1.5625rem;
+      padding-right: 1.5625rem;
       background-color: inherit;
       color: $midgray;
       cursor: pointer;
@@ -42,10 +42,10 @@
   }
 
   & > [role="tabpanel"] {
-    @include padding-leader(1);
-    @include padding-trailer(0);
-    @include rem(padding-left, 25px);
-    @include rem(padding-right, 25px);
+    padding-top: 1.5rem;
+    padding-bottom: 0;
+    padding-left: 1.5625rem;
+    padding-right: 1.5625rem;
     border-bottom: 1px solid $lightergray;
     margin: 0;
 
@@ -98,7 +98,7 @@
    */
   .tabbed-nav {
     & > .full-width {
-      @include rem(height, $tabs-height);
+      height: $tabs-height;
       background-color: $darkblue;
       border-bottom: 1px solid transparent;
       position: relative;
@@ -114,14 +114,14 @@
     }
 
     nav {
-      @include rem(padding, 0 40px);
+      padding: 0 2.5rem;
       display: inline-block;
       white-space: nowrap;
 
       a {
-        @include adjust-font-size-to(15px);
-        @include rem(line-height, $tabs-height);
-        @include rem(padding, 0 20px);
+        font-size: .9375rem;
+        line-height: $tabs-height;
+        padding: 0 1.25rem;
         color: rgba($white, .7);
         display: inline-block;
         letter-spacing: .5px;
@@ -161,7 +161,7 @@
         }
 
         @include breakpoint(desktop) {
-          @include rem(padding, 0 30px);
+          padding: 0 1.875rem;
         }
       }
 
@@ -178,7 +178,7 @@
 
     // wrapper added dynamically around nav element when tabs overflow
     .tabbed-nav__inner {
-      @include rem(padding-bottom, 15px);
+      padding-bottom: .9375rem;
       position: relative;
       z-index: 1;
     }
@@ -194,8 +194,8 @@
 
     // left/right arrows when screen size is too small to fit all the tabs
     .tab-arrow {
-      @include rem(font-size, 30px);
-      @include rem(padding, 0 20px 5px); // bottom padding aligns arrows with tab labels
+      font-size: 1.875rem;
+      padding: 0 1.25rem .3125rem; // bottom padding aligns arrows with tab labels
       background: $darkblue;
       color: $white;
       display: none;
@@ -215,13 +215,13 @@
     }
 
     .tab-arrow--left {
-      @include rem(padding-right, 10px);
+      padding-right: .625rem;
       background: linear-gradient(to left, rgba($darkblue, 0), rgba($darkblue, .9) 10%);
       left: 0;
     }
 
     .tab-arrow--right {
-      @include rem(padding-left, 10px);
+      padding-left: .625rem;
       background: linear-gradient(to right, rgba($darkblue, 0), rgba($darkblue, .9) 10%);
       right: 0;
     }
@@ -233,8 +233,8 @@
 
     & > [role="tabpanel"] {
       @include clearfix;
-      @include rem(margin-top, -70px);
-      @include rem(padding-top, 70px);
+      margin-top: -4.375rem;
+      padding-top: 4.375rem;
       margin-left: auto;
       max-width: 100%;
       padding-bottom: 0;
@@ -266,8 +266,8 @@
       }
 
       & > [role="tabpanel"] {
-        @include rem(margin-top, -76px);
-        @include rem(padding-top, 76px);
+        margin-top: -4.75rem;
+        padding-top: 4.75rem;
       }
 
       nav a {
@@ -277,7 +277,7 @@
           color: $white;
           font-weight: $regular;
 
-          &:after {
+          &::after {
             border-top-color: $black;
           }
         }
@@ -300,8 +300,8 @@
       }
 
       & > [role="tabpanel"] {
-        @include rem(margin-top, -76px);
-        @include rem(padding-top, 76px);
+        margin-top: -4.75rem;
+        padding-top: 4.75rem;
       }
 
       nav a {
@@ -311,7 +311,7 @@
           color: $white;
           font-weight: $regular;
 
-          &:after {
+          &::after {
             border-top-color: $darkblue;
           }
         }
@@ -320,20 +320,21 @@
 
     &.thin {
       nav a {
-        @include adjust-font-size-to(13px);
-        @include rem(line-height, $tabs-height - 2px); // leave 1px above and below for outline
-        @include rem(margin-top, 1px); // outline cont.
-        @include rem(padding, 0 15px);
+        font-size: .8125rem;
+        line-height: 1.5rem;
+        line-height: calc(4rem - .125rem); // $tabs-height minus 1px above and below for outline
+        margin-top: .0625rem; // outline cont.
+        padding: 0 .9375rem;
       }
 
       & > [role="tabpanel"] {
-        @include rem(margin-top, -55px);
-        @include rem(padding-top, 55px);
+        margin-top: -3.4375rem;
+        padding-top: 3.4375rem;
         background-color: transparent;
 
         @include breakpoint(desktop) {
-          @include rem(margin-top, -95px);
-          @include rem(padding-top, 95px);
+          margin-top: -5.9375rem;
+          padding-top: 5.9375rem;
         }
       }
     }
@@ -356,12 +357,12 @@
     padding: 0;
 
     @include breakpoint(desktop) {
-      @include rem(margin-right, -16px);
+      margin-right: -1rem;
     }
 
     @include breakpoint(wide) {
-      @include rem(margin-left, -16px);
-      @include rem(margin-right, -32px);
+      margin-left: -1rem;
+      margin-right: -2rem;
     }
 
     & > li {
@@ -373,7 +374,7 @@
 
   /* Tab links in sidebar (ul > li > a) */
   &__tab {
-    @include rem(padding, 12px 16px);
+    padding: .75rem 1rem;
     border-color: transparent;
     border-style: solid;
     border-width: 0 0 0 5px;
@@ -394,13 +395,13 @@
   &--right {
     .sidebar-tabs__list {
       @include breakpoint(desktop) {
-        @include rem(margin-left, -16px);
+        margin-left: -1rem;
         margin-right: 0;
       }
 
       @include breakpoint(wide) {
-        @include rem(margin-left, -32px);
-        @include rem(margin-right, -16px);
+        margin-left: -2rem;
+        margin-right: -1rem;
       }
     }
 

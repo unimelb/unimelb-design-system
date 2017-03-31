@@ -1,6 +1,6 @@
 .uomcontent [role="main"] .image-gallery {
   @include clearfix; /* for float layout while setting up gallery */
-  @include rem(max-width, $w-lge);
+  max-width: $w-lge;
   padding-left: 0;
   padding-right: 0;
 
@@ -69,10 +69,10 @@
 
     /* centre icon */
     & > svg {
-      @include rem(height, 40px);
-      @include rem(margin-left, -20px);
-      @include rem(margin-top, -20px);
-      @include rem(width, 40px);
+      height: 2.5rem;
+      margin-left: -1.25rem;
+      margin-top: -1.25rem;
+      width: 2.5rem;
       left: 50%;
       position: absolute;
       top: 50%;
@@ -85,8 +85,8 @@
 
     /* caption to be shown in the gallery (can be `figcaption` or a distinct paragraph) */
     .image-gallery__caption {
-      @include rem(font-size, 14px);
-      @include rem(padding, 8px 12px);
+      font-size: .875rem;
+      padding: .5rem .75rem;
       background-color: rgba($black, 0.7);
       bottom: 0;
       color: #fff;
@@ -134,7 +134,7 @@
 
   /* variant with small max-width */
   &--small {
-    @include rem(max-width, $w-sml);
+    max-width: $w-sml;
 
     /* same as tablet breakpoint without variant */
     @include breakpoint(desktop) {
@@ -150,7 +150,7 @@
 
   /* variant with medium max-width */
   &--medium {
-    @include rem(max-width, $w-mid);
+    max-width: $w-mid;
 
     @include breakpoint(desktop) {
       li {

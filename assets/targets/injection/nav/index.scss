@@ -1,7 +1,7 @@
 // Variables
-$width-localnav: 300px;
-$width-sitemap-trigger: 45px;
-$offset-localnav: -($width-localnav + $width-sitemap-trigger);
+$width-localnav: 18.75rem;
+$width-sitemap-trigger: 2.8125rem;
+$offset-localnav: -calc($width-localnav + $width-sitemap-trigger);
 
 @import '../../../shared/blanket';
 @import 'modal';

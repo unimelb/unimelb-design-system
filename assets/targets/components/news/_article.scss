@@ -1,8 +1,8 @@
 .uomcontent article.news {
   @include detail;
   @include clearfix;
-  @include rem(max-width, $w-lge);
-  @include padding-leader(2);
+  max-width: $w-lge;
+  padding-top: 3rem;
 
   margin-left: 0;
   margin-right: 0;
@@ -20,16 +20,16 @@
   }
 
   h1 {
-    @include padding-leader(0);
-    @include rem(padding-bottom, 15px);
+    padding-top: 0;
+    padding-bottom: .9375rem;
   }
 
   .aside {
-    @include rem(padding-top, 15px);
+    padding-top: .9375rem;
 
     div {
       padding-left: 0;
-      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     li {
@@ -50,7 +50,7 @@
   }
 
   .article {
-    @include rem(padding-top, 5px);
+    padding-top: .3125rem;
     max-width: 100%;
 
     h1,
@@ -70,14 +70,15 @@
     }
 
     h2 {
-      @include adjust-font-size-to(24px);
+      font-size: 1.5rem;
+      line-height: 2.25rem;
       font-weight: $light;
       padding-top: 0;
       text-transform: none;
     }
 
     figure.full-width {
-      @include rem(max-width, 700px);
+      max-width: $w-sml;
     }
 
     blockquote {
@@ -86,7 +87,7 @@
   }
 
   .video {
-    @include trailer(1);
+    margin-bottom: 1.5rem;
   }
 
   @include breakpoint(desktop) {
@@ -113,7 +114,7 @@
 
       ul,
       ol {
-        @include rem(margin-left, 20px);
+        margin-left: 1.25rem;
       }
 
       blockquote {

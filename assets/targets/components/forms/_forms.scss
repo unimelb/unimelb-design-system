@@ -1,8 +1,8 @@
 @mixin inlinebutton {
-  @include rem(border-radius, 3px);
-  @include rem(font-size, 13px);
-  @include rem(height, 45px);
-  @include rem(padding, 0 15px);
+  border-radius: 3px;
+  font-size: .8125rem;
+  height: 2.8125rem;
+  padding: 0 .9375rem;
   background-color: $highlight;
   border: 0 none;
   color: $white;
@@ -23,8 +23,8 @@
 }
 
 [role="main"] form {
-  @include rem(font-size, 16px);
-  @include rem(padding, 0 10px);
+  font-size: 1rem;
+  padding: 0 .625rem;
   background-color: $white;
   color: $darkgray;
   line-height: 1.2;
@@ -32,21 +32,21 @@
   max-width: $w-sml;
 
   @include breakpoint(desktop) {
-    @include rem(padding, 10px 30px);
+    padding: .625rem 1.875rem;
   }
 
   footer {
     padding: 0;
   }
 
-  [data-required=true]:after {
-    @include rem(padding-left, 5px);
+  [data-required=true]::after {
+    padding-left: .3125rem;
     content: '*';
     color: $cherry;
   }
 
   .form__subtext {
-    @include padding-trailer(.5);
+    padding-bottom: .75rem;
     font-size: smaller;
   }
 }
@@ -68,7 +68,7 @@
   }
 
   small {
-      @include rem(font-size, 18px);
+      font-size: 1.125rem;
       display: none;
       margin: 0;
       text-transform: none;
@@ -79,20 +79,20 @@
   }
 
   label {
-    @include rem(font-size, 16px);
+    font-size: 1rem;
     display: inline;
     position: relative;
     width: 100%;
 
     @include breakpoint(desktop) {
-      @include rem(width, 412px);
+      width: 25.75rem;
       display: inline-block;
     }
   }
 
   .invalid small {
-    @include rem(font-size, 14px);
-    @include rem(padding, 5px 0);
+    font-size: .875rem;
+    padding: .3125rem 0;
     animation: flash .4s .1s 1 ease-in-out;
     color: $cherry;
     display: block;
@@ -100,7 +100,7 @@
   }
 
   p {
-    @include rem(font-size, 16px);
+    font-size: 1rem;
   }
 
   input[type="text"],
@@ -129,7 +129,7 @@
     input[type="search"],
     input[type="url"] {
       @include textcontrol;
-      @include rem(height, 45px);
+      height: 2.8125rem;
       appearance: none;
       display: block;
       width: 100%;
@@ -137,9 +137,9 @@
 
     input[type="image"] {
       @include inlinebutton;
-      @include rem(border-radius, 0 3px 3px 0);
-      @include rem(margin, 15px 0 0);
-      @include rem(width, 45px);
+      border-radius: 0 3px 3px 0;
+      margin: .9375rem 0 0;
+      width: 2.8125rem;
       padding: 0;
       position: absolute;
       right: 0;
@@ -150,8 +150,8 @@
       }
 
       svg {
-        @include rem(height, 24px);
-        @include rem(width, 24px);
+        height: 1.5rem;
+        width: 1.5rem;
         background-color: transparent;
         cursor: pointer;
         fill: currentColor;
@@ -161,7 +161,7 @@
 
     .inline-button {
       @include inlinebutton;
-      @include rem(margin, 5px 0 0);
+      margin: .3125rem 0 0;
     }
   }
 
@@ -196,14 +196,14 @@
     input[type="password"],
     input[type="search"],
     input[type="url"] {
-      @include rem(border-radius, 3px 0 0 3px);
+      border-radius: 3px 0 0 3px;
       border-right: 0;
     }
 
     .inline-button {
-      @include rem(border-radius, 0 3px 3px 0);
-      @include rem(font-size, 13px);
-      @include rem(padding, 0 15px);
+      border-radius: 0 3px 3px 0;
+      font-size: .8125rem;
+      padding: 0 .9375rem;
       font-weight: $bold;
       letter-spacing: 1px;
     }
@@ -212,7 +212,7 @@
   .detached {
     & > span {
       &:first-child {
-        @include rem(padding-right, 15px);
+        padding-right: .9375rem;
       }
     }
 
@@ -223,10 +223,10 @@
       input[type="password"],
       input[type="search"],
       input[type="url"] {
-        @include rem(font-size, 24px);
-        @include rem(height, 60px);
-        @include rem(line-height, 36px);
-        @include rem(padding, 15px);
+        font-size: 1.5rem;
+        height: 3.75rem;
+        line-height: 2.25rem;
+        padding: .9375rem;
         border-color: $highlight;
 
         &:focus {
@@ -236,18 +236,18 @@
       }
 
       .inline-button {
-        @include rem(font-size, 16px);
-        @include rem(height, 60px);
-        @include rem(padding, 15px);
+        font-size: 1rem;
+        height: 3.75rem;
+        padding: .9375rem;
         line-height: 1;
 
         & > span {
-          @include rem(padding-left, 34px); /* 24px for small icon + 10px for spacing */
+          padding-left: 2.125rem; /* 24px for small icon + 10px for spacing */
           position: relative;
           white-space: nowrap;
 
           .small[data-icon] {
-            @include rem(margin-top, -2px);
+            margin-top: -.125rem;
             left: 0;
             position: absolute;
             top: 0;
@@ -259,7 +259,7 @@
 
   input[type="checkbox"],
   input[type="radio"] {
-    @include rem(margin-right, 8px);
+    margin-right: .5rem;
     display: inline;
   }
 }
@@ -271,8 +271,8 @@
     clip: rect(1px, 1px, 1px, 1px);
 
     & + label {
-      @include rem(margin-top, 4px);
-      @include rem(margin-bottom, -12px);
+      margin-top: .25rem;
+      margin-bottom: -.75rem;
       cursor: pointer;
       display: block;
       position: relative;
@@ -292,7 +292,7 @@
       }
 
       span {
-        @include rem(padding-left, 35px);
+        padding-left: 2.1875rem;
         cursor: pointer;
         display: block;
         text-indent: 0;
@@ -357,22 +357,22 @@
   .invalid input[type="checkbox"]:not(.unstyled),
   .invalid input[type="radio"]:not(.unstyled) {
     & + label + small {
-      @include rem(padding-top, 18px); // Compensate for negative bottom margin on label
+      padding-top: 1.125rem; // Compensate for negative bottom margin on label
     }
   }
 }
 
 .align-checkbox {
-  @include rem(padding-left, 30px);
-  @include rem(text-indent, -40px);
+  padding-left: 1.875rem;
+  text-indent: -2.5rem;
   line-height: 1.4;
 }
 
 .uomcontent .newsletter-box {
-  @include leader(1);
-  @include padding-leader(1);
-  @include padding-trailer(1);
-  @include rem(max-width, $w-mid);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  max-width: $w-mid;
   background-color: transparent;
   border-top: 1px solid rgba($white, 0.2);
   color: $white;
@@ -380,13 +380,14 @@
   margin-right: auto;
 
   p {
-    @include adjust-font-size-to(20px);
-    @include padding-trailer(1);
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    padding-bottom: 1.5rem;
     font-weight: $thin;
   }
 
   form {
-    @include rem(max-width, $w-lge);
+    max-width: $w-lge;
     background-color: transparent;
 
     label {
@@ -406,19 +407,19 @@
       }
 
       fieldset > div {
-        @include rem(padding-left, 10px);
-        @include rem(padding-right, 10px);
+        padding-left: .625rem;
+        padding-right: .625rem;
         display: table-cell;
       }
 
       input[type="submit"] {
-        @include rem(padding, 12px 20px);
+        padding: .75rem 1.25rem;
         border: 0;
       }
     }
   }
 
   @include breakpoint(desktop) {
-    @include padding-leader(0);
+    padding-top: 0;
   }
 }

@@ -12,8 +12,8 @@
 
 .uomcontent {
   .loading {
-    @include padding-leader(3);
-    @include padding-trailer(3);
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
     width: 100%;
 
     span {
@@ -24,8 +24,8 @@
   }
 
   .loading-blue {
-    @include padding-leader(3);
-    @include padding-trailer(3);
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
     background-color: $darkblue;
     width: 100%;
 
@@ -41,8 +41,8 @@
   }
 
   .cube {
-    @include rem(height, 50px);
-    @include rem(width, 50px);
+    height: 3.125rem;
+    width: 3.125rem;
     animation: rotateplane 1.2s infinite ease-in-out;
     background-color: $darkblue;
     margin: 0 auto;

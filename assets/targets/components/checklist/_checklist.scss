@@ -5,7 +5,7 @@
     padding-right: 0;
 
     li {
-      @include rem(padding, 15px 0 30px);
+      padding: .9375rem 0 1.875rem;
       border-top: 1px solid $lightergray;
       line-height: 1.5;
       list-style-type: none;

@@ -1,15 +1,9 @@
 .uomcontent [role="main"] .eg-palette {
   zoom: 1; }
-  .uomcontent [role="main"] .eg-palette:before,
-  .uomcontent [role="main"] .eg-palette:after {
-    content: '';
-    display: table; }
   .uomcontent [role="main"] .eg-palette::before,
   .uomcontent [role="main"] .eg-palette::after {
     content: '';
     display: table; }
-  .uomcontent [role="main"] .eg-palette:after {
-    clear: both; }
   .uomcontent [role="main"] .eg-palette::after {
     clear: both; }
 
