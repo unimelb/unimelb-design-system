@@ -47,6 +47,4 @@
   };
 
   document.addEventListener('DOMContentLoaded', window.buildVersionToolbar, false);
-  document.addEventListener('page:load', window.buildVersionToolbar, false);
-  document.addEventListener('page:restore', window.buildVersionToolbar, false);
 })(this);

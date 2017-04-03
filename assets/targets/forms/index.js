@@ -51,5 +51,3 @@ window.UOMFormLoadComponents = function() {
 };
 
 document.addEventListener('DOMContentLoaded', window.UOMFormLoadComponents, false);
-document.addEventListener('page:load', window.UOMFormLoadComponents, false);
-document.addEventListener('page:restore', window.UOMFormLoadComponents, false);

@@ -78,7 +78,4 @@ window.lmaps_loaded_go = function(recs) {
   for (var i=recs.length - 1; i >= 0; i--)
     new LMaps(recs[i], {counter: i});
 };
-
 document.addEventListener('DOMContentLoaded', window.UOMloadComponents, false);
-document.addEventListener('page:load', window.UOMloadComponents, false);
-document.addEventListener('page:restore', window.UOMloadComponents, false);
