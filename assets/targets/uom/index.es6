@@ -7,6 +7,7 @@ import {
 
 import * as utils from '../../utils/index.es6';
 import cssesc from 'cssesc';
+import WebFont from 'webfontloader';
 
 import Accordion from '../../components/accordion';
 import Announcement from '../../components/announcement/index.es6';
@@ -39,7 +40,8 @@ window.uom = {
   // utilities and third-party dependencies
   utils,
   vendor: {
-    cssesc
+    cssesc,
+    WebFont
   }
 };
 
@@ -65,6 +67,10 @@ window.uom.registerComponents([
 // Toggle JS classes on document root
 document.documentElement.classList.remove('no-js');
 document.documentElement.classList.add('js');
+
+// Load custom fonts
+const fonts = 'Roboto:400,300,100,700,100italic,300italic,400italic,700italic:latin';
+WebFont.load({ google: { families: [fonts] } });
 
 document.addEventListener('DOMContentLoaded', window.uom.initAllComponents, false);
 

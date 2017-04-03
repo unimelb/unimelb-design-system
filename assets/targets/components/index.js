@@ -1,11 +1,3 @@
-// Async load fonts from google
-var WebFont = require("webfontloader");
-WebFont.load({
-  google: { families: [
-    'Roboto:400,300,100,700,100italic,300italic,400italic,700italic:latin'
-  ] }
-});
-
 window.UOMbind = function(component) {
   if (!component)
     return -1;
@@ -78,4 +70,3 @@ window.lmaps_loaded_go = function(recs) {
   for (var i=recs.length - 1; i >= 0; i--)
     new LMaps(recs[i], {counter: i});
 };
-document.addEventListener('DOMContentLoaded', window.UOMloadComponents, false);
