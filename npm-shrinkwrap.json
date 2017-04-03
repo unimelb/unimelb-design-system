@@ -2367,6 +2367,11 @@
       "resolved": "https://registry.npmjs.org/has-flag/-/has-flag-1.0.0.tgz",
       "dev": true
     },
+    "has-localstorage": {
+      "version": "1.0.1",
+      "from": "has-localstorage@latest",
+      "resolved": "https://registry.npmjs.org/has-localstorage/-/has-localstorage-1.0.1.tgz"
+    },
     "has-unicode": {
       "version": "2.0.1",
       "from": "has-unicode@>=2.0.0 <3.0.0",
@@ -4599,6 +4604,11 @@
       "from": "string_decoder@>=0.10.0 <0.11.0",
       "resolved": "https://registry.npmjs.org/string_decoder/-/string_decoder-0.10.31.tgz",
       "dev": true
+    },
+    "string-hash": {
+      "version": "1.1.3",
+      "from": "string-hash@latest",
+      "resolved": "https://registry.npmjs.org/string-hash/-/string-hash-1.1.3.tgz"
     },
     "string-width": {
       "version": "1.0.2",

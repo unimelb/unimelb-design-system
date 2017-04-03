@@ -19,11 +19,13 @@
   "dependencies": {
     "classlist-polyfill": "unimelb/classlist-polyfill#1.1.20170228",
     "es6-promise": "^4.0.5",
+    "has-localstorage": "^1.0.1",
     "just-debounce": "^1.0.0",
     "normalize.css": "^5.0.0",
     "perfect-scrollbar": "^0.6.10",
     "photoswipe": "^4.1.1",
     "promise": "~7.1.1",
+    "string-hash": "^1.1.3",
     "webfontloader": "~1.6.3"
   },
   "devDependencies": {

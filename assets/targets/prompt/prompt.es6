@@ -1,12 +1,12 @@
+import hasLocalStorage from 'has-localstorage';
+
 const PROMPT_ID = 'uom-prompt';
 const PROMPT_CLASS = PROMPT_ID;
 const STORAGE_KEY = 'uomPromptRetry';
 
 function renderPrompt(root, content, opts) {
   // Don't render the prompt if localStorage is not supported
-  if (!window.localStorage || !document.querySelectorAll) {
-    return;
-  }
+  if (!hasLocalStorage()) return;
 
   // Retrieve the number of times the prompt was shown so far
   let count = window.localStorage.getItem(STORAGE_KEY);

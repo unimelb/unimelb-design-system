@@ -1,6 +1,5 @@
-
-var hashString = require('../../shared/vendor/hash-string');
-var hasLocalStorage = require('../../shared/has-local-storage')();
+var hashString = require('string-hash');
+var hasLocalStorage = require('has-localstorage');
 
 var STORAGE_PREFIX = 'uom-announcement-';
 var DISMISSED = 'dismissed';
@@ -24,14 +23,13 @@ Announcement.selector = '.page-announcement';
  * Check whether the announcement was previously dismissed.
  */
 Announcement.prototype.checkDismissed = function () {
-  this.props.message = this.props.announcement.querySelector('.page-announcement__message');
+  this.props.message = this.el.querySelector('.page-announcement__message');
 
   // Hash the announcement before storing
   this.props.hash = hashString(this.props.message.textContent);
 
   // Check local storage for hash
-  // (Support for local storage goes as far back as IE8, so falling back to cookies would be excessive)
-  this.props.wasDismissed = hasLocalStorage && localStorage.getItem(STORAGE_PREFIX + this.props.hash) === DISMISSED;
+  this.props.wasDismissed = hasLocalStorage() && window.localStorage.getItem(STORAGE_PREFIX + this.props.hash) === DISMISSED;
 };
 
 /**
@@ -41,10 +39,10 @@ Announcement.prototype.inject = function () {
   if (this.props.wasDismissed) return;
 
   // Insert announcement before header
-  this.props.parent.insertBefore(this.props.announcement, this.props.header);
+  this.props.parent.insertBefore(this.el, this.props.header);
 
   // Register handler on close button
-  this.props.closeBtn = this.props.announcement.querySelector('.page-announcement__close');
+  this.props.closeBtn = this.el.querySelector('.page-announcement__close');
   this.props.closeBtn.addEventListener('click', this.dismiss.bind(this));
 
   // Register handler on announcement link
@@ -59,10 +57,10 @@ Announcement.prototype.dismiss = function () {
   this.markDisimissed();
 
   // Set the max-height to the current height of the announcement
-  this.props.announcement.style['max-height'] = this.props.announcement.clientHeight + 'px';
+  this.el.style['max-height'] = this.el.clientHeight + 'px';
 
   // Hide announcement after triggering a reflow
-  this.props.announcement.clientHeight;
+  this.el.clientHeight;
   this.hide();
 };
 
@@ -83,10 +81,10 @@ Announcement.prototype.markDisimissed = function () {
  */
 Announcement.prototype.hide = function () {
   // Add class which sets max-height to 0
-  this.props.announcement.classList.add('page-announcement--dismissed');
+  this.el.classList.add('page-announcement--dismissed');
 
   // Hide the announcement to screen readers
-  this.props.announcement.setAttribute('aria-hidden', true);
+  this.el.setAttribute('aria-hidden', true);
 };
 
 module.exports = Announcement;
