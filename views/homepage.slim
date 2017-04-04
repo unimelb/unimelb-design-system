@@ -1,7 +1,7 @@
 .floating
 
 div role="main"
-  .contrast-helper.fixed-bg style="background-image:url(/assets/versions/#{opts[:version]}.jpg)"
+  .contrast-helper.fixed-bg style="background-image:url(/assets/banners/#{opts[:major_version]}.jpg)"
     header.banner
       .mid-align
         h1.white Web.unimelb
@@ -17,7 +17,8 @@ div role="main"
 
   hr.spacer
   section
-    h1.complimentary==opts[:version]
+    h1.complimentary style="background-image:url(/assets/banners/#{opts[:major_version]}.jpg)"
+      = opts[:version]
     p.center
       a.button-hero href="/getting-started" Set up a new site with #{opts[:version]}
 
