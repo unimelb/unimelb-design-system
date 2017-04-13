@@ -56,19 +56,24 @@
     }
   }
 
-  h2 {
-    font-size: 1.25rem;
+  .linkgroup-title {
+    display: block;
+    font-size: .9375rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
     margin-bottom: .5rem;
-    padding-bottom: .375rem;
-    padding-top: 1.5rem;
+    padding-bottom: 0;
+    padding-top: 0;
     border-bottom: 1px solid $blue;
     color: $lightblue;
     color: rgba($white, .6);
     line-height: 1.2;
     padding-right: 3%;
 
-    @include breakpoint(desktop) {
-      padding-left: 3%;
+    a {
+      font-weight: 400;
+      padding-bottom: .625rem;
+      padding-top: .25rem;
     }
   }
 
