@@ -206,7 +206,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
 <div>
   <div class="col-3 clearfix">
     <div>
-      <h2><a href="http://coursesearch.unimelb.edu.au/">Study at Melbourne</a></h2>
+      <strong class="linkgroup-title"><a href="http://coursesearch.unimelb.edu.au/">Study at Melbourne</a></strong>
       <ul>
         <li><a href="https://coursesearch.unimelb.edu.au/undergrad">Undergraduate study</a></li>
         <li><a href="https://coursesearch.unimelb.edu.au/grad">Graduate study</a></li>
@@ -218,7 +218,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
     </div>
 
     <div>
-      <h2><a href="http://about.unimelb.edu.au/">About us</a></h2>
+      <strong class="linkgroup-title"><a href="http://about.unimelb.edu.au/">About us</a></strong>
       <ul>
         <li><a href="http://about.unimelb.edu.au/strategy-and-leadership">Strategy and leadership</a></li>
         <li><a href="http://about.unimelb.edu.au/tradition-of-excellence">Tradition of excellence</a></li>
@@ -232,7 +232,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
     </div>
 
     <div>
-      <h2><a href="http://unimelb.edu.au/research/">Research</a></h2>
+      <strong class="linkgroup-title"><a href="http://unimelb.edu.au/research/">Research</a></strong>
       <ul>
         <li><a href="http://research.unimelb.edu.au/">About Research at Melbourne</a></li>
         <li><a href="http://ri.unimelb.edu.au/">Research institutes</a></li>
@@ -245,7 +245,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
   </div>
   <div class="col-3 clearfix">
     <div>
-      <h2><a href="http://unimelb.edu.au/engage/">Engagement</a></h2>
+      <strong class="linkgroup-title"><a href="http://unimelb.edu.au/engage/">Engagement</a></strong>
       <ul>
         <li><a href="https://events.unimelb.edu.au/">Events</a></li>
         <li><a href="http://engagement.unimelb.edu.au/">Community</a></li>
@@ -258,7 +258,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
     </div>
 
     <div>
-      <h2><a href="http://alumni.unimelb.edu.au/">Alumni &amp; friends</a></h2>
+      <strong class="linkgroup-title"><a href="http://alumni.unimelb.edu.au/">Alumni &amp; friends</a></strong>
       <ul>
         <li><a href="http://alumni.unimelb.edu.au/Benefits-and-offers">Benefits &amp; services</a></li>
         <li><a href="http://www.campaign.unimelb.edu.au/">Giving</a></li>
@@ -271,7 +271,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
     </div>
 
     <div>
-      <h2><a href="http://www.unimelb.edu.au/contact/">Contact &amp; Maps</a></h2>
+      <strong class="linkgroup-title"><a href="http://www.unimelb.edu.au/contact/">Contact &amp; Maps</a></strong>
       <ul>
         <li><a href="http://ask.unimelb.edu.au/app/contact">Contact us</a></li>
         <li><a href="http://ask.unimelb.edu.au">Enquiries</a></li>
