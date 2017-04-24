@@ -16,6 +16,8 @@ import CheckboxHelper from '../../components/checklist/checkboxhelper';
 import FilteredListing from '../../components/filtered-listings';
 import FancySelect from '../../components/forms/fancyselect';
 import Flash from '../../components/notices/flash';
+import GMaps from '../../components/maps/gmaps.es6';
+import LMaps from '../../components/maps/lmaps';
 import IconHelper from '../../components/icons';
 import ImageGallery from '../../components/gallery';
 import InPageNavigation from '../../components/inpage-navigation';
@@ -56,10 +58,12 @@ window.uom.registerComponents([
   FilteredListing,
   FancySelect,
   Flash,
+  GMaps,
   IconHelper,
   ImageGallery,
   InPageNavigation,
   JumpNav,
+  LMaps,
   MobileTableHelper,
   Modal,
   SidebarTabs,

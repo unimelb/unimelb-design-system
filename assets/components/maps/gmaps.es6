@@ -1,6 +1,5 @@
 /**
- * GMaps
- *
+ * Google Maps
  * @param  {Element} el
  * @param  {Object} props
  */
@@ -13,10 +12,9 @@ function GMaps(el, props) {
   this.props.zoom = parseInt(this.el.getAttribute('data-zoom')) || 17;
   this.props.pins = this.el.getAttribute('data-pin');
 
-  if (this.el.hasAttribute('data-address'))
+  if (this.el.hasAttribute('data-address')) {
     this.geolookup();
-
-  else if (this.el.hasAttribute('data-latlng')) {
+  } else if (this.el.hasAttribute('data-latlng')) {
     var [lat, lng] = this.el.getAttribute('data-latlng').split(',');
     this.props.options = {
       center:      new google.maps.LatLng(lat, lng),
@@ -27,6 +25,15 @@ function GMaps(el, props) {
     this.draw();
   }
 }
+
+GMaps.label = 'GMaps';
+GMaps.selector = '[data-latlng], [data-address]';
+GMaps.dependencies = {
+  scripts: [`https://maps.googleapis.com/maps/api/js?key=${process.env.GMAPSJSAPIKEY}`],
+  shouldLoadScripts: function () {
+    return !window.google;
+  }
+};
 
 GMaps.prototype.draw = function() {
   this.el.style.width = this.props.width + 'px';
