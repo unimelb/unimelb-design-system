@@ -16,6 +16,9 @@ function MobileTableHelper(el, props) {
   }
 }
 
+MobileTableHelper.label = 'MobileTableHelper';
+MobileTableHelper.selector = 'table';
+
 MobileTableHelper.prototype.insertLabels = function() {
   for (var rows=this.el.querySelectorAll('tr:not(.header)'), i=rows.length - 1; i >= 0; i--)
     for (var cells=rows[i].querySelectorAll('td'), j=cells.length - 1; j >= 0; j--)

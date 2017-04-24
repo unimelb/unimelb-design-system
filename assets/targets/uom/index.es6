@@ -20,8 +20,10 @@ import IconHelper from '../../components/icons';
 import ImageGallery from '../../components/gallery';
 import InPageNavigation from '../../components/inpage-navigation';
 import JumpNav from '../../components/inpage-navigation/jumpnav';
+import MobileTableHelper from '../../components/tables';
 import Modal from '../../components/modal';
 import SidebarTabs from '../../components/tabs/sidebar-tabs';
+import SortableTable from '../../components/tables/sortable';
 import Tabs from '../../components/tabs';
 import ValidateForm from '../../components/forms';
 
@@ -58,8 +60,10 @@ window.uom.registerComponents([
   ImageGallery,
   InPageNavigation,
   JumpNav,
+  MobileTableHelper,
   Modal,
   SidebarTabs,
+  SortableTable,
   Tabs,
   ValidateForm
 ]);

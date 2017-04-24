@@ -17,6 +17,9 @@ function SortableTable(el, props) {
   this.el.setAttribute('data-bound', true);
 }
 
+SortableTable.label = 'SortableTable';
+SortableTable.selector = 'table[data-sortable]';
+
 SortableTable.prototype.setupData = function() {
   var rows = this.props.tbody.querySelectorAll('tr');
 
