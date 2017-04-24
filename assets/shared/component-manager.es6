@@ -58,17 +58,17 @@ export function initComponent(label, context = document) {
   const deps = Component.dependencies;
 
   // Load any stylesheet dependencies in the background
-  if (deps && deps.stylesheets) {
+  if (deps && deps.stylesheets && (!deps.shouldLoadStylesheets || deps.shouldLoadStylesheets())) {
     loadStylesheet(deps.stylesheets);
   }
 
-  // Load any scripts dependencies and initialise matches once all scripts have finished loading
-  if (deps && deps.scripts) {
+  // Load any script dependencies and initialise matches once all scripts have finished loading
+  if (deps && deps.scripts && (!deps.shouldLoadScripts || deps.shouldLoadScripts())) {
     loadScript(deps.scripts).then(initMatches.bind(null, Component, matches));
     return;
   }
 
-  // No script dependencies; initialise matches right away
+  // No script dependencies or global ; initialise matches right away
   initMatches(Component, matches);
 }
 

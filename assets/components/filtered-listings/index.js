@@ -44,7 +44,10 @@ function FilteredListing(el, props) {
 FilteredListing.label = 'FilteredListing';
 FilteredListing.selector = 'form.filtered-listing-select';
 FilteredListing.dependencies = {
-  scripts: ['https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js']
+  scripts: ['https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js'],
+  shouldLoadScripts: function () {
+    return !window.Isotope;
+  }
 };
 
 /**

@@ -25,7 +25,10 @@ ImageGallery.dependencies = {
     'https://unpkg.com/photoswipe@4.1.1/dist/photoswipe.min.js',
     'https://unpkg.com/photoswipe@4.1.1/dist/photoswipe-ui-default.min.js',
     'https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js'
-  ]
+  ],
+  shouldLoadScripts: function () {
+    return !window.PhotoSwipe || !window.PhotoSwipeUI_Default || !window.Isotope;
+  }
 };
 
 /**
@@ -149,7 +152,7 @@ ImageGallery.prototype.openPhotoSwipe = function (slideIndex, disableAnimation) 
     showHideOpacity: true
   };
 
-  var gallery = new PhotoSwipe(this.props.pswp, window.PhotoSwipeUI_Default, this.props.slides, options);
+  var gallery = new window.PhotoSwipe(this.props.pswp, window.PhotoSwipeUI_Default, this.props.slides, options);
   gallery.init();
 };
 
