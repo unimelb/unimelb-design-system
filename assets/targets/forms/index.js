@@ -46,7 +46,7 @@ window.UOMFormLoadComponents = function() {
       new ValidateForm(recs[i], {});
   }
 
-  Icons = require('../injection/icons');
+  Icons = require('../injection/icon-set');
   new Icons();
 };
 

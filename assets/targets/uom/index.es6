@@ -80,5 +80,5 @@ document.documentElement.classList.add('js');
 const fonts = 'Roboto:400,300,100,700,100italic,300italic,400italic,700italic:latin';
 WebFont.load({ google: { families: [fonts] } });
 
-document.addEventListener('DOMContentLoaded', window.uom.initAllComponents, false);
+document.addEventListener('DOMContentLoaded', window.uom.initAllComponents);
 

@@ -37,7 +37,7 @@ InjectHeader.prototype.renderPageHeader = function() {
     if (document.querySelectorAll('.page-inner > .floating').length === 1) {
       // Landing page header
       this.props.header.innerHTML = `
-<a class="page-header-logo" href="${this.props.defaultlink}">
+<a class="page-header-logo" href="${this.props.defaultLink}">
   <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
     <title id="aria-uom-title">The University of Melbourne Logo</title>
     <image xlink:href="${require('./logo.svg')}" src="${require('./logo.png')}" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
@@ -80,7 +80,7 @@ InjectHeader.prototype.renderPageHeader = function() {
       // General header
       this.props.header.innerHTML = `
 <header>
-  <a class="page-header-logo" href="${this.props.defaultlink}">
+  <a class="page-header-logo" href="${this.props.defaultLink}">
     <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
       <title id="aria-uom-title">The University of Melbourne Logo</title>
       <image xlink:href="${require('./logo.svg')}" src="${require('./logo.png')}" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
