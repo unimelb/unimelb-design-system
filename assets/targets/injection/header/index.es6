@@ -6,7 +6,7 @@
 function InjectHeader(props) {
   this.props = props || {};
 
-  var CreateNameSpace = require('../../../shared/createnamespace');
+  var CreateNameSpace = require('shared/createnamespace');
   new CreateNameSpace();
 
   this.props.parent = document.querySelector('.uomcontent');
@@ -162,7 +162,7 @@ InjectHeader.prototype.renderBreadcrumb = function() {
       pagenav.insertBefore(mobile, pagenav.firstChild);
 
       if (!/(MSIE 9)/g.test(navigator.userAgent)) {
-        var FancySelect = require("../../../components/forms/fancyselect");
+        var FancySelect = require('components/forms/fancyselect');
         new FancySelect(select, {});
       }
     }

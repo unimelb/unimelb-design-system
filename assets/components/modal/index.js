@@ -1,4 +1,4 @@
-var Blanket = require('../../shared/blanket');
+var Blanket = require('shared/blanket');
 
 /**
  * Modal
@@ -10,7 +10,7 @@ function Modal(el, props) {
   this.props = props;
   this.props.target = document.getElementById(el.getAttribute('data-modal-target'));
 
-  var CreateNameSpace = require('../../shared/createnamespace');
+  var CreateNameSpace = require('shared/createnamespace');
   new CreateNameSpace();
 
   // Bind only if modal has target

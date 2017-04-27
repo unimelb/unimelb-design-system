@@ -1,4 +1,4 @@
-import { loadStylesheet, loadScript } from '../utils';
+import { loadStylesheet, loadScript } from 'utils';
 
 /**
  * Registered components by label.
