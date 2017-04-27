@@ -1,4 +1,4 @@
-var componentManager = require('../../shared/component-manager.es6');
+var componentManager = require('../../shared/component-manager');
 
 /**
  * Jump navigation

@@ -1,5 +1,5 @@
 var Blanket = require('../../../shared/blanket');
-var LocalNav = require('./localnav.es6');
+var LocalNav = require('./localnav');
 
 var HISTORY_KEY = 'uom_injection';
 

@@ -1,6 +1,6 @@
-import InjectHeader from './header/index.es6';
-import InjectNav from './nav/index.es6';
-import InjectFooter from './footer/index.es6';
+import InjectHeader from './header';
+import InjectNav from './nav';
+import InjectFooter from './footer';
 import InjectIconSet from './icon-set';
 
 // Deps

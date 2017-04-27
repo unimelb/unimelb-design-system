@@ -1,7 +1,7 @@
 // Dependencies
 var cssesc = require('cssesc');
 var debounce = require('just-debounce');
-var utils = require('../../utils/index.es6');
+var utils = require('../../utils');
 
 // Don't show sidebar until it's worth it
 var OVERFLOW_PRECISION = 10;

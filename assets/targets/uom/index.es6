@@ -3,20 +3,20 @@ import {
   initComponent,
   initAllComponents,
   registerComponents
-} from '../../shared/component-manager.es6';
+} from '../../shared/component-manager';
 
-import * as utils from '../../utils/index.es6';
+import * as utils from '../../utils';
 import cssesc from 'cssesc';
 import WebFont from 'webfontloader';
 
 import Accordion from '../../components/accordion';
-import Announcement from '../../components/announcement/index.es6';
+import Announcement from '../../components/announcement';
 import Checklist from '../../components/checklist';
 import CheckboxHelper from '../../components/checklist/checkboxhelper';
 import FilteredListing from '../../components/filtered-listings';
 import FancySelect from '../../components/forms/fancyselect';
 import Flash from '../../components/notices/flash';
-import GMaps from '../../components/maps/gmaps.es6';
+import GMaps from '../../components/maps/gmaps';
 import LMaps from '../../components/maps/lmaps';
 import IconHelper from '../../components/icons';
 import ImageGallery from '../../components/gallery';

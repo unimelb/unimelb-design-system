@@ -1,10 +1,10 @@
 import hasLocalStorage from 'has-localstorage';
 
-import easeInOutQuad from './easeInOutQuad.es6';
-import findUp from './findUp.es6';
-import loadScript from './loadScript.es6';
-import loadStylesheet from './loadStylesheet.es6';
-import smoothScrollTo from './smoothScrollTo.es6';
+import easeInOutQuad from './easeInOutQuad';
+import findUp from './findUp';
+import loadScript from './loadScript';
+import loadStylesheet from './loadStylesheet';
+import smoothScrollTo from './smoothScrollTo';
 
 export {
   easeInOutQuad,

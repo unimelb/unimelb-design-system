@@ -1,4 +1,4 @@
-var IconSet = require('./iconset.es6');
+var IconSet = require('./iconset');
 
 /**
  * Inject icon set

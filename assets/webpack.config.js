@@ -26,6 +26,9 @@ var config = {
     path: BUILD,
     filename: '[name].js'
   },
+  resolve: {
+    extensions: ['.js', '.es6', '.json', '']
+  },
   plugins: [
     new webpack.EnvironmentPlugin(['NODE_ENV', 'CDNURL', 'GMAPSJSAPIKEY'])
   ],

@@ -1,4 +1,4 @@
-import easeInOutQuad from './easeInOutQuad.es6';
+import easeInOutQuad from './easeInOutQuad';
 
 /**
  * Visually scroll the viewport to the given element using custom easing.
