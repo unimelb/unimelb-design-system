@@ -9,11 +9,11 @@ import * as utils from 'utils';
 import cssesc from 'cssesc';
 import WebFont from 'webfontloader';
 
+import CreateNameSpace from 'shared/create-namespace';
 import InjectHeader from 'components/header';
 import InjectNav from 'components/nav';
 import InjectFooter from 'components/footer';
 import InjectIconSet from 'components/icon-set';
-
 
 import Accordion from 'components/accordion';
 import Announcement from 'components/announcement';
@@ -96,6 +96,7 @@ document.addEventListener('DOMContentLoaded', window.uom.initAllComponents);
  * Initialise injection components.
  */
 function injection() {
+  new CreateNameSpace();
   new InjectHeader({ defaultLink: 'https://www.unimelb.edu.au' });
   new InjectNav();
   new InjectFooter();

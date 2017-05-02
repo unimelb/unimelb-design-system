@@ -10,9 +10,6 @@ function Modal(el, props) {
   this.props = props;
   this.props.target = document.getElementById(el.getAttribute('data-modal-target'));
 
-  var CreateNameSpace = require('shared/createnamespace');
-  new CreateNameSpace();
-
   // Bind only if modal has target
   if (!this.props.target) return;
 
