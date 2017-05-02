@@ -40,8 +40,7 @@ require('es6-promise').polyfill();
 require('classlist-polyfill');
 
 // Tracking
-require('./gtm');
-require('./tealium');
+require('shared/tracking');
 
 // Build API object
 window.uom = {

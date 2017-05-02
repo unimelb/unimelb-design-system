@@ -22,8 +22,6 @@ html.no-js lang="en"
 
     link rel="stylesheet" href="/assets/lib/docs.css"
     link rel="stylesheet" href="/assets/lib/highlight.css"
-    script src="/assets/lib/highlight.pack.js"
-
     link rel="stylesheet" href="/assets/lib/ace.extra.css"
 
   body data-version=(ENV['VERSION'])
@@ -31,3 +29,5 @@ html.no-js lang="en"
       .page-inner
         == yield
         == render(:_nav)
+
+    script src="/assets/lib/highlight.pack.js"
