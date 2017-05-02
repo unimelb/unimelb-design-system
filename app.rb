@@ -20,7 +20,9 @@ class App < Roda # rubocop:disable Metrics/ClassLength
     opts[:root], 'assets', 'components'
   )
   opts[:components] = Dir.entries(opts[:components_path])
-  opts[:components] = opts[:components].select { |f| f =~ /^[^\.|\_]*[^\.]$/ }
+  opts[:components] = opts[:components].select do |path|
+    File.exist?(File.join(opts[:components_path], path, "00-overview.md"))
+  end
 
   opts[:pages_path] = File.join(opts[:root], 'views', 'pages')
 
