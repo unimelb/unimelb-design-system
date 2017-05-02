@@ -21,7 +21,6 @@ section
 pre: code.html
   ==convert_tags
     erb:
-      <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
       <link rel="stylesheet" href="<%=opts[:cdnurl]%>/<%=opts[:version]%>/uom.css">
       <script src="<%=opts[:cdnurl]%>/<%=opts[:version]%>/uom.js"></script>
 
@@ -40,7 +39,6 @@ pre: code.html
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         <meta content="IE=edge" http-equiv="X-UA-Compatible" />
         <title> (any page title) </title>
-        <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><![endif]-->
         <link rel="stylesheet" href="<%=opts[:cdnurl]%>/<%=opts[:version]%>/uom.css">
         <script src="<%=opts[:cdnurl]%>/<%=opts[:version]%>/uom.js"></script>
       </head>

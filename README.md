@@ -25,7 +25,7 @@ npm install
 
 `npm-shrinkwrap.json` must be kept up to date when adding, removing or updating dependencies. NPM will take care of it for you automatically in some cases. If unsure, use `npm run shrink` to delete and recreate the shrinkwrap file.
 
-To building the assets for production (e.g. for debugging purposes), run `rake assets:build` or `npm run build`. The compiled targets can be found in the `/build` directory.
+To build the assets for production (e.g. for debugging purposes), run `npm run build`. The compiled targets can be found in the `/build` directory.
 
 
 ## Testing

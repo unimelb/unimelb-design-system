@@ -10,9 +10,6 @@ function Blanket() {
     this.el = document.createElement('div');
     this.el.className = 'modal__blanket';
 
-    var CreateNameSpace = require('./createnamespace');
-    new CreateNameSpace();
-
     // Add the blanket to the DOM
     document.querySelector('.uomcontent').appendChild(this.el);
   }

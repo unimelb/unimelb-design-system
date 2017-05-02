@@ -6,7 +6,7 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // use external interface to build asset require() calls
-var ip = require("ip");
+var ip = require('ip');
 var WEB_SERVER_HOST = ip.address();
 
 var ASSET_SERVER_PORT = process.env.ASSET_SERVER_PORT;
@@ -25,6 +25,15 @@ var config = {
   output: {
     path: BUILD,
     filename: '[name].js'
+  },
+  resolve: {
+    extensions: ['.js', '.es6', '.json', ''],
+    alias: {
+      components: path.join(__dirname, 'components'),
+      shared: path.join(__dirname, 'shared'),
+      targets: path.join(__dirname, 'targets'),
+      utils: path.join(__dirname, 'utils')
+    }
   },
   plugins: [
     new webpack.EnvironmentPlugin(['NODE_ENV', 'CDNURL', 'GMAPSJSAPIKEY'])

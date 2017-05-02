@@ -1,4 +1,4 @@
-import renderPrompt from './prompt.es6';
+import renderPrompt from './prompt';
 
 const SCRIPT_ID = 'uom-prompt-script';
 const TEMPLATE_ID = 'uom-prompt-template';
