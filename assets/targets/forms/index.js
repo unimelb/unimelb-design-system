@@ -1,53 +1,52 @@
-// Deps
-require('classlist-polyfill');
+import {
+  components,
+  initComponent,
+  initAllComponents,
+  registerComponents
+} from 'shared/component-manager';
+
+import * as utils from 'utils';
+import cssesc from 'cssesc';
+
+import InjectIconSet from 'targets/injection/icon-set';
+
+import Accordion from 'components/accordion';
+import FancySelect from 'components/forms/fancyselect';
+import IconHelper from 'components/icons';
+import InPageNavigation from 'components/inpage-navigation';
+import Modal from 'components/modal';
+import ValidateForm from 'components/forms';
+
+// Polyfills
 require('es6-promise').polyfill();
+require('classlist-polyfill');
 
-require("shared/smoothscroll");
-require("shared/findup");
+// Build API object
+window.uom = {
+  // component manager
+  components,
+  initComponent,
+  initAllComponents,
+  registerComponents,
 
-window.UOMFormLoadComponents = function() {
-  "use strict";
-
-  // components
-  var recs, i, Accordion, Modal, InPageNavigation, FancySelect, ValidateForm, Icons;
-
-  recs = document.querySelectorAll('.accordion__title');
-  if (recs.length > 0) {
-    Accordion = require("components/accordion");
-    for (i=recs.length - 1; i >= 0; i--)
-      new Accordion(recs[i], {});
-  }
-
-  recs = document.querySelectorAll('[data-modal-target]');
-  if (recs.length > 0) {
-    Modal = require("components/modal");
-    for (i=recs.length - 1; i >= 0; i--)
-      new Modal(recs[i], {});
-  }
-
-  recs = document.querySelectorAll('a[href^="#"]');
-  if (recs.length > 0) {
-    InPageNavigation = require("components/inpage-navigation");
-    for (i=recs.length - 1; i >= 0; i--)
-      new InPageNavigation(recs[i], {});
-  }
-
-  recs = document.querySelectorAll('select');
-  if (recs.length > 0) {
-    FancySelect = require("components/forms/fancyselect");
-    for (i=recs.length - 1; i >= 0; i--)
-      new FancySelect(recs[i], {});
-  }
-
-  recs = document.querySelectorAll('form[data-validate]');
-  if (recs.length > 0) {
-    ValidateForm = require("components/forms");
-    for (i=recs.length - 1; i >= 0; i--)
-      new ValidateForm(recs[i], {});
-  }
-
-  Icons = require('../injection/icon-set');
-  new Icons();
+  // utilities and third-party dependencies
+  utils,
+  vendor: { cssesc }
 };
 
-document.addEventListener('DOMContentLoaded', window.UOMFormLoadComponents, false);
+// Register the design system's components
+window.uom.registerComponents([
+  Accordion,
+  FancySelect,
+  IconHelper,
+  InPageNavigation,
+  Modal,
+  ValidateForm
+]);
+
+// Toggle JS classes on document root
+document.documentElement.classList.remove('no-js');
+document.documentElement.classList.add('js');
+
+document.addEventListener('DOMContentLoaded', function inject() { new InjectIconSet(); });
+document.addEventListener('DOMContentLoaded', window.uom.initAllComponents);

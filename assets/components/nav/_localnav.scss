@@ -172,7 +172,7 @@
   }
 
   .no-js & {
-    @include wrapper;
+    @include injection-wrapper;
     background-color: $navy;
     box-shadow: 0 0 0;
     display: block;

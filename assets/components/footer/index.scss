@@ -11,7 +11,7 @@
   }
 
   footer {
-    @include wrapper;
+    @include injection-wrapper;
     padding: .9375rem;
     padding-bottom: 3.75rem;
     margin-left: auto;

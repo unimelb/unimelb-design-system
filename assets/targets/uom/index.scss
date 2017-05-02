@@ -1,5 +1,11 @@
-// Global variables and mixins
+// Global variables and mixins, and normalisation styles
 @import '../../shared/globals';
+@import '../../shared/normalize';
+
+// Injection
+@import '../../components/footer/index';
+@import '../../components/header/index';
+@import '../../components/nav/index';
 
 // Components
 @import '../../components/filtered-listings/index';

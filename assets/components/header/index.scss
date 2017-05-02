@@ -458,7 +458,7 @@
 }
 
 .uomcontent .page-local-history {
-  @include wrapper;
+  @include injection-wrapper;
   color: $white;
 
   a {

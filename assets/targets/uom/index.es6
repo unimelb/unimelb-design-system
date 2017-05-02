@@ -9,6 +9,12 @@ import * as utils from 'utils';
 import cssesc from 'cssesc';
 import WebFont from 'webfontloader';
 
+import InjectHeader from 'components/header';
+import InjectNav from 'components/nav';
+import InjectFooter from 'components/footer';
+import InjectIconSet from 'components/icon-set';
+
+
 import Accordion from 'components/accordion';
 import Announcement from 'components/announcement';
 import Checklist from 'components/checklist';
@@ -32,6 +38,10 @@ import ValidateForm from 'components/forms';
 // Polyfills
 require('es6-promise').polyfill();
 require('classlist-polyfill');
+
+// Tracking
+require('./gtm');
+require('./tealium');
 
 // Build API object
 window.uom = {
@@ -80,5 +90,15 @@ document.documentElement.classList.add('js');
 const fonts = 'Roboto:400,300,100,700,100italic,300italic,400italic,700italic:latin';
 WebFont.load({ google: { families: [fonts] } });
 
+document.addEventListener('DOMContentLoaded', injection);
 document.addEventListener('DOMContentLoaded', window.uom.initAllComponents);
 
+/**
+ * Initialise injection components.
+ */
+function injection() {
+  new InjectHeader({ defaultLink: 'https://www.unimelb.edu.au' });
+  new InjectNav();
+  new InjectFooter();
+  new InjectIconSet();
+}
