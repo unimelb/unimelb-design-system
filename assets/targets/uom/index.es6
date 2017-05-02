@@ -44,6 +44,9 @@ require('shared/tracking');
 
 // Build API object
 window.uom = {
+  // injection
+  applyInjection,
+
   // component manager
   components,
   initComponent,
@@ -89,13 +92,13 @@ document.documentElement.classList.add('js');
 const fonts = 'Roboto:400,300,100,700,100italic,300italic,400italic,700italic:latin';
 WebFont.load({ google: { families: [fonts] } });
 
-document.addEventListener('DOMContentLoaded', injection);
+document.addEventListener('DOMContentLoaded', window.uom.applyInjection);
 document.addEventListener('DOMContentLoaded', window.uom.initAllComponents);
 
 /**
  * Initialise injection components.
  */
-function injection() {
+function applyInjection() {
   new CreateNameSpace();
   new InjectHeader({ defaultLink: 'https://www.unimelb.edu.au' });
   new InjectNav();
