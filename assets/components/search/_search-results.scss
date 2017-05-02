@@ -42,16 +42,12 @@
         @include fallbackAvatarWrapper;
 
         .person__photo {
+          @include fallbackAvatar;
           background-position: center;
           background-size: cover;
           border-radius: 50%;
           width: 85px;
           height: 85px;
-
-          // When using the background-image technique, show a fallback avatar if the photo fails to load
-          &:not(img) {
-            @include fallbackAvatar;
-          }
         }
 
         .person__info {
