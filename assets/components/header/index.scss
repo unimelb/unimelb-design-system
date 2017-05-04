@@ -236,23 +236,10 @@
       transition: .2s top .3s;
       z-index: 1;
 
-      // @media screen {
-        svg {
-          height: 3.75rem;
-          width: 3.75rem;
-
-          @include breakpoint(desktop) {
-            height: 100%;
-            width: 100%;
-          }
-        }
-
-        img {
-          border: 0;
-          max-height: 100%;
-          max-width: 100%;
-        }
-      // }
+      img {
+        height: 100%;
+        width: 100%;
+      }
     }
 
     @include breakpoint(desktop) {

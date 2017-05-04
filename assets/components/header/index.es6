@@ -35,10 +35,7 @@ InjectHeader.prototype.renderPageHeader = function() {
       // Landing page header
       this.props.header.innerHTML = `
 <a class="page-header-logo" href="${this.props.defaultLink}">
-  <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
-    <title id="aria-uom-title">The University of Melbourne Logo</title>
-    <image xlink:href="${require('./logo.svg')}" src="${require('./logo.png')}" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
-  </svg>
+  <img src="${require('./logo.svg')}" width="100" height="100" alt="The University of Melbourne">
 </a>
 `;
 
@@ -78,10 +75,7 @@ InjectHeader.prototype.renderPageHeader = function() {
       this.props.header.innerHTML = `
 <header>
   <a class="page-header-logo" href="${this.props.defaultLink}">
-    <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
-      <title id="aria-uom-title">The University of Melbourne Logo</title>
-      <image xlink:href="${require('./logo.svg')}" src="${require('./logo.png')}" alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
-    </svg>
+    <img src="${require('./logo.svg')}" width="100" height="100" alt="The University of Melbourne">
   </a>
   <nav class="page-header-navigation" aria-label="breadcrumbs">
     ${this.props.rootlink}
