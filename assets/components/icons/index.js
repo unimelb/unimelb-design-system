@@ -33,7 +33,7 @@ IconHelper.prototype.restoreChildren = function() {
   if (this.props.children.length === 0) return;
 
   // Create label wrapper and move all pre-existing children into it
-  var label = document.createElement('div');
+  var label = document.createElement('span');
   label.className = 'icon-label';
   for (var recs = this.props.children, i = recs.length - 1; i >= 0; i--)
     label.appendChild(recs[i]);

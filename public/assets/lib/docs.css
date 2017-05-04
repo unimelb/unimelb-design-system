@@ -27,16 +27,13 @@
   padding-bottom: 1.875rem;
   margin: 0 auto;
   text-align: center; }
-  .uomcontent [role="main"] .eg-palette div {
+  .uomcontent [role="main"] .eg-palette > div {
     display: inline-block;
     font-family: Roboto, Helvetica, Arial, sans-serif;
     font-size: 18px;
     margin: 20px;
     text-align: center;
     width: 100px; }
-    .uomcontent [role="main"] .eg-palette div.icon-label {
-      margin: 0;
-      width: auto; }
     .uomcontent [role="main"] .eg-palette div strong {
       font-weight: 400;
       text-align: center;
