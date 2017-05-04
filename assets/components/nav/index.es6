@@ -176,10 +176,7 @@ InjectNav.prototype.renderGlobalSitemap = function() {
     this.props.globalNav.innerHTML = `
 <a class="close-button" href="#">Close</a>
 <a href="https://www.unimelb.edu.au" class="logo">
-  <svg width="100" height="100" viewBox="0 0 140 140" aria-labelledby="aria-uom-title" role="img">
-    <image xlink:href="${require('../header/logo.svg')}" src="${require('../header/logo.png')}"
-      alt="The University of Melbourne Logo" width="140" height="140" preserveAspectRatio="xMaxYMin meet"/>
-  </svg>
+  <img src="${require('../header/logo.svg')}" width="100" height="100" alt="The University of Melbourne">
 </a>
 <form action="https://search.unimelb.edu.au" method="get">
   <fieldset>
