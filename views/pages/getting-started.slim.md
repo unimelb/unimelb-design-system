@@ -16,42 +16,39 @@ hr
 section
   h2#document-structure.subtitle Document structure
 
-  p To use the design system, add the following three resource includes into the <code>head</code> section of your page:
+  p To use the design system, add the following resource includes into the <code>head</code> section of your page:
 
-pre: code.html
-  ==convert_tags
-    erb:
-      <link rel="stylesheet" href="<%=opts[:cdnurl]%>/<%=opts[:version]%>/uom.css">
-      <script src="<%=opts[:cdnurl]%>/<%=opts[:version]%>/uom.js"></script>
-
-section
-  p The first provides a universal <abbr title="Reproduce modern functionality in older browser">polyfill</abbr> for styling on HTML5 semantic elements such as <code>header</code>, <code>nav</code> and <code>section</code> We use these elements as selectors in the design system stylesheet.
+  pre: code.html
+    ==convert_tags
+      erb:
+        <link rel="stylesheet" href="<%=opts[:cdnurl]%>/<%=opts[:version]%>/uom.css">
+        <script src="<%=opts[:cdnurl]%>/<%=opts[:version]%>/uom.js"></script>
 
   p At a bare minimum, you should include the following markup in your page:
 
-pre: code.html
-  ==convert_tags
-    erb:
-      <!DOCTYPE html>
-      <html lang="en" class="no-js">
-      <head>
-        <meta charset="utf-8" />
-        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <meta content="IE=edge" http-equiv="X-UA-Compatible" />
-        <title> (any page title) </title>
-        <link rel="stylesheet" href="<%=opts[:cdnurl]%>/<%=opts[:version]%>/uom.css">
-        <script src="<%=opts[:cdnurl]%>/<%=opts[:version]%>/uom.js"></script>
-      </head>
-      <body>
-        <div class="uomcontent">
-          <div class="page-inner">
-            <div role="main">
-              (your website markup goes here)
+  pre: code.html
+    ==convert_tags
+      erb:
+        <!DOCTYPE html>
+        <html lang="en" class="no-js">
+        <head>
+          <meta charset="utf-8" />
+          <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+          <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+          <title> (any page title) </title>
+          <link rel="stylesheet" href="<%=opts[:cdnurl]%>/<%=opts[:version]%>/uom.css">
+          <script src="<%=opts[:cdnurl]%>/<%=opts[:version]%>/uom.js"></script>
+        </head>
+        <body>
+          <div class="uomcontent">
+            <div class="page-inner">
+              <div role="main">
+                (your website markup goes here)
+              </div>
             </div>
           </div>
-        </div>
-      </body>
-      </html>
+        </body>
+        </html>
 
 hr
 
@@ -62,50 +59,48 @@ section
 
   p For nested navigation, use a <code>div class="inner"</code> as demonstrated below. You can have multiple levels of nesting, but this is not recommended. If your system doesn't allow you to add <code>inner</code> containers, you may omit them and just use nested lists.
 
-pre: code.html
-  ==convert_tags
-    erb:
-      <div id="sitemap" role="navigation">
-        <h2>Section title</h2>
-        <ul>
-          <li>
-            <a href="/another">Link to another page</a>
-          </li>
-          <li>
-            <a href="/sub-section">Sub-section</a>
-            <div class="inner">
-              <ul>
-                <li>
-                  <a href="/sub-section/a-page">A page in the sub-section</a>
-                </li>
-                <li>
-                  <a href="/sub-section/another">Another page</a>
-                  <div class="inner">
-                    <ul>
-                      <li>
-                        <a href="/sub-section/another/another">3rd level</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li><a href="/last-one">Last one</a></li>
-        </ul>
-      </div>
+  pre: code.html
+    ==convert_tags
+      erb:
+        <div id="sitemap" role="navigation">
+          <h2>Section title</h2>
+          <ul>
+            <li>
+              <a href="/another">Link to another page</a>
+            </li>
+            <li>
+              <a href="/sub-section">Sub-section</a>
+              <div class="inner">
+                <ul>
+                  <li>
+                    <a href="/sub-section/a-page">A page in the sub-section</a>
+                  </li>
+                  <li>
+                    <a href="/sub-section/another">Another page</a>
+                    <div class="inner">
+                      <ul>
+                        <li>
+                          <a href="/sub-section/another/another">3rd level</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="/last-one">Last one</a></li>
+          </ul>
+        </div>
 
-section
   p In situations where the site does not sit at the root of its domain (ie. within a subdirectory), the site root can be set to any arbitrary value by adding a <code>data-absolute-root</code> attribute to the local nav div. This value will be inserted before any nav links, so make sure you use relative links, eg.
 
-pre: code.html
-  ==convert_tags
-    erb:
-      <div id="sitemap" role="navigation" data-absolute-root="/sitehome">
-      ...
-      </div>
+  pre: code.html
+    ==convert_tags
+      erb:
+        <div id="sitemap" role="navigation" data-absolute-root="/sitehome">
+        ...
+        </div>
 
-section
   p This is part of a much larger discussion, but please be aware that the local navigation only displays <strong>end pages</strong> in the structure, so in the example listed above there is no direct link to <code>/sub-section</code> or <code>/sub-section/another</code>. This is intentional, and in most circumstances this type of page ("landing" page) should only contain a basic list of links to its children, eg. <a href="/components">the index of components on this site</a>.
 
 hr
@@ -115,32 +110,29 @@ section
 
   p We use <a href="http://schema.org/itemListElement">schema.org microdata for breadcrumbs</a> to enhance machine understanding. To use the breadcrumb navigation on your site, include the following markup structure before the <code>div role="main"</code>:
 
-pre: code.html
-  ==convert_tags
-    erb:
-      <ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList">
-        <li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-          <a href="/" title="Website Home" itemprop="item">
-            <span itemprop="name">Website Home</span>
-          </a>
-          <meta content="1" itemprop="position" />
-        </li>
-        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-          <a href="/layouts" itemprop="item" title="Layouts">
-            <span itemprop="name">Layouts</span>
-          </a>
-          <meta content="2" itemprop="position" />
-        </li>
-        <li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
-          <a href="" itemprop="item" title="Source">
-            <span itemprop="name">Source</span>
-          </a>
-          <meta content="3" itemprop="position" />
-        </li>
-      </ol>
-
-section
-  p Please note this replaces the previous markup used in v1.0 and earlier.
+  pre: code.html
+    ==convert_tags
+      erb:
+        <ol class="page-local-history" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+          <li class="root" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+            <a href="/" title="Website Home" itemprop="item">
+              <span itemprop="name">Website Home</span>
+            </a>
+            <meta content="1" itemprop="position" />
+          </li>
+          <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+            <a href="/layouts" itemprop="item" title="Layouts">
+              <span itemprop="name">Layouts</span>
+            </a>
+            <meta content="2" itemprop="position" />
+          </li>
+          <li class="last" itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+            <a href="" itemprop="item" title="Source">
+              <span itemprop="name">Source</span>
+            </a>
+            <meta content="3" itemprop="position" />
+          </li>
+        </ol>
 
   p Each <code>meta itemprop="position"</code> should be numbered consecutively, and remember to duplicate the link text in the parent link <code>title</code>.
 
@@ -155,28 +147,25 @@ section
 
   p Additionally, a header element must be included within the <code>div role="main"</code>. Inline styles have been added to the header in the example below to illustrate how it should be styled in your local styles - the css provided in the full design system already has this defined.
 
-pre: code.html
-  ==convert_tags
-    erb:
-      <div class="floating"></div>
-      <div role="main">
-        <header style="background-image:url(<%=opts[:cdnurl]%>/templates/0.1/components/globals/bg-banner-2edd2279a97e316344e7831983ef6868.jpg);background-size:cover;min-height:300px"></header>
-        (your website markup goes here)
-      </div>
+  pre: code.html
+    ==convert_tags
+      erb:
+        <div class="floating"></div>
+        <div role="main">
+          <header style="background-image:url(<%=opts[:cdnurl]%>/templates/0.1/components/globals/bg-banner-2edd2279a97e316344e7831983ef6868.jpg);background-size:cover;min-height:300px"></header>
+          (your website markup goes here)
+        </div>
 
-section
   p Occasionally, a site will need to co-brand the logo space - this can be done by adding a special link inside the <code>div class="floating"</code> as shown in the example below:
 
-pre: code.html
-  ==convert_tags
-    erb:
-      <div class="floating">
-        <a class="page-header-home" href="/">Faculty of Veterinary and Agricultural Sciences</a>
-      </div>
+  pre: code.html
+    ==convert_tags
+      erb:
+        <div class="floating">
+          <a class="page-header-home" href="/">Faculty of Veterinary and Agricultural Sciences</a>
+        </div>
 
-section
-  p
-    <img src="/assets/fvas-header.jpg" alt="">
+  p: img src="/assets/fvas-header.jpg" alt=""
 
 hr
 

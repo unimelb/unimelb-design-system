@@ -4,7 +4,7 @@ hidden: true
 ---
 
 article
-  .contrast-helper style="background-image: url(/assets/choose-header-images/header.jpg);"
+  .contrast-helper style="background-image: url(/assets/using-images/header.jpg);"
     .stage#particles
     header.banner.blurred
       .mid-align
@@ -60,7 +60,7 @@ article
       a href="#background-images" Read how to use background images
 
 
-  #content-images.fullwidth.mid-align style="background-image: url(/assets/choose-header-images/science.jpg);"
+  #content-images.fullwidth.mid-align style="background-image: url(/assets/using-images/science.jpg);"
     section
       h2.title Content images
       p The science of choosing and using content imagery is actually easier than one might think.
@@ -76,11 +76,11 @@ article
     p Imagine you're writing an article about cancer research. Which of these two images provide more information?
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/ci_01_01.jpg" alt="Laboratory Equipment (fig. 1)"
+      img src="/assets/using-images/ci_01_01.jpg" alt="Laboratory Equipment (fig. 1)"
       figcaption Laboratory Equipment (fig. 1)
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/ci_01_02.jpg" alt="Electron micrograph (fig. 2)"
+      img src="/assets/using-images/ci_01_02.jpg" alt="Electron micrograph (fig. 2)"
       figcaption
         |Electron micrographs like this are used by
         br
@@ -101,15 +101,15 @@ article
     p As an experiment, pretend you were given the following three images to complement an article about celebrating 25 years of internet in Australia. Which one would you choose?
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/ci_03_01.jpg" alt="Data highway (fig. 1)"
+      img src="/assets/using-images/ci_03_01.jpg" alt="Data highway (fig. 1)"
       figcaption The data highway (fig. 1)
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/ci_03_02.jpg" alt="Kids celebrating"
+      img src="/assets/using-images/ci_03_02.jpg" alt="Kids celebrating"
       figcaption Two children celebrating the web (fig. 2)
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/ci_03_03.jpg" alt="Browsing the web (fig. 3)"
+      img src="/assets/using-images/ci_03_03.jpg" alt="Browsing the web (fig. 3)"
       figcaption Using the web in an everyday situation (fig. 3)
 
     p This one is tricky. Of course the "data highway" is not appropriate in any way. Yes it's colourful, but it doesn't add anything meaningful. However, the decision between the children and the tablet is a bit harder. The everyday browsing may look adequate at first but there are two arguments not to choose it:
@@ -124,7 +124,7 @@ article
         .accordion__hidden
           p Or you could scrap all of the above, do some research, and find an actual photo of the terminal connected to the computer that established the first internet connection 25 years ago :-)
           figure.full-width role="group"
-            img src="/assets/choose-header-images/ci_03_04.jpg" alt="Old Computer Terminal (fig. 4)"
+            img src="/assets/using-images/ci_03_04.jpg" alt="Old Computer Terminal (fig. 4)"
             figcaption A terminal connected to Australia's first internet-connected computer 25 years ago (fig. 3)
 
     hr.spacer
@@ -133,11 +133,11 @@ article
     p If you are going to have many different images close together on a page (for example, using a visual listing component in the design system), it is important that they use consistent colours and photographic style:
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/ci_02_01.jpg" alt="Multiple nature images with different colours (fig. 1)"
+      img src="/assets/using-images/ci_02_01.jpg" alt="Multiple nature images with different colours (fig. 1)"
       figcaption Multiple images without colour correction (fig. 1)
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/ci_02_02.jpg" alt="Multiple nature images with adjusted colours (fig. 2)"
+      img src="/assets/using-images/ci_02_02.jpg" alt="Multiple nature images with adjusted colours (fig. 2)"
       figcaption The same images after adjustment of colours and contrast (fig. 2)
 
     p While all images are related to the topic nature, they feel disconnected in the first row. Colour corrections and contrast adjustments bring them closer together and provide a more coherent experience. This requires a bit of photoshop skill, but is worth the effort.
@@ -148,7 +148,7 @@ article
     p Charts and infographics are a good way of displaying statistics or illustrating processes. Just be aware that if there is no html-based text (or at least not much of it), the image containing the chart will be displayed on small screens as well and therefore resized. This may make it impossible to read for a large portion of your visitors.
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/ci_04_01.jpg" alt="Texas Registered Drivers 1980–2004 (fig. 1)"
+      img src="/assets/using-images/ci_04_01.jpg" alt="Texas Registered Drivers 1980–2004 (fig. 1)"
       figcaption Texas Registered Drivers 1980–2004 (fig. 1)
 
     p This chart is heavily formatted and therefore hard to figure out. It also contains too much text which will make it difficult or impossible to read on smaller screens.
@@ -157,7 +157,7 @@ article
 
     figure.full-width role="group"
       h3 Texas Registered Drivers 1980–2004
-      img src="/assets/choose-header-images/ci_04_02.jpg" alt="Texas Registered Drivers 1980–2004 (fig. 2)"
+      img src="/assets/using-images/ci_04_02.jpg" alt="Texas Registered Drivers 1980–2004 (fig. 2)"
       figcaption
         |The number of registered drivers in Texas rose from
         br
@@ -177,7 +177,7 @@ article
 
     p Ideally all charts put on our websites would be more like this. This chart is created using Javascript, HTML and SVG graphics. It doesn't use traditional images at all. This requires a bit of coding knowledge, but it can be done and is easily the most preferred version. It is easy to read both because the graphic is created using vectors (and is crisp on any display, including retina displays), but also because detail about the plot can be gained by interacting with the chart. It is also responsive so that it displays well across a range of device sizes. We are aiming to provide these charts in the Design System at some point, however they will require a smart CMS interface.
 
-  #background-images.fullwidth.mid-align style="background-image: url(/assets/choose-header-images/rocket.jpg);"
+  #background-images.fullwidth.mid-align style="background-image: url(/assets/using-images/rocket.jpg);"
     section
       h2.title Background images
       p Start with a bang and engage with your readers right from the start
@@ -192,19 +192,19 @@ article
     p A background image almost never appears without text on top. Always make sure that the text is easily readable because it is always more important than the image. If the image contains information that should not be cropped or overlaid by text, then it is a content image and should not be used in this context.
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/bi_01_01.jpg" alt="Bright background image with text on top (fig. 1)"
+      img src="/assets/using-images/bi_01_01.jpg" alt="Bright background image with text on top (fig. 1)"
       figcaption Bright background image making text too hard to read(fig. 1)
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/bi_01_02.jpg" alt="Bright background image with dark layer between image and text (fig. 2)"
+      img src="/assets/using-images/bi_01_02.jpg" alt="Bright background image with dark layer between image and text (fig. 2)"
       figcaption The same image with a black layer between image and text making the text readable (fig. 2)
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/bi_01_03.jpg" alt="Portrait of Glyn Davis overlaid with text (fig. 3)"
+      img src="/assets/using-images/bi_01_03.jpg" alt="Portrait of Glyn Davis overlaid with text (fig. 3)"
       figcaption Never use portrait photography. (fig. 3)
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/bi_01_04.jpg" alt="Group of students (fig. 4)"
+      img src="/assets/using-images/bi_01_04.jpg" alt="Group of students (fig. 4)"
       figcaption Always remember that images will be cropped according to the current screen size and ratio. (fig. 4)
 
     hr.spacer
@@ -213,11 +213,11 @@ article
     p Choose a background image that will compliment or even help explain your message. Use your background image to reinforce the overall message, not as an attempt to communicate everything all at once. Don’t pick an image that draws more attention than the primary objective (read the content) of the page.
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/bi_02_01.jpg" alt="Study findings about the universe (fig. 1)"
+      img src="/assets/using-images/bi_02_01.jpg" alt="Study findings about the universe (fig. 1)"
       figcaption This background image shows actual study findings (fig. 1)
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/bi_02_02.jpg" alt="Space (fig. 2)"
+      img src="/assets/using-images/bi_02_02.jpg" alt="Space (fig. 2)"
       figcaption A different image sets the topic as space, universe, etc while not distracting the reader (fig. 2)
 
     hr.spacer
@@ -232,19 +232,19 @@ article
     p Through associations with natural, cultural and artistic uses of colour, we subconsciously relate different colours with particular characteristics. Controlling the use of colour in your background images (which take up a huge chunk of space on the website), is a good way to reinforce your message.
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/bi_03_01.jpg" alt="Picture of old lab and scientists (fig. 1)"
+      img src="/assets/using-images/bi_03_01.jpg" alt="Picture of old lab and scientists (fig. 1)"
       figcaption Black and white makes us feel like something is older (fig. 1)
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/bi_03_02.jpg" alt="Picture of old lab and scientists (fig. 2)"
+      img src="/assets/using-images/bi_03_02.jpg" alt="Picture of old lab and scientists (fig. 2)"
       figcaption Red filter (fig. 2)
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/bi_03_03.jpg" alt="Picture of old lab and scientists (fig. 3)"
+      img src="/assets/using-images/bi_03_03.jpg" alt="Picture of old lab and scientists (fig. 3)"
       figcaption Purple filter (fig. 3)
 
     figure.full-width role="group"
-      img src="/assets/choose-header-images/bi_03_04.jpg" alt="Picture of old lab and scientists (fig. 4)"
+      img src="/assets/using-images/bi_03_04.jpg" alt="Picture of old lab and scientists (fig. 4)"
       figcaption Blue filter (fig. 4)
 
 
@@ -266,7 +266,7 @@ article
     p This is really important to keep in mind at all times. No image is sometimes better than some random image that does not help your message at all. Not have an image will definitely help your page load faster.
 
 
-  .fullwidth.mid-align style="background-image: url(/assets/choose-header-images/supplies.jpg);"
+  .fullwidth.mid-align style="background-image: url(/assets/using-images/supplies.jpg);"
     section
       h2.title Image resources
       p Knowing where to find all the good images
@@ -323,4 +323,4 @@ section
     a.button-hero href="/audio-video-guidelines" Next: Audio & Video guidelines
 
 script src="https://www.google.com/jsapi"
-script src="/assets/choose-header-images/images.js"
+script src="/assets/using-images/images.js"

@@ -40,7 +40,7 @@ section
       p
         |Download our
         '
-        a href="/assets/web.unimelb.paper_cutout.pdf" paper cutout pdf
+        a href="/assets/paper_cutout.pdf" paper cutout pdf
         '
         |and start to layout the page on your table or whiteboard.
     li

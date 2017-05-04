@@ -39,7 +39,7 @@ function InjectNav(props) {
     });
   }
 
-  // Inialise nav state, render global sitemap and bind events
+  // Initialise nav state, render global sitemap and bind events
   this.setActiveNav(this.props.supportsHistory ? window.history.state : null);
   this.renderGlobalSitemap();
   this.setupEventBindings();
