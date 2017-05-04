@@ -20,9 +20,7 @@ InjectFooter.prototype.renderFooter = function() {
   this.el.innerHTML = `
 <footer>
   <a class="unimelb-lge" href="https://unimelb.edu.au">
-    <svg width="300" height="100" viewBox="0 0 300 100" aria-labelledby="aria-uom-title" role="img">
-      <image xlink:href="${require('./lockup.svg')}" src="${require('./lockup.png')}" alt="The University of Melbourne Logo" width="300" height="100" preserveAspectRatio="xMaxYMin meet"/>
-    </svg>
+    <img src="${require('./lockup.svg')}" width="300" height="100" alt="The University of Melbourne">
   </a>
   <ul class="people-links">
     <li>
