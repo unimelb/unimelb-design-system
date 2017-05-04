@@ -56,16 +56,16 @@ InjectFooter.prototype.renderFooter = function() {
   <div class="ind-ack">We acknowledge and pay respect to the Traditional Owners of the lands upon which our campuses are situated.</div>
   <ul class="page-footer-section nav">
     <li>
-      <a href="http://safety.unimelb.edu.au/about/contacts/emergency.html">Emergency Information</a>
+      <a href="http://safety.unimelb.edu.au/emergency">Emergency Information</a>
     </li>
     <li>
-      <a href="http://www.unimelb.edu.au/disclaimer/">Disclaimer &amp; Copyright</a>
+      <a href="http://www.unimelb.edu.au/governance/disclaimer">Disclaimer &amp; Copyright</a>
     </li>
     <li>
-      <a href="http://www.unimelb.edu.au/accessibility/index.html">Accessibility</a>
+      <a href="http://www.unimelb.edu.au/accessibility">Accessibility</a>
     </li>
     <li>
-      <a href="http://www.unimelb.edu.au/disclaimer/privacy.html">Privacy</a>
+      <a href="http://www.unimelb.edu.au/governance/compliance/privacy">Privacy</a>
     </li>
   </ul>
   <ul class="page-footer-section social">

@@ -14,11 +14,11 @@ p The university has procured a 3rd party service who can assist with creating t
 
 h2 Video
 
-p Video should include captions that conform to <a href="http://www.unimelb.edu.au/accessibility/captioning/style-guide.htm">the university captioning style guide</a>.
+p Video should include captions that conform to <a href="http://www.unimelb.edu.au/accessibility/video-captioning/style-guide">the university captioning style guide</a>.
 
 p The university has procured a 3rd party service who can assist with captioning video. Contact the digital team for details on this service.
 
-p Video used needs to comply with <a href="http://marketing.unimelb.edu.au/imagebank/guidelines.html">the university video guidelines</a>.
+p Video used needs to comply with <a href="https://staff.unimelb.edu.au/marketing-communications/resources/photos-video-guidelines">the university video guidelines</a>.
 
 hr
 section
