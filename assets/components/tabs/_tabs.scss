@@ -122,7 +122,7 @@
         font-size: .9375rem;
         line-height: $tabs-height;
         padding: 0 1.25rem;
-        color: rgba(#fff, .7);
+        color: color(#fff alpha(70%));
         display: inline-block;
         letter-spacing: .5px;
         outline-offset: -1px;
@@ -216,13 +216,13 @@
 
     .tab-arrow--left {
       padding-right: .625rem;
-      background: linear-gradient(to left, rgba(var(--col-darkblue), 0), rgba(var(--col-darkblue), .9) 10%);
+      background: linear-gradient(to left, color(var(--col-darkblue) alpha(0%)), color(var(--col-darkblue) alpha(90%)) 10%);
       left: 0;
     }
 
     .tab-arrow--right {
       padding-left: .625rem;
-      background: linear-gradient(to right, rgba(var(--col-darkblue), 0), rgba(var(--col-darkblue), .9) 10%);
+      background: linear-gradient(to right, color(var(--col-darkblue) alpha(0%)), color(var(--col-darkblue) alpha(90%)) 10%);
       right: 0;
     }
 

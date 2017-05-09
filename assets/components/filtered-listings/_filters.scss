@@ -106,10 +106,10 @@
       }
 
       &[data-color="green"] + label {
-        color: $filtered-listing-green;
+        color: var(--col-palegreen);
 
         span::before {
-          border-color: darken(var(--col-green), 5%);
+          border-color: color(var(--col-green) shade(5%));
         }
 
         &::after {
@@ -118,52 +118,52 @@
       }
 
       &[data-color="bronze"] + label {
-        color: $filtered-listing-bronze;
+        color: var(--col-bronze);
 
         span::before {
-          border-color: darken($filtered-listing-bronze, 20%);
+          border-color: color(var(--col-bronze) shade(20%));
         }
 
         &::after {
-          border-color: darken($filtered-listing-bronze, 40%);
+          border-color: color(var(--col-bronze) shade(40%));
         }
       }
 
       &[data-color="silver"] + label {
-        color: $filtered-listing-silver;
+        color: var(--col-lightestblue);
 
         span::before {
-          background-color: darken($filtered-listing-silver, 5%);
-          border-color: darken($filtered-listing-silver, 10%);
+          background-color: color(var(--col-lightestblue) shade(5%));
+          border-color: color(var(--col-lightestblue) shade(10%));
         }
 
         &::after {
-          border-color: darken($filtered-listing-silver, 40%);
+          border-color: color(var(--col-lightestblue) shade(40%));
         }
       }
 
       &[data-color="blue"] + label {
-        color: $filtered-listing-blue;
+        color: var(--col-lightblue);
 
         span::before {
-          background-color: lighten($filtered-listing-blue, 10%);
-          border-color: darken($filtered-listing-blue, 10%);
+          background-color: color(var(--col-lightblue) tint(10%));
+          border-color: color(var(--col-lightblue) shade(10%));
         }
 
         &::after {
-          border-color: darken($filtered-listing-blue, 20%);
+          border-color: color(var(--col-lightblue) shade(20%));
         }
       }
 
       &[data-color="yellow"] + label {
-        color: $filtered-listing-yellow;
+        color: var(--col-paleyellow);
 
         span::before {
-          border-color: darken($filtered-listing-yellow, 10%);
+          border-color: color(var(--col-paleyellow) shade(10%));
         }
 
         &::after {
-          border-color: darken($filtered-listing-yellow, 60%);
+          border-color: color(var(--col-paleyellow) shade(60%));
         }
       }
     }

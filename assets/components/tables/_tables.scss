@@ -103,7 +103,7 @@
 
   .highlight,
   &.zebra tr:nth-child(odd) .highlight {
-    background-color: darken(var(--col-paleblue), 5%);
+    background-color: color(var(--col-paleblue) shade(5%));
   }
 
   &.staff-listing {

@@ -41,7 +41,7 @@
     padding-right: 0;
 
     & > li {
-      border-bottom: 1px solid darken($lightgray, 5%);
+      border-bottom: 1px solid color(var(--col-lightgray) shade(5%));
       list-style-type: none;
       margin: 0;
       max-width: 2000px;
@@ -170,7 +170,7 @@
 
   .alt ul.accordion {
     & > li {
-      border-bottom-color: lighten($lightblue, 25%);
+      border-bottom-color: color(var(--col-lightblue) tint(25%));
 
       &.accordion__visible {
         border-color: var(--col-lighterblue);

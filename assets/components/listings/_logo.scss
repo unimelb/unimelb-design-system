@@ -5,7 +5,7 @@
 
   &__item {
     padding: .625rem;
-    color: rgba(#000, .8);
+    color: color(#000 alpha(80%));
     display: inline-block;
     vertical-align: middle;
   }

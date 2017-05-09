@@ -172,21 +172,21 @@
     }
 
     dd {
-      border-left-color: lighten(var(--col-lightblue), 25%);
+      border-left-color: color(var(--col-lightblue) tint(25%));
 
       &::before {
-        background-color: lighten(var(--col-lightblue), 25%);
+        background-color: color(var(--col-lightblue) tint(25%));
       }
 
       ul:last-child,
       p:last-child {
-        border-bottom-color: lighten(var(--col-lightblue), 25%);
+        border-bottom-color: color(var(--col-lightblue) tint(25%));
       }
 
       ul.accordion {
 
         & > li:first-child {
-          border-top: 1px solid lighten(var(--col-lightblue), 25%);
+          border-top: 1px solid color(var(--col-lightblue) tint(25%));
 
           &.accordion__visible {
             border-top: 1px solid var(--col-lighterblue);

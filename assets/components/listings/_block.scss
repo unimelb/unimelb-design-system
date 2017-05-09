@@ -13,7 +13,7 @@
     margin-bottom: 1rem;
     background-color: transparent;
     border: 1px solid rgba(#000, .15);
-    box-shadow: 0 0 9px -3px rgba(#000, .3);
+    box-shadow: 0 0 9px -3px color(#000 alpha(30%));
     color: #000;
     float: left;
     list-style-type: none;
@@ -65,7 +65,7 @@
     @include clearfix;
     font-size: .75rem;
     padding: .25rem 1rem;
-    background-color: rgba(#fff, .9);
+    background-color: color(#fff alpha(90%));
     color: inherit;
     position: relative;
     width: 100%;
@@ -145,7 +145,7 @@
   .double {
     .block-container {
       padding: 2rem 0 .75rem;
-      background-color: rgba(#000, .6);
+      background-color: color(#000 alpha(60%));
       background-size: cover;
       color: #fff;
 
@@ -322,7 +322,7 @@
       margin-left: -1rem;
       margin-right: -1rem;
       margin-top: -4rem; /* account for padding-top of 4px on `meta` */
-      background: linear-gradient(to top, rgba(#fff, .9) 33%, rgba(#fff, 0) 100%);
+      background: linear-gradient(to top, color(#fff alpha(90%)) 33%, rgba(#fff, 0) 100%);
       content: '';
       display: block;
       width: auto;
@@ -405,7 +405,7 @@
       strong {
         font-size: 1.75rem;
         padding: .625rem;
-        background-color: rgba(var(--col-lighterblue), .8);
+        background-color: color(var(--col-lighterblue) alpha(80%));
         bottom: 0;
         font-weight: $regular;
         line-height: 1.1;
@@ -555,7 +555,7 @@
       min-height: 21.875rem;
       background-position: center;
       background-size: cover;
-      border-bottom-color: rgba(var(--col-darkblue), 0.8);
+      border-bottom-color: color(var(--col-darkblue) alpha(80%));
       border-bottom-width: 5px;
       border-left: 0;
       border-right: 0;
@@ -567,7 +567,7 @@
 
       .meta {
         padding: .75rem 1.25rem 0;
-        background-color: rgba(var(--col-darkblue), 0.8);
+        background-color: color(var(--col-darkblue) alpha(80%));
         border: none;
         bottom: 0;
         color: #fff;
@@ -704,7 +704,7 @@
       &.audio-thumb {
         &::after {
           transition: opacity 0.2s;
-          background-color: rgba(#000, 0.1);
+          background-color: color(#000 alpha(10%));
           background-position: center;
           background-repeat: no-repeat;
           background-size: 35%;

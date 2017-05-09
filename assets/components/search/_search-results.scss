@@ -1,7 +1,7 @@
 .uomcontent {
   p.search-spelling {
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba(#000, .1);
+    border-bottom: 1px solid color(#000 alpha(10%));
 
     strong {
       font-style: italic;
@@ -29,7 +29,7 @@
       @include clearfix;
       padding-bottom: 1.5rem;
       margin-bottom: 1.5rem;
-      border-bottom: 1px solid rgba(#000, .1);
+      border-bottom: 1px solid color(#000 alpha(10%));
       list-style-type: none;
       margin-left: 0;
       width: auto;

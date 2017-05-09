@@ -15,8 +15,8 @@
 
   &.invalid {
     background-color: #fff;
-    border-color: lighten(var(--col-cherry), 25%);
-    color: lighten(var(--col-cherry), 25%);
+    border-color: color(var(--col-cherry) tint(25%));
+    color: color(var(--col-cherry) tint(25%));
   }
 
   @include breakpoint(desktop) {
@@ -28,7 +28,7 @@
   @include control;
   font-size: 1.25rem;
   background-color: var(--col-lightgray);
-  border: 1px solid darken(var(--col-lightergray), 5%);
+  border: 1px solid color(var(--col-lightergray) shade(5%));
   box-shadow: inset 0 1px 3px rgba(#000, .15);
 
   &:hover {
@@ -61,7 +61,7 @@
   text-transform: uppercase;
 
   &:hover {
-    background-color: darken(var(--col-lighterblue), 10%);
+    background-color: color(var(--col-lighterblue) shade(10%));
   }
 
   &:active {
@@ -156,7 +156,7 @@
         height: 2.5rem;
         line-height: 2.5rem;
         background-color: transparent;
-        box-shadow: 0 3px 6px -3px rgba(#000, .3);
+        box-shadow: 0 3px 6px -3px color(#000 alpha(30%));
         width: 100%;
       }
 
@@ -195,7 +195,7 @@
   header {
     height: 3.75rem;
     background: #fff;
-    box-shadow: 0 6px 6px -3px rgba(#000, .3);
+    box-shadow: 0 6px 6px -3px color(#000 alpha(30%));
     display: table;
     overflow: visible;
     padding: 0;
@@ -745,7 +745,7 @@
     font-size: .5625rem;
     padding: 0 .625rem;
     width: 2.5rem;
-    border-left: 1px solid darken(var(--col-lightgray), 10%);
+    border-left: 1px solid color(var(--col-lightgray) shade(10%));
     box-sizing: content-box;
     font-weight: $regular;
     line-height: 1;
@@ -852,7 +852,7 @@
       transition: background-color 0.3s, color 0.3s, transform 0.3s;
 
       &:hover, &:focus {
-        background-color: rgba(#fff, 0.7);
+        background-color: color(#fff alpha(70%));
         color: #000;
         transform: scale(1.1);
       }

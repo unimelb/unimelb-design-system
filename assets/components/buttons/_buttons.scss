@@ -4,7 +4,7 @@
   padding: .9375rem 1.25rem;
   background-color: var(--col-lighterblue);
   border: 0;
-  border-bottom: 5px solid darken(var(--col-lighterblue), 10%);
+  border-bottom: 5px solid color(var(--col-lighterblue) shade(10%));
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -38,22 +38,22 @@
 
   &.warning {
     background-color: var(--col-cherry);
-    border-bottom-color: darken(var(--col-cherry), 10%);
+    border-bottom-color: color(var(--col-cherry) shade(10%));
   }
 
   &.cta {
     background-color: var(--col-green);
-    border-bottom-color: darken(var(--col-green), 10%);
+    border-bottom-color: color(var(--col-green) shade(10%));
   }
 
   &.brand {
     background-color: var(--col-darkblue);
-    border-bottom-color: darken(var(--col-darkblue), 10%);
+    border-bottom-color: color(var(--col-darkblue) shade(10%));
   }
 
   &.soft {
     background-color: var(--col-lightergray);
-    border-bottom-color: darken(var(--col-lightergray), 10%);
+    border-bottom-color: color(var(--col-lightergray) shade(10%));
     color: var(--col-midblue);
 
     &:not([disabled]):hover,
@@ -91,7 +91,7 @@
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: darken(var(--col-lighterblue), 10%);
+    background-color: color(var(--col-lighterblue) shade(10%));
   }
 
   &:active {
@@ -100,17 +100,17 @@
 
   &.warning:not([disabled]):hover,
   &.warning:not([disabled]):focus {
-    background-color: darken(var(--col-cherry), 10%);
+    background-color: color(var(--col-cherry) shade(10%));
   }
 
   &.cta:not([disabled]):hover,
   &.cta:not([disabled]):focus {
-    background-color: darken(var(--col-green), 10%);
+    background-color: color(var(--col-green) shade(10%));
   }
 
   &.brand:not([disabled]):hover,
   &.brand:not([disabled]):focus {
-    background-color: darken(var(--col-darkblue), 10%);
+    background-color: color(var(--col-darkblue) shade(10%));
   }
 
   &.soft {
@@ -119,7 +119,7 @@
 
     &:not([disabled]):hover,
     &:not([disabled]):focus {
-      background-color: darken(var(--col-gray), 10%);
+      background-color: color(var(--col-gray) shade(10%));
     }
   }
 
@@ -240,7 +240,7 @@
 
   &:hover {
     margin: .625rem 0;
-    background-color: rgba(#000, .1);
+    background-color: color(#000 alpha(10%));
     color: #000;
   }
 }

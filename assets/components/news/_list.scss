@@ -31,7 +31,7 @@
     padding-right: 1.25rem;
 
     background-color: var(--col-darkblue);
-    background-color: rgba(var(--col-darkblue), .7);
+    background-color: color(var(--col-darkblue) alpha(70%));
     color: #fff;
     max-width: 100%;
   }

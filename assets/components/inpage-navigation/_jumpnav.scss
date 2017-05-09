@@ -113,7 +113,7 @@ body.jumpnav-active {
         color: #000;
 
         &:active {
-          color: darken(var(--col-cherry), 15%);
+          color: color(var(--col-cherry) shade(15%));
         }
       }
 

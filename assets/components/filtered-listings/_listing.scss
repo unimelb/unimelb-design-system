@@ -97,11 +97,11 @@
       width: 24%;
     }
 
-    &--green > a { background-color: $filtered-listing-green; }
-    &--bronze > a { background-color: $filtered-listing-bronze; }
-    &--silver > a { background-color: $filtered-listing-silver; }
-    &--blue > a { background-color: $filtered-listing-blue; }
-    &--yellow > a { background-color: $filtered-listing-yellow; }
+    &--green > a { background-color: var(--col-palegreen); }
+    &--bronze > a { background-color: var(--col-bronze); }
+    &--silver > a { background-color: var(--col-lightestblue); }
+    &--blue > a { background-color: var(--col-lightblue); }
+    &--yellow > a { background-color: var(--col-paleyellow); }
   }
 
   a {

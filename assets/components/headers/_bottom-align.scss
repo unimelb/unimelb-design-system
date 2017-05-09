@@ -27,16 +27,16 @@
       padding-bottom: 1.875rem;
       padding-top: 1.875rem;
       align-self: flex-end;
-      background-color: rgba(var(--col-darkblue), .8);
+      background-color: color(var(--col-darkblue) alpha(80%));
       width: 100%;
 
       &.white {
-        background-color: rgba(#fff, .8);
+        background-color: color(#fff alpha(80%));
         color: #000;
       }
 
       &.black {
-        background-color: rgba(#000, .5);
+        background-color: color(#000 alpha(50%));
       }
 
       form {

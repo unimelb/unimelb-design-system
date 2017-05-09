@@ -95,7 +95,7 @@
     div {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
-      border-top: 1px solid darken(var(--col-lightgray), 10%);
+      border-top: 1px solid color(var(--col-lightgray) shade(10%));
       text-align: center;
 
       @include breakpoint(desktop) {

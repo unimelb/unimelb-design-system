@@ -127,7 +127,7 @@
 
       hr {
         margin: .9375rem;
-        border-color: rgba(#fff, .2);
+        border-color: color(#fff alpha(20%));
         margin-left: 3%;
         margin-right: 3%;
 
@@ -151,7 +151,7 @@
         }
 
         strong {
-          color: rgba(#fff, .4);
+          color: color(#fff alpha(40%));
           display: block;
         }
       }
@@ -260,7 +260,7 @@
 
       span {
         font-size: .875rem;
-        color: rgba(#fff, .8);
+        color: color(#fff alpha(80%));
       }
 
       select {
@@ -278,7 +278,7 @@
     }
 
     p {
-      color: rgba(#fff, .8);
+      color: color(#fff alpha(80%));
     }
   }
 }

@@ -91,7 +91,7 @@
   font-size: 6.25rem;
   margin-left: -3.125rem;
   margin-right: .625rem;
-  color: darken(var(--col-lightgray), 10%);
+  color: color(var(--col-lightgray) shade(10%));
   content: open-quote;
   line-height: .1em;
   vertical-align: -.333em;
@@ -135,7 +135,7 @@
       font-size: .75rem;
       line-height: 1.5rem;
       border: 0;
-      color: lighten(var(--col-midgray), 20%);
+      color: color(var(--col-midgray) tint(20%));
       float: left;
       font-family: $ff-sans;
       font-style: normal;

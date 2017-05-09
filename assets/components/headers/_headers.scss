@@ -206,23 +206,23 @@
   position: relative;
 
   header {
-    background-color: rgba(#000, .5);
+    background-color: color(#000 alpha(50%));
   }
 
   &.no-filter header {
     background-color: transparent;
   }
   &.filter-blue header {
-    background-color: rgba(var(--col-lighterblue), .5);
+    background-color: color(var(--col-lighterblue) alpha(50%));
   }
   &.filter-green header {
-    background-color: rgba(var(--col-green), .5);
+    background-color: color(var(--col-green) alpha(50%));
   }
   &.filter-yellow header {
-    background-color: rgba(#fff000, .5);
+    background-color: color(#fff000 alpha(50%));
   }
   &.filter-red header {
-    background-color: rgba(var(--col-cherry), .5);
+    background-color: color(var(--col-cherry) alpha(50%));
   }
 
   .stage {

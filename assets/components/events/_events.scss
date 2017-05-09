@@ -18,7 +18,7 @@
     width: 50%;
 
     &:hover {
-      color: darken(var(--col-lighterblue), 10%);
+      color: color(var(--col-lighterblue) shade(10%));
       text-decoration: underline;
     }
   }
@@ -29,7 +29,7 @@
 
   @include breakpoint(wide) {
     padding-left: .9375rem;
-    border-left: 1px solid darken(var(--col-lightgray), 5%);
+    border-left: 1px solid color(var(--col-lightgray) shade(5%));
     display: table-cell;
     vertical-align: top;
     width: 30%;
@@ -77,7 +77,7 @@
     }
 
     li {
-      border-bottom: 1px solid darken(var(--col-lightgray), 5%);
+      border-bottom: 1px solid color(var(--col-lightgray) shade(5%));
       border-left: 5px solid var(--col-lighterblue);
       margin-left: -.9375rem;
       padding-bottom: 1.25rem;
@@ -203,9 +203,9 @@
   .tags {
     margin-top: .625rem;
     padding: .625rem 0;
-    border-bottom: 1px solid darken(var(--col-lightgray), 5%);
-    border-top: 1px solid darken(var(--col-lightgray), 5%);
-    color: lighten(var(--col-midgray), 10%);
+    border-bottom: 1px solid color(var(--col-lightgray) shade(5%));
+    border-top: 1px solid color(var(--col-lightgray) shade(5%));
+    color: color(var(--col-midgray) tint(10%));
     margin-left: 3%;
     margin-right: 3%;
     width: 94%;
@@ -219,7 +219,7 @@
     }
 
     a {
-      color: lighten(var(--col-midgray), 10%);
+      color: color(var(--col-midgray) tint(10%));
 
       &:hover {
         color: #000;
@@ -241,7 +241,7 @@
 
       svg {
         display: inline;
-        fill: lighten(var(--col-midgray), 15%);
+        fill: color(var(--col-midgray) tint(15%));
       }
 
       [data-icon],
@@ -315,7 +315,7 @@
 
     .presenters {
       padding-left: .9375rem;
-      border-left: 1px solid darken(var(--col-lightgray), 5%);
+      border-left: 1px solid color(var(--col-lightgray) shade(5%));
       display: table-cell;
       width: 30%;
 

@@ -166,7 +166,7 @@ $smooth-transform: transform .3s ease;
 }
 
 @mixin grad-left {
-  background: linear-gradient(to left, rgba(var(--col-lighterblue), 0) 66%, rgba(var(--col-lighterblue), .9) 100%); // /* W3C */
+  background: linear-gradient(to left, color(var(--col-lighterblue) alpha(0%)) 66%, color(var(--col-lighterblue) alpha(90%)) 100%); // /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=1); // /* IE6-9 */
 }
 

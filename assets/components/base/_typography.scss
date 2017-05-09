@@ -280,7 +280,7 @@
       & > li {
         max-width: $w-mid;
         padding-left: 4.375rem;
-        border-top: 1px solid rgba(#000000, 0.1);
+        border-top: 1px solid color(#000 alpha(10%));
         counter-increment: steps;
         list-style-type: none;
         position: relative;
@@ -546,7 +546,7 @@
   }
 
   hr {
-    border-bottom: 1px solid darken(var(--col-lightgray), 5%);
+    border-bottom: 1px solid color(var(--col-lightgray) shade(5%));
     border-top: 0;
     clear: both;
     line-height: 0;
@@ -564,7 +564,7 @@
 
     &:hover,
     &:focus {
-      color: darken(var(--col-lighterblue), 15%);
+      color: color(var(--col-lighterblue) shade(15%));
       text-decoration: none;
     }
 

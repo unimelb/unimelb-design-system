@@ -118,8 +118,8 @@ body {
 .uomcontent .sitemap-trigger {
   width: 3.125rem;
   background-color: var(--col-navy);
-  box-shadow: 3px 0 6px rgba(#000, .4) inset;
-  color: rgba(#fff, .5);
+  box-shadow: 3px 0 6px color(#000 alpha(40%)) inset;
+  color: color(#fff alpha(50%));
   cursor: pointer;
   display: block;
   height: 100%;

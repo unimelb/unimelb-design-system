@@ -16,7 +16,7 @@
   z-index: 17;
 
   &.active {
-    box-shadow: 1px 0 12px 3px rgba(#000, .6);
+    box-shadow: 1px 0 12px 3px color(#000 alpha(60%));
     overflow: auto;
     transform: translateX(-100%);
     -webkit-overflow-scrolling: touch;
@@ -34,7 +34,7 @@
     padding-top: .5rem;
     padding-bottom: .5rem;
     color: var(--col-lightblue);
-    color: rgba(#fff, .6);
+    color: color(#fff alpha(60%));
     display: block;
     font-weight: $light;
     padding-left: 0;
@@ -66,7 +66,7 @@
     padding-top: 0;
     border-bottom: 1px solid var(--col-blue);
     color: var(--col-lightblue);
-    color: rgba(#fff, .6);
+    color: color(#fff alpha(60%));
     line-height: 1.2;
     padding-right: 3%;
 
@@ -80,7 +80,7 @@
   li {
     font-size: .875rem;
     color: #B9C2CA;
-    color: rgba(#fff, .6);
+    color: color(#fff alpha(60%));
     line-height: 1.4;
     list-style-type: disc;
     margin-left: 0;
@@ -220,7 +220,7 @@
     padding-top: 1rem;
     height: 3.75rem;
     border-bottom: 1px solid var(--col-blue);
-    color: rgba(#fff, .4);
+    color: color(#fff alpha(40%));
     display: block;
     text-decoration: none;
     text-transform: uppercase;
@@ -228,7 +228,7 @@
     &::before {
       font-size: 1.5rem;
       margin-right: .5rem;
-      color: rgba(#fff, .4);
+      color: color(#fff alpha(40%));
       content: '\2039';
       display: inline-block;
       font-weight: $regular;

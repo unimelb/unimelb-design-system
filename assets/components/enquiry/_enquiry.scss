@@ -3,7 +3,7 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     background-color: var(--col-paleblue);
-    box-shadow: 0 -1px 9px rgba(var(--col-lightblue), 0.3) inset;
+    box-shadow: 0 -1px 9px color(var(--col-lightblue) alpha(30%)) inset;
 
     .errors {
       font-size: 1.375rem;
@@ -43,7 +43,7 @@
       line-height: 1.5rem;
       padding-top: .75rem;
       max-width: $w-sml;
-      border-top: 1px solid rgba(var(--col-lightblue), 0.3);
+      border-top: 1px solid color(var(--col-lightblue) alpha(30%));
       color: var(--col-midblue);
       text-align: center;
 
@@ -123,7 +123,7 @@
 
     &.accordion__visible {
       .enquiry__cta {
-        border-bottom: 1px solid rgba(var(--col-lightblue), 0.3);
+        border-bottom: 1px solid color(var(--col-lightblue) alpha(30%));
       }
 
       .accordion__hidden {

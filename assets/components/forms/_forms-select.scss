@@ -71,30 +71,30 @@
 
   &.clear:hover,
   &.clear-dark:hover {
-    background-color: rgba(#fff, .3);
+    background-color: color(#fff alpha(30%));
   }
 
   &.clear-dark.invalid,
   &.clear-dark.invalid:hover {
-    background-color: rgba(#fff, .3);
+    background-color: color(#fff alpha(30%));
     border-color: var(--col-cherry);
     color: var(--col-cherry);
   }
 
   &.clear.invalid,
   &.clear.invalid:hover {
-    background-color: rgba(#fff, .3);
-    border-color: lighten(var(--col-cherry), 25%);
-    color: lighten(var(--col-cherry), 25%);
+    background-color: color(#fff alpha(30%));
+    border-color: color(var(--col-cherry) tint(25%));
+    color: color(var(--col-cherry) tint(25%));
   }
 
   &.clear.invalid + svg.icon + small {
-    color: lighten(var(--col-cherry), 25%);
+    color: color(var(--col-cherry) tint(25%));
   }
 
   &.clear.invalid + svg.icon {
-    color: lighten(var(--col-cherry), 25%);
-    fill: lighten(var(--col-cherry), 25%);
+    color: color(var(--col-cherry) tint(25%));
+    fill: color(var(--col-cherry) tint(25%));
   }
 }
 
@@ -128,7 +128,7 @@
 
   &:hover select.clear,
   &:hover select.clear-dark {
-    background-color: rgba(#fff, .3);
+    background-color: color(#fff alpha(30%));
     border-color: #fff;
     color: #fff;
   }

@@ -19,7 +19,7 @@
         transform: scale(1.1);
 
         svg circle {
-          fill: rgba(#000, 0.6);
+          fill: color(#000 alpha(60%));
         }
       }
 

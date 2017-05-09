@@ -194,7 +194,7 @@ body {
     &.alt {
       padding: 1.875rem 0;
       background-color: var(--col-paleblue);
-      box-shadow: 0 6px 6px 4px rgba(#000, .3);
+      box-shadow: 0 6px 6px 4px color(#000 alpha(30%));
       color: #000;
 
       .center {
@@ -216,7 +216,7 @@ body {
 
     &.contrib {
       background-color: var(--col-paleyellow);
-      border: 1px solid darken(var(--col-paleyellow), 10%);
+      border: 1px solid color(var(--col-paleyellow) shade(10%));
 
       p {
         padding-top: 0;
@@ -318,7 +318,7 @@ body {
     }
 
     .block {
-      background-color: rgba(#000, .7);
+      background-color: color(#000 alpha(70%));
       color: #fff;
       font-weight: $bold;
       left: 50%;
@@ -328,7 +328,7 @@ body {
       width: 200px;
 
       &:hover {
-        background-color: rgba(var(--col-paleyellow), .8);
+        background-color: color(var(--col-paleyellow) alpha(80%));
         color: #000;
       }
 
@@ -609,7 +609,7 @@ body {
 
   hr {
     border: 0 none;
-    border-top: 1px solid rgba(#fff, .2);
+    border-top: 1px solid color(#fff alpha(20%));
   }
 
   ul {
