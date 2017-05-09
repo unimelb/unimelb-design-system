@@ -60,6 +60,7 @@ var config = {
     ]
   },
   postcss: [
+    require('postcss-nested'),
     require('postcss-cssnext')({
       browsers: [
         '> 1% in AU',

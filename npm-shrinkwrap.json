@@ -3758,6 +3758,26 @@
       "resolved": "https://registry.npmjs.org/postcss-modules-values/-/postcss-modules-values-1.2.2.tgz",
       "dev": true
     },
+    "postcss-nested": {
+      "version": "2.0.1",
+      "from": "postcss-nested@latest",
+      "resolved": "https://registry.npmjs.org/postcss-nested/-/postcss-nested-2.0.1.tgz",
+      "dev": true,
+      "dependencies": {
+        "postcss": {
+          "version": "6.0.1",
+          "from": "postcss@>=6.0.1 <7.0.0",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-6.0.1.tgz",
+          "dev": true
+        },
+        "supports-color": {
+          "version": "3.2.3",
+          "from": "supports-color@>=3.2.3 <4.0.0",
+          "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-3.2.3.tgz",
+          "dev": true
+        }
+      }
+    },
     "postcss-nesting": {
       "version": "2.3.1",
       "from": "postcss-nesting@>=2.0.5 <3.0.0",
