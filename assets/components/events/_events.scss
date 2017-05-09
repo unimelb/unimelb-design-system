@@ -283,11 +283,11 @@
   }
 
   .presenters {
-    @mixin presenters;
+    @add-mixin presenters;
   }
 }
 
-// Manual fix for 300px diff
+/* Manual fix for 300px diff */
 .jumpnav-active .uomcontent [role="main"] ul.event-listing {
   @media (--bp-wide) {
     .col {

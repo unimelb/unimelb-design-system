@@ -1,4 +1,4 @@
-@import "~normalize.css";
+@import "normalize.css";
 
 html {
   height: 100%;
@@ -29,20 +29,20 @@ li {
   box-sizing: border-box;
 }
 
-// Override `bolder` from normalize.css, as Roboto's default font-weight is 300, and 400 isn't bold-enough
+/* Override `bolder` from normalize.css, as Roboto's default font-weight is 300, and 400 isn't bold-enough */
 b,
 strong {
   font-weight: bold;
 }
 
-// Revert to dotted bottom border for abbreviations
-// https://github.com/necolas/normalize.css/pull/468#issuecomment-174107494
+/* Revert to dotted bottom border for abbreviations */
+/* https://github.com/necolas/normalize.css/pull/468#issuecomment-174107494 */
 abbr[title] {
   border-bottom: 1px dotted;
   text-decoration: none;
 }
 
-// Override normalize.css behaviour
+/* Override normalize.css behaviour */
 button,
 input,
 optgroup,
@@ -62,7 +62,7 @@ iframe[src^='//player.vimeo.com'] {
   width: 100%;
 }
 
-// Hide elements (prefer `hidden` attribute)
+/* Hide elements (prefer `hidden` attribute) */
 .hidden,
 [hidden] {
   display: none !important; /* force */
@@ -73,13 +73,13 @@ iframe[src^='//player.vimeo.com'] {
   outline-width: 0;
 }
 
-// Force FOUC on webfontloader inactive and loading states
+/* Force FOUC on webfontloader inactive and loading states */
 .wf-inactive *,
 .wf-loading * {
   font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
 }
 
-// Chrome-less button for UI interactions
+/* Chrome-less button for UI interactions */
 .button-ui {
   background: none transparent;
   border: 0;

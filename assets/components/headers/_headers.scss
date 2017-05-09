@@ -6,7 +6,7 @@
 }
 
 @define-mixin banner {
-  @mixin bannerbox;
+  @add-mixin bannerbox;
   min-height: 18.75rem;
   height: auto;
 
@@ -49,7 +49,7 @@
     border-top: 8px solid var(--col-navy);
   }
 
-  // Alternate syntax to avoid class on parent container
+  /* Alternate syntax to avoid class on parent container */
   .headerless {
     border-top: 8px solid var(--col-navy);
     padding-top: 0;
@@ -81,7 +81,7 @@
     }
 
     &.image {
-      @mixin bannerbox;
+      @add-mixin bannerbox;
       min-height: 18.75rem;
       height: auto;
 
@@ -106,7 +106,7 @@
     }
 
     &.banner {
-      @mixin banner;
+      @add-mixin banner;
     }
 
     &.with-box {
@@ -192,7 +192,7 @@
     @media (--bp-desktop) {
       padding-top: 3rem;
       padding-bottom: 3rem;
-      // overflow: hidden;
+      /* overflow: hidden; */
     }
   }
 }

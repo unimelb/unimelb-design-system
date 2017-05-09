@@ -34,7 +34,7 @@
       left: 0;
       margin: 0 auto;
       max-width: 900px;
-      width: 100%; // fixes centring on IE
+      width: 100%; /* fixes centring on IE */
       right: 0;
     }
   }
@@ -51,7 +51,7 @@
     width: 30px;
 
     &::before {
-      @mixin modal-close-icon;
+      @add-mixin modal-close-icon;
     }
 
     &:hover,

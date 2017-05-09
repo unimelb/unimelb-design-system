@@ -25,7 +25,7 @@
 }
 
 @define-mixin textcontrol {
-  @mixin control;
+  @add-mixin control;
   font-size: 1.25rem;
   background-color: var(--col-lightgray);
   border: 1px solid color(var(--col-lightergray) shade(5%));
@@ -88,7 +88,7 @@
 }
 
 .uomcontent .page-header {
-  @mixin normalise;
+  @add-mixin normalise;
   font-size: 1.25rem;
   height: 3.75rem;
   background-color: #fff;
@@ -99,7 +99,7 @@
   width: 100%;
   z-index: 12;
 
-  // Work-around for conflict with other `fixed` class, which sets the font to `var(--ff-fixed)`
+  /* Work-around for conflict with other `fixed` class, which sets the font to `var(--ff-fixed)` */
   &.fixed {
     font-family: var(--ff-sans);
   }
@@ -110,7 +110,7 @@
   }
 
   * {
-    @mixin normalise;
+    @add-mixin normalise;
     font-family: var(--ff-sans);
   }
 
@@ -210,7 +210,7 @@
   }
 
   a {
-    @mixin headerblock;
+    @add-mixin headerblock;
     height: 3.75rem;
     line-height: 3.75rem;
     font-weight: var(--fw-light);
@@ -281,7 +281,7 @@
   }
 
   span {
-    @mixin headerblock;
+    @add-mixin headerblock;
     font-size: .8125rem;
     height: 2.5rem;
     line-height: 2.5rem;
@@ -434,7 +434,7 @@
 }
 
 .uomcontent .page-local-history {
-  @mixin injection-wrapper;
+  @add-mixin injection-wrapper;
   color: #fff;
 
   a {
@@ -567,7 +567,7 @@
       vertical-align: top;
 
       input[type="search"] {
-        @mixin textcontrol;
+        @add-mixin textcontrol;
         border-radius: 3px 0 0 3px;
         height: 2.5rem;
         margin-top: .1875rem;
@@ -578,7 +578,7 @@
         width: 100%;
       }
 
-// dupe
+/* dupe */
       .inline {
         display: table;
         overflow: hidden;
@@ -586,7 +586,7 @@
         width: 100%;
 
         input[type="image"] {
-          @mixin inlinebutton;
+          @add-mixin inlinebutton;
           border-radius: 0 3px 3px 0;
           margin: .9375rem 0 0;
           width: 2.8125rem;
@@ -610,7 +610,7 @@
         }
 
         .inline-button {
-          @mixin inlinebutton;
+          @add-mixin inlinebutton;
           border-radius: 0 3px 3px 0;
           font-size: .8125rem;
           height: 2.5rem;
@@ -639,7 +639,7 @@
           }
         }
       }
-// dupe
+/* dupe */
 
       .icon {
         fill: #fff;

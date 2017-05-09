@@ -1,6 +1,6 @@
 .uomcontent {
   .staff-listing {
-    @mixin wrapper;
+    @add-mixin wrapper;
     margin-top: 1.5rem;
     max-width: var(--w-mid);
     margin-bottom: 1.5rem;
@@ -58,7 +58,7 @@
     }
 
     a {
-      // color: #000;
+      /* color: #000; */
       font-weight: var(--fw-regular);
     }
 

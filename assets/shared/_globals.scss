@@ -83,8 +83,8 @@
  * Mixins
  */
 
-// Micro clearfix
-// http://nicolasgallagher.com/micro-clearfix-hack/
+/* Micro clearfix */
+/* http://nicolasgallagher.com/micro-clearfix-hack/ */
 @define-mixin clearfix {
   &::before,
   &::after {
@@ -118,18 +118,18 @@
 }
 
 @define-mixin grad-bottom {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .9) 100%); // /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=0); // /* IE6-9 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .9) 100%); /* /* W3C */ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=0); /* /* IE6-9 */ */
 }
 
 @define-mixin grad-top {
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .9) 100%); // /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#FFFFFF', GradientType=0); // /* IE6-9 */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .9) 100%); /* /* W3C */ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#FFFFFF', GradientType=0); /* /* IE6-9 */ */
 }
 
 @define-mixin grad-left {
-  background: linear-gradient(to left, color(var(--col-lighterblue) alpha(0%)) 66%, color(var(--col-lighterblue) alpha(90%)) 100%); // /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=1); // /* IE6-9 */
+  background: linear-gradient(to left, color(var(--col-lighterblue) alpha(0%)) 66%, color(var(--col-lighterblue) alpha(90%)) 100%); /* /* W3C */ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=1); /* /* IE6-9 */ */
 }
 
 @define-mixin imgreplace {
@@ -145,7 +145,7 @@
   padding: 0;
 }
 
-// Prevent wrap and add ellipsis if overflow
+/* Prevent wrap and add ellipsis if overflow */
 @define-mixin ellipsis {
   display: block;
   overflow: hidden;
@@ -153,11 +153,11 @@
   white-space: nowrap;
 }
 
-// Fallback avatar (used in People and Seach components)
+/* Fallback avatar (used in People and Seach components) */
 @define-mixin fallbackAvatar {
   position: relative;
 
-  // Fallback avatar for when the photo fails to load
+  /* Fallback avatar for when the photo fails to load */
   &::before {
     background: url(../components/people/avatar-lt.png) no-repeat center / cover transparent;
     border-radius: 50%;
@@ -167,21 +167,21 @@
     position: absolute;
     top: 0;
     width: 100%;
-    z-index: -1; // position the fallback below the photo so it is hidden when the photo exists
+    z-index: -1; /* position the fallback below the photo so it is hidden when the photo exists */
   }
 }
 
-// The photo's wrapper must extend this placeholder to allow for the fallback avatar to
-// appear underneath the photo when the latter loads successfully.
+/* The photo's wrapper must extend this placeholder to allow for the fallback avatar to */
+/* appear underneath the photo when the latter loads successfully. */
 @define-mixin fallbackAvatarWrapper {
   position: relative;
   z-index: 1;
 }
 
-// Hide only visually, but have it available for screenreaders
-// Parent element should have `overflow: hidden;` and `position: relative;` to solve outline bug in Chrome
-// http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
-// http://stackoverflow.com/questions/3970455/overflow-hidden-not-working
+/* Hide only visually, but have it available for screenreaders */
+/* Parent element should have `overflow: hidden;` and `position: relative;` to solve outline bug in Chrome */
+/* http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+/* http://stackoverflow.com/questions/3970455/overflow-hidden-not-working */
 @define-mixin screenreaders-only {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
@@ -190,7 +190,7 @@
   width: 1px;
 }
 
-// Remove text for image replacement
+/* Remove text for image replacement */
 @define-mixin hide-text {
   font: 0/0 a;
   color: transparent;

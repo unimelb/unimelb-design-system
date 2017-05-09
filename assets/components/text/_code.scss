@@ -10,13 +10,13 @@
 
 .uomcontent {
   code {
-    @mixin code;
+    @add-mixin code;
     border-bottom-width: 2px;
     color: var(--col-midgray);
   }
 
   pre {
-    @mixin code;
+    @add-mixin code;
     font-size: .8125rem;
     line-height: 1.5rem;
     margin-top: 0;

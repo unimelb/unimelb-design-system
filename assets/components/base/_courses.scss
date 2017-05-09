@@ -23,7 +23,7 @@
   }
 
   thead th {
-    @mixin subtitle;
+    @add-mixin subtitle;
     font-size: .875rem;
   }
 
@@ -105,7 +105,7 @@
       }
 
       h2 {
-        @mixin subtitle;
+        @add-mixin subtitle;
         padding-right: 3.75rem;
         padding-left: 3%;
 
@@ -224,7 +224,7 @@
 }
 
 .uomcontent [role="main"] .course-select {
-  @mixin filtered-listing-select;
+  @add-mixin filtered-listing-select;
   padding-left: .9375rem;
   padding-right: .9375rem;
   box-shadow: none;
@@ -294,7 +294,7 @@
 
 .ie9 .uomcontent [role="main"] {
    .course-select {
-    @mixin clearfix;
+    @add-mixin clearfix;
 
     .left {
       float: left;

@@ -1,5 +1,5 @@
 .uomcontent [role="main"] .image-gallery {
-  @mixin clearfix; /* for float layout while setting up gallery */
+  @add-mixin clearfix; /* for float layout while setting up gallery */
   max-width: var(--w-lge);
   padding-left: 0;
   padding-right: 0;

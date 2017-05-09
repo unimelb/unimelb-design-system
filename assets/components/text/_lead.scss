@@ -52,7 +52,7 @@
     }
 
     &.left {
-      @mixin wrapper;
+      @add-mixin wrapper;
       padding-top: 3rem;
       padding-bottom: 3rem;
       max-width: var(--w-sml);
@@ -104,7 +104,7 @@
     }
   }
 
-  // Compensate for padding-bottom of jump-nav on mobile
+  /* Compensate for padding-bottom of jump-nav on mobile */
   .jump-navigation + .lead {
     padding-top: 3rem;
 

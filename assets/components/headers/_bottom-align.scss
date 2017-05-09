@@ -3,7 +3,7 @@
   & > header:first-child {
 
   	.bottom-align {
-      @mixin grad-bottom;
+      @add-mixin grad-bottom;
       margin-bottom: -1.5625rem;
       align-self: flex-end;
       width: 100%;
@@ -18,7 +18,7 @@
     }
 
     .bottom-align-inverted {
-      @mixin grad-top;
+      @add-mixin grad-top;
       color: #000;
     }
 

@@ -35,7 +35,7 @@
 }
 
 @define-mixin title {
-  @mixin subtitle;
+  @add-mixin subtitle;
   text-align: center;
 
   &::after {
@@ -51,15 +51,15 @@
 
 .uomcontent {
   .subtitle {
-    @mixin subtitle;
+    @add-mixin subtitle;
   }
 
   .title {
-    @mixin title;
+    @add-mixin title;
   }
 
   h1.aligned-title {
-    @mixin aligned-title;
+    @add-mixin aligned-title;
   }
 
   h1.aligned-title + section {

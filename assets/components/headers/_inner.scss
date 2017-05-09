@@ -1,7 +1,7 @@
 .uomcontent {
   header {
     .inner {
-      @mixin clearfix;
+      @add-mixin clearfix;
       max-width: var(--w-lge);
       margin: 0 auto;
       width: 94%;

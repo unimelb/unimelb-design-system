@@ -1,11 +1,13 @@
-// Global variables and mixins, and normalisation styles
+/* Global variables and mixins, and normalisation styles */
 @import '../../shared/globals';
 @import '../../shared/normalize';
 
-// Override default sans-serif font stack
-var(--ff-sans): Helvetica, Arial, sans-serif;
+:root {
+  /* Override default sans-serif font stack */
+  --ff-sans: Helvetica, Arial, sans-serif;
+}
 
-// Import specificcomponents
+/* Import specificcomponents */
 @import '../../components/base/typography';
 @import '../../components/text/index';
 @import '../../components/buttons/index';
@@ -15,10 +17,10 @@ var(--ff-sans): Helvetica, Arial, sans-serif;
 @import '../../components/search/index';
 @import '../../components/filtered-listings/index';
 
-// Print
+/* Print */
 @import '../../shared/print';
 
-// Custom overrides
+/* Custom overrides */
 .uomcontent [role="main"] form {
   color: var(--col-midgray);
 }

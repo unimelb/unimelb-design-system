@@ -1,4 +1,4 @@
-// Print
+/* Print */
 @define-mixin defaults {
   background-color: #fff;
   font-size: 11pt;
@@ -12,14 +12,14 @@
   }
 
   body .uomcontent {
-    @mixin defaults();
+    @add-mixin defaults;
     color: #000 !important;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto;
     max-width: 700px;
 
     * {
-      @mixin defaults;
+      @add-mixin defaults;
     }
 
     .page-header-tools,
@@ -332,7 +332,7 @@
         }
       }
 
-      // Opinion follows
+      /* Opinion follows */
       .accordion__hidden {
         margin-top: 15px;
         max-height: 100%;

@@ -61,7 +61,7 @@
 
 .uomcontent .news-index {
   article {
-    @mixin clearfix;
+    @add-mixin clearfix;
     padding-top: 3rem;
     padding-bottom: 3rem;
     max-width: var(--w-mid);

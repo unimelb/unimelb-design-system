@@ -47,11 +47,11 @@
       max-width: 2000px;
       width: 100%;
 
-      @mixin inner-list-reset;
+      @add-mixin inner-list-reset;
 
       padding: 0;
 
-      // Ridiculous overrides
+      /* Ridiculous overrides */
       ol,
       ul {
         padding-bottom: 1.875rem;
@@ -63,7 +63,7 @@
       }
 
       ol.steps {
-        @mixin inner-list-reset;
+        @add-mixin inner-list-reset;
 
         ol,
         ul {

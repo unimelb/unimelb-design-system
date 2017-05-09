@@ -13,29 +13,29 @@
   }
 
   .flash--success {
-    @mixin notice-success;
+    @add-mixin notice-success;
   }
 
   .flash--info {
-    @mixin notice-info;
+    @add-mixin notice-info;
   }
 
   .flash--warning {
-    @mixin notice-warning;
+    @add-mixin notice-warning;
   }
 
   .flash--danger {
-    @mixin notice-danger;
+    @add-mixin notice-danger;
   }
 
   .flash--center {
     text-align: center;
   }
 
-  // Headerless layout
+  /* Headerless layout */
   .headerless {
     & + .flash {
-      // Keep message against logo between desktop and wide
+      /* Keep message against logo between desktop and wide */
       @media (min-width: 769px) and (max-width: 1098px) {
         padding-left: 12.8125rem;
 
@@ -45,7 +45,7 @@
       }
     }
 
-    // Keep message against logo, even above `wide`
+    /* Keep message against logo, even above `wide` */
     & + .flash--keep-left {
       @media (--bp-wide) {
         padding-left: 12.8125rem;

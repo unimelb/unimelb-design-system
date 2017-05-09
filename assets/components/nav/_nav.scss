@@ -74,7 +74,7 @@ body {
   }
 
   .icon {
-    @mixin imgreplace;
+    @add-mixin imgreplace;
     height: 1.5rem;
     margin-right: .625rem;
     width: 1.5rem;
@@ -112,7 +112,7 @@ body {
 }
 
 .uomcontent ul.quicklinks {
-  @mixin quicklinks;
+  @add-mixin quicklinks;
 }
 
 .uomcontent .sitemap-trigger {

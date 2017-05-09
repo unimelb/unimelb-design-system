@@ -1,5 +1,5 @@
 .uomcontent .block-listing {
-  @mixin clearfix;
+  @add-mixin clearfix;
   margin-bottom: 2rem;
   margin-top: 2rem;
   background-color: transparent;
@@ -62,7 +62,7 @@
   }
 
   .meta {
-    @mixin clearfix;
+    @add-mixin clearfix;
     font-size: .75rem;
     padding: .25rem 1rem;
     background-color: color(#fff alpha(90%));
@@ -541,7 +541,7 @@
         }
       }
 
-      // Hide label for modern browsers
+      /* Hide label for modern browsers */
       .icon-label {
         height: 0;
         text-indent: -999em;
@@ -578,7 +578,7 @@
           float: right;
         }
 
-        // Hide label for modern browsers
+        /* Hide label for modern browsers */
         .icon-label {
           height: 0;
           text-indent: -999em;
@@ -630,7 +630,7 @@
           margin-right: .25rem;
           margin-top: 0;
 
-          // Hide label for modern browsers
+          /* Hide label for modern browsers */
           .icon-label {
             height: 0;
             text-indent: -999em;

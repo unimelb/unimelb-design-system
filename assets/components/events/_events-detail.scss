@@ -1,5 +1,5 @@
 @define-mixin detail {
-  @mixin wrapper;
+  @add-mixin wrapper;
   padding-top: 1.5rem;
   padding-bottom: 3rem;
 
@@ -201,10 +201,10 @@
     }
 
     .presenters {
-      @mixin presenters;
+      @add-mixin presenters;
 
       @media (--bp-desktop) {
-        // margin-left: 18.75rem;
+        /* margin-left: 18.75rem; */
         border: 0 none;
         display: block;
         padding-left: 0;
@@ -273,5 +273,5 @@
 }
 
 .uomcontent .detail {
-  @mixin detail;
+  @add-mixin detail;
 }

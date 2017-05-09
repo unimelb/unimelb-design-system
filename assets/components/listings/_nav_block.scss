@@ -205,7 +205,7 @@
 }
 
 @define-mixin navigation-block-listing-fallback {
-  @mixin clearfix;
+  @add-mixin clearfix;
   margin: 0 auto;
 
   ul li {
@@ -219,7 +219,7 @@
     }
   }
 
-  // 3 rows, hope that is enough
+  /* 3 rows, hope that is enough */
   ul li:first-child + li + li + li,
   ul li:first-child + li + li + li + li + li + li,
   ul li:first-child + li + li + li + li + li + li + li + li + li {
@@ -228,5 +228,5 @@
 }
 
 .ie9 .uomcontent [role="main"] .navigation-block-listing {
-  @mixin navigation-block-listing-fallback;
+  @add-mixin navigation-block-listing-fallback;
 }

@@ -1,5 +1,5 @@
 .uomcontent .hero-listing {
-  @mixin feature-listing;
+  @add-mixin feature-listing;
 
   li {
     max-width: 100%;

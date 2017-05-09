@@ -2,7 +2,7 @@
  * In-page tabs
  */
 [data-tabbed].tabbed {
-  @mixin clearfix;
+  @add-mixin clearfix;
   margin-bottom: 3rem;
   width: 100%;
 
@@ -166,17 +166,17 @@
       }
 
       [data-icon] {
-        // Fix outline bug in Chrome
+        /* Fix outline bug in Chrome */
         overflow: hidden;
         position: relative;
 
         & > .icon-label {
-          @mixin screenreaders-only;
+          @add-mixin screenreaders-only;
         }
       }
     }
 
-    // wrapper added dynamically around nav element when tabs overflow
+    /* wrapper added dynamically around nav element when tabs overflow */
     .tabbed-nav__inner {
       padding-bottom: .9375rem;
       position: relative;
@@ -187,15 +187,15 @@
       z-index: 5;
     }
 
-    // show scrollbar when focused
+    /* show scrollbar when focused */
     .ps-focus .ps-scrollbar-x-rail {
       opacity: 1;
     }
 
-    // left/right arrows when screen size is too small to fit all the tabs
+    /* left/right arrows when screen size is too small to fit all the tabs */
     .tab-arrow {
       font-size: 1.875rem;
-      padding: 0 1.25rem .3125rem; // bottom padding aligns arrows with tab labels
+      padding: 0 1.25rem .3125rem; /* bottom padding aligns arrows with tab labels */
       background: var(--col-darkblue);
       color: #fff;
       display: none;
@@ -226,13 +226,13 @@
       right: 0;
     }
 
-    // show the arrows when the tabs overflow
+    /* show the arrows when the tabs overflow */
     .overflow .tab-arrow {
       display: inline-block;
     }
 
     & > [role="tabpanel"] {
-      @mixin clearfix;
+      @add-mixin clearfix;
       margin-top: -4.375rem;
       padding-top: 4.375rem;
       margin-left: auto;
@@ -322,8 +322,8 @@
       nav a {
         font-size: .8125rem;
         line-height: 1.5rem;
-        line-height: calc(4rem - .125rem); // tabs height minus 1px above and below for outline
-        margin-top: .0625rem; // outline cont.
+        line-height: calc(4rem - .125rem); /* tabs height minus 1px above and below for outline */
+        margin-top: .0625rem; /* outline cont. */
         padding: 0 .9375rem;
       }
 

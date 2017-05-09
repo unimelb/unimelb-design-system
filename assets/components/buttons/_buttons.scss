@@ -81,7 +81,7 @@
 }
 
 @define-mixin flatbutton {
-  @mixin raisedbutton;
+  @add-mixin raisedbutton;
   border-radius: 2px;
   font-size: .75rem;
   padding: .625rem .9375rem;
@@ -222,7 +222,7 @@
 }
 
 @define-mixin iconbutton {
-  @mixin flatbutton;
+  @add-mixin flatbutton;
   font-size: .875rem;
   margin: .625rem 0;
   padding: .3125rem .625rem .3125rem 1.25rem;
@@ -247,40 +247,40 @@
 
 .uomcontent input[type="submit"],
 .uomcontent input[type="button"] {
-  @mixin raisedbutton;
+  @add-mixin raisedbutton;
   width: auto;
 }
 
 .uomcontent {
   .button {
-    @mixin raisedbutton;
+    @add-mixin raisedbutton;
   }
 
   .button-small {
-    @mixin flatbutton;
+    @add-mixin flatbutton;
   }
 
   .with-arrow {
-    @mixin arrow-right;
+    @add-mixin arrow-right;
   }
 
   .with-arrow-left {
-    @mixin arrow-left;
+    @add-mixin arrow-left;
   }
 
   .button-hero {
-    @mixin outlinebutton;
-    @mixin outlinearrow;
+    @add-mixin outlinebutton;
+    @add-mixin outlinearrow;
   }
 
   .button-hero-reverse {
-    @mixin outlinebutton;
-    @mixin outlinearrow-reverse;
+    @add-mixin outlinebutton;
+    @add-mixin outlinearrow-reverse;
   }
 
   .button-hero-inverse {
-    @mixin outlinebutton;
-    @mixin outlinearrow;
+    @add-mixin outlinebutton;
+    @add-mixin outlinearrow;
     border-color: #fff;
     color: #fff;
     outline-color: currentColor;

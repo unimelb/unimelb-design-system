@@ -100,7 +100,7 @@
   }
 
   @media (--bp-tablet) {
-    @mixin clearfix;
+    @add-mixin clearfix;
     padding-bottom: 1.5rem;
 
     .simple-listing__item {

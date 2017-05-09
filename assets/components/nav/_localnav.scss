@@ -172,7 +172,7 @@
   }
 
   .no-js & {
-    @mixin injection-wrapper;
+    @add-mixin injection-wrapper;
     background-color: var(--col-navy);
     box-shadow: 0 0 0;
     display: block;

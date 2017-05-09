@@ -26,7 +26,7 @@
     }
 
     & > li {
-      @mixin clearfix;
+      @add-mixin clearfix;
       padding-bottom: 1.5rem;
       margin-bottom: 1.5rem;
       border-bottom: 1px solid color(#000 alpha(10%));
@@ -39,10 +39,10 @@
       }
 
       &.person {
-        @mixin fallbackAvatarWrapper;
+        @add-mixin fallbackAvatarWrapper;
 
         .person__photo {
-          @mixin fallbackAvatar;
+          @add-mixin fallbackAvatar;
           background-position: center;
           background-size: cover;
           border-radius: 50%;
@@ -143,7 +143,7 @@
         color: var(--col-lighterblue);
 
         & > a {
-          @mixin ellipsis;
+          @add-mixin ellipsis;
         }
       }
 

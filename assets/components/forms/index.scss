@@ -28,7 +28,7 @@
 }
 
 @define-mixin textcontrol {
-  @mixin control;
+  @add-mixin control;
   font-size: 1.25rem;
   background-color: var(--col-lightgray);
   border: 1px solid color(var(--col-lightergray) shade(5%));

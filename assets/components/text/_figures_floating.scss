@@ -52,7 +52,7 @@
 
 .uomcontent {
   .inset-left {
-    @mixin inset;
+    @add-mixin inset;
 
     @media (--bp-tablet) {
       margin-right: 1.875rem;
@@ -74,7 +74,7 @@
   }
 
   .inset-right {
-    @mixin inset;
+    @add-mixin inset;
 
     @media (--bp-tablet) {
       margin-left: 1.875rem;

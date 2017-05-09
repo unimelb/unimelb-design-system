@@ -18,7 +18,7 @@
     }
 
     .enquiry__cta {
-      @mixin wrapper;
+      @add-mixin wrapper;
       font-size: 1.25rem;
       line-height: 3.125rem;
       padding-bottom: 1.5rem;
@@ -38,7 +38,7 @@
     }
 
     .enquiry__subline {
-      @mixin wrapper;
+      @add-mixin wrapper;
       font-size: 1rem;
       line-height: 1.5rem;
       padding-top: .75rem;
@@ -71,7 +71,7 @@
       /* Hide the main legend only if present */
       & > .fields > fieldset {
         legend {
-          @mixin screenreaders-only;
+          @add-mixin screenreaders-only;
         }
       }
 

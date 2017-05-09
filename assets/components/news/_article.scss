@@ -1,6 +1,6 @@
 .uomcontent article.news {
-  @mixin detail;
-  @mixin clearfix;
+  @add-mixin detail;
+  @add-mixin clearfix;
   max-width: var(--w-lge);
   padding-top: 3rem;
 
@@ -45,7 +45,7 @@
 
     /* sidebar links that must not wrap (email, phone, url, etc.) */
     .news__nowrap {
-      @mixin ellipsis;
+      @add-mixin ellipsis;
     }
   }
 

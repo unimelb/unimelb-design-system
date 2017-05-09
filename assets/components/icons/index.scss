@@ -37,12 +37,12 @@
     }
 
     &.icon--hide-label {
-      // Fix outline bug in Chrome
+      /* Fix outline bug in Chrome */
       overflow: hidden;
       position: relative;
 
       & > .icon-label {
-        @mixin screenreaders-only;
+        @add-mixin screenreaders-only;
       }
     }
 

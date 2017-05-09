@@ -1,13 +1,13 @@
-// Global variables and mixins, and normalisation styles
+/* Global variables and mixins, and normalisation styles */
 @import '../../shared/globals';
 @import '../../shared/normalize';
 
-// Injection
+/* Injection */
 @import '../../components/footer/index';
 @import '../../components/header/index';
 @import '../../components/nav/index';
 
-// Components
+/* Components */
 @import '../../components/filtered-listings/index';
 @import '../../components/base/index';
 @import '../../components/text/index';
@@ -38,5 +38,5 @@
 @import '../../components/icons/index';
 @import '../../components/announcement/index';
 
-// Print
+/* Print */
 @import '../../shared/print';

@@ -109,12 +109,12 @@
   input[type="password"],
   input[type="search"],
   input[type="url"] {
-    @mixin textcontrol;
+    @add-mixin textcontrol;
     width: 100%;
   }
 
   textarea {
-    @mixin textcontrol;
+    @add-mixin textcontrol;
     height: 200px;
     width: 100%;
   }
@@ -128,7 +128,7 @@
     input[type="password"],
     input[type="search"],
     input[type="url"] {
-      @mixin textcontrol;
+      @add-mixin textcontrol;
       height: 2.8125rem;
       appearance: none;
       display: block;
@@ -136,7 +136,7 @@
     }
 
     input[type="image"] {
-      @mixin inlinebutton;
+      @add-mixin inlinebutton;
       border-radius: 0 3px 3px 0;
       margin: .9375rem 0 0;
       width: 2.8125rem;
@@ -160,7 +160,7 @@
     }
 
     .inline-button {
-      @mixin inlinebutton;
+      @add-mixin inlinebutton;
       margin: .3125rem 0 0;
     }
   }
@@ -357,7 +357,7 @@
   .invalid input[type="checkbox"]:not(.unstyled),
   .invalid input[type="radio"]:not(.unstyled) {
     & + label + small {
-      padding-top: 1.125rem; // Compensate for negative bottom margin on label
+      padding-top: 1.125rem; /* Compensate for negative bottom margin on label */
     }
   }
 }

@@ -60,6 +60,8 @@ var config = {
     ]
   },
   postcss: [
+    require('postcss-import'),
+    require('postcss-url'),
     require('postcss-mixins'),
     require('postcss-nested'),
     require('postcss-cssnext')({
@@ -89,7 +91,7 @@ if (isDev) {
   config.module.loaders.push(
     {
       test: /\.scss$/,
-      loader: 'style-loader!css-loader?-autoprefixer&-minimize&sourceMap&importLoaders=3!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
+      loader: 'style-loader!css-loader?-autoprefixer&-minimize&sourceMap&importLoaders=1!postcss-loader'
     },
     {
       test: /\.css$/,
@@ -113,7 +115,7 @@ if (isDev) {
       test: /\.scss$/,
       loader: ExtractTextPlugin.extract(
         'style-loader',
-        'css-loader?-autoprefixer&minimize!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
+        'css-loader?-autoprefixer&minimize!postcss-loader'
       )
     },
     {

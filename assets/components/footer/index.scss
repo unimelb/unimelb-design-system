@@ -1,5 +1,5 @@
 .uomcontent .page-footer {
-  @mixin normalise;
+  @add-mixin normalise;
   font-size: 1.25rem;
   background-color: var(--col-navy);
   clear: left;
@@ -7,11 +7,11 @@
   font-family: var(--ff-sans);
 
   * {
-    @mixin normalise;
+    @add-mixin normalise;
   }
 
   footer {
-    @mixin injection-wrapper;
+    @add-mixin injection-wrapper;
     padding: .9375rem;
     padding-bottom: 3.75rem;
     margin-left: auto;
@@ -157,7 +157,7 @@
       width: 44%;
     }
 
-    // nth-child for IE8, up to 9 items
+    /* nth-child for IE8, up to 9 items */
     li:first-child + li,
     li:first-child + li + li + li,
     li:first-child + li + li + li + li + li,
@@ -250,7 +250,7 @@
     }
 
     a {
-      @mixin imgreplace;
+      @add-mixin imgreplace;
       height: 2.25rem;
       padding-bottom: 1rem;
       width: 2.25rem;

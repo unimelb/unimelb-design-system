@@ -17,7 +17,7 @@ body {
 }
 
 .clearfix {
-  @mixin clearfix;
+  @add-mixin clearfix;
 }
 
 .spacer {
@@ -31,13 +31,13 @@ body {
     visibility: hidden;
   }
   .screenreaders-only {
-    @mixin screenreaders-only;
+    @add-mixin screenreaders-only;
   }
   .invisible {
     visibility: hidden;
   }
   .hide-text {
-    @mixin hide-text;
+    @add-mixin hide-text;
   }
 
   & > *:first-child {
@@ -54,7 +54,7 @@ body {
     color: var(--col-darkgray);
     float: right;
 
-    // Override
+    /* Override */
     &.layout-sidebar__side {
       float: none;
     }
@@ -388,7 +388,7 @@ body {
   }
 
   .layout-sidebar {
-    // Fine line to separate any content on white above and below
+    /* Fine line to separate any content on white above and below */
     border-bottom: 2px solid var(--col-paleblue);
     border-top: 2px solid var(--col-paleblue);
 
@@ -510,7 +510,7 @@ body {
     padding-top: 3.125rem;
 
     &::before {
-      @mixin tilt;
+      @add-mixin tilt;
       margin-top: -6.25rem;
       background-color: #fff;
       transform: skewY(-2deg);
@@ -525,7 +525,7 @@ body {
     padding-bottom: 3.125rem;
 
     &::after {
-      @mixin tilt;
+      @add-mixin tilt;
       background-color: #fff;
       transform: skewY(2deg);
     }
@@ -573,7 +573,7 @@ body {
   }
 }
 
-// Uninjected styles
+/* Uninjected styles */
 .uomcontent .page-local-history {
   padding: .9375rem 1.875rem;
   color: var(--col-midblue);

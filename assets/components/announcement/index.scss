@@ -11,7 +11,7 @@
     transition: max-height .2s ease;
 
     &--dismissed {
-      max-height: 0 !important; // Override inline style
+      max-height: 0 !important; /* Override inline style */
     }
 
     &__message {
@@ -93,7 +93,7 @@
         width: 1.5rem;
 
         .icon-label {
-          @mixin screenreaders-only;
+          @add-mixin screenreaders-only;
         }
       }
 

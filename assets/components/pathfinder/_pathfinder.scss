@@ -1,5 +1,5 @@
 @define-mixin pathfinder-3 {
-  @mixin feature-listing-3;
+  @add-mixin feature-listing-3;
   margin-top: 3rem;
   margin-bottom: 3rem;
   background-color: transparent;
@@ -194,7 +194,7 @@
     text-transform: uppercase;
 
     span {
-      // box-orient: vertical;
+      /* box-orient: vertical; */
       left: 0;
       position: absolute;
       top: 50%;
@@ -272,7 +272,7 @@
     max-width: var(--w-lge);
     table-layout: fixed;
 
-    // override clearfix
+    /* override clearfix */
     &::before,
     &::after {
       display: none;
@@ -329,7 +329,7 @@
 }
 
 @define-mixin pathfinder-2 {
-  @mixin pathfinder-3;
+  @add-mixin pathfinder-3;
 
   @media (--bp-desktop) {
     li {
@@ -367,15 +367,15 @@
 
 .uomcontent [role="main"] {
   .pathfinder-3 {
-    @mixin pathfinder-3;
+    @add-mixin pathfinder-3;
   }
 
   .pathfinder-2 {
-    @mixin pathfinder-2;
+    @add-mixin pathfinder-2;
   }
 
   .pathfinder-4 {
-    @mixin pathfinder-2;
+    @add-mixin pathfinder-2;
 
     @media (--bp-desktop) {
       li {

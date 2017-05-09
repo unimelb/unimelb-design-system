@@ -98,7 +98,7 @@
 }
 
 .uomcontent [role="main"] blockquote {
-  @mixin blockquote-modern;
+  @add-mixin blockquote-modern;
   margin-top: 0;
 
   &.blockquote-classic {
@@ -121,7 +121,7 @@
 
     &::after,
     &::before {
-      @mixin quote-style;
+      @add-mixin quote-style;
     }
 
     &::after {

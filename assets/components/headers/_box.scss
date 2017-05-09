@@ -8,7 +8,7 @@
       margin: 0 auto;
 
       h1 {
-        @mixin title;
+        @add-mixin title;
         font-size: .9375rem;
         line-height: 1.5rem;
         margin-bottom: 1.5rem;

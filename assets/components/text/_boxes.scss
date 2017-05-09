@@ -54,11 +54,11 @@
 
 .uomcontent [role="main"] {
   .contact-box {
-    @mixin boxes;
+    @add-mixin boxes;
   }
 
   .highlight-box {
-    @mixin boxes;
+    @add-mixin boxes;
 
     dd {
       font-size: 2.5rem;
@@ -68,7 +68,7 @@
   }
 
   .emergency-box {
-    @mixin boxes;
+    @add-mixin boxes;
     color: var(--col-cherry);
 
     dd {

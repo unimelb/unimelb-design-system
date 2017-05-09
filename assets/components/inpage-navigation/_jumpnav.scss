@@ -52,7 +52,7 @@
 }
 
 .uomcontent [role="main"] .jump-navigation {
-  @mixin jump;
+  @add-mixin jump;
   padding-top: 2.1875rem;
 
   @media (--bp-desktop) {
@@ -66,7 +66,7 @@
 
 body.jumpnav-active {
   .uomcontent #outer {
-    @mixin jump;
+    @add-mixin jump;
 
     @supports (column-span: all) {
       columns: 2;

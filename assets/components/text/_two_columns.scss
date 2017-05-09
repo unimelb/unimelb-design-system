@@ -1,5 +1,5 @@
 @define-mixin half {
-  @mixin wrapper;
+  @add-mixin wrapper;
   padding-bottom: 1.875rem;
   padding-top: 1.875rem;
   max-width: 100%;
@@ -16,7 +16,7 @@
     width: 100%;
   }
 
-  // Override for specific behaviour
+  /* Override for specific behaviour */
   .staff-listing-detailed img {
     padding: 0;
   }
@@ -64,5 +64,5 @@
 
 .uomcontent .half,
 .uomcontent [role="main"] .half {
-  @mixin half;
+  @add-mixin half;
 }

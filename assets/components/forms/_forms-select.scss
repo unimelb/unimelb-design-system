@@ -141,14 +141,14 @@
   width: 100%;
 }
 
-// The horror
+/* The horror */
 .uomcontent .styled-select {
-  @mixin theme;
+  @add-mixin theme;
   border-radius: 3px;
   padding: 0;
 
   select {
-    @mixin theme;
+    @add-mixin theme;
     border-radius: 3px;
     padding: .5rem .625rem;
     appearance: none;

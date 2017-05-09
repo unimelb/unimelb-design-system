@@ -1,6 +1,6 @@
 .uomcontent {
   .timeline {
-    @mixin clearfix;
+    @add-mixin clearfix;
     max-width: var(--w-mid);
     font-size: 1em;
     color: var(--col-midgray);

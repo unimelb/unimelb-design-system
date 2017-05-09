@@ -133,7 +133,7 @@
   p,
   li,
   table {
-    @mixin wrapper;
+    @add-mixin wrapper;
     max-width: var(--w-sml);
     font-weight: var(--fw-light);
     padding: 0;
@@ -223,9 +223,9 @@
       }
     }
 
-    @mixin inner-list-reset;
+    @add-mixin inner-list-reset;
 
-    // Remove bottom padding for inner lists
+    /* Remove bottom padding for inner lists */
     ol,
     ul {
       padding-bottom: 0;
@@ -380,7 +380,7 @@
     }
   }
 
-  // Nested aggregation
+  /* Nested aggregation */
   ol.nested {
     counter-reset: section;
     list-style-type: none;
@@ -483,12 +483,12 @@
   	}
 
     &.ticked-list {
-      @mixin ticks;
+      @add-mixin ticks;
     }
   }
 
   .ticked-list ul {
-    @mixin ticks;
+    @add-mixin ticks;
   }
 
   dl {
