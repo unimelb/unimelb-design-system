@@ -98,8 +98,11 @@ Recommended mobile devices for testing:
 
 1. Create a local branch off the most recent legacy tag - e.g. `git checkout tags/v5.0.1 -b fix-something-in-injection`
 2. Recreate `.env` from `.env.example` and set `CDNURL` to `"https://d2h9b02ioca40d.cloudfront.net/shared"`
-3. Fix whatever you need to fix in the injection and commit the changes.
+3. Fix whatever you need to fix in the injection and commit the changes to your local branch (don't push them).
 4. Run `NODE_ENV=production npm run build` to compile the targets.
-5. Copy the files to slingshot, test your changes and deploy.
-6. Create a tag from your branch - e.g. `git tag v5.0.2`, then `git push origin v5.0.2`.
-7. Delete your local branch - e.g. `git branch -d v5.0.2`.
+5. Copy the compiled injection files in the `build` folder to slingshot.
+6. In slingshot, inside `src/templates`, duplicate the latest version's folder and rename it to, for instance, `v5.0.2`.
+7. Run `bundle exec rake slingshot:compile`, then start a local web server and test your changes.
+8. Commit your changes, then go back to the design system.
+9. Create a tag from your branch and push it - e.g. `git tag v5.0.2`, then `git push origin v5.0.2`.
+10. Delete your local branch - e.g. `git branch -D fix-something-in-injection`.
