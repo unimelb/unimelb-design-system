@@ -156,7 +156,7 @@
     transform: translateX(-100%);
   }
 
-  @include breakpoint(tablet) {
+  @mixin breakpoint(tablet) {
     /* switch to fixed width */
     right: var(--offset-localnav);
     width: var(--width-localnav);
@@ -172,7 +172,7 @@
   }
 
   .no-js & {
-    @include injection-wrapper;
+    @mixin injection-wrapper;
     background-color: var(--col-navy);
     box-shadow: 0 0 0;
     display: block;

@@ -1,5 +1,5 @@
-@mixin half {
-  @include wrapper;
+@define-mixin half {
+  @mixin wrapper;
   padding-bottom: 1.875rem;
   padding-top: 1.875rem;
   max-width: 100%;
@@ -39,7 +39,7 @@
       width: 100%;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       padding: 1.875rem .9375rem;
       display: table-cell;
       vertical-align: top;
@@ -51,7 +51,7 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     max-width: var(--w-lge);
     display: table;
 
@@ -64,5 +64,5 @@
 
 .uomcontent .half,
 .uomcontent [role="main"] .half {
-  @include half;
+  @mixin half;
 }

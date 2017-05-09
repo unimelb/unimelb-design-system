@@ -34,7 +34,7 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     max-width: 250rem;
     background-color: transparent;
     display: table;
@@ -60,7 +60,7 @@
     }
   }
 
-  @include breakpoint(wide) {
+  @mixin breakpoint(wide) {
     li {
       height: 3.75rem;
     }

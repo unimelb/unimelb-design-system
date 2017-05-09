@@ -8,22 +8,22 @@
     padding-top: 0;
     position: relative;
 
-    @include breakpoint(height-smallest) {
+    @mixin breakpoint(height-smallest) {
       max-width: 21.875rem;
       padding-bottom: 21.875rem;
     }
 
-    @include breakpoint(height-small) {
+    @mixin breakpoint(height-small) {
       max-width: 25rem;
       padding-bottom: 25rem;
     }
 
-    @include breakpoint(height-medium) {
+    @mixin breakpoint(height-medium) {
       max-width: 31.25rem;
       padding-bottom: 31.25rem;
     }
 
-    @include breakpoint(height-big) {
+    @mixin breakpoint(height-big) {
       max-width: 37.5rem;
       padding-bottom: 37.5rem;
     }
@@ -43,7 +43,7 @@
     iframe {
       width: 100%;
 
-      @include breakpoint(wide) {
+      @mixin breakpoint(wide) {
         margin-left: 15%;
         width: 70%;
       }

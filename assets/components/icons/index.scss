@@ -42,7 +42,7 @@
       position: relative;
 
       & > .icon-label {
-        @include screenreaders-only;
+        @mixin screenreaders-only;
       }
     }
 

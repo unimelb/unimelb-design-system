@@ -1,4 +1,4 @@
-@mixin modal-close-icon {
+@define-mixin modal-close-icon {
   content: '\2573';
   display: block;
   font-size: 14px;
@@ -62,7 +62,7 @@
     width: 50px;
 
     &::before {
-      @include modal-close-icon;
+      @mixin modal-close-icon;
     }
 
     &:hover,

@@ -1,4 +1,4 @@
-@mixin tilt {
+@define-mixin tilt {
   height: 6.25rem;
   content: "";
   width: 100%;
@@ -11,13 +11,13 @@ body {
   color: #000;
   font-family: var(--ff-sans);
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     line-height: 1.68;
   }
 }
 
 .clearfix {
-  @include clearfix;
+  @mixin clearfix;
 }
 
 .spacer {
@@ -31,13 +31,13 @@ body {
     visibility: hidden;
   }
   .screenreaders-only {
-    @include screenreaders-only;
+    @mixin screenreaders-only;
   }
   .invisible {
     visibility: hidden;
   }
   .hide-text {
-    @include hide-text;
+    @mixin hide-text;
   }
 
   & > *:first-child {
@@ -150,7 +150,7 @@ body {
     & + .video {
       margin-top: -1.875rem;
       max-width: var(--w-lge);
-      @include breakpoint(87.5em) {
+      @mixin breakpoint(87.5em) {
         margin-left: auto;
         margin-right: auto;
         padding-bottom: 550px;
@@ -221,7 +221,7 @@ body {
       p {
         padding-top: 0;
 
-        @include breakpoint(desktop) {
+        @mixin breakpoint(desktop) {
           padding-left: 0;
         }
       }
@@ -235,7 +235,7 @@ body {
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     font-weight: var(--fw-light);
   }
 
@@ -258,7 +258,7 @@ body {
       width: 100%;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       display: inline-block;
       float: none;
       width: 25%;
@@ -278,14 +278,14 @@ body {
         width: 100%;
       }
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         width: 24%;
 
       }
     }
 
     .bside {
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         padding-bottom: 1.25rem;
         padding-top: 1.25rem;
       }
@@ -302,7 +302,7 @@ body {
     text-align: center;
     width: 100%;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       width: 814px;
     }
 
@@ -348,7 +348,7 @@ body {
     width: 94%;
 
 
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       margin-bottom: .9375rem;
       max-width: var(--w-lge);
       width: 100%;
@@ -372,7 +372,7 @@ body {
       text-align: left;
       width: 82%;
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         float: left;
         margin: 0;
         padding: 0;
@@ -422,7 +422,7 @@ body {
       }
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       display: table;
       width: 100%;
 
@@ -444,7 +444,7 @@ body {
       }
     }
 
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       &__main,
       &__side {
         padding: 4.5rem 2rem;
@@ -472,7 +472,7 @@ body {
       }
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       width: 68.6875rem;
       margin: 0 auto;
 
@@ -510,7 +510,7 @@ body {
     padding-top: 3.125rem;
 
     &::before {
-      @include tilt;
+      @mixin tilt;
       margin-top: -6.25rem;
       background-color: #fff;
       transform: skewY(-2deg);
@@ -525,7 +525,7 @@ body {
     padding-bottom: 3.125rem;
 
     &::after {
-      @include tilt;
+      @mixin tilt;
       background-color: #fff;
       transform: skewY(2deg);
     }
@@ -631,7 +631,7 @@ body {
       vertical-align: middle;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       padding: 0 0 1.875rem;
       text-align: center;
 
@@ -644,7 +644,7 @@ body {
     }
 
     &.site-links {
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         padding-top: 1.875rem;
       }
     }

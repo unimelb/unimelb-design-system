@@ -1,6 +1,6 @@
 .uomcontent [role="main"] {
   .notice {
-    @include wrapper;
+    @mixin wrapper;
     margin-bottom: .9375rem;
     max-width: var(--w-sml);
     padding: .9375rem;
@@ -15,24 +15,24 @@
       color: inherit;
     }
 
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       max-width: var(--w-sml);
     }
   }
 
   .notice--success {
-    @include notice-success;
+    @mixin notice-success;
   }
 
   .notice--info {
-    @include notice-info;
+    @mixin notice-info;
   }
 
   .notice--warning {
-    @include notice-warning;
+    @mixin notice-warning;
   }
 
   .notice--danger {
-    @include notice-danger;
+    @mixin notice-danger;
   }
 }

@@ -3,7 +3,7 @@
   to { filter: hue-rotate(-360deg); }
 }
 
-@mixin inner-list-reset {
+@define-mixin inner-list-reset {
   padding-bottom: 1.875rem;
 
   ul li {
@@ -44,10 +44,10 @@
   }
 }
 
-@mixin ticks {
+@define-mixin ticks {
   padding-left: 1.875rem;
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     padding-left: 1.25rem;
   }
 
@@ -133,12 +133,12 @@
   p,
   li,
   table {
-    @include wrapper;
+    @mixin wrapper;
     max-width: var(--w-sml);
     font-weight: var(--fw-light);
     padding: 0;
 
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       max-width: var(--w-sml);
     }
   }
@@ -149,7 +149,7 @@
     padding-bottom: 1.5rem;
     font-weight: var(--fw-light);
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       font-size: 2.0625rem;
       line-height: 3rem;
     }
@@ -213,7 +213,7 @@
     }
 
     &.nobullet {
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         padding-left: 0;
       }
 
@@ -223,7 +223,7 @@
       }
     }
 
-    @include inner-list-reset;
+    @mixin inner-list-reset;
 
     // Remove bottom padding for inner lists
     ol,
@@ -318,7 +318,7 @@
         font-weight: var(--fw-light);
         text-transform: none;
 
-        @include breakpoint(desktop) {
+        @mixin breakpoint(desktop) {
           font-size: 2.0625rem;
           line-height: 3rem;
         }
@@ -331,7 +331,7 @@
         padding-top: .5em;
       }
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         & > li {
           & > * {
             max-width: 650px !important;
@@ -346,14 +346,14 @@
         }
       }
 
-      @include breakpoint(860px) {
+      @mixin breakpoint(860px) {
         & > li {
           margin-right: 0;
           padding-left: 0;
         }
       }
 
-      @include breakpoint(wide) {
+      @mixin breakpoint(wide) {
         & > li {
           padding-left: 6.875rem;
 
@@ -372,7 +372,7 @@
         }
       }
 
-      @include breakpoint(1400px) {
+      @mixin breakpoint(1400px) {
         & > li > * {
           max-width: 700px !important;
         }
@@ -483,12 +483,12 @@
   	}
 
     &.ticked-list {
-      @include ticks;
+      @mixin ticks;
     }
   }
 
   .ticked-list ul {
-    @include ticks;
+    @mixin ticks;
   }
 
   dl {
@@ -528,7 +528,7 @@
         line-height: 1;
       }
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         padding: .625rem 1.875rem;
         display: inline-block;
         width: 75%;
@@ -623,7 +623,7 @@
       width: 100%;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       font-size: 2.94375rem;
       padding-bottom: 1.5rem;
       padding-top: 1.875rem;

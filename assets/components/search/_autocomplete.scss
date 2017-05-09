@@ -10,7 +10,7 @@
     width: 97%;
     z-index: 5;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       width: 91.5%;
     }
 

@@ -46,13 +46,13 @@
       font-style: italic;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       font-size: 1.375rem;
       line-height: 2.25rem;
     }
 
     &.left {
-      @include wrapper;
+      @mixin wrapper;
       padding-top: 3rem;
       padding-bottom: 3rem;
       max-width: var(--w-sml);
@@ -96,7 +96,7 @@
     margin: 0 auto;
     padding: 0;
 
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       max-width: var(--w-sml);
       padding-left: 0;
       padding-right: 0;
@@ -108,14 +108,14 @@
   .jump-navigation + .lead {
     padding-top: 3rem;
 
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       padding-top: 4.5rem;
     }
 
     &.left {
       padding-top: 1.5rem;
 
-      @include breakpoint(wide) {
+      @mixin breakpoint(wide) {
         padding-top: 3rem;
       }
     }

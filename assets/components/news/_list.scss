@@ -49,7 +49,7 @@
     padding: 0;
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
 
@@ -61,7 +61,7 @@
 
 .uomcontent .news-index {
   article {
-    @include clearfix;
+    @mixin clearfix;
     padding-top: 3rem;
     padding-bottom: 3rem;
     max-width: var(--w-mid);
@@ -111,7 +111,7 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     article {
       padding-left: 1.25rem;
       padding-right: 1.25rem;
@@ -141,7 +141,7 @@
       line-height: 2.25rem;
     }
 
-    @include breakpoint(925px) {
+    @mixin breakpoint(925px) {
       article {
         padding-left: 0;
         padding-right: 0;
@@ -174,7 +174,7 @@
       }
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       h1 {
         font-size: 1.25rem;
         line-height: 1.5rem;
@@ -231,7 +231,7 @@
         width: auto;
       }
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         img + p + h1 {
           margin-left: 16.875rem;
         }
@@ -242,7 +242,7 @@
       }
     }
 
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       margin: 0 auto;
       padding-left: 0;
       padding-right: 0;
@@ -258,7 +258,7 @@
       }
     }
 
-    @include breakpoint(920px) {
+    @mixin breakpoint(920px) {
       width: 94%;
     }
   }

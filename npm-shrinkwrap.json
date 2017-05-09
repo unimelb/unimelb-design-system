@@ -104,6 +104,18 @@
       "resolved": "https://registry.npmjs.org/array-flatten/-/array-flatten-1.1.1.tgz",
       "dev": true
     },
+    "array-union": {
+      "version": "1.0.2",
+      "from": "array-union@>=1.0.1 <2.0.0",
+      "resolved": "https://registry.npmjs.org/array-union/-/array-union-1.0.2.tgz",
+      "dev": true
+    },
+    "array-uniq": {
+      "version": "1.0.3",
+      "from": "array-uniq@>=1.0.1 <2.0.0",
+      "resolved": "https://registry.npmjs.org/array-uniq/-/array-uniq-1.0.3.tgz",
+      "dev": true
+    },
     "array-unique": {
       "version": "0.2.1",
       "from": "array-unique@>=0.2.1 <0.3.0",
@@ -610,6 +622,12 @@
       "version": "1.2.1",
       "from": "camelcase@>=1.0.2 <2.0.0",
       "resolved": "https://registry.npmjs.org/camelcase/-/camelcase-1.2.1.tgz",
+      "dev": true
+    },
+    "camelcase-css": {
+      "version": "1.0.1",
+      "from": "camelcase-css@>=1.0.1 <2.0.0",
+      "resolved": "https://registry.npmjs.org/camelcase-css/-/camelcase-css-1.0.1.tgz",
       "dev": true
     },
     "camelcase-keys": {
@@ -2257,6 +2275,12 @@
       "resolved": "https://registry.npmjs.org/globals/-/globals-9.17.0.tgz",
       "dev": true
     },
+    "globby": {
+      "version": "6.1.0",
+      "from": "globby@>=6.1.0 <7.0.0",
+      "resolved": "https://registry.npmjs.org/globby/-/globby-6.1.0.tgz",
+      "dev": true
+    },
     "globule": {
       "version": "1.1.0",
       "from": "globule@>=1.0.0 <2.0.0",
@@ -3674,6 +3698,26 @@
       "resolved": "https://registry.npmjs.org/postcss-initial/-/postcss-initial-1.5.3.tgz",
       "dev": true
     },
+    "postcss-js": {
+      "version": "1.0.0",
+      "from": "postcss-js@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/postcss-js/-/postcss-js-1.0.0.tgz",
+      "dev": true,
+      "dependencies": {
+        "postcss": {
+          "version": "6.0.1",
+          "from": "postcss@^6.0.1",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-6.0.1.tgz",
+          "dev": true
+        },
+        "supports-color": {
+          "version": "3.2.3",
+          "from": "supports-color@^3.2.3",
+          "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-3.2.3.tgz",
+          "dev": true
+        }
+      }
+    },
     "postcss-loader": {
       "version": "0.13.0",
       "from": "postcss-loader@>=0.13.0 <0.14.0",
@@ -3733,6 +3777,26 @@
       "from": "postcss-minify-selectors@>=2.0.4 <3.0.0",
       "resolved": "https://registry.npmjs.org/postcss-minify-selectors/-/postcss-minify-selectors-2.1.1.tgz",
       "dev": true
+    },
+    "postcss-mixins": {
+      "version": "6.0.0",
+      "from": "postcss-mixins@latest",
+      "resolved": "https://registry.npmjs.org/postcss-mixins/-/postcss-mixins-6.0.0.tgz",
+      "dev": true,
+      "dependencies": {
+        "postcss": {
+          "version": "6.0.1",
+          "from": "postcss@>=6.0.1 <7.0.0",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-6.0.1.tgz",
+          "dev": true
+        },
+        "supports-color": {
+          "version": "3.2.3",
+          "from": "supports-color@>=3.2.3 <4.0.0",
+          "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-3.2.3.tgz",
+          "dev": true
+        }
+      }
     },
     "postcss-modules-extract-imports": {
       "version": "1.0.1",
@@ -3871,6 +3935,26 @@
       "from": "postcss-selector-parser@>=2.2.2 <3.0.0",
       "resolved": "https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-2.2.3.tgz",
       "dev": true
+    },
+    "postcss-simple-vars": {
+      "version": "4.0.0",
+      "from": "postcss-simple-vars@>=4.0.0 <5.0.0",
+      "resolved": "https://registry.npmjs.org/postcss-simple-vars/-/postcss-simple-vars-4.0.0.tgz",
+      "dev": true,
+      "dependencies": {
+        "postcss": {
+          "version": "6.0.1",
+          "from": "postcss@^6.0.1",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-6.0.1.tgz",
+          "dev": true
+        },
+        "supports-color": {
+          "version": "3.2.3",
+          "from": "supports-color@^3.2.3",
+          "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-3.2.3.tgz",
+          "dev": true
+        }
+      }
     },
     "postcss-svgo": {
       "version": "2.1.6",
@@ -4660,6 +4744,26 @@
           "version": "1.1.0",
           "from": "loader-utils@>=1.0.2 <2.0.0",
           "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.1.0.tgz",
+          "dev": true
+        }
+      }
+    },
+    "sugarss": {
+      "version": "1.0.0",
+      "from": "sugarss@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/sugarss/-/sugarss-1.0.0.tgz",
+      "dev": true,
+      "dependencies": {
+        "postcss": {
+          "version": "6.0.1",
+          "from": "postcss@^6.0.0",
+          "resolved": "https://registry.npmjs.org/postcss/-/postcss-6.0.1.tgz",
+          "dev": true
+        },
+        "supports-color": {
+          "version": "3.2.3",
+          "from": "supports-color@^3.2.3",
+          "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-3.2.3.tgz",
           "dev": true
         }
       }

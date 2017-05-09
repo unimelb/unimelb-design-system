@@ -1,6 +1,6 @@
 .uomcontent {
   .timeline {
-    @include clearfix;
+    @mixin clearfix;
     max-width: var(--w-mid);
     font-size: 1em;
     color: var(--col-midgray);
@@ -132,7 +132,7 @@
       color: var(--col-navy);
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       &::before {
         left: 32.5%;
       }
@@ -207,7 +207,7 @@
       top: -5px;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       padding: 0;
 
       &::before {

@@ -1,5 +1,5 @@
-@mixin pathfinder-3 {
-  @include feature-listing-3;
+@define-mixin pathfinder-3 {
+  @mixin feature-listing-3;
   margin-top: 3rem;
   margin-bottom: 3rem;
   background-color: transparent;
@@ -84,7 +84,7 @@
       color: #000;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       li {
         border-left: 1px solid var(--col-lightergray);
 
@@ -262,7 +262,7 @@
     background-color: transparent;
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     padding-top: 3rem;
     padding-bottom: 3rem;
     display: table;
@@ -328,10 +328,10 @@
   }
 }
 
-@mixin pathfinder-2 {
-  @include pathfinder-3;
+@define-mixin pathfinder-2 {
+  @mixin pathfinder-3;
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     li {
       padding-left: .0625rem;
       padding-right: 0;
@@ -354,7 +354,7 @@
   }
 
   &.soft {
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       max-width: 1100px;
 
       li {
@@ -367,17 +367,17 @@
 
 .uomcontent [role="main"] {
   .pathfinder-3 {
-    @include pathfinder-3;
+    @mixin pathfinder-3;
   }
 
   .pathfinder-2 {
-    @include pathfinder-2;
+    @mixin pathfinder-2;
   }
 
   .pathfinder-4 {
-    @include pathfinder-2;
+    @mixin pathfinder-2;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       li {
         margin-bottom: .0625rem;
         display: inline-block;
@@ -391,7 +391,7 @@
       }
     }
 
-    @include breakpoint(1400px) {
+    @mixin breakpoint(1400px) {
       li {
         display: table-cell;
         height: 100%;
@@ -412,7 +412,7 @@
     }
 
     &.soft {
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         li {
           padding-left: .0625rem;
           text-align: left;

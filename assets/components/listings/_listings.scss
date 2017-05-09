@@ -1,13 +1,13 @@
-@mixin horizontal-align {
+@define-mixin horizontal-align {
   transform: translateX(-50%);
 }
 
-@mixin vertical-align {
+@define-mixin vertical-align {
   transform: translateY(-50%);
 }
 
-@mixin listing {
-  @include clearfix;
+@define-mixin listing {
+  @mixin clearfix;
   padding-bottom: 3rem;
   margin: 0 auto;
   max-width: var(--w-lge);
@@ -84,7 +84,7 @@
     }
   }
 
-  @include breakpoint(tablet) {
+  @mixin breakpoint(tablet) {
     padding-top: 3rem;
     img {
       max-width: 100%;
@@ -122,13 +122,13 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     li,
     li.alt {
       width: 32.9%;
     }
   }
-  @include breakpoint(wide) {
+  @mixin breakpoint(wide) {
     li,
     li.alt {
       width: 24.7%;
@@ -138,7 +138,7 @@
 
 .uomcontent {
   .listing {
-    @include listing;
+    @mixin listing;
   }
 
   .noborder {
@@ -152,13 +152,13 @@
 }
 
 body.jumpnav-active .uomcontent .listing {
-  @include breakpoint(wide) {
+  @mixin breakpoint(wide) {
     li {
       width: 32.9%;
     }
   }
 
-  @include breakpoint(1400px) {
+  @mixin breakpoint(1400px) {
     li {
       width: 24.7%;
     }
@@ -166,7 +166,7 @@ body.jumpnav-active .uomcontent .listing {
 }
 
 body.jumpnav-active .uomcontent [role="main"] .pathfinder-4 {
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     li {
       display: inline-block;
       height: auto;
@@ -180,7 +180,7 @@ body.jumpnav-active .uomcontent [role="main"] .pathfinder-4 {
     }
   }
 
-  @include breakpoint(1400px) {
+  @mixin breakpoint(1400px) {
     li {
       display: table-cell;
       height: 100%;

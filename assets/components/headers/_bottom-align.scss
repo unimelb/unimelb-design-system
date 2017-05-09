@@ -3,7 +3,7 @@
   & > header:first-child {
 
   	.bottom-align {
-      @include grad-bottom;
+      @mixin grad-bottom;
       margin-bottom: -1.5625rem;
       align-self: flex-end;
       width: 100%;
@@ -12,13 +12,13 @@
         padding-bottom: 1.5rem;
       }
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         margin-bottom: -3rem;
       }
     }
 
     .bottom-align-inverted {
-      @include grad-top;
+      @mixin grad-top;
       color: #000;
     }
 
@@ -47,7 +47,7 @@
         }
       }
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         margin-bottom: -3rem;
       }
     }

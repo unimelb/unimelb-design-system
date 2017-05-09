@@ -99,8 +99,8 @@
     }
   }
 
-  @include breakpoint(tablet) {
-    @include clearfix;
+  @mixin breakpoint(tablet) {
+    @mixin clearfix;
     padding-bottom: 1.5rem;
 
     .simple-listing__item {
@@ -121,7 +121,7 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     padding: 0 .625rem 1.5rem;
 
     .simple-listing__item {
@@ -166,7 +166,7 @@
     }
   }
 
-  @include breakpoint(wide) {
+  @mixin breakpoint(wide) {
     &--four {
       .simple-listing__item {
         width: 25%;

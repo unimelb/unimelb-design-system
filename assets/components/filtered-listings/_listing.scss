@@ -32,7 +32,7 @@
       }
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       padding-left: .9375rem;
       float: left;
       margin: 0;
@@ -45,7 +45,7 @@
   }
 
   .bside {
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       padding: .625rem 0 .625rem 1.875rem;
       float: right;
       width: 70%;
@@ -54,7 +54,7 @@
 }
 
 .uomcontent .filtered-listing-grid {
-  @include clearfix;
+  @mixin clearfix;
   left: 0;
   margin: 0 3%;
   max-width: 100%;
@@ -62,7 +62,7 @@
   transition-property: height, width;
   transition-duration: 0.4s;
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     margin: 0;
     width: 100%;
   }
@@ -79,7 +79,7 @@
     transition-duration: 0.4s;
     transition-property: opacity;
 
-    @include breakpoint(43.75em) {
+    @mixin breakpoint(43.75em) {
       float: left;
       margin: 0;
       padding-bottom: 4px;
@@ -87,12 +87,12 @@
       width: 48%;
     }
 
-    @include breakpoint(56.25em) {
+    @mixin breakpoint(56.25em) {
       margin: 0;
       width: 31.333%;
     }
 
-    @include breakpoint(68.75em) {
+    @mixin breakpoint(68.75em) {
       margin: 0;
       width: 24%;
     }
@@ -124,7 +124,7 @@
       color: var(--col-darkgray);
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       max-width: 11.25rem;
     }
   }

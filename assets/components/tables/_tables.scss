@@ -4,7 +4,7 @@
   overflow-x: scroll;
   width: 100%;
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     overflow-x: visible;
   }
 }
@@ -175,7 +175,7 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     max-width: var(--w-mid);
     border: 1px solid var(--col-lightergray);
     overflow: visible;

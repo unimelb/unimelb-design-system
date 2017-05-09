@@ -1,5 +1,5 @@
 // Print
-@mixin defaults {
+@define-mixin defaults {
   background-color: #fff;
   font-size: 11pt;
   font-weight: 400;
@@ -12,14 +12,14 @@
   }
 
   body .uomcontent {
-    @include defaults();
+    @mixin defaults();
     color: #000 !important;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto;
     max-width: 700px;
 
     * {
-      @include defaults;
+      @mixin defaults;
     }
 
     .page-header-tools,

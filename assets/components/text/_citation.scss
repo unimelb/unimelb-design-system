@@ -6,7 +6,7 @@
     & > .citation {
       list-style: none;
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         margin-left: 0;
       }
 

@@ -1,4 +1,4 @@
-@mixin jump {
+@define-mixin jump {
   color: var(--col-gray);
   list-style-position: inside;
   margin: 0 auto;
@@ -52,21 +52,21 @@
 }
 
 .uomcontent [role="main"] .jump-navigation {
-  @include jump;
+  @mixin jump;
   padding-top: 2.1875rem;
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     padding-top: 5rem;
   }
 
-  @include breakpoint(wide) {
+  @mixin breakpoint(wide) {
     padding-top: 2.1875rem;
   }
 }
 
 body.jumpnav-active {
   .uomcontent #outer {
-    @include jump;
+    @mixin jump;
 
     @supports (column-span: all) {
       columns: 2;
@@ -80,12 +80,12 @@ body.jumpnav-active {
         }
       }
 
-      @include breakpoint(wide) {
+      @mixin breakpoint(wide) {
         columns: auto;
       }
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       padding-top: 5rem;
 
       li:first-child {
@@ -97,7 +97,7 @@ body.jumpnav-active {
       }
     }
 
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       display: table;
       margin-top: 33px;
       padding: 15px 15px 30px;
@@ -140,7 +140,7 @@ body.jumpnav-active {
     }
   }
 
-  @include breakpoint(wide) {
+  @mixin breakpoint(wide) {
     .page-inner {
       background-color: #fff;
     }

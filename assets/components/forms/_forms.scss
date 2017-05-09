@@ -1,4 +1,4 @@
-@mixin inlinebutton {
+@define-mixin inlinebutton {
   border-radius: 3px;
   font-size: .8125rem;
   height: 2.8125rem;
@@ -31,7 +31,7 @@
   margin: 0 auto;
   max-width: var(--w-sml);
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     padding: .625rem 1.875rem;
   }
 
@@ -84,7 +84,7 @@
     position: relative;
     width: 100%;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       width: 25.75rem;
       display: inline-block;
     }
@@ -109,12 +109,12 @@
   input[type="password"],
   input[type="search"],
   input[type="url"] {
-    @include textcontrol;
+    @mixin textcontrol;
     width: 100%;
   }
 
   textarea {
-    @include textcontrol;
+    @mixin textcontrol;
     height: 200px;
     width: 100%;
   }
@@ -128,7 +128,7 @@
     input[type="password"],
     input[type="search"],
     input[type="url"] {
-      @include textcontrol;
+      @mixin textcontrol;
       height: 2.8125rem;
       appearance: none;
       display: block;
@@ -136,7 +136,7 @@
     }
 
     input[type="image"] {
-      @include inlinebutton;
+      @mixin inlinebutton;
       border-radius: 0 3px 3px 0;
       margin: .9375rem 0 0;
       width: 2.8125rem;
@@ -160,7 +160,7 @@
     }
 
     .inline-button {
-      @include inlinebutton;
+      @mixin inlinebutton;
       margin: .3125rem 0 0;
     }
   }
@@ -394,7 +394,7 @@
       color: #fff;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
 
       fieldset {
         display: table;
@@ -419,7 +419,7 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     padding-top: 0;
   }
 }

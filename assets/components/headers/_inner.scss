@@ -1,7 +1,7 @@
 .uomcontent {
   header {
     .inner {
-      @include clearfix;
+      @mixin clearfix;
       max-width: var(--w-lge);
       margin: 0 auto;
       width: 94%;
@@ -28,13 +28,13 @@
           font-weight: var(--fw-light);
           line-height: 1.2;
 
-          @include breakpoint(desktop) {
+          @mixin breakpoint(desktop) {
             margin-top: -.9375rem;
           }
         }
       }
 
-      @include breakpoint(tablet) {
+      @mixin breakpoint(tablet) {
         .left {
           float: left;
           width: 75%;

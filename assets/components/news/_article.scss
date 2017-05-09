@@ -1,6 +1,6 @@
 .uomcontent article.news {
-  @include detail;
-  @include clearfix;
+  @mixin detail;
+  @mixin clearfix;
   max-width: var(--w-lge);
   padding-top: 3rem;
 
@@ -45,7 +45,7 @@
 
     /* sidebar links that must not wrap (email, phone, url, etc.) */
     .news__nowrap {
-      @include ellipsis;
+      @mixin ellipsis;
     }
   }
 
@@ -90,7 +90,7 @@
     margin-bottom: 1.5rem;
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     margin-left: auto;
     margin-right: auto;
 
@@ -129,7 +129,7 @@
     }
   }
 
-  @include breakpoint(wide) {
+  @mixin breakpoint(wide) {
     .article {
       width: 75%;
     }

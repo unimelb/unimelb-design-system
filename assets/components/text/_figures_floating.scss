@@ -1,4 +1,4 @@
-@mixin inset {
+@define-mixin inset {
   margin-top: .375rem;
   float: none;
   margin-bottom: 0;
@@ -22,7 +22,7 @@
     max-height: 31.25rem;
   }
 
-  @include breakpoint(tablet) {
+  @mixin breakpoint(tablet) {
     margin-bottom: 1.875rem;
     border: 0 none;
     max-width: 62%;
@@ -44,7 +44,7 @@
     }
   }
 
-  @include breakpoint(wide) {
+  @mixin breakpoint(wide) {
     margin-bottom: 1.25rem;
     max-width: 80%;
   }
@@ -52,9 +52,9 @@
 
 .uomcontent {
   .inset-left {
-    @include inset;
+    @mixin inset;
 
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       margin-right: 1.875rem;
       float: left;
       text-align: left;
@@ -68,15 +68,15 @@
       }
     }
 
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       margin-left: -11.25rem;
     }
   }
 
   .inset-right {
-    @include inset;
+    @mixin inset;
 
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       margin-left: 1.875rem;
       float: right;
       text-align: right;
@@ -90,7 +90,7 @@
       }
     }
 
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       margin-right: -11.25rem;
     }
   }
@@ -98,13 +98,13 @@
 
 body.jumpnav-active .uomcontent {
   .inset-left {
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       margin-left: 0;
       max-width: 100%;
       padding: 0;
     }
 
-    @include breakpoint(1400px) {
+    @mixin breakpoint(1400px) {
       margin-bottom: 1.25rem;
       margin-left: -11.25rem;
       max-width: 80%;
@@ -112,14 +112,14 @@ body.jumpnav-active .uomcontent {
   }
 
   .inset-right {
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       margin-left: 1.875rem;
       margin-right: 0;
       max-width: 100%;
       padding: 0;
     }
 
-    @include breakpoint(1400px) {
+    @mixin breakpoint(1400px) {
       margin-bottom: 1.25rem;
       margin-right: -11.25rem;
       max-width: 80%;
@@ -130,23 +130,23 @@ body.jumpnav-active .uomcontent {
 body.jumpnav-active .uomcontent {
   blockquote:not(.blockquote-classic).left,
   blockquote:not(.blockquote-classic).right {
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       margin-left: 0;
     }
 
-    @include breakpoint(1400px) {
+    @mixin breakpoint(1400px) {
       margin-bottom: 1.25rem;
       margin-left: -11.25rem;
     }
   }
 
   blockquote:not(.blockquote-classic).right {
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       margin-left: 1.875rem;
       margin-right: 0;
     }
 
-    @include breakpoint(1400px) {
+    @mixin breakpoint(1400px) {
       margin-bottom: 1.25rem;
       margin-right: -11.25rem;
     }

@@ -1,4 +1,4 @@
-@mixin notice-success {
+@define-mixin notice-success {
   background-color: var(--col-palegreen);
   color: color(var(--col-palegreen) shade(65%));
 
@@ -7,7 +7,7 @@
   }
 }
 
-@mixin notice-info {
+@define-mixin notice-info {
   background-color: var(--col-lightestblue);
   color: color(var(--col-lightestblue) shade(65%));
 
@@ -16,7 +16,7 @@
   }
 }
 
-@mixin notice-warning {
+@define-mixin notice-warning {
   background-color: var(--col-paleyellow);
   color: color(var(--col-paleyellow) shade(65%));
 
@@ -25,7 +25,7 @@
   }
 }
 
-@mixin notice-danger {
+@define-mixin notice-danger {
   background-color: var(--col-salmon);
   color: color(var(--col-salmon) tint(35%));
 

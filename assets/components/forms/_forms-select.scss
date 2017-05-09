@@ -1,4 +1,4 @@
-@mixin theme {
+@define-mixin theme {
   background-color: var(--col-lighterblue);
   background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
   background-repeat: no-repeat;
@@ -143,12 +143,12 @@
 
 // The horror
 .uomcontent .styled-select {
-  @include theme;
+  @mixin theme;
   border-radius: 3px;
   padding: 0;
 
   select {
-    @include theme;
+    @mixin theme;
     border-radius: 3px;
     padding: .5rem .625rem;
     appearance: none;

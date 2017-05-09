@@ -1,4 +1,4 @@
-@mixin blockquote-modern {
+@define-mixin blockquote-modern {
   &:not(.blockquote-classic) {
     font-size: 1.75rem;
     margin-bottom: 1.875rem;
@@ -43,21 +43,21 @@
     }
 
 
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       clear: both;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       width: 100%;
     }
 
     &.left,
     &.right {
-      @include breakpoint(tablet) {
+      @mixin breakpoint(tablet) {
         font-size: 2rem;
       }
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         padding-right: .9375rem;
         margin: 0 .9375rem 0 0;
         max-width: 25rem;
@@ -66,20 +66,20 @@
         width: auto;
       }
 
-      @include breakpoint(wide) {
+      @mixin breakpoint(wide) {
         margin-left: -11.25rem;
         max-width: 60%;
       }
     }
 
     &.right {
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         margin-left: 1.875rem;
         float: right;
         margin-right: 0;
       }
 
-      @include breakpoint(wide) {
+      @mixin breakpoint(wide) {
         margin-right: -11.25rem;
         margin-left: 0;
       }
@@ -87,7 +87,7 @@
   }
 }
 
-@mixin quote-style {
+@define-mixin quote-style {
   font-size: 6.25rem;
   margin-left: -3.125rem;
   margin-right: .625rem;
@@ -98,7 +98,7 @@
 }
 
 .uomcontent [role="main"] blockquote {
-  @include blockquote-modern;
+  @mixin blockquote-modern;
   margin-top: 0;
 
   &.blockquote-classic {
@@ -121,7 +121,7 @@
 
     &::after,
     &::before {
-      @include quote-style;
+      @mixin quote-style;
     }
 
     &::after {
@@ -157,12 +157,12 @@
       padding: 0;
     }
 
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       font-size: 1.5rem;
       line-height: 2.25rem;
     }
 
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       margin-left: auto;
       margin-right: auto;
     }

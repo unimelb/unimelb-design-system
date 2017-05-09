@@ -32,7 +32,7 @@
       background-color: #000;
       display: none;
 
-      @include breakpoint(wide) {
+      @mixin breakpoint(wide) {
         display: block;
         height: 100%;
         overflow: hidden;

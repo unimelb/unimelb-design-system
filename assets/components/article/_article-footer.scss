@@ -28,7 +28,7 @@
       overflow: hidden;
       width: 94%;
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         width: 100%;
       }
     }

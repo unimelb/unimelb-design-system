@@ -57,7 +57,7 @@
         }
       }
 
-      @include breakpoint(tablet) {
+      @mixin breakpoint(tablet) {
         padding: 1.25rem 5.625rem;
         text-align: center;
 
@@ -93,11 +93,11 @@
         width: 1.5rem;
 
         .icon-label {
-          @include screenreaders-only;
+          @mixin screenreaders-only;
         }
       }
 
-      @include breakpoint(tablet) {
+      @mixin breakpoint(tablet) {
         right: 1.875rem;
       }
     }

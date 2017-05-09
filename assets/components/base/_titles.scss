@@ -1,4 +1,4 @@
-@mixin aligned-title {
+@define-mixin aligned-title {
   font-size: 1.75rem;
   padding-top: 3rem;
   padding-bottom: 2.25rem;
@@ -11,7 +11,7 @@
   text-transform: none;
   width: 94%;
 
-  @include breakpoint(wide) {
+  @mixin breakpoint(wide) {
     padding-top: 5rem;
     width: 100%;
   }
@@ -26,7 +26,7 @@
   }
 }
 
-@mixin subtitle {
+@define-mixin subtitle {
   font-size: .9375rem;
   line-height: 1.5rem;
   letter-spacing: .125rem;
@@ -34,8 +34,8 @@
   text-transform: uppercase;
 }
 
-@mixin title {
-  @include subtitle;
+@define-mixin title {
+  @mixin subtitle;
   text-align: center;
 
   &::after {
@@ -51,15 +51,15 @@
 
 .uomcontent {
   .subtitle {
-    @include subtitle;
+    @mixin subtitle;
   }
 
   .title {
-    @include title;
+    @mixin title;
   }
 
   h1.aligned-title {
-    @include aligned-title;
+    @mixin aligned-title;
   }
 
   h1.aligned-title + section {
@@ -82,7 +82,7 @@
     text-align: center;
     animation: hue 80s infinite linear;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       font-size: 10rem;
       line-height: 10.5rem;
     }
@@ -98,13 +98,13 @@
     line-height: 4.5rem;
     text-align: center;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       font-size: 6.25rem;
       line-height: 6.75rem;
       text-align: center;
     }
 
-    @include breakpoint(height-medium) {
+    @mixin breakpoint(height-medium) {
       padding-top: 0;
     }
   }

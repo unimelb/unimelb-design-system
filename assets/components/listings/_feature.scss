@@ -1,5 +1,5 @@
-@mixin feature-listing {
-  @include listing;
+@define-mixin feature-listing {
+  @mixin listing;
 
   li {
     padding-bottom: 1.5rem;
@@ -39,13 +39,13 @@
     }
   }
 
-  @include breakpoint(tablet) {
+  @mixin breakpoint(tablet) {
     li {
       width: 100%;
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     li {
       width: 49.7%;
     }
@@ -66,8 +66,8 @@
   }
 }
 
-@mixin feature-listing-3 {
-  @include feature-listing;
+@define-mixin feature-listing-3 {
+  @mixin feature-listing;
 
   strong {
     line-height: 1.3;
@@ -88,7 +88,7 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     li {
       width: 32.9%;
     }
@@ -105,10 +105,10 @@
 
 .uomcontent {
   .feature-listing {
-    @include feature-listing;
+    @mixin feature-listing;
   }
 
   .feature-listing-3 {
-    @include feature-listing-3;
+    @mixin feature-listing-3;
   }
 }

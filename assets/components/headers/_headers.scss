@@ -1,38 +1,38 @@
-@mixin bannerbox {
+@define-mixin bannerbox {
   align-items: center;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-@mixin banner {
-  @include bannerbox;
+@define-mixin banner {
+  @mixin bannerbox;
   min-height: 18.75rem;
   height: auto;
 
-  @include breakpoint(height-smallest) {
+  @mixin breakpoint(height-smallest) {
     min-height: 32.5rem;
   }
 
-  @include breakpoint(height-small) {
+  @mixin breakpoint(height-small) {
     min-height: 38.75rem;
   }
 
-  @include breakpoint(height-medium) {
+  @mixin breakpoint(height-medium) {
     min-height: 45rem;
   }
 
-  @include breakpoint(height-big) {
+  @mixin breakpoint(height-big) {
     min-height: 50rem;
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     h1 {
       font-size: 3.125rem;
       line-height: 3.75rem;
     }
   }
-  @include breakpoint(wide) {
+  @mixin breakpoint(wide) {
     h1 {
       font-size: 3.75rem;
       line-height: 4.5rem;
@@ -81,7 +81,7 @@
     }
 
     &.image {
-      @include bannerbox;
+      @mixin bannerbox;
       min-height: 18.75rem;
       height: auto;
 
@@ -106,14 +106,14 @@
     }
 
     &.banner {
-      @include banner;
+      @mixin banner;
     }
 
     &.with-box {
       display: table;
       padding: 0;
 
-      @include breakpoint(tablet) {
+      @mixin breakpoint(tablet) {
         padding-bottom: 1.875rem;
         padding-top: 1.875rem;
       }
@@ -132,12 +132,12 @@
         font-weight: var(--fw-bold);
       }
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         font-size: 2.8125rem;
         line-height: 3.75rem;
       }
 
-      @include breakpoint(wide) {
+      @mixin breakpoint(wide) {
         font-size: 3.4375rem;
         line-height: 3.75rem;
       }
@@ -148,13 +148,13 @@
       font-weight: var(--fw-thin);
       margin: 0 auto;
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         font-size: 1.25rem;
         line-height: 1.5rem;
         padding-top: 1.5rem;
       }
 
-      @include breakpoint(wide) {
+      @mixin breakpoint(wide) {
         font-size: 1.5rem;
         line-height: 2.25rem;
       }
@@ -189,7 +189,7 @@
       margin-top: 0;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       padding-top: 3rem;
       padding-bottom: 3rem;
       // overflow: hidden;
@@ -250,7 +250,7 @@
   & > header:first-child {
     padding-top: 7.5rem;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       padding-top: 11.25rem;
     }
   }
@@ -295,19 +295,19 @@
     &.banner {
       height: 18.75rem;
 
-      @include breakpoint(height-smallest) {
+      @mixin breakpoint(height-smallest) {
         height: 32.5rem;
       }
 
-      @include breakpoint(height-small) {
+      @mixin breakpoint(height-small) {
         height: 38.75rem;
       }
 
-      @include breakpoint(height-medium) {
+      @mixin breakpoint(height-medium) {
         height: 45rem;
       }
 
-      @include breakpoint(height-big) {
+      @mixin breakpoint(height-big) {
         height: 50rem;
       }
     }

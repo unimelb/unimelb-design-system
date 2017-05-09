@@ -27,7 +27,7 @@
         width: 100%;
       }
 
-      @include breakpoint(tablet) {
+      @mixin breakpoint(tablet) {
         margin-bottom: .9375rem;
 
         &::after {
@@ -46,7 +46,7 @@
       font-style: italic;
       padding: 0;
 
-      @include breakpoint(tablet) {
+      @mixin breakpoint(tablet) {
         font-size: 1.3125rem;
       }
     }
@@ -77,11 +77,11 @@
     border-bottom: 2px solid var(--col-navy);
     color: var(--col-navy);
 
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       margin-bottom: 1.5625rem;
     }
 
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       font-size: 3.125rem;
       margin-bottom: 1.9375rem;
     }

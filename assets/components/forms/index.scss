@@ -9,7 +9,7 @@
   }
 }
 
-@mixin control {
+@define-mixin control {
   border-radius: 3px;
   margin-top: .3125rem;
   padding: .5rem .625rem;
@@ -22,13 +22,13 @@
     color: color(var(--col-cherry) tint(25%));
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     width: 25rem;
   }
 }
 
-@mixin textcontrol {
-  @include control;
+@define-mixin textcontrol {
+  @mixin control;
   font-size: 1.25rem;
   background-color: var(--col-lightgray);
   border: 1px solid color(var(--col-lightergray) shade(5%));
@@ -50,7 +50,7 @@
   }
 }
 
-@mixin controlhack {
+@define-mixin controlhack {
   appearance: none;
   text-indent: .01px;
   text-overflow: '';

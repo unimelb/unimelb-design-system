@@ -1,6 +1,6 @@
 .uomcontent [role="navigation"]#globalsitemap {
-  @include normalise;
-  @include injection-wrapper;
+  @mixin normalise;
+  @mixin injection-wrapper;
   padding: 0 3% 1.875rem;
   background-color: var(--col-navy);
   font-family: var(--ff-sans);
@@ -22,7 +22,7 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  @include breakpoint(tablet) {
+  @mixin breakpoint(tablet) {
     padding: 0 8.125rem 1.875rem 2.5rem;
 
     &.active {
@@ -50,7 +50,7 @@
       text-decoration: underline;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       padding-top: .25rem;
       padding-bottom: .25rem;
     }
@@ -96,7 +96,7 @@
   }
 
   ul.quicklinks {
-    @include quicklinks;
+    @mixin quicklinks;
     padding: 0;
   }
 
@@ -104,7 +104,7 @@
     width: 100%;
     padding: 0 3%;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       margin-top: 1.875rem;
       max-width: var(--w-sml);
       float: right;
@@ -134,7 +134,7 @@
       }
 
       input[type="image"] {
-        @include inlinebutton;
+        @mixin inlinebutton;
         border-radius: 0 3px 3px 0;
         margin: .9375rem 0 0;
         width: 2.8125rem;
@@ -158,7 +158,7 @@
       }
 
       .inline-button {
-        @include inlinebutton;
+        @mixin inlinebutton;
         border-radius: 0 3px 3px 0;
         font-size: .8125rem;
         height: 2.8125rem;
@@ -191,7 +191,7 @@
   }
 
   .logo {
-    @include imgreplace;
+    @mixin imgreplace;
     height: 8.75rem;
     margin-top: .9375rem;
     width: 8.75rem;
@@ -208,7 +208,7 @@
       width: 100%;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       float: left;
       margin-top: 0;
     }
@@ -261,7 +261,7 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     .col-3 {
       padding-top: 3rem;
       clear: both;

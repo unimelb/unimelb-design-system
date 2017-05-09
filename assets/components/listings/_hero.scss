@@ -1,5 +1,5 @@
 .uomcontent .hero-listing {
-  @include feature-listing;
+  @mixin feature-listing;
 
   li {
     max-width: 100%;
@@ -34,7 +34,7 @@
     padding-bottom: .9375rem;
     padding-top: .9375rem;
 
-    @include breakpoint(0) {
+    @mixin breakpoint(0) {
       filter: none;
     }
 
@@ -56,7 +56,7 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     li {
       padding-bottom: 0;
       width: 100%;
@@ -74,7 +74,7 @@
       }
     }
   }
-  @include breakpoint(wide) {
+  @mixin breakpoint(wide) {
     .inner {
       padding: 10% 20%;
     }

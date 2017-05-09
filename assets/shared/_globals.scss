@@ -57,7 +57,7 @@
  * Mixins
  */
 
-@mixin breakpoint($point) {
+@define-mixin breakpoint $point {
   @if $point == wide {
     @media screen and (min-width: 1099px) {
       & {
@@ -125,7 +125,7 @@
 
 // Micro clearfix
 // http://nicolasgallagher.com/micro-clearfix-hack/
-@mixin clearfix {
+@define-mixin clearfix {
   &::before,
   &::after {
     content: '';
@@ -137,56 +137,56 @@
   }
 }
 
-@mixin wrapper {
+@define-mixin wrapper {
   margin: 0 auto;
   padding: 0 3%;
   width: 94%;
 
-  @include breakpoint(tablet) {
+  @mixin breakpoint(tablet) {
     max-width: var(--w-lge);
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     width: 100%;
   }
 }
 
-@mixin injection-wrapper {
+@define-mixin injection-wrapper {
   max-width: 87.5rem;
   padding: .9375rem;
   margin: 0 auto;
 }
 
-@mixin grad-bottom {
+@define-mixin grad-bottom {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .9) 100%); // /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=0); // /* IE6-9 */
 }
 
-@mixin grad-top {
+@define-mixin grad-top {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .9) 100%); // /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#FFFFFF', GradientType=0); // /* IE6-9 */
 }
 
-@mixin grad-left {
+@define-mixin grad-left {
   background: linear-gradient(to left, color(var(--col-lighterblue) alpha(0%)) 66%, color(var(--col-lighterblue) alpha(90%)) 100%); // /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=1); // /* IE6-9 */
 }
 
-@mixin imgreplace {
+@define-mixin imgreplace {
   background-color: transparent;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-@mixin normalise {
+@define-mixin normalise {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 // Prevent wrap and add ellipsis if overflow
-@mixin ellipsis {
+@define-mixin ellipsis {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -194,7 +194,7 @@
 }
 
 // Fallback avatar (used in People and Seach components)
-@mixin fallbackAvatar {
+@define-mixin fallbackAvatar {
   position: relative;
 
   // Fallback avatar for when the photo fails to load
@@ -213,7 +213,7 @@
 
 // The photo's wrapper must extend this placeholder to allow for the fallback avatar to
 // appear underneath the photo when the latter loads successfully.
-@mixin fallbackAvatarWrapper {
+@define-mixin fallbackAvatarWrapper {
   position: relative;
   z-index: 1;
 }
@@ -222,7 +222,7 @@
 // Parent element should have `overflow: hidden;` and `position: relative;` to solve outline bug in Chrome
 // http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
 // http://stackoverflow.com/questions/3970455/overflow-hidden-not-working
-@mixin screenreaders-only {
+@define-mixin screenreaders-only {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
   overflow: hidden;
@@ -231,7 +231,7 @@
 }
 
 // Remove text for image replacement
-@mixin hide-text {
+@define-mixin hide-text {
   font: 0/0 a;
   color: transparent;
   text-shadow: none;

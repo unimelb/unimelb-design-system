@@ -47,7 +47,7 @@
       max-width: 2000px;
       width: 100%;
 
-      @include inner-list-reset;
+      @mixin inner-list-reset;
 
       padding: 0;
 
@@ -63,7 +63,7 @@
       }
 
       ol.steps {
-        @include inner-list-reset;
+        @mixin inner-list-reset;
 
         ol,
         ul {
@@ -74,7 +74,7 @@
         li {
           margin: 0;
 
-          @include breakpoint(desktop) {
+          @mixin breakpoint(desktop) {
             padding-left: 6.875rem;
 
             li {
@@ -87,7 +87,7 @@
           padding-left: 3%;
           padding-right: 3%;
 
-          @include breakpoint(desktop) {
+          @mixin breakpoint(desktop) {
             padding-left: 0;
             padding-right: 0;
           }
@@ -129,7 +129,7 @@
           transition: transform 0.2s ease-in-out;
         }
 
-        @include breakpoint(desktop) {
+        @mixin breakpoint(desktop) {
           font-size: 1.375rem;
           line-height: 2.25rem;
           padding-left: 3.4375rem;

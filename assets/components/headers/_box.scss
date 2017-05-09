@@ -8,7 +8,7 @@
       margin: 0 auto;
 
       h1 {
-        @include title;
+        @mixin title;
         font-size: .9375rem;
         line-height: 1.5rem;
         margin-bottom: 1.5rem;
@@ -23,7 +23,7 @@
         font-weight: var(--fw-light);
       }
 
-      @include breakpoint(tablet) {
+      @mixin breakpoint(tablet) {
         margin: 1.875rem auto;
         padding-left: 3.75rem;
         padding-right: 3.75rem;

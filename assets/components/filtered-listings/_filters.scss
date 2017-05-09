@@ -13,14 +13,14 @@
   padding-top: 0;
 }
 
-@mixin filtered-listing-select {
+@define-mixin filtered-listing-select {
   max-width: var(--w-lge);
   background-color: transparent;
   color: #fff;
   margin: 0 auto;
   overflow: hidden;
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     padding-left: 0;
     padding-right: 0;
   }
@@ -51,7 +51,7 @@
   }
 
   .left {
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       line-height: 1.875rem;
       margin: 0;
 
@@ -64,7 +64,7 @@
       }
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       padding-left: 1.875rem;
       padding-right: 1.875rem;
       float: left;
@@ -83,7 +83,7 @@
         display: inline-block;
         width: auto;
 
-        @include breakpoint(tablet) {
+        @mixin breakpoint(tablet) {
           padding: 0;
         }
 
@@ -194,7 +194,7 @@
       width: 100%;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       padding-right: 1.875rem;
       float: right;
       margin: 0;
@@ -205,5 +205,5 @@
 }
 
 .uomcontent .filtered-listing-select {
-  @include filtered-listing-select;
+  @mixin filtered-listing-select;
 }

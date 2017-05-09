@@ -21,12 +21,12 @@
     padding-right: 0;
     width: 94%;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       width: 100%;
     }
 
     & > li {
-      @include clearfix;
+      @mixin clearfix;
       padding-bottom: 1.5rem;
       margin-bottom: 1.5rem;
       border-bottom: 1px solid color(#000 alpha(10%));
@@ -39,10 +39,10 @@
       }
 
       &.person {
-        @include fallbackAvatarWrapper;
+        @mixin fallbackAvatarWrapper;
 
         .person__photo {
-          @include fallbackAvatar;
+          @mixin fallbackAvatar;
           background-position: center;
           background-size: cover;
           border-radius: 50%;
@@ -67,7 +67,7 @@
           line-height: 1.5rem;
         }
 
-        @include breakpoint(desktop) {
+        @mixin breakpoint(desktop) {
           .person__info {
             display: table;
           }
@@ -112,7 +112,7 @@
       display: block;
       float: left;
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         max-width: 130px;
       }
     }
@@ -132,7 +132,7 @@
       color: #000;
       width: auto;
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         font-size: 1rem;
         line-height: 1.5rem;
       }
@@ -143,7 +143,7 @@
         color: var(--col-lighterblue);
 
         & > a {
-          @include ellipsis;
+          @mixin ellipsis;
         }
       }
 

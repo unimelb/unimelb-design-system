@@ -12,7 +12,7 @@
     }
 
     &__summary {
-      @include fallbackAvatarWrapper;
+      @mixin fallbackAvatarWrapper;
       text-align: center;
 
       h1 {
@@ -38,7 +38,7 @@
     }
 
     &__photo {
-      @include fallbackAvatar;
+      @mixin fallbackAvatar;
       background-position: center;
       background-size: cover;
       border-radius: 50%;
@@ -92,10 +92,10 @@
       }
     }
 
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
 
       &__info {
-        @include clearfix;
+        @mixin clearfix;
       }
 
       &__location,

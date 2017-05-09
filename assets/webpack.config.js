@@ -60,6 +60,7 @@ var config = {
     ]
   },
   postcss: [
+    require('postcss-mixins'),
     require('postcss-nested'),
     require('postcss-cssnext')({
       browsers: [

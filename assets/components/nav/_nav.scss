@@ -11,7 +11,7 @@ body {
     margin-top: -90px;
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     padding-top: 5.625rem;
   }
 }
@@ -20,7 +20,7 @@ body {
   background-color: #fff;
 }
 
-@mixin quicklinks {
+@define-mixin quicklinks {
   margin: 1.875rem 0;
   padding: .9375rem 0;
   clear: both;
@@ -35,7 +35,7 @@ body {
     margin-left: 0;
     width: 100%;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       clear: none;
       line-height: 1;
     }
@@ -63,7 +63,7 @@ body {
       text-decoration: underline;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       &:hover,
       &:focus {
         background-color: var(--col-lighterblue);
@@ -74,14 +74,14 @@ body {
   }
 
   .icon {
-    @include imgreplace;
+    @mixin imgreplace;
     height: 1.5rem;
     margin-right: .625rem;
     width: 1.5rem;
     display: block;
     float: left;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       float: none;
       margin-left: auto;
       margin-right: auto;
@@ -89,7 +89,7 @@ body {
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     border-bottom: 1px solid var(--col-blue);
     border-top: 1px solid var(--col-blue);
 
@@ -112,7 +112,7 @@ body {
 }
 
 .uomcontent ul.quicklinks {
-  @include quicklinks;
+  @mixin quicklinks;
 }
 
 .uomcontent .sitemap-trigger {

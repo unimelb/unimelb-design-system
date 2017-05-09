@@ -7,25 +7,25 @@
       padding-bottom: 0;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       text-align: left;
     }
   }
 
   .flash--success {
-    @include notice-success;
+    @mixin notice-success;
   }
 
   .flash--info {
-    @include notice-info;
+    @mixin notice-info;
   }
 
   .flash--warning {
-    @include notice-warning;
+    @mixin notice-warning;
   }
 
   .flash--danger {
-    @include notice-danger;
+    @mixin notice-danger;
   }
 
   .flash--center {
@@ -47,7 +47,7 @@
 
     // Keep message against logo, even above `wide`
     & + .flash--keep-left {
-      @include breakpoint(wide) {
+      @mixin breakpoint(wide) {
         padding-left: 12.8125rem;
 
         & > p {

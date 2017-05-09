@@ -1,4 +1,4 @@
-@mixin boxes {
+@define-mixin boxes {
   padding-top: 1.5rem;
   padding-bottom: 0;
   margin-bottom: 3rem;
@@ -54,11 +54,11 @@
 
 .uomcontent [role="main"] {
   .contact-box {
-    @include boxes;
+    @mixin boxes;
   }
 
   .highlight-box {
-    @include boxes;
+    @mixin boxes;
 
     dd {
       font-size: 2.5rem;
@@ -68,7 +68,7 @@
   }
 
   .emergency-box {
-    @include boxes;
+    @mixin boxes;
     color: var(--col-cherry);
 
     dd {
@@ -81,7 +81,7 @@
       color: var(--col-cherry);
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       dd {
         font-weight: var(--fw-regular);
       }

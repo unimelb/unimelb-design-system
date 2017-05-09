@@ -47,21 +47,21 @@
 
     }
 
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       column-count: 2;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       column-count: 3;
     }
 
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       column-count: 4;
     }
   }
 }
 
-@mixin navigation-text-listing-fallback {
+@define-mixin navigation-text-listing-fallback {
   margin: 0 auto;
 
   h1,
@@ -78,5 +78,5 @@
 }
 
 .ie9 .uomcontent [role="main"] .navigation-text-listing {
-  @include navigation-text-listing-fallback;
+  @mixin navigation-text-listing-fallback;
 }

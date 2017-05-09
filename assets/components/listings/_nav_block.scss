@@ -77,7 +77,7 @@
       }
     }
 
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       h3,
       p {
         margin: 0 auto 0 0;
@@ -97,7 +97,7 @@
       }
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       li {
         width: 32.33%;
 
@@ -107,7 +107,7 @@
       }
     }
 
-    @include breakpoint(wide) {
+    @mixin breakpoint(wide) {
       li {
         width: 24%;
 
@@ -135,7 +135,7 @@
       padding-bottom: 0;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       li {
         width: 32.5%;
       }
@@ -150,14 +150,14 @@
         margin-right: 0;
       }
 
-      @include breakpoint(tablet) {
+      @mixin breakpoint(tablet) {
         .styled-select {
           margin-right: auto;
           width: 88%;
         }
       }
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         padding-bottom: 0;
       }
     }
@@ -176,7 +176,7 @@
     padding-right: 0;
     width: 94%;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       width: 100%;
     }
 
@@ -204,8 +204,8 @@
   }
 }
 
-@mixin navigation-block-listing-fallback {
-  @include clearfix;
+@define-mixin navigation-block-listing-fallback {
+  @mixin clearfix;
   margin: 0 auto;
 
   ul li {
@@ -228,5 +228,5 @@
 }
 
 .ie9 .uomcontent [role="main"] .navigation-block-listing {
-  @include navigation-block-listing-fallback;
+  @mixin navigation-block-listing-fallback;
 }

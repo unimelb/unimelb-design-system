@@ -1,4 +1,4 @@
-@mixin headerblock {
+@define-mixin headerblock {
   font-size: .9375rem;
   color: var(--col-darkblue);
   display: inline-block;
@@ -6,7 +6,7 @@
   vertical-align: middle;
 }
 
-@mixin control {
+@define-mixin control {
   border-radius: 3px;
   margin-top: .3125rem;
   padding: .5rem .625rem;
@@ -19,13 +19,13 @@
     color: color(var(--col-cherry) tint(25%));
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     width: 25rem;
   }
 }
 
-@mixin textcontrol {
-  @include control;
+@define-mixin textcontrol {
+  @mixin control;
   font-size: 1.25rem;
   background-color: var(--col-lightgray);
   border: 1px solid color(var(--col-lightergray) shade(5%));
@@ -47,7 +47,7 @@
   }
 }
 
-@mixin inlinebutton {
+@define-mixin inlinebutton {
   border-radius: 3px;
   font-size: .8125rem;
   height: 2.8125rem;
@@ -88,7 +88,7 @@
 }
 
 .uomcontent .page-header {
-  @include normalise;
+  @mixin normalise;
   font-size: 1.25rem;
   height: 3.75rem;
   background-color: #fff;
@@ -104,17 +104,17 @@
     font-family: var(--ff-sans);
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     height: 5.625rem;
     position: absolute;
   }
 
   * {
-    @include normalise;
+    @mixin normalise;
     font-family: var(--ff-sans);
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     &.fixed:not(.floating) {
       height: 2.5rem;
       background-color: #fff;
@@ -126,7 +126,7 @@
         top: -60px;
         transition: .2s top;
 
-        @include breakpoint(desktop) {
+        @mixin breakpoint(desktop) {
           top: -140px;
         }
       }
@@ -203,14 +203,14 @@
     width: 100%;
     z-index: 3;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       height: 5.625rem;
       border-bottom: 0 none;
     }
   }
 
   a {
-    @include headerblock;
+    @mixin headerblock;
     height: 3.75rem;
     line-height: 3.75rem;
     font-weight: var(--fw-light);
@@ -242,7 +242,7 @@
       }
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       height: 5.625rem;
       line-height: 5.625rem;
 
@@ -262,7 +262,7 @@
         width: 8.75rem;
       }
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         width: 20rem;
 
         svg {
@@ -274,21 +274,21 @@
     &.wide + .page-header-navigation {
       padding-left: 9.6875rem;
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         padding-left: 23.75rem;
       }
     }
   }
 
   span {
-    @include headerblock;
+    @mixin headerblock;
     font-size: .8125rem;
     height: 2.5rem;
     line-height: 2.5rem;
     padding: 0 .625rem .3125rem .625rem;
     font-weight: var(--fw-light);
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       height: 4.6875rem;
       line-height: 4.6875rem;
       padding: 0 .625rem .46875rem .625rem;
@@ -352,11 +352,11 @@
       position: absolute;
     }
 
-    @include breakpoint(0) {
+    @mixin breakpoint(0) {
       display: block;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       display: none;
     }
   }
@@ -366,7 +366,7 @@
     display: inline;
   }
 
-  @include breakpoint(0) {
+  @mixin breakpoint(0) {
     a,
     span {
       display: none;
@@ -383,7 +383,7 @@
     padding: 0;
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     height: 5.625rem;
     padding-left: 12.8125rem;
     margin-right: 16.25rem;
@@ -413,7 +413,7 @@
       }
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       display: block;
     }
 
@@ -445,7 +445,7 @@
 }
 
 .uomcontent .page-local-history {
-  @include injection-wrapper;
+  @mixin injection-wrapper;
   color: #fff;
 
   a {
@@ -506,7 +506,7 @@
   opacity: .95;
   z-index: 100;
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     margin-top: 5.625rem;
   }
 }
@@ -520,7 +520,7 @@
     display: none;
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     width: auto;
 
     .page-header,
@@ -560,7 +560,7 @@
     display: block;
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     height: 5.625rem;
   }
 
@@ -578,7 +578,7 @@
       vertical-align: top;
 
       input[type="search"] {
-        @include textcontrol;
+        @mixin textcontrol;
         border-radius: 3px 0 0 3px;
         height: 2.5rem;
         margin-top: .1875rem;
@@ -597,7 +597,7 @@
         width: 100%;
 
         input[type="image"] {
-          @include inlinebutton;
+          @mixin inlinebutton;
           border-radius: 0 3px 3px 0;
           margin: .9375rem 0 0;
           width: 2.8125rem;
@@ -621,7 +621,7 @@
         }
 
         .inline-button {
-          @include inlinebutton;
+          @mixin inlinebutton;
           border-radius: 0 3px 3px 0;
           font-size: .8125rem;
           height: 2.5rem;
@@ -658,7 +658,7 @@
       }
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       max-width: 31.25rem;
       padding-left: 1.25rem;
       float: right;
@@ -694,7 +694,7 @@
         margin-left: auto;
         margin-right: auto;
 
-        @include breakpoint(desktop) {
+        @mixin breakpoint(desktop) {
           height: 2.25rem;
           margin-bottom: .25rem;
           margin-top: 1.25rem;
@@ -702,7 +702,7 @@
         }
       }
 
-      @include breakpoint(desktop) {
+      @mixin breakpoint(desktop) {
         font-size: .625rem;
         padding: 0 1.4375rem;
       }
@@ -725,18 +725,18 @@
   top: 0;
   vertical-align: top;
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     width: 12.5rem;
     background-color: #fff;
     position: absolute;
   }
 
   &.with-login {
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       width: 11.625rem;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       width: 18.75rem;
     }
   }
@@ -775,7 +775,7 @@
     &--login {
       display: none;
 
-      @include breakpoint(tablet) {
+      @mixin breakpoint(tablet) {
         display: inline-block;
       }
     }
@@ -785,7 +785,7 @@
     }
   }
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     .page-header-icon {
       font-size: .625rem;
       padding: 0 1.4375rem;
@@ -804,7 +804,7 @@
   background-color: transparent;
   position: relative;
 
-  @include breakpoint(desktop) {
+  @mixin breakpoint(desktop) {
     position: absolute;
   }
 
@@ -813,7 +813,7 @@
     margin-top: .9375rem;
     position: absolute;
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       margin-left: 1.875rem;
       margin-top: 1.875rem;
     }
@@ -832,7 +832,7 @@
       color: #fff;
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       font-size: 1.25rem;
       left: 12.5rem;
       margin-top: 1.875rem;
@@ -858,7 +858,7 @@
       }
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       margin: 2.5rem;
 
       a.page-header-icon {
@@ -935,13 +935,13 @@
       }
     }
 
-    @include breakpoint(tablet) {
+    @mixin breakpoint(tablet) {
       .page-header-home {
         width: 12rem;
       }
     }
 
-    @include breakpoint(desktop) {
+    @mixin breakpoint(desktop) {
       padding: 4.375rem 2.8125rem;
 
       .page-header-logo {
