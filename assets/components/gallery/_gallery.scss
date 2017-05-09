@@ -55,7 +55,7 @@
 
   /* zoom icon and purple gradient overlay shown on hover */
   &__icon {
-    background-color: rgba($black, .6);
+    background-color: rgba(#000, .6);
     background-image: linear-gradient(to right bottom, rgba(0, 150, 255, .3) 0%, rgba(255, 0, 126, .3) 100%);
     bottom: 0;
     cursor: zoom-in;
@@ -87,7 +87,7 @@
     .image-gallery__caption {
       font-size: .875rem;
       padding: .5rem .75rem;
-      background-color: rgba($black, 0.7);
+      background-color: rgba(#000, 0.7);
       bottom: 0;
       color: #fff;
       left: 0;

@@ -9,7 +9,7 @@
 
   &__panel {
     padding-right: $width-sitemap-trigger;
-    background-color: $menu;
+    background-color: var(--col-menu);
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -39,7 +39,7 @@
   &__back-btn.localnav__back-btn {
     font-size: .75rem;
     padding: 1.25rem;
-    background-color: darken($menu, 3%);
+    background-color: darken(var(--col-menu), 3%);
     color: rgba(255, 255, 255, .7);
     display: block;
     font-weight: normal;
@@ -134,7 +134,7 @@
 
       &:hover,
       &:focus {
-        background-color: darken($menu, 3%);
+        background-color: darken(var(--col-menu), 3%);
         color: #fff;
       }
     }
@@ -173,7 +173,7 @@
 
   .no-js & {
     @include injection-wrapper;
-    background-color: $navy;
+    background-color: var(--col-navy);
     box-shadow: 0 0 0;
     display: block;
     position: static;

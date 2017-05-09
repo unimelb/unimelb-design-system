@@ -11,7 +11,7 @@
   figcaption {
     font-size: .875rem;
     padding-bottom: .9375rem;
-    color: $midblue;
+    color: var(--col-midblue);
     font-style: italic;
     line-height: 1.2;
     text-align: center;
@@ -35,7 +35,7 @@
 
       &::before {
         width: 2.5rem;
-        border-bottom: 2px solid $midblue;
+        border-bottom: 2px solid var(--col-midblue);
         content: '';
         display: block;
         position: absolute;

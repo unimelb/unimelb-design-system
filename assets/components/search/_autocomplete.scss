@@ -3,8 +3,8 @@
     border-radius: 0 0 3px 3px;
     margin-top: -.625rem;
     max-width: $w-lge;
-    background-color: $white;
-    border: 1px solid $lightergray;
+    background-color: #fff;
+    border: 1px solid var(--col-lightergray);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     position: absolute;
     width: 97%;
@@ -29,8 +29,8 @@
 
       &:hover,
       &:focus {
-        background-color: $highlight;
-        color: $white;
+        background-color: var(--col-lighterblue);
+        color: #fff;
       }
     }
   }

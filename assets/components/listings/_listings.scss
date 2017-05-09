@@ -19,7 +19,7 @@
   li {
     padding-top: .75rem;
     padding-bottom: .75rem;
-    border-top: 1px solid darken($lightgray, 5%);
+    border-top: 1px solid darken(var(--col-lightgray), 5%);
     list-style-type: none;
     margin-bottom: 0;
     margin-left: auto;
@@ -62,7 +62,7 @@
   strong {
     font-size: 1rem;
     line-height: 1.5rem;
-    color: $darkblue;
+    color: var(--col-darkblue);
     display: block;
     font-weight: $regular;
   }
@@ -70,7 +70,7 @@
   p {
     font-size: .8125rem;
     line-height: 1.5rem;
-    color: $midgray;
+    color: var(--col-midgray);
     padding: 0;
     width: auto;
   }

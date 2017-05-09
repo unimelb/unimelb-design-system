@@ -33,7 +33,7 @@
 
   figure.framed img {
     @include breakpoint(tablet) {
-      box-shadow: 0 3px 6px -1px rgba($black, .2);
+      box-shadow: 0 3px 6px -1px rgba(#000, .2);
       display: inline-block;
       max-height: 90%;
     }
@@ -59,10 +59,10 @@
       background-attachment: fixed;
 
       .title {
-        color: $white;
+        color: #fff;
 
         &::after {
-          border-color: $white;
+          border-color: #fff;
         }
       }
     }
@@ -82,7 +82,7 @@
 
       section {
         align-self: center;
-        background: rgba($black, 0.5);
+        background: rgba(#000, 0.5);
         display: table-cell;
         padding-bottom: 0;
         padding-top: 0;
@@ -127,7 +127,7 @@
       line-height: 1.5rem;
       padding-top: 3rem;
       margin: 0 .9375rem;
-      color: $white;
+      color: #fff;
       font-weight: $light;
       max-width: 100%;
       padding-bottom: 0;
@@ -135,7 +135,7 @@
       &.black {
         padding-top: 4.5rem;
         padding-bottom: 3rem;
-        color: $black;
+        color: #000;
         text-align: left;
       }
 
@@ -155,15 +155,15 @@
       font-size: 1.25rem;
       line-height: 1.5rem;
       letter-spacing: .3125rem;
-      color: $white;
+      color: #fff;
 
       &.title::after {
-        border-color: $white;
+        border-color: #fff;
       }
     }
 
     blockquote {
-      color: $white;
+      color: #fff;
       line-height: 1.4;
     }
 

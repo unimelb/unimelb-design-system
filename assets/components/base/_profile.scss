@@ -1,5 +1,5 @@
 .uomcontent .profile {
-  background-color: $lightestblue;
+  background-color: var(--col-lightestblue);
 
   header {
     min-height: 25rem;
@@ -14,14 +14,14 @@
 
     h1 {
       border: 0;
-      color: $white;
+      color: #fff;
       line-height: 1.2;
       margin-bottom: 0;
 
       &::after {
         margin-top: .9375rem;
         max-width: $w-sml;
-        border-bottom: 2px solid $white;
+        border-bottom: 2px solid #fff;
         content: '';
         display: block;
         width: 100%;
@@ -33,7 +33,7 @@
         &::after {
           margin-top: 1.9375rem;
           max-width: $w-sml;
-          border-bottom: 2px solid $white;
+          border-bottom: 2px solid #fff;
           content: '';
           display: block;
           width: 100%;
@@ -74,8 +74,8 @@
 
   h1 {
     margin-bottom: 2.1875rem;
-    border-bottom: 2px solid $navy;
-    color: $navy;
+    border-bottom: 2px solid var(--col-navy);
+    color: var(--col-navy);
 
     @include breakpoint(tablet) {
       margin-bottom: 1.5625rem;

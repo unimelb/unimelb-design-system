@@ -106,7 +106,7 @@
 
   a {
     padding: .625rem;
-    color: $darkgray;
+    color: var(--col-darkgray);
     display: block;
     font-weight: $light;
     height: 100%;
@@ -121,7 +121,7 @@
     }
 
     &:hover {
-      color: $darkgray;
+      color: var(--col-darkgray);
     }
 
     @include breakpoint(desktop) {

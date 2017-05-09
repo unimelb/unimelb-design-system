@@ -1,36 +1,36 @@
 @mixin notice-success {
-  background-color: $palegreen;
-  color: darken($palegreen, 65%);
+  background-color: var(--col-palegreen);
+  color: darken(var(--col-palegreen), 65%);
 
   a {
-    color: darken($palegreen, 65%);
+    color: darken(var(--col-palegreen), 65%);
   }
 }
 
 @mixin notice-info {
-  background-color: $lightestblue;
-  color: darken($lightestblue, 65%);
+  background-color: var(--col-lightestblue);
+  color: darken(var(--col-lightestblue), 65%);
 
   a {
-    color: darken($lightestblue, 65%);
+    color: darken(var(--col-lightestblue), 65%);
   }
 }
 
 @mixin notice-warning {
-  background-color: $paleyellow;
-  color: darken($paleyellow, 65%);
+  background-color: var(--col-paleyellow);
+  color: darken(var(--col-paleyellow), 65%);
 
   a {
-    color: darken($palegreen, 65%);
+    color: darken(var(--col-palegreen), 65%);
   }
 }
 
 @mixin notice-danger {
-  background-color: $salmon;
-  color: lighten($salmon, 35%);
+  background-color: var(--col-salmon);
+  color: lighten(var(--col-salmon), 35%);
 
   a {
-    color: lighten($salmon, 65%);
+    color: lighten(var(--col-salmon), 65%);
   }
 }
 

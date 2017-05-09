@@ -14,7 +14,7 @@
       max-width: $w-sml;
 
       a {
-        color: $highlight;
+        color: var(--col-lighterblue);
       }
 
       img {
@@ -25,14 +25,14 @@
       }
 
       .profile {
-        background-color: $white;
+        background-color: #fff;
         display: table-cell;
         vertical-align: top;
 
         .frame {
           height: 3.125rem;
           width: 3.125rem;
-          background-color: $lightestblue;
+          background-color: var(--col-lightestblue);
           border-radius: 50%;
         }
       }
@@ -48,7 +48,7 @@
       td,
       li {
         border-bottom: 0 none;
-        border-top: 1px solid $lightergray;
+        border-top: 1px solid var(--col-lightergray);
       }
 
       & > tbody > tr:first-child > td,
@@ -63,7 +63,7 @@
     }
 
     a {
-      // color: $black;
+      // color: #000;
       font-weight: $regular;
     }
 
@@ -74,7 +74,7 @@
 
     tr {
       padding: .625rem 0;
-      border-bottom: 1px solid $lightergray;
+      border-bottom: 1px solid var(--col-lightergray);
       display: block;
 
       @include breakpoint(tablet) {
@@ -90,7 +90,7 @@
 
         @include breakpoint(tablet) {
           padding: .625rem 0;
-          border-bottom: 1px solid $lightergray;
+          border-bottom: 1px solid var(--col-lightergray);
           display: table-cell;
           width: auto;
 

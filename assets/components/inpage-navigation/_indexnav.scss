@@ -3,7 +3,7 @@
   top: 2.5rem;
   width: 2.5rem;
   align-items: center;
-  background-color: rgba($navy, 0.9);
+  background-color: rgba(var(--col-navy), 0.9);
   bottom: 0;
   display: flex;
   flex-direction: row;
@@ -24,7 +24,7 @@
   }
 
   a {
-    color: $white;
+    color: #fff;
     display: block;
     text-align: center;
     text-decoration: none;
@@ -55,7 +55,7 @@
 
     a {
       height: 2.5rem;
-      color: $highlight;
+      color: var(--col-lighterblue);
       font-weight: $regular;
     }
   }

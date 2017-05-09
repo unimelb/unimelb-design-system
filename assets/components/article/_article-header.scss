@@ -40,7 +40,7 @@
 
       h1,
       p {
-        color: $black;
+        color: #000;
         padding-left: 0;
         padding-right: 0;
         text-align: left;
@@ -58,10 +58,10 @@
         &.author {
           padding-bottom: 3rem;
           max-width: $w-sml;
-          border-bottom: 1px solid $lightergray;
+          border-bottom: 1px solid var(--col-lightergray);
 
           &::before {
-            border-color: $black;
+            border-color: #000;
             margin-left: 0;
           }
         }

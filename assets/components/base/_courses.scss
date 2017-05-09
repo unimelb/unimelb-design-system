@@ -8,7 +8,7 @@
 
   th {
     padding: 1.875rem 0 .625rem;
-    border-bottom: 1px solid $lightergray;
+    border-bottom: 1px solid var(--col-lightergray);
     border-left: 0 none;
     border-right: 0 none;
     border-top: 0 none;
@@ -30,7 +30,7 @@
   td {
     padding-bottom: .625rem;
     padding-top: .625rem;
-    border-bottom: 1px solid $lightergray;
+    border-bottom: 1px solid var(--col-lightergray);
     border-left: 0 none;
     border-right: 0 none;
     border-top: 0 none;
@@ -45,7 +45,7 @@
   }
 
   .accordion__title {
-    color: $cyan;
+    color: var(--col-lighterblue);
 
     &:hover {
       text-decoration: underline;
@@ -55,7 +55,7 @@
   .accordion__close {
     height: 3.125rem;
     width: 3.125rem;
-    color: $white;
+    color: #fff;
     cursor: pointer;
     display: block;
     position: absolute;
@@ -79,8 +79,8 @@
 
     td.unit-description {
       padding: .9375rem 0;
-      background-color: $navy;
-      color: $white;
+      background-color: var(--col-navy);
+      color: #fff;
       position: relative;
       text-align: left;
 
@@ -91,7 +91,7 @@
 
       &::before {
         border: solid transparent;
-        border-bottom-color: $navy;
+        border-bottom-color: var(--col-navy);
         border-width: 10px;
         bottom: 100%;
         content: ' ';
@@ -127,7 +127,7 @@
 
       hr {
         margin: .9375rem;
-        border-color: rgba($white, .2);
+        border-color: rgba(#fff, .2);
         margin-left: 3%;
         margin-right: 3%;
 
@@ -147,11 +147,11 @@
         }
 
         a {
-          color: $white;
+          color: #fff;
         }
 
         strong {
-          color: rgba($white, .4);
+          color: rgba(#fff, .4);
           display: block;
         }
       }
@@ -159,7 +159,7 @@
   }
 
   thead th:first-child + th {
-    border-color: $black;
+    border-color: #000;
     text-align: left;
   }
 
@@ -260,7 +260,7 @@
 
       span {
         font-size: .875rem;
-        color: rgba($white, .8);
+        color: rgba(#fff, .8);
       }
 
       select {
@@ -278,7 +278,7 @@
     }
 
     p {
-      color: rgba($white, .8);
+      color: rgba(#fff, .8);
     }
   }
 }
@@ -355,7 +355,7 @@
 
     tr td.unit-description::before {
       border: solid transparent;
-      border-bottom-color: $navy;
+      border-bottom-color: var(--col-navy);
       border-width: 10px;
       bottom: 100%;
       content: ' ';

@@ -1,7 +1,7 @@
 .uomcontent {
   p.search-spelling {
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid rgba($black, .1);
+    border-bottom: 1px solid rgba(#000, .1);
 
     strong {
       font-style: italic;
@@ -12,7 +12,7 @@
     font-size: .75rem;
     line-height: 1.5rem;
     padding-bottom: 1rem;
-    color: $midgray;
+    color: var(--col-midgray);
     padding-top: 0;
   }
 
@@ -29,7 +29,7 @@
       @include clearfix;
       padding-bottom: 1.5rem;
       margin-bottom: 1.5rem;
-      border-bottom: 1px solid rgba($black, .1);
+      border-bottom: 1px solid rgba(#000, .1);
       list-style-type: none;
       margin-left: 0;
       width: auto;
@@ -129,7 +129,7 @@
       font-size: .9375rem;
       line-height: 1.5rem;
       padding-bottom: 0;
-      color: $black;
+      color: #000;
       width: auto;
 
       @include breakpoint(desktop) {
@@ -140,7 +140,7 @@
       &.url {
         font-size: .75rem;
         line-height: 1.5rem;
-        color: $highlight;
+        color: var(--col-lighterblue);
 
         & > a {
           @include ellipsis;
@@ -179,7 +179,7 @@
     }
 
     & > dt {
-      color: $midgrayer;
+      color: var(--col-midgrayer);
       clear: none;
       width: auto;
     }

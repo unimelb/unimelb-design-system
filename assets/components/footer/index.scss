@@ -1,9 +1,9 @@
 .uomcontent .page-footer {
   @include normalise;
   font-size: 1.25rem;
-  background-color: $navy;
+  background-color: var(--col-navy);
   clear: left;
-  color: $white;
+  color: #fff;
   font-family: $ff-sans;
 
   * {
@@ -22,7 +22,7 @@
     font-size: .75rem;
     line-height: 1.25rem;
     clear: left;
-    color: $lightblue;
+    color: var(--col-lightblue);
     display: block;
     text-align: center;
 
@@ -31,7 +31,7 @@
 
       &:hover,
       &:focus {
-        color: $white;
+        color: #fff;
       }
     }
 
@@ -58,8 +58,8 @@
 
   ul.people-links {
     max-width: 87.5rem;
-    border-bottom: 1px solid $blue;
-    border-top: 1px solid $blue;
+    border-bottom: 1px solid var(--col-blue);
+    border-top: 1px solid var(--col-blue);
     margin: 0 auto;
     padding: 0;
     text-align: left;
@@ -74,7 +74,7 @@
         font-size: .625rem;
         line-height: 1.5rem;
         padding: 1.25rem .9375rem;
-        color: $white;
+        color: #fff;
         display: block;
         letter-spacing: 2px;
         text-decoration: none;
@@ -100,7 +100,7 @@
 .uomcontent .unimelb-lge {
   margin: 1.875rem auto;
   width: 16.875rem;
-  outline-color: $white;
+  outline-color: #fff;
   display: block;
 
   svg,
@@ -114,7 +114,7 @@
 .uomcontent .page-footer-section {
   height: 3.125rem;
   line-height: 3.125rem;
-  border-bottom: 1px solid $blue;
+  border-bottom: 1px solid var(--col-blue);
   clear: both;
   float: left;
   margin-left: 0;
@@ -132,7 +132,7 @@
 
   a {
     font-size: .9375rem;
-    color: $white;
+    color: #fff;
     text-decoration: none;
 
     &:hover {
@@ -143,7 +143,7 @@
   &.nav {
     padding-bottom: .75rem;
     padding-top: .5rem;
-    color: $lightblue;
+    color: var(--col-lightblue);
     height: auto;
 
     li {
@@ -179,7 +179,7 @@
 
       &:hover,
       &:focus {
-        color: $white;
+        color: #fff;
       }
     }
 
@@ -229,7 +229,7 @@
       a {
         border-radius: 3px;
         padding-top: .375rem;
-        color: $white;
+        color: #fff;
         vertical-align: top;
 
         svg {
@@ -261,7 +261,7 @@
 
       &:hover,
       &:focus {
-        background-color: $highlight;
+        background-color: var(--col-lighterblue);
         transform: scale(1.2);
       }
     }
@@ -315,9 +315,9 @@
     font-size: 1.125rem;
     max-width: $w-lge;
     padding: 2rem 0;
-    border-bottom: 1px solid $blue;
+    border-bottom: 1px solid var(--col-blue);
     clear: both;
-    color: $lightblue;
+    color: var(--col-lightblue);
     font-family: $ff-serif;
     font-style: italic;
     margin-left: auto;
@@ -327,7 +327,7 @@
 
     a {
       font-size: 1rem;
-      color: $lightblue;
+      color: var(--col-lightblue);
       font-style: normal;
     }
   }

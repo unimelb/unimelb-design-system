@@ -67,7 +67,7 @@
         @include breakpoint(desktop) {
           margin-top: -1.5rem;
           width: 1.25rem;
-          border-bottom: 4px solid $black;
+          border-bottom: 4px solid #000;
           display: block;
           margin-right: 0;
           position: absolute;
@@ -95,7 +95,7 @@
     div {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
-      border-top: 1px solid darken($lightgray, 10%);
+      border-top: 1px solid darken(var(--col-lightgray), 10%);
       text-align: center;
 
       @include breakpoint(desktop) {

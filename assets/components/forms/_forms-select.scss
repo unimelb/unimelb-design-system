@@ -1,10 +1,10 @@
 @mixin theme {
-  background-color: $highlight;
+  background-color: var(--col-lighterblue);
   background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
   background-repeat: no-repeat;
   background-position: 99% center;
-  border: 1px solid $highlight;
-  color: $white;
+  border: 1px solid var(--col-lighterblue);
+  color: #fff;
   cursor: pointer;
   line-height: 1.55;
   margin-top: 0;
@@ -14,87 +14,87 @@
   &.invalid:hover,
   &.alt.invalid,
   &.alt.invalid:hover {
-    background-color: $white;
+    background-color: #fff;
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iI2RmMDYyMCI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
-    border-color: $cherry;
-    color: $cherry;
+    border-color: var(--col-cherry);
+    color: var(--col-cherry);
 
     option {
-      color: $cherry;
+      color: var(--col-cherry);
     }
   }
 
   &.invalid + svg.icon,
   &.alt.invalid + svg.icon {
-    color: $cherry;
-    fill: $cherry;
+    color: var(--col-cherry);
+    fill: var(--col-cherry);
   }
 
   &:hover {
-    background-color: $brand;
-    border-color: $brand;
-    color: $white;
+    background-color: var(--col-darkblue);
+    border-color: var(--col-darkblue);
+    color: #fff;
   }
 
   &.alt {
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iIzAwNzZkZSI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
-    background-color: $white;
-    border-color: $highlight;
-    color: $highlight;
+    background-color: #fff;
+    border-color: var(--col-lighterblue);
+    color: var(--col-lighterblue);
 
     option {
-      color: $highlight;
+      color: var(--col-lighterblue);
     }
   }
 
   &.alt + svg.icon {
-    color: $highlight;
-    fill: $highlight;
+    color: var(--col-lighterblue);
+    fill: var(--col-lighterblue);
   }
 
   &.alt:hover {
-    background-color: $lightestblue;
-    border-color: $highlight;
-    color: $highlight;
+    background-color: var(--col-lightestblue);
+    border-color: var(--col-lighterblue);
+    color: var(--col-lighterblue);
   }
 
   &.clear,
   &.clear-dark {
     background-color: transparent;
-    border-color: $white;
-    color: $white;
+    border-color: #fff;
+    color: #fff;
 
     option {
-      color: $black;
+      color: #000;
     }
   }
 
   &.clear:hover,
   &.clear-dark:hover {
-    background-color: rgba($white, .3);
+    background-color: rgba(#fff, .3);
   }
 
   &.clear-dark.invalid,
   &.clear-dark.invalid:hover {
-    background-color: rgba($white, .3);
-    border-color: $cherry;
-    color: $cherry;
+    background-color: rgba(#fff, .3);
+    border-color: var(--col-cherry);
+    color: var(--col-cherry);
   }
 
   &.clear.invalid,
   &.clear.invalid:hover {
-    background-color: rgba($white, .3);
-    border-color: lighten($cherry, 25%);
-    color: lighten($cherry, 25%);
+    background-color: rgba(#fff, .3);
+    border-color: lighten(var(--col-cherry), 25%);
+    color: lighten(var(--col-cherry), 25%);
   }
 
   &.clear.invalid + svg.icon + small {
-    color: lighten($cherry, 25%);
+    color: lighten(var(--col-cherry), 25%);
   }
 
   &.clear.invalid + svg.icon {
-    color: lighten($cherry, 25%);
-    fill: lighten($cherry, 25%);
+    color: lighten(var(--col-cherry), 25%);
+    fill: lighten(var(--col-cherry), 25%);
   }
 }
 
@@ -107,30 +107,30 @@
     right: .4375rem;
     top: .4375rem;
     width: 1.875rem;
-    color: $white;
+    color: #fff;
     cursor: pointer;
     display: block;
-    fill: $white;
+    fill: #fff;
     position: absolute;
   }
 
   &:hover select {
-    background-color: $brand;
-    border-color: $brand;
-    color: $white;
+    background-color: var(--col-darkblue);
+    border-color: var(--col-darkblue);
+    color: #fff;
   }
 
   &:hover select.alt {
-    background-color: $lightestblue;
-    border-color: $highlight;
-    color: $highlight;
+    background-color: var(--col-lightestblue);
+    border-color: var(--col-lighterblue);
+    color: var(--col-lighterblue);
   }
 
   &:hover select.clear,
   &:hover select.clear-dark {
-    background-color: rgba($white, .3);
-    border-color: $white;
-    color: $white;
+    background-color: rgba(#fff, .3);
+    border-color: #fff;
+    color: #fff;
   }
 }
 
@@ -156,7 +156,7 @@
 
     option {
       background-color: transparent;
-      color: $white;
+      color: #fff;
     }
 
     &::-ms-expand {
@@ -190,14 +190,14 @@
     select {
       &,
       option {
-        background-color: $highlight !important;
+        background-color: var(--col-lighterblue) !important;
         color: #fff !important;
       }
 
       &.alt,
       &.alt option {
-        background-color: $white !important;
-        color: $highlight !important;
+        background-color: #fff !important;
+        color: var(--col-lighterblue) !important;
       }
 
       &.clear,

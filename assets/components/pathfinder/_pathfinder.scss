@@ -9,84 +9,84 @@
 
   &.white {
     a {
-      background-color: $white;
-      background-color: rgba($white, .9);
-      border-bottom: 3px solid $highlight;
-      color: $black;
-      outline-color: $white;
+      background-color: #fff;
+      background-color: rgba(#fff, .9);
+      border-bottom: 3px solid var(--col-lighterblue);
+      color: #000;
+      outline-color: #fff;
 
       &:hover, &:focus {
-        background-color: $white;
+        background-color: #fff;
       }
 
       &.featured {
-        color: $white;
+        color: #fff;
 
         p,
         span.text,
         strong {
-          border-color: $white;
-          color: $white;
+          border-color: #fff;
+          color: #fff;
         }
       }
 
       .button-small {
-        background-color: $highlight;
+        background-color: var(--col-lighterblue);
       }
     }
 
     p,
     span.text,
     strong {
-      border-color: $black;
-      color: $black;
+      border-color: #000;
+      color: #000;
     }
   }
 
   &.soft {
     a {
-      background-color: $white;
-      background-color: rgba($white, .9);
+      background-color: #fff;
+      background-color: rgba(#fff, .9);
       border-bottom: 0 none;
-      color: $black;
-      outline-color: $white;
+      color: #000;
+      outline-color: #fff;
 
       &:hover, &:focus {
-        background-color: $white;
+        background-color: #fff;
 
         .button-small {
           background-color: transparent;
-          color: $black;
+          color: #000;
         }
       }
 
       &.featured {
-        color: $white;
+        color: #fff;
 
         p,
         span.text,
         strong {
-          border-color: $white;
-          color: $white;
+          border-color: #fff;
+          color: #fff;
         }
       }
 
       .button-small {
         background-color: transparent;
-        color: $black;
+        color: #000;
       }
     }
 
     p,
     span.text,
     strong {
-      border-color: $black;
-      color: $black;
+      border-color: #000;
+      color: #000;
     }
 
     @include breakpoint(desktop) {
       li {
-        border-left: 1px solid $lightergray;
+        border-left: 1px solid var(--col-lightergray);
 
         &:first-child {
           border-left: none;
@@ -97,26 +97,26 @@
 
   &.buttons {
     a {
-      background-color: $white;
-      background-color: rgba($white, 0.9);
+      background-color: #fff;
+      background-color: rgba(#fff, 0.9);
       border: 0 none;
-      color: $black;
+      color: #000;
       min-height: 0;
-      outline-color: $white;
+      outline-color: #fff;
       padding-bottom: 0;
       padding-left: 0;
       padding-right: 0;
 
       &:hover,
       &:focus {
-        background-color: $white;
+        background-color: #fff;
       }
 
       strong {
         height: 6.25rem;
         min-width: 15.625rem;
         border-bottom: 0 none;
-        color: $black;
+        color: #000;
 
         & > span {
           padding: 0 .625rem;
@@ -142,7 +142,7 @@
 
       p {
         padding-bottom: 3rem;
-        color: $black;
+        color: #000;
       }
     }
   }
@@ -186,8 +186,8 @@
     padding-bottom: 3rem;
     letter-spacing: .0625rem;
     background-color: transparent;
-    border-bottom: 1px solid $white;
-    color: $white;
+    border-bottom: 1px solid #fff;
+    color: #fff;
     font-weight: $bold;
     position: relative;
     text-align: center;
@@ -206,8 +206,8 @@
   a {
     padding-bottom: 3rem;
     max-width: 21.875rem;
-    background-color: $brand;
-    border-bottom: 3px solid darken($brand, 50%);
+    background-color: var(--col-darkblue);
+    border-bottom: 3px solid darken(var(--col-darkblue), 50%);
     margin: 0 auto;
     position: relative;
     transition: all 150ms ease-out;
@@ -215,45 +215,45 @@
     strong,
     p,
     span.text {
-      color: $white;
+      color: #fff;
     }
 
     .button-small {
       font-size: .75rem;
       padding: .625rem .9375rem;
-      background-color: darken($brand, 5%);
+      background-color: darken(var(--col-darkblue), 5%);
     }
 
     &:hover, &:focus {
-      background-color: lighten($brand, 3%);
-      box-shadow: 0 0 10px rgba($black, 0.5);
+      background-color: lighten(var(--col-darkblue), 3%);
+      box-shadow: 0 0 10px rgba(#000, 0.5);
       transform: scale(1.06);
       transition-timing-function: ease-in;
       z-index: 2;
 
       .button-small {
-        background-color: darken($brand, 5%);
+        background-color: darken(var(--col-darkblue), 5%);
       }
     }
 
     &.featured {
       margin-bottom: -.9375rem;
-      background-color: darken($highlight, 5%);
-      color: $black;
+      background-color: darken(var(--col-lighterblue), 5%);
+      color: #000;
 
       transform: scale(1.06);
       z-index: 1;
 
       &:hover,
       &:focus {
-        background-color: lighten($highlight, 2%);
-        box-shadow: 0 0 10px rgba($black, 0.5);
+        background-color: lighten(var(--col-lighterblue), 2%);
+        box-shadow: 0 0 10px rgba(#000, 0.5);
         transform: scale(1.07);
         z-index: 1;
       }
 
       .button-small {
-        background-color: darken($highlight, 15%);
+        background-color: darken(var(--col-lighterblue), 15%);
       }
     }
   }

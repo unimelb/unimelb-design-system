@@ -12,13 +12,13 @@
   a {
     font-size: .875rem;
     padding-right: .625rem;
-    color: $lighterblue;
+    color: var(--col-lighterblue);
     display: inline-block;
     vertical-align: top;
     width: 50%;
 
     &:hover {
-      color: darken($lighterblue, 10%);
+      color: darken(var(--col-lighterblue), 10%);
       text-decoration: underline;
     }
   }
@@ -29,7 +29,7 @@
 
   @include breakpoint(wide) {
     padding-left: .9375rem;
-    border-left: 1px solid darken($lightgray, 5%);
+    border-left: 1px solid darken(var(--col-lightgray), 5%);
     display: table-cell;
     vertical-align: top;
     width: 30%;
@@ -50,12 +50,12 @@
   }
 
   a {
-    color: $black;
+    color: #000;
     display: block;
     text-decoration: none;
 
     &:hover {
-      color: $highlight;
+      color: var(--col-lighterblue);
     }
   }
 
@@ -77,8 +77,8 @@
     }
 
     li {
-      border-bottom: 1px solid darken($lightgray, 5%);
-      border-left: 5px solid $lighterblue;
+      border-bottom: 1px solid darken(var(--col-lightgray), 5%);
+      border-left: 5px solid var(--col-lighterblue);
       margin-left: -.9375rem;
       padding-bottom: 1.25rem;
       padding-top: 1.25rem;
@@ -110,12 +110,12 @@
   }
 
   h2 {
-    border-left: 5px solid $lighterblue;
+    border-left: 5px solid var(--col-lighterblue);
     font-size: 1.625rem;
     padding-bottom: .625rem;
     padding-right: .9375rem;
     border-right: 0 none;
-    color: $lighterblue;
+    color: var(--col-lighterblue);
     margin: 0 3% 0 0;
     padding-top: 0;
     padding-left: 3%;
@@ -127,7 +127,7 @@
     }
 
     @include breakpoint(desktop) {
-      border-right: 5px solid $lighterblue;
+      border-right: 5px solid var(--col-lighterblue);
       font-size: .875rem;
       width: 8.75rem;
       border-left: 0 none;
@@ -180,7 +180,7 @@
   }
 
   .time {
-    color: $lighterblue;
+    color: var(--col-lighterblue);
     display: block;
     font-weight: $regular;
     margin: 0 3%;
@@ -191,7 +191,7 @@
       margin-top: -.25rem;
       width: 1.25rem;
       display: inline-block;
-      fill: $highlight;
+      fill: var(--col-lighterblue);
       vertical-align: middle;
     }
 
@@ -203,9 +203,9 @@
   .tags {
     margin-top: .625rem;
     padding: .625rem 0;
-    border-bottom: 1px solid darken($lightgray, 5%);
-    border-top: 1px solid darken($lightgray, 5%);
-    color: lighten($midgray, 10%);
+    border-bottom: 1px solid darken(var(--col-lightgray), 5%);
+    border-top: 1px solid darken(var(--col-lightgray), 5%);
+    color: lighten(var(--col-midgray), 10%);
     margin-left: 3%;
     margin-right: 3%;
     width: 94%;
@@ -219,10 +219,10 @@
     }
 
     a {
-      color: lighten($midgray, 10%);
+      color: lighten(var(--col-midgray), 10%);
 
       &:hover {
-        color: $black;
+        color: #000;
         text-decoration: underline;
       }
     }
@@ -233,15 +233,15 @@
       line-height: 1.125rem;
       margin-right: .625rem;
       padding: .125rem .4375rem 0 .1875rem;
-      border: 1px solid $midgray;
-      color: $midgray;
+      border: 1px solid var(--col-midgray);
+      color: var(--col-midgray);
       display: inline-block;
       font-weight: $regular;
       text-transform: uppercase;
 
       svg {
         display: inline;
-        fill: lighten($midgray, 15%);
+        fill: lighten(var(--col-midgray), 15%);
       }
 
       [data-icon],
@@ -257,7 +257,7 @@
       margin-top: -.125rem;
       width: .8125rem;
       display: inline-block;
-      fill: $midgray;
+      fill: var(--col-midgray);
       vertical-align: middle;
     }
 
@@ -315,7 +315,7 @@
 
     .presenters {
       padding-left: .9375rem;
-      border-left: 1px solid darken($lightgray, 5%);
+      border-left: 1px solid darken(var(--col-lightgray), 5%);
       display: table-cell;
       width: 30%;
 

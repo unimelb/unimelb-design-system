@@ -26,8 +26,8 @@
       height: 4.375rem;
       padding-top: .5rem;
       transition: transform 0.15s;
-      background-color: $highlight;
-      color: $white;
+      background-color: var(--col-lighterblue);
+      color: #fff;
       display: block;
       text-align: center;
       text-decoration: none;
@@ -67,11 +67,11 @@
         transform: scale(1.1);
 
         svg {
-          fill: $white;
+          fill: #fff;
         }
 
         .icon-label {
-          color: $white;
+          color: #fff;
         }
       }
 

@@ -7,8 +7,8 @@
 }
 
 body {
-  background-color: $navy;
-  color: $black;
+  background-color: var(--col-navy);
+  color: #000;
   font-family: $ff-sans;
 
   @include breakpoint(desktop) {
@@ -51,7 +51,7 @@ body {
   .aside {
     font-size: .875rem;
     line-height: 1.5rem;
-    color: $darkgray;
+    color: var(--col-darkgray);
     float: right;
 
     // Override
@@ -168,7 +168,7 @@ body {
       font-size: .875rem;
       margin: 0 .9375rem;
       background-color: transparent;
-      color: $white;
+      color: #fff;
       display: inline-block;
       text-decoration: none;
       vertical-align: top;
@@ -185,7 +185,7 @@ body {
       }
 
       &:hover {
-        background-color: $highlight;
+        background-color: var(--col-lighterblue);
         transition: all 0.2s linear;
         transform: scale(1.1);
       }
@@ -193,30 +193,30 @@ body {
 
     &.alt {
       padding: 1.875rem 0;
-      background-color: $paleblue;
-      box-shadow: 0 6px 6px 4px rgba($black, .3);
-      color: $black;
+      background-color: var(--col-paleblue);
+      box-shadow: 0 6px 6px 4px rgba(#000, .3);
+      color: #000;
 
       .center {
         padding-bottom: 0;
       }
 
       ul a {
-        color: $black;
+        color: #000;
       }
 
       a.social {
-        color: $black;
+        color: #000;
 
         &:hover {
-          color: $white;
+          color: #fff;
         }
       }
     }
 
     &.contrib {
-      background-color: $paleyellow;
-      border: 1px solid darken($paleyellow, 10%);
+      background-color: var(--col-paleyellow);
+      border: 1px solid darken(var(--col-paleyellow), 10%);
 
       p {
         padding-top: 0;
@@ -307,7 +307,7 @@ body {
     }
 
     img {
-      border: 1px solid $lightergray;
+      border: 1px solid var(--col-lightergray);
       display: inline;
       margin-right: 10px;
       vertical-align: top;
@@ -318,8 +318,8 @@ body {
     }
 
     .block {
-      background-color: rgba($black, .7);
-      color: $white;
+      background-color: rgba(#000, .7);
+      color: #fff;
       font-weight: $bold;
       left: 50%;
       margin-left: -406px;
@@ -328,8 +328,8 @@ body {
       width: 200px;
 
       &:hover {
-        background-color: rgba($paleyellow, .8);
-        color: $black;
+        background-color: rgba(var(--col-paleyellow), .8);
+        color: #000;
       }
 
       &.desktop {
@@ -389,8 +389,8 @@ body {
 
   .layout-sidebar {
     // Fine line to separate any content on white above and below
-    border-bottom: 2px solid $paleblue;
-    border-top: 2px solid $paleblue;
+    border-bottom: 2px solid var(--col-paleblue);
+    border-top: 2px solid var(--col-paleblue);
 
     &__main,
     &__side {
@@ -399,8 +399,8 @@ body {
 
     &__side {
       font-size: .875rem;
-      background-color: $paleblue;
-      color: $darkgray;
+      background-color: var(--col-paleblue);
+      color: var(--col-darkgray);
       line-height: 1.68;
     }
 
@@ -453,7 +453,7 @@ body {
   }
 
   .alt {
-    background-color: $paleblue;
+    background-color: var(--col-paleblue);
 
     & + .spacer {
       margin-top: 0;
@@ -464,7 +464,7 @@ body {
   .margin-rule {
     .floating {
       padding: .9375rem .9375rem 1.875rem;
-      background-color: $lightgray;
+      background-color: var(--col-lightgray);
 
       h2,
       p {
@@ -484,7 +484,7 @@ body {
         &.ruled {
           margin-bottom: 3.75rem;
           margin-top: 3.75rem;
-          border-left: 1px solid $black;
+          border-left: 1px solid #000;
           float: left;
           margin-left: 0;
         }
@@ -512,12 +512,12 @@ body {
     &::before {
       @include tilt;
       margin-top: -6.25rem;
-      background-color: $white;
+      background-color: #fff;
       transform: skewY(-2deg);
     }
 
     &.alt::before {
-      background-color: $paleblue;
+      background-color: var(--col-paleblue);
     }
   }
 
@@ -526,12 +526,12 @@ body {
 
     &::after {
       @include tilt;
-      background-color: $white;
+      background-color: #fff;
       transform: skewY(2deg);
     }
 
     &.alt::after {
-      background-color: $paleblue;
+      background-color: var(--col-paleblue);
     }
 
     & + * {
@@ -576,22 +576,22 @@ body {
 // Uninjected styles
 .uomcontent .page-local-history {
   padding: .9375rem 1.875rem;
-  color: $midblue;
+  color: var(--col-midblue);
   display: block;
 
   a {
-    color: $midblue;
+    color: var(--col-midblue);
 
     &:hover {
-      color: $white;
+      color: #fff;
     }
   }
 }
 
 .uomcontent footer.cta {
   padding-top: 1.875rem;
-  background-color: $blue;
-  color: $white;
+  background-color: var(--col-blue);
+  color: #fff;
 
   .overview {
     padding: 1.875rem 0 0;
@@ -609,7 +609,7 @@ body {
 
   hr {
     border: 0 none;
-    border-top: 1px solid rgba($white, .2);
+    border-top: 1px solid rgba(#fff, .2);
   }
 
   ul {
@@ -622,7 +622,7 @@ body {
     }
 
     a {
-      color: $white;
+      color: #fff;
     }
 
     img {

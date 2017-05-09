@@ -19,7 +19,7 @@
     &:hover,
     &:focus {
       .inner {
-        background-color: $darkblue;
+        background-color: var(--col-darkblue);
       }
     }
   }
@@ -30,9 +30,9 @@
     padding-left: 1.25rem;
     padding-right: 1.25rem;
 
-    background-color: $darkblue;
-    background-color: rgba($darkblue, .7);
-    color: $white;
+    background-color: var(--col-darkblue);
+    background-color: rgba(var(--col-darkblue), .7);
+    color: #fff;
     max-width: 100%;
   }
 
@@ -65,7 +65,7 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     max-width: $w-mid;
-    border-bottom: 1px solid $lightergray;
+    border-bottom: 1px solid var(--col-lightergray);
     margin: 0 auto;
 
     &:first-child {
@@ -88,7 +88,7 @@
   }
 
   a {
-    color: $black;
+    color: #000;
     display: block;
     text-decoration: none;
   }
@@ -107,7 +107,7 @@
     &.topic {
       font-size: .875rem;
       line-height: 1.5rem;
-      color: $midgray;
+      color: var(--col-midgray);
     }
   }
 

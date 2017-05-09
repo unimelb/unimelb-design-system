@@ -22,13 +22,13 @@
     padding: .9375rem;
     margin-top: .25rem;
     margin-bottom: .75rem;
-    background-color: $paleblue;
-    border: 1px solid darken($paleblue, 7%);
+    background-color: var(--col-paleblue);
+    border: 1px solid darken(var(--col-paleblue), 7%);
     font-family: $ff-fixed;
   }
 
   .alt .citation {
-    background-color: $white;
+    background-color: #fff;
 
     &:last-child {
       margin-bottom: .25rem;

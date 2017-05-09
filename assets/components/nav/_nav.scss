@@ -17,7 +17,7 @@ body {
 }
 
 [role="main"] {
-  background-color: $white;
+  background-color: #fff;
 }
 
 @mixin quicklinks {
@@ -45,7 +45,7 @@ body {
     border-radius: 3px;
     font-size: .875rem;
     padding: .9375rem;
-    color: $white;
+    color: #fff;
     display: block;
     margin-bottom: 0;
     margin-left: 0;
@@ -66,7 +66,7 @@ body {
     @include breakpoint(desktop) {
       &:hover,
       &:focus {
-        background-color: $highlight;
+        background-color: var(--col-lighterblue);
         text-decoration: none;
         transform: scale(1.2);
       }
@@ -90,8 +90,8 @@ body {
   }
 
   @include breakpoint(desktop) {
-    border-bottom: 1px solid $blue;
-    border-top: 1px solid $blue;
+    border-bottom: 1px solid var(--col-blue);
+    border-top: 1px solid var(--col-blue);
 
     li {
       float: left;
@@ -117,9 +117,9 @@ body {
 
 .uomcontent .sitemap-trigger {
   width: 3.125rem;
-  background-color: $navy;
-  box-shadow: 3px 0 6px rgba($black, .4) inset;
-  color: rgba($white, .5);
+  background-color: var(--col-navy);
+  box-shadow: 3px 0 6px rgba(#000, .4) inset;
+  color: rgba(#fff, .5);
   cursor: pointer;
   display: block;
   height: 100%;
@@ -135,7 +135,7 @@ body {
 
     &:hover {
       width: 3.125rem;
-      color: $white;
+      color: #fff;
       transform: translateX(-5px);
     }
   }

@@ -20,5 +20,5 @@ $ff-sans: Helvetica, Arial, sans-serif;
 
 // Custom overrides
 .uomcontent [role="main"] form {
-  color: $midgray;
+  color: var(--col-midgray);
 }

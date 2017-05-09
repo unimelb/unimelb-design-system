@@ -3,7 +3,7 @@
     font-size: 1.75rem;
     margin-bottom: 1.875rem;
     padding-bottom: 1.875rem;
-    color: $lighterblue;
+    color: var(--col-lighterblue);
     display: block;
     font-family: "Arial Black", $ff-sans;
     font-style: normal;
@@ -32,8 +32,8 @@
       margin-top: .9375rem;
       padding-bottom: .9375rem;
       padding-top: .9375rem;
-      border-top: 4px solid $lighterblue;
-      color: $lighterblue;
+      border-top: 4px solid var(--col-lighterblue);
+      color: var(--col-lighterblue);
       display: block;
       float: right;
       font-family: $ff-sans;
@@ -91,7 +91,7 @@
   font-size: 6.25rem;
   margin-left: -3.125rem;
   margin-right: .625rem;
-  color: darken($lightgray, 10%);
+  color: darken(var(--col-lightgray), 10%);
   content: open-quote;
   line-height: .1em;
   vertical-align: -.333em;
@@ -109,7 +109,7 @@
     max-width: $w-mid;
     padding-left: .9375rem;
     padding-right: .9375rem;
-    color: $darkblue;
+    color: var(--col-darkblue);
     font-family: $ff-serif;
     font-style: italic;
     font-weight: $regular;
@@ -135,7 +135,7 @@
       font-size: .75rem;
       line-height: 1.5rem;
       border: 0;
-      color: lighten($midgray, 20%);
+      color: lighten(var(--col-midgray), 20%);
       float: left;
       font-family: $ff-sans;
       font-style: normal;

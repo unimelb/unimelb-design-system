@@ -1,7 +1,7 @@
 .uomcontent .filtered-listing-wrapper {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  background-color: $navy;
+  background-color: var(--col-navy);
 }
 
 .uomcontent .bottom-align-flat .filtered-listing-wrapper {
@@ -16,7 +16,7 @@
 @mixin filtered-listing-select {
   max-width: $w-lge;
   background-color: transparent;
-  color: $white;
+  color: #fff;
   margin: 0 auto;
   overflow: hidden;
 
@@ -59,7 +59,7 @@
       label {
         font-size: .9375rem;
         padding: 0 0 .9375rem;
-        color: $white;
+        color: #fff;
         display: block;
       }
     }
@@ -109,11 +109,11 @@
         color: $filtered-listing-green;
 
         span::before {
-          border-color: darken($green, 5%);
+          border-color: darken(var(--col-green), 5%);
         }
 
         &::after {
-          border-color: $green;
+          border-color: var(--col-green);
         }
       }
 
@@ -180,8 +180,8 @@
         width: 100%;
 
         option {
-          background-color: $navy;
-          color: $white;
+          background-color: var(--col-navy);
+          color: #fff;
         }
       }
     }

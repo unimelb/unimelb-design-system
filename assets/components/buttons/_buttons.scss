@@ -2,10 +2,10 @@
   border-radius: 5px;
   font-size: .8125rem;
   padding: .9375rem 1.25rem;
-  background-color: $highlight;
+  background-color: var(--col-lighterblue);
   border: 0;
-  border-bottom: 5px solid darken($highlight, 10%);
-  color: $white;
+  border-bottom: 5px solid darken(var(--col-lighterblue), 10%);
+  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-style: normal;
@@ -28,7 +28,7 @@
   &:hover,
   &:focus {
     border-bottom-width: 1px;
-    color: $white;
+    color: #fff;
     margin-top: 24px;
   }
 
@@ -37,29 +37,29 @@
   }
 
   &.warning {
-    background-color: $warning;
-    border-bottom-color: darken($warning, 10%);
+    background-color: var(--col-cherry);
+    border-bottom-color: darken(var(--col-cherry), 10%);
   }
 
   &.cta {
-    background-color: $cta;
-    border-bottom-color: darken($cta, 10%);
+    background-color: var(--col-green);
+    border-bottom-color: darken(var(--col-green), 10%);
   }
 
   &.brand {
-    background-color: $brand;
-    border-bottom-color: darken($brand, 10%);
+    background-color: var(--col-darkblue);
+    border-bottom-color: darken(var(--col-darkblue), 10%);
   }
 
   &.soft {
-    background-color: $soft;
-    border-bottom-color: darken($soft, 10%);
-    color: $midblue;
+    background-color: var(--col-lightergray);
+    border-bottom-color: darken(var(--col-lightergray), 10%);
+    color: var(--col-midblue);
 
     &:not([disabled]):hover,
     &:not([disabled]):focus {
-      background-color: $gray;
-      color: $darkblue;
+      background-color: var(--col-gray);
+      color: var(--col-darkblue);
     }
   }
 
@@ -91,7 +91,7 @@
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: darken($highlight, 10%);
+    background-color: darken(var(--col-lighterblue), 10%);
   }
 
   &:active {
@@ -100,26 +100,26 @@
 
   &.warning:not([disabled]):hover,
   &.warning:not([disabled]):focus {
-    background-color: darken($warning, 10%);
+    background-color: darken(var(--col-cherry), 10%);
   }
 
   &.cta:not([disabled]):hover,
   &.cta:not([disabled]):focus {
-    background-color: darken($cta, 10%);
+    background-color: darken(var(--col-green), 10%);
   }
 
   &.brand:not([disabled]):hover,
   &.brand:not([disabled]):focus {
-    background-color: darken($brand, 10%);
+    background-color: darken(var(--col-darkblue), 10%);
   }
 
   &.soft {
-    background-color: $soft;
-    color: $darkblue;
+    background-color: var(--col-lightergray);
+    color: var(--col-darkblue);
 
     &:not([disabled]):hover,
     &:not([disabled]):focus {
-      background-color: darken($gray, 10%);
+      background-color: darken(var(--col-gray), 10%);
     }
   }
 
@@ -161,9 +161,9 @@
   letter-spacing: .0625rem;
   margin: 1.25rem 0;
   padding: .625rem;
-  border-color: $black;
+  border-color: #000;
   border-style: solid;
-  color: $black;
+  color: #000;
   cursor: pointer;
   display: inline-block;
   font-style: normal;
@@ -177,8 +177,8 @@
 
   &:hover,
   &:focus {
-    background-color: $cyan;
-    color: $white;
+    background-color: var(--col-lighterblue);
+    color: #fff;
     border-color: transparent;
   }
 
@@ -240,8 +240,8 @@
 
   &:hover {
     margin: .625rem 0;
-    background-color: rgba($black, .1);
-    color: $black;
+    background-color: rgba(#000, .1);
+    color: #000;
   }
 }
 
@@ -281,20 +281,20 @@
   .button-hero-inverse {
     @include outlinebutton;
     @include outlinearrow;
-    border-color: $white;
-    color: $white;
+    border-color: #fff;
+    color: #fff;
     outline-color: currentColor;
   }
 
   .button-fill {
-    color: $black;
+    color: #000;
     text-align: center;
     text-decoration: none;
     width: 100%;
 
     &:hover {
-      background-color: $highlight;
-      color: $white;
+      background-color: var(--col-lighterblue);
+      color: #fff;
     }
 
     h2 {

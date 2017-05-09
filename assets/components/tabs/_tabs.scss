@@ -7,7 +7,7 @@
   width: 100%;
 
   nav {
-    border-bottom: 1px solid $lightergray;
+    border-bottom: 1px solid var(--col-lightergray);
 
     @include breakpoint(tablet) {
       text-align: left;
@@ -18,7 +18,7 @@
       padding-left: 1.5625rem;
       padding-right: 1.5625rem;
       background-color: inherit;
-      color: $midgray;
+      color: var(--col-midgray);
       cursor: pointer;
       display: inline-block;
       font-weight: $light;
@@ -31,12 +31,12 @@
 
       &:hover,
       &:focus {
-        color: $cyan;
+        color: var(--col-lighterblue);
       }
 
       &[data-current] {
-        border-bottom: 2px solid $cyan;
-        color: $cyan;
+        border-bottom: 2px solid var(--col-lighterblue);
+        color: var(--col-lighterblue);
       }
     }
   }
@@ -46,7 +46,7 @@
     padding-bottom: 0;
     padding-left: 1.5625rem;
     padding-right: 1.5625rem;
-    border-bottom: 1px solid $lightergray;
+    border-bottom: 1px solid var(--col-lightergray);
     margin: 0;
 
     p {
@@ -99,7 +99,7 @@
   .tabbed-nav {
     & > .full-width {
       height: $tabs-height;
-      background-color: $darkblue;
+      background-color: var(--col-darkblue);
       border-bottom: 1px solid transparent;
       position: relative;
       text-align: center;
@@ -122,7 +122,7 @@
         font-size: .9375rem;
         line-height: $tabs-height;
         padding: 0 1.25rem;
-        color: rgba($white, .7);
+        color: rgba(#fff, .7);
         display: inline-block;
         letter-spacing: .5px;
         outline-offset: -1px;
@@ -135,18 +135,18 @@
 
         &:hover,
         &:focus {
-          color: $white;
+          color: #fff;
         }
 
         &[data-current] {
-          color: $white;
+          color: #fff;
           font-weight: $regular;
           position: relative;
         }
 
         &[data-current]::after {
           border: solid transparent;
-          border-top-color: $darkblue;
+          border-top-color: var(--col-darkblue);
           border-width: 10px 10px 0;
           content: ' ';
           height: 0;
@@ -196,8 +196,8 @@
     .tab-arrow {
       font-size: 1.875rem;
       padding: 0 1.25rem .3125rem; // bottom padding aligns arrows with tab labels
-      background: $darkblue;
-      color: $white;
+      background: var(--col-darkblue);
+      color: #fff;
       display: none;
       font-weight: $bold;
       height: 100%;
@@ -210,19 +210,19 @@
       }
 
       &:focus {
-        outline: 1px dotted $white;
+        outline: 1px dotted #fff;
       }
     }
 
     .tab-arrow--left {
       padding-right: .625rem;
-      background: linear-gradient(to left, rgba($darkblue, 0), rgba($darkblue, .9) 10%);
+      background: linear-gradient(to left, rgba(var(--col-darkblue), 0), rgba(var(--col-darkblue), .9) 10%);
       left: 0;
     }
 
     .tab-arrow--right {
       padding-left: .625rem;
-      background: linear-gradient(to right, rgba($darkblue, 0), rgba($darkblue, .9) 10%);
+      background: linear-gradient(to right, rgba(var(--col-darkblue), 0), rgba(var(--col-darkblue), .9) 10%);
       right: 0;
     }
 
@@ -243,7 +243,7 @@
 
       section.lead {
         background: transparent;
-        color: $black;
+        color: #000;
         filter: none;
         font-weight: $light;
         margin: 0 auto;
@@ -251,14 +251,14 @@
         position: static;
 
         p {
-          color: $black;
+          color: #000;
         }
       }
     }
 
     &.black {
       .full-width {
-        background-color: $black;
+        background-color: #000;
       }
 
       figure.full-width {
@@ -271,28 +271,28 @@
       }
 
       nav a {
-        color: $white;
+        color: #fff;
 
         &[data-current] {
-          color: $white;
+          color: #fff;
           font-weight: $regular;
 
           &::after {
-            border-top-color: $black;
+            border-top-color: #000;
           }
         }
       }
 
       .mobile-nav,
       .mobile-nav select {
-        background-color: $black;
-        border: 1px solid $black;
+        background-color: #000;
+        border: 1px solid #000;
       }
     }
 
     &.navy {
       .full-width {
-        background-color: $darkblue;
+        background-color: var(--col-darkblue);
       }
 
       figure.full-width {
@@ -305,14 +305,14 @@
       }
 
       nav a {
-        color: $gray;
+        color: var(--col-gray);
 
         &[data-current] {
-          color: $white;
+          color: #fff;
           font-weight: $regular;
 
           &::after {
-            border-top-color: $darkblue;
+            border-top-color: var(--col-darkblue);
           }
         }
       }
@@ -382,8 +382,8 @@
     text-decoration: none;
 
     &[aria-selected="true"] {
-      background-color: $white;
-      border-color: $highlight;
+      background-color: #fff;
+      border-color: var(--col-lighterblue);
     }
 
     &:hover {

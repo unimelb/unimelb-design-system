@@ -3,7 +3,7 @@
     @include clearfix;
     max-width: $w-mid;
     font-size: 1em;
-    color: $midgray;
+    color: var(--col-midgray);
     font-family: $ff-sans;
     font-weight: $thin;
     margin: 0 auto;
@@ -14,7 +14,7 @@
       height: 1.25rem;
       top: 1.1875rem;
       width: 1.25rem;
-      background-color: $white;
+      background-color: #fff;
       content: '';
       left: 28%;
       position: absolute;
@@ -52,7 +52,7 @@
 
     dd {
       padding-bottom: 1.875rem;
-      border-left: 1px solid $lightergray;
+      border-left: 1px solid var(--col-lightergray);
       float: left;
       margin: -3px 0 0;
       position: relative;
@@ -67,7 +67,7 @@
         height: .9375rem;
         left: -.4375rem;
         width: .9375rem;
-        background-color: $lightergray;
+        background-color: var(--col-lightergray);
         border-radius: 50%;
         content: '';
         display: block;
@@ -93,7 +93,7 @@
       a.location {
         font-size: 1rem;
         padding-bottom: 1.25rem;
-        color: $navy;
+        color: var(--col-navy);
         display: block;
         font-style: italic;
         text-decoration: none;
@@ -113,10 +113,10 @@
         margin-left: 0;
 
         & > li:first-child {
-          border-top: 1px solid $lightergray;
+          border-top: 1px solid var(--col-lightergray);
 
           &.accordion__visible {
-            border-top: 1px solid $cyan;
+            border-top: 1px solid var(--col-lighterblue);
           }
         }
       }
@@ -129,7 +129,7 @@
 
     strong,
     span {
-      color: $navy;
+      color: var(--col-navy);
     }
 
     @include breakpoint(desktop) {
@@ -168,28 +168,28 @@
 
   .alt .timeline {
     &::before {
-      background-color: $paleblue;
+      background-color: var(--col-paleblue);
     }
 
     dd {
-      border-left-color: lighten($lightblue, 25%);
+      border-left-color: lighten(var(--col-lightblue), 25%);
 
       &::before {
-        background-color: lighten($lightblue, 25%);
+        background-color: lighten(var(--col-lightblue), 25%);
       }
 
       ul:last-child,
       p:last-child {
-        border-bottom-color: lighten($lightblue, 25%);
+        border-bottom-color: lighten(var(--col-lightblue), 25%);
       }
 
       ul.accordion {
 
         & > li:first-child {
-          border-top: 1px solid lighten($lightblue, 25%);
+          border-top: 1px solid lighten(var(--col-lightblue), 25%);
 
           &.accordion__visible {
-            border-top: 1px solid $cyan;
+            border-top: 1px solid var(--col-lighterblue);
           }
         }
       }

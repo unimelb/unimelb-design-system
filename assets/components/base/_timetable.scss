@@ -1,5 +1,5 @@
 .uomcontent .timetable {
-  background-color: $white;
+  background-color: #fff;
 
   @include breakpoint(desktop) {
     // r-bg-b
@@ -43,7 +43,7 @@
   }
 
   .aside {
-    background-color: $paleblue;
+    background-color: var(--col-paleblue);
 
     h2 {
       margin-left: 0;
@@ -76,13 +76,13 @@
 
   .time {
     min-width: 4.0625rem;
-    color: $black;
+    color: #000;
     display: inline-block;
     font-style: italic;
   }
 
   .duration {
-    color: $midgray;
+    color: var(--col-midgray);
     display: inline-block;
   }
 
@@ -98,7 +98,7 @@
 
   table {
     margin-bottom: 3.75rem;
-    border-bottom: 1px solid $lightergray;
+    border-bottom: 1px solid var(--col-lightergray);
     border-collapse: collapse;
     max-width: 100%;
     width: 100%;
@@ -115,7 +115,7 @@
     .accordion__close {
       height: 3.125rem;
       width: 3.125rem;
-      color: $white;
+      color: #fff;
       cursor: pointer;
       display: block;
       position: absolute;
@@ -136,7 +136,7 @@
     }
 
     tr {
-      border-bottom: 1px solid $lightergray;
+      border-bottom: 1px solid var(--col-lightergray);
       clear: both;
       display: block;
 
@@ -149,7 +149,7 @@
         @include subtitle;
         font-size: .875rem;
         padding: 1.875rem 0 .625rem;
-        border-top: 1px solid $lightergray;
+        border-top: 1px solid var(--col-lightergray);
         clear: both;
         display: block;
         letter-spacing: 1px;
@@ -159,8 +159,8 @@
 
         @include breakpoint(desktop) {
           padding: .625rem .625rem .625rem 0;
-          border-bottom: 1px solid $lightergray;
-          border-right: 1px solid $lightergray;
+          border-bottom: 1px solid var(--col-lightergray);
+          border-right: 1px solid var(--col-lightergray);
           border-top: 0 none;
           display: table-cell;
           max-width: 25%;
@@ -170,7 +170,7 @@
       td {
         font-size: .875rem;
         padding-top: .3125rem;
-        border-right: 1px solid $lightergray;
+        border-right: 1px solid var(--col-lightergray);
         display: block;
         float: left;
         width: 80%;
@@ -182,7 +182,7 @@
 
         @include breakpoint(desktop) {
           padding: .625rem;
-          border-bottom: 1px solid $lightergray;
+          border-bottom: 1px solid var(--col-lightergray);
           border-right: 0 none;
           display: table-cell;
           float: none;
@@ -217,8 +217,8 @@
         max-width: 20%;
 
         @include breakpoint(desktop) {
-          border-bottom: 1px solid $lightergray;
-          border-left: 1px solid $lightergray;
+          border-bottom: 1px solid var(--col-lightergray);
+          border-left: 1px solid var(--col-lightergray);
           display: table-cell;
           float: none;
           max-width: none;

@@ -1,12 +1,12 @@
 @mixin jump {
-  color: $gray;
+  color: var(--col-gray);
   list-style-position: inside;
   margin: 0 auto;
   padding: 35px 0 30px;
   width: 94%;
 
   li {
-    color: $midgray;
+    color: var(--col-midgray);
     display: inline-block;
     font-size: 14px;
     font-weight: $regular;
@@ -21,7 +21,7 @@
     &:first-child {
       padding-bottom: .4375rem;
       margin-bottom: .4375rem;
-      border-bottom: 1px solid $lightergray;
+      border-bottom: 1px solid var(--col-lightergray);
       letter-spacing: 1px;
       text-transform: uppercase;
       width: 100%;
@@ -93,7 +93,7 @@ body.jumpnav-active {
       }
 
       a {
-        border-bottom: 1px solid $lightergray;
+        border-bottom: 1px solid var(--col-lightergray);
       }
     }
 
@@ -110,10 +110,10 @@ body.jumpnav-active {
       }
 
       a.current {
-        color: $black;
+        color: #000;
 
         &:active {
-          color: darken($cherry, 15%);
+          color: darken(var(--col-cherry), 15%);
         }
       }
 
@@ -142,11 +142,11 @@ body.jumpnav-active {
 
   @include breakpoint(wide) {
     .page-inner {
-      background-color: $white;
+      background-color: #fff;
     }
 
     .uomcontent [role="main"] {
-      box-shadow: inset 2px 0 3px rgba($black, 0.15);
+      box-shadow: inset 2px 0 3px rgba(#000, 0.15);
       margin-left: 300px;
       margin-top: -10px;
       padding-top: 10px;

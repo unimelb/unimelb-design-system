@@ -46,12 +46,12 @@
   }
 
   &.headerless {
-    border-top: 8px solid $navy;
+    border-top: 8px solid var(--col-navy);
   }
 
   // Alternate syntax to avoid class on parent container
   .headerless {
-    border-top: 8px solid $navy;
+    border-top: 8px solid var(--col-navy);
     padding-top: 0;
   }
 
@@ -59,25 +59,25 @@
   & > header:first-child {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    background-color: $navy;
+    background-color: var(--col-navy);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: $white;
+    color: #fff;
     overflow: hidden;
     width: 100%;
 
     &.reverse {
-      color: $black;
+      color: #000;
     }
 
     &.solid-black {
-      background-color: $black;
+      background-color: #000;
     }
 
     &.solid-paleblue {
-      background-color: $paleblue;
-      color: $black;
+      background-color: var(--col-paleblue);
+      color: #000;
     }
 
     &.image {
@@ -198,7 +198,7 @@
 }
 
 .uomcontent [role="main"] .contrast-helper {
-  background-color: $midblue;
+  background-color: var(--col-midblue);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -206,23 +206,23 @@
   position: relative;
 
   header {
-    background-color: rgba($black, .5);
+    background-color: rgba(#000, .5);
   }
 
   &.no-filter header {
     background-color: transparent;
   }
   &.filter-blue header {
-    background-color: rgba($highlight, .5);
+    background-color: rgba(var(--col-lighterblue), .5);
   }
   &.filter-green header {
-    background-color: rgba($green, .5);
+    background-color: rgba(var(--col-green), .5);
   }
   &.filter-yellow header {
     background-color: rgba(#fff000, .5);
   }
   &.filter-red header {
-    background-color: rgba($cherry, .5);
+    background-color: rgba(var(--col-cherry), .5);
   }
 
   .stage {
@@ -240,7 +240,7 @@
 
 .uomcontent [role="main"] .fixed-bg {
   background-attachment: fixed;
-  background-color: $black;
+  background-color: #000;
   background-position: top center;
   background-size: inherit;
 }

@@ -5,7 +5,7 @@
   }
 
   .page-announcement {
-    color: $white;
+    color: #fff;
     position: relative;
     opacity: 1;
     transition: max-height .2s ease;
@@ -16,22 +16,22 @@
 
     &__message {
       padding: 1.25rem 3.125rem 1.25rem .9375rem;
-      background-color: $highlight;
-      color: $white;
+      background-color: var(--col-lighterblue);
+      color: #fff;
       display: block;
       text-align: left;
       text-decoration: none;
 
       &:hover {
-        background-color: $brand;
-        color: $white;
+        background-color: var(--col-darkblue);
+        color: #fff;
       }
 
       h2 {
         font-size: .8125rem;
         line-height: 1.5rem;
         padding-bottom: .1875rem;
-        color: $lightestblue;
+        color: var(--col-lightestblue);
         font-weight: normal;
         letter-spacing: normal;
         margin: 0;
@@ -77,15 +77,15 @@
       transition: background-color .15s, color .15s;
       background: none;
       border: none;
-      color: $white;
+      color: #fff;
       cursor: pointer;
       overflow: hidden;
       position: absolute;
       top: 50%;
 
       &:hover {
-        background-color: $white;
-        color: $highlight;
+        background-color: #fff;
+        color: var(--col-lighterblue);
       }
 
       & > [data-icon="close"] {

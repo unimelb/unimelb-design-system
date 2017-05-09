@@ -14,7 +14,7 @@
     }
 
     a {
-      color: $black;
+      color: #000;
       display: block;
       text-decoration: none;
 
@@ -36,7 +36,7 @@
     .frame {
       max-width: 12.5rem;
       margin-bottom: 1.5rem;
-      background-color: $lightestblue;
+      background-color: var(--col-lightestblue);
       border-radius: 50%;
       line-height: 0;
       margin-left: auto;
@@ -75,7 +75,7 @@
       line-height: 1.5rem;
       padding-top: 1.5rem;
       display: block;
-      color: $white;
+      color: #fff;
       text-decoration: none;
     }
 
@@ -85,14 +85,14 @@
       padding-top: 1.5rem;
       padding-bottom: .75rem;
       max-width: 31.25rem;
-      color: $white;
+      color: #fff;
       font-style: italic;
 
       a {
         font-size: .9375rem;
         line-height: 1.5rem;
         padding: 0 .625rem;
-        color: $white;
+        color: #fff;
         font-style: normal;
         font-weight: $regular;
         text-decoration: underline;
@@ -100,7 +100,7 @@
 
       &.links {
         padding-top: .75rem;
-        border-top: 1px solid rgba($white, 0.2);
+        border-top: 1px solid rgba(#fff, 0.2);
       }
     }
   }

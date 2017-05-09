@@ -107,12 +107,12 @@
         position: relative;
 
         &:hover {
-          color: $cyan;
+          color: var(--col-lighterblue);
           text-decoration: underline;
         }
 
         &:focus {
-          color: $cyan;
+          color: var(--col-lighterblue);
         }
 
         &::before {
@@ -151,10 +151,10 @@
       &.accordion__visible {
         margin-top: -1px;
         border-top: 1px solid;
-        border-color: $cyan;
+        border-color: var(--col-lighterblue);
 
         .accordion__title {
-          color: $cyan;
+          color: var(--col-lighterblue);
 
           &::before {
             transform: rotate(45deg);
@@ -173,7 +173,7 @@
       border-bottom-color: lighten($lightblue, 25%);
 
       &.accordion__visible {
-        border-color: $cyan;
+        border-color: var(--col-lighterblue);
       }
     }
   }
@@ -191,7 +191,7 @@
 
         &::before,
         .accordion__title {
-          color: $gray;
+          color: var(--col-gray);
         }
 
         .accordion__hidden {
@@ -204,7 +204,7 @@
 
         &.accordion__visible::before,
         &.accordion__visible .accordion__title {
-          color: $cyan;
+          color: var(--col-lighterblue);
         }
 
         div.highlight {

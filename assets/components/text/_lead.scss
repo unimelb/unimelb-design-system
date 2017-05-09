@@ -6,7 +6,7 @@
     padding-bottom: 4.5rem;
     max-width: $w-mid;
     background: transparent;
-    color: $black;
+    color: #000;
     filter: none;
     font-weight: $light;
     margin: 0 auto;
@@ -23,7 +23,7 @@
         padding-bottom: 3rem;
         margin-top: 1.875rem;
         width: 5rem;
-        border-top: 2px solid $darkblue;
+        border-top: 2px solid var(--col-darkblue);
         content: '';
         display: block;
         margin-left: auto;
@@ -42,7 +42,7 @@
     p {
       padding-bottom: 0;
       max-width: $w-mid;
-      color: $black;
+      color: #000;
       font-style: italic;
     }
 

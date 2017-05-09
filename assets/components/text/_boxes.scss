@@ -5,7 +5,7 @@
   max-width: $w-sml;
   padding-left: 1.5625rem;
   padding-right: 1.5625rem;
-  background-color: lighten($highlight, 54);
+  background-color: lighten(var(--col-lighterblue), 54);
   margin: 0 auto;
 
   h1 {
@@ -27,7 +27,7 @@
   dt {
     font-size: .9375rem;
     line-height: 1.5rem;
-    color: $black;
+    color: #000;
     display: block;
     float: none;
     font-weight: $light;
@@ -69,7 +69,7 @@
 
   .emergency-box {
     @include boxes;
-    color: $cherry;
+    color: var(--col-cherry);
 
     dd {
       font-size: 1.5rem;
@@ -78,7 +78,7 @@
     }
 
     a {
-      color: $cherry;
+      color: var(--col-cherry);
     }
 
     @include breakpoint(desktop) {

@@ -3,9 +3,9 @@
   font-size: .8125rem;
   height: 2.8125rem;
   padding: 0 .9375rem;
-  background-color: $highlight;
+  background-color: var(--col-lighterblue);
   border: 0 none;
-  color: $white;
+  color: #fff;
   cursor: pointer;
   font-weight: $bold;
   letter-spacing: 1px;
@@ -14,7 +14,7 @@
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: darken($highlight, 10%);
+    background-color: darken(var(--col-lighterblue), 10%);
   }
 
   &:active {
@@ -25,8 +25,8 @@
 [role="main"] form {
   font-size: 1rem;
   padding: 0 .625rem;
-  background-color: $white;
-  color: $darkgray;
+  background-color: #fff;
+  color: var(--col-darkgray);
   line-height: 1.2;
   margin: 0 auto;
   max-width: $w-sml;
@@ -42,7 +42,7 @@
   [data-required=true]::after {
     padding-left: .3125rem;
     content: '*';
-    color: $cherry;
+    color: var(--col-cherry);
   }
 
   .form__subtext {
@@ -52,7 +52,7 @@
 }
 
 .uomcontent .form-error {
-  color: $warning;
+  color: var(--col-cherry);
 
   p {
     padding-bottom: 0;
@@ -94,7 +94,7 @@
     font-size: .875rem;
     padding: .3125rem 0;
     animation: flash .4s .1s 1 ease-in-out;
-    color: $cherry;
+    color: var(--col-cherry);
     display: block;
     font-style: italic;
   }
@@ -227,11 +227,11 @@
         height: 3.75rem;
         line-height: 2.25rem;
         padding: .9375rem;
-        border-color: $highlight;
+        border-color: var(--col-lighterblue);
 
         &:focus {
-          background-color: $white;
-          color: $highlight;
+          background-color: #fff;
+          color: var(--col-lighterblue);
         }
       }
 
@@ -298,8 +298,8 @@
         text-indent: 0;
 
         &::before {
-          background-color: $white;
-          border: 1px solid lighten($midgray, 40%);
+          background-color: #fff;
+          border: 1px solid lighten(var(--col-midgray), 40%);
           box-sizing: border-box;
           content: '';
           display: block;
@@ -322,13 +322,13 @@
     }
 
     &:focus + label span::before {
-      border-color: $highlight;
+      border-color: var(--col-lighterblue);
     }
   }
 
   input[type="checkbox"]:not(.unstyled) + label {
     &::after {
-      border: 3px solid $highlight;
+      border: 3px solid var(--col-lighterblue);
       border-right: 0 none;
       border-top: 0 none;
       height: 5px;
@@ -343,7 +343,7 @@
 
   input[type="radio"]:not(.unstyled) + label {
     &::after {
-      background-color: $highlight;
+      background-color: var(--col-lighterblue);
       border-radius: 50%;
       height: 12px;
       width: 12px;
@@ -374,8 +374,8 @@
   padding-bottom: 1.5rem;
   max-width: $w-mid;
   background-color: transparent;
-  border-top: 1px solid rgba($white, 0.2);
-  color: $white;
+  border-top: 1px solid rgba(#fff, 0.2);
+  color: #fff;
   margin-left: auto;
   margin-right: auto;
 
@@ -391,7 +391,7 @@
     background-color: transparent;
 
     label {
-      color: $white;
+      color: #fff;
     }
 
     @include breakpoint(desktop) {
