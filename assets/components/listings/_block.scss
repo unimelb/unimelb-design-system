@@ -136,7 +136,7 @@
     display: block;
     overflow: hidden;
 
-    @mixin breakpoint(600px) {
+    @media (--bp-x-tablet) {
       height: 440px;
       overflow: hidden;
     }
@@ -167,7 +167,7 @@
     }
   }
 
-  @mixin breakpoint(600px) {
+  @media (--bp-x-tablet) {
     max-width: var(--w-lge);
 
     li {
@@ -218,7 +218,7 @@
     }
   }
 
-  @mixin breakpoint(wide) {
+  @media (--bp-wide) {
     li {
       width: 24%;
     }
@@ -243,7 +243,7 @@
     }
   }
 
-  @mixin breakpoint(87.5em) {
+  @media (--bp-xx-wide) {
     max-width: 1414px;
     padding: 0;
 
@@ -290,7 +290,7 @@
   .event { border-bottom-color: var(--col-lighterblue); }
   .exhibition { border-bottom-color: var(--col-yellow); }
 
-  @mixin breakpoint(600px) {
+  @media (--bp-x-tablet) {
     .event,
     .exhibition {
       .block-listing__img,
@@ -352,14 +352,14 @@
     background-color: #fff;
     position: relative;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       transition: transform .15s;
     }
 
     &:hover {
       z-index: 100;
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         transform: scale(1.02);
       }
 
@@ -397,7 +397,7 @@
         min-height: 18.75rem;
         background-color: transparent;
 
-        @mixin breakpoint(600px) {
+        @media (--bp-x-tablet) {
           min-height: 27.5rem;
         }
       }
@@ -418,12 +418,12 @@
           font-weight: var(--fw-thin);
         }
 
-        @mixin breakpoint(600px) {
+        @media (--bp-x-tablet) {
           padding: .625rem 1.5rem;
           width: 100%;
         }
 
-        @mixin breakpoint(wide) {
+        @media (--bp-wide) {
           font-size: 1.625rem;
           line-height: 2.25rem;
           padding: 1.25rem 1.5rem;
@@ -452,7 +452,7 @@
             line-height: 1.2;
           }
 
-          @mixin breakpoint(600px) {
+          @media (--bp-x-tablet) {
             font-size: 2.5rem;
 
             span {
@@ -533,7 +533,7 @@
         font-size: 1.25rem;
         line-height: 1.5rem;
 
-        @mixin breakpoint(desktop) {
+        @media (--bp-desktop) {
           font-size: 1.5rem;
           line-height: 2.25rem;
           font-weight: var(--fw-light);
@@ -541,12 +541,10 @@
         }
       }
 
-      @mixin breakpoint(0) {
-        // Hide label for modern browsers
-        .icon-label {
-          height: 0;
-          text-indent: -999em;
-        }
+      // Hide label for modern browsers
+      .icon-label {
+        height: 0;
+        text-indent: -999em;
       }
     }
 
@@ -580,12 +578,10 @@
           float: right;
         }
 
-        @mixin breakpoint(0) {
-          // Hide label for modern browsers
-          .icon-label {
-            height: 0;
-            text-indent: -999em;
-          }
+        // Hide label for modern browsers
+        .icon-label {
+          height: 0;
+          text-indent: -999em;
         }
       }
     }
@@ -634,12 +630,10 @@
           margin-right: .25rem;
           margin-top: 0;
 
-          @mixin breakpoint(0) {
-            // Hide label for modern browsers
-            .icon-label {
-              height: 0;
-              text-indent: -999em;
-            }
+          // Hide label for modern browsers
+          .icon-label {
+            height: 0;
+            text-indent: -999em;
           }
         }
 
@@ -655,19 +649,19 @@
           display: inline-block;
           line-height: 1;
 
-          @mixin breakpoint(height-small) {
+          @media (--bp-height-small) {
             font-size: 1.125rem;
             padding-left: .625rem;
           }
         }
 
-        @mixin breakpoint(height-small) {
+        @media (--bp-height-small) {
           font-size: .9375rem;
           line-height: 1.5rem;
         }
       }
 
-      @mixin breakpoint(600px) {
+      @media (--bp-x-tablet) {
         .block-container {
           height: 27.5rem;
         }
@@ -727,7 +721,7 @@
     }
   }
 
-  @mixin breakpoint(600px) {
+  @media (--bp-x-tablet) {
     li {
       max-width: 100%;
       width: 49%;
@@ -738,7 +732,7 @@
     }
   }
 
-  @mixin breakpoint(950px) {
+  @media (min-width: 950px) {
     li {
       width: 32%;
     }
@@ -748,7 +742,7 @@
     }
   }
 
-  @mixin breakpoint(1280px) {
+  @media (min-width: 1280px) {
     li {
       width: 24%;
     }

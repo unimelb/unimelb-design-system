@@ -54,74 +54,34 @@
 
 
 /**
+ * Breakpoints
+ */
+@custom-media --bp-max-mobile (max-width: 480px);
+@custom-media --bp-max-x-mobile (max-width: 599px);
+
+@custom-media --bp-tablet (min-width: 481px);
+@custom-media --bp-x-tablet (min-width: 600px);
+@custom-media --bp-max-tablet (max-width: 768px);
+@custom-media --bp-only-tablet (min-width: 481px) and (max-width: 768px);
+
+@custom-media --bp-desktop (min-width: 769px);
+@custom-media --bp-x-desktop (min-width: 900px);
+@custom-media --bp-max-desktop (max-width: 1098px);
+@custom-media --bp-only-desktop (min-width: 769px) and (max-width: 1098px);
+
+@custom-media --bp-wide (min-width: 1099px);
+@custom-media --bp-x-wide (min-width: 1250px);
+@custom-media --bp-xx-wide (min-width: 1400px);
+
+@custom-media --bp-height-smallest (min-height: 620px);
+@custom-media --bp-height-small (min-height: 700px);
+@custom-media --bp-height-medium (min-height: 850px);
+@custom-media --bp-height-big (min-height: 1200px);
+
+
+/**
  * Mixins
  */
-
-@define-mixin breakpoint $point {
-  @if $point == wide {
-    @media screen and (min-width: 1099px) {
-      & {
-        @content;
-      }
-    }
-  }
-  @else if $point == desktop {
-    @media screen and (min-width: 769px) {
-      & {
-        @content;
-      }
-    }
-  }
-  @else if $point == tablet {
-    @media screen and (min-width: 481px){
-      & {
-        @content;
-      }
-    }
-  }
-  @else if $point == mobile {
-    @media screen and (max-width: 480px) {
-      & {
-        @content;
-      }
-    }
-  }
-  @else if $point == height-smallest {
-    @media screen and (min-height: 620px) {
-      & {
-        @content;
-      }
-    }
-  }
-  @else if $point == height-small {
-    @media screen and (min-height: 700px) {
-      & {
-        @content;
-      }
-    }
-  }
-  @else if $point == height-medium {
-    @media screen and (min-height: 850px) {
-      & {
-        @content;
-      }
-    }
-  }
-  @else if $point == height-big {
-    @media screen and (min-height: 1200px) {
-      & {
-        @content;
-      }
-    }
-  }
-  @else {
-    @media screen and (min-width: $point) {
-      & {
-        @content;
-      }
-    }
-  }
-}
 
 // Micro clearfix
 // http://nicolasgallagher.com/micro-clearfix-hack/
@@ -142,11 +102,11 @@
   padding: 0 3%;
   width: 94%;
 
-  @mixin breakpoint(tablet) {
+  @media (--bp-tablet) {
     max-width: var(--w-lge);
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     width: 100%;
   }
 }

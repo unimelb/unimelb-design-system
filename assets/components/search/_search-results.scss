@@ -21,7 +21,7 @@
     padding-right: 0;
     width: 94%;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       width: 100%;
     }
 
@@ -67,7 +67,7 @@
           line-height: 1.5rem;
         }
 
-        @mixin breakpoint(desktop) {
+        @media (--bp-desktop) {
           .person__info {
             display: table;
           }
@@ -112,7 +112,7 @@
       display: block;
       float: left;
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         max-width: 130px;
       }
     }
@@ -132,7 +132,7 @@
       color: #000;
       width: auto;
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         font-size: 1rem;
         line-height: 1.5rem;
       }

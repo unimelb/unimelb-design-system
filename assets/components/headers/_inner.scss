@@ -28,13 +28,13 @@
           font-weight: var(--fw-light);
           line-height: 1.2;
 
-          @mixin breakpoint(desktop) {
+          @media (--bp-desktop) {
             margin-top: -.9375rem;
           }
         }
       }
 
-      @mixin breakpoint(tablet) {
+      @media (--bp-tablet) {
         .left {
           float: left;
           width: 75%;

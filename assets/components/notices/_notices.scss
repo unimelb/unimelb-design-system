@@ -15,7 +15,7 @@
       color: inherit;
     }
 
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       max-width: var(--w-sml);
     }
   }

@@ -47,15 +47,15 @@
 
     }
 
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       column-count: 2;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       column-count: 3;
     }
 
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       column-count: 4;
     }
   }

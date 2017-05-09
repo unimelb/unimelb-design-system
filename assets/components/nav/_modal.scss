@@ -30,7 +30,7 @@
       z-index: 14;
     }
 
-    @media screen and (min-width: 1100px) {
+    @media (--bp-wide) {
       left: 0;
       margin: 0 auto;
       max-width: 900px;

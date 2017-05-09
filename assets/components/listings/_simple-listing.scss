@@ -99,7 +99,7 @@
     }
   }
 
-  @mixin breakpoint(tablet) {
+  @media (--bp-tablet) {
     @mixin clearfix;
     padding-bottom: 1.5rem;
 
@@ -121,7 +121,7 @@
     }
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     padding: 0 .625rem 1.5rem;
 
     .simple-listing__item {
@@ -166,7 +166,7 @@
     }
   }
 
-  @mixin breakpoint(wide) {
+  @media (--bp-wide) {
     &--four {
       .simple-listing__item {
         width: 25%;

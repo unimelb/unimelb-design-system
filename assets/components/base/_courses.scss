@@ -16,7 +16,7 @@
     padding-right: 3%;
     text-align: left;
 
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       padding-left: 0;
       padding-right: 0;
     }
@@ -38,7 +38,7 @@
     padding-left: 0;
     padding-right: 3%;
 
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       padding-left: 0;
       padding-right: 0;
     }
@@ -84,7 +84,7 @@
       position: relative;
       text-align: left;
 
-      @mixin breakpoint(tablet) {
+      @media (--bp-tablet) {
         padding-left: .9375rem;
         padding-right: .9375rem;
       }
@@ -109,7 +109,7 @@
         padding-right: 3.75rem;
         padding-left: 3%;
 
-        @mixin breakpoint(tablet) {
+        @media (--bp-tablet) {
           padding-left: .9375rem;
         }
       }
@@ -119,7 +119,7 @@
         padding-left: 3%;
         padding-right: 3%;
 
-        @mixin breakpoint(tablet) {
+        @media (--bp-tablet) {
           padding-left: .9375rem;
           padding-right: .9375rem;
         }
@@ -131,7 +131,7 @@
         margin-left: 3%;
         margin-right: 3%;
 
-        @mixin breakpoint(tablet) {
+        @media (--bp-tablet) {
           margin: .9375rem;
         }
       }
@@ -140,7 +140,7 @@
         padding: .9375rem;
         clear: none;
 
-        @mixin breakpoint(tablet) {
+        @media (--bp-tablet) {
           display: block;
           float: left;
           width: 33%;
@@ -240,7 +240,7 @@
     padding: 0;
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     padding-left: .9375rem;
     padding-right: .9375rem;
     display: table;

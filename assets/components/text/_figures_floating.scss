@@ -22,7 +22,7 @@
     max-height: 31.25rem;
   }
 
-  @mixin breakpoint(tablet) {
+  @media (--bp-tablet) {
     margin-bottom: 1.875rem;
     border: 0 none;
     max-width: 62%;
@@ -44,7 +44,7 @@
     }
   }
 
-  @mixin breakpoint(wide) {
+  @media (--bp-wide) {
     margin-bottom: 1.25rem;
     max-width: 80%;
   }
@@ -54,7 +54,7 @@
   .inset-left {
     @mixin inset;
 
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       margin-right: 1.875rem;
       float: left;
       text-align: left;
@@ -68,7 +68,7 @@
       }
     }
 
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       margin-left: -11.25rem;
     }
   }
@@ -76,7 +76,7 @@
   .inset-right {
     @mixin inset;
 
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       margin-left: 1.875rem;
       float: right;
       text-align: right;
@@ -90,7 +90,7 @@
       }
     }
 
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       margin-right: -11.25rem;
     }
   }
@@ -98,13 +98,13 @@
 
 body.jumpnav-active .uomcontent {
   .inset-left {
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       margin-left: 0;
       max-width: 100%;
       padding: 0;
     }
 
-    @mixin breakpoint(1400px) {
+    @media (--bp-xx-wide) {
       margin-bottom: 1.25rem;
       margin-left: -11.25rem;
       max-width: 80%;
@@ -112,14 +112,14 @@ body.jumpnav-active .uomcontent {
   }
 
   .inset-right {
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       margin-left: 1.875rem;
       margin-right: 0;
       max-width: 100%;
       padding: 0;
     }
 
-    @mixin breakpoint(1400px) {
+    @media (--bp-xx-wide) {
       margin-bottom: 1.25rem;
       margin-right: -11.25rem;
       max-width: 80%;
@@ -130,23 +130,23 @@ body.jumpnav-active .uomcontent {
 body.jumpnav-active .uomcontent {
   blockquote:not(.blockquote-classic).left,
   blockquote:not(.blockquote-classic).right {
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       margin-left: 0;
     }
 
-    @mixin breakpoint(1400px) {
+    @media (--bp-xx-wide) {
       margin-bottom: 1.25rem;
       margin-left: -11.25rem;
     }
   }
 
   blockquote:not(.blockquote-classic).right {
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       margin-left: 1.875rem;
       margin-right: 0;
     }
 
-    @mixin breakpoint(1400px) {
+    @media (--bp-xx-wide) {
       margin-bottom: 1.25rem;
       margin-right: -11.25rem;
     }

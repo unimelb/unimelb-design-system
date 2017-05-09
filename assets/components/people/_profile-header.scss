@@ -92,7 +92,7 @@
       }
     }
 
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
 
       &__info {
         @mixin clearfix;

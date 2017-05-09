@@ -7,7 +7,7 @@
       padding-bottom: 0;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       text-align: left;
     }
   }
@@ -47,7 +47,7 @@
 
     // Keep message against logo, even above `wide`
     & + .flash--keep-left {
-      @mixin breakpoint(wide) {
+      @media (--bp-wide) {
         padding-left: 12.8125rem;
 
         & > p {

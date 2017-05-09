@@ -23,11 +23,11 @@
     }
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     margin-left: 0;
   }
 
-  @mixin breakpoint(wide) {
+  @media (--bp-wide) {
     padding-left: .9375rem;
     border-left: 1px solid color(var(--col-lightgray) shade(5%));
     display: table-cell;
@@ -44,7 +44,7 @@
   max-width: var(--w-lge);
   padding: 0;
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     border-spacing: 1.875rem;
     display: table;
   }
@@ -71,7 +71,7 @@
     padding-top: 0;
     width: 100%;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       display: table-row;
       padding-left: 0;
     }
@@ -94,7 +94,7 @@
         border-bottom: 0;
       }
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         padding-left: .9375rem;
         border-left: 0 none;
         border-spacing: 0;
@@ -126,7 +126,7 @@
       padding-right: 0.4em;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       border-right: 5px solid var(--col-lighterblue);
       font-size: .875rem;
       width: 8.75rem;
@@ -160,7 +160,7 @@
   ul {
     max-width: 100%;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       display: table-cell;
       margin: 0;
       padding: 0;
@@ -174,7 +174,7 @@
     line-height: 1.3;
     max-width: 100%;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       margin-left: 0;
     }
   }
@@ -195,7 +195,7 @@
       vertical-align: middle;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       margin-left: 0;
     }
   }
@@ -261,7 +261,7 @@
       vertical-align: middle;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       border-bottom: 0 none;
       border-top: 0 none;
       margin-left: 0;
@@ -275,7 +275,7 @@
       max-width: 100%;
     }
 
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       padding-right: .9375rem;
       display: table-cell;
       vertical-align: top;
@@ -289,7 +289,7 @@
 
 // Manual fix for 300px diff
 .jumpnav-active .uomcontent [role="main"] ul.event-listing {
-  @mixin breakpoint(wide) {
+  @media (--bp-wide) {
     .col {
       display: block;
       width: 100%;
@@ -307,7 +307,7 @@
     }
   }
 
-  @mixin breakpoint(1400px) {
+  @media (--bp-xx-wide) {
     .col {
       display: table-cell;
       width: auto;

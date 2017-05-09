@@ -39,13 +39,13 @@
     }
   }
 
-  @mixin breakpoint(tablet) {
+  @media (--bp-tablet) {
     li {
       width: 100%;
     }
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     li {
       width: 49.7%;
     }
@@ -88,7 +88,7 @@
     }
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     li {
       width: 32.9%;
     }

@@ -34,7 +34,7 @@
     }
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     max-width: 250rem;
     background-color: transparent;
     display: table;
@@ -60,7 +60,7 @@
     }
   }
 
-  @mixin breakpoint(wide) {
+  @media (--bp-wide) {
     li {
       height: 3.75rem;
     }

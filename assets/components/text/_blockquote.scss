@@ -43,21 +43,21 @@
     }
 
 
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       clear: both;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       width: 100%;
     }
 
     &.left,
     &.right {
-      @mixin breakpoint(tablet) {
+      @media (--bp-tablet) {
         font-size: 2rem;
       }
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         padding-right: .9375rem;
         margin: 0 .9375rem 0 0;
         max-width: 25rem;
@@ -66,20 +66,20 @@
         width: auto;
       }
 
-      @mixin breakpoint(wide) {
+      @media (--bp-wide) {
         margin-left: -11.25rem;
         max-width: 60%;
       }
     }
 
     &.right {
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         margin-left: 1.875rem;
         float: right;
         margin-right: 0;
       }
 
-      @mixin breakpoint(wide) {
+      @media (--bp-wide) {
         margin-right: -11.25rem;
         margin-left: 0;
       }
@@ -157,12 +157,12 @@
       padding: 0;
     }
 
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       font-size: 1.5rem;
       line-height: 2.25rem;
     }
 
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       margin-left: auto;
       margin-right: auto;
     }

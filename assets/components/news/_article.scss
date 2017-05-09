@@ -90,7 +90,7 @@
     margin-bottom: 1.5rem;
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     margin-left: auto;
     margin-right: auto;
 
@@ -129,7 +129,7 @@
     }
   }
 
-  @mixin breakpoint(wide) {
+  @media (--bp-wide) {
     .article {
       width: 75%;
     }

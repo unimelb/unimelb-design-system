@@ -11,7 +11,7 @@ body {
   color: #000;
   font-family: var(--ff-sans);
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     line-height: 1.68;
   }
 }
@@ -150,7 +150,7 @@ body {
     & + .video {
       margin-top: -1.875rem;
       max-width: var(--w-lge);
-      @mixin breakpoint(87.5em) {
+      @media (--bp-xx-wide) {
         margin-left: auto;
         margin-right: auto;
         padding-bottom: 550px;
@@ -221,7 +221,7 @@ body {
       p {
         padding-top: 0;
 
-        @mixin breakpoint(desktop) {
+        @media (--bp-desktop) {
           padding-left: 0;
         }
       }
@@ -235,7 +235,7 @@ body {
     }
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     font-weight: var(--fw-light);
   }
 
@@ -258,7 +258,7 @@ body {
       width: 100%;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       display: inline-block;
       float: none;
       width: 25%;
@@ -278,14 +278,14 @@ body {
         width: 100%;
       }
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         width: 24%;
 
       }
     }
 
     .bside {
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         padding-bottom: 1.25rem;
         padding-top: 1.25rem;
       }
@@ -302,7 +302,7 @@ body {
     text-align: center;
     width: 100%;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       width: 814px;
     }
 
@@ -348,7 +348,7 @@ body {
     width: 94%;
 
 
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       margin-bottom: .9375rem;
       max-width: var(--w-lge);
       width: 100%;
@@ -372,7 +372,7 @@ body {
       text-align: left;
       width: 82%;
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         float: left;
         margin: 0;
         padding: 0;
@@ -422,7 +422,7 @@ body {
       }
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       display: table;
       width: 100%;
 
@@ -444,7 +444,7 @@ body {
       }
     }
 
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       &__main,
       &__side {
         padding: 4.5rem 2rem;
@@ -472,7 +472,7 @@ body {
       }
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       width: 68.6875rem;
       margin: 0 auto;
 
@@ -631,7 +631,7 @@ body {
       vertical-align: middle;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       padding: 0 0 1.875rem;
       text-align: center;
 
@@ -644,7 +644,7 @@ body {
     }
 
     &.site-links {
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         padding-top: 1.875rem;
       }
     }

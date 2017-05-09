@@ -74,7 +74,7 @@
     }
   }
 
-  @mixin breakpoint(height-small) {
+  @media (--bp-height-small) {
     font-size: .9375rem;
     padding: 1.0625rem 2.5rem;
   }
@@ -130,7 +130,7 @@
     margin-top: 0;
   }
 
-  @mixin breakpoint(height-small) {
+  @media (--bp-height-small) {
     font-size: .75rem;
     padding: .625rem .9375rem;
   }
@@ -186,7 +186,7 @@
     opacity: .3;
   }
 
-  @mixin breakpoint(height-small) {
+  @media (--bp-height-small) {
     font-size: .9375rem;
     margin: 1.25rem 0;
     padding: 1.25rem;
@@ -200,7 +200,7 @@
     content: '\2192';
     line-height: 0;
 
-    @mixin breakpoint(height-small) {
+    @media (--bp-height-small) {
       font-size: 1.625rem;
       padding-left: .9375rem;
     }
@@ -214,7 +214,7 @@
     content: '\2190';
     line-height: 0;
 
-    @mixin breakpoint(height-small) {
+    @media (--bp-height-small) {
       font-size: 1.625rem;
       padding-right: .9375rem;
     }

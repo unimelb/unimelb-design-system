@@ -84,7 +84,7 @@
       color: #000;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       li {
         border-left: 1px solid var(--col-lightergray);
 
@@ -262,7 +262,7 @@
     background-color: transparent;
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     padding-top: 3rem;
     padding-bottom: 3rem;
     display: table;
@@ -331,7 +331,7 @@
 @define-mixin pathfinder-2 {
   @mixin pathfinder-3;
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     li {
       padding-left: .0625rem;
       padding-right: 0;
@@ -354,7 +354,7 @@
   }
 
   &.soft {
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       max-width: 1100px;
 
       li {
@@ -377,7 +377,7 @@
   .pathfinder-4 {
     @mixin pathfinder-2;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       li {
         margin-bottom: .0625rem;
         display: inline-block;
@@ -391,7 +391,7 @@
       }
     }
 
-    @mixin breakpoint(1400px) {
+    @media (--bp-xx-wide) {
       li {
         display: table-cell;
         height: 100%;
@@ -412,7 +412,7 @@
     }
 
     &.soft {
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         li {
           padding-left: .0625rem;
           text-align: left;

@@ -14,7 +14,7 @@
       padding: 0;
       vertical-align: top;
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         margin: .625rem 1.75rem;
       }
     }

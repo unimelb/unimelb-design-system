@@ -31,7 +31,7 @@
   margin: 0 auto;
   max-width: var(--w-sml);
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     padding: .625rem 1.875rem;
   }
 
@@ -84,7 +84,7 @@
     position: relative;
     width: 100%;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       width: 25.75rem;
       display: inline-block;
     }
@@ -394,7 +394,7 @@
       color: #fff;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
 
       fieldset {
         display: table;
@@ -419,7 +419,7 @@
     }
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     padding-top: 0;
   }
 }

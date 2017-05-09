@@ -19,7 +19,7 @@
     color: color(var(--col-cherry) tint(25%));
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     width: 25rem;
   }
 }
@@ -104,7 +104,7 @@
     font-family: var(--ff-sans);
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     height: 5.625rem;
     position: absolute;
   }
@@ -114,7 +114,7 @@
     font-family: var(--ff-sans);
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     &.fixed:not(.floating) {
       height: 2.5rem;
       background-color: #fff;
@@ -126,7 +126,7 @@
         top: -60px;
         transition: .2s top;
 
-        @mixin breakpoint(desktop) {
+        @media (--bp-desktop) {
           top: -140px;
         }
       }
@@ -203,7 +203,7 @@
     width: 100%;
     z-index: 3;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       height: 5.625rem;
       border-bottom: 0 none;
     }
@@ -242,7 +242,7 @@
       }
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       height: 5.625rem;
       line-height: 5.625rem;
 
@@ -262,7 +262,7 @@
         width: 8.75rem;
       }
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         width: 20rem;
 
         svg {
@@ -274,7 +274,7 @@
     &.wide + .page-header-navigation {
       padding-left: 9.6875rem;
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         padding-left: 23.75rem;
       }
     }
@@ -288,7 +288,7 @@
     padding: 0 .625rem .3125rem .625rem;
     font-weight: var(--fw-light);
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       height: 4.6875rem;
       line-height: 4.6875rem;
       padding: 0 .625rem .46875rem .625rem;
@@ -304,7 +304,7 @@
   vertical-align: baseline;
 
   .mobile-nav {
-    display: none;
+    display: block;
 
     .styled-select.alt {
       margin-top: .625rem;
@@ -352,25 +352,14 @@
       position: absolute;
     }
 
-    @mixin breakpoint(0) {
-      display: block;
-    }
-
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       display: none;
     }
   }
 
   a,
   span {
-    display: inline;
-  }
-
-  @mixin breakpoint(0) {
-    a,
-    span {
-      display: none;
-    }
+    display: none;
   }
 
   [data-icon] {
@@ -383,7 +372,7 @@
     padding: 0;
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     height: 5.625rem;
     padding-left: 12.8125rem;
     margin-right: 16.25rem;
@@ -413,7 +402,7 @@
       }
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       display: block;
     }
 
@@ -506,7 +495,7 @@
   opacity: .95;
   z-index: 100;
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     margin-top: 5.625rem;
   }
 }
@@ -520,7 +509,7 @@
     display: none;
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     width: auto;
 
     .page-header,
@@ -560,7 +549,7 @@
     display: block;
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     height: 5.625rem;
   }
 
@@ -658,7 +647,7 @@
       }
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       max-width: 31.25rem;
       padding-left: 1.25rem;
       float: right;
@@ -694,7 +683,7 @@
         margin-left: auto;
         margin-right: auto;
 
-        @mixin breakpoint(desktop) {
+        @media (--bp-desktop) {
           height: 2.25rem;
           margin-bottom: .25rem;
           margin-top: 1.25rem;
@@ -702,7 +691,7 @@
         }
       }
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         font-size: .625rem;
         padding: 0 1.4375rem;
       }
@@ -725,18 +714,18 @@
   top: 0;
   vertical-align: top;
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     width: 12.5rem;
     background-color: #fff;
     position: absolute;
   }
 
   &.with-login {
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       width: 11.625rem;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       width: 18.75rem;
     }
   }
@@ -775,7 +764,7 @@
     &--login {
       display: none;
 
-      @mixin breakpoint(tablet) {
+      @media (--bp-tablet) {
         display: inline-block;
       }
     }
@@ -785,7 +774,7 @@
     }
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     .page-header-icon {
       font-size: .625rem;
       padding: 0 1.4375rem;
@@ -804,7 +793,7 @@
   background-color: transparent;
   position: relative;
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     position: absolute;
   }
 
@@ -813,7 +802,7 @@
     margin-top: .9375rem;
     position: absolute;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       margin-left: 1.875rem;
       margin-top: 1.875rem;
     }
@@ -832,7 +821,7 @@
       color: #fff;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       font-size: 1.25rem;
       left: 12.5rem;
       margin-top: 1.875rem;
@@ -858,7 +847,7 @@
       }
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       margin: 2.5rem;
 
       a.page-header-icon {
@@ -935,13 +924,13 @@
       }
     }
 
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       .page-header-home {
         width: 12rem;
       }
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       padding: 4.375rem 2.8125rem;
 
       .page-header-logo {

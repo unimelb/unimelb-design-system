@@ -10,7 +10,7 @@
     width: 97%;
     z-index: 5;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       width: 91.5%;
     }
 

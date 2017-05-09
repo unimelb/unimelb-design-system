@@ -4,7 +4,7 @@
   overflow-x: scroll;
   width: 100%;
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     overflow-x: visible;
   }
 }
@@ -175,7 +175,7 @@
     }
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     max-width: var(--w-mid);
     border: 1px solid var(--col-lightergray);
     overflow: visible;

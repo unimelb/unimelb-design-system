@@ -9,7 +9,7 @@
   nav {
     border-bottom: 1px solid var(--col-lightergray);
 
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       text-align: left;
     }
 
@@ -160,7 +160,7 @@
           z-index: 10;
         }
 
-        @mixin breakpoint(desktop) {
+        @media (--bp-desktop) {
           padding: 0 1.875rem;
         }
       }
@@ -332,7 +332,7 @@
         padding-top: 3.4375rem;
         background-color: transparent;
 
-        @mixin breakpoint(desktop) {
+        @media (--bp-desktop) {
           margin-top: -5.9375rem;
           padding-top: 5.9375rem;
         }
@@ -356,11 +356,11 @@
     line-height: 1.4;
     padding: 0;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       margin-right: -1rem;
     }
 
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       margin-left: -1rem;
       margin-right: -2rem;
     }
@@ -394,12 +394,12 @@
   /* Tabs are on the right-hand side of the viewport; move them against the left edge of the sidebar  */
   &--right {
     .sidebar-tabs__list {
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         margin-left: -1rem;
         margin-right: 0;
       }
 
-      @mixin breakpoint(wide) {
+      @media (--bp-wide) {
         margin-left: -2rem;
         margin-right: -1rem;
       }

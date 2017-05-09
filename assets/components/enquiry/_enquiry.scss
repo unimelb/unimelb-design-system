@@ -31,7 +31,7 @@
         vertical-align: middle;
       }
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         font-size: 1.375rem;
         line-height: 2.25rem;
       }
@@ -47,7 +47,7 @@
       color: var(--col-midblue);
       text-align: center;
 
-      @mixin breakpoint(tablet) {
+      @media (--bp-tablet) {
         & > div {
           display: inline-block;
         }
@@ -82,7 +82,7 @@
           margin-right: auto;
         }
 
-        @mixin breakpoint(tablet) {
+        @media (--bp-tablet) {
           label,
           legend {
             font-weight: var(--fw-regular);

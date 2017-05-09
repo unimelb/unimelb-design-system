@@ -34,10 +34,6 @@
     padding-bottom: .9375rem;
     padding-top: .9375rem;
 
-    @mixin breakpoint(0) {
-      filter: none;
-    }
-
     strong {
       font-size: 2.5rem;
       color: #fff;
@@ -56,7 +52,7 @@
     }
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     li {
       padding-bottom: 0;
       width: 100%;
@@ -74,7 +70,7 @@
       }
     }
   }
-  @mixin breakpoint(wide) {
+  @media (--bp-wide) {
     .inner {
       padding: 10% 20%;
     }

@@ -81,7 +81,7 @@
       color: var(--col-cherry);
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       dd {
         font-weight: var(--fw-regular);
       }

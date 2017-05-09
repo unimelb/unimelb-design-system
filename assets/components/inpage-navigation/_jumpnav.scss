@@ -55,11 +55,11 @@
   @mixin jump;
   padding-top: 2.1875rem;
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     padding-top: 5rem;
   }
 
-  @mixin breakpoint(wide) {
+  @media (--bp-wide) {
     padding-top: 2.1875rem;
   }
 }
@@ -80,12 +80,12 @@ body.jumpnav-active {
         }
       }
 
-      @mixin breakpoint(wide) {
+      @media (--bp-wide) {
         columns: auto;
       }
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       padding-top: 5rem;
 
       li:first-child {
@@ -97,7 +97,7 @@ body.jumpnav-active {
       }
     }
 
-    @mixin breakpoint(wide) {
+    @media (--bp-wide) {
       display: table;
       margin-top: 33px;
       padding: 15px 15px 30px;
@@ -140,7 +140,7 @@ body.jumpnav-active {
     }
   }
 
-  @mixin breakpoint(wide) {
+  @media (--bp-wide) {
     .page-inner {
       background-color: #fff;
     }

@@ -10,29 +10,29 @@
   min-height: 18.75rem;
   height: auto;
 
-  @mixin breakpoint(height-smallest) {
+  @media (--bp-height-smallest) {
     min-height: 32.5rem;
   }
 
-  @mixin breakpoint(height-small) {
+  @media (--bp-height-small) {
     min-height: 38.75rem;
   }
 
-  @mixin breakpoint(height-medium) {
+  @media (--bp-height-medium) {
     min-height: 45rem;
   }
 
-  @mixin breakpoint(height-big) {
+  @media (--bp-height-big) {
     min-height: 50rem;
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     h1 {
       font-size: 3.125rem;
       line-height: 3.75rem;
     }
   }
-  @mixin breakpoint(wide) {
+  @media (--bp-wide) {
     h1 {
       font-size: 3.75rem;
       line-height: 4.5rem;
@@ -113,7 +113,7 @@
       display: table;
       padding: 0;
 
-      @mixin breakpoint(tablet) {
+      @media (--bp-tablet) {
         padding-bottom: 1.875rem;
         padding-top: 1.875rem;
       }
@@ -132,12 +132,12 @@
         font-weight: var(--fw-bold);
       }
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         font-size: 2.8125rem;
         line-height: 3.75rem;
       }
 
-      @mixin breakpoint(wide) {
+      @media (--bp-wide) {
         font-size: 3.4375rem;
         line-height: 3.75rem;
       }
@@ -148,13 +148,13 @@
       font-weight: var(--fw-thin);
       margin: 0 auto;
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         font-size: 1.25rem;
         line-height: 1.5rem;
         padding-top: 1.5rem;
       }
 
-      @mixin breakpoint(wide) {
+      @media (--bp-wide) {
         font-size: 1.5rem;
         line-height: 2.25rem;
       }
@@ -189,7 +189,7 @@
       margin-top: 0;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       padding-top: 3rem;
       padding-bottom: 3rem;
       // overflow: hidden;
@@ -250,7 +250,7 @@
   & > header:first-child {
     padding-top: 7.5rem;
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       padding-top: 11.25rem;
     }
   }
@@ -295,19 +295,19 @@
     &.banner {
       height: 18.75rem;
 
-      @mixin breakpoint(height-smallest) {
+      @media (--bp-height-smallest) {
         height: 32.5rem;
       }
 
-      @mixin breakpoint(height-small) {
+      @media (--bp-height-small) {
         height: 38.75rem;
       }
 
-      @mixin breakpoint(height-medium) {
+      @media (--bp-height-medium) {
         height: 45rem;
       }
 
-      @mixin breakpoint(height-big) {
+      @media (--bp-height-big) {
         height: 50rem;
       }
     }

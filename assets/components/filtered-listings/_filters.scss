@@ -20,7 +20,7 @@
   margin: 0 auto;
   overflow: hidden;
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     padding-left: 0;
     padding-right: 0;
   }
@@ -51,7 +51,7 @@
   }
 
   .left {
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       line-height: 1.875rem;
       margin: 0;
 
@@ -64,7 +64,7 @@
       }
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       padding-left: 1.875rem;
       padding-right: 1.875rem;
       float: left;
@@ -83,7 +83,7 @@
         display: inline-block;
         width: auto;
 
-        @mixin breakpoint(tablet) {
+        @media (--bp-tablet) {
           padding: 0;
         }
 
@@ -194,7 +194,7 @@
       width: 100%;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       padding-right: 1.875rem;
       float: right;
       margin: 0;

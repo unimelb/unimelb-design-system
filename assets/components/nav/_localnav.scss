@@ -156,7 +156,7 @@
     transform: translateX(-100%);
   }
 
-  @mixin breakpoint(tablet) {
+  @media (--bp-tablet) {
     /* switch to fixed width */
     right: var(--offset-localnav);
     width: var(--width-localnav);

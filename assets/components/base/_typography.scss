@@ -47,7 +47,7 @@
 @define-mixin ticks {
   padding-left: 1.875rem;
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     padding-left: 1.25rem;
   }
 
@@ -138,7 +138,7 @@
     font-weight: var(--fw-light);
     padding: 0;
 
-    @mixin breakpoint(tablet) {
+    @media (--bp-tablet) {
       max-width: var(--w-sml);
     }
   }
@@ -149,7 +149,7 @@
     padding-bottom: 1.5rem;
     font-weight: var(--fw-light);
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       font-size: 2.0625rem;
       line-height: 3rem;
     }
@@ -213,7 +213,7 @@
     }
 
     &.nobullet {
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         padding-left: 0;
       }
 
@@ -318,7 +318,7 @@
         font-weight: var(--fw-light);
         text-transform: none;
 
-        @mixin breakpoint(desktop) {
+        @media (--bp-desktop) {
           font-size: 2.0625rem;
           line-height: 3rem;
         }
@@ -331,7 +331,7 @@
         padding-top: .5em;
       }
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         & > li {
           & > * {
             max-width: 650px !important;
@@ -346,14 +346,14 @@
         }
       }
 
-      @mixin breakpoint(860px) {
+      @media (min-width: 860px) {
         & > li {
           margin-right: 0;
           padding-left: 0;
         }
       }
 
-      @mixin breakpoint(wide) {
+      @media (--bp-wide) {
         & > li {
           padding-left: 6.875rem;
 
@@ -372,7 +372,7 @@
         }
       }
 
-      @mixin breakpoint(1400px) {
+      @media (--bp-xx-wide) {
         & > li > * {
           max-width: 700px !important;
         }
@@ -528,7 +528,7 @@
         line-height: 1;
       }
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         padding: .625rem 1.875rem;
         display: inline-block;
         width: 75%;
@@ -623,7 +623,7 @@
       width: 100%;
     }
 
-    @mixin breakpoint(desktop) {
+    @media (--bp-desktop) {
       font-size: 2.94375rem;
       padding-bottom: 1.5rem;
       padding-top: 1.875rem;

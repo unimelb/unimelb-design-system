@@ -22,7 +22,7 @@
     color: color(var(--col-cherry) tint(25%));
   }
 
-  @mixin breakpoint(desktop) {
+  @media (--bp-desktop) {
     width: 25rem;
   }
 }

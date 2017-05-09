@@ -6,7 +6,7 @@
     & > .citation {
       list-style: none;
 
-      @mixin breakpoint(desktop) {
+      @media (--bp-desktop) {
         margin-left: 0;
       }
 
