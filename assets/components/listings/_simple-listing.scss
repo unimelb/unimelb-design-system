@@ -1,4 +1,4 @@
-.uomcontent .simple-listing {
+.uomcontent [role="main"] .simple-listing {
   max-width: $w-lge;
   padding: 0 1rem 2rem;
   color: $midgray;
@@ -32,6 +32,7 @@
   }
 
   &__img {
+    max-width: none; /* OVERRIDE */
     margin-bottom: .75rem;
     background-position: center;
     background-size: cover;
