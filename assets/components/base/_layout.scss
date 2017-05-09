@@ -27,13 +27,14 @@ body {
 
 .uomcontent [role="main"] {
   .hide-from-all {
-    @include hide-from-all;
+    display: none;
+    visibility: hidden;
   }
   .screenreaders-only {
     @include screenreaders-only;
   }
   .invisible {
-    @include invisible;
+    visibility: hidden;
   }
   .hide-text {
     @include hide-text;

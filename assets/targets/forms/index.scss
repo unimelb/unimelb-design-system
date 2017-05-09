@@ -16,7 +16,7 @@ $ff-sans: Helvetica, Arial, sans-serif;
 @import '../../components/filtered-listings/index';
 
 // Print
-@import '../../components/print';
+@import '../../shared/print';
 
 // Custom overrides
 .uomcontent [role="main"] form {
