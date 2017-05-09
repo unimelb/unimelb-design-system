@@ -7,13 +7,13 @@
 
       h1,
       p {
-        max-width: $w-mid;
+        max-width: var(--w-mid);
         padding-left: 1.25rem;
         padding-right: 1.25rem;
       }
 
       h1 {
-        font-weight: $bold;
+        font-weight: var(--fw-bold);
       }
 
       p.author {
@@ -21,7 +21,7 @@
           font-size: 1.125rem;
           line-height: 1.5rem;
           font-style: normal;
-          font-weight: $bold;
+          font-weight: var(--fw-bold);
         }
       }
 
@@ -49,15 +49,15 @@
       h1 {
         padding-top: 3rem;
         padding-bottom: 1.5rem;
-        max-width: $w-sml;
+        max-width: var(--w-sml);
       }
 
       p {
-        max-width: $w-sml;
+        max-width: var(--w-sml);
 
         &.author {
           padding-bottom: 3rem;
-          max-width: $w-sml;
+          max-width: var(--w-sml);
           border-bottom: 1px solid var(--col-lightergray);
 
           &::before {

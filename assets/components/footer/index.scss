@@ -4,7 +4,7 @@
   background-color: var(--col-navy);
   clear: left;
   color: #fff;
-  font-family: $ff-sans;
+  font-family: var(--ff-sans);
 
   * {
     @include normalise;
@@ -313,12 +313,12 @@
 
   .ind-ack {
     font-size: 1.125rem;
-    max-width: $w-lge;
+    max-width: var(--w-lge);
     padding: 2rem 0;
     border-bottom: 1px solid var(--col-blue);
     clear: both;
     color: var(--col-lightblue);
-    font-family: $ff-serif;
+    font-family: var(--ff-serif);
     font-style: italic;
     margin-left: auto;
     margin-right: auto;

@@ -1,6 +1,6 @@
 .uomcontent {
   .staff-listing-detailed {
-    max-width: $w-lge;
+    max-width: var(--w-lge);
     padding: 0;
     text-align: center;
 
@@ -24,7 +24,7 @@
     }
 
     strong {
-      font-weight: $regular;
+      font-weight: var(--fw-regular);
     }
 
     p {
@@ -94,7 +94,7 @@
         padding: 0 .625rem;
         color: #fff;
         font-style: normal;
-        font-weight: $regular;
+        font-weight: var(--fw-regular);
         text-decoration: underline;
       }
 

@@ -5,7 +5,7 @@
     .staff-listing-detailed {
       padding-bottom: 3rem;
       margin: 0 auto;
-      max-width: $w-sml;
+      max-width: var(--w-sml);
 
       li {
         width: 13.75rem;
@@ -21,7 +21,7 @@
     .republish-wrapper {
       padding-top: .75rem;
       padding-bottom: .75rem;
-      max-width: $w-sml;
+      max-width: var(--w-sml);
       border-bottom: 1px solid var(--col-lightergray);
       border-top: 1px solid var(--col-lightergray);
       margin: 0 auto;
@@ -35,7 +35,7 @@
 
     .share {
       margin: 0 auto;
-      max-width: $w-sml;
+      max-width: var(--w-sml);
       padding-top: .3125rem;
       display: table;
       float: left;
@@ -97,7 +97,7 @@
       text-align: left;
 
       a {
-        font-weight: $bold;
+        font-weight: var(--fw-bold);
       }
     }
   }

@@ -9,7 +9,7 @@
 body {
   background-color: var(--col-navy);
   color: #000;
-  font-family: $ff-sans;
+  font-family: var(--ff-sans);
 
   @include breakpoint(desktop) {
     line-height: 1.68;
@@ -65,7 +65,7 @@ body {
   }
 
   fieldset {
-    max-width: $w-sml;
+    max-width: var(--w-sml);
     margin: 0 auto;
     min-width: 0;
   }
@@ -79,7 +79,7 @@ body {
     padding-bottom: 3rem;
 
     div {
-      max-width: $w-sml;
+      max-width: var(--w-sml);
       margin: 0 auto;
 
       &.youtube5placeholder {
@@ -123,7 +123,7 @@ body {
       h2 {
         font-size: .8125rem;
         line-height: 1.5rem;
-        font-weight: $bold;
+        font-weight: var(--fw-bold);
         letter-spacing: 3px;
         text-transform: uppercase;
       }
@@ -149,7 +149,7 @@ body {
 
     & + .video {
       margin-top: -1.875rem;
-      max-width: $w-lge;
+      max-width: var(--w-lge);
       @include breakpoint(87.5em) {
         margin-left: auto;
         margin-right: auto;
@@ -228,7 +228,7 @@ body {
 
       ul {
         padding-left: 1.25rem;
-        max-width: $w-sml;
+        max-width: var(--w-sml);
         margin: 0 auto;
         padding-top: 0;
       }
@@ -236,7 +236,7 @@ body {
   }
 
   @include breakpoint(desktop) {
-    font-weight: $light;
+    font-weight: var(--fw-light);
   }
 
   .aside {
@@ -247,7 +247,7 @@ body {
     dt {
       letter-spacing: .0625rem;
       padding-bottom: .3125rem;
-      font-weight: $bold;
+      font-weight: var(--fw-bold);
       margin-left: 0;
       text-transform: uppercase;
       width: 100%;
@@ -266,7 +266,7 @@ body {
   }
 
   .hold {
-    max-width: $w-mid;
+    max-width: var(--w-mid);
     margin: 0 auto;
 
     .aside {
@@ -320,7 +320,7 @@ body {
     .block {
       background-color: color(#000 alpha(70%));
       color: #fff;
-      font-weight: $bold;
+      font-weight: var(--fw-bold);
       left: 50%;
       margin-left: -406px;
       position: absolute;
@@ -341,7 +341,7 @@ body {
 
   .fifth {
     margin-bottom: .9375rem;
-    max-width: $w-sml;
+    max-width: var(--w-sml);
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
@@ -350,7 +350,7 @@ body {
 
     @include breakpoint(wide) {
       margin-bottom: .9375rem;
-      max-width: $w-lge;
+      max-width: var(--w-lge);
       width: 100%;
 
       .col {
@@ -383,7 +383,7 @@ body {
   }
 
   .with-figure {
-    max-width: $w-sml;
+    max-width: var(--w-sml);
     margin: 0 auto;
   }
 
@@ -613,7 +613,7 @@ body {
   }
 
   ul {
-    max-width: $w-lge;
+    max-width: var(--w-lge);
     margin: 0 auto;
 
     li {

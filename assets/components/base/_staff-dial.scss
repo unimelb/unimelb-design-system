@@ -1,7 +1,7 @@
 .uomcontent [role="main"] {
 
   .staff-dial {
-    max-width: $w-mid;
+    max-width: var(--w-mid);
     margin: 0 auto;
     padding: 0;
     text-align: center;

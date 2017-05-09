@@ -1,7 +1,7 @@
 .uomcontent [role="main"] {
   header {
     .box {
-      max-width: $w-sml;
+      max-width: var(--w-sml);
       padding: 3.5rem 1.875rem;
       background: color(#fff alpha(80%));
       color: #000;
@@ -12,7 +12,7 @@
         font-size: .9375rem;
         line-height: 1.5rem;
         margin-bottom: 1.5rem;
-        font-weight: $bold;
+        font-weight: var(--fw-bold);
         text-align: center;
       }
 
@@ -20,7 +20,7 @@
         font-size: 1rem;
         line-height: 1.5rem;
         padding-top: 0;
-        font-weight: $light;
+        font-weight: var(--fw-light);
       }
 
       @include breakpoint(tablet) {

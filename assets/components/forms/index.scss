@@ -13,8 +13,8 @@
   border-radius: 3px;
   margin-top: .3125rem;
   padding: .5rem .625rem;
-  font-family: $ff-sans;
-  font-weight: $light;
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-light);
 
   &.invalid {
     background-color: #fff;

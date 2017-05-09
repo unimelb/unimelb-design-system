@@ -44,7 +44,7 @@
     background-color: transparent;
     color: inherit;
     display: block;
-    font-weight: $regular;
+    font-weight: var(--fw-regular);
     line-height: 1.5;
     text-align: left;
   }
@@ -86,14 +86,14 @@
     margin-bottom: 1rem;
     padding: 1rem 1rem 0;
     color: var(--col-lighterblue);
-    font-weight: $regular;
+    font-weight: var(--fw-regular);
     line-height: 1.4;
     text-align: left;
 
     time {
       font-size: 1.625rem;
       display: block;
-      font-weight: $bold;
+      font-weight: var(--fw-bold);
       padding-bottom: 0;
       padding-top: 0;
     }
@@ -106,7 +106,7 @@
 
     time {
       font-size: 1.125rem;
-      font-weight: $regular;
+      font-weight: var(--fw-regular);
 
       &:first-child::after {
         width: 2rem;
@@ -157,7 +157,7 @@
 
     strong {
       font-size: 2.5rem;
-      font-weight: $thin;
+      font-weight: var(--fw-thin);
       line-height: 1.1;
       margin-bottom: 0;
     }
@@ -168,7 +168,7 @@
   }
 
   @include breakpoint(600px) {
-    max-width: $w-lge;
+    max-width: var(--w-lge);
 
     li {
       margin-bottom: 1%;
@@ -407,7 +407,7 @@
         padding: .625rem;
         background-color: color(var(--col-lighterblue) alpha(80%));
         bottom: 0;
-        font-weight: $regular;
+        font-weight: var(--fw-regular);
         line-height: 1.1;
         margin: 0;
         position: absolute;
@@ -415,7 +415,7 @@
         em {
           font-size: 1.0625rem;
           line-height: 1.5rem;
-          font-weight: $thin;
+          font-weight: var(--fw-thin);
         }
 
         @include breakpoint(600px) {
@@ -439,7 +439,7 @@
           background-color: transparent;
 
           em {
-            font-weight: $bold;
+            font-weight: var(--fw-bold);
           }
 
           span {
@@ -448,7 +448,7 @@
             box-decoration-break: clone;
             box-shadow: 10px 0 0 #fff, -10px 0 0 #fff;
             color: var(--col-lighterblue);
-            font-weight: $bold;
+            font-weight: var(--fw-bold);
             line-height: 1.2;
           }
 
@@ -495,15 +495,14 @@
         box-shadow: 10px 0 0 var(--col-lighterblue), -10px 0 0 var(--col-lighterblue);
         color: #fff;
         display: inline;
-        font-weight: $bold;
+        font-weight: var(--fw-bold);
         line-height: 1.3;
         padding: 0;
       }
     }
 
     &.twitter {
-      $twitter-brand: #55acee;
-      border-bottom-color: $twitter-brand;
+      border-bottom-color: var(--col-twitter);
 
       &:hover {
         transform: none;
@@ -515,7 +514,7 @@
       }
 
       a {
-        color: $twitter-brand;
+        color: var(--col-twitter);
 
         &:hover {
           color: var(--col-lighterblue);
@@ -523,7 +522,7 @@
       }
 
       svg {
-        fill: $twitter-brand;
+        fill: var(--col-twitter);
       }
 
       em {
@@ -537,7 +536,7 @@
         @include breakpoint(desktop) {
           font-size: 1.5rem;
           line-height: 2.25rem;
-          font-weight: $light;
+          font-weight: var(--fw-light);
           overflow-wrap: break-word;
         }
       }
@@ -623,7 +622,7 @@
         padding: 1rem 0;
         color: currentColor;
         display: inline-block;
-        font-weight: $bold;
+        font-weight: var(--fw-bold);
         line-height: 1;
         margin-bottom: 0;
         text-align: center;

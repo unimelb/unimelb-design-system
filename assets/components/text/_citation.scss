@@ -24,7 +24,7 @@
     margin-bottom: .75rem;
     background-color: var(--col-paleblue);
     border: 1px solid color(var(--col-paleblue) shade(7%));
-    font-family: $ff-fixed;
+    font-family: var(--ff-fixed);
   }
 
   .alt .citation {

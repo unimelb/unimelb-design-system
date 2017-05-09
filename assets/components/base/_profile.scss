@@ -20,7 +20,7 @@
 
       &::after {
         margin-top: .9375rem;
-        max-width: $w-sml;
+        max-width: var(--w-sml);
         border-bottom: 2px solid #fff;
         content: '';
         display: block;
@@ -32,7 +32,7 @@
 
         &::after {
           margin-top: 1.9375rem;
-          max-width: $w-sml;
+          max-width: var(--w-sml);
           border-bottom: 2px solid #fff;
           content: '';
           display: block;

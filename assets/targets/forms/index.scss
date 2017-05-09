@@ -3,7 +3,7 @@
 @import '../../shared/normalize';
 
 // Override default sans-serif font stack
-$ff-sans: Helvetica, Arial, sans-serif;
+var(--ff-sans): Helvetica, Arial, sans-serif;
 
 // Import specificcomponents
 @import '../../components/base/typography';

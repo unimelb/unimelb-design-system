@@ -1,6 +1,6 @@
 .uomcontent [role="main"] table.course-progression {
   margin-bottom: 1.875rem;
-  max-width: $w-sml;
+  max-width: var(--w-sml);
   border: 0 none;
   border-collapse: collapse;
   overflow: visible;
@@ -66,7 +66,7 @@
     &::after {
       font-size: 3.75rem;
       content: '\00d7';
-      font-weight: $thin;
+      font-weight: var(--fw-thin);
       line-height: 1;
     }
   }
@@ -212,7 +212,7 @@
     line-height: 2.25rem;
     padding-top: 0;
     padding-bottom: 1.5rem;
-    font-weight: $light;
+    font-weight: var(--fw-light);
   }
 
   p {

@@ -2,7 +2,7 @@
   font-size: .9375rem;
   color: var(--col-darkblue);
   display: inline-block;
-  font-weight: $regular;
+  font-weight: var(--fw-regular);
   vertical-align: middle;
 }
 
@@ -10,8 +10,8 @@
   border-radius: 3px;
   margin-top: .3125rem;
   padding: .5rem .625rem;
-  font-family: $ff-sans;
-  font-weight: $light;
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-light);
 
   &.invalid {
     background-color: #fff;
@@ -93,15 +93,15 @@
   height: 3.75rem;
   background-color: #fff;
   color: #000;
-  font-family: $ff-sans;
+  font-family: var(--ff-sans);
   position: relative;
   top: 0;
   width: 100%;
   z-index: 12;
 
-  // Work-around for conflict with other `fixed` class, which sets the font to `$ff-fixed`
+  // Work-around for conflict with other `fixed` class, which sets the font to `var(--ff-fixed)`
   &.fixed {
-    font-family: $ff-sans;
+    font-family: var(--ff-sans);
   }
 
   @include breakpoint(desktop) {
@@ -111,7 +111,7 @@
 
   * {
     @include normalise;
-    font-family: $ff-sans;
+    font-family: var(--ff-sans);
   }
 
   @include breakpoint(desktop) {
@@ -213,7 +213,7 @@
     @include headerblock;
     height: 3.75rem;
     line-height: 3.75rem;
-    font-weight: $light;
+    font-weight: var(--fw-light);
     text-decoration: none;
 
     &:hover,
@@ -286,7 +286,7 @@
     height: 2.5rem;
     line-height: 2.5rem;
     padding: 0 .625rem .3125rem .625rem;
-    font-weight: $light;
+    font-weight: var(--fw-light);
 
     @include breakpoint(desktop) {
       height: 4.6875rem;
@@ -450,7 +450,7 @@
 
   a {
     color: #fff;
-    font-weight: $light;
+    font-weight: var(--fw-light);
   }
 }
 
@@ -469,7 +469,7 @@
       content: '/';
       color: var(--col-darkblue);
       display: inline-block;
-      font-weight: $light;
+      font-weight: var(--fw-light);
       vertical-align: middle;
     }
 
@@ -677,7 +677,7 @@
       color: var(--col-navy);
       cursor: pointer;
       display: table-cell;
-      font-weight: $regular;
+      font-weight: var(--fw-regular);
       line-height: 1;
       text-align: center;
       text-transform: uppercase;
@@ -747,7 +747,7 @@
     width: 2.5rem;
     border-left: 1px solid color(var(--col-lightgray) shade(10%));
     box-sizing: content-box;
-    font-weight: $regular;
+    font-weight: var(--fw-regular);
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
@@ -824,7 +824,7 @@
     margin-top: .9375rem;
     width: 10rem;
     color: #fff;
-    font-weight: $light;
+    font-weight: var(--fw-light);
     line-height: 1.3;
     position: absolute;
 

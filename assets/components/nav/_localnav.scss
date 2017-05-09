@@ -2,13 +2,13 @@
  * Local navigation
  */
 .uomcontent .localnav {
-  font-family: $ff-sans;
+  font-family: var(--ff-sans);
   color: #fff;
   position: fixed;
   z-index: 15;
 
   &__panel {
-    padding-right: $width-sitemap-trigger;
+    padding-right: var(--width-sitemap-trigger);
     background-color: var(--col-menu);
     height: 100%;
     overflow-x: hidden;
@@ -16,7 +16,7 @@
     right: -100%;
     top: 0;
     transform: translateX(0);
-    transition: $smooth-transform;
+    transition: var(--tr-transform);
     width: 100%;
 
     &--nested {
@@ -158,16 +158,16 @@
 
   @include breakpoint(tablet) {
     /* switch to fixed width */
-    right: $offset-localnav;
-    width: $width-localnav;
+    right: var(--offset-localnav);
+    width: var(--width-localnav);
 
     /* now that width is fixed, switch to margin so that sitemap link doesn't hide panel scrollbars */
-    margin-right: $width-sitemap-trigger;
+    margin-right: var(--width-sitemap-trigger);
     &__panel { padding-right: 0; }
 
     &.active {
       box-shadow: 1px 0 12px 3px rgba(0, 0, 0, .6);
-      transform: translateX($offset-localnav);
+      transform: translateX(var(--offset-localnav));
     }
   }
 

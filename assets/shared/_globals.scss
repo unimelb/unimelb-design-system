@@ -2,6 +2,7 @@
  * Variables
  */
 :root {
+  /* Colours */
   --col-darkgray: #333;
   --col-midgray: #666;
   --col-midgrayer: #777; /* last accessible grey text on white background */
@@ -28,27 +29,28 @@
 
   --col-green: #008a00;
   --col-cherry: #df0620;
+
+  --col-twitter: #55acee;
+
+  /* Layout widths */
+  --w-sml: 43.75rem;
+  --w-mid: 56.25rem;
+  --w-lge: 87.5rem;
+
+  /* Font stacks */
+  --ff-sans: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --ff-fixed: 'Courier New', 'Courier', fixed;
+  --ff-serif: 'Georgia', 'Times New Roman', 'Times', serif;
+
+  /* Font weights */
+  --fw-thin: 100;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* Transitions */
+  --tr-transform: transform .3s ease;
 }
-
-
-// Layout widths
-$w-sml: 43.75rem;
-$w-mid: 56.25rem;
-$w-lge: 87.5rem;
-
-// Font stacks
-$ff-sans: Roboto, Helvetica, Arial, sans-serif;
-$ff-fixed: 'Courier New', Courier, fixed;
-$ff-serif: Georgia, 'Times New Roman', Times, serif;
-
-// Font weights
-$thin: 100;
-$light: 300;
-$regular: 400;
-$bold: 700;
-
-// Transitions
-$smooth-transform: transform .3s ease;
 
 
 /**
@@ -141,7 +143,7 @@ $smooth-transform: transform .3s ease;
   width: 94%;
 
   @include breakpoint(tablet) {
-    max-width: $w-lge;
+    max-width: var(--w-lge);
   }
 
   @include breakpoint(desktop) {

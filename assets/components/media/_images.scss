@@ -95,14 +95,14 @@
       p {
         padding-top: 0;
         max-width: 28.125rem;
-        font-weight: $bold;
+        font-weight: var(--fw-bold);
         margin-left: auto;
         margin-right: auto;
 
         @include breakpoint(desktop) {
           font-size: 3.5rem;
           line-height: 3.75rem;
-          max-width: $w-sml;
+          max-width: var(--w-sml);
           padding-left: 0;
           padding-right: 0;
           text-align: left;
@@ -128,7 +128,7 @@
       padding-top: 3rem;
       margin: 0 .9375rem;
       color: #fff;
-      font-weight: $light;
+      font-weight: var(--fw-light);
       max-width: 100%;
       padding-bottom: 0;
 
@@ -140,7 +140,7 @@
       }
 
       @include breakpoint(desktop) {
-        max-width: $w-mid;
+        max-width: var(--w-mid);
         padding-left: 1.25rem;
         padding-right: 1.25rem;
         margin: 0 auto;

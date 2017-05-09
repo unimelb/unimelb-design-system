@@ -14,7 +14,7 @@
 }
 
 @mixin filtered-listing-select {
-  max-width: $w-lge;
+  max-width: var(--w-lge);
   background-color: transparent;
   color: #fff;
   margin: 0 auto;
@@ -29,12 +29,12 @@
     font-size: .9375rem;
     padding-bottom: .3125rem;
     display: block;
-    font-weight: $light;
+    font-weight: var(--fw-light);
   }
 
   h2 {
     font-size: 1.875rem;
-    font-weight: $thin;
+    font-weight: var(--fw-thin);
     line-height: 1.2;
     margin-left: 0;
     padding-bottom: 0;
@@ -44,7 +44,7 @@
 
   p {
     font-size: .8125rem;
-    font-weight: $light;
+    font-weight: var(--fw-light);
     margin-left: 0;
     padding: 0;
     text-align: left;

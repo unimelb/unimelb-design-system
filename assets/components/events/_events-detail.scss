@@ -76,13 +76,13 @@
       }
 
       strong {
-        font-weight: $regular;
+        font-weight: var(--fw-regular);
         vertical-align: baseline;
 
         @include breakpoint(desktop) {
           display: block;
           font-size: 2.25rem;
-          font-weight: $bold;
+          font-weight: var(--fw-bold);
           line-height: 3rem;
         }
       }
@@ -239,7 +239,7 @@
       line-height: 2.25rem;
       padding-bottom: 1.5rem;
       clear: none;
-      font-weight: $light;
+      font-weight: var(--fw-light);
       letter-spacing: 0;
       text-align: left;
       text-transform: none;

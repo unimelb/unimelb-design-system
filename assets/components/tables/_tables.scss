@@ -123,7 +123,7 @@
   tr {
     &.header {
       color: var(--col-navy);
-      font-weight: $bold;
+      font-weight: var(--fw-bold);
 
       th,
       th:first-child {
@@ -176,7 +176,7 @@
   }
 
   @include breakpoint(desktop) {
-    max-width: $w-mid;
+    max-width: var(--w-mid);
     border: 1px solid var(--col-lightergray);
     overflow: visible;
 
@@ -225,7 +225,7 @@
     }
 
     &.wide {
-      max-width: $w-lge;
+      max-width: var(--w-lge);
       table-layout: fixed;
     }
   }

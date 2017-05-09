@@ -1,6 +1,6 @@
 .uomcontent .news-hero {
   padding-bottom: 3rem;
-  max-width: $w-lge;
+  max-width: var(--w-lge);
   margin: 0 auto;
   text-align: right;
 
@@ -37,14 +37,14 @@
   }
 
   h1 {
-    max-width: $w-mid;
-    font-weight: $thin;
+    max-width: var(--w-mid);
+    font-weight: var(--fw-thin);
     margin: 0;
     padding: 0;
   }
 
   p {
-    max-width: $w-mid;
+    max-width: var(--w-mid);
     margin: 0;
     padding: 0;
   }
@@ -64,7 +64,7 @@
     @include clearfix;
     padding-top: 3rem;
     padding-bottom: 3rem;
-    max-width: $w-mid;
+    max-width: var(--w-mid);
     border-bottom: 1px solid var(--col-lightergray);
     margin: 0 auto;
 
@@ -96,12 +96,12 @@
   h1 {
     font-size: 1.375rem;
     line-height: 2.25rem;
-    max-width: $w-mid;
+    max-width: var(--w-mid);
     padding-bottom: .9375rem;
   }
 
   p {
-    max-width: $w-mid;
+    max-width: var(--w-mid);
     padding-bottom: 0;
 
     &.topic {
@@ -153,14 +153,14 @@
     article {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
-      max-width: $w-sml;
+      max-width: var(--w-sml);
     }
 
     h1 {
       font-size: 1.25rem;
       line-height: 1.5rem;
       padding-bottom: .75rem;
-      font-weight: $regular;
+      font-weight: var(--fw-regular);
     }
 
     p {

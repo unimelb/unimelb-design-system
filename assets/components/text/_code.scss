@@ -5,7 +5,7 @@
   border-color: #e4e4e4;
   border-style: solid;
   border-width: 0;
-  font-family: $ff-fixed;
+  font-family: var(--ff-fixed);
 }
 
 .uomcontent {
@@ -42,7 +42,7 @@
     @include breakpoint(desktop) {
       margin-left: auto;
       margin-right: auto;
-      max-width: $w-mid;
+      max-width: var(--w-mid);
     }
   }
 }

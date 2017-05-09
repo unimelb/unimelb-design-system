@@ -21,7 +21,7 @@
       color: var(--col-midgray);
       cursor: pointer;
       display: inline-block;
-      font-weight: $light;
+      font-weight: var(--fw-light);
       margin-bottom: -1px;
       text-decoration: none;
 
@@ -61,10 +61,10 @@
     nav {
       a {
         cursor: pointer;
-        font-weight: $regular;
+        font-weight: var(--fw-regular);
 
         &[data-current] {
-          font-weight: $bold;
+          font-weight: var(--fw-bold);
         }
       }
 
@@ -98,7 +98,7 @@
    */
   .tabbed-nav {
     & > .full-width {
-      height: $tabs-height;
+      height: 4rem;
       background-color: var(--col-darkblue);
       border-bottom: 1px solid transparent;
       position: relative;
@@ -120,7 +120,7 @@
 
       a {
         font-size: .9375rem;
-        line-height: $tabs-height;
+        line-height: 4rem; /* same as tabs height */
         padding: 0 1.25rem;
         color: color(#fff alpha(70%));
         display: inline-block;
@@ -140,7 +140,7 @@
 
         &[data-current] {
           color: #fff;
-          font-weight: $regular;
+          font-weight: var(--fw-regular);
           position: relative;
         }
 
@@ -199,7 +199,7 @@
       background: var(--col-darkblue);
       color: #fff;
       display: none;
-      font-weight: $bold;
+      font-weight: var(--fw-bold);
       height: 100%;
       position: absolute;
       top: 0;
@@ -245,9 +245,9 @@
         background: transparent;
         color: #000;
         filter: none;
-        font-weight: $light;
+        font-weight: var(--fw-light);
         margin: 0 auto;
-        max-width: $w-mid;
+        max-width: var(--w-mid);
         position: static;
 
         p {
@@ -275,7 +275,7 @@
 
         &[data-current] {
           color: #fff;
-          font-weight: $regular;
+          font-weight: var(--fw-regular);
 
           &::after {
             border-top-color: #000;
@@ -309,7 +309,7 @@
 
         &[data-current] {
           color: #fff;
-          font-weight: $regular;
+          font-weight: var(--fw-regular);
 
           &::after {
             border-top-color: var(--col-darkblue);
@@ -322,7 +322,7 @@
       nav a {
         font-size: .8125rem;
         line-height: 1.5rem;
-        line-height: calc(4rem - .125rem); // $tabs-height minus 1px above and below for outline
+        line-height: calc(4rem - .125rem); // tabs height minus 1px above and below for outline
         margin-top: .0625rem; // outline cont.
         padding: 0 .9375rem;
       }

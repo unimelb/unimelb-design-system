@@ -2,13 +2,13 @@
   header {
     .inner {
       @include clearfix;
-      max-width: $w-lge;
+      max-width: var(--w-lge);
       margin: 0 auto;
       width: 94%;
 
       h1 {
         letter-spacing: .125rem;
-        font-weight: $bold;
+        font-weight: var(--fw-bold);
         text-transform: uppercase;
       }
 
@@ -25,7 +25,7 @@
         small {
           padding-bottom: .625rem;
           display: block;
-          font-weight: $light;
+          font-weight: var(--fw-light);
           line-height: 1.2;
 
           @include breakpoint(desktop) {

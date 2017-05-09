@@ -93,35 +93,35 @@
 
 .uomcontent {
 	background-color: #fff;
-  font-family: $ff-sans;
-  font-weight: $regular;
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-regular);
 
   .sans {
-    font-family: $ff-sans;
+    font-family: var(--ff-sans);
   }
 
   .fixed {
-    font-family: $ff-fixed;
+    font-family: var(--ff-fixed);
   }
 
   .serif {
-    font-family: $ff-serif;
+    font-family: var(--ff-serif);
   }
 
   .thin {
-    font-weight: $thin;
+    font-weight: var(--fw-thin);
   }
 
   .light {
-    font-weight: $light;
+    font-weight: var(--fw-light);
   }
 
   .regular {
-    font-weight: $regular;
+    font-weight: var(--fw-regular);
   }
 
   .bold {
-    font-weight: $bold;
+    font-weight: var(--fw-bold);
   }
 
   h1,
@@ -134,12 +134,12 @@
   li,
   table {
     @include wrapper;
-    max-width: $w-sml;
-    font-weight: $light;
+    max-width: var(--w-sml);
+    font-weight: var(--fw-light);
     padding: 0;
 
     @include breakpoint(tablet) {
-      max-width: $w-sml;
+      max-width: var(--w-sml);
     }
   }
 
@@ -147,7 +147,7 @@
     font-size: 1.625rem;
     line-height: 2.25rem;
     padding-bottom: 1.5rem;
-    font-weight: $light;
+    font-weight: var(--fw-light);
 
     @include breakpoint(desktop) {
       font-size: 2.0625rem;
@@ -162,14 +162,14 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     clear: left;
-    font-weight: $bold;
+    font-weight: var(--fw-bold);
     text-transform: uppercase;
   }
 
   h3 {
     font-size: 1rem;
     line-height: 1.5rem;
-    font-weight: $bold;
+    font-weight: var(--fw-bold);
 
     &.subtitle {
 	    text-decoration: underline;
@@ -185,7 +185,7 @@
 
   ol,
   ul {
-    max-width: $w-sml;
+    max-width: var(--w-sml);
     padding-left: .9375rem;
     padding-right: .9375rem;
     color: var(--col-darkgray);
@@ -195,7 +195,7 @@
     li {
       padding-bottom: .75rem;
       margin-left: .9375rem;
-      max-width: $w-sml;
+      max-width: var(--w-sml);
       color: #000;
       display: list-item;
 
@@ -272,13 +272,13 @@
     }
 
     &.steps {
-      max-width: $w-mid;
+      max-width: var(--w-mid);
       counter-reset: steps;
       padding-left: 0;
       padding-right: 0;
 
       & > li {
-        max-width: $w-mid;
+        max-width: var(--w-mid);
         padding-left: 4.375rem;
         border-top: 1px solid color(#000 alpha(10%));
         counter-increment: steps;
@@ -297,7 +297,7 @@
           color: #000;
           content: counter(steps);
           display: block;
-          font-weight: $bold;
+          font-weight: var(--fw-bold);
           left: 0;
           line-height: 1.2;
           position: absolute;
@@ -315,7 +315,7 @@
         line-height: 2.25rem;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
-        font-weight: $light;
+        font-weight: var(--fw-light);
         text-transform: none;
 
         @include breakpoint(desktop) {
@@ -610,13 +610,13 @@
     font-size: 2.25rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    font-family: $ff-serif;
-    font-weight: $regular;
+    font-family: var(--ff-serif);
+    font-weight: var(--fw-regular);
     line-height: 1.2;
 
     &::after {
       margin-top: .9375rem;
-      max-width: $w-sml;
+      max-width: var(--w-sml);
       border-bottom: 2px solid var(--col-midgray);
       content: '';
       display: block;

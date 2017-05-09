@@ -8,6 +8,6 @@
 }
 
 .pswp__caption__center {
-  max-width: $w-sml;
+  max-width: var(--w-sml);
   text-align: center;
 }

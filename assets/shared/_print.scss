@@ -1,6 +1,4 @@
 // Print
-$gray: #aaaaaa;
-
 @mixin defaults {
   background-color: #fff;
   font-size: 11pt;
@@ -77,12 +75,12 @@ $gray: #aaaaaa;
 
         a,
         span {
-          color: $gray;
+          color: #aaa;
           line-height: 1.6;
         }
 
         .page-local-history {
-          color: $gray;
+          color: #aaa;
           display: inline;
           line-height: 1;
           padding: 0;
@@ -184,7 +182,7 @@ $gray: #aaaaaa;
 
       a[href^="http"]::after {
         content: " (" attr(href) ") ";
-        color: $gray;
+        color: #aaa;
         display: inline-block;
         font-size: 90%;
         padding-left: 5px;

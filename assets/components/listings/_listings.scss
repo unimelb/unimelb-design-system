@@ -10,7 +10,7 @@
   @include clearfix;
   padding-bottom: 3rem;
   margin: 0 auto;
-  max-width: $w-lge;
+  max-width: var(--w-lge);
   padding-left: 0;
   padding-right: 0;
 
@@ -64,7 +64,7 @@
     line-height: 1.5rem;
     color: var(--col-darkblue);
     display: block;
-    font-weight: $regular;
+    font-weight: var(--fw-regular);
   }
 
   p {

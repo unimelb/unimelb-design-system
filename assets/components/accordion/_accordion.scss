@@ -179,15 +179,15 @@
   }
 
   .code {
-    max-width: $w-mid;
+    max-width: var(--w-mid);
     clear: both;
     margin: 0 auto;
 
     ul.accordion {
-      max-width: $w-mid;
+      max-width: var(--w-mid);
 
       li {
-        max-width: $w-mid;
+        max-width: var(--w-mid);
 
         &::before,
         .accordion__title {
@@ -195,7 +195,7 @@
         }
 
         .accordion__hidden {
-          max-width: $w-mid;
+          max-width: var(--w-mid);
         }
 
         &.accordion__visible .accordion__hidden {
@@ -208,7 +208,7 @@
         }
 
         div.highlight {
-          max-width: $w-mid;
+          max-width: var(--w-mid);
         }
       }
     }

@@ -1,7 +1,7 @@
 .uomcontent article.news {
   @include detail;
   @include clearfix;
-  max-width: $w-lge;
+  max-width: var(--w-lge);
   padding-top: 3rem;
 
   margin-left: 0;
@@ -15,7 +15,7 @@
   }
 
   time {
-    font-weight: $light;
+    font-weight: var(--fw-light);
     font-style: italic;
   }
 
@@ -39,7 +39,7 @@
 
     /* sidebar headings */
     .news__meta-title {
-      font-weight: $regular;
+      font-weight: var(--fw-regular);
       font-style: italic;
     }
 
@@ -72,13 +72,13 @@
     h2 {
       font-size: 1.5rem;
       line-height: 2.25rem;
-      font-weight: $light;
+      font-weight: var(--fw-light);
       padding-top: 0;
       text-transform: none;
     }
 
     figure.full-width {
-      max-width: $w-sml;
+      max-width: var(--w-sml);
     }
 
     blockquote {

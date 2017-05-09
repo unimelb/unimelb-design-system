@@ -4,11 +4,11 @@
     line-height: 1.5rem;
     padding-top: 4.5rem;
     padding-bottom: 4.5rem;
-    max-width: $w-mid;
+    max-width: var(--w-mid);
     background: transparent;
     color: #000;
     filter: none;
-    font-weight: $light;
+    font-weight: var(--fw-light);
     margin: 0 auto;
     padding-left: 3%;
     padding-right: 3%;
@@ -41,7 +41,7 @@
 
     p {
       padding-bottom: 0;
-      max-width: $w-mid;
+      max-width: var(--w-mid);
       color: #000;
       font-style: italic;
     }
@@ -55,7 +55,7 @@
       @include wrapper;
       padding-top: 3rem;
       padding-bottom: 3rem;
-      max-width: $w-sml;
+      max-width: var(--w-sml);
       padding-left: 0;
       padding-right: 0;
       text-align: left;
@@ -82,7 +82,7 @@
   }
 
   &.left {
-    max-width: $w-sml;
+    max-width: var(--w-sml);
     padding-top: 0;
 
     & + p {
@@ -97,7 +97,7 @@
     padding: 0;
 
     @include breakpoint(wide) {
-      max-width: $w-sml;
+      max-width: var(--w-sml);
       padding-left: 0;
       padding-right: 0;
       text-align: left;

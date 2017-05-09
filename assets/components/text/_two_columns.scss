@@ -52,7 +52,7 @@
   }
 
   @include breakpoint(desktop) {
-    max-width: $w-lge;
+    max-width: var(--w-lge);
     display: table;
 
     svg {

@@ -46,7 +46,7 @@
     font-size: 1.25rem;
     line-height: 1.5rem;
     padding-bottom: .75rem;
-    font-weight: $regular;
+    font-weight: var(--fw-regular);
 
     a {
       padding-bottom: 0;
@@ -164,13 +164,13 @@
   }
 
   ul.narrow {
-    max-width: $w-mid;
+    max-width: var(--w-mid);
     margin-left: auto;
     margin-right: auto;
   }
 
   &.stacked {
-    max-width: $w-sml;
+    max-width: var(--w-sml);
     margin: 0 auto;
     padding-left: 0;
     padding-right: 0;

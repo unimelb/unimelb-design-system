@@ -5,12 +5,12 @@
     padding-bottom: 1.875rem;
     color: var(--col-lighterblue);
     display: block;
-    font-family: "Arial Black", $ff-sans;
+    font-family: "Arial Black", var(--ff-sans);
     font-style: normal;
     font-weight: 700;
     line-height: 1.2;
     margin: 0 auto;
-    max-width: $w-sml;
+    max-width: var(--w-sml);
     padding-right: .3em;
     position: relative;
     width: 94%;
@@ -36,9 +36,9 @@
       color: var(--col-lighterblue);
       display: block;
       float: right;
-      font-family: $ff-sans;
+      font-family: var(--ff-sans);
       font-style: normal;
-      font-weight: $light;
+      font-weight: var(--fw-light);
       width: 100%;
     }
 
@@ -106,13 +106,13 @@
     line-height: 1.5rem;
     padding-top: 1.5rem;
     padding-bottom: 3rem;
-    max-width: $w-mid;
+    max-width: var(--w-mid);
     padding-left: .9375rem;
     padding-right: .9375rem;
     color: var(--col-darkblue);
-    font-family: $ff-serif;
+    font-family: var(--ff-serif);
     font-style: italic;
-    font-weight: $regular;
+    font-weight: var(--fw-regular);
     margin-bottom: 0;
     margin-left: 10%;
     margin-right: 0;
@@ -137,9 +137,9 @@
       border: 0;
       color: color(var(--col-midgray) tint(20%));
       float: left;
-      font-family: $ff-sans;
+      font-family: var(--ff-sans);
       font-style: normal;
-      font-weight: $light;
+      font-weight: var(--fw-light);
       text-align: left;
       width: 100%;
 

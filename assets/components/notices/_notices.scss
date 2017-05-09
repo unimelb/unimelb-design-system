@@ -2,7 +2,7 @@
   .notice {
     @include wrapper;
     margin-bottom: .9375rem;
-    max-width: $w-sml;
+    max-width: var(--w-sml);
     padding: .9375rem;
     display: block; /* allow inline elements (e.g. `span`) */
     margin-left: auto;
@@ -16,7 +16,7 @@
     }
 
     @include breakpoint(tablet) {
-      max-width: $w-sml;
+      max-width: var(--w-sml);
     }
   }
 

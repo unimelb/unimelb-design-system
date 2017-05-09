@@ -68,7 +68,7 @@
   p,
   ul {
     margin: 0 auto;
-    max-width: $w-sml;
+    max-width: var(--w-sml);
   }
 
   li {

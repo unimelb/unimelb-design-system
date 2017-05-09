@@ -48,7 +48,7 @@
 
     .icon-label {
       display: block;
-      font-weight: $regular;
+      font-weight: var(--fw-regular);
       margin: 0;
       text-align: center;
       white-space: nowrap;

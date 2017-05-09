@@ -9,7 +9,7 @@
     color: var(--col-midgray);
     display: inline-block;
     font-size: 14px;
-    font-weight: $regular;
+    font-weight: var(--fw-regular);
     list-style-type: none;
     margin-bottom: 0;
     margin-left: 0;
@@ -37,7 +37,7 @@
     padding-bottom: .4375rem;
     padding-top: .4375rem;
     display: block;
-    font-weight: $light;
+    font-weight: var(--fw-light);
     text-decoration: none;
     white-space: normal;
 
@@ -47,7 +47,7 @@
   }
 
   &.fixed {
-    font-family: $ff-sans;
+    font-family: var(--ff-sans);
   }
 }
 
@@ -118,7 +118,7 @@ body.jumpnav-active {
       }
 
       &.fixed {
-        font-family: $ff-sans;
+        font-family: var(--ff-sans);
         margin-top: 10px;
         position: fixed;
         top: 45px;

@@ -6,7 +6,7 @@
     font-size: 1rem;
     padding: .9375rem 0 .3125rem;
     display: block;
-    font-weight: $regular;
+    font-weight: var(--fw-regular);
   }
 
   a {
@@ -41,7 +41,7 @@
 }
 
 .uomcontent [role="main"] ul.event-listing {
-  max-width: $w-lge;
+  max-width: var(--w-lge);
   padding: 0;
 
   @include breakpoint(desktop) {
@@ -61,7 +61,7 @@
 
   li {
     margin-bottom: 2.8125rem;
-    max-width: $w-lge;
+    max-width: var(--w-lge);
     padding-left: .9375rem;
     list-style-type: none;
     margin-left: 0;
@@ -170,7 +170,7 @@
   h3 {
     font-size: 1.625rem;
     padding-bottom: .625rem;
-    font-weight: $light;
+    font-weight: var(--fw-light);
     line-height: 1.3;
     max-width: 100%;
 
@@ -182,7 +182,7 @@
   .time {
     color: var(--col-lighterblue);
     display: block;
-    font-weight: $regular;
+    font-weight: var(--fw-regular);
     margin: 0 3%;
     width: 94%;
 
@@ -236,7 +236,7 @@
       border: 1px solid var(--col-midgray);
       color: var(--col-midgray);
       display: inline-block;
-      font-weight: $regular;
+      font-weight: var(--fw-regular);
       text-transform: uppercase;
 
       svg {

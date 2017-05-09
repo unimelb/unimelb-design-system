@@ -127,7 +127,7 @@ body {
   right: -5px;
   top: 0;
   transform: translateX(100%);
-  transition: color .3s ease, $smooth-transform;
+  transition: color .3s ease, var(--tr-transform);
   z-index: 16;
 
   &.active {
@@ -145,7 +145,7 @@ body {
     padding-left: 2.75rem;
     padding-top: 11.875rem;
     width: 15rem;
-    font-weight: $light;
+    font-weight: var(--fw-light);
     left: 0;
     letter-spacing: 1px;
     line-height: 1;

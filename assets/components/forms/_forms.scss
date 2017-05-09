@@ -7,7 +7,7 @@
   border: 0 none;
   color: #fff;
   cursor: pointer;
-  font-weight: $bold;
+  font-weight: var(--fw-bold);
   letter-spacing: 1px;
   position: relative;
   text-transform: uppercase;
@@ -29,7 +29,7 @@
   color: var(--col-darkgray);
   line-height: 1.2;
   margin: 0 auto;
-  max-width: $w-sml;
+  max-width: var(--w-sml);
 
   @include breakpoint(desktop) {
     padding: .625rem 1.875rem;
@@ -204,7 +204,7 @@
       border-radius: 0 3px 3px 0;
       font-size: .8125rem;
       padding: 0 .9375rem;
-      font-weight: $bold;
+      font-weight: var(--fw-bold);
       letter-spacing: 1px;
     }
   }
@@ -372,7 +372,7 @@
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  max-width: $w-mid;
+  max-width: var(--w-mid);
   background-color: transparent;
   border-top: 1px solid color(#fff alpha(20%));
   color: #fff;
@@ -383,11 +383,11 @@
     font-size: 1.25rem;
     line-height: 1.5rem;
     padding-bottom: 1.5rem;
-    font-weight: $thin;
+    font-weight: var(--fw-thin);
   }
 
   form {
-    max-width: $w-lge;
+    max-width: var(--w-lge);
     background-color: transparent;
 
     label {

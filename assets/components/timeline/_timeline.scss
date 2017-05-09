@@ -1,11 +1,11 @@
 .uomcontent {
   .timeline {
     @include clearfix;
-    max-width: $w-mid;
+    max-width: var(--w-mid);
     font-size: 1em;
     color: var(--col-midgray);
-    font-family: $ff-sans;
-    font-weight: $thin;
+    font-family: var(--ff-sans);
+    font-weight: var(--fw-thin);
     margin: 0 auto;
     padding-bottom: 0;
     position: relative;
@@ -22,7 +22,7 @@
     }
 
     &.full-width {
-      max-width: $w-lge;
+      max-width: var(--w-lge);
     }
 
     &.has-accordion {
