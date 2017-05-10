@@ -5,8 +5,8 @@
   --offset-localnav: -calc(var(--width-localnav) + var(--width-sitemap-trigger));
 }
 
-@import '../../shared/blanket';
-@import 'modal';
-@import 'nav';
-@import 'localnav';
-@import 'globalnav';
+@import '../../shared/blanket.scss';
+@import '_modal.scss';
+@import '_nav.scss';
+@import '_localnav.scss';
+@import '_globalnav.scss';

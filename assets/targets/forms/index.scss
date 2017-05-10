@@ -1,24 +1,24 @@
 /* Global variables and mixins, and normalisation styles */
-@import '../../shared/globals';
-@import '../../shared/normalize';
+@import '../../shared/_globals.scss';
+@import '../../shared/_normalize.scss';
 
 :root {
   /* Override default sans-serif font stack */
   --ff-sans: Helvetica, Arial, sans-serif;
 }
 
-/* Import specificcomponents */
-@import '../../components/base/typography';
-@import '../../components/text/index';
-@import '../../components/buttons/index';
-@import '../../components/forms/index';
-@import '../../components/accordion/index';
-@import '../../components/modal/index';
-@import '../../components/search/index';
-@import '../../components/filtered-listings/index';
+/* Import specific components */
+@import '../../components/base/_typography.scss';
+@import '../../components/text/index.scss';
+@import '../../components/buttons/index.scss';
+@import '../../components/forms/index.scss';
+@import '../../components/accordion/index.scss';
+@import '../../components/modal/index.scss';
+@import '../../components/search/index.scss';
+@import '../../components/filtered-listings/index.scss';
 
 /* Print */
-@import '../../shared/print';
+@import '../../shared/_print.scss';
 
 /* Custom overrides */
 .uomcontent [role="main"] form {

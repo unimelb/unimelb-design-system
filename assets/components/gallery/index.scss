@@ -1,6 +1,6 @@
-@import 'photoswipe/dist/photoswipe.css';
-@import 'photoswipe/dist/default-skin/default-skin.css';
-@import 'gallery';
+@import '~photoswipe/dist/photoswipe.css';
+@import '~photoswipe/dist/default-skin/default-skin.css';
+@import '_gallery.scss';
 
 /* HACK to work around webpack import order bug: https://github.com/webpack/webpack/issues/215 */
 .pswp img {
