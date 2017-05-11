@@ -32,7 +32,7 @@
       }
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       padding-left: .9375rem;
       float: left;
       margin: 0;
@@ -45,7 +45,7 @@
   }
 
   .bside {
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       padding: .625rem 0 .625rem 1.875rem;
       float: right;
       width: 70%;
@@ -62,7 +62,7 @@
   transition-property: height, width;
   transition-duration: 0.4s;
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     margin: 0;
     width: 100%;
   }
@@ -79,7 +79,7 @@
     transition-duration: 0.4s;
     transition-property: opacity;
 
-    @media (min-width: 700px) {
+    @media screen and (min-width: 700px) {
       float: left;
       margin: 0;
       padding-bottom: 4px;
@@ -87,12 +87,12 @@
       width: 48%;
     }
 
-    @media (--bp-x-desktop) {
+    @media screen and (--bp-x-desktop) {
       margin: 0;
       width: 31.333%;
     }
 
-    @media (--bp-wide) {
+    @media screen and (--bp-wide) {
       margin: 0;
       width: 24%;
     }
@@ -124,7 +124,7 @@
       color: var(--col-darkgray);
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       max-width: 11.25rem;
     }
   }

@@ -46,7 +46,7 @@
       font-style: italic;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       font-size: 1.375rem;
       line-height: 2.25rem;
     }
@@ -96,7 +96,7 @@
     margin: 0 auto;
     padding: 0;
 
-    @media (--bp-wide) {
+    @media screen and (--bp-wide) {
       max-width: var(--w-sml);
       padding-left: 0;
       padding-right: 0;
@@ -108,14 +108,14 @@
   .jump-navigation + .lead {
     padding-top: 3rem;
 
-    @media (--bp-wide) {
+    @media screen and (--bp-wide) {
       padding-top: 4.5rem;
     }
 
     &.left {
       padding-top: 1.5rem;
 
-      @media (--bp-wide) {
+      @media screen and (--bp-wide) {
         padding-top: 3rem;
       }
     }

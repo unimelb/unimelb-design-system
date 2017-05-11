@@ -47,7 +47,7 @@
 @define-mixin ticks {
   padding-left: 1.875rem;
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     padding-left: 1.25rem;
   }
 
@@ -138,7 +138,7 @@
     font-weight: var(--fw-light);
     padding: 0;
 
-    @media (--bp-tablet) {
+    @media screen and (--bp-tablet) {
       max-width: var(--w-sml);
     }
   }
@@ -149,7 +149,7 @@
     padding-bottom: 1.5rem;
     font-weight: var(--fw-light);
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       font-size: 2.0625rem;
       line-height: 3rem;
     }
@@ -213,7 +213,7 @@
     }
 
     &.nobullet {
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         padding-left: 0;
       }
 
@@ -318,7 +318,7 @@
         font-weight: var(--fw-light);
         text-transform: none;
 
-        @media (--bp-desktop) {
+        @media screen and (--bp-desktop) {
           font-size: 2.0625rem;
           line-height: 3rem;
         }
@@ -331,7 +331,7 @@
         padding-top: .5em;
       }
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         & > li {
           & > * {
             max-width: 650px !important;
@@ -346,14 +346,14 @@
         }
       }
 
-      @media (min-width: 860px) {
+      @media screen and (min-width: 860px) {
         & > li {
           margin-right: 0;
           padding-left: 0;
         }
       }
 
-      @media (--bp-wide) {
+      @media screen and (--bp-wide) {
         & > li {
           padding-left: 6.875rem;
 
@@ -372,7 +372,7 @@
         }
       }
 
-      @media (--bp-xx-wide) {
+      @media screen and (--bp-xx-wide) {
         & > li > * {
           max-width: 700px !important;
         }
@@ -528,7 +528,7 @@
         line-height: 1;
       }
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         padding: .625rem 1.875rem;
         display: inline-block;
         width: 75%;
@@ -546,7 +546,7 @@
   }
 
   hr {
-    border-bottom: 1px solid color(var(--col-lightgray) shade(5%));
+    border-bottom: 1px solid color(var(--col-lightgray) lightness(-5%));
     border-top: 0;
     clear: both;
     line-height: 0;
@@ -564,7 +564,7 @@
 
     &:hover,
     &:focus {
-      color: color(var(--col-lighterblue) shade(15%));
+      color: color(var(--col-lighterblue) lightness(-15%));
       text-decoration: none;
     }
 
@@ -623,7 +623,7 @@
       width: 100%;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       font-size: 2.94375rem;
       padding-bottom: 1.5rem;
       padding-top: 1.875rem;

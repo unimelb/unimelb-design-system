@@ -12,7 +12,7 @@
         padding-bottom: 1.5rem;
       }
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         margin-bottom: -3rem;
       }
     }
@@ -47,7 +47,7 @@
         }
       }
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         margin-bottom: -3rem;
       }
     }

@@ -31,7 +31,7 @@
         vertical-align: middle;
       }
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         font-size: 1.375rem;
         line-height: 2.25rem;
       }
@@ -47,7 +47,7 @@
       color: var(--col-midblue);
       text-align: center;
 
-      @media (--bp-tablet) {
+      @media screen and (--bp-tablet) {
         & > div {
           display: inline-block;
         }
@@ -82,7 +82,7 @@
           margin-right: auto;
         }
 
-        @media (--bp-tablet) {
+        @media screen and (--bp-tablet) {
           label,
           legend {
             font-weight: var(--fw-regular);

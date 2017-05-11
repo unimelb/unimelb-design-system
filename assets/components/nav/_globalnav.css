@@ -22,7 +22,7 @@
     -webkit-overflow-scrolling: touch;
   }
 
-  @media (--bp-tablet) {
+  @media screen and (--bp-tablet) {
     padding: 0 8.125rem 1.875rem 2.5rem;
 
     &.active {
@@ -50,7 +50,7 @@
       text-decoration: underline;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       padding-top: .25rem;
       padding-bottom: .25rem;
     }
@@ -104,7 +104,7 @@
     width: 100%;
     padding: 0 3%;
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       margin-top: 1.875rem;
       max-width: var(--w-sml);
       float: right;
@@ -208,7 +208,7 @@
       width: 100%;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       float: left;
       margin-top: 0;
     }
@@ -261,7 +261,7 @@
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     .col-3 {
       padding-top: 3rem;
       clear: both;

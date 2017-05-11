@@ -136,7 +136,7 @@
     display: block;
     overflow: hidden;
 
-    @media (--bp-x-tablet) {
+    @media screen and (--bp-x-tablet) {
       height: 440px;
       overflow: hidden;
     }
@@ -167,7 +167,7 @@
     }
   }
 
-  @media (--bp-x-tablet) {
+  @media screen and (--bp-x-tablet) {
     max-width: var(--w-lge);
 
     li {
@@ -218,7 +218,7 @@
     }
   }
 
-  @media (--bp-wide) {
+  @media screen and (--bp-wide) {
     li {
       width: 24%;
     }
@@ -243,7 +243,7 @@
     }
   }
 
-  @media (--bp-xx-wide) {
+  @media screen and (--bp-xx-wide) {
     max-width: 1414px;
     padding: 0;
 
@@ -290,7 +290,7 @@
   .event { border-bottom-color: var(--col-lighterblue); }
   .exhibition { border-bottom-color: var(--col-yellow); }
 
-  @media (--bp-x-tablet) {
+  @media screen and (--bp-x-tablet) {
     .event,
     .exhibition {
       .block-listing__img,
@@ -352,14 +352,14 @@
     background-color: #fff;
     position: relative;
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       transition: transform .15s;
     }
 
     &:hover {
       z-index: 100;
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         transform: scale(1.02);
       }
 
@@ -397,7 +397,7 @@
         min-height: 18.75rem;
         background-color: transparent;
 
-        @media (--bp-x-tablet) {
+        @media screen and (--bp-x-tablet) {
           min-height: 27.5rem;
         }
       }
@@ -418,12 +418,12 @@
           font-weight: var(--fw-thin);
         }
 
-        @media (--bp-x-tablet) {
+        @media screen and (--bp-x-tablet) {
           padding: .625rem 1.5rem;
           width: 100%;
         }
 
-        @media (--bp-wide) {
+        @media screen and (--bp-wide) {
           font-size: 1.625rem;
           line-height: 2.25rem;
           padding: 1.25rem 1.5rem;
@@ -452,7 +452,7 @@
             line-height: 1.2;
           }
 
-          @media (--bp-x-tablet) {
+          @media screen and (--bp-x-tablet) {
             font-size: 2.5rem;
 
             span {
@@ -533,7 +533,7 @@
         font-size: 1.25rem;
         line-height: 1.5rem;
 
-        @media (--bp-desktop) {
+        @media screen and (--bp-desktop) {
           font-size: 1.5rem;
           line-height: 2.25rem;
           font-weight: var(--fw-light);
@@ -649,19 +649,19 @@
           display: inline-block;
           line-height: 1;
 
-          @media (--bp-height-small) {
+          @media screen and (--bp-height-small) {
             font-size: 1.125rem;
             padding-left: .625rem;
           }
         }
 
-        @media (--bp-height-small) {
+        @media screen and (--bp-height-small) {
           font-size: .9375rem;
           line-height: 1.5rem;
         }
       }
 
-      @media (--bp-x-tablet) {
+      @media screen and (--bp-x-tablet) {
         .block-container {
           height: 27.5rem;
         }
@@ -721,7 +721,7 @@
     }
   }
 
-  @media (--bp-x-tablet) {
+  @media screen and (--bp-x-tablet) {
     li {
       max-width: 100%;
       width: 49%;
@@ -732,7 +732,7 @@
     }
   }
 
-  @media (min-width: 950px) {
+  @media screen and (min-width: 950px) {
     li {
       width: 32%;
     }
@@ -742,7 +742,7 @@
     }
   }
 
-  @media (min-width: 1280px) {
+  @media screen and (min-width: 1280px) {
     li {
       width: 24%;
     }

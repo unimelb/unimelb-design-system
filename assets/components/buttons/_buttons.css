@@ -4,7 +4,7 @@
   padding: .9375rem 1.25rem;
   background-color: var(--col-lighterblue);
   border: 0;
-  border-bottom: 5px solid color(var(--col-lighterblue) shade(10%));
+  border-bottom: 5px solid color(var(--col-lighterblue) lightness(-10%));
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -38,22 +38,22 @@
 
   &.warning {
     background-color: var(--col-cherry);
-    border-bottom-color: color(var(--col-cherry) shade(10%));
+    border-bottom-color: color(var(--col-cherry) lightness(-10%));
   }
 
   &.cta {
     background-color: var(--col-green);
-    border-bottom-color: color(var(--col-green) shade(10%));
+    border-bottom-color: color(var(--col-green) lightness(-10%));
   }
 
   &.brand {
     background-color: var(--col-darkblue);
-    border-bottom-color: color(var(--col-darkblue) shade(10%));
+    border-bottom-color: color(var(--col-darkblue) lightness(-10%));
   }
 
   &.soft {
     background-color: var(--col-lightergray);
-    border-bottom-color: color(var(--col-lightergray) shade(10%));
+    border-bottom-color: color(var(--col-lightergray) lightness(-10%));
     color: var(--col-midblue);
 
     &:not([disabled]):hover,
@@ -74,7 +74,7 @@
     }
   }
 
-  @media (--bp-height-small) {
+  @media screen and (--bp-height-small) {
     font-size: .9375rem;
     padding: 1.0625rem 2.5rem;
   }
@@ -91,7 +91,7 @@
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: color(var(--col-lighterblue) shade(10%));
+    background-color: color(var(--col-lighterblue) lightness(-10%));
   }
 
   &:active {
@@ -100,17 +100,17 @@
 
   &.warning:not([disabled]):hover,
   &.warning:not([disabled]):focus {
-    background-color: color(var(--col-cherry) shade(10%));
+    background-color: color(var(--col-cherry) lightness(-10%));
   }
 
   &.cta:not([disabled]):hover,
   &.cta:not([disabled]):focus {
-    background-color: color(var(--col-green) shade(10%));
+    background-color: color(var(--col-green) lightness(-10%));
   }
 
   &.brand:not([disabled]):hover,
   &.brand:not([disabled]):focus {
-    background-color: color(var(--col-darkblue) shade(10%));
+    background-color: color(var(--col-darkblue) lightness(-10%));
   }
 
   &.soft {
@@ -119,7 +119,7 @@
 
     &:not([disabled]):hover,
     &:not([disabled]):focus {
-      background-color: color(var(--col-gray) shade(10%));
+      background-color: color(var(--col-gray) lightness(-10%));
     }
   }
 
@@ -130,7 +130,7 @@
     margin-top: 0;
   }
 
-  @media (--bp-height-small) {
+  @media screen and (--bp-height-small) {
     font-size: .75rem;
     padding: .625rem .9375rem;
   }
@@ -186,7 +186,7 @@
     opacity: .3;
   }
 
-  @media (--bp-height-small) {
+  @media screen and (--bp-height-small) {
     font-size: .9375rem;
     margin: 1.25rem 0;
     padding: 1.25rem;
@@ -200,7 +200,7 @@
     content: '\2192';
     line-height: 0;
 
-    @media (--bp-height-small) {
+    @media screen and (--bp-height-small) {
       font-size: 1.625rem;
       padding-left: .9375rem;
     }
@@ -214,7 +214,7 @@
     content: '\2190';
     line-height: 0;
 
-    @media (--bp-height-small) {
+    @media screen and (--bp-height-small) {
       font-size: 1.625rem;
       padding-right: .9375rem;
     }

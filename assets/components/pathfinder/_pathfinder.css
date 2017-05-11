@@ -84,7 +84,7 @@
       color: #000;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       li {
         border-left: 1px solid var(--col-lightergray);
 
@@ -207,7 +207,7 @@
     padding-bottom: 3rem;
     max-width: 21.875rem;
     background-color: var(--col-darkblue);
-    border-bottom: 3px solid color(var(--col-darkblue) shade(50%));
+    border-bottom: 3px solid color(var(--col-darkblue) lightness(-50%));
     margin: 0 auto;
     position: relative;
     transition: all 150ms ease-out;
@@ -221,24 +221,24 @@
     .button-small {
       font-size: .75rem;
       padding: .625rem .9375rem;
-      background-color: color(var(--col-darkblue) shade(5%));
+      background-color: color(var(--col-darkblue) lightness(-5%));
     }
 
     &:hover, &:focus {
-      background-color: color(var(--col-darkblue) tint(3%));
+      background-color: color(var(--col-darkblue) lightness(+3%));
       box-shadow: 0 0 10px color(#000 alpha(50%));
       transform: scale(1.06);
       transition-timing-function: ease-in;
       z-index: 2;
 
       .button-small {
-        background-color: color(var(--col-darkblue) shade(5%));
+        background-color: color(var(--col-darkblue) lightness(-5%));
       }
     }
 
     &.featured {
       margin-bottom: -.9375rem;
-      background-color: color(var(--col-lighterblue) shade(5%));
+      background-color: color(var(--col-lighterblue) lightness(-5%));
       color: #000;
 
       transform: scale(1.06);
@@ -246,14 +246,14 @@
 
       &:hover,
       &:focus {
-        background-color: color(var(--col-lighterblue) tint(2%));
+        background-color: color(var(--col-lighterblue) lightness(+2%));
         box-shadow: 0 0 10px color(#000 alpha(50%));
         transform: scale(1.07);
         z-index: 1;
       }
 
       .button-small {
-        background-color: color(var(--col-lighterblue) shade(15%));
+        background-color: color(var(--col-lighterblue) lightness(-15%));
       }
     }
   }
@@ -262,7 +262,7 @@
     background-color: transparent;
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     padding-top: 3rem;
     padding-bottom: 3rem;
     display: table;
@@ -331,7 +331,7 @@
 @define-mixin pathfinder-2 {
   @mixin pathfinder-3;
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     li {
       padding-left: .0625rem;
       padding-right: 0;
@@ -354,7 +354,7 @@
   }
 
   &.soft {
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       max-width: 1100px;
 
       li {
@@ -377,7 +377,7 @@
   .pathfinder-4 {
     @mixin pathfinder-2;
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       li {
         margin-bottom: .0625rem;
         display: inline-block;
@@ -391,7 +391,7 @@
       }
     }
 
-    @media (--bp-xx-wide) {
+    @media screen and (--bp-xx-wide) {
       li {
         display: table-cell;
         height: 100%;
@@ -412,7 +412,7 @@
     }
 
     &.soft {
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         li {
           padding-left: .0625rem;
           text-align: left;

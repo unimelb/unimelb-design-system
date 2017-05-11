@@ -102,11 +102,11 @@
   padding: 0 3%;
   width: 94%;
 
-  @media (--bp-tablet) {
+  @media screen and (--bp-tablet) {
     max-width: var(--w-lge);
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     width: 100%;
   }
 }

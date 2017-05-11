@@ -39,7 +39,7 @@
       width: 100%;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       padding: 1.875rem .9375rem;
       display: table-cell;
       vertical-align: top;
@@ -51,7 +51,7 @@
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     max-width: var(--w-lge);
     display: table;
 

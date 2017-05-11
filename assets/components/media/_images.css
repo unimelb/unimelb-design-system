@@ -32,7 +32,7 @@
   }
 
   figure.framed img {
-    @media (--bp-tablet) {
+    @media screen and (--bp-tablet) {
       box-shadow: 0 3px 6px -1px color(#000 alpha(20%));
       display: inline-block;
       max-height: 90%;
@@ -99,7 +99,7 @@
         margin-left: auto;
         margin-right: auto;
 
-        @media (--bp-desktop) {
+        @media screen and (--bp-desktop) {
           font-size: 3.5rem;
           line-height: 3.75rem;
           max-width: var(--w-sml);
@@ -139,7 +139,7 @@
         text-align: left;
       }
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         max-width: var(--w-mid);
         padding-left: 1.25rem;
         padding-right: 1.25rem;
@@ -173,7 +173,7 @@
       max-width: 100%;
     }
 
-    @media (--bp-height-small) {
+    @media screen and (--bp-height-small) {
       height: 40.625rem;
 
       p {
@@ -182,12 +182,12 @@
       }
     }
 
-    @media (--bp-height-medium) {
+    @media screen and (--bp-height-medium) {
       height: 53.125rem;
       padding-bottom: 1.875rem;
     }
 
-    @media (--bp-height-big) {
+    @media screen and (--bp-height-big) {
       height: 62.5rem;
     }
   }

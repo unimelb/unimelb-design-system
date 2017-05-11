@@ -1,0 +1,4 @@
+:root {
+  /* Override default sans-serif font stack */
+  --ff-sans: Helvetica, Arial, sans-serif;
+}

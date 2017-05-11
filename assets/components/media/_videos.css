@@ -8,7 +8,7 @@
     padding-top: 0;
     position: relative;
 
-    @media (--bp-wide) {
+    @media screen and (--bp-wide) {
       margin-bottom: 3rem;
       max-width: 100%;
       padding-bottom: 39.45%;
@@ -37,7 +37,7 @@
           top: 50%;
           width: 100px;
 
-          @media (--bp-desktop) {
+          @media screen and (--bp-desktop) {
             height: 140px;
             margin-top: -70px;
             margin-left: -70px;
@@ -46,7 +46,7 @@
         }
       }
 
-      @media (--bp-wide) {
+      @media screen and (--bp-wide) {
         margin-left: 11%;
         width: 70%;
       }
@@ -60,7 +60,7 @@
       top: 0;
       width: 100%;
 
-      @media (--bp-wide) {
+      @media screen and (--bp-wide) {
         margin-left: 15%;
         width: 70%;
       }
@@ -71,7 +71,7 @@
   .video.video--21-9 {
     padding-bottom: 42.5%;
 
-    @media (--bp-wide) {
+    @media screen and (--bp-wide) {
       max-width: 100%;
       padding-bottom: 29.75%;
     }
@@ -86,7 +86,7 @@
       width: 100%;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       margin-right: 1.875rem;
 
       iframe {

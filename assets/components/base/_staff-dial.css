@@ -14,7 +14,7 @@
       padding: 0;
       vertical-align: top;
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         margin: .625rem 1.75rem;
       }
     }

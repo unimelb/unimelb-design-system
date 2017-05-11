@@ -72,7 +72,7 @@
       border-bottom: 1px solid var(--col-lightergray);
       display: block;
 
-      @media (--bp-tablet) {
+      @media screen and (--bp-tablet) {
         border-bottom: 0 none;
         display: table-row;
       }
@@ -83,7 +83,7 @@
         display: block;
         width: 100%;
 
-        @media (--bp-tablet) {
+        @media screen and (--bp-tablet) {
           padding: .625rem 0;
           border-bottom: 1px solid var(--col-lightergray);
           display: table-cell;

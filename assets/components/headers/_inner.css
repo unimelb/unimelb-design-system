@@ -28,13 +28,13 @@
           font-weight: var(--fw-light);
           line-height: 1.2;
 
-          @media (--bp-desktop) {
+          @media screen and (--bp-desktop) {
             margin-top: -.9375rem;
           }
         }
       }
 
-      @media (--bp-tablet) {
+      @media screen and (--bp-tablet) {
         .left {
           float: left;
           width: 75%;

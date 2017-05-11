@@ -49,7 +49,7 @@
     padding: 0;
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
 
@@ -111,7 +111,7 @@
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     article {
       padding-left: 1.25rem;
       padding-right: 1.25rem;
@@ -141,7 +141,7 @@
       line-height: 2.25rem;
     }
 
-    @media (min-width: 925px) {
+    @media screen and (min-width: 925px) {
       article {
         padding-left: 0;
         padding-right: 0;
@@ -174,7 +174,7 @@
       }
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       h1 {
         font-size: 1.25rem;
         line-height: 1.5rem;
@@ -231,7 +231,7 @@
         width: auto;
       }
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         img + p + h1 {
           margin-left: 16.875rem;
         }
@@ -242,7 +242,7 @@
       }
     }
 
-    @media (--bp-tablet) {
+    @media screen and (--bp-tablet) {
       margin: 0 auto;
       padding-left: 0;
       padding-right: 0;
@@ -258,7 +258,7 @@
       }
     }
 
-    @media (min-width: 920px) {
+    @media screen and (min-width: 920px) {
       width: 94%;
     }
   }

@@ -1,9 +1,7 @@
-/* Global variables and mixins, and normalisation styles */
+/* Global variables and mixins, custom variables and normalisation styles */
 @import '../../shared/_globals';
+@import '_vars';
 @import '../../shared/_normalize';
-
-/* Form target overrides */
-@import '_overrides';
 
 /* Import specific components */
 @import '../../components/base/_typography';
@@ -17,3 +15,6 @@
 
 /* Print */
 @import '../../shared/_print';
+
+/* Form target overrides */
+@import '_overrides';

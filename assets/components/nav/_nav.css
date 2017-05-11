@@ -11,7 +11,7 @@ body {
     margin-top: -90px;
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     padding-top: 5.625rem;
   }
 }
@@ -35,7 +35,7 @@ body {
     margin-left: 0;
     width: 100%;
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       clear: none;
       line-height: 1;
     }
@@ -63,7 +63,7 @@ body {
       text-decoration: underline;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       &:hover,
       &:focus {
         background-color: var(--col-lighterblue);
@@ -81,7 +81,7 @@ body {
     display: block;
     float: left;
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       float: none;
       margin-left: auto;
       margin-right: auto;
@@ -89,7 +89,7 @@ body {
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     border-bottom: 1px solid var(--col-blue);
     border-top: 1px solid var(--col-blue);
 

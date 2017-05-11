@@ -28,7 +28,7 @@
       overflow: hidden;
       width: 94%;
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         width: 100%;
       }
     }

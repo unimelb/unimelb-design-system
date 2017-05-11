@@ -52,7 +52,7 @@
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     li {
       padding-bottom: 0;
       width: 100%;
@@ -70,7 +70,7 @@
       }
     }
   }
-  @media (--bp-wide) {
+  @media screen and (--bp-wide) {
     .inner {
       padding: 10% 20%;
     }

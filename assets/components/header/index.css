@@ -15,11 +15,11 @@
 
   &.invalid {
     background-color: #fff;
-    border-color: color(var(--col-cherry) tint(25%));
-    color: color(var(--col-cherry) tint(25%));
+    border-color: color(var(--col-cherry) lightness(+25%));
+    color: color(var(--col-cherry) lightness(+25%));
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     width: 25rem;
   }
 }
@@ -28,7 +28,7 @@
   @mixin control;
   font-size: 1.25rem;
   background-color: var(--col-lightgray);
-  border: 1px solid color(var(--col-lightergray) shade(5%));
+  border: 1px solid color(var(--col-lightergray) lightness(-5%));
   box-shadow: inset 0 1px 3px color(#000 alpha(15%));
 
   &:hover {
@@ -61,7 +61,7 @@
   text-transform: uppercase;
 
   &:hover {
-    background-color: color(var(--col-lighterblue) shade(10%));
+    background-color: color(var(--col-lighterblue) lightness(-10%));
   }
 
   &:active {
@@ -104,7 +104,7 @@
     font-family: var(--ff-sans);
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     height: 5.625rem;
     position: absolute;
   }
@@ -114,7 +114,7 @@
     font-family: var(--ff-sans);
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     &.fixed:not(.floating) {
       height: 2.5rem;
       background-color: #fff;
@@ -123,12 +123,8 @@
 
       .page-header-logo {
         position: absolute;
-        top: -60px;
+        top: -140px;
         transition: .2s top;
-
-        @media (--bp-desktop) {
-          top: -140px;
-        }
       }
 
       a,
@@ -203,7 +199,7 @@
     width: 100%;
     z-index: 3;
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       height: 5.625rem;
       border-bottom: 0 none;
     }
@@ -242,7 +238,7 @@
       }
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       height: 5.625rem;
       line-height: 5.625rem;
 
@@ -262,7 +258,7 @@
         width: 8.75rem;
       }
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         width: 20rem;
 
         svg {
@@ -274,7 +270,7 @@
     &.wide + .page-header-navigation {
       padding-left: 9.6875rem;
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         padding-left: 23.75rem;
       }
     }
@@ -288,7 +284,7 @@
     padding: 0 .625rem .3125rem .625rem;
     font-weight: var(--fw-light);
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       height: 4.6875rem;
       line-height: 4.6875rem;
       padding: 0 .625rem .46875rem .625rem;
@@ -352,7 +348,7 @@
       position: absolute;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       display: none;
     }
   }
@@ -372,7 +368,7 @@
     padding: 0;
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     height: 5.625rem;
     padding-left: 12.8125rem;
     margin-right: 16.25rem;
@@ -402,7 +398,7 @@
       }
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       display: block;
     }
 
@@ -495,7 +491,7 @@
   opacity: .95;
   z-index: 100;
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     margin-top: 5.625rem;
   }
 }
@@ -509,7 +505,7 @@
     display: none;
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     width: auto;
 
     .page-header,
@@ -549,7 +545,7 @@
     display: block;
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     height: 5.625rem;
   }
 
@@ -647,7 +643,7 @@
       }
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       max-width: 31.25rem;
       padding-left: 1.25rem;
       float: right;
@@ -683,7 +679,7 @@
         margin-left: auto;
         margin-right: auto;
 
-        @media (--bp-desktop) {
+        @media screen and (--bp-desktop) {
           height: 2.25rem;
           margin-bottom: .25rem;
           margin-top: 1.25rem;
@@ -691,7 +687,7 @@
         }
       }
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         font-size: .625rem;
         padding: 0 1.4375rem;
       }
@@ -714,18 +710,18 @@
   top: 0;
   vertical-align: top;
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     width: 12.5rem;
     background-color: #fff;
     position: absolute;
   }
 
   &.with-login {
-    @media (--bp-tablet) {
+    @media screen and (--bp-tablet) {
       width: 11.625rem;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       width: 18.75rem;
     }
   }
@@ -734,7 +730,7 @@
     font-size: .5625rem;
     padding: 0 .625rem;
     width: 2.5rem;
-    border-left: 1px solid color(var(--col-lightgray) shade(10%));
+    border-left: 1px solid color(var(--col-lightgray) lightness(-10%));
     box-sizing: content-box;
     font-weight: var(--fw-regular);
     line-height: 1;
@@ -764,7 +760,7 @@
     &--login {
       display: none;
 
-      @media (--bp-tablet) {
+      @media screen and (--bp-tablet) {
         display: inline-block;
       }
     }
@@ -774,7 +770,7 @@
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     .page-header-icon {
       font-size: .625rem;
       padding: 0 1.4375rem;
@@ -793,7 +789,7 @@
   background-color: transparent;
   position: relative;
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     position: absolute;
   }
 
@@ -802,7 +798,7 @@
     margin-top: .9375rem;
     position: absolute;
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       margin-left: 1.875rem;
       margin-top: 1.875rem;
     }
@@ -821,7 +817,7 @@
       color: #fff;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       font-size: 1.25rem;
       left: 12.5rem;
       margin-top: 1.875rem;
@@ -847,7 +843,7 @@
       }
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       margin: 2.5rem;
 
       a.page-header-icon {
@@ -924,13 +920,13 @@
       }
     }
 
-    @media (--bp-tablet) {
+    @media screen and (--bp-tablet) {
       .page-header-home {
         width: 12rem;
       }
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       padding: 4.375rem 2.8125rem;
 
       .page-header-logo {

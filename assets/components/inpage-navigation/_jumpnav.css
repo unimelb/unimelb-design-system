@@ -55,11 +55,11 @@
   @mixin jump;
   padding-top: 2.1875rem;
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     padding-top: 5rem;
   }
 
-  @media (--bp-wide) {
+  @media screen and (--bp-wide) {
     padding-top: 2.1875rem;
   }
 }
@@ -80,12 +80,12 @@ body.jumpnav-active {
         }
       }
 
-      @media (--bp-wide) {
+      @media screen and (--bp-wide) {
         columns: auto;
       }
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       padding-top: 5rem;
 
       li:first-child {
@@ -97,7 +97,7 @@ body.jumpnav-active {
       }
     }
 
-    @media (--bp-wide) {
+    @media screen and (--bp-wide) {
       display: table;
       margin-top: 33px;
       padding: 15px 15px 30px;
@@ -113,7 +113,7 @@ body.jumpnav-active {
         color: #000;
 
         &:active {
-          color: color(var(--col-cherry) shade(15%));
+          color: color(var(--col-cherry) lightness(-15%));
         }
       }
 
@@ -140,7 +140,7 @@ body.jumpnav-active {
     }
   }
 
-  @media (--bp-wide) {
+  @media screen and (--bp-wide) {
     .page-inner {
       background-color: #fff;
     }

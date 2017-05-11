@@ -10,7 +10,7 @@
     width: 97%;
     z-index: 5;
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       width: 91.5%;
     }
 

@@ -1,8 +1,3 @@
-:root {
-  /* Override default sans-serif font stack */
-  --ff-sans: Helvetica, Arial, sans-serif;
-}
-
 /* Custom overrides */
 .uomcontent [role="main"] form {
   color: var(--col-midgray);

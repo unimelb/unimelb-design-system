@@ -92,7 +92,7 @@
       }
     }
 
-    @media (--bp-tablet) {
+    @media screen and (--bp-tablet) {
 
       &__info {
         @mixin clearfix;

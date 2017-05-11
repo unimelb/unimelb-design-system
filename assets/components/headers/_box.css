@@ -23,7 +23,7 @@
         font-weight: var(--fw-light);
       }
 
-      @media (--bp-tablet) {
+      @media screen and (--bp-tablet) {
         margin: 1.875rem auto;
         padding-left: 3.75rem;
         padding-right: 3.75rem;

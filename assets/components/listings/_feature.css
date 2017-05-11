@@ -39,13 +39,13 @@
     }
   }
 
-  @media (--bp-tablet) {
+  @media screen and (--bp-tablet) {
     li {
       width: 100%;
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     li {
       width: 49.7%;
     }
@@ -88,7 +88,7 @@
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     li {
       width: 32.9%;
     }

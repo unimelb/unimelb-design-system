@@ -5,7 +5,7 @@
   max-width: var(--w-sml);
   padding-left: 1.5625rem;
   padding-right: 1.5625rem;
-  background-color: color(var(--col-lighterblue) tint(54%));
+  background-color: color(var(--col-lighterblue) lightness(+54%));
   margin: 0 auto;
 
   h1 {
@@ -81,7 +81,7 @@
       color: var(--col-cherry);
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       dd {
         font-weight: var(--fw-regular);
       }

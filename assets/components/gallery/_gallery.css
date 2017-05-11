@@ -112,7 +112,7 @@
     }
   }
 
-  @media (--bp-tablet) {
+  @media screen and (--bp-tablet) {
     li {
       padding-bottom: 34%;
       width: 50%;
@@ -122,7 +122,7 @@
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     li {
       padding-bottom: 17%;
       width: 25%;
@@ -137,7 +137,7 @@
     max-width: var(--w-sml);
 
     /* same as tablet breakpoint without variant */
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       li {
         padding-bottom: 34%;
         width: 50%;
@@ -152,7 +152,7 @@
   &--medium {
     max-width: var(--w-mid);
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       li {
         padding-bottom: 22.66%;
         width: 33.33%;

@@ -47,15 +47,15 @@
 
     }
 
-    @media (--bp-tablet) {
+    @media screen and (--bp-tablet) {
       column-count: 2;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       column-count: 3;
     }
 
-    @media (--bp-wide) {
+    @media screen and (--bp-wide) {
       column-count: 4;
     }
   }

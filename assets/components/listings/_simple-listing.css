@@ -99,7 +99,7 @@
     }
   }
 
-  @media (--bp-tablet) {
+  @media screen and (--bp-tablet) {
     @mixin clearfix;
     padding-bottom: 1.5rem;
 
@@ -121,7 +121,7 @@
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     padding: 0 .625rem 1.5rem;
 
     .simple-listing__item {
@@ -166,7 +166,7 @@
     }
   }
 
-  @media (--bp-wide) {
+  @media screen and (--bp-wide) {
     &--four {
       .simple-listing__item {
         width: 25%;

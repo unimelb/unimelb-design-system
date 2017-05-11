@@ -34,7 +34,7 @@
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     max-width: 250rem;
     background-color: transparent;
     display: table;
@@ -60,7 +60,7 @@
     }
   }
 
-  @media (--bp-wide) {
+  @media screen and (--bp-wide) {
     li {
       height: 3.75rem;
     }

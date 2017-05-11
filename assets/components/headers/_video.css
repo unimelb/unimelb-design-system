@@ -32,7 +32,7 @@
       background-color: #000;
       display: none;
 
-      @media (--bp-wide) {
+      @media screen and (--bp-wide) {
         display: block;
         height: 100%;
         overflow: hidden;

@@ -4,7 +4,7 @@
   overflow-x: scroll;
   width: 100%;
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     overflow-x: visible;
   }
 }
@@ -103,7 +103,7 @@
 
   .highlight,
   &.zebra tr:nth-child(odd) .highlight {
-    background-color: color(var(--col-paleblue) shade(5%));
+    background-color: color(var(--col-paleblue) lightness(-5%));
   }
 
   &.staff-listing {
@@ -175,7 +175,7 @@
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     max-width: var(--w-mid);
     border: 1px solid var(--col-lightergray);
     overflow: visible;

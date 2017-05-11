@@ -90,7 +90,7 @@
     margin-bottom: 1.5rem;
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     margin-left: auto;
     margin-right: auto;
 
@@ -129,7 +129,7 @@
     }
   }
 
-  @media (--bp-wide) {
+  @media screen and (--bp-wide) {
     .article {
       width: 75%;
     }

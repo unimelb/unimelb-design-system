@@ -14,7 +14,7 @@
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: color(var(--col-lighterblue) shade(10%));
+    background-color: color(var(--col-lighterblue) lightness(-10%));
   }
 
   &:active {
@@ -31,11 +31,11 @@
 
   &.invalid {
     background-color: #fff;
-    border-color: color(var(--col-cherry) tint(25%));
-    color: color(var(--col-cherry) tint(25%));
+    border-color: color(var(--col-cherry) lightness(+25%));
+    color: color(var(--col-cherry) lightness(+25%));
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     width: 25rem;
   }
 }
@@ -44,7 +44,7 @@
   @mixin control;
   font-size: 1.25rem;
   background-color: var(--col-lightgray);
-  border: 1px solid color(var(--col-lightergray) shade(5%));
+  border: 1px solid color(var(--col-lightergray) lightness(-5%));
   box-shadow: inset 0 1px 3px color(#000 alpha(15%));
 
   &:hover {
@@ -78,7 +78,7 @@
   margin: 0 auto;
   max-width: var(--w-sml);
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     padding: .625rem 1.875rem;
   }
 
@@ -131,7 +131,7 @@
     position: relative;
     width: 100%;
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       width: 25.75rem;
       display: inline-block;
     }
@@ -346,7 +346,7 @@
 
         &::before {
           background-color: #fff;
-          border: 1px solid color(var(--col-midgray) tint(40%));
+          border: 1px solid color(var(--col-midgray) lightness(+40%));
           box-sizing: border-box;
           content: '';
           display: block;
@@ -441,7 +441,7 @@
       color: #fff;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
 
       fieldset {
         display: table;
@@ -466,7 +466,7 @@
     }
   }
 
-  @media (--bp-desktop) {
+  @media screen and (--bp-desktop) {
     padding-top: 0;
   }
 }
@@ -474,10 +474,10 @@
 @keyframes flash {
   0%,
   100% {
-    color: color(var(--col-cherry) tint(25%));
+    color: color(var(--col-cherry) lightness(+25%));
   }
 
   66% {
-    color: color(var(--col-cherry) tint(60%));
+    color: color(var(--col-cherry) lightness(+60%));
   }
 }

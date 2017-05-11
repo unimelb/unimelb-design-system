@@ -35,7 +35,7 @@
       }
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       text-align: left;
     }
   }
@@ -49,7 +49,7 @@
       letter-spacing: 1px;
       text-transform: uppercase;
 
-      @media (--bp-desktop) {
+      @media screen and (--bp-desktop) {
         min-height: 7.0625rem;
         line-height: 1.6em;
       }
@@ -86,7 +86,7 @@
       }
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       border-bottom: 0;
       text-align: center;
 
@@ -183,7 +183,7 @@
       }
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       margin-bottom: .625rem;
       margin-top: 1.25rem;
       border: 0 none;
@@ -271,7 +271,7 @@
       max-width: 1.5rem;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       margin-bottom: 3.75rem;
       margin-top: 1.25rem;
       padding-right: 1rem;

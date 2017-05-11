@@ -39,7 +39,7 @@
       }
     }
 
-    @media (--bp-wide) {
+    @media screen and (--bp-wide) {
       left: 0;
       margin: 0 auto;
       max-width: 900px;

@@ -132,7 +132,7 @@
       color: var(--col-navy);
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       &::before {
         left: 32.5%;
       }
@@ -172,21 +172,21 @@
     }
 
     dd {
-      border-left-color: color(var(--col-lightblue) tint(25%));
+      border-left-color: color(var(--col-lightblue) lightness(+25%));
 
       &::before {
-        background-color: color(var(--col-lightblue) tint(25%));
+        background-color: color(var(--col-lightblue) lightness(+25%));
       }
 
       ul:last-child,
       p:last-child {
-        border-bottom-color: color(var(--col-lightblue) tint(25%));
+        border-bottom-color: color(var(--col-lightblue) lightness(+25%));
       }
 
       ul.accordion {
 
         & > li:first-child {
-          border-top: 1px solid color(var(--col-lightblue) tint(25%));
+          border-top: 1px solid color(var(--col-lightblue) lightness(+25%));
 
           &.accordion__visible {
             border-top: 1px solid var(--col-lighterblue);
@@ -207,7 +207,7 @@
       top: -5px;
     }
 
-    @media (--bp-desktop) {
+    @media screen and (--bp-desktop) {
       padding: 0;
 
       &::before {

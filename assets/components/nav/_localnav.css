@@ -46,7 +46,7 @@
   &__back-btn.localnav__back-btn {
     font-size: .75rem;
     padding: 1.25rem;
-    background-color: color(var(--col-menu) shade(3%));
+    background-color: color(var(--col-menu) lightness(-3%));
     color: rgba(255, 255, 255, .7);
     display: block;
     font-weight: normal;
@@ -141,7 +141,7 @@
 
       &:hover,
       &:focus {
-        background-color: color(var(--col-menu) shade(3%));
+        background-color: color(var(--col-menu) lightness(-3%));
         color: #fff;
       }
     }
@@ -163,7 +163,7 @@
     transform: translateX(-100%);
   }
 
-  @media (--bp-tablet) {
+  @media screen and (--bp-tablet) {
     /* switch to fixed width */
     right: var(--offset-localnav);
     width: var(--width-localnav);
