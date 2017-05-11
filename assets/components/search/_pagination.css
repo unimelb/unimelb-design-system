@@ -1,0 +1,55 @@
+.uomcontent {
+  p.search-result-numbers {
+    font-size: .875rem;
+    line-height: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid color(#000 alpha(10%));
+    color: var(--col-midgray);
+  }
+
+  ul.search-pagination {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+
+    li {
+      display: inline-block;
+      list-style-type: none;
+      margin: 0;
+      max-width: none;
+      padding: 0;
+      vertical-align: middle;
+      width: auto;
+
+      &:nth-last-child(2) {
+        margin-right: .625rem;
+      }
+    }
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    a,
+    span {
+      border-radius: 2px;
+      font-size: 1rem;
+      padding: .3125rem .9375rem;
+      display: block;
+
+      &.button-small {
+        font-size: .75rem;
+      }
+    }
+
+    span {
+      background-color: var(--col-paleblue);
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.uomcontent{
+  .flash {
+    padding: .9375rem;
+    text-align: center;
+
+    & > p {
+      padding-bottom: 0;
+    }
+
+    @media screen and (--bp-desktop) {
+      text-align: left;
+    }
+  }
+
+  .flash--success {
+    @mixin notice-success;
+  }
+
+  .flash--info {
+    @mixin notice-info;
+  }
+
+  .flash--warning {
+    @mixin notice-warning;
+  }
+
+  .flash--danger {
+    @mixin notice-danger;
+  }
+
+  .flash--center {
+    text-align: center;
+  }
+
+  /* Headerless layout */
+  .headerless {
+    & + .flash {
+      /* Keep message against logo between desktop and wide */
+      @media screen and (min-width: 769px) and (max-width: 1098px) {
+        padding-left: 12.8125rem;
+
+        & > p {
+          max-width: none;
+        }
+      }
+    }
+
+    /* Keep message against logo, even above `wide` */
+    & + .flash--keep-left {
+      @media screen and (--bp-wide) {
+        padding-left: 12.8125rem;
+
+        & > p {
+          max-width: none;
+        }
+      }
+    }
+  }
+}
+
+.jumpnav-active .flash {
+  box-shadow: inset 2px 0 3px color(#000 alpha(15%));
+}

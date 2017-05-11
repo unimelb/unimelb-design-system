@@ -1,0 +1,52 @@
+.uomcontent [role="main"] {
+  .soundcloud-cover {
+    max-width: 12.5rem;
+    padding-bottom: 12.5rem;
+    height: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 0;
+    position: relative;
+
+    @media screen and (--bp-height-smallest) {
+      max-width: 21.875rem;
+      padding-bottom: 21.875rem;
+    }
+
+    @media screen and (--bp-height-small) {
+      max-width: 25rem;
+      padding-bottom: 25rem;
+    }
+
+    @media screen and (--bp-height-medium) {
+      max-width: 31.25rem;
+      padding-bottom: 31.25rem;
+    }
+
+    @media screen and (--bp-height-big) {
+      max-width: 37.5rem;
+      padding-bottom: 37.5rem;
+    }
+
+    iframe {
+      height: 100%;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+  div.soundcloud {
+    max-width: 100%;
+
+    iframe {
+      width: 100%;
+
+      @media screen and (--bp-wide) {
+        margin-left: 15%;
+        width: 70%;
+      }
+    }
+  }
+}

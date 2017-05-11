@@ -1,0 +1,4 @@
+/* Custom overrides */
+.uomcontent [role="main"] form {
+  color: var(--col-midgray);
+}

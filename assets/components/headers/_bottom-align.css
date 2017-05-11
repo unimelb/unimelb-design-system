@@ -1,0 +1,69 @@
+.uomcontent [role="main"] {
+  header,
+  & > header:first-child {
+
+  	.bottom-align {
+      @mixin grad-bottom;
+      margin-bottom: -1.5625rem;
+      align-self: flex-end;
+      width: 100%;
+
+      p {
+        padding-bottom: 1.5rem;
+      }
+
+      @media screen and (--bp-desktop) {
+        margin-bottom: -3rem;
+      }
+    }
+
+    .bottom-align-inverted {
+      @mixin grad-top;
+      color: #000;
+    }
+
+    .bottom-align-flat {
+      margin-bottom: -1.5625rem;
+      padding-bottom: 1.875rem;
+      padding-top: 1.875rem;
+      align-self: flex-end;
+      background-color: color(var(--col-darkblue) alpha(80%));
+      width: 100%;
+
+      &.white {
+        background-color: color(#fff alpha(80%));
+        color: #000;
+      }
+
+      &.black {
+        background-color: color(#000 alpha(50%));
+      }
+
+      form {
+        background-color: transparent;
+
+        label {
+          color: #fff;
+        }
+      }
+
+      @media screen and (--bp-desktop) {
+        margin-bottom: -3rem;
+      }
+    }
+	}
+}
+
+.ie9 {
+  .uomcontent header {
+    position: relative;
+
+    .bottom-align,
+    .bottom-align-inverted,
+    .bottom-align-flat {
+      bottom: 0;
+      margin-bottom: 0;
+      position: absolute;
+    }
+  }
+}

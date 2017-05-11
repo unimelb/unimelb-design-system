@@ -1,0 +1,82 @@
+.uomcontent .navigation-text-listing {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+  max-width: 87.5rem;
+  margin: 0 auto;
+  padding-left: 3%;
+  padding-right: 3%;
+
+  h1,
+  p,
+  ul {
+    max-width: 250rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  h1 {
+    padding-bottom: 0;
+
+    &.aligned-title {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      max-width: 100%;
+    }
+  }
+
+  ul {
+    padding-bottom: 0;
+    padding-top: 0;
+
+    li {
+      /* Include vendored fallbacks, autoprefixer does not recognise columns module */
+      -moz-column-break-inside: avoid;
+      -ms-column-break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      break-inside: avoid;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      a {
+        padding-bottom: 1.5rem;
+        display: block;
+      }
+
+    }
+
+    @media screen and (--bp-tablet) {
+      column-count: 2;
+    }
+
+    @media screen and (--bp-desktop) {
+      column-count: 3;
+    }
+
+    @media screen and (--bp-wide) {
+      column-count: 4;
+    }
+  }
+}
+
+@define-mixin navigation-text-listing-fallback {
+  margin: 0 auto;
+
+  h1,
+  p,
+  ul {
+    margin: 0 auto;
+    max-width: var(--w-sml);
+  }
+
+  li {
+    display: inline-block;
+    width: 32%;
+  }
+}
+
+.ie9 .uomcontent [role="main"] .navigation-text-listing {
+  @mixin navigation-text-listing-fallback;
+}

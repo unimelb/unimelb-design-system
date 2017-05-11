@@ -1,0 +1,25 @@
+.logo-listing {
+  max-width: var(--w-mid);
+  margin: 0 auto;
+  text-align: center;
+
+  &__item {
+    padding: .625rem;
+    color: color(#000 alpha(80%));
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  figcaption {
+    font-size: .8em;
+  }
+
+  figure {
+    margin: 0;
+    text-decoration: inherit;
+  }
+
+  li {
+    list-style-type: none;
+  }
+}

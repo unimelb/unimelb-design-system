@@ -1,0 +1,89 @@
+.uomcontent .profile {
+  background-color: var(--col-lightestblue);
+
+  header {
+    min-height: 25rem;
+
+    .bottom-align {
+      padding-top: 3.125rem;
+      bottom: 0;
+      padding-bottom: 0;
+      position: absolute;
+      width: 100%;
+    }
+
+    h1 {
+      border: 0;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 0;
+
+      &::after {
+        margin-top: .9375rem;
+        max-width: var(--w-sml);
+        border-bottom: 2px solid #fff;
+        content: '';
+        display: block;
+        width: 100%;
+      }
+
+      @media screen and (--bp-tablet) {
+        margin-bottom: .9375rem;
+
+        &::after {
+          margin-top: 1.9375rem;
+          max-width: var(--w-sml);
+          border-bottom: 2px solid #fff;
+          content: '';
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    p {
+      font-size: 1.1875rem;
+      font-style: italic;
+      padding: 0;
+
+      @media screen and (--bp-tablet) {
+        font-size: 1.3125rem;
+      }
+    }
+
+    & + .intro {
+      padding-top: 0;
+    }
+  }
+
+  section {
+    &.intro {
+      padding-bottom: 0;
+
+      p {
+        font-style: italic;
+        padding-bottom: 0;
+      }
+
+      & + .video {
+        margin-top: 1.9375rem;
+      }
+    }
+
+  }
+
+  h1 {
+    margin-bottom: 2.1875rem;
+    border-bottom: 2px solid var(--col-navy);
+    color: var(--col-navy);
+
+    @media screen and (--bp-tablet) {
+      margin-bottom: 1.5625rem;
+    }
+
+    @media screen and (--bp-wide) {
+      font-size: 3.125rem;
+      margin-bottom: 1.9375rem;
+    }
+  }
+}

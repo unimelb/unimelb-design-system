@@ -1,0 +1,38 @@
+.uomcontent [role="main"] {
+  .notice {
+    @mixin wrapper;
+    margin-bottom: .9375rem;
+    max-width: var(--w-sml);
+    padding: .9375rem;
+    display: block; /* allow inline elements (e.g. `span`) */
+    margin-left: auto;
+    margin-right: auto;
+
+    p,
+    ul,
+    ol,
+    li {
+      color: inherit;
+    }
+
+    @media screen and (--bp-tablet) {
+      max-width: var(--w-sml);
+    }
+  }
+
+  .notice--success {
+    @mixin notice-success;
+  }
+
+  .notice--info {
+    @mixin notice-info;
+  }
+
+  .notice--warning {
+    @mixin notice-warning;
+  }
+
+  .notice--danger {
+    @mixin notice-danger;
+  }
+}

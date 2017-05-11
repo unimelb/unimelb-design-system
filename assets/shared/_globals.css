@@ -1,0 +1,201 @@
+/**
+ * Variables
+ */
+:root {
+  /* Colours */
+  --col-darkgray: #333;
+  --col-midgray: #666;
+  --col-midgrayer: #777; /* last accessible grey text on white background */
+  --col-gray: #adb8c1;
+  --col-lightgray: #f6f6f6;
+  --col-lightergray: #e0e0e0;
+
+  --col-navy: #0c304a;
+  --col-blue: #304e64;
+  --col-menu: #036;
+  --col-darkblue: #004576;
+  --col-borderblue: #7399b7;
+  --col-midblue: #366996;
+  --col-lightblue: #82a1bd;
+  --col-lighterblue: #006fdc;
+  --col-paleblue: #f2f5f8;
+  --col-lightestblue: #e1eaf5;
+
+  --col-paleyellow: #fffbcc;
+  --col-palegreen: #d2f1cf;
+  --col-salmon: #ea4f62;
+  --col-bronze: #e5e1dc;
+  --col-yellow: #eecc00;
+
+  --col-green: #008a00;
+  --col-cherry: #df0620;
+
+  --col-twitter: #55acee;
+
+  /* Layout widths */
+  --w-sml: 43.75rem;
+  --w-mid: 56.25rem;
+  --w-lge: 87.5rem;
+
+  /* Font stacks */
+  --ff-sans: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  --ff-fixed: 'Courier New', 'Courier', fixed;
+  --ff-serif: 'Georgia', 'Times New Roman', 'Times', serif;
+
+  /* Font weights */
+  --fw-thin: 100;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  /* Transitions */
+  --tr-transform: transform .3s ease;
+}
+
+
+/**
+ * Breakpoints
+ */
+@custom-media --bp-max-mobile (max-width: 480px);
+@custom-media --bp-max-x-mobile (max-width: 599px);
+
+@custom-media --bp-tablet (min-width: 481px);
+@custom-media --bp-x-tablet (min-width: 600px);
+@custom-media --bp-max-tablet (max-width: 768px);
+@custom-media --bp-only-tablet (min-width: 481px) and (max-width: 768px);
+
+@custom-media --bp-desktop (min-width: 769px);
+@custom-media --bp-x-desktop (min-width: 900px);
+@custom-media --bp-max-desktop (max-width: 1098px);
+@custom-media --bp-only-desktop (min-width: 769px) and (max-width: 1098px);
+
+@custom-media --bp-wide (min-width: 1099px);
+@custom-media --bp-x-wide (min-width: 1250px);
+@custom-media --bp-xx-wide (min-width: 1400px);
+
+@custom-media --bp-height-smallest (min-height: 620px);
+@custom-media --bp-height-small (min-height: 700px);
+@custom-media --bp-height-medium (min-height: 850px);
+@custom-media --bp-height-big (min-height: 1200px);
+
+
+/**
+ * Mixins
+ */
+
+/* Micro clearfix */
+/* http://nicolasgallagher.com/micro-clearfix-hack/ */
+@define-mixin clearfix {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@define-mixin wrapper {
+  margin: 0 auto;
+  padding: 0 3%;
+  width: 94%;
+
+  @media screen and (--bp-tablet) {
+    max-width: var(--w-lge);
+  }
+
+  @media screen and (--bp-desktop) {
+    width: 100%;
+  }
+}
+
+@define-mixin injection-wrapper {
+  max-width: 87.5rem;
+  padding: .9375rem;
+  margin: 0 auto;
+}
+
+@define-mixin grad-bottom {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .9) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=0); /* IE6-9 */
+}
+
+@define-mixin grad-top {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .9) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#FFFFFF', GradientType=0); /* IE6-9 */
+}
+
+@define-mixin grad-left {
+  background: linear-gradient(to left, color(var(--col-lighterblue) alpha(0%)) 66%, color(var(--col-lighterblue) alpha(90%)) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=1); /* IE6-9 */
+}
+
+@define-mixin imgreplace {
+  background-color: transparent;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@define-mixin normalise {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Prevent wrap and add ellipsis if overflow */
+@define-mixin ellipsis {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Fallback avatar (used in People and Seach components) */
+@define-mixin fallbackAvatar {
+  position: relative;
+
+  /* Fallback avatar for when the photo fails to load */
+  &::before {
+    background: url(../components/people/avatar-lt.png) no-repeat center / cover transparent;
+    border-radius: 50%;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1; /* position the fallback below the photo so it is hidden when the photo exists */
+  }
+}
+
+/* The photo's wrapper must extend this placeholder to allow for the fallback avatar to */
+/* appear underneath the photo when the latter loads successfully. */
+@define-mixin fallbackAvatarWrapper {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hide only visually, but have it available for screenreaders */
+/* Parent element should have `overflow: hidden;` and `position: relative;` to solve outline bug in Chrome */
+/* http://snook.ca/archives/html_and_css/hiding-content-for-accessibility */
+/* http://stackoverflow.com/questions/3970455/overflow-hidden-not-working */
+@define-mixin screenreaders-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+}
+
+/* Remove text for image replacement */
+@define-mixin hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+

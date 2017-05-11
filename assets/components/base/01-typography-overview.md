@@ -3,13 +3,13 @@
 <h2 id="css-font-stack">CSS font stack</h2>
 
 <pre>
-<code class="css">/* Sans $ff-sans */
+<code class="css">/* var(--ff-sans) */
 font-family: Roboto, Helvetica, Arial, sans-serif;
 
-/* Fixed $ff-fixed */
+/* var(--ff-fixed) */
 font-family: Courier New, Courier, fixed;
 
-/* Serif $ff-serif */
+/* var(--ff-serif) */
 font-family: Georgia, Times New Roman, Times, serif;</code>
 </pre>
 

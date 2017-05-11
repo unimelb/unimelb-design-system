@@ -1,0 +1,50 @@
+@keyframes rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+  }
+}
+
+.uomcontent {
+  .loading {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+    width: 100%;
+
+    span {
+      display: block;
+      height: 0;
+      text-indent: -999em;
+    }
+  }
+
+  .loading-blue {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+    background-color: var(--col-darkblue);
+    width: 100%;
+
+    span {
+      display: block;
+      height: 0;
+      text-indent: -999em;
+    }
+
+    .cube {
+      background-color: #fff;
+    }
+  }
+
+  .cube {
+    height: 3.125rem;
+    width: 3.125rem;
+    animation: rotateplane 1.2s infinite ease-in-out;
+    background-color: var(--col-darkblue);
+    margin: 0 auto;
+  }
+}

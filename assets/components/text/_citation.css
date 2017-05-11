@@ -1,0 +1,37 @@
+.uomcontent {
+  .citation-list {
+    padding-left: 0;
+    padding-right: 0;
+
+    & > .citation {
+      list-style: none;
+
+      @media screen and (--bp-desktop) {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        padding-bottom: .9375rem;
+      }
+    }
+  }
+
+  .citation {
+    font-size: .9375rem;
+    line-height: 1.5rem;
+    padding: .9375rem;
+    margin-top: .25rem;
+    margin-bottom: .75rem;
+    background-color: var(--col-paleblue);
+    border: 1px solid color(var(--col-paleblue) lightness(-7%));
+    font-family: var(--ff-fixed);
+  }
+
+  .alt .citation {
+    background-color: #fff;
+
+    &:last-child {
+      margin-bottom: .25rem;
+    }
+  }
+}

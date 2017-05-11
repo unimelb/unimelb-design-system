@@ -1,0 +1,66 @@
+.uomcontent {
+  header {
+    .inner {
+      @mixin clearfix;
+      max-width: var(--w-lge);
+      margin: 0 auto;
+      width: 94%;
+
+      h1 {
+        letter-spacing: .125rem;
+        font-weight: var(--fw-bold);
+        text-transform: uppercase;
+      }
+
+      p {
+        font-size: 1.125rem;
+        padding: .625rem 0 1.25rem;
+        line-height: 1.2;
+        text-align: center;
+      }
+
+      .right {
+        text-align: center;
+
+        small {
+          padding-bottom: .625rem;
+          display: block;
+          font-weight: var(--fw-light);
+          line-height: 1.2;
+
+          @media screen and (--bp-desktop) {
+            margin-top: -.9375rem;
+          }
+        }
+      }
+
+      @media screen and (--bp-tablet) {
+        .left {
+          float: left;
+          width: 75%;
+
+          h1 {
+            font-size: 1.75rem;
+            max-width: 100%;
+            text-align: left;
+          }
+
+          p {
+            font-size: 1rem;
+            max-width: 100%;
+            text-align: left;
+          }
+        }
+
+        .right {
+          padding-top: .9375rem;
+          float: right;
+          overflow: hidden;
+          text-align: right;
+          width: 25%;
+        }
+
+      }
+    }
+  }
+}

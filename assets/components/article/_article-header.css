@@ -1,0 +1,84 @@
+.uomcontent [role="main"] {
+  article {
+    header,
+    header:first-child {
+      @mixin banner;
+      position: relative;
+
+      h1,
+      p {
+        max-width: var(--w-mid);
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      h1 {
+        font-weight: var(--fw-bold);
+      }
+
+      p.author {
+        em {
+          font-size: 1.125rem;
+          line-height: 1.5rem;
+          font-style: normal;
+          font-weight: var(--fw-bold);
+        }
+      }
+
+      .bottom-align {
+        padding-bottom: 3rem;
+        position: relative;
+      }
+    }
+
+    header.noimg,
+    header.noimg:first-child {
+      background-color: transparent;
+      display: block;
+      height: auto;
+      min-height: 0;
+
+      h1,
+      p {
+        color: #000;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left;
+      }
+
+      h1 {
+        padding-top: 3rem;
+        padding-bottom: 1.5rem;
+        max-width: var(--w-sml);
+      }
+
+      p {
+        max-width: var(--w-sml);
+
+        &.author {
+          padding-bottom: 3rem;
+          max-width: var(--w-sml);
+          border-bottom: 1px solid var(--col-lightergray);
+
+          &::before {
+            border-color: #000;
+            margin-left: 0;
+          }
+        }
+      }
+
+      & + section.with-figure > figure.full-width {
+        margin-top: -1.5625rem;
+      }
+    }
+  }
+}
+
+.ie9, .ie10 {
+  .uomcontent article header,
+  .uomcontent article header:first-child {
+    .bottom-align {
+      position: absolute;
+    }
+  }
+}

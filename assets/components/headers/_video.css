@@ -1,0 +1,51 @@
+.uomcontent {
+  header {
+
+    .embed-video-button {
+      cursor: pointer;
+      margin: 0 auto;
+      transition: transform .3s;
+      width: 20%;
+
+      svg circle,
+      svg polygon {
+        fill: transparent;
+        stroke: #fff;
+        stroke-width: 5px;
+        transition: fill .3s;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+
+        svg circle {
+          fill: color(#000 alpha(60%));
+        }
+      }
+
+      &.hide {
+        display: none;
+      }
+    }
+
+    .video-loop {
+      background-color: #000;
+      display: none;
+
+      @media screen and (--bp-wide) {
+        display: block;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        video {
+          background-color: #000;
+          min-height: 100%;
+          min-width: 100%;
+        }
+      }
+    }
+  }
+}
