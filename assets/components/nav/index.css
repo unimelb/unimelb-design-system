@@ -1,5 +1,3 @@
-@import '../../shared/blanket';
-@import '_modal';
 @import '_nav';
 @import '_localnav';
 @import '_globalnav';
