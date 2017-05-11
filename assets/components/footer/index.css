@@ -1,0 +1,334 @@
+.uomcontent .page-footer {
+  @mixin normalise;
+  font-size: 1.25rem;
+  background-color: var(--col-navy);
+  clear: left;
+  color: #fff;
+  font-family: var(--ff-sans);
+
+  * {
+    @mixin normalise;
+  }
+
+  footer {
+    @mixin injection-wrapper;
+    padding: .9375rem;
+    padding-bottom: 3.75rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  small {
+    font-size: .75rem;
+    line-height: 1.25rem;
+    clear: left;
+    color: var(--col-lightblue);
+    display: block;
+    text-align: center;
+
+    a {
+      color: inherit;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
+    }
+
+    @media (--bp-desktop) {
+      text-align: left;
+    }
+  }
+
+  ul.quicklinks {
+    padding: 0;
+
+    a {
+      font-size: .6875rem;
+      line-height: 2.875rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      @media (--bp-desktop) {
+        min-height: 7.0625rem;
+        line-height: 1.6em;
+      }
+    }
+  }
+
+  ul.people-links {
+    max-width: 87.5rem;
+    border-bottom: 1px solid var(--col-blue);
+    border-top: 1px solid var(--col-blue);
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+
+    li {
+      display: inline-block;
+      list-style-type: none;
+      width: 100%;
+
+      a {
+        font-size: .625rem;
+        line-height: 1.5rem;
+        padding: 1.25rem .9375rem;
+        color: #fff;
+        display: block;
+        letter-spacing: 2px;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    @media (--bp-desktop) {
+      border-bottom: 0;
+      text-align: center;
+
+      li {
+        width: auto;
+      }
+    }
+  }
+}
+
+.uomcontent .unimelb-lge {
+  margin: 1.875rem auto;
+  width: 16.875rem;
+  outline-color: #fff;
+  display: block;
+
+  svg,
+  img {
+    display: block;
+    max-height: 100%;
+    width: 100%;
+  }
+}
+
+.uomcontent .page-footer-section {
+  height: 3.125rem;
+  line-height: 3.125rem;
+  border-bottom: 1px solid var(--col-blue);
+  clear: both;
+  float: left;
+  margin-left: 0;
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+
+  li {
+    display: block;
+    float: left;
+    list-style-type: none;
+    margin-left: 0;
+  }
+
+  a {
+    font-size: .9375rem;
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.nav {
+    padding-bottom: .75rem;
+    padding-top: .5rem;
+    color: var(--col-lightblue);
+    height: auto;
+
+    li {
+      padding-bottom: .625rem;
+      padding-top: .625rem;
+      color: inherit;
+      line-height: 1.1;
+      margin-left: 0;
+      margin-right: 6%;
+      text-align: right;
+      width: 44%;
+    }
+
+    /* nth-child for IE8, up to 9 items */
+    li:first-child + li,
+    li:first-child + li + li + li,
+    li:first-child + li + li + li + li + li,
+    li:first-child + li + li + li + li + li + li + li {
+      margin-left: 6%;
+      margin-right: 0;
+      text-align: left;
+    }
+
+    li:first-child + li + li,
+    li:first-child + li + li + li + li ,
+    li:first-child + li + li + li + li + li + li {
+      clear: left;
+    }
+
+    a {
+      font-size: .875rem;
+      color: inherit;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
+    }
+
+    @media (--bp-desktop) {
+      margin-bottom: .625rem;
+      margin-top: 1.25rem;
+      border: 0 none;
+      width: 70%;
+
+      li {
+        padding-right: 1.875rem;
+        clear: none;
+        display: inline;
+        float: none;
+        margin-left: 0;
+        margin-right: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+        width: auto;
+      }
+
+      li:first-child + li,
+      li:first-child + li + li + li,
+      li:first-child + li + li + li + li + li,
+      li:first-child + li + li + li + li + li + li + li {
+        margin-left: 0;
+      }
+
+      a {
+        font-size: .9375rem;
+      }
+    }
+  }
+
+  &.social {
+    margin-bottom: 1.25rem;
+    padding-top: 1rem;
+    height: auto;
+    padding-bottom: 0;
+
+    li {
+      margin-bottom: 1rem;
+      line-height: 1;
+      text-align: center;
+      width: 20%;
+
+      a {
+        border-radius: 3px;
+        padding-top: .375rem;
+        color: #fff;
+        vertical-align: top;
+
+        svg {
+          height: 1.5rem;
+          margin-bottom: .3125rem;
+          width: 1.5rem;
+          fill: currentColor;
+        }
+      }
+
+      &.social-facebook {
+        margin-left: 20%;
+      }
+
+      &.social-linkedin {
+        margin-right: 20%;
+      }
+    }
+
+    a {
+      @mixin imgreplace;
+      height: 2.25rem;
+      padding-bottom: 1rem;
+      width: 2.25rem;
+      display: inline-block;
+      text-decoration: none;
+      overflow: hidden;
+      transition: all 0.2s linear;
+
+      &:hover,
+      &:focus {
+        background-color: var(--col-lighterblue);
+        transform: scale(1.2);
+      }
+    }
+
+    img {
+      max-width: 1.5rem;
+      max-width: 1.5rem;
+    }
+
+    @media (--bp-desktop) {
+      margin-bottom: 3.75rem;
+      margin-top: 1.25rem;
+      padding-right: 1rem;
+      border: 0 none;
+      clear: none;
+      float: right;
+      text-align: right;
+      width: 30%;
+
+      li {
+        margin-left: 1.5rem;
+        display: inline;
+        float: none;
+        width: auto;
+
+        &.social-twitter {
+          width: auto;
+        }
+
+        &.social-facebook {
+          margin-left: 0;
+        }
+
+        &.social-linkedin {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.uomcontent .unimelb-lge {
+  .noie {
+    display: none;
+  }
+}
+
+.uomcontent .page-footer footer {
+
+  .ind-ack {
+    font-size: 1.125rem;
+    max-width: var(--w-lge);
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--col-blue);
+    clear: both;
+    color: var(--col-lightblue);
+    font-family: var(--ff-serif);
+    font-style: italic;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    text-align: center;
+
+    a {
+      font-size: 1rem;
+      color: var(--col-lightblue);
+      font-style: normal;
+    }
+  }
+}

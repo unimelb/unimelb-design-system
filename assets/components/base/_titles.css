@@ -1,0 +1,111 @@
+@define-mixin aligned-title {
+  font-size: 1.75rem;
+  padding-top: 3rem;
+  padding-bottom: 2.25rem;
+  padding-right: 1.25rem;
+  font-weight: var(--fw-light);
+  letter-spacing: 0;
+  margin: 0 auto;
+  padding-left: 0;
+  text-align: left;
+  text-transform: none;
+  width: 94%;
+
+  @media (--bp-wide) {
+    padding-top: 5rem;
+    width: 100%;
+  }
+
+  &::after {
+    margin-top: 2.25rem;
+    width: 3.125rem;
+    border-bottom: 2px solid #000;
+    content: '';
+    display: block;
+    margin-left: 0;
+  }
+}
+
+@define-mixin subtitle {
+  font-size: .9375rem;
+  line-height: 1.5rem;
+  letter-spacing: .125rem;
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+}
+
+@define-mixin title {
+  @mixin subtitle;
+  text-align: center;
+
+  &::after {
+    margin-top: 1.5rem;
+    width: 5rem;
+    border-bottom: 2px solid #000;
+    content: '';
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.uomcontent {
+  .subtitle {
+    @mixin subtitle;
+  }
+
+  .title {
+    @mixin title;
+  }
+
+  h1.aligned-title {
+    @mixin aligned-title;
+  }
+
+  h1.aligned-title + section {
+    padding-top: 0;
+  }
+
+  .feature {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+  }
+}
+
+.uomcontent [role="main"] {
+  h1.highlight {
+    font-size: 4.6875rem;
+    line-height: 5.25rem;
+    color: var(--col-lighterblue);
+    font-weight: var(--fw-thin);
+    letter-spacing: -5px;
+    text-align: center;
+    animation: hue 80s infinite linear;
+
+    @media (--bp-desktop) {
+      font-size: 10rem;
+      line-height: 10.5rem;
+    }
+  }
+
+  header h1.highlight,
+  & > header:first-child h1.highlight,
+  header.image h1.highlight,
+  & > header.image:first-child h1.highlight,
+  header.banner h1.highlight,
+  & > header.banner:first-child h1.highlight {
+    font-size: 3.75rem;
+    line-height: 4.5rem;
+    text-align: center;
+
+    @media (--bp-desktop) {
+      font-size: 6.25rem;
+      line-height: 6.75rem;
+      text-align: center;
+    }
+
+    @media (--bp-height-medium) {
+      padding-top: 0;
+    }
+  }
+}

@@ -73,12 +73,8 @@ if (isDev) {
 
   config.module.loaders.push(
     {
-      test: /\.scss$/,
-      loader: 'style-loader!css-loader?-autoprefixer&-minimize&sourceMap&importLoaders=1!postcss-loader'
-    },
-    {
       test: /\.css$/,
-      loader: 'style-loader!css-loader?-autoprefixer&-minimize&sourceMap&importLoaders=1!postcss-loader'
+      loader: 'style-loader?sourceMap!css-loader?-autoprefixer&-minimize&sourceMap&importLoaders=1!postcss-loader?sourceMap'
     }
   );
 
@@ -94,13 +90,6 @@ if (isDev) {
   );
 
   config.module.loaders.push(
-    {
-      test: /\.scss$/,
-      loader: ExtractTextPlugin.extract(
-        'style-loader',
-        'css-loader?-autoprefixer&minimize!postcss-loader'
-      )
-    },
     {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract(
@@ -130,7 +119,7 @@ function addEntry(entries, dir) {
     var targets = (isDev) ? ['webpack-dev-server/client?' + ASSET_SERVER_URL, 'webpack/hot/dev-server'] : [];
     addTarget(targets, dirPath, 'index.js');
     addTarget(targets, dirPath, 'index.es6');
-    addTarget(targets, dirPath, 'index.scss');
+    addTarget(targets, dirPath, 'index.css');
 
     // Add the entry
     entries[dir] = targets;

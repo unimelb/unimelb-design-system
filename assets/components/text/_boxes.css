@@ -1,0 +1,90 @@
+@define-mixin boxes {
+  padding-top: 1.5rem;
+  padding-bottom: 0;
+  margin-bottom: 3rem;
+  max-width: var(--w-sml);
+  padding-left: 1.5625rem;
+  padding-right: 1.5625rem;
+  background-color: color(var(--col-lighterblue) tint(54%));
+  margin: 0 auto;
+
+  h1 {
+    font-size: .9375rem;
+    line-height: 1.5rem;
+    letter-spacing: .125rem;
+    padding: 0 0 .9375rem 0;
+    font-weight: var(--fw-bold);
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  dl {
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  dt {
+    font-size: .9375rem;
+    line-height: 1.5rem;
+    color: #000;
+    display: block;
+    float: none;
+    font-weight: var(--fw-light);
+    width: auto;
+  }
+
+  dd {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    display: block;
+    float: none;
+    font-weight: var(--fw-regular);
+    width: auto;
+  }
+
+  p {
+    padding-bottom: 0;
+  }
+}
+
+.uomcontent [role="main"] {
+  .contact-box {
+    @mixin boxes;
+  }
+
+  .highlight-box {
+    @mixin boxes;
+
+    dd {
+      font-size: 2.5rem;
+      line-height: 3rem;
+      font-weight: var(--fw-bold);
+    }
+  }
+
+  .emergency-box {
+    @mixin boxes;
+    color: var(--col-cherry);
+
+    dd {
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+      font-weight: var(--fw-bold);
+    }
+
+    a {
+      color: var(--col-cherry);
+    }
+
+    @media (--bp-desktop) {
+      dd {
+        font-weight: var(--fw-regular);
+      }
+    }
+  }
+}

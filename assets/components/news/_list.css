@@ -1,0 +1,269 @@
+.uomcontent .news-hero {
+  padding-bottom: 3rem;
+  max-width: var(--w-lge);
+  margin: 0 auto;
+  text-align: right;
+
+  a {
+    padding-top: 9rem;
+    max-width: 71.875rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    text-decoration: none;
+    text-align: left;
+    width: 100%;
+
+
+    &:hover,
+    &:focus {
+      .inner {
+        background-color: var(--col-darkblue);
+      }
+    }
+  }
+
+  .inner {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+
+    background-color: var(--col-darkblue);
+    background-color: color(var(--col-darkblue) alpha(70%));
+    color: #fff;
+    max-width: 100%;
+  }
+
+  h1 {
+    max-width: var(--w-mid);
+    font-weight: var(--fw-thin);
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    max-width: var(--w-mid);
+    margin: 0;
+    padding: 0;
+  }
+
+  @media (--bp-desktop) {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+
+    a {
+      padding-top: 21rem;
+    }
+  }
+}
+
+.uomcontent .news-index {
+  article {
+    @mixin clearfix;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    max-width: var(--w-mid);
+    border-bottom: 1px solid var(--col-lightergray);
+    margin: 0 auto;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    img {
+      margin-bottom: .9375rem;
+      display: block;
+      margin-left: auto;
+      margin-right: 3%;
+      width: 94%;
+
+      &:first-child {
+        margin-left: .625rem;
+        max-width: 7.8125rem;
+        float: right;
+      }
+    }
+  }
+
+  a {
+    color: #000;
+    display: block;
+    text-decoration: none;
+  }
+
+  h1 {
+    font-size: 1.375rem;
+    line-height: 2.25rem;
+    max-width: var(--w-mid);
+    padding-bottom: .9375rem;
+  }
+
+  p {
+    max-width: var(--w-mid);
+    padding-bottom: 0;
+
+    &.topic {
+      font-size: .875rem;
+      line-height: 1.5rem;
+      color: var(--col-midgray);
+    }
+  }
+
+  @media (--bp-desktop) {
+    article {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+
+      img {
+        width: 100%;
+
+        &:first-child {
+          max-width: 14.375rem;
+          float: left;
+          margin-left: 0;
+          margin-right: 2%;
+
+          & + p,
+          & + p + h1,
+          & + p + h1 + p {
+            margin-left: 16.875rem;
+            margin-right: 0;
+            width: auto;
+          }
+        }
+      }
+    }
+
+    h1 {
+      font-size: 1.625rem;
+      line-height: 2.25rem;
+    }
+
+    @media (min-width: 925px) {
+      article {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  &.dense {
+    article {
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      max-width: var(--w-sml);
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+      padding-bottom: .75rem;
+      font-weight: var(--fw-regular);
+    }
+
+    p {
+      font-size: .875rem;
+      line-height: 1.5rem;
+
+      &.date {
+        font-size: .8125rem;
+        line-height: 1.5rem;
+        font-style: italic;
+      }
+    }
+
+    @media (--bp-desktop) {
+      h1 {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+      }
+
+      article img {
+        width: 100%;
+
+        &:first-child {
+          max-width: 7.5rem;
+
+          & + p,
+          & + p + h1,
+          & + p + h1 + p {
+            margin-left: 8.75rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.uomcontent [data-tabbed].tabbed {
+  .news-tabs {
+    padding-top: 3rem;
+    max-width: 56.25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .news-index.tab {
+    padding-top: 1.5rem;
+    border-bottom: 0;
+    padding-left: 3%;
+    padding-right: 3%;
+
+    article {
+      clear: left;
+
+      h1 {
+        margin: 0;
+        max-width: 1000px;
+      }
+
+      p {
+        max-width: 1000px;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      img:first-child + p + h1 + p {
+        width: auto;
+      }
+
+      @media (--bp-desktop) {
+        img + p + h1 {
+          margin-left: 16.875rem;
+        }
+      }
+
+      &:last-child {
+        border: none;
+      }
+    }
+
+    @media (--bp-tablet) {
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+      width: 94%;
+
+      article {
+        padding-left: 0;
+      }
+
+      h1,
+      p {
+        width: auto;
+      }
+    }
+
+    @media (min-width: 920px) {
+      width: 94%;
+    }
+  }
+}
+
+.uomcontent [role="main"] section .news-index {
+  max-width: none;
+}

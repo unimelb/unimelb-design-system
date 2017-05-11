@@ -1,0 +1,230 @@
+.uomcontent {
+  .accordion__title {
+    cursor: pointer;
+  }
+
+  .accordion__hidden {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+
+    td {
+      display: none;
+    }
+  }
+
+  .accordion__close {
+    display: none;
+  }
+
+  .accordion__visible .accordion__hidden {
+    max-height: 3125rem;
+  }
+
+  .accordion__visible tr.accordion__hidden {
+    display: table-row;
+
+    td {
+      display: table-cell;
+    }
+  }
+
+  .accordion__noanim {
+    .accordion__hidden,
+    .accordion__visible .accordion__hidden {
+      transition: none;
+    }
+  }
+
+  ul.accordion {
+    padding-left: 0;
+    padding-right: 0;
+
+    & > li {
+      border-bottom: 1px solid color(var(--col-lightgray) shade(5%));
+      list-style-type: none;
+      margin: 0;
+      max-width: 2000px;
+      width: 100%;
+
+      @mixin inner-list-reset;
+
+      padding: 0;
+
+      /* Ridiculous overrides */
+      ol,
+      ul {
+        padding-bottom: 1.875rem;
+
+        ol,
+        ul {
+          padding-bottom: 0;
+        }
+      }
+
+      ol.steps {
+        @mixin inner-list-reset;
+
+        ol,
+        ul {
+          padding-left: 2.1875rem;
+          padding-right: 2.1875rem;
+        }
+
+        li {
+          margin: 0;
+
+          @media (--bp-desktop) {
+            padding-left: 6.875rem;
+
+            li {
+              padding-left: 0;
+            }
+          }
+        }
+
+        p {
+          padding-left: 3%;
+          padding-right: 3%;
+
+          @media (--bp-desktop) {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
+
+      p {
+        width: 100%;
+      }
+
+      .accordion__title {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+        padding-left: 2.5rem;
+        padding-right: .9375rem;
+        display: block;
+        position: relative;
+
+        &:hover {
+          color: var(--col-lighterblue);
+          text-decoration: underline;
+        }
+
+        &:focus {
+          color: var(--col-lighterblue);
+        }
+
+        &::before {
+          font-size: 1.125rem;
+          left: .9375rem;
+          margin-top: -.5625rem;
+          content: "+";
+          display: inline-block;
+          line-height: 1;
+          position: absolute;
+          text-align: left;
+          text-decoration: none;
+          top: 50%;
+          transition: transform 0.2s ease-in-out;
+        }
+
+        @media (--bp-desktop) {
+          font-size: 1.375rem;
+          line-height: 2.25rem;
+          padding-left: 3.4375rem;
+
+          &::before {
+            font-size: 1.5rem;
+            margin-top: -.75rem;
+          }
+        }
+      }
+
+      .accordion__hidden {
+        padding-top: .75rem;
+        padding-left: .9375rem;
+        padding-right: .9375rem;
+        display: none;
+      }
+
+      &.accordion__visible {
+        margin-top: -1px;
+        border-top: 1px solid;
+        border-color: var(--col-lighterblue);
+
+        .accordion__title {
+          color: var(--col-lighterblue);
+
+          &::before {
+            transform: rotate(45deg);
+          }
+        }
+
+        .accordion__hidden {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .alt ul.accordion {
+    & > li {
+      border-bottom-color: color(var(--col-lightblue) tint(25%));
+
+      &.accordion__visible {
+        border-color: var(--col-lighterblue);
+      }
+    }
+  }
+
+  .code {
+    max-width: var(--w-mid);
+    clear: both;
+    margin: 0 auto;
+
+    ul.accordion {
+      max-width: var(--w-mid);
+
+      li {
+        max-width: var(--w-mid);
+
+        &::before,
+        .accordion__title {
+          color: var(--col-gray);
+        }
+
+        .accordion__hidden {
+          max-width: var(--w-mid);
+        }
+
+        &.accordion__visible .accordion__hidden {
+          max-height: 625rem;
+        }
+
+        &.accordion__visible::before,
+        &.accordion__visible .accordion__title {
+          color: var(--col-lighterblue);
+        }
+
+        div.highlight {
+          max-width: var(--w-mid);
+        }
+      }
+    }
+  }
+}
+
+.ie9 .uomcontent {
+  ul.accordion > li {
+    .accordion__title::before {
+      font-size: 18px;
+    }
+
+    &.accordion__visible .accordion__title::before {
+      font-size: 16px;
+      content: "x";
+      transform: none;
+    }
+  }
+}

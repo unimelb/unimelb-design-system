@@ -1,0 +1,345 @@
+.uomcontent [role="navigation"]#globalsitemap {
+  @mixin normalise;
+  @mixin injection-wrapper;
+  padding: 0 3% 1.875rem;
+  background-color: var(--col-navy);
+  font-family: var(--ff-sans);
+  height: 100%;
+  margin: 0;
+  max-width: none;
+  position: fixed;
+  right: -100%;
+  top: 0;
+  transform: translateX(0);
+  transition: var(--tr-transform);
+  width: 100%;
+  z-index: 17;
+
+  &.active {
+    box-shadow: 1px 0 12px 3px color(#000 alpha(60%));
+    overflow: auto;
+    transform: translateX(-100%);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  @media (--bp-tablet) {
+    padding: 0 8.125rem 1.875rem 2.5rem;
+
+    &.active {
+      transform: translateX(-100%) translateX(90px);
+    }
+  }
+
+  a {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    color: var(--col-lightblue);
+    color: color(#fff alpha(60%));
+    display: block;
+    font-weight: var(--fw-light);
+    padding-left: 0;
+    padding-right: 3%;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @media (--bp-desktop) {
+      padding-top: .25rem;
+      padding-bottom: .25rem;
+    }
+  }
+
+  .linkgroup-title {
+    display: block;
+    font-size: .9375rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+    padding-bottom: 0;
+    padding-top: 0;
+    border-bottom: 1px solid var(--col-blue);
+    color: var(--col-lightblue);
+    color: color(#fff alpha(60%));
+    line-height: 1.2;
+    padding-right: 3%;
+
+    a {
+      font-weight: 400;
+      padding-bottom: .625rem;
+      padding-top: .25rem;
+    }
+  }
+
+  li {
+    font-size: .875rem;
+    color: #B9C2CA;
+    color: color(#fff alpha(60%));
+    line-height: 1.4;
+    list-style-type: disc;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  ul {
+    padding-left: 1.25rem;
+    margin: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-top: 0;
+  }
+
+  ul.quicklinks {
+    @mixin quicklinks;
+    padding: 0;
+  }
+
+  form {
+    width: 100%;
+    padding: 0 3%;
+
+    @media (--bp-desktop) {
+      margin-top: 1.875rem;
+      max-width: var(--w-sml);
+      float: right;
+      padding: 0;
+      width: 60%;
+    }
+
+    fieldset {
+      input[type="search"] {
+        background-color: var(--col-lightergray);
+
+        &:focus {
+          background-color: #fff;
+        }
+      }
+    }
+
+/* dupe */
+    .inline {
+      display: table;
+      position: relative;
+      width: 100%;
+
+      input[type="text"],
+      input[type="search"] {
+        border-radius: 3px 0 0 3px;
+      }
+
+      input[type="image"] {
+        @mixin inlinebutton;
+        border-radius: 0 3px 3px 0;
+        margin: .9375rem 0 0;
+        width: 2.8125rem;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        span {
+          display: none;
+        }
+
+        svg {
+          height: 1.5rem;
+          width: 1.5rem;
+          background-color: transparent;
+          cursor: pointer;
+          fill: currentColor;
+          max-height: 100%;
+        }
+      }
+
+      .inline-button {
+        @mixin inlinebutton;
+        border-radius: 0 3px 3px 0;
+        font-size: .8125rem;
+        height: 2.8125rem;
+        margin: .3125rem 0 0;
+        padding: 0 .9375rem;
+        letter-spacing: 1px;
+
+        span.small {
+          padding: 0;
+
+          svg {
+            height: 1.5rem;
+            width: 1.5rem;
+          }
+        }
+      }
+
+      & > span {
+        display: table-cell;
+        padding: 0;
+        vertical-align: middle;
+
+        &.fill {
+          width: 100%;
+        }
+      }
+    }
+/* dupe */
+
+  }
+
+  .logo {
+    @mixin imgreplace;
+    height: 8.75rem;
+    margin-top: .9375rem;
+    width: 8.75rem;
+    border: 0 none;
+    clear: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    text-decoration: none;
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    @media (--bp-desktop) {
+      float: left;
+      margin-top: 0;
+    }
+  }
+
+  a.close-button {
+    font-size: .875rem;
+    padding-left: .25rem;
+    padding-top: 1rem;
+    height: 3.75rem;
+    border-bottom: 1px solid var(--col-blue);
+    color: color(#fff alpha(40%));
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::before {
+      font-size: 1.5rem;
+      margin-right: .5rem;
+      color: color(#fff alpha(40%));
+      content: '\2039';
+      display: inline-block;
+      font-weight: var(--fw-regular);
+      line-height: 1;
+      vertical-align: -1px;
+    }
+
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      animation: chevronback 1s infinite ease-in-out;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .col-3 {
+    padding-left: 3%;
+
+    &:last-child {
+      padding-bottom: 2rem;
+    }
+  }
+
+  @media (--bp-desktop) {
+    .col-3 {
+      padding-top: 3rem;
+      clear: both;
+
+      div {
+        float: left;
+        width: 30%;
+
+        &:first-child {
+          margin-right: 5%;
+
+          & + div + div {
+            margin-left: 5%;
+          }
+        }
+      }
+
+      h2 {
+        letter-spacing: .125rem;
+        border-top: 0 none;
+        font-size: .9375rem;
+        font-weight: var(--fw-regular);
+        margin-right: 0;
+        padding-left: 0;
+        padding-top: 0;
+        text-transform: uppercase;
+
+        a {
+          font-weight: var(--fw-regular);
+        }
+      }
+
+      a {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+body.ie9 {
+  .uomcontent [role="navigation"]#globalsitemap {
+    ul.quicklinks a {
+      color: #fff;
+    }
+
+    .logo * {
+      border: 0 none;
+      outline: 0;
+    }
+
+    .col-3 {
+      clear: both;
+      padding-top: 30px;
+
+      div {
+        float: left;
+        padding-bottom: 30px;
+        width: 30%;
+
+        &:first-child {
+          margin-right: 5%;
+
+          & + div + div {
+            margin-left: 5%;
+          }
+        }
+      }
+
+      h2 {
+        border-top: 0 none;
+        margin-right: 0;
+        padding-left: 0;
+        padding-top: 0;
+      }
+
+      a {
+        padding-left: 0;
+      }
+    }
+  }
+}

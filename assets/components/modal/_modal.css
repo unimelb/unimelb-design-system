@@ -1,0 +1,73 @@
+@define-mixin modal-close-icon {
+  content: '\2573';
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1;
+  padding-bottom: 2px;
+}
+
+.uomcontent {
+  .modal__dialog {
+    background-color: #fff;
+    box-shadow: 0 3px 6px 3px rgba(0, 0, 0, .2);
+    left: 5%;
+    max-width: 100%;
+    padding: 20px;
+    position: absolute;
+    right: 5%;
+    text-align: left;
+    top: 5%;
+    visibility: hidden;
+    z-index: 1;
+
+    * {
+      max-width: 100%;
+    }
+
+    /* Hide accidental peek from 3rd party embeds at page load */
+    iframe {
+      display: none;
+    }
+
+    &.on {
+      visibility: visible;
+      z-index: 14;
+
+      iframe {
+        display: block;
+      }
+    }
+
+    @media (--bp-wide) {
+      left: 0;
+      margin: 0 auto;
+      max-width: 900px;
+      width: 100%; /* fixes centring on IE */
+      right: 0;
+    }
+  }
+
+  .modal__close {
+    background-color: #fff;
+    color: var(--col-midgray);
+    font-size: 11px;
+    font-weight: 400;
+    padding: 0 0 5px 5px;
+    position: absolute;
+    right: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 50px;
+
+    &::before {
+      @mixin modal-close-icon;
+    }
+
+    &:hover,
+    &:focus {
+      color: #000;
+    }
+  }
+}
