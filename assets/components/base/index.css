@@ -1,7 +1,7 @@
-@import '_titles.css';
-@import '_typography.css';
-@import '_layout.css';
-@import '_courses.css';
-@import '_profile.css';
-@import '_timetable.css';
-@import '_staff-dial.css';
+@import '_titles';
+@import '_typography';
+@import '_layout';
+@import '_courses';
+@import '_profile';
+@import '_timetable';
+@import '_staff-dial';

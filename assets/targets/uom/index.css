@@ -1,41 +1,41 @@
 /* Global variables and mixins, and normalisation styles */
-@import '../../shared/_globals.css';
-@import '../../shared/_normalize.css';
+@import '../../shared/_globals';
+@import '../../shared/_normalize';
 
 /* Injection */
-@import '../../components/footer/index.css';
-@import '../../components/header/index.css';
-@import '../../components/nav/index.css';
+@import '../../components/footer';
+@import '../../components/header';
+@import '../../components/nav';
 
 /* Components */
-@import '../../components/filtered-listings/index.css';
-@import '../../components/base/index.css';
-@import '../../components/text/index.css';
-@import '../../components/buttons/index.css';
-@import '../../components/listings/index.css';
-@import '../../components/pathfinder/index.css';
-@import '../../components/forms/index.css';
-@import '../../components/checklist/index.css';
-@import '../../components/media/index.css';
-@import '../../components/accordion/index.css';
-@import '../../components/gallery/index.css';
-@import '../../components/headers/index.css';
-@import '../../components/article/index.css';
-@import '../../components/search/index.css';
-@import '../../components/loading-animation/index.css';
-@import '../../components/tables/index.css';
-@import '../../components/timeline/index.css';
-@import '../../components/enquiry/index.css';
-@import '../../components/notices/index.css';
-@import '../../components/tabs/index.css';
-@import '../../components/inpage-navigation/index.css';
-@import '../../components/events/index.css';
-@import '../../components/maps/index.css';
-@import '../../components/modal/index.css';
-@import '../../components/news/index.css';
-@import '../../components/people/index.css';
-@import '../../components/icons/index.css';
-@import '../../components/announcement/index.css';
+@import '../../components/filtered-listings';
+@import '../../components/base';
+@import '../../components/text';
+@import '../../components/buttons';
+@import '../../components/listings';
+@import '../../components/pathfinder';
+@import '../../components/forms';
+@import '../../components/checklist';
+@import '../../components/media';
+@import '../../components/accordion';
+@import '../../components/gallery';
+@import '../../components/headers';
+@import '../../components/article';
+@import '../../components/search';
+@import '../../components/loading-animation';
+@import '../../components/tables';
+@import '../../components/timeline';
+@import '../../components/enquiry';
+@import '../../components/notices';
+@import '../../components/tabs';
+@import '../../components/inpage-navigation';
+@import '../../components/events';
+@import '../../components/maps';
+@import '../../components/modal';
+@import '../../components/news';
+@import '../../components/people';
+@import '../../components/icons';
+@import '../../components/announcement';
 
 /* Print */
-@import '../../shared/_print.css';
+@import '../../shared/_print';

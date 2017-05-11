@@ -1,4 +1,4 @@
-@import '_search-form.css';
-@import '_search-results.css';
-@import '_autocomplete.css';
-@import '_pagination.css';
+@import '_search-form';
+@import '_search-results';
+@import '_autocomplete';
+@import '_pagination';

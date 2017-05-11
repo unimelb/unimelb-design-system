@@ -1,4 +1,4 @@
-@import '../../shared/_globals.css';
+@import '../../shared/_globals';
 
 @keyframes appear-bottom {
   from { transform: translateY(100%); }

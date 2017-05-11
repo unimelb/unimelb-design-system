@@ -1,5 +1,5 @@
-@import '../../shared/blanket.css';
-@import '_modal.css';
-@import '_nav.css';
-@import '_localnav.css';
-@import '_globalnav.css';
+@import '../../shared/blanket';
+@import '_modal';
+@import '_nav';
+@import '_localnav';
+@import '_globalnav';

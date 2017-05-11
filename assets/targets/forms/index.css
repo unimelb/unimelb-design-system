@@ -1,19 +1,19 @@
 /* Global variables and mixins, and normalisation styles */
-@import '../../shared/_globals.css';
-@import '../../shared/_normalize.css';
+@import '../../shared/_globals';
+@import '../../shared/_normalize';
 
 /* Form target overrides */
-@import '_overrides.css';
+@import '_overrides';
 
 /* Import specific components */
-@import '../../components/base/_typography.css';
-@import '../../components/text/index.css';
-@import '../../components/buttons/index.css';
-@import '../../components/forms/index.css';
-@import '../../components/accordion/index.css';
-@import '../../components/modal/index.css';
-@import '../../components/search/index.css';
-@import '../../components/filtered-listings/index.css';
+@import '../../components/base/_typography';
+@import '../../components/text';
+@import '../../components/buttons';
+@import '../../components/forms';
+@import '../../components/accordion';
+@import '../../components/modal';
+@import '../../components/search';
+@import '../../components/filtered-listings';
 
 /* Print */
-@import '../../shared/_print.css';
+@import '../../shared/_print';
