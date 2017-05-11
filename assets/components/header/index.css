@@ -29,7 +29,7 @@
   font-size: 1.25rem;
   background-color: var(--col-lightgray);
   border: 1px solid color(var(--col-lightergray) shade(5%));
-  box-shadow: inset 0 1px 3px rgba(#000, .15);
+  box-shadow: inset 0 1px 3px color(#000 alpha(15%));
 
   &:hover {
     border-color: var(--col-gray);
@@ -537,7 +537,7 @@
 .uomcontent .page-header-search {
   height: 3.75rem;
   animation: fadeIn .2s backwards;
-  background: rgba(#fff, .95);
+  background: color(#fff alpha(95%));
   display: none;
   left: 0;
   position: fixed;

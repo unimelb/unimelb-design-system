@@ -12,7 +12,7 @@
   li {
     margin-bottom: 1rem;
     background-color: transparent;
-    border: 1px solid rgba(#000, .15);
+    border: 1px solid color(#000 alpha(15%));
     box-shadow: 0 0 9px -3px color(#000 alpha(30%));
     color: #000;
     float: left;
@@ -303,7 +303,7 @@
 
         &::before {
           height: 3.125rem;
-          background: linear-gradient(to top, rgba(#fff, 1) 10%, rgba(#fff, 0) 100%);
+          background: linear-gradient(to top, #fff 10%, color(#fff alpha(0%)) 100%);
           content: '';
           display: block;
           width: 100%;
@@ -322,7 +322,7 @@
       margin-left: -1rem;
       margin-right: -1rem;
       margin-top: -4rem; /* account for padding-top of 4px on `meta` */
-      background: linear-gradient(to top, color(#fff alpha(90%)) 33%, rgba(#fff, 0) 100%);
+      background: linear-gradient(to top, color(#fff alpha(90%)) 33%, color(#fff alpha(0%)) 100%);
       content: '';
       display: block;
       width: auto;
