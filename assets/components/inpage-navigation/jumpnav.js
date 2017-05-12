@@ -5,7 +5,7 @@ var componentManager = require('shared/component-manager');
  * @param  {Object} props
  */
 function JumpNav(el, props) {
-  this.props = props;
+  this.props = props || {};
   this.props.root = document.querySelector('[role="main"]');
   this.props.headings = this.props.root.querySelectorAll('h2[id]');
   this.props.topmode = el.classList.contains('top');

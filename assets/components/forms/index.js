@@ -10,7 +10,7 @@ function ValidateForm(el, props) {
   "use strict";
 
   this.el = el;
-  this.props = props;
+  this.props = props || {};
 
   this.props.patterns = {
     alpha         : /[a-zA-Z]+/,

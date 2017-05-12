@@ -5,7 +5,7 @@
  */
 function Flash(el, props) {
   this.el = el;
-  this.props = props;
+  this.props = props || {};
 
   var main = document.querySelector('[role="main"]');
   var headerless = document.querySelector('.headerless');

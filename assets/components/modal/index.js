@@ -7,7 +7,7 @@ var Blanket = require('shared/blanket');
  */
 function Modal(el, props) {
   this.el = el;
-  this.props = props;
+  this.props = props || {};
   this.props.target = document.getElementById(el.getAttribute('data-modal-target'));
 
   // Bind only if modal has target

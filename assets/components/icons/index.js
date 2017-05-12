@@ -5,7 +5,7 @@
  */
 function IconHelper(el, props) {
   this.el = el;
-  this.props = props;
+  this.props = props || {};
 
   // Allow providing icon target with or without the `#icon-` prefix
   this.props.ref = this.el.getAttribute('data-icon');
