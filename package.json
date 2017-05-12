@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "classlist-polyfill": "unimelb/classlist-polyfill#1.1.20170228",
-    "cssesc": "^1.0.0",
+    "cssesc": "0.1.0",
     "es6-promise": "^4.0.5",
     "has-localstorage": "^1.0.1",
     "just-debounce": "^1.0.0",
