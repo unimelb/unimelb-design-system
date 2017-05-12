@@ -1,5 +1,4 @@
-var hashString = require('string-hash');
-var hasLocalStorage = require('has-localstorage');
+var utils = require('../../utils');
 
 var STORAGE_PREFIX = 'uom-announcement-';
 var DISMISSED = 'dismissed';
@@ -8,6 +7,8 @@ var DISMISSED = 'dismissed';
 function Announcement(el, props) {
   this.el = el;
   this.props = props;
+
+  this.props.hasLocalStorage = utils.hasLocalStorage();
   this.props.parent = document.querySelector('.uomcontent');
   this.props.page = this.props.parent.querySelector('.page-inner');
   this.props.header = this.props.parent.querySelector('.page-header');
@@ -26,10 +27,11 @@ Announcement.prototype.checkDismissed = function () {
   this.props.message = this.el.querySelector('.page-announcement__message');
 
   // Hash the announcement before storing
-  this.props.hash = hashString(this.props.message.textContent);
+  this.props.hash = utils.hashString(this.props.message.textContent);
 
   // Check local storage for hash
-  this.props.wasDismissed = hasLocalStorage() && window.localStorage.getItem(STORAGE_PREFIX + this.props.hash) === DISMISSED;
+  this.props.wasDismissed = this.props.hasLocalStorage &&
+      window.localStorage.getItem(STORAGE_PREFIX + this.props.hash) === DISMISSED;
 };
 
 /**
@@ -47,14 +49,14 @@ Announcement.prototype.inject = function () {
 
   // Register handler on announcement link
   // This does not close the announcement for performance reasons - it just marks it as dismissed in localStorage
-  this.props.message.addEventListener('click', this.markDisimissed.bind(this));
+  this.props.message.addEventListener('click', this.markDismissed.bind(this));
 };
 
 /**
  * Dismiss the announcement.
  */
 Announcement.prototype.dismiss = function () {
-  this.markDisimissed();
+  this.markDismissed();
 
   // Set the max-height to the current height of the announcement
   this.el.style['max-height'] = this.el.clientHeight + 'px';
@@ -67,10 +69,10 @@ Announcement.prototype.dismiss = function () {
 /**
  * Mark the announcement as dismissed.
  */
-Announcement.prototype.markDisimissed = function () {
+Announcement.prototype.markDismissed = function () {
   this.props.wasDismissed = true;
 
-  if (hasLocalStorage) {
+  if (this.props.hasLocalStorage) {
     // Mark the announcement as dismissed in local storage
     localStorage.setItem(STORAGE_PREFIX + this.props.hash, DISMISSED);
   }
