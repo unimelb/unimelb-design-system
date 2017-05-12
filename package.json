@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "classlist-polyfill": "unimelb/classlist-polyfill#1.1.20170228",
-    "cssesc": "~0.1.0",
+    "cssesc": "^1.0.0",
     "es6-promise": "^4.0.5",
     "has-localstorage": "^1.0.1",
     "just-debounce": "^1.0.0",
@@ -33,7 +33,7 @@
     "babel-loader": "~6.2.5",
     "babel-preset-es2015": "~6.16.0",
     "css-loader": "^0.28.1",
-    "dotenv": "~2.0.0",
+    "dotenv": "^4.0.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
     "html-loader": "~0.4.4",
