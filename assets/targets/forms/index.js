@@ -8,7 +8,7 @@ import {
 import * as utils from 'utils';
 import cssesc from 'cssesc';
 
-import InjectIconSet from 'targets/injection/icon-set';
+import InjectIconSet from 'components/icon-set';
 
 import Accordion from 'components/accordion';
 import FancySelect from 'components/forms/fancyselect';
