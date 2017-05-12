@@ -8,7 +8,7 @@ var utils = require('../../utils');
  */
 function InPageNavigation(el, props) {
   this.el = el;
-  this.props = props;
+  this.props = props || {};
   this.el.addEventListener('click', this.delegateScroll.bind(this));
 }
 

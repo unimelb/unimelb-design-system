@@ -5,7 +5,7 @@
  */
 function LMaps(el, props) {
   this.el = el;
-  this.props = props;
+  this.props = props || {};
 
   this.props.latlng = this.el.getAttribute('data-leaflet-latlng').split(',');
   this.props.zoom = parseInt(this.el.getAttribute('data-zoom')) || 15;

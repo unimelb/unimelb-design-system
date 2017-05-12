@@ -7,10 +7,8 @@
  * @param  {Object} props
  */
 function FancySelect(el, props) {
-  "use strict";
-
   this.el = el;
-  this.props = props;
+  this.props = props || {};
   this.props.parent = this.el.parentNode;
 
   // Only fancify if it hasn't already been done

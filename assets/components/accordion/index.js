@@ -6,7 +6,7 @@
  */
 function Accordion(el, props) {
   this.el = el;
-  this.props = props;
+  this.props = props || {};
 
   this.props.container = this.el.parentNode;
   this.props.hidden = this.props.container.querySelector('.accordion__hidden');

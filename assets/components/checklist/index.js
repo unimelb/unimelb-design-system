@@ -5,10 +5,8 @@
  * @param  {Object} props
  */
 function Checklist(el, props) {
-  "use strict";
-
   this.el = el;
-  this.props = props;
+  this.props = props || {};
 
   this.props.target = document.getElementById(this.el.getAttribute('data-unlock-target'));
   this.props.target.addEventListener('click', this.handleTargetClick.bind(this));

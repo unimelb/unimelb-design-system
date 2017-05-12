@@ -6,7 +6,7 @@
  */
 function MobileTableHelper(el, props) {
   this.el = el;
-  this.props = props;
+  this.props = props || {};
 
   this.props.labels = this.el.querySelectorAll('thead th');
 

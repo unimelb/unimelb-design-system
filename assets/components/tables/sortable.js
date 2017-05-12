@@ -6,7 +6,7 @@
  */
 function SortableTable(el, props) {
   this.el = el;
-  this.props = props;
+  this.props = props || {};
   this.props.tbody = this.el.querySelector('tbody');
 
   this.setupData();

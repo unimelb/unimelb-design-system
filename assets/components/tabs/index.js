@@ -16,7 +16,7 @@ var DEBOUNCE_DELAY = 100;
  */
 function Tabs(el, props) {
   this.el = el;
-  this.props = props;
+  this.props = props || {};
   this.props.nav = this.el.querySelector('nav');
   this.props.navParent = this.props.nav.parentElement;
   this.props.tabs = this.el.querySelectorAll('nav a');
