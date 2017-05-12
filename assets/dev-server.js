@@ -23,14 +23,12 @@ var devServer = new WebpackDevServer(webpack(config), {
   stats: 'minimal', // reduce terminal output,
   proxy: { // proxy unhandled requests to rack server
     '**': {
-      target: `http://127.0.0.1:${WEB_SERVER_PORT}`,
-      changeOrigin: false,
-      secure: false
+      target: `http://127.0.0.1:${WEB_SERVER_PORT}`
     }
   }
 });
 
-// Bind server to all incoming requests
+// Listen for all incoming requests (both current IP and `localhost`)
 devServer.listen(ASSET_SERVER_PORT, '0.0.0.0', function(err) {
   if (err) console.error(err);
   console.log(`=> 🔥  Webpack development server listening at http://${ip.address()}:${ASSET_SERVER_PORT}`);
