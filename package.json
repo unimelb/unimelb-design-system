@@ -7,13 +7,12 @@
   "license": "UNLICENSED",
   "engines": {
     "node": "6.9.3",
-    "npm": "3.10.10"
+    "yarn": "*"
   },
   "scripts": {
     "prebuild": "rm -Rf build/*",
     "build": "NODE_ENV=production webpack --config assets/webpack.config.js",
     "dev": "node assets/dev-server.js",
-    "shrink": "rm -f npm-shrinkwrap.json && npm prune && npm i && npm shrinkwrap --dev",
     "start": "bundle exec foreman start"
   },
   "dependencies": {
