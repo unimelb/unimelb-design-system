@@ -1,6 +1,5 @@
 // Dependencies
 var cssesc = require('cssesc');
-var debounce = require('just-debounce');
 var utils = require('../../utils');
 
 // Don't show sidebar until it's worth it
@@ -39,7 +38,7 @@ function Tabs(el, props) {
     }
 
     this.handleResize();
-    window.addEventListener('resize', debounce(this.handleResize.bind(this), DEBOUNCE_DELAY));
+    window.addEventListener('resize', utils.debounce(this.handleResize.bind(this), DEBOUNCE_DELAY));
   }
 }
 
