@@ -4,8 +4,6 @@
  * @param  {Object} props
  */
 function CreateNameSpace() {
-  "use strict";
-
   var bodyclass;
   if (/(MSIE 9.0)/g.test(navigator.userAgent))
     bodyclass = 'ie ie9';

@@ -5,8 +5,6 @@
  * @param  {Object} props
  */
 function Checklist(el, props) {
-  "use strict";
-
   this.el = el;
   this.props = props || {};
 

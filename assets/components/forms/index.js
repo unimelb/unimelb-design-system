@@ -7,8 +7,6 @@ var utils = require('../../utils');
  * @param  {Object} props
  */
 function ValidateForm(el, props) {
-  "use strict";
-
   this.el = el;
   this.props = props || {};
 

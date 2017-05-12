@@ -5,8 +5,6 @@
  * @param  {Object} props
  */
 function CheckboxHelper(el, props) {
-  "use strict";
-
   this.el = el;
   this.props = props || {};
   this.props.parent = this.el.parentNode;
