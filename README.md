@@ -7,25 +7,23 @@ The contents of this repository have been produced by The University of Melbourn
 
 ## Set-up
 
-To set up the design system locally, run:
+The design system requires Ruby v2.3.3, Node.js v6.9.3, and the latest version of [yarn](https://yarnpkg.com/en/). To set it up, run:
 
 ```
 git clone https://github.com/unimelb/unimelb-design-system.git
 cd unimelb-design-system
 cp .env.example .env
 bundle install
-npm install
+yarn install
 ```
 
 
 ## Development
 
-1. Run `foreman start` or `npm start`
+1. Run `foreman start` or `yarn start`
 2. Visit [http://localhost:7001/](http://localhost:7001/)
 
-`npm-shrinkwrap.json` must be kept up to date when adding, removing or updating dependencies. NPM will take care of it for you automatically in some cases. If unsure, use `npm run shrink` to delete and recreate the shrinkwrap file.
-
-To build the assets for production (e.g. for debugging purposes), run `npm run build`. The compiled targets can be found in the `/build` directory.
+To build the assets for production (e.g. for debugging purposes), run `yarn run build`. The compiled targets can be found in the `/build` directory.
 
 
 ## Testing
@@ -99,7 +97,7 @@ Recommended mobile devices for testing:
 1. Create a local branch off the most recent legacy tag - e.g. `git checkout tags/v5.0.1 -b fix-something-in-injection`
 2. Recreate `.env` from `.env.example` and set `CDNURL` to `"https://d2h9b02ioca40d.cloudfront.net/shared"`
 3. Fix whatever you need to fix in the injection and commit the changes to your local branch (don't push them).
-4. Run `NODE_ENV=production npm run build` to compile the targets.
+4. Run `NODE_ENV=production yarn run build` to compile the targets.
 5. Copy the compiled injection files in the `build` folder to slingshot.
 6. In slingshot, inside `src/templates`, duplicate the latest version's folder and rename it to, for instance, `v5.0.2`.
 7. Run `bundle exec rake slingshot:compile`, then start a local web server and test your changes.
