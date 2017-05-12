@@ -38,6 +38,7 @@ import ValidateForm from 'components/forms';
 // Polyfills
 require('es6-promise').polyfill();
 require('classlist-polyfill');
+require('locale-compare-polyfill');
 
 // Tracking
 require('shared/tracking');
