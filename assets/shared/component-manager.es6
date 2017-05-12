@@ -104,7 +104,7 @@ function initMatches(Component, matches) {
   matches.forEach(el => {
     // Retrieve and parse props (only allow JSON object)
     const rawProps = el.getAttribute('data-props');
-    const props = /^{/.test(rawProps) ? JSON.parse(rawProps) : {};
+    const props = rawProps && /^{/.test(rawProps) ? JSON.parse(rawProps) : {};
 
     // Create new instance
     new Component(el, props);
