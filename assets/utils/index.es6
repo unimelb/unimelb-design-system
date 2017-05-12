@@ -1,4 +1,5 @@
 import debounce from 'just-debounce';
+import hashString from 'string-hash';
 import hasLocalStorage from 'has-localstorage';
 
 import easeInOutQuad from './ease-in-out-quad';
@@ -11,6 +12,7 @@ export {
   debounce,
   easeInOutQuad,
   findUp,
+  hashString,
   hasLocalStorage,
   loadScript,
   loadStylesheet,
