@@ -2,47 +2,66 @@ require('dotenv').config();
 
 var fs = require('fs');
 var path = require('path');
+var ip = require('ip');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-// use external interface to build asset require() calls
-var ip = require('ip');
-var WEB_SERVER_HOST = ip.address();
-
-var ASSET_SERVER_PORT = process.env.ASSET_SERVER_PORT;
-var ASSET_SERVER_URL = 'http://' + WEB_SERVER_HOST + ':' + ASSET_SERVER_PORT + '/';
-
-var TARGETS = path.join(__dirname, 'targets');
-var BUILD = path.join(__dirname, '..', 'build');
+var TARGETS_PATH = path.resolve(__dirname, 'targets');
+var ASSET_SERVER_URL = `http://${ip.address()}:${process.env.ASSET_SERVER_PORT}/`;
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var isDev = process.env.NODE_ENV !== 'production';
 
-// Webpack config
-var config = {
-  context: TARGETS,
-  entry: fs.readdirSync(TARGETS).reduce(addEntry, {}),
+module.exports = {
+  context: TARGETS_PATH,
+  devtool: isDev && 'eval-cheap-module-source-map',
+  entry: fs.readdirSync(TARGETS_PATH).reduce(addEntry, {}),
   output: {
-    path: BUILD,
-    filename: '[name].js'
+    path: path.resolve(__dirname, '..', 'build'),
+    filename: '[name].js',
+    publicPath: isDev ? ASSET_SERVER_URL : `${process.env.CDNURL}/${process.env.VERSION}/`
   },
   resolve: {
-    extensions: ['.js', '.es6', '.json', ''],
+    extensions: ['.js', '.es6', '.json', '*'],
     alias: {
-      components: path.join(__dirname, 'components'),
-      shared: path.join(__dirname, 'shared'),
-      targets: path.join(__dirname, 'targets'),
-      utils: path.join(__dirname, 'utils')
+      components: path.resolve(__dirname, 'components'),
+      shared: path.resolve(__dirname, 'shared'),
+      targets: path.resolve(__dirname, 'targets'),
+      utils: path.resolve(__dirname, 'utils')
     }
   },
-  plugins: [
-    new webpack.EnvironmentPlugin(['NODE_ENV', 'CDNURL', 'GMAPSJSAPIKEY'])
-  ],
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.(jpe?g|png|gif|svg|woff|ttf|otf|eot|ico)$/,
-        loader: 'file-loader?name=assets/[name]-[sha1:hash:5].[ext]'
+        loader: 'file-loader',
+        options: {
+          name: 'assets/[name]-[sha1:hash:5].[ext]'
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: {
+            loader: 'style-loader',
+            options: { sourceMap: isDev }
+          },
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                autoprefixer: false, // handled by postcss-cssnext
+                importLoaders: 1, // one more loader in the chain
+                minimize: !isDev,
+                sourceMap: isDev
+              }
+            },
+            {
+              loader: 'postcss-loader',
+              options: { sourceMap: isDev }
+            }
+          ]
+        })
       },
       {
         test: /\.es6?$/,
@@ -52,56 +71,27 @@ var config = {
       {
         test: /\.html$/,
         loader: 'html-loader'
-      },
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
       }
     ]
-  }
-};
-
-// Development configuration
-if (isDev) {
-  config.output.publicPath = ASSET_SERVER_URL;
-  config.devtool = 'eval-cheap-module-source-map';
-
-  config.plugins.push(
+  },
+  plugins: [
+    new webpack.EnvironmentPlugin([
+      'NODE_ENV',
+      'CDNURL',
+      'GMAPSJSAPIKEY'
+    ]),
+    new ExtractTextPlugin({
+      allChunks: true,
+      filename: '[name].css',
+      disable: isDev
+    })
+  ].concat(isDev ? [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
-  );
-
-  config.module.loaders.push(
-    {
-      test: /\.css$/,
-      loader: 'style-loader?sourceMap!css-loader?-autoprefixer&-minimize&sourceMap&importLoaders=1!postcss-loader?sourceMap'
-    }
-  );
-
-// Production configuration
-} else {
-  config.output.publicPath = process.env.CDNURL + '/' + process.env.VERSION + '/';
-
-  config.plugins.push(
-    new ExtractTextPlugin('[name].css', { allChunks: true }),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } })
-  );
-
-  config.module.loaders.push(
-    {
-      test: /\.css$/,
-      loader: ExtractTextPlugin.extract(
-        'style-loader',
-        'css-loader?-autoprefixer&minimize!postcss-loader'
-      )
-    }
-  );
-}
-
-// Export configuration
-module.exports = config;
+    new webpack.NoEmitOnErrorsPlugin()
+  ] : [
+    new webpack.optimize.UglifyJsPlugin()
+  ])
+};
 
 
 /**
@@ -111,12 +101,12 @@ module.exports = config;
  * @return {Object} - the `entries` object that includes the new entry
  */
 function addEntry(entries, dir) {
-  var dirPath = path.join(TARGETS, dir);
+  var dirPath = path.join(TARGETS_PATH, dir);
 
   // Add entries for directories only
   if (fs.lstatSync(dirPath).isDirectory()) {
     // Build the entry's targets array
-    var targets = (isDev) ? ['webpack-dev-server/client?' + ASSET_SERVER_URL, 'webpack/hot/dev-server'] : [];
+    var targets = isDev ? [`webpack-dev-server/client?${ASSET_SERVER_URL}`, 'webpack/hot/dev-server'] : [];
     addTarget(targets, dirPath, 'index.js');
     addTarget(targets, dirPath, 'index.es6');
     addTarget(targets, dirPath, 'index.css');
