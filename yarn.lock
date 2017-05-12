@@ -2595,9 +2595,9 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-perfect-scrollbar@^0.6.10:
-  version "0.6.16"
-  resolved "https://registry.yarnpkg.com/perfect-scrollbar/-/perfect-scrollbar-0.6.16.tgz#b1d61a5245cf3962bb9a8407a3fc669d923212fc"
+perfect-scrollbar@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/perfect-scrollbar/-/perfect-scrollbar-0.7.0.tgz#85280682cb61ee90f8c0786c9ca5b704471ece1a"
 
 performance-now@^0.2.0:
   version "0.2.0"

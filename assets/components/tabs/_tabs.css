@@ -183,13 +183,14 @@
       z-index: 1;
     }
 
-    .ps-scrollbar-x-rail {
+    .ps__scrollbar-x-rail {
       z-index: 5;
     }
 
     /* show scrollbar when focused */
-    .ps-focus .ps-scrollbar-x-rail {
-      opacity: 1;
+    .ps--focus {
+      .ps__scrollbar-x-rail { opacity: 1; }
+      .ps__scrollbar-x { outline-offset: 1px; }
     }
 
     /* left/right arrows when screen size is too small to fit all the tabs */
