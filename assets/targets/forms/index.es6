@@ -1,10 +1,4 @@
-import {
-  components,
-  initComponent,
-  initAllComponents,
-  registerComponents
-} from 'shared/component-manager';
-
+import * as componentManager from 'shared/component-manager';
 import * as utils from 'utils';
 import cssesc from 'cssesc';
 
@@ -23,13 +17,7 @@ require('classlist-polyfill');
 
 // Build API object
 window.uom = {
-  // component manager
-  components,
-  initComponent,
-  initAllComponents,
-  registerComponents,
-
-  // utilities and third-party dependencies
+  ...componentManager,
   utils,
   vendor: { cssesc }
 };

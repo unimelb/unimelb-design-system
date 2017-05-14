@@ -1,10 +1,4 @@
-import {
-  components,
-  initComponent,
-  initAllComponents,
-  registerComponents
-} from 'shared/component-manager';
-
+import * as componentManager from 'shared/component-manager';
 import * as utils from 'utils';
 import cssesc from 'cssesc';
 import WebFont from 'webfontloader';
@@ -45,16 +39,8 @@ require('shared/tracking');
 
 // Build API object
 window.uom = {
-  // injection
   applyInjection,
-
-  // component manager
-  components,
-  initComponent,
-  initAllComponents,
-  registerComponents,
-
-  // utilities and third-party dependencies
+  ...componentManager,
   utils,
   vendor: {
     cssesc,
