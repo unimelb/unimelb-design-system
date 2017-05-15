@@ -97,7 +97,7 @@ function findMatches(context, rawSelector, firstOnly) {
   }
 
   // Look for all matches
-  return Array.from(context.querySelectorAll(selector))
+  return [].slice.call(context.querySelectorAll(selector));
 }
 
 /**
