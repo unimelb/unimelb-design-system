@@ -328,17 +328,6 @@
       width: auto;
     }
 
-    .top-unit {
-      height: 25.625rem;
-      padding-top: 1rem;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .double .top-unit {
-      max-height: 26.875rem;
-    }
-
     .mid-unit {
       max-height: 5.625rem;
     }
