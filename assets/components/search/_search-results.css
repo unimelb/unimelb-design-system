@@ -103,6 +103,10 @@
 
     a {
       text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     img,
@@ -191,6 +195,37 @@
     /* space out consecutive items */
     & > dd + dt {
       margin-left: 1rem;
+    }
+  }
+
+  /* Sub-links */
+  .search-results__subs {
+    margin-top: .75rem;
+    padding: 0;
+    list-style-type: circle;
+    line-height: 1.4;
+
+    & > li {
+      margin-bottom: .25rem;
+      padding: 0;
+      list-style-type: inherit;
+      color: inherit;
+    }
+
+    @supports (display: grid) {
+      @media (--bp-tablet) {
+        display: grid;
+        grid-gap: .25rem 1rem;
+        grid-template-columns: repeat(2, 1fr);
+
+        & > li {
+          margin-bottom: 0;
+        }
+      }
+
+      @media (--bp-x-tablet) {
+        grid-template-columns: repeat(2, minmax(15rem, max-content));
+      }
     }
   }
 }
