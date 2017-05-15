@@ -1,10 +1,17 @@
-import { loadStylesheet, loadScript } from 'utils';
+import { cuid, loadStylesheet, loadScript } from 'utils';
 
 /**
  * Registered components by label.
  * @type {Object}
  */
 export const components = {};
+
+/**
+ * Component instances by ID.
+ * When a component is instantiated, a random ID is generated and set as the value of the `data-bound`
+ * attribute on the component's root DOM element.
+ */
+export const instances = {};
 
 /**
  * Register one or more components.
@@ -102,14 +109,17 @@ function findMatches(context, rawSelector, firstOnly) {
  */
 function initMatches(Component, matches) {
   matches.forEach(el => {
+    // Generate unique ID
+    var id = cuid();
+
     // Retrieve and parse props (only allow JSON object)
     const rawProps = el.getAttribute('data-props');
     const props = rawProps && /^{/.test(rawProps) ? JSON.parse(rawProps) : {};
 
-    // Create new instance
-    new Component(el, props);
+    // Create and store new instance
+    instances[id] = new Component(el, props);
 
-    // Mark element as bound
-    el.setAttribute('data-bound', 'true');
+    // Mark element as bound and expose its ID
+    el.setAttribute('data-bound', id);
   });
 }
