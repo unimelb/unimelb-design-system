@@ -3,94 +3,6 @@
   to { filter: hue-rotate(-360deg); }
 }
 
-@define-mixin inner-list-reset {
-  padding-bottom: 1.875rem;
-
-  ul li {
-    list-style-type: disc;
-
-    ol,
-    ul {
-      padding-top: .5em;
-    }
-  }
-
-  ol li {
-    list-style-type: decimal;
-
-    ol,
-    ul {
-      padding-bottom: 0;
-      padding-top: .5em;
-    }
-
-    ol li {
-      list-style-type: lower-alpha;
-
-      ol li {
-        list-style-type: lower-roman;
-      }
-    }
-
-    ul li {
-      list-style-type: disc;
-    }
-  }
-
-  .ticked-list li,
-  .no-li,
-  ol.steps li {
-    list-style-type: none;
-  }
-}
-
-@define-mixin ticks {
-  padding-left: 1.875rem;
-
-  @media screen and (--bp-desktop) {
-    padding-left: 1.25rem;
-  }
-
-  li {
-    list-style-type: none;
-    position: relative;
-
-    &::before {
-      height: .3125rem;
-      left: .375rem;
-      margin-left: -1.875rem;
-      top: .375rem;
-      width: .625rem;
-      background: transparent;
-      border: 3px solid var(--col-green);
-      border-right: 0 none;
-      border-top: 0 none;
-      content: '';
-      position: absolute;
-      transform: rotate(-45deg);
-    }
-
-    &.disabled::before {
-      opacity: .2;
-    }
-
-
-    ul {
-      padding-top: .75rem;
-      padding-bottom: 0;
-    }
-
-    li {
-      list-style-type: disc;
-
-      &::before {
-        display: none;
-      }
-    }
-  }
-}
-
-
 .uomcontent {
 	background-color: #fff;
   font-family: var(--ff-sans);
@@ -186,18 +98,23 @@
   ol,
   ul {
     max-width: var(--w-sml);
+    margin: 0 auto;
     padding-left: .9375rem;
     padding-right: .9375rem;
+    padding-bottom: 1.5rem;
     color: var(--col-darkgray);
     list-style-position: outside;
-    margin: 0 auto;
 
     li {
-      padding-bottom: .75rem;
+      padding-bottom: .5rem;
       margin-left: .9375rem;
       max-width: var(--w-sml);
       color: #000;
       display: list-item;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
 
       &.no-li {
         list-style-type: none;
@@ -205,10 +122,6 @@
         &::before {
           display: none;
         }
-      }
-
-      &:last-child {
-        padding-bottom: 0;
       }
     }
 
@@ -223,12 +136,30 @@
       }
     }
 
-    @mixin inner-list-reset;
-
-    /* Remove bottom padding for inner lists */
     ol,
     ul {
+      padding-top: .5rem;
       padding-bottom: 0;
+    }
+
+    ul li {
+      list-style-type: disc;
+    }
+
+    ol li {
+      list-style-type: decimal;
+
+      ol li {
+        list-style-type: lower-alpha;
+
+        ol li {
+          list-style-type: lower-roman;
+        }
+      }
+
+      ul li {
+        list-style-type: disc;
+      }
     }
   }
 
@@ -328,7 +259,14 @@
       ul {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
-        padding-top: .5em;
+      }
+
+      & > li {
+        & > ol,
+        & > ul {
+          padding-top: 0;
+          padding-bottom: 1rem;
+        }
       }
 
       @media screen and (--bp-desktop) {
@@ -410,7 +348,6 @@
     ol {
       counter-reset: section;
       list-style-type: none;
-      padding: 1em 0 0;
 
       li::before {
         content: counters(section,".") " ";
@@ -419,15 +356,10 @@
       &[type="a"],
       &[type="i"] {
         padding-left: 2.625rem;
-        padding-top: .75rem;
 
         li::before {
           display: none;
         }
-      }
-
-      li:last-child {
-        padding-bottom: 0;
       }
 
       &[type="a"] li {
@@ -483,12 +415,36 @@
   	}
 
     &.ticked-list {
-      @mixin ticks;
-    }
-  }
+      padding-left: 1.875rem;
 
-  .ticked-list ul {
-    @mixin ticks;
+      @media screen and (--bp-desktop) {
+        padding-left: 1.25rem;
+      }
+
+      & > li {
+        list-style-type: none;
+        position: relative;
+
+        &::before {
+          height: .3125rem;
+          left: .375rem;
+          margin-left: -1.875rem;
+          top: .375rem;
+          width: .625rem;
+          background: transparent;
+          border: 3px solid var(--col-green);
+          border-right: 0 none;
+          border-top: 0 none;
+          content: '';
+          position: absolute;
+          transform: rotate(-45deg);
+        }
+
+        &.disabled::before {
+          opacity: .2;
+        }
+      }
+    }
   }
 
   dl {
