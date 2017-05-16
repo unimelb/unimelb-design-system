@@ -53,15 +53,6 @@
     }
   }
 
-  p {
-    font-size: .875rem;
-    line-height: 1.5rem;
-    padding-bottom: 3rem;
-    border: 0;
-    color: var(--col-midgray);
-    width: 100%;
-  }
-
   ul {
     padding-bottom: 0;
     padding-top: 0;
