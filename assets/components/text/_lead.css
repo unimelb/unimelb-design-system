@@ -53,11 +53,8 @@
 
     &.left {
       @mixin wrapper;
-      padding-top: 3rem;
-      padding-bottom: 3rem;
+      padding: 3rem 0;
       max-width: var(--w-sml);
-      padding-left: 0;
-      padding-right: 0;
       text-align: left;
 
       & > p {
@@ -94,12 +91,10 @@
 .jumpnav-active .uomcontent {
   .lead {
     margin: 0 auto;
-    padding: 0;
+    padding: 3rem 0;
 
     @media screen and (--bp-wide) {
       max-width: var(--w-sml);
-      padding-left: 0;
-      padding-right: 0;
       text-align: left;
     }
   }
