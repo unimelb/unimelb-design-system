@@ -37,6 +37,7 @@
   }
 
   ul.accordion {
+    @mixin inner-list-reset;
     padding-left: 0;
     padding-right: 0;
 
@@ -47,24 +48,7 @@
       max-width: 2000px;
       width: 100%;
 
-      @mixin inner-list-reset;
-
-      padding: 0;
-
-      /* Ridiculous overrides */
-      ol,
-      ul {
-        padding-bottom: 1.875rem;
-
-        ol,
-        ul {
-          padding-bottom: 0;
-        }
-      }
-
       ol.steps {
-        @mixin inner-list-reset;
-
         ol,
         ul {
           padding-left: 2.1875rem;

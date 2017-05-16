@@ -203,6 +203,7 @@
     }
 
     &.steps {
+      @mixin inner-list-reset;
       max-width: var(--w-mid);
       counter-reset: steps;
       padding-left: 0;
@@ -259,14 +260,6 @@
       ul {
         padding-left: 1.25rem;
         padding-right: 1.25rem;
-      }
-
-      & > li {
-        & > ol,
-        & > ul {
-          padding-top: 0;
-          padding-bottom: 1.5rem;
-        }
       }
 
       @media screen and (--bp-desktop) {
