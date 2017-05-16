@@ -157,11 +157,11 @@
       /* reduce max-width of 2 and 3-column text-only listings (making sure to compensate for the items' padding) */
       &.simple-listing--one,
       &.simple-listing--two {
-        max-width: 45rem; /* 700px + 0.625rem * 2 */
+        max-width: calc(var(--w-sml) + 2 * .625rem);
       }
 
       &.simple-listing--three {
-        max-width: 57.5rem; /* 900px + 0.625rem * 2 */
+        max-width: calc(var(--w-mid) + 2 * .625rem);
       }
     }
   }

@@ -102,13 +102,3 @@
     }
   }
 }
-
-.uomcontent {
-  .feature-listing {
-    @mixin feature-listing;
-  }
-
-  .feature-listing-3 {
-    @mixin feature-listing-3;
-  }
-}

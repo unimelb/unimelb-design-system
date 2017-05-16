@@ -137,10 +137,6 @@
 }
 
 .uomcontent {
-  .listing {
-    @mixin listing;
-  }
-
   .noborder {
     border: 0;
   }
@@ -148,20 +144,6 @@
   .tight {
     padding-bottom: 0;
     padding-top: 0;
-  }
-}
-
-body.jumpnav-active .uomcontent .listing {
-  @media screen and (--bp-wide) {
-    li {
-      width: 32.9%;
-    }
-  }
-
-  @media screen and (--bp-xx-wide) {
-    li {
-      width: 24.7%;
-    }
   }
 }
 
