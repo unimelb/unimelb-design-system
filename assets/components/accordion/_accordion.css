@@ -44,27 +44,11 @@
       border-bottom: 1px solid color(var(--col-lightgray) lightness(-5%));
       list-style-type: none;
       margin: 0;
+      padding-bottom: 0;
       max-width: 2000px;
       width: 100%;
 
-      @mixin inner-list-reset;
-
-      padding: 0;
-
-      /* Ridiculous overrides */
-      ol,
-      ul {
-        padding-bottom: 1.875rem;
-
-        ol,
-        ul {
-          padding-bottom: 0;
-        }
-      }
-
       ol.steps {
-        @mixin inner-list-reset;
-
         ol,
         ul {
           padding-left: 2.1875rem;
@@ -146,6 +130,9 @@
         padding-left: .9375rem;
         padding-right: .9375rem;
         display: none;
+
+        /* reset inner lists */
+        @mixin inner-list-reset;
       }
 
       &.accordion__visible {

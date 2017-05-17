@@ -199,3 +199,14 @@
   border: 0;
 }
 
+/*
+ * Reset inner lists.
+ * For list components that may contain base lists - e.g. `ol.steps`, `ul.accordion`
+ */
+@define-mixin inner-list-reset {
+  & > ol,
+  & > ul {
+    padding-top: 0;
+    padding-bottom: 1.5rem;
+  }
+}
