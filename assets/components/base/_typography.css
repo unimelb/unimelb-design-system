@@ -203,7 +203,6 @@
     }
 
     &.steps {
-      @mixin inner-list-reset;
       max-width: var(--w-mid);
       counter-reset: steps;
       padding-left: 0;
@@ -216,6 +215,9 @@
         counter-increment: steps;
         list-style-type: none;
         position: relative;
+
+        /* reset inner lists */
+        @mixin inner-list-reset;
 
         &:first-child {
           border-top: none;

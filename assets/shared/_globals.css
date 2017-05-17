@@ -204,11 +204,9 @@
  * For list components that may contain base lists - e.g. `ol.steps`, `ul.accordion`
  */
 @define-mixin inner-list-reset {
-  & > li {
-    & > ol,
-    & > ul {
-      padding-top: 0;
-      padding-bottom: 1.5rem;
-    }
+  & > ol,
+  & > ul {
+    padding-top: 0;
+    padding-bottom: 1.5rem;
   }
 }
