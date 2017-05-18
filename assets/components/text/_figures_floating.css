@@ -1,60 +1,59 @@
-@define-mixin inset {
-  margin-top: .375rem;
-  float: none;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 100%;
-  padding: 0;
-  text-align: center;
+.uomcontent {
 
-  figcaption {
-    font-size: .875rem;
-    padding-bottom: .9375rem;
-    color: var(--col-midblue);
-    font-style: italic;
-    line-height: 1.2;
+  /**
+   * Inset figures
+   */
+  .inset-left,
+  .inset-right {
+    margin-top: .375rem;
+    float: none;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    padding: 0;
     text-align: center;
-  }
-
-  img,
-  svg {
-    max-height: 31.25rem;
-  }
-
-  @media screen and (--bp-tablet) {
-    margin-bottom: 1.875rem;
-    border: 0 none;
-    max-width: 62%;
 
     figcaption {
-      margin-top: .9375rem;
-      padding-top: .9375rem;
-      padding-bottom: 0;
-      position: relative;
+      font-size: .875rem;
+      padding-bottom: .9375rem;
+      color: var(--col-midblue);
+      font-style: italic;
+      line-height: 1.2;
+      text-align: center;
+    }
 
-      &::before {
-        width: 2.5rem;
-        border-bottom: 2px solid var(--col-midblue);
-        content: '';
-        display: block;
-        position: absolute;
-        top: 0;
-      }
+    img,
+    svg {
+      max-height: 31.25rem;
     }
   }
 
-  @media screen and (--bp-wide) {
-    margin-bottom: 1.25rem;
-    max-width: 80%;
-  }
-}
+  @media screen and (--bp-x-tablet) {
+    .inset-left,
+    .inset-right {
+      margin-bottom: 1.875rem;
+      border: 0 none;
+      max-width: 62%;
 
-.uomcontent {
-  .inset-left {
-    @mixin inset;
+      figcaption {
+        margin-top: .9375rem;
+        padding-top: .9375rem;
+        padding-bottom: 0;
+        position: relative;
 
-    @media screen and (--bp-tablet) {
+        &::before {
+          width: 2.5rem;
+          border-bottom: 2px solid var(--col-midblue);
+          content: '';
+          display: block;
+          position: absolute;
+          top: 0;
+        }
+      }
+    }
+
+    .inset-left {
       margin-right: 1.875rem;
       float: left;
       text-align: left;
@@ -68,15 +67,7 @@
       }
     }
 
-    @media screen and (--bp-wide) {
-      margin-left: -11.25rem;
-    }
-  }
-
-  .inset-right {
-    @mixin inset;
-
-    @media screen and (--bp-tablet) {
+    .inset-right {
       margin-left: 1.875rem;
       float: right;
       text-align: right;
@@ -89,14 +80,26 @@
         }
       }
     }
+  }
 
-    @media screen and (--bp-wide) {
+  @media screen and (--bp-wide) {
+    .inset-left,
+    .inset-right {
+      margin-bottom: 1.25rem;
+      max-width: 80%;
+    }
+
+    .inset-left {
+      margin-left: -11.25rem;
+    }
+
+    .inset-right {
       margin-right: -11.25rem;
     }
   }
 }
 
-body.jumpnav-active .uomcontent {
+.jumpnav-active .uomcontent {
   .inset-left {
     @media screen and (--bp-wide) {
       margin-left: 0;
