@@ -14,44 +14,6 @@
       padding-bottom: 39.45%;
     }
 
-    [data-ytid] {
-      background-color: #000;
-      cursor: pointer;
-      height: 100%;
-      left: 0;
-      margin: 0;
-      position: absolute;
-      text-align: center;
-      top: 0;
-      width: 100%;
-
-      img {
-        width: 100%;
-
-        &.video-trigger {
-          height: 100px;
-          left: 50%;
-          margin-left: -50px;
-          margin-top: -50px;
-          position: absolute;
-          top: 50%;
-          width: 100px;
-
-          @media screen and (--bp-desktop) {
-            height: 140px;
-            margin-top: -70px;
-            margin-left: -70px;
-            width: 140px;
-          }
-        }
-      }
-
-      @media screen and (--bp-wide) {
-        margin-left: 11%;
-        width: 70%;
-      }
-    }
-
     iframe {
       height: 100%;
       left: 0;
@@ -80,11 +42,6 @@
   .half .video {
     margin-bottom: 1.875rem;
     padding-bottom: 56.25%;
-
-    [data-ytid] {
-      margin-left: 0;
-      width: 100%;
-    }
 
     @media screen and (--bp-desktop) {
       margin-right: 1.875rem;

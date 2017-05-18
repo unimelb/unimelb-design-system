@@ -2,6 +2,7 @@
 @import '../../shared/_globals';
 @import '_vars';
 @import '../../shared/_normalize';
+@import '../../shared/_utils';
 
 /* Import specific components */
 @import '../../components/base/_typography';

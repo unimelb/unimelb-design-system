@@ -1,6 +1,7 @@
 /* Global variables and mixins, and normalisation styles */
 @import '../../shared/_globals';
 @import '../../shared/_normalize';
+@import '../../shared/_utils';
 
 /* Injection */
 @import '../../components/footer';
