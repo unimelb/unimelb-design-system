@@ -9,7 +9,7 @@ h1.aligned-title Getting started
 section.lead.left
   p Creating a new site using the Design System requires setting up a basic page markup and then using the <a href="/components">components</a> and <a href="/layouts">example layouts</a> to build pages.
 
-p If you notice an issue or have a suggestion for a new component or feature, please <a href="https://staff.unimelb.edu.au/services/it-support/web-help#/">log a support ticket</a> (staff login required) or <a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">create an issue on GitHub</a>.
+p If you notice an issue or have a suggestion for a new component or feature, please <a href="https://staff.unimelb.edu.au/services/it-support/web-help#/">log a support ticket</a> (staff login required) or <a href="https://github.com/unimelb/unimelb-design-system/issues">create an issue on GitHub</a>.
 
 hr
 
