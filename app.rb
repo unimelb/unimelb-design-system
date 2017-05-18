@@ -127,8 +127,8 @@ class App < Roda # rubocop:disable Metrics/ClassLength
 
     build_pages_navigation
 
-    opts[:navigation] << { title: 'Page Templates', href: '/layouts' }
-    opts[:navigation] << { title: 'Component reference', href: '/components' }
+    opts[:navigation] << { title: 'Components', href: '/components' }
+    opts[:navigation] << { title: 'Layouts', href: '/layouts' }
   end
 
   def build_pages_navigation

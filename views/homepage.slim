@@ -4,69 +4,26 @@ div role="main"
   .contrast-helper.fixed-bg style="background-image:url(/assets/banners/#{opts[:major_version]}.jpg)"
     header.banner
       .mid-align
-        h1.white Web.unimelb
+        h1.white Web.Unimelb
         p Everything you need to make a great website @unimelb
-        p
-          a.button-hero-inverse href="#intro" Get started
-
-  section#intro
-    h2.title A digital design system for The University of Melbourne.
-    p This site explains how we plan, design and build web sites and web applications consistently across the unimelb domain in the pursuit of improved usability and to a strong digital brand.
-
-    p Use this site to learn how to write effective content, design your site or develop using the university templates. If you can't find what you are looking for, <a href="https://staff.unimelb.edu.au/services/it-support/web-help#/">log a support ticket</a> (staff login required) or <a href="https://github.com/marcom-unimelb/unimelb-design-system/issues">create an issue on GitHub!</a>
-
-  hr.spacer
-  section
-    h1.complimentary style="background-image:url(/assets/banners/#{opts[:major_version]}.jpg)"
-      = opts[:version]
-    p.center
-      a.button-hero href="/getting-started" Set up a new site with #{opts[:version]}
-
-  section.alt
-    .half
-      .center
-        img src="/assets/home_content_creators.svg" height="250"
-      section
-        h1 For content creators
-        p Learn how to fill your website with fantastic text, imagery and video
-        p
-          a.button-hero href="/content-creators" Content principles
+        p: a.button-hero-inverse href="/getting-started" Get started with #{opts[:version]}
 
   section
-    .half
-      section
-        h1 For designers
-        p Learn how to use the design system to assemble websites that meet objectives without re-inventing the wheel.
-        p
-          a.button-hero href="/designers" Design principles
-      .center
-        img src="/assets/home_designers.svg" height="250"
+    ul.pathfinder-3
+      li: a href="/getting-started"
+        strong: span Getting started
+        p Creating a new site using the Design System requires setting up a basic page markup and then using the components and example layouts to build pages.
+        span.button-small.brand Set up a site
+      li: a href="/components"
+        strong: span Components
+        p The design system provides a set of components which you can assemble into unique page templates.
+        span.button-small.brand Explore
+      li: a href="/layouts"
+        strong: span Layouts
+        p Some example layouts are available to get you started building the most commonly used page types across the unimelb domain.
+        span.button-small.brand Browse
 
-  section.alt
-    .half
-      .center
-        img src="/assets/home_developers.svg" height="250"
-      section
-        h1 For developers
-        p Learn about the units of page style and functionality you can assemble into unique page templates.
-        p
-          a.button-hero href="/components" Components
-
+  .alt
     section.navigation-text-listing
+      h1.aligned-title Components
       == render(:_component_list)
-
-  hr
-
-  section
-    h1 Example Layouts
-    p Example layouts to get you started building the most commonly used page types across the unimelb domain.
-    p
-      a.button-hero href="/layouts" View example layouts
-
-  footer
-    javascript:
-      if (navigator.userAgent.match(/MSIE 10/i) || navigator.userAgent.match(/Trident\/7\./) || navigator.userAgent.match(/Edge\/12\./))
-          document.querySelector('body').addEventListener('mousewheel', function(e) {
-            e.preventDefault();
-            window.scrollTo(0, window.pageYOffset - event.wheelDelta);
-          });
