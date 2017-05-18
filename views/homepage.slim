@@ -1,12 +1,13 @@
 .floating
 
 div role="main"
-  .contrast-helper.fixed-bg style="background-image:url(/assets/banners/#{opts[:major_version]}.jpg)"
+  .contrast-helper.fixed-bg style="background-image:url(/assets/banner.jpg)"
     header.banner
       .mid-align
         h1.white Web.Unimelb
         p Everything you need to make a great website @unimelb
-        p: a.button-hero-inverse href="/getting-started" Get started with #{opts[:version]}
+        p: a.button-hero-inverse href="/getting-started"
+          | Get started with <span style="text-transform: lowercase;">#{opts[:version]}</span>
 
   section
     ul.pathfinder-3
