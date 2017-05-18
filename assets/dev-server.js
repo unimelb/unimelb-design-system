@@ -17,15 +17,19 @@ var ASSET_SERVER_PORT = process.env.ASSET_SERVER_PORT;
 var devServer = new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true, // enable hot module replacement
-  disableHostCheck: true, // https://github.com/webpack/webpack-dev-server/issues/897
   overlay: true, // show overlay in browser on compiler error or warning
-  clientLogLevel: 'warning', // reduce webpack browser console output
+  clientLogLevel: 'warning', // reduce browser console output
   stats: 'minimal', // reduce terminal output,
-  proxy: { // proxy unhandled requests to rack server
-    '**': {
-      target: `http://127.0.0.1:${WEB_SERVER_PORT}`
-    }
-  }
+
+  // Proxy unhandled requests to rack server
+  proxy: {
+    '**': { target: `http://127.0.0.1:${WEB_SERVER_PORT}` }
+  },
+
+  // Work around security restriction
+  // https://github.com/webpack/webpack-dev-server/issues/897
+  disableHostCheck: true,
+  headers: { 'Access-Control-Allow-Origin': '*' }
 });
 
 // Listen for all incoming requests (both current IP and `localhost`)
