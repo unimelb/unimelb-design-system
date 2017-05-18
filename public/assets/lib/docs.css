@@ -85,7 +85,7 @@
     background-color: #df0620; }
 
 .uomcontent [role="main"] header .mid-align h1.white {
-  color: rgba(255, 255, 255, .4);
+  color: rgba(255, 255, 255, .7);
   font-size: 60px;
   font-size: 3.75rem;
   font-weight: 100;
@@ -153,28 +153,4 @@
     font-size: 100px;
     font-size: 6.25rem;
   }
-}
-
-.uomcontent h1.complimentary {
-  background-attachment: fixed;
-  -webkit-background-clip: text;
-  background-clip: text;
-
-  color: rgba(0,0,0,0);
-  font-size: 120px;
-  font-size: 7.5rem;
-  font-weight: 600;
-  letter-spacing: -5px;
-  line-height: 108px;
-  line-height: 6.75rem;
-  text-align: center;
-  text-shadow: 0 2px 3px rgba(0, 0, 0, .3);
-  transform-style: preserve-3d;
-}
-
-.ie9 .uomcontent h1.complimentary,
-.ie10 .uomcontent h1.complimentary,
-.ie11 .uomcontent h1.complimentary {
-  background-image: none;
-  color: #000;
 }

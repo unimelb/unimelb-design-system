@@ -1,4 +1,4 @@
-== render(:_breadcrumb)
+== render(:_breadcrumbs)
 
 div role="main"
   .headerless
@@ -6,6 +6,4 @@ div role="main"
   section.navigation-text-listing
     h1.aligned-title Components
     == render(:_component_list)
-
-  .hidden
-    a href="/components/all" All components
+    p: a.button-hero href="/components/all" View all components

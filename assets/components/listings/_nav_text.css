@@ -20,7 +20,7 @@
     padding-bottom: 0;
 
     &.aligned-title {
-      padding-top: 3rem;
+      padding-top: 0;
       padding-bottom: 3rem;
       max-width: 100%;
     }
@@ -61,7 +61,11 @@
   }
 }
 
-@define-mixin navigation-text-listing-fallback {
+.uomcontent .headerless + .navigation-text-listing {
+  padding-top: 6rem; /* increase space between logo and heading */
+}
+
+.ie9 .uomcontent [role="main"] .navigation-text-listing {
   margin: 0 auto;
 
   h1,
@@ -75,8 +79,4 @@
     display: inline-block;
     width: 32%;
   }
-}
-
-.ie9 .uomcontent [role="main"] .navigation-text-listing {
-  @mixin navigation-text-listing-fallback;
 }

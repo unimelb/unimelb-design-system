@@ -10,7 +10,7 @@ body {
   text-rendering: optimizeLegibility;
 
   /* height of content or viewport, whichever is taller */
-  /* `height: 100%;` causes Friefox to only print the first page https://github.com/marcom-unimelb/unimelb-design-system/issues/750 */
+  /* `height: 100%;` causes Friefox to only print the first page https://github.com/unimelb/unimelb-design-system/issues/750 */
   min-height: 100%;
 }
 
