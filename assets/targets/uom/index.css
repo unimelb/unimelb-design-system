@@ -1,7 +1,6 @@
 /* Global variables and mixins, and normalisation styles */
 @import '../../shared/_globals';
 @import '../../shared/_normalize';
-@import '../../shared/_utils';
 
 /* Injection */
 @import '../../components/footer';
@@ -12,6 +11,7 @@
 @import '../../components/filtered-listings';
 @import '../../components/base';
 @import '../../components/text';
+@import '../../components/figure';
 @import '../../components/buttons';
 @import '../../components/listings';
 @import '../../components/pathfinder';

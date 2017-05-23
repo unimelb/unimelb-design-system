@@ -2,11 +2,11 @@
 @import '../../shared/_globals';
 @import '_vars';
 @import '../../shared/_normalize';
-@import '../../shared/_utils';
 
 /* Import specific components */
 @import '../../components/base/_typography';
 @import '../../components/text';
+@import '../../components/figure';
 @import '../../components/buttons';
 @import '../../components/forms';
 @import '../../components/accordion';

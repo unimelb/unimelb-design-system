@@ -1,0 +1,14 @@
+p In the examples above, you may have noticed the presence of two variant classes: <code>figure--min</code> and <code>figure--max</code>. Their role is to control the sizing behaviour of each figure. You must always use one or the other.
+
+h3 <code>figure--min</code>: Let the figure shrink to fit its content
+p Typically for <strong>images</strong> and non-responsive SVG elements. The previous section also shows an example with an audio player. The class notably deals with the case where an inset figure's content is narrower than its caption (cf. figure below).
+
+h3 <code>figure--max</code>: Let the figure expand to its maximum width
+p Typically for <strong>embeds</strong>, videos, responsive SVG elements, tables, etc.
+
+.with-figure.clearfix
+  figure.figure.figure--right
+    img.figure__content alt="cute kitten" src="http://placekitten.com/g/200/150"
+    figcaption.figure__caption Without class <code>figure--min</code>, the figure expands to fit its caption
+  p Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi. Integer rhoncus ante quis lectus facilisis, ac auctor enim mattis. Nullam gravida nec ante mattis accumsan. Donec pretium, leo tempor adipiscing posuere, risus ligula ornare erat, vitae euismod lectus nulla ac arcu. Morbi sed pharetra risus, nec auctor lorem. Phasellus neque quam, auctor ut tincidunt et, suscipit quis nibh. Praesent sed malesuada eros, eu volutpat tortor. Proin pharetra nisl sed eros ultrices, vitae condimentum felis tempor. Proin pharetra nisl sed eros ultrices, vitae condimentum felis tempor.
+

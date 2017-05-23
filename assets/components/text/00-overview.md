@@ -1,6 +1,6 @@
 ---
 title: Text
 ---
-<div class="jumpnav"></div>
+<div class="jumpnav top"></div>
 
 Text styles available in the design system:
