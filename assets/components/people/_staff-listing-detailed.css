@@ -49,6 +49,7 @@
       }
     }
 
+    /* DEPRECATED */
     &--diamond {
       li {
         width: 25rem;
@@ -105,6 +106,7 @@
     }
   }
 
+  /* DEPRECATED */
   .diamond-mask {
     max-width: 18.75rem;
     margin-bottom: 1.5rem;

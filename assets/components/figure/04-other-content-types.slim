@@ -1,4 +1,6 @@
-p The use of the figure component is not limited to images. Some examples are shown below. Check out the <a href="/components/media">Media page</a> for examples involving third-party embeds, like YouTube videos.
+p The use of the figure component is not limited to images. Some examples are shown below. Check out the <a href="/components/embed">embed component</a> for examples involving third-party embeds, like YouTube videos
+
+p.notice.notice--info Note that figures with SVG elements are <a href="https://css-tricks.com/scale-svg/">buggy in IE</a>, and no workaround is in place at this time.
 
 figure.figure.figure--max
   video.figure__content controls=true width="700" height="394"
@@ -25,6 +27,12 @@ figure.figure.figure--max
         td Yes
   figcaption.figure__caption Figure with <code>table</code> element
 
+figure.figure.figure--max
+  svg.figure__content width="400" height="50" viewBox="0 0 40 5"
+    title Disc
+    rect fill="#ADB8C1" x="0" y="0" width="40" height="5" rx="2" ry="2" /
+  figcaption.figure__caption Figure with responsive <code>svg</code> element
+
 .with-figure.clearfix
   p Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at.
 
@@ -40,7 +48,7 @@ figure.figure.figure--max
     svg.figure__content width="200" height="100" viewBox="0 0 10 5"
       title Disc
       rect fill="#ADB8C1" x="0" y="0" width="10" height="5" rx="2" ry="2" /
-    figcaption.figure__caption Inset figure with <code>svg</code> element and long caption
+    figcaption.figure__caption Inset figure with non-responsive <code>svg</code> element
 
   p Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi. Integer rhoncus ante quis lectus facilisis, ac auctor enim mattis. Nullam gravida nec ante mattis accumsan. Nullam iaculis orci quis ipsum accumsan pharetra.
 

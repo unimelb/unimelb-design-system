@@ -18,6 +18,7 @@
     filter: grayscale(0%);
   }
 
+  /* DEPRECATED */
   figure.full-width {
     margin-left: 0;
     margin-right: 0;
