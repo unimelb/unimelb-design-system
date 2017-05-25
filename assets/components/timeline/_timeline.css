@@ -60,13 +60,13 @@
       text-align: left;
 
       &:last-child {
-        border-left: 0;
+        border-left-color: transparent;
       }
 
       &::before {
-        height: .9375rem;
-        left: -.4375rem;
-        width: .9375rem;
+        height: 15px;
+        left: -8px;
+        width: 15px;
         background-color: var(--col-lightergray);
         border-radius: 50%;
         content: '';

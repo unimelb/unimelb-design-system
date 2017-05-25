@@ -167,6 +167,14 @@
     &--left,
     &--right {
       max-width: 75%;
+
+      & > .figure__caption {
+        margin-top: 1.25rem;
+
+        &::before {
+          margin-bottom: .625rem;
+        }
+      }
     }
 
     &--left { margin-left: -7rem; }
