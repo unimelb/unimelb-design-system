@@ -1,6 +1,6 @@
 // Dependencies
 var cssesc = require('cssesc');
-var utils = require('../../utils');
+var utils = require('utils');
 
 // Don't show sidebar until it's worth it
 var OVERFLOW_PRECISION = 10;

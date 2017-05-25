@@ -1,4 +1,4 @@
-var utils = require('../../utils');
+var utils = require('utils');
 
 var STORAGE_PREFIX = 'uom-announcement-';
 var DISMISSED = 'dismissed';
