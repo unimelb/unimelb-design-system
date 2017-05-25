@@ -1,0 +1,53 @@
+p The figure component comes with a variant class specifically for embeds: <code>figure--embed</code>.
+
+figure.figure.figure--embed
+  .embed.figure__content
+    iframe src="https://www.youtube.com/embed/nlF7qp5GNPI" width="560" height="315" frameborder="0" allowfullscreen=true
+  figcaption.figure__caption YouTube embed with caption and default 16:9 ratio
+
+figure.figure.figure--embed
+  .embed.embed--21_9.figure__content
+    iframe src="https://www.youtube.com/embed/0XuNcBK6aDs" width="560" height="315" frameborder="0" allowfullscreen=true
+  figcaption.figure__caption 21:9 ratio with class <code>embed--21_9</code>
+
+figure.figure.figure--embed
+  .embed.figure__content
+    iframe src="https://player.vimeo.com/video/21149746" width="640" height="360" frameborder="0" allowfullscreen=true
+  figcaption.figure__caption Vimeo embed
+
+p If the use of a <code>figure</code> element doesn't convey the right semantics, and assuming a caption is not required, you may use a simple <code>div</code> as demonstrated below:
+
+.figure.figure--embed
+  .embed.figure__content
+    iframe src="https://www.youtube.com/embed/nlF7qp5GNPI" width="560" height="315" frameborder="0" allowfullscreen=true
+
+p <code>figure--embed</code> is actually just an alias for the following three classes combined: <code>figure--max figure--spaced figure--wide</code>. When it comes to video embeds, only <code>figure--max</code> is required, so if you don't want the embed to be wider than the text, for instance, use <code>figure--max figure--spaced</code>:
+
+figure.figure.figure--max.figure--spaced
+  .embed.figure__content
+    iframe src="https://www.youtube.com/embed/nlF7qp5GNPI" width="560" height="315" frameborder="0" allowfullscreen=true
+  figcaption.figure__caption This embed is as wide as the text.
+
+p Video embeds can be used inside inset figures and <code>half</code> layouts. (This latter configuration doesn't support captions, but a simple alternative is to describe the video in the text opposite.)
+
+.with-figure.clearfix
+  figure.figure.figure--left.figure--max
+    .embed.figure__content
+      iframe src="https://www.youtube.com/embed/nlF7qp5GNPI" width="560" height="315" frameborder="0" allowfullscreen=true
+    figcaption.figure__caption Inset YouTube video with caption
+  p Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper consequat sed non leo. Nam massa est, egestas ac felis id, blandit luctus metus. Mauris eu aliquet nisi. Donec nunc ipsum, fermentum quis enim posuere, dapibus fermentum libero. Aliquam erat volutpat. Nulla tempor tellus lorem, dapibus euismod mi mattis sit amet. Sed ac orci consequat, aliquet ligula vitae, facilisis elit. Sed et lobortis est, eu facilisis massa.
+
+  figure.figure.figure--right.figure--max.figure--confined
+    .embed.figure__content
+      iframe src="https://www.youtube.com/embed/nlF7qp5GNPI" width="560" height="315" frameborder="0" allowfullscreen=true
+    figcaption.figure__caption With <code>figure--confined</code> to remove offset
+  p Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper consequat sed non leo. Nam massa est, egestas ac felis id, blandit luctus metus. Mauris eu aliquet nisi. Donec nunc ipsum, fermentum quis enim posuere, dapibus fermentum libero. Aliquam erat volutpat. Nulla tempor tellus lorem, dapibus euismod mi mattis sit amet. Sed ac orci consequat, aliquet ligula vitae, facilisis elit. Sed et lobortis est, eu facilisis massa.
+
+.half
+  section
+    figure.figure.figure--max
+      .embed.figure__content
+        iframe src="https://www.youtube.com/embed/nlF7qp5GNPI" width="560" height="315" frameborder="0" allowfullscreen=true
+  section
+  	h1 Cibo democritum
+  	p Ius sonet equidem no, aperiri interpretaris pri ne, eu eirmod graecis his. Sed ne dicunt efficiendi, ad laudem soluta omittam per. Est velit scaevola forensibus ne, diam scripta in est. <em>Cibo democritum quaerendum et duo</em>, nostrum dignissim qui te. Impetus rationibus quaerendum

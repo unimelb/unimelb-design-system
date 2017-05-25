@@ -84,6 +84,10 @@
     blockquote {
       width: 100%;
     }
+
+    .figure {
+      margin-left: 0; /* HACK fix centring */
+    }
   }
 
   .video {

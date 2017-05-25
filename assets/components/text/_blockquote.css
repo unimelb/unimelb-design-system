@@ -168,3 +168,29 @@
     }
   }
 }
+
+body.jumpnav-active .uomcontent {
+  blockquote:not(.blockquote-classic).left,
+  blockquote:not(.blockquote-classic).right {
+    @media screen and (--bp-wide) {
+      margin-left: 0;
+    }
+
+    @media screen and (--bp-xx-wide) {
+      margin-bottom: 1.25rem;
+      margin-left: -11.25rem;
+    }
+  }
+
+  blockquote:not(.blockquote-classic).right {
+    @media screen and (--bp-wide) {
+      margin-left: 1.875rem;
+      margin-right: 0;
+    }
+
+    @media screen and (--bp-xx-wide) {
+      margin-bottom: 1.25rem;
+      margin-right: -11.25rem;
+    }
+  }
+}

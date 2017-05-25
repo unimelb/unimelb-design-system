@@ -1,0 +1,27 @@
+p By default, figures appear in the flow of the page. In most cases, you'll want to use a <code>figure</code> element along with a <code>figcaption</code>, but this is completely optional as the semantics of these elements may not be appropriate in all contexts. Check out the <a href="#advanced-examples">Advanced examples</a> section for more information.
+
+p If the figure contains an image, don't forget to give the <code>img</code> element an alt text. This is especially important if the figure doesn't have a caption or if the caption doesn't describe the image sufficently. Note that the alt text must not be the same as the caption.
+
+p.notice.notice--info Note that, according to the <strong>HTML5 specification</strong>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure"><code>figure</code></a> cannot be used inside <code>p</code>, <code>h1</code>, <code>h2</code>, etc. and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption"><code>figcaption</code></a> must be the first or last direct child of <code>figure</code> (last in our case).
+
+figure.figure.figure--min
+  img.figure__content alt="cute kitten" src="http://placekitten.com/g/400/200"
+  figcaption.figure__caption Figure with small image and caption
+
+p Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper.
+
+figure.figure.figure--min
+  img.figure__content alt="fluffy kitten" src="http://placekitten.com/g/800/300"
+  figcaption.figure__caption Figure with large image and caption
+
+p Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper.
+
+figure.figure.figure--min.figure--spaced
+  img.figure__content alt="cute kitten" src="http://placekitten.com/g/700/300"
+  figcaption.figure__caption More space above and below with class <code>figure--spaced</code>
+
+p Cras pretium et elit id bibendum. Duis dapibus condimentum justo, aliquet porta justo vehicula quis. Pellentesque vulputate mattis lacus quis elementum. Vivamus vitae lobortis orci. Praesent interdum et elit non dignissim. Morbi sit amet nibh vitae tortor ullamcorper.
+
+figure.figure.figure--min.figure--wide
+  img.figure__content alt="cute kitten" src="http://placekitten.com/g/900/300"
+  figcaption.figure__caption Wider than text with class <code>figure--wide</code>

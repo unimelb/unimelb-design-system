@@ -1,0 +1,222 @@
+.uomcontent .figure {
+  max-width: var(--w-sml);
+  margin: 0 auto 1.5rem;
+  text-align: center;
+
+  &__content {
+    vertical-align: bottom; /* get rid of inline-block spacing */
+
+    /* ensure responsive behaviour whichever the element (`video`, `svg`, etc.) */
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* HACK override highly-specific table margin */
+  table.figure__content {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  &__caption {
+    margin-top: .75rem;
+    font-size: .875rem;
+    font-style: italic;
+    line-height: 1.3;
+  }
+
+  &--spaced,
+  &--embed {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem; /* assume there's a paragraph with 1.5rem bottom padding above */
+  }
+
+  &--wide,
+  &--embed {
+    max-width: var(--w-mid);
+  }
+
+  /* let the figure shrink to fit its content */
+  &--min {
+    width: auto; /* works without, but better to be explicit */
+
+    & > .figure__content {
+      width: auto; /* use the element's intrinsic width */
+    }
+  }
+
+  /* let the figure expand to its maximum width */
+  &--max,
+  &--embed {
+    width: 100%; /* required for inset figures; good to have for default figures */
+
+    & > .figure__content {
+      width: 100%; /* force the element to expand */
+    }
+  }
+
+  @media (--bp-tablet) {
+    &--left,
+    &--right {
+      max-width: 50%;
+      margin-bottom: .75rem;
+      padding-top: calc(1em * (1.5789 - 1) / 2); /* align with text based on body line height */
+
+      & > .figure__caption {
+        position: relative;
+        margin-top: 1rem;
+        color: var(--col-midblue);
+
+        &::before {
+          content: '';
+          display: block;
+          width: 2.5rem;
+          margin-bottom: .5rem;
+          border-bottom: 2px solid currentColor;
+        }
+      }
+
+      /* fix figures with content smaller than max-width (including when shrunk because of `max-height`) */
+      &.figure--min {
+        display: table;
+
+        & > .figure__content {
+          width: 100%; /* force images to respect their parent figure's max-width in IE */
+        }
+
+        & > .figure__caption {
+          display: table-caption; /* ignore caption when computing inset width: fit image only */
+          caption-side: bottom; /* `table-caption` renders caption at the top by default */
+          opacity: inherit; /* fix bug where caption remains visible when figure is hidden with `opacity: 0;` */
+        }
+      }
+    }
+
+    &--left {
+      float: left;
+      margin-left: 3%; /* same distance from the edge as 94%-wide paragraphs */
+      margin-right: 1.5rem;
+      text-align: left;
+
+      & > .figure__content {
+        margin-left: 0;
+      }
+    }
+
+    &--right {
+      float: right;
+      margin-left: 1.5rem;
+      margin-right: 3%; /* same distance from the edge as 94%-wide paragraphs */
+      text-align: right;
+
+      & > .figure__content {
+        margin-right: 0;
+      }
+
+      & > .figure__caption::before {
+        margin-left: auto; /* align separator to the right */
+      }
+    }
+
+    /* confined variant */
+    /* duplicate the styles that must not change */
+    &--confined {
+      max-width: 50% !important; /* not a hack: `confined` styles should never have to be overriden */
+
+      &.figure--left { margin-right: 1.5rem !important; }
+      &.figure--right { margin-left: 1.5rem !important; }
+    }
+  }
+
+  @media (--bp-desktop) {
+    &--left,
+    &--right {
+      margin-bottom: 1rem;
+      padding-top: calc(1em * (1.68 - 1) / 2); /* align with text based on body line height */
+    }
+
+    &--left { margin-left: 0; }
+    &--right { margin-right: 0; }
+
+    &--confined {
+      margin-bottom: 1rem !important;
+
+      &.figure--left { margin-left: 0 !important; }
+      &.figure--right { margin-right: 0 !important; }
+    }
+  }
+
+  @media (--bp-x-desktop) {
+    &--left,
+    &--right {
+      max-width: 60%;
+      margin-bottom: 1.25rem;
+    }
+
+    &--left {
+      margin-left: -3rem;
+      margin-right: 2.25rem;
+    }
+
+    &--right {
+      margin-right: -3rem;
+      margin-left: 2.25rem;
+    }
+  }
+
+  @media (--bp-wide) {
+    &--left,
+    &--right {
+      max-width: 75%;
+
+      & > .figure__caption {
+        margin-top: 1.25rem;
+
+        &::before {
+          margin-bottom: .625rem;
+        }
+      }
+    }
+
+    &--left { margin-left: -7rem; }
+    &--right { margin-right: -7rem; }
+  }
+
+  @media (--bp-x-wide) {
+    &--left { margin-left: -11rem; }
+    &--right { margin-right: -11rem; }
+  }
+}
+
+/* adjust offsets when jumpnav is active */
+/* lots of overrides in here, but no way around it */
+.jumpnav-active .figure {
+  @media (--bp-wide) {
+    &.figure--left,
+    &.figure--right {
+      max-width: 50%;
+    }
+
+    &.figure--left { margin-left: 0; }
+    &.figure--right { margin-right: 0; }
+  }
+
+  @media (--bp-x-wide) {
+    &.figure--left,
+    &.figure--right {
+      max-width: 60%;
+    }
+
+    &.figure--left { margin-left: -3rem; }
+    &.figure--right { margin-right: -3rem; }
+  }
+
+  @media (--bp-xx-wide) {
+    &.figure--left,
+    &.figure--right {
+      max-width: 75%;
+    }
+
+    &.figure--left { margin-left: -7rem; }
+    &.figure--right { margin-right: -7rem; }
+  }
+}

@@ -40,7 +40,7 @@
       padding-bottom: 1.875rem;
       padding-right: 1.25rem;
       float: left;
-      margin: -3px 0 0;
+      margin: -4px 0 0;
       text-align: right;
       text-transform: uppercase;
       width: 28%;
@@ -54,25 +54,26 @@
       padding-bottom: 1.875rem;
       border-left: 1px solid var(--col-lightergray);
       float: left;
-      margin: -3px 0 0;
+      margin: -4px 0 0;
       position: relative;
       width: 68%;
       text-align: left;
 
       &:last-child {
-        border-left: 0;
+        border-left-color: transparent; /* keep 1px border so dot remains aligned */
       }
 
+      /* dot */
       &::before {
-        height: .9375rem;
-        left: -.4375rem;
-        width: .9375rem;
+        height: 15px; /* odd number for dot to be perfectly centred on the 1px line */
+        left: -8px; /* half of width, rounded up */
+        width: 15px;
         background-color: var(--col-lightergray);
         border-radius: 50%;
         content: '';
         display: block;
         position: absolute;
-        top: 3px;
+        top: 4px;
         z-index: 2;
       }
 

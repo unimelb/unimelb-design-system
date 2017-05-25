@@ -1,0 +1,34 @@
+p The figure component is designed to be versatile: the caption is in no way mandatory, and the <code>figure</code> element can be replaced with a simple <code>div</code>. This section demonstrates these two aspects for both default and inset figures, and for various content types.
+
+.with-figure.clearfix
+  figure.figure.figure--min
+    img.figure__content alt="cute kitten" src="http://placekitten.com/g/400/200"
+
+  .figure.figure--min
+    img.figure__content alt="fluffy kitten" src="http://placekitten.com/g/700/200"
+
+  figure.figure.figure--left.figure--min
+    img.figure__content alt="cute kitten" src="http://placekitten.com/g/700/300"
+
+  p Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi. Integer rhoncus ante quis lectus facilisis, ac auctor enim mattis. Nullam gravida nec ante mattis accumsan.
+
+  .figure.figure--right.figure--min
+    img.figure__content alt="fluffy kitten" src="http://placekitten.com/g/300/200"
+
+  p Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi.
+
+  .figure.figure--left.figure--max.figure--confined
+    video.figure__content controls=true width="700" height="394"
+      source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" type="video/mp4"
+      source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.webm" type="video/webm"
+      source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.ogv" type="video/ogg"
+
+  p Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris.
+
+  .figure.figure--right.figure--min.figure--confined
+    svg.figure__content width="100" height="100" viewBox="0 0 10 10"
+      title Disc
+      rect fill="#ADB8C1" x="0" y="0" width="10" height="10" rx="2" ry="2" /
+
+  p Maecenas pulvinar velit magna, nec scelerisque mauris fringilla suscipit. Pellentesque ut vehicula justo. Sed non rhoncus libero, ut iaculis eros. Aenean at sapien ultrices, vulputate erat at, dapibus mauris. Nullam iaculis orci quis ipsum accumsan pharetra. Nunc vel condimentum mi. Integer rhoncus ante quis lectus facilisis, ac auctor enim mattis. Nullam gravida nec ante mattis accumsan. Aenean at sapien ultrices.
+

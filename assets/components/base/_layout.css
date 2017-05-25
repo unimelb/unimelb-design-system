@@ -383,8 +383,10 @@ body {
   }
 
   .with-figure {
-    max-width: var(--w-sml);
-    margin: 0 auto;
+    @media (--bp-desktop) {
+      max-width: var(--w-sml);
+      margin: 0 auto;
+    }
   }
 
   .layout-sidebar {
