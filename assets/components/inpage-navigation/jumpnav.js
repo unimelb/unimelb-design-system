@@ -1,4 +1,5 @@
 var componentManager = require('shared/component-manager');
+var utils = require('utils');
 
 /**
  * Jump navigation
@@ -26,8 +27,8 @@ function JumpNav(el, props) {
   setTimeout(this.initCalcs.bind(this), 1000);
 
   // Event binding
-  window.addEventListener('scroll', this.handleScroll.bind(this));
-  window.addEventListener('resize', this.handleResize.bind(this)); // causing trouble
+  window.addEventListener('scroll', utils.debounce(this.handleScroll.bind(this), 16));
+  window.addEventListener('resize', utils.debounce(this.handleResize.bind(this), 100));
 
   // Initial calc
   this.handleScroll();
@@ -36,20 +37,16 @@ function JumpNav(el, props) {
 JumpNav.label = 'JumpNav';
 JumpNav.selector = '.jumpnav, .indexnav';
 
-JumpNav.prototype.handleResize = function() {
-  this.initCalcs();
-
+JumpNav.prototype.handleScroll = function() {
   var scrollY = window.scrollY || window.pageYOffset;
   this.trackProgress(scrollY);
   this.setEndpoint(scrollY);
   this.setFixed(scrollY);
 };
 
-JumpNav.prototype.handleScroll = function() {
-  var scrollY = window.scrollY || window.pageYOffset;
-  this.trackProgress(scrollY);
-  this.setEndpoint(scrollY);
-  this.setFixed(scrollY);
+JumpNav.prototype.handleResize = function() {
+  this.initCalcs();
+  this.handleScroll();
 };
 
 /*
