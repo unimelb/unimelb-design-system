@@ -1,5 +1,6 @@
 import * as componentManager from 'shared/component-manager';
 import * as utils from 'utils';
+import bus from 'shared/bus';
 import cssesc from 'cssesc';
 import WebFont from 'webfontloader';
 
@@ -42,6 +43,7 @@ window.uom = {
   applyInjection,
   ...componentManager,
   utils,
+  bus,
   vendor: {
     cssesc,
     WebFont
