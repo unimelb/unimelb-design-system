@@ -1,10 +1,10 @@
 import cuid from 'cuid';
 import debounce from 'lodash.debounce';
-import defer from 'lodash.defer';
 import hashString from 'string-hash';
 import hasLocalStorage from 'has-localstorage';
 import throttle from 'lodash.throttle';
 
+import defer from './defer';
 import easeInOutQuad from './ease-in-out-quad';
 import findUp from './find-up';
 import loadScript from './load-script';

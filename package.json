@@ -23,7 +23,6 @@
     "has-localstorage": "^1.0.1",
     "locale-compare-polyfill": "~0.0.2",
     "lodash.debounce": "^4.0.8",
-    "lodash.defer": "^4.1.0",
     "lodash.throttle": "^4.1.1",
     "normalize.css": "^5.0.0",
     "perfect-scrollbar": "^0.7.0",
