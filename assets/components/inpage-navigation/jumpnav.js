@@ -2,6 +2,9 @@ var componentManager = require('shared/component-manager');
 var utils = require('utils');
 var bus = require('shared/bus').default;
 
+// Scrolling threshold for fixed positioning
+var FIXED_THRESHOLD = 90 - 40; // height of static header minus height of fixed header
+
 /**
  * Jump navigation
  * @param  {Object} props
@@ -9,17 +12,13 @@ var bus = require('shared/bus').default;
 function JumpNav(el, props) {
   this.props = props || {};
   this.props.root = document.querySelector('[role="main"]');
+  this.props.header = document.querySelector('[role="main"] > header:first-child');
   this.props.headings = this.props.root.querySelectorAll('h2[id]');
   this.props.topmode = el.classList.contains('top');
   this.props.arbitraryOffset = 60; // scroll clearance
 
   // Return early if page has no identified headings
   if (this.props.headings.length === 0) return;
-
-  // Does layout contain a header at the top
-  var firstElem = this.props.root.firstElementChild;
-  if (firstElem && firstElem.nodeName === 'HEADER')
-    this.props.header = firstElem;
 
   // Build nav menu
   this.buildNavMenu();
@@ -28,7 +27,7 @@ function JumpNav(el, props) {
   setTimeout(this.initCalcs.bind(this), 1000);
 
   // Event binding
-  window.addEventListener('scroll', utils.throttle(this.handleScroll.bind(this), 100));
+  window.addEventListener('scroll', utils.throttle(this.handleScroll.bind(this), 50));
   window.addEventListener('resize', utils.debounce(this.handleResize.bind(this), 100));
 
   // Recompute when document height changes (until next tick thanks to wait=0 and leading=false)
@@ -132,11 +131,12 @@ JumpNav.prototype.buildNavMenu = function() {
 };
 
 JumpNav.prototype.initCalcs = function() {
-  var headerOffset =  (this.props.header ? this.props.header.offsetHeight: 0);
-  this.props.fixPoint = this.props.root.offsetTop + headerOffset - 20;
+  var headerOffset = this.props.header ? this.props.header.offsetHeight : 0;
+  this.props.fixPoint = FIXED_THRESHOLD + headerOffset;
 
-  if (this.props.root.classList.contains('floating'))
+  if (this.props.root.classList.contains('floating')) {
     this.props.fixPoint = this.props.fixPoint + 35;
+  }
 
   // Does the page include an inner footer
   var innerFooterHeight = document.querySelector('[role="main"] > footer:last-of-type');
@@ -174,7 +174,7 @@ JumpNav.prototype.setEndpoint = function(scrollY) {
 
 // Will now check if a header is present, otherwise leave fixed
 JumpNav.prototype.setFixed = function(scrollY) {
-  if (scrollY > this.props.fixPoint) {
+  if (scrollY >= this.props.fixPoint) {
     this.el.classList.remove('headless');
     this.el.classList.add('fixed');
     this.el.style.bottom = this.props.footerOffset;
