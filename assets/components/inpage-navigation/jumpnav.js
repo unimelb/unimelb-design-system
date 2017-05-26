@@ -27,7 +27,7 @@ function JumpNav(el, props) {
   setTimeout(this.initCalcs.bind(this), 1000);
 
   // Event binding
-  window.addEventListener('scroll', utils.debounce(this.handleScroll.bind(this), 16));
+  window.addEventListener('scroll', utils.throttle(this.handleScroll.bind(this), 100));
   window.addEventListener('resize', utils.debounce(this.handleResize.bind(this), 100));
 
   // Initial calc

@@ -21,7 +21,7 @@ function InjectHeader(props) {
     this.props.header = document.querySelector('.page-header');
   }
 
-  window.addEventListener('scroll', utils.debounce(this.handleScroll.bind(this), 16));
+  window.addEventListener('scroll', utils.throttle(this.handleScroll.bind(this), 100));
   this.handleScroll(); // Check once on page load
 }
 
