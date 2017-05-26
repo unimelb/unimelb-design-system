@@ -1,5 +1,6 @@
 import * as componentManager from 'shared/component-manager';
 import * as utils from 'utils';
+import bus from 'shared/bus';
 import cssesc from 'cssesc';
 
 import InjectIconSet from 'components/icon-set';
@@ -19,6 +20,7 @@ require('classlist-polyfill');
 window.uom = {
   ...componentManager,
   utils,
+  bus,
   vendor: { cssesc }
 };
 

@@ -1,5 +1,5 @@
 var cssesc = require('cssesc');
-var utils = require('../../utils');
+var utils = require('utils');
 
 /**
  * In-page Navigation

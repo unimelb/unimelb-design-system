@@ -1,11 +1,9 @@
 // Dependencies
 var cssesc = require('cssesc');
-var utils = require('../../utils');
+var utils = require('utils');
 
 // Don't show sidebar until it's worth it
 var OVERFLOW_PRECISION = 10;
-// Debounce delay for resize event
-var DEBOUNCE_DELAY = 100;
 
 
 /**
@@ -38,7 +36,7 @@ function Tabs(el, props) {
     }
 
     this.handleResize();
-    window.addEventListener('resize', utils.debounce(this.handleResize.bind(this), DEBOUNCE_DELAY));
+    window.addEventListener('resize', utils.debounce(this.handleResize.bind(this), 100));
   }
 }
 

@@ -1,8 +1,10 @@
 import cuid from 'cuid';
-import debounce from 'just-debounce';
+import debounce from 'lodash.debounce';
 import hashString from 'string-hash';
 import hasLocalStorage from 'has-localstorage';
+import throttle from 'lodash.throttle';
 
+import defer from './defer';
 import easeInOutQuad from './ease-in-out-quad';
 import findUp from './find-up';
 import loadScript from './load-script';
@@ -12,11 +14,13 @@ import smoothScrollTo from './smooth-scroll-to';
 export {
   cuid,
   debounce,
+  defer,
   easeInOutQuad,
   findUp,
   hashString,
   hasLocalStorage,
   loadScript,
   loadStylesheet,
-  smoothScrollTo
+  smoothScrollTo,
+  throttle
 };

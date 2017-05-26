@@ -104,6 +104,7 @@ body.jumpnav-active {
       position: absolute;
       width: 240px;
       z-index: 100;
+      transition: margin-top .2s ease;
 
       li {
         width: 100%;

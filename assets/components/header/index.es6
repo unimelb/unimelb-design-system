@@ -1,3 +1,8 @@
+var utils = require('utils');
+
+// Scrolling threshold for fixed positioning
+var FIXED_THRESHOLD = 90 - 40; // height of static header minus height of fixed header
+
 /**
  * InjectHeader
  *
@@ -19,7 +24,7 @@ function InjectHeader(props) {
     this.props.header = document.querySelector('.page-header');
   }
 
-  window.addEventListener("scroll", this.handleScroll.bind(this));
+  window.addEventListener('scroll', utils.throttle(this.handleScroll.bind(this), 100));
   this.handleScroll(); // Check once on page load
 }
 
@@ -255,7 +260,7 @@ InjectHeader.prototype.reorderStructure = function() {
 };
 
 InjectHeader.prototype.handleScroll = function(e) {
-  this.props.header.classList.toggle('fixed', (window.scrollY || window.pageYOffset) > 40);
+  this.props.header.classList.toggle('fixed', (window.scrollY || window.pageYOffset) >= FIXED_THRESHOLD);
 };
 
 module.exports = InjectHeader;
