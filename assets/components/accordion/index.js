@@ -1,3 +1,5 @@
+var bus = require('shared/bus').default;
+
 /**
  * Accordion
  *
@@ -7,6 +9,7 @@
 function Accordion(el, props) {
   this.el = el;
   this.props = props || {};
+  this.emit = bus.nsEmit(Accordion);
 
   this.props.container = this.el.parentNode;
   this.props.hidden = this.props.container.querySelector('.accordion__hidden');
@@ -77,6 +80,7 @@ Accordion.prototype.handleClick = function(e) {
 
   // Toggle panel visibility
   this.props.container.classList.toggle('accordion__visible');
+  this.emit('panelToggled');
 
   // Deal with focus and scrolling issues
   if (isSingleFocus) {

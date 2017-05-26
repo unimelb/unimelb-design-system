@@ -1,5 +1,6 @@
 var componentManager = require('shared/component-manager');
 var utils = require('utils');
+var bus = require('shared/bus').default;
 
 /**
  * Jump navigation
@@ -29,6 +30,9 @@ function JumpNav(el, props) {
   // Event binding
   window.addEventListener('scroll', utils.throttle(this.handleScroll.bind(this), 100));
   window.addEventListener('resize', utils.debounce(this.handleResize.bind(this), 100));
+
+  // Recompute when document height changes (until next tick thanks to wait=0 and leading=false)
+  bus.on('Accordion.panelToggled', utils.defer(this.handleResize.bind(this)));
 
   // Initial calc
   this.handleScroll();
