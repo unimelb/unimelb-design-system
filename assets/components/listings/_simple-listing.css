@@ -50,7 +50,7 @@
   &__heading {
     margin-bottom: .125rem;
     color: var(--col-darkblue);
-    font-size: 1em;
+    font-size: 1.125em;
     font-weight: 400;
     letter-spacing: inherit;
     line-height: 1.4;
@@ -59,20 +59,19 @@
   }
 
   &__excerpt {
-    font-size: .85em;
     padding-bottom: 0;
   }
 
-  &--one {
+  &--four {
     .simple-listing__excerpt {
-      font-size: 1em;
+      font-size: .9em;
     }
   }
 
   &--two,
   &--three {
     .simple-listing__heading {
-      font-size: 1.25em;
+      font-size: 1.375em;
     }
   }
 
