@@ -50,7 +50,7 @@
   &__heading {
     margin-bottom: .125rem;
     color: var(--col-darkblue);
-    font-size: 1em;
+    font-size: 1.125em;
     font-weight: 400;
     letter-spacing: inherit;
     line-height: 1.4;
@@ -59,20 +59,19 @@
   }
 
   &__excerpt {
-    font-size: .85em;
     padding-bottom: 0;
   }
 
-  &--one {
+  &--four {
     .simple-listing__excerpt {
-      font-size: 1em;
+      font-size: .9em;
     }
   }
 
   &--two,
   &--three {
     .simple-listing__heading {
-      font-size: 1.25em;
+      font-size: 1.375em;
     }
   }
 
@@ -149,18 +148,18 @@
     }
 
     &--text {
-      &:not(.simple-listing--four) {
+      /* reduce max-width of 2 and 3-column text-only listings (making sure to compensate for the items' padding) */
+      &.simple-listing--one,
+      &.simple-listing--two {
         padding-left: 0;
         padding-right: 0;
       }
 
-      /* reduce max-width of 2 and 3-column text-only listings (making sure to compensate for the items' padding) */
-      &.simple-listing--one,
-      &.simple-listing--two {
+      &.simple-listing--one {
         max-width: calc(var(--w-sml) + 2 * .625rem);
       }
 
-      &.simple-listing--three {
+      &.simple-listing--two {
         max-width: calc(var(--w-mid) + 2 * .625rem);
       }
     }
