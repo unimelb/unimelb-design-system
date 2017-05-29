@@ -153,6 +153,9 @@
       &.simple-listing--two {
         padding-left: 0;
         padding-right: 0;
+      }
+
+      &.simple-listing--one {
         max-width: calc(var(--w-sml) + 2 * .625rem);
       }
 
