@@ -227,6 +227,7 @@
       background-color: var(--col-darkblue);
       display: block;
       left: 0;
+      padding: .5rem;
       position: absolute;
       top: 0;
       transition: .2s top .3s;
@@ -246,6 +247,7 @@
         margin-left: 2.5rem;
         height: 8.75rem;
         width: 8.75rem;
+        padding: 1.25rem;
         position: absolute;
       }
     }

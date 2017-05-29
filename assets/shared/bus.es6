@@ -13,6 +13,4 @@ const bus = EventEmitter.mixin({
 
 });
 
-console.log(bus);
-
 export default bus;

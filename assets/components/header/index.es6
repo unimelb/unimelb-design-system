@@ -40,7 +40,7 @@ InjectHeader.prototype.renderPageHeader = function() {
       // Landing page header
       this.props.header.innerHTML = `
 <a class="page-header-logo" href="${this.props.defaultLink}">
-  <img src="${require('./logo.svg')}" width="100" height="100" alt="The University of Melbourne">
+  <img src="${require('./logo.svg')}" width="117" height="117" alt="The University of Melbourne homepage">
 </a>
 `;
 
@@ -80,7 +80,7 @@ InjectHeader.prototype.renderPageHeader = function() {
       this.props.header.innerHTML = `
 <header>
   <a class="page-header-logo" href="${this.props.defaultLink}">
-    <img src="${require('./logo.svg')}" width="100" height="100" alt="The University of Melbourne">
+    <img src="${require('./logo.svg')}" width="117" height="117" alt="The University of Melbourne homepage">
   </a>
   <nav class="page-header-navigation" aria-label="breadcrumbs">
     ${this.props.rootlink}
