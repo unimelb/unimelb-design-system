@@ -149,18 +149,15 @@
     }
 
     &--text {
-      &:not(.simple-listing--four) {
-        padding-left: 0;
-        padding-right: 0;
-      }
-
       /* reduce max-width of 2 and 3-column text-only listings (making sure to compensate for the items' padding) */
       &.simple-listing--one,
       &.simple-listing--two {
+        padding-left: 0;
+        padding-right: 0;
         max-width: calc(var(--w-sml) + 2 * .625rem);
       }
 
-      &.simple-listing--three {
+      &.simple-listing--two {
         max-width: calc(var(--w-mid) + 2 * .625rem);
       }
     }
