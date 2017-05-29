@@ -61,7 +61,7 @@ Recommended mobile devices for testing:
 ### Release preparation
 
 1. Once there are enough changes for a release, identify the highest semver level (e.g. `pr-major`) assigned to the PRs in the `next-release` milestone, and deduce the version number for the release - e.g. if the latest release was `v6.0.1` and at least one PR has tag `pr-minor`, the next release will be `v6.1`.
-2. Create a new milestone and release notes draft. Name both after the chosen version number (e.g. `v6.1`).
+2. Create a new milestone and release draft. Name both after the chosen version number (e.g. `v6.1`).
 3. Take a look at the [list of all issues and PRs](https://github.com/unimelb/unimelb-design-system/milestone/32) in the `next-release` milestone, then, for each PR and associated issues, document the changes in the release notes and reassign the PR and issues to the new milestone (e.g. `v6.1`). At the end of this process, the `next-release` milestone should no longer be assigned to any PR/issue and the release notes should be complete.
 
 
