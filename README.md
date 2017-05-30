@@ -62,12 +62,13 @@ Recommended mobile devices for testing:
 
 1. Once there are enough changes for a release, identify the highest semver level (e.g. `pr-major`) assigned to the PRs in the `next-release` milestone, and deduce the version number for the release - e.g. if the latest release was `v6.0.1` and at least one PR has tag `pr-minor`, the next release will be `v6.1`.
 2. Create a new milestone and release draft. Name both after the chosen version number (e.g. `v6.1`). For major versions, you may want to start with a release candidate (RC): in the release draft, just tick the "pre-release" box and add `-rc1` to the name of the tag (e.g. `v7.0-rc1`).
-3. Take a look at the [list of all issues and PRs](https://github.com/unimelb/unimelb-design-system/milestone/32) in the `next-release` milestone, then, for each PR and associated issues, document the changes in the release notes and reassign the PR and issues to the new milestone (e.g. `v6.1`). At the end of this process, the `next-release` milestone should no longer be assigned to any PR/issue and the release notes should be complete.
+3. Take a look at the [list of all issues and PRs](https://github.com/unimelb/unimelb-design-system/milestone/32) in the `next-release` milestone, then, for each PR and associated issues, document the changes in the release notes and reassign the PR and issues to the new milestone (e.g. `v6.1`). At the end of this process, the `next-release` milestone should no longer be assigned to any PR/issue and the release notes should be complete. Don't publish the release notes yet.
 
 
 ### Deployment
 
-1. Update the `VERSION` environment variable in Semaphore and in the `.env` file. For release candidates, use the version number without the `-rc` suffix so early adopters don't have to update their design system version twice.
+1. Update the version number in `package.json` and commit the change straight to `master`.
+1. Update the `VERSION` environment variable in the `.env` file and in Semaphore. For release candidates, use the version number without the `-rc` suffix so early adopters don't have to update their design system version twice.
 2. Perform a manual deployment in [Semaphore](https://semaphoreci.com/unimelb/unimelb-design-system).
 3. Check that the new version is live at `https://d2h9b02ioca40d.cloudfront.net/<version-number>/uom.<js|css>`.
 
