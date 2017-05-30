@@ -69,7 +69,7 @@ Recommended mobile devices for testing:
 
 1. Update the version number in `package.json` and commit the change straight to `master`.
 1. Update the `VERSION` environment variable in the `.env` file and in Semaphore. For release candidates, use the version number without the `-rc` suffix so early adopters don't have to update their design system version twice.
-2. Perform a manual deployment in [Semaphore](https://semaphoreci.com/unimelb/unimelb-design-system).
+2. Perform a manual deployment in [Semaphore](https://semaphoreci.com/unimelb/unimelb-design-system): navigate to the latest build of the `master` branch and select _Deploy manually_.
 3. Check that the new version is live at `https://d2h9b02ioca40d.cloudfront.net/<version-number>/uom.<js|css>`.
 
 
