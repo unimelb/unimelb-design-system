@@ -61,13 +61,13 @@ Recommended mobile devices for testing:
 ### Release preparation
 
 1. Once there are enough changes for a release, identify the highest semver level (e.g. `pr-major`) assigned to the PRs in the `next-release` milestone, and deduce the version number for the release - e.g. if the latest release was `v6.0.1` and at least one PR has tag `pr-minor`, the next release will be `v6.1`.
-2. Create a new milestone and release draft. Name both after the chosen version number (e.g. `v6.1`).
+2. Create a new milestone and release draft. Name both after the chosen version number (e.g. `v6.1`). For major versions, you may want to start with a release candidate (RC): in the release draft, just tick the "pre-release" box and add `-rc1` to the name of the tag (e.g. `v7.0-rc1`).
 3. Take a look at the [list of all issues and PRs](https://github.com/unimelb/unimelb-design-system/milestone/32) in the `next-release` milestone, then, for each PR and associated issues, document the changes in the release notes and reassign the PR and issues to the new milestone (e.g. `v6.1`). At the end of this process, the `next-release` milestone should no longer be assigned to any PR/issue and the release notes should be complete.
 
 
 ### Deployment
 
-1. Update the `VERSION` environment variable in Semaphore and in the `.env` file.
+1. Update the `VERSION` environment variable in Semaphore and in the `.env` file. For release candidates, use the version number without the `-rc` suffix so early adopters don't have to update their design system version twice.
 2. Perform a manual deployment in [Semaphore](https://semaphoreci.com/unimelb/unimelb-design-system).
 3. Check that the new version is live at `https://d2h9b02ioca40d.cloudfront.net/<version-number>/uom.<js|css>`.
 
@@ -89,7 +89,9 @@ Recommended mobile devices for testing:
 
 10. Grab the deployment URL of the previous version of the documentation site on Netlify, and provide it in the [release notes](https://github.com/unimelb/unimelb-design-system/releases) of that version on GitHub.
 11. Publish the release notes of the new version.
-12. Announce the release in the `#general` Slack channel.
+12. In the case of a release candidate, liaise with early adopters internally to deploy and test the new version on a limited number of sites. If this testing phase reveals any issues: fix them, perform a manual deployment in Semaphore, deploy the documentation site again if needed, test thoroughly, and re-publish the same release notes but with the release candidate number incremented (e.g. `v7.0-rc2`). Make sure to keep assigning issues and pull requests to the version's milestone and to keep documenting the changes in the release notes if relevant. Once the release candidate is considered stable, in the release notes, remove the `-rc` prefix from the tag name, untick the "pre-release" box and hit _Publish_.
+13. Close the version's milestone in GitHub.
+14. Announce the release in the `#general` Slack channel.
 
 
 ## Updating the legacy injection (< v6.0)
