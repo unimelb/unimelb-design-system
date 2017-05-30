@@ -14,7 +14,7 @@ git clone https://github.com/unimelb/unimelb-design-system.git
 cd unimelb-design-system
 cp .env.example .env
 bundle install
-yarn install
+yarn
 ```
 
 
