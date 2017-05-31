@@ -108,6 +108,7 @@ module RodaRenderComponent
         var e' + l + ' = ace.edit("s' + l + '");
         e' + l + '.setTheme("ace/theme/github");
         e' + l + '.session.setMode("ace/mode/html");
+        e' + l + '.session.setOption("useWorker", false);
         e' + l + '.getSession().setTabSize(2);
         e' + l + '.getSession().setUseSoftTabs(true);
         e' + l + '.getSession().on("change", function(e){

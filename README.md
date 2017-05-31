@@ -76,9 +76,9 @@ Recommended mobile devices for testing:
 ### Documentation site
 
 1. After deploying the new version, run `RACK_ENV=dev MODE=prod rackup -p 7000` locally.
-2. Test the documentation site at http://localhost:7000. You can check all components at once at http://localhost:7000/components/all.
-3. Find your IP address.
-4. If you haven't already done so, clone the [static-capture](https://github.com/waitingallday/static-capture) project.
+2. Test the documentation site at http://localhost:7000. You can check all components at once at http://localhost:7000/components/all. Fix any issues and redeploy if needed.
+3. If you haven't already done so, clone the [static-capture](https://github.com/waitingallday/static-capture) project.
+4. Find your IP address.
 5. From the root of the `static-capture` directory, run `rake capture source=http://<ip-address>:7000`.
 6. Rename the newly created folder with the version number (e.g. `v6.1`).
 7. Copy the favicons as well as `robots.txt` from the design system's `public` folder into this new folder.
