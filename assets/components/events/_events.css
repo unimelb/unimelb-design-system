@@ -334,36 +334,26 @@
  */
 .uomcontent {
 
-  /* wrapper (i.e. anchor element) */
+  /* ribbon wrapper for anchor element in event listing */
   .ribbon-wrapper {
-    position: relative;
-    overflow: hidden;
+    @media (--bp-desktop) {
+      position: relative;
+      overflow: hidden;
 
-    & > strong {
-      padding-right: 6rem;
-    }
-
-    & > h3 {
-      padding-right: 4.5rem;
-    }
-
-    & > p {
-      padding-right: 2.25rem;
+      & > h1 { padding-right: 6.5rem; }
+      & > strong { padding-right: 6rem; }
+      & > h3 { padding-right: 4.5rem; }
+      & > p { padding-right: 2.25rem; }
     }
   }
 
   /* ribbon */
   .ribbon {
-    position: absolute;
-    top: calc(1em * 2.5 / 2);
-    right: calc(1em * 2.5 / 2);
-    display: block;
-    width: 100%;
+    display: inline-block;
+    font-size: .875em;
     font-weight: bold;
-    line-height: 2.5;
-    text-align: center;
-    transform-origin: top right;
-    transform: rotate(45deg) translate(50%, 50%);
+    line-height: 2;
+    padding: 0 .625em;
 
     &--warning {
       @mixin notice-warning;
@@ -371,6 +361,33 @@
 
     &--danger {
       @mixin notice-danger;
+    }
+
+    &--event-listing {
+      margin-left: 3%;
+      margin-bottom: .625rem;
+    }
+
+    &--event-page {
+      position: relative;
+      top: -.75rem;
+    }
+
+    @media (--bp-desktop) {
+      position: absolute;
+      top: calc(1em * 2.25 / 2);
+      right: calc(1em * 2.25 / 2);
+      display: block;
+      width: 100%;
+      font-size: 1em;
+      line-height: 2.25;
+      text-align: center;
+      transform-origin: top right;
+      transform: rotate(45deg) translate(50%, 50%);
+
+      &--event-listing {
+        margin: 0;
+      }
     }
   }
 

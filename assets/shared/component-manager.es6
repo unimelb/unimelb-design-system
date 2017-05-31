@@ -38,8 +38,11 @@ export function registerComponents(comps) {
  * Initialise all registered components.
  * @param {element} context (optional) - restrict the search in the DOM (defaults to `document`)
  */
-export function initAllComponents() {
-  Object.keys(components).forEach((label) => initComponent(label));
+export function initAllComponents(context) {
+  // If first parameter is not provided or not a valid DOM Node, default to `document`
+  context = context && context.nodeName ? context : document;
+
+  Object.keys(components).forEach((label) => initComponent(label, context));
 }
 
 /**
@@ -58,7 +61,7 @@ export function initComponent(label, context = document) {
   }
 
   // Find matches and return if none are found
-  const matches = findMatches(context, Component.selector, Component.firstOnly);
+  const matches = findMatches(Component, context);
   if (matches.length === 0) return;
 
   // Retrieve the component's third-party dependencies
@@ -81,17 +84,16 @@ export function initComponent(label, context = document) {
 
 /**
  * Find a component's matches.
+ * @param {constructor} Component
  * @param {element} context
- * @param {string} rawSelector
- * @param {boolean} firstOnly
  * @return {array<element>} - the matched elements
  */
-function findMatches(context, rawSelector, firstOnly) {
+function findMatches(Component, context) {
   // Build selector, making sure to exclude elements that are already bound
-  const selector = `${rawSelector}:not([data-bound])`;
+  const selector = `${Component.selector}:not([data-bound-${Component.label.toLowerCase()}])`;
 
   // Optionally, look only for the first match
-  if (firstOnly) {
+  if (Component.firstOnly) {
     const match = context.querySelector(selector);
     return match ? [match] : [];
   }
@@ -120,6 +122,6 @@ function initMatches(Component, matches) {
     instances[id] = new Component(el, props);
 
     // Mark element as bound and expose its ID
-    el.setAttribute('data-bound', id);
+    el.setAttribute(`data-bound-${Component.label.toLowerCase()}`, id);
   });
 }

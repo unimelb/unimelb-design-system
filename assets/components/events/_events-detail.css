@@ -126,8 +126,11 @@
   }
 
   .upper {
+    text-align: center;
+
     @media screen and (--bp-desktop) {
       margin-left: 18.75rem;
+      text-align: left;
     }
 
     .aside {
@@ -143,24 +146,18 @@
     }
 
     h1 {
-      text-align: center;
-
       @media screen and (--bp-desktop) {
         margin-left: 0;
-        text-align: left;
       }
     }
 
     h2 {
-      text-align: center;
-
       &::after {
         display: none;
       }
 
       @media screen and (--bp-desktop) {
         margin-left: 0;
-        text-align: left;
         width: auto;
       }
     }

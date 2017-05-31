@@ -99,7 +99,7 @@ module RodaRenderComponent
     def trigger_source_editable # rubocop:disable Metrics/MethodLength, Metrics/AbcSize, Metrics/LineLength
       # rubocop:disable Metrics/LineLength
       buf = '
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js" type="text/javascript" charset="utf-8"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.3/ace.js"></script>
 '
       @code_i.times do |i|
         l = (1 + i).to_s
@@ -108,11 +108,13 @@ module RodaRenderComponent
         var e' + l + ' = ace.edit("s' + l + '");
         e' + l + '.setTheme("ace/theme/github");
         e' + l + '.session.setMode("ace/mode/html");
+        e' + l + '.session.setOption("useWorker", false);
         e' + l + '.getSession().setTabSize(2);
         e' + l + '.getSession().setUseSoftTabs(true);
         e' + l + '.getSession().on("change", function(e){
-          document.getElementById("r' + l + '").innerHTML = e' + l + '.getValue();
-          UOMloadComponents();
+          var el = document.getElementById("r' + l + '");
+          el.innerHTML = e' + l + '.getValue();
+          window.uom.initAllComponents(el);
         });
       </script>
 '

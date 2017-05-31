@@ -13,8 +13,6 @@ function SortableTable(el, props) {
   this.props.selected = 0;
   this.props.sortAs = '';
   this.setupHeadings();
-
-  this.el.setAttribute('data-bound', true);
 }
 
 SortableTable.label = 'SortableTable';
@@ -147,7 +145,7 @@ SortableTable.prototype.rewriteStore = function() {
   }
 
   // Rebind mobile labels
-  window.UOMbind('tables');
+  window.uom.initComponent('MobileTableHelper');
 };
 
 module.exports = SortableTable;
