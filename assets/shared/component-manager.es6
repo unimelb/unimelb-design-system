@@ -38,8 +38,11 @@ export function registerComponents(comps) {
  * Initialise all registered components.
  * @param {element} context (optional) - restrict the search in the DOM (defaults to `document`)
  */
-export function initAllComponents() {
-  Object.keys(components).forEach((label) => initComponent(label));
+export function initAllComponents(context) {
+  // If first parameter is not provided or not a valid DOM Node, default to `document`
+  context = context && context.nodeName ? context : document;
+
+  Object.keys(components).forEach((label) => initComponent(label, context));
 }
 
 /**
