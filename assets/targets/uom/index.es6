@@ -40,7 +40,6 @@ require('shared/tracking');
 
 // Build API object
 window.uom = {
-  applyInjection,
   ...componentManager,
   utils,
   bus,
@@ -49,6 +48,15 @@ window.uom = {
     WebFont
   }
 };
+
+// Register the design system's injection components
+window.uom.registerInjectionComponents([
+  CreateNameSpace,
+  InjectHeader,
+  InjectNav,
+  InjectFooter,
+  InjectIconSet
+]);
 
 // Register the design system's components
 window.uom.registerComponents([
@@ -83,14 +91,3 @@ WebFont.load({ google: { families: [fonts] } });
 
 document.addEventListener('DOMContentLoaded', window.uom.applyInjection);
 document.addEventListener('DOMContentLoaded', window.uom.initAllComponents);
-
-/**
- * Initialise injection components.
- */
-function applyInjection() {
-  new CreateNameSpace();
-  new InjectHeader({ defaultLink: 'https://www.unimelb.edu.au' });
-  new InjectNav();
-  new InjectFooter();
-  new InjectIconSet();
-}

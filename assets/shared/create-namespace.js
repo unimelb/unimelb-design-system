@@ -42,4 +42,6 @@ function CreateNameSpace() {
   }
 }
 
+CreateNameSpace.label = 'CreateNameSpace';
+
 module.exports = CreateNameSpace;

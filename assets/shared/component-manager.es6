@@ -7,6 +7,12 @@ import { cuid, loadStylesheet, loadScript } from 'utils';
 export const components = {};
 
 /**
+ * Registered injection components by label.
+ * @type {Object}
+ */
+export const injectionComponents = {};
+
+/**
  * Component instances by ID.
  * When a component is instantiated, a random ID is generated and set as the value of the `data-bound`
  * attribute on the component's root DOM element.
@@ -14,8 +20,14 @@ export const components = {};
 export const instances = {};
 
 /**
+ * Injection component instances by label.
+ * There's only one instance per component, so no need for random IDs.
+ */
+export const injectionInstances = {};
+
+/**
  * Register one or more components.
- * @param {array|constructor} components - an array of components, or a single component's constructor
+ * @param {array|constructor} comps - an array of components, or a single component's constructor
  */
 export function registerComponents(comps) {
   // Allow passing a single component
@@ -31,6 +43,27 @@ export function registerComponents(comps) {
 
     // Register component by label
     components[Component.label] = Component;
+  });
+}
+
+/**
+ * Register one or more injection components.
+ * @param {array|constructor} comps - an array of components, or a single component's constructor
+ */
+export function registerInjectionComponents(comps) {
+  // Allow passing a single injection component
+  comps = Array.isArray(comps) ? comps : [comps];
+
+  // Register every injection component
+  comps.forEach(Component => {
+    // Log error if component doesn't have a label
+    if (!Component.label) {
+      console.error('Injection component must have a label', Component);
+      return;
+    }
+
+    // Register injection component by label
+    injectionComponents[Component.label] = Component;
   });
 }
 
@@ -80,6 +113,16 @@ export function initComponent(label, context = document) {
 
   // No script dependencies or global ; initialise matches right away
   initMatches(Component, matches);
+}
+
+/**
+ * Initialise all registered injection components.
+ */
+export function applyInjection() {
+  Object.keys(injectionComponents).forEach((label) => {
+    const Component = injectionComponents[label];
+    injectionInstances[label] = new Component();
+  });
 }
 
 /**

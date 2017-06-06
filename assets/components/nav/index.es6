@@ -46,6 +46,8 @@ function InjectNav(props) {
   this.update();
 }
 
+InjectNav.label = 'InjectNav';
+
 InjectNav.prototype.setActiveNav = function(state) {
   this.props.activeNav = (state && state[HISTORY_KEY] ? state[HISTORY_KEY] : {
     local: false,

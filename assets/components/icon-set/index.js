@@ -14,4 +14,6 @@ function InjectIconSet() {
   document.querySelector('.uomcontent').appendChild(el);
 }
 
+InjectIconSet.label = 'InjectIconSet';
+
 module.exports = InjectIconSet;
