@@ -14,6 +14,8 @@ function InjectFooter(props) {
   }
 }
 
+InjectFooter.label = 'InjectFooter';
+
 InjectFooter.prototype.renderFooter = function() {
   this.el = document.createElement('div');
   this.el.className = 'page-footer';

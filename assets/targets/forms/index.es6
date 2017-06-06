@@ -24,6 +24,11 @@ window.uom = {
   vendor: { cssesc }
 };
 
+// Register the design system's injection components
+window.uom.registerInjectionComponents([
+  InjectIconSet
+]);
+
 // Register the design system's components
 window.uom.registerComponents([
   Accordion,
@@ -38,5 +43,5 @@ window.uom.registerComponents([
 document.documentElement.classList.remove('no-js');
 document.documentElement.classList.add('js');
 
-document.addEventListener('DOMContentLoaded', function inject() { new InjectIconSet(); });
+document.addEventListener('DOMContentLoaded', window.uom.applyInjection);
 document.addEventListener('DOMContentLoaded', window.uom.initAllComponents);

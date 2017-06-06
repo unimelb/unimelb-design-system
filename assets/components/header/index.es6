@@ -9,7 +9,7 @@ var FIXED_THRESHOLD = 90 - 40; // height of static header minus height of fixed 
  * @param  {Object} props
  */
 function InjectHeader(props) {
-  this.props = props || {};
+  this.props = props || { defaultLink: 'https://www.unimelb.edu.au' };
 
   this.props.parent = document.querySelector('.uomcontent');
   this.props.page = document.querySelector('.page-inner');
@@ -27,6 +27,8 @@ function InjectHeader(props) {
   window.addEventListener('scroll', utils.throttle(this.handleScroll.bind(this), 100));
   this.handleScroll(); // Check once on page load
 }
+
+InjectHeader.label = 'InjectHeader';
 
 InjectHeader.prototype.renderPageHeader = function() {
   // Create header if it doesn't already exist
