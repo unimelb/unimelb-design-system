@@ -8,12 +8,13 @@
 @import '../../components/nav';
 
 /* Components */
-@import '../../components/filtered-listings';
 @import '../../components/base';
 @import '../../components/text';
 @import '../../components/figure';
 @import '../../components/buttons';
 @import '../../components/listings';
+@import '../../components/filtered-listings';
+@import '../../components/course'; /* depends on mixin from `filtered-listings` */
 @import '../../components/pathfinder';
 @import '../../components/forms';
 @import '../../components/checklist';
