@@ -1,4 +1,4 @@
-.uomcontent .figure {
+.uomcontent [role="main"] .figure {
   max-width: var(--w-sml);
   margin: 0 auto 1.5rem;
   text-align: center;
