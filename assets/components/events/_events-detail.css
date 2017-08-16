@@ -129,7 +129,7 @@
     text-align: center;
 
     @media screen and (--bp-desktop) {
-      margin-left: 18.75rem;
+      padding-left: 18.75rem;
       text-align: left;
     }
 
