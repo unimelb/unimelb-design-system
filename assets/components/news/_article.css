@@ -85,8 +85,10 @@
       width: 100%;
     }
 
+    /* HACK fix centring and width */
     .figure {
-      margin-left: 0; /* HACK fix centring */
+      margin-left: 0;
+      max-width: none;
     }
   }
 
