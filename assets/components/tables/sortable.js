@@ -8,15 +8,22 @@ function SortableTable(el, props) {
   this.el = el;
   this.props = props || {};
   this.props.tbody = this.el.querySelector('tbody');
+  this.tableInfo = [];
+  this.tableFragment = document.createDocumentFragment();
+  this.colCount = this.props.tbody.rows[0].cells.length;
 
   this.setupData();
   this.props.selected = 0;
   this.props.sortAs = '';
   this.setupHeadings();
+  this.initSearchFields(el);
+  this.cacheTable();
+  this.populateSearchOptions();
 }
 
 SortableTable.label = 'SortableTable';
 SortableTable.selector = 'table[data-sortable]';
+SortableTable.defaultOption = "__all";
 
 SortableTable.prototype.setupData = function() {
   var rows = this.props.tbody.querySelectorAll('tr');
@@ -64,6 +71,107 @@ SortableTable.prototype.setupHeadings = function() {
     }
   }
 };
+
+SortableTable.prototype.initSearchField = function(el) {
+  var type = el.dataset.sortableSearchType;
+  var searchNode = document.createElement('span');
+  switch (type) {
+    case "text":
+      var field = '<input type="search" name="' + el.innerText + '" placeholder="Search by ' + el.innerText + '"/>';
+      searchNode.innerHTML = field;
+      var searchel = searchNode.querySelector('input');
+      searchel.addEventListener('keyup', this.handleSearch.bind(this));
+      break;
+    case "select":
+      var field = '<select name="' + el.innerText + '"><option value="' + SortableTable.defaultOption + '">Please select</option></select>';
+      searchNode.innerHTML = field;
+      var searchel = searchNode.querySelector('select');
+      searchel.addEventListener('change', this.handleSearch.bind(this));
+      break;
+  }
+  return searchNode;
+}
+
+SortableTable.prototype.initSearchFields = function(el) {
+  var searchableCols = el.querySelectorAll('[data-sortable-search-type]');
+  var row = document.createElement('tr');
+  searchableCols.forEach(function(th) {
+    var cellRef = row.insertCell(-1);
+    cellRef.insertAdjacentElement('beforeend', this.initSearchField(th));
+  }, this);
+  this.insertAfter(el.querySelectorAll('tr')[0], row);
+}
+
+SortableTable.prototype.cacheTable = function() {
+  var element  = this.props.tbody;
+  this.tableFragment = this.tableFragment.appendChild(element.cloneNode(true));
+}
+
+SortableTable.prototype.populateSearchOptions = function() {
+  this.el.querySelectorAll('[data-sortable-search-type]').forEach(function(el, index) {
+    var options = new Set();
+
+    if (el.dataset.sortableSearchType === 'select') {
+      this.store.forEach(function(row){
+        options.add(row[index].innerText);
+      });
+    }
+
+    options.forEach(function(option){
+      var optionField = document.createElement('option');
+      optionField.value = option;
+      optionField.innerHTML = option;
+      this.el.querySelector('select[name="' + el.innerText + '"]').appendChild(optionField);
+    }, this);
+  }, this)
+}
+
+SortableTable.prototype.handleSearch = function(e) {
+  var table = this.tableFragment.cloneNode(true); // create a copy of the cached table Node
+
+  inputs = this.el.querySelectorAll('input, select');
+
+  // build an array of input field data
+  this.criteria = Array.prototype.map.call( inputs, function(input){
+    return input.value.toLocaleLowerCase();
+  });
+
+  // check rows for select / input data
+  var rows = table.querySelectorAll("tr");
+  rows.forEach(function(row){
+    var cells = row.querySelectorAll("td");
+    var results = []; // build up an array of true / false if the cell matches the filter
+    cells.forEach(function(cell, index){
+      // naive comparison of cell data to input
+      if (cell.innerText.toLocaleLowerCase().indexOf(this.criteria[index]) >= 0 || this.criteria[index] == SortableTable.defaultOption) {
+        results.push(true);
+      } else {
+        results.push(false);
+      }
+    }, this);
+
+    // remove the row if it doesn't match every filter
+    if (!results.every(this.isTrue)) {
+      row.remove();
+    }
+  }, this);
+
+  // replace the table in the DOM with a new table
+  this.props.tbody.innerHTML = table.innerHTML;
+
+  if(this.props.tbody.innerText.length === 0) {
+    this.addNoResultsRow();
+  }
+
+  // rebuild this.store
+  this.setupData();
+}
+
+SortableTable.prototype.addNoResultsRow = function() {
+  var noResultsRow = document.createElement('tr');
+  noResultsRow.innerHTML = '<td colspan="' + this.colCount + '">No Results</td>';
+  this.props.tbody.append(noResultsRow);
+}
 
 SortableTable.prototype.handleColClick = function(e) {
   var col = e.target;
@@ -147,5 +255,13 @@ SortableTable.prototype.rewriteStore = function() {
   // Rebind mobile labels
   window.uom.initComponent('MobileTableHelper');
 };
+
+SortableTable.prototype.insertAfter = function(el, content){
+  el.parentNode.insertBefore(content, el.nextSibling);
+}
+
+SortableTable.prototype.isTrue = function(el, index, array){
+  return el === true;
+}
 
 module.exports = SortableTable;
