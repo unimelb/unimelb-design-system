@@ -3,31 +3,38 @@ table.zebra(data-sortable)
     tr
       th scope="col" Preference
       th scope="col" data-sort-as="text" Text
-      th(data-sort-skip scope="col") Offer made
-      th(data-sort-initial scope="col") Unit Code
-      th.right scope="col" Retail Price
+      th(data-sort-skip scope="col" data-sortable-search-type="select") Offer made
+      th(data-sort-initial scope="col" data-sortable-search-type="text") Unit Code
+      th(data-sort-initial scope="col" data-sortable-search-type="multi-select") Available
+      th.right scope="col" data-sortable-search-type="text" Retail Price
   tbody
     tr
       td 1
       td 50
       td Yes
       td ARTS_11
+      td
+        ' Semester 1
+        ' Semester 2
       td.right $29.99
     tr
       td 2
       td 300
       td No
       td ARTS_3
+      td Semester 1
       td.right $9.99
     tr
       td 4
       td 7
       td Yes
       td ARTS_100
+      td Semester 2
       td.right $39.99
     tr
       td 3
       td 6
       td Yes
       td ARTS_2
+      td Summer only
       td.right $109.99
