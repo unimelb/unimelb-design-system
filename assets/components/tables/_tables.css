@@ -261,6 +261,10 @@
           padding-bottom: .625rem;
         }
 
+        &.no-content {
+          padding: 0;
+        }
+
         &:empty {
           display: table-cell;
         }

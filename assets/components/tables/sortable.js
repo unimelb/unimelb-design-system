@@ -122,7 +122,11 @@ SortableTable.prototype.initSearchFields = function(el) {
   var row = document.createElement('tr');
   searchableCols.forEach(function(th) {
     var cellRef = row.insertCell(-1);
-    cellRef.insertAdjacentElement('beforeend', this.initSearchField(th));
+    var searchNode = this.initSearchField(th);
+    cellRef.insertAdjacentElement('beforeend', searchNode);
+    if (searchNode.firstChild.type === "hidden") {
+      cellRef.className = 'no-content';
+    }
   }, this);
   this.insertAfter(el.querySelectorAll('tr')[0], row);
 }
