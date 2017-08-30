@@ -95,6 +95,21 @@
       padding-left: .625rem;
       padding-right: 1.25rem;
     }
+    td{
+      min-width: 9rem;
+    }
+  }
+
+  [data-sortable-multiselect] {
+    display: none;
+    position: absolute;
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #0076de;
+  }
+
+  [data-sortable-multiselect].visible {
+    display: block;
   }
 
   .right {
@@ -173,6 +188,38 @@
     tr:nth-child(odd) td {
       background-color: var(--col-paleblue);
     }
+  }
+
+  input[type="search"],
+  button{
+    border-radius: .2rem;
+    border: 1px solid #0076de;
+    padding: 0.1rem 0.3rem;
+    width: 100%;
+    text-align: left;
+    color: #0076de;
+    background: #fff;
+    line-height: 1.3rem;
+  }
+
+  button{
+    padding: 0rem 0.3rem;
+    font-family: Roboto,Helvetica,Arial,sans-serif;
+    font-weight: 300;
+    font-size: 1.125rem;
+    line-height: 1.525rem;
+  }
+
+  button:hover{
+    background-color: #e1eaf5;
+  }
+
+  .styled-select{
+    background-size: 24px;
+  }
+
+  .styled-select::-ms-expand {
+    display: none;
   }
 
   @media screen and (--bp-desktop) {

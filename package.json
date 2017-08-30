@@ -25,6 +25,7 @@
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "normalize.css": "^5.0.0",
+    "object.values": "^1.0.4",
     "perfect-scrollbar": "^0.7.0",
     "photoswipe": "^4.1.1",
     "string-hash": "^1.1.3",
