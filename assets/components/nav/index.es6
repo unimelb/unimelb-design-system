@@ -205,13 +205,12 @@ InjectNav.prototype.renderGlobalSitemap = function() {
 <div>
   <div class="col-3 clearfix">
     <div>
-      <strong class="linkgroup-title"><a href="http://coursesearch.unimelb.edu.au/">Study at Melbourne</a></strong>
+      <strong class="linkgroup-title"><a href="https://study.unimelb.edu.au/">Study at Melbourne</a></strong>
       <ul>
-        <li><a href="https://coursesearch.unimelb.edu.au/undergrad">Undergraduate study</a></li>
-        <li><a href="https://coursesearch.unimelb.edu.au/grad">Graduate study</a></li>
-        <li><a href="http://futurestudents.unimelb.edu.au/">Future students</a></li>
-        <li><a href="http://futurestudents.unimelb.edu.au/admissions">Admissions, fees &amp; applications</a></li>
-        <li><a href="http://futurestudents.unimelb.edu.au/info/international">International students</a></li>
+        <li><a href="https://study.unimelb.edu.au/find">Find a course</a></li>
+        <li><a href="https://study.unimelb.edu.au/connect-with-us/">Future students</a></li>
+        <li><a href="https://study.unimelb.edu.au/how-to-apply">Admissions, fees &amp; applications</a></li>
+        <li><a href="https://study.unimelb.edu.au/connect-with-us/information-for-schools/information-for-schools-outside-australia">International students</a></li>
         <li><a href="http://www.unimelb.edu.au/campustour/">Campus tour</a></li>
       </ul>
     </div>
@@ -219,12 +218,12 @@ InjectNav.prototype.renderGlobalSitemap = function() {
     <div>
       <strong class="linkgroup-title"><a href="http://about.unimelb.edu.au/">About us</a></strong>
       <ul>
-        <li><a href="http://about.unimelb.edu.au/strategy-and-leadership">Strategy and leadership</a></li>
-        <li><a href="http://about.unimelb.edu.au/tradition-of-excellence">Tradition of excellence</a></li>
-        <li><a href="http://about.unimelb.edu.au/international-connections">International connections</a></li>
-        <li><a href="http://about.unimelb.edu.au/campuses-and-facilities">Campuses and facilities</a></li>
-        <li><a href="http://about.unimelb.edu.au/governance-and-leadership">Structure and governance</a></li>
-        <li><a href="http://about.unimelb.edu.au/policy-and-publications">Policy and publications</a></li>
+        <li><a href="https://about.unimelb.edu.au/strategy-and-leadership">Strategy and leadership</a></li>
+        <li><a href="https://about.unimelb.edu.au/tradition-of-excellence">Tradition of excellence</a></li>
+        <li><a href="https://iro.unimelb.edu.au/">International connections</a></li>
+        <li><a href="https://about.unimelb.edu.au/campuses-and-facilities">Campuses and facilities</a></li>
+        <li><a href="https://about.unimelb.edu.au/strategy/our-structure">Structure and governance</a></li>
+        <li><a href="https://about.unimelb.edu.au/policy-and-publications">Policy and publications</a></li>
         <li><a href="http://hr.unimelb.edu.au/careers">Careers at Melbourne</a></li>
         <li><a href="http://newsroom.unimelb.edu.au">Newsroom</a></li>
       </ul>
@@ -249,7 +248,6 @@ InjectNav.prototype.renderGlobalSitemap = function() {
         <li><a href="https://events.unimelb.edu.au/">Events</a></li>
         <li><a href="http://engagement.unimelb.edu.au/">Community</a></li>
         <li><a href="http://engagement.unimelb.edu.au/#international">Global Engagement</a></li>
-        <li><a href="http://businessconnect.unimelb.edu.au/">Business &amp; Industry</a></li>
         <li><a href="http://engagement.unimelb.edu.au/#cultural">Arts &amp; Culture</a></li>
         <li><a href="http://www.sport.unimelb.edu.au/facilities/index.html">Sports Facilities</a></li>
         <li><a href="https://shop.unimelb.edu.au/">Shop</a></li>
