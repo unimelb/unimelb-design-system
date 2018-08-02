@@ -78,7 +78,7 @@ InjectFooter.prototype.renderFooter = function() {
       <a href="https://www.twitter.com/unimelb"><svg role="img" class="icon"><use xlink:href="#icon-twitter" /></svg> Twitter</a>
     </li>
     <li class="social-linkedin">
-      <a href="https://www.linkedin.com/company/university-of-melbourne"><svg role="img" class="icon"><use xlink:href="#icon-linkedin" /></svg> LinkedIn</a>
+      <a href="https://www.linkedin.com/school/university-of-melbourne"><svg role="img" class="icon"><use xlink:href="#icon-linkedin" /></svg> LinkedIn</a>
     </li>
   </ul>
   <small>Phone: 13 MELB (13 6352) | International: +61 3 9035 5511</small>
