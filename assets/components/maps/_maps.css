@@ -7,4 +7,12 @@
       max-width: none;
     }
   }
+
+  .leaflet-control-attribution a {
+    color: inherit;
+
+    &.em {
+      color: #0078A8;
+    }
+  }
 }
