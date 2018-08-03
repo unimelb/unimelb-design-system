@@ -26,8 +26,8 @@ function LMaps(el, props) {
   this.redraw();
 
 	const credentials = {
-    style: 'maps-unimelb/cj1rdzyxl000d2rlbhzhdt62x',
-    token: 'pk.eyJ1IjoibWFwcy11bmltZWxiIiwiYSI6ImNqa2J3aDlwaDAzMmIzcnFtYm8xcnQwN2gifQ.CcmJEN3wgYOs0qclbPrw_w'
+    style: process.env.MAPBOXSTYLE,
+    token: process.env.MAPBOXTOKEN
   };
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/'+ credentials.style +'/tiles/256/{z}/{x}/{y}?access_token=' + credentials.token, {

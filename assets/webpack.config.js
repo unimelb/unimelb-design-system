@@ -78,7 +78,8 @@ module.exports = {
     new webpack.EnvironmentPlugin([
       'NODE_ENV',
       'CDNURL',
-      'GMAPSJSAPIKEY'
+      'MAPBOXSTYLE',
+      'MAPBOXTOKEN'
     ]),
     new ExtractTextPlugin({
       allChunks: true,
