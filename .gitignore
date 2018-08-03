@@ -6,6 +6,5 @@ node_modules/
 .env
 .ruby-version
 .node-version
-.nvmrc
 .idea
 npm-debug*.log
