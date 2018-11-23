@@ -1,5 +1,6 @@
 .uomcontent [role="main"] .image-gallery {
-  @mixin clearfix; /* for float layout while setting up gallery */
+  @mixin clearfix;
+  /* for float layout while setting up gallery */
   max-width: var(--w-lge);
   padding-left: 0;
   padding-right: 0;
@@ -7,19 +8,25 @@
   li {
     border: 5px solid transparent;
     display: block;
-    float: left; /* float layout while setting up gallery */
-    height: 0; /* use padding for responsive ratio */
+    float: left;
+    /* float layout while setting up gallery */
+    height: 0;
+    /* use padding for responsive ratio */
     list-style-type: none;
     margin: 0;
     max-width: none;
     overflow: hidden;
-    padding-bottom: 60%; /* responsive ratio + ensures all items  */
+    padding-bottom: 60%;
+    /* responsive ratio + ensures all items  */
     position: relative;
-    width: 100%; /* for landscape and panorama ratios */
+    width: 100%;
+    /* for landscape and panorama ratios */
 
-    &.portrait { width: 50%; }
+    &.portrait {
+      width: 50%;
+    }
 
-    & > a {
+    &>a {
       background-position: center;
       background-size: cover;
       bottom: 0;
@@ -47,8 +54,13 @@
 
       /* scale image and show icon + gradient */
       &:hover {
-        &::before { transform: scale(1.1); }
-        .image-gallery__icon { opacity: 1; }
+        &::before {
+          transform: scale(1.1);
+        }
+
+        .image-gallery__icon {
+          opacity: 1;
+        }
       }
     }
   }
@@ -68,7 +80,7 @@
     transition: opacity 0.3s ease-in-out 0.1s;
 
     /* centre icon */
-    & > svg {
+    &>svg {
       height: 2.5rem;
       margin-left: -1.25rem;
       margin-top: -1.25rem;
@@ -105,6 +117,7 @@
   img {
     display: block;
     width: 100%;
+    height: auto;
 
     /* hide image with JS when gallery set-up is complete (image becomes link background for cover layout) */
     &.hide {
@@ -117,8 +130,13 @@
       padding-bottom: 34%;
       width: 50%;
 
-      &.portrait { width: 25%; }
-      &.panorama { width: 75%; }
+      &.portrait {
+        width: 25%;
+      }
+
+      &.panorama {
+        width: 75%;
+      }
     }
   }
 
@@ -127,8 +145,13 @@
       padding-bottom: 17%;
       width: 25%;
 
-      &.portrait { width: 12.5%; }
-      &.panorama { width: 50%; }
+      &.portrait {
+        width: 12.5%;
+      }
+
+      &.panorama {
+        width: 50%;
+      }
     }
   }
 
@@ -142,8 +165,13 @@
         padding-bottom: 34%;
         width: 50%;
 
-        &.portrait { width: 25%; }
-        &.panorama { width: 75%; }
+        &.portrait {
+          width: 25%;
+        }
+
+        &.panorama {
+          width: 75%;
+        }
       }
     }
   }
@@ -157,8 +185,13 @@
         padding-bottom: 22.66%;
         width: 33.33%;
 
-        &.portrait { width: 16.665%; }
-        &.panorama { width: 66.66%; }
+        &.portrait {
+          width: 16.665%;
+        }
+
+        &.panorama {
+          width: 66.66%;
+        }
       }
     }
   }
