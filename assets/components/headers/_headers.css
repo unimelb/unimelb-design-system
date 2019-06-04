@@ -59,7 +59,7 @@
   & > header:first-child {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    background-color: var(--col-navy);
+    background-color: var(--col-background-primary-navy);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -120,11 +120,12 @@
     }
 
     h1 {
-      font-size: 2.0625rem;
+      font-size: 2rem;
+      font-family: var(--ff-noto);
       line-height: 3rem;
       padding-bottom: 0;
       max-width: var(--w-sml);
-      font-weight: var(--fw-thin);
+      font-weight: var(--fw-bold);
       margin: 0 auto;
       text-align: left;
 

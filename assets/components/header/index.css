@@ -224,7 +224,7 @@
     &.page-header-logo {
       height: 3.75rem;
       width: 3.75rem;
-      background-color: var(--col-darkblue);
+      background-color: var(--col-background-primary-navy);
       display: block;
       left: 0;
       padding: .5rem;

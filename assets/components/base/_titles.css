@@ -27,21 +27,23 @@
 }
 
 @define-mixin subtitle {
-  font-size: .9375rem;
+  font-size: 1.75rem;
   line-height: 1.5rem;
-  letter-spacing: .125rem;
   font-weight: var(--fw-bold);
-  text-transform: uppercase;
+  text-transform: none;
+  font-family: var(--ff-noto);
 }
 
 @define-mixin title {
   @mixin subtitle;
   text-align: center;
+  color: var(--col-background-primary-navy);
 
-  &::after {
+
+&::after {
     margin-top: 1.5rem;
     width: 5rem;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid var(--col-navy-light);
     content: '';
     display: block;
     margin-left: auto;

@@ -99,7 +99,7 @@
   .tabbed-nav {
     & > .full-width {
       height: 4rem;
-      background-color: var(--col-darkblue);
+      background-color: var(--col-background-primary-navy);
       border-bottom: 1px solid transparent;
       position: relative;
       text-align: center;
