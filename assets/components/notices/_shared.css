@@ -8,7 +8,7 @@
 }
 
 @define-mixin notice-info {
-  background-color: var(--col-lightestblue);
+  background-color: var(--col-navy-light);
   color: color(var(--col-lightestblue) lightness(-65%));
 
   a {

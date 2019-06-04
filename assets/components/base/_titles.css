@@ -43,7 +43,7 @@
 &::after {
     margin-top: 1.5rem;
     width: 5rem;
-    border-bottom: 2px solid var(--col-navy-light);
+    border-bottom: 2px solid var(--col-navy-mid);
     content: '';
     display: block;
     margin-left: auto;

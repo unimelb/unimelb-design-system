@@ -349,6 +349,7 @@
   /* Panels container (must be focusable - i.e. have `tabindex="-1"`) */
   &__panels {
     outline: 0;
+     background-color: rgb(247, 247, 247);
   }
 
   /* List of tabs in sidebar */
@@ -384,7 +385,7 @@
 
     &[aria-selected="true"] {
       background-color: #fff;
-      border-color: var(--col-lighterblue);
+      border-color: var(--col-background-primary-navy);
     }
 
     &:hover {

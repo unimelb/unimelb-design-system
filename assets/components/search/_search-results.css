@@ -9,11 +9,13 @@
   }
 
   h2.search-title {
-    font-size: .75rem;
     line-height: 1.5rem;
     padding-bottom: 1rem;
-    color: var(--col-midgray);
+    color: var(--col-background-primary-navy);
     padding-top: 0;
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: normal;
   }
 
   ol.search-results {
@@ -27,12 +29,14 @@
 
     & > li {
       @mixin clearfix;
-      padding-bottom: 1.5rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid color(#000 alpha(10%));
-      list-style-type: none;
-      margin-left: 0;
-      width: auto;
+        padding: 1.5rem;
+        border-radius: 6px;
+        box-shadow: 0 2px 3px -1px rgba(0, 0, 0, .4);
+        border-left: 10px solid rgb(235, 236, 236);
+        background-color: white;
+        border-color: rgb(231, 112, 82);
+        margin-bottom: 2rem;
+        list-style-type: none;
 
       &:last-child {
         padding-bottom: 1.5rem;
@@ -127,14 +131,17 @@
       padding-bottom: .75rem;
       font-weight: var(--fw-regular);
       width: auto;
+      font-weight: 600;
     }
 
     p {
-      font-size: .9375rem;
+      font-size: 1rem;
       line-height: 1.5rem;
       padding-bottom: 0;
       color: #000;
       width: auto;
+      color: var(--col-background-primary-navy);
+
 
       @media screen and (--bp-desktop) {
         font-size: 1rem;
@@ -142,11 +149,13 @@
       }
 
       &.url {
-        font-size: .75rem;
+        font-size: 1rem;
+        font-style: italic;
+        padding-top: .5rem;
         line-height: 1.5rem;
-        color: var(--col-lighterblue);
 
         & > a {
+          color: #22765F;
           @mixin ellipsis;
         }
       }
