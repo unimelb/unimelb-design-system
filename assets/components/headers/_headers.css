@@ -139,7 +139,7 @@
       }
 
       @media screen and (--bp-wide) {
-        font-size: 3.4375rem;
+        font-size: 2.8125rem;
         line-height: 3.75rem;
       }
     }

@@ -9,14 +9,14 @@
   cursor: pointer;
   display: inline-block;
   font-style: normal;
-  font-weight: var(--fw-bold);
+  font-weight: normal;
   letter-spacing: 2px;
   margin: 20px 0;
   outline-color: #000;
   outline-offset: 1px;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
   vertical-align: bottom;
 
   &[disabled],
