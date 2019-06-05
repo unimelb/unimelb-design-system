@@ -284,7 +284,7 @@
     height: 2.5rem;
     line-height: 2.5rem;
     padding: 0 .625rem .3125rem .625rem;
-    font-weight: var(--fw-light);
+    font-weight: var(--fw-regular);
 
     @media screen and (--bp-desktop) {
       height: 4.6875rem;
@@ -421,7 +421,7 @@
       }
 
       span {
-        color: inherit;
+        color: var(--col-background-primary-navy);
       }
     }
   }
@@ -466,7 +466,7 @@
   }
 
   span {
-    font-size: .9375rem;
+    font-size: 1rem;
     height: auto;
     line-height: 1;
     padding: 0;
