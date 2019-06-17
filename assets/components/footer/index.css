@@ -1,7 +1,7 @@
 .uomcontent .page-footer {
   @mixin normalise;
   font-size: 1.25rem;
-  background-color: var(--col-background-secondary-navy);
+  background-color: rgba(var(--col-brand));
   clear: left;
   color: #fff;
   font-family: var(--ff-sans);
@@ -217,7 +217,7 @@
       }
 
       a {
-        font-size: 1rem;
+        font-size: 1.15rem;
         color: var(--col-blue-light);
       }
     }

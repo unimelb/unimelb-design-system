@@ -10,6 +10,7 @@
   --col-navy-mid: #abbed5;
   --col-navy-mid-2: 93, 130, 173;
   --col-navy-light: #f2f5f9;
+  --col-brand: 9, 65, 131;
 
   /* Supporting palette */
   --col-black-dark: 0, 0, 0;
@@ -32,7 +33,6 @@
   --col-blue-dark: 53, 101, 158;
   --col-blue-mid-2: 64, 116, 178;
   --col-blue-mid-1: 173, 205, 240;
-  --col-blue-light: 205, 230, 255;
   --col-orange-dark: 185, 61, 28;
   --col-orange-mid-2: 231, 112, 82;
   --col-orange-mid-1: 255, 164, 120;

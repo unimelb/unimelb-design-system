@@ -134,12 +134,10 @@
 
           &::after {
             font-size: 2rem;
-            left: 5rem;
             content: '\203A';
-            line-height: 0;
-            top: 3px;
-            display: inline-block;
-            position: relative;
+            right: 0;
+            top: -3px;
+            position: absolute;
           }
         }
       }
@@ -206,9 +204,9 @@
     text-align: center;
 
     span {
-      font-size: 1rem;
-      font-weight: var(--fw-regular);
-      font-family: var(--ff-sans);
+      font-size: 1.75rem;
+      font-weight: var(--fw-bold);
+      font-family: var(--ff-noto);
       line-height: 1.5;
       left: 0;
       transform: translateY(-50%);
