@@ -1,5 +1,5 @@
 @define-mixin raisedbutton {
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: .8125rem;
   padding: .9375rem 1.25rem;
   background-color: var(--col-lighterblue);
@@ -155,7 +155,7 @@
 }
 
 @define-mixin outlinebutton {
-  border-radius: 5px;
+  border-radius: 3px;
   border-width: 2px;
   font-size: .8125rem;
   letter-spacing: .0625rem;
@@ -284,9 +284,12 @@
   .button-hero-inverse {
     @mixin outlinebutton;
     @mixin outlinearrow;
-    border-color: #fff;
+    border-color: rgba(255,255,255,.3);
     color: #fff;
     outline-color: currentColor;
+    &:hover{
+      border-color: #fff;
+    }
   }
 
   .button-fill {

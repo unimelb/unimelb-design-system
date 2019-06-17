@@ -8,8 +8,47 @@
   --col-background-secondary-navy: #033a7b;
   --col-blue-light: #cde6ff;
   --col-navy-mid: #abbed5;
+  --col-navy-mid-2: 93, 130, 173;
   --col-navy-light: #f2f5f9;
 
+  /* Supporting palette */
+  --col-black-dark: 0, 0, 0;
+  --col-black-mid-2: 153, 162, 170;
+  --col-black-mid-1: 198, 200, 202;
+  --col-black-light: 235, 236, 236;
+  --col-teal-dark: 2, 112, 127;
+  --col-teal-mid-2: 63, 167, 194;
+  --col-teal-mid-1: 124, 189, 206;
+  --col-teal-light: 203, 232, 239;
+
+  /* Note - there is no dark yellow in the brand palette */
+  --col-yellow-mid-2: 236, 174, 101;
+  --col-yellow-mid-1: 255, 220, 162;
+  --col-yellow-light: 253, 242, 223;
+  --col-emerald-dark: 34, 118, 95;
+  --col-emerald-mid-2: 89, 177, 127;
+  --col-emerald-mid-1: 152, 214, 195;
+  --col-emerald-light: 213, 242, 230;
+  --col-blue-dark: 53, 101, 158;
+  --col-blue-mid-2: 64, 116, 178;
+  --col-blue-mid-1: 173, 205, 240;
+  --col-blue-light: 205, 230, 255;
+  --col-orange-dark: 185, 61, 28;
+  --col-orange-mid-2: 231, 112, 82;
+  --col-orange-mid-1: 255, 164, 120;
+  --col-orange-light: 255, 220, 186;
+  --col-green-dark: 70, 119, 73;
+  --col-green-mid-2: 161, 209, 114;
+  --col-green-mid-1: 218, 226, 153;
+  --col-green-light: 243, 248, 215;
+  --col-purple-dark: 87, 96, 164;
+  --col-purple-mid-2: 114, 131, 191;
+  --col-purple-mid-1: 176, 188, 225;
+  --col-purple-light: 222, 224, 248;
+  --col-pink-dark: 152, 65, 64;
+  --col-pink-mid-2: 238, 136, 137;
+  --col-pink-mid-1: 255, 189, 204;
+  --col-pink-light: 255, 223, 230;
 
   --col-darkgray: #333;
   --col-midgray: #666;
