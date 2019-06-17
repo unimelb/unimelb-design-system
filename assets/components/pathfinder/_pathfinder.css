@@ -218,6 +218,7 @@
 
   a {
     padding-bottom: 3rem;
+    padding-top: 2rem;
     max-width: 21.875rem;
     background-color: var(--col-background-primary-navy);
     margin: 0 auto;
