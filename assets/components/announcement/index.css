@@ -16,7 +16,7 @@
 
     &__message {
       padding: 1.25rem 3.125rem 1.25rem .9375rem;
-      background-color: var(--col-lighterblue);
+      background-color: var(--col-brighterblue);
       color: #fff;
       display: block;
       text-align: left;
@@ -85,7 +85,7 @@
 
       &:hover {
         background-color: #fff;
-        color: var(--col-lighterblue);
+        color: var(--col-brighterblue);
       }
 
       & > [data-icon="close"] {

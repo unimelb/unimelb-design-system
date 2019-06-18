@@ -66,7 +66,7 @@ body {
     @media screen and (--bp-desktop) {
       &:hover,
       &:focus {
-        background-color: var(--col-lighterblue);
+        background-color: var(--col-brighterblue);
         text-decoration: none;
         transform: scale(1.2);
       }

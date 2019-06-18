@@ -91,12 +91,12 @@
         position: relative;
 
         &:hover {
-          color: var(--col-lighterblue);
+          color: var(--col-brighterblue);
           text-decoration: underline;
         }
 
         &:focus {
-          color: var(--col-lighterblue);
+          color: var(--col-brighterblue);
         }
 
         &::before {
@@ -138,10 +138,10 @@
       &.accordion__visible {
         margin-top: -1px;
         border-top: 1px solid;
-        border-color: var(--col-lighterblue);
+        border-color: var(--col-brighterblue);
 
         .accordion__title {
-          color: var(--col-lighterblue);
+          color: var(--col-brighterblue);
 
           &::before {
             transform: rotate(45deg);
@@ -160,7 +160,7 @@
       border-bottom-color: color(var(--col-lightblue) lightness(+25%));
 
       &.accordion__visible {
-        border-color: var(--col-lighterblue);
+        border-color: var(--col-brighterblue);
       }
     }
   }
@@ -191,7 +191,7 @@
 
         &.accordion__visible::before,
         &.accordion__visible .accordion__title {
-          color: var(--col-lighterblue);
+          color: var(--col-brighterblue);
         }
 
         div.highlight {

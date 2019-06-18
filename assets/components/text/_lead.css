@@ -1,14 +1,13 @@
 .uomcontent [role="main"] {
   .lead {
-    font-size: 1.1875rem;
-    line-height: 1.5rem;
+    font-size: calc(20/16rem);
+    line-height: 1.5;
     padding-top: 4.5rem;
     padding-bottom: 4.5rem;
     max-width: var(--w-mid);
     background: transparent;
-    color: #000;
     filter: none;
-    font-weight: var(--fw-light);
+    font-weight: var(--fw-bold);
     margin: 0 auto;
     padding-left: 3%;
     padding-right: 3%;
@@ -31,6 +30,15 @@
       }
     }
 
+    /* TODO Icelab: adjust sizes for all possible lead children manually */
+    * {
+      font-size: calc(20/16rem);
+
+      @media screen and (--bp-desktop) {
+        font-size: calc(22/16rem);
+      }
+    }
+
     & + section {
       padding-top: 0;
     }
@@ -42,13 +50,6 @@
     p {
       padding-bottom: 0;
       max-width: var(--w-mid);
-      color: #000;
-      font-style: italic;
-    }
-
-    @media screen and (--bp-desktop) {
-      font-size: 1.375rem;
-      line-height: 2.25rem;
     }
 
     &.left {

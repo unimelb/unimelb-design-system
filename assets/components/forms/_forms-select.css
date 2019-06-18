@@ -1,9 +1,9 @@
 @define-mixin theme {
-  background-color: var(--col-lighterblue);
+  background-color: var(--col-brighterblue);
   background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
   background-repeat: no-repeat;
   background-position: 99% center;
-  border: 1px solid var(--col-lighterblue);
+  border: 1px solid var(--col-brighterblue);
   color: #fff;
   cursor: pointer;
   line-height: 1.55;
@@ -39,23 +39,23 @@
   &.alt {
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iIzAwNzZkZSI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
     background-color: #fff;
-    border-color: var(--col-lighterblue);
-    color: var(--col-lighterblue);
+    border-color: var(--col-brighterblue);
+    color: var(--col-brighterblue);
 
     option {
-      color: var(--col-lighterblue);
+      color: var(--col-brighterblue);
     }
   }
 
   &.alt + svg.icon {
-    color: var(--col-lighterblue);
-    fill: var(--col-lighterblue);
+    color: var(--col-brighterblue);
+    fill: var(--col-brighterblue);
   }
 
   &.alt:hover {
     background-color: var(--col-lightestblue);
-    border-color: var(--col-lighterblue);
-    color: var(--col-lighterblue);
+    border-color: var(--col-brighterblue);
+    color: var(--col-brighterblue);
   }
 
   &.clear,
@@ -122,8 +122,8 @@
 
   &:hover select.alt {
     background-color: var(--col-lightestblue);
-    border-color: var(--col-lighterblue);
-    color: var(--col-lighterblue);
+    border-color: var(--col-brighterblue);
+    color: var(--col-brighterblue);
   }
 
   &:hover select.clear,
@@ -190,14 +190,14 @@
     select {
       &,
       option {
-        background-color: var(--col-lighterblue) !important;
+        background-color: var(--col-brighterblue) !important;
         color: #fff !important;
       }
 
       &.alt,
       &.alt option {
         background-color: #fff !important;
-        color: var(--col-lighterblue) !important;
+        color: var(--col-brighterblue) !important;
       }
 
       &.clear,

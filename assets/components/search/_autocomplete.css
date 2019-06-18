@@ -29,7 +29,7 @@
 
       &:hover,
       &:focus {
-        background-color: var(--col-lighterblue);
+        background-color: var(--col-brighterblue);
         color: #fff;
       }
     }

@@ -31,12 +31,12 @@
 
       &:hover,
       &:focus {
-        color: var(--col-lighterblue);
+        color: var(--col-brighterblue);
       }
 
       &[data-current] {
-        border-bottom: 2px solid var(--col-lighterblue);
-        color: var(--col-lighterblue);
+        border-bottom: 2px solid var(--col-brighterblue);
+        color: var(--col-brighterblue);
       }
     }
   }
@@ -244,16 +244,10 @@
 
       section.lead {
         background: transparent;
-        color: #000;
         filter: none;
-        font-weight: var(--fw-light);
         margin: 0 auto;
         max-width: var(--w-mid);
         position: static;
-
-        p {
-          color: #000;
-        }
       }
     }
 
@@ -384,7 +378,7 @@
 
     &[aria-selected="true"] {
       background-color: #fff;
-      border-color: var(--col-lighterblue);
+      border-color: var(--col-brighterblue);
     }
 
     &:hover {

@@ -45,7 +45,7 @@
   }
 
   .accordion__title {
-    color: var(--col-lighterblue);
+    color: var(--col-brighterblue);
 
     &:hover {
       text-decoration: underline;

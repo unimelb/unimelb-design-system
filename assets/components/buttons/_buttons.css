@@ -2,9 +2,9 @@
   border-radius: 5px;
   font-size: .8125rem;
   padding: .9375rem 1.25rem;
-  background-color: var(--col-lighterblue);
+  background-color: var(--col-brighterblue);
   border: 0;
-  border-bottom: 5px solid color(var(--col-lighterblue) lightness(-10%));
+  border-bottom: 5px solid color(var(--col-brighterblue) lightness(-10%));
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -91,7 +91,7 @@
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: color(var(--col-lighterblue) lightness(-10%));
+    background-color: color(var(--col-brighterblue) lightness(-10%));
   }
 
   &:active {
@@ -177,7 +177,7 @@
 
   &:hover,
   &:focus {
-    background-color: var(--col-lighterblue);
+    background-color: var(--col-brighterblue);
     color: #fff;
     border-color: transparent;
   }
@@ -293,7 +293,7 @@
     width: 100%;
 
     &:hover {
-      background-color: var(--col-lighterblue);
+      background-color: var(--col-brighterblue);
       color: #fff;
     }
 

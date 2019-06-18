@@ -117,7 +117,7 @@
           border-top: 1px solid var(--col-lightergray);
 
           &.accordion__visible {
-            border-top: 1px solid var(--col-lighterblue);
+            border-top: 1px solid var(--col-brighterblue);
           }
         }
       }
@@ -190,7 +190,7 @@
           border-top: 1px solid color(var(--col-lightblue) lightness(+25%));
 
           &.accordion__visible {
-            border-top: 1px solid var(--col-lighterblue);
+            border-top: 1px solid var(--col-brighterblue);
           }
         }
       }

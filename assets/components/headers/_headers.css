@@ -124,7 +124,7 @@
       line-height: 3rem;
       padding-bottom: 0;
       max-width: var(--w-sml);
-      font-weight: var(--fw-thin);
+      font-weight: var(--fw-bolder);
       margin: 0 auto;
       text-align: left;
 
@@ -145,7 +145,7 @@
 
     p {
       max-width: var(--w-sml);
-      font-weight: var(--fw-thin);
+      font-weight: var(--fw-bold);
       margin: 0 auto;
 
       @media screen and (--bp-desktop) {
@@ -213,7 +213,7 @@
     background-color: transparent;
   }
   &.filter-blue header {
-    background-color: color(var(--col-lighterblue) alpha(50%));
+    background-color: color(var(--col-brighterblue) alpha(50%));
   }
   &.filter-green header {
     background-color: color(var(--col-green) alpha(50%));

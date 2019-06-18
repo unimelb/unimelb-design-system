@@ -12,13 +12,13 @@
   a {
     font-size: .875rem;
     padding-right: .625rem;
-    color: var(--col-lighterblue);
+    color: var(--col-brighterblue);
     display: inline-block;
     vertical-align: top;
     width: 50%;
 
     &:hover {
-      color: color(var(--col-lighterblue) lightness(-10%));
+      color: color(var(--col-brighterblue) lightness(-10%));
       text-decoration: underline;
     }
   }
@@ -56,7 +56,7 @@
     text-decoration: none;
 
     &:hover {
-      color: var(--col-lighterblue);
+      color: var(--col-brighterblue);
     }
   }
 
@@ -79,7 +79,7 @@
 
     li {
       border-bottom: 1px solid color(var(--col-lightgray) lightness(-5%));
-      border-left: 5px solid var(--col-lighterblue);
+      border-left: 5px solid var(--col-brighterblue);
       margin-left: -.9375rem;
       padding-bottom: 1.25rem;
       padding-top: 1.25rem;
@@ -114,12 +114,12 @@
   }
 
   h2 {
-    border-left: 5px solid var(--col-lighterblue);
+    border-left: 5px solid var(--col-brighterblue);
     font-size: 1.625rem;
     padding-bottom: .625rem;
     padding-right: .9375rem;
     border-right: 0 none;
-    color: var(--col-lighterblue);
+    color: var(--col-brighterblue);
     margin: 0 3% 0 0;
     padding-top: 0;
     padding-left: 3%;
@@ -131,7 +131,7 @@
     }
 
     @media screen and (--bp-desktop) {
-      border-right: 5px solid var(--col-lighterblue);
+      border-right: 5px solid var(--col-brighterblue);
       font-size: .875rem;
       width: 8.75rem;
       border-left: 0 none;
@@ -184,7 +184,7 @@
   }
 
   .time {
-    color: var(--col-lighterblue);
+    color: var(--col-brighterblue);
     display: block;
     font-weight: var(--fw-regular);
     margin: 0 3%;
@@ -195,7 +195,7 @@
       margin-top: -.25rem;
       width: 1.25rem;
       display: inline-block;
-      fill: var(--col-lighterblue);
+      fill: var(--col-brighterblue);
       vertical-align: middle;
     }
 

@@ -3,9 +3,9 @@
     font-size: 1.75rem;
     margin-bottom: 1.875rem;
     padding-bottom: 1.875rem;
-    color: var(--col-lighterblue);
+    color: var(--col-brighterblue);
     display: block;
-    font-family: "Arial Black", var(--ff-sans);
+    font-family: var(--ff-serif);
     font-style: normal;
     font-weight: 700;
     line-height: 1.2;
@@ -28,18 +28,25 @@
     }
 
     cite {
-      font-size: 1.25rem;
-      margin-top: .9375rem;
-      padding-bottom: .9375rem;
-      padding-top: .9375rem;
-      border-top: 4px solid var(--col-lighterblue);
-      color: var(--col-lighterblue);
+      color: var(--col-brighterblue);
       display: block;
       float: right;
       font-family: var(--ff-sans);
+      font-size: 1.25rem;
       font-style: normal;
-      font-weight: var(--fw-light);
+      font-weight: var(--fw-bold);
+      margin-top: calc(26/16rem);
+      padding-bottom: calc(20/16rem);
+      padding-top: calc(24/16rem);
+      position: relative;
       width: 100%;
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: calc(50/16rem);
+        border-top: 2px solid currentColor;
+      }
     }
 
 
@@ -81,20 +88,19 @@
 
       @media screen and (--bp-wide) {
         margin-right: -11.25rem;
-        margin-left: 0;
       }
     }
   }
 }
 
 @define-mixin quote-style {
-  font-size: 6.25rem;
-  margin-left: -3.125rem;
-  margin-right: .625rem;
-  color: color(var(--col-lightgray) lightness(-10%));
   content: open-quote;
+  display: inline-block;
+  font-size: 2.75rem;
   line-height: .1em;
-  vertical-align: -.333em;
+  margin-left: -1.95rem;
+  margin-right: .625rem;
+  vertical-align: -.125em;
 }
 
 .uomcontent [role="main"] blockquote {
@@ -102,10 +108,9 @@
   margin-top: 0;
 
   &.blockquote-classic {
-    font-size: 1.1875rem;
+    font-size: 1rem;
     line-height: 1.5rem;
-    padding-top: 1.5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 3.375rem;
     max-width: var(--w-mid);
     padding-left: .9375rem;
     padding-right: .9375rem;
@@ -126,25 +131,22 @@
 
     &::after {
       content: close-quote;
-      margin-left: 0;
-      margin-right: 0;
-      vertical-align: -.667em;
+      margin-left: 0.6rem;
+      margin-bottom: 2rem;
     }
 
     cite {
-      font-size: .75rem;
+      font-size: 1rem;
       line-height: 1.5rem;
       border: 0;
-      color: color(var(--col-midgray) lightness(+20%));
       float: left;
       font-family: var(--ff-sans);
       font-style: normal;
-      font-weight: var(--fw-light);
+      font-weight: var(--fw-bold);
       text-align: left;
       width: 100%;
 
       &::before {
-        padding-right: .3125rem;
         content: '\2014';
       }
     }

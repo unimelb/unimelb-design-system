@@ -8,12 +8,9 @@
 
 body {
   background-color: var(--col-navy);
-  color: #000;
+  color: var(--col-darkblue);
   font-family: var(--ff-sans);
-
-  @media screen and (--bp-desktop) {
-    line-height: 1.68;
-  }
+  -webkit-font-smoothing: antialiased;
 }
 
 .clearfix {
@@ -23,7 +20,6 @@ body {
 .spacer {
   padding: 0 .9375rem;
 }
-
 
 .uomcontent [role="main"] {
   .hide-from-all {
@@ -185,7 +181,7 @@ body {
       }
 
       &:hover {
-        background-color: var(--col-lighterblue);
+        background-color: var(--col-brighterblue);
         transition: all 0.2s linear;
         transform: scale(1.1);
       }
@@ -233,10 +229,6 @@ body {
         padding-top: 0;
       }
     }
-  }
-
-  @media screen and (--bp-desktop) {
-    font-weight: var(--fw-light);
   }
 
   .aside {
@@ -403,7 +395,6 @@ body {
       font-size: .875rem;
       background-color: var(--col-paleblue);
       color: var(--col-darkgray);
-      line-height: 1.68;
     }
 
     &__main__inner {

@@ -52,7 +52,7 @@
   font-size: .8125rem;
   height: 2.8125rem;
   padding: 0 .9375rem;
-  background-color: var(--col-lighterblue);
+  background-color: var(--col-brighterblue);
   border: 0 none;
   color: #fff;
   cursor: pointer;
@@ -61,7 +61,7 @@
   text-transform: uppercase;
 
   &:hover {
-    background-color: color(var(--col-lighterblue) lightness(-10%));
+    background-color: color(var(--col-brighterblue) lightness(-10%));
   }
 
   &:active {
@@ -324,7 +324,7 @@
 
     @-moz-document url-prefix() {
       margin-top: .625rem;
-      border: 1px solid var(--col-lighterblue);
+      border: 1px solid var(--col-brighterblue);
       border-radius: 3px;
       overflow: hidden;
 

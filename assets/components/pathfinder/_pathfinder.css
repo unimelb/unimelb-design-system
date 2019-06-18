@@ -11,7 +11,7 @@
     a {
       background-color: #fff;
       background-color: color(#fff alpha(90%));
-      border-bottom: 3px solid var(--col-lighterblue);
+      border-bottom: 3px solid var(--col-brighterblue);
       color: #000;
       outline-color: #fff;
 
@@ -31,7 +31,7 @@
       }
 
       .button-small {
-        background-color: var(--col-lighterblue);
+        background-color: var(--col-brighterblue);
       }
     }
 
@@ -238,7 +238,7 @@
 
     &.featured {
       margin-bottom: -.9375rem;
-      background-color: color(var(--col-lighterblue) lightness(-5%));
+      background-color: color(var(--col-brighterblue) lightness(-5%));
       color: #000;
 
       transform: scale(1.06);
@@ -246,14 +246,14 @@
 
       &:hover,
       &:focus {
-        background-color: color(var(--col-lighterblue) lightness(+2%));
+        background-color: color(var(--col-brighterblue) lightness(+2%));
         box-shadow: 0 0 10px color(#000 alpha(50%));
         transform: scale(1.07);
         z-index: 1;
       }
 
       .button-small {
-        background-color: color(var(--col-lighterblue) lightness(-15%));
+        background-color: color(var(--col-brighterblue) lightness(-15%));
       }
     }
   }

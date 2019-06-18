@@ -85,7 +85,7 @@
       /* underline headings */
       &__heading {
         margin-bottom: .5rem;
-        color: var(--col-lighterblue);
+        color: var(--col-brighterblue);
         font-size: 1.25em;
         text-decoration: underline;
       }

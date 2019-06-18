@@ -3,7 +3,7 @@
   font-size: .8125rem;
   height: 2.8125rem;
   padding: 0 .9375rem;
-  background-color: var(--col-lighterblue);
+  background-color: var(--col-brighterblue);
   border: 0 none;
   color: #fff;
   cursor: pointer;
@@ -14,7 +14,7 @@
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: color(var(--col-lighterblue) lightness(-10%));
+    background-color: color(var(--col-brighterblue) lightness(-10%));
   }
 
   &:active {
@@ -278,11 +278,11 @@
         height: 3.75rem;
         line-height: 2.25rem;
         padding: .9375rem;
-        border-color: var(--col-lighterblue);
+        border-color: var(--col-brighterblue);
 
         &:focus {
           background-color: #fff;
-          color: var(--col-lighterblue);
+          color: var(--col-brighterblue);
         }
       }
 
@@ -373,13 +373,13 @@
     }
 
     &:focus + label span::before {
-      border-color: var(--col-lighterblue);
+      border-color: var(--col-brighterblue);
     }
   }
 
   input[type="checkbox"]:not(.unstyled) + label {
     &::after {
-      border: 3px solid var(--col-lighterblue);
+      border: 3px solid var(--col-brighterblue);
       border-right: 0 none;
       border-top: 0 none;
       height: 5px;
@@ -394,7 +394,7 @@
 
   input[type="radio"]:not(.unstyled) + label {
     &::after {
-      background-color: var(--col-lighterblue);
+      background-color: var(--col-brighterblue);
       border-radius: 50%;
       height: 12px;
       width: 12px;

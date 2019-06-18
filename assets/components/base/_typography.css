@@ -47,7 +47,6 @@
   table {
     @mixin wrapper;
     max-width: var(--w-sml);
-    font-weight: var(--fw-light);
     padding: 0;
 
     @media screen and (--bp-tablet) {
@@ -59,23 +58,22 @@
     font-size: 1.625rem;
     line-height: 2.25rem;
     padding-bottom: 1.5rem;
-    font-weight: var(--fw-light);
+    font-weight: var(--fw-bold);
+    font-family: var(--ff-serif);
 
     @media screen and (--bp-desktop) {
-      font-size: 2.0625rem;
+      font-size: 2rem;
       line-height: 3rem;
     }
   }
 
   h2 {
-    font-size: .9375rem;
-    line-height: 1.5rem;
-    letter-spacing: .0625rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
     clear: left;
+    font-family: var(--ff-serif);
+    font-size: 1.4rem;
     font-weight: var(--fw-bold);
-    text-transform: uppercase;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
   }
 
   h3 {
@@ -91,8 +89,11 @@
 
   p,
   li {
-    letter-spacing: .0125rem;
     padding-bottom: 1.5rem;
+
+    @media screen and (--bp-desktop) {
+      font-size: calc(18/16rem);
+    }
   }
 
   ol,
@@ -245,17 +246,17 @@
       }
 
       h2 {
-        font-size: 1.625rem;
+        font-size: calc(32/16rem);
         line-height: 2.25rem;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
         font-weight: var(--fw-light);
         text-transform: none;
 
-        @media screen and (--bp-desktop) {
+        /* @media screen and (--bp-desktop) {
           font-size: 2.0625rem;
           line-height: 3rem;
-        }
+        } */
       }
 
       ol,
@@ -510,12 +511,12 @@
   }
 
   a {
-    color: var(--col-lighterblue);
+    color: var(--col-brighterblue);
     text-decoration: underline;
 
     &:hover,
     &:focus {
-      color: color(var(--col-lighterblue) lightness(-15%));
+      color: color(var(--col-brighterblue) lightness(-15%));
       text-decoration: none;
     }
 

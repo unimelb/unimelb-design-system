@@ -7,7 +7,7 @@
 .uom-prompt {
   padding: 1rem 3.5rem .5rem;
   animation: appear-bottom .5s backwards;
-  background-color: var(--col-lighterblue);
+  background-color: var(--col-brighterblue);
   bottom: 0;
   color: #fff;
   font-family: Roboto, Helvetica, Arial, sans-serif;
@@ -63,7 +63,7 @@
 
     &:hover {
       background-color: #fff;
-      color: var(--col-lighterblue);
+      color: var(--col-brighterblue);
     }
   }
 
@@ -102,7 +102,7 @@
 
         &:hover {
           background-color: #fff;
-          color: var(--col-lighterblue);
+          color: var(--col-brighterblue);
         }
 
         @media screen and (--bp-desktop) {
