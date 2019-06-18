@@ -13,7 +13,7 @@ class App < Roda # rubocop:disable Metrics/ClassLength
   plugin :render, engine: 'slim'
 
   opts[:version] = ENV['VERSION']
-  opts[:major_version] = /^v[0-9]+/.match(ENV['VERSION'])[0]
+  # opts[:major_version] = /^v[0-9]+/.match(ENV['VERSION'])[0]
   opts[:cdnurl] = ENV['CDNURL']
 
   opts[:components_path] = File.join(
