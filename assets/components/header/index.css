@@ -1,8 +1,7 @@
 @define-mixin headerblock {
   font-size: .9375rem;
-  color: var(--col-darkblue);
+  color: #fff;
   display: inline-block;
-  font-weight: var(--fw-regular);
   vertical-align: middle;
 }
 
@@ -11,7 +10,6 @@
   margin-top: .3125rem;
   padding: .5rem .625rem;
   font-family: var(--ff-sans);
-  font-weight: var(--fw-light);
 
   &.invalid {
     background-color: #fff;
@@ -91,8 +89,8 @@
   @mixin normalise;
   font-size: 1.25rem;
   height: 3.75rem;
-  background-color: #fff;
-  color: #000;
+  background-color: var(--col-darkblue);
+  color: #fff;
   font-family: var(--ff-sans);
   position: relative;
   top: 0;
@@ -105,7 +103,7 @@
   }
 
   @media screen and (--bp-desktop) {
-    height: 5.625rem;
+    height: calc(115/16rem);
     position: absolute;
   }
 
@@ -117,7 +115,7 @@
   @media screen and (--bp-desktop) {
     &.fixed:not(.floating) {
       height: 2.5rem;
-      background-color: #fff;
+      background-color: var(--col-darkblue);
       position: fixed;
       width: 100%;
 
@@ -152,7 +150,7 @@
         height: 2.5rem;
         line-height: 2.5rem;
         background-color: transparent;
-        box-shadow: 0 3px 6px -3px color(#000 alpha(30%));
+        /* box-shadow: 0 3px 6px -3px color(#000 alpha(30%)); */
         width: 100%;
       }
 
@@ -173,8 +171,8 @@
       }
 
       .page-header-tools .page-header-icon {
+        font-size: calc(12/16rem);
         height: 2.5rem;
-        border-left-color: var(--col-lightgray);
         line-height: 1;
         vertical-align: top;
 
@@ -190,8 +188,7 @@
 
   header {
     height: 3.75rem;
-    background: #fff;
-    box-shadow: 0 6px 6px -3px color(#000 alpha(30%));
+    background-color: var(--col-darkblue);
     display: table;
     overflow: visible;
     padding: 0;
@@ -200,7 +197,7 @@
     z-index: 3;
 
     @media screen and (--bp-desktop) {
-      height: 5.625rem;
+      height: calc(115/16rem);
       border-bottom: 0 none;
     }
   }
@@ -209,7 +206,6 @@
     @mixin headerblock;
     height: 3.75rem;
     line-height: 3.75rem;
-    font-weight: var(--fw-light);
     text-decoration: none;
 
     &:hover,
@@ -240,13 +236,13 @@
     }
 
     @media screen and (--bp-desktop) {
-      height: 5.625rem;
-      line-height: 5.625rem;
+      height: calc(115/16rem);
+      line-height: calc(115/16rem);
 
       &.page-header-logo {
-        margin-left: 2.5rem;
-        height: 8.75rem;
-        width: 8.75rem;
+        margin-left: calc(25/16rem);
+        height: calc(115/16rem);
+        width: calc(115/16rem);
         padding: 1.25rem;
         position: absolute;
       }
@@ -284,7 +280,6 @@
     height: 2.5rem;
     line-height: 2.5rem;
     padding: 0 .625rem .3125rem .625rem;
-    font-weight: var(--fw-light);
 
     @media screen and (--bp-desktop) {
       height: 4.6875rem;
@@ -371,7 +366,7 @@
   }
 
   @media screen and (--bp-desktop) {
-    height: 5.625rem;
+    height: calc(115/16rem);
     padding-left: 12.8125rem;
     margin-right: 16.25rem;
     display: block;
@@ -405,14 +400,14 @@
     }
 
     a {
-      color: var(--col-darkblue);
+      color: var(--col-lightestblue);
 
       &:hover,
       &:focus {
-        color: var(--col-midblue);
+        color: #fff;
 
         .icon {
-          fill: var(--col-midblue);
+          fill: #fff;
         }
       }
 
@@ -437,36 +432,45 @@
 
   a {
     color: #fff;
-    font-weight: var(--fw-light);
   }
 }
 
 .uomcontent .page-header-navigation ol.page-local-history {
-  line-height: 5.625rem;
+  line-height: calc(115/16rem);
   list-style-type: none;
 
   li {
-    font-size: .9375rem;
-    padding-right: .625rem;
+    font-size: calc(17/16rem);
+    padding-right: calc(13/16rem);
     display: inline-block;
     width: auto;
 
     &::after {
-      padding-left: .625rem;
-      content: '/';
       color: var(--col-darkblue);
+      border-right: 2px solid rgba(255, 255, 255, 0.6);
+      border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+      content: '';
       display: inline-block;
-      font-weight: var(--fw-light);
+      height: .4em;
+      margin-left: calc(12/16rem);
+      transform: rotate(-45deg);
       vertical-align: middle;
+      width: .4em;
     }
 
     &:last-child::after {
       display: none;
     }
+
+    &:last-child {
+      span {
+        font-weight: var(--fw-bold);
+      }
+    }
   }
 
   span {
-    font-size: .9375rem;
+    font-size: calc(17/16rem);
     height: auto;
     line-height: 1;
     padding: 0;
@@ -494,7 +498,7 @@
   z-index: 100;
 
   @media screen and (--bp-desktop) {
-    margin-top: 5.625rem;
+    margin-top: calc(115/16rem);
   }
 }
 
@@ -524,7 +528,7 @@
       }
 
       .page-header-icon {
-        height: 5.625rem;
+        height: calc(115/16rem);
         line-height: 1;
         vertical-align: top;
       }
@@ -548,7 +552,7 @@
   }
 
   @media screen and (--bp-desktop) {
-    height: 5.625rem;
+    height: calc(115/16rem);
   }
 
   form {
@@ -674,7 +678,7 @@
       svg {
         height: 1.25rem;
         margin-bottom: .25rem;
-        margin-top: .875rem;
+        margin-top: calc(14/16rem);
         width: 1.25rem;
         fill: currentColor;
         display: block;
@@ -714,7 +718,6 @@
 
   @media screen and (--bp-desktop) {
     width: 12.5rem;
-    background-color: #fff;
     position: absolute;
   }
 
@@ -732,12 +735,12 @@
     font-size: .5625rem;
     padding: 0 .625rem;
     width: 2.5rem;
-    border-left: 1px solid color(var(--col-lightgray) lightness(-10%));
+    border-left: 1px solid rgba(255,255,255,0.15);
     box-sizing: content-box;
     font-weight: var(--fw-regular);
     line-height: 1;
     text-align: center;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
 
     svg {
@@ -774,13 +777,13 @@
 
   @media screen and (--bp-desktop) {
     .page-header-icon {
-      font-size: .625rem;
+      font-size: calc(13/16rem);
       padding: 0 1.4375rem;
 
       svg {
         height: 1.5rem;
         margin-bottom: .625rem;
-        margin-top: 1.625rem;
+        margin-top: calc(35/16rem);
         width: 1.5rem;
       }
     }
@@ -811,7 +814,6 @@
     margin-top: .9375rem;
     width: 10rem;
     color: #fff;
-    font-weight: var(--fw-light);
     line-height: 1.3;
     position: absolute;
 

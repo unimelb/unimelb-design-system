@@ -7,10 +7,22 @@
 }
 
 body {
-  background-color: var(--col-navy);
   color: var(--col-darkblue);
   font-family: var(--ff-sans);
   -webkit-font-smoothing: antialiased;
+  /* Trick to cover any elastic scrolling */
+  overflow: visible;
+  &::before {
+    content: "";
+    background-color: var(--col-darkblue);
+    position: absolute;
+    height: 300px;
+    top: -300px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 999;
+  }
 }
 
 .clearfix {

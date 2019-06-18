@@ -45,13 +45,14 @@
     padding-top: 0;
   }
 
+  /* DEPRECATED */
   &.headerless {
-    border-top: 8px solid var(--col-navy);
+    border-top: 1px solid #fff;
   }
 
   /* Alternate syntax to avoid class on parent container */
   .headerless {
-    border-top: 8px solid var(--col-navy);
+    border-top: 1px solid #fff;
     padding-top: 0;
   }
 
