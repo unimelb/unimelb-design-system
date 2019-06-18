@@ -9,6 +9,7 @@
 
 /* Components */
 @import '../../components/base';
+@import '../../components/focus';
 @import '../../components/text';
 @import '../../components/figure';
 @import '../../components/buttons';

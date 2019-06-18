@@ -8,3 +8,5 @@ node_modules/
 .node-version
 .idea
 npm-debug*.log
+!public/builds/.gitkeep
+public/builds/*

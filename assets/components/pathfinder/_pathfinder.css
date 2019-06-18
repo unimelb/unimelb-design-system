@@ -168,7 +168,7 @@
   span.text {
     margin-top: 1.5rem;
     padding-bottom: 1.5rem;
-    font-size: .8125rem;
+    font-size: calc(16/16rem);
     min-width: 10.3125rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -176,22 +176,26 @@
     display: block;
     padding-top: 0;
     text-align: center;
-    -webkit-font-smoothing: subpixel-antialiased;
+
+    @media screen and (--bp-desktop) {
+      font-size: calc(18/16rem);
+    }
   }
 
   strong {
-    font-size: .9375rem;
-    line-height: 1.5rem;
-    padding-top: 3rem;
+    font-size: calc(24/16rem);
+    line-height: 1.35;
+    padding-top: calc(30/16rem);
     padding-bottom: 3rem;
-    letter-spacing: .0625rem;
-    background-color: transparent;
-    border-bottom: 1px solid #fff;
     color: #fff;
+    font-family: var(--ff-serif);
     font-weight: var(--fw-bold);
     position: relative;
     text-align: center;
-    text-transform: uppercase;
+
+    @media screen and (--bp-desktop) {
+      font-size: calc(28/16rem);
+    }
 
     span {
       /* box-orient: vertical; */
@@ -204,10 +208,10 @@
   }
 
   a {
+    @mixin focus-light;
     padding-bottom: 3rem;
     max-width: 21.875rem;
     background-color: var(--col-darkblue);
-    border-bottom: 3px solid color(var(--col-darkblue) lightness(-50%));
     margin: 0 auto;
     position: relative;
     transition: all 150ms ease-out;
@@ -218,10 +222,15 @@
       color: #fff;
     }
 
+    /* TODO Icelab manually include these styles once button classes have been fixed up */
     .button-small {
+      @mixin outlinebutton;
+      @mixin outlinearrow;
+      border-color: #fff;
+      color: #fff;
+      outline-color: currentColor;
       font-size: .75rem;
       padding: .625rem .9375rem;
-      background-color: color(var(--col-darkblue) lightness(-5%));
     }
 
     &:hover, &:focus {
@@ -292,19 +301,17 @@
 
     p,
     span.text {
-      padding-top: 1.5rem;
       padding-bottom: 7.5rem;
       max-width: 21.875rem;
       margin: 0 auto;
       padding-left: 0;
       padding-right: 0;
-      text-align: left;
     }
 
     strong {
-      height: 7.5rem;
+      height: calc(120/16rem);
       max-width: 21.875rem;
-      margin: 0 auto;
+      margin: calc(20/16rem) auto 0;
       padding: 0;
     }
 

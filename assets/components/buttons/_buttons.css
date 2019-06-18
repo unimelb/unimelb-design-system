@@ -87,7 +87,6 @@
   padding: .625rem .9375rem;
   border-bottom: 0;
   margin: 0;
-  position: relative;
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
@@ -170,7 +169,6 @@
   font-weight: var(--fw-bold);
   outline-color: #000;
   outline-offset: 1px;
-  position: relative;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;

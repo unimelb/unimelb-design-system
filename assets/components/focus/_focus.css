@@ -1,0 +1,41 @@
+@define-mixin focus-base {
+  position: relative;
+}
+
+@define-mixin focus {
+  @mixin focus-base;
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: 100px;
+    position: absolute;
+    width: 100px;
+  }
+  &::before {
+    left: 0;
+    mask: url(./focus-top-left.svg) no-repeat center;
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+    mask: url(./focus-bottom-right.svg) no-repeat center;
+    right: 0;
+  }
+}
+
+@define-mixin focus-light {
+  @mixin focus;
+  &::before,
+  &::after {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@define-mixin focus-dark {
+  @mixin focus;
+  &::before,
+  &::after {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}
