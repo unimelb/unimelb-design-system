@@ -1,7 +1,7 @@
 @define-mixin raisedbutton {
   border-radius: 5px;
   font-size: calc(16/16rem);
-  padding: .9375rem 1.25rem;
+  padding: 0.9em 1.8em;
   background-color: var(--col-brighterblue);
   border: 0;
   border-bottom: 5px solid color(var(--col-brighterblue) lightness(-10%));
@@ -57,7 +57,6 @@
 
   @media screen and (--bp-desktop) {
     font-size: calc(18/16rem);
-    padding: 1.0625rem 2.5rem;
   }
 
   [data-icon] {
@@ -75,8 +74,8 @@
 @define-mixin flatbutton {
   @mixin raisedbutton;
   border-radius: 2px;
-  font-size: calc(12/16rem);
-  padding: .625rem .9375rem;
+  font-size: calc(13/16rem);
+  padding: 0.5em 1.2em;
   border-bottom: 0;
   margin: 0;
 
@@ -123,7 +122,6 @@
 
   @media screen and (--bp-desktop) {
     font-size: calc(14/16rem);
-    padding: .625rem .9375rem;
   }
 }
 
@@ -164,10 +162,9 @@
 @define-mixin outlinebutton {
   border-radius: 5px;
   border-width: 2px;
-  font-size: .8125rem;
-  letter-spacing: .0625rem;
+  font-size: calc(16/16rem);
   margin: 1.25rem 0;
-  padding: .625rem;
+  padding: 1em 1.5em;
   border-color: #000;
   border-style: solid;
   color: #000;
@@ -176,10 +173,8 @@
   font-style: normal;
   font-weight: var(--fw-bold);
   outline-color: #000;
-  outline-offset: 1px;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
 
   &:hover,
   &:focus {
@@ -191,10 +186,8 @@
     opacity: .3;
   }
 
-  @media screen and (--bp-height-small) {
-    font-size: .9375rem;
-    margin: 1.25rem 0;
-    padding: 1.25rem;
+  @media screen and (--bp-desktop) {
+    font-size: calc(18/16rem);
   }
 }
 

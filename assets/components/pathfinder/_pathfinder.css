@@ -231,9 +231,8 @@
       @mixin arrow-right;
       border-color: #fff;
       color: #fff;
+      padding: 0.5em 0.7em;
       outline-color: currentColor;
-      font-size: .75rem;
-      padding: .625rem .9375rem;
     }
 
     &:hover, &:focus {
@@ -242,7 +241,8 @@
       z-index: 2;
 
       .button-small {
-        background-color: color(var(--col-darkblue) lightness(-5%));
+        color: #fff;
+        text-decoration: underline;
       }
     }
 
