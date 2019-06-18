@@ -11,8 +11,8 @@ html.no-js lang="en"
     link rel="apple-touch-icon-precomposed" href="/favicon-152.png"
     link rel="icon" type="image/x-icon" href="/favicon.ico"
 
-    = ENV['MODE'].inspect
-    - if ENV['MODE'] == 'prod'
+    meta value=ENV['RACK_ENV']
+    - unless ENV['RACK_ENV'] == 'production'
       link rel="stylesheet" href="/builds/#{ENV["HEROKU_SLUG_COMMIT"]}/uom.css"
       script src="/builds/#{ENV["HEROKU_SLUG_COMMIT"]}/uom.js"
     - else
