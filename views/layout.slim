@@ -13,7 +13,7 @@ html.no-js lang="en"
 
     meta value=ENV['RACK_ENV']
     - unless ENV['RACK_ENV'] == 'development'
-      link rel="stylesheet" href="/builds/#{ENV["VERSION"]}/uom.css"
+      link rel="stylesheet" href="#{ENV["CDNURL"]}/#{ENV["VERSION"]}/uom.css"
       script src="/builds/#{ENV["VERSION"]}/uom.js"
     - else
       script src="/uom.js"
