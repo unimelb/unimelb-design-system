@@ -84,8 +84,8 @@ document.documentElement.classList.remove('no-js');
 document.documentElement.classList.add('js');
 
 // Load custom fonts
-const fonts = 'Roboto:400,300,100,700,100italic,300italic,400italic,700italic:latin';
-WebFont.load({ google: { families: [fonts] } });
+const fonts = ['Noto Serif:400,400i,700,700i', 'Source Sans Pro:300,300i,400,400i,600,600i,700,700i,900,900'];
+WebFont.load({ google: { families: fonts } });
 
 document.addEventListener('DOMContentLoaded', window.uom.applyInjection);
 document.addEventListener('DOMContentLoaded', window.uom.initAllComponents);
