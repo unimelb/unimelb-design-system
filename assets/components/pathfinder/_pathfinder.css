@@ -216,7 +216,7 @@
     position: relative;
     transform: scale(1);
     transition-property: transform, background-color;
-    transition-duration: 300ms;
+    transition-duration: 280ms;
     transition-timing-function: cubic-bezier(0.68, -0.25, 0.265, 1.25);
 
     strong,
@@ -228,7 +228,7 @@
     /* TODO Icelab manually include these styles once button classes have been fixed up */
     .button-small {
       @mixin outlinebutton;
-      @mixin outlinearrow;
+      @mixin arrow-right;
       border-color: #fff;
       color: #fff;
       outline-color: currentColor;
