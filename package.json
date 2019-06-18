@@ -14,7 +14,7 @@
     "build": "NODE_ENV=production webpack --config assets/webpack.config.js",
     "postbuild": "cp -R build ./public/builds/$HEROKU_SLUG_COMMIT",
     "dev": "node assets/dev-server.js",
-    "start": "bundle exec foreman start"
+    "start": "bundle exec foreman start -f Procfile.dev"
   },
   "dependencies": {
     "classlist-polyfill": "unimelb/classlist-polyfill#1.1.20170228",
