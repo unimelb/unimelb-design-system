@@ -1,15 +1,12 @@
 @define-mixin jump {
-  color: var(--col-gray);
   list-style-position: inside;
   margin: 0 auto;
   padding: 35px 0 30px;
   width: 94%;
 
   li {
-    color: var(--col-midgray);
     display: inline-block;
-    font-size: 14px;
-    font-weight: var(--fw-regular);
+    font-size: calc(16/16rem);
     list-style-type: none;
     margin-bottom: 0;
     margin-left: 0;
@@ -18,13 +15,31 @@
     white-space: normal;
     width: 50%;
 
+    @media screen and (--bp-desktop) {
+      font-size: calc(18/16rem);
+    }
+
     &:first-child {
-      padding-bottom: .4375rem;
+      font-size: calc(18/16rem);
+      font-weight: var(--fw-bold);
       margin-bottom: .4375rem;
-      border-bottom: 1px solid var(--col-lightergray);
-      letter-spacing: 1px;
+      padding-bottom: .4375rem;
+      position: relative;
       text-transform: uppercase;
       width: 100%;
+
+      &::after {
+        border-bottom: 2px solid currentColor;
+        content: '';
+        display: block;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        width: calc(40/16rem);
+      }
+
+      @media screen and (--bp-desktop) {
+        font-size: calc(20/16rem);
+      }
 
       a::before {
         content: '';
@@ -34,10 +49,9 @@
   }
 
   a {
-    padding-bottom: .4375rem;
-    padding-top: .4375rem;
     display: block;
-    font-weight: var(--fw-light);
+    line-height: 1.3;
+    margin-bottom: calc(8/16rem);
     text-decoration: none;
     white-space: normal;
 
@@ -91,10 +105,6 @@ body.jumpnav-active {
       li:first-child {
         margin-bottom: 0;
       }
-
-      a {
-        border-bottom: 1px solid var(--col-lightergray);
-      }
     }
 
     @media screen and (--bp-wide) {
@@ -112,6 +122,7 @@ body.jumpnav-active {
 
       a.current {
         color: #000;
+        text-decoration: underline;
 
         &:active {
           color: color(var(--col-cherry) lightness(-15%));

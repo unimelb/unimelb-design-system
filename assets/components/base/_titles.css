@@ -21,8 +21,8 @@
 
   &::after {
     margin-top: 2.25rem;
-    width: 3.125rem;
-    border-bottom: 2px solid var(--col-darkblue);
+    width: calc(40/16rem);
+    border-bottom: 2px solid currentColor;
     content: '';
     display: block;
     margin-left: 0;
