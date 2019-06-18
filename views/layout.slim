@@ -12,7 +12,7 @@ html.no-js lang="en"
     link rel="icon" type="image/x-icon" href="/favicon.ico"
 
     meta value=ENV['RACK_ENV']
-    - unless ENV['RACK_ENV'] == 'production'
+    - unless ENV['RACK_ENV'] == 'development'
       link rel="stylesheet" href="/builds/#{ENV["HEROKU_SLUG_COMMIT"]}/uom.css"
       script src="/builds/#{ENV["HEROKU_SLUG_COMMIT"]}/uom.js"
     - else
