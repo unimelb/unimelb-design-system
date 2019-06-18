@@ -12,12 +12,12 @@ html.no-js lang="en"
     link rel="icon" type="image/x-icon" href="/favicon.ico"
 
     - if ENV['MODE'] == 'prod'
-      link rel="stylesheet" href="#{ENV['CDNURL']}/#{ENV['VERSION']}/uom.css"
-      script src="#{ENV['CDNURL']}/#{ENV['VERSION']}/uom.js"
+      link rel="stylesheet" href="/builds/#{ENV["HEROKU_SLUG_COMMIT"]}/uom.css"
+      script src="/builds/#{ENV["HEROKU_SLUG_COMMIT"]}/uom.js"
     - else
       script src="/uom.js"
 
-    link rel="stylesheet" href="/assets/lib/docs.css"
+    / link rel="stylesheet" href="/assets/lib/docs.css"
     link rel="stylesheet" href="/assets/lib/highlight.css"
     link rel="stylesheet" href="/assets/lib/ace.extra.css"
 

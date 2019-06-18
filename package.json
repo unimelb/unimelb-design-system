@@ -10,8 +10,9 @@
     "yarn": "*"
   },
   "scripts": {
-    "prebuild": "rm -Rf build/*",
+    "prebuild": "rm -rf build/* && rm -rf public/builds/*",
     "build": "NODE_ENV=production webpack --config assets/webpack.config.js",
+    "postbuild": "cp -R build ./public/builds/$HEROKU_SLUG_COMMIT",
     "dev": "node assets/dev-server.js",
     "start": "bundle exec foreman start"
   },

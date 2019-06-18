@@ -9,7 +9,7 @@ class App < Roda # rubocop:disable Metrics/ClassLength
   use Rack::Session::Cookie, secret: ENV['SECRET']
   opts[:root] = File.join(File.dirname(__FILE__))
 
-  plugin :static, ['/assets']
+  plugin :static, ['/assets', '/builds/' + ENV['HEROKU_SLUG_COMMIT']]
   plugin :render, engine: 'slim'
 
   opts[:version] = ENV['VERSION']
