@@ -13,11 +13,11 @@
   --col-navy: #0c304a;
   --col-blue: #304e64;
   --col-menu: #036;
-  --col-darkblue: #004576;
+  --col-darkblue: #094183;
   --col-borderblue: #7399b7;
-  --col-midblue: #366996;
+  --col-midblue: #4074B2;
   --col-lightblue: #82a1bd;
-  --col-lighterblue: #006fdc;
+  --col-brighterblue: #2179dd;
   --col-paleblue: #f2f5f8;
   --col-lightestblue: #e1eaf5;
 
@@ -38,15 +38,16 @@
   --w-lge: 87.5rem;
 
   /* Font stacks */
-  --ff-sans: 'Roboto', 'Helvetica', 'Arial', sans-serif;
-  --ff-fixed: 'Courier New', 'Courier', fixed;
-  --ff-serif: 'Georgia', 'Times New Roman', 'Times', serif;
+  --ff-sans: "Source Sans Pro", Gill Sans, Trebuchet MS, Arial, sans-serif;
+  --ff-fixed: "Courier New", "Courier", fixed;
+  --ff-serif: "Noto Serif", Georgia, Times New Roman, serif;
 
   /* Font weights */
-  --fw-thin: 100;
+  --fw-thin: 300;
   --fw-light: 300;
   --fw-regular: 400;
-  --fw-bold: 700;
+  --fw-bold: 600;
+  --fw-bolder: 700;
 
   /* Transitions */
   --tr-transform: transform .3s ease;
@@ -128,7 +129,7 @@
 }
 
 @define-mixin grad-left {
-  background: linear-gradient(to left, color(var(--col-lighterblue) alpha(0%)) 66%, color(var(--col-lighterblue) alpha(90%)) 100%); /* W3C */
+  background: linear-gradient(to left, color(var(--col-brighterblue) alpha(0%)) 66%, color(var(--col-brighterblue) alpha(90%)) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=1); /* IE6-9 */
 }
 
