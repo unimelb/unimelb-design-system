@@ -36,7 +36,7 @@ DEPENDENCIES
   thin (~> 1.6.4)
 
 RUBY VERSION
-   ruby 2.3.3p222
+   ruby 2.4.6p354
 
 BUNDLED WITH
-   1.13.6
+   1.17.3

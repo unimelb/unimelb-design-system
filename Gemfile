@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.3'
+ruby '2.4.6'
 
 gem 'dotenv', '~> 2.1.0'
 gem 'rack', '~> 1.6.5'
