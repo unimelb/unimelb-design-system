@@ -55,14 +55,14 @@
   }
 
   h1 {
-    font-size: 1.625rem;
+    font-size: calc(36/16rem);
     line-height: 2.25rem;
     padding-bottom: 1.5rem;
     font-weight: var(--fw-bold);
     font-family: var(--ff-serif);
 
     @media screen and (--bp-desktop) {
-      font-size: 2rem;
+      font-size: calc(42/16rem);
       line-height: 3rem;
     }
   }
@@ -70,21 +70,49 @@
   h2 {
     clear: left;
     font-family: var(--ff-serif);
-    font-size: 1.4rem;
+    font-size: calc(36/16rem);
     font-weight: var(--fw-bold);
     padding-bottom: 1.5rem;
     padding-top: 1.5rem;
+
+    @media screen and (--bp-desktop) {
+      font-size: calc(32/16rem);
+    }
   }
 
   h3 {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    font-size: calc(28/16rem);
     font-weight: var(--fw-bold);
+
+    @media screen and (--bp-desktop) {
+      font-size: calc(32/16rem);
+    }
 
     &.subtitle {
 	    text-decoration: underline;
 	    text-transform: none;
 	  }
+  }
+
+  h4 {
+    font-size: calc(24/16rem);
+    @media screen and (--bp-desktop) {
+      font-size: calc(28/16rem);
+    }
+  }
+
+  h5 {
+    font-size: calc(22/16rem);
+    @media screen and (--bp-desktop) {
+      font-size: calc(24/16rem);
+    }
+  }
+
+  h6 {
+    font-size: calc(18/16rem);
+    @media screen and (--bp-desktop) {
+      font-size: calc(20/16rem);
+    }
   }
 
   p,
@@ -103,14 +131,12 @@
     padding-left: .9375rem;
     padding-right: .9375rem;
     padding-bottom: 1.5rem;
-    color: var(--col-darkgray);
     list-style-position: outside;
 
     li {
       padding-bottom: .5rem;
       margin-left: .9375rem;
       max-width: var(--w-sml);
-      color: #000;
       display: list-item;
 
       &:last-child {
@@ -226,12 +252,11 @@
 
         &::before {
           font-size: 3.125rem;
-          letter-spacing: -.3125rem;
-          padding-top: 1.25rem;
+          padding-top: 1rem;
           width: 3.75rem;
-          color: #000;
           content: counter(steps);
           display: block;
+          font-family: var(--ff-serif);
           font-weight: var(--fw-bold);
           left: 0;
           line-height: 1.2;
@@ -246,17 +271,10 @@
       }
 
       h2 {
-        font-size: calc(32/16rem);
         line-height: 2.25rem;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
-        font-weight: var(--fw-light);
         text-transform: none;
-
-        /* @media screen and (--bp-desktop) {
-          font-size: 2.0625rem;
-          line-height: 3rem;
-        } */
       }
 
       ol,

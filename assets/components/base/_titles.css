@@ -30,11 +30,10 @@
 }
 
 @define-mixin subtitle {
-  font-size: .9375rem;
+  font-size: calc(22/16rem);
   line-height: 1.5rem;
-  letter-spacing: .125rem;
+  font-family: var(--ff-sans);
   font-weight: var(--fw-bold);
-  text-transform: uppercase;
 }
 
 @define-mixin title {
