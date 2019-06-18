@@ -23,7 +23,7 @@ var devServer = new WebpackDevServer(webpack(config), {
 
   // Proxy unhandled requests to rack server
   proxy: {
-    '**': { target: `http://127.0.0.1:${WEB_SERVER_PORT}` }
+    '**': { target: `http://localhost:${WEB_SERVER_PORT}` }
   },
 
   // Work around security restriction

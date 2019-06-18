@@ -1,2 +1,2 @@
-web: RACK_ENV=development rackup -p $WEB_SERVER_PORT
+web: RACK_ENV=development bundle exec rackup -p 7000
 assets: yarn run dev

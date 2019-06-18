@@ -16,7 +16,7 @@ html.no-js lang="en"
       link rel="stylesheet" href="#{ENV["CDNURL"]}/#{ENV["VERSION"]}/uom.css"
       script src="/builds/#{ENV["VERSION"]}/uom.js"
     - else
-      script src="/uom.js"
+      script src="http://localhost:#{ENV["ASSET_SERVER_PORT"]}/uom.js"
 
     / link rel="stylesheet" href="/assets/lib/docs.css"
     link rel="stylesheet" href="/assets/lib/highlight.css"
