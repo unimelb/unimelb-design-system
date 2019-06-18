@@ -214,7 +214,10 @@
     background-color: var(--col-darkblue);
     margin: 0 auto;
     position: relative;
-    transition: all 150ms ease-out;
+    transform: scale(1);
+    transition-property: transform, background-color;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.68, -0.25, 0.265, 1.25);
 
     strong,
     p,
@@ -235,9 +238,7 @@
 
     &:hover, &:focus {
       background-color: color(var(--col-darkblue) lightness(+3%));
-      box-shadow: 0 0 10px color(#000 alpha(50%));
       transform: scale(1.06);
-      transition-timing-function: ease-in;
       z-index: 2;
 
       .button-small {
@@ -256,8 +257,7 @@
       &:hover,
       &:focus {
         background-color: color(var(--col-brighterblue) lightness(+2%));
-        box-shadow: 0 0 10px color(#000 alpha(50%));
-        transform: scale(1.07);
+        transform: scale(1.08);
         z-index: 1;
       }
 
