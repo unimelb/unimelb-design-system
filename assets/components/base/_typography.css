@@ -516,8 +516,8 @@
   }
 
   hr {
-    border-bottom: 1px solid color(var(--col-lightgray) lightness(-5%));
-    border-top: 0;
+    border: 0;
+    border-bottom: 1px solid var(--col-lightestblue);
     clear: both;
     line-height: 0;
     margin: 0;
