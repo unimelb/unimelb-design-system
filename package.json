@@ -12,7 +12,7 @@
   "scripts": {
     "prebuild": "rm -rf build/* && rm -rf public/builds/*",
     "build": "NODE_ENV=production webpack --config assets/webpack.config.js",
-    "postbuild": "mkdir -p ./public/builds/$HEROKU_SLUG_COMMIT && cp -R build/* ./public/builds/$HEROKU_SLUG_COMMIT",
+    "postbuild": "mkdir -p ./public/builds/$VERSION && cp -R build/* ./public/builds/$VERSION",
     "dev": "node assets/dev-server.js",
     "start": "bundle exec foreman start -f Procfile.dev"
   },

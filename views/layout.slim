@@ -13,8 +13,8 @@ html.no-js lang="en"
 
     meta value=ENV['RACK_ENV']
     - unless ENV['RACK_ENV'] == 'development'
-      link rel="stylesheet" href="/builds/#{ENV["HEROKU_SLUG_COMMIT"]}/uom.css"
-      script src="/builds/#{ENV["HEROKU_SLUG_COMMIT"]}/uom.js"
+      link rel="stylesheet" href="/builds/#{ENV["VERSION"]}/uom.css"
+      script src="/builds/#{ENV["VERSION"]}/uom.js"
     - else
       script src="/uom.js"
 
