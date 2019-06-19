@@ -31,13 +31,14 @@
 
 @define-mixin subtitle {
   font-size: calc(22/16rem);
-  line-height: 1.5rem;
   font-family: var(--ff-sans);
   font-weight: var(--fw-bold);
 }
 
 @define-mixin title {
-  @mixin subtitle;
+  font-size: calc(22/16rem);
+  font-family: var(--ff-serif);
+  font-weight: var(--fw-bold);
   text-align: center;
 
   &::after {

@@ -587,8 +587,12 @@ body {
   a {
     color: var(--col-midblue);
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: #fff;
+    }
+    &:active {
+      color: var(--col-lightestblue);
     }
   }
 }

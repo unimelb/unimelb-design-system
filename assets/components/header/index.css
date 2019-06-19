@@ -121,8 +121,8 @@
 
       .page-header-logo {
         position: absolute;
-        top: -140px;
-        transition: .2s top;
+        transform: translateY(-100%);
+        transition: .2s transform;
       }
 
       a,
@@ -157,8 +157,8 @@
       .page-header-navigation {
         height: 2.5rem;
         line-height: 1.875rem;
-        padding-left: .9375rem;
-        transition: .3s padding-left .1s, .2s height;
+        transform: translateX(.9375rem);
+        transition: .3s transform .1s, .2s height;
         vertical-align: top;
 
         ol.page-local-history {
@@ -226,7 +226,8 @@
       padding: .5rem;
       position: absolute;
       top: 0;
-      transition: .2s top .3s;
+      transform: translateY(0);
+      transition: .2s transform .3s;
       z-index: 1;
 
       img {
@@ -266,10 +267,10 @@
     }
 
     &.wide + .page-header-navigation {
-      padding-left: 9.6875rem;
+      transform: translateX(9.6875rem);
 
       @media screen and (--bp-desktop) {
-        padding-left: 23.75rem;
+        transform: translateX(23.75rem);
       }
     }
   }
@@ -290,10 +291,11 @@
 }
 
 .uomcontent .page-header-navigation {
-  padding: 0 .9375rem 0 4.6875rem;
+  padding: 0 .9375rem 0;
   display: table-cell;
   left: 0;
-  transition: .3s padding-left;
+  transition: .3s transform;
+  transform: translateX(4.6875rem);
   vertical-align: baseline;
 
   .mobile-nav {
@@ -367,7 +369,7 @@
 
   @media screen and (--bp-desktop) {
     height: calc(115/16rem);
-    padding-left: 12.8125rem;
+    transform: translateX(calc(150/16rem));
     margin-right: 16.25rem;
     display: block;
     overflow: hidden;
@@ -412,7 +414,7 @@
       }
 
       &:active {
-        color: #000;
+        color: var(--col-lightestblue);
       }
 
       span {
