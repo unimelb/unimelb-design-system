@@ -8,9 +8,10 @@
   &::after {
     content: "";
     display: block;
-    height: 100px;
+    height: 80px;
     position: absolute;
-    width: 100px;
+    mask-size: contain;
+    width: 80px;
   }
   &::before {
     left: 0;
@@ -24,8 +25,23 @@
   }
 }
 
+@define-mixin focus-medium {
+  &::before,
+  &::after {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+@define-mixin focus-small {
+  &::before,
+  &::after {
+    height: 30px;
+    width: 30px;
+  }
+}
+
 @define-mixin focus-light {
-  @mixin focus;
   &::before,
   &::after {
     background-color: rgba(255, 255, 255, 0.2);
@@ -33,9 +49,15 @@
 }
 
 @define-mixin focus-dark {
-  @mixin focus;
   &::before,
   &::after {
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+}
+
+@define-mixin focus-blue {
+  &::before,
+  &::after {
+    background-color: var(--col-midblue);
   }
 }

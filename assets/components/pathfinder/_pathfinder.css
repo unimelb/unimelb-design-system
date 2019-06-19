@@ -9,14 +9,19 @@
 
   &.white {
     a {
+      @mixin focus;
+      @mixin focus-blue;
+      @mixin focus-medium;
       background-color: #fff;
-      background-color: color(#fff alpha(90%));
       border-bottom: 3px solid var(--col-brighterblue);
       color: #000;
       outline-color: #fff;
 
       &:hover, &:focus {
         background-color: #fff;
+        .button-small {
+          color: var(--col-darkblue);
+        }
       }
 
       &.featured {
@@ -31,22 +36,24 @@
       }
 
       .button-small {
-        background-color: var(--col-brighterblue);
+        border-color: color(var(--col-darkblue) alpha(70%));
+        color: var(--col-darkblue);
       }
     }
 
     p,
     span.text,
     strong {
-      border-color: #000;
-      color: #000;
+      border-color: var(--col-darkblue);
+      color: var(--col-darkblue);
     }
   }
 
   &.soft {
     a {
+      @mixin focus;
+      @mixin focus-dark;
       background-color: #fff;
-      background-color: color(#fff alpha(90%));
       border-bottom: 0 none;
       color: #000;
       outline-color: #fff;
@@ -98,7 +105,6 @@
   &.buttons {
     a {
       background-color: #fff;
-      background-color: color(#fff alpha(90%));
       border: 0 none;
       color: #000;
       min-height: 0;
@@ -208,6 +214,7 @@
   }
 
   a {
+    @mixin focus;
     @mixin focus-light;
     padding-bottom: 3rem;
     max-width: 21.875rem;
@@ -216,8 +223,8 @@
     position: relative;
     transform: scale(1);
     transition-property: transform, background-color;
-    transition-duration: 280ms;
-    transition-timing-function: cubic-bezier(0.68, -0.25, 0.265, 1.25);
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.68, -0.35, 0.265, 1.55);
 
     strong,
     p,
@@ -241,6 +248,7 @@
       z-index: 2;
 
       .button-small {
+        background-color: transparent;
         color: #fff;
         text-decoration: underline;
       }
@@ -259,10 +267,6 @@
         background-color: color(var(--col-brighterblue) lightness(+2%));
         transform: scale(1.08);
         z-index: 1;
-      }
-
-      .button-small {
-        background-color: color(var(--col-brighterblue) lightness(-15%));
       }
     }
   }
