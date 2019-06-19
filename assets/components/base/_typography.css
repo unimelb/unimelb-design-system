@@ -115,6 +115,7 @@
 
   h6 {
     font-size: calc(18/16rem);
+    font-weight: var(--fw-bold);
     @media screen and (--bp-desktop) {
       font-size: calc(20/16rem);
     }
