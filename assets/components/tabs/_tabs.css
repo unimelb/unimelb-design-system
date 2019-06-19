@@ -98,9 +98,9 @@
    */
   .tabbed-nav {
     & > .full-width {
-      height: 4rem;
-      background-color: var(--col-darkblue);
-      border-bottom: 1px solid transparent;
+      height: calc(74/16rem);
+      background-color: transparent;
+      border-bottom: 1px solid #abbed5;
       position: relative;
       text-align: center;
     }
@@ -114,20 +114,24 @@
     }
 
     nav {
+      margin-top: calc(10/16rem);
       padding: 0 2.5rem;
       display: inline-block;
       white-space: nowrap;
 
       a {
-        font-size: .9375rem;
-        line-height: 4rem; /* same as tabs height */
-        padding: 0 1.25rem;
-        color: color(#fff alpha(70%));
+        background-color: #f2f5f9;
+        border: 1px solid #abbed5;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        font-size: calc(16/16rem);
+        font-weight: var(--fw-bold);
+        line-height: calc(62/16rem); /* same as tabs height */
+        padding: 0 calc(20/16rem);
+        margin-right: calc(5/16rem);
+        color: var(--col-darkblue);
         display: inline-block;
-        letter-spacing: .5px;
-        outline-offset: -1px;
         text-decoration: none;
-        text-transform: uppercase;
 
         &:hover {
           text-decoration: underline;
@@ -135,33 +139,18 @@
 
         &:hover,
         &:focus {
-          color: #fff;
+          color: color(var(--col-darkblue) lightness(-15%));
         }
 
         &[data-current] {
-          color: #fff;
-          font-weight: var(--fw-regular);
+          background-color: #fff;
+          border-bottom-color: #fff;
           position: relative;
         }
 
-        &[data-current]::after {
-          border: solid transparent;
-          border-top-color: var(--col-darkblue);
-          border-width: 10px 10px 0;
-          content: ' ';
-          height: 0;
-          left: 50%;
-          margin-bottom: -10px;
-          margin-left: -10px;
-          pointer-events: none;
-          position: absolute;
-          top: 100%;
-          width: 0;
-          z-index: 10;
-        }
-
         @media screen and (--bp-desktop) {
-          padding: 0 1.875rem;
+          font-size: calc(18/16rem);
+          padding: 0 calc(30/16rem);
         }
       }
 
