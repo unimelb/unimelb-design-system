@@ -81,11 +81,12 @@
   }
 
   h3 {
-    font-size: calc(28/16rem);
+    font-size: calc(23/16rem);
     font-weight: var(--fw-bold);
+    margin-bottom: calc(10/16rem);
 
     @media screen and (--bp-desktop) {
-      font-size: calc(32/16rem);
+      font-size: calc(25/16rem);
     }
 
     &.subtitle {
@@ -95,16 +96,20 @@
   }
 
   h4 {
-    font-size: calc(24/16rem);
+    font-size: calc(20/16rem);
+    font-weight: var(--fw-bold);
+    margin-bottom: calc(8/16rem);
     @media screen and (--bp-desktop) {
-      font-size: calc(28/16rem);
+      font-size: calc(22/16rem);
     }
   }
 
   h5 {
-    font-size: calc(22/16rem);
+    font-size: calc(18/16rem);
+    font-weight: var(--fw-bold);
+    margin-bottom: calc(5/16rem);
     @media screen and (--bp-desktop) {
-      font-size: calc(24/16rem);
+      font-size: calc(20/16rem);
     }
   }
 
