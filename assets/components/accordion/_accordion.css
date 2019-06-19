@@ -83,21 +83,24 @@
       }
 
       .accordion__title {
+        background-color: transparent;
+        display: block;
         font-family: var(--ff-serif);
         font-weight: var(--fw-bolder);
-        padding-top: .75rem;
         padding-bottom: .75rem;
+        padding-left: calc(22/16rem);
         padding-right: 2.5rem;
-        padding-left: .9375rem;
-        display: block;
+        padding-top: .75rem;
         position: relative;
+        transition-property: background-color;
+        transition-duration: 50ms;
 
         &:hover {
-          color: var(--col-brighterblue);
-          text-decoration: underline;
+          background-color: var(--col-lightgray);
         }
 
         &:focus {
+          background-color: var(--col-lightgray);
           color: var(--col-brighterblue);
         }
 
@@ -114,16 +117,16 @@
           margin-right: 0.2em;
           opacity: 0.8;
           position: absolute;
-          right: .9375rem;
+          right: calc(22/16rem);
           text-decoration: none;
-          top: 1.5em;
+          top: 1.6em;
           transform-origin: center 3px;
           transition: transform 0.2s ease-in-out;
           width: 0;
         }
 
         @media screen and (--bp-desktop) {
-          font-size: 1.375rem;
+          font-size: calc(20/16rem);
           line-height: 2.25rem;
           padding-right: 3.4375rem;
 
@@ -136,8 +139,8 @@
 
       .accordion__hidden {
         padding-top: .75rem;
-        padding-left: .9375rem;
-        padding-right: .9375rem;
+        padding-left: calc(22/16rem);
+        padding-right: calc(22/16rem);
         display: none;
 
         /* reset inner lists */
@@ -145,12 +148,10 @@
       }
 
       &.accordion__visible {
-        margin-top: -1px;
-        border-top: 1px solid;
-        border-color: var(--col-brighterblue);
+        background-color: var(--col-lightgray);
 
         .accordion__title {
-          color: var(--col-brighterblue);
+          border-bottom: 1px solid color(var(--col-lightgray) lightness(-5%));
 
           &::before {
             transform: rotate(180deg);
