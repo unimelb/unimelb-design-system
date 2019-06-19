@@ -38,7 +38,7 @@
 @define-mixin title {
   font-size: calc(22/16rem);
   font-family: var(--ff-serif);
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-bolder);
   text-align: center;
 
   &::after {

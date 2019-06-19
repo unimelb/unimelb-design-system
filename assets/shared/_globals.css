@@ -39,7 +39,7 @@
 
   /* Font stacks */
   --ff-sans: "Source Sans Pro", Gill Sans, Trebuchet MS, Arial, sans-serif;
-  --ff-fixed: "Courier New", "Courier", fixed;
+  --ff-fixed: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
   --ff-serif: "Noto Serif", Georgia, Times New Roman, serif;
 
   /* Font weights */
