@@ -1,7 +1,7 @@
 var utils = require('utils');
 
 // Scrolling threshold for fixed positioning
-var FIXED_THRESHOLD = 90 - 40; // height of static header minus height of fixed header
+var FIXED_THRESHOLD = 115 - 40; // height of static header minus height of fixed header
 
 /**
  * InjectHeader
