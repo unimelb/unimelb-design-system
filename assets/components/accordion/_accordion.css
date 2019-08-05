@@ -174,42 +174,6 @@
       }
     }
   }
-
-  .code {
-    max-width: var(--w-mid);
-    clear: both;
-    margin: 0 auto;
-
-    ul.accordion {
-      max-width: var(--w-mid);
-
-      li {
-        max-width: var(--w-mid);
-
-        &::before,
-        .accordion__title {
-          color: var(--deprecated-col-gray);
-        }
-
-        .accordion__hidden {
-          max-width: var(--w-mid);
-        }
-
-        &.accordion__visible .accordion__hidden {
-          max-height: 625rem;
-        }
-
-        &.accordion__visible::before,
-        &.accordion__visible .accordion__title {
-          color: var(--deprecated-col-brighterblue);
-        }
-
-        div.highlight {
-          max-width: var(--w-mid);
-        }
-      }
-    }
-  }
 }
 
 .ie9 .uomcontent {
