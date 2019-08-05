@@ -8,11 +8,12 @@
     }
   }
 
+  /* TODO fix typography here */
   h2.search-title {
     font-size: .75rem;
     line-height: 1.5rem;
     padding-bottom: 1rem;
-    color: var(--deprecated-col-midgray);
+    color: var(--col-navy-main);
     padding-top: 0;
   }
 
@@ -183,7 +184,6 @@
     }
 
     & > dt {
-      color: var(--deprecated-col-midgrayer);
       clear: none;
       width: auto;
     }

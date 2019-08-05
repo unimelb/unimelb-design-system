@@ -3,9 +3,6 @@
     @mixin clearfix;
     max-width: var(--w-mid);
     font-size: 1em;
-    color: var(--deprecated-col-midgray);
-    font-family: var(--ff-sans);
-    font-weight: var(--deprecated-fw--thin);
     margin: 0 auto;
     padding-bottom: 0;
     position: relative;

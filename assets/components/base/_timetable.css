@@ -82,7 +82,7 @@
   }
 
   .duration {
-    color: var(--deprecated-col-midgray);
+    color: var(--col-unsanctioned-gray-mid-3);
     display: inline-block;
   }
 

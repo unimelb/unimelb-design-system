@@ -18,10 +18,8 @@
       padding-left: 1.5625rem;
       padding-right: 1.5625rem;
       background-color: inherit;
-      color: var(--deprecated-col-midgray);
       cursor: pointer;
       display: inline-block;
-      font-weight: var(--deprecated-fw--light);
       margin-bottom: -1px;
       text-decoration: none;
 

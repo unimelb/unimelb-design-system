@@ -34,7 +34,7 @@
 
       &::before {
         font-size: .875rem;
-        color: var(--deprecated-col-midgray);
+        color: var(--col-blue-dark);
         content: attr(data-label);
         display: block;
         font-style: italic;

@@ -86,12 +86,6 @@
       }
     }
 
-    &__location {
-      em {
-        color: var(--deprecated-col-midgray);
-      }
-    }
-
     @media screen and (--bp-tablet) {
 
       &__info {

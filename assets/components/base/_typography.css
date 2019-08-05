@@ -579,7 +579,7 @@
   .grey {
     font-size: 1rem;
     line-height: 1.5rem;
-    color: var(--deprecated-col-midgray);
+    color: var(--col-unsanctioned-gray-mid-3);
   }
 
   .main-title {
@@ -593,7 +593,7 @@
     &::after {
       margin-top: .9375rem;
       max-width: var(--w-sml);
-      border-bottom: 2px solid var(--deprecated-col-midgray);
+      border-bottom: 2px solid var(--col-unsanctioned-gray-mid-3);
       content: '';
       display: block;
       width: 100%;

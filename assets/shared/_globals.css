@@ -3,8 +3,6 @@
  */
 :root {
   /* Colours */
-  --deprecated-col-midgray: #666;
-  --deprecated-col-midgrayer: #777; /* last accessible grey text on white background */
   --deprecated-col-gray: #adb8c1;
   --deprecated-col-lightgray: #f6f6f6;
   --deprecated-col-lightergray: #e0e0e0;
@@ -72,6 +70,9 @@
   --col-yellow-light: #fdf2df;
   --col-yellow-mid-1: #ffdca2;
   --col-yellow-mid-2: #ecae65;
+
+  /* Unsanctioned colours to meet accesibility requirements */
+  --col-unsanctioned-gray-mid-3: #777;
 
   /* Layout widths */
   --w-sml: 43.75rem;

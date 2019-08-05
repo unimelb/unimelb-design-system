@@ -65,7 +65,7 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     max-width: var(--w-mid);
-    border-bottom: 1px solid var(--deprecated-col-lightergray);
+    border-bottom: 1px solid var(--col-black-mid-1);
     margin: 0 auto;
 
     &:first-child {
@@ -88,7 +88,7 @@
   }
 
   a {
-    color: var(--col-black-dark);
+    color: var(--col-navy-main);
     display: block;
     text-decoration: none;
   }
@@ -100,6 +100,11 @@
     padding-bottom: .9375rem;
   }
 
+  a:hover h1,
+  a:focus h1 {
+    text-decoration: underline;
+  }
+
   p {
     max-width: var(--w-mid);
     padding-bottom: 0;
@@ -107,7 +112,6 @@
     &.topic {
       font-size: .875rem;
       line-height: 1.5rem;
-      color: var(--deprecated-col-midgray);
     }
   }
 

@@ -1,8 +1,7 @@
 @define-mixin code {
   font-size: 1rem;
   line-height: 1.5rem;
-  background-color: #f1f1f1;
-  border-color: #e4e4e4;
+  background-color: var(--col-blue-light);
   border-style: solid;
   border-width: 0;
   font-family: var(--ff-fixed);
@@ -11,8 +10,7 @@
 .uomcontent {
   code {
     @mixin code;
-    border-bottom-width: 2px;
-    color: var(--deprecated-col-midgray);
+    color: var(--col-black-dark);
   }
 
   pre {
