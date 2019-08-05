@@ -20,7 +20,7 @@
       &:hover, &:focus {
         background-color: #fff;
         .button-small {
-          color: var(--deprecated-col-darkblue);
+          color: var(--col-navy-main);
         }
       }
 
@@ -36,16 +36,16 @@
       }
 
       .button-small {
-        border-color: color(var(--deprecated-col-darkblue) alpha(70%));
-        color: var(--deprecated-col-darkblue);
+        border-color: color(var(--col-navy-main) alpha(70%));
+        color: var(--col-navy-main);
       }
     }
 
     p,
     span.text,
     strong {
-      border-color: var(--deprecated-col-darkblue);
-      color: var(--deprecated-col-darkblue);
+      border-color: var(--col-navy-main);
+      color: var(--col-navy-main);
     }
   }
 
@@ -218,7 +218,7 @@
     @mixin focus-light;
     padding-bottom: 3rem;
     max-width: 21.875rem;
-    background-color: var(--deprecated-col-darkblue);
+    background-color: var(--col-navy-main);
     margin: 0 auto;
     position: relative;
     transform: scale(1);
@@ -243,7 +243,7 @@
     }
 
     &:hover, &:focus {
-      background-color: color(var(--deprecated-col-darkblue) lightness(+3%));
+      background-color: color(var(--col-navy-main) lightness(+3%));
       transform: scale(1.06);
       z-index: 2;
 

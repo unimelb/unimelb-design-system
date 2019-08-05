@@ -61,7 +61,7 @@
 
   strong {
     font-size: 1rem;
-    color: var(--deprecated-col-darkblue);
+    color: var(--col-navy-main);
     display: block;
     font-weight: var(--deprecated-fw--regular);
   }

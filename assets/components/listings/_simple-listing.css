@@ -49,7 +49,7 @@
   /* includes overrides for h2, h3 and h4 */
   &__heading {
     margin-bottom: .125rem;
-    color: var(--deprecated-col-darkblue);
+    color: var(--col-navy-main);
     font-size: 1.125em;
     font-weight: 400;
     letter-spacing: inherit;

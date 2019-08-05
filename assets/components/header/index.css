@@ -89,7 +89,7 @@
   @mixin normalise;
   font-size: 1.25rem;
   height: 3.75rem;
-  background-color: var(--deprecated-col-darkblue);
+  background-color: var(--col-navy-main);
   color: #fff;
   font-family: var(--ff-sans);
   position: relative;
@@ -115,7 +115,7 @@
   @media screen and (--bp-desktop) {
     &.fixed:not(.floating) {
       height: 2.5rem;
-      background-color: var(--deprecated-col-darkblue);
+      background-color: var(--col-navy-main);
       position: fixed;
       width: 100%;
 
@@ -188,7 +188,7 @@
 
   header {
     height: 3.75rem;
-    background-color: var(--deprecated-col-darkblue);
+    background-color: var(--col-navy-main);
     display: table;
     overflow: visible;
     padding: 0;
@@ -220,7 +220,7 @@
     &.page-header-logo {
       height: 3.75rem;
       width: 3.75rem;
-      background-color: var(--deprecated-col-darkblue);
+      background-color: var(--col-navy-main);
       display: block;
       left: 0;
       padding: .5rem;
@@ -309,11 +309,11 @@
         padding: .3125rem 1.5625rem .3125rem .625rem;
         border: 0;
         border-radius: 3px;
-        color: var(--deprecated-col-darkblue);
+        color: var(--col-navy-main);
         max-width: 100%;
 
         &:hover {
-          color: var(--deprecated-col-darkblue);
+          color: var(--col-navy-main);
         }
       }
 
@@ -343,7 +343,7 @@
       right: .3125rem;
       top: .3125rem;
       width: 1.25rem;
-      fill: var(--deprecated-col-darkblue);
+      fill: var(--col-navy-main);
       position: absolute;
     }
 
@@ -384,7 +384,7 @@
   }
 
   .page-local-history {
-    color: var(--deprecated-col-darkblue);
+    color: var(--col-navy-main);
     display: none;
     margin: 0;
     padding: 0;
@@ -701,7 +701,7 @@
 
       &:hover,
       &:focus {
-        background-color: var(--deprecated-col-darkblue);
+        background-color: var(--col-navy-main);
         color: #fff;
         text-decoration: none;
       }
@@ -757,7 +757,7 @@
 
     &:hover,
     &:focus {
-      background-color: var(--deprecated-col-darkblue);
+      background-color: var(--col-navy-main);
       color: #fff;
       text-decoration: none;
       outline: none;

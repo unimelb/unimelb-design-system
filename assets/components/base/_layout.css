@@ -7,14 +7,14 @@
 }
 
 body {
-  color: var(--deprecated-col-darkblue);
+  color: var(--col-navy-main);
   font-family: var(--ff-sans);
   -webkit-font-smoothing: antialiased;
   /* Trick to cover any elastic scrolling */
   overflow: visible;
   &::before {
     content: "";
-    background-color: var(--deprecated-col-darkblue);
+    background-color: var(--col-navy-main);
     position: absolute;
     height: 300px;
     top: -300px;

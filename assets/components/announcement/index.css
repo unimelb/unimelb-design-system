@@ -23,7 +23,7 @@
       text-decoration: none;
 
       &:hover {
-        background-color: var(--deprecated-col-darkblue);
+        background-color: var(--col-navy-main);
         color: #fff;
       }
 

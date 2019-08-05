@@ -22,7 +22,7 @@
         padding-bottom: 3rem;
         margin-top: 1.875rem;
         width: 5rem;
-        border-top: 2px solid var(--deprecated-col-darkblue);
+        border-top: 2px solid var(--col-navy-main);
         content: '';
         display: block;
         margin-left: auto;

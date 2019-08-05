@@ -45,8 +45,8 @@
   }
 
   &.brand {
-    background-color: var(--deprecated-col-darkblue);
-    border-bottom-color: color(var(--deprecated-col-darkblue) lightness(-10%));
+    background-color: var(--col-navy-main);
+    border-bottom-color: color(var(--col-navy-main) lightness(-10%));
   }
 
   &.soft {
@@ -100,7 +100,7 @@
 
   &.brand:not([disabled]):hover,
   &.brand:not([disabled]):focus {
-    background-color: color(var(--deprecated-col-darkblue) lightness(-10%));
+    background-color: color(var(--col-navy-main) lightness(-10%));
   }
 
   &.soft {

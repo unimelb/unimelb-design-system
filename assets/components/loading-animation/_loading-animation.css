@@ -26,7 +26,7 @@
   .loading-blue {
     padding-top: 4.5rem;
     padding-bottom: 4.5rem;
-    background-color: var(--deprecated-col-darkblue);
+    background-color: var(--col-navy-main);
     width: 100%;
 
     span {
@@ -44,7 +44,7 @@
     height: 3.125rem;
     width: 3.125rem;
     animation: rotateplane 1.2s infinite ease-in-out;
-    background-color: var(--deprecated-col-darkblue);
+    background-color: var(--col-navy-main);
     margin: 0 auto;
   }
 }

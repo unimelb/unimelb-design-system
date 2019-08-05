@@ -116,7 +116,7 @@
     max-width: var(--w-mid);
     padding-left: .9375rem;
     padding-right: .9375rem;
-    color: var(--deprecated-col-darkblue);
+    color: var(--col-navy-main);
     font-family: var(--ff-serif);
     font-style: italic;
     font-weight: var(--deprecated-fw--regular);

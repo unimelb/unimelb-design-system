@@ -541,7 +541,7 @@
       min-height: 21.875rem;
       background-position: center;
       background-size: cover;
-      border-bottom-color: color(var(--deprecated-col-darkblue) alpha(80%));
+      border-bottom-color: color(var(--col-navy-main) alpha(80%));
       border-bottom-width: 5px;
       border-left: 0;
       border-right: 0;
@@ -553,7 +553,7 @@
 
       .meta {
         padding: .75rem 1.25rem 0;
-        background-color: color(var(--deprecated-col-darkblue) alpha(80%));
+        background-color: color(var(--col-navy-main) alpha(80%));
         border: none;
         bottom: 0;
         color: #fff;

@@ -19,7 +19,7 @@
     &:hover,
     &:focus {
       .inner {
-        background-color: var(--deprecated-col-darkblue);
+        background-color: var(--col-navy-main);
       }
     }
   }
@@ -30,8 +30,8 @@
     padding-left: 1.25rem;
     padding-right: 1.25rem;
 
-    background-color: var(--deprecated-col-darkblue);
-    background-color: color(var(--deprecated-col-darkblue) alpha(70%));
+    background-color: var(--col-navy-main);
+    background-color: color(var(--col-navy-main) alpha(70%));
     color: #fff;
     max-width: 100%;
   }
