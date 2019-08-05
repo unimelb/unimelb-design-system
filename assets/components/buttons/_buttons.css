@@ -50,9 +50,9 @@
   }
 
   &.soft {
-    background-color: var(--deprecated-col-lightergray);
-    border-bottom-color: color(var(--deprecated-col-lightergray) lightness(-10%));
-    color: var(--deprecated-col-midgray);
+    background-color: var(--col-black-light);
+    border-bottom-color: color(var(--col-black-light) lightness(-10%));
+    color: var(--col-black-dark);
   }
 
   @media screen and (--bp-desktop) {
@@ -104,12 +104,12 @@
   }
 
   &.soft {
-    background-color: var(--deprecated-col-lightergray);
-    color: var(--deprecated-col-darkgray);
+    background-color: var(--col-black-light);
+    color: var(--col-black-dark);
 
     &:not([disabled]):hover,
     &:not([disabled]):focus {
-      background-color: color(var(--deprecated-col-lightergray) lightness(-10%));
+      background-color: color(var(--col-black-light) lightness(-10%));
     }
   }
 

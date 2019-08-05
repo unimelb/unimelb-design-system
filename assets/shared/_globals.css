@@ -3,7 +3,6 @@
  */
 :root {
   /* Colours */
-  --deprecated-col-darkgray: #333;
   --deprecated-col-midgray: #666;
   --deprecated-col-midgrayer: #777; /* last accessible grey text on white background */
   --deprecated-col-gray: #adb8c1;

@@ -59,7 +59,7 @@ body {
   .aside {
     font-size: .875rem;
     line-height: 1.5rem;
-    color: var(--deprecated-col-darkgray);
+    color: var(--col-navy-main);
     float: right;
 
     /* Override */
@@ -406,7 +406,7 @@ body {
     &__side {
       font-size: .875rem;
       background-color: var(--deprecated-col-paleblue);
-      color: var(--deprecated-col-darkgray);
+      color: var(--col-navy-main);
     }
 
     &__main__inner {

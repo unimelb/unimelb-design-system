@@ -106,7 +106,7 @@
 
   a {
     padding: .625rem;
-    color: var(--deprecated-col-darkgray);
+    color: var(--col-blue-dark);
     display: block;
     font-weight: var(--deprecated-fw--light);
     height: 100%;
@@ -121,7 +121,7 @@
     }
 
     &:hover {
-      color: var(--deprecated-col-darkgray);
+      color: var(--col-blue-dark);
     }
 
     @media screen and (--bp-desktop) {
