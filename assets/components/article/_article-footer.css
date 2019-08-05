@@ -22,8 +22,8 @@
       padding-top: .75rem;
       padding-bottom: .75rem;
       max-width: var(--w-sml);
-      border-bottom: 1px solid var(--col-lightergray);
-      border-top: 1px solid var(--col-lightergray);
+      border-bottom: 1px solid var(--deprecated-col-lightergray);
+      border-top: 1px solid var(--deprecated-col-lightergray);
       margin: 0 auto;
       overflow: hidden;
       width: 94%;
@@ -97,7 +97,7 @@
       text-align: left;
 
       a {
-        font-weight: var(--fw-bold);
+        font-weight: var(--deprecated-fw--bold);
       }
     }
   }

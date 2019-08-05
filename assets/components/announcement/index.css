@@ -16,14 +16,14 @@
 
     &__message {
       padding: 1.25rem 3.125rem 1.25rem .9375rem;
-      background-color: var(--col-brighterblue);
+      background-color: var(--deprecated-col-brighterblue);
       color: #fff;
       display: block;
       text-align: left;
       text-decoration: none;
 
       &:hover {
-        background-color: var(--col-darkblue);
+        background-color: var(--deprecated-col-darkblue);
         color: #fff;
       }
 
@@ -31,7 +31,7 @@
         font-size: .8125rem;
         line-height: 1.5rem;
         padding-bottom: .1875rem;
-        color: var(--col-lightestblue);
+        color: var(--deprecated-col-lightestblue);
         font-weight: normal;
         letter-spacing: normal;
         margin: 0;
@@ -85,7 +85,7 @@
 
       &:hover {
         background-color: #fff;
-        color: var(--col-brighterblue);
+        color: var(--deprecated-col-brighterblue);
       }
 
       & > [data-icon="close"] {

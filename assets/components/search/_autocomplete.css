@@ -4,7 +4,7 @@
     margin-top: -.625rem;
     max-width: var(--w-lge);
     background-color: #fff;
-    border: 1px solid var(--col-lightergray);
+    border: 1px solid var(--deprecated-col-lightergray);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     position: absolute;
     width: 97%;
@@ -29,7 +29,7 @@
 
       &:hover,
       &:focus {
-        background-color: var(--col-brighterblue);
+        background-color: var(--deprecated-col-brighterblue);
         color: #fff;
       }
     }

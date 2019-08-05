@@ -27,7 +27,7 @@
       padding-bottom: 1.875rem;
       padding-top: 1.875rem;
       align-self: flex-end;
-      background-color: color(var(--col-darkblue) alpha(80%));
+      background-color: color(var(--deprecated-col-darkblue) alpha(80%));
       width: 100%;
 
       &.white {

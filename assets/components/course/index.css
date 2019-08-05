@@ -8,7 +8,7 @@
 
   th {
     padding: 1.875rem 0 .625rem;
-    border-bottom: 1px solid var(--col-lightergray);
+    border-bottom: 1px solid var(--deprecated-col-lightergray);
     border-left: 0 none;
     border-right: 0 none;
     border-top: 0 none;
@@ -30,7 +30,7 @@
   td {
     padding-bottom: .625rem;
     padding-top: .625rem;
-    border-bottom: 1px solid var(--col-lightergray);
+    border-bottom: 1px solid var(--deprecated-col-lightergray);
     border-left: 0 none;
     border-right: 0 none;
     border-top: 0 none;
@@ -45,7 +45,7 @@
   }
 
   .accordion__title {
-    color: var(--col-brighterblue);
+    color: var(--deprecated-col-brighterblue);
 
     &:hover {
       text-decoration: underline;
@@ -66,7 +66,7 @@
     &::after {
       font-size: 3.75rem;
       content: '\00d7';
-      font-weight: var(--fw-thin);
+      font-weight: var(--deprecated-fw--thin);
       line-height: 1;
     }
   }
@@ -79,7 +79,7 @@
 
     td.unit-description {
       padding: .9375rem 0;
-      background-color: var(--col-navy);
+      background-color: var(--deprecated-col-navy);
       color: #fff;
       position: relative;
       text-align: left;
@@ -91,7 +91,7 @@
 
       &::before {
         border: solid transparent;
-        border-bottom-color: var(--col-navy);
+        border-bottom-color: var(--deprecated-col-navy);
         border-width: 10px;
         bottom: 100%;
         content: ' ';
@@ -212,7 +212,7 @@
     line-height: 2.25rem;
     padding-top: 0;
     padding-bottom: 1.5rem;
-    font-weight: var(--fw-light);
+    font-weight: var(--deprecated-fw--light);
   }
 
   p {
@@ -355,7 +355,7 @@
 
     tr td.unit-description::before {
       border: solid transparent;
-      border-bottom-color: var(--col-navy);
+      border-bottom-color: var(--deprecated-col-navy);
       border-width: 10px;
       bottom: 100%;
       content: ' ';

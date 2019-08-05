@@ -2,8 +2,8 @@
   .enquiry {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    background-color: var(--col-paleblue);
-    box-shadow: 0 -1px 9px color(var(--col-lightblue) alpha(30%)) inset;
+    background-color: var(--deprecated-col-paleblue);
+    box-shadow: 0 -1px 9px color(var(--deprecated-col-lightblue) alpha(30%)) inset;
 
     .errors {
       font-size: 1.375rem;
@@ -43,8 +43,8 @@
       line-height: 1.5rem;
       padding-top: .75rem;
       max-width: var(--w-sml);
-      border-top: 1px solid color(var(--col-lightblue) alpha(30%));
-      color: var(--col-midblue);
+      border-top: 1px solid color(var(--deprecated-col-lightblue) alpha(30%));
+      color: var(--deprecated-col-midblue);
       text-align: center;
 
       @media screen and (--bp-tablet) {
@@ -85,7 +85,7 @@
         @media screen and (--bp-tablet) {
           label,
           legend {
-            font-weight: var(--fw-regular);
+            font-weight: var(--deprecated-fw--regular);
           }
         }
 
@@ -93,14 +93,14 @@
         input[type="radio"] {
           & + label {
             width: 100%;
-            font-weight: var(--fw-light);
+            font-weight: var(--deprecated-fw--light);
           }
         }
       }
     }
 
     &--dark {
-      background-color: var(--col-blue);
+      background-color: var(--deprecated-col-blue);
       color: #fff;
       box-shadow: none;
 
@@ -123,7 +123,7 @@
 
     &.accordion__visible {
       .enquiry__cta {
-        border-bottom: 1px solid color(var(--col-lightblue) alpha(30%));
+        border-bottom: 1px solid color(var(--deprecated-col-lightblue) alpha(30%));
       }
 
       .accordion__hidden {

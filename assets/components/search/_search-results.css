@@ -12,7 +12,7 @@
     font-size: .75rem;
     line-height: 1.5rem;
     padding-bottom: 1rem;
-    color: var(--col-midgray);
+    color: var(--deprecated-col-midgray);
     padding-top: 0;
   }
 
@@ -125,7 +125,7 @@
       font-size: 1.25rem;
       line-height: 1.5rem;
       padding-bottom: .75rem;
-      font-weight: var(--fw-regular);
+      font-weight: var(--deprecated-fw--regular);
       width: auto;
     }
 
@@ -144,7 +144,7 @@
       &.url {
         font-size: .75rem;
         line-height: 1.5rem;
-        color: var(--col-brighterblue);
+        color: var(--deprecated-col-brighterblue);
 
         & > a {
           @mixin ellipsis;
@@ -183,7 +183,7 @@
     }
 
     & > dt {
-      color: var(--col-midgrayer);
+      color: var(--deprecated-col-midgrayer);
       clear: none;
       width: auto;
     }

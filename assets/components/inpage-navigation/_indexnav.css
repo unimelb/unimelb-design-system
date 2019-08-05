@@ -3,7 +3,7 @@
   top: 2.5rem;
   width: 2.5rem;
   align-items: center;
-  background-color: color(var(--col-navy) alpha(90%));
+  background-color: color(var(--deprecated-col-navy) alpha(90%));
   bottom: 0;
   display: flex;
   flex-direction: row;
@@ -55,8 +55,8 @@
 
     a {
       height: 2.5rem;
-      color: var(--col-brighterblue);
-      font-weight: var(--fw-regular);
+      color: var(--deprecated-col-brighterblue);
+      font-weight: var(--deprecated-fw--regular);
     }
   }
 
@@ -69,7 +69,7 @@
       line-height: 1.5rem;
       height: 3.75rem;
       line-height: 2.8125rem;
-      font-weight: var(--fw-bold);
+      font-weight: var(--deprecated-fw--bold);
     }
   }
 }

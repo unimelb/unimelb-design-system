@@ -6,7 +6,7 @@
 .uomcontent {
 	background-color: #fff;
   font-family: var(--ff-sans);
-  font-weight: var(--fw-regular);
+  font-weight: var(--deprecated-fw--regular);
 
   .sans {
     font-family: var(--ff-sans);
@@ -21,19 +21,19 @@
   }
 
   .thin {
-    font-weight: var(--fw-thin);
+    font-weight: var(--deprecated-fw--thin);
   }
 
   .light {
-    font-weight: var(--fw-light);
+    font-weight: var(--deprecated-fw--light);
   }
 
   .regular {
-    font-weight: var(--fw-regular);
+    font-weight: var(--deprecated-fw--regular);
   }
 
   .bold {
-    font-weight: var(--fw-bold);
+    font-weight: var(--deprecated-fw--bold);
   }
 
   h1,
@@ -58,7 +58,7 @@
     font-size: calc(36/16rem);
     line-height: 2.25rem;
     padding-bottom: 1.5rem;
-    font-weight: var(--fw-bolder);
+    font-weight: var(--deprecated-fw--bolder);
     font-family: var(--ff-serif);
 
     @media screen and (--bp-desktop) {
@@ -71,7 +71,7 @@
     clear: left;
     font-family: var(--ff-serif);
     font-size: calc(36/16rem);
-    font-weight: var(--fw-bolder);
+    font-weight: var(--deprecated-fw--bolder);
     padding-bottom: 1.5rem;
     padding-top: 1.5rem;
 
@@ -82,7 +82,7 @@
 
   h3 {
     font-size: calc(23/16rem);
-    font-weight: var(--fw-bold);
+    font-weight: var(--deprecated-fw--bold);
     margin-bottom: calc(10/16rem);
 
     @media screen and (--bp-desktop) {
@@ -97,7 +97,7 @@
 
   h4 {
     font-size: calc(20/16rem);
-    font-weight: var(--fw-bold);
+    font-weight: var(--deprecated-fw--bold);
     margin-bottom: calc(8/16rem);
     @media screen and (--bp-desktop) {
       font-size: calc(22/16rem);
@@ -106,7 +106,7 @@
 
   h5 {
     font-size: calc(18/16rem);
-    font-weight: var(--fw-bold);
+    font-weight: var(--deprecated-fw--bold);
     margin-bottom: calc(5/16rem);
     @media screen and (--bp-desktop) {
       font-size: calc(20/16rem);
@@ -115,7 +115,7 @@
 
   h6 {
     font-size: calc(18/16rem);
-    font-weight: var(--fw-bold);
+    font-weight: var(--deprecated-fw--bold);
     @media screen and (--bp-desktop) {
       font-size: calc(20/16rem);
     }
@@ -263,7 +263,7 @@
           content: counter(steps);
           display: block;
           font-family: var(--ff-serif);
-          font-weight: var(--fw-bolder);
+          font-weight: var(--deprecated-fw--bolder);
           left: 0;
           line-height: 1.2;
           position: absolute;
@@ -452,7 +452,7 @@
           top: .375rem;
           width: .625rem;
           background: transparent;
-          border: 3px solid var(--col-green);
+          border: 3px solid var(--deprecated-col-green);
           border-right: 0 none;
           border-top: 0 none;
           content: '';
@@ -523,7 +523,7 @@
 
   hr {
     border: 0;
-    border-bottom: 1px solid var(--col-lightestblue);
+    border-bottom: 1px solid var(--deprecated-col-lightestblue);
     clear: both;
     line-height: 0;
     margin: 0;
@@ -535,12 +535,12 @@
   }
 
   a {
-    color: var(--col-brighterblue);
+    color: var(--deprecated-col-brighterblue);
     text-decoration: underline;
 
     &:hover,
     &:focus {
-      color: color(var(--col-brighterblue) lightness(-15%));
+      color: color(var(--deprecated-col-brighterblue) lightness(-15%));
       text-decoration: none;
     }
 
@@ -579,7 +579,7 @@
   .grey {
     font-size: 1rem;
     line-height: 1.5rem;
-    color: var(--col-midgray);
+    color: var(--deprecated-col-midgray);
   }
 
   .main-title {
@@ -587,13 +587,13 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     font-family: var(--ff-serif);
-    font-weight: var(--fw-regular);
+    font-weight: var(--deprecated-fw--regular);
     line-height: 1.2;
 
     &::after {
       margin-top: .9375rem;
       max-width: var(--w-sml);
-      border-bottom: 2px solid var(--col-midgray);
+      border-bottom: 2px solid var(--deprecated-col-midgray);
       content: '';
       display: block;
       width: 100%;

@@ -7,7 +7,7 @@
   width: 100%;
 
   nav {
-    border-bottom: 1px solid var(--col-lightergray);
+    border-bottom: 1px solid var(--deprecated-col-lightergray);
 
     @media screen and (--bp-tablet) {
       text-align: left;
@@ -18,10 +18,10 @@
       padding-left: 1.5625rem;
       padding-right: 1.5625rem;
       background-color: inherit;
-      color: var(--col-midgray);
+      color: var(--deprecated-col-midgray);
       cursor: pointer;
       display: inline-block;
-      font-weight: var(--fw-light);
+      font-weight: var(--deprecated-fw--light);
       margin-bottom: -1px;
       text-decoration: none;
 
@@ -31,12 +31,12 @@
 
       &:hover,
       &:focus {
-        color: var(--col-brighterblue);
+        color: var(--deprecated-col-brighterblue);
       }
 
       &[data-current] {
-        border-bottom: 2px solid var(--col-brighterblue);
-        color: var(--col-brighterblue);
+        border-bottom: 2px solid var(--deprecated-col-brighterblue);
+        color: var(--deprecated-col-brighterblue);
       }
     }
   }
@@ -46,7 +46,7 @@
     padding-bottom: 0;
     padding-left: 1.5625rem;
     padding-right: 1.5625rem;
-    border-bottom: 1px solid var(--col-lightergray);
+    border-bottom: 1px solid var(--deprecated-col-lightergray);
     margin: 0;
 
     p {
@@ -61,10 +61,10 @@
     nav {
       a {
         cursor: pointer;
-        font-weight: var(--fw-regular);
+        font-weight: var(--deprecated-fw--regular);
 
         &[data-current] {
-          font-weight: var(--fw-bold);
+          font-weight: var(--deprecated-fw--bold);
         }
       }
 
@@ -125,11 +125,11 @@
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
         font-size: calc(16/16rem);
-        font-weight: var(--fw-bold);
+        font-weight: var(--deprecated-fw--bold);
         line-height: calc(62/16rem); /* same as tabs height */
         padding: 0 calc(20/16rem);
         margin-right: calc(5/16rem);
-        color: var(--col-darkblue);
+        color: var(--deprecated-col-darkblue);
         display: inline-block;
         text-decoration: none;
 
@@ -139,7 +139,7 @@
 
         &:hover,
         &:focus {
-          color: color(var(--col-darkblue) lightness(-15%));
+          color: color(var(--deprecated-col-darkblue) lightness(-15%));
         }
 
         &[data-current] {
@@ -186,10 +186,10 @@
     .tab-arrow {
       font-size: 1.875rem;
       padding: 0 1.25rem .3125rem; /* bottom padding aligns arrows with tab labels */
-      background: var(--col-darkblue);
+      background: var(--deprecated-col-darkblue);
       color: #fff;
       display: none;
-      font-weight: var(--fw-bold);
+      font-weight: var(--deprecated-fw--bold);
       height: 100%;
       position: absolute;
       top: 0;
@@ -206,13 +206,13 @@
 
     .tab-arrow--left {
       padding-right: .625rem;
-      background: linear-gradient(to left, color(var(--col-darkblue) alpha(0%)), color(var(--col-darkblue) alpha(90%)) 10%);
+      background: linear-gradient(to left, color(var(--deprecated-col-darkblue) alpha(0%)), color(var(--deprecated-col-darkblue) alpha(90%)) 10%);
       left: 0;
     }
 
     .tab-arrow--right {
       padding-left: .625rem;
-      background: linear-gradient(to right, color(var(--col-darkblue) alpha(0%)), color(var(--col-darkblue) alpha(90%)) 10%);
+      background: linear-gradient(to right, color(var(--deprecated-col-darkblue) alpha(0%)), color(var(--deprecated-col-darkblue) alpha(90%)) 10%);
       right: 0;
     }
 
@@ -259,7 +259,7 @@
 
         &[data-current] {
           color: #fff;
-          font-weight: var(--fw-regular);
+          font-weight: var(--deprecated-fw--regular);
 
           &::after {
             border-top-color: #000;
@@ -276,7 +276,7 @@
 
     &.navy {
       .full-width {
-        background-color: var(--col-darkblue);
+        background-color: var(--deprecated-col-darkblue);
       }
 
       figure.full-width {
@@ -289,14 +289,14 @@
       }
 
       nav a {
-        color: var(--col-gray);
+        color: var(--deprecated-col-gray);
 
         &[data-current] {
           color: #fff;
-          font-weight: var(--fw-regular);
+          font-weight: var(--deprecated-fw--regular);
 
           &::after {
-            border-top-color: var(--col-darkblue);
+            border-top-color: var(--deprecated-col-darkblue);
           }
         }
       }
@@ -367,7 +367,7 @@
 
     &[aria-selected="true"] {
       background-color: #fff;
-      border-color: var(--col-brighterblue);
+      border-color: var(--deprecated-col-brighterblue);
     }
 
     &:hover {

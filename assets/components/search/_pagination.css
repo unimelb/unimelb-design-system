@@ -4,7 +4,7 @@
     line-height: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid color(#000 alpha(10%));
-    color: var(--col-midgray);
+    color: var(--deprecated-col-midgray);
   }
 
   ul.search-pagination {
@@ -49,7 +49,7 @@
     }
 
     span {
-      background-color: var(--col-paleblue);
+      background-color: var(--deprecated-col-paleblue);
     }
   }
 }

@@ -19,7 +19,7 @@
     &:hover,
     &:focus {
       .inner {
-        background-color: var(--col-darkblue);
+        background-color: var(--deprecated-col-darkblue);
       }
     }
   }
@@ -30,15 +30,15 @@
     padding-left: 1.25rem;
     padding-right: 1.25rem;
 
-    background-color: var(--col-darkblue);
-    background-color: color(var(--col-darkblue) alpha(70%));
+    background-color: var(--deprecated-col-darkblue);
+    background-color: color(var(--deprecated-col-darkblue) alpha(70%));
     color: #fff;
     max-width: 100%;
   }
 
   h1 {
     max-width: var(--w-mid);
-    font-weight: var(--fw-thin);
+    font-weight: var(--deprecated-fw--thin);
     margin: 0;
     padding: 0;
   }
@@ -65,7 +65,7 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     max-width: var(--w-mid);
-    border-bottom: 1px solid var(--col-lightergray);
+    border-bottom: 1px solid var(--deprecated-col-lightergray);
     margin: 0 auto;
 
     &:first-child {
@@ -107,7 +107,7 @@
     &.topic {
       font-size: .875rem;
       line-height: 1.5rem;
-      color: var(--col-midgray);
+      color: var(--deprecated-col-midgray);
     }
   }
 
@@ -160,7 +160,7 @@
       font-size: 1.25rem;
       line-height: 1.5rem;
       padding-bottom: .75rem;
-      font-weight: var(--fw-regular);
+      font-weight: var(--deprecated-fw--regular);
     }
 
     p {

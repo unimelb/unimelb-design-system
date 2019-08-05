@@ -13,7 +13,7 @@
       }
 
       h1 {
-        font-weight: var(--fw-bold);
+        font-weight: var(--deprecated-fw--bold);
       }
 
       p.author {
@@ -21,7 +21,7 @@
           font-size: 1.125rem;
           line-height: 1.5rem;
           font-style: normal;
-          font-weight: var(--fw-bold);
+          font-weight: var(--deprecated-fw--bold);
         }
       }
 
@@ -58,7 +58,7 @@
         &.author {
           padding-bottom: 3rem;
           max-width: var(--w-sml);
-          border-bottom: 1px solid var(--col-lightergray);
+          border-bottom: 1px solid var(--deprecated-col-lightergray);
 
           &::before {
             border-color: #000;

@@ -1,36 +1,36 @@
 @define-mixin notice-success {
-  background-color: var(--col-palegreen);
-  color: color(var(--col-palegreen) lightness(-65%));
+  background-color: var(--deprecated-col-palegreen);
+  color: color(var(--deprecated-col-palegreen) lightness(-65%));
 
   a {
-    color: color(var(--col-palegreen) lightness(-65%));
+    color: color(var(--deprecated-col-palegreen) lightness(-65%));
   }
 }
 
 @define-mixin notice-info {
-  background-color: var(--col-lightestblue);
-  color: color(var(--col-lightestblue) lightness(-65%));
+  background-color: var(--deprecated-col-lightestblue);
+  color: color(var(--deprecated-col-lightestblue) lightness(-65%));
 
   a {
-    color: color(var(--col-lightestblue) lightness(-65%));
+    color: color(var(--deprecated-col-lightestblue) lightness(-65%));
   }
 }
 
 @define-mixin notice-warning {
-  background-color: var(--col-paleyellow);
-  color: color(var(--col-paleyellow) lightness(-65%));
+  background-color: var(--deprecated-col-paleyellow);
+  color: color(var(--deprecated-col-paleyellow) lightness(-65%));
 
   a {
-    color: color(var(--col-palegreen) lightness(-65%));
+    color: color(var(--deprecated-col-palegreen) lightness(-65%));
   }
 }
 
 @define-mixin notice-danger {
-  background-color: var(--col-salmon);
-  color: color(var(--col-salmon) lightness(+35%));
+  background-color: var(--deprecated-col-salmon);
+  color: color(var(--deprecated-col-salmon) lightness(+35%));
 
   a {
-    color: color(var(--col-salmon) lightness(+65%));
+    color: color(var(--deprecated-col-salmon) lightness(+65%));
   }
 }
 

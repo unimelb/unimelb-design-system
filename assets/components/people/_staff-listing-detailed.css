@@ -24,7 +24,7 @@
     }
 
     strong {
-      font-weight: var(--fw-regular);
+      font-weight: var(--deprecated-fw--regular);
     }
 
     p {
@@ -36,7 +36,7 @@
     .frame {
       max-width: 12.5rem;
       margin-bottom: 1.5rem;
-      background-color: var(--col-lightestblue);
+      background-color: var(--deprecated-col-lightestblue);
       border-radius: 50%;
       line-height: 0;
       margin-left: auto;
@@ -95,7 +95,7 @@
         padding: 0 .625rem;
         color: #fff;
         font-style: normal;
-        font-weight: var(--fw-regular);
+        font-weight: var(--deprecated-fw--regular);
         text-decoration: underline;
       }
 

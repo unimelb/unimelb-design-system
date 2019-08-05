@@ -1,5 +1,5 @@
 .uomcontent .profile {
-  background-color: var(--col-lightestblue);
+  background-color: var(--deprecated-col-lightestblue);
 
   header {
     min-height: 25rem;
@@ -74,8 +74,8 @@
 
   h1 {
     margin-bottom: 2.1875rem;
-    border-bottom: 2px solid var(--col-navy);
-    color: var(--col-navy);
+    border-bottom: 2px solid var(--deprecated-col-navy);
+    color: var(--deprecated-col-navy);
 
     @media screen and (--bp-tablet) {
       margin-bottom: 1.5625rem;

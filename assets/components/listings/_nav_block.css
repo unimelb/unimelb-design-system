@@ -46,7 +46,7 @@
     font-size: 1.25rem;
     line-height: 1.5rem;
     padding-bottom: .75rem;
-    font-weight: var(--fw-regular);
+    font-weight: var(--deprecated-fw--regular);
 
     a {
       padding-bottom: 0;

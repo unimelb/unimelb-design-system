@@ -46,7 +46,7 @@
       font-size: 1.125rem;
       line-height: 1.5rem;
       color: #fff;
-      font-weight: var(--fw-thin);
+      font-weight: var(--deprecated-fw--thin);
       max-width: 100%;
       padding: 0;
     }

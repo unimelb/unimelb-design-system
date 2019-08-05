@@ -5,7 +5,7 @@
   max-width: var(--w-sml);
   padding-left: 1.5625rem;
   padding-right: 1.5625rem;
-  background-color: color(var(--col-brighterblue) lightness(+54%));
+  background-color: color(var(--deprecated-col-brighterblue) lightness(+54%));
   margin: 0 auto;
 
   h1 {
@@ -13,7 +13,7 @@
     line-height: 1.5rem;
     letter-spacing: .125rem;
     padding: 0 0 .9375rem 0;
-    font-weight: var(--fw-bold);
+    font-weight: var(--deprecated-fw--bold);
     margin: 0;
     text-transform: uppercase;
   }
@@ -30,7 +30,7 @@
     color: #000;
     display: block;
     float: none;
-    font-weight: var(--fw-light);
+    font-weight: var(--deprecated-fw--light);
     width: auto;
   }
 
@@ -43,7 +43,7 @@
     margin-top: 0;
     display: block;
     float: none;
-    font-weight: var(--fw-regular);
+    font-weight: var(--deprecated-fw--regular);
     width: auto;
   }
 
@@ -63,27 +63,27 @@
     dd {
       font-size: 2.5rem;
       line-height: 3rem;
-      font-weight: var(--fw-bold);
+      font-weight: var(--deprecated-fw--bold);
     }
   }
 
   .emergency-box {
     @mixin boxes;
-    color: var(--col-cherry);
+    color: var(--deprecated-col-cherry);
 
     dd {
       font-size: 1.5rem;
       line-height: 2.25rem;
-      font-weight: var(--fw-bold);
+      font-weight: var(--deprecated-fw--bold);
     }
 
     a {
-      color: var(--col-cherry);
+      color: var(--deprecated-col-cherry);
     }
 
     @media screen and (--bp-desktop) {
       dd {
-        font-weight: var(--fw-regular);
+        font-weight: var(--deprecated-fw--regular);
       }
     }
   }

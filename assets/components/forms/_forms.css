@@ -3,18 +3,18 @@
   font-size: .8125rem;
   height: 2.8125rem;
   padding: 0 .9375rem;
-  background-color: var(--col-brighterblue);
+  background-color: var(--deprecated-col-brighterblue);
   border: 0 none;
   color: #fff;
   cursor: pointer;
-  font-weight: var(--fw-bold);
+  font-weight: var(--deprecated-fw--bold);
   letter-spacing: 1px;
   position: relative;
   text-transform: uppercase;
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: color(var(--col-brighterblue) lightness(-10%));
+    background-color: color(var(--deprecated-col-brighterblue) lightness(-10%));
   }
 
   &:active {
@@ -27,12 +27,12 @@
   margin-top: .3125rem;
   padding: .5rem .625rem;
   font-family: var(--ff-sans);
-  font-weight: var(--fw-light);
+  font-weight: var(--deprecated-fw--light);
 
   &.invalid {
     background-color: #fff;
-    border-color: color(var(--col-cherry) lightness(+25%));
-    color: color(var(--col-cherry) lightness(+25%));
+    border-color: color(var(--deprecated-col-cherry) lightness(+25%));
+    color: color(var(--deprecated-col-cherry) lightness(+25%));
   }
 
   @media screen and (--bp-desktop) {
@@ -43,17 +43,17 @@
 @define-mixin textcontrol {
   @mixin control;
   font-size: 1.25rem;
-  background-color: var(--col-lightgray);
-  border: 1px solid color(var(--col-lightergray) lightness(-5%));
+  background-color: var(--deprecated-col-lightgray);
+  border: 1px solid color(var(--deprecated-col-lightergray) lightness(-5%));
   box-shadow: inset 0 1px 3px color(#000 alpha(15%));
 
   &:hover:not([disabled]) {
-    border-color: var(--col-gray);
+    border-color: var(--deprecated-col-gray);
   }
 
   &:focus {
     background-color: #fff;
-    border-color: var(--col-borderblue);
+    border-color: var(--deprecated-col-borderblue);
     color: #000;
     outline: 0;
 
@@ -77,7 +77,7 @@
   font-size: 1rem;
   padding: 0 .625rem;
   background-color: #fff;
-  color: var(--col-darkgray);
+  color: var(--deprecated-col-darkgray);
   line-height: 1.2;
   margin: 0 auto;
   max-width: var(--w-sml);
@@ -93,7 +93,7 @@
   [data-required=true]::after {
     padding-left: .3125rem;
     content: '*';
-    color: var(--col-cherry);
+    color: var(--deprecated-col-cherry);
   }
 
   .form__subtext {
@@ -103,7 +103,7 @@
 }
 
 .uomcontent .form-error {
-  color: var(--col-cherry);
+  color: var(--deprecated-col-cherry);
 
   p {
     padding-bottom: 0;
@@ -145,7 +145,7 @@
     font-size: .875rem;
     padding: .3125rem 0;
     animation: flash .4s .1s 1 ease-in-out;
-    color: var(--col-cherry);
+    color: var(--deprecated-col-cherry);
     display: block;
     font-style: italic;
   }
@@ -255,7 +255,7 @@
       border-radius: 0 3px 3px 0;
       font-size: .8125rem;
       padding: 0 .9375rem;
-      font-weight: var(--fw-bold);
+      font-weight: var(--deprecated-fw--bold);
       letter-spacing: 1px;
     }
   }
@@ -278,11 +278,11 @@
         height: 3.75rem;
         line-height: 2.25rem;
         padding: .9375rem;
-        border-color: var(--col-brighterblue);
+        border-color: var(--deprecated-col-brighterblue);
 
         &:focus {
           background-color: #fff;
-          color: var(--col-brighterblue);
+          color: var(--deprecated-col-brighterblue);
         }
       }
 
@@ -350,7 +350,7 @@
 
         &::before {
           background-color: #fff;
-          border: 1px solid color(var(--col-midgray) lightness(+40%));
+          border: 1px solid color(var(--deprecated-col-midgray) lightness(+40%));
           box-sizing: border-box;
           content: '';
           display: block;
@@ -373,13 +373,13 @@
     }
 
     &:focus + label span::before {
-      border-color: var(--col-brighterblue);
+      border-color: var(--deprecated-col-brighterblue);
     }
   }
 
   input[type="checkbox"]:not(.unstyled) + label {
     &::after {
-      border: 3px solid var(--col-brighterblue);
+      border: 3px solid var(--deprecated-col-brighterblue);
       border-right: 0 none;
       border-top: 0 none;
       height: 5px;
@@ -394,7 +394,7 @@
 
   input[type="radio"]:not(.unstyled) + label {
     &::after {
-      background-color: var(--col-brighterblue);
+      background-color: var(--deprecated-col-brighterblue);
       border-radius: 50%;
       height: 12px;
       width: 12px;
@@ -434,7 +434,7 @@
     font-size: 1.25rem;
     line-height: 1.5rem;
     padding-bottom: 1.5rem;
-    font-weight: var(--fw-thin);
+    font-weight: var(--deprecated-fw--thin);
   }
 
   form {
@@ -478,10 +478,10 @@
 @keyframes flash {
   0%,
   100% {
-    color: color(var(--col-cherry) lightness(+25%));
+    color: color(var(--deprecated-col-cherry) lightness(+25%));
   }
 
   66% {
-    color: color(var(--col-cherry) lightness(+60%));
+    color: color(var(--deprecated-col-cherry) lightness(+60%));
   }
 }

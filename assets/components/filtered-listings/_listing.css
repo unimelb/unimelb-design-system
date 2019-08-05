@@ -22,7 +22,7 @@
       font-size: 1.375rem;
       line-height: 2.25rem;
       padding-top: 0;
-      font-weight: var(--fw-light);
+      font-weight: var(--deprecated-fw--light);
       letter-spacing: 0;
       text-align: left;
       text-transform: none;
@@ -97,18 +97,18 @@
       width: 24%;
     }
 
-    &--green > a { background-color: var(--col-palegreen); }
-    &--bronze > a { background-color: var(--col-bronze); }
-    &--silver > a { background-color: var(--col-lightestblue); }
-    &--blue > a { background-color: var(--col-lightblue); }
-    &--yellow > a { background-color: var(--col-paleyellow); }
+    &--green > a { background-color: var(--deprecated-col-palegreen); }
+    &--bronze > a { background-color: var(--deprecated-col-bronze); }
+    &--silver > a { background-color: var(--deprecated-col-lightestblue); }
+    &--blue > a { background-color: var(--deprecated-col-lightblue); }
+    &--yellow > a { background-color: var(--deprecated-col-paleyellow); }
   }
 
   a {
     padding: .625rem;
-    color: var(--col-darkgray);
+    color: var(--deprecated-col-darkgray);
     display: block;
-    font-weight: var(--fw-light);
+    font-weight: var(--deprecated-fw--light);
     height: 100%;
     margin: 0;
     min-width: 100%;
@@ -121,7 +121,7 @@
     }
 
     &:hover {
-      color: var(--col-darkgray);
+      color: var(--deprecated-col-darkgray);
     }
 
     @media screen and (--bp-desktop) {

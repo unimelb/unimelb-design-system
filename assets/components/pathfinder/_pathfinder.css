@@ -13,14 +13,14 @@
       @mixin focus-blue;
       @mixin focus-medium;
       background-color: #fff;
-      border-bottom: 3px solid var(--col-brighterblue);
+      border-bottom: 3px solid var(--deprecated-col-brighterblue);
       color: #000;
       outline-color: #fff;
 
       &:hover, &:focus {
         background-color: #fff;
         .button-small {
-          color: var(--col-darkblue);
+          color: var(--deprecated-col-darkblue);
         }
       }
 
@@ -36,16 +36,16 @@
       }
 
       .button-small {
-        border-color: color(var(--col-darkblue) alpha(70%));
-        color: var(--col-darkblue);
+        border-color: color(var(--deprecated-col-darkblue) alpha(70%));
+        color: var(--deprecated-col-darkblue);
       }
     }
 
     p,
     span.text,
     strong {
-      border-color: var(--col-darkblue);
-      color: var(--col-darkblue);
+      border-color: var(--deprecated-col-darkblue);
+      color: var(--deprecated-col-darkblue);
     }
   }
 
@@ -93,7 +93,7 @@
 
     @media screen and (--bp-desktop) {
       li {
-        border-left: 1px solid var(--col-lightergray);
+        border-left: 1px solid var(--deprecated-col-lightergray);
 
         &:first-child {
           border-left: none;
@@ -195,7 +195,7 @@
     padding-bottom: 3rem;
     color: #fff;
     font-family: var(--ff-serif);
-    font-weight: var(--fw-bolder);
+    font-weight: var(--deprecated-fw--bolder);
     position: relative;
     text-align: center;
 
@@ -218,7 +218,7 @@
     @mixin focus-light;
     padding-bottom: 3rem;
     max-width: 21.875rem;
-    background-color: var(--col-darkblue);
+    background-color: var(--deprecated-col-darkblue);
     margin: 0 auto;
     position: relative;
     transform: scale(1);
@@ -243,7 +243,7 @@
     }
 
     &:hover, &:focus {
-      background-color: color(var(--col-darkblue) lightness(+3%));
+      background-color: color(var(--deprecated-col-darkblue) lightness(+3%));
       transform: scale(1.06);
       z-index: 2;
 
@@ -256,7 +256,7 @@
 
     &.featured {
       margin-bottom: -.9375rem;
-      background-color: color(var(--col-brighterblue) lightness(-5%));
+      background-color: color(var(--deprecated-col-brighterblue) lightness(-5%));
       color: #000;
 
       transform: scale(1.06);
@@ -264,7 +264,7 @@
 
       &:hover,
       &:focus {
-        background-color: color(var(--col-brighterblue) lightness(+2%));
+        background-color: color(var(--deprecated-col-brighterblue) lightness(+2%));
         transform: scale(1.08);
         z-index: 1;
       }

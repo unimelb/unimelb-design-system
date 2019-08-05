@@ -76,13 +76,13 @@
       }
 
       strong {
-        font-weight: var(--fw-regular);
+        font-weight: var(--deprecated-fw--regular);
         vertical-align: baseline;
 
         @media screen and (--bp-desktop) {
           display: block;
           font-size: 2.25rem;
-          font-weight: var(--fw-bold);
+          font-weight: var(--deprecated-fw--bold);
           line-height: 3rem;
         }
       }
@@ -95,7 +95,7 @@
     div {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
-      border-top: 1px solid color(var(--col-lightgray) lightness(-10%));
+      border-top: 1px solid color(var(--deprecated-col-lightgray) lightness(-10%));
       text-align: center;
 
       @media screen and (--bp-desktop) {
@@ -242,7 +242,7 @@
       line-height: 2.25rem;
       padding-bottom: 1.5rem;
       clear: none;
-      font-weight: var(--fw-light);
+      font-weight: var(--deprecated-fw--light);
       letter-spacing: 0;
       text-align: left;
       text-transform: none;

@@ -34,7 +34,7 @@
 
       &::before {
         font-size: .875rem;
-        color: var(--col-midgray);
+        color: var(--deprecated-col-midgray);
         content: attr(data-label);
         display: block;
         font-style: italic;
@@ -103,7 +103,7 @@
 
   .highlight,
   &.zebra tr:nth-child(odd) .highlight {
-    background-color: color(var(--col-paleblue) lightness(-5%));
+    background-color: color(var(--deprecated-col-paleblue) lightness(-5%));
   }
 
   &.staff-listing {
@@ -122,8 +122,8 @@
 
   tr {
     &.header {
-      color: var(--col-navy);
-      font-weight: var(--fw-bold);
+      color: var(--deprecated-col-navy);
+      font-weight: var(--deprecated-fw--bold);
 
       th,
       th:first-child {
@@ -136,19 +136,19 @@
 
     th {
       padding: .625rem;
-      border: 1px solid var(--col-lightergray);
+      border: 1px solid var(--deprecated-col-lightergray);
       text-align: left;
       vertical-align: top;
     }
 
     td {
       padding: .625rem;
-      border: 1px solid var(--col-lightergray);
+      border: 1px solid var(--deprecated-col-lightergray);
       text-align: left;
       vertical-align: top;
 
       &:first-child {
-        border-top: 1px solid var(--col-lightergray);
+        border-top: 1px solid var(--deprecated-col-lightergray);
         padding-bottom: 0;
       }
 
@@ -160,7 +160,7 @@
 
   &.zebra {
     border: 0;
-    border-bottom: 1px solid var(--col-lightergray);
+    border-bottom: 1px solid var(--deprecated-col-lightergray);
 
     thead th,
     tr td,
@@ -168,16 +168,16 @@
       border: 0;
     }
     thead th {
-      border-bottom: 2px solid var(--col-lightergray);
+      border-bottom: 2px solid var(--deprecated-col-lightergray);
     }
     tr:nth-child(odd) td {
-      background-color: var(--col-paleblue);
+      background-color: var(--deprecated-col-paleblue);
     }
   }
 
   @media screen and (--bp-desktop) {
     max-width: var(--w-mid);
-    border: 1px solid var(--col-lightergray);
+    border: 1px solid var(--deprecated-col-lightergray);
     overflow: visible;
 
     thead {
@@ -186,7 +186,7 @@
       th {
         font-size: .875rem;
         padding: .625rem;
-        border: 1px solid var(--col-lightergray);
+        border: 1px solid var(--deprecated-col-lightergray);
         border-bottom-width: 2px;
         text-align: left;
         vertical-align: bottom;
@@ -198,8 +198,8 @@
         th,
         th:first-child {
           padding: .625rem;
-          background-color: var(--col-paleblue);
-          border: 1px solid var(--col-lightergray);
+          background-color: var(--deprecated-col-paleblue);
+          border: 1px solid var(--deprecated-col-lightergray);
           text-align: left;
         }
       }
@@ -207,7 +207,7 @@
       td {
         font-size: 1rem;
         padding: .625rem;
-        border: 1px solid var(--col-lightergray);
+        border: 1px solid var(--deprecated-col-lightergray);
         display: table-cell;
 
         &:first-child {

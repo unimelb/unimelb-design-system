@@ -13,8 +13,8 @@
 
   &.invalid {
     background-color: #fff;
-    border-color: color(var(--col-cherry) lightness(+25%));
-    color: color(var(--col-cherry) lightness(+25%));
+    border-color: color(var(--deprecated-col-cherry) lightness(+25%));
+    color: color(var(--deprecated-col-cherry) lightness(+25%));
   }
 
   @media screen and (--bp-desktop) {
@@ -25,17 +25,17 @@
 @define-mixin textcontrol {
   @mixin control;
   font-size: 1.25rem;
-  background-color: var(--col-lightgray);
-  border: 1px solid color(var(--col-lightergray) lightness(-5%));
+  background-color: var(--deprecated-col-lightgray);
+  border: 1px solid color(var(--deprecated-col-lightergray) lightness(-5%));
   box-shadow: inset 0 1px 3px color(#000 alpha(15%));
 
   &:hover {
-    border-color: var(--col-gray);
+    border-color: var(--deprecated-col-gray);
   }
 
   &:focus {
     background-color: #fff;
-    border-color: var(--col-borderblue);
+    border-color: var(--deprecated-col-borderblue);
     color: #000;
     outline: 0;
 
@@ -50,7 +50,7 @@
   font-size: .8125rem;
   height: 2.8125rem;
   padding: 0 .9375rem;
-  background-color: var(--col-brighterblue);
+  background-color: var(--deprecated-col-brighterblue);
   border: 0 none;
   color: #fff;
   cursor: pointer;
@@ -59,7 +59,7 @@
   text-transform: uppercase;
 
   &:hover {
-    background-color: color(var(--col-brighterblue) lightness(-10%));
+    background-color: color(var(--deprecated-col-brighterblue) lightness(-10%));
   }
 
   &:active {
@@ -89,7 +89,7 @@
   @mixin normalise;
   font-size: 1.25rem;
   height: 3.75rem;
-  background-color: var(--col-darkblue);
+  background-color: var(--deprecated-col-darkblue);
   color: #fff;
   font-family: var(--ff-sans);
   position: relative;
@@ -115,7 +115,7 @@
   @media screen and (--bp-desktop) {
     &.fixed:not(.floating) {
       height: 2.5rem;
-      background-color: var(--col-darkblue);
+      background-color: var(--deprecated-col-darkblue);
       position: fixed;
       width: 100%;
 
@@ -188,7 +188,7 @@
 
   header {
     height: 3.75rem;
-    background-color: var(--col-darkblue);
+    background-color: var(--deprecated-col-darkblue);
     display: table;
     overflow: visible;
     padding: 0;
@@ -210,7 +210,7 @@
 
     &:hover,
     &:focus {
-      color: var(--col-midblue);
+      color: var(--deprecated-col-midblue);
     }
 
     &:hover {
@@ -220,7 +220,7 @@
     &.page-header-logo {
       height: 3.75rem;
       width: 3.75rem;
-      background-color: var(--col-darkblue);
+      background-color: var(--deprecated-col-darkblue);
       display: block;
       left: 0;
       padding: .5rem;
@@ -309,11 +309,11 @@
         padding: .3125rem 1.5625rem .3125rem .625rem;
         border: 0;
         border-radius: 3px;
-        color: var(--col-darkblue);
+        color: var(--deprecated-col-darkblue);
         max-width: 100%;
 
         &:hover {
-          color: var(--col-darkblue);
+          color: var(--deprecated-col-darkblue);
         }
       }
 
@@ -321,7 +321,7 @@
 
     @-moz-document url-prefix() {
       margin-top: .625rem;
-      border: 1px solid var(--col-brighterblue);
+      border: 1px solid var(--deprecated-col-brighterblue);
       border-radius: 3px;
       overflow: hidden;
 
@@ -343,7 +343,7 @@
       right: .3125rem;
       top: .3125rem;
       width: 1.25rem;
-      fill: var(--col-darkblue);
+      fill: var(--deprecated-col-darkblue);
       position: absolute;
     }
 
@@ -384,7 +384,7 @@
   }
 
   .page-local-history {
-    color: var(--col-darkblue);
+    color: var(--deprecated-col-darkblue);
     display: none;
     margin: 0;
     padding: 0;
@@ -402,7 +402,7 @@
     }
 
     a {
-      color: var(--col-lightestblue);
+      color: var(--deprecated-col-lightestblue);
 
       &:hover,
       &:focus {
@@ -414,7 +414,7 @@
       }
 
       &:active {
-        color: var(--col-lightestblue);
+        color: var(--deprecated-col-lightestblue);
       }
 
       span {
@@ -465,7 +465,7 @@
 
     &:last-child {
       span {
-        font-weight: var(--fw-bold);
+        font-weight: var(--deprecated-fw--bold);
       }
     }
   }
@@ -666,10 +666,10 @@
       padding: 0 .625rem;
       width: 2.5rem;
       box-sizing: content-box;
-      color: var(--col-navy);
+      color: var(--deprecated-col-navy);
       cursor: pointer;
       display: table-cell;
-      font-weight: var(--fw-regular);
+      font-weight: var(--deprecated-fw--regular);
       line-height: 1;
       text-align: center;
       text-transform: uppercase;
@@ -701,7 +701,7 @@
 
       &:hover,
       &:focus {
-        background-color: var(--col-darkblue);
+        background-color: var(--deprecated-col-darkblue);
         color: #fff;
         text-decoration: none;
       }
@@ -738,7 +738,7 @@
     width: 2.5rem;
     border-left: 1px solid rgba(255,255,255,0.15);
     box-sizing: content-box;
-    font-weight: var(--fw-regular);
+    font-weight: var(--deprecated-fw--regular);
     line-height: 1;
     text-align: center;
     /* text-transform: uppercase; */
@@ -757,7 +757,7 @@
 
     &:hover,
     &:focus {
-      background-color: var(--col-darkblue);
+      background-color: var(--deprecated-col-darkblue);
       color: #fff;
       text-decoration: none;
       outline: none;
@@ -869,7 +869,7 @@
     }
 
     .page-header-tools a.page-header-icon {
-      color: var(--col-navy);
+      color: var(--deprecated-col-navy);
     }
   }
 

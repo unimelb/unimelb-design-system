@@ -1,9 +1,9 @@
 @define-mixin theme {
-  background-color: var(--col-brighterblue);
+  background-color: var(--deprecated-col-brighterblue);
   background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
   background-repeat: no-repeat;
   background-position: 99% center;
-  border: 1px solid var(--col-brighterblue);
+  border: 1px solid var(--deprecated-col-brighterblue);
   color: #fff;
   cursor: pointer;
   line-height: 1.55;
@@ -16,46 +16,46 @@
   &.alt.invalid:hover {
     background-color: #fff;
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iI2RmMDYyMCI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
-    border-color: var(--col-cherry);
-    color: var(--col-cherry);
+    border-color: var(--deprecated-col-cherry);
+    color: var(--deprecated-col-cherry);
 
     option {
-      color: var(--col-cherry);
+      color: var(--deprecated-col-cherry);
     }
   }
 
   &.invalid + svg.icon,
   &.alt.invalid + svg.icon {
-    color: var(--col-cherry);
-    fill: var(--col-cherry);
+    color: var(--deprecated-col-cherry);
+    fill: var(--deprecated-col-cherry);
   }
 
   &:hover {
-    background-color: var(--col-darkblue);
-    border-color: var(--col-darkblue);
+    background-color: var(--deprecated-col-darkblue);
+    border-color: var(--deprecated-col-darkblue);
     color: #fff;
   }
 
   &.alt {
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iIzAwNzZkZSI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
     background-color: #fff;
-    border-color: var(--col-brighterblue);
-    color: var(--col-brighterblue);
+    border-color: var(--deprecated-col-brighterblue);
+    color: var(--deprecated-col-brighterblue);
 
     option {
-      color: var(--col-brighterblue);
+      color: var(--deprecated-col-brighterblue);
     }
   }
 
   &.alt + svg.icon {
-    color: var(--col-brighterblue);
-    fill: var(--col-brighterblue);
+    color: var(--deprecated-col-brighterblue);
+    fill: var(--deprecated-col-brighterblue);
   }
 
   &.alt:hover {
-    background-color: var(--col-lightestblue);
-    border-color: var(--col-brighterblue);
-    color: var(--col-brighterblue);
+    background-color: var(--deprecated-col-lightestblue);
+    border-color: var(--deprecated-col-brighterblue);
+    color: var(--deprecated-col-brighterblue);
   }
 
   &.clear,
@@ -77,24 +77,24 @@
   &.clear-dark.invalid,
   &.clear-dark.invalid:hover {
     background-color: color(#fff alpha(30%));
-    border-color: var(--col-cherry);
-    color: var(--col-cherry);
+    border-color: var(--deprecated-col-cherry);
+    color: var(--deprecated-col-cherry);
   }
 
   &.clear.invalid,
   &.clear.invalid:hover {
     background-color: color(#fff alpha(30%));
-    border-color: color(var(--col-cherry) lightness(+25%));
-    color: color(var(--col-cherry) lightness(+25%));
+    border-color: color(var(--deprecated-col-cherry) lightness(+25%));
+    color: color(var(--deprecated-col-cherry) lightness(+25%));
   }
 
   &.clear.invalid + svg.icon + small {
-    color: color(var(--col-cherry) lightness(+25%));
+    color: color(var(--deprecated-col-cherry) lightness(+25%));
   }
 
   &.clear.invalid + svg.icon {
-    color: color(var(--col-cherry) lightness(+25%));
-    fill: color(var(--col-cherry) lightness(+25%));
+    color: color(var(--deprecated-col-cherry) lightness(+25%));
+    fill: color(var(--deprecated-col-cherry) lightness(+25%));
   }
 }
 
@@ -115,15 +115,15 @@
   }
 
   &:hover select {
-    background-color: var(--col-darkblue);
-    border-color: var(--col-darkblue);
+    background-color: var(--deprecated-col-darkblue);
+    border-color: var(--deprecated-col-darkblue);
     color: #fff;
   }
 
   &:hover select.alt {
-    background-color: var(--col-lightestblue);
-    border-color: var(--col-brighterblue);
-    color: var(--col-brighterblue);
+    background-color: var(--deprecated-col-lightestblue);
+    border-color: var(--deprecated-col-brighterblue);
+    color: var(--deprecated-col-brighterblue);
   }
 
   &:hover select.clear,
@@ -137,7 +137,7 @@
 .uomcontent select {
   font-size: 1.125rem;
   font-family: var(--ff-sans);
-  font-weight: var(--fw-light);
+  font-weight: var(--deprecated-fw--light);
   width: 100%;
 }
 
@@ -190,14 +190,14 @@
     select {
       &,
       option {
-        background-color: var(--col-brighterblue) !important;
+        background-color: var(--deprecated-col-brighterblue) !important;
         color: #fff !important;
       }
 
       &.alt,
       &.alt option {
         background-color: #fff !important;
-        color: var(--col-brighterblue) !important;
+        color: var(--deprecated-col-brighterblue) !important;
       }
 
       &.clear,

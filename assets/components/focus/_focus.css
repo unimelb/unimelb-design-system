@@ -58,6 +58,6 @@
 @define-mixin focus-blue {
   &::before,
   &::after {
-    background-color: var(--col-midblue);
+    background-color: var(--deprecated-col-midblue);
   }
 }

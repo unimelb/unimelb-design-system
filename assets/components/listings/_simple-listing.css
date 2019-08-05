@@ -1,7 +1,7 @@
 .uomcontent [role="main"] .simple-listing {
   max-width: var(--w-lge);
   padding: 0 1rem 2rem;
-  color: var(--col-midgray);
+  color: var(--deprecated-col-midgray);
   line-height: 1.6;
 
   &__item {
@@ -49,7 +49,7 @@
   /* includes overrides for h2, h3 and h4 */
   &__heading {
     margin-bottom: .125rem;
-    color: var(--col-darkblue);
+    color: var(--deprecated-col-darkblue);
     font-size: 1.125em;
     font-weight: 400;
     letter-spacing: inherit;
@@ -85,7 +85,7 @@
       /* underline headings */
       &__heading {
         margin-bottom: .5rem;
-        color: var(--col-brighterblue);
+        color: var(--deprecated-col-brighterblue);
         font-size: 1.25em;
         text-decoration: underline;
       }

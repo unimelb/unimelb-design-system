@@ -6,7 +6,7 @@
 
     li {
       padding: .9375rem 0 1.875rem;
-      border-top: 1px solid var(--col-lightergray);
+      border-top: 1px solid var(--deprecated-col-lightergray);
       line-height: 1.5;
       list-style-type: none;
       margin-left: 0;
@@ -16,7 +16,7 @@
       }
 
       &.on span {
-        color: var(--col-green);
+        color: var(--deprecated-col-green);
         text-decoration: line-through;
       }
 

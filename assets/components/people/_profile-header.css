@@ -2,7 +2,7 @@
 
   .profile-header {
     padding: 3rem 1rem;
-    background-color: var(--col-paleblue);
+    background-color: var(--deprecated-col-paleblue);
     color: inherit;
 
     &__summary,
@@ -20,7 +20,7 @@
         line-height: 2.25rem;
         margin-bottom: .5rem;
         margin-top: 1.5rem;
-        font-weight: var(--fw-regular);
+        font-weight: var(--deprecated-fw--regular);
         padding-bottom: 0;
         text-align: inherit;
 
@@ -32,7 +32,7 @@
       p {
         font-size: 1.125rem;
         line-height: 1.5rem;
-        font-weight: var(--fw-light);
+        font-weight: var(--deprecated-fw--light);
         padding-top: 0;
       }
     }
@@ -50,7 +50,7 @@
 
     &__info {
       padding-top: 1.5rem;
-      border-top: 1px solid var(--col-lightestblue);
+      border-top: 1px solid var(--deprecated-col-lightestblue);
 
       a {
         text-decoration: none;
@@ -88,7 +88,7 @@
 
     &__location {
       em {
-        color: var(--col-midgray);
+        color: var(--deprecated-col-midgray);
       }
     }
 

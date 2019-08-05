@@ -3,9 +3,9 @@
     @mixin clearfix;
     max-width: var(--w-mid);
     font-size: 1em;
-    color: var(--col-midgray);
+    color: var(--deprecated-col-midgray);
     font-family: var(--ff-sans);
-    font-weight: var(--fw-thin);
+    font-weight: var(--deprecated-fw--thin);
     margin: 0 auto;
     padding-bottom: 0;
     position: relative;
@@ -52,7 +52,7 @@
 
     dd {
       padding-bottom: 1.875rem;
-      border-left: 1px solid var(--col-lightergray);
+      border-left: 1px solid var(--deprecated-col-lightergray);
       float: left;
       margin: -4px 0 0;
       position: relative;
@@ -68,7 +68,7 @@
         height: 15px; /* odd number for dot to be perfectly centred on the 1px line */
         left: -8px; /* half of width, rounded up */
         width: 15px;
-        background-color: var(--col-lightergray);
+        background-color: var(--deprecated-col-lightergray);
         border-radius: 50%;
         content: '';
         display: block;
@@ -94,7 +94,7 @@
       a.location {
         font-size: 1rem;
         padding-bottom: 1.25rem;
-        color: var(--col-navy);
+        color: var(--deprecated-col-navy);
         display: block;
         font-style: italic;
         text-decoration: none;
@@ -114,10 +114,10 @@
         margin-left: 0;
 
         & > li:first-child {
-          border-top: 1px solid var(--col-lightergray);
+          border-top: 1px solid var(--deprecated-col-lightergray);
 
           &.accordion__visible {
-            border-top: 1px solid var(--col-brighterblue);
+            border-top: 1px solid var(--deprecated-col-brighterblue);
           }
         }
       }
@@ -130,7 +130,7 @@
 
     strong,
     span {
-      color: var(--col-navy);
+      color: var(--deprecated-col-navy);
     }
 
     @media screen and (--bp-desktop) {
@@ -169,28 +169,28 @@
 
   .alt .timeline {
     &::before {
-      background-color: var(--col-paleblue);
+      background-color: var(--deprecated-col-paleblue);
     }
 
     dd {
-      border-left-color: color(var(--col-lightblue) lightness(+25%));
+      border-left-color: color(var(--deprecated-col-lightblue) lightness(+25%));
 
       &::before {
-        background-color: color(var(--col-lightblue) lightness(+25%));
+        background-color: color(var(--deprecated-col-lightblue) lightness(+25%));
       }
 
       ul:last-child,
       p:last-child {
-        border-bottom-color: color(var(--col-lightblue) lightness(+25%));
+        border-bottom-color: color(var(--deprecated-col-lightblue) lightness(+25%));
       }
 
       ul.accordion {
 
         & > li:first-child {
-          border-top: 1px solid color(var(--col-lightblue) lightness(+25%));
+          border-top: 1px solid color(var(--deprecated-col-lightblue) lightness(+25%));
 
           &.accordion__visible {
-            border-top: 1px solid var(--col-brighterblue);
+            border-top: 1px solid var(--deprecated-col-brighterblue);
           }
         }
       }

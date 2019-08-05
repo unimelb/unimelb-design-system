@@ -41,7 +41,7 @@
     padding-right: 0;
 
     & > li {
-      border-bottom: 1px solid color(var(--col-lightgray) lightness(-5%));
+      border-bottom: 1px solid color(var(--deprecated-col-lightgray) lightness(-5%));
       list-style-type: none;
       margin: 0;
       padding-bottom: 0;
@@ -86,7 +86,7 @@
         background-color: transparent;
         display: block;
         font-family: var(--ff-serif);
-        font-weight: var(--fw-bolder);
+        font-weight: var(--deprecated-fw--bolder);
         padding-bottom: .75rem;
         padding-left: calc(22/16rem);
         padding-right: 2.5rem;
@@ -96,12 +96,12 @@
         transition-duration: 50ms;
 
         &:hover {
-          background-color: var(--col-lightgray);
+          background-color: var(--deprecated-col-lightgray);
         }
 
         &:focus {
-          background-color: var(--col-lightgray);
-          color: var(--col-brighterblue);
+          background-color: var(--deprecated-col-lightgray);
+          color: var(--deprecated-col-brighterblue);
         }
 
         &::before {
@@ -148,10 +148,10 @@
       }
 
       &.accordion__visible {
-        background-color: var(--col-lightgray);
+        background-color: var(--deprecated-col-lightgray);
 
         .accordion__title {
-          border-bottom: 1px solid color(var(--col-lightgray) lightness(-5%));
+          border-bottom: 1px solid color(var(--deprecated-col-lightgray) lightness(-5%));
 
           &::before {
             transform: rotate(180deg);
@@ -167,10 +167,10 @@
 
   .alt ul.accordion {
     & > li {
-      border-bottom-color: color(var(--col-lightblue) lightness(+25%));
+      border-bottom-color: color(var(--deprecated-col-lightblue) lightness(+25%));
 
       &.accordion__visible {
-        border-color: var(--col-brighterblue);
+        border-color: var(--deprecated-col-brighterblue);
       }
     }
   }
@@ -188,7 +188,7 @@
 
         &::before,
         .accordion__title {
-          color: var(--col-gray);
+          color: var(--deprecated-col-gray);
         }
 
         .accordion__hidden {
@@ -201,7 +201,7 @@
 
         &.accordion__visible::before,
         &.accordion__visible .accordion__title {
-          color: var(--col-brighterblue);
+          color: var(--deprecated-col-brighterblue);
         }
 
         div.highlight {

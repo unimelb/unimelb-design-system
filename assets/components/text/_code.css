@@ -12,7 +12,7 @@
   code {
     @mixin code;
     border-bottom-width: 2px;
-    color: var(--col-midgray);
+    color: var(--deprecated-col-midgray);
   }
 
   pre {

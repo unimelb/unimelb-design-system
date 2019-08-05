@@ -2,7 +2,7 @@
   @mixin normalise;
   @mixin injection-wrapper;
   padding: 0 3% 1.875rem;
-  background-color: var(--col-navy);
+  background-color: var(--deprecated-col-navy);
   font-family: var(--ff-sans);
   height: 100%;
   margin: 0;
@@ -33,10 +33,10 @@
   a {
     padding-top: .5rem;
     padding-bottom: .5rem;
-    color: var(--col-lightblue);
+    color: var(--deprecated-col-lightblue);
     color: color(#fff alpha(60%));
     display: block;
-    font-weight: var(--fw-light);
+    font-weight: var(--deprecated-fw--light);
     padding-left: 0;
     padding-right: 3%;
     text-decoration: none;
@@ -64,8 +64,8 @@
     margin-bottom: .5rem;
     padding-bottom: 0;
     padding-top: 0;
-    border-bottom: 1px solid var(--col-blue);
-    color: var(--col-lightblue);
+    border-bottom: 1px solid var(--deprecated-col-blue);
+    color: var(--deprecated-col-lightblue);
     color: color(#fff alpha(60%));
     line-height: 1.2;
     padding-right: 3%;
@@ -114,7 +114,7 @@
 
     fieldset {
       input[type="search"] {
-        background-color: var(--col-lightergray);
+        background-color: var(--deprecated-col-lightergray);
 
         &:focus {
           background-color: #fff;
@@ -219,7 +219,7 @@
     padding-left: .25rem;
     padding-top: 1rem;
     height: 3.75rem;
-    border-bottom: 1px solid var(--col-blue);
+    border-bottom: 1px solid var(--deprecated-col-blue);
     color: color(#fff alpha(40%));
     display: block;
     text-decoration: none;
@@ -231,7 +231,7 @@
       color: color(#fff alpha(40%));
       content: '\2039';
       display: inline-block;
-      font-weight: var(--fw-regular);
+      font-weight: var(--deprecated-fw--regular);
       line-height: 1;
       vertical-align: -1px;
     }
@@ -283,14 +283,14 @@
         letter-spacing: .125rem;
         border-top: 0 none;
         font-size: .9375rem;
-        font-weight: var(--fw-regular);
+        font-weight: var(--deprecated-fw--regular);
         margin-right: 0;
         padding-left: 0;
         padding-top: 0;
         text-transform: uppercase;
 
         a {
-          font-weight: var(--fw-regular);
+          font-weight: var(--deprecated-fw--regular);
         }
       }
 

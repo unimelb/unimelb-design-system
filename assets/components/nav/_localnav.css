@@ -16,7 +16,7 @@
 
   &__panel {
     padding-right: var(--width-sitemap-trigger);
-    background-color: var(--col-menu);
+    background-color: var(--deprecated-col-menu);
     height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -46,7 +46,7 @@
   &__back-btn.localnav__back-btn {
     font-size: .75rem;
     padding: 1.25rem;
-    background-color: color(var(--col-menu) lightness(-3%));
+    background-color: color(var(--deprecated-col-menu) lightness(-3%));
     color: rgba(255, 255, 255, .7);
     display: block;
     font-weight: normal;
@@ -141,7 +141,7 @@
 
       &:hover,
       &:focus {
-        background-color: color(var(--col-menu) lightness(-3%));
+        background-color: color(var(--deprecated-col-menu) lightness(-3%));
         color: #fff;
       }
     }
@@ -180,7 +180,7 @@
 
   .no-js & {
     @mixin injection-wrapper;
-    background-color: var(--col-navy);
+    background-color: var(--deprecated-col-navy);
     box-shadow: 0 0 0;
     display: block;
     position: static;

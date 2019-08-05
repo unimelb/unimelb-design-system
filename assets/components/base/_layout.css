@@ -7,14 +7,14 @@
 }
 
 body {
-  color: var(--col-darkblue);
+  color: var(--deprecated-col-darkblue);
   font-family: var(--ff-sans);
   -webkit-font-smoothing: antialiased;
   /* Trick to cover any elastic scrolling */
   overflow: visible;
   &::before {
     content: "";
-    background-color: var(--col-darkblue);
+    background-color: var(--deprecated-col-darkblue);
     position: absolute;
     height: 300px;
     top: -300px;
@@ -59,7 +59,7 @@ body {
   .aside {
     font-size: .875rem;
     line-height: 1.5rem;
-    color: var(--col-darkgray);
+    color: var(--deprecated-col-darkgray);
     float: right;
 
     /* Override */
@@ -131,7 +131,7 @@ body {
       h2 {
         font-size: .8125rem;
         line-height: 1.5rem;
-        font-weight: var(--fw-bold);
+        font-weight: var(--deprecated-fw--bold);
         letter-spacing: 3px;
         text-transform: uppercase;
       }
@@ -193,7 +193,7 @@ body {
       }
 
       &:hover {
-        background-color: var(--col-brighterblue);
+        background-color: var(--deprecated-col-brighterblue);
         transition: all 0.2s linear;
         transform: scale(1.1);
       }
@@ -201,7 +201,7 @@ body {
 
     &.alt {
       padding: 1.875rem 0;
-      background-color: var(--col-paleblue);
+      background-color: var(--deprecated-col-paleblue);
       box-shadow: 0 6px 6px 4px color(#000 alpha(30%));
       color: #000;
 
@@ -223,8 +223,8 @@ body {
     }
 
     &.contrib {
-      background-color: var(--col-paleyellow);
-      border: 1px solid color(var(--col-paleyellow) lightness(-10%));
+      background-color: var(--deprecated-col-paleyellow);
+      border: 1px solid color(var(--deprecated-col-paleyellow) lightness(-10%));
 
       p {
         padding-top: 0;
@@ -251,7 +251,7 @@ body {
     dt {
       letter-spacing: .0625rem;
       padding-bottom: .3125rem;
-      font-weight: var(--fw-bold);
+      font-weight: var(--deprecated-fw--bold);
       margin-left: 0;
       text-transform: uppercase;
       width: 100%;
@@ -311,7 +311,7 @@ body {
     }
 
     img {
-      border: 1px solid var(--col-lightergray);
+      border: 1px solid var(--deprecated-col-lightergray);
       display: inline;
       margin-right: 10px;
       vertical-align: top;
@@ -324,7 +324,7 @@ body {
     .block {
       background-color: color(#000 alpha(70%));
       color: #fff;
-      font-weight: var(--fw-bold);
+      font-weight: var(--deprecated-fw--bold);
       left: 50%;
       margin-left: -406px;
       position: absolute;
@@ -332,7 +332,7 @@ body {
       width: 200px;
 
       &:hover {
-        background-color: color(var(--col-paleyellow) alpha(80%));
+        background-color: color(var(--deprecated-col-paleyellow) alpha(80%));
         color: #000;
       }
 
@@ -395,8 +395,8 @@ body {
 
   .layout-sidebar {
     /* Fine line to separate any content on white above and below */
-    border-bottom: 2px solid var(--col-paleblue);
-    border-top: 2px solid var(--col-paleblue);
+    border-bottom: 2px solid var(--deprecated-col-paleblue);
+    border-top: 2px solid var(--deprecated-col-paleblue);
 
     &__main,
     &__side {
@@ -405,8 +405,8 @@ body {
 
     &__side {
       font-size: .875rem;
-      background-color: var(--col-paleblue);
-      color: var(--col-darkgray);
+      background-color: var(--deprecated-col-paleblue);
+      color: var(--deprecated-col-darkgray);
     }
 
     &__main__inner {
@@ -458,7 +458,7 @@ body {
   }
 
   .alt {
-    background-color: var(--col-paleblue);
+    background-color: var(--deprecated-col-paleblue);
 
     & + .spacer {
       margin-top: 0;
@@ -469,7 +469,7 @@ body {
   .margin-rule {
     .floating {
       padding: .9375rem .9375rem 1.875rem;
-      background-color: var(--col-lightgray);
+      background-color: var(--deprecated-col-lightgray);
 
       h2,
       p {
@@ -522,7 +522,7 @@ body {
     }
 
     &.alt::before {
-      background-color: var(--col-paleblue);
+      background-color: var(--deprecated-col-paleblue);
     }
   }
 
@@ -536,7 +536,7 @@ body {
     }
 
     &.alt::after {
-      background-color: var(--col-paleblue);
+      background-color: var(--deprecated-col-paleblue);
     }
 
     & + * {
@@ -581,25 +581,25 @@ body {
 /* Uninjected styles */
 .uomcontent .page-local-history {
   padding: .9375rem 1.875rem;
-  color: var(--col-midblue);
+  color: var(--deprecated-col-midblue);
   display: block;
 
   a {
-    color: var(--col-lightestblue);
+    color: var(--deprecated-col-lightestblue);
 
     &:hover,
     &:focus {
       color: #fff;
     }
     &:active {
-      color: var(--col-lightestblue);
+      color: var(--deprecated-col-lightestblue);
     }
   }
 }
 
 .uomcontent footer.cta {
   padding-top: 1.875rem;
-  background-color: var(--col-blue);
+  background-color: var(--deprecated-col-blue);
   color: #fff;
 
   .overview {

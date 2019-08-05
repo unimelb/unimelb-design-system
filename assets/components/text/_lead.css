@@ -7,7 +7,7 @@
     max-width: var(--w-mid);
     background: transparent;
     filter: none;
-    font-weight: var(--fw-bold);
+    font-weight: var(--deprecated-fw--bold);
     margin: 0 auto;
     padding-left: 3%;
     padding-right: 3%;
@@ -22,7 +22,7 @@
         padding-bottom: 3rem;
         margin-top: 1.875rem;
         width: 5rem;
-        border-top: 2px solid var(--col-darkblue);
+        border-top: 2px solid var(--deprecated-col-darkblue);
         content: '';
         display: block;
         margin-left: auto;

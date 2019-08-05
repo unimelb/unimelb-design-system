@@ -19,7 +19,7 @@
   li {
     padding-top: .75rem;
     padding-bottom: .75rem;
-    border-top: 1px solid color(var(--col-lightgray) lightness(-5%));
+    border-top: 1px solid color(var(--deprecated-col-lightgray) lightness(-5%));
     list-style-type: none;
     margin-bottom: 0;
     margin-left: auto;
@@ -61,14 +61,14 @@
 
   strong {
     font-size: 1rem;
-    color: var(--col-darkblue);
+    color: var(--deprecated-col-darkblue);
     display: block;
-    font-weight: var(--fw-regular);
+    font-weight: var(--deprecated-fw--regular);
   }
 
   p {
     font-size: .8125rem;
-    color: var(--col-midgray);
+    color: var(--deprecated-col-midgray);
     padding: 0;
     width: auto;
   }

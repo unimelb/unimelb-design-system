@@ -3,34 +3,34 @@
  */
 :root {
   /* Colours */
-  --col-darkgray: #333;
-  --col-midgray: #666;
-  --col-midgrayer: #777; /* last accessible grey text on white background */
-  --col-gray: #adb8c1;
-  --col-lightgray: #f6f6f6;
-  --col-lightergray: #e0e0e0;
+  --deprecated-col-darkgray: #333;
+  --deprecated-col-midgray: #666;
+  --deprecated-col-midgrayer: #777; /* last accessible grey text on white background */
+  --deprecated-col-gray: #adb8c1;
+  --deprecated-col-lightgray: #f6f6f6;
+  --deprecated-col-lightergray: #e0e0e0;
 
-  --col-navy: #0c304a;
-  --col-blue: #304e64;
-  --col-menu: #036;
-  --col-darkblue: #094183;
-  --col-borderblue: #7399b7;
-  --col-midblue: #4074B2;
-  --col-lightblue: #82a1bd;
-  --col-brighterblue: #2872CA;
-  --col-paleblue: #f2f5f8;
-  --col-lightestblue: #e1eaf5;
+  --deprecated-col-navy: #0c304a;
+  --deprecated-col-blue: #304e64;
+  --deprecated-col-menu: #036;
+  --deprecated-col-darkblue: #094183;
+  --deprecated-col-borderblue: #7399b7;
+  --deprecated-col-midblue: #4074B2;
+  --deprecated-col-lightblue: #82a1bd;
+  --deprecated-col-brighterblue: #2872CA;
+  --deprecated-col-paleblue: #f2f5f8;
+  --deprecated-col-lightestblue: #e1eaf5;
 
-  --col-paleyellow: #fffbcc;
-  --col-palegreen: #d2f1cf;
-  --col-salmon: #ea4f62;
-  --col-bronze: #e5e1dc;
-  --col-yellow: #eecc00;
+  --deprecated-col-paleyellow: #fffbcc;
+  --deprecated-col-palegreen: #d2f1cf;
+  --deprecated-col-salmon: #ea4f62;
+  --deprecated-col-bronze: #e5e1dc;
+  --deprecated-col-yellow: #eecc00;
 
-  --col-green: #26B765;
-  --col-cherry: #b93d1c;
+  --deprecated-col-green: #26B765;
+  --deprecated-col-cherry: #b93d1c;
 
-  --col-twitter: #55acee;
+  --deprecated-col-twitter: #55acee;
 
   /* Layout widths */
   --w-sml: 43.75rem;
@@ -43,11 +43,11 @@
   --ff-serif: "Noto Serif", Georgia, Times New Roman, serif;
 
   /* Font weights */
-  --fw-thin: 300;
-  --fw-light: 300;
-  --fw-regular: 400;
-  --fw-bold: 600;
-  --fw-bolder: 700;
+  --deprecated-fw--thin: 300;
+  --deprecated-fw--light: 300;
+  --deprecated-fw--regular: 400;
+  --deprecated-fw--bold: 600;
+  --deprecated-fw--bolder: 700;
 
   /* Transitions */
   --tr-transform: transform .3s ease;
@@ -129,7 +129,7 @@
 }
 
 @define-mixin grad-left {
-  background: linear-gradient(to left, color(var(--col-brighterblue) alpha(0%)) 66%, color(var(--col-brighterblue) alpha(90%)) 100%); /* W3C */
+  background: linear-gradient(to left, color(var(--deprecated-col-brighterblue) alpha(0%)) 66%, color(var(--deprecated-col-brighterblue) alpha(90%)) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#cc000000', GradientType=1); /* IE6-9 */
 }
 
