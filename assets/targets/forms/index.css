@@ -17,5 +17,3 @@
 /* Print */
 @import '../../shared/_print';
 
-/* Form target overrides */
-@import '_overrides';
