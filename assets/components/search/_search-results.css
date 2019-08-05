@@ -1,7 +1,7 @@
 .uomcontent {
   p.search-spelling {
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid color(#000 alpha(10%));
+    border-bottom: 1px solid color(var(--col-black-dark) alpha(10%));
 
     strong {
       font-style: italic;
@@ -29,7 +29,7 @@
       @mixin clearfix;
       padding-bottom: 1.5rem;
       margin-bottom: 1.5rem;
-      border-bottom: 1px solid color(#000 alpha(10%));
+      border-bottom: 1px solid color(var(--col-black-dark) alpha(10%));
       list-style-type: none;
       margin-left: 0;
       width: auto;
@@ -133,7 +133,7 @@
       font-size: .9375rem;
       line-height: 1.5rem;
       padding-bottom: 0;
-      color: #000;
+      color: var(--col-black-dark);
       width: auto;
 
       @media screen and (--bp-desktop) {

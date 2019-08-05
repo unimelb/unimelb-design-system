@@ -176,7 +176,7 @@ body {
       font-size: .875rem;
       margin: 0 .9375rem;
       background-color: transparent;
-      color: #fff;
+      color: var(--col-white);
       display: inline-block;
       text-decoration: none;
       vertical-align: top;
@@ -202,22 +202,22 @@ body {
     &.alt {
       padding: 1.875rem 0;
       background-color: var(--deprecated-col-paleblue);
-      box-shadow: 0 6px 6px 4px color(#000 alpha(30%));
-      color: #000;
+      box-shadow: 0 6px 6px 4px color(var(--col-black-dark) alpha(30%));
+      color: var(--col-black-dark);
 
       .center {
         padding-bottom: 0;
       }
 
       ul a {
-        color: #000;
+        color: var(--col-black-dark);
       }
 
       a.social {
-        color: #000;
+        color: var(--col-black-dark);
 
         &:hover {
-          color: #fff;
+          color: var(--col-white);
         }
       }
     }
@@ -322,8 +322,8 @@ body {
     }
 
     .block {
-      background-color: color(#000 alpha(70%));
-      color: #fff;
+      background-color: color(var(--col-black-dark) alpha(70%));
+      color: var(--col-white);
       font-weight: var(--deprecated-fw--bold);
       left: 50%;
       margin-left: -406px;
@@ -333,7 +333,7 @@ body {
 
       &:hover {
         background-color: color(var(--deprecated-col-paleyellow) alpha(80%));
-        color: #000;
+        color: var(--col-black-dark);
       }
 
       &.desktop {
@@ -489,7 +489,7 @@ body {
         &.ruled {
           margin-bottom: 3.75rem;
           margin-top: 3.75rem;
-          border-left: 1px solid #000;
+          border-left: 1px solid var(--col-black-dark);
           float: left;
           margin-left: 0;
         }
@@ -517,7 +517,7 @@ body {
     &::before {
       @mixin tilt;
       margin-top: -6.25rem;
-      background-color: #fff;
+      background-color: var(--col-white);
       transform: skewY(-2deg);
     }
 
@@ -531,7 +531,7 @@ body {
 
     &::after {
       @mixin tilt;
-      background-color: #fff;
+      background-color: var(--col-white);
       transform: skewY(2deg);
     }
 
@@ -589,7 +589,7 @@ body {
 
     &:hover,
     &:focus {
-      color: #fff;
+      color: var(--col-white);
     }
     &:active {
       color: var(--deprecated-col-lightestblue);
@@ -600,7 +600,7 @@ body {
 .uomcontent footer.cta {
   padding-top: 1.875rem;
   background-color: var(--deprecated-col-blue);
-  color: #fff;
+  color: var(--col-white);
 
   .overview {
     padding: 1.875rem 0 0;
@@ -618,7 +618,7 @@ body {
 
   hr {
     border: 0 none;
-    border-top: 1px solid color(#fff alpha(20%));
+    border-top: 1px solid color(var(--col-white) alpha(20%));
   }
 
   ul {
@@ -631,7 +631,7 @@ body {
     }
 
     a {
-      color: #fff;
+      color: var(--col-white);
     }
 
     img {

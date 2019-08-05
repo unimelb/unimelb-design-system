@@ -3,7 +3,7 @@
     border-radius: 0 0 3px 3px;
     margin-top: -.625rem;
     max-width: var(--w-lge);
-    background-color: #fff;
+    background-color: var(--col-white);
     border: 1px solid var(--deprecated-col-lightergray);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     position: absolute;
@@ -30,7 +30,7 @@
       &:hover,
       &:focus {
         background-color: var(--deprecated-col-brighterblue);
-        color: #fff;
+        color: var(--col-white);
       }
     }
   }

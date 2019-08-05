@@ -5,7 +5,7 @@
   padding: 0 .9375rem;
   background-color: var(--deprecated-col-brighterblue);
   border: 0 none;
-  color: #fff;
+  color: var(--col-white);
   cursor: pointer;
   font-weight: var(--deprecated-fw--bold);
   letter-spacing: 1px;
@@ -30,7 +30,7 @@
   font-weight: var(--deprecated-fw--light);
 
   &.invalid {
-    background-color: #fff;
+    background-color: var(--col-white);
     border-color: color(var(--deprecated-col-cherry) lightness(+25%));
     color: color(var(--deprecated-col-cherry) lightness(+25%));
   }
@@ -45,20 +45,20 @@
   font-size: 1.25rem;
   background-color: var(--deprecated-col-lightgray);
   border: 1px solid color(var(--deprecated-col-lightergray) lightness(-5%));
-  box-shadow: inset 0 1px 3px color(#000 alpha(15%));
+  box-shadow: inset 0 1px 3px color(var(--col-black-dark) alpha(15%));
 
   &:hover:not([disabled]) {
     border-color: var(--deprecated-col-gray);
   }
 
   &:focus {
-    background-color: #fff;
+    background-color: var(--col-white);
     border-color: var(--deprecated-col-borderblue);
-    color: #000;
+    color: var(--col-black-dark);
     outline: 0;
 
     &.invalid {
-      color: #000;
+      color: var(--col-black-dark);
     }
   }
 
@@ -76,7 +76,7 @@
 [role="main"] form {
   font-size: 1rem;
   padding: 0 .625rem;
-  background-color: #fff;
+  background-color: var(--col-white);
   color: var(--col-navy-main);
   line-height: 1.2;
   margin: 0 auto;
@@ -281,7 +281,7 @@
         border-color: var(--deprecated-col-brighterblue);
 
         &:focus {
-          background-color: #fff;
+          background-color: var(--col-white);
           color: var(--deprecated-col-brighterblue);
         }
       }
@@ -349,8 +349,8 @@
         text-indent: 0;
 
         &::before {
-          background-color: #fff;
-          border: 1px solid color(var(--deprecated-col-midgray) lightness(+40%));
+          background-color: var(--col-white);
+          border: 1px solid var(--col-black-mid-1);
           box-sizing: border-box;
           content: '';
           display: block;
@@ -425,8 +425,8 @@
   padding-bottom: 1.5rem;
   max-width: var(--w-mid);
   background-color: transparent;
-  border-top: 1px solid color(#fff alpha(20%));
-  color: #fff;
+  border-top: 1px solid color(var(--col-white) alpha(20%));
+  color: var(--col-white);
   margin-left: auto;
   margin-right: auto;
 
@@ -442,7 +442,7 @@
     background-color: transparent;
 
     label {
-      color: #fff;
+      color: var(--col-white);
     }
 
     @media screen and (--bp-desktop) {

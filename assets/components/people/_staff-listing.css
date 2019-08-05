@@ -25,7 +25,7 @@
       }
 
       .profile {
-        background-color: #fff;
+        background-color: var(--col-white);
         display: table-cell;
         vertical-align: top;
 
@@ -58,7 +58,7 @@
     }
 
     a {
-      /* color: #000; */
+      /* color: var(--col-black-dark); */
       font-weight: var(--deprecated-fw--regular);
     }
 

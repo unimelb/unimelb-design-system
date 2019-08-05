@@ -14,14 +14,14 @@
 
     h1 {
       border: 0;
-      color: #fff;
+      color: var(--col-white);
       line-height: 1.2;
       margin-bottom: 0;
 
       &::after {
         margin-top: .9375rem;
         max-width: var(--w-sml);
-        border-bottom: 2px solid #fff;
+        border-bottom: 2px solid var(--col-white);
         content: '';
         display: block;
         width: 100%;
@@ -33,7 +33,7 @@
         &::after {
           margin-top: 1.9375rem;
           max-width: var(--w-sml);
-          border-bottom: 2px solid #fff;
+          border-bottom: 2px solid var(--col-white);
           content: '';
           display: block;
           width: 100%;

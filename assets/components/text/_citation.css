@@ -28,7 +28,7 @@
   }
 
   .alt .citation {
-    background-color: #fff;
+    background-color: var(--col-white);
 
     &:last-child {
       margin-bottom: .25rem;

@@ -101,7 +101,7 @@
 
     &--dark {
       background-color: var(--deprecated-col-blue);
-      color: #fff;
+      color: var(--col-white);
       box-shadow: none;
 
       .enquiry__cta a {

@@ -47,12 +47,12 @@
 
   /* DEPRECATED */
   &.headerless {
-    border-top: 1px solid #fff;
+    border-top: 1px solid var(--col-white);
   }
 
   /* Alternate syntax to avoid class on parent container */
   .headerless {
-    border-top: 1px solid #fff;
+    border-top: 1px solid var(--col-white);
     padding-top: 0;
   }
 
@@ -64,21 +64,21 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: #fff;
+    color: var(--col-white);
     overflow: hidden;
     width: 100%;
 
     &.reverse {
-      color: #000;
+      color: var(--col-black-dark);
     }
 
     &.solid-black {
-      background-color: #000;
+      background-color: var(--col-black-dark);
     }
 
     &.solid-paleblue {
       background-color: var(--deprecated-col-paleblue);
-      color: #000;
+      color: var(--col-black-dark);
     }
 
     &.image {
@@ -207,7 +207,7 @@
   position: relative;
 
   header {
-    background-color: color(#000 alpha(50%));
+    background-color: color(var(--col-black-dark) alpha(50%));
   }
 
   &.no-filter header {
@@ -241,7 +241,7 @@
 
 .uomcontent [role="main"] .fixed-bg {
   background-attachment: fixed;
-  background-color: #000;
+  background-color: var(--col-black-dark);
   background-position: top center;
   background-size: inherit;
 }

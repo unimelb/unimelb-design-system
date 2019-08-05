@@ -16,7 +16,7 @@
 @define-mixin filtered-listing-select {
   max-width: var(--w-lge);
   background-color: transparent;
-  color: #fff;
+  color: var(--col-white);
   margin: 0 auto;
   overflow: hidden;
 
@@ -59,7 +59,7 @@
       label {
         font-size: .9375rem;
         padding: 0 0 .9375rem;
-        color: #fff;
+        color: var(--col-white);
         display: block;
       }
     }
@@ -181,7 +181,7 @@
 
         option {
           background-color: var(--deprecated-col-navy);
-          color: #fff;
+          color: var(--col-white);
         }
       }
     }

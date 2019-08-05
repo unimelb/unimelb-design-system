@@ -5,7 +5,7 @@
   }
 
   .page-announcement {
-    color: #fff;
+    color: var(--col-white);
     position: relative;
     opacity: 1;
     transition: max-height .2s ease;
@@ -17,14 +17,14 @@
     &__message {
       padding: 1.25rem 3.125rem 1.25rem .9375rem;
       background-color: var(--deprecated-col-brighterblue);
-      color: #fff;
+      color: var(--col-white);
       display: block;
       text-align: left;
       text-decoration: none;
 
       &:hover {
         background-color: var(--col-navy-main);
-        color: #fff;
+        color: var(--col-white);
       }
 
       h2 {
@@ -77,14 +77,14 @@
       transition: background-color .15s, color .15s;
       background: none;
       border: none;
-      color: #fff;
+      color: var(--col-white);
       cursor: pointer;
       overflow: hidden;
       position: absolute;
       top: 50%;
 
       &:hover {
-        background-color: #fff;
+        background-color: var(--col-white);
         color: var(--deprecated-col-brighterblue);
       }
 

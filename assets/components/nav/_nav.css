@@ -17,7 +17,7 @@ body {
 }
 
 [role="main"] {
-  background-color: #fff;
+  background-color: var(--col-white);
 }
 
 @define-mixin quicklinks {
@@ -45,7 +45,7 @@ body {
     border-radius: 3px;
     font-size: .875rem;
     padding: .9375rem;
-    color: #fff;
+    color: var(--col-white);
     display: block;
     margin-bottom: 0;
     margin-left: 0;
@@ -118,8 +118,8 @@ body {
 .uomcontent .sitemap-trigger {
   width: 3.125rem;
   background-color: var(--deprecated-col-navy);
-  box-shadow: 3px 0 6px color(#000 alpha(40%)) inset;
-  color: color(#fff alpha(50%));
+  box-shadow: 3px 0 6px color(var(--col-black-dark) alpha(40%)) inset;
+  color: color(var(--col-white) alpha(50%));
   cursor: pointer;
   display: block;
   height: 100%;
@@ -135,7 +135,7 @@ body {
 
     &:hover {
       width: 3.125rem;
-      color: #fff;
+      color: var(--col-white);
       transform: translateX(-5px);
     }
   }

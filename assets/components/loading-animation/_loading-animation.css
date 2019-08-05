@@ -36,7 +36,7 @@
     }
 
     .cube {
-      background-color: #fff;
+      background-color: var(--col-white);
     }
   }
 

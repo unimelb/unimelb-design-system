@@ -27,7 +27,7 @@
       padding-top: .5rem;
       transition: transform 0.15s;
       background-color: var(--deprecated-col-brighterblue);
-      color: #fff;
+      color: var(--col-white);
       display: block;
       text-align: center;
       text-decoration: none;
@@ -67,11 +67,11 @@
         transform: scale(1.1);
 
         svg {
-          fill: #fff;
+          fill: var(--col-white);
         }
 
         .icon-label {
-          color: #fff;
+          color: var(--col-white);
         }
       }
 

@@ -3,7 +3,7 @@
   font-size: 1.25rem;
   background-color: var(--deprecated-col-navy);
   clear: left;
-  color: #fff;
+  color: var(--col-white);
   font-family: var(--ff-sans);
 
   * {
@@ -31,7 +31,7 @@
 
       &:hover,
       &:focus {
-        color: #fff;
+        color: var(--col-white);
       }
     }
 
@@ -74,7 +74,7 @@
         font-size: .625rem;
         line-height: 1.5rem;
         padding: 1.25rem .9375rem;
-        color: #fff;
+        color: var(--col-white);
         display: block;
         letter-spacing: 2px;
         text-decoration: none;
@@ -100,7 +100,7 @@
 .uomcontent .unimelb-lge {
   margin: 1.875rem auto;
   width: 16.875rem;
-  outline-color: #fff;
+  outline-color: var(--col-white);
   display: block;
 
   svg,
@@ -132,7 +132,7 @@
 
   a {
     font-size: .9375rem;
-    color: #fff;
+    color: var(--col-white);
     text-decoration: none;
 
     &:hover {
@@ -179,7 +179,7 @@
 
       &:hover,
       &:focus {
-        color: #fff;
+        color: var(--col-white);
       }
     }
 
@@ -229,7 +229,7 @@
       a {
         border-radius: 3px;
         padding-top: .375rem;
-        color: #fff;
+        color: var(--col-white);
         vertical-align: top;
 
         svg {

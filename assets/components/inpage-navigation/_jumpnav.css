@@ -121,7 +121,7 @@ body.jumpnav-active {
       }
 
       a.current {
-        color: #000;
+        color: var(--col-black-dark);
         text-decoration: underline;
 
         &:active {
@@ -154,7 +154,7 @@ body.jumpnav-active {
 
   @media screen and (--bp-wide) {
     .page-inner {
-      background-color: #fff;
+      background-color: var(--col-white);
     }
 
     .uomcontent [role="main"] {

@@ -1,6 +1,6 @@
 .uomcontent {
   .modal__blanket {
-    background-color: #000;
+    background-color: var(--col-black-dark);
     display: none;
     height: 100%;
     left: 0;

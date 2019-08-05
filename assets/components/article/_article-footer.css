@@ -63,7 +63,7 @@
           height: 1.875rem;
           width: 1.875rem;
           background-color: #4099FF;
-          color: #fff;
+          color: var(--col-white);
           display: block;
           overflow: hidden;
           vertical-align: top;

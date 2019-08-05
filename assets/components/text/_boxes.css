@@ -27,7 +27,7 @@
   dt {
     font-size: .9375rem;
     line-height: 1.5rem;
-    color: #000;
+    color: var(--col-black-dark);
     display: block;
     float: none;
     font-weight: var(--deprecated-fw--light);

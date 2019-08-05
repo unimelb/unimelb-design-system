@@ -12,26 +12,26 @@
       @mixin focus;
       @mixin focus-blue;
       @mixin focus-medium;
-      background-color: #fff;
+      background-color: var(--col-white);
       border-bottom: 3px solid var(--deprecated-col-brighterblue);
-      color: #000;
-      outline-color: #fff;
+      color: var(--col-black-dark);
+      outline-color: var(--col-white);
 
       &:hover, &:focus {
-        background-color: #fff;
+        background-color: var(--col-white);
         .button-small {
           color: var(--col-navy-main);
         }
       }
 
       &.featured {
-        color: #fff;
+        color: var(--col-white);
 
         p,
         span.text,
         strong {
-          border-color: #fff;
-          color: #fff;
+          border-color: var(--col-white);
+          color: var(--col-white);
         }
       }
 
@@ -53,42 +53,42 @@
     a {
       @mixin focus;
       @mixin focus-dark;
-      background-color: #fff;
+      background-color: var(--col-white);
       border-bottom: 0 none;
-      color: #000;
-      outline-color: #fff;
+      color: var(--col-black-dark);
+      outline-color: var(--col-white);
 
       &:hover, &:focus {
-        background-color: #fff;
+        background-color: var(--col-white);
 
         .button-small {
           background-color: transparent;
-          color: #000;
+          color: var(--col-black-dark);
         }
       }
 
       &.featured {
-        color: #fff;
+        color: var(--col-white);
 
         p,
         span.text,
         strong {
-          border-color: #fff;
-          color: #fff;
+          border-color: var(--col-white);
+          color: var(--col-white);
         }
       }
 
       .button-small {
         background-color: transparent;
-        color: #000;
+        color: var(--col-black-dark);
       }
     }
 
     p,
     span.text,
     strong {
-      border-color: #000;
-      color: #000;
+      border-color: var(--col-black-dark);
+      color: var(--col-black-dark);
     }
 
     @media screen and (--bp-desktop) {
@@ -104,25 +104,25 @@
 
   &.buttons {
     a {
-      background-color: #fff;
+      background-color: var(--col-white);
       border: 0 none;
-      color: #000;
+      color: var(--col-black-dark);
       min-height: 0;
-      outline-color: #fff;
+      outline-color: var(--col-white);
       padding-bottom: 0;
       padding-left: 0;
       padding-right: 0;
 
       &:hover,
       &:focus {
-        background-color: #fff;
+        background-color: var(--col-white);
       }
 
       strong {
         height: 6.25rem;
         min-width: 15.625rem;
         border-bottom: 0 none;
-        color: #000;
+        color: var(--col-black-dark);
 
         & > span {
           padding: 0 .625rem;
@@ -148,7 +148,7 @@
 
       p {
         padding-bottom: 3rem;
-        color: #000;
+        color: var(--col-black-dark);
       }
     }
   }
@@ -193,7 +193,7 @@
     line-height: 1.35;
     padding-top: calc(30/16rem);
     padding-bottom: 3rem;
-    color: #fff;
+    color: var(--col-white);
     font-family: var(--ff-serif);
     font-weight: var(--deprecated-fw--bolder);
     position: relative;
@@ -229,15 +229,15 @@
     strong,
     p,
     span.text {
-      color: #fff;
+      color: var(--col-white);
     }
 
     /* TODO Icelab manually include these styles once button classes have been fixed up */
     .button-small {
       @mixin outlinebutton;
       @mixin arrow-right;
-      border-color: #fff;
-      color: #fff;
+      border-color: var(--col-white);
+      color: var(--col-white);
       padding: 0.5em 0.7em;
       outline-color: currentColor;
     }
@@ -249,7 +249,7 @@
 
       .button-small {
         background-color: transparent;
-        color: #fff;
+        color: var(--col-white);
         text-decoration: underline;
       }
     }
@@ -257,7 +257,7 @@
     &.featured {
       margin-bottom: -.9375rem;
       background-color: color(var(--deprecated-col-brighterblue) lightness(-5%));
-      color: #000;
+      color: var(--col-black-dark);
 
       transform: scale(1.06);
       z-index: 1;

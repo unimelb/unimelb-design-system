@@ -10,7 +10,7 @@
       svg circle,
       svg polygon {
         fill: transparent;
-        stroke: #fff;
+        stroke: var(--col-white);
         stroke-width: 5px;
         transition: fill .3s;
       }
@@ -19,7 +19,7 @@
         transform: scale(1.1);
 
         svg circle {
-          fill: color(#000 alpha(60%));
+          fill: color(var(--col-black-dark) alpha(60%));
         }
       }
 
@@ -29,7 +29,7 @@
     }
 
     .video-loop {
-      background-color: #000;
+      background-color: var(--col-black-dark);
       display: none;
 
       @media screen and (--bp-wide) {
@@ -41,7 +41,7 @@
         width: 100%;
 
         video {
-          background-color: #000;
+          background-color: var(--col-black-dark);
           min-height: 100%;
           min-width: 100%;
         }

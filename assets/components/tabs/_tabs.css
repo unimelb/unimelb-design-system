@@ -143,8 +143,8 @@
         }
 
         &[data-current] {
-          background-color: #fff;
-          border-bottom-color: #fff;
+          background-color: var(--col-white);
+          border-bottom-color: var(--col-white);
           position: relative;
         }
 
@@ -187,7 +187,7 @@
       font-size: 1.875rem;
       padding: 0 1.25rem .3125rem; /* bottom padding aligns arrows with tab labels */
       background: var(--col-navy-main);
-      color: #fff;
+      color: var(--col-white);
       display: none;
       font-weight: var(--deprecated-fw--bold);
       height: 100%;
@@ -200,7 +200,7 @@
       }
 
       &:focus {
-        outline: 1px dotted #fff;
+        outline: 1px dotted var(--col-white);
       }
     }
 
@@ -242,7 +242,7 @@
 
     &.black {
       .full-width {
-        background-color: #000;
+        background-color: var(--col-black-dark);
       }
 
       figure.full-width {
@@ -255,22 +255,22 @@
       }
 
       nav a {
-        color: #fff;
+        color: var(--col-white);
 
         &[data-current] {
-          color: #fff;
+          color: var(--col-white);
           font-weight: var(--deprecated-fw--regular);
 
           &::after {
-            border-top-color: #000;
+            border-top-color: var(--col-black-dark);
           }
         }
       }
 
       .mobile-nav,
       .mobile-nav select {
-        background-color: #000;
-        border: 1px solid #000;
+        background-color: var(--col-black-dark);
+        border: 1px solid var(--col-black-dark);
       }
     }
 
@@ -292,7 +292,7 @@
         color: var(--deprecated-col-gray);
 
         &[data-current] {
-          color: #fff;
+          color: var(--col-white);
           font-weight: var(--deprecated-fw--regular);
 
           &::after {
@@ -366,7 +366,7 @@
     text-decoration: none;
 
     &[aria-selected="true"] {
-      background-color: #fff;
+      background-color: var(--col-white);
       border-color: var(--deprecated-col-brighterblue);
     }
 

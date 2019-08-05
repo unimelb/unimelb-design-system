@@ -1,6 +1,6 @@
 @define-mixin headerblock {
   font-size: .9375rem;
-  color: #fff;
+  color: var(--col-white);
   display: inline-block;
   vertical-align: middle;
 }
@@ -12,7 +12,7 @@
   font-family: var(--ff-sans);
 
   &.invalid {
-    background-color: #fff;
+    background-color: var(--col-white);
     border-color: color(var(--deprecated-col-cherry) lightness(+25%));
     color: color(var(--deprecated-col-cherry) lightness(+25%));
   }
@@ -27,20 +27,20 @@
   font-size: 1.25rem;
   background-color: var(--deprecated-col-lightgray);
   border: 1px solid color(var(--deprecated-col-lightergray) lightness(-5%));
-  box-shadow: inset 0 1px 3px color(#000 alpha(15%));
+  box-shadow: inset 0 1px 3px color(var(--col-black-dark) alpha(15%));
 
   &:hover {
     border-color: var(--deprecated-col-gray);
   }
 
   &:focus {
-    background-color: #fff;
+    background-color: var(--col-white);
     border-color: var(--deprecated-col-borderblue);
-    color: #000;
+    color: var(--col-black-dark);
     outline: 0;
 
     &.invalid {
-      color: #000;
+      color: var(--col-black-dark);
     }
   }
 }
@@ -52,7 +52,7 @@
   padding: 0 .9375rem;
   background-color: var(--deprecated-col-brighterblue);
   border: 0 none;
-  color: #fff;
+  color: var(--col-white);
   cursor: pointer;
   letter-spacing: 1px;
   position: relative;
@@ -90,7 +90,7 @@
   font-size: 1.25rem;
   height: 3.75rem;
   background-color: var(--col-navy-main);
-  color: #fff;
+  color: var(--col-white);
   font-family: var(--ff-sans);
   position: relative;
   top: 0;
@@ -150,7 +150,7 @@
         height: 2.5rem;
         line-height: 2.5rem;
         background-color: transparent;
-        /* box-shadow: 0 3px 6px -3px color(#000 alpha(30%)); */
+        /* box-shadow: 0 3px 6px -3px color(var(--col-black-dark) alpha(30%)); */
         width: 100%;
       }
 
@@ -406,10 +406,10 @@
 
       &:hover,
       &:focus {
-        color: #fff;
+        color: var(--col-white);
 
         .icon {
-          fill: #fff;
+          fill: var(--col-white);
         }
       }
 
@@ -430,10 +430,10 @@
 
 .uomcontent .page-local-history {
   @mixin injection-wrapper;
-  color: #fff;
+  color: var(--col-white);
 
   a {
-    color: #fff;
+    color: var(--col-white);
   }
 }
 
@@ -493,7 +493,7 @@
 .uomcontent .modal__blanket.white {
   margin-top: 3.75rem;
   animation: fadeIn .2s backwards;
-  background-color: #fff;
+  background-color: var(--col-white);
   display: block;
   opacity: .95;
   z-index: 100;
@@ -540,7 +540,7 @@
 .uomcontent .page-header-search {
   height: 3.75rem;
   animation: fadeIn .2s backwards;
-  background: color(#fff alpha(95%));
+  background: color(var(--col-white) alpha(95%));
   display: none;
   left: 0;
   position: fixed;
@@ -645,7 +645,7 @@
 /* dupe */
 
       .icon {
-        fill: #fff;
+        fill: var(--col-white);
         vertical-align: top;
       }
     }
@@ -702,7 +702,7 @@
       &:hover,
       &:focus {
         background-color: var(--col-navy-main);
-        color: #fff;
+        color: var(--col-white);
         text-decoration: none;
       }
     }
@@ -758,7 +758,7 @@
     &:hover,
     &:focus {
       background-color: var(--col-navy-main);
-      color: #fff;
+      color: var(--col-white);
       text-decoration: none;
       outline: none;
     }
@@ -814,12 +814,12 @@
     left: 5.625rem;
     margin-top: .9375rem;
     width: 10rem;
-    color: #fff;
+    color: var(--col-white);
     line-height: 1.3;
     position: absolute;
 
     &:hover, &:focus {
-      color: #fff;
+      color: var(--col-white);
     }
 
     @media screen and (--bp-desktop) {
@@ -838,12 +838,12 @@
       border-radius: 3px;
       background-color: transparent;
       border: 1px solid transparent;
-      color: #fff;
+      color: var(--col-white);
       transition: background-color 0.3s, color 0.3s, transform 0.3s;
 
       &:hover, &:focus {
-        background-color: color(#fff alpha(70%));
-        color: #000;
+        background-color: color(var(--col-white) alpha(70%));
+        color: var(--col-black-dark);
         transform: scale(1.1);
       }
     }
@@ -865,7 +865,7 @@
 
   &.reverse {
     .page-header-home {
-      color: #000;
+      color: var(--col-black-dark);
     }
 
     .page-header-tools a.page-header-icon {
@@ -970,7 +970,7 @@
     }
 
     .page-header-tools {
-      background-color: #fff;
+      background-color: var(--col-white);
       position: absolute;
     }
 

@@ -3,8 +3,8 @@
     .box {
       max-width: var(--w-sml);
       padding: 3.5rem 1.875rem;
-      background: color(#fff alpha(80%));
-      color: #000;
+      background: color(var(--col-white) alpha(80%));
+      color: var(--col-black-dark);
       margin: 0 auto;
 
       h1 {

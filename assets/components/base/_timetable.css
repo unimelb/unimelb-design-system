@@ -1,5 +1,5 @@
 .uomcontent .timetable {
-  background-color: #fff;
+  background-color: var(--col-white);
 
   @media screen and (--bp-desktop) {
     /* r-bg-b */
@@ -76,7 +76,7 @@
 
   .time {
     min-width: 4.0625rem;
-    color: #000;
+    color: var(--col-black-dark);
     display: inline-block;
     font-style: italic;
   }
@@ -115,7 +115,7 @@
     .accordion__close {
       height: 3.125rem;
       width: 3.125rem;
-      color: #fff;
+      color: var(--col-white);
       cursor: pointer;
       display: block;
       position: absolute;

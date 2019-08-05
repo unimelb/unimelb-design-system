@@ -19,7 +19,7 @@
 
     .bottom-align-inverted {
       @mixin grad-top;
-      color: #000;
+      color: var(--col-black-dark);
     }
 
     .bottom-align-flat {
@@ -31,19 +31,19 @@
       width: 100%;
 
       &.white {
-        background-color: color(#fff alpha(80%));
-        color: #000;
+        background-color: color(var(--col-white) alpha(80%));
+        color: var(--col-black-dark);
       }
 
       &.black {
-        background-color: color(#000 alpha(50%));
+        background-color: color(var(--col-black-dark) alpha(50%));
       }
 
       form {
         background-color: transparent;
 
         label {
-          color: #fff;
+          color: var(--col-white);
         }
       }
 

@@ -33,7 +33,7 @@
 
   figure.framed img {
     @media screen and (--bp-tablet) {
-      box-shadow: 0 3px 6px -1px color(#000 alpha(20%));
+      box-shadow: 0 3px 6px -1px color(var(--col-black-dark) alpha(20%));
       display: inline-block;
       max-height: 90%;
     }
@@ -59,10 +59,10 @@
       background-attachment: fixed;
 
       .title {
-        color: #fff;
+        color: var(--col-white);
 
         &::after {
-          border-color: #fff;
+          border-color: var(--col-white);
         }
       }
     }
@@ -82,7 +82,7 @@
 
       section {
         align-self: center;
-        background: color(#000 alpha(50%));
+        background: color(var(--col-black-dark) alpha(50%));
         display: table-cell;
         padding-bottom: 0;
         padding-top: 0;
@@ -126,14 +126,14 @@
       font-size: 1.1875rem;
       padding-top: 3rem;
       margin: 0 .9375rem;
-      color: #fff;
+      color: var(--col-white);
       max-width: 100%;
       padding-bottom: 0;
 
       &.black {
         padding-top: 4.5rem;
         padding-bottom: 3rem;
-        color: #000;
+        color: var(--col-black-dark);
         text-align: left;
       }
 
@@ -153,15 +153,15 @@
       font-size: 1.25rem;
       line-height: 1.5rem;
       letter-spacing: .3125rem;
-      color: #fff;
+      color: var(--col-white);
 
       &.title::after {
-        border-color: #fff;
+        border-color: var(--col-white);
       }
     }
 
     blockquote {
-      color: #fff;
+      color: var(--col-white);
       line-height: 1.4;
     }
 

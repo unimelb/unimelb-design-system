@@ -10,7 +10,7 @@
  */
 .uomcontent .localnav {
   font-family: var(--ff-sans);
-  color: #fff;
+  color: var(--col-white);
   position: fixed;
   z-index: 15;
 
@@ -117,7 +117,7 @@
 
       &:hover,
       &:focus {
-        color: #fff;
+        color: var(--col-white);
       }
 
       &:hover {
@@ -142,7 +142,7 @@
       &:hover,
       &:focus {
         background-color: color(var(--deprecated-col-menu) lightness(-3%));
-        color: #fff;
+        color: var(--col-white);
       }
     }
   }

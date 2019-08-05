@@ -9,7 +9,7 @@
   animation: appear-bottom .5s backwards;
   background-color: var(--deprecated-col-brighterblue);
   bottom: 0;
-  color: #fff;
+  color: var(--col-white);
   font-family: Roboto, Helvetica, Arial, sans-serif;
   left: 0;
   line-height: 1.5;
@@ -62,7 +62,7 @@
     }
 
     &:hover {
-      background-color: #fff;
+      background-color: var(--col-white);
       color: var(--deprecated-col-brighterblue);
     }
   }
@@ -91,7 +91,7 @@
         margin-bottom: .5rem;
         min-width: 6rem;
         padding: .5rem 1rem;
-        border: 2px solid #fff;
+        border: 2px solid var(--col-white);
         border-radius: 4px;
         box-sizing: border-box;
         display: block;
@@ -101,7 +101,7 @@
         transition: color .15s, background-color .15s;
 
         &:hover {
-          background-color: #fff;
+          background-color: var(--col-white);
           color: var(--deprecated-col-brighterblue);
         }
 

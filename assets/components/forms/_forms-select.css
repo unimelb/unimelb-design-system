@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-position: 99% center;
   border: 1px solid var(--deprecated-col-brighterblue);
-  color: #fff;
+  color: var(--col-white);
   cursor: pointer;
   line-height: 1.55;
   margin-top: 0;
@@ -14,7 +14,7 @@
   &.invalid:hover,
   &.alt.invalid,
   &.alt.invalid:hover {
-    background-color: #fff;
+    background-color: var(--col-white);
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iI2RmMDYyMCI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
     border-color: var(--deprecated-col-cherry);
     color: var(--deprecated-col-cherry);
@@ -33,12 +33,12 @@
   &:hover {
     background-color: var(--col-navy-main);
     border-color: var(--col-navy-main);
-    color: #fff;
+    color: var(--col-white);
   }
 
   &.alt {
     background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzRweCIgaGVpZ2h0PSIzNHB4IiB2aWV3Qm94PSIwIDAgNDkgNDgiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgZmlsbD0iIzAwNzZkZSI+PHBhdGggZD0iTTI0LDQgQzEyLjk1LDQgNCwxMi45NSA0LDI0IEM0LDM1LjA1IDEyLjk1LDQ0IDI0LDQ0IEMzNS4wNSw0NCA0NCwzNS4wNSA0NCwyNCBDNDQsMTIuOTUgMzUuMDUsNCAyNCw0IEwyNCw0IFogTTI0LDI4IEwxNiwyMCBMMzIsMjAgTDI0LDI4IEwyNCwyOCBaIj48L3BhdGg+PC9nPjwvc3ZnPg==');
-    background-color: #fff;
+    background-color: var(--col-white);
     border-color: var(--deprecated-col-brighterblue);
     color: var(--deprecated-col-brighterblue);
 
@@ -61,29 +61,29 @@
   &.clear,
   &.clear-dark {
     background-color: transparent;
-    border-color: #fff;
-    color: #fff;
+    border-color: var(--col-white);
+    color: var(--col-white);
 
     option {
-      color: #000;
+      color: var(--col-black-dark);
     }
   }
 
   &.clear:hover,
   &.clear-dark:hover {
-    background-color: color(#fff alpha(30%));
+    background-color: color(var(--col-white) alpha(30%));
   }
 
   &.clear-dark.invalid,
   &.clear-dark.invalid:hover {
-    background-color: color(#fff alpha(30%));
+    background-color: color(var(--col-white) alpha(30%));
     border-color: var(--deprecated-col-cherry);
     color: var(--deprecated-col-cherry);
   }
 
   &.clear.invalid,
   &.clear.invalid:hover {
-    background-color: color(#fff alpha(30%));
+    background-color: color(var(--col-white) alpha(30%));
     border-color: color(var(--deprecated-col-cherry) lightness(+25%));
     color: color(var(--deprecated-col-cherry) lightness(+25%));
   }
@@ -107,17 +107,17 @@
     right: .4375rem;
     top: .4375rem;
     width: 1.875rem;
-    color: #fff;
+    color: var(--col-white);
     cursor: pointer;
     display: block;
-    fill: #fff;
+    fill: var(--col-white);
     position: absolute;
   }
 
   &:hover select {
     background-color: var(--col-navy-main);
     border-color: var(--col-navy-main);
-    color: #fff;
+    color: var(--col-white);
   }
 
   &:hover select.alt {
@@ -128,9 +128,9 @@
 
   &:hover select.clear,
   &:hover select.clear-dark {
-    background-color: color(#fff alpha(30%));
-    border-color: #fff;
-    color: #fff;
+    background-color: color(var(--col-white) alpha(30%));
+    border-color: var(--col-white);
+    color: var(--col-white);
   }
 }
 
@@ -156,7 +156,7 @@
 
     option {
       background-color: transparent;
-      color: #fff;
+      color: var(--col-white);
     }
 
     &::-ms-expand {
@@ -191,12 +191,12 @@
       &,
       option {
         background-color: var(--deprecated-col-brighterblue) !important;
-        color: #fff !important;
+        color: var(--col-white)!important;
       }
 
       &.alt,
       &.alt option {
-        background-color: #fff !important;
+        background-color: var(--col-white)!important;
         color: var(--deprecated-col-brighterblue) !important;
       }
 
@@ -204,8 +204,8 @@
       &.clear-dark,
       &.clear option,
       &.clear-dark option {
-        background-color: #fff !important;
-        color: #000 !important;
+        background-color: var(--col-white)!important;
+        color: var(--col-black-dark) !important;
       }
     }
   }

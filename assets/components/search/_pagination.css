@@ -3,7 +3,7 @@
     font-size: .875rem;
     line-height: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid color(#000 alpha(10%));
+    border-top: 1px solid color(var(--col-black-dark) alpha(10%));
     color: var(--deprecated-col-midgray);
   }
 

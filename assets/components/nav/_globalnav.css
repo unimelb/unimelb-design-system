@@ -16,7 +16,7 @@
   z-index: 17;
 
   &.active {
-    box-shadow: 1px 0 12px 3px color(#000 alpha(60%));
+    box-shadow: 1px 0 12px 3px color(var(--col-black-dark) alpha(60%));
     overflow: auto;
     transform: translateX(-100%);
     -webkit-overflow-scrolling: touch;
@@ -34,7 +34,7 @@
     padding-top: .5rem;
     padding-bottom: .5rem;
     color: var(--deprecated-col-lightblue);
-    color: color(#fff alpha(60%));
+    color: color(var(--col-white) alpha(60%));
     display: block;
     font-weight: var(--deprecated-fw--light);
     padding-left: 0;
@@ -43,7 +43,7 @@
 
     &:hover,
     &:focus {
-      color: #fff;
+      color: var(--col-white);
     }
 
     &:hover {
@@ -66,7 +66,7 @@
     padding-top: 0;
     border-bottom: 1px solid var(--deprecated-col-blue);
     color: var(--deprecated-col-lightblue);
-    color: color(#fff alpha(60%));
+    color: color(var(--col-white) alpha(60%));
     line-height: 1.2;
     padding-right: 3%;
 
@@ -80,7 +80,7 @@
   li {
     font-size: .875rem;
     color: #B9C2CA;
-    color: color(#fff alpha(60%));
+    color: color(var(--col-white) alpha(60%));
     line-height: 1.4;
     list-style-type: disc;
     margin-left: 0;
@@ -117,7 +117,7 @@
         background-color: var(--deprecated-col-lightergray);
 
         &:focus {
-          background-color: #fff;
+          background-color: var(--col-white);
         }
       }
     }
@@ -220,7 +220,7 @@
     padding-top: 1rem;
     height: 3.75rem;
     border-bottom: 1px solid var(--deprecated-col-blue);
-    color: color(#fff alpha(40%));
+    color: color(var(--col-white) alpha(40%));
     display: block;
     text-decoration: none;
     text-transform: uppercase;
@@ -228,7 +228,7 @@
     &::before {
       font-size: 1.5rem;
       margin-right: .5rem;
-      color: color(#fff alpha(40%));
+      color: color(var(--col-white) alpha(40%));
       content: '\2039';
       display: inline-block;
       font-weight: var(--deprecated-fw--regular);
@@ -238,7 +238,7 @@
 
     &:hover,
     &:focus {
-      color: #fff;
+      color: var(--col-white);
     }
 
     &:hover {
@@ -248,7 +248,7 @@
     &:hover::before,
     &:focus::before {
       animation: chevronback 1s infinite ease-in-out;
-      color: #fff;
+      color: var(--col-white);
       text-decoration: none;
     }
   }
@@ -304,7 +304,7 @@
 body.ie9 {
   .uomcontent [role="navigation"]#globalsitemap {
     ul.quicklinks a {
-      color: #fff;
+      color: var(--col-white);
     }
 
     .logo * {

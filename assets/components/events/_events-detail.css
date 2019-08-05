@@ -59,7 +59,7 @@
       &.range time + time::before {
         margin-right: .3125rem;
         width: 1rem;
-        border-bottom: 2px solid #000;
+        border-bottom: 2px solid var(--col-black-dark);
         content: "";
         display: inline-block;
         vertical-align: middle;
@@ -67,7 +67,7 @@
         @media screen and (--bp-desktop) {
           margin-top: -1.5rem;
           width: 1.25rem;
-          border-bottom: 4px solid #000;
+          border-bottom: 4px solid var(--col-black-dark);
           display: block;
           margin-right: 0;
           position: absolute;

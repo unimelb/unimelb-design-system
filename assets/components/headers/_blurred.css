@@ -1,8 +1,8 @@
 .uomcontent [role="main"] {
   header {
     .blurred {
-      background: color(#000 alpha(30%));
-      box-shadow: 0 0 100px 111px color(#000 alpha(30%));
+      background: color(var(--col-black-dark) alpha(30%));
+      box-shadow: 0 0 100px 111px color(var(--col-black-dark) alpha(30%));
     }
   }
 }

@@ -9,7 +9,7 @@
 
 .uomcontent {
   .modal__dialog {
-    background-color: #fff;
+    background-color: var(--col-white);
     box-shadow: 0 3px 6px 3px rgba(0, 0, 0, .2);
     left: 5%;
     max-width: 100%;
@@ -49,8 +49,8 @@
   }
 
   .modal__close {
-    background-color: #fff;
-    color: var(--deprecated-col-midgray);
+    background-color: var(--col-white);
+    color: var(--col-navy-main);
     font-size: 11px;
     font-weight: 400;
     padding: 0 0 5px 5px;
@@ -67,7 +67,7 @@
 
     &:hover,
     &:focus {
-      color: #000;
+      color: var(--col-black-dark);
     }
   }
 }
