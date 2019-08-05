@@ -52,7 +52,7 @@
 
     dd {
       padding-bottom: 1.875rem;
-      border-left: 1px solid var(--deprecated-col-lightergray);
+      border-left: 1px solid var(--col-blue-light);
       float: left;
       margin: -4px 0 0;
       position: relative;
@@ -63,17 +63,17 @@
         border-left-color: transparent; /* keep 1px border so dot remains aligned */
       }
 
-      /* dot */
+      /* Dot */
       &::before {
-        height: 15px; /* odd number for dot to be perfectly centred on the 1px line */
-        left: -8px; /* half of width, rounded up */
-        width: 15px;
-        background-color: var(--deprecated-col-lightergray);
+        height: 13px; /* odd number for dot to be perfectly centred on the 1px line */
+        left: -7px; /* half of width, rounded up */
+        width: 13px;
+        background-color: var(--col-blue-light);
         border-radius: 50%;
         content: '';
         display: block;
         position: absolute;
-        top: 4px;
+        top: 5px;
         z-index: 2;
       }
 
