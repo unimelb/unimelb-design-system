@@ -1,6 +1,6 @@
 @define-mixin inlinebutton {
   border-radius: 3px;
-  font-size: calc(13/16rem);
+  font-size: calc(16/16rem);
   height: calc(45/16rem);
   padding: 0 calc(15/16rem);
   background-color: var(--col-navy-main);
@@ -8,9 +8,7 @@
   color: var(--col-white);
   cursor: pointer;
   font-weight: var(--fw-semibold);
-  letter-spacing: 1px;
   position: relative;
-  text-transform: uppercase;
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
@@ -80,6 +78,9 @@
   line-height: 1.2;
   margin: 0 auto;
   max-width: var(--w-sml);
+  &.alt {
+    padding: calc(20/16rem);
+  }
 
   @media screen and (--bp-desktop) {
     padding: calc(10/16rem) 0;
@@ -255,10 +256,9 @@
 
     .inline-button {
       border-radius: 0 3px 3px 0;
-      font-size: .8125rem;
+      font-size: calc(16/16rem);
       padding: 0 .9375rem;
       font-weight: var(--fw-semibold);
-      letter-spacing: 1px;
     }
   }
 
@@ -289,7 +289,7 @@
       }
 
       .inline-button {
-        font-size: 1rem;
+        font-size: calc(16/16rem);
         height: 3.75rem;
         padding: .9375rem;
         line-height: 1;
