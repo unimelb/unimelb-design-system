@@ -8,14 +8,18 @@
     border-collapse: collapse;
     display: table;
 
+    a {
+      color: var(--col-navy-main);
+      &:hover,
+      &:focus {
+        color: var(--col-tertiary-navy);
+      }
+    }
+
     &.min {
       margin-left: auto;
       margin-right: auto;
       max-width: var(--w-sml);
-
-      a {
-        color: var(--col-blue-mid-2);
-      }
 
       img {
         display: block;
@@ -56,7 +60,6 @@
     }
 
     a {
-      /* color: var(--col-black-dark); */
       font-weight: var(--fw-regular);
     }
 

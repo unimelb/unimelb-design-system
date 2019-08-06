@@ -14,12 +14,20 @@
     }
 
     a {
-      color: var(--col-black-dark);
+      color: var(--col-navy-main);
       display: block;
       text-decoration: none;
 
       strong {
-        text-decoration: underline;
+        font-weight: var(--fw-semibold);
+      }
+
+      &:hover,
+      &:focus {
+        strong {
+          color: var(--col-tertiary-navy);
+          text-decoration: underline;
+        }
       }
     }
 
