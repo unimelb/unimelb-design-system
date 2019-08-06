@@ -85,7 +85,7 @@
       line-height: calc(24/16rem);
       padding-top: calc(24/16rem);
       padding-bottom: .75rem;
-      max-width: 3calc(20/16rem);
+      max-width: calc(500/16rem);
       color: var(--col-white);
       font-style: italic;
 

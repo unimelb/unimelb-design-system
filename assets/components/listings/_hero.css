@@ -22,7 +22,7 @@
   }
 
   figure {
-    max-height: 3calc(20/16rem);
+    max-height: calc(500/16rem);
     margin: 0;
   }
 

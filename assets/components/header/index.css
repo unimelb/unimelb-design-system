@@ -605,7 +605,7 @@
     }
 
     @media screen and (--bp-desktop) {
-      max-width: 3calc(20/16rem);
+      max-width: calc(500/16rem);
       padding-left: calc(20/16rem);
       float: right;
       width: 100%;
