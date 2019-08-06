@@ -39,6 +39,7 @@
   font-size: calc(22/16rem);
   font-family: var(--ff-serif);
   font-weight: var(--fw-bold);
+  letter-spacing: -0.03em;
   text-align: center;
 
   &::after {
@@ -77,10 +78,9 @@
 
 .uomcontent [role="main"] {
   h1.highlight {
-    font-size: 4.6875rem;
-    line-height: 5.25rem;
+    font-size: calc(75/16rem);
+    line-height: calc(84/16)rem;
     color: var(--col-blue-mid-2);
-    font-weight: var(--fw-light);
     letter-spacing: -5px;
     text-align: center;
     animation: hue 80s infinite linear;

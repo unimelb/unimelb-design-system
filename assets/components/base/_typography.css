@@ -60,6 +60,7 @@
     padding-bottom: calc(24/16rem);
     font-weight: var(--fw-bold);
     font-family: var(--ff-serif);
+    letter-spacing: -0.03em;
 
     @media screen and (--bp-desktop) {
       font-size: calc(42/16rem);
@@ -72,6 +73,7 @@
     font-family: var(--ff-serif);
     font-size: calc(36/16rem);
     font-weight: var(--fw-bold);
+    letter-spacing: -0.03em;
     padding-bottom: calc(24/16rem);
     padding-top: calc(24/16rem);
 
