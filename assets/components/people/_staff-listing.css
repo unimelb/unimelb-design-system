@@ -18,7 +18,6 @@
       }
 
       img {
-        border-radius: 50%;
         display: block;
         width: 100%;
         height: 100%;
@@ -33,7 +32,6 @@
           height: 3.125rem;
           width: 3.125rem;
           background-color: var(--col-blue-light);
-          border-radius: 50%;
         }
       }
 

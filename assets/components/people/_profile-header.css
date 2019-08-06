@@ -30,9 +30,8 @@
       }
 
       p {
-        font-size: 1.125rem;
-        line-height: calc(24/16rem);
-        font-weight: var(--fw-light);
+        font-size: calc(18/16rem);
+        line-height: 1.4;
         padding-top: 0;
       }
     }
@@ -41,7 +40,6 @@
       @mixin fallbackAvatar;
       background-position: center;
       background-size: cover;
-      border-radius: 50%;
       display: block;
       height: 150px;
       margin: 0 auto;

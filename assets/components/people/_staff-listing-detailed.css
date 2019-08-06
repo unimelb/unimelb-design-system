@@ -37,13 +37,11 @@
       max-width: 12.5rem;
       margin-bottom: calc(24/16rem);
       background-color: var(--col-blue-light);
-      border-radius: 50%;
       line-height: 0;
       margin-left: auto;
       margin-right: auto;
 
       img {
-        border-radius: 50%;
         margin-top: 0;
         max-width: 100%;
       }
