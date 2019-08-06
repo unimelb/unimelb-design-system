@@ -27,14 +27,13 @@
 
   strong {
     font-size: .9375rem;
-    padding-bottom: .3125rem;
+    padding-bottom: calc(5/16rem);
     display: block;
     font-weight: var(--fw-light);
   }
 
   h2 {
     font-size: calc(30/16rem);
-    font-weight: var(--fw-light);
     line-height: 1.2;
     margin-left: 0;
     padding-bottom: 0;
@@ -57,7 +56,7 @@
 
       legend,
       label {
-        font-size: .9375rem;
+        font-size: calc(18/16rem);
         padding: 0 0 .9375rem;
         color: var(--col-white);
         display: block;
@@ -76,32 +75,24 @@
     padding-right: 2.8125rem;
     float: left;
 
+    input[type="checkbox"]:not(.unstyled) + label {
+      &::after {
+        top: calc(9/16rem);
+      }
+      span::before {
+        top: calc(5/16rem);
+      }
+    }
+
     input[type="checkbox"] {
       & + label {
-        padding-left: .3125rem;
-        padding-top: .3125rem;
+        padding-left: calc(5/16rem);
+        padding-top: calc(5/16rem);
         display: inline-block;
         width: auto;
 
         @media screen and (--bp-tablet) {
           padding: 0;
-        }
-
-        span {
-          padding-left: 1.5625rem;
-          display: inline-block;
-          width: auto;
-
-          &::before {
-            background-color: currentColor;
-            margin-left: 0;
-            top: 5px;
-          }
-        }
-
-        &::after {
-          left: 3px;
-          top: 9px;
         }
       }
 
@@ -185,7 +176,7 @@
     }
 
     label {
-      font-size: .9375rem;
+      font-size: calc(18/16rem);
       line-height: calc(30/16rem);
       padding-bottom: .9375rem;
       display: block;

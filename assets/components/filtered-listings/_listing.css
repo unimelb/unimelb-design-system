@@ -19,10 +19,10 @@
     }
 
     h2 {
-      font-size: 1.375rem;
+      font-size: calc(22/16rem);
       line-height: calc(36/16rem);
+      font-weight: var(--fw-bold);
       padding-top: 0;
-      font-weight: var(--fw-light);
       letter-spacing: 0;
       text-align: left;
       text-transform: none;

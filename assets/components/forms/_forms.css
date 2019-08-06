@@ -3,7 +3,7 @@
   font-size: calc(13/16rem);
   height: calc(45/16rem);
   padding: 0 calc(15/16rem);
-  background-color: var(--col-blue-mid-2);
+  background-color: var(--col-navy-main);
   border: 0 none;
   color: var(--col-white);
   cursor: pointer;
@@ -52,7 +52,7 @@
 
   &:focus {
     background-color: var(--col-white);
-    border-color: var(--col-blue-mid-2);
+    border-color: var(--col-navy-main);
     color: var(--col-black-dark);
     outline: 0;
 
@@ -73,7 +73,7 @@
 }
 
 [role="main"] form {
-  font-size: 1rem;
+  font-size: calc(18/16rem);
   padding: 0;
   background-color: var(--col-white);
   color: var(--col-navy-main);
@@ -85,10 +85,6 @@
     padding: calc(10/16rem) 0;
   }
 
-  footer {
-    padding: 0;
-  }
-
   [data-required=true]::after {
     padding-left: .3125rem;
     content: '*';
@@ -97,12 +93,19 @@
 
   .form__subtext {
     padding-bottom: .75rem;
-    font-size: smaller;
+    font-size: calc(16/16rem);
+  }
+}
+
+.uomcontent [role="main"] form {
+  footer {
+    padding: 0;
   }
 }
 
 .uomcontent .form-error {
   color: var(--col-pink-dark);
+  margin-bottom: calc(15/16rem);
 
   p {
     padding-bottom: 0;
@@ -114,7 +117,7 @@
   padding: 0;
 
   div {
-    padding: 10px 0;
+    padding: calc(10/16rem) 0 calc(12/16rem);
   }
 
   small {
@@ -129,7 +132,7 @@
   }
 
   label {
-    font-size: 1rem;
+    font-size: calc(18/16rem);
     display: inline;
     position: relative;
     width: 100%;
@@ -141,7 +144,7 @@
   }
 
   .invalid small {
-    font-size: .875rem;
+    font-size: calc(16/16rem);
     padding: .3125rem 0;
     animation: flash .4s .1s 1 ease-in-out;
     color: var(--col-pink-dark);
@@ -277,11 +280,11 @@
         height: 3.75rem;
         line-height: calc(36/16rem);
         padding: .9375rem;
-        border-color: var(--col-blue-mid-2);
+        border-color: var(--col-navy-main);
 
         &:focus {
           background-color: var(--col-white);
-          color: var(--col-blue-mid-2);
+          color: var(--col-navy-main);
         }
       }
 
@@ -342,7 +345,7 @@
       }
 
       span {
-        padding-left: 2.1875rem;
+        padding-left: calc(30/16rem);
         cursor: pointer;
         display: block;
         text-indent: 0;
@@ -372,13 +375,13 @@
     }
 
     &:focus + label span::before {
-      border-color: var(--col-blue-mid-2);
+      border-color: var(--col-navy-main);
     }
   }
 
   input[type="checkbox"]:not(.unstyled) + label {
     &::after {
-      border: 3px solid var(--col-blue-mid-2);
+      border: 3px solid var(--col-navy-main);
       border-right: 0 none;
       border-top: 0 none;
       height: 5px;
@@ -393,7 +396,7 @@
 
   input[type="radio"]:not(.unstyled) + label {
     &::after {
-      background-color: var(--col-blue-mid-2);
+      background-color: var(--col-navy-main);
       border-radius: 50%;
       height: 12px;
       width: 12px;

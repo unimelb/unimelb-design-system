@@ -57,8 +57,8 @@ body {
   }
 
   .aside {
-    font-size: .875rem;
-    line-height: calc(24/16rem);
+    font-size: calc(16/16rem);
+    line-height: 1.5;
     color: var(--col-navy-main);
     float: right;
 
