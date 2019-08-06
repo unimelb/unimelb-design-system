@@ -4,7 +4,7 @@
   padding: 0.9em 1.8em;
   background-color: var(--col-blue-mid-2);
   border: 0;
-  border-bottom: 5px solid color(var(--col-blue-mid-2) lightness(-10%));
+  border-bottom: 5px solid var(--col-blue-dark);
   color: var(--col-white);
   cursor: pointer;
   display: inline-block;
@@ -36,22 +36,22 @@
 
   &.warning {
     background-color: var(--col-pink-dark);
-    border-bottom-color: color(var(--col-pink-dark) lightness(-10%));
+    border-bottom-color: var(--col-pink-dark);
   }
 
   &.cta {
     background-color: var(--col-emerald-mid-2);
-    border-bottom-color: color(var(--col-emerald-mid-2) lightness(-10%));
+    border-bottom-color: var(--col-emerald-mid-2);
   }
 
   &.brand {
     background-color: var(--col-navy-main);
-    border-bottom-color: color(var(--col-navy-main) lightness(-10%));
+    border-bottom-color: var(--col-navy-main);
   }
 
   &.soft {
     background-color: var(--col-black-light);
-    border-bottom-color: color(var(--col-black-light) lightness(-10%));
+    border-bottom-color: var(--col-black-light);
     color: var(--col-black-dark);
   }
 
@@ -81,7 +81,7 @@
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: color(var(--col-blue-mid-2) lightness(-10%));
+    background-color: var(--col-blue-dark);
   }
 
   &:active {
@@ -90,17 +90,17 @@
 
   &.warning:not([disabled]):hover,
   &.warning:not([disabled]):focus {
-    background-color: color(var(--col-pink-dark) lightness(-10%));
+    background-color: var(--col-pink-dark);
   }
 
   &.cta:not([disabled]):hover,
   &.cta:not([disabled]):focus {
-    background-color: color(var(--col-emerald-mid-2) lightness(-10%));
+    background-color: var(--col-emerald-mid-2);
   }
 
   &.brand:not([disabled]):hover,
   &.brand:not([disabled]):focus {
-    background-color: color(var(--col-navy-main) lightness(-10%));
+    background-color: var(--col-navy-main);
   }
 
   &.soft {
@@ -109,7 +109,7 @@
 
     &:not([disabled]):hover,
     &:not([disabled]):focus {
-      background-color: color(var(--col-black-light) lightness(-10%));
+      background-color: var(--col-black-light);
     }
   }
 

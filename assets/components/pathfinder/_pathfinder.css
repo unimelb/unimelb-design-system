@@ -243,7 +243,6 @@
     }
 
     &:hover, &:focus {
-      background-color: color(var(--col-navy-main) lightness(+3%));
       transform: scale(1.06);
       z-index: 2;
 
@@ -256,7 +255,7 @@
 
     &.featured {
       margin-bottom: -.9375rem;
-      background-color: color(var(--col-blue-mid-2) lightness(-5%));
+      background-color: var(--col-blue-mid-2);
       color: var(--col-black-dark);
 
       transform: scale(1.06);
@@ -264,7 +263,6 @@
 
       &:hover,
       &:focus {
-        background-color: color(var(--col-blue-mid-2) lightness(+2%));
         transform: scale(1.08);
         z-index: 1;
       }

@@ -170,21 +170,21 @@
     }
 
     dd {
-      border-left-color: color(var(--col-navy-mid-1) lightness(+25%));
+      border-left-color: var(--col-blue-light);
 
       &::before {
-        background-color: color(var(--col-navy-mid-1) lightness(+25%));
+        background-color: var(--col-blue-light);
       }
 
       ul:last-child,
       p:last-child {
-        border-bottom-color: color(var(--col-navy-mid-1) lightness(+25%));
+        border-bottom-color: var(--col-blue-light);
       }
 
       ul.accordion {
 
         & > li:first-child {
-          border-top: 1px solid color(var(--col-navy-mid-1) lightness(+25%));
+          border-top: 1px solid var(--col-blue-light);
 
           &.accordion__visible {
             border-top: 1px solid var(--col-blue-mid-2);

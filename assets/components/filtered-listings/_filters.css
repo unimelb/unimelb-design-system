@@ -109,7 +109,7 @@
         color: var(--col-emerald-light);
 
         span::before {
-          border-color: color(var(--col-emerald-mid-2) lightness(-5%));
+          border-color: var(--col-emerald-mid-2);
         }
 
         &::after {
@@ -118,40 +118,38 @@
       }
 
       &[data-color="bronze"] + label {
-        color: var(--col-black-light);
+        color: var(--col-pink-light);
 
         span::before {
-          border-color: color(var(--col-black-light) lightness(-20%));
+          border-color: var(--col-pink-dark);
         }
 
         &::after {
-          border-color: color(var(--col-black-light) lightness(-40%));
+          border-color: var(--col-pink-dark);
         }
       }
 
       &[data-color="silver"] + label {
-        color: var(--col-blue-light);
+        color: var(--col-black-light);
 
         span::before {
-          background-color: color(var(--col-blue-light) lightness(-5%));
-          border-color: color(var(--col-blue-light) lightness(-10%));
+          border-color: var(--col-black-dark);
         }
 
         &::after {
-          border-color: color(var(--col-blue-light) lightness(-40%));
+          border-color: var(--col-black-dark);
         }
       }
 
       &[data-color="blue"] + label {
-        color: var(--col-navy-mid-1);
+        color: var(--col-blue-light);
 
         span::before {
-          background-color: color(var(--col-navy-mid-1) lightness(+10%));
-          border-color: color(var(--col-navy-mid-1) lightness(-10%));
+          border-color: var(--col-blue-mid-2)
         }
 
         &::after {
-          border-color: color(var(--col-navy-mid-1) lightness(-20%));
+          border-color: var(--col-blue-mid-2)
         }
       }
 
@@ -159,11 +157,11 @@
         color: var(--col-yellow-light);
 
         span::before {
-          border-color: color(var(--col-yellow-light) lightness(-10%));
+          border-color: var(--col-orange-mid-2);
         }
 
         &::after {
-          border-color: color(var(--col-yellow-light) lightness(-60%));
+          border-color: var(--col-orange-mid-2);
         }
       }
     }

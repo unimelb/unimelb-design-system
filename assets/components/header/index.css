@@ -13,8 +13,8 @@
 
   &.invalid {
     background-color: var(--col-white);
-    border-color: color(var(--col-pink-dark) lightness(+25%));
-    color: color(var(--col-pink-dark) lightness(+25%));
+    border-color: var(--col-pink-mid-2);
+    color: var(--col-pink-mid-2);
   }
 
   @media screen and (--bp-desktop) {

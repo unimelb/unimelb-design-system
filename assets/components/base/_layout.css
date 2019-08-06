@@ -224,7 +224,7 @@ body {
 
     &.contrib {
       background-color: var(--col-yellow-light);
-      border: 1px solid color(var(--col-yellow-light) lightness(-10%));
+      border: 1px solid var(--col-yellow-mid-1);
 
       p {
         padding-top: 0;

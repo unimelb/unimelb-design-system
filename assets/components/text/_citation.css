@@ -23,7 +23,7 @@
     margin-top: .25rem;
     margin-bottom: .75rem;
     background-color: var(--col-unsanctioned-blue-light-1);
-    border: 1px solid color(var(--col-unsanctioned-blue-light-1) lightness(-7%));
+    border: 1px solid var(--col-blue-light);
     font-family: var(--ff-fixed);
   }
 

@@ -1,27 +1,27 @@
 @define-mixin notice-success {
   background-color: var(--col-emerald-light);
-  color: color(var(--col-emerald-light) lightness(-65%));
+  color: var(--col-emerald-dark);
 
   a {
-    color: color(var(--col-emerald-light) lightness(-65%));
+    color: var(--col-emerald-dark);
   }
 }
 
 @define-mixin notice-info {
   background-color: var(--col-blue-light);
-  color: color(var(--col-blue-light) lightness(-65%));
+  color: var(--col-blue-dark);
 
   a {
-    color: color(var(--col-blue-light) lightness(-65%));
+    color: var(--col-blue-dark);
   }
 }
 
 @define-mixin notice-warning {
   background-color: var(--col-yellow-light);
-  color: color(var(--col-yellow-light) lightness(-65%));
+  color: var(--col-orange-dark);
 
   a {
-    color: color(var(--col-emerald-light) lightness(-65%));
+    color: var(--col-orange-dark);
   }
 }
 

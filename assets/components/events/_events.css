@@ -18,7 +18,7 @@
     width: 50%;
 
     &:hover {
-      color: color(var(--col-blue-mid-2) lightness(-10%));
+      color: var(--col-blue-dark);
       text-decoration: underline;
     }
   }

@@ -540,7 +540,7 @@
 
     &:hover,
     &:focus {
-      color: color(var(--col-blue-mid-2) lightness(-15%));
+      color: var(--col-blue-dark);
       text-decoration: none;
     }
 

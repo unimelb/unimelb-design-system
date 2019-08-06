@@ -125,7 +125,7 @@ body.jumpnav-active {
         text-decoration: underline;
 
         &:active {
-          color: color(var(--col-pink-dark) lightness(-15%));
+          color: var(--col-pink-dark);
         }
       }
 

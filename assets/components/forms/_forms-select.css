@@ -84,17 +84,17 @@
   &.clear.invalid,
   &.clear.invalid:hover {
     background-color: color(var(--col-white) alpha(30%));
-    border-color: color(var(--col-pink-dark) lightness(+25%));
-    color: color(var(--col-pink-dark) lightness(+25%));
+    border-color: var(--col-pink-mid-2);
+    color: var(--col-pink-mid-2);
   }
 
   &.clear.invalid + svg.icon + small {
-    color: color(var(--col-pink-dark) lightness(+25%));
+    color: var(--col-pink-mid-2);
   }
 
   &.clear.invalid + svg.icon {
-    color: color(var(--col-pink-dark) lightness(+25%));
-    fill: color(var(--col-pink-dark) lightness(+25%));
+    color: var(--col-pink-mid-2);
+    fill: var(--col-pink-mid-2);
   }
 }
 
