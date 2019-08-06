@@ -58,6 +58,3 @@
   }
 }
 
-.jumpnav-active .flash {
-  box-shadow: inset 2px 0 3px color(var(--col-black-dark) alpha(15%));
-}
