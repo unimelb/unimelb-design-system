@@ -3,11 +3,10 @@
     font-size: 1.75rem;
     margin-bottom: calc(30/16rem);
     padding-bottom: calc(30/16rem);
-    color: var(--col-blue-mid-2);
     display: block;
     font-family: var(--ff-serif);
-    font-style: normal;
-    font-weight: var(--fw-bold);
+    font-style: italic;
+    font-weight: var(--fw-regular);
     line-height: 1.3;
     margin: 0 auto;
     max-width: var(--w-sml);
@@ -30,7 +29,6 @@
     }
 
     cite {
-      color: var(--col-blue-mid-2);
       display: block;
       float: right;
       font-family: var(--ff-sans);
@@ -47,7 +45,7 @@
         position: absolute;
         top: 0;
         width: calc(50/16rem);
-        border-top: 2px solid currentColor;
+        border-top: 1px solid var(--col-black-mid-1);
       }
     }
 
