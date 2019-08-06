@@ -3,7 +3,7 @@
   padding-top: 3rem;
   padding-bottom: calc(36/16rem);
   padding-right: calc(20/16rem);
-  font-weight: var(--deprecated-fw--bolder);
+  font-weight: var(--fw-bold);
   margin: 0 auto;
   padding-left: 0;
   text-align: left;
@@ -32,13 +32,13 @@
 @define-mixin subtitle {
   font-size: calc(22/16rem);
   font-family: var(--ff-sans);
-  font-weight: var(--deprecated-fw--bold);
+  font-weight: var(--fw-semibold);
 }
 
 @define-mixin title {
   font-size: calc(22/16rem);
   font-family: var(--ff-serif);
-  font-weight: var(--deprecated-fw--bolder);
+  font-weight: var(--fw-bold);
   text-align: center;
 
   &::after {
@@ -80,7 +80,7 @@
     font-size: 4.6875rem;
     line-height: 5.25rem;
     color: var(--col-blue-mid-2);
-    font-weight: var(--deprecated-fw--thin);
+    font-weight: var(--fw-light);
     letter-spacing: -5px;
     text-align: center;
     animation: hue 80s infinite linear;

@@ -86,7 +86,7 @@
         background-color: transparent;
         display: block;
         font-family: var(--ff-serif);
-        font-weight: var(--deprecated-fw--bolder);
+        font-weight: var(--fw-bold);
         padding-bottom: .75rem;
         padding-left: calc(22/16rem);
         padding-right: 2.5rem;

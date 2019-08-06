@@ -59,7 +59,7 @@
 
     a {
       /* color: var(--col-black-dark); */
-      font-weight: var(--deprecated-fw--regular);
+      font-weight: var(--fw-regular);
     }
 
     li {

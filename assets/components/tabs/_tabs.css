@@ -59,10 +59,10 @@
     nav {
       a {
         cursor: pointer;
-        font-weight: var(--deprecated-fw--regular);
+        font-weight: var(--fw-regular);
 
         &[data-current] {
-          font-weight: var(--deprecated-fw--bold);
+          font-weight: var(--fw-semibold);
         }
       }
 
@@ -123,7 +123,7 @@
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
         font-size: calc(16/16rem);
-        font-weight: var(--deprecated-fw--bold);
+        font-weight: var(--fw-semibold);
         line-height: calc(62/16rem); /* same as tabs height */
         padding: 0 calc(20/16rem);
         margin-right: calc(5/16rem);
@@ -187,7 +187,7 @@
       background: var(--col-navy-main);
       color: var(--col-white);
       display: none;
-      font-weight: var(--deprecated-fw--bold);
+      font-weight: var(--fw-semibold);
       height: 100%;
       position: absolute;
       top: 0;

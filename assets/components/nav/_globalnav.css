@@ -36,7 +36,7 @@
     color: var(--col-navy-mid-1);
     color: color(var(--col-white) alpha(60%));
     display: block;
-    font-weight: var(--deprecated-fw--light);
+    font-weight: var(--fw-light);
     padding-left: 0;
     padding-right: 3%;
     text-decoration: none;
@@ -231,7 +231,7 @@
       color: color(var(--col-white) alpha(40%));
       content: '\2039';
       display: inline-block;
-      font-weight: var(--deprecated-fw--regular);
+      font-weight: var(--fw-regular);
       line-height: 1;
       vertical-align: -1px;
     }
@@ -283,14 +283,14 @@
         letter-spacing: .125rem;
         border-top: 0 none;
         font-size: .9375rem;
-        font-weight: var(--deprecated-fw--regular);
+        font-weight: var(--fw-regular);
         margin-right: 0;
         padding-left: 0;
         padding-top: 0;
         text-transform: uppercase;
 
         a {
-          font-weight: var(--deprecated-fw--regular);
+          font-weight: var(--fw-regular);
         }
       }
 

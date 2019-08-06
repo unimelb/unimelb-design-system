@@ -85,7 +85,7 @@
         @media screen and (--bp-tablet) {
           label,
           legend {
-            font-weight: var(--deprecated-fw--regular);
+            font-weight: var(--fw-regular);
           }
         }
 
@@ -93,7 +93,7 @@
         input[type="radio"] {
           & + label {
             width: 100%;
-            font-weight: var(--deprecated-fw--light);
+            font-weight: var(--fw-light);
           }
         }
       }

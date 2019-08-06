@@ -7,7 +7,7 @@
     display: block;
     font-family: var(--ff-serif);
     font-style: normal;
-    font-weight: var(--deprecated-fw--bolder);
+    font-weight: var(--fw-bold);
     line-height: 1.3;
     margin: 0 auto;
     max-width: var(--w-sml);
@@ -36,7 +36,7 @@
       font-family: var(--ff-sans);
       font-size: calc(20/16rem);
       font-style: normal;
-      font-weight: var(--deprecated-fw--bold);
+      font-weight: var(--fw-semibold);
       margin-top: calc(26/16rem);
       padding-bottom: calc(25/16rem);
       padding-top: calc(24/16rem);
@@ -119,7 +119,7 @@
     color: var(--col-navy-main);
     font-family: var(--ff-serif);
     font-style: italic;
-    font-weight: var(--deprecated-fw--regular);
+    font-weight: var(--fw-regular);
     margin-bottom: 0;
     margin-left: 10%;
     margin-right: 0;
@@ -144,7 +144,7 @@
       float: left;
       font-family: var(--ff-sans);
       font-style: normal;
-      font-weight: var(--deprecated-fw--bold);
+      font-weight: var(--fw-semibold);
       text-align: left;
       width: 100%;
 

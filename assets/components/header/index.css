@@ -420,7 +420,7 @@
 
     &:last-child {
       span {
-        font-weight: var(--deprecated-fw--bold);
+        font-weight: var(--fw-semibold);
       }
     }
   }
@@ -624,7 +624,7 @@
       color: var(--col-navy-main);
       cursor: pointer;
       display: table-cell;
-      font-weight: var(--deprecated-fw--regular);
+      font-weight: var(--fw-regular);
       line-height: 1;
       text-align: center;
       text-transform: uppercase;
@@ -693,7 +693,7 @@
     width: 2.5rem;
     border-left: 1px solid rgba(255,255,255,0.15);
     box-sizing: content-box;
-    font-weight: var(--deprecated-fw--regular);
+    font-weight: var(--fw-regular);
     line-height: 1;
     text-align: center;
     /* text-transform: uppercase; */

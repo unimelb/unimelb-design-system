@@ -13,7 +13,7 @@
       }
 
       h1 {
-        font-weight: var(--deprecated-fw--bold);
+        font-weight: var(--fw-semibold);
       }
 
       p.author {
@@ -21,7 +21,7 @@
           font-size: 1.125rem;
           line-height: calc(24/16rem);
           font-style: normal;
-          font-weight: var(--deprecated-fw--bold);
+          font-weight: var(--fw-semibold);
         }
       }
 

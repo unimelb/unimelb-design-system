@@ -125,12 +125,12 @@
       line-height: 3rem;
       padding-bottom: 0;
       max-width: var(--w-sml);
-      font-weight: var(--deprecated-fw--bolder);
+      font-weight: var(--fw-bold);
       margin: 0 auto;
       text-align: left;
 
       &.article {
-        font-weight: var(--deprecated-fw--bold);
+        font-weight: var(--fw-semibold);
       }
 
       @media screen and (--bp-desktop) {
@@ -146,7 +146,7 @@
 
     p {
       max-width: var(--w-sml);
-      font-weight: var(--deprecated-fw--bold);
+      font-weight: var(--fw-semibold);
       margin: 0 auto;
 
       @media screen and (--bp-desktop) {
@@ -182,7 +182,7 @@
         font-size: 1.125rem;
         line-height: calc(24/16rem);
         font-style: normal;
-        font-weight: var(--deprecated-fw--bold);
+        font-weight: var(--fw-semibold);
       }
     }
 

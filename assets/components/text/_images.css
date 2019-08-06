@@ -95,7 +95,7 @@
       p {
         padding-top: 0;
         max-width: 28.125rem;
-        font-weight: var(--deprecated-fw--bold);
+        font-weight: var(--fw-semibold);
         margin-left: auto;
         margin-right: auto;
 

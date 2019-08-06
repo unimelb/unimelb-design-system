@@ -7,7 +7,7 @@
     max-width: var(--w-mid);
     background: transparent;
     filter: none;
-    font-weight: var(--deprecated-fw--bold);
+    font-weight: var(--fw-semibold);
     margin: 0 auto;
     padding-left: 3%;
     padding-right: 3%;

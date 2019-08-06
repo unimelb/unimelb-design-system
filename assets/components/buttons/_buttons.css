@@ -9,7 +9,7 @@
   cursor: pointer;
   display: inline-block;
   font-style: normal;
-  font-weight: var(--deprecated-fw--bold);
+  font-weight: var(--fw-semibold);
   margin: 20px 0;
   outline-color: var(--col-black-dark);
   outline-offset: 1px;
@@ -171,7 +171,7 @@
   cursor: pointer;
   display: inline-block;
   font-style: normal;
-  font-weight: var(--deprecated-fw--bold);
+  font-weight: var(--fw-semibold);
   outline-color: var(--col-black-dark);
   text-align: center;
   text-decoration: none;
@@ -198,7 +198,7 @@
   padding: .3125rem calc(10/16rem) .3125rem calc(20/16rem);
   appearance: none;
   display: inline-block;
-  font-weight: var(--deprecated-fw--regular);
+  font-weight: var(--fw-regular);
 
   svg.icon {
     height: 1rem;

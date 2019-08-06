@@ -195,7 +195,7 @@
     padding-bottom: 3rem;
     color: var(--col-white);
     font-family: var(--ff-serif);
-    font-weight: var(--deprecated-fw--bolder);
+    font-weight: var(--fw-bold);
     position: relative;
     text-align: center;
 

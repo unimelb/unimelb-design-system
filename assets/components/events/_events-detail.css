@@ -76,13 +76,13 @@
       }
 
       strong {
-        font-weight: var(--deprecated-fw--regular);
+        font-weight: var(--fw-regular);
         vertical-align: baseline;
 
         @media screen and (--bp-desktop) {
           display: block;
           font-size: calc(36/16rem);
-          font-weight: var(--deprecated-fw--bold);
+          font-weight: var(--fw-semibold);
           line-height: 3rem;
         }
       }
@@ -242,7 +242,7 @@
       line-height: calc(36/16rem);
       padding-bottom: calc(24/16rem);
       clear: none;
-      font-weight: var(--deprecated-fw--light);
+      font-weight: var(--fw-light);
       letter-spacing: 0;
       text-align: left;
       text-transform: none;

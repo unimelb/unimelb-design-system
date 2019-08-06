@@ -145,7 +145,7 @@ body {
     padding-left: 2.75rem;
     padding-top: 1calc(30/16rem);
     width: 15rem;
-    font-weight: var(--deprecated-fw--light);
+    font-weight: var(--fw-light);
     left: 0;
     letter-spacing: 1px;
     line-height: 1;

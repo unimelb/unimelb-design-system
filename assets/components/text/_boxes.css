@@ -13,7 +13,7 @@
     line-height: calc(24/16rem);
     letter-spacing: .125rem;
     padding: 0 0 .9375rem 0;
-    font-weight: var(--deprecated-fw--bold);
+    font-weight: var(--fw-semibold);
     margin: 0;
     text-transform: uppercase;
   }
@@ -30,7 +30,7 @@
     color: var(--col-black-dark);
     display: block;
     float: none;
-    font-weight: var(--deprecated-fw--light);
+    font-weight: var(--fw-light);
     width: auto;
   }
 
@@ -43,7 +43,7 @@
     margin-top: 0;
     display: block;
     float: none;
-    font-weight: var(--deprecated-fw--regular);
+    font-weight: var(--fw-regular);
     width: auto;
   }
 
@@ -63,7 +63,7 @@
     dd {
       font-size: 2.5rem;
       line-height: 3rem;
-      font-weight: var(--deprecated-fw--bold);
+      font-weight: var(--fw-semibold);
     }
   }
 
@@ -79,12 +79,12 @@
     dd {
       font-size: calc(24/16rem);
       line-height: calc(36/16rem);
-      font-weight: var(--deprecated-fw--bold);
+      font-weight: var(--fw-semibold);
     }
 
     @media screen and (--bp-desktop) {
       dd {
-        font-weight: var(--deprecated-fw--regular);
+        font-weight: var(--fw-regular);
       }
     }
   }

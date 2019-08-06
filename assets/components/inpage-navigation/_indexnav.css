@@ -56,7 +56,7 @@
     a {
       height: 2.5rem;
       color: var(--col-blue-mid-2);
-      font-weight: var(--deprecated-fw--regular);
+      font-weight: var(--fw-regular);
     }
   }
 
@@ -69,7 +69,7 @@
       line-height: calc(24/16rem);
       height: 3.75rem;
       line-height: 2.8125rem;
-      font-weight: var(--deprecated-fw--bold);
+      font-weight: var(--fw-semibold);
     }
   }
 }

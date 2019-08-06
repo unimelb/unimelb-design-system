@@ -126,7 +126,7 @@
       &::after {
         font-size: 3.75rem;
         content: '\00d7';
-        font-weight: var(--deprecated-fw--thin);
+        font-weight: var(--fw-light);
         line-height: 1;
       }
     }
@@ -229,7 +229,7 @@
           padding: .3125rem;
           width: calc(20/16rem);
           display: block;
-          font-weight: var(--deprecated-fw--bold);
+          font-weight: var(--fw-semibold);
           line-height: 1;
           margin: -.75em auto 0;
           text-decoration: none;

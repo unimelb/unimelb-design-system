@@ -63,7 +63,7 @@
     font-size: 1rem;
     color: var(--col-navy-main);
     display: block;
-    font-weight: var(--deprecated-fw--regular);
+    font-weight: var(--fw-regular);
   }
 
   p {

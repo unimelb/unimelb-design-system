@@ -46,7 +46,7 @@
       font-size: 1.125rem;
       line-height: calc(24/16rem);
       color: var(--col-white);
-      font-weight: var(--deprecated-fw--thin);
+      font-weight: var(--fw-light);
       max-width: 100%;
       padding: 0;
     }

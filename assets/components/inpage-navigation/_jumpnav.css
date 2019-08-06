@@ -21,7 +21,7 @@
 
     &:first-child {
       font-size: calc(18/16rem);
-      font-weight: var(--deprecated-fw--bold);
+      font-weight: var(--fw-semibold);
       margin-bottom: .4375rem;
       padding-bottom: .4375rem;
       position: relative;

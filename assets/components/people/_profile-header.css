@@ -20,7 +20,7 @@
         line-height: calc(36/16rem);
         margin-bottom: .5rem;
         margin-top: calc(24/16rem);
-        font-weight: var(--deprecated-fw--regular);
+        font-weight: var(--fw-regular);
         padding-bottom: 0;
         text-align: inherit;
 
@@ -32,7 +32,7 @@
       p {
         font-size: 1.125rem;
         line-height: calc(24/16rem);
-        font-weight: var(--deprecated-fw--light);
+        font-weight: var(--fw-light);
         padding-top: 0;
       }
     }

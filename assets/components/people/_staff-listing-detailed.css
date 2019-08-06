@@ -24,7 +24,7 @@
     }
 
     strong {
-      font-weight: var(--deprecated-fw--regular);
+      font-weight: var(--fw-regular);
     }
 
     p {
@@ -95,7 +95,7 @@
         padding: 0 calc(10/16rem);
         color: var(--col-white);
         font-style: normal;
-        font-weight: var(--deprecated-fw--regular);
+        font-weight: var(--fw-regular);
         text-decoration: underline;
       }
 

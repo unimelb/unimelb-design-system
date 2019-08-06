@@ -29,12 +29,12 @@
     font-size: .9375rem;
     padding-bottom: .3125rem;
     display: block;
-    font-weight: var(--deprecated-fw--light);
+    font-weight: var(--fw-light);
   }
 
   h2 {
     font-size: calc(30/16rem);
-    font-weight: var(--deprecated-fw--thin);
+    font-weight: var(--fw-light);
     line-height: 1.2;
     margin-left: 0;
     padding-bottom: 0;
@@ -44,7 +44,7 @@
 
   p {
     font-size: .8125rem;
-    font-weight: var(--deprecated-fw--light);
+    font-weight: var(--fw-light);
     margin-left: 0;
     padding: 0;
     text-align: left;

@@ -66,7 +66,7 @@
     &::after {
       font-size: 3.75rem;
       content: '\00d7';
-      font-weight: var(--deprecated-fw--thin);
+      font-weight: var(--fw-light);
       line-height: 1;
     }
   }
@@ -212,7 +212,7 @@
     line-height: calc(36/16rem);
     padding-top: 0;
     padding-bottom: calc(24/16rem);
-    font-weight: var(--deprecated-fw--light);
+    font-weight: var(--fw-light);
   }
 
   p {

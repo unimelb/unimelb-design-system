@@ -68,11 +68,10 @@
   --ff-serif: "Noto Serif", Georgia, Times New Roman, serif;
 
   /* Font weights */
-  --deprecated-fw--thin: 300;
-  --deprecated-fw--light: 300;
-  --deprecated-fw--regular: 400;
-  --deprecated-fw--bold: 600;
-  --deprecated-fw--bolder: 700;
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 
   /* Transitions */
   --tr-transform: transform .3s ease;

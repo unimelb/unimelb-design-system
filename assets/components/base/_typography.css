@@ -6,7 +6,7 @@
 .uomcontent {
 	background-color: var(--col-white);
   font-family: var(--ff-sans);
-  font-weight: var(--deprecated-fw--regular);
+  font-weight: var(--fw-regular);
 
   .sans {
     font-family: var(--ff-sans);
@@ -21,19 +21,19 @@
   }
 
   .thin {
-    font-weight: var(--deprecated-fw--thin);
+    font-weight: var(--fw-light);
   }
 
   .light {
-    font-weight: var(--deprecated-fw--light);
+    font-weight: var(--fw-light);
   }
 
   .regular {
-    font-weight: var(--deprecated-fw--regular);
+    font-weight: var(--fw-regular);
   }
 
   .bold {
-    font-weight: var(--deprecated-fw--bold);
+    font-weight: var(--fw-semibold);
   }
 
   h1,
@@ -58,7 +58,7 @@
     font-size: calc(36/16rem);
     line-height: calc(36/16rem);
     padding-bottom: calc(24/16rem);
-    font-weight: var(--deprecated-fw--bolder);
+    font-weight: var(--fw-bold);
     font-family: var(--ff-serif);
 
     @media screen and (--bp-desktop) {
@@ -71,7 +71,7 @@
     clear: left;
     font-family: var(--ff-serif);
     font-size: calc(36/16rem);
-    font-weight: var(--deprecated-fw--bolder);
+    font-weight: var(--fw-bold);
     padding-bottom: calc(24/16rem);
     padding-top: calc(24/16rem);
 
@@ -82,7 +82,7 @@
 
   h3 {
     font-size: calc(23/16rem);
-    font-weight: var(--deprecated-fw--bold);
+    font-weight: var(--fw-semibold);
     margin-bottom: calc(10/16rem);
 
     @media screen and (--bp-desktop) {
@@ -97,7 +97,7 @@
 
   h4 {
     font-size: calc(20/16rem);
-    font-weight: var(--deprecated-fw--bold);
+    font-weight: var(--fw-semibold);
     margin-bottom: calc(8/16rem);
     @media screen and (--bp-desktop) {
       font-size: calc(22/16rem);
@@ -106,7 +106,7 @@
 
   h5 {
     font-size: calc(18/16rem);
-    font-weight: var(--deprecated-fw--bold);
+    font-weight: var(--fw-semibold);
     margin-bottom: calc(5/16rem);
     @media screen and (--bp-desktop) {
       font-size: calc(20/16rem);
@@ -115,7 +115,7 @@
 
   h6 {
     font-size: calc(18/16rem);
-    font-weight: var(--deprecated-fw--bold);
+    font-weight: var(--fw-semibold);
     @media screen and (--bp-desktop) {
       font-size: calc(20/16rem);
     }
@@ -263,7 +263,7 @@
           content: counter(steps);
           display: block;
           font-family: var(--ff-serif);
-          font-weight: var(--deprecated-fw--bolder);
+          font-weight: var(--fw-bold);
           left: 0;
           line-height: 1.2;
           position: absolute;
@@ -587,7 +587,7 @@
     padding-top: calc(24/16rem);
     padding-bottom: calc(24/16rem);
     font-family: var(--ff-serif);
-    font-weight: var(--deprecated-fw--regular);
+    font-weight: var(--fw-regular);
     line-height: 1.2;
 
     &::after {

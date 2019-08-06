@@ -44,7 +44,7 @@
     background-color: transparent;
     color: inherit;
     display: block;
-    font-weight: var(--deprecated-fw--regular);
+    font-weight: var(--fw-regular);
     line-height: 1.5;
     text-align: left;
   }
@@ -86,14 +86,14 @@
     margin-bottom: 1rem;
     padding: 1rem 1rem 0;
     color: var(--col-blue-mid-2);
-    font-weight: var(--deprecated-fw--regular);
+    font-weight: var(--fw-regular);
     line-height: 1.4;
     text-align: left;
 
     time {
       font-size: 1.625rem;
       display: block;
-      font-weight: var(--deprecated-fw--bold);
+      font-weight: var(--fw-semibold);
       padding-bottom: 0;
       padding-top: 0;
     }
@@ -106,7 +106,7 @@
 
     time {
       font-size: 1.125rem;
-      font-weight: var(--deprecated-fw--regular);
+      font-weight: var(--fw-regular);
 
       &:first-child::after {
         width: 2rem;
@@ -157,7 +157,7 @@
 
     strong {
       font-size: 2.5rem;
-      font-weight: var(--deprecated-fw--thin);
+      font-weight: var(--fw-light);
       line-height: 1.1;
       margin-bottom: 0;
     }
@@ -396,7 +396,7 @@
         padding: calc(10/16rem);
         background-color: color(var(--col-blue-mid-2) alpha(80%));
         bottom: 0;
-        font-weight: var(--deprecated-fw--regular);
+        font-weight: var(--fw-regular);
         line-height: 1.1;
         margin: 0;
         position: absolute;
@@ -404,7 +404,7 @@
         em {
           font-size: 1.0625rem;
           line-height: calc(24/16rem);
-          font-weight: var(--deprecated-fw--thin);
+          font-weight: var(--fw-light);
         }
 
         @media screen and (--bp-x-tablet) {
@@ -428,7 +428,7 @@
           background-color: transparent;
 
           em {
-            font-weight: var(--deprecated-fw--bold);
+            font-weight: var(--fw-semibold);
           }
 
           span {
@@ -437,7 +437,7 @@
             box-decoration-break: clone;
             box-shadow: 10px 0 0 var(--col-white), -10px 0 0 var(--col-white);
             color: var(--col-blue-mid-2);
-            font-weight: var(--deprecated-fw--bold);
+            font-weight: var(--fw-semibold);
             line-height: 1.2;
           }
 
@@ -484,7 +484,7 @@
         box-shadow: 10px 0 0 var(--col-blue-mid-2), -10px 0 0 var(--col-blue-mid-2);
         color: var(--col-white);
         display: inline;
-        font-weight: var(--deprecated-fw--bold);
+        font-weight: var(--fw-semibold);
         line-height: 1.3;
         padding: 0;
       }
@@ -525,7 +525,7 @@
         @media screen and (--bp-desktop) {
           font-size: calc(24/16rem);
           line-height: calc(36/16rem);
-          font-weight: var(--deprecated-fw--light);
+          font-weight: var(--fw-light);
           overflow-wrap: break-word;
         }
       }
@@ -607,7 +607,7 @@
         padding: 1rem 0;
         color: currentColor;
         display: inline-block;
-        font-weight: var(--deprecated-fw--bold);
+        font-weight: var(--fw-semibold);
         line-height: 1;
         margin-bottom: 0;
         text-align: center;

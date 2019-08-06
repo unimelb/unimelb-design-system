@@ -22,7 +22,7 @@
       font-size: 1.375rem;
       line-height: calc(36/16rem);
       padding-top: 0;
-      font-weight: var(--deprecated-fw--light);
+      font-weight: var(--fw-light);
       letter-spacing: 0;
       text-align: left;
       text-transform: none;
@@ -121,7 +121,7 @@
     padding: calc(10/16rem);
     color: var(--col-blue-dark);
     display: block;
-    font-weight: var(--deprecated-fw--light);
+    font-weight: var(--fw-light);
     height: 100%;
     margin: 0;
     min-width: 100%;

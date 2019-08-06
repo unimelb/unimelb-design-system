@@ -12,7 +12,7 @@
         font-size: .9375rem;
         line-height: calc(24/16rem);
         margin-bottom: calc(24/16rem);
-        font-weight: var(--deprecated-fw--bold);
+        font-weight: var(--fw-semibold);
         text-align: center;
       }
 
@@ -20,7 +20,7 @@
         font-size: 1rem;
         line-height: calc(24/16rem);
         padding-top: 0;
-        font-weight: var(--deprecated-fw--light);
+        font-weight: var(--fw-light);
       }
 
       @media screen and (--bp-tablet) {

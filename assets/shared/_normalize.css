@@ -32,7 +32,7 @@ li {
 /* Override `bolder` from normalize.css, as Source Sans Pro's default is too much  */
 b,
 strong {
-  font-weight: var(--deprecated-fw--bold);
+  font-weight: var(--fw-semibold);
 }
 
 /* Revert to dotted bottom border for abbreviations */

@@ -126,7 +126,7 @@
       font-size: calc(20/16rem);
       line-height: calc(24/16rem);
       padding-bottom: .75rem;
-      font-weight: var(--deprecated-fw--regular);
+      font-weight: var(--fw-regular);
       width: auto;
     }
 

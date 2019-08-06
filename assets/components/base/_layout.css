@@ -131,7 +131,7 @@ body {
       h2 {
         font-size: .8125rem;
         line-height: calc(24/16rem);
-        font-weight: var(--deprecated-fw--bold);
+        font-weight: var(--fw-semibold);
         letter-spacing: 3px;
         text-transform: uppercase;
       }
@@ -251,7 +251,7 @@ body {
     dt {
       letter-spacing: .0625rem;
       padding-bottom: .3125rem;
-      font-weight: var(--deprecated-fw--bold);
+      font-weight: var(--fw-semibold);
       margin-left: 0;
       text-transform: uppercase;
       width: 100%;
@@ -324,7 +324,7 @@ body {
     .block {
       background-color: color(var(--col-black-dark) alpha(70%));
       color: var(--col-white);
-      font-weight: var(--deprecated-fw--bold);
+      font-weight: var(--fw-semibold);
       left: 50%;
       margin-left: -406px;
       position: absolute;

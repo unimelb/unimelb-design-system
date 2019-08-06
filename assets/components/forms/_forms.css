@@ -1,13 +1,13 @@
 @define-mixin inlinebutton {
   border-radius: 3px;
-  font-size: .8125rem;
-  height: 2.8125rem;
-  padding: 0 .9375rem;
+  font-size: calc(13/16rem);
+  height: calc(45/16rem);
+  padding: 0 calc(15/16rem);
   background-color: var(--col-blue-mid-2);
   border: 0 none;
   color: var(--col-white);
   cursor: pointer;
-  font-weight: var(--deprecated-fw--bold);
+  font-weight: var(--fw-semibold);
   letter-spacing: 1px;
   position: relative;
   text-transform: uppercase;
@@ -27,7 +27,6 @@
   margin-top: .3125rem;
   padding: .5rem calc(10/16rem);
   font-family: var(--ff-sans);
-  font-weight: var(--deprecated-fw--light);
 
   &.invalid {
     background-color: var(--col-white);
@@ -75,7 +74,7 @@
 
 [role="main"] form {
   font-size: 1rem;
-  padding: 0 calc(10/16rem);
+  padding: 0;
   background-color: var(--col-white);
   color: var(--col-navy-main);
   line-height: 1.2;
@@ -83,7 +82,7 @@
   max-width: var(--w-sml);
 
   @media screen and (--bp-desktop) {
-    padding: calc(10/16rem) calc(30/16rem);
+    padding: calc(10/16rem) 0;
   }
 
   footer {
@@ -255,7 +254,7 @@
       border-radius: 0 3px 3px 0;
       font-size: .8125rem;
       padding: 0 .9375rem;
-      font-weight: var(--deprecated-fw--bold);
+      font-weight: var(--fw-semibold);
       letter-spacing: 1px;
     }
   }
@@ -434,7 +433,6 @@
     font-size: calc(20/16rem);
     line-height: calc(24/16rem);
     padding-bottom: calc(24/16rem);
-    font-weight: var(--deprecated-fw--thin);
   }
 
   form {

@@ -137,7 +137,7 @@
 .uomcontent select {
   font-size: 1.125rem;
   font-family: var(--ff-sans);
-  font-weight: var(--deprecated-fw--light);
+  font-weight: var(--fw-light);
   width: 100%;
 }
 

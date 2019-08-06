@@ -8,7 +8,7 @@
 
       h1 {
         letter-spacing: .125rem;
-        font-weight: var(--deprecated-fw--bold);
+        font-weight: var(--fw-semibold);
         text-transform: uppercase;
       }
 
@@ -25,7 +25,7 @@
         small {
           padding-bottom: calc(10/16rem);
           display: block;
-          font-weight: var(--deprecated-fw--light);
+          font-weight: var(--fw-light);
           line-height: 1.2;
 
           @media screen and (--bp-desktop) {

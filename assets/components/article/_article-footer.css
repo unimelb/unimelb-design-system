@@ -97,7 +97,7 @@
       text-align: left;
 
       a {
-        font-weight: var(--deprecated-fw--bold);
+        font-weight: var(--fw-semibold);
       }
     }
   }

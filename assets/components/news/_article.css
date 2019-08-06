@@ -15,7 +15,7 @@
   }
 
   time {
-    font-weight: var(--deprecated-fw--light);
+    font-weight: var(--fw-light);
     font-style: italic;
   }
 
@@ -39,7 +39,7 @@
 
     /* sidebar headings */
     .news__meta-title {
-      font-weight: var(--deprecated-fw--regular);
+      font-weight: var(--fw-regular);
       font-style: italic;
     }
 
@@ -72,7 +72,7 @@
     h2 {
       font-size: calc(24/16rem);
       line-height: calc(36/16rem);
-      font-weight: var(--deprecated-fw--light);
+      font-weight: var(--fw-light);
       padding-top: 0;
       text-transform: none;
     }
