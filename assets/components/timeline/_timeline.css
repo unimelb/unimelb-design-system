@@ -32,7 +32,7 @@
     }
 
     dt {
-      font-size: .9375rem;
+      font-size: calc(16/16rem);
       line-height: 1.5rem;
       padding-bottom: 1.875rem;
       padding-right: 1.25rem;
@@ -55,6 +55,7 @@
       position: relative;
       width: 68%;
       text-align: left;
+      font-size: calc(18/16rem);
 
       &:last-child {
         border-left-color: transparent; /* keep 1px border so dot remains aligned */
@@ -66,7 +67,6 @@
         left: -6px; /* half of width, rounded up */
         width: 11px;
         background-color: var(--col-blue-light);
-        /* border-radius: 50%; */
         content: '';
         display: block;
         position: absolute;
@@ -90,7 +90,7 @@
       }
 
       a.location {
-        font-size: 1rem;
+        font-size: calc(16/16rem);
         padding-bottom: 1.25rem;
         color: var(--col-navy-main);
         display: block;
