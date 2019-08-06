@@ -58,8 +58,8 @@
 
   header,
   & > header:first-child {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: calc(24/16rem);
+    padding-bottom: calc(24/16rem);
     background-color: var(--col-navy-main);
     background-position: center;
     background-repeat: no-repeat;
@@ -96,8 +96,8 @@
       & > p {
         padding-bottom: 3rem;
         max-width: var(--w-mid);
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding-left: calc(20/16rem);
+        padding-right: calc(20/16rem);
         text-align: center;
       }
 
@@ -115,8 +115,8 @@
       padding: 0;
 
       @media screen and (--bp-tablet) {
-        padding-bottom: 1.875rem;
-        padding-top: 1.875rem;
+        padding-bottom: calc(30/16rem);
+        padding-top: calc(30/16rem);
       }
     }
 
@@ -150,26 +150,26 @@
       margin: 0 auto;
 
       @media screen and (--bp-desktop) {
-        font-size: 1.25rem;
-        line-height: 1.5rem;
-        padding-top: 1.5rem;
+        font-size: calc(20/16rem);
+        line-height: calc(24/16rem);
+        padding-top: calc(24/16rem);
       }
 
       @media screen and (--bp-wide) {
-        font-size: 1.5rem;
-        line-height: 2.25rem;
+        font-size: calc(24/16rem);
+        line-height: calc(36/16rem);
       }
     }
 
     p.author {
       font-size: 1rem;
-      line-height: 1.5rem;
-      max-width: 21.875rem;
+      line-height: calc(24/16rem);
+      max-width: 2calc(30/16rem);
       font-style: italic;
 
       &::before {
         margin-top: 0;
-        margin-bottom: 1.5rem;
+        margin-bottom: calc(24/16rem);
         width: 5rem;
         border-top: 5px solid currentColor;
         content: '';
@@ -180,7 +180,7 @@
 
       em {
         font-size: 1.125rem;
-        line-height: 1.5rem;
+        line-height: calc(24/16rem);
         font-style: normal;
         font-weight: var(--deprecated-fw--bold);
       }
@@ -252,7 +252,7 @@
     padding-top: 7.5rem;
 
     @media screen and (--bp-desktop) {
-      padding-top: 11.25rem;
+      padding-top: 1calc(20/16rem);
     }
   }
 }

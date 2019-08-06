@@ -2,7 +2,7 @@
   header {
     .box {
       max-width: var(--w-sml);
-      padding: 3.5rem 1.875rem;
+      padding: 3.5rem calc(30/16rem);
       background: color(var(--col-white) alpha(80%));
       color: var(--col-black-dark);
       margin: 0 auto;
@@ -10,21 +10,21 @@
       h1 {
         @mixin title;
         font-size: .9375rem;
-        line-height: 1.5rem;
-        margin-bottom: 1.5rem;
+        line-height: calc(24/16rem);
+        margin-bottom: calc(24/16rem);
         font-weight: var(--deprecated-fw--bold);
         text-align: center;
       }
 
       p {
         font-size: 1rem;
-        line-height: 1.5rem;
+        line-height: calc(24/16rem);
         padding-top: 0;
         font-weight: var(--deprecated-fw--light);
       }
 
       @media screen and (--bp-tablet) {
-        margin: 1.875rem auto;
+        margin: calc(30/16rem) auto;
         padding-left: 3.75rem;
         padding-right: 3.75rem;
       }

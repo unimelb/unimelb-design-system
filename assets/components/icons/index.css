@@ -17,8 +17,8 @@
     }
 
     &.small {
-      height: 1.5rem;
-      width: 1.5rem;
+      height: calc(24/16rem);
+      width: calc(24/16rem);
     }
 
     &.large {

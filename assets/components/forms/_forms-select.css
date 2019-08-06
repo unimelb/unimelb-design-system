@@ -103,10 +103,10 @@
   position: relative;
 
   svg.icon {
-    height: 1.875rem;
+    height: calc(30/16rem);
     right: .4375rem;
     top: .4375rem;
-    width: 1.875rem;
+    width: calc(30/16rem);
     color: var(--col-white);
     cursor: pointer;
     display: block;
@@ -150,7 +150,7 @@
   select {
     @mixin theme;
     border-radius: 3px;
-    padding: .5rem .625rem;
+    padding: .5rem calc(10/16rem);
     appearance: none;
     border: 0;
 

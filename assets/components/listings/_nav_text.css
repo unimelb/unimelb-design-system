@@ -41,7 +41,7 @@
       padding: 0;
 
       a {
-        padding-bottom: 1.5rem;
+        padding-bottom: calc(24/16rem);
         display: block;
       }
 

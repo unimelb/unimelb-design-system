@@ -92,7 +92,7 @@
     }
 
     li {
-      padding-bottom: 1.5rem;
+      padding-bottom: calc(24/16rem);
       border: 0;
       display: inline-block;
       vertical-align: top;
@@ -110,7 +110,7 @@
     }
 
     a {
-      padding: 0 .625rem;
+      padding: 0 calc(10/16rem);
     }
 
     strong,

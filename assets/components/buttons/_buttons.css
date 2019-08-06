@@ -65,8 +65,8 @@
     padding-top: .0625rem;
 
     &.small {
-      height: 1.25rem;
-      width: 1.25rem;
+      height: calc(20/16rem);
+      width: calc(20/16rem);
     }
   }
 }
@@ -163,7 +163,7 @@
   border-radius: 5px;
   border-width: 2px;
   font-size: calc(16/16rem);
-  margin: 1.25rem 0;
+  margin: calc(20/16rem) 0;
   padding: 1em 1.5em;
   border-color: var(--col-black-dark);
   border-style: solid;
@@ -194,8 +194,8 @@
 @define-mixin iconbutton {
   @mixin flatbutton;
   font-size: .875rem;
-  margin: .625rem 0;
-  padding: .3125rem .625rem .3125rem 1.25rem;
+  margin: calc(10/16rem) 0;
+  padding: .3125rem calc(10/16rem) .3125rem calc(20/16rem);
   appearance: none;
   display: inline-block;
   font-weight: var(--deprecated-fw--regular);
@@ -209,7 +209,7 @@
   }
 
   &:hover {
-    margin: .625rem 0;
+    margin: calc(10/16rem) 0;
     background-color: color(var(--col-black-dark) alpha(10%));
     color: var(--col-black-dark);
   }
@@ -272,7 +272,7 @@
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: calc(24/16rem);
     }
 
     p {

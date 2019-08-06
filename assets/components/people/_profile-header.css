@@ -17,9 +17,9 @@
 
       h1 {
         font-size: 1.5625rem;
-        line-height: 2.25rem;
+        line-height: calc(36/16rem);
         margin-bottom: .5rem;
-        margin-top: 1.5rem;
+        margin-top: calc(24/16rem);
         font-weight: var(--deprecated-fw--regular);
         padding-bottom: 0;
         text-align: inherit;
@@ -31,7 +31,7 @@
 
       p {
         font-size: 1.125rem;
-        line-height: 1.5rem;
+        line-height: calc(24/16rem);
         font-weight: var(--deprecated-fw--light);
         padding-top: 0;
       }
@@ -49,7 +49,7 @@
     }
 
     &__info {
-      padding-top: 1.5rem;
+      padding-top: calc(24/16rem);
       border-top: 1px solid var(--col-blue-mid-1);
 
       a {
@@ -76,12 +76,12 @@
     }
 
     &__contact {
-      margin-bottom: 1.5rem;
+      margin-bottom: calc(24/16rem);
 
       [data-icon] {
-        height: 1.25rem;
+        height: calc(20/16rem);
         margin-top: .25rem;
-        width: 1.25rem;
+        width: calc(20/16rem);
         vertical-align: top;
       }
     }

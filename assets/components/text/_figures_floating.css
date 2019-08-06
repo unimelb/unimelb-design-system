@@ -26,14 +26,14 @@
 
     img,
     svg {
-      max-height: 31.25rem;
+      max-height: 3calc(20/16rem);
     }
   }
 
   @media screen and (--bp-x-tablet) {
     .inset-left,
     .inset-right {
-      margin-bottom: 1.875rem;
+      margin-bottom: calc(30/16rem);
       border: 0 none;
       max-width: 62%;
 
@@ -55,7 +55,7 @@
     }
 
     .inset-left {
-      margin-right: 1.875rem;
+      margin-right: calc(30/16rem);
       float: left;
       text-align: left;
 
@@ -69,7 +69,7 @@
     }
 
     .inset-right {
-      margin-left: 1.875rem;
+      margin-left: calc(30/16rem);
       float: right;
       text-align: right;
 
@@ -86,16 +86,16 @@
   @media screen and (--bp-wide) {
     .inset-left,
     .inset-right {
-      margin-bottom: 1.25rem;
+      margin-bottom: calc(20/16rem);
       max-width: 80%;
     }
 
     .inset-left {
-      margin-left: -11.25rem;
+      margin-left: -1calc(20/16rem);
     }
 
     .inset-right {
-      margin-right: -11.25rem;
+      margin-right: -1calc(20/16rem);
     }
   }
 }
@@ -109,23 +109,23 @@
     }
 
     @media screen and (--bp-xx-wide) {
-      margin-bottom: 1.25rem;
-      margin-left: -11.25rem;
+      margin-bottom: calc(20/16rem);
+      margin-left: -1calc(20/16rem);
       max-width: 80%;
     }
   }
 
   .inset-right {
     @media screen and (--bp-wide) {
-      margin-left: 1.875rem;
+      margin-left: calc(30/16rem);
       margin-right: 0;
       max-width: 100%;
       padding: 0;
     }
 
     @media screen and (--bp-xx-wide) {
-      margin-bottom: 1.25rem;
-      margin-right: -11.25rem;
+      margin-bottom: calc(20/16rem);
+      margin-right: -1calc(20/16rem);
       max-width: 80%;
     }
   }

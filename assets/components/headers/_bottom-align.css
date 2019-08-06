@@ -9,7 +9,7 @@
       width: 100%;
 
       p {
-        padding-bottom: 1.5rem;
+        padding-bottom: calc(24/16rem);
       }
 
       @media screen and (--bp-desktop) {
@@ -24,8 +24,8 @@
 
     .bottom-align-flat {
       margin-bottom: -1.5625rem;
-      padding-bottom: 1.875rem;
-      padding-top: 1.875rem;
+      padding-bottom: calc(30/16rem);
+      padding-top: calc(30/16rem);
       align-self: flex-end;
       background-color: color(var(--col-navy-main) alpha(80%));
       width: 100%;

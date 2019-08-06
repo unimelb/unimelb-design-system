@@ -70,8 +70,8 @@
     /* centre icon */
     & > svg {
       height: 2.5rem;
-      margin-left: -1.25rem;
-      margin-top: -1.25rem;
+      margin-left: -calc(20/16rem);
+      margin-top: -calc(20/16rem);
       width: 2.5rem;
       left: 50%;
       position: absolute;

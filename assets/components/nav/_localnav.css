@@ -45,7 +45,7 @@
   /* HACK increase specificity to override `.button-ui`, which was part of the Buttons component until v6.0 */
   &__back-btn.localnav__back-btn {
     font-size: .75rem;
-    padding: 1.25rem;
+    padding: calc(20/16rem);
     background-color: var(--col-navy-main);
     color: rgba(255, 255, 255, .7);
     display: block;
@@ -57,8 +57,8 @@
     width: 100%;
 
     &::before {
-      font-size: 1.25rem;
-      padding-right: .625rem;
+      font-size: calc(20/16rem);
+      padding-right: calc(10/16rem);
       content: '\2039';
       float: left;
       font-weight: normal;
@@ -82,7 +82,7 @@
   /* add chevron to nested panel triggers */
   &__nested-trigger {
     &::after {
-      font-size: 1.5rem;
+      font-size: calc(24/16rem);
       content: '\203a';
       float: right;
       font-weight: 400;
@@ -137,7 +137,7 @@
 
     a {
       font-size: .875rem;
-      padding: 1.25rem;
+      padding: calc(20/16rem);
 
       &:hover,
       &:focus {
@@ -149,12 +149,12 @@
 
   /* meta menu */
   &__meta {
-    padding: 1.25rem 0;
+    padding: calc(20/16rem) 0;
     color: rgba(255, 255, 255, .7);
 
     a {
       font-size: .8125rem;
-      padding: .25rem 1.25rem;
+      padding: .25rem calc(20/16rem);
     }
   }
 

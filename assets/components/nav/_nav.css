@@ -21,7 +21,7 @@ body {
 }
 
 @define-mixin quicklinks {
-  margin: 1.875rem 0;
+  margin: calc(30/16rem) 0;
   padding: .9375rem 0;
   clear: both;
   margin: 0;
@@ -56,7 +56,7 @@ body {
     svg {
       fill: currentColor;
       margin-bottom: .875rem;
-      margin-top: .625rem;
+      margin-top: calc(10/16rem);
     }
 
     &:hover {
@@ -75,9 +75,9 @@ body {
 
   .icon {
     @mixin imgreplace;
-    height: 1.5rem;
-    margin-right: .625rem;
-    width: 1.5rem;
+    height: calc(24/16rem);
+    margin-right: calc(10/16rem);
+    width: calc(24/16rem);
     display: block;
     float: left;
 
@@ -100,8 +100,8 @@ body {
 
     a {
       min-height: 6.625rem;
-      margin-top: .625rem;
-      margin-bottom: .625rem;
+      margin-top: calc(10/16rem);
+      margin-bottom: calc(10/16rem);
       display: block;
       margin-left: 15%;
       margin-right: 15%;
@@ -143,7 +143,7 @@ body {
   span {
     font-size: .9375rem;
     padding-left: 2.75rem;
-    padding-top: 11.875rem;
+    padding-top: 1calc(30/16rem);
     width: 15rem;
     font-weight: var(--deprecated-fw--light);
     left: 0;
@@ -158,7 +158,7 @@ body {
     z-index: 11;
 
     &::before {
-      font-size: 1.5rem;
+      font-size: calc(24/16rem);
       content: '\203a';
       display: inline-block;
       left: -10px;

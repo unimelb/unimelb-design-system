@@ -8,8 +8,8 @@
       h1,
       p {
         max-width: var(--w-mid);
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding-left: calc(20/16rem);
+        padding-right: calc(20/16rem);
       }
 
       h1 {
@@ -19,7 +19,7 @@
       p.author {
         em {
           font-size: 1.125rem;
-          line-height: 1.5rem;
+          line-height: calc(24/16rem);
           font-style: normal;
           font-weight: var(--deprecated-fw--bold);
         }
@@ -48,7 +48,7 @@
 
       h1 {
         padding-top: 3rem;
-        padding-bottom: 1.5rem;
+        padding-bottom: calc(24/16rem);
         max-width: var(--w-sml);
       }
 

@@ -127,11 +127,11 @@
 
         @media screen and (--bp-desktop) {
           font-size: calc(20/16rem);
-          line-height: 2.25rem;
+          line-height: calc(36/16rem);
           padding-right: 3.4375rem;
 
           &::before {
-            font-size: 1.5rem;
+            font-size: calc(24/16rem);
             margin-top: -.75rem;
           }
         }

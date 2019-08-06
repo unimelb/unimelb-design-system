@@ -7,7 +7,7 @@
   }
 
   h2 {
-    margin-bottom: 1.5rem;
+    margin-bottom: calc(24/16rem);
     background-size: cover;
     max-width: 100%;
     padding: 0;
@@ -22,7 +22,7 @@
   }
 
   figure {
-    max-height: 31.25rem;
+    max-height: 3calc(20/16rem);
     margin: 0;
   }
 
@@ -44,7 +44,7 @@
 
     p {
       font-size: 1.125rem;
-      line-height: 1.5rem;
+      line-height: calc(24/16rem);
       color: var(--col-white);
       font-weight: var(--deprecated-fw--thin);
       max-width: 100%;
@@ -66,7 +66,7 @@
       }
 
       p {
-        padding-bottom: 1.5rem;
+        padding-bottom: calc(24/16rem);
       }
     }
   }

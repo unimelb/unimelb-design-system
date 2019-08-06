@@ -1,6 +1,6 @@
 .uomcontent {
   p.search-spelling {
-    margin-bottom: 1.5rem;
+    margin-bottom: calc(24/16rem);
     border-bottom: 1px solid color(var(--col-black-dark) alpha(10%));
 
     strong {
@@ -11,7 +11,7 @@
   /* TODO fix typography here */
   h2.search-title {
     font-size: .75rem;
-    line-height: 1.5rem;
+    line-height: calc(24/16rem);
     padding-bottom: 1rem;
     color: var(--col-navy-main);
     padding-top: 0;
@@ -28,15 +28,15 @@
 
     & > li {
       @mixin clearfix;
-      padding-bottom: 1.5rem;
-      margin-bottom: 1.5rem;
+      padding-bottom: calc(24/16rem);
+      margin-bottom: calc(24/16rem);
       border-bottom: 1px solid color(var(--col-black-dark) alpha(10%));
       list-style-type: none;
       margin-left: 0;
       width: auto;
 
       &:last-child {
-        padding-bottom: 1.5rem;
+        padding-bottom: calc(24/16rem);
       }
 
       &.person {
@@ -65,7 +65,7 @@
 
         .person__phone {
           font-size: 1.125rem;
-          line-height: 1.5rem;
+          line-height: calc(24/16rem);
         }
 
         @media screen and (--bp-desktop) {
@@ -80,7 +80,7 @@
           }
 
           .person__profile {
-            padding-right: 1.5rem;
+            padding-right: calc(24/16rem);
             width: 100%;
           }
 
@@ -90,8 +90,8 @@
           }
 
           .person__phone {
-            font-size: 1.25rem;
-            line-height: 1.5rem;
+            font-size: calc(20/16rem);
+            line-height: calc(24/16rem);
             white-space: nowrap;
 
             & + .person__email {
@@ -123,8 +123,8 @@
     }
 
     h3 {
-      font-size: 1.25rem;
-      line-height: 1.5rem;
+      font-size: calc(20/16rem);
+      line-height: calc(24/16rem);
       padding-bottom: .75rem;
       font-weight: var(--deprecated-fw--regular);
       width: auto;
@@ -132,19 +132,19 @@
 
     p {
       font-size: .9375rem;
-      line-height: 1.5rem;
+      line-height: calc(24/16rem);
       padding-bottom: 0;
       color: var(--col-black-dark);
       width: auto;
 
       @media screen and (--bp-desktop) {
         font-size: 1rem;
-        line-height: 1.5rem;
+        line-height: calc(24/16rem);
       }
 
       &.url {
         font-size: .75rem;
-        line-height: 1.5rem;
+        line-height: calc(24/16rem);
         color: var(--col-blue-mid-2);
 
         & > a {
@@ -157,7 +157,7 @@
         clear: left;
 
         & > a::after {
-          font-size: 1.25rem;
+          font-size: calc(20/16rem);
           padding-left: .3125rem;
           content: '\2192';
           line-height: 0;
@@ -165,8 +165,8 @@
       }
 
       & > [data-icon="lock"] {
-        width: 1.25rem;
-        height: 1.25rem;
+        width: calc(20/16rem);
+        height: calc(20/16rem);
       }
     }
   }

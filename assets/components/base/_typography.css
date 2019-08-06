@@ -56,8 +56,8 @@
 
   h1 {
     font-size: calc(36/16rem);
-    line-height: 2.25rem;
-    padding-bottom: 1.5rem;
+    line-height: calc(36/16rem);
+    padding-bottom: calc(24/16rem);
     font-weight: var(--deprecated-fw--bolder);
     font-family: var(--ff-serif);
 
@@ -72,8 +72,8 @@
     font-family: var(--ff-serif);
     font-size: calc(36/16rem);
     font-weight: var(--deprecated-fw--bolder);
-    padding-bottom: 1.5rem;
-    padding-top: 1.5rem;
+    padding-bottom: calc(24/16rem);
+    padding-top: calc(24/16rem);
 
     @media screen and (--bp-desktop) {
       font-size: calc(32/16rem);
@@ -123,7 +123,7 @@
 
   p,
   li {
-    padding-bottom: 1.5rem;
+    padding-bottom: calc(24/16rem);
 
     @media screen and (--bp-desktop) {
       font-size: calc(18/16rem);
@@ -136,7 +136,7 @@
     margin: 0 auto;
     padding-left: .9375rem;
     padding-right: .9375rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: calc(24/16rem);
     list-style-position: outside;
 
     li {
@@ -197,7 +197,7 @@
   }
 
   ol {
-    padding-left: 1.875rem;
+    padding-left: calc(30/16rem);
 
     &[type="a"] li {
       list-style-type: lower-alpha;
@@ -272,21 +272,21 @@
         }
 
         & > p:first-child {
-          padding-top: 1.5rem;
+          padding-top: calc(24/16rem);
         }
       }
 
       h2 {
-        line-height: 2.25rem;
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        line-height: calc(36/16rem);
+        padding-top: calc(24/16rem);
+        padding-bottom: calc(24/16rem);
         text-transform: none;
       }
 
       ol,
       ul {
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding-left: calc(20/16rem);
+        padding-right: calc(20/16rem);
       }
 
       @media screen and (--bp-desktop) {
@@ -297,7 +297,7 @@
 
           &::before {
             font-size: 4.25rem;
-            left: .625rem;
+            left: calc(10/16rem);
             letter-spacing: -.4375rem;
             line-height: 1.05;
           }
@@ -435,10 +435,10 @@
   	}
 
     &.ticked-list {
-      padding-left: 1.875rem;
+      padding-left: calc(30/16rem);
 
       @media screen and (--bp-desktop) {
-        padding-left: 1.25rem;
+        padding-left: calc(20/16rem);
       }
 
       & > li {
@@ -448,9 +448,9 @@
         &::before {
           height: .3125rem;
           left: .375rem;
-          margin-left: -1.875rem;
+          margin-left: -calc(30/16rem);
           top: .375rem;
-          width: .625rem;
+          width: calc(10/16rem);
           background: transparent;
           border: 3px solid var(--col-emerald-mid-2);
           border-right: 0 none;
@@ -469,9 +469,9 @@
 
   dl {
     font-size: .75rem;
-    line-height: 1.5rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    line-height: calc(24/16rem);
+    padding-top: calc(24/16rem);
+    padding-bottom: calc(24/16rem);
     padding-left: .9375rem;
     padding-right: .9375rem;
     dt {
@@ -505,7 +505,7 @@
       }
 
       @media screen and (--bp-desktop) {
-        padding: .625rem 1.875rem;
+        padding: calc(10/16rem) calc(30/16rem);
         display: inline-block;
         width: 75%;
 
@@ -529,8 +529,8 @@
     margin: 0;
 
     &.spacer {
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
+      margin-top: calc(24/16rem);
+      margin-bottom: calc(24/16rem);
     }
   }
 
@@ -578,14 +578,14 @@
 
   .grey {
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: calc(24/16rem);
     color: var(--col-unsanctioned-black-mid-3);
   }
 
   .main-title {
-    font-size: 2.25rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    font-size: calc(36/16rem);
+    padding-top: calc(24/16rem);
+    padding-bottom: calc(24/16rem);
     font-family: var(--ff-serif);
     font-weight: var(--deprecated-fw--regular);
     line-height: 1.2;
@@ -601,8 +601,8 @@
 
     @media screen and (--bp-desktop) {
       font-size: 2.94375rem;
-      padding-bottom: 1.5rem;
-      padding-top: 1.875rem;
+      padding-bottom: calc(24/16rem);
+      padding-top: calc(30/16rem);
       line-height: 1.26;
     }
 
@@ -613,7 +613,7 @@
 
   .small {
     font-size: .75rem;
-    line-height: 1.5rem;
+    line-height: calc(24/16rem);
   }
 
   .line {

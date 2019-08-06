@@ -1,6 +1,6 @@
 @define-mixin code {
   font-size: 1rem;
-  line-height: 1.5rem;
+  line-height: calc(24/16rem);
   background-color: var(--col-unsanctioned-black-light-1);
   border-width: 0;
   font-family: var(--ff-fixed);
@@ -15,11 +15,11 @@
   pre {
     @mixin code;
     font-size: .8125rem;
-    line-height: 1.5rem;
+    line-height: calc(24/16rem);
     margin-top: 0;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding-top: calc(24/16rem);
+    padding-bottom: calc(24/16rem);
+    margin-bottom: calc(24/16rem);
     border-bottom-width: 1px;
     border-top-width: 1px;
     padding-left: .9375rem;
@@ -45,8 +45,8 @@
 }
 
 #top.uomcontent [role="main"] pre.flex {
-  padding-left: 1.875rem;
-  padding-right: 1.875rem;
+  padding-left: calc(30/16rem);
+  padding-right: calc(30/16rem);
   height: auto;
   padding-top: 0;
 }

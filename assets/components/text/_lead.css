@@ -20,7 +20,7 @@
 
       &::before {
         padding-bottom: 3rem;
-        margin-top: 1.875rem;
+        margin-top: calc(30/16rem);
         width: 5rem;
         border-top: 2px solid var(--col-navy-main);
         content: '';
@@ -65,14 +65,14 @@
   }
 
   section > .lead {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: calc(24/16rem);
+    padding-bottom: calc(24/16rem);
   }
 }
 
 .uomcontent h1.aligned-title + .lead {
   & + p {
-    padding-top: 1.5rem;
+    padding-top: calc(24/16rem);
 
     &::before {
       display: none;
@@ -109,7 +109,7 @@
     }
 
     &.left {
-      padding-top: 1.5rem;
+      padding-top: calc(24/16rem);
 
       @media screen and (--bp-wide) {
         padding-top: 3rem;

@@ -1,7 +1,7 @@
 .uomcontent [role="navigation"]#globalsitemap {
   @mixin normalise;
   @mixin injection-wrapper;
-  padding: 0 3% 1.875rem;
+  padding: 0 3% calc(30/16rem);
   background-color: var(--col-navy-main);
   font-family: var(--ff-sans);
   height: 100%;
@@ -23,7 +23,7 @@
   }
 
   @media screen and (--bp-tablet) {
-    padding: 0 8.125rem 1.875rem 2.5rem;
+    padding: 0 8.125rem calc(30/16rem) 2.5rem;
 
     &.active {
       transform: translateX(-100%) translateX(90px);
@@ -72,7 +72,7 @@
 
     a {
       font-weight: 400;
-      padding-bottom: .625rem;
+      padding-bottom: calc(10/16rem);
       padding-top: .25rem;
     }
   }
@@ -88,7 +88,7 @@
   }
 
   ul {
-    padding-left: 1.25rem;
+    padding-left: calc(20/16rem);
     margin: 0;
     padding-bottom: 0;
     padding-right: 0;
@@ -105,7 +105,7 @@
     padding: 0 3%;
 
     @media screen and (--bp-desktop) {
-      margin-top: 1.875rem;
+      margin-top: calc(30/16rem);
       max-width: var(--w-sml);
       float: right;
       padding: 0;
@@ -148,8 +148,8 @@
         }
 
         svg {
-          height: 1.5rem;
-          width: 1.5rem;
+          height: calc(24/16rem);
+          width: calc(24/16rem);
           background-color: transparent;
           cursor: pointer;
           fill: currentColor;
@@ -170,8 +170,8 @@
           padding: 0;
 
           svg {
-            height: 1.5rem;
-            width: 1.5rem;
+            height: calc(24/16rem);
+            width: calc(24/16rem);
           }
         }
       }
@@ -199,7 +199,7 @@
     clear: none;
     margin-left: auto;
     margin-right: auto;
-    padding: 1.25rem;
+    padding: calc(20/16rem);
     text-decoration: none;
 
     img {
@@ -226,7 +226,7 @@
     text-transform: uppercase;
 
     &::before {
-      font-size: 1.5rem;
+      font-size: calc(24/16rem);
       margin-right: .5rem;
       color: color(var(--col-white) alpha(40%));
       content: '\2039';

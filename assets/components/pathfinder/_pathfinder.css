@@ -125,7 +125,7 @@
         color: var(--col-black-dark);
 
         & > span {
-          padding: 0 .625rem;
+          padding: 0 calc(10/16rem);
           transform: translateY(-50%);
 
           span {
@@ -136,7 +136,7 @@
           }
 
           &::after {
-            font-size: 1.25rem;
+            font-size: calc(20/16rem);
             margin-top: -.3125rem;
             padding-left: .3125rem;
             content: '\2192';
@@ -160,8 +160,8 @@
   }
 
   li {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: calc(24/16rem);
+    margin-bottom: calc(24/16rem);
     margin-left: 0;
     margin-right: 0;
     overflow: visible;
@@ -172,12 +172,12 @@
 
   p,
   span.text {
-    margin-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    margin-top: calc(24/16rem);
+    padding-bottom: calc(24/16rem);
     font-size: calc(16/16rem);
     min-width: 10.3125rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: calc(20/16rem);
+    padding-right: calc(20/16rem);
     background-color: transparent;
     display: block;
     padding-top: 0;
@@ -217,7 +217,7 @@
     @mixin focus;
     @mixin focus-light;
     padding-bottom: 3rem;
-    max-width: 21.875rem;
+    max-width: 2calc(30/16rem);
     background-color: var(--col-navy-main);
     margin: 0 auto;
     position: relative;
@@ -304,7 +304,7 @@
     p,
     span.text {
       padding-bottom: 7.5rem;
-      max-width: 21.875rem;
+      max-width: 2calc(30/16rem);
       margin: 0 auto;
       padding-left: 0;
       padding-right: 0;
@@ -312,13 +312,13 @@
 
     strong {
       height: calc(120/16rem);
-      max-width: 21.875rem;
+      max-width: 2calc(30/16rem);
       margin: calc(20/16rem) auto 0;
       padding: 0;
     }
 
     a {
-      max-width: 21.875rem;
+      max-width: 2calc(30/16rem);
       min-height: 25rem;
       padding: 0 2.1875rem;
       height: 100%;
@@ -327,7 +327,7 @@
     }
 
     .button-small {
-      bottom: 1.875rem;
+      bottom: calc(30/16rem);
       box-align: horizontal;
       display: inline-block;
       left: 50%;

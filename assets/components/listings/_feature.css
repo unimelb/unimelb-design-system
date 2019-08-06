@@ -2,13 +2,13 @@
   @mixin listing;
 
   li {
-    padding-bottom: 1.5rem;
+    padding-bottom: calc(24/16rem);
     border-top: 0 none;
     text-align: center;
   }
 
   figure {
-    max-height: 21.875rem;
+    max-height: 2calc(30/16rem);
     float: none;
     margin-right: 0;
     max-width: 100%;
@@ -20,8 +20,8 @@
   }
 
   strong {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
+    font-size: calc(20/16rem);
+    line-height: calc(24/16rem);
     text-align: left;
   }
 
@@ -31,10 +31,10 @@
   }
 
   &.listing--crop-height figure {
-    height: 21.25rem;
+    height: 2calc(20/16rem);
 
     img {
-      min-height: 21.25rem;
+      min-height: 2calc(20/16rem);
       max-width: none;
     }
   }
@@ -59,8 +59,8 @@
     }
 
     strong {
-      font-size: 1.25rem;
-      line-height: 1.5rem;
+      font-size: calc(20/16rem);
+      line-height: calc(24/16rem);
       padding-bottom: .75rem;
     }
   }

@@ -29,13 +29,13 @@
 
     p {
       font-size: .9375rem;
-      line-height: 1.5rem;
+      line-height: calc(24/16rem);
       padding-bottom: 0;
     }
 
     .frame {
       max-width: 12.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: calc(24/16rem);
       background-color: var(--col-blue-light);
       border-radius: 50%;
       line-height: 0;
@@ -72,9 +72,9 @@
     }
 
     strong {
-      font-size: 1.25rem;
-      line-height: 1.5rem;
-      padding-top: 1.5rem;
+      font-size: calc(20/16rem);
+      line-height: calc(24/16rem);
+      padding-top: calc(24/16rem);
       display: block;
       color: var(--col-white);
       text-decoration: none;
@@ -82,17 +82,17 @@
 
     p {
       font-size: 1rem;
-      line-height: 1.5rem;
-      padding-top: 1.5rem;
+      line-height: calc(24/16rem);
+      padding-top: calc(24/16rem);
       padding-bottom: .75rem;
-      max-width: 31.25rem;
+      max-width: 3calc(20/16rem);
       color: var(--col-white);
       font-style: italic;
 
       a {
         font-size: .9375rem;
-        line-height: 1.5rem;
-        padding: 0 .625rem;
+        line-height: calc(24/16rem);
+        padding: 0 calc(10/16rem);
         color: var(--col-white);
         font-style: normal;
         font-weight: var(--deprecated-fw--regular);
@@ -109,7 +109,7 @@
   /* DEPRECATED */
   .diamond-mask {
     max-width: 18.75rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: calc(24/16rem);
     transform: rotate(45deg) scale(.7);
     display: block;
     margin-left: auto;

@@ -8,7 +8,7 @@
     .errors {
       font-size: 1.375rem;
       max-width: var(--w-sml);
-      padding-top: 1.875rem;
+      padding-top: calc(30/16rem);
       background-color: #fad8dc;
       margin: 0 auto;
 
@@ -19,28 +19,28 @@
 
     .enquiry__cta {
       @mixin wrapper;
-      font-size: 1.25rem;
+      font-size: calc(20/16rem);
       line-height: 3.125rem;
-      padding-bottom: 1.5rem;
+      padding-bottom: calc(24/16rem);
       max-width: var(--w-sml);
       text-align: center;
 
       a {
-        line-height: 1.875rem;
-        margin-left: .625rem;
+        line-height: calc(30/16rem);
+        margin-left: calc(10/16rem);
         vertical-align: middle;
       }
 
       @media screen and (--bp-desktop) {
         font-size: 1.375rem;
-        line-height: 2.25rem;
+        line-height: calc(36/16rem);
       }
     }
 
     .enquiry__subline {
       @mixin wrapper;
       font-size: 1rem;
-      line-height: 1.5rem;
+      line-height: calc(24/16rem);
       padding-top: .75rem;
       max-width: var(--w-sml);
       border-top: 1px solid color(var(--col-navy-mid-1) alpha(30%));
@@ -53,7 +53,7 @@
         }
 
         .secondary {
-          margin-left: 1.25rem;
+          margin-left: calc(20/16rem);
         }
       }
     }
@@ -64,7 +64,7 @@
 
     .enquiry__form {
       form {
-        padding-top: 1.5rem;
+        padding-top: calc(24/16rem);
         max-width: 100%;
       }
 

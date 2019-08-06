@@ -40,7 +40,7 @@
   }
 
   & > [role="tabpanel"] {
-    padding-top: 1.5rem;
+    padding-top: calc(24/16rem);
     padding-bottom: 0;
     padding-left: 1.5625rem;
     padding-right: 1.5625rem;
@@ -182,8 +182,8 @@
 
     /* left/right arrows when screen size is too small to fit all the tabs */
     .tab-arrow {
-      font-size: 1.875rem;
-      padding: 0 1.25rem .3125rem; /* bottom padding aligns arrows with tab labels */
+      font-size: calc(30/16rem);
+      padding: 0 calc(20/16rem) .3125rem; /* bottom padding aligns arrows with tab labels */
       background: var(--col-navy-main);
       color: var(--col-white);
       display: none;
@@ -203,13 +203,13 @@
     }
 
     .tab-arrow--left {
-      padding-right: .625rem;
+      padding-right: calc(10/16rem);
       background: linear-gradient(to left, color(var(--col-navy-main) alpha(0%)), color(var(--col-navy-main) alpha(90%)) 10%);
       left: 0;
     }
 
     .tab-arrow--right {
-      padding-left: .625rem;
+      padding-left: calc(10/16rem);
       background: linear-gradient(to right, color(var(--col-navy-main) alpha(0%)), color(var(--col-navy-main) alpha(90%)) 10%);
       right: 0;
     }
@@ -307,7 +307,7 @@
     &.thin {
       nav a {
         font-size: .8125rem;
-        line-height: 1.5rem;
+        line-height: calc(24/16rem);
         line-height: calc(4rem - .125rem); /* tabs height minus 1px above and below for outline */
         margin-top: .0625rem; /* outline cont. */
         padding: 0 .9375rem;

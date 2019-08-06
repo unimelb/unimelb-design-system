@@ -10,9 +10,9 @@
 }
 
 .uomcontent [role="main"] table.mobile-friendly {
-  margin-top: 1.5rem;
+  margin-top: calc(24/16rem);
   max-width: 37.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: calc(24/16rem);
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -88,12 +88,12 @@
     }
 
     th.right:last-child {
-      padding-left: 1.25rem;
+      padding-left: calc(20/16rem);
     }
     th.right.asc:last-child,
     th.right.desc:last-child {
-      padding-left: .625rem;
-      padding-right: 1.25rem;
+      padding-left: calc(10/16rem);
+      padding-right: calc(20/16rem);
     }
   }
 
@@ -127,7 +127,7 @@
 
       th,
       th:first-child {
-        padding: 1.25rem .625rem .625rem .625rem;
+        padding: calc(20/16rem) calc(10/16rem) calc(10/16rem) calc(10/16rem);
         background-color: transparent;
         border-top: 0;
         text-align: left;
@@ -135,14 +135,14 @@
     }
 
     th {
-      padding: .625rem;
+      padding: calc(10/16rem);
       border: 1px solid var(--col-blue-light);
       text-align: left;
       vertical-align: top;
     }
 
     td {
-      padding: .625rem;
+      padding: calc(10/16rem);
       border: 1px solid var(--col-blue-light);
       text-align: left;
       vertical-align: top;
@@ -185,7 +185,7 @@
 
       th {
         font-size: .875rem;
-        padding: .625rem;
+        padding: calc(10/16rem);
         border: 1px solid var(--col-blue-light);
         border-bottom-width: 2px;
         text-align: left;
@@ -197,7 +197,7 @@
       &.header {
         th,
         th:first-child {
-          padding: .625rem;
+          padding: calc(10/16rem);
           background-color: var(--col-unsanctioned-blue-light-1);
           border: 1px solid var(--col-blue-light);
           text-align: left;
@@ -206,12 +206,12 @@
 
       td {
         font-size: 1rem;
-        padding: .625rem;
+        padding: calc(10/16rem);
         border: 1px solid var(--col-blue-light);
         display: table-cell;
 
         &:first-child {
-          padding-bottom: .625rem;
+          padding-bottom: calc(10/16rem);
         }
 
         &:empty {

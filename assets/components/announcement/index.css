@@ -15,7 +15,7 @@
     }
 
     &__message {
-      padding: 1.25rem 3.125rem 1.25rem .9375rem;
+      padding: calc(20/16rem) 3.125rem calc(20/16rem) .9375rem;
       background-color: var(--col-blue-mid-2);
       color: var(--col-white);
       display: block;
@@ -29,7 +29,7 @@
 
       h2 {
         font-size: .8125rem;
-        line-height: 1.5rem;
+        line-height: calc(24/16rem);
         padding-bottom: .1875rem;
         color: var(--col-blue-light);
         font-weight: normal;
@@ -41,24 +41,24 @@
 
       p {
         font-size: 1.125rem;
-        line-height: 1.5rem;
+        line-height: calc(24/16rem);
         margin: 0;
         padding: 0;
 
         &.with-arrow::after {
-          font-size: 1.25rem;
-          padding-left: .625rem;
+          font-size: calc(20/16rem);
+          padding-left: calc(10/16rem);
           content: '\2192';
           line-height: 0;
         }
 
         strong {
-          margin-right: .625rem;
+          margin-right: calc(10/16rem);
         }
       }
 
       @media screen and (--bp-tablet) {
-        padding: 1.25rem 5.625rem;
+        padding: calc(20/16rem) 5.625rem;
         text-align: center;
 
         h2,
@@ -71,8 +71,8 @@
     &__close {
       border-radius: 3px;
       font-size: .8125rem;
-      margin-top: -calc((.625rem * 2 + 1.5rem) / 2);
-      padding: .625rem;
+      margin-top: -calc((.625rem * 2 + calc(24/16rem)) / 2);
+      padding: calc(10/16rem);
       right: .9375rem;
       transition: background-color .15s, color .15s;
       background: none;
@@ -89,8 +89,8 @@
       }
 
       & > [data-icon="close"] {
-        height: 1.5rem;
-        width: 1.5rem;
+        height: calc(24/16rem);
+        width: calc(24/16rem);
 
         .icon-label {
           @mixin screenreaders-only;
@@ -98,7 +98,7 @@
       }
 
       @media screen and (--bp-tablet) {
-        right: 1.875rem;
+        right: calc(30/16rem);
       }
     }
   }

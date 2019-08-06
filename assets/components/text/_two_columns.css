@@ -1,7 +1,7 @@
 @define-mixin half {
   @mixin wrapper;
-  padding-bottom: 1.875rem;
-  padding-top: 1.875rem;
+  padding-bottom: calc(30/16rem);
+  padding-top: calc(30/16rem);
   max-width: 100%;
 
   h1 {
@@ -9,7 +9,7 @@
   }
 
   img {
-    margin-top: 1.875rem;
+    margin-top: calc(30/16rem);
     padding-left: .9375rem;
     padding-right: .9375rem;
     max-width: 95%;
@@ -40,7 +40,7 @@
     }
 
     @media screen and (--bp-desktop) {
-      padding: 1.875rem .9375rem;
+      padding: calc(30/16rem) .9375rem;
       display: table-cell;
       vertical-align: top;
       width: 50%;

@@ -6,7 +6,7 @@
 
   a {
     padding-top: 9rem;
-    max-width: 71.875rem;
+    max-width: 7calc(30/16rem);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -25,10 +25,10 @@
   }
 
   .inner {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-top: calc(24/16rem);
+    padding-bottom: calc(24/16rem);
+    padding-left: calc(20/16rem);
+    padding-right: calc(20/16rem);
 
     background-color: var(--col-navy-main);
     background-color: color(var(--col-navy-main) alpha(70%));
@@ -50,8 +50,8 @@
   }
 
   @media screen and (--bp-desktop) {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: calc(20/16rem);
+    padding-right: calc(20/16rem);
 
     a {
       padding-top: 21rem;
@@ -80,7 +80,7 @@
       width: 94%;
 
       &:first-child {
-        margin-left: .625rem;
+        margin-left: calc(10/16rem);
         max-width: 7.8125rem;
         float: right;
       }
@@ -95,7 +95,7 @@
 
   h1 {
     font-size: 1.375rem;
-    line-height: 2.25rem;
+    line-height: calc(36/16rem);
     max-width: var(--w-mid);
     padding-bottom: .9375rem;
   }
@@ -111,14 +111,14 @@
 
     &.topic {
       font-size: .875rem;
-      line-height: 1.5rem;
+      line-height: calc(24/16rem);
     }
   }
 
   @media screen and (--bp-desktop) {
     article {
-      padding-left: 1.25rem;
-      padding-right: 1.25rem;
+      padding-left: calc(20/16rem);
+      padding-right: calc(20/16rem);
 
       img {
         width: 100%;
@@ -142,7 +142,7 @@
 
     h1 {
       font-size: 1.625rem;
-      line-height: 2.25rem;
+      line-height: calc(36/16rem);
     }
 
     @media screen and (min-width: 925px) {
@@ -155,33 +155,33 @@
 
   &.dense {
     article {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
+      padding-top: calc(24/16rem);
+      padding-bottom: calc(24/16rem);
       max-width: var(--w-sml);
     }
 
     h1 {
-      font-size: 1.25rem;
-      line-height: 1.5rem;
+      font-size: calc(20/16rem);
+      line-height: calc(24/16rem);
       padding-bottom: .75rem;
       font-weight: var(--deprecated-fw--regular);
     }
 
     p {
       font-size: .875rem;
-      line-height: 1.5rem;
+      line-height: calc(24/16rem);
 
       &.date {
         font-size: .8125rem;
-        line-height: 1.5rem;
+        line-height: calc(24/16rem);
         font-style: italic;
       }
     }
 
     @media screen and (--bp-desktop) {
       h1 {
-        font-size: 1.25rem;
-        line-height: 1.5rem;
+        font-size: calc(20/16rem);
+        line-height: calc(24/16rem);
       }
 
       article img {
@@ -210,7 +210,7 @@
   }
 
   .news-index.tab {
-    padding-top: 1.5rem;
+    padding-top: calc(24/16rem);
     border-bottom: 0;
     padding-left: 3%;
     padding-right: 3%;

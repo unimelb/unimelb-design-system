@@ -1,6 +1,6 @@
 .uomcontent .filtered-listing-wrapper {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-top: calc(24/16rem);
+  padding-bottom: calc(24/16rem);
   background-color: var(--col-navy-main);
 }
 
@@ -33,7 +33,7 @@
   }
 
   h2 {
-    font-size: 1.875rem;
+    font-size: calc(30/16rem);
     font-weight: var(--deprecated-fw--thin);
     line-height: 1.2;
     margin-left: 0;
@@ -52,7 +52,7 @@
 
   .left {
     @media screen and (--bp-tablet) {
-      line-height: 1.875rem;
+      line-height: calc(30/16rem);
       margin: 0;
 
       legend,
@@ -65,8 +65,8 @@
     }
 
     @media screen and (--bp-desktop) {
-      padding-left: 1.875rem;
-      padding-right: 1.875rem;
+      padding-left: calc(30/16rem);
+      padding-right: calc(30/16rem);
       float: left;
       width: 66.66%;
     }
@@ -168,7 +168,7 @@
   }
 
   .right {
-    padding-top: 1.875rem;
+    padding-top: calc(30/16rem);
     margin: 0;
 
     & > div {
@@ -186,14 +186,14 @@
 
     label {
       font-size: .9375rem;
-      line-height: 1.875rem;
+      line-height: calc(30/16rem);
       padding-bottom: .9375rem;
       display: block;
       width: 100%;
     }
 
     @media screen and (--bp-desktop) {
-      padding-right: 1.875rem;
+      padding-right: calc(30/16rem);
       float: right;
       margin: 0;
       padding-top: 0;

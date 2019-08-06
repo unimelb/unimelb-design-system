@@ -41,11 +41,11 @@
   }
 
   .half .video {
-    margin-bottom: 1.875rem;
+    margin-bottom: calc(30/16rem);
     padding-bottom: 56.25%;
 
     @media screen and (--bp-desktop) {
-      margin-right: 1.875rem;
+      margin-right: calc(30/16rem);
 
       iframe {
         margin-left: 0;

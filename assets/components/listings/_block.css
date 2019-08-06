@@ -39,7 +39,7 @@
   }
 
   strong {
-    font-size: 1.25rem;
+    font-size: calc(20/16rem);
     padding: 1rem 1rem 0;
     background-color: transparent;
     color: inherit;
@@ -123,7 +123,7 @@
     color: var(--col-white);
 
     strong {
-      margin-bottom: 1.5rem;
+      margin-bottom: calc(24/16rem);
       padding-top: 0;
     }
 
@@ -208,7 +208,7 @@
 
       p {
         padding: 0 2rem 1rem;
-        font-size: 1.25rem;
+        font-size: calc(20/16rem);
         line-height: 1.4;
       }
 
@@ -266,7 +266,7 @@
   }
 
   .crop-height {
-    max-height: 11.875rem;
+    max-height: 1calc(30/16rem);
     overflow: hidden;
 
     img {
@@ -393,7 +393,7 @@
 
       strong {
         font-size: 1.75rem;
-        padding: .625rem;
+        padding: calc(10/16rem);
         background-color: color(var(--col-blue-mid-2) alpha(80%));
         bottom: 0;
         font-weight: var(--deprecated-fw--regular);
@@ -403,19 +403,19 @@
 
         em {
           font-size: 1.0625rem;
-          line-height: 1.5rem;
+          line-height: calc(24/16rem);
           font-weight: var(--deprecated-fw--thin);
         }
 
         @media screen and (--bp-x-tablet) {
-          padding: .625rem 1.5rem;
+          padding: calc(10/16rem) calc(24/16rem);
           width: 100%;
         }
 
         @media screen and (--bp-wide) {
           font-size: 1.625rem;
-          line-height: 2.25rem;
-          padding: 1.25rem 1.5rem;
+          line-height: calc(36/16rem);
+          padding: calc(20/16rem) calc(24/16rem);
         }
       }
 
@@ -457,13 +457,13 @@
       background-size: cover;
 
       a {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: calc(24/16rem);
+        padding-right: calc(24/16rem);
       }
 
       span {
-        font-size: 1.25rem;
-        line-height: 1.5rem;
+        font-size: calc(20/16rem);
+        line-height: calc(24/16rem);
         padding-top: 6rem;
         display: block;
         font-style: normal;
@@ -519,12 +519,12 @@
       }
 
       strong {
-        font-size: 1.25rem;
-        line-height: 1.5rem;
+        font-size: calc(20/16rem);
+        line-height: calc(24/16rem);
 
         @media screen and (--bp-desktop) {
-          font-size: 1.5rem;
-          line-height: 2.25rem;
+          font-size: calc(24/16rem);
+          line-height: calc(36/16rem);
           font-weight: var(--deprecated-fw--light);
           overflow-wrap: break-word;
         }
@@ -538,7 +538,7 @@
     }
 
     &.instagram {
-      min-height: 21.875rem;
+      min-height: 2calc(30/16rem);
       background-position: center;
       background-size: cover;
       border-bottom-color: color(var(--col-navy-main) alpha(80%));
@@ -552,7 +552,7 @@
       }
 
       .meta {
-        padding: .75rem 1.25rem 0;
+        padding: .75rem calc(20/16rem) 0;
         background-color: color(var(--col-navy-main) alpha(80%));
         border: none;
         bottom: 0;
@@ -583,7 +583,7 @@
       }
 
       a {
-        padding: .625rem 0;
+        padding: calc(10/16rem) 0;
         border: 0;
         border-bottom: 1px solid var(--col-black-light);
         color: var(--col-blue-mid-2);
@@ -602,7 +602,7 @@
 
       strong {
         font-size: .8125rem;
-        line-height: 1.5rem;
+        line-height: calc(24/16rem);
         letter-spacing: .0625rem;
         padding: 1rem 0;
         color: currentColor;
@@ -631,22 +631,22 @@
         }
 
         &::after {
-          font-size: .625rem;
+          font-size: calc(10/16rem);
           margin-top: -.625rem;
-          padding-left: .625rem;
+          padding-left: calc(10/16rem);
           content: '\2192';
           display: inline-block;
           line-height: 1;
 
           @media screen and (--bp-height-small) {
             font-size: 1.125rem;
-            padding-left: .625rem;
+            padding-left: calc(10/16rem);
           }
         }
 
         @media screen and (--bp-height-small) {
           font-size: .9375rem;
-          line-height: 1.5rem;
+          line-height: calc(24/16rem);
         }
       }
 

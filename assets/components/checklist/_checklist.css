@@ -5,7 +5,7 @@
     padding-right: 0;
 
     li {
-      padding: .9375rem 0 1.875rem;
+      padding: .9375rem 0 calc(30/16rem);
       border-top: 1px solid var(--col-black-light);
       line-height: 1.5;
       list-style-type: none;

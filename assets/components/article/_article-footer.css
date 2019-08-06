@@ -51,8 +51,8 @@
 
       li {
         font-size: .875rem;
-        line-height: 1.5rem;
-        margin: 0 .625rem 0 0;
+        line-height: calc(24/16rem);
+        margin: 0 calc(10/16rem) 0 0;
         display: inline-block;
         list-style-type: none;
         padding: 0;
@@ -60,8 +60,8 @@
 
         a {
           border-radius: 3px;
-          height: 1.875rem;
-          width: 1.875rem;
+          height: calc(30/16rem);
+          width: calc(30/16rem);
           background-color: #4099FF;
           color: var(--col-white);
           display: block;
@@ -69,8 +69,8 @@
           vertical-align: top;
 
           svg {
-            height: 1.875rem;
-            width: 1.875rem;
+            height: calc(30/16rem);
+            width: calc(30/16rem);
             fill: currentColor;
           }
         }
@@ -92,8 +92,8 @@
 
     .categories {
       font-size: 1.0625rem;
-      line-height: 1.5rem;
-      padding-top: 1.5rem;
+      line-height: calc(24/16rem);
+      padding-top: calc(24/16rem);
       text-align: left;
 
       a {

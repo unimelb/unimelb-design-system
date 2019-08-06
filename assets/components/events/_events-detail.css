@@ -1,13 +1,13 @@
 @define-mixin detail {
   @mixin wrapper;
-  padding-top: 1.5rem;
+  padding-top: calc(24/16rem);
   padding-bottom: 3rem;
 
   .aside {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    padding-left: 1.875rem;
-    padding-right: 1.875rem;
+    padding-left: calc(30/16rem);
+    padding-right: calc(30/16rem);
     display: block;
     float: left;
     width: 100%;
@@ -16,7 +16,7 @@
       padding: 0;
 
       time {
-        font-size: 1.25rem;
+        font-size: calc(20/16rem);
         display: block;
         position: relative;
         text-align: center;
@@ -35,9 +35,9 @@
           text-align: right;
 
           &:first-child {
-            padding-bottom: 1.5rem;
+            padding-bottom: calc(24/16rem);
             margin-top: -.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: calc(24/16rem);
             position: relative;
           }
 
@@ -46,7 +46,7 @@
 
             &.date {
               font-size: 3.75rem;
-              padding-top: .625rem;
+              padding-top: calc(10/16rem);
             }
 
             &.month {
@@ -65,8 +65,8 @@
         vertical-align: middle;
 
         @media screen and (--bp-desktop) {
-          margin-top: -1.5rem;
-          width: 1.25rem;
+          margin-top: -calc(24/16rem);
+          width: calc(20/16rem);
           border-bottom: 4px solid var(--col-black-dark);
           display: block;
           margin-right: 0;
@@ -81,7 +81,7 @@
 
         @media screen and (--bp-desktop) {
           display: block;
-          font-size: 2.25rem;
+          font-size: calc(36/16rem);
           font-weight: var(--deprecated-fw--bold);
           line-height: 3rem;
         }
@@ -93,8 +93,8 @@
     }
 
     div {
-      padding-top: 1.5rem;
-      padding-bottom: 1.5rem;
+      padding-top: calc(24/16rem);
+      padding-bottom: calc(24/16rem);
       border-top: 1px solid var(--col-black-light);
       text-align: center;
 
@@ -238,9 +238,9 @@
 
     h1,
     h2 {
-      font-size: 1.5rem;
-      line-height: 2.25rem;
-      padding-bottom: 1.5rem;
+      font-size: calc(24/16rem);
+      line-height: calc(36/16rem);
+      padding-bottom: calc(24/16rem);
       clear: none;
       font-weight: var(--deprecated-fw--light);
       letter-spacing: 0;
@@ -253,24 +253,24 @@
       }
 
       @media screen and (--bp-desktop) {
-        font-size: 1.875rem;
-        line-height: 2.25rem;
-        padding-top: 1.5rem;
+        font-size: calc(30/16rem);
+        line-height: calc(36/16rem);
+        padding-top: calc(24/16rem);
       }
     }
 
     h2 {
-      font-size: 1.25rem;
-      line-height: 1.5rem;
+      font-size: calc(20/16rem);
+      line-height: calc(24/16rem);
 
       @media screen and (--bp-desktop) {
-        font-size: 1.5rem;
-        line-height: 2.25rem;
+        font-size: calc(24/16rem);
+        line-height: calc(36/16rem);
       }
     }
 
     h3 {
-      padding-bottom: 1.5rem;
+      padding-bottom: calc(24/16rem);
     }
   }
 }

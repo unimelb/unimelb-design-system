@@ -18,7 +18,7 @@
 
   .citation {
     font-size: .9375rem;
-    line-height: 1.5rem;
+    line-height: calc(24/16rem);
     padding: .9375rem;
     margin-top: .25rem;
     margin-bottom: .75rem;

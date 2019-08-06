@@ -233,6 +233,6 @@
   & > ol,
   & > ul {
     padding-top: 0;
-    padding-bottom: 1.5rem;
+    padding-bottom: calc(24/16rem);
   }
 }

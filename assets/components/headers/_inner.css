@@ -14,7 +14,7 @@
 
       p {
         font-size: 1.125rem;
-        padding: .625rem 0 1.25rem;
+        padding: calc(10/16rem) 0 calc(20/16rem);
         line-height: 1.2;
         text-align: center;
       }
@@ -23,7 +23,7 @@
         text-align: center;
 
         small {
-          padding-bottom: .625rem;
+          padding-bottom: calc(10/16rem);
           display: block;
           font-weight: var(--deprecated-fw--light);
           line-height: 1.2;

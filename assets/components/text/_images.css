@@ -25,8 +25,8 @@
 
     figcaption {
       font-size: .875rem;
-      line-height: 1.5rem;
-      padding-bottom: 1.5rem;
+      line-height: calc(24/16rem);
+      padding-bottom: calc(24/16rem);
       font-style: italic;
     }
   }
@@ -40,7 +40,7 @@
   }
 
   .fullwidth {
-    height: 31.25rem;
+    height: 3calc(20/16rem);
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
@@ -139,8 +139,8 @@
 
       @media screen and (--bp-desktop) {
         max-width: var(--w-mid);
-        padding-left: 1.25rem;
-        padding-right: 1.25rem;
+        padding-left: calc(20/16rem);
+        padding-right: calc(20/16rem);
         margin: 0 auto;
 
         &.black {
@@ -150,8 +150,8 @@
     }
 
     h2 {
-      font-size: 1.25rem;
-      line-height: 1.5rem;
+      font-size: calc(20/16rem);
+      line-height: calc(24/16rem);
       letter-spacing: .3125rem;
       color: var(--col-white);
 
@@ -166,7 +166,7 @@
     }
 
     pre {
-      margin-bottom: 1.5rem;
+      margin-bottom: calc(24/16rem);
       margin: 0;
       max-width: 100%;
     }
@@ -181,7 +181,7 @@
 
     @media screen and (--bp-height-medium) {
       height: 53.125rem;
-      padding-bottom: 1.875rem;
+      padding-bottom: calc(30/16rem);
     }
 
     @media screen and (--bp-height-big) {

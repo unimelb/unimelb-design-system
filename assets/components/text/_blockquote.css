@@ -1,8 +1,8 @@
 @define-mixin blockquote-modern {
   &:not(.blockquote-classic) {
     font-size: 1.75rem;
-    margin-bottom: 1.875rem;
-    padding-bottom: 1.875rem;
+    margin-bottom: calc(30/16rem);
+    padding-bottom: calc(30/16rem);
     color: var(--col-blue-mid-2);
     display: block;
     font-family: var(--ff-serif);
@@ -34,7 +34,7 @@
       display: block;
       float: right;
       font-family: var(--ff-sans);
-      font-size: 1.25rem;
+      font-size: calc(20/16rem);
       font-style: normal;
       font-weight: var(--deprecated-fw--bold);
       margin-top: calc(26/16rem);
@@ -76,20 +76,20 @@
       }
 
       @media screen and (--bp-wide) {
-        margin-left: -11.25rem;
+        margin-left: -1calc(20/16rem);
         max-width: 60%;
       }
     }
 
     &.right {
       @media screen and (--bp-desktop) {
-        margin-left: 1.875rem;
+        margin-left: calc(30/16rem);
         float: right;
         margin-right: 0;
       }
 
       @media screen and (--bp-wide) {
-        margin-right: -11.25rem;
+        margin-right: -1calc(20/16rem);
       }
     }
   }
@@ -101,7 +101,7 @@
   font-size: 2.75rem;
   line-height: .1em;
   margin-left: -1.95rem;
-  margin-right: .625rem;
+  margin-right: calc(10/16rem);
   vertical-align: -.125em;
 }
 
@@ -111,7 +111,7 @@
 
   &.blockquote-classic {
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: calc(24/16rem);
     padding-bottom: 3.375rem;
     max-width: var(--w-mid);
     padding-left: .9375rem;
@@ -139,7 +139,7 @@
 
     cite {
       font-size: 1rem;
-      line-height: 1.5rem;
+      line-height: calc(24/16rem);
       border: 0;
       float: left;
       font-family: var(--ff-sans);
@@ -154,16 +154,16 @@
     }
 
     p {
-      font-size: 1.5rem;
-      line-height: 2.25rem;
+      font-size: calc(24/16rem);
+      line-height: calc(36/16rem);
       display: inline;
       margin: 0;
       padding: 0;
     }
 
     @media screen and (--bp-tablet) {
-      font-size: 1.5rem;
-      line-height: 2.25rem;
+      font-size: calc(24/16rem);
+      line-height: calc(36/16rem);
     }
 
     @media screen and (--bp-wide) {
@@ -181,20 +181,20 @@ body.jumpnav-active .uomcontent {
     }
 
     @media screen and (--bp-xx-wide) {
-      margin-bottom: 1.25rem;
-      margin-left: -11.25rem;
+      margin-bottom: calc(20/16rem);
+      margin-left: -1calc(20/16rem);
     }
   }
 
   blockquote:not(.blockquote-classic).right {
     @media screen and (--bp-wide) {
-      margin-left: 1.875rem;
+      margin-left: calc(30/16rem);
       margin-right: 0;
     }
 
     @media screen and (--bp-xx-wide) {
-      margin-bottom: 1.25rem;
-      margin-right: -11.25rem;
+      margin-bottom: calc(20/16rem);
+      margin-right: -1calc(20/16rem);
     }
   }
 }

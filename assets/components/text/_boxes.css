@@ -1,5 +1,5 @@
 @define-mixin boxes {
-  padding-top: 1.5rem;
+  padding-top: calc(24/16rem);
   padding-bottom: 0;
   margin-bottom: 3rem;
   max-width: var(--w-sml);
@@ -10,7 +10,7 @@
 
   h1 {
     font-size: .9375rem;
-    line-height: 1.5rem;
+    line-height: calc(24/16rem);
     letter-spacing: .125rem;
     padding: 0 0 .9375rem 0;
     font-weight: var(--deprecated-fw--bold);
@@ -26,7 +26,7 @@
 
   dt {
     font-size: .9375rem;
-    line-height: 1.5rem;
+    line-height: calc(24/16rem);
     color: var(--col-black-dark);
     display: block;
     float: none;
@@ -35,9 +35,9 @@
   }
 
   dd {
-    font-size: 1.25rem;
-    line-height: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: calc(20/16rem);
+    line-height: calc(24/16rem);
+    margin-bottom: calc(24/16rem);
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
@@ -77,8 +77,8 @@
     }
 
     dd {
-      font-size: 1.5rem;
-      line-height: 2.25rem;
+      font-size: calc(24/16rem);
+      line-height: calc(36/16rem);
       font-weight: var(--deprecated-fw--bold);
     }
 
