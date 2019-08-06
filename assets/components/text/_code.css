@@ -1,7 +1,7 @@
 @define-mixin code {
   font-size: 1rem;
   line-height: calc(24/16rem);
-  background-color: var(--col-unsanctioned-black-light-1);
+  background-color: var(--col-primary-light-grey);
   border-width: 0;
   font-family: var(--ff-fixed);
 }

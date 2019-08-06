@@ -2,7 +2,7 @@
 
   .profile-header {
     padding: 3rem 1rem;
-    background-color: var(--col-unsanctioned-blue-light-1);
+    background-color: var(--col-navy-light);
     color: inherit;
 
     &__summary,

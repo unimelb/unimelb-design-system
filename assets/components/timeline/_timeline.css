@@ -167,7 +167,7 @@
 
   .alt .timeline {
     &::before {
-      background-color: var(--col-unsanctioned-blue-light-1);
+      background-color: var(--col-navy-light);
     }
 
     dd {

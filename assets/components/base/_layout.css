@@ -202,7 +202,7 @@ body {
 
     &.alt {
       padding: calc(30/16rem) 0;
-      background-color: var(--col-unsanctioned-blue-light-1);
+      background-color: var(--col-navy-light);
       box-shadow: 0 6px 6px 4px color(var(--col-black-dark) alpha(30%));
       color: var(--col-black-dark);
 
@@ -396,8 +396,8 @@ body {
 
   .layout-sidebar {
     /* Fine line to separate any content on white above and below */
-    border-bottom: 2px solid var(--col-unsanctioned-blue-light-1);
-    border-top: 2px solid var(--col-unsanctioned-blue-light-1);
+    border-bottom: 2px solid var(--col-navy-light);
+    border-top: 2px solid var(--col-navy-light);
 
     &__main,
     &__side {
@@ -406,7 +406,7 @@ body {
 
     &__side {
       font-size: .875rem;
-      background-color: var(--col-unsanctioned-blue-light-1);
+      background-color: var(--col-navy-light);
       color: var(--col-navy-main);
     }
 
@@ -459,7 +459,7 @@ body {
   }
 
   .alt {
-    background-color: var(--col-unsanctioned-blue-light-1);
+    background-color: var(--col-primary-light-grey);
 
     & + .spacer {
       margin-top: 0;
@@ -523,7 +523,7 @@ body {
     }
 
     &.alt::before {
-      background-color: var(--col-unsanctioned-blue-light-1);
+      background-color: var(--col-navy-light);
     }
   }
 
@@ -537,7 +537,7 @@ body {
     }
 
     &.alt::after {
-      background-color: var(--col-unsanctioned-blue-light-1);
+      background-color: var(--col-navy-light);
     }
 
     & + * {

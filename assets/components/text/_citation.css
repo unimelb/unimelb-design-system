@@ -17,14 +17,11 @@
   }
 
   .citation {
-    font-size: .9375rem;
-    line-height: calc(24/16rem);
     padding: .9375rem;
     margin-top: .25rem;
     margin-bottom: .75rem;
-    background-color: var(--col-unsanctioned-blue-light-1);
+    background-color: var(--col-navy-light);
     border: 1px solid var(--col-blue-light);
-    font-family: var(--ff-fixed);
   }
 
   .alt .citation {

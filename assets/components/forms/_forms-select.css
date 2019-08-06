@@ -77,7 +77,7 @@
   }
 
   &.alt:hover {
-    background-color: var(--col-unsanctioned-blue-light-1);
+    background-color: var(--col-navy-light);
     border-color: var(--col-blue-mid-2);
     color: var(--col-blue-mid-2);
   }

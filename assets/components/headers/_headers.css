@@ -77,7 +77,7 @@
     }
 
     &.solid-paleblue {
-      background-color: var(--col-unsanctioned-blue-light-1);
+      background-color: var(--col-navy-light);
       color: var(--col-black-dark);
     }
 

@@ -40,7 +40,7 @@
 @define-mixin textcontrol {
   @mixin control;
   font-size: calc(20/16rem);
-  background-color: var(--col-unsanctioned-black-light-1);
+  background-color: var(--col-primary-light-grey);
   border: 1px solid var(--col-black-mid-1);
   box-shadow: inset 0 2px 0 color(var(--col-black-dark) alpha(5%));
 

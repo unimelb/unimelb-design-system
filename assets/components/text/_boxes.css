@@ -5,7 +5,7 @@
   max-width: var(--w-sml);
   padding-left: 1.5625rem;
   padding-right: 1.5625rem;
-  background-color: var(--col-unsanctioned-blue-light-1);
+  background-color: var(--col-navy-light);
   margin: 0 auto;
 
   h1 {
@@ -69,7 +69,7 @@
 
   .emergency-box {
     @mixin boxes;
-    background-color: var(--col-yellow-light);
+    background-color: var(--col-navy-light);
     color: var(--col-orange-dark);
 
     a {

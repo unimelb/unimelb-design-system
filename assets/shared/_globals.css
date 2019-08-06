@@ -7,6 +7,7 @@
 
   --col-black-dark: #000000;
   --col-black-light: #ebecec;
+  --col-primary-light-grey: #f7f7f7;
   --col-secondary-mid-grey: #e4e4e4;
   --col-black-mid-1: #c6c8ca;
   --col-black-mid-2: #99a2aa;
@@ -36,7 +37,6 @@
   --col-pink-light: #ffdfe6;
   --col-pink-mid-1: #ffbdcc;
   --col-pink-mid-2: #ee8889;
-  --col-primary-light-grey: #f7f7f7;
   --col-primary-navy: #094183;
   --col-purple-dark: #5760a4;
   --col-purple-light: #dee0f8;
@@ -53,9 +53,7 @@
   --col-yellow-mid-2: #ecae65;
 
   /* Unsanctioned colours to meet accesibility requirements */
-  --col-unsanctioned-black-light-1: #f6f6f6;
   --col-unsanctioned-black-mid-3: #777;
-  --col-unsanctioned-blue-light-1: #ebf2f9;
 
   /* Layout widths */
   --w-sml: 43.75rem;

@@ -2,7 +2,7 @@
   .enquiry {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    background-color: var(--col-unsanctioned-blue-light-1);
+    background-color: var(--col-navy-light);
     box-shadow: 0 -1px 9px color(var(--col-navy-mid-1) alpha(30%)) inset;
 
     .errors {
