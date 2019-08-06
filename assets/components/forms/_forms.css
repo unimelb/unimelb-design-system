@@ -43,12 +43,12 @@
 @define-mixin textcontrol {
   @mixin control;
   font-size: 1.25rem;
-  background-color: var(--deprecated-col-lightgray);
-  border: 1px solid color(var(--deprecated-col-lightergray) lightness(-5%));
-  box-shadow: inset 0 1px 3px color(var(--col-black-dark) alpha(15%));
+  background-color: var(--col-unsanctioned-black-light-1);
+  border: 1px solid var(--col-black-mid-1);
+  box-shadow: inset 0 1px 3px color(var(--col-black-dark) alpha(10%));
 
   &:hover:not([disabled]) {
-    border-color: var(--deprecated-col-gray);
+    border-color: var(--col-unsanctioned-black-mid-3);
   }
 
   &:focus {

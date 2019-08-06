@@ -72,7 +72,8 @@
   --col-yellow-mid-2: #ecae65;
 
   /* Unsanctioned colours to meet accesibility requirements */
-  --col-unsanctioned-gray-mid-3: #777;
+  --col-unsanctioned-black-light-1: #f6f6f6;
+  --col-unsanctioned-black-mid-3: #777;
 
   /* Layout widths */
   --w-sml: 43.75rem;

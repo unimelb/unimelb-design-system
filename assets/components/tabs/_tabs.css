@@ -241,6 +241,7 @@
     &.black {
       .full-width {
         background-color: var(--col-black-dark);
+        border-bottom-color: var(--col-black-dark);
       }
 
       figure.full-width {
@@ -253,15 +254,16 @@
       }
 
       nav a {
+        background-color: var(--col-unsanctioned-black-mid-3);
+        border-color: var(--col-unsanctioned-black-mid-3);
+        border-bottom-color: var(--col-unsanctioned-black-mid-3);
         color: var(--col-white);
 
         &[data-current] {
-          color: var(--col-white);
-          font-weight: var(--deprecated-fw--regular);
-
-          &::after {
-            border-top-color: var(--col-black-dark);
-          }
+          background-color: var(--col-white);
+          border-color: var(--col-white);
+          border-bottom-color: var(--col-white);
+          color: var(--col-navy-main);
         }
       }
 
@@ -275,6 +277,7 @@
     &.navy {
       .full-width {
         background-color: var(--col-navy-main);
+        border-bottom-color: var(--col-navy-main);
       }
 
       figure.full-width {
@@ -287,15 +290,16 @@
       }
 
       nav a {
-        color: var(--deprecated-col-gray);
+        background-color: var(--col-navy-mid-2);
+        border-color: var(--col-navy-mid-2);
+        border-bottom-color: var(--col-navy-mid-2);
+        color: var(--col-white);
 
         &[data-current] {
-          color: var(--col-white);
-          font-weight: var(--deprecated-fw--regular);
-
-          &::after {
-            border-top-color: var(--col-navy-main);
-          }
+          background-color: var(--col-white);
+          border-color: var(--col-white);
+          border-bottom-color: var(--col-white);
+          color: var(--col-navy-main);
         }
       }
     }
