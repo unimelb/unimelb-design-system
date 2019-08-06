@@ -69,7 +69,12 @@
 
   .emergency-box {
     @mixin boxes;
-    @mixin notice-warning;
+    background-color: var(--col-yellow-light);
+    color: var(--col-orange-dark);
+
+    a {
+      color: var(--col-orange-dark);
+    }
 
     dd {
       font-size: 1.5rem;
