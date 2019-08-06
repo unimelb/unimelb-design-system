@@ -117,6 +117,7 @@
   }
 
   tbody th {
+    font-weight: var(--fw-semibold);
     text-align: left;
   }
 
@@ -184,10 +185,10 @@
       display: table-header-group;
 
       th {
-        font-size: .875rem;
-        padding: calc(10/16rem);
         border: 1px solid var(--col-blue-light);
         border-bottom-width: 2px;
+        font-weight: var(--fw-semibold);
+        padding: calc(10/16rem);
         text-align: left;
         vertical-align: bottom;
       }
