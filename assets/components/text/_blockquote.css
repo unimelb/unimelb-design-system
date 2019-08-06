@@ -76,7 +76,7 @@
       }
 
       @media screen and (--bp-wide) {
-        margin-left: -1calc(20/16rem);
+        margin-left: calc(-180/16rem);
         max-width: 60%;
       }
     }
@@ -89,7 +89,7 @@
       }
 
       @media screen and (--bp-wide) {
-        margin-right: -1calc(20/16rem);
+        margin-right: calc(-180/16rem);
       }
     }
   }
@@ -182,7 +182,7 @@ body.jumpnav-active .uomcontent {
 
     @media screen and (--bp-xx-wide) {
       margin-bottom: calc(20/16rem);
-      margin-left: -1calc(20/16rem);
+      margin-left: calc(-180/16rem);
     }
   }
 
@@ -194,7 +194,7 @@ body.jumpnav-active .uomcontent {
 
     @media screen and (--bp-xx-wide) {
       margin-bottom: calc(20/16rem);
-      margin-right: -1calc(20/16rem);
+      margin-right: calc(-180/16rem);
     }
   }
 }

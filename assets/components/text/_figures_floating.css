@@ -91,11 +91,11 @@
     }
 
     .inset-left {
-      margin-left: -1calc(20/16rem);
+      margin-left: calc(-180/16rem);
     }
 
     .inset-right {
-      margin-right: -1calc(20/16rem);
+      margin-right: calc(-180/16rem);
     }
   }
 }
@@ -110,7 +110,7 @@
 
     @media screen and (--bp-xx-wide) {
       margin-bottom: calc(20/16rem);
-      margin-left: -1calc(20/16rem);
+      margin-left: calc(-180/16rem);
       max-width: 80%;
     }
   }
@@ -125,7 +125,7 @@
 
     @media screen and (--bp-xx-wide) {
       margin-bottom: calc(20/16rem);
-      margin-right: -1calc(20/16rem);
+      margin-right: calc(-180/16rem);
       max-width: 80%;
     }
   }
