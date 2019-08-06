@@ -71,7 +71,7 @@
   h2 {
     clear: left;
     font-family: var(--ff-serif);
-    font-size: calc(36/16rem);
+    font-size: calc(28/16rem);
     font-weight: var(--fw-bold);
     letter-spacing: -0.03em;
     padding-bottom: calc(24/16rem);
@@ -259,8 +259,9 @@
         }
 
         &::before {
-          font-size: 3.125rem;
-          padding-top: 1rem;
+          font-size: calc(28/16rem);
+          letter-spacing: -0.03em;
+          padding-top: calc(26/16rem);
           width: 3.75rem;
           content: counter(steps);
           display: block;
@@ -296,13 +297,6 @@
           & > * {
             max-width: 650px !important;
           }
-
-          &::before {
-            font-size: 4.25rem;
-            left: calc(10/16rem);
-            letter-spacing: -.4375rem;
-            line-height: 1.05;
-          }
         }
       }
 
@@ -326,8 +320,9 @@
           }
 
           &::before {
-            font-size: 5rem;
-            letter-spacing: -.6875rem;
+            font-size: calc(32/16rem);
+            letter-spacing: -0.03em;
+            padding-top: calc(24/16rem);
           }
         }
       }
