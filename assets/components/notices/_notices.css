@@ -3,7 +3,7 @@
     @mixin wrapper;
     margin-bottom: .9375rem;
     max-width: var(--w-sml);
-    padding: .9375rem;
+    padding: calc(16/16rem) calc(18/16rem) calc(20/16rem);
     display: block; /* allow inline elements (e.g. `span`) */
     margin-left: auto;
     margin-right: auto;
