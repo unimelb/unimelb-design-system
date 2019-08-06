@@ -10,6 +10,7 @@ body {
   color: var(--col-navy-main);
   font-family: var(--ff-sans);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   /* Trick to cover any elastic scrolling */
   overflow: visible;
   &::before {
