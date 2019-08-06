@@ -7,6 +7,7 @@
 
   --col-black-dark: #000000;
   --col-black-light: #ebecec;
+  --col-secondary-mid-grey: #e4e4e4;
   --col-black-mid-1: #c6c8ca;
   --col-black-mid-2: #99a2aa;
   --col-blue-dark: #35659e;
@@ -25,6 +26,8 @@
   --col-navy-main: #094183;
   --col-navy-mid-1: #abbed5;
   --col-navy-mid-2: #5d82ad;
+  --col-secondary-navy: #033a7b;
+  --col-tertiary-navy: #012a58;
   --col-orange-dark: #b93d1c;
   --col-orange-light: #ffdcba;
   --col-orange-mid-1: #ffa478;
@@ -39,14 +42,11 @@
   --col-purple-light: #dee0f8;
   --col-purple-mid-1: #b0bce1;
   --col-purple-mid-2: #7283bf;
-  --col-secondary-mid-grey: #e4e4e4;
-  --col-secondary-navy: #033a7b;
   --col-teal-dark: #02707f;
   --col-teal-light: #cbe8ef;
   --col-teal-light: #cbe8ef;
   --col-teal-mid-1: #7cbdce;
   --col-teal-mid-2: #3fa7c2;
-  --col-tertiary-navy: #012a58;
   --col-white: #ffffff;
   --col-yellow-light: #fdf2df;
   --col-yellow-mid-1: #ffdca2;

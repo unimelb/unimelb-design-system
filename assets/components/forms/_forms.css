@@ -14,7 +14,7 @@
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: var(--col-blue-dark);
+    background-color: var(--col-tertiary-navy);
   }
 
   &:active {

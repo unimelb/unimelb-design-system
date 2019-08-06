@@ -13,7 +13,7 @@
     margin-bottom: 1rem;
     background-color: transparent;
     border: 1px solid var(--col-black-light);
-    color: var(--col-black-dark);
+    color: var(--col-tertiary-navy);
     float: left;
     list-style-type: none;
     margin-left: 0;
@@ -125,7 +125,7 @@
 
   .event,
   .exhibition {
-    background-color: var(--col-black-dark);
+    background-color: var(--col-tertiary-navy);
     color: var(--col-white);
 
     strong {
@@ -157,7 +157,7 @@
 
       &:hover .button-hero-inverse {
         background-color: var(--col-white);
-        color: var(--col-black-dark);
+        color: var(--col-tertiary-navy);
       }
     }
 
