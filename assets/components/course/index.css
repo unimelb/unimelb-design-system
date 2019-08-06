@@ -235,7 +235,7 @@
   }
 
   .left p {
-    font-size: .8125rem;
+    font-size: calc(16/16rem);
     margin: 0;
     padding: 0;
   }
@@ -269,7 +269,7 @@
     }
 
     h2 {
-      font-size: 2.5rem;
+      font-size: calc(40/16rem);
       margin: 0;
       max-width: 2000px;
       padding: 0;
@@ -278,18 +278,17 @@
     }
 
     p {
-      color: color(var(--col-white) alpha(80%));
+      color: var(--col-white);
     }
   }
 }
 
 .uomcontent [role="main"] header:first-child.banner .course-select h1 {
-  font-size: 2.5rem;
+  font-size: calc(40/16rem);
   margin: 0;
   max-width: 2000px;
   padding: 0;
   text-align: left;
-  text-transform: uppercase;
 }
 
 .ie9 .uomcontent [role="main"] {

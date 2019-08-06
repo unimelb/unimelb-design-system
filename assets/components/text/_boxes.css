@@ -9,30 +9,27 @@
   margin: 0 auto;
 
   h1 {
-    font-size: .9375rem;
+    font-size: calc(18/16rem);
     line-height: calc(24/16rem);
-    letter-spacing: .125rem;
     padding: 0 0 .9375rem 0;
-    font-weight: var(--fw-semibold);
     margin: 0;
-    text-transform: uppercase;
   }
 
   dl {
+    font-size: calc(18/16rem);
     margin: 0 auto;
     overflow: hidden;
     padding: 0;
   }
 
   dt {
-    font-size: calc(16/16rem);
+    color: color(var(--col-black-dark) alpha(70%));
     display: block;
     float: none;
     width: auto;
   }
 
   dd {
-    font-size: calc(20/16rem);
     line-height: calc(24/16rem);
     margin-bottom: calc(24/16rem);
     margin-left: 0;

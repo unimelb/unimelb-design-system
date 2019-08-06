@@ -10,10 +10,8 @@
 
   /* TODO fix typography here */
   h2.search-title {
-    font-size: .75rem;
-    line-height: calc(24/16rem);
+    font-size: calc(18/16rem);
     padding-bottom: 1rem;
-    color: var(--col-navy-main);
     padding-top: 0;
   }
 
@@ -46,7 +44,6 @@
           @mixin fallbackAvatar;
           background-position: center;
           background-size: cover;
-          border-radius: 50%;
           width: 85px;
           height: 85px;
         }
@@ -56,15 +53,20 @@
         }
 
         .person__contact {
+          font-size: calc(16/16rem);
           padding-top: .75rem;
 
           a {
+            color: var(--col-blue-mid-2);
             white-space: nowrap;
+            &:hover,
+            &:focus {
+              color: var(--col-blue-dark);
+            }
           }
         }
 
         .person__phone {
-          font-size: 1.125rem;
           line-height: calc(24/16rem);
         }
 
@@ -90,13 +92,16 @@
           }
 
           .person__phone {
-            font-size: calc(20/16rem);
-            line-height: calc(24/16rem);
+            font-size: calc(16/16rem);
             white-space: nowrap;
 
             & + .person__email {
               padding-top: .75rem;
             }
+          }
+
+          .person__email {
+            font-size: calc(16/16rem);
           }
         }
       }
@@ -104,8 +109,11 @@
 
     a {
       text-decoration: none;
+      color: var(--col-navy-main);
 
-      &:hover {
+      &:hover,
+      &:focus {
+        color: var(--col-tertiary-navy);
         text-decoration: underline;
       }
     }
@@ -124,37 +132,41 @@
 
     h3 {
       font-size: calc(20/16rem);
-      line-height: calc(24/16rem);
-      padding-bottom: .75rem;
-      font-weight: var(--fw-regular);
+      font-weight: var(--fw-semibold);
+      margin-bottom: calc(5/16rem);
       width: auto;
     }
 
     p {
-      font-size: .9375rem;
-      line-height: calc(24/16rem);
       padding-bottom: 0;
-      color: var(--col-black-dark);
       width: auto;
 
-      @media screen and (--bp-desktop) {
-        font-size: 1rem;
-        line-height: calc(24/16rem);
-      }
-
       &.url {
-        font-size: .75rem;
-        line-height: calc(24/16rem);
-        color: var(--col-blue-mid-2);
+        font-size: calc(16/16rem);
+        margin-top: calc(5/16rem);
 
         & > a {
           @mixin ellipsis;
+          color: var(--col-blue-mid-2);
+          &:hover,
+          &:focus {
+            color: var(--col-blue-dark);
+          }
         }
       }
 
       &.more {
+        font-size: calc(16/16rem);
         padding-top: .75rem;
         clear: left;
+
+        & > a {
+          color: var(--col-blue-mid-2);
+          &:hover,
+          &:focus {
+            color: var(--col-blue-dark);
+          }
+        }
 
         & > a::after {
           font-size: calc(20/16rem);
@@ -206,10 +218,18 @@
     line-height: 1.4;
 
     & > li {
+      font-size: calc(16/16rem);
       margin-bottom: .25rem;
       padding: 0;
       list-style-type: inherit;
       color: inherit;
+      a {
+        color: var(--col-blue-mid-2);
+        &:hover,
+        &:focus {
+          color: var(--col-blue-dark);
+        }
+      }
     }
 
     @supports (display: grid) {
