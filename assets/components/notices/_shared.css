@@ -1,6 +1,6 @@
 @define-mixin notice-success {
   background-color: var(--col-emerald-light);
-  color: var(--col-emerald-dark);
+  color: color(var(--col-black-dark) alpha(70%));
 
   a {
     color: var(--col-emerald-dark);
@@ -9,7 +9,7 @@
 
 @define-mixin notice-info {
   background-color: var(--col-blue-light);
-  color: var(--col-blue-dark);
+  color: color(var(--col-black-dark) alpha(70%));
 
   a {
     color: var(--col-blue-dark);
@@ -18,7 +18,7 @@
 
 @define-mixin notice-warning {
   background-color: var(--col-yellow-light);
-  color: var(--col-orange-dark);
+  color: color(var(--col-black-dark) alpha(70%));
 
   a {
     color: var(--col-orange-dark);
@@ -27,7 +27,7 @@
 
 @define-mixin notice-danger {
   background-color: var(--col-orange-dark);
-  color: var(--col-white);
+  color: color(var(--col-white) alpha(95%));
 
   a {
     color: var(--col-yellow-light);
