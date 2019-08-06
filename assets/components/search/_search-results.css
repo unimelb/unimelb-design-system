@@ -145,7 +145,7 @@
       &.url {
         font-size: .75rem;
         line-height: 1.5rem;
-        color: var(--deprecated-col-brighterblue);
+        color: var(--col-blue-mid-2);
 
         & > a {
           @mixin ellipsis;

@@ -12,13 +12,13 @@
   a {
     font-size: .875rem;
     padding-right: .625rem;
-    color: var(--deprecated-col-brighterblue);
+    color: var(--col-blue-mid-2);
     display: inline-block;
     vertical-align: top;
     width: 50%;
 
     &:hover {
-      color: color(var(--deprecated-col-brighterblue) lightness(-10%));
+      color: color(var(--col-blue-mid-2) lightness(-10%));
       text-decoration: underline;
     }
   }
@@ -29,7 +29,7 @@
 
   @media screen and (--bp-wide) {
     padding-left: .9375rem;
-    border-left: 1px solid color(var(--deprecated-col-lightgray) lightness(-5%));
+    border-left: 1px solid var(--col-blue-light);
     display: table-cell;
     vertical-align: top;
     width: 30%;
@@ -56,7 +56,7 @@
     text-decoration: none;
 
     &:hover {
-      color: var(--deprecated-col-brighterblue);
+      color: var(--col-blue-mid-2);
     }
   }
 
@@ -78,8 +78,8 @@
     }
 
     li {
-      border-bottom: 1px solid color(var(--deprecated-col-lightgray) lightness(-5%));
-      border-left: 5px solid var(--deprecated-col-brighterblue);
+      border-bottom: 1px solid var(--col-blue-light);
+      border-left: 5px solid var(--col-blue-mid-2);
       margin-left: -.9375rem;
       padding-bottom: 1.25rem;
       padding-top: 1.25rem;
@@ -114,12 +114,12 @@
   }
 
   h2 {
-    border-left: 5px solid var(--deprecated-col-brighterblue);
+    border-left: 5px solid var(--col-blue-mid-2);
     font-size: 1.625rem;
     padding-bottom: .625rem;
     padding-right: .9375rem;
     border-right: 0 none;
-    color: var(--deprecated-col-brighterblue);
+    color: var(--col-blue-mid-2);
     margin: 0 3% 0 0;
     padding-top: 0;
     padding-left: 3%;
@@ -131,7 +131,7 @@
     }
 
     @media screen and (--bp-desktop) {
-      border-right: 5px solid var(--deprecated-col-brighterblue);
+      border-right: 5px solid var(--col-blue-mid-2);
       font-size: .875rem;
       width: 8.75rem;
       border-left: 0 none;
@@ -184,7 +184,7 @@
   }
 
   .time {
-    color: var(--deprecated-col-brighterblue);
+    color: var(--col-blue-mid-2);
     display: block;
     font-weight: var(--deprecated-fw--regular);
     margin: 0 3%;
@@ -195,7 +195,7 @@
       margin-top: -.25rem;
       width: 1.25rem;
       display: inline-block;
-      fill: var(--deprecated-col-brighterblue);
+      fill: var(--col-blue-mid-2);
       vertical-align: middle;
     }
 
@@ -207,8 +207,8 @@
   .tags {
     margin-top: .625rem;
     padding: .625rem 0;
-    border-bottom: 1px solid color(var(--deprecated-col-lightgray) lightness(-5%));
-    border-top: 1px solid color(var(--deprecated-col-lightgray) lightness(-5%));
+    border-bottom: 1px solid var(--col-blue-light);
+    border-top: 1px solid var(--col-blue-light);
     margin-left: 3%;
     margin-right: 3%;
     width: 94%;
@@ -308,7 +308,7 @@
 
     .presenters {
       padding-left: .9375rem;
-      border-left: 1px solid color(var(--deprecated-col-lightgray) lightness(-5%));
+      border-left: 1px solid var(--col-blue-light);
       display: table-cell;
       width: 30%;
 

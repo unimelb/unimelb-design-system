@@ -91,7 +91,7 @@
       a.location {
         font-size: 1rem;
         padding-bottom: 1.25rem;
-        color: var(--deprecated-col-navy);
+        color: var(--col-navy-main);
         display: block;
         font-style: italic;
         text-decoration: none;
@@ -111,10 +111,10 @@
         margin-left: 0;
 
         & > li:first-child {
-          border-top: 1px solid var(--deprecated-col-lightergray);
+          border-top: 1px solid var(--col-black-light);
 
           &.accordion__visible {
-            border-top: 1px solid var(--deprecated-col-brighterblue);
+            border-top: 1px solid var(--col-blue-mid-2);
           }
         }
       }
@@ -127,7 +127,7 @@
 
     strong,
     span {
-      color: var(--deprecated-col-navy);
+      color: var(--col-navy-main);
     }
 
     @media screen and (--bp-desktop) {
@@ -166,28 +166,28 @@
 
   .alt .timeline {
     &::before {
-      background-color: var(--deprecated-col-paleblue);
+      background-color: var(--col-unsanctioned-blue-light-1);
     }
 
     dd {
-      border-left-color: color(var(--deprecated-col-lightblue) lightness(+25%));
+      border-left-color: color(var(--col-navy-mid-1) lightness(+25%));
 
       &::before {
-        background-color: color(var(--deprecated-col-lightblue) lightness(+25%));
+        background-color: color(var(--col-navy-mid-1) lightness(+25%));
       }
 
       ul:last-child,
       p:last-child {
-        border-bottom-color: color(var(--deprecated-col-lightblue) lightness(+25%));
+        border-bottom-color: color(var(--col-navy-mid-1) lightness(+25%));
       }
 
       ul.accordion {
 
         & > li:first-child {
-          border-top: 1px solid color(var(--deprecated-col-lightblue) lightness(+25%));
+          border-top: 1px solid color(var(--col-navy-mid-1) lightness(+25%));
 
           &.accordion__visible {
-            border-top: 1px solid var(--deprecated-col-brighterblue);
+            border-top: 1px solid var(--col-blue-mid-2);
           }
         }
       }

@@ -60,7 +60,7 @@
   & > header:first-child {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    background-color: var(--deprecated-col-navy);
+    background-color: var(--col-navy-main);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -77,7 +77,7 @@
     }
 
     &.solid-paleblue {
-      background-color: var(--deprecated-col-paleblue);
+      background-color: var(--col-unsanctioned-blue-light-1);
       color: var(--col-black-dark);
     }
 
@@ -199,7 +199,7 @@
 }
 
 .uomcontent [role="main"] .contrast-helper {
-  background-color: var(--deprecated-col-midblue);
+  background-color: var(--col-blue-mid-2);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -214,16 +214,16 @@
     background-color: transparent;
   }
   &.filter-blue header {
-    background-color: color(var(--deprecated-col-brighterblue) alpha(50%));
+    background-color: color(var(--col-blue-mid-2) alpha(50%));
   }
   &.filter-green header {
-    background-color: color(var(--deprecated-col-green) alpha(50%));
+    background-color: color(var(--col-emerald-mid-2) alpha(50%));
   }
   &.filter-yellow header {
     background-color: color(#fff000 alpha(50%));
   }
   &.filter-red header {
-    background-color: color(var(--deprecated-col-cherry) alpha(50%));
+    background-color: color(var(--col-pink-dark) alpha(50%));
   }
 
   .stage {

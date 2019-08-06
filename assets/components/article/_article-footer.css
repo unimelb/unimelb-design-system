@@ -22,8 +22,8 @@
       padding-top: .75rem;
       padding-bottom: .75rem;
       max-width: var(--w-sml);
-      border-bottom: 1px solid var(--deprecated-col-lightergray);
-      border-top: 1px solid var(--deprecated-col-lightergray);
+      border-bottom: 1px solid var(--col-black-light);
+      border-top: 1px solid var(--col-black-light);
       margin: 0 auto;
       overflow: hidden;
       width: 94%;

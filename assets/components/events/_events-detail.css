@@ -95,7 +95,7 @@
     div {
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
-      border-top: 1px solid color(var(--deprecated-col-lightgray) lightness(-10%));
+      border-top: 1px solid var(--col-black-light);
       text-align: center;
 
       @media screen and (--bp-desktop) {

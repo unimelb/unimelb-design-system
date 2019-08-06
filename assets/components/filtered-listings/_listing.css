@@ -97,11 +97,11 @@
       width: 24%;
     }
 
-    &--green > a { background-color: var(--deprecated-col-palegreen); }
-    &--bronze > a { background-color: var(--deprecated-col-bronze); }
-    &--silver > a { background-color: var(--deprecated-col-lightestblue); }
-    &--blue > a { background-color: var(--deprecated-col-lightblue); }
-    &--yellow > a { background-color: var(--deprecated-col-paleyellow); }
+    &--green > a { background-color: var(--col-emerald-light); }
+    &--bronze > a { background-color: var(--col-black-light); }
+    &--silver > a { background-color: var(--col-blue-light); }
+    &--blue > a { background-color: var(--col-navy-mid-1); }
+    &--yellow > a { background-color: var(--col-yellow-light); }
   }
 
   a {

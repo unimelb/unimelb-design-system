@@ -8,7 +8,7 @@
 
   th {
     padding: 1.875rem 0 .625rem;
-    border-bottom: 1px solid var(--deprecated-col-lightergray);
+    border-bottom: 1px solid var(--col-black-light);
     border-left: 0 none;
     border-right: 0 none;
     border-top: 0 none;
@@ -30,7 +30,7 @@
   td {
     padding-bottom: .625rem;
     padding-top: .625rem;
-    border-bottom: 1px solid var(--deprecated-col-lightergray);
+    border-bottom: 1px solid var(--col-black-light);
     border-left: 0 none;
     border-right: 0 none;
     border-top: 0 none;
@@ -45,7 +45,7 @@
   }
 
   .accordion__title {
-    color: var(--deprecated-col-brighterblue);
+    color: var(--col-blue-mid-2);
 
     &:hover {
       text-decoration: underline;
@@ -79,7 +79,7 @@
 
     td.unit-description {
       padding: .9375rem 0;
-      background-color: var(--deprecated-col-navy);
+      background-color: var(--col-navy-main);
       color: var(--col-white);
       position: relative;
       text-align: left;
@@ -91,7 +91,7 @@
 
       &::before {
         border: solid transparent;
-        border-bottom-color: var(--deprecated-col-navy);
+        border-bottom-color: var(--col-navy-main);
         border-width: 10px;
         bottom: 100%;
         content: ' ';
@@ -355,7 +355,7 @@
 
     tr td.unit-description::before {
       border: solid transparent;
-      border-bottom-color: var(--deprecated-col-navy);
+      border-bottom-color: var(--col-navy-main);
       border-width: 10px;
       bottom: 100%;
       content: ' ';

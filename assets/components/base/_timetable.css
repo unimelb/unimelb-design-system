@@ -43,7 +43,7 @@
   }
 
   .aside {
-    background-color: var(--deprecated-col-paleblue);
+    background-color: var(--col-unsanctioned-blue-light-1);
 
     h2 {
       margin-left: 0;
@@ -98,7 +98,7 @@
 
   table {
     margin-bottom: 3.75rem;
-    border-bottom: 1px solid var(--deprecated-col-lightergray);
+    border-bottom: 1px solid var(--col-black-light);
     border-collapse: collapse;
     max-width: 100%;
     width: 100%;
@@ -136,7 +136,7 @@
     }
 
     tr {
-      border-bottom: 1px solid var(--deprecated-col-lightergray);
+      border-bottom: 1px solid var(--col-black-light);
       clear: both;
       display: block;
 
@@ -149,7 +149,7 @@
         @mixin subtitle;
         font-size: .875rem;
         padding: 1.875rem 0 .625rem;
-        border-top: 1px solid var(--deprecated-col-lightergray);
+        border-top: 1px solid var(--col-black-light);
         clear: both;
         display: block;
         letter-spacing: 1px;
@@ -159,8 +159,8 @@
 
         @media screen and (--bp-desktop) {
           padding: .625rem .625rem .625rem 0;
-          border-bottom: 1px solid var(--deprecated-col-lightergray);
-          border-right: 1px solid var(--deprecated-col-lightergray);
+          border-bottom: 1px solid var(--col-black-light);
+          border-right: 1px solid var(--col-black-light);
           border-top: 0 none;
           display: table-cell;
           max-width: 25%;
@@ -170,7 +170,7 @@
       td {
         font-size: .875rem;
         padding-top: .3125rem;
-        border-right: 1px solid var(--deprecated-col-lightergray);
+        border-right: 1px solid var(--col-black-light);
         display: block;
         float: left;
         width: 80%;
@@ -182,7 +182,7 @@
 
         @media screen and (--bp-desktop) {
           padding: .625rem;
-          border-bottom: 1px solid var(--deprecated-col-lightergray);
+          border-bottom: 1px solid var(--col-black-light);
           border-right: 0 none;
           display: table-cell;
           float: none;
@@ -217,8 +217,8 @@
         max-width: 20%;
 
         @media screen and (--bp-desktop) {
-          border-bottom: 1px solid var(--deprecated-col-lightergray);
-          border-left: 1px solid var(--deprecated-col-lightergray);
+          border-bottom: 1px solid var(--col-black-light);
+          border-left: 1px solid var(--col-black-light);
           display: table-cell;
           float: none;
           max-width: none;

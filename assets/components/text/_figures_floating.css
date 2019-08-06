@@ -18,7 +18,7 @@
     figcaption {
       font-size: .875rem;
       padding-bottom: .9375rem;
-      color: var(--deprecated-col-midblue);
+      color: var(--col-blue-mid-2);
       font-style: italic;
       line-height: 1.2;
       text-align: center;
@@ -45,7 +45,7 @@
 
         &::before {
           width: 2.5rem;
-          border-bottom: 2px solid var(--deprecated-col-midblue);
+          border-bottom: 2px solid var(--col-blue-mid-2);
           content: '';
           display: block;
           position: absolute;

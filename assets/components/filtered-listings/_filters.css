@@ -1,7 +1,7 @@
 .uomcontent .filtered-listing-wrapper {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-  background-color: var(--deprecated-col-navy);
+  background-color: var(--col-navy-main);
 }
 
 .uomcontent .bottom-align-flat .filtered-listing-wrapper {
@@ -106,64 +106,64 @@
       }
 
       &[data-color="green"] + label {
-        color: var(--deprecated-col-palegreen);
+        color: var(--col-emerald-light);
 
         span::before {
-          border-color: color(var(--deprecated-col-green) lightness(-5%));
+          border-color: color(var(--col-emerald-mid-2) lightness(-5%));
         }
 
         &::after {
-          border-color: var(--deprecated-col-green);
+          border-color: var(--col-emerald-mid-2);
         }
       }
 
       &[data-color="bronze"] + label {
-        color: var(--deprecated-col-bronze);
+        color: var(--col-black-light);
 
         span::before {
-          border-color: color(var(--deprecated-col-bronze) lightness(-20%));
+          border-color: color(var(--col-black-light) lightness(-20%));
         }
 
         &::after {
-          border-color: color(var(--deprecated-col-bronze) lightness(-40%));
+          border-color: color(var(--col-black-light) lightness(-40%));
         }
       }
 
       &[data-color="silver"] + label {
-        color: var(--deprecated-col-lightestblue);
+        color: var(--col-blue-light);
 
         span::before {
-          background-color: color(var(--deprecated-col-lightestblue) lightness(-5%));
-          border-color: color(var(--deprecated-col-lightestblue) lightness(-10%));
+          background-color: color(var(--col-blue-light) lightness(-5%));
+          border-color: color(var(--col-blue-light) lightness(-10%));
         }
 
         &::after {
-          border-color: color(var(--deprecated-col-lightestblue) lightness(-40%));
+          border-color: color(var(--col-blue-light) lightness(-40%));
         }
       }
 
       &[data-color="blue"] + label {
-        color: var(--deprecated-col-lightblue);
+        color: var(--col-navy-mid-1);
 
         span::before {
-          background-color: color(var(--deprecated-col-lightblue) lightness(+10%));
-          border-color: color(var(--deprecated-col-lightblue) lightness(-10%));
+          background-color: color(var(--col-navy-mid-1) lightness(+10%));
+          border-color: color(var(--col-navy-mid-1) lightness(-10%));
         }
 
         &::after {
-          border-color: color(var(--deprecated-col-lightblue) lightness(-20%));
+          border-color: color(var(--col-navy-mid-1) lightness(-20%));
         }
       }
 
       &[data-color="yellow"] + label {
-        color: var(--deprecated-col-paleyellow);
+        color: var(--col-yellow-light);
 
         span::before {
-          border-color: color(var(--deprecated-col-paleyellow) lightness(-10%));
+          border-color: color(var(--col-yellow-light) lightness(-10%));
         }
 
         &::after {
-          border-color: color(var(--deprecated-col-paleyellow) lightness(-60%));
+          border-color: color(var(--col-yellow-light) lightness(-60%));
         }
       }
     }
@@ -180,7 +180,7 @@
         width: 100%;
 
         option {
-          background-color: var(--deprecated-col-navy);
+          background-color: var(--col-navy-main);
           color: var(--col-white);
         }
       }

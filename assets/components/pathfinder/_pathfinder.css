@@ -13,7 +13,7 @@
       @mixin focus-blue;
       @mixin focus-medium;
       background-color: var(--col-white);
-      border-bottom: 3px solid var(--deprecated-col-brighterblue);
+      border-bottom: 3px solid var(--col-blue-mid-2);
       color: var(--col-black-dark);
       outline-color: var(--col-white);
 
@@ -93,7 +93,7 @@
 
     @media screen and (--bp-desktop) {
       li {
-        border-left: 1px solid var(--deprecated-col-lightergray);
+        border-left: 1px solid var(--col-black-light);
 
         &:first-child {
           border-left: none;
@@ -256,7 +256,7 @@
 
     &.featured {
       margin-bottom: -.9375rem;
-      background-color: color(var(--deprecated-col-brighterblue) lightness(-5%));
+      background-color: color(var(--col-blue-mid-2) lightness(-5%));
       color: var(--col-black-dark);
 
       transform: scale(1.06);
@@ -264,7 +264,7 @@
 
       &:hover,
       &:focus {
-        background-color: color(var(--deprecated-col-brighterblue) lightness(+2%));
+        background-color: color(var(--col-blue-mid-2) lightness(+2%));
         transform: scale(1.08);
         z-index: 1;
       }

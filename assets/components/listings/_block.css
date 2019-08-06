@@ -85,7 +85,7 @@
     font-size: 1.125rem;
     margin-bottom: 1rem;
     padding: 1rem 1rem 0;
-    color: var(--deprecated-col-brighterblue);
+    color: var(--col-blue-mid-2);
     font-weight: var(--deprecated-fw--regular);
     line-height: 1.4;
     text-align: left;
@@ -110,7 +110,7 @@
 
       &:first-child::after {
         width: 2rem;
-        border-bottom: 3px solid var(--deprecated-col-brighterblue);
+        border-bottom: 3px solid var(--col-blue-mid-2);
         content: '';
         display: block;
       }
@@ -286,9 +286,9 @@
     }
   }
 
-  li { border-bottom: 4px solid var(--deprecated-col-green); }
-  .event { border-bottom-color: var(--deprecated-col-brighterblue); }
-  .exhibition { border-bottom-color: var(--deprecated-col-yellow); }
+  li { border-bottom: 4px solid var(--col-emerald-mid-2); }
+  .event { border-bottom-color: var(--col-blue-mid-2); }
+  .exhibition { border-bottom-color: var(--col-yellow-mid-2); }
 
   @media screen and (--bp-x-tablet) {
     .event,
@@ -354,7 +354,7 @@
 
       p,
       strong {
-        color: var(--deprecated-col-brighterblue);
+        color: var(--col-blue-mid-2);
         transition: color .15s;
       }
     }
@@ -394,7 +394,7 @@
       strong {
         font-size: 1.75rem;
         padding: .625rem;
-        background-color: color(var(--deprecated-col-brighterblue) alpha(80%));
+        background-color: color(var(--col-blue-mid-2) alpha(80%));
         bottom: 0;
         font-weight: var(--deprecated-fw--regular);
         line-height: 1.1;
@@ -420,7 +420,7 @@
       }
 
       &.special {
-        border-bottom-color: var(--deprecated-col-brighterblue);
+        border-bottom-color: var(--col-blue-mid-2);
 
         strong {
           padding-bottom: 1.625rem;
@@ -436,7 +436,7 @@
             background-color: var(--col-white);
             box-decoration-break: clone;
             box-shadow: 10px 0 0 var(--col-white), -10px 0 0 var(--col-white);
-            color: var(--deprecated-col-brighterblue);
+            color: var(--col-blue-mid-2);
             font-weight: var(--deprecated-fw--bold);
             line-height: 1.2;
           }
@@ -473,15 +473,15 @@
           height: 3.125rem;
           margin-bottom: -.4375rem;
           margin-left: -.625rem;
-          fill: var(--deprecated-col-brighterblue);
+          fill: var(--col-blue-mid-2);
         }
       }
 
       strong {
         font-size: 2.5rem;
-        background-color: var(--deprecated-col-brighterblue);
+        background-color: var(--col-blue-mid-2);
         box-decoration-break: clone;
-        box-shadow: 10px 0 0 var(--deprecated-col-brighterblue), -10px 0 0 var(--deprecated-col-brighterblue);
+        box-shadow: 10px 0 0 var(--col-blue-mid-2), -10px 0 0 var(--col-blue-mid-2);
         color: var(--col-white);
         display: inline;
         font-weight: var(--deprecated-fw--bold);
@@ -491,7 +491,7 @@
     }
 
     &.twitter {
-      border-bottom-color: var(--deprecated-col-twitter);
+      border-bottom-color: var(--col-teal-mid-2);
 
       &:hover {
         transform: none;
@@ -503,15 +503,15 @@
       }
 
       a {
-        color: var(--deprecated-col-twitter);
+        color: var(--col-teal-mid-2);
 
         &:hover {
-          color: var(--deprecated-col-brighterblue);
+          color: var(--col-blue-mid-2);
         }
       }
 
       svg {
-        fill: var(--deprecated-col-twitter);
+        fill: var(--col-teal-mid-2);
       }
 
       em {
@@ -576,7 +576,7 @@
     }
 
     &.more {
-      border-bottom-color: var(--deprecated-col-brighterblue);
+      border-bottom-color: var(--col-blue-mid-2);
 
       &:hover {
         transform: none;
@@ -585,8 +585,8 @@
       a {
         padding: .625rem 0;
         border: 0;
-        border-bottom: 1px solid var(--deprecated-col-lightergray);
-        color: var(--deprecated-col-brighterblue);
+        border-bottom: 1px solid var(--col-black-light);
+        color: var(--col-blue-mid-2);
         display: block;
         position: relative;
         text-align: center;
@@ -594,7 +594,7 @@
         width: 100%;
 
         &:hover {
-          background-color: var(--deprecated-col-brighterblue);
+          background-color: var(--col-blue-mid-2);
           border-bottom-color: transparent;
           color: var(--col-white);
         }

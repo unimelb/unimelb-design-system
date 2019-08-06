@@ -2,9 +2,9 @@
   border-radius: 5px;
   font-size: calc(16/16rem);
   padding: 0.9em 1.8em;
-  background-color: var(--deprecated-col-brighterblue);
+  background-color: var(--col-blue-mid-2);
   border: 0;
-  border-bottom: 5px solid color(var(--deprecated-col-brighterblue) lightness(-10%));
+  border-bottom: 5px solid color(var(--col-blue-mid-2) lightness(-10%));
   color: var(--col-white);
   cursor: pointer;
   display: inline-block;
@@ -35,13 +35,13 @@
   }
 
   &.warning {
-    background-color: var(--deprecated-col-cherry);
-    border-bottom-color: color(var(--deprecated-col-cherry) lightness(-10%));
+    background-color: var(--col-pink-dark);
+    border-bottom-color: color(var(--col-pink-dark) lightness(-10%));
   }
 
   &.cta {
-    background-color: var(--deprecated-col-green);
-    border-bottom-color: color(var(--deprecated-col-green) lightness(-10%));
+    background-color: var(--col-emerald-mid-2);
+    border-bottom-color: color(var(--col-emerald-mid-2) lightness(-10%));
   }
 
   &.brand {
@@ -81,7 +81,7 @@
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: color(var(--deprecated-col-brighterblue) lightness(-10%));
+    background-color: color(var(--col-blue-mid-2) lightness(-10%));
   }
 
   &:active {
@@ -90,12 +90,12 @@
 
   &.warning:not([disabled]):hover,
   &.warning:not([disabled]):focus {
-    background-color: color(var(--deprecated-col-cherry) lightness(-10%));
+    background-color: color(var(--col-pink-dark) lightness(-10%));
   }
 
   &.cta:not([disabled]):hover,
   &.cta:not([disabled]):focus {
-    background-color: color(var(--deprecated-col-green) lightness(-10%));
+    background-color: color(var(--col-emerald-mid-2) lightness(-10%));
   }
 
   &.brand:not([disabled]):hover,
@@ -267,7 +267,7 @@
     width: 100%;
 
     &:hover {
-      background-color: var(--deprecated-col-brighterblue);
+      background-color: var(--col-blue-mid-2);
       color: var(--col-white);
     }
 

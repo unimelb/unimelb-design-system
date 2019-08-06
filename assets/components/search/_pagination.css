@@ -48,7 +48,7 @@
     }
 
     span {
-      background-color: var(--deprecated-col-paleblue);
+      background-color: var(--col-unsanctioned-blue-light-1);
     }
   }
 }

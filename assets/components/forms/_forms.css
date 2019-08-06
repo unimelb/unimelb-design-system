@@ -3,7 +3,7 @@
   font-size: .8125rem;
   height: 2.8125rem;
   padding: 0 .9375rem;
-  background-color: var(--deprecated-col-brighterblue);
+  background-color: var(--col-blue-mid-2);
   border: 0 none;
   color: var(--col-white);
   cursor: pointer;
@@ -14,7 +14,7 @@
 
   &:not([disabled]):hover,
   &:not([disabled]):focus {
-    background-color: color(var(--deprecated-col-brighterblue) lightness(-10%));
+    background-color: color(var(--col-blue-mid-2) lightness(-10%));
   }
 
   &:active {
@@ -31,8 +31,8 @@
 
   &.invalid {
     background-color: var(--col-white);
-    border-color: color(var(--deprecated-col-cherry) lightness(+25%));
-    color: color(var(--deprecated-col-cherry) lightness(+25%));
+    border-color: color(var(--col-pink-dark) lightness(+25%));
+    color: color(var(--col-pink-dark) lightness(+25%));
   }
 
   @media screen and (--bp-desktop) {
@@ -53,7 +53,7 @@
 
   &:focus {
     background-color: var(--col-white);
-    border-color: var(--deprecated-col-borderblue);
+    border-color: var(--col-blue-mid-2);
     color: var(--col-black-dark);
     outline: 0;
 
@@ -93,7 +93,7 @@
   [data-required=true]::after {
     padding-left: .3125rem;
     content: '*';
-    color: var(--deprecated-col-cherry);
+    color: var(--col-pink-dark);
   }
 
   .form__subtext {
@@ -103,7 +103,7 @@
 }
 
 .uomcontent .form-error {
-  color: var(--deprecated-col-cherry);
+  color: var(--col-pink-dark);
 
   p {
     padding-bottom: 0;
@@ -145,7 +145,7 @@
     font-size: .875rem;
     padding: .3125rem 0;
     animation: flash .4s .1s 1 ease-in-out;
-    color: var(--deprecated-col-cherry);
+    color: var(--col-pink-dark);
     display: block;
     font-style: italic;
   }
@@ -278,11 +278,11 @@
         height: 3.75rem;
         line-height: 2.25rem;
         padding: .9375rem;
-        border-color: var(--deprecated-col-brighterblue);
+        border-color: var(--col-blue-mid-2);
 
         &:focus {
           background-color: var(--col-white);
-          color: var(--deprecated-col-brighterblue);
+          color: var(--col-blue-mid-2);
         }
       }
 
@@ -373,13 +373,13 @@
     }
 
     &:focus + label span::before {
-      border-color: var(--deprecated-col-brighterblue);
+      border-color: var(--col-blue-mid-2);
     }
   }
 
   input[type="checkbox"]:not(.unstyled) + label {
     &::after {
-      border: 3px solid var(--deprecated-col-brighterblue);
+      border: 3px solid var(--col-blue-mid-2);
       border-right: 0 none;
       border-top: 0 none;
       height: 5px;
@@ -394,7 +394,7 @@
 
   input[type="radio"]:not(.unstyled) + label {
     &::after {
-      background-color: var(--deprecated-col-brighterblue);
+      background-color: var(--col-blue-mid-2);
       border-radius: 50%;
       height: 12px;
       width: 12px;
@@ -478,10 +478,10 @@
 @keyframes flash {
   0%,
   100% {
-    color: color(var(--deprecated-col-cherry) lightness(+25%));
+    color: color(var(--col-pink-dark) lightness(+25%));
   }
 
   66% {
-    color: color(var(--deprecated-col-cherry) lightness(+60%));
+    color: color(var(--col-pink-dark) lightness(+60%));
   }
 }

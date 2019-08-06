@@ -2,7 +2,7 @@
 
   .profile-header {
     padding: 3rem 1rem;
-    background-color: var(--deprecated-col-paleblue);
+    background-color: var(--col-unsanctioned-blue-light-1);
     color: inherit;
 
     &__summary,
@@ -50,7 +50,7 @@
 
     &__info {
       padding-top: 1.5rem;
-      border-top: 1px solid var(--deprecated-col-lightestblue);
+      border-top: 1px solid var(--col-blue-mid-1);
 
       a {
         text-decoration: none;

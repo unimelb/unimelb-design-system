@@ -79,7 +79,7 @@
   h1.highlight {
     font-size: 4.6875rem;
     line-height: 5.25rem;
-    color: var(--deprecated-col-brighterblue);
+    color: var(--col-blue-mid-2);
     font-weight: var(--deprecated-fw--thin);
     letter-spacing: -5px;
     text-align: center;

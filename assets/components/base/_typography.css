@@ -452,7 +452,7 @@
           top: .375rem;
           width: .625rem;
           background: transparent;
-          border: 3px solid var(--deprecated-col-green);
+          border: 3px solid var(--col-emerald-mid-2);
           border-right: 0 none;
           border-top: 0 none;
           content: '';
@@ -523,7 +523,7 @@
 
   hr {
     border: 0;
-    border-bottom: 1px solid var(--deprecated-col-lightestblue);
+    border-bottom: 1px solid var(--col-blue-light);
     clear: both;
     line-height: 0;
     margin: 0;
@@ -535,12 +535,12 @@
   }
 
   a {
-    color: var(--deprecated-col-brighterblue);
+    color: var(--col-blue-mid-2);
     text-decoration: underline;
 
     &:hover,
     &:focus {
-      color: color(var(--deprecated-col-brighterblue) lightness(-15%));
+      color: color(var(--col-blue-mid-2) lightness(-15%));
       text-decoration: none;
     }
 

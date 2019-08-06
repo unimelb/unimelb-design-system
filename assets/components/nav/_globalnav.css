@@ -2,7 +2,7 @@
   @mixin normalise;
   @mixin injection-wrapper;
   padding: 0 3% 1.875rem;
-  background-color: var(--deprecated-col-navy);
+  background-color: var(--col-navy-main);
   font-family: var(--ff-sans);
   height: 100%;
   margin: 0;
@@ -33,7 +33,7 @@
   a {
     padding-top: .5rem;
     padding-bottom: .5rem;
-    color: var(--deprecated-col-lightblue);
+    color: var(--col-navy-mid-1);
     color: color(var(--col-white) alpha(60%));
     display: block;
     font-weight: var(--deprecated-fw--light);
@@ -64,8 +64,8 @@
     margin-bottom: .5rem;
     padding-bottom: 0;
     padding-top: 0;
-    border-bottom: 1px solid var(--deprecated-col-blue);
-    color: var(--deprecated-col-lightblue);
+    border-bottom: 1px solid var(--col-navy-main);
+    color: var(--col-navy-mid-1);
     color: color(var(--col-white) alpha(60%));
     line-height: 1.2;
     padding-right: 3%;
@@ -114,7 +114,7 @@
 
     fieldset {
       input[type="search"] {
-        background-color: var(--deprecated-col-lightergray);
+        background-color: var(--col-black-light);
 
         &:focus {
           background-color: var(--col-white);
@@ -219,7 +219,7 @@
     padding-left: .25rem;
     padding-top: 1rem;
     height: 3.75rem;
-    border-bottom: 1px solid var(--deprecated-col-blue);
+    border-bottom: 1px solid var(--col-navy-main);
     color: color(var(--col-white) alpha(40%));
     display: block;
     text-decoration: none;

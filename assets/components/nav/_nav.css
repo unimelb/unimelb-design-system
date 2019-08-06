@@ -66,7 +66,7 @@ body {
     @media screen and (--bp-desktop) {
       &:hover,
       &:focus {
-        background-color: var(--deprecated-col-brighterblue);
+        background-color: var(--col-blue-mid-2);
         text-decoration: none;
         transform: scale(1.2);
       }
@@ -90,8 +90,8 @@ body {
   }
 
   @media screen and (--bp-desktop) {
-    border-bottom: 1px solid var(--deprecated-col-blue);
-    border-top: 1px solid var(--deprecated-col-blue);
+    border-bottom: 1px solid var(--col-navy-main);
+    border-top: 1px solid var(--col-navy-main);
 
     li {
       float: left;
@@ -117,7 +117,7 @@ body {
 
 .uomcontent .sitemap-trigger {
   width: 3.125rem;
-  background-color: var(--deprecated-col-navy);
+  background-color: var(--col-navy-main);
   box-shadow: 3px 0 6px color(var(--col-black-dark) alpha(40%)) inset;
   color: color(var(--col-white) alpha(50%));
   cursor: pointer;

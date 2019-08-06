@@ -7,7 +7,7 @@
   width: 100%;
 
   nav {
-    border-bottom: 1px solid var(--deprecated-col-lightergray);
+    border-bottom: 1px solid var(--col-black-light);
 
     @media screen and (--bp-tablet) {
       text-align: left;
@@ -29,12 +29,12 @@
 
       &:hover,
       &:focus {
-        color: var(--deprecated-col-brighterblue);
+        color: var(--col-blue-mid-2);
       }
 
       &[data-current] {
-        border-bottom: 2px solid var(--deprecated-col-brighterblue);
-        color: var(--deprecated-col-brighterblue);
+        border-bottom: 2px solid var(--col-blue-mid-2);
+        color: var(--col-blue-mid-2);
       }
     }
   }
@@ -44,7 +44,7 @@
     padding-bottom: 0;
     padding-left: 1.5625rem;
     padding-right: 1.5625rem;
-    border-bottom: 1px solid var(--deprecated-col-lightergray);
+    border-bottom: 1px solid var(--col-black-light);
     margin: 0;
 
     p {
@@ -369,7 +369,7 @@
 
     &[aria-selected="true"] {
       background-color: var(--col-white);
-      border-color: var(--deprecated-col-brighterblue);
+      border-color: var(--col-blue-mid-2);
     }
 
     &:hover {

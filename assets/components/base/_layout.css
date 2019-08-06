@@ -193,7 +193,7 @@ body {
       }
 
       &:hover {
-        background-color: var(--deprecated-col-brighterblue);
+        background-color: var(--col-blue-mid-2);
         transition: all 0.2s linear;
         transform: scale(1.1);
       }
@@ -201,7 +201,7 @@ body {
 
     &.alt {
       padding: 1.875rem 0;
-      background-color: var(--deprecated-col-paleblue);
+      background-color: var(--col-unsanctioned-blue-light-1);
       box-shadow: 0 6px 6px 4px color(var(--col-black-dark) alpha(30%));
       color: var(--col-black-dark);
 
@@ -223,8 +223,8 @@ body {
     }
 
     &.contrib {
-      background-color: var(--deprecated-col-paleyellow);
-      border: 1px solid color(var(--deprecated-col-paleyellow) lightness(-10%));
+      background-color: var(--col-yellow-light);
+      border: 1px solid color(var(--col-yellow-light) lightness(-10%));
 
       p {
         padding-top: 0;
@@ -311,7 +311,7 @@ body {
     }
 
     img {
-      border: 1px solid var(--deprecated-col-lightergray);
+      border: 1px solid var(--col-black-light);
       display: inline;
       margin-right: 10px;
       vertical-align: top;
@@ -332,7 +332,7 @@ body {
       width: 200px;
 
       &:hover {
-        background-color: color(var(--deprecated-col-paleyellow) alpha(80%));
+        background-color: color(var(--col-yellow-light) alpha(80%));
         color: var(--col-black-dark);
       }
 
@@ -395,8 +395,8 @@ body {
 
   .layout-sidebar {
     /* Fine line to separate any content on white above and below */
-    border-bottom: 2px solid var(--deprecated-col-paleblue);
-    border-top: 2px solid var(--deprecated-col-paleblue);
+    border-bottom: 2px solid var(--col-unsanctioned-blue-light-1);
+    border-top: 2px solid var(--col-unsanctioned-blue-light-1);
 
     &__main,
     &__side {
@@ -405,7 +405,7 @@ body {
 
     &__side {
       font-size: .875rem;
-      background-color: var(--deprecated-col-paleblue);
+      background-color: var(--col-unsanctioned-blue-light-1);
       color: var(--col-navy-main);
     }
 
@@ -458,7 +458,7 @@ body {
   }
 
   .alt {
-    background-color: var(--deprecated-col-paleblue);
+    background-color: var(--col-unsanctioned-blue-light-1);
 
     & + .spacer {
       margin-top: 0;
@@ -469,7 +469,7 @@ body {
   .margin-rule {
     .floating {
       padding: .9375rem .9375rem 1.875rem;
-      background-color: var(--deprecated-col-lightgray);
+      background-color: var(--col-black-light);
 
       h2,
       p {
@@ -522,7 +522,7 @@ body {
     }
 
     &.alt::before {
-      background-color: var(--deprecated-col-paleblue);
+      background-color: var(--col-unsanctioned-blue-light-1);
     }
   }
 
@@ -536,7 +536,7 @@ body {
     }
 
     &.alt::after {
-      background-color: var(--deprecated-col-paleblue);
+      background-color: var(--col-unsanctioned-blue-light-1);
     }
 
     & + * {
@@ -581,25 +581,25 @@ body {
 /* Uninjected styles */
 .uomcontent .page-local-history {
   padding: .9375rem 1.875rem;
-  color: var(--deprecated-col-midblue);
+  color: var(--col-blue-mid-2);
   display: block;
 
   a {
-    color: var(--deprecated-col-lightestblue);
+    color: var(--col-blue-light);
 
     &:hover,
     &:focus {
       color: var(--col-white);
     }
     &:active {
-      color: var(--deprecated-col-lightestblue);
+      color: var(--col-blue-light);
     }
   }
 }
 
 .uomcontent footer.cta {
   padding-top: 1.875rem;
-  background-color: var(--deprecated-col-blue);
+  background-color: var(--col-navy-main);
   color: var(--col-white);
 
   .overview {

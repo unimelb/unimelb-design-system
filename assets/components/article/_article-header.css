@@ -58,7 +58,7 @@
         &.author {
           padding-bottom: 3rem;
           max-width: var(--w-sml);
-          border-bottom: 1px solid var(--deprecated-col-lightergray);
+          border-bottom: 1px solid var(--col-black-light);
 
           &::before {
             border-color: var(--col-black-dark);

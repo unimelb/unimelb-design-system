@@ -3,7 +3,7 @@
     font-size: 1.75rem;
     margin-bottom: 1.875rem;
     padding-bottom: 1.875rem;
-    color: var(--deprecated-col-brighterblue);
+    color: var(--col-blue-mid-2);
     display: block;
     font-family: var(--ff-serif);
     font-style: normal;
@@ -30,7 +30,7 @@
     }
 
     cite {
-      color: var(--deprecated-col-brighterblue);
+      color: var(--col-blue-mid-2);
       display: block;
       float: right;
       font-family: var(--ff-sans);

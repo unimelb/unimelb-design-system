@@ -16,7 +16,7 @@
 
     &__message {
       padding: 1.25rem 3.125rem 1.25rem .9375rem;
-      background-color: var(--deprecated-col-brighterblue);
+      background-color: var(--col-blue-mid-2);
       color: var(--col-white);
       display: block;
       text-align: left;
@@ -31,7 +31,7 @@
         font-size: .8125rem;
         line-height: 1.5rem;
         padding-bottom: .1875rem;
-        color: var(--deprecated-col-lightestblue);
+        color: var(--col-blue-light);
         font-weight: normal;
         letter-spacing: normal;
         margin: 0;
@@ -85,7 +85,7 @@
 
       &:hover {
         background-color: var(--col-white);
-        color: var(--deprecated-col-brighterblue);
+        color: var(--col-blue-mid-2);
       }
 
       & > [data-icon="close"] {

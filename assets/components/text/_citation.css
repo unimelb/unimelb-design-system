@@ -22,8 +22,8 @@
     padding: .9375rem;
     margin-top: .25rem;
     margin-bottom: .75rem;
-    background-color: var(--deprecated-col-paleblue);
-    border: 1px solid color(var(--deprecated-col-paleblue) lightness(-7%));
+    background-color: var(--col-unsanctioned-blue-light-1);
+    border: 1px solid color(var(--col-unsanctioned-blue-light-1) lightness(-7%));
     font-family: var(--ff-fixed);
   }
 

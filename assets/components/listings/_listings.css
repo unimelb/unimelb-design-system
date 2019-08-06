@@ -19,7 +19,7 @@
   li {
     padding-top: .75rem;
     padding-bottom: .75rem;
-    border-top: 1px solid color(var(--deprecated-col-lightgray) lightness(-5%));
+    border-top: 1px solid var(--col-black-light);
     list-style-type: none;
     margin-bottom: 0;
     margin-left: auto;

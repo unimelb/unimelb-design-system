@@ -125,7 +125,7 @@ body.jumpnav-active {
         text-decoration: underline;
 
         &:active {
-          color: color(var(--deprecated-col-cherry) lightness(-15%));
+          color: color(var(--col-pink-dark) lightness(-15%));
         }
       }
 
@@ -158,7 +158,7 @@ body.jumpnav-active {
     }
 
     .uomcontent [role="main"] {
-      border-left: 1px solid var(--deprecated-col-lightestblue);
+      border-left: 1px solid var(--col-blue-light);
       margin-left: 300px;
       margin-top: -10px;
       padding-top: 10px;

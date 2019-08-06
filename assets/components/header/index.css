@@ -13,8 +13,8 @@
 
   &.invalid {
     background-color: var(--col-white);
-    border-color: color(var(--deprecated-col-cherry) lightness(+25%));
-    color: color(var(--deprecated-col-cherry) lightness(+25%));
+    border-color: color(var(--col-pink-dark) lightness(+25%));
+    color: color(var(--col-pink-dark) lightness(+25%));
   }
 
   @media screen and (--bp-desktop) {
@@ -165,7 +165,7 @@
 
     &:hover,
     &:focus {
-      color: var(--deprecated-col-midblue);
+      color: var(--col-blue-mid-2);
     }
 
     &:hover {
@@ -276,7 +276,7 @@
 
     @-moz-document url-prefix() {
       margin-top: .625rem;
-      border: 1px solid var(--deprecated-col-brighterblue);
+      border: 1px solid var(--col-blue-mid-2);
       border-radius: 3px;
       overflow: hidden;
 
@@ -357,7 +357,7 @@
     }
 
     a {
-      color: var(--deprecated-col-lightestblue);
+      color: var(--col-blue-light);
 
       &:hover,
       &:focus {
@@ -369,7 +369,7 @@
       }
 
       &:active {
-        color: var(--deprecated-col-lightestblue);
+        color: var(--col-blue-light);
       }
 
       span {
@@ -621,7 +621,7 @@
       padding: 0 .625rem;
       width: 2.5rem;
       box-sizing: content-box;
-      color: var(--deprecated-col-navy);
+      color: var(--col-navy-main);
       cursor: pointer;
       display: table-cell;
       font-weight: var(--deprecated-fw--regular);
@@ -824,7 +824,7 @@
     }
 
     .page-header-tools a.page-header-icon {
-      color: var(--deprecated-col-navy);
+      color: var(--col-navy-main);
     }
   }
 

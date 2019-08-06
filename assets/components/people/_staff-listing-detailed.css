@@ -36,7 +36,7 @@
     .frame {
       max-width: 12.5rem;
       margin-bottom: 1.5rem;
-      background-color: var(--deprecated-col-lightestblue);
+      background-color: var(--col-blue-light);
       border-radius: 50%;
       line-height: 0;
       margin-left: auto;

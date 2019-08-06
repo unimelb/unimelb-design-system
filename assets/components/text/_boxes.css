@@ -5,7 +5,7 @@
   max-width: var(--w-sml);
   padding-left: 1.5625rem;
   padding-right: 1.5625rem;
-  background-color: color(var(--deprecated-col-brighterblue) lightness(+54%));
+  background-color: color(var(--col-blue-mid-2) lightness(+54%));
   margin: 0 auto;
 
   h1 {
@@ -69,7 +69,7 @@
 
   .emergency-box {
     @mixin boxes;
-    color: var(--deprecated-col-cherry);
+    color: var(--col-pink-dark);
 
     dd {
       font-size: 1.5rem;
@@ -78,7 +78,7 @@
     }
 
     a {
-      color: var(--deprecated-col-cherry);
+      color: var(--col-pink-dark);
     }
 
     @media screen and (--bp-desktop) {
