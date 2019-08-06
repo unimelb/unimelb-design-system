@@ -76,6 +76,10 @@
       background-color: var(--col-black-dark);
     }
 
+    &.darker {
+      background-color: var(--col-tertiary-navy);
+    }
+
     &.solid-paleblue {
       background-color: var(--col-navy-light);
       color: var(--col-black-dark);

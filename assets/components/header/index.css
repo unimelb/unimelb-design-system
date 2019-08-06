@@ -569,11 +569,9 @@
         .inline-button {
           @mixin inlinebutton;
           border-radius: 0 3px 3px 0;
-          font-size: .8125rem;
           height: 2.5rem;
           margin: .1875rem 0 0;
           padding: 0 .9375rem;
-          letter-spacing: 1px;
 
           span.small {
             color: inherit;
