@@ -52,7 +52,7 @@
     background-color: var(--col-navy-main);
     &:hover,
     &:focus {
-      background-color: var(--col-black-dark);
+      background-color: var(--col-tertiary-navy);
     }
   }
 
@@ -124,7 +124,7 @@
 
     &:not([disabled]):hover,
     &:not([disabled]):focus {
-      background-color: var(--col-black-dark);
+      background-color: var(--col-tertiary-navy);
     }
   }
 
@@ -248,6 +248,11 @@
 .uomcontent input[type="button"] {
   @mixin raisedbutton;
   width: auto;
+  background-color: var(--col-navy-main);
+  &:hover,
+  &:focus {
+    background-color: var(--col-tertiary-navy);
+  }
 }
 
 .uomcontent {
