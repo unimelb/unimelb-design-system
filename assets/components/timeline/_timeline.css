@@ -62,16 +62,17 @@
 
       /* Dot */
       &::before {
-        height: 13px; /* odd number for dot to be perfectly centred on the 1px line */
-        left: -7px; /* half of width, rounded up */
-        width: 13px;
+        height: 11px; /* odd number for dot to be perfectly centred on the 1px line */
+        left: -6px; /* half of width, rounded up */
+        width: 11px;
         background-color: var(--col-blue-light);
-        border-radius: 50%;
+        /* border-radius: 50%; */
         content: '';
         display: block;
         position: absolute;
         top: 5px;
         z-index: 2;
+        transform: rotate(45deg);
       }
 
       span,
