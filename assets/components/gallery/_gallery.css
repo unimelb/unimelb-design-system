@@ -41,22 +41,19 @@
         position: absolute;
         right: 0;
         top: 0;
-        transition: transform 0.2s ease-in-out;
         z-index: -1;
       }
 
-      /* scale image and show icon + gradient */
+      /* scale image and show icon + background */
       &:hover {
-        &::before { transform: scale(1.1); }
         .image-gallery__icon { opacity: 1; }
       }
     }
   }
 
-  /* zoom icon and purple gradient overlay shown on hover */
+  /* zoom icon and background overlay shown on hover */
   &__icon {
-    background-color: color(var(--col-black-dark) alpha(60%));
-    background-image: linear-gradient(to right bottom, rgba(0, 150, 255, .3) 0%, rgba(255, 0, 126, .3) 100%);
+    background-color: color(var(--col-navy-main) alpha(65%));
     bottom: 0;
     cursor: zoom-in;
     display: block;
@@ -65,7 +62,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    transition: opacity 0.3s ease-in-out 0.1s;
+    transition: opacity 200ms ease-in-out;
 
     /* centre icon */
     & > svg {
