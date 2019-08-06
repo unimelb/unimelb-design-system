@@ -182,7 +182,7 @@
   }
 
   tbody.accordion__visible tr.accordion__title {
-    font-weight: bold;
+    font-weight: var(--fw-bold);
   }
 
   tbody.accordion__visible tr.accordion__hidden {
@@ -349,7 +349,6 @@
     .accordion__close::after {
       content: '\00d7';
       font-size: 60px;
-      font-weight: 100;
       line-height: 1;
     }
 

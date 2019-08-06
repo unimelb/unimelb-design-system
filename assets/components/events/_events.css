@@ -341,7 +341,7 @@
   .ribbon {
     display: inline-block;
     font-size: .875em;
-    font-weight: bold;
+    font-weight: var(--fw-bold);
     line-height: 2;
     padding: 0 .625em;
 

@@ -95,7 +95,7 @@
         border-radius: 4px;
         box-sizing: border-box;
         display: block;
-        font-weight: bold;
+        font-weight: var(--fw-bold);
         letter-spacing: .5px;
         text-decoration: none;
         transition: color .15s, background-color .15s;

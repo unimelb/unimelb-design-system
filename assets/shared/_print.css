@@ -2,7 +2,7 @@
 @define-mixin defaults {
   background-color: var(--col-white);
   font-size: 11pt;
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   line-height: 1.2;
 }
 
