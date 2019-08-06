@@ -98,8 +98,8 @@
     }
 
     &--green > a {
-      background-color: var(--col-emerald-light);
-      color: var(--col-emerald-dark);
+      background-color: var(--col-green-light);
+      color: var(--col-green-dark);
     }
     &--bronze > a {
       background-color: var(--col-pink-light);

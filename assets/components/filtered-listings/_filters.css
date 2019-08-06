@@ -106,14 +106,14 @@
       }
 
       &[data-color="green"] + label {
-        color: var(--col-emerald-light);
+        color: var(--col-green-light);
 
         span::before {
-          border-color: var(--col-emerald-mid-2);
+          border-color: var(--col-green-dark);
         }
 
         &::after {
-          border-color: var(--col-emerald-mid-2);
+          border-color: var(--col-green-dark);
         }
       }
 
