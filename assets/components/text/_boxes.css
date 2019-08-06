@@ -25,12 +25,9 @@
   }
 
   dt {
-    font-size: .9375rem;
-    line-height: calc(24/16rem);
-    color: var(--col-black-dark);
+    font-size: calc(16/16rem);
     display: block;
     float: none;
-    font-weight: var(--fw-light);
     width: auto;
   }
 
