@@ -1,23 +1,22 @@
 .uomcontent {
+  form:not(.unstyled-controls) fieldset .checklist,
   .checklist {
     margin-left: 0;
     padding-left: 0;
     padding-right: 0;
 
     li {
-      padding: .9375rem 0 calc(30/16rem);
+      padding: calc(15/16rem) 0 calc(15/16rem);
       border-top: 1px solid var(--col-black-light);
       line-height: 1.5;
       list-style-type: none;
-      margin-left: 0;
 
       &:first-child {
         border-top: 0 none;
       }
 
       &.on span {
-        color: var(--col-emerald-mid-2);
-        text-decoration: line-through;
+        color: var(--col-emerald-dark);
       }
 
       input[type="checkbox"] + label {
@@ -25,11 +24,11 @@
         margin-bottom: 0;
 
         &::after {
-          top: 7px;
+          top: calc(8/16rem);
         }
 
         > span::before {
-          top: 3px;
+          top: calc(4/16rem);
         }
       }
     }
