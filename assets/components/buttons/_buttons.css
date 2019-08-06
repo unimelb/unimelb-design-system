@@ -4,7 +4,6 @@
   padding: 0.9em 1.8em;
   background-color: var(--col-blue-mid-2);
   border: 0;
-  border-bottom: 5px solid var(--col-blue-dark);
   color: var(--col-white);
   cursor: pointer;
   display: inline-block;
@@ -25,9 +24,8 @@
 
   &:hover,
   &:focus {
-    border-bottom-width: 1px;
     color: var(--col-white);
-    margin-top: 24px;
+    background-color: var(--col-blue-dark);
   }
 
   &:active {
@@ -35,24 +33,36 @@
   }
 
   &.warning {
-    background-color: var(--col-pink-dark);
-    border-bottom-color: var(--col-pink-dark);
+    background-color: var(--col-orange-dark);
+    &:hover,
+    &:focus {
+      background-color: var(--col-pink-dark);
+    }
   }
 
   &.cta {
     background-color: var(--col-emerald-mid-2);
-    border-bottom-color: var(--col-emerald-mid-2);
+    &:hover,
+    &:focus {
+      background-color: var(--col-emerald-dark);
+    }
   }
 
   &.brand {
     background-color: var(--col-navy-main);
-    border-bottom-color: var(--col-navy-main);
+    &:hover,
+    &:focus {
+      background-color: var(--col-black-dark);
+    }
   }
 
   &.soft {
     background-color: var(--col-black-light);
-    border-bottom-color: var(--col-black-light);
     color: var(--col-black-dark);
+    &:hover,
+    &:focus {
+      background-color: var(--col-black-mid-1);
+    }
   }
 
   @media screen and (--bp-desktop) {
@@ -90,17 +100,32 @@
 
   &.warning:not([disabled]):hover,
   &.warning:not([disabled]):focus {
-    background-color: var(--col-pink-dark);
+    background-color: var(--col-orange-dark);
+
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
+      background-color: var(--col-pink-dark);
+    }
   }
 
   &.cta:not([disabled]):hover,
   &.cta:not([disabled]):focus {
     background-color: var(--col-emerald-mid-2);
+
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
+      background-color: var(--col-emerald-dark);
+    }
   }
 
   &.brand:not([disabled]):hover,
   &.brand:not([disabled]):focus {
     background-color: var(--col-navy-main);
+
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
+      background-color: var(--col-black-dark);
+    }
   }
 
   &.soft {
@@ -109,7 +134,7 @@
 
     &:not([disabled]):hover,
     &:not([disabled]):focus {
-      background-color: var(--col-black-light);
+      background-color: var(--col-black-mid-1);
     }
   }
 
@@ -165,21 +190,25 @@
   font-size: calc(16/16rem);
   margin: calc(20/16rem) 0;
   padding: 1em 1.5em;
-  border-color: var(--col-black-dark);
+  border-color: color(var(--col-navy-main) alpha(30%));
   border-style: solid;
-  color: var(--col-black-dark);
+  color: var(--col-navy-main);
   cursor: pointer;
   display: inline-block;
   font-style: normal;
   font-weight: var(--fw-semibold);
-  outline-color: var(--col-black-dark);
+  outline-color: var(--col-navy-main);
   text-align: center;
   text-decoration: none;
+  transition-property: border-color;
+  transition-timing-function: ease-in-out;
+  transition-duration: 150ms;
 
   &:hover,
   &:focus {
+    border-color: var(--col-navy-main);
+    color: var(--col-navy-main);
     text-decoration: underline;
-    color: var(--col-black-dark);
   }
 
   &:active {
@@ -251,12 +280,13 @@
   .button-hero-inverse {
     @mixin outlinebutton;
     @mixin arrow-right;
-    border-color: rgba(255, 255, 255, 0.7);
+    border-color: color(var(--col-white) alpha(30%));
     color: var(--col-white);
     outline-color: currentColor;
     &:hover,
     &:focus {
       color: var(--col-white);
+      border-color: var(--col-white);
     }
   }
 
