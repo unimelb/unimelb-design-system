@@ -3,7 +3,6 @@
     padding-top: 3rem;
     padding-bottom: 3rem;
     background-color: var(--col-navy-light);
-    box-shadow: 0 -1px 9px color(var(--col-navy-mid-1) alpha(30%)) inset;
 
     .errors {
       font-size: 1.375rem;
@@ -39,8 +38,6 @@
 
     .enquiry__subline {
       @mixin wrapper;
-      font-size: 1rem;
-      line-height: calc(24/16rem);
       padding-top: .75rem;
       max-width: var(--w-sml);
       border-top: 1px solid color(var(--col-navy-mid-1) alpha(30%));
@@ -88,21 +85,12 @@
             font-weight: var(--fw-regular);
           }
         }
-
-        input[type="checkbox"],
-        input[type="radio"] {
-          & + label {
-            width: 100%;
-            font-weight: var(--fw-light);
-          }
-        }
       }
     }
 
     &--dark {
       background-color: var(--col-navy-main);
       color: var(--col-white);
-      box-shadow: none;
 
       .enquiry__cta a {
         outline-color: currentColor;

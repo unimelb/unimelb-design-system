@@ -94,7 +94,7 @@
 
   .form__subtext {
     padding-bottom: .75rem;
-    font-size: calc(16/16rem);
+    line-height: 1.4;
   }
 }
 
