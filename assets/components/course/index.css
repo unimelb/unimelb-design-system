@@ -24,7 +24,7 @@
 
   thead th {
     @mixin subtitle;
-    font-size: .875rem;
+    font-size: calc(16/16rem);
   }
 
   td {

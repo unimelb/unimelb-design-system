@@ -122,6 +122,14 @@
           margin-left: 0;
         }
       }
+
+      a {
+        color: var(--col-navy-main);
+        &:hover,
+        &:focus {
+          color: var(--col-tertiary-navy);
+        }
+      }
     }
   }
 

@@ -26,20 +26,21 @@
 
   .inner {
     padding-top: calc(24/16rem);
-    padding-bottom: calc(24/16rem);
-    padding-left: calc(20/16rem);
-    padding-right: calc(20/16rem);
+    padding-bottom: calc(30/16rem);
+    padding-left: calc(30/16rem);
+    padding-right: calc(30/16rem);
 
     background-color: var(--col-navy-main);
     background-color: color(var(--col-navy-main) alpha(70%));
     color: var(--col-white);
     max-width: 100%;
+    transition-property: background-color;
+    transition-duration: 200ms;
   }
 
   h1 {
     max-width: var(--w-mid);
-    font-weight: var(--fw-light);
-    margin: 0;
+    margin: 0 0 calc(15/16rem);
     padding: 0;
   }
 
@@ -110,8 +111,8 @@
     padding-bottom: 0;
 
     &.topic {
-      font-size: .875rem;
-      line-height: calc(24/16rem);
+      font-size: calc(16/16rem);
+      margin-bottom: calc(5/16rem);
     }
   }
 
@@ -164,12 +165,10 @@
       font-size: calc(20/16rem);
       line-height: calc(24/16rem);
       padding-bottom: .75rem;
-      font-weight: var(--fw-regular);
     }
 
     p {
-      font-size: .875rem;
-      line-height: calc(24/16rem);
+      font-size: calc(16/16rem);
 
       &.date {
         font-size: .8125rem;
