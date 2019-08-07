@@ -20,7 +20,6 @@
     }
 
     a {
-      font-size: .8125rem;
       line-height: calc(24/16rem);
       border-radius: 4px;
       height: 4.375rem;
@@ -31,36 +30,35 @@
       display: block;
       text-align: center;
       text-decoration: none;
-      text-transform: uppercase;
       width: 100%;
 
       /* These should be abstracted out to variables */
       &.c1 {
-        background-color: #9c27b0;
+        background-color: var(--col-unsanctioned-black-mid-3);
       }
 
       &.c2 {
-        background-color: #673ab7;
+        background-color: var(--col-emerald-dark);
       }
 
       &.c3 {
-        background-color: #2196f3;
+        background-color: var(--col-orange-dark);
       }
 
       &.c4 {
-        background-color: #009688;
+        background-color: var(--col-pink-dark);
       }
 
       &.c5 {
-        background-color: #009688;
+        background-color: var(--col-purple-dark);
       }
 
       &.c6 {
-        background-color: #ff9800;
+        background-color: var(--col-teal-dark);
       }
 
       &.c7 {
-        background-color: #607d8b;
+        background-color: var(--col-yellow-mid-2);
       }
 
       &:hover {

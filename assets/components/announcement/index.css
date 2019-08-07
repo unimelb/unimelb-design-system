@@ -28,15 +28,15 @@
       }
 
       h2 {
-        font-size: .8125rem;
+        font-size: calc(16/16rem);
         line-height: calc(24/16rem);
         padding-bottom: .1875rem;
         color: var(--col-blue-light);
-        font-weight: var(--fw-regular);
+        font-family: var(--ff-sans);
+        font-weight: var(--fw-semibold);
         letter-spacing: normal;
         margin: 0;
         padding-top: 0;
-        text-transform: uppercase;
       }
 
       p {
@@ -44,13 +44,6 @@
         line-height: calc(24/16rem);
         margin: 0;
         padding: 0;
-
-        &.with-arrow::after {
-          font-size: calc(20/16rem);
-          padding-left: calc(10/16rem);
-          content: '\2192';
-          line-height: 0;
-        }
 
         strong {
           margin-right: calc(10/16rem);

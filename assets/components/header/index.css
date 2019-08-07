@@ -790,12 +790,11 @@
       background-color: transparent;
       border: 1px solid transparent;
       color: var(--col-white);
-      transition: background-color 0.3s, color 0.3s, transform 0.3s;
+      transition: background-color 0.3s, color 0.3s;
 
       &:hover, &:focus {
-        background-color: color(var(--col-white) alpha(70%));
+        background-color: color(var(--col-white) alpha(90%));
         color: var(--col-black-dark);
-        transform: scale(1.1);
       }
     }
 

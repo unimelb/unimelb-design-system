@@ -208,7 +208,7 @@
     background-color: color(var(--col-emerald-mid-2) alpha(50%));
   }
   &.filter-yellow header {
-    background-color: color(#fff000 alpha(50%));
+    background-color: color(var(--col-yellow-mid-2) alpha(50%));
   }
   &.filter-red header {
     background-color: color(var(--col-pink-dark) alpha(50%));
@@ -264,7 +264,6 @@
 
     [role="main"] .contrast-helper header {
       background-color: transparent;
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7f000000', endColorstr='#7f000000', GradientType=1);
     }
   }
 }

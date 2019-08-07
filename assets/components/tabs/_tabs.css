@@ -98,7 +98,7 @@
     & > .full-width {
       height: calc(74/16rem);
       background-color: transparent;
-      border-bottom: 1px solid #abbed5;
+      border-bottom: 1px solid var(--col-blue-mid-2);
       position: relative;
       text-align: center;
     }
@@ -118,8 +118,8 @@
       white-space: nowrap;
 
       a {
-        background-color: #f2f5f9;
-        border: 1px solid #abbed5;
+        background-color: var(--col-navy-light);
+        border: 1px solid var(--col-blue-mid-2);
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
         font-size: calc(16/16rem);

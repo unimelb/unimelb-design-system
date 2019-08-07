@@ -12,7 +12,7 @@
     color: inherit;
 
     &.em {
-      color: #0078A8;
+      color: var(--col-navy-main);
     }
   }
 }

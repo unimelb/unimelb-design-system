@@ -83,7 +83,3 @@ body.jumpnav-active .uomcontent .hero-listing {
     width: 100%;
   }
 }
-
-.ie9 .uomcontent .hero-listing .inner {
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000,endColorstr=#7f000000);
-}

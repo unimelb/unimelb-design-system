@@ -13,7 +13,7 @@
 
   body .uomcontent {
     @mixin defaults;
-    color: #000 !important;
+    color: var(--col-black-dark) !important;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto;
     max-width: 700px;
@@ -75,12 +75,12 @@
 
         a,
         span {
-          color: #aaa;
+          color: var(--col-black-dark);
           line-height: 1.6;
         }
 
         .page-local-history {
-          color: #aaa;
+          color: var(--col-black-dark);
           display: inline;
           line-height: 1;
           padding: 0;
@@ -182,7 +182,7 @@
 
       a[href^="http"]::after {
         content: " (" attr(href) ") ";
-        color: #aaa;
+        color: var(--col-black-dark);
         display: inline-block;
         font-size: 90%;
         padding-left: 5px;
@@ -227,7 +227,7 @@
       }
 
       select {
-        background-color: #f6f6f6;
+        background-color: var(--col-white);
         border-color: var(--col-black-dark);
         color: var(--col-black-dark);
         -webkit-appearance: menulist;

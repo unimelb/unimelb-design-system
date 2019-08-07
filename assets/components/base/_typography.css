@@ -609,7 +609,7 @@
   }
 
   .small {
-    font-size: .75rem;
+    font-size: calc(14/16rem);
     line-height: calc(24/16rem);
   }
 

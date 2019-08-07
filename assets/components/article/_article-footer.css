@@ -62,25 +62,22 @@
           border-radius: 3px;
           height: calc(30/16rem);
           width: calc(30/16rem);
-          background-color: #4099FF;
+          background-color: var(--col-navy-main);
           color: var(--col-white);
           display: block;
           overflow: hidden;
           vertical-align: top;
+
+          &:hover,
+          &:focus {
+            background-color: var(--col-tertiary-navy);
+          }
 
           svg {
             height: calc(30/16rem);
             width: calc(30/16rem);
             fill: currentColor;
           }
-        }
-
-        &.facebook a {
-          background-color: #3b5998;
-        }
-
-        &.linkedin a {
-          background-color: #0976b4;
         }
       }
     }

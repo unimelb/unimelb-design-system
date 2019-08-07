@@ -74,8 +74,8 @@
 
   li {
     font-size: calc(16/16rem);
-    color: #B9C2CA;
-    color: color(var(--col-white) alpha(60%));
+    color: var(--col-navy-mid-2);
+    color: color(var(--col-white) alpha(90%));
     line-height: 1.4;
     list-style-type: disc;
     margin-left: 0;

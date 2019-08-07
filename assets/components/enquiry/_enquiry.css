@@ -8,7 +8,7 @@
       font-size: 1.375rem;
       max-width: var(--w-sml);
       padding-top: calc(30/16rem);
-      background-color: #fad8dc;
+      background-color: var(--col-pink-light);
       margin: 0 auto;
 
       ul li {
