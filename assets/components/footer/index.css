@@ -44,10 +44,8 @@
     padding: 0;
 
     a {
-      font-size: .6875rem;
+      font-size: calc(16/16rem);
       line-height: 2.875rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
 
       @media screen and (--bp-desktop) {
         min-height: 7.0625rem;
@@ -71,14 +69,12 @@
       width: 100%;
 
       a {
-        font-size: calc(10/16rem);
+        font-size: calc(16/16rem);
         line-height: calc(24/16rem);
         padding: calc(20/16rem) .9375rem;
         color: var(--col-white);
         display: block;
-        letter-spacing: 2px;
         text-decoration: none;
-        text-transform: uppercase;
 
         &:hover {
           text-decoration: underline;
@@ -257,12 +253,11 @@
       display: inline-block;
       text-decoration: none;
       overflow: hidden;
-      transition: all 0.2s linear;
+      transition: background-color 0.2s linear;
 
       &:hover,
       &:focus {
         background-color: var(--col-blue-mid-2);
-        transform: scale(1.2);
       }
     }
 

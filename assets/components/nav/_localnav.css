@@ -44,16 +44,14 @@
   /* close and back buttons */
   /* HACK increase specificity to override `.button-ui`, which was part of the Buttons component until v6.0 */
   &__back-btn.localnav__back-btn {
-    font-size: .75rem;
+    font-size: calc(16/16rem);
     padding: calc(20/16rem);
     background-color: var(--col-navy-main);
     color: rgba(255, 255, 255, .7);
     display: block;
     font-weight: var(--fw-regular);
-    line-height: 1.96;
-    letter-spacing: .07em;
+    line-height: 1.3;
     text-align: left;
-    text-transform: uppercase;
     width: 100%;
 
     &::before {
@@ -109,7 +107,6 @@
     }
 
     a {
-      letter-spacing: .0625rem;
       color: inherit;
       display: block;
       outline-offset: -1px;
@@ -136,7 +133,6 @@
     }
 
     a {
-      font-size: .875rem;
       padding: calc(20/16rem);
 
       &:hover,
@@ -153,7 +149,7 @@
     color: rgba(255, 255, 255, .7);
 
     a {
-      font-size: .8125rem;
+      font-size: calc(14/16rem);
       padding: .25rem calc(20/16rem);
     }
   }
@@ -173,7 +169,7 @@
     &__panel { padding-right: 0; }
 
     &.active {
-      box-shadow: 1px 0 12px 3px rgba(0, 0, 0, .6);
+      box-shadow: -5px 0 0 0 rgba(0, 0, 0, .1);
       transform: translateX(var(--offset-localnav));
     }
   }
