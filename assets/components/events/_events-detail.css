@@ -33,6 +33,10 @@
         @media screen and (--bp-desktop) {
           display: block;
           text-align: right;
+          font-size: calc(18/16rem);
+          font-family: var(--ff-sans);
+          font-weight: var(--fw-regular);
+          line-height: 1;
 
           &:first-child {
             padding-bottom: calc(24/16rem);
@@ -42,6 +46,9 @@
           }
 
           strong {
+            font-family: var(--ff-serif);
+            font-weight: var(--fw-bold);
+            font-size: calc(28/16rem);
             padding: 0;
 
             &.date {
