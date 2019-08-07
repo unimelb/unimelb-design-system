@@ -167,11 +167,11 @@
     .tabbed-nav__inner {
       padding-bottom: .9375rem;
       position: relative;
-      z-index: 1;
+      z-index: var(--z-default);
     }
 
     .ps__scrollbar-x-rail {
-      z-index: 5;
+      z-index: calc(var(--z-default) + 2);
     }
 
     /* show scrollbar when focused */
@@ -191,7 +191,7 @@
       height: 100%;
       position: absolute;
       top: 0;
-      z-index: 2;
+      z-index: calc(var(--z-default) + 1);
 
       &[disabled] {
         opacity: .5;

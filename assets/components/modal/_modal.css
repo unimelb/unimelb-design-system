@@ -18,7 +18,7 @@
     text-align: left;
     top: 5%;
     visibility: hidden;
-    z-index: 1;
+    z-index: var(--z-modal);
     &:after {
       background-color: color(var(--col-black-dark) alpha(15%));
       content: "";
@@ -40,7 +40,7 @@
 
     &.on {
       visibility: visible;
-      z-index: 14;
+      z-index: var(--z-modal);
 
       iframe {
         display: block;

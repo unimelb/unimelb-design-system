@@ -13,7 +13,7 @@
   transform: translateX(0);
   transition: var(--tr-transform);
   width: 100%;
-  z-index: 17;
+  z-index: var(--z-overlay);
 
   &.active {
     overflow: auto;

@@ -113,7 +113,7 @@ body.jumpnav-active {
       padding: 15px 15px 30px;
       position: absolute;
       width: 240px;
-      z-index: 100;
+      z-index: var(--z-navigation);
       transition: margin-top .2s ease;
 
       li {

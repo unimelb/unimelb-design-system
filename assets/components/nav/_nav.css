@@ -5,7 +5,7 @@ body {
 .page-inner {
   min-height: 100%;
   position: relative;
-  z-index: 10;
+  z-index: var(--z-navigation);
 
   .floating {
     margin-top: calc(-115/16rem);
@@ -128,7 +128,7 @@ body {
   top: 0;
   transform: translateX(100%);
   transition: color .3s ease, var(--tr-transform);
-  z-index: 16;
+  z-index: calc(var(--z-navigation) + 6);
 
   &.active {
     transform: translateX(0);
@@ -154,7 +154,7 @@ body {
     text-transform: uppercase;
     top: 0;
     transform: rotate(90deg);
-    z-index: 11;
+    z-index: calc(var(--z-navigation) + 1);
 
     &::before {
       font-size: calc(24/16rem);

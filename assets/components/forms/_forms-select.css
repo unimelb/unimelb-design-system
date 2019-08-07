@@ -16,7 +16,7 @@
     right: calc(42/16rem);
     width: 1px;
     background-color: currentColor;
-    z-index: 1;
+    z-index: var(--z-default);
   }
 
   &:after {

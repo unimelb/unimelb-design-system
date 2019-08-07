@@ -365,7 +365,7 @@
       position: absolute;
       top: calc(1em * 2.25 / 2);
       right: calc(1em * 2.25 / 2);
-      z-index: 1; /* on top of embed, if present in `.upper` */
+      z-index: var(--z-default); /* on top of embed, if present in `.upper` */
       display: block;
       width: 100%;
       font-size: 1em;

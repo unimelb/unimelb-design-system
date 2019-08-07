@@ -12,7 +12,7 @@
   font-family: var(--ff-sans);
   color: var(--col-white);
   position: fixed;
-  z-index: 15;
+  z-index: calc(var(--z-navigation) + 5);
 
   &__panel {
     padding-right: var(--width-sitemap-trigger);
@@ -85,7 +85,7 @@
       float: right;
       font-weight: var(--fw-regular);
       line-height: .85;
-      z-index: 9;
+      z-index: calc(var(--z-navigation) - 1);
     }
   }
 

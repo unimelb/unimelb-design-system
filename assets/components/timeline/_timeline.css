@@ -15,7 +15,7 @@
       content: '';
       left: 28%;
       position: absolute;
-      z-index: 2;
+      z-index: var(--z-default);
     }
 
     &.full-width {
@@ -71,7 +71,7 @@
         display: block;
         position: absolute;
         top: 5px;
-        z-index: 2;
+        z-index: var(--z-default);
         transform: rotate(45deg);
       }
 

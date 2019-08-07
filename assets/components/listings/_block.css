@@ -342,7 +342,7 @@
 
 
     &:hover {
-      z-index: 100;
+      z-index: var(--z-navigation);
 
       p,
       strong {

@@ -9,7 +9,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 14;
+    z-index: calc(var(--z-navigation) + 4);
 
     &.on {
       display: block;

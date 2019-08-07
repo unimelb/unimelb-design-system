@@ -248,7 +248,6 @@
 
     &:hover, &:focus {
       background-color: var(--col-tertiary-navy);
-      z-index: 2;
 
       .button-small {
         background-color: transparent;
@@ -259,12 +258,6 @@
     &.featured {
       background-color: var(--col-purple-dark);
       color: var(--col-black-dark);
-      z-index: 1;
-
-      &:hover,
-      &:focus {
-        z-index: 1;
-      }
     }
   }
 

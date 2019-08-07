@@ -3,7 +3,7 @@
   content: "";
   width: 100%;
   position: absolute;
-  z-index: 1;
+  z-index: var(--z-default);
 }
 
 body {
@@ -22,7 +22,7 @@ body {
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 999;
+    z-index: calc(var(--z-modal) - 1);
   }
 }
 

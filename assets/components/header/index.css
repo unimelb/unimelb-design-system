@@ -50,7 +50,7 @@
   position: relative;
   top: 0;
   width: 100%;
-  z-index: 12;
+  z-index: calc(var(--z-navigation) + 2);
 
   /* Work-around for conflict with other `fixed` class, which sets the font to `var(--ff-fixed)` */
   &.fixed {
@@ -182,7 +182,7 @@
       top: 0;
       opacity: 1;
       transition: .2s opacity .3s;
-      z-index: 1;
+      z-index: var(--z-default);
 
       img {
         height: 100%;
@@ -450,7 +450,7 @@
   background-color: var(--col-white);
   display: block;
   opacity: .95;
-  z-index: 100;
+  z-index: var(--z-navigation);
 
   @media screen and (--bp-desktop) {
     margin-top: calc(115/16rem);
@@ -460,7 +460,7 @@
 .uomcontent.search-active {
   position: relative;
   width: 100%;
-  z-index: 101;
+  z-index: calc(var(--z-navigation) + 1);
 
   .page-header-tools {
     display: none;
@@ -500,7 +500,7 @@
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 16;
+  z-index: var(--z-navigation);
 
   &.active {
     display: block;
