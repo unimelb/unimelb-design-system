@@ -125,8 +125,6 @@
 
   .event,
   .exhibition {
-    background-color: var(--col-tertiary-navy);
-    color: var(--col-white);
 
     strong {
       margin-bottom: calc(24/16rem);
