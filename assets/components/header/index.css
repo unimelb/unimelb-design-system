@@ -76,8 +76,8 @@
 
       .page-header-logo {
         position: absolute;
-        transform: translateY(-100%);
-        transition: .2s transform;
+        opacity: 0;
+        transition: .2s opacity;
       }
 
       a,
@@ -180,8 +180,8 @@
       padding: .5rem;
       position: absolute;
       top: 0;
-      transform: translateY(0);
-      transition: .2s transform .3s;
+      opacity: 1;
+      transition: .2s opacity .3s;
       z-index: 1;
 
       img {
