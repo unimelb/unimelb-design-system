@@ -394,14 +394,11 @@ body {
     }
   }
 
-  .flash + .layout-sidebar {
-    border-top: none;
-  }
   .layout-sidebar {
     /* Fine line to separate any content on white above and below */
-    border-bottom: 2px solid var(--col-navy-light);
-    border-top: 2px solid var(--col-navy-light);
-
+    border-bottom: 1px solid var(--col-navy-light);
+    border-top: 1px solid var(--col-navy-light);
+    margin-top: -1px;
 
     &__main,
     &__side {
