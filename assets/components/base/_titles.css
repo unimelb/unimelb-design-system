@@ -45,7 +45,7 @@
   &::after {
     margin-top: calc(24/16rem);
     width: 5rem;
-    border-bottom: 2px solid var(--col-black-dark);
+    border-bottom: 1px solid var(--col-black-mid-1);
     content: '';
     display: block;
     margin-left: auto;

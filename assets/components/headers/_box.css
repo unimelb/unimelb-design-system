@@ -3,24 +3,23 @@
     .box {
       max-width: var(--w-sml);
       padding: 3.5rem calc(30/16rem);
-      background: color(var(--col-white) alpha(80%));
-      color: var(--col-black-dark);
+      background: color(var(--col-white) alpha(95%));
+      color: var(--col-navy-main);
       margin: 0 auto;
 
       h1 {
         @mixin title;
-        font-size: .9375rem;
         line-height: calc(24/16rem);
         margin-bottom: calc(24/16rem);
-        font-weight: var(--fw-semibold);
+        font-weight: var(--fw-bold);
         text-align: center;
       }
 
       p {
-        font-size: 1rem;
-        line-height: calc(24/16rem);
+        font-size: calc(18/16rem);
+        line-height: 1.5;
         padding-top: 0;
-        font-weight: var(--fw-light);
+        font-weight: var(--fw-regular);
       }
 
       @media screen and (--bp-tablet) {

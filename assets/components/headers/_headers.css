@@ -7,24 +7,7 @@
 
 @define-mixin banner {
   @mixin bannerbox;
-  min-height: 18.75rem;
-  height: auto;
-
-  @media screen and (--bp-height-smallest) {
-    min-height: 32.5rem;
-  }
-
-  @media screen and (--bp-height-small) {
-    min-height: 38.75rem;
-  }
-
-  @media screen and (--bp-height-medium) {
-    min-height: 45rem;
-  }
-
-  @media screen and (--bp-height-big) {
-    min-height: 50rem;
-  }
+  height: 70vh;
 
   @media screen and (--bp-desktop) {
     h1 {
@@ -132,6 +115,7 @@
       font-weight: var(--fw-bold);
       margin: 0 auto;
       text-align: left;
+      margin-top: calc(8/16rem);
 
       &.article {
         font-weight: var(--fw-semibold);
@@ -175,7 +159,7 @@
         margin-top: 0;
         margin-bottom: calc(24/16rem);
         width: 5rem;
-        border-top: 5px solid currentColor;
+        border-top: 1px solid currentColor;
         content: '';
         display: block;
         margin-left: auto;
@@ -195,8 +179,8 @@
     }
 
     @media screen and (--bp-desktop) {
-      padding-top: 3rem;
-      padding-bottom: 3rem;
+      padding-top: calc(48/16rem);
+      padding-bottom: calc(48/16rem);
       /* overflow: hidden; */
     }
   }

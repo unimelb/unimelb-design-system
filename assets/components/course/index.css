@@ -212,7 +212,6 @@
     line-height: calc(36/16rem);
     padding-top: 0;
     padding-bottom: calc(24/16rem);
-    font-weight: var(--fw-light);
   }
 
   p {
@@ -235,7 +234,8 @@
   }
 
   .left p {
-    font-size: calc(16/16rem);
+    font-size: calc(18/16rem);
+    font-weight: var(--fw-regular);
     margin: 0;
     padding: 0;
   }
@@ -274,7 +274,6 @@
       max-width: 2000px;
       padding: 0;
       text-align: left;
-      text-transform: uppercase;
     }
 
     p {

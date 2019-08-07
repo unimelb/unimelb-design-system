@@ -2,7 +2,7 @@
   header,
   & > header:first-child {
 
-  	.bottom-align {
+    .bottom-align {
       @mixin grad-bottom;
       margin-bottom: -1.5625rem;
       align-self: flex-end;
