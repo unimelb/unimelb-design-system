@@ -17,8 +17,7 @@
   }
 
   h1 {
-    padding-bottom: 0;
-
+    padding-bottom: calc(5/16rem);
     &.aligned-title {
       padding-top: 0;
       padding-bottom: 3rem;
@@ -43,6 +42,11 @@
       a {
         padding-bottom: calc(24/16rem);
         display: block;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+          text-decoration: underline
+        }
       }
 
     }

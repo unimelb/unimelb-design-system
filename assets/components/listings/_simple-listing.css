@@ -84,14 +84,14 @@
       /* underline headings */
       &__heading {
         margin-bottom: .5rem;
-        color: var(--col-blue-mid-2);
+        color: var(--col-navy-main);
         font-size: 1.25em;
-        text-decoration: underline;
       }
 
       &__link:hover {
         .simple-listing__heading {
-          text-decoration: none;
+          color: var(--col-secondary-navy);
+          text-decoration: underline;
         }
       }
     }
