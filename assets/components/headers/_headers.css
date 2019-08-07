@@ -168,7 +168,7 @@
     p.author {
       font-size: 1rem;
       line-height: calc(24/16rem);
-      max-width: 2calc(30/16rem);
+      max-width: calc(350/16rem);
       font-style: italic;
 
       &::before {

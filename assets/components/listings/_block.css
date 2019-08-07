@@ -533,7 +533,7 @@
     }
 
     &.instagram {
-      min-height: 2calc(30/16rem);
+      min-height: calc(350/16rem);
       background-position: center;
       background-size: cover;
       border-bottom-color: color(var(--col-navy-main) alpha(80%));
