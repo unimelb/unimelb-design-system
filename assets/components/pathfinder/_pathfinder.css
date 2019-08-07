@@ -18,9 +18,10 @@
       outline-color: var(--col-white);
 
       &:hover, &:focus {
-        background-color: var(--col-white);
+        background-color: var(--col-navy-light);
         .button-small {
           color: var(--col-navy-main);
+          border-color: var(--col-navy-main);
         }
       }
 
@@ -36,8 +37,14 @@
       }
 
       .button-small {
-        border-color: color(var(--col-navy-main) alpha(70%));
+        border-color: color(var(--col-navy-main) alpha(30%));
         color: var(--col-navy-main);
+        &:hover,
+        &:focus {
+          color: var(--col-navy-main);
+          border-color: var(--col-navy-main);
+          background-color: transparent !important;
+        }
       }
     }
 
@@ -59,7 +66,7 @@
       outline-color: var(--col-white);
 
       &:hover, &:focus {
-        background-color: var(--col-white);
+        background-color: var(--col-primary-light-grey);
 
         .button-small {
           background-color: transparent;
@@ -80,6 +87,7 @@
 
       .button-small {
         background-color: transparent;
+        border-color: transparent !important;
         color: var(--col-black-dark);
       }
     }
@@ -115,24 +123,25 @@
 
       &:hover,
       &:focus {
-        background-color: var(--col-white);
+        background-color: var(--col-primary-light-grey);
       }
 
       strong {
+        display: flex;
         height: 6.25rem;
         min-width: 15.625rem;
         border-bottom: 0 none;
-        color: var(--col-black-dark);
+        color: var(--col-navy-main);
+        align-items: center;
+        justify-content: center;
 
         & > span {
           padding: 0 calc(10/16rem);
-          transform: translateY(-50%);
 
           span {
             margin-bottom: .75rem;
             display: inline-block;
             position: static;
-            transform: translateY(0);
           }
 
           &::after {
@@ -202,29 +211,19 @@
     @media screen and (--bp-desktop) {
       font-size: calc(28/16rem);
     }
-
-    span {
-      /* box-orient: vertical; */
-      left: 0;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
-    }
   }
 
   a {
     @mixin focus;
     @mixin focus-light;
     padding-bottom: 3rem;
-    max-width: 2calc(30/16rem);
+    max-width: calc(350/16rem);
     background-color: var(--col-navy-main);
     margin: 0 auto;
     position: relative;
-    transform: scale(1);
-    transition-property: transform, background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.68, -0.35, 0.265, 1.55);
+    transition-property: background-color;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
 
     strong,
     p,
@@ -236,34 +235,34 @@
     .button-small {
       @mixin outlinebutton;
       @mixin arrow-right;
-      border-color: var(--col-white);
+      border-color: color(var(--col-white) alpha(30%));
       color: var(--col-white);
       padding: 0.5em 0.7em;
       outline-color: currentColor;
+      &:hover,
+      &:focus {
+        color: var(--col-white);
+        border-color: var(--col-white);
+      }
     }
 
     &:hover, &:focus {
-      transform: scale(1.06);
+      background-color: var(--col-tertiary-navy);
       z-index: 2;
 
       .button-small {
         background-color: transparent;
         color: var(--col-white);
-        text-decoration: underline;
       }
     }
 
     &.featured {
-      margin-bottom: -.9375rem;
-      background-color: var(--col-blue-mid-2);
+      background-color: var(--col-purple-dark);
       color: var(--col-black-dark);
-
-      transform: scale(1.06);
       z-index: 1;
 
       &:hover,
       &:focus {
-        transform: scale(1.08);
         z-index: 1;
       }
     }
@@ -304,21 +303,18 @@
     p,
     span.text {
       padding-bottom: 7.5rem;
-      max-width: 2calc(30/16rem);
+      max-width: calc(350/16rem);
       margin: 0 auto;
       padding-left: 0;
       padding-right: 0;
     }
 
     strong {
-      height: calc(120/16rem);
-      max-width: 2calc(30/16rem);
-      margin: calc(20/16rem) auto 0;
-      padding: 0;
+      margin: 0 auto calc(30/16rem);
+      padding: calc(30/16rem) 0 0;
     }
 
     a {
-      max-width: 2calc(30/16rem);
       min-height: 25rem;
       padding: 0 2.1875rem;
       height: 100%;

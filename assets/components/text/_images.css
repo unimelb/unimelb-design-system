@@ -56,7 +56,8 @@
     }
 
     &.fixed-background {
-      background-attachment: fixed;
+      /* Note: Fixed background attachment was intentionally removed but we need
+      to retain the colour changes so this class must live on. */
 
       .title {
         color: var(--col-white);
