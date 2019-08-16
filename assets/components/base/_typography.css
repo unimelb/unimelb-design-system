@@ -574,7 +574,7 @@
   }
 
   .grey {
-    font-size: 1rem;
+    font-size: pxtorem(16);
     line-height: pxtorem(24);
     color: var(--col-unsanctioned-black-mid-3);
   }

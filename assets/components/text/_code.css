@@ -1,5 +1,5 @@
 @define-mixin code {
-  font-size: 1rem;
+  font-size: pxtorem(16);
   line-height: pxtorem(24);
   background-color: var(--col-primary-light-grey);
   border-width: 0;

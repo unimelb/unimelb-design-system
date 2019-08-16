@@ -3,7 +3,7 @@
   width: 94%;
 
   strong {
-    font-size: 1rem;
+    font-size: pxtorem(16);
     padding: pxtorem(15) 0 pxtorem(5);
     display: block;
     font-weight: var(--fw-regular);
@@ -329,7 +329,7 @@
       overflow: hidden;
 
       & > h1 { padding-right: 6.5rem; }
-      & > strong { padding-right: 6rem; }
+      & > strong { padding-right: pxtorem(96); }
       & > h3 { padding-right: 4.5rem; }
       & > p { padding-right: pxtorem(36); }
     }

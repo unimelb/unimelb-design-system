@@ -11,7 +11,7 @@
   /* TODO fix typography here */
   h2.search-title {
     font-size: pxtorem(18);
-    padding-bottom: 1rem;
+    padding-bottom: pxtorem(16);
     padding-top: 0;
   }
 
@@ -120,7 +120,7 @@
 
     img,
     .person__photo {
-      margin-right: 1rem;
+      margin-right: pxtorem(16);
       max-width: pxtorem(100);
       display: block;
       float: left;
@@ -206,7 +206,7 @@
 
     /* space out consecutive items */
     & > dd + dt {
-      margin-left: 1rem;
+      margin-left: pxtorem(16);
     }
   }
 
@@ -235,7 +235,7 @@
     @supports (display: grid) {
       @media (--bp-tablet) {
         display: grid;
-        grid-gap: .25rem 1rem;
+        grid-gap: .25rem pxtorem(16);
         grid-template-columns: repeat(2, 1fr);
 
         & > li {

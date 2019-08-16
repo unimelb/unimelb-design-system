@@ -38,7 +38,7 @@
     a,
     span {
       border-radius: 2px;
-      font-size: 1rem;
+      font-size: pxtorem(16);
       padding: pxtorem(5) pxtorem(15);
       display: block;
 

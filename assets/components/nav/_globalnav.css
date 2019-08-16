@@ -219,7 +219,7 @@
   a.close-button {
     font-size: pxtorem(14);
     padding-left: .25rem;
-    padding-top: 1rem;
+    padding-top: pxtorem(16);
     height: 3.75rem;
     border-bottom: 1px solid var(--col-navy-main);
     color: color(var(--col-white) alpha(40%));
@@ -259,7 +259,7 @@
     padding-left: 3%;
 
     &:last-child {
-      padding-bottom: 2rem;
+      padding-bottom: pxtorem(32);
     }
   }
 

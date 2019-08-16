@@ -212,12 +212,12 @@
 
   &.social {
     margin-bottom: pxtorem(20);
-    padding-top: 1rem;
+    padding-top: pxtorem(16);
     height: auto;
     padding-bottom: 0;
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: pxtorem(16);
       line-height: 1;
       text-align: center;
       width: 20%;
@@ -248,7 +248,7 @@
     a {
       @mixin imgreplace;
       height: pxtorem(36);
-      padding-bottom: 1rem;
+      padding-bottom: pxtorem(16);
       width: pxtorem(36);
       display: inline-block;
       text-decoration: none;
@@ -269,7 +269,7 @@
     @media screen and (--bp-desktop) {
       margin-bottom: 3.75rem;
       margin-top: pxtorem(20);
-      padding-right: 1rem;
+      padding-right: pxtorem(16);
       border: 0 none;
       clear: none;
       float: right;
@@ -309,7 +309,7 @@
   .ind-ack {
     font-size: pxtorem(18);
     max-width: var(--w-lge);
-    padding: 2rem 0;
+    padding: pxtorem(32) 0;
     border-bottom: 1px solid var(--col-navy-main);
     clear: both;
     color: var(--col-navy-mid-1);
@@ -321,7 +321,7 @@
     text-align: center;
 
     a {
-      font-size: 1rem;
+      font-size: pxtorem(16);
       color: var(--col-navy-mid-1);
       font-style: normal;
     }

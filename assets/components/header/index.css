@@ -18,7 +18,7 @@
   }
 
   @media screen and (--bp-desktop) {
-    width: 25rem;
+    width: pxtorem(400);
   }
 }
 

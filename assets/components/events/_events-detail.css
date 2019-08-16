@@ -65,7 +65,7 @@
 
       &.range time + time::before {
         margin-right: pxtorem(5);
-        width: 1rem;
+        width: pxtorem(16);
         border-bottom: 2px solid var(--col-black-dark);
         content: "";
         display: inline-block;

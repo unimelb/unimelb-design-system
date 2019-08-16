@@ -1,7 +1,7 @@
 .uomcontent .block-listing {
   @mixin clearfix;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-bottom: pxtorem(32);
+  margin-top: pxtorem(32);
   background-color: transparent;
   border: none;
   margin-left: auto;
@@ -10,7 +10,7 @@
   width: 100%;
 
   li {
-    margin-bottom: 1rem;
+    margin-bottom: pxtorem(16);
     background-color: transparent;
     border: 1px solid var(--col-black-light);
     color: var(--col-tertiary-navy);
@@ -25,7 +25,7 @@
 
   p {
     font-size: pxtorem(16);
-    padding: 1rem 1rem 0;
+    padding: pxtorem(16) pxtorem(16) 0;
     background-color: transparent;
     color: inherit;
     line-height: 1.5;
@@ -33,13 +33,13 @@
     text-align: left;
 
     &:last-of-type {
-      padding-bottom: 1rem;
+      padding-bottom: pxtorem(16);
     }
   }
 
   strong {
     font-size: pxtorem(20);
-    padding: 1rem 1rem 0;
+    padding: pxtorem(16) pxtorem(16) 0;
     background-color: transparent;
     color: inherit;
     display: block;
@@ -69,7 +69,7 @@
   .meta {
     @mixin clearfix;
     font-size: pxtorem(14);
-    padding: .25rem 1rem;
+    padding: .25rem pxtorem(16);
     background-color: color(var(--col-white) alpha(90%));
     color: inherit;
     position: relative;
@@ -90,8 +90,8 @@
 
   .when {
     font-size: pxtorem(18);
-    margin-bottom: 1rem;
-    padding: 1rem 1rem 0;
+    margin-bottom: pxtorem(16);
+    padding: pxtorem(16) pxtorem(16) 0;
     font-weight: var(--fw-regular);
     line-height: 1.3;
     text-align: left;
@@ -148,7 +148,7 @@
 
   .double {
     .block-container {
-      padding: 2rem 0 pxtorem(12);
+      padding: pxtorem(32) 0 pxtorem(12);
       background-color: color(var(--col-black-dark) alpha(60%));
       background-size: cover;
       color: var(--col-white);
@@ -168,7 +168,7 @@
     }
 
     .button-hero-inverse {
-      margin-left: 1rem;
+      margin-left: pxtorem(16);
     }
   }
 
@@ -203,18 +203,18 @@
       }
 
       strong {
-        padding: 4rem 2rem 2rem;
+        padding: pxtorem(64) pxtorem(32) pxtorem(32);
         line-height: 1;
       }
 
       p {
-        padding: 0 2rem 1rem;
+        padding: 0 pxtorem(32) pxtorem(16);
         font-size: pxtorem(20);
         line-height: 1.3;
       }
 
       .button-hero-inverse {
-        margin-left: 2rem;
+        margin-left: pxtorem(32);
       }
     }
   }
@@ -229,17 +229,17 @@
 
       strong {
         font-size: 3.375rem;
-        padding: 4rem 4rem 2rem;
+        padding: pxtorem(64) pxtorem(64) pxtorem(32);
         line-height: 1.1;
       }
 
       p {
-        padding: 0 4rem 2rem;
+        padding: 0 pxtorem(64) pxtorem(32);
         line-height: 1.3;
       }
 
       .button-hero-inverse {
-        margin-left: 4rem;
+        margin-left: pxtorem(64);
       }
     }
   }
@@ -320,9 +320,9 @@
 
     .news .meta::before {
       height: 3.75rem;
-      margin-left: -1rem;
-      margin-right: -1rem;
-      margin-top: -4rem; /* account for padding-top of 4px on `meta` */
+      margin-left: pxtorem(-16);
+      margin-right: pxtorem(-16);
+      margin-top: pxtorem(-64); /* account for padding-top of 4px on `meta` */
       background: linear-gradient(to top, color(var(--col-white) alpha(90%)) 33%, color(var(--col-white) alpha(0%)) 100%);
       content: '';
       display: block;
@@ -457,7 +457,7 @@
       span {
         font-size: pxtorem(20);
         line-height: pxtorem(24);
-        padding-top: 6rem;
+        padding-top: pxtorem(96);
         display: block;
         font-style: normal;
         font-weight: normal;
@@ -592,7 +592,7 @@
       strong {
         font-size: pxtorem(18);
         line-height: pxtorem(24);
-        padding: 1rem 0;
+        padding: pxtorem(16) 0;
         color: currentColor;
         display: inline-block;
         font-weight: var(--fw-semibold);

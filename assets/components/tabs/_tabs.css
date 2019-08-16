@@ -343,12 +343,12 @@
     padding: 0;
 
     @media screen and (--bp-desktop) {
-      margin-right: -1rem;
+      margin-right: pxtorem(-16);
     }
 
     @media screen and (--bp-wide) {
-      margin-left: -1rem;
-      margin-right: -2rem;
+      margin-left: pxtorem(-16);
+      margin-right: pxtorem(-32);
     }
 
     & > li {
@@ -360,7 +360,7 @@
 
   /* Tab links in sidebar (ul > li > a) */
   &__tab {
-    padding: pxtorem(12) 1rem;
+    padding: pxtorem(12) pxtorem(16);
     border-color: transparent;
     border-style: solid;
     border-width: 0 0 0 5px;
@@ -381,13 +381,13 @@
   &--right {
     .sidebar-tabs__list {
       @media screen and (--bp-desktop) {
-        margin-left: -1rem;
+        margin-left: pxtorem(-16);
         margin-right: 0;
       }
 
       @media screen and (--bp-wide) {
-        margin-left: -2rem;
-        margin-right: -1rem;
+        margin-left: pxtorem(-32);
+        margin-right: pxtorem(-16);
       }
     }
 

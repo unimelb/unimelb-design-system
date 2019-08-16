@@ -5,7 +5,7 @@
 }
 
 .uom-prompt {
-  padding: 1rem 3.5rem .5rem;
+  padding: pxtorem(16) 3.5rem .5rem;
   animation: appear-bottom .5s backwards;
   background-color: var(--col-blue-mid-2);
   bottom: 0;
@@ -70,7 +70,7 @@
   &__content {
     p {
       font-size: pxtorem(18);
-      margin: 0 0 1rem;
+      margin: 0 0 pxtorem(16);
     }
 
     ul {
@@ -89,8 +89,8 @@
       & > button {
         font-size: pxtorem(14);
         margin-bottom: .5rem;
-        min-width: 6rem;
-        padding: .5rem 1rem;
+        min-width: pxtorem(96);
+        padding: .5rem pxtorem(16);
         border: 2px solid var(--col-white);
         border-radius: 4px;
         box-sizing: border-box;
@@ -116,7 +116,7 @@
       }
 
       @media screen and (--bp-tablet) {
-        margin: 0 1rem;
+        margin: 0 pxtorem(16);
       }
     }
   }

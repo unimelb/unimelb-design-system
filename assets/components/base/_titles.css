@@ -11,7 +11,7 @@
   width: 94%;
 
   @media screen and (--bp-wide) {
-    padding-top: 5rem;
+    padding-top: pxtorem(80);
     width: 100%;
   }
 
@@ -44,7 +44,7 @@
 
   &::after {
     margin-top: pxtorem(24);
-    width: 5rem;
+    width: pxtorem(80);
     border-bottom: 1px solid var(--col-black-mid-1);
     content: '';
     display: block;

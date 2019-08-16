@@ -228,7 +228,7 @@
       }
 
       td {
-        font-size: 1rem;
+        font-size: pxtorem(16);
         padding: pxtorem(10);
         border: 1px solid var(--col-blue-light);
         display: table-cell;

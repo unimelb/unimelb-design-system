@@ -33,7 +33,7 @@
   }
 
   @media screen and (--bp-desktop) {
-    width: 25rem;
+    width: pxtorem(400);
   }
 }
 
@@ -154,7 +154,7 @@
   }
 
   p {
-    font-size: 1rem;
+    font-size: pxtorem(16);
   }
 
   input[type="text"],

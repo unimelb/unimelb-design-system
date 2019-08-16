@@ -14,8 +14,8 @@
     }
 
     @media screen and (--bp-height-small) {
-      width: 25rem;
-      padding-bottom: 25rem;
+      width: pxtorem(400);
+      padding-bottom: pxtorem(400);
     }
 
     @media screen and (--bp-height-medium) {

@@ -5,7 +5,7 @@
     text-align: center;
 
     li {
-      padding: pxtorem(48) 1rem;
+      padding: pxtorem(48) pxtorem(16);
       width: 18.75rem;
       display: inline-block;
       list-style-type: none;
@@ -58,7 +58,7 @@
     /* DEPRECATED */
     &--diamond {
       li {
-        width: 25rem;
+        width: pxtorem(400);
       }
     }
   }
@@ -87,7 +87,7 @@
     }
 
     p {
-      font-size: 1rem;
+      font-size: pxtorem(16);
       line-height: pxtorem(24);
       padding-top: pxtorem(24);
       padding-bottom: pxtorem(12);

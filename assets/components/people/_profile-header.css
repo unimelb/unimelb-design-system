@@ -1,7 +1,7 @@
 .uomcontent [role="main"] {
 
   .profile-header {
-    padding: pxtorem(48) 1rem;
+    padding: pxtorem(48) pxtorem(16);
     background-color: var(--col-navy-light);
     color: inherit;
 

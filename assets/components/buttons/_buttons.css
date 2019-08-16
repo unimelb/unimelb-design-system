@@ -230,9 +230,9 @@
   font-weight: var(--fw-regular);
 
   svg.icon {
-    height: 1rem;
+    height: pxtorem(16);
     margin: 0 pxtorem(5);
-    width: 1rem;
+    width: pxtorem(16);
     fill: currentcolor;
     vertical-align: middle;
   }
@@ -311,7 +311,7 @@
     }
 
     p {
-      font-size: 1rem;
+      font-size: pxtorem(16);
     }
   }
 }

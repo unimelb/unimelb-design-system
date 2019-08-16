@@ -146,7 +146,7 @@ body {
 
       p,
       li {
-        font-size: 1rem;
+        font-size: pxtorem(16);
         line-height: 1.5;
       }
 
@@ -401,7 +401,7 @@ body {
 
     &__main,
     &__side {
-      padding: 2rem 1rem;
+      padding: pxtorem(32) pxtorem(16);
     }
 
     &__side {
@@ -434,7 +434,7 @@ body {
 
       &__main,
       &__side {
-        padding: 4.5rem 1rem;
+        padding: 4.5rem pxtorem(16);
         display: table-cell;
         vertical-align: top;
       }
@@ -453,7 +453,7 @@ body {
     @media screen and (--bp-wide) {
       &__main,
       &__side {
-        padding: 4.5rem 2rem;
+        padding: 4.5rem pxtorem(32);
       }
     }
   }

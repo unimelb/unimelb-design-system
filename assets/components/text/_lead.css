@@ -21,7 +21,7 @@
       &::before {
         padding-bottom: pxtorem(48);
         margin-top: pxtorem(30);
-        width: 5rem;
+        width: pxtorem(80);
         border-top: 2px solid var(--col-navy-main);
         content: '';
         display: block;

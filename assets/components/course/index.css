@@ -115,7 +115,7 @@
       }
 
       p {
-        font-size: 1rem;
+        font-size: pxtorem(16);
         padding-left: 3%;
         padding-right: 3%;
 

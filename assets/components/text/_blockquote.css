@@ -61,13 +61,13 @@
     &.left,
     &.right {
       @media screen and (--bp-tablet) {
-        font-size: 2rem;
+        font-size: pxtorem(32);
       }
 
       @media screen and (--bp-desktop) {
         padding-right: pxtorem(15);
         margin: 0 pxtorem(15) 0 0;
-        max-width: 25rem;
+        max-width: pxtorem(400);
         float: left;
         max-width: 62%;
         width: auto;
@@ -108,7 +108,7 @@
   margin-top: 0;
 
   &.blockquote-classic {
-    font-size: 1rem;
+    font-size: pxtorem(16);
     line-height: pxtorem(24);
     padding-bottom: 3.375rem;
     max-width: var(--w-mid);
@@ -132,11 +132,11 @@
     &::after {
       content: close-quote;
       margin-left: 0.6rem;
-      margin-bottom: 2rem;
+      margin-bottom: pxtorem(32);
     }
 
     cite {
-      font-size: 1rem;
+      font-size: pxtorem(16);
       line-height: pxtorem(24);
       border: 0;
       float: left;

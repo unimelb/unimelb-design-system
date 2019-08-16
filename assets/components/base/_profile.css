@@ -2,7 +2,7 @@
   background-color: var(--col-blue-light);
 
   header {
-    min-height: 25rem;
+    min-height: pxtorem(400);
 
     .bottom-align {
       padding-top: 3.125rem;

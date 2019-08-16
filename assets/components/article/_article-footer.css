@@ -8,7 +8,7 @@
       max-width: var(--w-sml);
 
       li {
-        width: 13.75rem;
+        width: pxtorem(220);
       }
 
       .frame {
@@ -88,7 +88,7 @@
     }
 
     .categories {
-      font-size: 1.0625rem;
+      font-size: pxtorem(17);
       line-height: pxtorem(24);
       padding-top: pxtorem(24);
       text-align: left;

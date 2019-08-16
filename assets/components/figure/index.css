@@ -64,7 +64,7 @@
 
       & > .figure__caption {
         position: relative;
-        margin-top: 1rem;
+        margin-top: pxtorem(16);
 
         &::before {
           content: '';
@@ -130,7 +130,7 @@
   @media (--bp-desktop) {
     &--left,
     &--right {
-      margin-bottom: 1rem;
+      margin-bottom: pxtorem(16);
       padding-top: calc(1em * (1.68 - 1) / 2); /* align with text based on body line height */
     }
 
@@ -138,7 +138,7 @@
     &--right { margin-right: 0; }
 
     &--confined {
-      margin-bottom: 1rem !important;
+      margin-bottom: pxtorem(16) !important;
 
       &.figure--left { margin-left: 0 !important; }
       &.figure--right { margin-right: 0 !important; }
@@ -153,12 +153,12 @@
     }
 
     &--left {
-      margin-left: -3rem;
+      margin-left: pxtorem(-48);
       margin-right: pxtorem(36);
     }
 
     &--right {
-      margin-right: -3rem;
+      margin-right: pxtorem(-48);
       margin-left: pxtorem(36);
     }
   }
@@ -206,8 +206,8 @@
       max-width: 60%;
     }
 
-    &.figure--left { margin-left: -3rem; }
-    &.figure--right { margin-right: -3rem; }
+    &.figure--left { margin-left: pxtorem(-48); }
+    &.figure--right { margin-right: pxtorem(-48); }
   }
 
   @media (--bp-xx-wide) {

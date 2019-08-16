@@ -308,7 +308,7 @@
     }
 
     a {
-      min-height: 25rem;
+      min-height: pxtorem(400);
       padding: 0 pxtorem(35);
       height: 100%;
       margin: 0 auto;

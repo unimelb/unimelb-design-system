@@ -150,7 +150,7 @@
     }
 
     p.author {
-      font-size: 1rem;
+      font-size: pxtorem(16);
       line-height: pxtorem(24);
       max-width: pxtorem(350);
       font-style: italic;
@@ -158,7 +158,7 @@
       &::before {
         margin-top: 0;
         margin-bottom: pxtorem(24);
-        width: 5rem;
+        width: pxtorem(80);
         border-top: 1px solid currentColor;
         content: '';
         display: block;
