@@ -184,7 +184,7 @@
     }
 
     .block-container {
-      min-height: 27.5rem;
+      min-height: pxtorem(440);
       display: block;
       position: relative;
     }
@@ -228,7 +228,7 @@
       width: 49%;
 
       strong {
-        font-size: 3.375rem;
+        font-size: pxtorem(54);
         padding: pxtorem(64) pxtorem(64) pxtorem(32);
         line-height: 1.1;
       }
@@ -279,7 +279,7 @@
   .exhibition {
     .crop-height,
     .block-listing__img {
-      margin-bottom: -1.75rem;
+      margin-bottom: pxtorem(-28);
     }
 
     .crop-height {
@@ -375,7 +375,7 @@
         background-color: transparent;
 
         @media screen and (--bp-x-tablet) {
-          min-height: 27.5rem;
+          min-height: pxtorem(440);
         }
       }
 
@@ -464,8 +464,8 @@
 
         svg {
           height: pxtorem(50);
-          margin-bottom: -.4375rem;
-          margin-left: -.625rem;
+          margin-bottom: pxtorem(-7);
+          margin-left: pxtorem(-10);
           fill: var(--col-blue-mid-2);
         }
       }
@@ -619,7 +619,7 @@
 
         &::after {
           font-size: pxtorem(10);
-          margin-top: -.625rem;
+          margin-top: pxtorem(-10);
           padding-left: pxtorem(10);
           content: '\2192';
           display: inline-block;
@@ -639,7 +639,7 @@
 
       @media screen and (--bp-x-tablet) {
         .block-container {
-          height: 27.5rem;
+          height: pxtorem(440);
         }
 
         @supports (display: flex) {

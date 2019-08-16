@@ -108,7 +108,7 @@
     }
 
     h1 {
-      font-size: 2.0625rem;
+      font-size: pxtorem(33);
       line-height: pxtorem(48);
       padding-bottom: 0;
       max-width: var(--w-sml);
@@ -284,19 +284,19 @@
       height: pxtorem(300);
 
       @media screen and (--bp-height-smallest) {
-        height: 32.5rem;
+        height: pxtorem(520);
       }
 
       @media screen and (--bp-height-small) {
-        height: 38.75rem;
+        height: pxtorem(620);
       }
 
       @media screen and (--bp-height-medium) {
-        height: 45rem;
+        height: pxtorem(720);
       }
 
       @media screen and (--bp-height-big) {
-        height: 50rem;
+        height: pxtorem(800);
       }
     }
   }

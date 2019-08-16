@@ -96,9 +96,9 @@
 @define-mixin quote-style {
   content: open-quote;
   display: inline-block;
-  font-size: 2.75rem;
+  font-size: pxtorem(44);
   line-height: .1em;
-  margin-left: -1.95rem;
+  margin-left: pxtorem(32);
   margin-right: pxtorem(10);
   vertical-align: -.125em;
 }
@@ -110,7 +110,7 @@
   &.blockquote-classic {
     font-size: pxtorem(16);
     line-height: pxtorem(24);
-    padding-bottom: 3.375rem;
+    padding-bottom: pxtorem(54);
     max-width: var(--w-mid);
     padding-left: pxtorem(15);
     padding-right: pxtorem(15);
@@ -131,7 +131,7 @@
 
     &::after {
       content: close-quote;
-      margin-left: 0.6rem;
+      margin-left: pxtorem(10);
       margin-bottom: pxtorem(32);
     }
 

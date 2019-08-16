@@ -129,7 +129,7 @@
       strong {
         display: flex;
         height: pxtorem(100);
-        min-width: 15.625rem;
+        min-width: pxtorem(250);
         border-bottom: 0 none;
         color: var(--col-navy-main);
         align-items: center;

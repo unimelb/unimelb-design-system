@@ -35,7 +35,7 @@
   }
 
   @media screen and (--bp-desktop) {
-    max-width: 250rem;
+    max-width: pxtorem(4000);
     background-color: transparent;
     display: table;
     margin-top: 0;

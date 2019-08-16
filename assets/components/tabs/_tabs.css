@@ -250,7 +250,7 @@
 
       & > [role="tabpanel"] {
         margin-top: pxtorem(-76);
-        padding-top: 4.75rem;
+        padding-top: pxtorem(76);
       }
 
       nav a {
@@ -286,7 +286,7 @@
 
       & > [role="tabpanel"] {
         margin-top: pxtorem(-76);
-        padding-top: 4.75rem;
+        padding-top: pxtorem(76);
       }
 
       nav a {
@@ -314,13 +314,13 @@
       }
 
       & > [role="tabpanel"] {
-        margin-top: -3.4375rem;
+        margin-top: pxtorem(-55);
         padding-top: pxtorem(55);
         background-color: transparent;
 
         @media screen and (--bp-desktop) {
-          margin-top: -5.9375rem;
-          padding-top: 5.9375rem;
+          margin-top: pxtorem(-95);
+          padding-top: pxtorem(95);
         }
       }
     }

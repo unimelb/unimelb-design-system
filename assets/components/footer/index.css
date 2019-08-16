@@ -95,7 +95,7 @@
 
 .uomcontent .unimelb-lge {
   margin: pxtorem(30) auto;
-  width: 16.875rem;
+  width: pxtorem(270);
   outline-color: var(--col-white);
   display: block;
 

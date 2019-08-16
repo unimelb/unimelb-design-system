@@ -37,7 +37,7 @@
     & + .flash {
       /* Keep message against logo between desktop and wide */
       @media screen and (min-width: 769px) and (max-width: 1098px) {
-        padding-left: 12.8125rem;
+        padding-left: pxtorem(205);
 
         & > p {
           max-width: none;
@@ -48,7 +48,7 @@
     /* Keep message against logo, even above `wide` */
     & + .flash--keep-left {
       @media screen and (--bp-wide) {
-        padding-left: 12.8125rem;
+        padding-left: pxtorem(205);
 
         & > p {
           max-width: none;

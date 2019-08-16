@@ -9,7 +9,7 @@
   h1,
   p,
   ul {
-    max-width: 250rem;
+    max-width: pxtorem(4000);
     margin-left: 0;
     margin-right: 0;
     padding-left: 0;

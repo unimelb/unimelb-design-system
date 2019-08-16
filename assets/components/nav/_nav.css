@@ -98,7 +98,7 @@ body {
     }
 
     a {
-      min-height: 6.625rem;
+      min-height: pxtorem(106);
       margin-top: pxtorem(10);
       margin-bottom: pxtorem(10);
       display: block;
@@ -142,7 +142,7 @@ body {
 
   span {
     font-size: pxtorem(15);
-    padding-left: 2.75rem;
+    padding-left: pxtorem(44);
     padding-top: pxtorem(190);
     width: pxtorem(225);
     left: 0;

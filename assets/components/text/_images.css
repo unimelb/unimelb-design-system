@@ -95,13 +95,13 @@
 
       p {
         padding-top: 0;
-        max-width: 28.125rem;
+        max-width: pxtorem(450);
         font-weight: var(--fw-semibold);
         margin-left: auto;
         margin-right: auto;
 
         @media screen and (--bp-desktop) {
-          font-size: 3.5rem;
+          font-size: pxtorem(56);
           line-height: pxtorem(60);
           max-width: var(--w-sml);
           padding-left: 0;

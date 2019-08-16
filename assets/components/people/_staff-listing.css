@@ -41,7 +41,7 @@
 
       .details {
         padding-left: pxtorem(25);
-        width: 35.625rem;
+        width: pxtorem(570);
         display: table-cell;
         line-height: 1.4;
         vertical-align: middle;

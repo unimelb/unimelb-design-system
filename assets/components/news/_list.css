@@ -5,7 +5,7 @@
   text-align: right;
 
   a {
-    padding-top: 9rem;
+    padding-top: pxtorem(144);
     max-width: pxtorem(1150);
     background-position: center;
     background-repeat: no-repeat;
@@ -55,7 +55,7 @@
     padding-right: pxtorem(20);
 
     a {
-      padding-top: 21rem;
+      padding-top: pxtorem(336);
     }
   }
 }
@@ -82,7 +82,7 @@
 
       &:first-child {
         margin-left: pxtorem(10);
-        max-width: 7.8125rem;
+        max-width: pxtorem(125);
         float: right;
       }
     }
@@ -125,7 +125,7 @@
         width: 100%;
 
         &:first-child {
-          max-width: 14.375rem;
+          max-width: pxtorem(230);
           float: left;
           margin-left: 0;
           margin-right: 2%;
@@ -133,7 +133,7 @@
           & + p,
           & + p + h1,
           & + p + h1 + p {
-            margin-left: 16.875rem;
+            margin-left: pxtorem(270);
             margin-right: 0;
             width: auto;
           }
@@ -203,7 +203,7 @@
 .uomcontent [data-tabbed].tabbed {
   .news-tabs {
     padding-top: pxtorem(48);
-    max-width: 56.25rem;
+    max-width: pxtorem(900);
     margin-left: auto;
     margin-right: auto;
   }
@@ -236,7 +236,7 @@
 
       @media screen and (--bp-desktop) {
         img + p + h1 {
-          margin-left: 16.875rem;
+          margin-left: pxtorem(270);
         }
       }
 

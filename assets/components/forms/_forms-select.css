@@ -128,8 +128,8 @@
 
   svg.icon {
     height: pxtorem(30);
-    right: .4375rem;
-    top: .4375rem;
+    right: pxtorem(7);
+    top: pxtorem(7);
     width: pxtorem(30);
     color: var(--col-white);
     cursor: pointer;

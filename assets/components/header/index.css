@@ -134,7 +134,7 @@
         svg {
           height: pxtorem(14);
           margin-bottom: pxtorem(3);
-          margin-top: .4375rem;
+          margin-top: pxtorem(7);
           width: pxtorem(14);
         }
       }
@@ -237,8 +237,8 @@
     padding: 0 pxtorem(10) pxtorem(5) pxtorem(10);
 
     @media screen and (--bp-desktop) {
-      height: 4.6875rem;
-      line-height: 4.6875rem;
+      height: pxtorem(75);
+      line-height: pxtorem(75);
       padding: 0 pxtorem(10) .46875rem pxtorem(10);
     }
   }
@@ -324,7 +324,7 @@
   @media screen and (--bp-desktop) {
     height: pxtorem(115);
     transform: translateX(pxtorem(150));
-    margin-right: 16.25rem;
+    margin-right: pxtorem(260);
     display: block;
     overflow: hidden;
     position: absolute;
@@ -472,7 +472,7 @@
     .page-header,
     .page-header.fixed:not(.floating)  {
       span {
-        height: 4.6875rem;
+        height: pxtorem(75);
         line-height: 1;
 
         &[data-icon] {
@@ -614,7 +614,7 @@
     }
 
     .page-header-icon {
-      font-size: .5625rem;
+      font-size: pxtorem(9);
       padding: 0 pxtorem(10);
       width: pxtorem(40);
       box-sizing: content-box;
@@ -648,7 +648,7 @@
 
       @media screen and (--bp-desktop) {
         font-size: pxtorem(10);
-        padding: 0 1.4375rem;
+        padding: 0 pxtorem(23);
       }
 
       &:hover,
@@ -662,7 +662,7 @@
 }
 
 .uomcontent .page-header-tools {
-  width: 7.75rem;
+  width: pxtorem(124);
   display: table-cell;
   right: 0;
   text-align: right;
@@ -676,7 +676,7 @@
 
   &.with-login {
     @media screen and (--bp-tablet) {
-      width: 11.625rem;
+      width: pxtorem(186);
     }
 
     @media screen and (--bp-desktop) {
@@ -685,7 +685,7 @@
   }
 
   .page-header-icon {
-    font-size: .5625rem;
+    font-size: pxtorem(9);
     padding: 0 pxtorem(10);
     width: pxtorem(40);
     border-left: 1px solid rgba(255,255,255,0.15);
@@ -730,7 +730,7 @@
   @media screen and (--bp-desktop) {
     .page-header-icon {
       font-size: pxtorem(13);
-      padding: 0 1.4375rem;
+      padding: 0 pxtorem(23);
 
       svg {
         height: pxtorem(24);
@@ -802,12 +802,12 @@
       margin: pxtorem(40);
 
       a.page-header-icon {
-        height: 3.9375rem;
+        height: pxtorem(63);
         margin-left: pxtorem(20);
-        padding: .4375rem pxtorem(15) 0;
+        padding: pxtorem(7) pxtorem(15) 0;
 
         svg {
-          margin-top: .4375rem;
+          margin-top: pxtorem(7);
         }
       }
     }
@@ -839,13 +839,13 @@
     }
 
     .page-header-logo {
-      margin-right: .6875rem;
+      margin-right: pxtorem(11);
       display: inline-block;
       vertical-align: middle;
     }
 
     .page-header-home {
-      width: 8rem;
+      width: pxtorem(128);
       display: inline-block;
       height: auto;
       white-space: normal;
@@ -877,7 +877,7 @@
 
     @media screen and (--bp-tablet) {
       .page-header-home {
-        width: 12rem;
+        width: pxtorem(192);
       }
     }
 
@@ -908,7 +908,7 @@
 }
 
 .uomcontent #uom-login.modal__dialog {
-  max-width: 28.125rem;
+  max-width: pxtorem(450);
   margin-left: auto;
   margin-right: auto;
 }

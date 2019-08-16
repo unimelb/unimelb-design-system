@@ -139,7 +139,7 @@
     width: 100%;
 
     @media screen and (--bp-desktop) {
-      width: 25.75rem;
+      width: pxtorem(412);
       display: inline-block;
     }
   }
@@ -295,7 +295,7 @@
         line-height: 1;
 
         & > span {
-          padding-left: 2.125rem; /* 24px for small icon + 10px for spacing */
+          padding-left: pxtorem(34); /* 24px for small icon + 10px for spacing */
           position: relative;
           white-space: nowrap;
 
