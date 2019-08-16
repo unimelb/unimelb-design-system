@@ -1,8 +1,8 @@
 @define-mixin blockquote-modern {
   &:not(.blockquote-classic) {
     font-size: 1.75rem;
-    margin-bottom: calc(30/16rem);
-    padding-bottom: calc(30/16rem);
+    margin-bottom: pxtorem(30);
+    padding-bottom: pxtorem(30);
     display: block;
     font-family: var(--ff-serif);
     font-style: italic;
@@ -32,19 +32,19 @@
       display: block;
       float: right;
       font-family: var(--ff-sans);
-      font-size: calc(20/16rem);
+      font-size: pxtorem(20);
       font-style: normal;
       font-weight: var(--fw-semibold);
-      margin-top: calc(26/16rem);
-      padding-bottom: calc(25/16rem);
-      padding-top: calc(24/16rem);
+      margin-top: pxtorem(26);
+      padding-bottom: pxtorem(25);
+      padding-top: pxtorem(24);
       position: relative;
       width: 100%;
       &:before {
         content: "";
         position: absolute;
         top: 0;
-        width: calc(50/16rem);
+        width: pxtorem(50);
         border-top: 1px solid var(--col-black-mid-1);
       }
     }
@@ -65,8 +65,8 @@
       }
 
       @media screen and (--bp-desktop) {
-        padding-right: .9375rem;
-        margin: 0 .9375rem 0 0;
+        padding-right: pxtorem(15);
+        margin: 0 pxtorem(15) 0 0;
         max-width: 25rem;
         float: left;
         max-width: 62%;
@@ -81,7 +81,7 @@
 
     &.right {
       @media screen and (--bp-desktop) {
-        margin-left: calc(30/16rem);
+        margin-left: pxtorem(30);
         float: right;
         margin-right: 0;
       }
@@ -99,7 +99,7 @@
   font-size: 2.75rem;
   line-height: .1em;
   margin-left: -1.95rem;
-  margin-right: calc(10/16rem);
+  margin-right: pxtorem(10);
   vertical-align: -.125em;
 }
 
@@ -109,11 +109,11 @@
 
   &.blockquote-classic {
     font-size: 1rem;
-    line-height: calc(24/16rem);
+    line-height: pxtorem(24);
     padding-bottom: 3.375rem;
     max-width: var(--w-mid);
-    padding-left: .9375rem;
-    padding-right: .9375rem;
+    padding-left: pxtorem(15);
+    padding-right: pxtorem(15);
     color: var(--col-navy-main);
     font-family: var(--ff-serif);
     font-style: italic;
@@ -137,7 +137,7 @@
 
     cite {
       font-size: 1rem;
-      line-height: calc(24/16rem);
+      line-height: pxtorem(24);
       border: 0;
       float: left;
       font-family: var(--ff-sans);
@@ -152,16 +152,16 @@
     }
 
     p {
-      font-size: calc(24/16rem);
-      line-height: calc(36/16rem);
+      font-size: pxtorem(24);
+      line-height: pxtorem(36);
       display: inline;
       margin: 0;
       padding: 0;
     }
 
     @media screen and (--bp-tablet) {
-      font-size: calc(24/16rem);
-      line-height: calc(36/16rem);
+      font-size: pxtorem(24);
+      line-height: pxtorem(36);
     }
 
     @media screen and (--bp-wide) {
@@ -179,19 +179,19 @@ body.jumpnav-active .uomcontent {
     }
 
     @media screen and (--bp-xx-wide) {
-      margin-bottom: calc(20/16rem);
+      margin-bottom: pxtorem(20);
       margin-left: calc(-180/16rem);
     }
   }
 
   blockquote:not(.blockquote-classic).right {
     @media screen and (--bp-wide) {
-      margin-left: calc(30/16rem);
+      margin-left: pxtorem(30);
       margin-right: 0;
     }
 
     @media screen and (--bp-xx-wide) {
-      margin-bottom: calc(20/16rem);
+      margin-bottom: pxtorem(20);
       margin-right: calc(-180/16rem);
     }
   }

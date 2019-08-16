@@ -1,7 +1,7 @@
 @define-mixin half {
   @mixin wrapper;
-  padding-bottom: calc(30/16rem);
-  padding-top: calc(30/16rem);
+  padding-bottom: pxtorem(30);
+  padding-top: pxtorem(30);
   max-width: 100%;
 
   h1 {
@@ -9,9 +9,9 @@
   }
 
   img {
-    margin-top: calc(30/16rem);
-    padding-left: .9375rem;
-    padding-right: .9375rem;
+    margin-top: pxtorem(30);
+    padding-left: pxtorem(15);
+    padding-right: pxtorem(15);
     max-width: 95%;
     width: 100%;
   }
@@ -40,7 +40,7 @@
     }
 
     @media screen and (--bp-desktop) {
-      padding: calc(30/16rem) .9375rem;
+      padding: pxtorem(30) pxtorem(15);
       display: table-cell;
       vertical-align: top;
       width: 50%;
@@ -56,8 +56,8 @@
     display: table;
 
     svg {
-      margin-left: .9375rem;
-      margin-right: .9375rem;
+      margin-left: pxtorem(15);
+      margin-right: pxtorem(15);
     }
   }
 }

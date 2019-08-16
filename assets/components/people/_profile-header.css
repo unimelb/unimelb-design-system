@@ -1,7 +1,7 @@
 .uomcontent [role="main"] {
 
   .profile-header {
-    padding: 3rem 1rem;
+    padding: pxtorem(48) 1rem;
     background-color: var(--col-navy-light);
     color: inherit;
 
@@ -17,9 +17,9 @@
 
       h1 {
         font-size: 1.5625rem;
-        line-height: calc(36/16rem);
+        line-height: pxtorem(36);
         margin-bottom: .5rem;
-        margin-top: calc(24/16rem);
+        margin-top: pxtorem(24);
         padding-bottom: 0;
         text-align: inherit;
 
@@ -29,7 +29,7 @@
       }
 
       p {
-        font-size: calc(18/16rem);
+        font-size: pxtorem(18);
         line-height: 1.4;
         padding-top: 0;
       }
@@ -46,7 +46,7 @@
     }
 
     &__info {
-      padding-top: calc(24/16rem);
+      padding-top: pxtorem(24);
       border-top: 1px solid var(--col-blue-mid-1);
 
       a {
@@ -73,12 +73,12 @@
     }
 
     &__contact {
-      margin-bottom: calc(24/16rem);
+      margin-bottom: pxtorem(24);
 
       [data-icon] {
-        height: calc(20/16rem);
+        height: pxtorem(20);
         margin-top: .25rem;
-        width: calc(20/16rem);
+        width: pxtorem(20);
         vertical-align: top;
       }
     }

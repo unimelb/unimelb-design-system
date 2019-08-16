@@ -17,8 +17,8 @@
     }
 
     &.small {
-      height: calc(24/16rem);
-      width: calc(24/16rem);
+      height: pxtorem(24);
+      width: pxtorem(24);
     }
 
     &.large {

@@ -1,6 +1,6 @@
 .uomcontent {
   p.search-spelling {
-    margin-bottom: calc(24/16rem);
+    margin-bottom: pxtorem(24);
     border-bottom: 1px solid color(var(--col-black-dark) alpha(10%));
 
     strong {
@@ -10,7 +10,7 @@
 
   /* TODO fix typography here */
   h2.search-title {
-    font-size: calc(18/16rem);
+    font-size: pxtorem(18);
     padding-bottom: 1rem;
     padding-top: 0;
   }
@@ -26,15 +26,15 @@
 
     & > li {
       @mixin clearfix;
-      padding-bottom: calc(24/16rem);
-      margin-bottom: calc(24/16rem);
+      padding-bottom: pxtorem(24);
+      margin-bottom: pxtorem(24);
       border-bottom: 1px solid color(var(--col-black-dark) alpha(10%));
       list-style-type: none;
       margin-left: 0;
       width: auto;
 
       &:last-child {
-        padding-bottom: calc(24/16rem);
+        padding-bottom: pxtorem(24);
       }
 
       &.person {
@@ -53,7 +53,7 @@
         }
 
         .person__contact {
-          font-size: calc(16/16rem);
+          font-size: pxtorem(16);
           padding-top: .75rem;
 
           a {
@@ -67,7 +67,7 @@
         }
 
         .person__phone {
-          line-height: calc(24/16rem);
+          line-height: pxtorem(24);
         }
 
         @media screen and (--bp-desktop) {
@@ -82,7 +82,7 @@
           }
 
           .person__profile {
-            padding-right: calc(24/16rem);
+            padding-right: pxtorem(24);
             width: 100%;
           }
 
@@ -92,7 +92,7 @@
           }
 
           .person__phone {
-            font-size: calc(16/16rem);
+            font-size: pxtorem(16);
             white-space: nowrap;
 
             & + .person__email {
@@ -101,7 +101,7 @@
           }
 
           .person__email {
-            font-size: calc(16/16rem);
+            font-size: pxtorem(16);
           }
         }
       }
@@ -131,9 +131,9 @@
     }
 
     h3 {
-      font-size: calc(20/16rem);
+      font-size: pxtorem(20);
       font-weight: var(--fw-semibold);
-      margin-bottom: calc(5/16rem);
+      margin-bottom: pxtorem(5);
       width: auto;
     }
 
@@ -142,8 +142,8 @@
       width: auto;
 
       &.url {
-        font-size: calc(16/16rem);
-        margin-top: calc(5/16rem);
+        font-size: pxtorem(16);
+        margin-top: pxtorem(5);
 
         & > a {
           @mixin ellipsis;
@@ -156,7 +156,7 @@
       }
 
       &.more {
-        font-size: calc(16/16rem);
+        font-size: pxtorem(16);
         padding-top: .75rem;
         clear: left;
 
@@ -169,7 +169,7 @@
         }
 
         & > a::after {
-          font-size: calc(20/16rem);
+          font-size: pxtorem(20);
           padding-left: .3125rem;
           content: '\2192';
           line-height: 0;
@@ -177,8 +177,8 @@
       }
 
       & > [data-icon="lock"] {
-        width: calc(20/16rem);
-        height: calc(20/16rem);
+        width: pxtorem(20);
+        height: pxtorem(20);
       }
     }
   }
@@ -218,7 +218,7 @@
     line-height: 1.4;
 
     & > li {
-      font-size: calc(16/16rem);
+      font-size: pxtorem(16);
       margin-bottom: .25rem;
       padding: 0;
       list-style-type: inherit;

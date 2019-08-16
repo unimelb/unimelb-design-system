@@ -1,6 +1,6 @@
 .uomcontent{
   .flash {
-    padding: .9375rem;
+    padding: pxtorem(15);
     text-align: center;
 
     & > p {

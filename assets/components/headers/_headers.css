@@ -41,8 +41,8 @@
 
   header,
   & > header:first-child {
-    padding-top: calc(24/16rem);
-    padding-bottom: calc(24/16rem);
+    padding-top: pxtorem(24);
+    padding-bottom: pxtorem(24);
     background-color: var(--col-navy-main);
     background-position: center;
     background-repeat: no-repeat;
@@ -81,10 +81,10 @@
 
       & > h1,
       & > p {
-        padding-bottom: 3rem;
+        padding-bottom: pxtorem(48);
         max-width: var(--w-mid);
-        padding-left: calc(20/16rem);
-        padding-right: calc(20/16rem);
+        padding-left: pxtorem(20);
+        padding-right: pxtorem(20);
         text-align: center;
       }
 
@@ -102,20 +102,20 @@
       padding: 0;
 
       @media screen and (--bp-tablet) {
-        padding-bottom: calc(30/16rem);
-        padding-top: calc(30/16rem);
+        padding-bottom: pxtorem(30);
+        padding-top: pxtorem(30);
       }
     }
 
     h1 {
       font-size: 2.0625rem;
-      line-height: 3rem;
+      line-height: pxtorem(48);
       padding-bottom: 0;
       max-width: var(--w-sml);
       font-weight: var(--fw-bold);
       margin: 0 auto;
       text-align: left;
-      margin-top: calc(8/16rem);
+      margin-top: pxtorem(8);
 
       &.article {
         font-weight: var(--fw-semibold);
@@ -127,7 +127,7 @@
       }
 
       @media screen and (--bp-wide) {
-        font-size: 3.4375rem;
+        font-size: pxtorem(55);
         line-height: 3.75rem;
       }
     }
@@ -138,26 +138,26 @@
       margin: 0 auto;
 
       @media screen and (--bp-desktop) {
-        font-size: calc(20/16rem);
-        line-height: calc(24/16rem);
-        padding-top: calc(24/16rem);
+        font-size: pxtorem(20);
+        line-height: pxtorem(24);
+        padding-top: pxtorem(24);
       }
 
       @media screen and (--bp-wide) {
-        font-size: calc(24/16rem);
-        line-height: calc(36/16rem);
+        font-size: pxtorem(24);
+        line-height: pxtorem(36);
       }
     }
 
     p.author {
       font-size: 1rem;
-      line-height: calc(24/16rem);
-      max-width: calc(350/16rem);
+      line-height: pxtorem(24);
+      max-width: pxtorem(350);
       font-style: italic;
 
       &::before {
         margin-top: 0;
-        margin-bottom: calc(24/16rem);
+        margin-bottom: pxtorem(24);
         width: 5rem;
         border-top: 1px solid currentColor;
         content: '';
@@ -168,7 +168,7 @@
 
       em {
         font-size: 1.125rem;
-        line-height: calc(24/16rem);
+        line-height: pxtorem(24);
         font-style: normal;
         font-weight: var(--fw-semibold);
       }
@@ -179,8 +179,8 @@
     }
 
     @media screen and (--bp-desktop) {
-      padding-top: calc(48/16rem);
-      padding-bottom: calc(48/16rem);
+      padding-top: pxtorem(48);
+      padding-bottom: pxtorem(48);
       /* overflow: hidden; */
     }
   }
@@ -240,7 +240,7 @@
     padding-top: 7.5rem;
 
     @media screen and (--bp-desktop) {
-      padding-top: calc(180/16rem);
+      padding-top: pxtorem(180);
     }
   }
 }

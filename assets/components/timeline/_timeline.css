@@ -8,9 +8,9 @@
     position: relative;
 
     &::before {
-      height: calc(20/16rem);
+      height: pxtorem(20);
       top: 1.1875rem;
-      width: calc(20/16rem);
+      width: pxtorem(20);
       background-color: var(--col-white);
       content: '';
       left: 28%;
@@ -32,10 +32,10 @@
     }
 
     dt {
-      font-size: calc(16/16rem);
-      line-height: calc(24/16rem);
-      padding-bottom: calc(30/16rem);
-      padding-right: calc(20/16rem);
+      font-size: pxtorem(16);
+      line-height: pxtorem(24);
+      padding-bottom: pxtorem(30);
+      padding-right: pxtorem(20);
       float: left;
       margin: -4px 0 0;
       text-align: right;
@@ -48,14 +48,14 @@
     }
 
     dd {
-      padding-bottom: calc(30/16rem);
+      padding-bottom: pxtorem(30);
       border-left: 1px solid var(--col-blue-light);
       float: left;
       margin: -4px 0 0;
       position: relative;
       width: 68%;
       text-align: left;
-      font-size: calc(18/16rem);
+      font-size: pxtorem(18);
 
       &:last-child {
         border-left-color: transparent; /* keep 1px border so dot remains aligned */
@@ -78,9 +78,9 @@
       span,
       p,
       figure {
-        margin-left: calc(20/16rem);
-        padding-bottom: calc(10/16rem);
-        padding-left: calc(20/16rem);
+        margin-left: pxtorem(20);
+        padding-bottom: pxtorem(10);
+        padding-left: pxtorem(20);
         display: block;
         margin: 0;
       }
@@ -90,8 +90,8 @@
       }
 
       a.location {
-        font-size: calc(16/16rem);
-        padding-bottom: calc(20/16rem);
+        font-size: pxtorem(16);
+        padding-bottom: pxtorem(20);
         color: var(--col-navy-main);
         display: block;
         font-style: italic;
@@ -104,7 +104,7 @@
 
       ul:last-child,
       p:last-child {
-        padding-bottom: calc(20/16rem);
+        padding-bottom: pxtorem(20);
       }
 
       ul.accordion {
@@ -145,7 +145,7 @@
 
         span,
         p {
-          padding-left: calc(20/16rem);
+          padding-left: pxtorem(20);
         }
       }
 

@@ -13,7 +13,7 @@
   }
 
   .bside {
-    padding: 0 .9375rem;
+    padding: 0 pxtorem(15);
     padding-left: 3%;
 
     h1 {
@@ -148,7 +148,7 @@
       th {
         @mixin subtitle;
         font-size: .875rem;
-        padding: calc(30/16rem) 0 calc(10/16rem);
+        padding: pxtorem(30) 0 pxtorem(10);
         border-top: 1px solid var(--col-black-light);
         clear: both;
         display: block;
@@ -158,7 +158,7 @@
         vertical-align: top;
 
         @media screen and (--bp-desktop) {
-          padding: calc(10/16rem) calc(10/16rem) calc(10/16rem) 0;
+          padding: pxtorem(10) pxtorem(10) pxtorem(10) 0;
           border-bottom: 1px solid var(--col-black-light);
           border-right: 1px solid var(--col-black-light);
           border-top: 0 none;
@@ -181,7 +181,7 @@
         vertical-align: top;
 
         @media screen and (--bp-desktop) {
-          padding: calc(10/16rem);
+          padding: pxtorem(10);
           border-bottom: 1px solid var(--col-black-light);
           border-right: 0 none;
           display: table-cell;
@@ -196,8 +196,8 @@
       }
 
       td.informative {
-        padding-bottom: calc(10/16rem);
-        padding-right: calc(10/16rem);
+        padding-bottom: pxtorem(10);
+        padding-right: pxtorem(10);
         display: block;
         max-width: 100%;
         white-space: normal;
@@ -225,9 +225,9 @@
         }
 
         a {
-          font-size: calc(24/16rem);
+          font-size: pxtorem(24);
           padding: .3125rem;
-          width: calc(20/16rem);
+          width: pxtorem(20);
           display: block;
           font-weight: var(--fw-semibold);
           line-height: 1;

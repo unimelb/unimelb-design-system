@@ -1,6 +1,6 @@
 .uomcontent .page-footer {
   @mixin normalise;
-  font-size: calc(20/16rem);
+  font-size: pxtorem(20);
   background-color: var(--col-navy-main);
   clear: left;
   color: var(--col-white);
@@ -12,7 +12,7 @@
 
   footer {
     @mixin injection-wrapper;
-    padding: .9375rem;
+    padding: pxtorem(15);
     padding-bottom: 3.75rem;
     margin-left: auto;
     margin-right: auto;
@@ -20,7 +20,7 @@
 
   small {
     font-size: .75rem;
-    line-height: calc(20/16rem);
+    line-height: pxtorem(20);
     clear: left;
     color: var(--col-navy-mid-1);
     display: block;
@@ -44,7 +44,7 @@
     padding: 0;
 
     a {
-      font-size: calc(16/16rem);
+      font-size: pxtorem(16);
       line-height: 2.875rem;
 
       @media screen and (--bp-desktop) {
@@ -69,9 +69,9 @@
       width: 100%;
 
       a {
-        font-size: calc(16/16rem);
-        line-height: calc(24/16rem);
-        padding: calc(20/16rem) .9375rem;
+        font-size: pxtorem(16);
+        line-height: pxtorem(24);
+        padding: pxtorem(20) pxtorem(15);
         color: var(--col-white);
         display: block;
         text-decoration: none;
@@ -94,7 +94,7 @@
 }
 
 .uomcontent .unimelb-lge {
-  margin: calc(30/16rem) auto;
+  margin: pxtorem(30) auto;
   width: 16.875rem;
   outline-color: var(--col-white);
   display: block;
@@ -127,7 +127,7 @@
   }
 
   a {
-    font-size: .9375rem;
+    font-size: pxtorem(15);
     color: var(--col-white);
     text-decoration: none;
 
@@ -143,8 +143,8 @@
     height: auto;
 
     li {
-      padding-bottom: calc(10/16rem);
-      padding-top: calc(10/16rem);
+      padding-bottom: pxtorem(10);
+      padding-top: pxtorem(10);
       color: inherit;
       line-height: 1.1;
       margin-left: 0;
@@ -180,13 +180,13 @@
     }
 
     @media screen and (--bp-desktop) {
-      margin-bottom: calc(10/16rem);
-      margin-top: calc(20/16rem);
+      margin-bottom: pxtorem(10);
+      margin-top: pxtorem(20);
       border: 0 none;
       width: 70%;
 
       li {
-        padding-right: calc(30/16rem);
+        padding-right: pxtorem(30);
         clear: none;
         display: inline;
         float: none;
@@ -205,13 +205,13 @@
       }
 
       a {
-        font-size: .9375rem;
+        font-size: pxtorem(15);
       }
     }
   }
 
   &.social {
-    margin-bottom: calc(20/16rem);
+    margin-bottom: pxtorem(20);
     padding-top: 1rem;
     height: auto;
     padding-bottom: 0;
@@ -229,9 +229,9 @@
         vertical-align: top;
 
         svg {
-          height: calc(24/16rem);
+          height: pxtorem(24);
           margin-bottom: .3125rem;
-          width: calc(24/16rem);
+          width: pxtorem(24);
           fill: currentColor;
         }
       }
@@ -247,9 +247,9 @@
 
     a {
       @mixin imgreplace;
-      height: calc(36/16rem);
+      height: pxtorem(36);
       padding-bottom: 1rem;
-      width: calc(36/16rem);
+      width: pxtorem(36);
       display: inline-block;
       text-decoration: none;
       overflow: hidden;
@@ -262,13 +262,13 @@
     }
 
     img {
-      max-width: calc(24/16rem);
-      max-width: calc(24/16rem);
+      max-width: pxtorem(24);
+      max-width: pxtorem(24);
     }
 
     @media screen and (--bp-desktop) {
       margin-bottom: 3.75rem;
-      margin-top: calc(20/16rem);
+      margin-top: pxtorem(20);
       padding-right: 1rem;
       border: 0 none;
       clear: none;
@@ -277,7 +277,7 @@
       width: 30%;
 
       li {
-        margin-left: calc(24/16rem);
+        margin-left: pxtorem(24);
         display: inline;
         float: none;
         width: auto;

@@ -1,9 +1,9 @@
 .uomcontent {
   .staff-listing {
     @mixin wrapper;
-    margin-top: calc(24/16rem);
+    margin-top: pxtorem(24);
     max-width: var(--w-mid);
-    margin-bottom: calc(24/16rem);
+    margin-bottom: pxtorem(24);
     border: 0;
     border-collapse: collapse;
     display: table;
@@ -64,12 +64,12 @@
     }
 
     li {
-      padding: calc(10/16rem) 0;
+      padding: pxtorem(10) 0;
       list-style-type: none;
     }
 
     tr {
-      padding: calc(10/16rem) 0;
+      padding: pxtorem(10) 0;
       border-bottom: 1px solid var(--col-black-light);
       display: block;
 
@@ -85,7 +85,7 @@
         width: 100%;
 
         @media screen and (--bp-tablet) {
-          padding: calc(10/16rem) 0;
+          padding: pxtorem(10) 0;
           border-bottom: 1px solid var(--col-black-light);
           display: table-cell;
           width: auto;

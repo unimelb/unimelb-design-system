@@ -10,7 +10,7 @@
     position: relative;
 
     @media screen and (--bp-wide) {
-      margin-bottom: 3rem;
+      margin-bottom: pxtorem(48);
       max-width: 100%;
       padding-bottom: 39.45%;
     }
@@ -41,11 +41,11 @@
   }
 
   .half .video {
-    margin-bottom: calc(30/16rem);
+    margin-bottom: pxtorem(30);
     padding-bottom: 56.25%;
 
     @media screen and (--bp-desktop) {
-      margin-right: calc(30/16rem);
+      margin-right: pxtorem(30);
 
       iframe {
         margin-left: 0;

@@ -2,28 +2,28 @@
   header {
     .box {
       max-width: var(--w-sml);
-      padding: 3.5rem calc(30/16rem);
+      padding: 3.5rem pxtorem(30);
       background: color(var(--col-white) alpha(95%));
       color: var(--col-navy-main);
       margin: 0 auto;
 
       h1 {
         @mixin title;
-        line-height: calc(24/16rem);
-        margin-bottom: calc(24/16rem);
+        line-height: pxtorem(24);
+        margin-bottom: pxtorem(24);
         font-weight: var(--fw-bold);
         text-align: center;
       }
 
       p {
-        font-size: calc(18/16rem);
+        font-size: pxtorem(18);
         line-height: 1.5;
         padding-top: 0;
         font-weight: var(--fw-regular);
       }
 
       @media screen and (--bp-tablet) {
-        margin: calc(30/16rem) auto;
+        margin: pxtorem(30) auto;
         padding-left: 3.75rem;
         padding-right: 3.75rem;
       }

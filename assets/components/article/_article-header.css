@@ -8,8 +8,8 @@
       h1,
       p {
         max-width: var(--w-mid);
-        padding-left: calc(20/16rem);
-        padding-right: calc(20/16rem);
+        padding-left: pxtorem(20);
+        padding-right: pxtorem(20);
       }
 
       h1 {
@@ -19,14 +19,14 @@
       p.author {
         em {
           font-size: 1.125rem;
-          line-height: calc(24/16rem);
+          line-height: pxtorem(24);
           font-style: normal;
           font-weight: var(--fw-semibold);
         }
       }
 
       .bottom-align {
-        padding-bottom: 3rem;
+        padding-bottom: pxtorem(48);
         position: relative;
       }
     }
@@ -47,8 +47,8 @@
       }
 
       h1 {
-        padding-top: 3rem;
-        padding-bottom: calc(24/16rem);
+        padding-top: pxtorem(48);
+        padding-bottom: pxtorem(24);
         max-width: var(--w-sml);
       }
 
@@ -56,7 +56,7 @@
         max-width: var(--w-sml);
 
         &.author {
-          padding-bottom: 3rem;
+          padding-bottom: pxtorem(48);
           max-width: var(--w-sml);
           border-bottom: 1px solid var(--col-black-light);
 
@@ -68,7 +68,7 @@
       }
 
       & + section.with-figure > figure.full-width {
-        margin-top: -1.5625rem;
+        margin-top: pxtorem(-25);
       }
     }
   }

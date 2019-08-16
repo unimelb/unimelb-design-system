@@ -24,7 +24,7 @@
   }
 
   p {
-    font-size: calc(16/16rem);
+    font-size: pxtorem(16);
     padding: 1rem 1rem 0;
     background-color: transparent;
     color: inherit;
@@ -38,7 +38,7 @@
   }
 
   strong {
-    font-size: calc(20/16rem);
+    font-size: pxtorem(20);
     padding: 1rem 1rem 0;
     background-color: transparent;
     color: inherit;
@@ -68,7 +68,7 @@
 
   .meta {
     @mixin clearfix;
-    font-size: calc(14/16rem);
+    font-size: pxtorem(14);
     padding: .25rem 1rem;
     background-color: color(var(--col-white) alpha(90%));
     color: inherit;
@@ -116,8 +116,8 @@
       display: inline-block;
       &:first-child::after {
         display: inline-block;
-        margin-left: calc(3/16rem);
-        margin-right: calc(3/16rem);
+        margin-left: pxtorem(3);
+        margin-right: pxtorem(3);
         content: "-";
       }
     }
@@ -127,7 +127,7 @@
   .exhibition {
 
     strong {
-      margin-bottom: calc(24/16rem);
+      margin-bottom: pxtorem(24);
       padding-top: 0;
     }
 
@@ -209,7 +209,7 @@
 
       p {
         padding: 0 2rem 1rem;
-        font-size: calc(20/16rem);
+        font-size: pxtorem(20);
         line-height: 1.3;
       }
 
@@ -267,7 +267,7 @@
   }
 
   .crop-height {
-    max-height: calc(190/16rem);
+    max-height: pxtorem(190);
     overflow: hidden;
 
     img {
@@ -381,7 +381,7 @@
 
       strong {
         font-size: 1.75rem;
-        padding: calc(10/16rem);
+        padding: pxtorem(10);
         background-color: color(var(--col-blue-mid-2) alpha(80%));
         bottom: 0;
         font-weight: var(--fw-regular);
@@ -390,19 +390,19 @@
         position: absolute;
 
         em {
-          font-size: calc(18/16rem);
-          line-height: calc(24/16rem);
+          font-size: pxtorem(18);
+          line-height: pxtorem(24);
         }
 
         @media screen and (--bp-x-tablet) {
-          padding: calc(10/16rem) calc(24/16rem);
+          padding: pxtorem(10) pxtorem(24);
           width: 100%;
         }
 
         @media screen and (--bp-wide) {
           font-size: 1.625rem;
-          line-height: calc(36/16rem);
-          padding: calc(20/16rem) calc(24/16rem);
+          line-height: pxtorem(36);
+          padding: pxtorem(20) pxtorem(24);
         }
       }
 
@@ -450,13 +450,13 @@
       background-size: cover;
 
       a {
-        padding-left: calc(24/16rem);
-        padding-right: calc(24/16rem);
+        padding-left: pxtorem(24);
+        padding-right: pxtorem(24);
       }
 
       span {
-        font-size: calc(20/16rem);
-        line-height: calc(24/16rem);
+        font-size: pxtorem(20);
+        line-height: pxtorem(24);
         padding-top: 6rem;
         display: block;
         font-style: normal;
@@ -512,13 +512,13 @@
       }
 
       strong {
-        font-size: calc(20/16rem);
+        font-size: pxtorem(20);
         font-weight: var(--fw-regular);
         line-height: 1.5;
 
         @media screen and (--bp-desktop) {
-          font-size: calc(24/16rem);
-          line-height: calc(36/16rem);
+          font-size: pxtorem(24);
+          line-height: pxtorem(36);
           overflow-wrap: break-word;
         }
       }
@@ -531,7 +531,7 @@
     }
 
     &.instagram {
-      min-height: calc(350/16rem);
+      min-height: pxtorem(350);
       background-position: center;
       background-size: cover;
       border-bottom-color: color(var(--col-navy-main) alpha(80%));
@@ -545,7 +545,7 @@
       }
 
       .meta {
-        padding: .75rem calc(20/16rem) 0;
+        padding: .75rem pxtorem(20) 0;
         background-color: color(var(--col-navy-main) alpha(80%));
         border: none;
         bottom: 0;
@@ -572,7 +572,7 @@
       border-bottom-color: var(--col-blue-mid-2);
 
       a {
-        padding: calc(10/16rem) 0;
+        padding: pxtorem(10) 0;
         border: 0;
         border-bottom: 1px solid var(--col-black-light);
         color: var(--col-blue-mid-2);
@@ -590,8 +590,8 @@
       }
 
       strong {
-        font-size: calc(18/16rem);
-        line-height: calc(24/16rem);
+        font-size: pxtorem(18);
+        line-height: pxtorem(24);
         padding: 1rem 0;
         color: currentColor;
         display: inline-block;
@@ -618,22 +618,22 @@
         }
 
         &::after {
-          font-size: calc(10/16rem);
+          font-size: pxtorem(10);
           margin-top: -.625rem;
-          padding-left: calc(10/16rem);
+          padding-left: pxtorem(10);
           content: '\2192';
           display: inline-block;
           line-height: 1;
 
           @media screen and (--bp-height-small) {
             font-size: 1.125rem;
-            padding-left: calc(10/16rem);
+            padding-left: pxtorem(10);
           }
         }
 
         @media screen and (--bp-height-small) {
-          font-size: calc(18/16rem);
-          line-height: calc(24/16rem);
+          font-size: pxtorem(18);
+          line-height: pxtorem(24);
         }
       }
 

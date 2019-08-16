@@ -1,7 +1,7 @@
 @define-mixin pathfinder-3 {
   @mixin feature-listing-3;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: pxtorem(48);
+  margin-bottom: pxtorem(48);
   background-color: transparent;
   border: 0 none;
   padding: 0 3%;
@@ -136,7 +136,7 @@
         justify-content: center;
 
         & > span {
-          padding: 0 calc(10/16rem);
+          padding: 0 pxtorem(10);
 
           span {
             margin-bottom: .75rem;
@@ -145,7 +145,7 @@
           }
 
           &::after {
-            font-size: calc(20/16rem);
+            font-size: pxtorem(20);
             margin-top: -.3125rem;
             padding-left: .3125rem;
             content: '\2192';
@@ -156,7 +156,7 @@
       }
 
       p {
-        padding-bottom: 3rem;
+        padding-bottom: pxtorem(48);
         color: var(--col-black-dark);
       }
     }
@@ -169,8 +169,8 @@
   }
 
   li {
-    margin-top: calc(24/16rem);
-    margin-bottom: calc(24/16rem);
+    margin-top: pxtorem(24);
+    margin-bottom: pxtorem(24);
     margin-left: 0;
     margin-right: 0;
     overflow: visible;
@@ -181,27 +181,27 @@
 
   p,
   span.text {
-    margin-top: calc(24/16rem);
-    padding-bottom: calc(24/16rem);
-    font-size: calc(16/16rem);
+    margin-top: pxtorem(24);
+    padding-bottom: pxtorem(24);
+    font-size: pxtorem(16);
     min-width: 10.3125rem;
-    padding-left: calc(20/16rem);
-    padding-right: calc(20/16rem);
+    padding-left: pxtorem(20);
+    padding-right: pxtorem(20);
     background-color: transparent;
     display: block;
     padding-top: 0;
     text-align: center;
 
     @media screen and (--bp-desktop) {
-      font-size: calc(18/16rem);
+      font-size: pxtorem(18);
     }
   }
 
   strong {
-    font-size: calc(24/16rem);
+    font-size: pxtorem(24);
     line-height: 1.35;
-    padding-top: calc(30/16rem);
-    padding-bottom: 3rem;
+    padding-top: pxtorem(30);
+    padding-bottom: pxtorem(48);
     color: var(--col-white);
     font-family: var(--ff-serif);
     font-weight: var(--fw-bold);
@@ -209,15 +209,15 @@
     text-align: center;
 
     @media screen and (--bp-desktop) {
-      font-size: calc(28/16rem);
+      font-size: pxtorem(28);
     }
   }
 
   a {
     @mixin focus;
     @mixin focus-light;
-    padding-bottom: 3rem;
-    max-width: calc(350/16rem);
+    padding-bottom: pxtorem(48);
+    max-width: pxtorem(350);
     background-color: var(--col-navy-main);
     margin: 0 auto;
     position: relative;
@@ -266,8 +266,8 @@
   }
 
   @media screen and (--bp-desktop) {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: pxtorem(48);
+    padding-bottom: pxtorem(48);
     display: table;
     float: none;
     height: 100%;
@@ -296,27 +296,27 @@
     p,
     span.text {
       padding-bottom: 7.5rem;
-      max-width: calc(350/16rem);
+      max-width: pxtorem(350);
       margin: 0 auto;
       padding-left: 0;
       padding-right: 0;
     }
 
     strong {
-      margin: 0 auto calc(30/16rem);
-      padding: calc(30/16rem) 0 0;
+      margin: 0 auto pxtorem(30);
+      padding: pxtorem(30) 0 0;
     }
 
     a {
       min-height: 25rem;
-      padding: 0 2.1875rem;
+      padding: 0 pxtorem(35);
       height: 100%;
       margin: 0 auto;
       position: relative;
     }
 
     .button-small {
-      bottom: calc(30/16rem);
+      bottom: pxtorem(30);
       box-align: horizontal;
       display: inline-block;
       left: 50%;

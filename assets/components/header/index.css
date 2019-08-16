@@ -1,5 +1,5 @@
 @define-mixin headerblock {
-  font-size: .9375rem;
+  font-size: pxtorem(15);
   color: var(--col-white);
   display: inline-block;
   vertical-align: middle;
@@ -8,7 +8,7 @@
 @define-mixin control {
   border-radius: 3px;
   margin-top: .3125rem;
-  padding: .5rem calc(10/16rem);
+  padding: .5rem pxtorem(10);
   font-family: var(--ff-sans);
 
   &.invalid {
@@ -42,7 +42,7 @@
 
 .uomcontent .page-header {
   @mixin normalise;
-  font-size: calc(20/16rem);
+  font-size: pxtorem(20);
   height: 3.75rem;
   background-color: var(--col-navy-main);
   color: var(--col-white);
@@ -58,7 +58,7 @@
   }
 
   @media screen and (--bp-desktop) {
-    height: calc(115/16rem);
+    height: pxtorem(115);
     position: absolute;
   }
 
@@ -87,10 +87,10 @@
         vertical-align: middle;
 
         [data-icon] {
-          height: calc(20/16rem);
+          height: pxtorem(20);
           margin-bottom: .25rem;
           margin-right: .3125rem;
-          width: calc(20/16rem);
+          width: pxtorem(20);
           display: inline-block;
           line-height: 1;
           padding: 0;
@@ -110,7 +110,7 @@
 
       .page-header-navigation {
         height: 2.5rem;
-        line-height: calc(30/16rem);
+        line-height: pxtorem(30);
         transform: translateX(.9375rem);
         transition: .3s transform .1s, .2s height;
         vertical-align: top;
@@ -126,14 +126,14 @@
       }
 
       .page-header-tools .page-header-icon {
-        font-size: calc(12/16rem);
+        font-size: pxtorem(12);
         height: 2.5rem;
         line-height: 1;
         vertical-align: top;
 
         svg {
           height: .875rem;
-          margin-bottom: .1875rem;
+          margin-bottom: pxtorem(3);
           margin-top: .4375rem;
           width: .875rem;
         }
@@ -152,7 +152,7 @@
     z-index: 3;
 
     @media screen and (--bp-desktop) {
-      height: calc(115/16rem);
+      height: pxtorem(115);
       border-bottom: 0 none;
     }
   }
@@ -191,14 +191,14 @@
     }
 
     @media screen and (--bp-desktop) {
-      height: calc(115/16rem);
-      line-height: calc(115/16rem);
+      height: pxtorem(115);
+      line-height: pxtorem(115);
 
       &.page-header-logo {
-        margin-left: calc(25/16rem);
-        height: calc(115/16rem);
-        width: calc(115/16rem);
-        padding: calc(20/16rem);
+        margin-left: pxtorem(25);
+        height: pxtorem(115);
+        width: pxtorem(115);
+        padding: pxtorem(20);
         position: absolute;
       }
     }
@@ -234,18 +234,18 @@
     font-size: .8125rem;
     height: 2.5rem;
     line-height: 2.5rem;
-    padding: 0 calc(10/16rem) .3125rem calc(10/16rem);
+    padding: 0 pxtorem(10) .3125rem pxtorem(10);
 
     @media screen and (--bp-desktop) {
       height: 4.6875rem;
       line-height: 4.6875rem;
-      padding: 0 calc(10/16rem) .46875rem calc(10/16rem);
+      padding: 0 pxtorem(10) .46875rem pxtorem(10);
     }
   }
 }
 
 .uomcontent .page-header-navigation {
-  padding: 0 .9375rem 0;
+  padding: 0 pxtorem(15) 0;
   display: table-cell;
   left: 0;
   transition: .3s transform;
@@ -256,11 +256,11 @@
     display: block;
 
     .styled-select.alt {
-      margin-top: calc(10/16rem);
+      margin-top: pxtorem(10);
       position: relative;
 
       select {
-        padding: .3125rem 1.5625rem .3125rem calc(10/16rem);
+        padding: .3125rem 1.5625rem .3125rem pxtorem(10);
         border: 0;
         border-radius: 3px;
         color: var(--col-navy-main);
@@ -274,7 +274,7 @@
     }
 
     @-moz-document url-prefix() {
-      margin-top: calc(10/16rem);
+      margin-top: pxtorem(10);
       border: 1px solid var(--col-blue-mid-2);
       border-radius: 3px;
       overflow: hidden;
@@ -293,10 +293,10 @@
     }
 
     .styled-select svg.icon {
-      height: calc(20/16rem);
+      height: pxtorem(20);
       right: .3125rem;
       top: .3125rem;
-      width: calc(20/16rem);
+      width: pxtorem(20);
       fill: var(--col-navy-main);
       position: absolute;
     }
@@ -312,18 +312,18 @@
   }
 
   [data-icon] {
-    height: calc(20/16rem);
+    height: pxtorem(20);
     margin-bottom: .25rem;
     margin-right: .3125rem;
-    width: calc(20/16rem);
+    width: pxtorem(20);
     display: inline-block;
     line-height: 1;
     padding: 0;
   }
 
   @media screen and (--bp-desktop) {
-    height: calc(115/16rem);
-    transform: translateX(calc(150/16rem));
+    height: pxtorem(115);
+    transform: translateX(pxtorem(150));
     margin-right: 16.25rem;
     display: block;
     overflow: hidden;
@@ -344,10 +344,10 @@
     padding: 0;
 
     [data-icon] {
-      height: calc(20/16rem);
+      height: pxtorem(20);
 
       .icon {
-        height: calc(20/16rem);
+        height: pxtorem(20);
       }
     }
 
@@ -392,12 +392,12 @@
 }
 
 .uomcontent .page-header-navigation ol.page-local-history {
-  line-height: calc(115/16rem);
+  line-height: pxtorem(115);
   list-style-type: none;
 
   li {
-    font-size: calc(17/16rem);
-    padding-right: calc(13/16rem);
+    font-size: pxtorem(17);
+    padding-right: pxtorem(13);
     display: inline-block;
     width: auto;
 
@@ -407,7 +407,7 @@
       content: '';
       display: inline-block;
       height: .4em;
-      margin-left: calc(12/16rem);
+      margin-left: pxtorem(12);
       transform: rotate(-45deg);
       vertical-align: middle;
       width: .4em;
@@ -425,7 +425,7 @@
   }
 
   span {
-    font-size: calc(17/16rem);
+    font-size: pxtorem(17);
     height: auto;
     line-height: 1;
     padding: 0;
@@ -437,10 +437,10 @@
 }
 
 .uomcontent div.page-local-history {
-  padding: 0 calc(30/16rem);
+  padding: 0 pxtorem(30);
 
   span {
-    padding: 0 calc(10/16rem);
+    padding: 0 pxtorem(10);
   }
 }
 
@@ -453,7 +453,7 @@
   z-index: var(--z-navigation);
 
   @media screen and (--bp-desktop) {
-    margin-top: calc(115/16rem);
+    margin-top: pxtorem(115);
   }
 }
 
@@ -476,14 +476,14 @@
         line-height: 1;
 
         &[data-icon] {
-          width: calc(24/16rem);
-          height: calc(24/16rem);
+          width: pxtorem(24);
+          height: pxtorem(24);
           margin: 0;
         }
       }
 
       .page-header-icon {
-        height: calc(115/16rem);
+        height: pxtorem(115);
         line-height: 1;
         vertical-align: top;
       }
@@ -507,11 +507,11 @@
   }
 
   @media screen and (--bp-desktop) {
-    height: calc(115/16rem);
+    height: pxtorem(115);
   }
 
   form {
-    padding-left: calc(10/16rem);
+    padding-left: pxtorem(10);
     animation: slideFromTop .2s backwards;
     display: table;
     height: 100%;
@@ -519,7 +519,7 @@
 
     fieldset {
       padding-top: .3125rem;
-      padding-right: calc(10/16rem);
+      padding-right: pxtorem(10);
       display: table-cell;
       vertical-align: top;
 
@@ -527,7 +527,7 @@
         @mixin textcontrol;
         border-radius: 3px 0 0 3px;
         height: 2.5rem;
-        margin-top: .1875rem;
+        margin-top: pxtorem(3);
         animation: fadeIn .2s backwards, slideFromRight .2s .1s backwards;
         appearance: none;
         border-right: 0;
@@ -545,7 +545,7 @@
         input[type="image"] {
           @mixin inlinebutton;
           border-radius: 0 3px 3px 0;
-          margin: .9375rem 0 0;
+          margin: pxtorem(15) 0 0;
           width: 2.8125rem;
           padding: 0;
           position: absolute;
@@ -557,8 +557,8 @@
           }
 
           svg {
-            height: calc(24/16rem);
-            width: calc(24/16rem);
+            height: pxtorem(24);
+            width: pxtorem(24);
             background-color: transparent;
             cursor: pointer;
             fill: currentColor;
@@ -570,16 +570,16 @@
           @mixin inlinebutton;
           border-radius: 0 3px 3px 0;
           height: 2.5rem;
-          margin: .1875rem 0 0;
-          padding: 0 .9375rem;
+          margin: pxtorem(3) 0 0;
+          padding: 0 pxtorem(15);
 
           span.small {
             color: inherit;
             padding: 0;
 
             svg {
-              height: calc(24/16rem);
-              width: calc(24/16rem);
+              height: pxtorem(24);
+              width: pxtorem(24);
             }
           }
         }
@@ -603,8 +603,8 @@
     }
 
     @media screen and (--bp-desktop) {
-      max-width: calc(500/16rem);
-      padding-left: calc(20/16rem);
+      max-width: pxtorem(500);
+      padding-left: pxtorem(20);
       float: right;
       width: 100%;
 
@@ -615,7 +615,7 @@
 
     .page-header-icon {
       font-size: .5625rem;
-      padding: 0 calc(10/16rem);
+      padding: 0 pxtorem(10);
       width: 2.5rem;
       box-sizing: content-box;
       color: var(--col-navy-main);
@@ -629,25 +629,25 @@
       vertical-align: top;
 
       svg {
-        height: calc(20/16rem);
+        height: pxtorem(20);
         margin-bottom: .25rem;
-        margin-top: calc(14/16rem);
-        width: calc(20/16rem);
+        margin-top: pxtorem(14);
+        width: pxtorem(20);
         fill: currentColor;
         display: block;
         margin-left: auto;
         margin-right: auto;
 
         @media screen and (--bp-desktop) {
-          height: calc(36/16rem);
+          height: pxtorem(36);
           margin-bottom: .25rem;
-          margin-top: calc(20/16rem);
-          width: calc(36/16rem);
+          margin-top: pxtorem(20);
+          width: pxtorem(36);
         }
       }
 
       @media screen and (--bp-desktop) {
-        font-size: calc(10/16rem);
+        font-size: pxtorem(10);
         padding: 0 1.4375rem;
       }
 
@@ -686,7 +686,7 @@
 
   .page-header-icon {
     font-size: .5625rem;
-    padding: 0 calc(10/16rem);
+    padding: 0 pxtorem(10);
     width: 2.5rem;
     border-left: 1px solid rgba(255,255,255,0.15);
     box-sizing: content-box;
@@ -696,10 +696,10 @@
     transition: background-color 0.3s, color 0.3s, transform 0.3s;
 
     svg {
-      height: calc(20/16rem);
+      height: pxtorem(20);
       margin-bottom: .25rem;
       margin-top: .875rem;
-      width: calc(20/16rem);
+      width: pxtorem(20);
       fill: currentColor;
       display: block;
       margin-left: auto;
@@ -729,14 +729,14 @@
 
   @media screen and (--bp-desktop) {
     .page-header-icon {
-      font-size: calc(13/16rem);
+      font-size: pxtorem(13);
       padding: 0 1.4375rem;
 
       svg {
-        height: calc(24/16rem);
-        margin-bottom: calc(10/16rem);
-        margin-top: calc(35/16rem);
-        width: calc(24/16rem);
+        height: pxtorem(24);
+        margin-bottom: pxtorem(10);
+        margin-top: pxtorem(35);
+        width: pxtorem(24);
       }
     }
   }
@@ -751,19 +751,19 @@
   }
 
   .page-header-logo {
-    margin-left: .9375rem;
-    margin-top: .9375rem;
+    margin-left: pxtorem(15);
+    margin-top: pxtorem(15);
     position: absolute;
 
     @media screen and (--bp-desktop) {
-      margin-left: calc(30/16rem);
-      margin-top: calc(30/16rem);
+      margin-left: pxtorem(30);
+      margin-top: pxtorem(30);
     }
   }
 
   .page-header-home {
     left: 5.625rem;
-    margin-top: .9375rem;
+    margin-top: pxtorem(15);
     width: 10rem;
     color: var(--col-white);
     line-height: 1.3;
@@ -774,14 +774,14 @@
     }
 
     @media screen and (--bp-desktop) {
-      font-size: calc(20/16rem);
+      font-size: pxtorem(20);
       left: 12.5rem;
-      margin-top: calc(30/16rem);
+      margin-top: pxtorem(30);
     }
   }
 
   .page-header-tools {
-    margin: .9375rem;
+    margin: pxtorem(15);
     background-color: transparent;
     position: absolute;
 
@@ -803,8 +803,8 @@
 
       a.page-header-icon {
         height: 3.9375rem;
-        margin-left: calc(20/16rem);
-        padding: .4375rem .9375rem 0;
+        margin-left: pxtorem(20);
+        padding: .4375rem pxtorem(15) 0;
 
         svg {
           margin-top: .4375rem;
@@ -824,7 +824,7 @@
   }
 
   &.short {
-    padding: .9375rem;
+    padding: pxtorem(15);
     background-position: center center;
     background-size: cover;
     height: auto;
@@ -851,15 +851,15 @@
       white-space: normal;
 
       h1 {
-        font-size: .9375rem;
+        font-size: pxtorem(15);
         display: inline;
         line-height: 1.5;
       }
     }
 
     .page-header-tools {
-      right: .9375rem;
-      top: .9375rem;
+      right: pxtorem(15);
+      top: pxtorem(15);
       position: absolute;
     }
 
@@ -894,7 +894,7 @@
         width: 18.75rem;
 
         h1 {
-          font-size: calc(24/16rem);
+          font-size: pxtorem(24);
         }
       }
 

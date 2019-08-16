@@ -7,7 +7,7 @@
     text-align: center;
 
     li {
-      margin: calc(10/16rem) calc(10/16rem);
+      margin: pxtorem(10) pxtorem(10);
       width: 4.375rem;
       display: inline-block;
       list-style-type: none;
@@ -15,12 +15,12 @@
       vertical-align: top;
 
       @media screen and (--bp-desktop) {
-        margin: calc(10/16rem) 1.75rem;
+        margin: pxtorem(10) 1.75rem;
       }
     }
 
     a {
-      line-height: calc(24/16rem);
+      line-height: pxtorem(24);
       border-radius: 4px;
       height: 4.375rem;
       padding-top: .5rem;

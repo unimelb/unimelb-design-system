@@ -1,13 +1,13 @@
 .uomcontent [role="main"] {
   .enquiry {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: pxtorem(48);
+    padding-bottom: pxtorem(48);
     background-color: var(--col-navy-light);
 
     .errors {
       font-size: 1.375rem;
       max-width: var(--w-sml);
-      padding-top: calc(30/16rem);
+      padding-top: pxtorem(30);
       background-color: var(--col-pink-light);
       margin: 0 auto;
 
@@ -18,21 +18,21 @@
 
     .enquiry__cta {
       @mixin wrapper;
-      font-size: calc(20/16rem);
+      font-size: pxtorem(20);
       line-height: 3.125rem;
-      padding-bottom: calc(24/16rem);
+      padding-bottom: pxtorem(24);
       max-width: var(--w-sml);
       text-align: center;
 
       a {
-        line-height: calc(30/16rem);
-        margin-left: calc(10/16rem);
+        line-height: pxtorem(30);
+        margin-left: pxtorem(10);
         vertical-align: middle;
       }
 
       @media screen and (--bp-desktop) {
         font-size: 1.375rem;
-        line-height: calc(36/16rem);
+        line-height: pxtorem(36);
       }
     }
 
@@ -50,7 +50,7 @@
         }
 
         .secondary {
-          margin-left: calc(20/16rem);
+          margin-left: pxtorem(20);
         }
       }
     }
@@ -61,7 +61,7 @@
 
     .enquiry__form {
       form {
-        padding-top: calc(24/16rem);
+        padding-top: pxtorem(24);
         max-width: 100%;
       }
 

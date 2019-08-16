@@ -2,7 +2,7 @@
   @mixin detail;
   @mixin clearfix;
   max-width: var(--w-lge);
-  padding-top: 3rem;
+  padding-top: pxtorem(48);
 
   margin-left: 0;
   margin-right: 0;
@@ -16,11 +16,11 @@
 
   h1 {
     padding-top: 0;
-    padding-bottom: .9375rem;
+    padding-bottom: pxtorem(15);
   }
 
   .aside {
-    padding-top: .9375rem;
+    padding-top: pxtorem(15);
 
     div {
       padding-left: 0;
@@ -46,7 +46,7 @@
 
   figure + .article {
     h1 {
-      margin-top: calc(10/16rem);
+      margin-top: pxtorem(10);
     }
   }
 
@@ -71,8 +71,8 @@
     }
 
     h2 {
-      font-size: calc(24/16rem);
-      line-height: calc(36/16rem);
+      font-size: pxtorem(24);
+      line-height: pxtorem(36);
       font-weight: var(--fw-light);
       padding-top: 0;
       text-transform: none;
@@ -94,7 +94,7 @@
   }
 
   .video {
-    margin-bottom: calc(24/16rem);
+    margin-bottom: pxtorem(24);
   }
 
   @media screen and (--bp-desktop) {
@@ -121,7 +121,7 @@
 
       ul,
       ol {
-        margin-left: calc(20/16rem);
+        margin-left: pxtorem(20);
       }
 
       blockquote {

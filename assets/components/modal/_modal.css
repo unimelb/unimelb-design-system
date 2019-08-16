@@ -1,7 +1,7 @@
 @define-mixin modal-close-icon {
   content: '✕';
   display: block;
-  font-size: calc(16/16rem);
+  font-size: pxtorem(16);
   font-weight: var(--fw-bold);
   line-height: 1;
   padding-bottom: 2px;
@@ -12,7 +12,7 @@
     background-color: var(--col-white);
     left: 5%;
     max-width: 100%;
-    padding: calc(30/16rem);
+    padding: pxtorem(30);
     position: absolute;
     right: 5%;
     text-align: left;
@@ -59,7 +59,7 @@
   .modal__close {
     background-color: var(--col-white);
     color: var(--col-navy-main);
-    font-size: calc(14/16rem);
+    font-size: pxtorem(14);
     font-weight: var(--fw-regular);
     padding: 0 0 5px 5px;
     position: absolute;

@@ -4,7 +4,7 @@
   text-align: center;
 
   &__item {
-    padding: calc(10/16rem);
+    padding: pxtorem(10);
     color: color(var(--col-black-dark) alpha(80%));
     display: inline-block;
     vertical-align: middle;

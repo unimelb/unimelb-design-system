@@ -14,7 +14,7 @@
 
       p {
         font-size: 1.125rem;
-        padding: calc(10/16rem) 0 calc(20/16rem);
+        padding: pxtorem(10) 0 pxtorem(20);
         line-height: 1.2;
         text-align: center;
       }
@@ -23,7 +23,7 @@
         text-align: center;
 
         small {
-          padding-bottom: calc(10/16rem);
+          padding-bottom: pxtorem(10);
           display: block;
           font-weight: var(--fw-light);
           line-height: 1.2;
@@ -53,7 +53,7 @@
         }
 
         .right {
-          padding-top: .9375rem;
+          padding-top: pxtorem(15);
           float: right;
           overflow: hidden;
           text-align: right;

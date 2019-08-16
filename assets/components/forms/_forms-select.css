@@ -13,7 +13,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    right: calc(42/16rem);
+    right: pxtorem(42);
     width: 1px;
     background-color: currentColor;
     z-index: var(--z-default);
@@ -32,7 +32,7 @@
     top: 50%;
     right: 0;
     margin-top: -9px;
-    margin-right: calc(16/16rem);
+    margin-right: pxtorem(16);
   }
 
 
@@ -127,10 +127,10 @@
   position: relative;
 
   svg.icon {
-    height: calc(30/16rem);
+    height: pxtorem(30);
     right: .4375rem;
     top: .4375rem;
-    width: calc(30/16rem);
+    width: pxtorem(30);
     color: var(--col-white);
     cursor: pointer;
     display: block;
@@ -173,7 +173,7 @@
   select {
     @mixin theme;
     border-radius: 3px;
-    padding: .5rem calc(10/16rem);
+    padding: .5rem pxtorem(10);
     appearance: none;
     border: 0;
 

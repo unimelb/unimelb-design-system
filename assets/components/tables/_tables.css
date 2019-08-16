@@ -10,9 +10,9 @@
 }
 
 .uomcontent [role="main"] table.mobile-friendly {
-  margin-top: calc(24/16rem);
+  margin-top: pxtorem(24);
   max-width: 37.5rem;
-  margin-bottom: calc(24/16rem);
+  margin-bottom: pxtorem(24);
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -48,7 +48,7 @@
   border-collapse: collapse;
 
   th .sortable {
-    padding-left: .1875rem;
+    padding-left: pxtorem(3);
     display: inline-block;
     font-size: .6em;
     position: relative;
@@ -115,7 +115,7 @@
     }
 
     th.right:last-child {
-      padding-left: calc(20/16rem);
+      padding-left: pxtorem(20);
     }
   }
 
@@ -150,7 +150,7 @@
 
       th,
       th:first-child {
-        padding: calc(20/16rem) calc(10/16rem) calc(10/16rem) calc(10/16rem);
+        padding: pxtorem(20) pxtorem(10) pxtorem(10) pxtorem(10);
         background-color: transparent;
         border-top: 0;
         text-align: left;
@@ -158,14 +158,14 @@
     }
 
     th {
-      padding: calc(10/16rem);
+      padding: pxtorem(10);
       border: 1px solid var(--col-blue-light);
       text-align: left;
       vertical-align: top;
     }
 
     td {
-      padding: calc(10/16rem);
+      padding: pxtorem(10);
       border: 1px solid var(--col-blue-light);
       text-align: left;
       vertical-align: top;
@@ -210,7 +210,7 @@
         border: 1px solid var(--col-blue-light);
         border-bottom-width: 2px;
         font-weight: var(--fw-semibold);
-        padding: calc(10/16rem);
+        padding: pxtorem(10);
         text-align: left;
         vertical-align: bottom;
       }
@@ -220,7 +220,7 @@
       &.header {
         th,
         th:first-child {
-          padding: calc(10/16rem);
+          padding: pxtorem(10);
           background-color: var(--col-navy-light);
           border: 1px solid var(--col-blue-light);
           text-align: left;
@@ -229,12 +229,12 @@
 
       td {
         font-size: 1rem;
-        padding: calc(10/16rem);
+        padding: pxtorem(10);
         border: 1px solid var(--col-blue-light);
         display: table-cell;
 
         &:first-child {
-          padding-bottom: calc(10/16rem);
+          padding-bottom: pxtorem(10);
         }
 
         &:empty {

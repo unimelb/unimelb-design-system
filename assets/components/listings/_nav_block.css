@@ -7,7 +7,7 @@
   padding-right: 3%;
 
   h1.aligned-title {
-    padding-bottom: 3rem;
+    padding-bottom: pxtorem(48);
     margin-left: 0;
     max-width: 100%;
   }
@@ -43,8 +43,8 @@
   }
 
   h3 {
-    font-size: calc(20/16rem);
-    line-height: calc(24/16rem);
+    font-size: pxtorem(20);
+    line-height: pxtorem(24);
     padding-bottom: .75rem;
     font-weight: var(--fw-semibold);
 
@@ -72,7 +72,7 @@
       padding: 0;
 
       ul {
-        padding-bottom: 3rem;
+        padding-bottom: pxtorem(48);
       }
     }
 

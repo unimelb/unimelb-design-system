@@ -8,7 +8,7 @@
 
 @define-mixin listing {
   @mixin clearfix;
-  padding-bottom: 3rem;
+  padding-bottom: pxtorem(48);
   margin: 0 auto;
   max-width: var(--w-lge);
   padding-left: 0;
@@ -44,7 +44,7 @@
   }
 
   figure {
-    margin-bottom: .9375rem;
+    margin-bottom: pxtorem(15);
     margin-left: 0;
     margin-right: 0;
     margin-top: 0;
@@ -82,7 +82,7 @@
   }
 
   @media screen and (--bp-tablet) {
-    padding-top: 3rem;
+    padding-top: pxtorem(48);
     img {
       max-width: 100%;
     }
@@ -92,7 +92,7 @@
     }
 
     li {
-      padding-bottom: calc(24/16rem);
+      padding-bottom: pxtorem(24);
       border: 0;
       display: inline-block;
       vertical-align: top;
@@ -110,7 +110,7 @@
     }
 
     a {
-      padding: 0 calc(10/16rem);
+      padding: 0 pxtorem(10);
     }
 
     strong,

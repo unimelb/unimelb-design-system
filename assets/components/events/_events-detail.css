@@ -1,13 +1,13 @@
 @define-mixin detail {
   @mixin wrapper;
-  padding-top: calc(24/16rem);
-  padding-bottom: 3rem;
+  padding-top: pxtorem(24);
+  padding-bottom: pxtorem(48);
 
   .aside {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    padding-left: calc(30/16rem);
-    padding-right: calc(30/16rem);
+    padding-top: pxtorem(48);
+    padding-bottom: pxtorem(48);
+    padding-left: pxtorem(30);
+    padding-right: pxtorem(30);
     display: block;
     float: left;
     width: 100%;
@@ -16,7 +16,7 @@
       padding: 0;
 
       time {
-        font-size: calc(20/16rem);
+        font-size: pxtorem(20);
         display: block;
         position: relative;
         text-align: center;
@@ -33,27 +33,27 @@
         @media screen and (--bp-desktop) {
           display: block;
           text-align: right;
-          font-size: calc(18/16rem);
+          font-size: pxtorem(18);
           font-family: var(--ff-sans);
           font-weight: var(--fw-regular);
           line-height: 1;
 
           &:first-child {
-            padding-bottom: calc(24/16rem);
+            padding-bottom: pxtorem(24);
             margin-top: -.5rem;
-            margin-bottom: calc(24/16rem);
+            margin-bottom: pxtorem(24);
             position: relative;
           }
 
           strong {
             font-family: var(--ff-serif);
             font-weight: var(--fw-bold);
-            font-size: calc(28/16rem);
+            font-size: pxtorem(28);
             padding: 0;
 
             &.date {
               font-size: 3.75rem;
-              padding-top: calc(10/16rem);
+              padding-top: pxtorem(10);
             }
 
             &.month {
@@ -72,8 +72,8 @@
         vertical-align: middle;
 
         @media screen and (--bp-desktop) {
-          margin-top: -calc(24/16rem);
-          width: calc(20/16rem);
+          margin-top: -pxtorem(24);
+          width: pxtorem(20);
           border-bottom: 4px solid var(--col-black-dark);
           display: block;
           margin-right: 0;
@@ -88,9 +88,9 @@
 
         @media screen and (--bp-desktop) {
           display: block;
-          font-size: calc(36/16rem);
+          font-size: pxtorem(36);
           font-weight: var(--fw-semibold);
-          line-height: 3rem;
+          line-height: pxtorem(48);
         }
       }
     }
@@ -100,8 +100,8 @@
     }
 
     div {
-      padding-top: calc(24/16rem);
-      padding-bottom: calc(24/16rem);
+      padding-top: pxtorem(24);
+      padding-bottom: pxtorem(24);
       border-top: 1px solid var(--col-black-light);
       text-align: center;
 
@@ -253,9 +253,9 @@
 
     h1,
     h2 {
-      font-size: calc(24/16rem);
-      line-height: calc(36/16rem);
-      padding-bottom: calc(24/16rem);
+      font-size: pxtorem(24);
+      line-height: pxtorem(36);
+      padding-bottom: pxtorem(24);
       clear: none;
       font-weight: var(--fw-light);
       letter-spacing: 0;
@@ -268,24 +268,24 @@
       }
 
       @media screen and (--bp-desktop) {
-        font-size: calc(30/16rem);
-        line-height: calc(36/16rem);
-        padding-top: calc(24/16rem);
+        font-size: pxtorem(30);
+        line-height: pxtorem(36);
+        padding-top: pxtorem(24);
       }
     }
 
     h2 {
-      font-size: calc(20/16rem);
-      line-height: calc(24/16rem);
+      font-size: pxtorem(20);
+      line-height: pxtorem(24);
 
       @media screen and (--bp-desktop) {
-        font-size: calc(24/16rem);
-        line-height: calc(36/16rem);
+        font-size: pxtorem(24);
+        line-height: pxtorem(36);
       }
     }
 
     h3 {
-      padding-bottom: calc(24/16rem);
+      padding-bottom: pxtorem(24);
     }
   }
 }

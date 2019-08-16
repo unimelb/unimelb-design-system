@@ -4,12 +4,12 @@
 
     .bottom-align {
       @mixin grad-bottom;
-      margin-bottom: -1.5625rem;
+      margin-bottom: pxtorem(-25);
       align-self: flex-end;
       width: 100%;
 
       p {
-        padding-bottom: calc(24/16rem);
+        padding-bottom: pxtorem(24);
       }
 
       @media screen and (--bp-desktop) {
@@ -23,9 +23,9 @@
     }
 
     .bottom-align-flat {
-      margin-bottom: -1.5625rem;
-      padding-bottom: calc(30/16rem);
-      padding-top: calc(30/16rem);
+      margin-bottom: pxtorem(-25);
+      padding-bottom: pxtorem(30);
+      padding-top: pxtorem(30);
       align-self: flex-end;
       background-color: color(var(--col-navy-main) alpha(80%));
       width: 100%;

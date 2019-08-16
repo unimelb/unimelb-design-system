@@ -44,8 +44,8 @@
   /* close and back buttons */
   /* HACK increase specificity to override `.button-ui`, which was part of the Buttons component until v6.0 */
   &__back-btn.localnav__back-btn {
-    font-size: calc(16/16rem);
-    padding: calc(20/16rem);
+    font-size: pxtorem(16);
+    padding: pxtorem(20);
     background-color: var(--col-navy-main);
     color: rgba(255, 255, 255, .7);
     display: block;
@@ -55,8 +55,8 @@
     width: 100%;
 
     &::before {
-      font-size: calc(20/16rem);
-      padding-right: calc(10/16rem);
+      font-size: pxtorem(20);
+      padding-right: pxtorem(10);
       content: '\2039';
       float: left;
       font-weight: var(--fw-regular);
@@ -80,7 +80,7 @@
   /* add chevron to nested panel triggers */
   &__nested-trigger {
     &::after {
-      font-size: calc(24/16rem);
+      font-size: pxtorem(24);
       content: '\203a';
       float: right;
       font-weight: var(--fw-regular);
@@ -133,7 +133,7 @@
     }
 
     a {
-      padding: calc(20/16rem);
+      padding: pxtorem(20);
 
       &:hover,
       &:focus {
@@ -145,12 +145,12 @@
 
   /* meta menu */
   &__meta {
-    padding: calc(20/16rem) 0;
+    padding: pxtorem(20) 0;
     color: rgba(255, 255, 255, .7);
 
     a {
-      font-size: calc(14/16rem);
-      padding: .25rem calc(20/16rem);
+      font-size: pxtorem(14);
+      padding: .25rem pxtorem(20);
     }
   }
 

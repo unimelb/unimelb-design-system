@@ -1,9 +1,9 @@
 .uomcontent [role="main"] {
   .notice {
     @mixin wrapper;
-    margin-bottom: .9375rem;
+    margin-bottom: pxtorem(15);
     max-width: var(--w-sml);
-    padding: calc(16/16rem) calc(18/16rem) calc(20/16rem);
+    padding: pxtorem(16) pxtorem(18) pxtorem(20);
     display: block; /* allow inline elements (e.g. `span`) */
     margin-left: auto;
     margin-right: auto;

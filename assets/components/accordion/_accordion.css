@@ -51,15 +51,15 @@
       ol.steps {
         ol,
         ul {
-          padding-left: 2.1875rem;
-          padding-right: 2.1875rem;
+          padding-left: pxtorem(35);
+          padding-right: pxtorem(35);
         }
 
         li {
           margin: 0;
 
           @media screen and (--bp-desktop) {
-            padding-left: 6.875rem;
+            padding-left: pxtorem(110);
 
             li {
               padding-left: 0;
@@ -85,10 +85,10 @@
       .accordion__title {
         background-color: transparent;
         display: block;
-        padding-bottom: calc(10/16rem);
-        padding-left: calc(15/16rem);
-        padding-right: calc(40/16rem);
-        padding-top: calc(10/16rem);
+        padding-bottom: pxtorem(10);
+        padding-left: pxtorem(15);
+        padding-right: pxtorem(40);
+        padding-top: pxtorem(10);
         position: relative;
         transition-property: background-color;
         transition-duration: 50ms;
@@ -114,7 +114,7 @@
           margin-right: 0.2em;
           opacity: 0.8;
           position: absolute;
-          right: calc(22/16rem);
+          right: pxtorem(22);
           text-decoration: none;
           top: 1.6em;
           transform: rotate(45deg) translateY(0);
@@ -124,21 +124,21 @@
         }
 
         @media screen and (--bp-desktop) {
-          font-size: calc(20/16rem);
-          line-height: calc(36/16rem);
-          padding-right: 3.4375rem;
+          font-size: pxtorem(20);
+          line-height: pxtorem(36);
+          padding-right: pxtorem(55);
 
           &::before {
-            font-size: calc(24/16rem);
-            margin-top: -.75rem;
+            font-size: pxtorem(24);
+            margin-top: pxtorem(-12);
           }
         }
       }
 
       .accordion__hidden {
         padding-top: .75rem;
-        padding-left: calc(15/16rem);
-        padding-right: calc(15/16rem);
+        padding-left: pxtorem(15);
+        padding-right: pxtorem(15);
         display: none;
 
         /* reset inner lists */

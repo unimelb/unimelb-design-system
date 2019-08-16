@@ -1,6 +1,6 @@
 .uomcontent [role="main"] .figure {
   max-width: var(--w-sml);
-  margin: 0 auto calc(24/16rem);
+  margin: 0 auto pxtorem(24);
   text-align: center;
 
   &__content {
@@ -27,8 +27,8 @@
 
   &--spaced,
   &--embed {
-    margin-top: calc(24/16rem);
-    margin-bottom: 3rem; /* assume there's a paragraph with calc(24/16rem) bottom padding above */
+    margin-top: pxtorem(24);
+    margin-bottom: pxtorem(48); /* assume there's a paragraph with pxtorem(24) bottom padding above */
   }
 
   &--wide,
@@ -94,7 +94,7 @@
     &--left {
       float: left;
       margin-left: 3%; /* same distance from the edge as 94%-wide paragraphs */
-      margin-right: calc(24/16rem);
+      margin-right: pxtorem(24);
       text-align: left;
 
       & > .figure__content {
@@ -104,7 +104,7 @@
 
     &--right {
       float: right;
-      margin-left: calc(24/16rem);
+      margin-left: pxtorem(24);
       margin-right: 3%; /* same distance from the edge as 94%-wide paragraphs */
       text-align: right;
 
@@ -122,8 +122,8 @@
     &--confined {
       max-width: 50% !important; /* not a hack: `confined` styles should never have to be overriden */
 
-      &.figure--left { margin-right: calc(24/16rem) !important; }
-      &.figure--right { margin-left: calc(24/16rem) !important; }
+      &.figure--left { margin-right: pxtorem(24) !important; }
+      &.figure--right { margin-left: pxtorem(24) !important; }
     }
   }
 
@@ -149,17 +149,17 @@
     &--left,
     &--right {
       max-width: 60%;
-      margin-bottom: calc(20/16rem);
+      margin-bottom: pxtorem(20);
     }
 
     &--left {
       margin-left: -3rem;
-      margin-right: calc(36/16rem);
+      margin-right: pxtorem(36);
     }
 
     &--right {
       margin-right: -3rem;
-      margin-left: calc(36/16rem);
+      margin-left: pxtorem(36);
     }
   }
 
@@ -169,10 +169,10 @@
       max-width: 75%;
 
       & > .figure__caption {
-        margin-top: calc(20/16rem);
+        margin-top: pxtorem(20);
 
         &::before {
-          margin-bottom: calc(10/16rem);
+          margin-bottom: pxtorem(10);
         }
       }
     }

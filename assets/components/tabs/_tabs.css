@@ -3,7 +3,7 @@
  */
 [data-tabbed].tabbed {
   @mixin clearfix;
-  margin-bottom: 3rem;
+  margin-bottom: pxtorem(48);
   width: 100%;
 
   nav {
@@ -40,7 +40,7 @@
   }
 
   & > [role="tabpanel"] {
-    padding-top: calc(24/16rem);
+    padding-top: pxtorem(24);
     padding-bottom: 0;
     padding-left: 1.5625rem;
     padding-right: 1.5625rem;
@@ -96,7 +96,7 @@
    */
   .tabbed-nav {
     & > .full-width {
-      height: calc(74/16rem);
+      height: pxtorem(74);
       background-color: transparent;
       border-bottom: 1px solid var(--col-blue-mid-2);
       position: relative;
@@ -112,7 +112,7 @@
     }
 
     nav {
-      margin-top: calc(10/16rem);
+      margin-top: pxtorem(10);
       padding: 0 2.5rem;
       display: inline-block;
       white-space: nowrap;
@@ -122,11 +122,11 @@
         border: 1px solid var(--col-blue-mid-2);
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
-        font-size: calc(16/16rem);
+        font-size: pxtorem(16);
         font-weight: var(--fw-semibold);
-        line-height: calc(62/16rem); /* same as tabs height */
-        padding: 0 calc(20/16rem);
-        margin-right: calc(5/16rem);
+        line-height: pxtorem(62); /* same as tabs height */
+        padding: 0 pxtorem(20);
+        margin-right: pxtorem(5);
         color: var(--col-navy-main);
         display: inline-block;
         text-decoration: none;
@@ -147,8 +147,8 @@
         }
 
         @media screen and (--bp-desktop) {
-          font-size: calc(18/16rem);
-          padding: 0 calc(30/16rem);
+          font-size: pxtorem(18);
+          padding: 0 pxtorem(30);
         }
       }
 
@@ -165,7 +165,7 @@
 
     /* wrapper added dynamically around nav element when tabs overflow */
     .tabbed-nav__inner {
-      padding-bottom: .9375rem;
+      padding-bottom: pxtorem(15);
       position: relative;
       z-index: var(--z-default);
     }
@@ -182,8 +182,8 @@
 
     /* left/right arrows when screen size is too small to fit all the tabs */
     .tab-arrow {
-      font-size: calc(30/16rem);
-      padding: 0 calc(20/16rem) .3125rem; /* bottom padding aligns arrows with tab labels */
+      font-size: pxtorem(30);
+      padding: 0 pxtorem(20) .3125rem; /* bottom padding aligns arrows with tab labels */
       background: var(--col-navy-main);
       color: var(--col-white);
       display: none;
@@ -203,13 +203,13 @@
     }
 
     .tab-arrow--left {
-      padding-right: calc(10/16rem);
+      padding-right: pxtorem(10);
       background: linear-gradient(to left, color(var(--col-navy-main) alpha(0%)), color(var(--col-navy-main) alpha(90%)) 10%);
       left: 0;
     }
 
     .tab-arrow--right {
-      padding-left: calc(10/16rem);
+      padding-left: pxtorem(10);
       background: linear-gradient(to right, color(var(--col-navy-main) alpha(0%)), color(var(--col-navy-main) alpha(90%)) 10%);
       right: 0;
     }
@@ -307,15 +307,15 @@
     &.thin {
       nav a {
         font-size: .8125rem;
-        line-height: calc(24/16rem);
+        line-height: pxtorem(24);
         line-height: calc(4rem - .125rem); /* tabs height minus 1px above and below for outline */
         margin-top: .0625rem; /* outline cont. */
-        padding: 0 .9375rem;
+        padding: 0 pxtorem(15);
       }
 
       & > [role="tabpanel"] {
         margin-top: -3.4375rem;
-        padding-top: 3.4375rem;
+        padding-top: pxtorem(55);
         background-color: transparent;
 
         @media screen and (--bp-desktop) {

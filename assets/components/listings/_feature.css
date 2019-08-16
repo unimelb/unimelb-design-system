@@ -2,13 +2,13 @@
   @mixin listing;
 
   li {
-    padding-bottom: calc(24/16rem);
+    padding-bottom: pxtorem(24);
     border-top: 0 none;
     text-align: center;
   }
 
   figure {
-    max-height: calc(350/16rem);
+    max-height: pxtorem(350);
     float: none;
     margin-right: 0;
     max-width: 100%;
@@ -20,8 +20,8 @@
   }
 
   strong {
-    font-size: calc(20/16rem);
-    line-height: calc(24/16rem);
+    font-size: pxtorem(20);
+    line-height: pxtorem(24);
     text-align: left;
   }
 
@@ -31,10 +31,10 @@
   }
 
   &.listing--crop-height figure {
-    height: calc(340/16rem);
+    height: pxtorem(340);
 
     img {
-      min-height: calc(340/16rem);
+      min-height: pxtorem(340);
       max-width: none;
     }
   }
@@ -59,8 +59,8 @@
     }
 
     strong {
-      font-size: calc(20/16rem);
-      line-height: calc(24/16rem);
+      font-size: pxtorem(20);
+      line-height: pxtorem(24);
       padding-bottom: .75rem;
     }
   }

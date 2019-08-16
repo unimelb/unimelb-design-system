@@ -31,7 +31,7 @@ body {
 }
 
 .spacer {
-  padding: 0 .9375rem;
+  padding: 0 pxtorem(15);
 }
 
 .uomcontent [role="main"] {
@@ -54,11 +54,11 @@ body {
   }
 
   article {
-    padding-bottom: 3rem;
+    padding-bottom: pxtorem(48);
   }
 
   .aside {
-    font-size: calc(16/16rem);
+    font-size: pxtorem(16);
     line-height: 1.5;
     color: var(--col-navy-main);
     float: right;
@@ -84,8 +84,8 @@ body {
   }
 
   section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: pxtorem(48);
+    padding-bottom: pxtorem(48);
 
     div {
       max-width: var(--w-sml);
@@ -131,7 +131,7 @@ body {
 
       h2 {
         font-size: .8125rem;
-        line-height: calc(24/16rem);
+        line-height: pxtorem(24);
         font-weight: var(--fw-semibold);
         letter-spacing: 3px;
         text-transform: uppercase;
@@ -157,7 +157,7 @@ body {
     }
 
     & + .video {
-      margin-top: -calc(30/16rem);
+      margin-top: -pxtorem(30);
       max-width: var(--w-lge);
       @media screen and (--bp-xx-wide) {
         margin-left: auto;
@@ -168,14 +168,14 @@ body {
   }
 
   footer {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: pxtorem(48);
+    padding-bottom: pxtorem(48);
     clear: both;
 
     a.social {
       border-radius: 3px;
       font-size: .875rem;
-      margin: 0 .9375rem;
+      margin: 0 pxtorem(15);
       background-color: transparent;
       color: var(--col-white);
       display: inline-block;
@@ -183,14 +183,14 @@ body {
       vertical-align: top;
 
       [data-icon] {
-        padding: calc(10/16rem);
+        padding: pxtorem(10);
         height: auto;
         width: auto;
       }
 
       .icon {
-        height: calc(24/16rem);
-        width: calc(24/16rem);
+        height: pxtorem(24);
+        width: pxtorem(24);
       }
 
       &:hover {
@@ -200,7 +200,7 @@ body {
     }
 
     &.alt {
-      padding: calc(30/16rem) 0;
+      padding: pxtorem(30) 0;
       background-color: var(--col-navy-light);
       box-shadow: 0 6px 6px 4px color(var(--col-black-dark) alpha(30%));
       color: var(--col-black-dark);
@@ -235,7 +235,7 @@ body {
       }
 
       ul {
-        padding-left: calc(20/16rem);
+        padding-left: pxtorem(20);
         max-width: var(--w-sml);
         margin: 0 auto;
         padding-top: 0;
@@ -274,7 +274,7 @@ body {
     margin: 0 auto;
 
     .aside {
-      padding-bottom: .9375rem;
+      padding-bottom: pxtorem(15);
       padding-top: .3125rem;
       vertical-align: top;
 
@@ -290,12 +290,12 @@ body {
 
     .bside {
       @media screen and (--bp-desktop) {
-        padding-bottom: calc(20/16rem);
-        padding-top: calc(20/16rem);
+        padding-bottom: pxtorem(20);
+        padding-top: pxtorem(20);
       }
 
       dd {
-        padding-bottom: calc(10/16rem);
+        padding-bottom: pxtorem(10);
       }
     }
   }
@@ -344,7 +344,7 @@ body {
   }
 
   .fifth {
-    margin-bottom: .9375rem;
+    margin-bottom: pxtorem(15);
     max-width: var(--w-sml);
     margin-left: auto;
     margin-right: auto;
@@ -353,7 +353,7 @@ body {
 
 
     @media screen and (--bp-wide) {
-      margin-bottom: .9375rem;
+      margin-bottom: pxtorem(15);
       max-width: var(--w-lge);
       width: 100%;
 
@@ -369,7 +369,7 @@ body {
 
   .quarter {
     li {
-      padding-bottom: calc(20/16rem);
+      padding-bottom: pxtorem(20);
       line-height: 1;
       margin-left: 9%;
       margin-right: 9%;
@@ -443,7 +443,7 @@ body {
         width: 33%;
 
         &__inner {
-          max-width: calc(340/16rem);
+          max-width: pxtorem(340);
           margin-left: auto;
           margin-right: 0;
         }
@@ -469,7 +469,7 @@ body {
 
   .margin-rule {
     .floating {
-      padding: .9375rem .9375rem calc(30/16rem);
+      padding: pxtorem(15) pxtorem(15) pxtorem(30);
       background-color: var(--col-black-light);
 
       h2,
@@ -483,7 +483,7 @@ body {
       margin: 0 auto;
 
       section {
-        margin: calc(30/16rem) 0 calc(30/16rem) 18.75rem;
+        margin: pxtorem(30) 0 pxtorem(30) 18.75rem;
         padding-bottom: 0;
         padding-top: 0;
 
@@ -497,7 +497,7 @@ body {
       }
 
       .floating {
-        padding-right: calc(20/16rem);
+        padding-right: pxtorem(20);
         padding-top: 3.125rem;
         width: 17.5rem;
         background-color: transparent;
@@ -506,7 +506,7 @@ body {
 
         h2 {
           font-size: 1.625rem;
-          padding-bottom: .9375rem;
+          padding-bottom: pxtorem(15);
         }
       }
     }
@@ -581,7 +581,7 @@ body {
 
 /* Uninjected styles */
 .uomcontent .page-local-history {
-  padding: .9375rem calc(30/16rem);
+  padding: pxtorem(15) pxtorem(30);
   color: var(--col-blue-mid-2);
   display: block;
 
@@ -599,18 +599,18 @@ body {
 }
 
 .uomcontent footer.cta {
-  padding-top: calc(30/16rem);
+  padding-top: pxtorem(30);
   background-color: var(--col-navy-main);
   color: var(--col-white);
 
   .overview {
-    padding: calc(30/16rem) 0 0;
+    padding: pxtorem(30) 0 0;
   }
 
   .button-hero-inverse {
-    margin-left: calc(30/16rem);
-    padding-bottom: calc(10/16rem);
-    padding-top: calc(10/16rem);
+    margin-left: pxtorem(30);
+    padding-bottom: pxtorem(10);
+    padding-top: pxtorem(10);
 
     &::after {
       top: -.25rem;
@@ -627,7 +627,7 @@ body {
     margin: 0 auto;
 
     li {
-      padding: .9375rem;
+      padding: pxtorem(15);
       list-style-type: none;
     }
 
@@ -636,17 +636,17 @@ body {
     }
 
     img {
-      margin-right: calc(10/16rem);
-      max-width: calc(24/16rem);
+      margin-right: pxtorem(10);
+      max-width: pxtorem(24);
       vertical-align: middle;
     }
 
     @media screen and (--bp-desktop) {
-      padding: 0 0 calc(30/16rem);
+      padding: 0 0 pxtorem(30);
       text-align: center;
 
       li {
-        padding: calc(30/16rem);
+        padding: pxtorem(30);
         display: inline-block;
         float: none;
         width: auto;
@@ -655,7 +655,7 @@ body {
 
     &.site-links {
       @media screen and (--bp-desktop) {
-        padding-top: calc(30/16rem);
+        padding-top: pxtorem(30);
       }
     }
   }

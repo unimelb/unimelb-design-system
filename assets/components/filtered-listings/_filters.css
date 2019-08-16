@@ -1,6 +1,6 @@
 .uomcontent .filtered-listing-wrapper {
-  padding-top: calc(24/16rem);
-  padding-bottom: calc(24/16rem);
+  padding-top: pxtorem(24);
+  padding-bottom: pxtorem(24);
   background-color: var(--col-navy-main);
 }
 
@@ -26,14 +26,14 @@
   }
 
   strong {
-    font-size: .9375rem;
-    padding-bottom: calc(5/16rem);
+    font-size: pxtorem(15);
+    padding-bottom: pxtorem(5);
     display: block;
     font-weight: var(--fw-light);
   }
 
   h2 {
-    font-size: calc(30/16rem);
+    font-size: pxtorem(30);
     line-height: 1.2;
     margin-left: 0;
     padding-bottom: 0;
@@ -48,21 +48,21 @@
 
   .left {
     @media screen and (--bp-tablet) {
-      line-height: calc(30/16rem);
+      line-height: pxtorem(30);
       margin: 0;
 
       legend,
       label {
-        font-size: calc(18/16rem);
-        padding: 0 0 .9375rem;
+        font-size: pxtorem(18);
+        padding: 0 0 pxtorem(15);
         color: var(--col-white);
         display: block;
       }
     }
 
     @media screen and (--bp-desktop) {
-      padding-left: calc(30/16rem);
-      padding-right: calc(30/16rem);
+      padding-left: pxtorem(30);
+      padding-right: pxtorem(30);
       float: left;
       width: 66.66%;
     }
@@ -74,17 +74,17 @@
 
     input[type="checkbox"]:not(.unstyled) + label {
       &::after {
-        top: calc(9/16rem);
+        top: pxtorem(9);
       }
       span::before {
-        top: calc(5/16rem);
+        top: pxtorem(5);
       }
     }
 
     input[type="checkbox"] {
       & + label {
-        padding-left: calc(5/16rem);
-        padding-top: calc(5/16rem);
+        padding-left: pxtorem(5);
+        padding-top: pxtorem(5);
         display: inline-block;
         width: auto;
 
@@ -156,11 +156,11 @@
   }
 
   .right {
-    padding-top: calc(30/16rem);
+    padding-top: pxtorem(30);
     margin: 0;
 
     & > div {
-      padding-top: .1875rem;
+      padding-top: pxtorem(3);
 
       select {
         width: 100%;
@@ -173,15 +173,15 @@
     }
 
     label {
-      font-size: calc(18/16rem);
-      line-height: calc(30/16rem);
-      padding-bottom: .9375rem;
+      font-size: pxtorem(18);
+      line-height: pxtorem(30);
+      padding-bottom: pxtorem(15);
       display: block;
       width: 100%;
     }
 
     @media screen and (--bp-desktop) {
-      padding-right: calc(30/16rem);
+      padding-right: pxtorem(30);
       float: right;
       margin: 0;
       padding-top: 0;

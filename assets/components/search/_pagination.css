@@ -1,14 +1,14 @@
 .uomcontent {
   p.search-result-numbers {
     font-size: .875rem;
-    line-height: calc(24/16rem);
-    padding-top: calc(24/16rem);
+    line-height: pxtorem(24);
+    padding-top: pxtorem(24);
     border-top: 1px solid color(var(--col-black-dark) alpha(10%));
   }
 
   ul.search-pagination {
-    padding-top: calc(24/16rem);
-    padding-bottom: calc(24/16rem);
+    padding-top: pxtorem(24);
+    padding-bottom: pxtorem(24);
     padding-left: 0;
     padding-right: 0;
     text-align: left;
@@ -23,7 +23,7 @@
       width: auto;
 
       &:nth-last-child(2) {
-        margin-right: calc(10/16rem);
+        margin-right: pxtorem(10);
       }
     }
 
@@ -39,7 +39,7 @@
     span {
       border-radius: 2px;
       font-size: 1rem;
-      padding: .3125rem .9375rem;
+      padding: .3125rem pxtorem(15);
       display: block;
 
       &.button-small {

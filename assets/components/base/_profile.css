@@ -19,7 +19,7 @@
       margin-bottom: 0;
 
       &::after {
-        margin-top: .9375rem;
+        margin-top: pxtorem(15);
         max-width: var(--w-sml);
         border-bottom: 2px solid var(--col-white);
         content: '';
@@ -28,7 +28,7 @@
       }
 
       @media screen and (--bp-tablet) {
-        margin-bottom: .9375rem;
+        margin-bottom: pxtorem(15);
 
         &::after {
           margin-top: 1.9375rem;
@@ -73,7 +73,7 @@
   }
 
   h1 {
-    margin-bottom: 2.1875rem;
+    margin-bottom: pxtorem(35);
     border-bottom: 2px solid var(--col-navy-main);
     color: var(--col-navy-main);
 

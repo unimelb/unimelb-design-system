@@ -11,13 +11,13 @@
       }
 
       &:last-child {
-        padding-bottom: .9375rem;
+        padding-bottom: pxtorem(15);
       }
     }
   }
 
   .citation {
-    padding: .9375rem;
+    padding: pxtorem(15);
     margin-top: .25rem;
     margin-bottom: .75rem;
     background-color: var(--col-navy-light);

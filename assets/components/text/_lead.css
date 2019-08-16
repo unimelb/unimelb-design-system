@@ -1,6 +1,6 @@
 .uomcontent [role="main"] {
   .lead {
-    font-size: calc(20/16rem);
+    font-size: pxtorem(20);
     line-height: 1.5;
     padding-top: 4.5rem;
     padding-bottom: 4.5rem;
@@ -19,8 +19,8 @@
       padding-top: 0;
 
       &::before {
-        padding-bottom: 3rem;
-        margin-top: calc(30/16rem);
+        padding-bottom: pxtorem(48);
+        margin-top: pxtorem(30);
         width: 5rem;
         border-top: 2px solid var(--col-navy-main);
         content: '';
@@ -32,10 +32,10 @@
 
     /* TODO Icelab: adjust sizes for all possible lead children manually */
     * {
-      font-size: calc(20/16rem);
+      font-size: pxtorem(20);
 
       @media screen and (--bp-desktop) {
-        font-size: calc(22/16rem);
+        font-size: pxtorem(22);
       }
     }
 
@@ -54,7 +54,7 @@
 
     &.left {
       @mixin wrapper;
-      padding: 3rem 0;
+      padding: pxtorem(48) 0;
       max-width: var(--w-sml);
       text-align: left;
 
@@ -65,14 +65,14 @@
   }
 
   section > .lead {
-    padding-top: calc(24/16rem);
-    padding-bottom: calc(24/16rem);
+    padding-top: pxtorem(24);
+    padding-bottom: pxtorem(24);
   }
 }
 
 .uomcontent h1.aligned-title + .lead {
   & + p {
-    padding-top: calc(24/16rem);
+    padding-top: pxtorem(24);
 
     &::before {
       display: none;
@@ -92,7 +92,7 @@
 .jumpnav-active .uomcontent {
   .lead {
     margin: 0 auto;
-    padding: 3rem 0;
+    padding: pxtorem(48) 0;
 
     @media screen and (--bp-wide) {
       max-width: var(--w-sml);
@@ -102,17 +102,17 @@
 
   /* Compensate for padding-bottom of jump-nav on mobile */
   .jump-navigation + .lead {
-    padding-top: 3rem;
+    padding-top: pxtorem(48);
 
     @media screen and (--bp-wide) {
       padding-top: 4.5rem;
     }
 
     &.left {
-      padding-top: calc(24/16rem);
+      padding-top: pxtorem(24);
 
       @media screen and (--bp-wide) {
-        padding-top: 3rem;
+        padding-top: pxtorem(48);
       }
     }
   }

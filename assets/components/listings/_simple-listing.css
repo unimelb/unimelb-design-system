@@ -99,10 +99,10 @@
 
   @media screen and (--bp-tablet) {
     @mixin clearfix;
-    padding-bottom: calc(24/16rem);
+    padding-bottom: pxtorem(24);
 
     .simple-listing__item {
-      margin-bottom: calc(24/16rem);
+      margin-bottom: pxtorem(24);
     }
 
     &--four {
@@ -120,10 +120,10 @@
   }
 
   @media screen and (--bp-desktop) {
-    padding: 0 calc(10/16rem) calc(24/16rem);
+    padding: 0 pxtorem(10) pxtorem(24);
 
     .simple-listing__item {
-      padding: 0 calc(10/16rem);
+      padding: 0 pxtorem(10);
     }
 
     &--two,
@@ -155,11 +155,11 @@
       }
 
       &.simple-listing--one {
-        max-width: calc(var(--w-sml) + 2 * calc(10/16rem));
+        max-width: calc(var(--w-sml) + 2 * pxtorem(10));
       }
 
       &.simple-listing--two {
-        max-width: calc(var(--w-mid) + 2 * calc(10/16rem));
+        max-width: calc(var(--w-mid) + 2 * pxtorem(10));
       }
     }
   }

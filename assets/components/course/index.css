@@ -1,5 +1,5 @@
 .uomcontent [role="main"] table.course-progression {
-  margin-bottom: calc(30/16rem);
+  margin-bottom: pxtorem(30);
   max-width: var(--w-sml);
   border: 0 none;
   border-collapse: collapse;
@@ -7,7 +7,7 @@
   width: 100%;
 
   th {
-    padding: calc(30/16rem) 0 calc(10/16rem);
+    padding: pxtorem(30) 0 pxtorem(10);
     border-bottom: 1px solid var(--col-black-light);
     border-left: 0 none;
     border-right: 0 none;
@@ -24,12 +24,12 @@
 
   thead th {
     @mixin subtitle;
-    font-size: calc(16/16rem);
+    font-size: pxtorem(16);
   }
 
   td {
-    padding-bottom: calc(10/16rem);
-    padding-top: calc(10/16rem);
+    padding-bottom: pxtorem(10);
+    padding-top: pxtorem(10);
     border-bottom: 1px solid var(--col-black-light);
     border-left: 0 none;
     border-right: 0 none;
@@ -78,15 +78,15 @@
     }
 
     td.unit-description {
-      padding: .9375rem 0;
+      padding: pxtorem(15) 0;
       background-color: var(--col-navy-main);
       color: var(--col-white);
       position: relative;
       text-align: left;
 
       @media screen and (--bp-tablet) {
-        padding-left: .9375rem;
-        padding-right: .9375rem;
+        padding-left: pxtorem(15);
+        padding-right: pxtorem(15);
       }
 
       &::before {
@@ -110,7 +110,7 @@
         padding-left: 3%;
 
         @media screen and (--bp-tablet) {
-          padding-left: .9375rem;
+          padding-left: pxtorem(15);
         }
       }
 
@@ -120,24 +120,24 @@
         padding-right: 3%;
 
         @media screen and (--bp-tablet) {
-          padding-left: .9375rem;
-          padding-right: .9375rem;
+          padding-left: pxtorem(15);
+          padding-right: pxtorem(15);
         }
       }
 
       hr {
-        margin: .9375rem;
+        margin: pxtorem(15);
         border-color: color(var(--col-white) alpha(20%));
         margin-left: 3%;
         margin-right: 3%;
 
         @media screen and (--bp-tablet) {
-          margin: .9375rem;
+          margin: pxtorem(15);
         }
       }
 
       .col1_3 {
-        padding: .9375rem;
+        padding: pxtorem(15);
         clear: none;
 
         @media screen and (--bp-tablet) {
@@ -209,14 +209,14 @@
 
   h3 {
     font-size: 1.625rem;
-    line-height: calc(36/16rem);
+    line-height: pxtorem(36);
     padding-top: 0;
-    padding-bottom: calc(24/16rem);
+    padding-bottom: pxtorem(24);
   }
 
   p {
     font-size: .875rem;
-    line-height: calc(24/16rem);
+    line-height: pxtorem(24);
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -224,25 +224,25 @@
 
 .uomcontent [role="main"] .course-select {
   @mixin filtered-listing-select;
-  padding-left: .9375rem;
-  padding-right: .9375rem;
+  padding-left: pxtorem(15);
+  padding-right: pxtorem(15);
   box-shadow: none;
 
   .left,
   .right {
-    padding-top: .9375rem;
+    padding-top: pxtorem(15);
   }
 
   .left p {
-    font-size: calc(18/16rem);
+    font-size: pxtorem(18);
     font-weight: var(--fw-regular);
     margin: 0;
     padding: 0;
   }
 
   @media screen and (--bp-desktop) {
-    padding-left: .9375rem;
-    padding-right: .9375rem;
+    padding-left: pxtorem(15);
+    padding-right: pxtorem(15);
     display: table;
     width: 100%;
 
@@ -269,7 +269,7 @@
     }
 
     h2 {
-      font-size: calc(40/16rem);
+      font-size: pxtorem(40);
       margin: 0;
       max-width: 2000px;
       padding: 0;
@@ -283,7 +283,7 @@
 }
 
 .uomcontent [role="main"] header:first-child.banner .course-select h1 {
-  font-size: calc(40/16rem);
+  font-size: pxtorem(40);
   margin: 0;
   max-width: 2000px;
   padding: 0;

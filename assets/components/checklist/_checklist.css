@@ -6,7 +6,7 @@
     padding-right: 0;
 
     li {
-      padding: calc(15/16rem) 0 calc(15/16rem);
+      padding: pxtorem(15) 0 pxtorem(15);
       border-top: 1px solid var(--col-black-light);
       line-height: 1.5;
       list-style-type: none;
@@ -24,11 +24,11 @@
         margin-bottom: 0;
 
         &::after {
-          top: calc(8/16rem);
+          top: pxtorem(8);
         }
 
         > span::before {
-          top: calc(4/16rem);
+          top: pxtorem(4);
         }
       }
     }

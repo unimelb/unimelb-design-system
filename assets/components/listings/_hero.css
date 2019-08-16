@@ -7,7 +7,7 @@
   }
 
   h2 {
-    margin-bottom: calc(24/16rem);
+    margin-bottom: pxtorem(24);
     background-size: cover;
     max-width: 100%;
     padding: 0;
@@ -22,7 +22,7 @@
   }
 
   figure {
-    max-height: calc(500/16rem);
+    max-height: pxtorem(500);
     margin: 0;
   }
 
@@ -31,8 +31,8 @@
     margin: 0;
     max-width: 100%;
     padding: 3%;
-    padding-bottom: .9375rem;
-    padding-top: .9375rem;
+    padding-bottom: pxtorem(15);
+    padding-top: pxtorem(15);
 
     strong {
       font-family: var(--ff-serif);
@@ -40,13 +40,13 @@
       font-size: 2.5rem;
       color: var(--col-white);
       line-height: 1.2;
-      padding-bottom: calc(10/16rem);
+      padding-bottom: pxtorem(10);
       padding-top: 0;
     }
 
     p {
-      font-size: calc(18/16rem);
-      line-height: calc(24/16rem);
+      font-size: pxtorem(18);
+      line-height: pxtorem(24);
       color: var(--col-white);
       max-width: 100%;
       padding: 0;
@@ -67,7 +67,7 @@
       }
 
       p {
-        padding-bottom: calc(24/16rem);
+        padding-bottom: pxtorem(24);
       }
     }
   }

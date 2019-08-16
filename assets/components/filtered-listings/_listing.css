@@ -8,7 +8,7 @@
   }
 
   .aside {
-    padding-bottom: 3rem;
+    padding-bottom: pxtorem(48);
     float: none;
     margin: 0 3%;
     vertical-align: top;
@@ -19,8 +19,8 @@
     }
 
     h2 {
-      font-size: calc(22/16rem);
-      line-height: calc(36/16rem);
+      font-size: pxtorem(22);
+      line-height: pxtorem(36);
       font-weight: var(--fw-bold);
       padding-top: 0;
       letter-spacing: 0;
@@ -33,20 +33,20 @@
     }
 
     @media screen and (--bp-desktop) {
-      padding-left: .9375rem;
+      padding-left: pxtorem(15);
       float: left;
       margin: 0;
       max-width: 30%;
 
       p {
-        padding-bottom: calc(24/16rem);
+        padding-bottom: pxtorem(24);
       }
     }
   }
 
   .bside {
     @media screen and (--bp-desktop) {
-      padding: calc(10/16rem) 0 calc(10/16rem) calc(30/16rem);
+      padding: pxtorem(10) 0 pxtorem(10) pxtorem(30);
       float: right;
       width: 70%;
     }
@@ -69,8 +69,8 @@
 
   .filtered-listing-item {
     font-size: .875rem;
-    line-height: calc(24/16rem);
-    height: 6.875rem;
+    line-height: pxtorem(24);
+    height: pxtorem(110);
     margin: .125rem .125rem .25rem .125rem;
     list-style-type: none;
     opacity: 1;
@@ -118,7 +118,7 @@
   }
 
   a {
-    padding: calc(10/16rem);
+    padding: pxtorem(10);
     color: var(--col-blue-dark);
     display: block;
     font-weight: var(--fw-light);
@@ -138,13 +138,13 @@
     }
 
     @media screen and (--bp-desktop) {
-      max-width: calc(180/16rem);
+      max-width: pxtorem(180);
     }
   }
 
   strong {
     font-size: 1rem;
-    line-height: calc(24/16rem);
+    line-height: pxtorem(24);
     display: block;
     line-height: 1.2;
   }

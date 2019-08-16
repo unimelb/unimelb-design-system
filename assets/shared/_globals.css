@@ -142,7 +142,7 @@
 
 @define-mixin injection-wrapper {
   max-width: 87.5rem;
-  padding: .9375rem;
+  padding: pxtorem(15);
   margin: 0 auto;
 }
 
@@ -233,6 +233,6 @@
   & > ol,
   & > ul {
     padding-top: 0;
-    padding-bottom: calc(24/16rem);
+    padding-bottom: pxtorem(24);
   }
 }

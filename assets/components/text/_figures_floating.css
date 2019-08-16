@@ -17,7 +17,7 @@
 
     figcaption {
       font-size: .875rem;
-      padding-bottom: .9375rem;
+      padding-bottom: pxtorem(15);
       color: var(--col-blue-mid-2);
       font-style: italic;
       line-height: 1.2;
@@ -26,20 +26,20 @@
 
     img,
     svg {
-      max-height: calc(500/16rem);
+      max-height: pxtorem(500);
     }
   }
 
   @media screen and (--bp-x-tablet) {
     .inset-left,
     .inset-right {
-      margin-bottom: calc(30/16rem);
+      margin-bottom: pxtorem(30);
       border: 0 none;
       max-width: 62%;
 
       figcaption {
-        margin-top: .9375rem;
-        padding-top: .9375rem;
+        margin-top: pxtorem(15);
+        padding-top: pxtorem(15);
         padding-bottom: 0;
         position: relative;
 
@@ -55,7 +55,7 @@
     }
 
     .inset-left {
-      margin-right: calc(30/16rem);
+      margin-right: pxtorem(30);
       float: left;
       text-align: left;
 
@@ -69,7 +69,7 @@
     }
 
     .inset-right {
-      margin-left: calc(30/16rem);
+      margin-left: pxtorem(30);
       float: right;
       text-align: right;
 
@@ -86,16 +86,16 @@
   @media screen and (--bp-wide) {
     .inset-left,
     .inset-right {
-      margin-bottom: calc(20/16rem);
+      margin-bottom: pxtorem(20);
       max-width: 80%;
     }
 
     .inset-left {
-      margin-left: calc(-180/16rem);
+      margin-left: pxtorem(-180);
     }
 
     .inset-right {
-      margin-right: calc(-180/16rem);
+      margin-right: pxtorem(-180);
     }
   }
 }
@@ -109,23 +109,23 @@
     }
 
     @media screen and (--bp-xx-wide) {
-      margin-bottom: calc(20/16rem);
-      margin-left: calc(-180/16rem);
+      margin-bottom: pxtorem(20);
+      margin-left: pxtorem(-180);
       max-width: 80%;
     }
   }
 
   .inset-right {
     @media screen and (--bp-wide) {
-      margin-left: calc(30/16rem);
+      margin-left: pxtorem(30);
       margin-right: 0;
       max-width: 100%;
       padding: 0;
     }
 
     @media screen and (--bp-xx-wide) {
-      margin-bottom: calc(20/16rem);
-      margin-right: calc(-180/16rem);
+      margin-bottom: pxtorem(20);
+      margin-right: pxtorem(-180);
       max-width: 80%;
     }
   }

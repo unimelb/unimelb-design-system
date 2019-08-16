@@ -1,8 +1,8 @@
 @define-mixin inlinebutton {
   border-radius: 2px;
-  font-size: calc(16/16rem);
-  height: calc(45/16rem);
-  padding: 0 calc(15/16rem);
+  font-size: pxtorem(16);
+  height: pxtorem(45);
+  padding: 0 pxtorem(15);
   background-color: var(--col-navy-main);
   border: 0 none;
   color: var(--col-white);
@@ -23,7 +23,7 @@
 @define-mixin control {
   border-radius: 2px;
   margin-top: .3125rem;
-  padding: .5rem calc(10/16rem);
+  padding: .5rem pxtorem(10);
   font-family: var(--ff-sans);
 
   &.invalid {
@@ -39,7 +39,7 @@
 
 @define-mixin textcontrol {
   @mixin control;
-  font-size: calc(20/16rem);
+  font-size: pxtorem(20);
   background-color: var(--col-primary-light-grey);
   border: 1px solid var(--col-black-mid-1);
   box-shadow: inset 0 2px 0 color(var(--col-black-dark) alpha(5%));
@@ -71,7 +71,7 @@
 }
 
 [role="main"] form {
-  font-size: calc(18/16rem);
+  font-size: pxtorem(18);
   padding: 0;
   background-color: var(--col-white);
   color: var(--col-navy-main);
@@ -79,11 +79,11 @@
   margin: 0 auto;
   max-width: var(--w-sml);
   &.alt {
-    padding: calc(20/16rem);
+    padding: pxtorem(20);
   }
 
   @media screen and (--bp-desktop) {
-    padding: calc(10/16rem) 0;
+    padding: pxtorem(10) 0;
   }
 
   [data-required=true]::after {
@@ -106,7 +106,7 @@
 
 .uomcontent .form-error {
   color: var(--col-pink-dark);
-  margin-bottom: calc(15/16rem);
+  margin-bottom: pxtorem(15);
 
   p {
     padding-bottom: 0;
@@ -118,7 +118,7 @@
   padding: 0;
 
   div {
-    padding: calc(10/16rem) 0 calc(12/16rem);
+    padding: pxtorem(10) 0 pxtorem(12);
   }
 
   small {
@@ -133,7 +133,7 @@
   }
 
   label {
-    font-size: calc(18/16rem);
+    font-size: pxtorem(18);
     display: inline;
     position: relative;
     width: 100%;
@@ -145,7 +145,7 @@
   }
 
   .invalid small {
-    font-size: calc(16/16rem);
+    font-size: pxtorem(16);
     padding: .3125rem 0;
     animation: flash .4s .1s 1 ease-in-out;
     color: var(--col-pink-dark);
@@ -192,7 +192,7 @@
     input[type="image"] {
       @mixin inlinebutton;
       border-radius: 0 3px 3px 0;
-      margin: .9375rem 0 0;
+      margin: pxtorem(15) 0 0;
       width: 2.8125rem;
       padding: 0;
       position: absolute;
@@ -204,8 +204,8 @@
       }
 
       svg {
-        height: calc(24/16rem);
-        width: calc(24/16rem);
+        height: pxtorem(24);
+        width: pxtorem(24);
         background-color: transparent;
         cursor: pointer;
         fill: currentColor;
@@ -256,8 +256,8 @@
 
     .inline-button {
       border-radius: 0 3px 3px 0;
-      font-size: calc(16/16rem);
-      padding: 0 .9375rem;
+      font-size: pxtorem(16);
+      padding: 0 pxtorem(15);
       font-weight: var(--fw-semibold);
     }
   }
@@ -265,7 +265,7 @@
   .detached {
     & > span {
       &:first-child {
-        padding-right: .9375rem;
+        padding-right: pxtorem(15);
       }
     }
 
@@ -276,10 +276,10 @@
       input[type="password"],
       input[type="search"],
       input[type="url"] {
-        font-size: calc(24/16rem);
+        font-size: pxtorem(24);
         height: 3.75rem;
-        line-height: calc(36/16rem);
-        padding: .9375rem;
+        line-height: pxtorem(36);
+        padding: pxtorem(15);
         border-color: var(--col-navy-main);
 
         &:focus {
@@ -289,9 +289,9 @@
       }
 
       .inline-button {
-        font-size: calc(16/16rem);
+        font-size: pxtorem(16);
         height: 3.75rem;
-        padding: .9375rem;
+        padding: pxtorem(15);
         line-height: 1;
 
         & > span {
@@ -325,7 +325,7 @@
 
     & + label {
       margin-top: .25rem;
-      margin-bottom: -.75rem;
+      margin-bottom: pxtorem(-12);
       cursor: pointer;
       display: block;
       position: relative;
@@ -345,7 +345,7 @@
       }
 
       span {
-        padding-left: calc(30/16rem);
+        padding-left: pxtorem(30);
         cursor: pointer;
         display: block;
         text-indent: 0;
@@ -416,15 +416,15 @@
 }
 
 .align-checkbox {
-  padding-left: calc(30/16rem);
+  padding-left: pxtorem(30);
   text-indent: -2.5rem;
   line-height: 1.4;
 }
 
 .uomcontent .newsletter-box {
-  margin-top: calc(24/16rem);
-  padding-top: calc(24/16rem);
-  padding-bottom: calc(24/16rem);
+  margin-top: pxtorem(24);
+  padding-top: pxtorem(24);
+  padding-bottom: pxtorem(24);
   max-width: var(--w-mid);
   background-color: transparent;
   border-top: 1px solid color(var(--col-white) alpha(20%));
@@ -433,9 +433,9 @@
   margin-right: auto;
 
   p {
-    font-size: calc(20/16rem);
-    line-height: calc(24/16rem);
-    padding-bottom: calc(24/16rem);
+    font-size: pxtorem(20);
+    line-height: pxtorem(24);
+    padding-bottom: pxtorem(24);
   }
 
   form {
@@ -459,13 +459,13 @@
       }
 
       fieldset > div {
-        padding-left: calc(10/16rem);
-        padding-right: calc(10/16rem);
+        padding-left: pxtorem(10);
+        padding-right: pxtorem(10);
         display: table-cell;
       }
 
       input[type="submit"] {
-        padding: .75rem calc(20/16rem);
+        padding: .75rem pxtorem(20);
         border: 0;
       }
     }
