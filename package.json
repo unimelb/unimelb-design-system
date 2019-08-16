@@ -28,6 +28,7 @@
     "normalize.css": "^5.0.0",
     "perfect-scrollbar": "^0.7.0",
     "photoswipe": "^4.1.1",
+    "postcss-functions": "^3.0.0",
     "string-hash": "^1.1.3",
     "super-event-emitter": "^4.1.4",
     "webfontloader": "~1.6.3"

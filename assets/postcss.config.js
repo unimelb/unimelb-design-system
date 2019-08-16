@@ -2,6 +2,13 @@ module.exports = {
   plugins: {
     'postcss-import': {},
     'postcss-url': {},
+    'postcss-functions': {
+      functions: {
+        pxtorem: function($px) {
+          return "calc(" + $px / 16 + "rem)";
+        }
+      }
+    },
     'postcss-mixins': {},
     'postcss-nested': {},
     'postcss-cssnext': {
