@@ -267,7 +267,7 @@
   }
 
   .crop-height {
-    max-height: 1calc(30/16rem);
+    max-height: calc(190/16rem);
     overflow: hidden;
 
     img {

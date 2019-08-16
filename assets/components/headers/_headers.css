@@ -240,7 +240,7 @@
     padding-top: 7.5rem;
 
     @media screen and (--bp-desktop) {
-      padding-top: 1calc(20/16rem);
+      padding-top: calc(180/16rem);
     }
   }
 }

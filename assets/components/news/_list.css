@@ -6,7 +6,7 @@
 
   a {
     padding-top: 9rem;
-    max-width: 7calc(30/16rem);
+    max-width: calc(1150/16rem);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

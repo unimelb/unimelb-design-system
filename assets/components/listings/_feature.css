@@ -31,10 +31,10 @@
   }
 
   &.listing--crop-height figure {
-    height: 2calc(20/16rem);
+    height: calc(340/16rem);
 
     img {
-      min-height: 2calc(20/16rem);
+      min-height: calc(340/16rem);
       max-width: none;
     }
   }

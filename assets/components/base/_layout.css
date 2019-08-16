@@ -443,7 +443,7 @@ body {
         width: 33%;
 
         &__inner {
-          max-width: 2calc(20/16rem);
+          max-width: calc(340/16rem);
           margin-left: auto;
           margin-right: 0;
         }
