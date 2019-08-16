@@ -79,14 +79,14 @@
 .uomcontent [role="main"] {
   h1.highlight {
     font-size: pxtorem(75);
-    line-height: calc(84/16)rem;
+    line-height: pxtorem(84);
     color: var(--col-blue-mid-2);
     letter-spacing: -5px;
     text-align: center;
     animation: hue 80s infinite linear;
 
     @media screen and (--bp-desktop) {
-      font-size: 10rem;
+      font-size: pxtorem(160);
       line-height: 10.5rem;
     }
   }

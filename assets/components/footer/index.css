@@ -138,7 +138,7 @@
 
   &.nav {
     padding-bottom: pxtorem(12);
-    padding-top: .5rem;
+    padding-top: pxtorem(8);
     color: var(--col-navy-mid-1);
     height: auto;
 

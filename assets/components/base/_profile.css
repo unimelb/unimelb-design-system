@@ -31,7 +31,7 @@
         margin-bottom: pxtorem(15);
 
         &::after {
-          margin-top: 1.9375rem;
+          margin-top: pxtorem(31);
           max-width: var(--w-sml);
           border-bottom: 2px solid var(--col-white);
           content: '';
@@ -42,7 +42,7 @@
     }
 
     p {
-      font-size: 1.1875rem;
+      font-size: pxtorem(19);
       font-style: italic;
       padding: 0;
 
@@ -66,7 +66,7 @@
       }
 
       & + .video {
-        margin-top: 1.9375rem;
+        margin-top: pxtorem(31);
       }
     }
 
@@ -78,12 +78,12 @@
     color: var(--col-navy-main);
 
     @media screen and (--bp-tablet) {
-      margin-bottom: 1.5625rem;
+      margin-bottom: pxtorem(25);
     }
 
     @media screen and (--bp-wide) {
       font-size: pxtorem(50);
-      margin-bottom: 1.9375rem;
+      margin-bottom: pxtorem(31);
     }
   }
 }

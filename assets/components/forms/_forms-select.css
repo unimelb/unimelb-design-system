@@ -173,7 +173,7 @@
   select {
     @mixin theme;
     border-radius: 3px;
-    padding: .5rem pxtorem(10);
+    padding: pxtorem(8) pxtorem(10);
     appearance: none;
     border: 0;
 

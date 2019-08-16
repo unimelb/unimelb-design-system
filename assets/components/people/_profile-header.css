@@ -16,9 +16,9 @@
       text-align: center;
 
       h1 {
-        font-size: 1.5625rem;
+        font-size: pxtorem(25);
         line-height: pxtorem(36);
-        margin-bottom: .5rem;
+        margin-bottom: pxtorem(8);
         margin-top: pxtorem(24);
         padding-bottom: 0;
         text-align: inherit;

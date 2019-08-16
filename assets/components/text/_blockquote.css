@@ -1,6 +1,6 @@
 @define-mixin blockquote-modern {
   &:not(.blockquote-classic) {
-    font-size: 1.75rem;
+    font-size: pxtorem(28);
     margin-bottom: pxtorem(30);
     padding-bottom: pxtorem(30);
     display: block;

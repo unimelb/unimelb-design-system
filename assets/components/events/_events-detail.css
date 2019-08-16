@@ -40,7 +40,7 @@
 
           &:first-child {
             padding-bottom: pxtorem(24);
-            margin-top: -.5rem;
+            margin-top: pxtorem(-8);
             margin-bottom: pxtorem(24);
             position: relative;
           }

@@ -40,7 +40,7 @@
       }
 
       .details {
-        padding-left: 1.5625rem;
+        padding-left: pxtorem(25);
         width: 35.625rem;
         display: table-cell;
         line-height: 1.4;

@@ -8,22 +8,22 @@
 
     li {
       margin: pxtorem(10) pxtorem(10);
-      width: 4.375rem;
+      width: pxtorem(70);
       display: inline-block;
       list-style-type: none;
       padding: 0;
       vertical-align: top;
 
       @media screen and (--bp-desktop) {
-        margin: pxtorem(10) 1.75rem;
+        margin: pxtorem(10) pxtorem(28);
       }
     }
 
     a {
       line-height: pxtorem(24);
       border-radius: 4px;
-      height: 4.375rem;
-      padding-top: .5rem;
+      height: pxtorem(70);
+      padding-top: pxtorem(8);
       transition: transform 0.15s;
       background-color: var(--col-blue-mid-2);
       color: var(--col-white);

@@ -380,7 +380,7 @@
       }
 
       strong {
-        font-size: 1.75rem;
+        font-size: pxtorem(28);
         padding: pxtorem(10);
         background-color: color(var(--col-blue-mid-2) alpha(80%));
         bottom: 0;
@@ -556,7 +556,7 @@
         width: 100%;
 
         em {
-          padding-bottom: .5rem;
+          padding-bottom: pxtorem(8);
           float: right;
         }
 

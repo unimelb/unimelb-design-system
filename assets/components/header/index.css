@@ -8,7 +8,7 @@
 @define-mixin control {
   border-radius: 3px;
   margin-top: pxtorem(5);
-  padding: .5rem pxtorem(10);
+  padding: pxtorem(8) pxtorem(10);
   font-family: var(--ff-sans);
 
   &.invalid {
@@ -178,7 +178,7 @@
       background-color: var(--col-navy-main);
       display: block;
       left: 0;
-      padding: .5rem;
+      padding: pxtorem(8);
       position: absolute;
       top: 0;
       opacity: 1;
@@ -260,7 +260,7 @@
       position: relative;
 
       select {
-        padding: pxtorem(5) 1.5625rem pxtorem(5) pxtorem(10);
+        padding: pxtorem(5) pxtorem(25) pxtorem(5) pxtorem(10);
         border: 0;
         border-radius: 3px;
         color: var(--col-navy-main);
@@ -764,7 +764,7 @@
   .page-header-home {
     left: pxtorem(90);
     margin-top: pxtorem(15);
-    width: 10rem;
+    width: pxtorem(160);
     color: var(--col-white);
     line-height: 1.3;
     position: absolute;
@@ -882,11 +882,11 @@
     }
 
     @media screen and (--bp-desktop) {
-      padding: 4.375rem 2.8125rem;
+      padding: pxtorem(70) 2.8125rem;
 
       .page-header-logo {
         height: 7.5rem;
-        margin-right: 1.9375rem;
+        margin-right: pxtorem(31);
         width: 7.5rem;
       }
 

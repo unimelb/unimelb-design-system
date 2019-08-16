@@ -23,7 +23,7 @@
 @define-mixin control {
   border-radius: 2px;
   margin-top: pxtorem(5);
-  padding: .5rem pxtorem(10);
+  padding: pxtorem(8) pxtorem(10);
   font-family: var(--ff-sans);
 
   &.invalid {
@@ -312,7 +312,7 @@
 
   input[type="checkbox"],
   input[type="radio"] {
-    margin-right: .5rem;
+    margin-right: pxtorem(8);
     display: inline;
   }
 }

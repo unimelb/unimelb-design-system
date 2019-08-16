@@ -15,8 +15,8 @@
 
     a {
       padding-bottom: pxtorem(12);
-      padding-left: 1.5625rem;
-      padding-right: 1.5625rem;
+      padding-left: pxtorem(25);
+      padding-right: pxtorem(25);
       background-color: inherit;
       cursor: pointer;
       display: inline-block;
@@ -42,8 +42,8 @@
   & > [role="tabpanel"] {
     padding-top: pxtorem(24);
     padding-bottom: 0;
-    padding-left: 1.5625rem;
-    padding-right: 1.5625rem;
+    padding-left: pxtorem(25);
+    padding-right: pxtorem(25);
     border-bottom: 1px solid var(--col-black-light);
     margin: 0;
 
@@ -221,8 +221,8 @@
 
     & > [role="tabpanel"] {
       @mixin clearfix;
-      margin-top: -4.375rem;
-      padding-top: 4.375rem;
+      margin-top: pxtorem(-70);
+      padding-top: pxtorem(70);
       margin-left: auto;
       max-width: 100%;
       padding-bottom: 0;

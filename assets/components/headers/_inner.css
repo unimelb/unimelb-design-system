@@ -40,7 +40,7 @@
           width: 75%;
 
           h1 {
-            font-size: 1.75rem;
+            font-size: pxtorem(28);
             max-width: 100%;
             text-align: left;
           }

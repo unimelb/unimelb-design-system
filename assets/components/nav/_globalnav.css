@@ -30,8 +30,8 @@
   }
 
   a {
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    padding-top: pxtorem(8);
+    padding-bottom: pxtorem(8);
     color: var(--col-navy-mid-1);
     color: color(var(--col-white) alpha(80%));
     display: block;
@@ -57,7 +57,7 @@
   .linkgroup-title {
     display: block;
     font-weight: var(--fw-semibold);
-    margin-bottom: .5rem;
+    margin-bottom: pxtorem(8);
     padding-bottom: 0;
     padding-top: 0;
     border-bottom: 1px solid var(--col-navy-main);
@@ -229,7 +229,7 @@
 
     &::before {
       font-size: pxtorem(24);
-      margin-right: .5rem;
+      margin-right: pxtorem(8);
       color: color(var(--col-white) alpha(40%));
       content: '\2039';
       display: inline-block;

@@ -9,7 +9,7 @@
 
     &::before {
       height: pxtorem(20);
-      top: 1.1875rem;
+      top: pxtorem(19);
       width: pxtorem(20);
       background-color: var(--col-white);
       content: '';

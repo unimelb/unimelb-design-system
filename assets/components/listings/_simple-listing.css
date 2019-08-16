@@ -14,7 +14,7 @@
   }
 
   &__link {
-    padding-bottom: .5rem;
+    padding-bottom: pxtorem(8);
     color: inherit;
     display: block;
     outline-offset: 1px;
@@ -83,7 +83,7 @@
 
       /* underline headings */
       &__heading {
-        margin-bottom: .5rem;
+        margin-bottom: pxtorem(8);
         color: var(--col-navy-main);
         font-size: 1.25em;
       }
@@ -106,11 +106,11 @@
     }
 
     &--four {
-      padding-left: .5rem;
-      padding-right: .5rem;
+      padding-left: pxtorem(8);
+      padding-right: pxtorem(8);
 
       .simple-listing__item {
-        padding: 0 .5rem;
+        padding: 0 pxtorem(8);
         float: left;
         width: 50%;
 

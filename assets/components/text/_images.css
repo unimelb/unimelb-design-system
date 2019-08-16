@@ -124,7 +124,7 @@
     }
 
     p {
-      font-size: 1.1875rem;
+      font-size: pxtorem(19);
       padding-top: pxtorem(48);
       margin: 0 pxtorem(15);
       color: var(--col-white);

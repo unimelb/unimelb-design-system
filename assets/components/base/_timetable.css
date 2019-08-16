@@ -75,7 +75,7 @@
   }
 
   .time {
-    min-width: 4.0625rem;
+    min-width: pxtorem(65);
     color: var(--col-black-dark);
     display: inline-block;
     font-style: italic;
