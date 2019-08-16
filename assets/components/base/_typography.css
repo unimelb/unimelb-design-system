@@ -467,10 +467,7 @@
   dl {
     font-size: pxtorem(12);
     line-height: pxtorem(24);
-    padding-top: pxtorem(24);
-    padding-bottom: pxtorem(24);
-    padding-left: pxtorem(15);
-    padding-right: pxtorem(15);
+    padding: pxtorem(24) pxtorem(15);
     dt {
       width: pxtorem(120);
       clear: left;
