@@ -18,7 +18,7 @@
 
       p.author {
         em {
-          font-size: 1.125rem;
+          font-size: pxtorem(18);
           line-height: pxtorem(24);
           font-style: normal;
           font-weight: var(--fw-semibold);

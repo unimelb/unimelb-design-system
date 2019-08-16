@@ -18,7 +18,7 @@
   }
 
   .accordion__visible .accordion__hidden {
-    max-height: 3125rem;
+    max-height: pxtorem(50000);
   }
 
   .accordion__visible tr.accordion__hidden {
@@ -136,7 +136,7 @@
       }
 
       .accordion__hidden {
-        padding-top: .75rem;
+        padding-top: pxtorem(12);
         padding-left: pxtorem(15);
         padding-right: pxtorem(15);
         display: none;

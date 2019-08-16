@@ -19,7 +19,7 @@
   .citation {
     padding: pxtorem(15);
     margin-top: .25rem;
-    margin-bottom: .75rem;
+    margin-bottom: pxtorem(12);
     background-color: var(--col-navy-light);
     border: 1px solid var(--col-blue-light);
   }

@@ -63,7 +63,7 @@
       padding: 10% 10%;
 
       strong {
-        padding-top: .75rem;
+        padding-top: pxtorem(12);
       }
 
       p {

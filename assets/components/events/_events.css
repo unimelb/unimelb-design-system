@@ -4,7 +4,7 @@
 
   strong {
     font-size: 1rem;
-    padding: pxtorem(15) 0 .3125rem;
+    padding: pxtorem(15) 0 pxtorem(5);
     display: block;
     font-weight: var(--fw-regular);
   }
@@ -110,7 +110,7 @@
   }
 
   p {
-    padding-bottom: .3125rem;
+    padding-bottom: pxtorem(5);
 
     @media screen and (--bp-desktop) {
       margin-left: 0;
@@ -152,7 +152,7 @@
         font-family: var(--ff-serif);
         font-weight: var(--fw-bold);
         font-size: pxtorem(28);
-        padding: .3125rem 0;
+        padding: pxtorem(5) 0;
         display: block;
         line-height: .7;
 

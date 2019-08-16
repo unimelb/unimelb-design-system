@@ -250,7 +250,7 @@ body {
 
     dt {
       letter-spacing: .0625rem;
-      padding-bottom: .3125rem;
+      padding-bottom: pxtorem(5);
       font-weight: var(--fw-semibold);
       margin-left: 0;
       text-transform: uppercase;
@@ -275,7 +275,7 @@ body {
 
     .aside {
       padding-bottom: pxtorem(15);
-      padding-top: .3125rem;
+      padding-top: pxtorem(5);
       vertical-align: top;
 
       dt {

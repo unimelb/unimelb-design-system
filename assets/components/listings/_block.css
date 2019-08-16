@@ -89,7 +89,7 @@
   }
 
   .when {
-    font-size: 1.125rem;
+    font-size: pxtorem(18);
     margin-bottom: 1rem;
     padding: 1rem 1rem 0;
     font-weight: var(--fw-regular);
@@ -111,7 +111,7 @@
     line-height: 2.8;
 
     time {
-      font-size: 1.125rem;
+      font-size: pxtorem(18);
       font-weight: var(--fw-regular);
       display: inline-block;
       &:first-child::after {
@@ -148,7 +148,7 @@
 
   .double {
     .block-container {
-      padding: 2rem 0 .75rem;
+      padding: 2rem 0 pxtorem(12);
       background-color: color(var(--col-black-dark) alpha(60%));
       background-size: cover;
       color: var(--col-white);
@@ -545,7 +545,7 @@
       }
 
       .meta {
-        padding: .75rem pxtorem(20) 0;
+        padding: pxtorem(12) pxtorem(20) 0;
         background-color: color(var(--col-navy-main) alpha(80%));
         border: none;
         bottom: 0;
@@ -626,7 +626,7 @@
           line-height: 1;
 
           @media screen and (--bp-height-small) {
-            font-size: 1.125rem;
+            font-size: pxtorem(18);
             padding-left: pxtorem(10);
           }
         }

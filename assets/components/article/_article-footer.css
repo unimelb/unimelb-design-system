@@ -19,8 +19,8 @@
     }
 
     .republish-wrapper {
-      padding-top: .75rem;
-      padding-bottom: .75rem;
+      padding-top: pxtorem(12);
+      padding-bottom: pxtorem(12);
       max-width: var(--w-sml);
       border-bottom: 1px solid var(--col-black-light);
       border-top: 1px solid var(--col-black-light);
@@ -36,7 +36,7 @@
     .share {
       margin: 0 auto;
       max-width: var(--w-sml);
-      padding-top: .3125rem;
+      padding-top: pxtorem(5);
       display: table;
       float: left;
       padding-bottom: 0;

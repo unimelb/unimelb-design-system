@@ -108,7 +108,7 @@
       }
 
       ul.accordion {
-        margin-top: .75rem;
+        margin-top: pxtorem(12);
         margin-left: 0;
 
         & > li:first-child {

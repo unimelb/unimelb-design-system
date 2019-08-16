@@ -22,7 +22,7 @@
 
 @define-mixin control {
   border-radius: 2px;
-  margin-top: .3125rem;
+  margin-top: pxtorem(5);
   padding: .5rem pxtorem(10);
   font-family: var(--ff-sans);
 
@@ -87,13 +87,13 @@
   }
 
   [data-required=true]::after {
-    padding-left: .3125rem;
+    padding-left: pxtorem(5);
     content: '*';
     color: var(--col-pink-dark);
   }
 
   .form__subtext {
-    padding-bottom: .75rem;
+    padding-bottom: pxtorem(12);
     line-height: 1.4;
   }
 }
@@ -122,7 +122,7 @@
   }
 
   small {
-      font-size: 1.125rem;
+      font-size: pxtorem(18);
       display: none;
       margin: 0;
       text-transform: none;
@@ -146,7 +146,7 @@
 
   .invalid small {
     font-size: pxtorem(16);
-    padding: .3125rem 0;
+    padding: pxtorem(5) 0;
     animation: flash .4s .1s 1 ease-in-out;
     color: var(--col-pink-dark);
     display: block;
@@ -215,7 +215,7 @@
 
     .inline-button {
       @mixin inlinebutton;
-      margin: .3125rem 0 0;
+      margin: pxtorem(5) 0 0;
     }
   }
 
@@ -410,7 +410,7 @@
   .invalid input[type="checkbox"]:not(.unstyled),
   .invalid input[type="radio"]:not(.unstyled) {
     & + label + small {
-      padding-top: 1.125rem; /* Compensate for negative bottom margin on label */
+      padding-top: pxtorem(18); /* Compensate for negative bottom margin on label */
     }
   }
 }
@@ -465,7 +465,7 @@
       }
 
       input[type="submit"] {
-        padding: .75rem pxtorem(20);
+        padding: pxtorem(12) pxtorem(20);
         border: 0;
       }
     }

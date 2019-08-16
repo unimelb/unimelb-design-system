@@ -7,7 +7,7 @@
 
 @define-mixin control {
   border-radius: 3px;
-  margin-top: .3125rem;
+  margin-top: pxtorem(5);
   padding: .5rem pxtorem(10);
   font-family: var(--ff-sans);
 
@@ -89,7 +89,7 @@
         [data-icon] {
           height: pxtorem(20);
           margin-bottom: .25rem;
-          margin-right: .3125rem;
+          margin-right: pxtorem(5);
           width: pxtorem(20);
           display: inline-block;
           line-height: 1;
@@ -121,7 +121,7 @@
         }
 
         .mobile-nav .styled-select.alt {
-          margin-top: .3125rem;
+          margin-top: pxtorem(5);
         }
       }
 
@@ -234,7 +234,7 @@
     font-size: .8125rem;
     height: 2.5rem;
     line-height: 2.5rem;
-    padding: 0 pxtorem(10) .3125rem pxtorem(10);
+    padding: 0 pxtorem(10) pxtorem(5) pxtorem(10);
 
     @media screen and (--bp-desktop) {
       height: 4.6875rem;
@@ -260,7 +260,7 @@
       position: relative;
 
       select {
-        padding: .3125rem 1.5625rem .3125rem pxtorem(10);
+        padding: pxtorem(5) 1.5625rem pxtorem(5) pxtorem(10);
         border: 0;
         border-radius: 3px;
         color: var(--col-navy-main);
@@ -294,8 +294,8 @@
 
     .styled-select svg.icon {
       height: pxtorem(20);
-      right: .3125rem;
-      top: .3125rem;
+      right: pxtorem(5);
+      top: pxtorem(5);
       width: pxtorem(20);
       fill: var(--col-navy-main);
       position: absolute;
@@ -314,7 +314,7 @@
   [data-icon] {
     height: pxtorem(20);
     margin-bottom: .25rem;
-    margin-right: .3125rem;
+    margin-right: pxtorem(5);
     width: pxtorem(20);
     display: inline-block;
     line-height: 1;
@@ -518,7 +518,7 @@
     width: 100%;
 
     fieldset {
-      padding-top: .3125rem;
+      padding-top: pxtorem(5);
       padding-right: pxtorem(10);
       display: table-cell;
       vertical-align: top;
@@ -609,7 +609,7 @@
       width: 100%;
 
       fieldset {
-        padding-top: .3125rem;
+        padding-top: pxtorem(5);
       }
     }
 

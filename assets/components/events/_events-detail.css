@@ -57,14 +57,14 @@
             }
 
             &.month {
-              padding-bottom: .3125rem;
+              padding-bottom: pxtorem(5);
             }
           }
         }
       }
 
       &.range time + time::before {
-        margin-right: .3125rem;
+        margin-right: pxtorem(5);
         width: 1rem;
         border-bottom: 2px solid var(--col-black-dark);
         content: "";
@@ -209,7 +209,7 @@
         }
 
         .button-small {
-          margin-top: .3125rem;
+          margin-top: pxtorem(5);
         }
       }
 

@@ -153,7 +153,7 @@
     h2 {
       font-size: pxtorem(20);
       line-height: pxtorem(24);
-      letter-spacing: .3125rem;
+      letter-spacing: pxtorem(5);
       color: var(--col-white);
 
       &.title::after {

@@ -139,15 +139,15 @@
           padding: 0 pxtorem(10);
 
           span {
-            margin-bottom: .75rem;
+            margin-bottom: pxtorem(12);
             display: inline-block;
             position: static;
           }
 
           &::after {
             font-size: pxtorem(20);
-            margin-top: -.3125rem;
-            padding-left: .3125rem;
+            margin-top: pxtorem(-5);
+            padding-left: pxtorem(5);
             content: '\2192';
             display: inline-block;
             line-height: 0;
@@ -184,7 +184,7 @@
     margin-top: pxtorem(24);
     padding-bottom: pxtorem(24);
     font-size: pxtorem(16);
-    min-width: 10.3125rem;
+    min-width: pxtorem(165);
     padding-left: pxtorem(20);
     padding-right: pxtorem(20);
     background-color: transparent;

@@ -90,7 +90,7 @@
       font-size: 1rem;
       line-height: pxtorem(24);
       padding-top: pxtorem(24);
-      padding-bottom: .75rem;
+      padding-bottom: pxtorem(12);
       max-width: pxtorem(500);
       color: var(--col-white);
       font-style: italic;
@@ -106,7 +106,7 @@
       }
 
       &.links {
-        padding-top: .75rem;
+        padding-top: pxtorem(12);
         border-top: 1px solid color(var(--col-white) alpha(20%));
       }
     }

@@ -38,7 +38,7 @@
 
     .enquiry__subline {
       @mixin wrapper;
-      padding-top: .75rem;
+      padding-top: pxtorem(12);
       max-width: var(--w-sml);
       border-top: 1px solid color(var(--col-navy-mid-1) alpha(30%));
       color: var(--col-blue-mid-2);

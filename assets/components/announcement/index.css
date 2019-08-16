@@ -40,7 +40,7 @@
       }
 
       p {
-        font-size: 1.125rem;
+        font-size: pxtorem(18);
         line-height: pxtorem(24);
         margin: 0;
         padding: 0;

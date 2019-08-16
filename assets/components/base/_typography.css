@@ -443,7 +443,7 @@
         position: relative;
 
         &::before {
-          height: .3125rem;
+          height: pxtorem(5);
           left: .375rem;
           margin-left: -pxtorem(30);
           top: .375rem;
@@ -465,7 +465,7 @@
   }
 
   dl {
-    font-size: .75rem;
+    font-size: pxtorem(12);
     line-height: pxtorem(24);
     padding-top: pxtorem(24);
     padding-bottom: pxtorem(24);

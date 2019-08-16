@@ -54,7 +54,7 @@
 
         .person__contact {
           font-size: pxtorem(16);
-          padding-top: .75rem;
+          padding-top: pxtorem(12);
 
           a {
             color: var(--col-blue-mid-2);
@@ -96,7 +96,7 @@
             white-space: nowrap;
 
             & + .person__email {
-              padding-top: .75rem;
+              padding-top: pxtorem(12);
             }
           }
 
@@ -157,7 +157,7 @@
 
       &.more {
         font-size: pxtorem(16);
-        padding-top: .75rem;
+        padding-top: pxtorem(12);
         clear: left;
 
         & > a {
@@ -170,7 +170,7 @@
 
         & > a::after {
           font-size: pxtorem(20);
-          padding-left: .3125rem;
+          padding-left: pxtorem(5);
           content: '\2192';
           line-height: 0;
         }
@@ -212,7 +212,7 @@
 
   /* Sub-links */
   .search-results__subs {
-    margin-top: .75rem;
+    margin-top: pxtorem(12);
     padding: 0;
     list-style-type: circle;
     line-height: 1.4;

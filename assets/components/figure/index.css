@@ -18,7 +18,7 @@
   }
 
   &__caption {
-    margin-top: .75rem;
+    margin-top: pxtorem(12);
     font-size: .875rem;
     font-style: italic;
     line-height: 1.3;
@@ -59,7 +59,7 @@
     &--left,
     &--right {
       max-width: 50%;
-      margin-bottom: .75rem;
+      margin-bottom: pxtorem(12);
       padding-top: calc(1em * (1.5789 - 1) / 2); /* align with text based on body line height */
 
       & > .figure__caption {

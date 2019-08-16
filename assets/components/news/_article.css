@@ -51,7 +51,7 @@
   }
 
   .article {
-    padding-top: .3125rem;
+    padding-top: pxtorem(5);
     max-width: 100%;
 
     h1,

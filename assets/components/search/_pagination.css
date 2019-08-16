@@ -39,11 +39,11 @@
     span {
       border-radius: 2px;
       font-size: 1rem;
-      padding: .3125rem pxtorem(15);
+      padding: pxtorem(5) pxtorem(15);
       display: block;
 
       &.button-small {
-        font-size: .75rem;
+        font-size: pxtorem(12);
       }
     }
 

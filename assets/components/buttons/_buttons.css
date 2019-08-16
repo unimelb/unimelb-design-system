@@ -224,14 +224,14 @@
   @mixin flatbutton;
   font-size: .875rem;
   margin: pxtorem(10) 0;
-  padding: .3125rem pxtorem(10) .3125rem pxtorem(20);
+  padding: pxtorem(5) pxtorem(10) pxtorem(5) pxtorem(20);
   appearance: none;
   display: inline-block;
   font-weight: var(--fw-regular);
 
   svg.icon {
     height: 1rem;
-    margin: 0 .3125rem;
+    margin: 0 pxtorem(5);
     width: 1rem;
     fill: currentcolor;
     vertical-align: middle;

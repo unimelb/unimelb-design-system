@@ -164,7 +164,7 @@
     h1 {
       font-size: pxtorem(20);
       line-height: pxtorem(24);
-      padding-bottom: .75rem;
+      padding-bottom: pxtorem(12);
     }
 
     p {

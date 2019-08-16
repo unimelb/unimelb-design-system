@@ -65,7 +65,7 @@
       height: 3.75rem;
     }
     a {
-      font-size: 1.125rem;
+      font-size: pxtorem(18);
       line-height: pxtorem(24);
       height: 3.75rem;
       line-height: 2.8125rem;

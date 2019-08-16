@@ -159,7 +159,7 @@
 }
 
 .uomcontent select {
-  font-size: 1.125rem;
+  font-size: pxtorem(18);
   font-family: var(--ff-sans);
   width: 100%;
 }
@@ -199,7 +199,7 @@
 }
 
 .uomcontent fieldset .styled-select {
-  margin-top: .3125rem;
+  margin-top: pxtorem(5);
 }
 
 .ie9 {

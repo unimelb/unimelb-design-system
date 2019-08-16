@@ -19,7 +19,7 @@
   }
 
   small {
-    font-size: .75rem;
+    font-size: pxtorem(12);
     line-height: pxtorem(20);
     clear: left;
     color: var(--col-navy-mid-1);
@@ -137,7 +137,7 @@
   }
 
   &.nav {
-    padding-bottom: .75rem;
+    padding-bottom: pxtorem(12);
     padding-top: .5rem;
     color: var(--col-navy-mid-1);
     height: auto;
@@ -230,7 +230,7 @@
 
         svg {
           height: pxtorem(24);
-          margin-bottom: .3125rem;
+          margin-bottom: pxtorem(5);
           width: pxtorem(24);
           fill: currentColor;
         }
@@ -307,7 +307,7 @@
 .uomcontent .page-footer footer {
 
   .ind-ack {
-    font-size: 1.125rem;
+    font-size: pxtorem(18);
     max-width: var(--w-lge);
     padding: 2rem 0;
     border-bottom: 1px solid var(--col-navy-main);

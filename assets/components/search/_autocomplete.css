@@ -21,8 +21,8 @@
 
     li,
     li:last-child {
-      padding-top: .75rem;
-      padding-bottom: .75rem;
+      padding-top: pxtorem(12);
+      padding-bottom: pxtorem(12);
       padding-left: pxtorem(15);
       list-style-type: none;
       margin: 0;

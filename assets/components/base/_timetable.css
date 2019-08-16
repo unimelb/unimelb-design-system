@@ -169,7 +169,7 @@
 
       td {
         font-size: .875rem;
-        padding-top: .3125rem;
+        padding-top: pxtorem(5);
         border-right: 1px solid var(--col-black-light);
         display: block;
         float: left;
@@ -226,7 +226,7 @@
 
         a {
           font-size: pxtorem(24);
-          padding: .3125rem;
+          padding: pxtorem(5);
           width: pxtorem(20);
           display: block;
           font-weight: var(--fw-semibold);
