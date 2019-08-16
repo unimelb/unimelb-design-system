@@ -109,7 +109,7 @@
           content: "";
           display: inline-block;
           height: 6px;
-          line-height: 6px;
+          line-height: 1;
           margin-left: 0.7em;
           margin-right: 0.2em;
           opacity: 0.8;
