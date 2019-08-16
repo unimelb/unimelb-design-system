@@ -73,10 +73,10 @@
   }
 
   &.listing--crop-height figure {
-    height: 12.5rem;
+    height: pxtorem(200);
 
     img {
-      min-height: 12.5rem;
+      min-height: pxtorem(200);
       max-width: none;
     }
   }

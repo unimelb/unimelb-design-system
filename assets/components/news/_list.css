@@ -95,7 +95,7 @@
   }
 
   h1 {
-    font-size: 1.375rem;
+    font-size: pxtorem(22);
     line-height: pxtorem(36);
     max-width: var(--w-mid);
     padding-bottom: pxtorem(15);
@@ -187,12 +187,12 @@
         width: 100%;
 
         &:first-child {
-          max-width: 7.5rem;
+          max-width: pxtorem(120);
 
           & + p,
           & + p + h1,
           & + p + h1 + p {
-            margin-left: 8.75rem;
+            margin-left: pxtorem(140);
           }
         }
       }

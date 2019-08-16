@@ -87,7 +87,7 @@
 
     @media screen and (--bp-desktop) {
       font-size: pxtorem(160);
-      line-height: 10.5rem;
+      line-height: pxtorem(168);
     }
   }
 
@@ -98,12 +98,12 @@
   header.banner h1.highlight,
   & > header.banner:first-child h1.highlight {
     font-size: pxtorem(60);
-    line-height: 4.5rem;
+    line-height: pxtorem(72);
     text-align: center;
 
     @media screen and (--bp-desktop) {
       font-size: pxtorem(100);
-      line-height: 6.75rem;
+      line-height: pxtorem(108);
       text-align: center;
     }
 

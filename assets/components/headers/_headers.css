@@ -18,7 +18,7 @@
   @media screen and (--bp-wide) {
     h1 {
       font-size: pxtorem(60);
-      line-height: 4.5rem;
+      line-height: pxtorem(72);
     }
   }
 }
@@ -122,7 +122,7 @@
       }
 
       @media screen and (--bp-desktop) {
-        font-size: 2.8125rem;
+        font-size: pxtorem(45);
         line-height: pxtorem(60);
       }
 
@@ -237,7 +237,7 @@
 .uomcontent .floating + [role="main"] {
   header,
   & > header:first-child {
-    padding-top: 7.5rem;
+    padding-top: pxtorem(120);
 
     @media screen and (--bp-desktop) {
       padding-top: pxtorem(180);
@@ -254,7 +254,7 @@
       width: 100%;
 
       &.image > p {
-        padding-bottom: 12.5rem;
+        padding-bottom: pxtorem(200);
       }
     }
 

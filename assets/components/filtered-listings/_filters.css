@@ -69,7 +69,7 @@
   }
 
   .filtered-listing-tag {
-    padding-right: 2.8125rem;
+    padding-right: pxtorem(45);
     float: left;
 
     input[type="checkbox"]:not(.unstyled) + label {

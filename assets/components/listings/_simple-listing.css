@@ -47,7 +47,7 @@
 
   /* includes overrides for h2, h3 and h4 */
   &__heading {
-    margin-bottom: .125rem;
+    margin-bottom: pxtorem(2);
     color: var(--col-navy-main);
     font-size: 1.125em;
     font-weight: 400;

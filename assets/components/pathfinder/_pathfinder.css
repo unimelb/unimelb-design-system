@@ -295,7 +295,7 @@
 
     p,
     span.text {
-      padding-bottom: 7.5rem;
+      padding-bottom: pxtorem(120);
       max-width: pxtorem(350);
       margin: 0 auto;
       padding-left: 0;

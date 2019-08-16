@@ -6,11 +6,11 @@
     max-width: 100%;
     padding-bottom: 100%;
     position: relative;
-    width: 12.5rem;
+    width: pxtorem(200);
 
     @media screen and (--bp-height-smallest) {
-      width: 20rem;
-      padding-bottom: 20rem;
+      width: pxtorem(320);
+      padding-bottom: pxtorem(320);
     }
 
     @media screen and (--bp-height-small) {
@@ -19,13 +19,13 @@
     }
 
     @media screen and (--bp-height-medium) {
-      width: 30rem;
-      padding-bottom: 30rem;
+      width: pxtorem(480);
+      padding-bottom: pxtorem(480);
     }
 
     @media screen and (--bp-height-big) {
-      width: 35rem;
-      padding-bottom: 35rem;
+      width: pxtorem(560);
+      padding-bottom: pxtorem(560);
     }
 
     & > iframe {

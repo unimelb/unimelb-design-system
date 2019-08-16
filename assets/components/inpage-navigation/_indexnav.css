@@ -1,7 +1,7 @@
 .uomcontent #outer.index-navigation {
   padding-top: pxtorem(20);
-  top: 2.5rem;
-  width: 2.5rem;
+  top: pxtorem(40);
+  width: pxtorem(40);
   align-items: center;
   background-color: color(var(--col-navy-main) alpha(90%));
   bottom: 0;
@@ -49,12 +49,12 @@
     }
 
     li {
-      height: 2.5rem;
+      height: pxtorem(40);
       display: table-cell;
     }
 
     a {
-      height: 2.5rem;
+      height: pxtorem(40);
       color: var(--col-blue-mid-2);
       font-weight: var(--fw-regular);
     }
@@ -68,7 +68,7 @@
       font-size: pxtorem(18);
       line-height: pxtorem(24);
       height: pxtorem(60);
-      line-height: 2.8125rem;
+      line-height: pxtorem(45);
       font-weight: var(--fw-semibold);
     }
   }

@@ -42,7 +42,7 @@
     }
 
     .frame {
-      max-width: 12.5rem;
+      max-width: pxtorem(200);
       margin-bottom: pxtorem(24);
       background-color: var(--col-blue-light);
       line-height: 0;

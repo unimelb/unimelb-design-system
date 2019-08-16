@@ -66,10 +66,10 @@
 
     /* centre icon */
     & > svg {
-      height: 2.5rem;
+      height: pxtorem(40);
       margin-left: -pxtorem(20);
       margin-top: -pxtorem(20);
-      width: 2.5rem;
+      width: pxtorem(40);
       left: 50%;
       position: absolute;
       top: 50%;

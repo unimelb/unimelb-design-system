@@ -160,7 +160,7 @@
     }
 
     strong {
-      font-size: 2.5rem;
+      font-size: pxtorem(40);
       font-family: var(--ff-serif);
       font-weight: var(--fw-bold);
       line-height: 1.3;
@@ -283,7 +283,7 @@
     }
 
     .crop-height {
-      max-height: 15rem;
+      max-height: pxtorem(225);
     }
   }
 
@@ -435,7 +435,7 @@
           }
 
           @media screen and (--bp-x-tablet) {
-            font-size: 2.5rem;
+            font-size: pxtorem(40);
 
             span {
               line-height: 1.3;
@@ -471,7 +471,7 @@
       }
 
       strong {
-        font-size: 2.5rem;
+        font-size: pxtorem(40);
         background-color: var(--col-blue-mid-2);
         box-decoration-break: clone;
         box-shadow: 10px 0 0 var(--col-blue-mid-2), -10px 0 0 var(--col-blue-mid-2);

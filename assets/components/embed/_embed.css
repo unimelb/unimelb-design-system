@@ -37,13 +37,13 @@
 
       & > iframe {
         position: static;
-        width: 15rem;
-        height: 15rem;
+        width: pxtorem(225);
+        height: pxtorem(225);
         margin: 0 auto;
 
         @media (--bp-desktop) {
-          width: 20rem;
-          height: 20rem;
+          width: pxtorem(320);
+          height: pxtorem(320);
         }
       }
     }

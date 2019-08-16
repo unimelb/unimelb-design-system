@@ -112,7 +112,7 @@
     }
 
     section {
-      padding-top: 12.5rem;
+      padding-top: pxtorem(200);
       @mixin grad-bottom;
       bottom: 0;
       margin: 0;
@@ -132,7 +132,7 @@
       padding-bottom: 0;
 
       &.black {
-        padding-top: 4.5rem;
+        padding-top: pxtorem(72);
         padding-bottom: pxtorem(48);
         color: var(--col-black-dark);
         text-align: left;
@@ -174,7 +174,7 @@
 
     @media screen and (--bp-height-small) {
       p {
-        font-size: 1.375rem;
+        font-size: pxtorem(22);
       }
     }
 

@@ -141,7 +141,7 @@
 }
 
 @define-mixin injection-wrapper {
-  max-width: 87.5rem;
+  max-width: pxtorem(1400);
   padding: pxtorem(15);
   margin: 0 auto;
 }

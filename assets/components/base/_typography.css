@@ -372,7 +372,7 @@
 
       &[type="a"],
       &[type="i"] {
-        padding-left: 2.625rem;
+        padding-left: pxtorem(42);
 
         li::before {
           display: none;
@@ -444,9 +444,9 @@
 
         &::before {
           height: pxtorem(5);
-          left: .375rem;
+          left: pxtorem(6);
           margin-left: -pxtorem(30);
-          top: .375rem;
+          top: pxtorem(6);
           width: pxtorem(10);
           background: transparent;
           border: 3px solid var(--col-green-dark);
@@ -472,7 +472,7 @@
     padding-left: pxtorem(15);
     padding-right: pxtorem(15);
     dt {
-      width: 7.5rem;
+      width: pxtorem(120);
       clear: left;
       float: left;
     }
@@ -597,7 +597,7 @@
     }
 
     @media screen and (--bp-desktop) {
-      font-size: 2.94375rem;
+      font-size: pxtorem(47);
       padding-bottom: pxtorem(24);
       padding-top: pxtorem(30);
       line-height: 1.26;

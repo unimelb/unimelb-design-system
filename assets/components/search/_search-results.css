@@ -186,7 +186,7 @@
   /* Definition list for meta information (e.g. year/type for handbook results) */
   .search-results__meta {
     font-size: pxtorem(14);
-    margin: pxtorem(-4) 0 .125rem;
+    margin: pxtorem(-4) 0 pxtorem(2);
     padding: 0;
 
     & > dt,

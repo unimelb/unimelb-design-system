@@ -22,8 +22,8 @@
         text-align: center;
 
         strong {
-          padding-left: .375rem;
-          padding-right: .375rem;
+          padding-left: pxtorem(6);
+          padding-right: pxtorem(6);
 
           &.date {
             padding-right: 0;

@@ -45,17 +45,17 @@
 
     a {
       font-size: pxtorem(16);
-      line-height: 2.875rem;
+      line-height:pxtorem(46);
 
       @media screen and (--bp-desktop) {
-        min-height: 7.0625rem;
+        min-height: pxtorem(113);
         line-height: 1.6em;
       }
     }
   }
 
   ul.people-links {
-    max-width: 87.5rem;
+    max-width: pxtorem(1400);
     border-bottom: 1px solid var(--col-navy-main);
     border-top: 1px solid var(--col-navy-main);
     margin: 0 auto;
@@ -224,7 +224,7 @@
 
       a {
         border-radius: 3px;
-        padding-top: .375rem;
+        padding-top: pxtorem(6);
         color: var(--col-white);
         vertical-align: top;
 

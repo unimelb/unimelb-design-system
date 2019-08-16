@@ -55,7 +55,7 @@
     @mixin boxes;
 
     dd {
-      font-size: 2.5rem;
+      font-size: pxtorem(40);
       line-height: pxtorem(48);
       font-weight: var(--fw-semibold);
     }

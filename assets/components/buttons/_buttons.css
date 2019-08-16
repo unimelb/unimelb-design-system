@@ -70,7 +70,7 @@
   }
 
   [data-icon] {
-    margin-left: .125rem;
+    margin-left: pxtorem(2);
     padding-bottom: pxtorem(3);
     padding-top: pxtorem(1);
 

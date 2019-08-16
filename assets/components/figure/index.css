@@ -69,7 +69,7 @@
         &::before {
           content: '';
           display: block;
-          width: 2.5rem;
+          width: pxtorem(40);
           margin-bottom: pxtorem(8);
           border-bottom: 2px solid currentColor;
         }
@@ -177,13 +177,13 @@
       }
     }
 
-    &--left { margin-left: -7rem; }
-    &--right { margin-right: -7rem; }
+    &--left { margin-left: pxtorem(-112); }
+    &--right { margin-right: pxtorem(-112); }
   }
 
   @media (--bp-x-wide) {
-    &--left { margin-left: -11rem; }
-    &--right { margin-right: -11rem; }
+    &--left { margin-left: pxtorem(-176); }
+    &--right { margin-right: pxtorem(-176); }
   }
 }
 
@@ -216,7 +216,7 @@
       max-width: 75%;
     }
 
-    &.figure--left { margin-left: -7rem; }
-    &.figure--right { margin-right: -7rem; }
+    &.figure--left { margin-left: pxtorem(-112); }
+    &.figure--right { margin-right: pxtorem(-112); }
   }
 }

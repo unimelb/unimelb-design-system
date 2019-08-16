@@ -183,7 +183,7 @@
     input[type="search"],
     input[type="url"] {
       @mixin textcontrol;
-      height: 2.8125rem;
+      height: pxtorem(45);
       appearance: none;
       display: block;
       width: 100%;
@@ -193,7 +193,7 @@
       @mixin inlinebutton;
       border-radius: 0 3px 3px 0;
       margin: pxtorem(15) 0 0;
-      width: 2.8125rem;
+      width: pxtorem(45);
       padding: 0;
       position: absolute;
       right: 0;
@@ -300,7 +300,7 @@
           white-space: nowrap;
 
           .small[data-icon] {
-            margin-top: -.125rem;
+            margin-top: pxtorem(-2);
             left: 0;
             position: absolute;
             top: 0;
@@ -417,7 +417,7 @@
 
 .align-checkbox {
   padding-left: pxtorem(30);
-  text-indent: -2.5rem;
+  text-indent: pxtorem(-40);
   line-height: 1.4;
 }
 

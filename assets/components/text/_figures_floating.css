@@ -6,7 +6,7 @@
    */
   .inset-left,
   .inset-right {
-    margin-top: .375rem;
+    margin-top: pxtorem(6);
     float: none;
     margin-bottom: 0;
     margin-left: auto;
@@ -44,7 +44,7 @@
         position: relative;
 
         &::before {
-          width: 2.5rem;
+          width: pxtorem(40);
           border-bottom: 2px solid var(--col-blue-mid-2);
           content: '';
           display: block;

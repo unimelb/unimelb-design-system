@@ -11,7 +11,7 @@
 
 .uomcontent [role="main"] table.mobile-friendly {
   margin-top: pxtorem(24);
-  max-width: 37.5rem;
+  max-width: pxtorem(600);
   margin-bottom: pxtorem(24);
   margin-left: auto;
   margin-right: auto;

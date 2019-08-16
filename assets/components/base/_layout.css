@@ -434,7 +434,7 @@ body {
 
       &__main,
       &__side {
-        padding: 4.5rem pxtorem(16);
+        padding: pxtorem(72) pxtorem(16);
         display: table-cell;
         vertical-align: top;
       }
@@ -453,7 +453,7 @@ body {
     @media screen and (--bp-wide) {
       &__main,
       &__side {
-        padding: 4.5rem pxtorem(32);
+        padding: pxtorem(72) pxtorem(32);
       }
     }
   }

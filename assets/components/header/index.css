@@ -69,7 +69,7 @@
 
   @media screen and (--bp-desktop) {
     &.fixed:not(.floating) {
-      height: 2.5rem;
+      height: pxtorem(40);
       background-color: var(--col-navy-main);
       position: fixed;
       width: 100%;
@@ -82,8 +82,8 @@
 
       a,
       span {
-        height: 2.5rem;
-        line-height: 2.5rem;
+        height: pxtorem(40);
+        line-height: pxtorem(40);
         vertical-align: middle;
 
         [data-icon] {
@@ -102,14 +102,14 @@
       }
 
       header {
-        height: 2.5rem;
-        line-height: 2.5rem;
+        height: pxtorem(40);
+        line-height: pxtorem(40);
         background-color: transparent;
         width: 100%;
       }
 
       .page-header-navigation {
-        height: 2.5rem;
+        height: pxtorem(40);
         line-height: pxtorem(30);
         transform: translateX(.9375rem);
         transition: .3s transform .1s, .2s height;
@@ -127,7 +127,7 @@
 
       .page-header-tools .page-header-icon {
         font-size: pxtorem(12);
-        height: 2.5rem;
+        height: pxtorem(40);
         line-height: 1;
         vertical-align: top;
 
@@ -204,18 +204,18 @@
     }
 
     &.wide {
-      width: 8.75rem;
+      width: pxtorem(140);
       background-color: transparent;
 
       svg {
-        width: 8.75rem;
+        width: pxtorem(140);
       }
 
       @media screen and (--bp-desktop) {
-        width: 20rem;
+        width: pxtorem(320);
 
         svg {
-          width: 20rem;
+          width: pxtorem(320);
         }
       }
     }
@@ -232,8 +232,8 @@
   span {
     @mixin headerblock;
     font-size: pxtorem(13);
-    height: 2.5rem;
-    line-height: 2.5rem;
+    height: pxtorem(40);
+    line-height: pxtorem(40);
     padding: 0 pxtorem(10) pxtorem(5) pxtorem(10);
 
     @media screen and (--bp-desktop) {
@@ -526,7 +526,7 @@
       input[type="search"] {
         @mixin textcontrol;
         border-radius: 3px 0 0 3px;
-        height: 2.5rem;
+        height: pxtorem(40);
         margin-top: pxtorem(3);
         animation: fadeIn .2s backwards, slideFromRight .2s .1s backwards;
         appearance: none;
@@ -546,7 +546,7 @@
           @mixin inlinebutton;
           border-radius: 0 3px 3px 0;
           margin: pxtorem(15) 0 0;
-          width: 2.8125rem;
+          width: pxtorem(45);
           padding: 0;
           position: absolute;
           right: 0;
@@ -569,7 +569,7 @@
         .inline-button {
           @mixin inlinebutton;
           border-radius: 0 3px 3px 0;
-          height: 2.5rem;
+          height: pxtorem(40);
           margin: pxtorem(3) 0 0;
           padding: 0 pxtorem(15);
 
@@ -616,7 +616,7 @@
     .page-header-icon {
       font-size: .5625rem;
       padding: 0 pxtorem(10);
-      width: 2.5rem;
+      width: pxtorem(40);
       box-sizing: content-box;
       color: var(--col-navy-main);
       cursor: pointer;
@@ -670,7 +670,7 @@
   vertical-align: top;
 
   @media screen and (--bp-desktop) {
-    width: 12.5rem;
+    width: pxtorem(200);
     position: absolute;
   }
 
@@ -687,7 +687,7 @@
   .page-header-icon {
     font-size: .5625rem;
     padding: 0 pxtorem(10);
-    width: 2.5rem;
+    width: pxtorem(40);
     border-left: 1px solid rgba(255,255,255,0.15);
     box-sizing: content-box;
     font-weight: var(--fw-regular);
@@ -775,7 +775,7 @@
 
     @media screen and (--bp-desktop) {
       font-size: pxtorem(20);
-      left: 12.5rem;
+      left: pxtorem(200);
       margin-top: pxtorem(30);
     }
   }
@@ -799,7 +799,7 @@
     }
 
     @media screen and (--bp-desktop) {
-      margin: 2.5rem;
+      margin: pxtorem(40);
 
       a.page-header-icon {
         height: 3.9375rem;
@@ -882,12 +882,12 @@
     }
 
     @media screen and (--bp-desktop) {
-      padding: pxtorem(70) 2.8125rem;
+      padding: pxtorem(70) pxtorem(45);
 
       .page-header-logo {
-        height: 7.5rem;
+        height: pxtorem(120);
         margin-right: pxtorem(31);
-        width: 7.5rem;
+        width: pxtorem(120);
       }
 
       .page-header-home {
@@ -900,7 +900,7 @@
 
       .page-header-tools {
         margin-top: -calc(4.5rem / 2);
-        right: 2.5rem;
+        right: pxtorem(40);
         top: 50%;
       }
     }

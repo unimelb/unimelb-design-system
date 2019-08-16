@@ -7,7 +7,7 @@
       width: 94%;
 
       h1 {
-        letter-spacing: .125rem;
+        letter-spacing: pxtorem(2);
         font-weight: var(--fw-semibold);
         text-transform: uppercase;
       }
@@ -29,7 +29,7 @@
           line-height: 1.2;
 
           @media screen and (--bp-desktop) {
-            margin-top: -.9375rem;
+            margin-top: pxtorem(-15);
           }
         }
       }

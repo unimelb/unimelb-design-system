@@ -22,7 +22,7 @@
   }
 
   @media screen and (--bp-tablet) {
-    padding: 0 8.125rem pxtorem(30) 2.5rem;
+    padding: 0 8.125rem pxtorem(30) pxtorem(40);
 
     &.active {
       transform: translateX(-100%) translateX(90px);
@@ -132,7 +132,7 @@
         @mixin inlinebutton;
         border-radius: 0 3px 3px 0;
         margin: pxtorem(15) 0 0;
-        width: 2.8125rem;
+        width: pxtorem(45);
         padding: 0;
         position: absolute;
         right: 0;
@@ -156,7 +156,7 @@
         @mixin inlinebutton;
         border-radius: 0 3px 3px 0;
         font-size: pxtorem(13);
-        height: 2.8125rem;
+        height: pxtorem(45);
         margin: pxtorem(5) 0 0;
         padding: 0 pxtorem(15);
         letter-spacing: 1px;
@@ -194,9 +194,9 @@
 
   .logo {
     @mixin imgreplace;
-    height: 8.75rem;
+    height: pxtorem(140);
     margin-top: pxtorem(15);
-    width: 8.75rem;
+    width: pxtorem(140);
     border: 0 none;
     clear: none;
     margin-left: auto;
@@ -282,7 +282,7 @@
       }
 
       h2 {
-        letter-spacing: .125rem;
+        letter-spacing: pxtorem(2);
         border-top: 0 none;
         font-size: pxtorem(15);
         font-weight: var(--fw-regular);

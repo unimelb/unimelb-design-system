@@ -1,7 +1,7 @@
 .uomcontent .navigation-block-listing {
-  padding-top: 4.5rem;
-  padding-bottom: 4.5rem;
-  max-width: 87.5rem;
+  padding-top: pxtorem(72);
+  padding-bottom: pxtorem(72);
+  max-width: pxtorem(1400);
   margin: 0 auto;
   padding-left: 3%;
   padding-right: 3%;
