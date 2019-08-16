@@ -6,8 +6,8 @@
   }
 
   [data-icon] {
-    height: 3.75rem;
-    width: 3.75rem;
+    height: pxtorem(60);
+    width: pxtorem(60);
     display: inline-block;
     margin: 0;
     vertical-align: middle;

@@ -11,13 +11,13 @@
 
   @media screen and (--bp-desktop) {
     h1 {
-      font-size: 3.125rem;
-      line-height: 3.75rem;
+      font-size: pxtorem(50);
+      line-height: pxtorem(60);
     }
   }
   @media screen and (--bp-wide) {
     h1 {
-      font-size: 3.75rem;
+      font-size: pxtorem(60);
       line-height: 4.5rem;
     }
   }
@@ -70,7 +70,7 @@
 
     &.image {
       @mixin bannerbox;
-      min-height: 18.75rem;
+      min-height: pxtorem(300);
       height: auto;
 
       & > h1,
@@ -123,12 +123,12 @@
 
       @media screen and (--bp-desktop) {
         font-size: 2.8125rem;
-        line-height: 3.75rem;
+        line-height: pxtorem(60);
       }
 
       @media screen and (--bp-wide) {
         font-size: pxtorem(55);
-        line-height: 3.75rem;
+        line-height: pxtorem(60);
       }
     }
 
@@ -273,7 +273,7 @@
   header,
   & > header:first-child {
     &.image {
-      height: 18.75rem;
+      height: pxtorem(300);
 
       &.with-filters {
         height: auto;
@@ -281,7 +281,7 @@
     }
 
     &.banner {
-      height: 18.75rem;
+      height: pxtorem(300);
 
       @media screen and (--bp-height-smallest) {
         height: 32.5rem;

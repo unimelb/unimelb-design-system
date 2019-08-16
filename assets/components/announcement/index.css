@@ -15,7 +15,7 @@
     }
 
     &__message {
-      padding: pxtorem(20) 3.125rem pxtorem(20) pxtorem(15);
+      padding: pxtorem(20) pxtorem(50) pxtorem(20) pxtorem(15);
       background-color: var(--col-blue-mid-2);
       color: var(--col-white);
       display: block;

@@ -72,7 +72,7 @@
   [data-icon] {
     margin-left: .125rem;
     padding-bottom: pxtorem(3);
-    padding-top: .0625rem;
+    padding-top: pxtorem(1);
 
     &.small {
       height: pxtorem(20);

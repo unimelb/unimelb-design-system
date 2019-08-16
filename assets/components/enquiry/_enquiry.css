@@ -19,7 +19,7 @@
     .enquiry__cta {
       @mixin wrapper;
       font-size: pxtorem(20);
-      line-height: 3.125rem;
+      line-height: pxtorem(50);
       padding-bottom: pxtorem(24);
       max-width: var(--w-sml);
       text-align: center;

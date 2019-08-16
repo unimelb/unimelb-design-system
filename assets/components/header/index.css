@@ -43,7 +43,7 @@
 .uomcontent .page-header {
   @mixin normalise;
   font-size: pxtorem(20);
-  height: 3.75rem;
+  height: pxtorem(60);
   background-color: var(--col-navy-main);
   color: var(--col-white);
   font-family: var(--ff-sans);
@@ -88,7 +88,7 @@
 
         [data-icon] {
           height: pxtorem(20);
-          margin-bottom: .25rem;
+          margin-bottom: pxtorem(4);
           margin-right: pxtorem(5);
           width: pxtorem(20);
           display: inline-block;
@@ -142,7 +142,7 @@
   }
 
   header {
-    height: 3.75rem;
+    height: pxtorem(60);
     background-color: var(--col-navy-main);
     display: table;
     overflow: visible;
@@ -159,8 +159,8 @@
 
   a {
     @mixin headerblock;
-    height: 3.75rem;
-    line-height: 3.75rem;
+    height: pxtorem(60);
+    line-height: pxtorem(60);
     text-decoration: none;
 
     &:hover,
@@ -173,8 +173,8 @@
     }
 
     &.page-header-logo {
-      height: 3.75rem;
-      width: 3.75rem;
+      height: pxtorem(60);
+      width: pxtorem(60);
       background-color: var(--col-navy-main);
       display: block;
       left: 0;
@@ -313,7 +313,7 @@
 
   [data-icon] {
     height: pxtorem(20);
-    margin-bottom: .25rem;
+    margin-bottom: pxtorem(4);
     margin-right: pxtorem(5);
     width: pxtorem(20);
     display: inline-block;
@@ -445,7 +445,7 @@
 }
 
 .uomcontent .modal__blanket.white {
-  margin-top: 3.75rem;
+  margin-top: pxtorem(60);
   animation: fadeIn .2s backwards;
   background-color: var(--col-white);
   display: block;
@@ -492,7 +492,7 @@
 }
 
 .uomcontent .page-header-search {
-  height: 3.75rem;
+  height: pxtorem(60);
   animation: fadeIn .2s backwards;
   background: color(var(--col-white) alpha(95%));
   display: none;
@@ -630,7 +630,7 @@
 
       svg {
         height: pxtorem(20);
-        margin-bottom: .25rem;
+        margin-bottom: pxtorem(4);
         margin-top: pxtorem(14);
         width: pxtorem(20);
         fill: currentColor;
@@ -640,7 +640,7 @@
 
         @media screen and (--bp-desktop) {
           height: pxtorem(36);
-          margin-bottom: .25rem;
+          margin-bottom: pxtorem(4);
           margin-top: pxtorem(20);
           width: pxtorem(36);
         }
@@ -680,7 +680,7 @@
     }
 
     @media screen and (--bp-desktop) {
-      width: 18.75rem;
+      width: pxtorem(300);
     }
   }
 
@@ -697,7 +697,7 @@
 
     svg {
       height: pxtorem(20);
-      margin-bottom: .25rem;
+      margin-bottom: pxtorem(4);
       margin-top: pxtorem(14);
       width: pxtorem(20);
       fill: currentColor;
@@ -891,7 +891,7 @@
       }
 
       .page-header-home {
-        width: 18.75rem;
+        width: pxtorem(300);
 
         h1 {
           font-size: pxtorem(24);

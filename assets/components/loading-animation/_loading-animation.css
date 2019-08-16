@@ -41,8 +41,8 @@
   }
 
   .cube {
-    height: 3.125rem;
-    width: 3.125rem;
+    height: pxtorem(50);
+    width: pxtorem(50);
     animation: rotateplane 1.2s infinite ease-in-out;
     background-color: var(--col-navy-main);
     margin: 0 auto;

@@ -142,7 +142,7 @@
     }
 
     h1 {
-      font-size: 1.625rem;
+      font-size: pxtorem(26);
       line-height: pxtorem(36);
     }
 

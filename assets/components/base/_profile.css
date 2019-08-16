@@ -5,7 +5,7 @@
     min-height: pxtorem(400);
 
     .bottom-align {
-      padding-top: 3.125rem;
+      padding-top: pxtorem(50);
       bottom: 0;
       padding-bottom: 0;
       position: absolute;
@@ -82,7 +82,7 @@
     }
 
     @media screen and (--bp-wide) {
-      font-size: 3.125rem;
+      font-size: pxtorem(50);
       margin-bottom: 1.9375rem;
     }
   }

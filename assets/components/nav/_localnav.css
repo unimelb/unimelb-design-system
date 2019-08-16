@@ -1,6 +1,6 @@
 /* Variables */
 :root {
-  --width-localnav: 18.75rem;
+  --width-localnav: pxtorem(300);
   --width-sitemap-trigger: 2.8125rem;
   --offset-localnav: -calc(var(--width-localnav) + var(--width-sitemap-trigger));
 }
@@ -150,7 +150,7 @@
 
     a {
       font-size: pxtorem(14);
-      padding: .25rem pxtorem(20);
+      padding: pxtorem(4) pxtorem(20);
     }
   }
 

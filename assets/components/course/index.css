@@ -53,8 +53,8 @@
   }
 
   .accordion__close {
-    height: 3.125rem;
-    width: 3.125rem;
+    height: pxtorem(50);
+    width: pxtorem(50);
     color: var(--col-white);
     cursor: pointer;
     display: block;
@@ -64,7 +64,7 @@
     top: 0;
 
     &::after {
-      font-size: 3.75rem;
+      font-size: pxtorem(60);
       content: '\00d7';
       font-weight: var(--fw-light);
       line-height: 1;
@@ -106,7 +106,7 @@
 
       h2 {
         @mixin subtitle;
-        padding-right: 3.75rem;
+        padding-right: pxtorem(60);
         padding-left: 3%;
 
         @media screen and (--bp-tablet) {
@@ -208,7 +208,7 @@
   }
 
   h3 {
-    font-size: 1.625rem;
+    font-size: pxtorem(26);
     line-height: pxtorem(36);
     padding-top: 0;
     padding-bottom: pxtorem(24);

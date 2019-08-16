@@ -262,7 +262,7 @@
           font-size: pxtorem(28);
           letter-spacing: -0.03em;
           padding-top: pxtorem(26);
-          width: 3.75rem;
+          width: pxtorem(60);
           content: counter(steps);
           display: block;
           font-family: var(--ff-serif);
@@ -547,7 +547,7 @@
   }
 
   .center {
-    padding: 0 0 3.75rem;
+    padding: 0 0 pxtorem(60);
     margin: 0 auto;
     text-align: center;
   }

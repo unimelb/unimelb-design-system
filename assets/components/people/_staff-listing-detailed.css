@@ -6,7 +6,7 @@
 
     li {
       padding: pxtorem(48) pxtorem(16);
-      width: 18.75rem;
+      width: pxtorem(300);
       display: inline-block;
       list-style-type: none;
       margin: 0;
@@ -114,7 +114,7 @@
 
   /* DEPRECATED */
   .diamond-mask {
-    max-width: 18.75rem;
+    max-width: pxtorem(300);
     margin-bottom: pxtorem(24);
     transform: rotate(45deg) scale(.7);
     display: block;

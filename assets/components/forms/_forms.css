@@ -277,7 +277,7 @@
       input[type="search"],
       input[type="url"] {
         font-size: pxtorem(24);
-        height: 3.75rem;
+        height: pxtorem(60);
         line-height: pxtorem(36);
         padding: pxtorem(15);
         border-color: var(--col-navy-main);
@@ -290,7 +290,7 @@
 
       .inline-button {
         font-size: pxtorem(16);
-        height: 3.75rem;
+        height: pxtorem(60);
         padding: pxtorem(15);
         line-height: 1;
 
@@ -324,7 +324,7 @@
     clip: rect(1px, 1px, 1px, 1px);
 
     & + label {
-      margin-top: .25rem;
+      margin-top: pxtorem(4);
       margin-bottom: pxtorem(-12);
       cursor: pointer;
       display: block;

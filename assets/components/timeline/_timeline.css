@@ -121,7 +121,7 @@
       }
 
       &:last-child p:last-child {
-        padding-bottom: 3.75rem;
+        padding-bottom: pxtorem(60);
         border-bottom: 0;
       }
     }

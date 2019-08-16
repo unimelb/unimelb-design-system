@@ -249,7 +249,7 @@ body {
     width: 100%;
 
     dt {
-      letter-spacing: .0625rem;
+      letter-spacing: pxtorem(1);
       padding-bottom: pxtorem(5);
       font-weight: var(--fw-semibold);
       margin-left: 0;
@@ -411,7 +411,7 @@ body {
     }
 
     &__main__inner {
-      max-width: 68.75rem;
+      max-width: pxtorem(1100);
       margin-left: 0;
       margin-right: auto;
     }
@@ -479,17 +479,17 @@ body {
     }
 
     @media screen and (--bp-desktop) {
-      width: 68.6875rem;
+      width: pxtorem(1099);
       margin: 0 auto;
 
       section {
-        margin: pxtorem(30) 0 pxtorem(30) 18.75rem;
+        margin: pxtorem(30) 0 pxtorem(30) pxtorem(300);
         padding-bottom: 0;
         padding-top: 0;
 
         &.ruled {
-          margin-bottom: 3.75rem;
-          margin-top: 3.75rem;
+          margin-bottom: pxtorem(60);
+          margin-top: pxtorem(60);
           border-left: 1px solid var(--col-black-dark);
           float: left;
           margin-left: 0;
@@ -498,14 +498,14 @@ body {
 
       .floating {
         padding-right: pxtorem(20);
-        padding-top: 3.125rem;
-        width: 17.5rem;
+        padding-top: pxtorem(50);
+        width: pxtorem(280);
         background-color: transparent;
         float: left;
         text-align: right;
 
         h2 {
-          font-size: 1.625rem;
+          font-size: pxtorem(26);
           padding-bottom: pxtorem(15);
         }
       }
@@ -513,11 +513,11 @@ body {
   }
 
   .tilt-before {
-    padding-top: 3.125rem;
+    padding-top: pxtorem(50);
 
     &::before {
       @mixin tilt;
-      margin-top: -6.25rem;
+      margin-top: pxtorem(100);
       background-color: var(--col-white);
       transform: skewY(-2deg);
     }
@@ -528,7 +528,7 @@ body {
   }
 
   .tilt-after {
-    padding-bottom: 3.125rem;
+    padding-bottom: pxtorem(50);
 
     &::after {
       @mixin tilt;
@@ -613,7 +613,7 @@ body {
     padding-top: pxtorem(10);
 
     &::after {
-      top: -.25rem;
+      top: pxtorem(-4);
     }
   }
 

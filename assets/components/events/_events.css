@@ -192,7 +192,7 @@
 
     svg {
       height: pxtorem(20);
-      margin-top: -.25rem;
+      margin-top: pxtorem(-4);
       width: pxtorem(20);
       display: inline-block;
       fill: var(--col-blue-mid-2);
@@ -244,7 +244,7 @@
 
     svg {
       height: pxtorem(13);
-      margin-left: .0625rem;
+      margin-left: pxtorem(1);
       margin-right: pxtorem(3);
       margin-top: -.125rem;
       width: pxtorem(13);

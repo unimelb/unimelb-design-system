@@ -49,8 +49,8 @@
     }
 
     @media screen and (--bp-desktop) {
-      padding-top: .25rem;
-      padding-bottom: .25rem;
+      padding-top: pxtorem(4);
+      padding-bottom: pxtorem(4);
     }
   }
 
@@ -68,7 +68,7 @@
 
     a {
       padding-bottom: pxtorem(10);
-      padding-top: .25rem;
+      padding-top: pxtorem(4);
     }
   }
 
@@ -218,9 +218,9 @@
 
   a.close-button {
     font-size: pxtorem(14);
-    padding-left: .25rem;
+    padding-left: pxtorem(4);
     padding-top: pxtorem(16);
-    height: 3.75rem;
+    height: pxtorem(60);
     border-bottom: 1px solid var(--col-navy-main);
     color: color(var(--col-white) alpha(40%));
     display: block;

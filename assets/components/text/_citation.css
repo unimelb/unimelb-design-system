@@ -18,7 +18,7 @@
 
   .citation {
     padding: pxtorem(15);
-    margin-top: .25rem;
+    margin-top: pxtorem(4);
     margin-bottom: pxtorem(12);
     background-color: var(--col-navy-light);
     border: 1px solid var(--col-blue-light);
@@ -28,7 +28,7 @@
     background-color: var(--col-white);
 
     &:last-child {
-      margin-bottom: .25rem;
+      margin-bottom: pxtorem(4);
     }
   }
 }

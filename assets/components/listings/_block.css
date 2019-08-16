@@ -69,7 +69,7 @@
   .meta {
     @mixin clearfix;
     font-size: pxtorem(14);
-    padding: .25rem pxtorem(16);
+    padding: pxtorem(4) pxtorem(16);
     background-color: color(var(--col-white) alpha(90%));
     color: inherit;
     position: relative;
@@ -97,7 +97,7 @@
     text-align: left;
 
     time {
-      font-size: 1.625rem;
+      font-size: pxtorem(26);
       display: block;
       font-weight: var(--fw-semibold);
       padding-bottom: 0;
@@ -106,8 +106,8 @@
   }
 
   .range {
-    padding-top: .25rem;
-    margin-bottom: .25rem;
+    padding-top: pxtorem(4);
+    margin-bottom: pxtorem(4);
     line-height: 2.8;
 
     time {
@@ -303,7 +303,7 @@
         width: 100%;
 
         &::before {
-          height: 3.125rem;
+          height: pxtorem(50);
           background: linear-gradient(to top, var(--col-white) 10%, color(var(--col-white) alpha(0%)) 100%);
           content: '';
           display: block;
@@ -312,14 +312,14 @@
       }
 
       .block-listing__img::before {
-        top: -3.125rem;
+        top: pxtorem(-50);
         left: 0;
         position: absolute;
       }
     }
 
     .news .meta::before {
-      height: 3.75rem;
+      height: pxtorem(60);
       margin-left: pxtorem(-16);
       margin-right: pxtorem(-16);
       margin-top: pxtorem(-64); /* account for padding-top of 4px on `meta` */
@@ -368,10 +368,10 @@
     }
 
     &.newshero {
-      min-height: 18.75rem;
+      min-height: pxtorem(300);
 
       a {
-        min-height: 18.75rem;
+        min-height: pxtorem(300);
         background-color: transparent;
 
         @media screen and (--bp-x-tablet) {
@@ -400,7 +400,7 @@
         }
 
         @media screen and (--bp-wide) {
-          font-size: 1.625rem;
+          font-size: pxtorem(26);
           line-height: pxtorem(36);
           padding: pxtorem(20) pxtorem(24);
         }
@@ -410,8 +410,8 @@
         border-bottom-color: var(--col-blue-mid-2);
 
         strong {
-          padding-bottom: 1.625rem;
-          padding-left: 1.625rem;
+          padding-bottom: pxtorem(26);
+          padding-left: pxtorem(26);
           background-color: transparent;
 
           em {
@@ -425,7 +425,7 @@
           span {
             font-family: var(--ff-serif);
             font-weight: var(--fw-bold);
-            padding-bottom: .25rem;
+            padding-bottom: pxtorem(4);
             background-color: var(--col-white);
             box-decoration-break: clone;
             box-shadow: 10px 0 0 var(--col-white), -10px 0 0 var(--col-white);
@@ -463,7 +463,7 @@
         font-weight: normal;
 
         svg {
-          height: 3.125rem;
+          height: pxtorem(50);
           margin-bottom: -.4375rem;
           margin-left: -.625rem;
           fill: var(--col-blue-mid-2);
@@ -603,7 +603,7 @@
         white-space: nowrap;
 
         span.small {
-          margin-right: .25rem;
+          margin-right: pxtorem(4);
           margin-top: 0;
 
           /* Hide label for modern browsers */

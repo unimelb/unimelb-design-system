@@ -62,12 +62,12 @@
 
   @media screen and (--bp-wide) {
     li {
-      height: 3.75rem;
+      height: pxtorem(60);
     }
     a {
       font-size: pxtorem(18);
       line-height: pxtorem(24);
-      height: 3.75rem;
+      height: pxtorem(60);
       line-height: 2.8125rem;
       font-weight: var(--fw-semibold);
     }

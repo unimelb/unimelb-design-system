@@ -331,7 +331,7 @@
 
   @media screen and (--bp-desktop) {
     li {
-      padding-left: .0625rem;
+      padding-left: pxtorem(1);
       padding-right: 0;
       text-align: left;
 
@@ -347,7 +347,7 @@
     }
 
     p {
-      min-width: 17.5rem;
+      min-width: pxtorem(280);
     }
   }
 
@@ -377,7 +377,7 @@
 
     @media screen and (--bp-desktop) {
       li {
-        margin-bottom: .0625rem;
+        margin-bottom: pxtorem(1);
         display: inline-block;
         height: auto;
         width: 49%;
@@ -404,7 +404,7 @@
         }
 
         &:nth-child(2n+1) {
-          padding-left: .0625rem;
+          padding-left: pxtorem(1);
         }
       }
     }
@@ -412,7 +412,7 @@
     &.soft {
       @media screen and (--bp-desktop) {
         li {
-          padding-left: .0625rem;
+          padding-left: pxtorem(1);
           text-align: left;
 
           &:nth-child(2n+1) {

@@ -13,7 +13,7 @@
   footer {
     @mixin injection-wrapper;
     padding: pxtorem(15);
-    padding-bottom: 3.75rem;
+    padding-bottom: pxtorem(60);
     margin-left: auto;
     margin-right: auto;
   }
@@ -108,8 +108,8 @@
 }
 
 .uomcontent .page-footer-section {
-  height: 3.125rem;
-  line-height: 3.125rem;
+  height: pxtorem(50);
+  line-height: pxtorem(50);
   border-bottom: 1px solid var(--col-navy-main);
   clear: both;
   float: left;
@@ -267,7 +267,7 @@
     }
 
     @media screen and (--bp-desktop) {
-      margin-bottom: 3.75rem;
+      margin-bottom: pxtorem(60);
       margin-top: pxtorem(20);
       padding-right: pxtorem(16);
       border: 0 none;

@@ -78,7 +78,7 @@
   &--text {
     .simple-listing { /* for nesting purposes */
       &__link {
-        padding-top: .25rem;
+        padding-top: pxtorem(4);
       }
 
       /* underline headings */

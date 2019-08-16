@@ -102,7 +102,7 @@
 
         @media screen and (--bp-desktop) {
           font-size: 3.5rem;
-          line-height: 3.75rem;
+          line-height: pxtorem(60);
           max-width: var(--w-sml);
           padding-left: 0;
           padding-right: 0;

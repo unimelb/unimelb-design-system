@@ -186,7 +186,7 @@
   /* Definition list for meta information (e.g. year/type for handbook results) */
   .search-results__meta {
     font-size: pxtorem(14);
-    margin: -.25rem 0 .125rem;
+    margin: pxtorem(-4) 0 .125rem;
     padding: 0;
 
     & > dt,
@@ -219,7 +219,7 @@
 
     & > li {
       font-size: pxtorem(16);
-      margin-bottom: .25rem;
+      margin-bottom: pxtorem(4);
       padding: 0;
       list-style-type: inherit;
       color: inherit;
@@ -235,7 +235,7 @@
     @supports (display: grid) {
       @media (--bp-tablet) {
         display: grid;
-        grid-gap: .25rem pxtorem(16);
+        grid-gap: pxtorem(4) pxtorem(16);
         grid-template-columns: repeat(2, 1fr);
 
         & > li {

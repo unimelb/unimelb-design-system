@@ -115,7 +115,7 @@ body {
 }
 
 .uomcontent .sitemap-trigger {
-  width: 3.125rem;
+  width: pxtorem(50);
   background-color: var(--col-navy-main);
   border-left: 1px solid var(--col-blue-mid-2);
   box-shadow: 3px 0 0 color(var(--col-black-dark) alpha(10%)) inset;
@@ -134,7 +134,7 @@ body {
     transform: translateX(0);
 
     &:hover {
-      width: 3.125rem;
+      width: pxtorem(50);
       color: var(--col-white);
       transform: translateX(-5px);
     }

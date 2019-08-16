@@ -77,7 +77,7 @@
 
       [data-icon] {
         height: pxtorem(20);
-        margin-top: .25rem;
+        margin-top: pxtorem(4);
         width: pxtorem(20);
         vertical-align: top;
       }

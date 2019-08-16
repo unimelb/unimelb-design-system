@@ -97,7 +97,7 @@
   & > header.image:first-child h1.highlight,
   header.banner h1.highlight,
   & > header.banner:first-child h1.highlight {
-    font-size: 3.75rem;
+    font-size: pxtorem(60);
     line-height: 4.5rem;
     text-align: center;
 

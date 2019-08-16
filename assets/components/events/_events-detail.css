@@ -52,7 +52,7 @@
             padding: 0;
 
             &.date {
-              font-size: 3.75rem;
+              font-size: pxtorem(60);
               padding-top: pxtorem(10);
             }
 
@@ -96,7 +96,7 @@
     }
 
     @media screen and (--bp-desktop) {
-      width: 18.75rem;
+      width: pxtorem(300);
     }
 
     div {
@@ -106,7 +106,7 @@
       text-align: center;
 
       @media screen and (--bp-desktop) {
-        padding-left: 3.75rem;
+        padding-left: pxtorem(60);
         text-align: right;
       }
     }
@@ -144,7 +144,7 @@
     text-align: center;
 
     @media screen and (--bp-desktop) {
-      padding-left: 18.75rem;
+      padding-left: pxtorem(300);
       text-align: left;
     }
 
@@ -152,7 +152,7 @@
       padding-top: 0;
 
       @media screen and (--bp-desktop) {
-        margin-left: -18.75rem;
+        margin-left: pxtorem(-300);
       }
     }
 
@@ -190,10 +190,10 @@
 
   .lower {
     @media screen and (--bp-desktop) {
-      margin-left: 18.75rem;
+      margin-left: pxtorem(300);
 
       .aside {
-        margin-left: -18.75rem;
+        margin-left: pxtorem(-300);
 
         div {
           padding-left: 0;
@@ -222,7 +222,7 @@
       @mixin presenters;
 
       @media screen and (--bp-desktop) {
-        /* margin-left: 18.75rem; */
+        /* margin-left: pxtorem(300); */
         border: 0 none;
         display: block;
         padding-left: 0;
