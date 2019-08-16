@@ -87,7 +87,7 @@
 
       & > a,
       & > button {
-        font-size: .875rem;
+        font-size: pxtorem(14);
         margin-bottom: .5rem;
         min-width: 6rem;
         padding: .5rem 1rem;

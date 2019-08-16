@@ -12,7 +12,7 @@
       }
 
       .frame {
-        max-width: 6.25rem;
+        max-width: pxtorem(100);
         margin-left: auto;
         margin-right: auto;
       }
@@ -50,7 +50,7 @@
       }
 
       li {
-        font-size: .875rem;
+        font-size: pxtorem(14);
         line-height: pxtorem(24);
         margin: 0 pxtorem(10) 0 0;
         display: inline-block;

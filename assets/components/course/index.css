@@ -215,7 +215,7 @@
   }
 
   p {
-    font-size: .875rem;
+    font-size: pxtorem(14);
     line-height: pxtorem(24);
     padding-top: 0;
     padding-bottom: 0;
@@ -259,7 +259,7 @@
       width: 25%;
 
       span {
-        font-size: .875rem;
+        font-size: pxtorem(14);
         color: color(var(--col-white) alpha(80%));
       }
 

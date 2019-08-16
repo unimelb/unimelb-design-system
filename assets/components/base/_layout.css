@@ -1,5 +1,5 @@
 @define-mixin tilt {
-  height: 6.25rem;
+  height: pxtorem(100);
   content: "";
   width: 100%;
   position: absolute;
@@ -50,7 +50,7 @@ body {
   }
 
   & > *:first-child {
-    padding-top: 6.25rem;
+    padding-top: pxtorem(100);
   }
 
   article {
@@ -130,7 +130,7 @@ body {
       padding-top: 0;
 
       h2 {
-        font-size: .8125rem;
+        font-size: pxtorem(13);
         line-height: pxtorem(24);
         font-weight: var(--fw-semibold);
         letter-spacing: 3px;
@@ -174,7 +174,7 @@ body {
 
     a.social {
       border-radius: 3px;
-      font-size: .875rem;
+      font-size: pxtorem(14);
       margin: 0 pxtorem(15);
       background-color: transparent;
       color: var(--col-white);
@@ -405,7 +405,7 @@ body {
     }
 
     &__side {
-      font-size: .875rem;
+      font-size: pxtorem(14);
       background-color: var(--col-navy-light);
       color: var(--col-navy-main);
     }
@@ -541,12 +541,12 @@ body {
     }
 
     & + * {
-      padding-top: 6.25rem;
+      padding-top: pxtorem(100);
     }
   }
 
   .with-tilt-sibling {
-    padding-bottom: 6.25rem;
+    padding-bottom: pxtorem(100);
   }
 
   .center {

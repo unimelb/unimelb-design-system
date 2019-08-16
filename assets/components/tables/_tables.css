@@ -33,7 +33,7 @@
       width: auto;
 
       &::before {
-        font-size: .875rem;
+        font-size: pxtorem(14);
         color: var(--col-blue-dark);
         content: attr(data-label);
         display: block;

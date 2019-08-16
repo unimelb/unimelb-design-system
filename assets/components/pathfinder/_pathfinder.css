@@ -128,7 +128,7 @@
 
       strong {
         display: flex;
-        height: 6.25rem;
+        height: pxtorem(100);
         min-width: 15.625rem;
         border-bottom: 0 none;
         color: var(--col-navy-main);

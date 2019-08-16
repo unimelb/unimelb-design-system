@@ -132,10 +132,10 @@
         vertical-align: top;
 
         svg {
-          height: .875rem;
+          height: pxtorem(14);
           margin-bottom: pxtorem(3);
           margin-top: .4375rem;
-          width: .875rem;
+          width: pxtorem(14);
         }
       }
     }
@@ -231,7 +231,7 @@
 
   span {
     @mixin headerblock;
-    font-size: .8125rem;
+    font-size: pxtorem(13);
     height: 2.5rem;
     line-height: 2.5rem;
     padding: 0 pxtorem(10) pxtorem(5) pxtorem(10);
@@ -698,7 +698,7 @@
     svg {
       height: pxtorem(20);
       margin-bottom: .25rem;
-      margin-top: .875rem;
+      margin-top: pxtorem(14);
       width: pxtorem(20);
       fill: currentColor;
       display: block;
@@ -762,7 +762,7 @@
   }
 
   .page-header-home {
-    left: 5.625rem;
+    left: pxtorem(90);
     margin-top: pxtorem(15);
     width: 10rem;
     color: var(--col-white);

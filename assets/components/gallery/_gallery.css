@@ -82,7 +82,7 @@
 
     /* caption to be shown in the gallery (can be `figcaption` or a distinct paragraph) */
     .image-gallery__caption {
-      font-size: .875rem;
+      font-size: pxtorem(14);
       padding: .5rem pxtorem(12);
       background-color: color(var(--col-black-dark) alpha(70%));
       bottom: 0;

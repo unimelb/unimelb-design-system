@@ -102,7 +102,7 @@
     text-align: center;
 
     @media screen and (--bp-desktop) {
-      font-size: 6.25rem;
+      font-size: pxtorem(100);
       line-height: 6.75rem;
       text-align: center;
     }

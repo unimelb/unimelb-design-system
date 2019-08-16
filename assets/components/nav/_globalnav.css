@@ -155,7 +155,7 @@
       .inline-button {
         @mixin inlinebutton;
         border-radius: 0 3px 3px 0;
-        font-size: .8125rem;
+        font-size: pxtorem(13);
         height: 2.8125rem;
         margin: pxtorem(5) 0 0;
         padding: 0 pxtorem(15);
@@ -217,7 +217,7 @@
   }
 
   a.close-button {
-    font-size: .875rem;
+    font-size: pxtorem(14);
     padding-left: .25rem;
     padding-top: 1rem;
     height: 3.75rem;

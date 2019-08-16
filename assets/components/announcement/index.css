@@ -51,7 +51,7 @@
       }
 
       @media screen and (--bp-tablet) {
-        padding: pxtorem(20) 5.625rem;
+        padding: pxtorem(20) pxtorem(90);
         text-align: center;
 
         h2,
@@ -63,7 +63,7 @@
 
     &__close {
       border-radius: 3px;
-      font-size: .8125rem;
+      font-size: pxtorem(13);
       margin-top: -calc((.625rem * 2 + pxtorem(24)) / 2);
       padding: pxtorem(10);
       right: pxtorem(15);

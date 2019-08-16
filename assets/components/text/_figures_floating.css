@@ -16,7 +16,7 @@
     text-align: center;
 
     figcaption {
-      font-size: .875rem;
+      font-size: pxtorem(14);
       padding-bottom: pxtorem(15);
       color: var(--col-blue-mid-2);
       font-style: italic;

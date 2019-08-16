@@ -330,7 +330,7 @@
     }
 
     .mid-unit {
-      max-height: 5.625rem;
+      max-height: pxtorem(90);
     }
   }
 

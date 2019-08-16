@@ -24,7 +24,7 @@
     text-align: center;
 
     figcaption {
-      font-size: .875rem;
+      font-size: pxtorem(14);
       line-height: pxtorem(24);
       padding-bottom: pxtorem(24);
       font-style: italic;

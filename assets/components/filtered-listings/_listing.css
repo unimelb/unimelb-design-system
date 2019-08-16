@@ -68,7 +68,7 @@
   }
 
   .filtered-listing-item {
-    font-size: .875rem;
+    font-size: pxtorem(14);
     line-height: pxtorem(24);
     height: pxtorem(110);
     margin: .125rem .125rem .25rem .125rem;

@@ -222,7 +222,7 @@
 
 @define-mixin iconbutton {
   @mixin flatbutton;
-  font-size: .875rem;
+  font-size: pxtorem(14);
   margin: pxtorem(10) 0;
   padding: pxtorem(5) pxtorem(10) pxtorem(5) pxtorem(20);
   appearance: none;

@@ -55,7 +55,7 @@ body {
 
     svg {
       fill: currentColor;
-      margin-bottom: .875rem;
+      margin-bottom: pxtorem(14);
       margin-top: pxtorem(10);
     }
 

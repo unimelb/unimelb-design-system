@@ -14,7 +14,7 @@
 
   pre {
     @mixin code;
-    font-size: .8125rem;
+    font-size: pxtorem(13);
     line-height: pxtorem(24);
     margin-top: 0;
     padding-top: pxtorem(24);

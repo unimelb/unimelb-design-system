@@ -67,7 +67,7 @@
   }
 
   p {
-    font-size: .8125rem;
+    font-size: pxtorem(13);
     padding: 0;
     width: auto;
   }

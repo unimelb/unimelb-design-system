@@ -10,7 +10,7 @@
   }
 
   a {
-    font-size: .875rem;
+    font-size: pxtorem(14);
     padding-right: pxtorem(10);
     color: var(--col-blue-mid-2);
     display: inline-block;
@@ -243,11 +243,11 @@
     }
 
     svg {
-      height: .8125rem;
+      height: pxtorem(13);
       margin-left: .0625rem;
       margin-right: pxtorem(3);
       margin-top: -.125rem;
-      width: .8125rem;
+      width: pxtorem(13);
       display: inline-block;
       fill: var(--col-unsanctioned-black-mid-3);
       vertical-align: middle;

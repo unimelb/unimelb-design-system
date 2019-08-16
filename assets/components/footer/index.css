@@ -170,7 +170,7 @@
     }
 
     a {
-      font-size: .875rem;
+      font-size: pxtorem(14);
       color: inherit;
 
       &:hover,

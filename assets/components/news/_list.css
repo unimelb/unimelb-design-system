@@ -171,7 +171,7 @@
       font-size: pxtorem(16);
 
       &.date {
-        font-size: .8125rem;
+        font-size: pxtorem(13);
         line-height: pxtorem(24);
         font-style: italic;
       }

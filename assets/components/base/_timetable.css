@@ -147,7 +147,7 @@
 
       th {
         @mixin subtitle;
-        font-size: .875rem;
+        font-size: pxtorem(14);
         padding: pxtorem(30) 0 pxtorem(10);
         border-top: 1px solid var(--col-black-light);
         clear: both;
@@ -168,7 +168,7 @@
       }
 
       td {
-        font-size: .875rem;
+        font-size: pxtorem(14);
         padding-top: pxtorem(5);
         border-right: 1px solid var(--col-black-light);
         display: block;

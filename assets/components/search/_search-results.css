@@ -121,7 +121,7 @@
     img,
     .person__photo {
       margin-right: 1rem;
-      max-width: 6.25rem;
+      max-width: pxtorem(100);
       display: block;
       float: left;
 
@@ -185,7 +185,7 @@
 
   /* Definition list for meta information (e.g. year/type for handbook results) */
   .search-results__meta {
-    font-size: .875rem;
+    font-size: pxtorem(14);
     margin: -.25rem 0 .125rem;
     padding: 0;
 

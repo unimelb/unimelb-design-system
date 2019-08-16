@@ -306,7 +306,7 @@
 
     &.thin {
       nav a {
-        font-size: .8125rem;
+        font-size: pxtorem(13);
         line-height: pxtorem(24);
         line-height: calc(4rem - .125rem); /* tabs height minus 1px above and below for outline */
         margin-top: .0625rem; /* outline cont. */

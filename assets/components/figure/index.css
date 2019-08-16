@@ -19,7 +19,7 @@
 
   &__caption {
     margin-top: pxtorem(12);
-    font-size: .875rem;
+    font-size: pxtorem(14);
     font-style: italic;
     line-height: 1.3;
     color: var(--col-blue-mid-2);
