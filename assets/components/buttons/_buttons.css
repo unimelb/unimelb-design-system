@@ -1,5 +1,5 @@
 @define-mixin raisedbutton {
-  border-radius: 5px;
+  border-radius: 3px;
   font-size: .8125rem;
   padding: .9375rem 1.25rem;
   background-color: var(--col-lighterblue);
@@ -9,14 +9,14 @@
   cursor: pointer;
   display: inline-block;
   font-style: normal;
-  font-weight: var(--fw-bold);
+  font-weight: normal;
   letter-spacing: 2px;
   margin: 20px 0;
   outline-color: #000;
   outline-offset: 1px;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: capitalize;
   vertical-align: bottom;
 
   &[disabled],
@@ -155,15 +155,15 @@
 }
 
 @define-mixin outlinebutton {
-  border-radius: 5px;
+  border-radius: 3px;
   border-width: 2px;
   font-size: .8125rem;
   letter-spacing: .0625rem;
   margin: 1.25rem 0;
   padding: .625rem;
-  border-color: #000;
+  border-color: var(--col-background-primary-navy);
   border-style: solid;
-  color: #000;
+  color: var(--col-background-primary-navy);
   cursor: pointer;
   display: inline-block;
   font-style: normal;
@@ -173,17 +173,16 @@
   position: relative;
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
 
   &:hover,
   &:focus {
-    background-color: var(--col-lighterblue);
-    color: #fff;
-    border-color: transparent;
+    text-decoration: underline;
   }
 
   &:active {
-    opacity: .3;
+   background-color: var(--col-background-primary-navy);
+   color: #fff;
+   text-decoration: none;
   }
 
   @media screen and (--bp-height-small) {
@@ -197,11 +196,15 @@
   &::after {
     font-size: .9375rem;
     padding-left: .625rem;
-    content: '\2192';
+    content: '\203A';
     line-height: 0;
+    top: 6px;
+    display: inline-block;
+    position: relative;
 
     @media screen and (--bp-height-small) {
-      font-size: 1.625rem;
+      font-size: 2.5rem;
+      font-weight: var(--fw-regular);
       padding-left: .9375rem;
     }
   }
@@ -281,9 +284,12 @@
   .button-hero-inverse {
     @mixin outlinebutton;
     @mixin outlinearrow;
-    border-color: #fff;
+    border-color: rgba(255,255,255,.3);
     color: #fff;
     outline-color: currentColor;
+    &:hover{
+      border-color: #fff;
+    }
   }
 
   .button-fill {

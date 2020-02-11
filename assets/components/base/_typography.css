@@ -47,7 +47,7 @@
   table {
     @mixin wrapper;
     max-width: var(--w-sml);
-    font-weight: var(--fw-light);
+    font-weight: var(--fw-regular);
     padding: 0;
 
     @media screen and (--bp-tablet) {
@@ -59,7 +59,7 @@
     font-size: 1.625rem;
     line-height: 2.25rem;
     padding-bottom: 1.5rem;
-    font-weight: var(--fw-light);
+    font-weight: var(--fw-regular);
 
     @media screen and (--bp-desktop) {
       font-size: 2.0625rem;
@@ -68,14 +68,13 @@
   }
 
   h2 {
-    font-size: .9375rem;
+    font-size: 1rem;
     line-height: 1.5rem;
-    letter-spacing: .0625rem;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     clear: left;
     font-weight: var(--fw-bold);
-    text-transform: uppercase;
+    color: var(--col-background-primary-navy);
   }
 
   h3 {
@@ -91,8 +90,8 @@
 
   p,
   li {
-    letter-spacing: .0125rem;
     padding-bottom: 1.5rem;
+    color: var(--col-background-primary-navy);
   }
 
   ol,
@@ -109,7 +108,7 @@
       padding-bottom: .5rem;
       margin-left: .9375rem;
       max-width: var(--w-sml);
-      color: #000;
+      color: var(--col-background-primary-navy);
       display: list-item;
 
       &:last-child {
@@ -419,6 +418,8 @@
       & > li {
         list-style-type: none;
         position: relative;
+        font-size: 1rem;
+        color: var(--col-background-primary-navy);
 
         &::before {
           height: .3125rem;
@@ -510,7 +511,7 @@
   }
 
   a {
-    color: var(--col-lighterblue);
+    color: var(--col-background-primary-navy);
     text-decoration: underline;
 
     &:hover,

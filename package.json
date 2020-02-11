@@ -6,7 +6,7 @@
   "author": "The University of Melbourne",
   "license": "UNLICENSED",
   "engines": {
-    "node": "6.9.3",
+    "node": "*",
     "yarn": "*"
   },
   "scripts": {
