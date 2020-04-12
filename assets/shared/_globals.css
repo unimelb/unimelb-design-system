@@ -3,6 +3,14 @@
  */
 :root {
   /* Colours */
+
+  --col-background-primary-navy: #094183;
+  --col-background-secondary-navy: #033a7b;
+  --col-blue-light: #cde6ff;
+  --col-navy-mid: #abbed5;
+  --col-navy-light: #f2f5f9;
+
+
   --col-darkgray: #333;
   --col-midgray: #666;
   --col-midgrayer: #777; /* last accessible grey text on white background */
@@ -41,6 +49,8 @@
   --ff-sans: 'Roboto', 'Helvetica', 'Arial', sans-serif;
   --ff-fixed: 'Courier New', 'Courier', fixed;
   --ff-serif: 'Georgia', 'Times New Roman', 'Times', serif;
+  --ff-sans: 'Source Sans Pro', 'Gill Sans', 'Trebuchet MS', 'Arial', sans-serif;
+  --ff-noto: 'Noto Serif', 'Georgia', 'Times New Roman', serif;
 
   /* Font weights */
   --fw-thin: 100;

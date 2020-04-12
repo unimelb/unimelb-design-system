@@ -12,7 +12,7 @@ body {
   font-family: var(--ff-sans);
 
   @media screen and (--bp-desktop) {
-    line-height: 1.68;
+    line-height: 1.5;
   }
 }
 
@@ -383,13 +383,14 @@ body {
   }
 
   .with-figure {
+    font-size: 1.25rem;
     @media (--bp-desktop) {
       max-width: var(--w-sml);
       margin: 0 auto;
     }
   }
 
-  .layout-sidebar {
+.layout-sidebar {
     /* Fine line to separate any content on white above and below */
     border-bottom: 2px solid var(--col-paleblue);
     border-top: 2px solid var(--col-paleblue);
