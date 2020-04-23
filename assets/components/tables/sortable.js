@@ -4,19 +4,43 @@
  * @param  {Element} el
  * @param  {Object} props
  */
+
+require('utils/array-foreach-polyfill');
+require('utils/array-includes-polyfill');
+require('utils/array-some-polyfill');
+require('utils/array-every-polyfill');
+
+var domready = require('domready');
+
+var values = require('object.values');
+if (!Object.values) {
+	values.shim();
+}
+var yo;
+domready(function () {
+  yo = require('yo-yo');
+});
+
 function SortableTable(el, props) {
   this.el = el;
   this.props = props || {};
   this.props.tbody = this.el.querySelector('tbody');
+  this.tableInfo = [];
+  this.tableFragment = document.createDocumentFragment();
+  this.colCount = this.props.tbody.rows[0].cells.length;
 
   this.setupData();
   this.props.selected = 0;
   this.props.sortAs = '';
   this.setupHeadings();
+  this.initSearchFields(el);
+  this.cacheTable();
+  this.populateSearchOptions();
 }
 
 SortableTable.label = 'SortableTable';
 SortableTable.selector = 'table[data-sortable]';
+SortableTable.defaultOption = "__all";
 
 SortableTable.prototype.setupData = function() {
   var rows = this.props.tbody.querySelectorAll('tr');
@@ -52,7 +76,7 @@ SortableTable.prototype.setupHeadings = function() {
       if (!this.props.cols[i].hasAttribute('tabindex'))
         this.props.cols[i].setAttribute('tabindex', 0);
 
-      var place = document.createElement('span');
+      var place = yo`<span></span>`;
       place.classList.add('sortable');
       this.props.cols[i].appendChild(place);
 
@@ -64,6 +88,212 @@ SortableTable.prototype.setupHeadings = function() {
     }
   }
 };
+
+SortableTable.prototype.initSearchField = function(el) {
+  var searchNode = yo`<span></span>`;
+  if (el.dataset === undefined) {
+    searchNode.appendChild(yo`<input name="${optionName}" type="hidden" value="" />`);
+    return searchNode;
+  }
+  var type = el.dataset.sortableSearchType;
+  var optionName = el.innerText.toLocaleLowerCase().replace(/ /g,"_");
+  switch (type) {
+    case "text":
+      var field = yo`<input type="search" name="${optionName}" placeholder="Search by ${el.innerText}"/>`;
+      searchNode.appendChild(field);
+      var searchel = searchNode.querySelector('input');
+      searchel.addEventListener('keyup', this.handleSearch.bind(this));
+      break;
+    case "select":
+      var field = yo`<select class="styled-select alt" name="${optionName}"><option value="${SortableTable.defaultOption}">Please select</option></select>`;
+      searchNode.appendChild(field);
+      var searchel = searchNode.querySelector('select');
+      searchel.addEventListener('change', this.handleSearch.bind(this));
+      break;
+    case "multi-select":
+      // hidden field is so multi-select options keep their place in the criteria array if no option is picked.
+      var button = yo`<div> <button data-name="${el.innerText}">Please select</button> <div data-name="${el.innerText}" data-sortable-multiselect> <input type="hidden" value="" name="${optionName}"/> </div> </div>`;
+      searchNode.appendChild(button);
+      var buttonEl = searchNode.querySelector('button');
+      buttonEl.addEventListener('click', this.showMultiSelect.bind(this), true);
+      break;
+    default:
+      searchNode.appendChild(yo`<input name="${optionName}" type="hidden" value="" />`);
+      break;
+  }
+  return searchNode;
+}
+
+SortableTable.prototype.initSearchFields = function(el) {
+  var searchableCols = Array.prototype.slice.call(el.querySelectorAll('th'));
+  var row = yo`<tr></tr>`;
+  searchableCols.forEach(function(th) {
+    var cellRef = row.insertCell(-1);
+    var searchNode = this.initSearchField(th);
+    cellRef.insertAdjacentElement('beforeend', searchNode);
+    if (searchNode.firstChild.type === "hidden") {
+      cellRef.className = 'no-content';
+    }
+  }, this);
+  this.insertAfter(el.querySelectorAll('tr')[0], row);
+}
+
+SortableTable.prototype.cacheTable = function() {
+  var element  = this.props.tbody;
+  this.tableFragment = this.tableFragment.appendChild(element.cloneNode(true));
+}
+
+SortableTable.prototype.populateSearchOptions = function() {
+  var headers = Array.prototype.slice.call(this.el.querySelectorAll('th'));
+  headers.forEach(function(el, index) {
+    if (el.dataset !== undefined && el.dataset.sortableSearchType !== undefined) {
+      var options = new Set();
+
+      if (el.dataset.sortableSearchType.indexOf('select') >= 0) {
+        this.store.forEach(function(row){
+          var values = row[index].innerText.split(/\r?\n/);
+          values.forEach(function(value){
+            if (value !== ""){
+              options.add(value);
+            }
+          }, this);
+        });
+      }
+
+      options.forEach(function(option, index){
+        if (el.dataset.sortableSearchType === 'select') {
+          var optionField = yo`<option></option>`;
+          var optionName = el.innerText.toLocaleLowerCase().replace(/ /g,"_");
+          optionField.value = option;
+          optionField.innerHTML = option;
+          this.el.querySelector(`select[name="${optionName}"]`).appendChild(optionField)
+        }
+
+        if (el.dataset.sortableSearchType === 'multi-select') {
+          var optionId = `opt-${Math.random().toString(36)}`;
+          var optionName = el.innerText.toLocaleLowerCase().replace(/ /g,"_");
+          var optionField = yo`<div><input id="${optionId}" type="checkbox" value="${option}" name="${optionName}"/> <label for="${optionId}">${option}</label></div>`;
+          optionField.addEventListener('change', this.handleMultiSelect.bind(this));
+          this.el.querySelector(`[data-sortable-multiselect][data-name="${el.innerText}"]`).appendChild(optionField);
+        }
+
+      }, this);
+    }
+  }, this)
+}
+
+SortableTable.prototype.handleMultiSelect = function(e) {
+  var parent = e.currentTarget.parentNode;
+  var optionsSelected = parent.querySelectorAll('input[type="checkbox"]:checked').length;
+  var button = parent.parentNode.querySelector('button');
+
+  if (optionsSelected > 0) {
+    button.innerText = `${optionsSelected} selected`;
+  } else {
+    button.innerText = 'Please select';
+  }
+
+  this.handleSearch();
+}
+
+SortableTable.prototype.showMultiSelect = function(e) {
+  var name = e.currentTarget.dataset.name;
+  var multiselect = this.el.querySelector(`[data-sortable-multiselect][data-name="${name}"]`);
+  this.hideMultiSelectFunction = this.hideMultiSelect.bind(this, multiselect);
+
+  if(multiselect.classList.contains('visible')){
+    multiselect.classList.remove('visible');
+    document.removeEventListener('click', this.hideMultiSelectFunction, true);
+  } else {
+    multiselect.classList.add('visible');
+    document.addEventListener('click', this.hideMultiSelectFunction, true);
+  }
+}
+
+SortableTable.prototype.hideMultiSelect = function(multiselect, e) {
+  if (!multiselect.contains(e.target)) {
+    multiselect.classList.remove('visible');
+    document.removeEventListener('click', this.hideMultiSelectFunction, true);
+    this.hideMultiSelectFunction = null;
+  }
+}
+
+SortableTable.prototype.buildCriteria = function(inputs) {
+  var inputGroups = {}
+  inputs = Array.prototype.slice.call(inputs)
+  inputs.forEach(function(input) {
+    if (inputGroups[input.name] === undefined) {
+      inputGroups[input.name] = [input.value.toLocaleLowerCase()];
+    } else {
+      inputGroups[input.name].push(input.value.toLocaleLowerCase());
+    }
+
+  }, this);
+
+  var values = Object.values(inputGroups);
+
+  // strip values from hidden fields if present.
+  values.forEach(function(value) {
+    if (value.length > 1) {
+      value.shift();
+    }
+  })
+
+  this.criteria = values;
+}
+
+SortableTable.prototype.checkPresence = function(criteria, cellText) {
+  var present = true;
+  if (criteria !== undefined) {
+    present = criteria.some(this.isPresent, cellText);
+  }
+  return present;
+}
+
+SortableTable.prototype.handleSearch = function(e) {
+  var table = this.tableFragment.cloneNode(true); // create a copy of the cached table Node
+
+  inputs = this.el.querySelectorAll('input[type="search"], input[type="hidden"], input[type="checkbox"]:checked, select');
+  this.buildCriteria(inputs);
+
+  // check rows for select / input data
+  var rows = Array.prototype.slice.call(table.querySelectorAll("tr"));
+  rows.forEach(function(row){
+    var cells = Array.prototype.slice.call(row.querySelectorAll("td"));
+    var results = []; // build up an array of true / false if the cell matches the filter
+    cells.forEach(function(cell, index){
+      // naive comparison of cell data to input
+      var textPresent = this.checkPresence(this.criteria[index], cell.innerText.toLocaleLowerCase());
+
+      if (textPresent || this.criteria[index].includes(SortableTable.defaultOption)) {
+        results.push(true);
+      } else {
+        results.push(false);
+      }
+    }, this);
+
+    // remove the row if it doesn't match every filter
+    if (!results.every(this.isTrue)) {
+      row.parentElement.removeChild(row);
+    }
+  }, this);
+
+  // replace the table in the DOM with a new table
+  this.props.tbody.innerHTML = table.innerHTML;
+
+  if(this.props.tbody.innerText.length === 0) {
+    this.addNoResultsRow();
+  }
+
+  // rebuild this.store
+  this.setupData();
+}
+
+SortableTable.prototype.addNoResultsRow = function() {
+  var noResultsRow = yo`<tr></tr>`;
+  noResultsRow.appendChild(yo`<td colspan="${this.colCount}">No Results</td>`);
+  this.props.tbody.append(noResultsRow);
+}
 
 SortableTable.prototype.handleColClick = function(e) {
   var col = e.target;
@@ -137,15 +367,26 @@ SortableTable.prototype.rewriteStore = function() {
     this.props.tbody.removeChild(rows[i]);
 
   for (rows=this.store.length - 1, i=rows; i >= 0; i--) {
-    var row = document.createElement('tr');
+    var row = yo`<tr></tr>`;
     for (var cols=this.store[i].length - 1, j=cols; j >= 0; j--)
       row.appendChild(this.store[rows-i][cols-j]);
-
     this.props.tbody.appendChild(row);
   }
 
   // Rebind mobile labels
   window.uom.initComponent('MobileTableHelper');
 };
+
+SortableTable.prototype.insertAfter = function(el, content){
+  el.parentNode.insertBefore(content, el.nextSibling);
+}
+
+SortableTable.prototype.isTrue = function(el, index, array){
+  return el === true;
+}
+
+SortableTable.prototype.isPresent = function(el, index, array){
+  return this.valueOf().indexOf(el) >= 0;
+}
 
 module.exports = SortableTable;
